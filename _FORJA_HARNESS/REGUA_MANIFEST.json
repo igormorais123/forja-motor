@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-08-05T17:37:04-03:00",
+  "atualizadoEm": "2026-08-05T17:56:35-03:00",
   "hashes": {
     "_FORJA_HARNESS/forja_regua.py": "db5c26f195d00f013849c39024b4303ba1a049bbc89dac3924b7bad70723885c",
     "_FORJA_HARNESS/forja_gate_liveness.py": "022b753465977df5c01947a4594afb2603435df0599060686dc9b6481da04733",
@@ -21,7 +21,7 @@
     "_FORJA_HARNESS/forja_docx_layout.py": "d9cf14387cc877a72000aa2cb89cacdfd3a72e923aeca198e34155a3e72e3eaa",
     "_FORJA_HARNESS/test_forja_layout_antimoldagem.py": "39233304811d1c20b45d7e403ff30934a6ad7dc852421d5561b0c131df42f79f",
     "_FORJA_HARNESS/forja_assinatura_visual.py": "bb85ad103caf8ab297fd134772db4f5420d8e074928cbefa867ac5f8471b1021",
-    "_FORJA_HARNESS/test_forja_assinatura_antimoldagem.py": "5e3f93a6f9f87e2917bad3a735430248b7e0757a22f5c384d9e276d46118d59c",
+    "_FORJA_HARNESS/test_forja_assinatura_antimoldagem.py": "0222b98494f55ce017a46e0aa8f9394933602db72b9cd124e4d2b91b111dec05",
     "_FORJA_HARNESS/forja_adocao_rota.py": "6704e9fdaca634edd901e2452c60ca7dd64c197273dc2fa36435a9f0a2ccccc4",
     "_FORJA_HARNESS/test_forja_adocao_rota.py": "1c7435e9f49fb362c2830f96ab8dcf2e692c29b2316e251b053e3d02f6aa1a12",
     "_FORJA_HARNESS/test_forja_porta_unica.py": "634c49a0b7f99ea05e399c110c6155299b38ccca34593cd5f52df120864f27e4",
@@ -29,7 +29,7 @@
     "_FORJA_HARNESS/test_forja_baseline_aprovado.py": "e6ed8382be8fcdb227cf25df64ef83a460b0d966a2caf5b89b90da7457ce6c4f",
     "_FORJA_HARNESS/state/BASELINE_APROVADO.json": "f13d20f2fc4b4c11dae96fc67ed5055b13aa818865bdfc82bdd685f252ca773b",
     "_FORJA_HARNESS/forja_varredura_tipografica.py": "c30e86f1b15b04ac54d5aca5c3d05e140b4b2d4049be6eeb2b20d6338b8d83e0",
-    "_FORJA_HARNESS/test_forja_varredura_tipografica.py": "4ef0c74402d061d0bcb081d45490daa64a8a78998bccd7a1e30beec95d8c02ba",
+    "_FORJA_HARNESS/test_forja_varredura_tipografica.py": "386ec0ec673433377382b4cd623592b406873e8d48f0c582eb6d0265d72081eb",
     "_FORJA_HARNESS/forja_canario_mutacao.py": "dd24cef573772747e4ad26d7928c5a506bc579b51fd427362ba5e3aff39bc953",
     "_FORJA_HARNESS/test_forja_canario_mutacao.py": "a2b5072c027c786edff66ab242de42cfe470a6fcfb663817946c436095d5b42b",
     "_FORJA_HARNESS/forja_canario_catraca.py": "f058bac6cedd886ee8feeff068bccd69d6d2603399eb1e9511356b89d3c03d74",
@@ -134,7 +134,7 @@
     "_FORJA_HARNESS/forja_ar_blind.py": "60be1c790dccebb298d3b04fac133fa3cd53ccd51904b04113ea5a8e8c6121d4",
     "_FORJA_HARNESS/forja_ar_ciclo.py": "b42ce916c933a2808ce5567ccb5c35d549bf2e897fa89078582aa224634fea63",
     "_FORJA_HARNESS/forja_ar_evolucao.py": "7eb01cb62db875fdb392837e1e263fff47cf01dc3a635088e56a905bc53fddfc",
-    "_FORJA_HARNESS/test_forja_autoresearch.py": "7819cf9a0157630400840e42cbf3a8b4c078628cc13e5665e55822c5ba30032a",
+    "_FORJA_HARNESS/test_forja_autoresearch.py": "db0672321514e25d3d8562da69aac0413b2f894c6f7fcf398e0964d4b1c3f7c6",
     "_FORJA_HARNESS/autoresearch/AR_MANIFEST.json": "1d45b4ee48a2ed854a96d2b15ac961f8c3467772f637072cc1480656d3428cbc",
     "_FORJA_HARNESS/autoresearch/canarios/CANARIOS_MANIFEST.json": "8149ce77f7c722d3bb83735c31391750abf3ebc3271773f7d455cad66f7212c1",
     "_FORJA_HARNESS/autoresearch/prompts/JUIZ_CEGO_PROMPT.md": "9da3b460474b7f2b8078a2d69399b887a354e31c3f8828bd78616a541c2721b8",
@@ -1449,6 +1449,15 @@
         "_FORJA_HARNESS/test_forja_n3_visual.py",
         "_FORJA_HARNESS/test_forja_varredura_tipografica.py",
         "_FORJA_HARNESS/test_real_telemetria_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T17:56:35-03:00",
+      "motivo": "ajuste das suites que dependem dos autos: nao-verificado deixa de ser relatado como regressao",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_assinatura_antimoldagem.py",
+        "_FORJA_HARNESS/test_forja_autoresearch.py",
+        "_FORJA_HARNESS/test_forja_varredura_tipografica.py"
       ]
     }
   ]

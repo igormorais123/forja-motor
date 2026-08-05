@@ -88,7 +88,13 @@ def test_scan_estado_real_encontra_vinte():
         f"{payload['summary']['eligible']} elegíveis, piso {piso}"
         + ("" if forja_acervo.autos_disponiveis()
            else " (autos ausentes: " + forja_acervo.motivo_da_ausencia_dos_autos() + ")"))
-    assert any(item["artifactKind"] == "metadata_only" for item in payload["cases"])
+    # A classe `metadata_only` só aparece onde há caso sem artefato produzido, e
+    # isso depende de material que fica na máquina. Numa árvore montada a partir
+    # dos repositórios a classe some sem que o corpus tenha perdido a capacidade
+    # de discriminá-la — quem prova essa capacidade são os testes sintéticos
+    # acima, que não dependem do acervo.
+    if forja_acervo.autos_disponiveis():
+        assert any(item["artifactKind"] == "metadata_only" for item in payload["cases"])
 
 
 def test_painel_discrimina_placeholder_e_null_motivado():

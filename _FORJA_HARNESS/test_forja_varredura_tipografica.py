@@ -27,6 +27,7 @@ import sys
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
+import forja_acervo  # noqa: E402
 from forja_varredura_tipografica import _marcar_superadas, varrer  # noqa: E402
 
 # Medido em 04/08/2026, já descontadas as versões superadas por correção posterior

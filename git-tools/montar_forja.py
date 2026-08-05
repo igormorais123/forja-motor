@@ -100,7 +100,7 @@ def main(argv=None) -> int:
         return 0
 
     print("\n  rodando o baseline na árvore montada ...", flush=True)
-    r = _rodar(sys.executable, "-X", "utf8", "forja_baseline.py", "--quiet",
+    r = _rodar(sys.executable, "-X", "utf8", "forja_baseline.py",
                cwd=str(destino / "_FORJA_HARNESS"))
     print((r.stdout or "").strip()[-2000:])
     if r.returncode != 0:
