@@ -1,0 +1,261 @@
+- generic [active] [ref=f2e1]:
+  - toolbar "Diagram actions" [ref=f2e2]:
+    - button "Toggle color theme" [pressed] [ref=f2e3] [cursor=pointer]:
+      - generic [ref=f2e4]: ☼
+      - generic [ref=f2e5]: Light
+    - button "Enter presentation stage" [ref=f2e6] [cursor=pointer]:
+      - generic [ref=f2e7]: □
+      - generic [ref=f2e8]: Present
+    - button "Export diagram" [ref=f2e10] [cursor=pointer]:
+      - text: Export
+      - generic [ref=f2e11]: ▾
+  - generic [ref=f2e12]:
+    - generic [ref=f2e13]:
+      - generic [ref=f2e14]:
+        - heading "FORJA — Fabricação de Petições + Melhoria Contínua" [level=1] [ref=f2e16]
+        - text: BLUEPRINT / REV 01
+      - paragraph [ref=f2e17]: o caminho completo de uma petição, os guardiões que vigiam cada etapa e a escola que melhora a fábrica · 2026-07-23
+    - generic "Guided diagram views" [ref=f2e18]:
+      - generic [ref=f2e19]:
+        - generic [ref=f2e20]:
+          - generic [ref=f2e21]: Guided views
+          - generic [ref=f2e22]: 0 / 5
+        - strong [ref=f2e24]: Explore this system
+      - button "Play guided story" [ref=f2e26] [cursor=pointer]:
+        - generic [ref=f2e27]: ▶
+        - generic [ref=f2e28]: Play story
+      - navigation "Story chapters" [ref=f2e29]:
+        - list [ref=f2e30]:
+          - listitem [ref=f2e31]:
+            - 'button "Open chapter 1 of 5: O caminho da peça. Chapter focus delta: 0 stay, 12 enter, 0 leave" [ref=f2e32] [cursor=pointer]':
+              - generic [ref=f2e33]: "01"
+              - generic [ref=f2e34]: O caminho da peça
+              - generic [ref=f2e35]:
+                - generic [ref=f2e36]: =0
+                - generic [ref=f2e37]: "+12"
+                - generic [ref=f2e38]: −0
+          - listitem [ref=f2e39]:
+            - 'button "Open chapter 2 of 5: Onde a linha trava sozinha. Chapter focus delta: 0 stay, 7 enter, 0 leave" [ref=f2e40] [cursor=pointer]':
+              - generic [ref=f2e41]: "02"
+              - generic [ref=f2e42]: Onde a linha trava sozinha
+              - generic [ref=f2e43]:
+                - generic [ref=f2e44]: =0
+                - generic [ref=f2e45]: "+7"
+                - generic [ref=f2e46]: −0
+          - listitem [ref=f2e47]:
+            - 'button "Open chapter 3 of 5: Pessoas e inteligências. Chapter focus delta: 0 stay, 5 enter, 0 leave" [ref=f2e48] [cursor=pointer]':
+              - generic [ref=f2e49]: "03"
+              - generic [ref=f2e50]: Pessoas e inteligências
+              - generic [ref=f2e51]:
+                - generic [ref=f2e52]: =0
+                - generic [ref=f2e53]: "+5"
+                - generic [ref=f2e54]: −0
+          - listitem [ref=f2e55]:
+            - 'button "Open chapter 4 of 5: A escola da fábrica. Chapter focus delta: 0 stay, 6 enter, 0 leave" [ref=f2e56] [cursor=pointer]':
+              - generic [ref=f2e57]: "04"
+              - generic [ref=f2e58]: A escola da fábrica
+              - generic [ref=f2e59]:
+                - generic [ref=f2e60]: =0
+                - generic [ref=f2e61]: "+6"
+                - generic [ref=f2e62]: −0
+          - listitem [ref=f2e63]:
+            - 'button "Open chapter 5 of 5: Guardiões automáticos. Chapter focus delta: 0 stay, 6 enter, 0 leave" [ref=f2e64] [cursor=pointer]':
+              - generic [ref=f2e65]: "05"
+              - generic [ref=f2e66]: Guardiões automáticos
+              - generic [ref=f2e67]:
+                - generic [ref=f2e68]: =0
+                - generic [ref=f2e69]: "+6"
+                - generic [ref=f2e70]: −0
+    - generic [ref=f2e71]:
+      - img "FORJA — Fabricação de Petições + Melhoria Contínua o caminho completo de uma petição, os guardiões que vigiam cada etapa e a escola que melhora a fábrica · 2026-07-23" [ref=f2e72]:
+        - generic [ref=f2e75]: Chegada e preparação do caso
+        - generic [ref=f2e77]: Conselho, fontes e redação auditada
+        - generic [ref=f2e79]: Revisão, conferência e entrega
+        - generic [ref=f2e81]: Escola da fábrica — melhoria contínua em ambiente isolado
+        - group "Direct relationship explorer":
+          - 'button "Inspect relationship 1 of 16: O caso chega e é registrado to Leitura protegida, caso conferido. Press Enter for details."'
+          - 'button "Inspect relationship 2 of 16: Leitura protegida to Cem perguntas sobre o caso, sem texto malicioso. Press Enter for details."'
+          - 'button "Inspect relationship 3 of 16: Cem perguntas sobre o caso to Fatos, prazos e tribunal, perguntas respondidas. Press Enter for details."'
+          - 'button "Inspect relationship 4 of 16: Fatos, prazos e tribunal to Conselho de estratégia e direito, fatos com prova. Press Enter for details."'
+          - 'button "Inspect relationship 5 of 16: Conselho de estratégia e direito to Fontes oficiais conferidas, pareceres respondidos. Press Enter for details."'
+          - 'button "Inspect relationship 6 of 16: Fontes oficiais conferidas to A peça é escrita no molde, fontes conferidas. Press Enter for details."'
+          - 'button "Inspect relationship 7 of 16: A peça é escrita no molde to Auditoria de fatos e citações, minuta completa. Press Enter for details."'
+          - 'button "Inspect relationship 8 of 16: Auditoria de fatos e citações to Revisão final da escrita, sem erro grave. Press Enter for details."'
+          - 'button "Inspect relationship 9 of 16: Revisão final da escrita to Conferência página a página, conteúdo intacto. Press Enter for details."'
+          - 'button "Inspect relationship 10 of 16: Conferência página a página to Pacote de entrega montado, páginas aprovadas. Press Enter for details."'
+          - 'button "Inspect relationship 11 of 16: Pacote de entrega montado to Entrega comprovada e lições, pacote pronto. Press Enter for details."'
+          - 'button "Inspect relationship 12 of 16: Entrega comprovada e lições to Lições guardadas, lições registradas. Press Enter for details."'
+          - 'button "Inspect relationship 13 of 16: Lições guardadas to Criar versões de teste, problema identificado. Press Enter for details."'
+          - 'button "Inspect relationship 14 of 16: Criar versões de teste to Dar nota pela mesma régua, versões criadas. Press Enter for details."'
+          - 'button "Inspect relationship 15 of 16: Dar nota pela mesma régua to Aplicar a vencedora, nota mínima alcançada. Press Enter for details."'
+          - 'button "Inspect relationship 16 of 16: Aplicar a vencedora to O caso chega e é registrado, molde novo. Press Enter for details."'
+        - button "Focus O caso chega e é registrado, O pedido vira caso com número e pasta própria., Chegada e preparação do caso" [ref=f2e84] [cursor=pointer]:
+          - generic [ref=f2e87]: O caso chega e é registrado
+          - generic: O pedido vira caso com número e pasta própria.
+          - generic: "Trava: histórico divergente para tudo até a reconciliação."
+        - button "Focus Leitura protegida, Arquivos lidos, indexados e varridos por segurança., Chegada e preparação do caso" [ref=f2e88] [cursor=pointer]:
+          - generic [ref=f2e91]: Leitura protegida
+          - generic: Arquivos lidos, indexados e varridos por segurança.
+          - generic: Documento é prova, nunca comando; achado vai para triagem humana.
+        - 'button "Focus Cem perguntas sobre o caso, Cada resposta classificada: prova, relato ou lacuna., Chegada e preparação do caso" [ref=f2e92] [cursor=pointer]':
+          - generic [ref=f2e95]: Cem perguntas sobre o caso
+          - generic: "Cada resposta classificada: prova, relato ou lacuna."
+          - generic: Lacuna essencial impede a redação e vira pedido de diligência.
+        - button "Focus Fatos, prazos e tribunal, Linha do tempo com provas e as regras do tribunal., Chegada e preparação do caso" [ref=f2e96] [cursor=pointer]:
+          - generic [ref=f2e99]: Fatos, prazos e tribunal
+          - generic: Linha do tempo com provas e as regras do tribunal.
+          - generic: Prazo contado duas vezes; divergência resolvida por escrito.
+        - button "Focus Conselho de estratégia e direito, Dois conselheiros de IA opinam por escrito., Conselho, fontes e redação auditada" [ref=f2e100] [cursor=pointer]:
+          - generic [ref=f2e103]: Conselho de estratégia e direito
+          - generic: Dois conselheiros de IA opinam por escrito.
+          - generic: Conselheiros de IA; sem os dois pareceres a demanda não fecha.
+        - button "Focus Fontes oficiais conferidas, Cada lei e decisão é conferida na fonte oficial., Conselho, fontes e redação auditada" [ref=f2e104] [cursor=pointer]:
+          - generic [ref=f2e107]: Fontes oficiais conferidas
+          - generic: Cada lei e decisão é conferida na fonte oficial.
+          - generic: O que não bate com a fonte é corrigido ou retirado.
+        - button "Focus A peça é escrita no molde, A minuta nasce com a origem de cada argumento., Conselho, fontes e redação auditada" [ref=f2e108] [cursor=pointer]:
+          - generic [ref=f2e111]: A peça é escrita no molde
+          - generic: A minuta nasce com a origem de cada argumento.
+          - generic: Redação por IA em voz humana; entidades reais e localizáveis.
+        - button "Focus Auditoria de fatos e citações, Revisor separado confere tudo e simula o adversário., Conselho, fontes e redação auditada" [ref=f2e112] [cursor=pointer]:
+          - generic [ref=f2e115]: Auditoria de fatos e citações
+          - generic: Revisor separado confere tudo e simula o adversário.
+          - generic: Quem revisa nunca é quem escreveu; um erro grave já trava.
+        - button "Focus Revisão final da escrita, Só a forma melhora; o conteúdo fica congelado., Revisão, conferência e entrega" [ref=f2e116] [cursor=pointer]:
+          - generic [ref=f2e119]: Revisão final da escrita
+          - generic: Só a forma melhora; o conteúdo fica congelado.
+          - generic: Se fato, número ou pedido mudar, a versão é descartada.
+        - button "Focus Conferência página a página, O documento final é inspecionado por inteiro., Revisão, conferência e entrega" [ref=f2e120] [cursor=pointer]:
+          - generic [ref=f2e123]: Conferência página a página
+          - generic: O documento final é inspecionado por inteiro.
+          - generic: Regime estrito exige confirmação humana assinada.
+        - button "Focus Pacote de entrega montado, Tudo junto, com selo de integridade e carta., Revisão, conferência e entrega" [ref=f2e124] [cursor=pointer]:
+          - generic [ref=f2e127]: Pacote de entrega montado
+          - generic: Tudo junto, com selo de integridade e carta.
+          - generic: Anexos exatos; três a seis pontos para o olho do advogado.
+        - button "Focus Entrega comprovada e lições, Prova de entrega, medições e retrospectiva do caso., Revisão, conferência e entrega" [ref=f2e128] [cursor=pointer]:
+          - generic [ref=f2e131]: Entrega comprovada e lições
+          - generic: Prova de entrega, medições e retrospectiva do caso.
+          - generic: Sem prova de entrega, o caso não fecha.
+        - button "Focus Lições guardadas, A diferença entre enviado e protocolado vira lição., Escola da fábrica — melhoria contínua em ambiente isolado" [ref=f2e132] [cursor=pointer]:
+          - generic [ref=f2e135]: Lições guardadas
+          - generic: A diferença entre enviado e protocolado vira lição.
+          - generic: Lições como padrão geral, nunca segredo de cliente.
+        - button "Focus Criar versões de teste, Mudanças de molde testadas em ambiente separado., Escola da fábrica — melhoria contínua em ambiente isolado" [ref=f2e136] [cursor=pointer]:
+          - generic [ref=f2e139]: Criar versões de teste
+          - generic: Mudanças de molde testadas em ambiente separado.
+          - generic: Casos-modelo apenas; produção viva nunca é tocada.
+        - button "Focus Dar nota pela mesma régua, Critério fixado antes; ninguém ajusta depois., Escola da fábrica — melhoria contínua em ambiente isolado" [ref=f2e140] [cursor=pointer]:
+          - generic [ref=f2e143]: Dar nota pela mesma régua
+          - generic: Critério fixado antes; ninguém ajusta depois.
+          - generic: Régua fixada antes; às cegas quando há comparação.
+        - button "Focus Aplicar a vencedora, Vira molde novo só para os próximos casos., Escola da fábrica — melhoria contínua em ambiente isolado" [ref=f2e144] [cursor=pointer]:
+          - generic [ref=f2e147]: Aplicar a vencedora
+          - generic: Vira molde novo só para os próximos casos.
+          - generic: Retroativo só com ordem escrita e justificativa.
+        - generic: caso conferido
+        - generic: sem texto malicioso
+        - generic: perguntas respondidas
+        - generic: fatos com prova
+        - generic: pareceres respondidos
+        - generic: fontes conferidas
+        - generic: minuta completa
+        - generic: sem erro grave
+        - generic: conteúdo intacto
+        - generic: páginas aprovadas
+        - generic: pacote pronto
+        - generic: lições registradas
+        - generic: problema identificado
+        - generic: versões criadas
+        - generic: nota mínima alcançada
+        - generic: molde novo
+        - toolbar "Semantic legend" [ref=f2e148]:
+          - generic [ref=f2e149]: Legend
+          - button "Inspect Message Bus, 2 nodes" [ref=f2e150] [cursor=pointer]:
+            - generic [ref=f2e153]: Message bus
+            - generic: "2"
+          - button "Inspect Security, 2 nodes" [ref=f2e154] [cursor=pointer]:
+            - generic [ref=f2e157]: Security
+            - generic: "2"
+          - button "Inspect Backend, 4 nodes" [ref=f2e158] [cursor=pointer]:
+            - generic [ref=f2e161]: Backend
+            - generic: "4"
+          - button "Inspect Database, 2 nodes" [ref=f2e162] [cursor=pointer]:
+            - generic [ref=f2e165]: Database
+            - generic: "2"
+          - button "Inspect External, 2 nodes" [ref=f2e166] [cursor=pointer]:
+            - generic [ref=f2e169]: External
+            - generic: "2"
+          - button "Inspect Frontend, 1 node" [ref=f2e170] [cursor=pointer]:
+            - generic [ref=f2e173]: Frontend
+            - generic: "1"
+          - button "Inspect Cloud, 3 nodes" [ref=f2e174] [cursor=pointer]:
+            - generic [ref=f2e177]: Cloud
+            - generic: "3"
+      - status [ref=f2e178]
+      - toolbar "Diagram view controls" [ref=f2e179]:
+        - button "Trace a directed route" [ref=f2e180] [cursor=pointer]: PATH
+        - button "Open semantic radar" [ref=f2e181] [cursor=pointer]: MAP
+        - button "Open semantic lens" [ref=f2e182] [cursor=pointer]: LENS
+        - button "Find a node" [ref=f2e183] [cursor=pointer]: ⌕
+        - button "Open diagram guide" [ref=f2e184] [cursor=pointer]: "?"
+        - button "Zoom out" [disabled] [ref=f2e185]: −
+        - button "Zoom in to reveal relationship labels and node context. Reset diagram view" [ref=f2e186] [cursor=pointer]: MAP 100%
+        - button "Zoom in" [ref=f2e187] [cursor=pointer]: +
+    - generic [ref=f2e188]:
+      - generic [ref=f2e189]:
+        - heading "Os guardiões automáticos — programas reais que vigiam cada etapa" [level=3] [ref=f2e192]
+        - list [ref=f2e193]:
+          - listitem [ref=f2e194]: "• Caçador de texto malicioso (na leitura dos documentos): procura letras invisíveis, fonte minúscula e frases que tentem dar ordens à inteligência artificial; qualquer achado para a linha e vai para triagem humana."
+          - listitem [ref=f2e195]: "• Explorador de cem perguntas: garante que o caso foi examinado por dez ângulos — objetivo do cliente, caminho processual, fatos e provas, leis aplicáveis, repercussão, riscos, prazos, tendência dos julgadores, argumentos do adversário e blindagem contra recursos."
+          - listitem [ref=f2e196]: "• Conferente de citações: compara cada lei, súmula e decisão citada, palavra por palavra, com a fonte oficial, arquivada com a data da conferência."
+          - listitem [ref=f2e197]: "• Contador duplo de prazos: o mesmo prazo é contado duas vezes, por conferentes separados; divergência precisa ser resolvida e registrada por escrito antes de liberar a peça."
+          - listitem [ref=f2e198]: "• Simulador do adversário: nove objeções respondidas por escrito antes de liberar — a nona pergunta se a peça aceitou premissa que os autos não sustentam."
+          - listitem [ref=f2e199]: "• Conferente de fidelidade da revisão final: compara o texto antes e depois da revisão de escrita; se número, data, citação, pedido ou ressalva mudou, a versão é descartada e refeita."
+          - listitem [ref=f2e200]: "• Inspetor do documento final: procura campos esquecidos (como um nome entre colchetes), texto invisível e vestígios técnicos escondidos nos bastidores do arquivo; confere que a aparência segue o padrão do escritório."
+          - listitem [ref=f2e201]: "• Comparador pós-entrega: mede as diferenças entre a versão que enviamos e a que foi protocolada, e transforma cada diferença em lição registrada para os próximos casos."
+      - generic [ref=f2e202]:
+        - heading "Onde o sistema trava sozinho — e o que destrava" [level=3] [ref=f2e205]
+        - list [ref=f2e206]:
+          - listitem [ref=f2e207]: • Falta prova para um fato essencial → a redação não começa; a pendência vira pedido de diligência com responsável nomeado.
+          - listitem [ref=f2e208]: • Citação não confere com a fonte oficial → é corrigida, transformada em paráfrase declarada ou retirada antes de seguir.
+          - listitem [ref=f2e209]: • A auditoria encontra um erro grave (fato alterado, citação falsa, autoridade trocada, pedido faltando) → a peça volta; só segue com zero erros graves comprovados.
+          - listitem [ref=f2e210]: • A revisão de escrita tocou no conteúdo → a versão é descartada e refeita a partir do texto auditado, quantas vezes for preciso.
+          - listitem [ref=f2e211]: • Página com defeito visual ou campo esquecido → a entrega espera a correção e uma nova inspeção completa de todas as páginas.
+          - listitem [ref=f2e212]: • Sem prova de entrega e sem o painel de demandas atualizado → o caso não fecha e a demanda continua aberta.
+      - generic [ref=f2e213]:
+        - heading "Quem faz o quê — pessoas e inteligências artificiais, sem disfarce" [level=3] [ref=f2e216]
+        - list [ref=f2e217]:
+          - listitem [ref=f2e218]: "• A inteligência artificial faz o trabalho pesado: lê os autos, pesquisa fontes, redige a minuta, audita citações e inspeciona páginas — sempre dentro de trilhos, com registro de cada passo."
+          - listitem [ref=f2e219]: • Helena e Cícero são conselheiros de inteligência artificial especializados (estratégia e direito). Os pareceres deles são escritos e obrigatórios; cada recomendação recebe resposta registrada — acatada ou rejeitada e por quê.
+          - listitem [ref=f2e220]: "• Quem produz nunca é quem revisa: a auditoria e a conferência de páginas são feitas por revisor separado do autor da etapa — regra de contrato, não cortesia."
+          - listitem [ref=f2e221]: "• As pessoas mandam nos pontos decisivos: o professor Fábio define o objetivo e dá o retorno final sobre cada peça; exceções a qualquer trava exigem autorização nomeada; para entrega em regime estrito, o protocolo exige confirmação humana assinada."
+          - listitem [ref=f2e222]: "• O retorno humano é a matéria-prima mais valiosa: as correções feitas na versão protocolada viram lições registradas que melhoram o molde dos próximos casos."
+      - generic [ref=f2e223]:
+        - heading "O que nunca acontece sozinho" [level=3] [ref=f2e226]
+        - list [ref=f2e227]:
+          - listitem [ref=f2e228]: • Nenhuma petição real é alterada automaticamente pelo ciclo de melhoria — a versão vencedora só vira molde para casos futuros.
+          - listitem [ref=f2e229]: • Nenhum fato, número, data, citação ou pedido muda depois da auditoria; a revisão final só toca na forma da escrita.
+          - listitem [ref=f2e230]: "• Nenhum segredo de cliente sai da área privada: as lições são padrões gerais, nunca conteúdo identificável; senhas e chaves de acesso jamais entram em documento."
+          - listitem [ref=f2e231]: • Nenhuma imagem criada por inteligência artificial retrata fatos, pessoas ou provas em peça que vai ao tribunal.
+          - listitem [ref=f2e232]: "• Nenhuma exceção é silenciosa: pular uma trava exige autorização com nome e justificativa, e o registro final lista todas as exceções concedidas."
+      - generic [ref=f2e233]:
+        - heading "A escola da fábrica — como a melhoria contínua funciona" [level=3] [ref=f2e236]
+        - list [ref=f2e237]:
+          - listitem [ref=f2e238]: "• Matéria-prima: as lições das entregas e os registros dos casos, guardados em área privada."
+          - listitem [ref=f2e239]: • A régua de nota é fixada antes de criar as versões — ninguém ajusta o critério depois de ver o resultado.
+          - listitem [ref=f2e240]: • As versões são testadas em ambiente separado, com casos-modelo; a produção viva nunca é tocada.
+          - listitem [ref=f2e241]: "• Empate de nota se resolve pela honestidade do desenho: vence a versão que mostra o conteúdo, não a que esconde texto só para pontuar."
+          - listitem [ref=f2e242]: "• Resultado real já obtido: o mapa desta fábrica subiu da nota 92,8 para 100 em três rodadas de teste, com cópia de segurança e registro de cada passo."
+      - generic [ref=f2e243]:
+        - heading "Correspondência técnica — único lugar com códigos, para quem for aos documentos internos" [level=3] [ref=f2e246]
+        - list [ref=f2e247]:
+          - listitem [ref=f2e248]: "• Etapas: chegada do caso = F0 · leitura protegida = F1 · cem perguntas = F2 e F2-A · fatos e tribunal = F3 · conselho = F4 · fontes oficiais = F5 · redação = F6 · auditoria = F7 · revisão da escrita = F7-B · conferência de páginas = F8 · pacote = F9 · entrega e lições = F10."
+          - listitem [ref=f2e249]: "• Gravidade de erro: erro grave que trava tudo = P0 · apontamento que segue com ressalva destacada = P1."
+          - listitem [ref=f2e250]: • Selo de integridade = impressão digital única do arquivo (chamada de hash), que prova que nada mudou depois da conferência.
+          - listitem [ref=f2e251]: • Os guardiões correspondem aos programas internos de varredura de texto malicioso, exploração de perguntas, conferência de citações, fidelidade editorial, inspeção do documento e comparação pós-entrega.
+          - listitem [ref=f2e252]: • O ciclo de melhoria corresponde ao experimento AutoResearch, registrado com regras, diário de notas e vencedores por rodada em pasta própria.
+    - paragraph [ref=f2e253]:
+      - text: Architecture diagram • Built with Archify
+      - generic [ref=f2e254]: • Hover to trace • R route • Click to focus • +/− zoom • M radar • [/] views • P play story • T theme • E export
+  - status

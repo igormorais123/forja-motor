@@ -1,0 +1,1 @@
+Falha ao processar -File 'C:\Users\IgorPC\.claude\projects\Escrit¢rio' porque o arquivo n∆o tem uma extens∆o '.ps1'. Especifique um nome de arquivo de script do Windows PowerShell v†lido e tente novamente.

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "specVersion": "N4.0-candidate",
+  "phases": {
+    "F0": {
+      "outputs": [
+        "n4_run_registration"
+      ],
+      "gates": []
+    },
+    "F1": {
+      "outputs": [
+        "n4_document_coverage"
+      ],
+      "gates": [
+        "comparison_inputs_preserved"
+      ]
+    },
+    "F2": {
+      "outputs": [
+        "n4_classification",
+        "question_tree"
+      ],
+      "gates": [
+        "n4_modules_classified",
+        "material_questions_open_or_routed",
+        "exploration_100_complete",
+        "answers_provenance_classified",
+        "downstream_handoff_ready"
+      ]
+    },
+    "F3": {
+      "outputs": [
+        "event_identity",
+        "document_comparison",
+        "reasoning_graph",
+        "conduct_ledger",
+        "recipient_map"
+      ],
+      "gates": [
+        "event_identity_stable",
+        "comparison_inputs_complete_or_blocked",
+        "reasoning_references_valid"
+      ]
+    },
+    "F4": {
+      "outputs": [
+        "coverage_matrix",
+        "thesis_maturity",
+        "case_acceptance_tests",
+        "decision_factor_map",
+        "settlement_map",
+        "intertemporal_map",
+        "quantification_scenarios",
+        "signature_brief"
+      ],
+      "gates": [
+        "material_coverage_complete",
+        "thesis_roles_decided",
+        "case_tests_frozen_before_final_draft",
+        "conditional_modules_resolved"
+      ]
+    },
+    "F5": {
+      "outputs": [
+        "science_research_protocol",
+        "science_study_ledger",
+        "science_evidence_synthesis",
+        "science_claim_evidence_map"
+      ],
+      "gates": [
+        "science_evidence_ready_or_explicitly_blocked"
+      ]
+    },
+    "F6": {
+      "outputs": [
+        "paragraph_evidence_map_n4"
+      ],
+      "gates": [
+        "only_authorized_claims_used"
+      ]
+    },
+    "F7": {
+      "outputs": [
+        "case_test_results",
+        "global_consistency",
+        "metacognitive_audit",
+        "science_audit"
+      ],
+      "gates": [
+        "case_tests_passed",
+        "global_consistency_passed",
+        "metacognitive_audit_completed",
+        "science_audit_passed_or_not_applicable"
+      ]
+    },
+    "F8": {
+      "outputs": [
+        "n4_visual_semantic_audit"
+      ],
+      "gates": [
+        "visual_scales_units_sources_consistent"
+      ]
+    },
+    "F9": {
+      "outputs": [
+        "delivery_selection"
+      ],
+      "gates": [
+        "delivery_selection_matches_package"
+      ]
+    },
+    "F10": {
+      "outputs": [
+        "delivery_integrity",
+        "human_diff_classification",
+        "post_protocol_return",
+        "protocol_evidence",
+        "post_protocol_baseline_backfill",
+        "post_protocol_document_comparison",
+        "learning_candidate"
+      ],
+      "conditionalOutputs": {
+        "when": "eligible_post_protocol_return_detected",
+        "outputs": [
+          "post_protocol_return",
+          "protocol_evidence",
+          "post_protocol_baseline_backfill",
+          "post_protocol_document_comparison",
+          "learning_candidate"
+        ]
+      },
+      "gates": [
+        "delivery_integrity_confirmed",
+        "human_diff_classified",
+        "post_protocol_identity_resolved",
+        "post_protocol_baseline_resolved",
+        "n4_management_synced"
+      ]
+    }
+  }
+}

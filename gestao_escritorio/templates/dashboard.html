@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Gestão do Escritório — Medina Osório</title>
+  <link rel="icon" type="image/png" href="__FAVICON_URI__">
+  <style>
+    :root {
+      --petroleo: #395c60;
+      --petroleo-deep: #243f42;
+      --terracota: #9c5b38;
+      --terracota-soft: #f7e9df;
+      --ink: #202725;
+      --muted: #66706d;
+      --line: #d9ddd9;
+      --line-strong: #bbc4c0;
+      --canvas: #f3f4f1;
+      --paper: #ffffff;
+      --paper-alt: #f8f9f7;
+      --green: #28734d;
+      --green-soft: #e4f1e9;
+      --amber: #966b12;
+      --amber-soft: #f7efd8;
+      --red: #a33b36;
+      --red-soft: #f8e7e5;
+      --blue: #2f6482;
+      --blue-soft: #e6eff4;
+      --shadow: 0 8px 24px rgba(27, 39, 36, .08);
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; letter-spacing: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Aptos, "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    button, input, select, textarea { font: inherit; letter-spacing: 0; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid rgba(47, 100, 130, .28);
+      outline-offset: 2px;
+    }
+    a { color: var(--petroleo); }
+    .icon { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner, .shell { width: min(1480px, calc(100% - 36px)); margin: 0 auto; }
+    .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { min-width: 0; display: flex; align-items: center; gap: 15px; }
+    .brand img { width: 104px; height: 45px; object-fit: contain; flex: 0 0 auto; }
+    .brand-copy { min-width: 0; border-left: 1px solid var(--line-strong); padding-left: 15px; }
+    .eyebrow { color: var(--terracota); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 1px 0 0; color: var(--petroleo-deep); font-family: Georgia, "Times New Roman", serif; font-size: 23px; line-height: 1.12; }
+    .header-meta { color: var(--muted); font-size: 12px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: 1px solid var(--petroleo);
+      border-radius: 5px;
+      padding: 7px 11px;
+      background: var(--petroleo);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--petroleo-deep); }
+    .btn.secondary { color: var(--petroleo-deep); background: #fff; border-color: var(--line-strong); }
+    .btn.secondary:hover { background: var(--paper-alt); }
+    .btn.danger { color: var(--red); background: #fff; border-color: #ddb5b2; }
+    .btn.icon-only { width: 36px; padding: 0; }
+    .btn:disabled { opacity: .55; cursor: wait; }
+    .live-badge { min-height: 30px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; color: var(--muted); font-size: 12px; background: var(--paper-alt); }
+    .signal { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+    .signal.ok { background: var(--green); }
+    .signal.bad { background: var(--red); }
+    .tab-band { background: var(--petroleo-deep); }
+    .tabs { width: min(1480px, calc(100% - 36px)); min-height: 44px; margin: 0 auto; display: flex; align-items: stretch; gap: 3px; overflow-x: auto; scrollbar-width: thin; }
+    .tab {
+      min-width: 126px;
+      border: 0;
+      border-bottom: 3px solid transparent;
+      padding: 9px 13px 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: #d9e2e1;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 750;
+    }
+    .tab:hover { background: rgba(255,255,255,.07); color: #fff; }
+    .tab.active { color: #fff; border-bottom-color: #d9926a; background: rgba(255,255,255,.09); }
+    .shell { padding: 18px 0 44px; }
+    .privacy-line { color: var(--muted); font-size: 12px; display: flex; align-items: center; gap: 7px; margin-bottom: 11px; }
+    .status-rail { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 5px; scrollbar-width: thin; }
+    .status-chip { flex: 0 0 auto; min-height: 30px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; background: var(--paper); color: var(--muted); font-size: 12px; }
+    .status-chip b { color: var(--ink); }
+    .notice { display: none; margin: 10px 0 0; padding: 10px 12px; border-left: 4px solid var(--blue); background: var(--blue-soft); color: #284b60; }
+    .notice.show { display: block; }
+    .view { display: none; padding-top: 17px; }
+    .view.active { display: block; animation: reveal .18s ease-out; }
+    @keyframes reveal { from { opacity: .35; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+    .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin: 0 0 12px; }
+    .section-heading h2 { margin: 0; color: var(--petroleo-deep); font-family: Georgia, "Times New Roman", serif; font-size: 21px; }
+    .section-heading p { margin: 3px 0 0; color: var(--muted); }
+    .metric-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-bottom: 17px; }
+    .metric { min-height: 88px; border: 1px solid var(--line); border-top: 3px solid var(--line-strong); border-radius: var(--radius); padding: 10px 11px; background: var(--paper); cursor: default; }
+    .metric.actionable { cursor: pointer; }
+    .metric.actionable:hover { border-color: var(--petroleo); }
+    .metric strong { display: block; color: var(--petroleo-deep); font-family: Georgia, "Times New Roman", serif; font-size: 28px; line-height: 1; }
+    .metric span { display: block; color: var(--muted); margin-top: 7px; font-size: 12px; }
+    .metric.red { border-top-color: var(--red); }
+    .metric.amber { border-top-color: var(--amber); }
+    .metric.green { border-top-color: var(--green); }
+    .metric.blue { border-top-color: var(--blue); }
+    .overview-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(300px, .8fr); gap: 18px; align-items: start; }
+    .surface { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+    .surface-head { min-height: 48px; padding: 10px 13px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); }
+    .surface-title { color: var(--petroleo-deep); font-weight: 850; }
+    .surface-sub { color: var(--muted); font-size: 12px; }
+    .queue-row { min-height: 80px; display: grid; grid-template-columns: 42px minmax(0, 1.15fr) minmax(230px, 1fr) 120px 28px; gap: 12px; align-items: center; padding: 10px 13px; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .queue-row:last-child { border-bottom: 0; }
+    .queue-row:hover { background: var(--paper-alt); }
+    .rank { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--petroleo); font-weight: 850; }
+    .queue-title { font-weight: 850; line-height: 1.25; }
+    .queue-meta, .next-action { color: var(--muted); font-size: 12px; margin-top: 4px; }
+    .next-action { color: #3e4b47; }
+    .deadline { text-align: right; }
+    .deadline strong { display: block; }
+    .deadline span { color: var(--muted); font-size: 12px; }
+    .side-stack { display: grid; gap: 12px; }
+    .health-list, .quality-list { padding: 5px 13px 10px; }
+    .health-row, .quality-row { min-height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); }
+    .health-row:last-child, .quality-row:last-child { border-bottom: 0; }
+    .health-label { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .health-value { color: var(--muted); text-align: right; font-size: 12px; }
+    .pill { display: inline-flex; align-items: center; gap: 5px; min-height: 23px; border: 1px solid var(--line); border-radius: 999px; padding: 2px 7px; color: var(--muted); background: var(--paper-alt); font-size: 11px; font-weight: 750; }
+    .pill.red { color: var(--red); border-color: #e4bdb9; background: var(--red-soft); }
+    .pill.amber { color: var(--amber); border-color: #e3d09c; background: var(--amber-soft); }
+    .pill.green { color: var(--green); border-color: #b8d7c5; background: var(--green-soft); }
+    .pill.blue { color: var(--blue); border-color: #bcd1de; background: var(--blue-soft); }
+    .deadline-board { overflow: hidden; }
+    .board-head { padding: 12px 13px; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--line); }
+    .legend { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .calendar-wrap { overflow-x: auto; }
+    .calendar-grid { min-width: 940px; display: grid; grid-template-columns: repeat(7, minmax(130px, 1fr)); background: var(--line); gap: 1px; }
+    .weekday { min-height: 30px; display: flex; align-items: center; justify-content: center; background: #edf1ee; color: var(--muted); font-size: 11px; font-weight: 850; text-transform: uppercase; }
+    .day { min-height: 112px; padding: 7px; background: var(--paper); }
+    .day.weekend { background: #faf9f6; }
+    .day.past { color: #929996; }
+    .day.today { box-shadow: inset 0 0 0 2px var(--terracota); }
+    .day-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+    .day-number { font-weight: 850; font-size: 12px; }
+    .day-count { min-width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; background: var(--petroleo); color: #fff; font-size: 10px; }
+    .calendar-item { width: 100%; border: 0; border-left: 3px solid var(--amber); padding: 4px 5px; margin: 0 0 4px; background: var(--amber-soft); color: #58430d; text-align: left; font-size: 10px; line-height: 1.25; cursor: pointer; overflow: hidden; }
+    .calendar-item.primary { border-left-color: var(--red); background: var(--red-soft); color: #6f2925; }
+    .calendar-item.done { opacity: .5; text-decoration: line-through; }
+    .deadline-lanes { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+    .deadline-lane { min-height: 130px; padding: 12px 13px; }
+    .deadline-lane + .deadline-lane { border-left: 1px solid var(--line); }
+    .lane-title { color: var(--muted); font-size: 11px; font-weight: 850; text-transform: uppercase; margin-bottom: 7px; }
+    .deadline-line { padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .deadline-line:last-child { border-bottom: 0; }
+    .deadline-line button { display: block; border: 0; padding: 0; color: var(--petroleo-deep); background: transparent; text-align: left; font-weight: 850; cursor: pointer; }
+    .deadline-line small { color: var(--muted); }
+    .filter-bar { display: grid; grid-template-columns: minmax(250px, 1fr) 170px 190px 150px auto; gap: 8px; margin-bottom: 10px; }
+    .field, .filter-bar input, .filter-bar select, dialog input, dialog select, dialog textarea {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line-strong);
+      border-radius: 5px;
+      padding: 8px 10px;
+      color: var(--ink);
+      background: #fff;
+    }
+    textarea { resize: vertical; }
+    .search-field { position: relative; }
+    .search-field .icon { position: absolute; top: 10px; left: 10px; color: var(--muted); }
+    .search-field input { padding-left: 34px; }
+    .count { align-self: center; justify-self: end; color: var(--muted); font-size: 12px; }
+    .demand-list { overflow: hidden; }
+    .demand-row { min-height: 92px; display: grid; grid-template-columns: 9px minmax(0, 1.4fr) minmax(220px, 1fr) 148px 32px; gap: 12px; align-items: center; padding: 11px 13px; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .demand-row:last-child { border-bottom: 0; }
+    .demand-row:hover { background: var(--paper-alt); }
+    .demand-row.done { opacity: .64; }
+    .demand-row.done .demand-title { text-decoration: line-through; }
+    .urgency-bar { width: 4px; height: 48px; border-radius: 4px; background: var(--line-strong); }
+    .urgency-bar.red { background: var(--red); }
+    .urgency-bar.amber { background: var(--amber); }
+    .urgency-bar.green { background: var(--green); }
+    .urgency-bar.blue { background: var(--blue); }
+    .demand-title { font-weight: 850; line-height: 1.27; }
+    .demand-meta { color: var(--muted); font-size: 12px; margin-top: 5px; display: flex; gap: 7px; flex-wrap: wrap; }
+    .demand-next { color: #3d4845; font-size: 12px; }
+    .demand-badges { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+    .chevron { color: var(--muted); }
+    .integration-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .integration { min-height: 142px; padding: 12px 13px; }
+    .integration-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .integration-name { display: flex; align-items: center; gap: 8px; color: var(--petroleo-deep); font-weight: 850; }
+    .integration-detail { color: var(--muted); margin-top: 10px; }
+    .integration-stats { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; }
+    .history { margin-top: 14px; overflow: hidden; }
+    .history-row { min-height: 48px; display: grid; grid-template-columns: 140px 110px 1fr 90px; gap: 12px; align-items: center; padding: 8px 13px; border-bottom: 1px solid var(--line); }
+    .history-row:last-child { border-bottom: 0; }
+    .history-row.header { min-height: 34px; background: #edf1ee; color: var(--muted); font-size: 11px; font-weight: 850; text-transform: uppercase; }
+    .sanitized-panel { margin-top: 14px; }
+    .sanitized-row { padding: 10px 13px; border-bottom: 1px solid var(--line); }
+    .sanitized-row:last-child { border-bottom: 0; }
+    .delivery-row { min-height: 68px; display: grid; grid-template-columns: 140px minmax(0, 1fr) 160px; gap: 13px; align-items: center; padding: 10px 13px; border-bottom: 1px solid var(--line); }
+    .delivery-row:last-child { border-bottom: 0; }
+    .delivery-date { color: var(--muted); font-size: 12px; }
+    .delivery-title { font-weight: 850; }
+    .delivery-files { color: var(--muted); font-size: 12px; }
+    .empty { padding: 26px 16px; text-align: center; color: var(--muted); }
+    dialog { width: min(820px, calc(100vw - 28px)); max-height: calc(100vh - 34px); border: 0; border-radius: 7px; padding: 0; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); }
+    dialog::backdrop { background: rgba(24, 34, 32, .52); }
+    .dialog-head { position: sticky; top: 0; z-index: 2; min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: #fff; }
+    .dialog-title { color: var(--petroleo-deep); font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: 700; }
+    .dialog-body { padding: 16px; }
+    .dialog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+    .detail-block { min-width: 0; }
+    .detail-block.full { grid-column: 1 / -1; }
+    .label { color: var(--muted); font-size: 11px; font-weight: 850; text-transform: uppercase; margin-bottom: 4px; }
+    .detail-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .link-list { display: flex; gap: 8px; flex-wrap: wrap; }
+    .link-list a { display: inline-flex; align-items: center; gap: 5px; }
+    .dialog-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .comment-list { max-height: 190px; overflow: auto; border-top: 1px solid var(--line); margin-top: 8px; }
+    .comment { padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .comment:last-child { border-bottom: 0; }
+    .comment small { color: var(--muted); }
+    .form-grid { display: grid; grid-template-columns: 1fr 180px; gap: 10px; }
+    .form-grid .full { grid-column: 1 / -1; }
+    .form-grid label { display: block; color: var(--muted); font-size: 12px; font-weight: 750; margin-bottom: 4px; }
+    .evidence-box { margin-top: 14px; padding: 12px; border: 1px solid #d8c49a; border-radius: var(--radius); background: #fffaf0; }
+    .evidence-grid { display: grid; grid-template-columns: 180px 1fr; gap: 9px; margin-top: 8px; }
+    .remote-banner { display: none; padding: 8px 12px; background: var(--amber-soft); color: #5f460f; border-bottom: 1px solid #ddc98f; text-align: center; font-size: 12px; }
+    .remote .remote-banner { display: block; }
+    @media (max-width: 1060px) {
+      .metric-grid { grid-template-columns: repeat(3, 1fr); }
+      .overview-grid { grid-template-columns: 1fr; }
+      .queue-row { grid-template-columns: 38px minmax(0, 1fr) 116px 24px; }
+      .queue-row .next-action { grid-column: 2 / 4; }
+      .filter-bar { grid-template-columns: 1fr 1fr 1fr; }
+      .filter-bar .search-field { grid-column: 1 / -1; }
+      .count { grid-column: 1 / -1; justify-self: start; }
+      .demand-row { grid-template-columns: 8px minmax(0, 1fr) 130px 28px; }
+      .demand-next { grid-column: 2 / 4; }
+    }
+    @media (max-width: 760px) {
+      .header-inner, .shell, .tabs { width: min(100% - 20px, 1480px); }
+      .app-header { position: static; }
+      .header-inner { min-height: 0; padding: 12px 0; align-items: flex-start; flex-direction: column; }
+      .brand { width: 100%; }
+      .brand img { width: 86px; }
+      h1 { font-size: 19px; }
+      .actions { width: 100%; justify-content: flex-start; }
+      .actions .live-badge { order: -1; }
+      .tab { min-width: 108px; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric { min-height: 80px; }
+      .queue-row { grid-template-columns: 34px minmax(0, 1fr) 22px; }
+      .queue-row .deadline { grid-column: 2; text-align: left; }
+      .queue-row .next-action { grid-column: 2 / 4; }
+      .deadline-lanes { grid-template-columns: 1fr; }
+      .deadline-lane + .deadline-lane { border-left: 0; border-top: 1px solid var(--line); }
+      .filter-bar { grid-template-columns: 1fr; }
+      .filter-bar .search-field, .count { grid-column: auto; }
+      .demand-row { grid-template-columns: 8px minmax(0, 1fr) 24px; }
+      .demand-row .deadline { grid-column: 2; text-align: left; }
+      .demand-next { grid-column: 2 / 4; }
+      .integration-grid { grid-template-columns: 1fr; }
+      .history-row { grid-template-columns: 1fr 86px; }
+      .history-row > :nth-child(3), .history-row > :nth-child(4) { grid-column: 1 / -1; }
+      .history-row.header { display: none; }
+      .delivery-row { grid-template-columns: 1fr; gap: 4px; }
+      .dialog-grid, .form-grid, .evidence-grid { grid-template-columns: 1fr; }
+      .form-grid .full, .detail-block.full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-15.2-6.5L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 15.2 6.5L21 16"/><path d="M21 21v-5h-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10H3Z"/><path d="M3 7V5h7l2 2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3"/><path d="M18 13v7H4V6h7"/></symbol>
+  </svg>
+  <div class="remote-banner">Retrato externo em modo somente leitura. A atualização e as alterações acontecem no PC do escritório.</div>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="__LOGO_URI__" alt="Medina Osório Advogados">
+        <div class="brand-copy">
+          <div class="eyebrow">Central operacional</div>
+          <h1>Gestão do Escritório</h1>
+          <div class="header-meta" id="headerMeta">Carregando estado da operação...</div>
+        </div>
+      </div>
+      <div class="actions">
+        <span class="live-badge" id="liveBadge"><span class="signal"></span><span>Verificando conexão</span></span>
+        <button class="btn" id="refreshBtn"><svg class="icon"><use href="#i-refresh"/></svg><span>Atualizar</span></button>
+        <button class="btn secondary" id="newTaskBtn"><svg class="icon"><use href="#i-plus"/></svg><span>Nova tarefa</span></button>
+      </div>
+    </div>
+    <nav class="tab-band" aria-label="Vistas da gestão">
+      <div class="tabs">
+        <button class="tab active" data-view="today"><svg class="icon"><use href="#i-home"/></svg>Hoje</button>
+        <button class="tab" data-view="deadlines"><svg class="icon"><use href="#i-calendar"/></svg>Prazos</button>
+        <button class="tab" data-view="demands"><svg class="icon"><use href="#i-list"/></svg>Demandas</button>
+        <button class="tab" data-view="integrations"><svg class="icon"><use href="#i-activity"/></svg>Integrações</button>
+        <button class="tab" data-view="deliveries"><svg class="icon"><use href="#i-send"/></svg>Entregas</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <div class="privacy-line"><svg class="icon"><use href="#i-lock"/></svg>WhatsApp em modo sanitizado. O painel nunca exibe conversa bruta.</div>
+    <div class="status-rail" id="statusRail"></div>
+    <div class="notice" id="notice" role="status" aria-live="polite"></div>
+
+    <section class="view active" id="view-today" data-view-panel="today">
+      <div class="section-heading"><div><h2>Visão de hoje</h2><p>Prioridade, carga e bloqueios para decidir a próxima ação sem abrir vinte cartões.</p></div></div>
+      <div class="metric-grid" id="metrics"></div>
+      <div class="overview-grid">
+        <section class="surface">
+          <div class="surface-head"><div><div class="surface-title">Fila prioritária</div><div class="surface-sub">Ordenada por prazo formal, urgência e qualidade do dado.</div></div><span class="pill" id="focusCount"></span></div>
+          <div id="priorityQueue"></div>
+          <div id="forjaFilaBloco" style="display:none">
+            <div class="surface-head" style="margin-top:18px"><div><div class="surface-title">Próximas peças (FORJA)</div><div class="surface-sub">Prontidão real da fábrica: a fila propõe, o humano dispara.</div></div><span class="pill" id="forjaFilaStamp"></span></div>
+            <div id="forjaFilaList"></div>
+            <div id="forjaFilaResumo" style="margin-top:8px"></div>
+          </div>
+        </section>
+        <aside class="side-stack">
+          <section class="surface"><div class="surface-head"><div><div class="surface-title">Saúde operacional</div><div class="surface-sub">Conectores e frescor do último ciclo.</div></div></div><div class="health-list" id="healthList"></div></section>
+          <section class="surface"><div class="surface-head"><div><div class="surface-title">Qualidade da fila</div><div class="surface-sub">Lacunas que reduzem a confiabilidade do painel.</div></div></div><div class="quality-list" id="qualityList"></div></section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view" id="view-deadlines" data-view-panel="deadlines">
+      <div class="section-heading"><div><h2>Mapa de prazos</h2><p>Prazo confirmado e data mencionada permanecem conceitos separados.</p></div></div>
+      <section class="surface deadline-board" id="deadlineBoard"></section>
+    </section>
+
+    <section class="view" id="view-demands" data-view-panel="demands">
+      <div class="section-heading"><div><h2>Demandas</h2><p>Lista compacta; abra uma demanda para ver conteúdo, vínculos, comentários e evidência.</p></div></div>
+      <div class="filter-bar">
+        <label class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="search" aria-label="Buscar demandas" placeholder="Buscar caso, cliente, assunto ou pasta"></label>
+        <select id="statusFilter" aria-label="Filtrar status"><option value="open">Abertas</option><option value="all">Todos os status</option><option value="done">Cumpridas</option></select>
+        <select id="urgencyFilter" aria-label="Filtrar urgência"><option value="all">Toda urgência</option><option value="overdue">Vencidas</option><option value="48h">Até 48 horas</option><option value="high">Alta</option><option value="triage">Sem prazo</option><option value="blocked">Com bloqueio</option></select>
+        <select id="sourceFilter" aria-label="Filtrar fonte"><option value="all">Toda fonte</option><option value="email">E-mail</option><option value="whatsapp">WhatsApp</option><option value="manual">Manual</option></select>
+        <div class="count" id="demandCount"></div>
+      </div>
+      <section class="surface demand-list" id="demandList"></section>
+    </section>
+
+    <section class="view" id="view-integrations" data-view-panel="integrations">
+      <div class="section-heading"><div><h2>Integrações e continuidade</h2><p>Estado real, último ciclo, modo degradado e histórico de atualização.</p></div></div>
+      <div class="integration-grid" id="integrationGrid"></div>
+      <section class="surface history" id="updateHistory"></section>
+      <section class="surface sanitized-panel" id="whatsappPanel"></section>
+    </section>
+
+    <section class="view" id="view-deliveries" data-view-panel="deliveries">
+      <div class="section-heading"><div><h2>Entregas ao Fábio</h2><p>Evidências encontradas na varredura de enviados, com anexos arquivados.</p></div></div>
+      <section class="surface" id="deliveryList"></section>
+    </section>
+  </main>
+
+  <dialog id="demandDialog">
+    <div class="dialog-head"><div class="dialog-title" id="demandDialogTitle">Detalhe da demanda</div><button class="btn secondary icon-only" data-close="demandDialog" title="Fechar"><svg class="icon"><use href="#i-x"/></svg></button></div>
+    <div class="dialog-body" id="demandDialogBody"></div>
+  </dialog>
+
+  <dialog id="newTaskDialog">
+    <div class="dialog-head"><div class="dialog-title">Nova tarefa</div><button class="btn secondary icon-only" data-close="newTaskDialog" title="Fechar"><svg class="icon"><use href="#i-x"/></svg></button></div>
+    <div class="dialog-body">
+      <div class="form-grid">
+        <div class="full"><label for="manualTitle">Título</label><input id="manualTitle" maxlength="220" placeholder="O que precisa ser feito"></div>
+        <div><label for="manualDeadline">Prazo confirmado</label><input id="manualDeadline" type="date"></div>
+        <div><label for="manualPriority">Prioridade</label><select id="manualPriority"><option value="media">Média</option><option value="alta">Alta</option><option value="baixa">Baixa</option></select></div>
+        <div class="full"><label for="manualSummary">Resumo e próxima ação</label><textarea id="manualSummary" rows="6" maxlength="8000" placeholder="Contexto suficiente para executar a tarefa"></textarea></div>
+      </div>
+      <div class="dialog-actions"><button class="btn" id="saveManualTaskBtn"><svg class="icon"><use href="#i-plus"/></svg>Salvar tarefa</button><button class="btn secondary" data-close="newTaskDialog">Cancelar</button></div>
+    </div>
+  </dialog>
+
+  <script>
+    const SNAPSHOT = __SNAPSHOT_JSON__;
+    const REMOTE = __REMOTE_MODE__;
+    const API_BASE = location.protocol === "http:" && location.hostname === "127.0.0.1" ? "" : "http://127.0.0.1:8765";
+    const state = {
+      data: SNAPSHOT,
+      health: null,
+      live: false,
+      activeView: localStorage.getItem("medina-office-view") || "today",
+      selectedId: null,
+      updateTimer: null,
+    };
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+    const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+    const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+
+    function parseDate(value) {
+      if (!value) return null;
+      const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})/);
+      return match ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 12) : null;
+    }
+    function fmtDate(value) {
+      const d = parseDate(value);
+      return d ? d.toLocaleDateString("pt-BR") : "Sem prazo";
+    }
+    function fmtDateTime(value) {
+      if (!value) return "não registrado";
+      const d = new Date(value);
+      return Number.isNaN(d.getTime()) ? String(value) : d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+    }
+    function relativeAge(minutes) {
+      if (minutes == null) return "sem registro";
+      if (minutes < 60) return `${minutes} min`;
+      if (minutes < 1440) return `${Math.floor(minutes / 60)} h`;
+      return `${Math.floor(minutes / 1440)} d`;
+    }
+    function allItems() { return state.data?.demandas?.demandas || []; }
+    function sourceLabel(item) { return item?.derived?.fonteLabel || item?.origem || "Não informada"; }
+    function qualityIssues(item) { return item?.derived?.quality?.issues || []; }
+    function dateMentions(item) { return item?.derived?.dateMentions || []; }
+    function forjaLabel(value) {
+      return ({ not_run: "FORJA não executada", queued: "FORJA na fila", running: "FORJA em andamento", blocked: "FORJA bloqueada", ready_for_review: "FORJA pronta para revisão", draft_awaiting_review: "Rascunho aguardando revisão", sent_confirmed: "Envio confirmado", fulfilled_by_forja_f10: "FORJA concluída", fulfilled_by_reconciliation: "Entrega reconciliada", superseded: "Caso substituído" })[value] || value || "FORJA sem estado";
+    }
+    function forjaTone(value) {
+      if (["fulfilled_by_forja_f10", "fulfilled_by_reconciliation", "sent_confirmed"].includes(value)) return "green";
+      if (["blocked"].includes(value)) return "red";
+      if (["running", "ready_for_review", "draft_awaiting_review", "queued"].includes(value)) return "amber";
+      return "blue";
+    }
+    function renderForjaDetail(item) {
+      const forja = item.forja || { lifecycleStatus: "not_run", artifacts: [], blockers: [] };
+      const status = forja.lifecycleStatus || "not_run";
+      const gates = Object.entries(forja.gates || {}).slice(0, 10).map(([name, value]) => {
+        const gateStatus = typeof value === "string" ? value : value?.status || "unknown";
+        return pill(`${name}: ${gateStatus}`, gateStatus === "pass" ? "green" : gateStatus === "blocked" ? "red" : "amber");
+      }).join("");
+      const visual = forja.visualQa || {};
+      const integrity = forja.integrity || {};
+      const integrityPill = integrity.status === "blocked" ? pill(`Integridade pendente${integrity.visualFailed ? ` · ${integrity.visualFailed} visual` : ""}`, "red") : integrity.status === "stale" ? pill("Sincronização N4 desatualizada", "amber") : integrity.status === "compatible" ? pill("Replay N3 compatível", "green") : "";
+      const blockers = (forja.blockers || []).map((value) => `<li>${esc(value)}</li>`).join("");
+      const artifacts = !REMOTE && forja.caseId ? (forja.artifacts || []).filter((artifact) => artifact.exists).map((artifact) => `<button class="btn secondary" data-forja-artifact="${esc(artifact.artifactId)}" data-forja-case="${esc(forja.caseId)}">${icon("external")}${esc(artifact.label || artifact.artifactId)}</button>`).join("") : "";
+      const packageButton = !REMOTE && forja.caseId && forja.package?.packageId ? `<button class="btn secondary" data-forja-package="${esc(forja.caseId)}">${icon("folder")}Abrir pacote</button>` : "";
+      const n4 = forja.n4 || null;
+      const n4Artifacts = !REMOTE && forja.caseId && n4 ? (n4.artifactIds || []).map((artifactId) => `<button class="btn secondary" data-forja-artifact="${esc(artifactId)}" data-forja-case="${esc(forja.caseId)}">${icon("external")}${esc(artifactId.replace(/\.json$/i, ""))}</button>`).join("") : "";
+      const n4StateLabel = !n4 || n4.evaluationStatus === "not_evaluated" ? "N4 não executada" : n4.approved && n4.promotionEligible ? "Ciclo prospectivo validado" : n4.approved && n4.caseTestMode === "retrospective_baseline" ? "Baseline retrospectiva validada" : n4.approved ? "Estrutura aprovada sem promoção" : n4.complete ? "Revisão pendente" : "Em materialização";
+      const n4StateTone = n4?.approved ? "green" : "amber";
+      const n4Block = n4 ? `<div class="detail-block full" style="margin-top:10px"><div class="label">FORJA N4 · raciocínio, prova e ciência</div><div class="demand-badges">${pill(n4.mode || "shadow")}${pill(n4StateLabel, n4StateTone)}${n4.evaluationStatus !== "not_evaluated" ? pill(n4.promotionEligible ? "Elegível para promoção" : "Não promove", n4.promotionEligible ? "green" : "amber") : ""}${n4.legalReleaseStatus === "human_review_required" && n4.evaluationStatus !== "not_evaluated" ? pill("Revisão humana", "amber") : ""}${n4.promotionRequirements && n4.promotionRequirements.councilDecisionsVerified === false ? pill("Conselho pendente", "amber") : ""}${n4.citationCoverage && n4.citationCoverage.materialTotal ? pill(`Citações materiais ${n4.citationCoverage.verifiedMaterial}/${n4.citationCoverage.materialTotal}`, n4.citationCoverage.verifiedMaterial === n4.citationCoverage.materialTotal ? "green" : "amber") : n4.evaluationStatus !== "not_evaluated" ? pill("Citações materiais sem ledger", "amber") : ""}${pill(`Questões ${n4.questionCoverage || "0/0"}`)}${pill(`Testes ${n4.caseTests || "0/0"}`)}${n4.mutationScore != null ? pill(`Mutações literais ${Math.round(Number(n4.mutationScore) * 100)}%`) : ""}${pill(`Ciência ${n4.scienceMode || "não iniciada"}`)}${n4.materialBlocks ? pill(`${n4.materialBlocks} bloqueio${n4.materialBlocks > 1 ? "s" : ""}`, n4.blocksCurrentFlow ? "red" : "amber") : n4.evaluationStatus === "not_evaluated" ? "" : pill("Sem bloqueio N4", "green")}</div><div class="detail-text" style="margin-top:8px">${esc(n4.nextAction || "Sem próxima ação N4 registrada.")}</div>${n4Artifacts ? `<div class="dialog-actions">${n4Artifacts}</div>` : ""}</div>` : "";
+      return `<div class="detail-block full"><div class="label">Ciclo FORJA</div><div class="demand-badges">${pill(forjaLabel(status), forjaTone(status))}${integrityPill}${forja.phaseCursor ? pill(forja.phaseCursor) : ""}${visual.total ? pill(`QA visual automática ${visual.reviewed || 0}/${visual.total}`, visual.status === "pass" ? "green" : "amber") : ""}</div><div class="detail-text" style="margin-top:8px">${esc(forja.nextAction || "Sem próxima ação FORJA registrada.")}</div>${gates ? `<div class="demand-badges" style="margin-top:8px">${gates}</div>` : ""}${blockers ? `<ul class="detail-text">${blockers}</ul>` : ""}${artifacts || packageButton ? `<div class="dialog-actions">${artifacts}${packageButton}</div>` : ""}${forja.lastEventAt ? `<small>Último evento: ${esc(fmtDateTime(forja.lastEventAt))} · sincronizado: ${esc(fmtDateTime(forja.syncedAt))}</small>` : ""}${n4Block}</div>`;
+    }
+    function daysUntil(value) {
+      const due = parseDate(value);
+      if (!due) return null;
+      const today = new Date(); today.setHours(12, 0, 0, 0);
+      return Math.round((due - today) / 86400000);
+    }
+    function urgency(item) {
+      if (item.status === "cumprida") return { key: "done", label: "Cumprida", tone: "green", rank: 1000 };
+      const days = daysUntil(item.prazo);
+      if (days != null && days < 0) return { key: "overdue", label: `Vencida há ${Math.abs(days)}d`, tone: "red", rank: -100 + days };
+      if (days != null && days <= 2) return { key: "48h", label: days === 0 ? "Vence hoje" : `${days}d`, tone: "red", rank: days };
+      if (item.urgenciaManual === "alta") return { key: "high", label: "Alta", tone: "amber", rank: 3 };
+      if (days != null && days <= 7) return { key: "soon", label: `${days}d`, tone: "amber", rank: 4 + days };
+      if (days != null) return { key: "dated", label: fmtDate(item.prazo), tone: "blue", rank: 20 + days };
+      return { key: "triage", label: "Sem prazo", tone: "amber", rank: 60 + (item.derived?.ageDays || 0) * -0.1 };
+    }
+    function focusSort(a, b) {
+      return urgency(a).rank - urgency(b).rank || (b.derived?.quality?.high || 0) - (a.derived?.quality?.high || 0) || String(a.titulo || "").localeCompare(String(b.titulo || ""));
+    }
+    function pill(text, tone = "") { return `<span class="pill ${tone}">${esc(text)}</span>`; }
+    function setNotice(message, tone = "blue") {
+      const node = $("#notice");
+      node.textContent = message;
+      node.className = `notice show ${tone}`;
+      clearTimeout(node._timer);
+      node._timer = setTimeout(() => node.classList.remove("show"), 9000);
+    }
+
+    function integrationTone(value) {
+      if ((value?.conflicts || 0) > 0 || (value?.artifactFailures || 0) > 0) return "red";
+      if (value?.total && (value?.linked || 0) < value.total) return "amber";
+      if (value?.ok) return "green";
+      const stateName = String(value?.state || "");
+      return /login|verificar|pending|degrad|nao_verificado/.test(stateName) ? "amber" : "red";
+    }
+    function stateLabel(value) {
+      if (value?.ok && ["ok", "connected"].includes(String(value.state || "ok"))) return "Ativo";
+      const name = String(value?.state || "");
+      if (/precisa_login|login/.test(name)) return "Login necessário";
+      if (/verificar|pairing|pending/.test(name)) return "Requer pareamento";
+      if (/macrodroid/.test(name)) return "Ativo";
+      if (/diario_9h/.test(name)) return "Agendado";
+      if (/nao_verificado/.test(name)) return "Não verificado";
+      if (/erro/.test(name)) return "Falha";
+      return value?.ok ? "Ativo" : name || "Não verificado";
+    }
+    function integrationMessage(key, value) {
+      if (key === "whatsappPersonal" && /verificar|pairing|pending/.test(String(value?.state || ""))) {
+        return "O acesso pessoal aguarda novo pareamento. O último retrato sanitizado permanece disponível.";
+      }
+      if (key === "phoneAlert" && value?.ok) return "Alertas críticos no celular estão ativos.";
+      if (key === "calendar" && value?.ok) return "Lembrete diário das 9h está agendado.";
+      return value?.message || value?.error || value?.summary || "";
+    }
+    function integrationName(key) {
+      return ({ gmailLocal: "Gmail", whatsappPersonal: "WhatsApp", phoneAlert: "Celular", calendar: "Agenda", deliveries: "Entregas", hermesBridge: "Hermes VPS", forjaSidecar: "FORJA" })[key] || key;
+    }
+
+    function renderHeader() {
+      const updated = state.data?.demandas?.updatedAt;
+      const runtime = state.data?.runtime || {};
+      $("#headerMeta").textContent = `Dados: ${fmtDateTime(updated)} · Serviço ${runtime.version || state.health?.version || "local"}`;
+      const badge = $("#liveBadge");
+      const updateState = state.health?.update?.state || runtime.update?.state;
+      const text = REMOTE ? "Modo externo · leitura" : state.live ? (updateState === "running" ? "Atualização em curso" : "Conexão local ativa") : "Retrato offline";
+      badge.innerHTML = `<span class="signal ${state.live ? "ok" : REMOTE ? "" : "bad"}"></span><span>${esc(text)}</span>`;
+      document.body.classList.toggle("remote", REMOTE);
+      $("#refreshBtn").disabled = !state.live && !REMOTE;
+      $("#newTaskBtn").style.display = REMOTE ? "none" : "inline-flex";
+      $("#refreshBtn span").textContent = REMOTE ? "Recarregar" : updateState === "running" ? "Atualizando" : "Atualizar";
+    }
+
+    function renderStatusRail() {
+      const status = state.data?.status || {};
+      const keys = ["gmailLocal", "whatsappPersonal", "hermesBridge", "forjaSidecar", "phoneAlert", "calendar", "deliveries"];
+      $("#statusRail").innerHTML = keys.map((key) => {
+        const value = status[key] || (key === "hermesBridge" ? state.data?.hermesBridge : {});
+        const tone = integrationTone(value);
+        const detail = stateLabel(value);
+        return `<span class="status-chip" title="${esc(integrationMessage(key, value))}"><span class="signal ${tone === "green" ? "ok" : tone === "red" ? "bad" : ""}"></span><b>${esc(integrationName(key))}</b>${esc(detail)}</span>`;
+      }).join("");
+    }
+
+    function metric(value, label, tone, filter) {
+      return `<div class="metric ${tone} ${filter ? "actionable" : ""}" ${filter ? `data-metric-filter="${filter}"` : ""}><strong>${value}</strong><span>${esc(label)}</span></div>`;
+    }
+    function renderOverview() {
+      const items = allItems();
+      const open = items.filter((item) => item.status !== "cumprida");
+      const done = items.length - open.length;
+      const overdue = open.filter((item) => urgency(item).key === "overdue");
+      const critical = open.filter((item) => urgency(item).key === "48h");
+      const triage = open.filter((item) => !item.prazo);
+      const blocked = open.filter((item) => qualityIssues(item).some((issue) => ["missing_folder", "missing_command", "attachment_gap", "external_attachments"].includes(issue.code)));
+      $("#metrics").innerHTML = [
+        metric(open.length, "Abertas", "blue", "open"), metric(overdue.length, "Vencidas", overdue.length ? "red" : "green", "overdue"),
+        metric(critical.length, "Até 48 horas", critical.length ? "red" : "green", "48h"), metric(triage.length, "Sem prazo", triage.length ? "amber" : "green", "triage"),
+        metric(blocked.length, "Com bloqueio", blocked.length ? "amber" : "green", "blocked"), metric(done, "Cumpridas", "green", "done")
+      ].join("");
+
+      const focus = open.slice().sort(focusSort).slice(0, 7);
+      $("#focusCount").textContent = `${focus.length} em foco`;
+      $("#priorityQueue").innerHTML = focus.length ? focus.map((item, index) => {
+        const u = urgency(item);
+        return `<div class="queue-row" data-open-demand="${esc(item.id)}"><div class="rank">${index + 1}</div><div><div class="queue-title">${esc(item.titulo)}</div><div class="queue-meta">${esc(sourceLabel(item))} · ${esc(item.clienteOuCaso || "Caso não informado")}</div></div><div class="next-action">${esc(item.proximaAcao || "Próxima ação não informada")}</div><div class="deadline"><strong>${esc(u.label)}</strong><span>${item.prazo ? fmtDate(item.prazo) : `${item.derived?.ageDays ?? "?"}d na fila`}</span></div><svg class="icon chevron"><use href="#i-chevron"/></svg></div>`;
+      }).join("") : `<div class="empty">Nenhuma demanda aberta.</div>`;
+
+      const status = state.data?.status || {};
+      const healthRows = [
+        ["Gmail", status.gmailLocal, "mail"], ["WhatsApp", status.whatsappPersonal, "message"], ["Hermes VPS", status.hermesBridge || state.data?.hermesBridge, "activity"], ["FORJA", status.forjaSidecar, "activity"], ["Alertas", status.phoneAlert, "alert"]
+      ];
+      $("#healthList").innerHTML = healthRows.map(([label, value, iconName]) => `<div class="health-row"><div class="health-label">${icon(iconName)}<span>${label}</span></div>${pill(stateLabel(value), integrationTone(value))}</div>`).join("");
+
+      const insights = state.data?.insights || {};
+      const quality = [
+        [insights.missingDeadlines || 0, "Demandas sem prazo confirmado", "triage"],
+        [insights.missingFolders || 0, "Pastas locais ausentes", "blocked"],
+        [insights.missingEvidence || 0, "Conclusões sem evidência", "all"],
+        [insights.qualityIssues || 0, "Pendências de qualidade", "all"],
+        [insights.forjaNotRun || 0, "Demandas sem vínculo FORJA", "all"],
+        [insights.forjaIntegrationIssues || 0, "Divergências Gestão × FORJA", "all"],
+      ];
+      $("#qualityList").innerHTML = quality.map(([value, label, filter]) => `<div class="quality-row"><button class="btn secondary" style="border:0;padding:0;min-height:28px" data-quality-filter="${filter}">${esc(label)}</button>${pill(value, value ? "amber" : "green")}</div>`).join("");
+    }
+
+    function deadlineEntries() {
+      const entries = [];
+      allItems().forEach((item) => {
+        if (item.prazo) entries.push({ date: item.prazo, kind: "primary", item, context: item.prazoTexto || "Prazo principal" });
+        dateMentions(item).forEach((mention) => entries.push({ date: mention.date, kind: "mention", item, context: mention.context || "Data a conferir" }));
+      });
+      return entries.sort((a, b) => a.date.localeCompare(b.date));
+    }
+    function isoDate(d) {
+      const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, "0"), day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    }
+    function renderDeadlines() {
+      const entries = deadlineEntries();
+      const openEntries = entries.filter((entry) => entry.item.status !== "cumprida");
+      const today = new Date(); today.setHours(12, 0, 0, 0);
+      const start = new Date(today); start.setDate(today.getDate() - ((today.getDay() + 6) % 7));
+      const end = new Date(start); end.setDate(start.getDate() + 41);
+      const byDate = new Map();
+      entries.forEach((entry) => { if (!byDate.has(entry.date)) byDate.set(entry.date, []); byDate.get(entry.date).push(entry); });
+      const days = Array.from({ length: 42 }, (_, index) => { const d = new Date(start); d.setDate(start.getDate() + index); return d; });
+      const dayHtml = days.map((day) => {
+        const key = isoDate(day), list = byDate.get(key) || [];
+        const classes = ["day", day.getDay() === 0 || day.getDay() === 6 ? "weekend" : "", key < isoDate(today) ? "past" : "", key === isoDate(today) ? "today" : ""].filter(Boolean).join(" ");
+        const items = list.slice(0, 4).map((entry) => `<button class="calendar-item ${entry.kind === "primary" ? "primary" : ""} ${entry.item.status === "cumprida" ? "done" : ""}" data-open-demand="${esc(entry.item.id)}" title="${esc(entry.context)}">${entry.kind === "primary" ? "Prazo" : "Conferir"} · ${esc(entry.item.titulo)}</button>`).join("");
+        return `<div class="${classes}"><div class="day-head"><span class="day-number">${String(day.getDate()).padStart(2, "0")}${day.getDate() === 1 || key === isoDate(start) ? "/" + day.toLocaleDateString("pt-BR", { month: "short" }).replace(".", "") : ""}</span>${list.length ? `<span class="day-count">${list.length}</span>` : ""}</div>${items}${list.length > 4 ? `<small>+${list.length - 4} outras</small>` : ""}</div>`;
+      }).join("");
+      const overdue = openEntries.filter((entry) => entry.kind === "primary" && entry.date < isoDate(today));
+      const upcoming = openEntries.filter((entry) => entry.kind === "primary" && entry.date >= isoDate(today));
+      const mentions = openEntries.filter((entry) => entry.kind === "mention" && entry.date >= isoDate(start) && entry.date <= isoDate(end));
+      const line = (entry) => `<div class="deadline-line"><small>${fmtDate(entry.date)} · ${entry.kind === "primary" ? "prazo confirmado" : "data a conferir"} · ${esc(sourceLabel(entry.item))}</small><button data-open-demand="${esc(entry.item.id)}">${esc(entry.item.titulo)}</button></div>`;
+      $("#deadlineBoard").innerHTML = `<div class="board-head"><div><div class="surface-title">Próximas seis semanas</div><div class="surface-sub">Vermelho: prazo principal. Amarelo: data extraída que ainda exige conferência.</div></div><div class="legend">${pill(`${overdue.length} vencidas`, overdue.length ? "red" : "green")}${pill(`${upcoming.length} futuras`, "blue")}${pill(`${mentions.length} a conferir`, "amber")}</div></div><div class="calendar-wrap"><div class="calendar-grid">${["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"].map((d) => `<div class="weekday">${d}</div>`).join("")}${dayHtml}</div></div><div class="deadline-lanes"><div class="deadline-lane"><div class="lane-title">Vencidas e risco imediato</div>${overdue.length ? overdue.slice(0, 10).map(line).join("") : `<div class="empty">Sem prazo formal vencido.</div>`}</div><div class="deadline-lane"><div class="lane-title">Próximos prazos</div>${upcoming.length ? upcoming.slice(0, 12).map(line).join("") : `<div class="empty">Sem prazo formal futuro.</div>`}<div class="lane-title" style="margin-top:14px">Datas a conferir</div>${mentions.length ? mentions.slice(0, 8).map(line).join("") : `<div class="empty">Sem data auxiliar no período.</div>`}</div></div>`;
+    }
+
+    function filterDemands(items) {
+      const query = $("#search").value.trim().toLowerCase();
+      const status = $("#statusFilter").value;
+      const urgencyValue = $("#urgencyFilter").value;
+      const source = $("#sourceFilter").value;
+      return items.filter((item) => {
+        if (status === "open" && item.status === "cumprida") return false;
+        if (status === "done" && item.status !== "cumprida") return false;
+        const u = urgency(item);
+        if (urgencyValue === "overdue" && u.key !== "overdue") return false;
+        if (urgencyValue === "48h" && u.key !== "48h") return false;
+        if (urgencyValue === "high" && item.urgenciaManual !== "alta") return false;
+        if (urgencyValue === "triage" && item.prazo) return false;
+        if (urgencyValue === "blocked" && !qualityIssues(item).some((issue) => issue.severity === "high" || issue.code === "external_attachments") && item.forja?.integrity?.status !== "blocked") return false;
+        if (source !== "all" && !String(item.origem || "").startsWith(source)) return false;
+        if (!query) return true;
+        const haystack = [item.titulo, item.clienteOuCaso, item.resumo, item.proximaAcao, item.pasta, sourceLabel(item), ...(item.tags || [])].join(" ").toLowerCase();
+        return haystack.includes(query);
+      });
+    }
+    function renderDemands() {
+      const items = allItems().slice().sort(focusSort);
+      const visible = filterDemands(items);
+      $("#demandCount").textContent = `${visible.length} de ${items.length} demandas`;
+      $("#demandList").innerHTML = visible.length ? visible.map((item) => {
+        const u = urgency(item), issues = qualityIssues(item);
+        const badges = [pill(sourceLabel(item)), pill(forjaLabel(item.forja?.lifecycleStatus), forjaTone(item.forja?.lifecycleStatus)), item.respondidoComConteudo ? pill("Entrega registrada", "green") : pill("Sem entrega", "red")];
+        if (item.forja?.integrity?.status === "blocked") badges.push(pill("Integridade FORJA pendente", "red"));
+        if (issues.length) badges.push(pill(`${issues.length} pendência${issues.length > 1 ? "s" : ""}`, "amber"));
+        return `<div class="demand-row ${item.status === "cumprida" ? "done" : ""}" data-open-demand="${esc(item.id)}"><div class="urgency-bar ${u.tone}"></div><div><div class="demand-title">${esc(item.titulo)}</div><div class="demand-meta"><span>${esc(item.clienteOuCaso || "Caso não informado")}</span><span>·</span><span>${item.derived?.ageDays != null ? `${item.derived.ageDays}d na fila` : "recebimento não datado"}</span></div><div class="demand-badges">${badges.join("")}</div></div><div class="demand-next">${esc(item.proximaAcao || "Próxima ação não informada")}</div><div class="deadline"><strong>${esc(u.label)}</strong><span>${item.prazo ? fmtDate(item.prazo) : "triar prazo"}</span></div><svg class="icon chevron"><use href="#i-chevron"/></svg></div>`;
+      }).join("") : `<div class="empty">Nenhuma demanda corresponde aos filtros.</div>`;
+    }
+
+    function detailComments(item) {
+      const comments = item.manual?.comentarios || [];
+      return comments.length ? `<div class="comment-list">${comments.slice().reverse().map((comment) => `<div class="comment"><small>${esc(fmtDateTime(comment.at))} · ${esc(comment.tipo || "comentário")}</small><div>${esc(comment.texto || "")}</div></div>`).join("")}</div>` : `<div class="empty">Sem comentários registrados.</div>`;
+    }
+    function openDemand(itemId) {
+      const item = allItems().find((candidate) => candidate.id === itemId);
+      if (!item) return;
+      state.selectedId = itemId;
+      const u = urgency(item), issues = qualityIssues(item), links = item.derived?.emailLinks || [];
+      $("#demandDialogTitle").textContent = item.titulo || "Detalhe da demanda";
+      $("#demandDialogBody").innerHTML = `<div class="demand-badges">${pill(u.label, u.tone)}${pill(sourceLabel(item))}${item.respondidoComConteudo ? pill("Entrega registrada", "green") : pill("Sem entrega", "red")}${issues.map((issue) => pill(issue.label, issue.severity === "high" ? "red" : "amber")).join("")}</div><div class="dialog-grid" style="margin-top:15px"><div class="detail-block"><div class="label">Caso ou cliente</div><div class="detail-text">${esc(item.clienteOuCaso || "Não informado")}</div></div><div class="detail-block"><div class="label">Prazo</div><div class="detail-text">${esc(fmtDate(item.prazo))} · ${esc(item.prazoTexto || "Sem descrição")}</div></div><div class="detail-block full"><div class="label">Resumo</div><div class="detail-text">${esc(item.resumo || "Sem resumo")}</div></div><div class="detail-block full"><div class="label">Próxima ação</div><div class="detail-text">${esc(item.proximaAcao || "Não informada")}</div></div><div class="detail-block"><div class="label">Anexos</div><div class="detail-text">${esc(item.anexos?.observacao || "Sem informação")}</div></div><div class="detail-block"><div class="label">Pasta</div><div class="detail-text">${esc(item.pasta || "Não vinculada")}</div></div>${dateMentions(item).length ? `<div class="detail-block full"><div class="label">Datas mencionadas a conferir</div><div class="demand-badges">${dateMentions(item).map((mention) => pill(fmtDate(mention.date), "amber")).join("")}</div></div>` : ""}${item.evidenciaResposta ? `<div class="detail-block full"><div class="label">Evidência de conclusão</div><div class="detail-text">${esc(item.evidenciaResposta)}</div></div>` : ""}${links.length ? `<div class="detail-block full"><div class="label">Originais</div><div class="link-list">${links.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener">${icon("external")}${esc(link.label)}</a>`).join("")}</div></div>` : ""}${renderForjaDetail(item)}<div class="detail-block full"><div class="label">Comentários e correções</div>${detailComments(item)}${!REMOTE ? `<textarea id="detailComment" rows="3" placeholder="Correção, contexto ou feedback operacional"></textarea><div class="dialog-actions"><button class="btn secondary" id="saveCommentBtn">${icon("message")}Salvar comentário</button></div>` : ""}</div></div>${!REMOTE ? `<div class="dialog-actions"><button class="btn secondary" id="openFolderBtn">${icon("folder")}Abrir pasta</button>${item.status === "cumprida" ? `<button class="btn secondary" id="reopenBtn">Reabrir demanda</button>` : ""}</div>${item.status !== "cumprida" ? `<div class="evidence-box"><div class="surface-title">Registrar conclusão com evidência</div><div class="surface-sub">O servidor rejeita conclusões sem evidência concreta e também bloqueia anexos, mídias ou etapas operacionais ainda pendentes.</div><div class="evidence-grid"><select id="evidenceType"><option value="">Tipo de evidência</option><option value="email">E-mail enviado</option><option value="whatsapp">WhatsApp entregue</option><option value="protocolo">Protocolo</option><option value="arquivo">Arquivo entregue</option><option value="manual">Registro manual verificável</option></select><textarea id="evidenceNote" rows="3" placeholder="Identifique data, canal, mensagem, protocolo ou arquivo"></textarea></div><div class="dialog-actions"><button class="btn" id="completeBtn">${icon("check")}Marcar concluída</button></div></div>` : ""}` : ""}`;
+      $("#demandDialog").showModal();
+      $("#saveCommentBtn")?.addEventListener("click", saveSelectedComment);
+      $("#openFolderBtn")?.addEventListener("click", openSelectedFolder);
+      document.querySelectorAll("#demandDialogBody [data-forja-artifact]").forEach((button) => button.addEventListener("click", () => openForjaArtifact(button.dataset.forjaCase, button.dataset.forjaArtifact)));
+      document.querySelectorAll("#demandDialogBody [data-forja-package]").forEach((button) => button.addEventListener("click", () => openForjaPackage(button.dataset.forjaPackage)));
+      $("#completeBtn")?.addEventListener("click", completeSelected);
+      $("#reopenBtn")?.addEventListener("click", reopenSelected);
+    }
+
+    function integrationCard(key, value, stats = []) {
+      const tone = integrationTone(value);
+      const descriptions = {
+        gmailLocal: "Recebidos, enviados, respostas com peça e anexos.", whatsappPersonal: "Coleta pessoal e exportação estritamente sanitizada.",
+        hermesBridge: "Sincronização de prioridades e painel externo.", forjaSidecar: "Vínculo entre demandas, fases, peças, bloqueios e evidências da FORJA.", phoneAlert: "Alertas apenas para abertas vencidas ou até 48h.", calendar: "Lembrete humano diário separado da execução.", deliveries: "Auditoria de entregas e anexos enviados."
+      };
+      const gmailAction = key === "gmailLocal" && value?.authRequired && state.live ? `<div class="dialog-actions"><button class="btn secondary" id="gmailLoginBtn">${icon("mail")}Conectar Gmail</button></div>` : "";
+      const whatsappAction = key === "whatsappPersonal" && /verificar|pairing|pending/.test(String(value?.state || "")) && state.live ? `<div class="dialog-actions"><button class="btn secondary" id="whatsappPairBtn">${icon("message")}Parear WhatsApp</button></div>` : "";
+      return `<article class="surface integration"><div class="integration-head"><div class="integration-name">${icon(key === "gmailLocal" ? "mail" : key === "whatsappPersonal" ? "message" : key === "calendar" ? "calendar" : key === "deliveries" ? "send" : "activity")}${esc(integrationName(key))}</div>${pill(stateLabel(value), tone)}</div><div class="integration-detail">${esc(integrationMessage(key, value) || descriptions[key] || "")}</div><div class="integration-stats">${stats.map(([label, number]) => pill(`${label}: ${number ?? 0}`)).join("")}</div>${gmailAction}${whatsappAction}</article>`;
+    }
+    function renderIntegrations() {
+      const s = state.data?.status || {};
+      const bridge = s.hermesBridge || state.data?.hermesBridge || {};
+      $("#integrationGrid").innerHTML = [
+        integrationCard("gmailLocal", s.gmailLocal, [["novos", s.gmailLocal?.newInbound], ["enviados", s.gmailLocal?.sentScanned], ["anexos", `${s.gmailLocal?.attachmentsDownloaded || 0}/${s.gmailLocal?.attachmentsExpected || 0}`]]),
+        integrationCard("whatsappPersonal", s.whatsappPersonal, [["exportação", s.whatsappPersonal?.sanitizedExport?.state || "n/d"]]),
+        integrationCard("hermesBridge", bridge, [["atualizado", bridge.updatedAt ? fmtDateTime(bridge.updatedAt) : "n/d"]]),
+        integrationCard("forjaSidecar", s.forjaSidecar, [["vínculos", `${s.forjaSidecar?.linked || 0}/${s.forjaSidecar?.total || 0}`], ["cobertura", `${s.forjaSidecar?.coveragePercent || 0}%`], ["divergências", s.forjaSidecar?.conflicts], ["arquivos ausentes", s.forjaSidecar?.artifactFailures]]),
+        integrationCard("phoneAlert", s.phoneAlert), integrationCard("calendar", s.calendar),
+        integrationCard("deliveries", s.deliveries, [["encontradas", s.deliveries?.deliveriesFound], ["anexos", `${s.deliveries?.attachmentsDownloaded || 0}/${s.deliveries?.attachmentsExpected || 0}`]])
+      ].join("");
+      $("#gmailLoginBtn")?.addEventListener("click", gmailLogin);
+      $("#whatsappPairBtn")?.addEventListener("click", startWhatsappPairing);
+
+      const runs = state.data?.updateHistory?.runs || [];
+      const historyRows = runs.length
+        ? `<div class="history-row header"><span>Início</span><span>Estado</span><span>Resultado</span><span>Duração</span></div>${runs.slice(0, 10).map((run) => `<div class="history-row"><span>${esc(fmtDateTime(run.startedAt))}</span><span>${pill(run.state === "success" ? "sucesso" : run.state, run.state === "success" ? "green" : run.state === "running" ? "blue" : "red")}</span><span>${esc(run.message || "")}</span><span>${esc(run.durationSeconds != null ? String(run.durationSeconds) + "s" : "-")}</span></div>`).join("")}`
+        : `<div class="empty">O histórico começará na próxima atualização pelo serviço v2.</div>`;
+      $("#updateHistory").innerHTML = `<div class="surface-head"><div><div class="surface-title">Histórico de atualização</div><div class="surface-sub">Últimas execuções do ciclo completo.</div></div>${state.data?.runtime?.update?.state === "running" ? pill("em andamento", "blue") : ""}</div>${historyRows}`;
+
+      const candidates = state.data?.whatsapp?.candidates || [];
+      $("#whatsappPanel").innerHTML = `<div class="surface-head"><div><div class="surface-title">Triagem WhatsApp</div><div class="surface-sub">Somente sinais operacionais sanitizados; conteúdo bruto não é transportado.</div></div>${pill("privado e somente leitura", "blue")}</div>${candidates.length ? candidates.map((candidate) => `<div class="sanitized-row"><b>${esc(candidate.chatName || "Contato configurado")}</b><div>${esc(candidate.summary || "Sem sinal operacional")}</div><small>${esc(candidate.lastAt ? fmtDateTime(candidate.lastAt) : "sem data")}</small></div>`).join("") : `<div class="empty">Sem retrato sanitizado disponível.</div>`}`;
+    }
+
+    function renderDeliveries() {
+      const payload = state.data?.deliveries || {};
+      const deliveries = payload.deliveries || [];
+      $("#deliveryList").innerHTML = `<div class="surface-head"><div><div class="surface-title">${payload.deliveriesFound || deliveries.length} entregas encontradas</div><div class="surface-sub">Anexos arquivados: ${payload.attachmentsDownloaded || 0}/${payload.attachmentsExpected || 0}</div></div></div>${deliveries.length ? deliveries.map((item) => `<div class="delivery-row"><div class="delivery-date">${esc(fmtDateTime(item.date))}</div><div class="delivery-title">${esc(item.subject || "Sem assunto")}</div><div class="delivery-files">${(item.attachments || []).map((file) => esc(file.filename)).join(", ") || "sem anexo listado"}</div></div>`).join("") : `<div class="empty">Nenhuma entrega encontrada no último ciclo.</div>`}`;
+    }
+
+    function setView(view) {
+      state.activeView = ["today", "deadlines", "demands", "integrations", "deliveries"].includes(view) ? view : "today";
+      localStorage.setItem("medina-office-view", state.activeView);
+      $$(".tab").forEach((tab) => tab.classList.toggle("active", tab.dataset.view === state.activeView));
+      $$("[data-view-panel]").forEach((panel) => panel.classList.toggle("active", panel.dataset.viewPanel === state.activeView));
+    }
+    function renderForjaFila() {
+      const bloco = $("#forjaFilaBloco");
+      if (!bloco) return;
+      const fila = state.data?.forjaFila;
+      if (!fila || !fila.resumo) { bloco.style.display = "none"; return; }
+      bloco.style.display = "";
+      const atual = state.data?.demandas?.updatedAt;
+      const desatualizada = atual && fila.origem?.demandasUpdatedAt && atual !== fila.origem.demandasUpdatedAt;
+      $("#forjaFilaStamp").textContent = desatualizada ? "fila desatualizada — regenerar" : `fila de ${fila.geradoEm ? fila.geradoEm.slice(0, 16).replace("T", " ") : "?"}`;
+      $("#forjaFilaStamp").className = desatualizada ? "pill amber" : "pill";
+      const top = (fila.producao || []).slice(0, 5);
+      $("#forjaFilaList").innerHTML = top.length ? top.map((item) => {
+        const fatores = (item.fatores || []).map((f) => `${f.fator} +${f.pontos}`).join(" · ");
+        const prazoTxt = item.prazoVencido ? `<strong style="color:#b3261e">VENCIDO</strong>` : `<strong>${item.prazo ? fmtDate(item.prazo) : "sem prazo"}</strong>`;
+        return `<div class="queue-row" data-open-demand="${esc(item.demandaId)}" title="${esc(fatores)}"><div class="rank">${item.posicao}</div><div><div class="queue-title">${esc(item.titulo || item.demandaId)}</div><div class="queue-meta">score ${item.score} · ${esc(fatores)}</div></div><div class="deadline">${prazoTxt}<span>prazo</span></div><svg class="icon chevron"><use href="#i-chevron"/></svg></div>`;
+      }).join("") : `<div class="empty">Nenhuma demanda pronta para produção.</div>`;
+      const porMotivo = {};
+      (fila.bloqueadas || []).forEach((b) => { porMotivo[b.categoria] = (porMotivo[b.categoria] || 0) + 1; });
+      const rotulos = { bloqueada_acesso: "acesso a documentos", bloqueada_comando: "sem comando", bloqueada_decisao_cliente: "decisão do cliente", bloqueada_pasta: "pasta/origem" };
+      const partes = Object.entries(porMotivo).map(([k, v]) => `${v} ${rotulos[k] || k}`);
+      const esperando = (fila.bloqueadas || []).filter((b) => b.destaque48h);
+      const revisao = fila.resumo.aguardandoRevisaoHumana || 0;
+      let resumoHtml = `<span class="queue-meta">${fila.resumo.bloqueadas || 0} bloqueadas${partes.length ? ` (${partes.join(", ")})` : ""} · ${fila.resumo.emProducao || 0} em produção · ${revisao} aguardando revisão humana</span>`;
+      const oa = fila.operacaoAssistida;
+      if (oa) resumoHtml += oa.fechamentoPendente
+        ? `<div style="margin-top:6px">${pill("Fila em operação assistida — fechamento do M4 pendente", "amber")}</div>`
+        : ` <span class="queue-meta">· operação assistida até ${fmtDate(oa.ate)}</span>`;
+      if (esperando.length) resumoHtml += `<div style="margin-top:6px">${esperando.map((b) => pill(`${esc(b.titulo || b.demandaId)}: aguardando decisão há ${b.esperaDias}d`, "amber")).join(" ")}</div>`;
+      $("#forjaFilaResumo").innerHTML = resumoHtml;
+    }
+    function renderAll() {
+      renderHeader(); renderStatusRail(); renderOverview(); renderForjaFila(); renderDeadlines(); renderDemands(); renderIntegrations(); renderDeliveries(); setView(state.activeView);
+    }
+
+    async function apiFetch(path, options = {}) {
+      const response = await fetch(`${API_BASE}${path}`, { cache: "no-store", ...options });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || payload.ok === false) throw new Error(payload.error || `Falha HTTP ${response.status}`);
+      return payload;
+    }
+    async function postJson(path, payload) {
+      return apiFetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+    }
+    async function hydrateLive(silent = false) {
+      if (REMOTE) { state.live = false; renderAll(); return; }
+      try {
+        state.health = await apiFetch("/api/health");
+        const data = await apiFetch("/api/data");
+        state.data = data;
+        state.live = true;
+      } catch (error) {
+        state.live = false;
+        if (!silent) setNotice("Servidor local indisponível. O último retrato continua acessível.", "amber");
+      }
+      renderAll();
+    }
+    async function startRefresh() {
+      if (REMOTE) { location.reload(); return; }
+      if (!state.live) { await hydrateLive(); if (!state.live) return; }
+      try {
+        const response = await fetch(`${API_BASE}/api/update`, { method: "POST", cache: "no-store" });
+        const payload = await response.json();
+        if (response.status === 409) { setNotice("Uma atualização já está em andamento.", "amber"); pollUpdate(); return; }
+        if (!response.ok || !payload.ok) throw new Error(payload.error || "Não foi possível iniciar.");
+        state.health.update = payload.update;
+        renderHeader();
+        setNotice("Atualização iniciada. O painel pode ser usado enquanto Gmail, WhatsApp e Hermes são conferidos.");
+        pollUpdate();
+      } catch (error) { setNotice(`Falha ao iniciar a atualização: ${error.message}`, "red"); }
+    }
+    async function pollUpdate() {
+      clearTimeout(state.updateTimer);
+      try {
+        const payload = await apiFetch("/api/update-status");
+        state.data.runtime = payload.runtime;
+        state.data.updateHistory = payload.history;
+        const update = payload.runtime?.update || {};
+        state.health = state.health || {}; state.health.update = update;
+        renderHeader(); renderIntegrations();
+        if (update.state === "running") {
+          state.updateTimer = setTimeout(pollUpdate, 1800);
+          return;
+        }
+        if (update.state === "success") {
+          await hydrateLive(true);
+          setNotice(`Atualização concluída em ${update.durationSeconds || "?"}s.`);
+        } else if (update.state === "error") {
+          await hydrateLive(true);
+          setNotice(`Atualização terminou com falha: ${update.error || update.message || "ver Integrações"}`, "red");
+        }
+      } catch (error) { setNotice(`Perdi a conexão com a atualização: ${error.message}`, "red"); }
+    }
+
+    async function saveSelectedComment() {
+      const text = $("#detailComment")?.value.trim();
+      if (!text) { setNotice("Escreva o comentário antes de salvar.", "amber"); return; }
+      try { const result = await postJson("/api/comment", { id: state.selectedId, text }); state.data = result.snapshot; openDemand(state.selectedId); renderAll(); setNotice("Comentário preservado na demanda."); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function completeSelected() {
+      const evidenceType = $("#evidenceType")?.value;
+      const note = $("#evidenceNote")?.value.trim();
+      if (!evidenceType || !note) { setNotice("Informe o tipo e a descrição concreta da evidência.", "amber"); return; }
+      try { const result = await postJson("/api/item-status", { id: state.selectedId, status: "cumprida", evidenceType, note }); state.data = result.snapshot; $("#demandDialog").close(); renderAll(); setNotice("Demanda concluída com evidência registrada."); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function reopenSelected() {
+      try { const result = await postJson("/api/item-status", { id: state.selectedId, status: "aberta", note: "Reaberta pelo painel." }); state.data = result.snapshot; $("#demandDialog").close(); renderAll(); setNotice("Demanda reaberta."); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function openSelectedFolder() {
+      try { await postJson("/api/open-folder", { id: state.selectedId }); setNotice("Pasta aberta no computador."); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function openForjaArtifact(caseId, artifactId) {
+      try { const result = await postJson("/api/forja/open-artifact", { caseId, artifactId }); setNotice(`${result.name || "Artefato"} aberto no computador.`); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function openForjaPackage(caseId) {
+      try { await postJson("/api/forja/open-package", { caseId }); setNotice("Pacote FORJA aberto no computador."); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function createManualTask() {
+      const titulo = $("#manualTitle").value.trim();
+      if (!titulo) { setNotice("Informe o título da tarefa.", "amber"); return; }
+      try {
+        const result = await postJson("/api/manual-task", { titulo, prazo: $("#manualDeadline").value || null, urgenciaManual: $("#manualPriority").value, resumo: $("#manualSummary").value.trim(), origem: "manual", tags: ["manual"] });
+        state.data = result.snapshot; $("#newTaskDialog").close(); $("#manualTitle").value = ""; $("#manualDeadline").value = ""; $("#manualSummary").value = ""; renderAll(); setNotice("Nova tarefa criada e vinculada a uma pasta local.");
+      } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function gmailLogin() {
+      try { const result = await apiFetch("/api/gmail-login", { method: "POST" }); setNotice(result.message || "Login iniciado."); } catch (error) { setNotice(error.message, "red"); }
+    }
+    async function startWhatsappPairing() {
+      try {
+        const result = await apiFetch("/api/whatsapp-pair", { method: "POST" });
+        setNotice(result.message || "Tela de pareamento iniciada.");
+      } catch (error) { setNotice(error.message, "red"); }
+    }
+
+    document.addEventListener("click", (event) => {
+      const tab = event.target.closest("[data-view]"); if (tab) setView(tab.dataset.view);
+      const open = event.target.closest("[data-open-demand]"); if (open) openDemand(open.dataset.openDemand);
+      const close = event.target.closest("[data-close]"); if (close) document.getElementById(close.dataset.close)?.close();
+      const metricFilter = event.target.closest("[data-metric-filter]");
+      if (metricFilter) { setView("demands"); $("#statusFilter").value = metricFilter.dataset.metricFilter === "done" ? "done" : "open"; $("#urgencyFilter").value = ["overdue","48h","triage","blocked"].includes(metricFilter.dataset.metricFilter) ? metricFilter.dataset.metricFilter : "all"; renderDemands(); }
+      const qualityFilter = event.target.closest("[data-quality-filter]");
+      if (qualityFilter) { setView("demands"); $("#statusFilter").value = "open"; $("#urgencyFilter").value = ["triage","blocked"].includes(qualityFilter.dataset.qualityFilter) ? qualityFilter.dataset.qualityFilter : "all"; renderDemands(); }
+    });
+    $("#refreshBtn").addEventListener("click", startRefresh);
+    $("#newTaskBtn").addEventListener("click", () => state.live ? $("#newTaskDialog").showModal() : setNotice("Conecte o servidor local antes de criar uma tarefa.", "amber"));
+    $("#saveManualTaskBtn").addEventListener("click", createManualTask);
+    ["search", "statusFilter", "urgencyFilter", "sourceFilter"].forEach((id) => document.getElementById(id).addEventListener(id === "search" ? "input" : "change", renderDemands));
+
+    renderAll();
+    hydrateLive(true).then(() => {
+      if (state.health?.update?.state === "running") pollUpdate();
+      if (!REMOTE) setInterval(() => hydrateLive(true), 120000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+{
+  "data": "2026-08-05T02:40:26.294404",
+  "controles_benignos": [
+    {
+      "nome": "sinonimia_conectivo",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": "agravante",
+          "cliente_nome": "João da Silva",
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "provimento",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "sinonimia_verbo",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": "autor",
+          "cliente_nome": "Maria da Costa",
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "procedência",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "papel_oposto_parte_contraria",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": "agravante",
+          "cliente_nome": "Empresa Tal",
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "provimento",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    }
+  ],
+  "sabotagens": [
+    {
+      "nome": "troca_parte_agravante_agravado",
+      "deve_acusar": true,
+      "acusou_realmente": true,
+      "passou": true,
+      "resultado_completo": {
+        "status": "findings_detected",
+        "papeis": {
+          "cliente_esperado": "agravante",
+          "cliente_nome": "Empresa Tal",
+          "incoerencias": [
+            {
+              "tipo": "papel_cliente_oposto_no_corpo",
+              "papel": "agravante",
+              "papel_oposto_encontrado": "agravado"
+            }
+          ]
+        },
+        "pedido": {
+          "direcao_declarada": "provimento",
+          "incoerencias": []
+        },
+        "p0_count": 1,
+        "approved": false
+      }
+    },
+    {
+      "nome": "troca_parte_recorrente_recorrido",
+      "deve_acusar": true,
+      "acusou_realmente": true,
+      "passou": true,
+      "resultado_completo": {
+        "status": "findings_detected",
+        "papeis": {
+          "cliente_esperado": "recorrente",
+          "cliente_nome": "Cliente ABC Ltda.",
+          "incoerencias": [
+            {
+              "tipo": "papel_cliente_oposto_no_corpo",
+              "papel": "recorrente",
+              "papel_oposto_encontrado": "recorrido"
+            }
+          ]
+        },
+        "pedido": {
+          "direcao_declarada": "provimento",
+          "incoerencias": []
+        },
+        "p0_count": 1,
+        "approved": false
+      }
+    },
+    {
+      "nome": "troca_pedido_provimento_desprovimento",
+      "deve_acusar": true,
+      "acusou_realmente": true,
+      "passou": true,
+      "resultado_completo": {
+        "status": "findings_detected",
+        "papeis": {
+          "cliente_esperado": "agravante",
+          "cliente_nome": "Sociedade X",
+          "incoerencias": [
+            {
+              "tipo": "papel_pedido_oposto",
+              "papel": "agravante",
+              "pedido_oposto_encontrado": "\\bdesprovimento\\b"
+            }
+          ]
+        },
+        "pedido": {
+          "direcao_declarada": "provimento",
+          "incoerencias": [
+            {
+              "tipo": "direcao_oposta",
+              "direcao_esperada": "provimento",
+              "oposta_encontrada": "desprovimento"
+            }
+          ]
+        },
+        "p0_count": 2,
+        "approved": false
+      }
+    },
+    {
+      "nome": "troca_pedido_procedencia_improcedencia",
+      "deve_acusar": true,
+      "acusou_realmente": true,
+      "passou": true,
+      "resultado_completo": {
+        "status": "findings_detected",
+        "papeis": {
+          "cliente_esperado": "autor",
+          "cliente_nome": "João Silva",
+          "incoerencias": [
+            {
+              "tipo": "papel_pedido_oposto",
+              "papel": "autor",
+              "pedido_oposto_encontrado": "\\bimprocedência\\b"
+            }
+          ]
+        },
+        "pedido": {
+          "direcao_declarada": "procedência",
+          "incoerencias": [
+            {
+              "tipo": "direcao_oposta",
+              "direcao_esperada": "procedência",
+              "oposta_encontrada": "improcedência"
+            }
+          ]
+        },
+        "p0_count": 2,
+        "approved": false
+      }
+    }
+  ],
+  "acervo_real": [
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "provimento",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "procedência",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "audited_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": "agravante",
+          "cliente_nome": "NYLTON JOSÉ SIMÕES FILHO",
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "acolhimento",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "final_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "final_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "final_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "final_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "final_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "final_markdown.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": "agravante",
+          "cliente_nome": "NYLTON JOSÉ SIMÕES FILHO",
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": "acolhimento",
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "ESTUDO_ESTRATEGICO_PLANO_SAUDE.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "MAPA_IA.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "MINUTA_ANS.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "MINUTA_INICIAL_TJDFT.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    },
+    {
+      "nome": "MINUTA_MPDFT.md",
+      "deve_acusar": false,
+      "acusou_realmente": false,
+      "passou": true,
+      "resultado_completo": {
+        "status": "approved",
+        "papeis": {
+          "cliente_esperado": null,
+          "cliente_nome": null,
+          "incoerencias": []
+        },
+        "pedido": {
+          "direcao_declarada": null,
+          "incoerencias": []
+        },
+        "p0_count": 0,
+        "approved": true
+      }
+    }
+  ],
+  "sumario": {
+    "controles_benignos_ok": 3,
+    "controles_benignos_falso_positivo": 0,
+    "sabotagens_detectadas": 4,
+    "sabotagens_nao_detectadas": 0,
+    "acervo_falsos_positivos": 0
+  }
+}

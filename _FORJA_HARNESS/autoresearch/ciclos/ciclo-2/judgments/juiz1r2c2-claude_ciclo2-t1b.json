@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz1r2c2-claude",
+  "judgeFamily": "claude",
+  "declarations": {"filesRead": ["PAR_ciclo2-t1b_ORD1_L.md","PAR_ciclo2-t1b_ORD1_R.md","PAR_ciclo2-t1b_ORD2_L.md","PAR_ciclo2-t1b_ORD2_R.md"], "externalAccess": false, "workspaceAccess": false},
+  "votes": [
+    {"order": 1, "winnerPosition": "L", "anchor": "Esta ação não pede que o Juízo declare verdadeiras, em cognição sumária, as respostas da Declaração Pessoal de Saúde — DPS. A omissão formal descrita no documento exige apuração.", "justificativa": "L apresenta síntese executiva de alta precisão jurídica: reconhece dados desfavoráveis, mas delimita questão procedimental autônoma com clareza. Usa quadros e estrutura em camadas que reduzem ambiguidade."},
+    {"order": 2, "winnerPosition": "L", "anchor": "A Ré excluiu individualmente Mateus de plano coletivo empresarial em 18/06/2026, após atribuir-lhe omissão de doença ou lesão preexistente e tentativa de obtenção de vantagem indevida.", "justificativa": "L abre com fato brutal (exclusão + acusação de fraude + manutenção do grupo), estabelecendo perigo imediato. Narrativa pragmática sem quadros defensivos."}
+  ]
+}

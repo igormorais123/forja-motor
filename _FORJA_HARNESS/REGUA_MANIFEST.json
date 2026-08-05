@@ -1,0 +1,1375 @@
+{
+  "atualizadoEm": "2026-08-05T07:31:16-03:00",
+  "hashes": {
+    "_FORJA_HARNESS/forja_regua.py": "01b83dbbee4772f1a25e5b91f1efb171dd62e9d6efec75c5df5cbe98b62f2198",
+    "_FORJA_HARNESS/forja_gate_liveness.py": "022b753465977df5c01947a4594afb2603435df0599060686dc9b6481da04733",
+    "_FORJA_HARNESS/forja_conselho.py": "0b2fee8358884dd7679a7a3991096334bc9fce6f79843ec8704392a30363c470",
+    "_FORJA_HARNESS/forja_citations.py": "2a90c7d0d55bdabe4f465b165fba2699feddafa058ced4780c60d1116e4cf51b",
+    "_FORJA_HARNESS/forja_baseline.py": "f45886e0a2389467e2ac93caeb40cfe52ff2910419cf66c7259fc0dfbdbd8bf1",
+    "_FORJA_HARNESS/forja_verificador.py": "c8e74b2e3154d5a43ac9f00bbdf4aa9bf48002d6475c3436d90d278e36a4fe3f",
+    "_FORJA_HARNESS/forja_estilo_humano.py": "b9f749f7a5b6e1db7e8cd5d8b568a1d38d7e268e318ba96a8f5dda9bfcbfc5df",
+    "_FORJA_HARNESS/forja_run.py": "2ebd9a273d26a7297fb3abefd59bb456c507a25653b6054803761bbdbcb81d45",
+    "_FORJA_HARNESS/forja_headless.py": "429042f6e0e93f076e96926f24a8b0d9d8caaf03abbf087b7edb8d831605b2b0",
+    "_FORJA_HARNESS/forja_editorial.py": "8c295119f0ca8757ce7ab06ada2264c2d647a19147c5fe0cc84ab961810b094e",
+    "_FORJA_HARNESS/forja_fable5.py": "75f037ccce8d424c140f346b95af68bc04258419efc2d2eb8d97f77085d6b20c",
+    "_FORJA_HARNESS/forja_editorial_fidelity.py": "fcd46deb75104ac1d6fe2b539c927bad0cfb1a916a9b1f5c695f1e120293580b",
+    "_FORJA_HARNESS/forja_package.py": "d23900cc029b432dce58f1a09198542608d8cd209d9cbcd08991e0806c47b354",
+    "_FORJA_HARNESS/forja_fidelity.py": "58b642749707921f8e346283ccb44d0d85410764a2ac5aa5ec96dbb20aad5473",
+    "_FORJA_HARNESS/forja_f8_contract.py": "b69362db3631df823f92e4165b5d94f69c37d1dad0bf65a4174282cb7daeea95",
+    "_FORJA_HARNESS/forja_visual_qa.py": "35e4c71f994fcd2b1cffcc1abf73af4d1da878c66a622ac6b07e44bd74ab92ee",
+    "_FORJA_HARNESS/forja_visual_review.py": "e88cde49b0084827cea1462eff355e2285c44523b0e4a64cf125bccc7a716479",
+    "_FORJA_HARNESS/forja_docx_layout.py": "fbb7531ba5e8842a4f849b58c07ec471ba7bf0ed47f7178605384d477a77efbd",
+    "_FORJA_HARNESS/test_forja_layout_antimoldagem.py": "4e2dd041514bf9e9ac949f2735a62e04a87401c360fdf84fcde4c8687c41fb94",
+    "_FORJA_HARNESS/forja_assinatura_visual.py": "bb85ad103caf8ab297fd134772db4f5420d8e074928cbefa867ac5f8471b1021",
+    "_FORJA_HARNESS/test_forja_assinatura_antimoldagem.py": "856d50077dd8d0ccf356d0da441310907edfc4360a321372ec2ca640b62bca1a",
+    "_FORJA_HARNESS/forja_adocao_rota.py": "6704e9fdaca634edd901e2452c60ca7dd64c197273dc2fa36435a9f0a2ccccc4",
+    "_FORJA_HARNESS/test_forja_adocao_rota.py": "1c7435e9f49fb362c2830f96ab8dcf2e692c29b2316e251b053e3d02f6aa1a12",
+    "_FORJA_HARNESS/test_forja_porta_unica.py": "634c49a0b7f99ea05e399c110c6155299b38ccca34593cd5f52df120864f27e4",
+    "_FORJA_HARNESS/forja_baseline_aprovado.py": "8e421061bbe0cbeab3e2697aee9ba53b3888e7c46deed603f8667e5cc160f855",
+    "_FORJA_HARNESS/test_forja_baseline_aprovado.py": "fc9b34932c50cb4588c6c745eb1208f2a208aacb29ec7be5373f8d591cf065f1",
+    "_FORJA_HARNESS/BASELINE_APROVADO.json": "f8360c72dead2a5145554d2e03a81f256cb1a181b268d8a440e38e6cdab3e0b7",
+    "_FORJA_HARNESS/forja_varredura_tipografica.py": "2b4207514f0266397ba44fc8b457ab42ce1dc5940fb568a0026dddd29779a503",
+    "_FORJA_HARNESS/test_forja_varredura_tipografica.py": "2f58e4bc9a0b5aacadb2caa35bf3a93b05f3f6aa7f57268b23d7491be5ed2997",
+    "_FORJA_HARNESS/forja_canario_mutacao.py": "dd24cef573772747e4ad26d7928c5a506bc579b51fd427362ba5e3aff39bc953",
+    "_FORJA_HARNESS/test_forja_canario_mutacao.py": "a2b5072c027c786edff66ab242de42cfe470a6fcfb663817946c436095d5b42b",
+    "_FORJA_HARNESS/forja_canario_catraca.py": "f058bac6cedd886ee8feeff068bccd69d6d2603399eb1e9511356b89d3c03d74",
+    "_FORJA_HARNESS/test_forja_canario_catraca.py": "6ebf0c25f54c1d99ab34b9aaa28c4f3984cb1c7566751c3210c69cba8e6255da",
+    "_FORJA_HARNESS/forja_forma_artefatos.py": "1bbd0cbd0ff8d36277d49b27a22c5e87eb0e8a861143b7ecc3afe9a7140e58d7",
+    "_FORJA_HARNESS/test_forja_forma_artefatos.py": "369b59be193d5e3c7728733bca8b3eb294ee94571f91aebabc3a3d16a97ef2c0",
+    "_FORJA_HARNESS/forja_official_sources.py": "b55bf604af3675bfa989b9c0c97545e1b2b4a43a81aabdb72448c55190305743",
+    "_FORJA_HARNESS/forja_human_review.py": "ecfcf271ecac6f283768f813f3b2edebd57322dc418500f80b5aa0adb19a7a1d",
+    "_FORJA_HARNESS/forja_n4_validate.py": "5135eff9083cac482a29cc1236afc37af3115821863b4992e9c54479375b6daf",
+    "_FORJA_HARNESS/forja_close_cycle.py": "835702daba20b735e8f929409bed8d12572d1aff812e6640e94f0ae438ebf93f",
+    "_FORJA_HARNESS/forja_f10_contract.py": "2db8e3fcbff8292d35b560f985cf48055fe177e9efb327b02890b1d9d12c66db",
+    "_FORJA_HARNESS/forja_state_machine.py": "23e983a07dda02de8cf1493466fe57f4cc308d69e9b3d4e6dd3590ec02fca93c",
+    "_FORJA_HARNESS/forja_metricas_f7.py": "d2e77c1dba64859b421c4afb0036294f910d1559177df8cd6c713acde49d3475",
+    "_FORJA_HARNESS/forja_lastro.py": "7b09f1eee772dfbf0bb158d3aa34b4c09fe873b9e7d6f6e7efaf3397d43b47fc",
+    "_FORJA_HARNESS/forja_memoria_auditabilidade.py": "9dc3fdec38754589e30362f195ea1b42ca937195b2218982dfd8ae9ca45feef7",
+    "_FORJA_HARNESS/forja_calibra_monetario.py": "beec0623a3e5a28785ef345ae874e599efba719005a62407ddaa3e612e4b7272",
+    "_FORJA_HARNESS/forja_calibra_gates_economicos.py": "8fa953e3f7a025630095e07df3f0fc96721dd380f9f894a2aa48cf9f3f4922a3",
+    "_FORJA_HARNESS/forja_email.py": "6847d598877687cd9c1355bf55140de2cba2105c6309605a11cc084ce6838920",
+    "_FORJA_HARNESS/forja_render_docx.py": "aa34ad0938d397962d8a270840f271538de5c11a3e456be5b73137747af3e18c",
+    "_FORJA_HARNESS/forja_visual_build.py": "db537592ba0e5a12e045305fd2d3b4cdf6477f700190d92fd43f645b8365e283",
+    "_FORJA_HARNESS/forja_svg_docx.py": "62c0a8a115df0404ff85878d8f634e4e8c64f2e5d76b7b499f97d9107b20c183",
+    "_FORJA_HARNESS/forja_visual_qa_structural.py": "7ed3fffb645e83ceb744ac443f93e7f64c089d9c12274bf7d87193405d5df8a0",
+    "_FORJA_HARNESS/forja_delivery.py": "9e0ee447e7f33db5a499590191dc60bc3415fffbbd5e753ebd7f406a6b507a78",
+    "_FORJA_HARNESS/forja_injection_scan.py": "dbc5dbfb6c2be058fcc8552b0ae2ef68ea6ecdb5daf3c42f470f7530a24fe9d2",
+    "_FORJA_HARNESS/forja_visual.py": "6f5e3ff37005cc84e9ccff55bb0b71613d4d694cf99bbab9fb476661558f6a6d",
+    "_FORJA_HARNESS/forja_fila.py": "ce55027245fb52829abbf0ad618d8bf91b46255dd342305bde7b5bfecc8974ad",
+    "_FORJA_HARNESS/test_forja_fila.py": "550da597b8bd906d1fff5b9487656b06001980b56eb5aa6078ead498a62b5c1e",
+    "_FORJA_HARNESS/test_licao41.py": "d66fb15272ff3ffe71ed665d51066046bc8ad366daad9dbbde56705d8c02a1a2",
+    "_FORJA_HARNESS/test_forja_citacoes.py": "f2c0240dc877c4010205a3254ce538012e9643c7c01f99da8b875a347adbc24b",
+    "_FORJA_HARNESS/test_forja_lastro.py": "de39c6e8d60ce66df653cc79a7d2c1d49afe1d022e95b3725af5b431d69f02b1",
+    "_FORJA_HARNESS/test_forja_gate_liveness.py": "cff2e296b67cfbb2e3cc1e54772cdd1732587d5fbe46e85b99024fbe609ad2ad",
+    "_FORJA_HARNESS/test_forja_lastro_rota_producao.py": "1c7bfd03720d0751512af73cfe80368ae95f566f1593e6d9f9fb96ae516113cd",
+    "_FORJA_HARNESS/test_forja_memoria_auditabilidade.py": "8843e3973da19050830a30bbcdd93d8520a32a3a374619c58c5dfbf436e11d5a",
+    "_FORJA_HARNESS/test_forja_f8_static.py": "e1d9db8229e95fcee2a1f757f474de0049be965bb0ecc92d0cc225c4de57c6af",
+    "_FORJA_HARNESS/test_forja_f8_pecas_reais.py": "308dcbfe1274018c32ba1b5a73b4f4dcd668d3efc669533d248e3de631e0f227",
+    "_FORJA_HARNESS/test_forja_verificador.py": "6d6025512d14ca425524186cccf7aad2d4352d069058cc62d400580b4d46dd07",
+    "_FORJA_HARNESS/test_forja_politica_citacoes.py": "e9c9593ee360c2374521771a05432039a29ce8e344855bfb52edc4d409eb3feb",
+    "_FORJA_HARNESS/test_forja_identidade_citacoes.py": "7fe7d77ecfd6307f871e7694c6da78592604e0eb8221eefd7ca9f596ce791324",
+    "_FORJA_HARNESS/forja_replay.py": "ffa99330953263a80c925a4e57374e137a43fc8dfbab84ebe153c1bef36e24b1",
+    "_FORJA_HARNESS/forja_adversarial_gate.py": "4f35e39f7f0bf147c5975d750a27bf8d4f46d0edeb597515211d63899478c26e",
+    "_FORJA_HARNESS/forja_recomputo_censo.py": "9f6974c019fe61f2075a886ebabb3f5afdf62eedcbb6d44c818a678e74897a19",
+    "_FORJA_HARNESS/test_forja_adversarial_gate.py": "c6ee5b83b287d6bab3b6e02743d45c9b29a12a0487e46b1dc053294b50c6b0c9",
+    "_FORJA_HARNESS/test_forja_recomputo_censo.py": "0f15076c8f9d086e571b2d9046105feb987b805816dac441039778fabf7012c2",
+    "_FORJA_HARNESS/forja_p0.py": "6639421d80cc5d200b77ed1678cb8189edd24b341d1f291aeb8714497599e737",
+    "_FORJA_HARNESS/forja_regimento_gate.py": "7a2a0ae7e9a429d967d9534c880ddd3e341302e2a152f8ed4d682dfa13f75a1e",
+    "_FORJA_HARNESS/forja_produto.py": "e94d165bc5cabb410629c06cf3c3fa04b09b653db3ef4ec0c5324c139da672ef",
+    "_FORJA_HARNESS/forja_entrega.py": "fdc0423d7b52234e2bcf264ea13730f63736625bc155b20a17e5dd165227c762",
+    "_FORJA_HARNESS/test_forja_p0.py": "e2096b0e4cc48271ac901a2fe0b361cee7aa2397d92719206c88340a06a9d8a1",
+    "_FORJA_HARNESS/test_forja_regimento_gate.py": "1af5f59f544e270be288196e9af15fb4f6f8d4b75c8d7ddadae2c16a12e8026a",
+    "_FORJA_HARNESS/test_forja_produto.py": "dc560bc5ee2e4d49a4f412bbb235ce90187bcae1a7b1f217e58de222e91a09f2",
+    "_FORJA_HARNESS/test_forja_entrega.py": "678d086188678dc8c1b93da52c99c4fb3b5f1f1ba8d47cad4dc200853d488a23",
+    "_FORJA_HARNESS/forja_artefatos.py": "a41728e59847fbe629d84aac6b8d772d5037079ac501f610d4abf09287e44817",
+    "_FORJA_HARNESS/test_forja_artefatos.py": "0a4b8ffe7d054852e5e2d001ea5f659529ca2ca304f280863d760165480849ee",
+    "_FORJA_HARNESS/forja_ingestao.py": "773e3f5b60ab37583a79069699118bf2532bdb82d98d830c6653abd1c34e06f1",
+    "_FORJA_HARNESS/forja_contexto.py": "c88e5ac44d5b0c7330a65ab109081aa3e59019ff8554fe959bb803109d0cd9a7",
+    "_FORJA_HARNESS/forja_redacao.py": "ccc1268f6d7843956082cadadb5c4264f09ac09cfb2c788a00c43ec2e4b4385d",
+    "_FORJA_HARNESS/test_forja_ingestao.py": "b775fb0166ad81e4299fde29947ee0f7c2bfb2cf102654dd13cd0ce2f636f54f",
+    "_FORJA_HARNESS/test_forja_contexto.py": "3c23f0322be302f48efaaa9308f8801bfe9fcb070d736ae93c908b7ea56199ff",
+    "_FORJA_HARNESS/test_forja_redacao.py": "b0226be7be34f98569311b7be58517a796aad569f38928110c502c1995ab7d5b",
+    "_FORJA_HARNESS/forja_paragrafos.py": "5dc9f43e3265f1e6a3de9e6e63ae39d64f52de470bd2c6f463b8aab445d8cbc9",
+    "_FORJA_HARNESS/forja_fontes_oficiais.py": "ae6ab45825884282ae6e08e6249db994b3614af75b397f38413d968ea00c37c4",
+    "_FORJA_HARNESS/forja_red_team.py": "9e6967003579588edc9511011160c1e6e6a35c68a3723ac87199340af42b4d66",
+    "_FORJA_HARNESS/test_forja_injection_gate.py": "0141d4e15245d7eb1bff5876f39760841e1ef0656e09be0b533bee870443d3cc",
+    "_FORJA_HARNESS/test_forja_paragrafos.py": "c4af7936fd5c691867744c8cad5bbd41b210a11905043159a95fc52c42fc4a16",
+    "_FORJA_HARNESS/test_forja_fontes_oficiais.py": "d8cd3e8e02e17a3267815df323354b69f48c9ed66699c774bf08a8f32dd87261",
+    "_FORJA_HARNESS/test_forja_red_team.py": "3a1be166c85764605754ece1d25ee4aad88e28c5a448f5b4a3b0c95c689ff64a",
+    "_FORJA_HARNESS/test_forja_gates_emitidos.py": "37044feb53dc4c65ae00fb2fc3b06593a2e9894cff433d9bc1c3cea48ea62ff1",
+    "_FORJA_HARNESS/test_forja_estilo_humano.py": "b43642c9d0ea8ca3edd0af3c02011f2412bad65c3f5893944bea7aeb912f0685",
+    "_FORJA_HARNESS/test_forja_editorial.py": "e5357358cc44169fc14c0cd97a2debccce1c3f390128c8db6ac5cd0cb389a81f",
+    "_FORJA_HARNESS/test_forja_run.py": "9765fc2097395cae5ab6cd7bd08e8f6cfd893ab0ddb808f9fd6a734d430ed502",
+    "_FORJA_HARNESS/test_forja_n3_package.py": "c6c290062e65bee7ea2d6870a6076291dfdd7968f96af78b5a5a7edfa5f60290",
+    "_FORJA_HARNESS/test_forja_n3_visual.py": "5056045b87e802d4cfede6e1ce15724bf772e743b65a324a363259ee2b540db8",
+    "_FORJA_HARNESS/test_forja_svg_docx.py": "cda13133942b3219ee4254a273700b5d65cef707e986303eb2fb61bcdc4499c1",
+    "_FORJA_HARNESS/test_forja_anti_cheat.py": "871d47ebeba98f52eadb4a0da8b0523518e212f7ba97ad38b71a5008b3760b48",
+    "_FORJA_HARNESS/test_f7_campos.py": "110e256e3ac8a86e6910c671de72c4c8198feaea2c9f289ac6b7fe9e5cdbb6be",
+    "_FORJA_HARNESS/test_forja_injection.py": "1629f630f3faaacf821bdd7a88beecb0f3b2f638d89ad484bf707823053c7870",
+    "_FORJA_HARNESS/test_forja_regua.py": "a4689a1dbce3c29f11fd9d855372f66b467a99c79a7497da6a7fd3f076178a39",
+    "_FORJA_HARNESS/test_real_telemetria_licao41.py": "57da6bf969713b0a7e9055d86402fa4afffe44523a00ca9833a2fa720620cb49",
+    "_FERRAMENTAS/medina_visual_kit.py": "6106b7513b9bdc27dbc97c30a26948df7dafb8e789f8946d3131ad91dcc9798a",
+    "_FERRAMENTAS/medina_svg_kit.py": "f7e3d7bd6fc5794003d9ab5278944e4b50695fbb0fd3e3c29c9492c65569b583",
+    "_FERRAMENTAS/word_visual_pipeline.py": "e0cd9f0ce6e4e301231ee145c90073e616638be51b82d8adaa6577c4c3c2971a",
+    "_FERRAMENTAS/montar_visual.py": "c6d5b1b7f89a0a73e7a3a952244d4768b9a2612c79e421c5cdd078b1d267dc30",
+    "_FERRAMENTAS/estilo_medina.py": "c52bb199634adf0ec1225ecd449bdc2b1bb11c730b1e418595f6496805021b2e",
+    "_FORJA_HARNESS/phase_contracts/F6.json": "0266d4e810a37873f2745f15d117c77b1de79304fb605852f5d5e5ddc6ef0264",
+    "_FORJA_HARNESS/phase_contracts/F7.json": "034854fe5cff095ed06757010ec98abc080195f844ef64a0940523a1cf839281",
+    "_FORJA_HARNESS/phase_contracts/F8.json": "65a81c23d1f7f3b03632e223d4ee2d381662e6e6630d9e346c7709a970be41ac",
+    "_FORJA_HARNESS/phase_contracts/F9.json": "166b1a32125538c7570fcabe9df47a400dd39d5302bbc07e92e2cab2af83ef42",
+    "_FORJA_HARNESS/phase_contracts_n4/F6.json": "94461b5544a4e6e5dab0e04a1af57e03e7adf375041f0d62295850167ecffd3b",
+    "_FORJA_HARNESS/phase_contracts_n4/F7.json": "91b787edda9c5dd9f0f98a7f3fe2c526605171d070fcd56e907e8b26a20fdd76",
+    "_FORJA_HARNESS/phase_contracts_n4/F8.json": "4a41e3bb9fd9119a9f3a4025378ec87bc54bb78b6352764076ee1a61370a2b60",
+    "_FORJA_HARNESS/phase_contracts_n4/F9.json": "ef13500a65f7d392aa0da28c12292ff09ed18a82808ef63eff12203c5f3d6fdb",
+    "_FORJA_HARNESS/n4_schemas/N4_LAYOUT_PROFILES.json": "8d0b4e19c6bdfcdb1e5273d26f32fc88450dddabebc2a4177399806e0fb05846",
+    "_FORJA_HARNESS/cache/fontes_oficiais/OFFICIAL_SOURCE_MANIFEST.json": "a8839a37815c49ac5feabdc0f4d6d26e398faeb1527c46bba4ff441dada07e99",
+    "_FORJA_HARNESS/FORJA_HUMAN_REVIEW_TRUST.example.json": "ef6448cd0426dc1c8603d649e41f214fb02ca51adb487bc8bb009775cfa667a3",
+    "_FORJA_HARNESS/FORJA_HUMAN_REVIEW_TRUST_PIN.json": "7040647a6cd51b3dc3ea50860fae08633bd906258702ddd4c7162f760f8a64bb",
+    "_FORJA_HARNESS/PROTOCOLO_ESCRITA_HUMANA_FORJA.md": "c05f4831931856cfc1bf36bb96a82c7ccf2faee8c87f286fc1a69ea39eb20fed",
+    "_FORJA_HARNESS/PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md": "ec1ab1745f64b065d02b21fbab5c27bfe958a6e4711cd29785ec99b9cd18825f",
+    "_FORJA_HARNESS/forja_ar_corpus.py": "54806996b444948fb7702f22571b50024f56c5c337bf4dfee4129811ef53dd6f",
+    "_FORJA_HARNESS/forja_ar_indicadores.py": "f491d1974096f75eac15ce9c548a4500f7cb8bcba3e11090e6cec751f716985d",
+    "_FORJA_HARNESS/forja_ar_canarios.py": "a28391f2daafe0fe760fa3216e9e190d6dc85974bb00faa63128c39e83f26b5d",
+    "_FORJA_HARNESS/forja_ar_runpair.py": "8bff960ac2ca9580d14c69eb13d40a4ab6b3fa553e42f6606866b4043886e385",
+    "_FORJA_HARNESS/forja_ar_blind.py": "60be1c790dccebb298d3b04fac133fa3cd53ccd51904b04113ea5a8e8c6121d4",
+    "_FORJA_HARNESS/forja_ar_ciclo.py": "b42ce916c933a2808ce5567ccb5c35d549bf2e897fa89078582aa224634fea63",
+    "_FORJA_HARNESS/forja_ar_evolucao.py": "7eb01cb62db875fdb392837e1e263fff47cf01dc3a635088e56a905bc53fddfc",
+    "_FORJA_HARNESS/test_forja_autoresearch.py": "db96a2a4e6694bf0b856ef3d0c9376b9325f06d898602a341a70e51944d8027d",
+    "_FORJA_HARNESS/autoresearch/AR_MANIFEST.json": "1d45b4ee48a2ed854a96d2b15ac961f8c3467772f637072cc1480656d3428cbc",
+    "_FORJA_HARNESS/autoresearch/canarios/CANARIOS_MANIFEST.json": "8149ce77f7c722d3bb83735c31391750abf3ebc3271773f7d455cad66f7212c1",
+    "_FORJA_HARNESS/autoresearch/prompts/JUIZ_CEGO_PROMPT.md": "9da3b460474b7f2b8078a2d69399b887a354e31c3f8828bd78616a541c2721b8",
+    "_FORJA_HARNESS/autoresearch/prompts/GERACAO_VARIANTE_PROMPT.md": "21576379c49ba75900377460c96d49ee0598f4406299046079654291a2ab07c2",
+    "_FORJA_HARNESS/autoresearch/prompts/REDACAO_PAR_PROMPT.md": "1c9e7aa1e4a9e6b2b1c725ed10b477dacfbd91c78e8efeca5aa5d2e638b2d37c"
+  },
+  "historico": [
+    {
+      "em": "2026-07-10T00:14:45-03:00",
+      "motivo": "baseline inicial da régua anti-fraude (10/07/2026): manifesto criado após review adversarial Codex e correções corte-identidade + F7 fail-closed",
+      "arquivosMudados": [
+        "_FERRAMENTAS\\estilo_medina.py",
+        "_FERRAMENTAS\\medina_svg_kit.py",
+        "_FERRAMENTAS\\medina_visual_kit.py",
+        "_FERRAMENTAS\\montar_visual.py",
+        "_FERRAMENTAS\\word_visual_pipeline.py",
+        "_FORJA_HARNESS\\forja_citations.py",
+        "_FORJA_HARNESS\\forja_delivery.py",
+        "_FORJA_HARNESS\\forja_injection_scan.py",
+        "_FORJA_HARNESS\\forja_metricas_f7.py",
+        "_FORJA_HARNESS\\forja_regua.py",
+        "_FORJA_HARNESS\\forja_render_docx.py",
+        "_FORJA_HARNESS\\forja_verificador.py",
+        "_FORJA_HARNESS\\forja_visual.py",
+        "_FORJA_HARNESS\\test_f7_campos.py",
+        "_FORJA_HARNESS\\test_forja_citacoes.py",
+        "_FORJA_HARNESS\\test_forja_injection.py",
+        "_FORJA_HARNESS\\test_forja_regua.py",
+        "_FORJA_HARNESS\\test_forja_verificador.py",
+        "_FORJA_HARNESS\\test_licao41.py",
+        "_FORJA_HARNESS\\test_real_telemetria_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-07-12T10:39:24-03:00",
+      "motivo": "FORJA FILA (R1.1 Helena): forja_fila.py e test_forja_fila.py entram como protegidos; forja_reconcile ganha encadeamento da fila sob flag; forja_delivery/forja_visual ja rebaselinados em 11/07 (conselho). Gates M0-M2 fechados em 12/07/2026.",
+      "arquivosMudados": [
+        "_FERRAMENTAS\\medina_svg_kit.py",
+        "_FERRAMENTAS\\medina_visual_kit.py",
+        "_FERRAMENTAS\\montar_visual.py",
+        "_FERRAMENTAS\\word_visual_pipeline.py",
+        "_FORJA_HARNESS\\forja_delivery.py",
+        "_FORJA_HARNESS\\forja_fila.py",
+        "_FORJA_HARNESS\\forja_regua.py",
+        "_FORJA_HARNESS\\forja_render_docx.py",
+        "_FORJA_HARNESS\\forja_verificador.py",
+        "_FORJA_HARNESS\\forja_visual.py",
+        "_FORJA_HARNESS\\test_f7_campos.py",
+        "_FORJA_HARNESS\\test_forja_citacoes.py",
+        "_FORJA_HARNESS\\test_forja_fila.py",
+        "_FORJA_HARNESS\\test_forja_verificador.py",
+        "_FORJA_HARNESS\\test_real_telemetria_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-07-12T14:08:40-03:00",
+      "motivo": "Feedback Igor 12/07: marco interno sai do calendario dele — acompanhamento do M4 passa a viver na fila (pendencia_operacao_assistida em forja_fila.py + caso N15 na regressao).",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\forja_delivery.py",
+        "_FORJA_HARNESS\\forja_fila.py",
+        "_FORJA_HARNESS\\forja_verificador.py",
+        "_FORJA_HARNESS\\test_forja_fila.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T15:03:39-03:00",
+      "motivo": "Gate bloqueante de escrita humana em F6 F7 render pacote e regressões",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\PROTOCOLO_ESCRITA_HUMANA_FORJA.md",
+        "_FORJA_HARNESS\\forja_estilo_humano.py",
+        "_FORJA_HARNESS\\forja_headless.py",
+        "_FORJA_HARNESS\\forja_package.py",
+        "_FORJA_HARNESS\\forja_regua.py",
+        "_FORJA_HARNESS\\forja_render_docx.py",
+        "_FORJA_HARNESS\\forja_run.py",
+        "_FORJA_HARNESS\\forja_verificador.py",
+        "_FORJA_HARNESS\\forja_visual.py",
+        "_FORJA_HARNESS\\phase_contracts\\F6.json",
+        "_FORJA_HARNESS\\phase_contracts\\F7.json",
+        "_FORJA_HARNESS\\phase_contracts_n4\\F6.json",
+        "_FORJA_HARNESS\\phase_contracts_n4\\F7.json",
+        "_FORJA_HARNESS\\test_forja_estilo_humano.py",
+        "_FORJA_HARNESS\\test_forja_n3_package.py",
+        "_FORJA_HARNESS\\test_forja_run.py",
+        "_FORJA_HARNESS\\test_forja_verificador.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T15:05:40-03:00",
+      "motivo": "Bateria real separa corpus legado bloqueado de pecas atuais aprovadas",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\test_real_telemetria_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T15:06:27-03:00",
+      "motivo": "Captura UTF-8 tolerante elimina falha de decodificacao da bateria real",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T15:08:00-03:00",
+      "motivo": "Manifesto passa a preservar LF em rebaselines futuros",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T15:22:54-03:00",
+      "motivo": "Gate FORJA-ESTILO-HUMANO-v2 estendido ao corpo dos e-mails F9, pacote e recibo do rascunho com hash do corpo; novos testes de bloqueio e não-trava",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\PROTOCOLO_ESCRITA_HUMANA_FORJA.md",
+        "_FORJA_HARNESS\\forja_close_cycle.py",
+        "_FORJA_HARNESS\\forja_estilo_humano.py",
+        "_FORJA_HARNESS\\forja_package.py",
+        "_FORJA_HARNESS\\forja_regua.py",
+        "_FORJA_HARNESS\\phase_contracts\\F9.json",
+        "_FORJA_HARNESS\\phase_contracts_n4\\F9.json",
+        "_FORJA_HARNESS\\test_forja_estilo_humano.py",
+        "_FORJA_HARNESS\\test_forja_n3_package.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T22:27:28-03:00",
+      "motivo": "F7-B Fable 5 documentado, contratos alinhados e novos gates protegidos",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\PROTOCOLO_ESCRITA_HUMANA_FORJA.md",
+        "_FORJA_HARNESS\\PROTOCOLO_FABLE5_ESCRITA_FINAL.md",
+        "_FORJA_HARNESS\\forja_editorial_fidelity.py",
+        "_FORJA_HARNESS\\forja_fable5.py",
+        "_FORJA_HARNESS\\forja_package.py",
+        "_FORJA_HARNESS\\forja_regua.py",
+        "_FORJA_HARNESS\\forja_run.py",
+        "_FORJA_HARNESS\\phase_contracts\\F7.json",
+        "_FORJA_HARNESS\\phase_contracts\\F8.json",
+        "_FORJA_HARNESS\\phase_contracts_n4\\F7.json",
+        "_FORJA_HARNESS\\phase_contracts_n4\\F8.json",
+        "_FORJA_HARNESS\\test_forja_fable5.py"
+      ]
+    },
+    {
+      "em": "2026-07-15T22:50:40-03:00",
+      "motivo": "Clarifica três candidatas Fable no total e no máximo dois retries",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\PROTOCOLO_FABLE5_ESCRITA_FINAL.md"
+      ]
+    },
+    {
+      "em": "2026-07-16T23:20:18-03:00",
+      "motivo": "corrigir auditoria Claude: utilitarios revisados, runner N3 e preservacao de gateHistory",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\forja_citations.py",
+        "_FORJA_HARNESS\\forja_delivery.py",
+        "_FORJA_HARNESS\\forja_headless.py"
+      ]
+    },
+    {
+      "em": "2026-07-21T21:35:09-03:00",
+      "motivo": "Bloqueio anti-autocertificacao visual textual e de fontes oficiais",
+      "arquivosMudados": [
+        "_FERRAMENTAS\\medina_visual_kit.py",
+        "_FERRAMENTAS\\montar_visual.py",
+        "_FORJA_HARNESS\\FORJA_HUMAN_REVIEW_TRUST.example.json",
+        "_FORJA_HARNESS\\FORJA_HUMAN_REVIEW_TRUST_PIN.json",
+        "_FORJA_HARNESS\\cache\\fontes_oficiais\\OFFICIAL_SOURCE_MANIFEST.json",
+        "_FORJA_HARNESS\\forja_citations.py",
+        "_FORJA_HARNESS\\forja_docx_layout.py",
+        "_FORJA_HARNESS\\forja_fidelity.py",
+        "_FORJA_HARNESS\\forja_human_review.py",
+        "_FORJA_HARNESS\\forja_metricas_f7.py",
+        "_FORJA_HARNESS\\forja_n4_validate.py",
+        "_FORJA_HARNESS\\forja_official_sources.py",
+        "_FORJA_HARNESS\\forja_package.py",
+        "_FORJA_HARNESS\\forja_regua.py",
+        "_FORJA_HARNESS\\forja_render_docx.py",
+        "_FORJA_HARNESS\\forja_visual.py",
+        "_FORJA_HARNESS\\forja_visual_qa.py",
+        "_FORJA_HARNESS\\forja_visual_review.py",
+        "_FORJA_HARNESS\\n4_schemas\\N4_LAYOUT_PROFILES.json",
+        "_FORJA_HARNESS\\phase_contracts\\F7.json",
+        "_FORJA_HARNESS\\phase_contracts\\F8.json",
+        "_FORJA_HARNESS\\phase_contracts_n4\\F8.json",
+        "_FORJA_HARNESS\\test_forja_anti_cheat.py",
+        "_FORJA_HARNESS\\test_forja_citacoes.py",
+        "_FORJA_HARNESS\\test_forja_n3_package.py",
+        "_FORJA_HARNESS\\test_forja_n3_visual.py"
+      ]
+    },
+    {
+      "em": "2026-07-21T21:38:05-03:00",
+      "motivo": "Migracao de testes legados para fontes manifestadas e replay vivo em producao",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\forja_metricas_f7.py",
+        "_FORJA_HARNESS\\test_f7_campos.py",
+        "_FORJA_HARNESS\\test_forja_regua.py",
+        "_FORJA_HARNESS\\test_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-07-21T21:40:04-03:00",
+      "motivo": "Normalizacao hash-bound do folio antes da promocao do DOCX",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\forja_render_docx.py"
+      ]
+    },
+    {
+      "em": "2026-07-21T21:41:04-03:00",
+      "motivo": "Bateria real deterministica separada do replay HTTPS fail-closed de producao",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\test_real_telemetria_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-07-21T21:45:31-03:00",
+      "motivo": "Teste visual portavel sem copiar corpus juridico para o espelho Hermes",
+      "arquivosMudados": [
+        "_FORJA_HARNESS\\test_forja_n3_visual.py"
+      ]
+    },
+    {
+      "em": "2026-07-21T21:47:39-03:00",
+      "motivo": "Manifesto canônico portável entre Windows e Linux com detecção de colisão",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-07-23T02:20:58-03:00",
+      "motivo": "Instalacao do subsistema FORJA AUTO-RESEARCH (ciclo AR): 6 modulos forja_ar_*, suite test_forja_autoresearch (23 testes, 12 sabotagens), manifests e prompts sob protecao; suite adicionada a regua. PRD/TDD planejamento 22-23 v1.1 pos-review Codex.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/autoresearch/AR_MANIFEST.json",
+        "_FORJA_HARNESS/autoresearch/canarios/CANARIOS_MANIFEST.json",
+        "_FORJA_HARNESS/autoresearch/prompts/GERACAO_VARIANTE_PROMPT.md",
+        "_FORJA_HARNESS/autoresearch/prompts/JUIZ_CEGO_PROMPT.md",
+        "_FORJA_HARNESS/autoresearch/prompts/REDACAO_PAR_PROMPT.md",
+        "_FORJA_HARNESS/forja_ar_blind.py",
+        "_FORJA_HARNESS/forja_ar_canarios.py",
+        "_FORJA_HARNESS/forja_ar_ciclo.py",
+        "_FORJA_HARNESS/forja_ar_corpus.py",
+        "_FORJA_HARNESS/forja_ar_indicadores.py",
+        "_FORJA_HARNESS/forja_ar_runpair.py",
+        "_FORJA_HARNESS/forja_n4_validate.py",
+        "_FORJA_HARNESS/forja_package.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_autoresearch.py"
+      ]
+    },
+    {
+      "em": "2026-07-23T04:11:15-03:00",
+      "motivo": "Ciclo AR-1 real executado: camada evolutiva Karpathy (forja_ar_evolucao.py + 3 testes, suite 26), pre-registro de familias de juiz no AR_MANIFEST (2 familias no ambiente), canarios reais congelados. Relatorio em autoresearch/ciclos/ciclo-1.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/autoresearch/AR_MANIFEST.json",
+        "_FORJA_HARNESS/forja_ar_evolucao.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_autoresearch.py"
+      ]
+    },
+    {
+      "em": "2026-07-23T20:55:54-03:00",
+      "motivo": "duas origens auditadas: (1) v1.1 do ciclo AR - sealed exige avaliacao real antes do debito e promotion exige winner==variante com teto estudo_descritivo sem sealed, 3 testes novos (29 verdes); (2) sessao paralela de hoje - validacao F7 de source ledger contra texto final em forja_run/forja_delivery/forja_package e contratos F7/F8/F9, referenciada no INDICE reformulado (docs/)",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_ar_ciclo.py",
+        "_FORJA_HARNESS/forja_citations.py",
+        "_FORJA_HARNESS/forja_close_cycle.py",
+        "_FORJA_HARNESS/forja_delivery.py",
+        "_FORJA_HARNESS/forja_editorial_fidelity.py",
+        "_FORJA_HARNESS/forja_human_review.py",
+        "_FORJA_HARNESS/forja_metricas_f7.py",
+        "_FORJA_HARNESS/forja_official_sources.py",
+        "_FORJA_HARNESS/forja_package.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/phase_contracts/F7.json",
+        "_FORJA_HARNESS/phase_contracts/F9.json",
+        "_FORJA_HARNESS/phase_contracts_n4/F7.json",
+        "_FORJA_HARNESS/phase_contracts_n4/F8.json",
+        "_FORJA_HARNESS/phase_contracts_n4/F9.json",
+        "_FORJA_HARNESS/test_f7_campos.py",
+        "_FORJA_HARNESS/test_forja_anti_cheat.py",
+        "_FORJA_HARNESS/test_forja_autoresearch.py",
+        "_FORJA_HARNESS/test_forja_n3_package.py"
+      ]
+    },
+    {
+      "em": "2026-07-23T23:18:27-03:00",
+      "motivo": "fechamento 100% das pendencias dos ciclos AR-1/AR-2: leak_scan bloqueante no prepare da bancada (L6), sanitize_instructions + custoPareado/I11 no runpair (L10), canarios rebaseados em peca fora do corpus (Cafelana V4, desentrelacamento), retry_transient_io em forja_metadata/render/injection contra locks transitorios da producao paralela, template canonico de juiz (L7); suite AR 32/32",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/autoresearch/AR_MANIFEST.json",
+        "_FORJA_HARNESS/autoresearch/canarios/CANARIOS_MANIFEST.json",
+        "_FORJA_HARNESS/forja_ar_blind.py",
+        "_FORJA_HARNESS/forja_ar_runpair.py",
+        "_FORJA_HARNESS/forja_render_docx.py",
+        "_FORJA_HARNESS/test_forja_autoresearch.py",
+        "_FORJA_HARNESS/test_forja_injection.py"
+      ]
+    },
+    {
+      "em": "2026-07-26T16:00:16-03:00",
+      "motivo": "Rebaseline pos-ondas W0-W3, M9 e blindagem de lastro (26/07/2026). Mudancas conferidas uma a uma, todas com origem documentada: (a) forja_verificador, forja_estilo_humano e seus testes = gates E9/E10 de citacao regimental e gate de escrita humana; (b) forja_package e forja_n4_validate = W2B/W3, mapa de destinatarios, trilha de pesquisa e cartoes de ancora de precedente; (c) forja_run, forja_editorial_fidelity e phase_contracts F7 = E14/M1-M7, parametrizacao do modelo editorial de Fable 5 para Opus 5; (d) forja_regua = passa a vigiar forja_editorial.py e o shim; (e) forja_fable5.py deixou de ser modulo e virou shim de compatibilidade, com a implementacao em forja_editorial.py (M9); (f) forja_editorial.py, test_forja_editorial.py e PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md entram no manifesto; (g) forja_lastro.py e test_forja_lastro.py, blindagem FORJA-LASTRO-v1 contra lastro aparente, ancorada nas alucinacoes reais do caso Vale Trading. Baseline 40/40 verde antes do rebaseline. Diffs grandes em n4_validate, package e regua sao churn de CRLF: com --ignore-cr-at-eol o conteudo real e +76, +279 e +23 linhas.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md",
+        "_FORJA_HARNESS/PROTOCOLO_ESCRITA_HUMANA_FORJA.md",
+        "_FORJA_HARNESS/PROTOCOLO_FABLE5_ESCRITA_FINAL.md",
+        "_FORJA_HARNESS/autoresearch/prompts/GERACAO_VARIANTE_PROMPT.md",
+        "_FORJA_HARNESS/autoresearch/prompts/JUIZ_CEGO_PROMPT.md",
+        "_FORJA_HARNESS/forja_editorial.py",
+        "_FORJA_HARNESS/forja_editorial_fidelity.py",
+        "_FORJA_HARNESS/forja_estilo_humano.py",
+        "_FORJA_HARNESS/forja_fable5.py",
+        "_FORJA_HARNESS/forja_n4_validate.py",
+        "_FORJA_HARNESS/forja_package.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/forja_verificador.py",
+        "_FORJA_HARNESS/phase_contracts/F7.json",
+        "_FORJA_HARNESS/phase_contracts_n4/F7.json",
+        "_FORJA_HARNESS/test_forja_editorial.py",
+        "_FORJA_HARNESS/test_forja_estilo_humano.py",
+        "_FORJA_HARNESS/test_forja_fable5.py",
+        "_FORJA_HARNESS/test_forja_verificador.py"
+      ]
+    },
+    {
+      "em": "2026-07-26T16:07:36-03:00",
+      "motivo": "Fecho do M9 e do gate G11 (26/07/2026). Alem do rename forja_fable5 -> forja_editorial com shim, arquivou-se em cache/fontes_oficiais o verbatim dos nove artigos do RISTJ efetivamente citados no acervo (13, 15, 71, 81, 103, 106, 160, 184-A, 259), extraidos do texto oficial consolidado ate a ER 47/2024 ja arquivado pelo escritorio, com nota de recomposicao de ligadura fi e alerta sobre as ER 48 a 53 de junho/2026. Isso destrava a bateria REAL da regua, que estava reprovando desde o gate E9/E10 porque pecas de producao ja entregues citavam o RISTJ sem lastro arquivado. Regua APROVADA em 38.4s antes deste rebaseline.",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-07-26T16:12:37-03:00",
+      "motivo": "L-wire (26/07/2026): contrato F7 passa a exigir o gate fact_grounding_verbatim, com nota registrando a ancora — o fato F012 do caso Vale Trading estava marcado confirmed_document, com localizador plausivel, e afirmava o oposto do documento citado. Verificacao por forja_lastro.fatos_sem_lastro(). Acoplamento completo: contrato F7 exige o gate, forja_delivery ganhou o elo 9-B bloqueante sobre o fact_ledger, forja_verificador roda os gates lexicais L3-L6 em todo render, e test_forja_lastro trava os quatro pontos de acoplamento para que a regra nao vire decoracao. Baseline 40/40 e regua APROVADA antes deste rebaseline.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_delivery.py",
+        "_FORJA_HARNESS/phase_contracts/F7.json"
+      ]
+    },
+    {
+      "em": "2026-07-26T16:19:09-03:00",
+      "motivo": "E11 auditavel (26/07/2026): forja_regimentos.py + test_forja_regimentos.py entram no manifesto. Converte a varredura manual de emendas regimentais em checagem recorrente, com parser tolerante aos cabecalhos que ja existem no acervo (prosa, tabela, tres formatos de data). Regra conservadora: na duvida reporta desconhecido, nunca aprovado; ausencia de data nao e data recente. Verificacao vencida e ressalva, nao bloqueio, porque o arquivo nao esta errado e sim por conferir. Estado apurado: 16 regimentos, 5 com bloqueio por falta de metadado, 3 com ressalva, 8 em ordem. Baseline 41/41 verde.",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-07-26T16:46:13-03:00",
+      "motivo": "E11 concluido (26/07/2026): auditoria de regimentos de 16 arquivos fechada em 16 em ordem, 0 bloqueio, 0 ressalva. Parser de forja_regimentos corrigido em tres pontos apurados contra o acervo real — le frontmatter YAML (data_download, download_em, versao_oficial), extrai a data DEPOIS do rotulo em vez da primeira data da linha (a linha de versao do TJRJ tinha duas datas e devolvia 2024 para arquivo conferido em 2026), e ordena rotulos por especificidade. Conferencia em fonte oficial nesta data: TRF4 no AR 37/2026 sem posterior; TRF2 na ER 56 de 07/05/2026 sem posterior; TRE-PR na Res 792/2017 compilada ate a Res 957/2025; TJSP com AR 594 e 595/2026 POSTERIORES a compilacao de 30/04/2026, registrado como ressalva de uso; TRF1 sem emenda posterior a ER 5/2022 localizada. Dois arquivos do TRF4 (Jalusa e Memoriais Cautelar Fiscal) estao no AR 35 e receberam aviso expresso de desatualizacao em vez de reescrita do corpo. Pendencias que dependem de diario eletronico ficaram declaradas nos proprios arquivos, nao supridas.",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-07-27T15:06:28-03:00",
+      "motivo": "PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md: corrigida referencia ao arquivo de regressao test_forja_fable5.py, que nao existe mais apos a renomeacao para test_forja_editorial.py; correcao documental de caminho quebrado, sem alteracao de regra, gate ou invariante do protocolo editorial",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md"
+      ]
+    },
+    {
+      "em": "2026-07-27T15:30:42-03:00",
+      "motivo": "forja_editorial.py: (1) --model passa a receber o id canonico via model.cli_model, porque o apelido 'opus' resolve para claude-opus-4-8 nesta instalacao e F7-B falharia por divergencia em toda tentativa; (2) captura migrada de --output-format json para stream-json com recomposicao de todos os turnos, porque o modo json devolve so o ultimo turno e mutilava peca longa. Medido na bancada Cafelana V7 de 27-07-2026; regressao em test_forja_identidade_modelo.py com 12 casos",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_editorial.py",
+        "_FORJA_HARNESS/forja_headless.py"
+      ]
+    },
+    {
+      "em": "2026-08-03T23:54:20-03:00",
+      "motivo": "FORJA-LASTRO-v2 e rota visual SVG OOXML sem renderização; revisão técnica 04-08-2026",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_svg_kit.py",
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FERRAMENTAS/word_visual_pipeline.py",
+        "_FORJA_HARNESS/forja_delivery.py",
+        "_FORJA_HARNESS/forja_fidelity.py",
+        "_FORJA_HARNESS/forja_n4_validate.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_render_docx.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/forja_svg_docx.py",
+        "_FORJA_HARNESS/forja_verificador.py",
+        "_FORJA_HARNESS/forja_visual.py",
+        "_FORJA_HARNESS/forja_visual_build.py",
+        "_FORJA_HARNESS/forja_visual_qa_structural.py",
+        "_FORJA_HARNESS/phase_contracts/F7.json",
+        "_FORJA_HARNESS/phase_contracts_n4/F7.json",
+        "_FORJA_HARNESS/test_forja_n3_visual.py",
+        "_FORJA_HARNESS/test_forja_run.py",
+        "_FORJA_HARNESS/test_forja_svg_docx.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T00:08:52-03:00",
+      "motivo": "FORJA-LASTRO-v2; rota SVG OOXML sem renderização; hashing incremental de fontes grandes; revisão cruzada 04-08-2026",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T00:09:33-03:00",
+      "motivo": "Revisão cruzada 04-08-2026: proteger FORJA-LASTRO-v2 e sua regressão na régua rápida; hashing incremental; rota SVG OOXML sem renderização",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T00:20:32-03:00",
+      "motivo": "MC-16: proteger os calibradores forja_calibra_monetario e forja_calibra_gates_economicos, que produzem os numeros de evidencia enviados ao cliente e estavam fora do manifesto",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_calibra_gates_economicos.py",
+        "_FORJA_HARNESS/forja_calibra_monetario.py",
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T00:40:42-03:00",
+      "motivo": "Integração da memória obrigatória de auditabilidade e migração do contrato F8/F9 canônico para QA estática OOXML/SVG sem renderização; compatibilidade histórica PDF mantida isolada",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_delivery.py",
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/forja_f8_contract.py",
+        "_FORJA_HARNESS/forja_memoria_auditabilidade.py",
+        "_FORJA_HARNESS/forja_package.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/phase_contracts/F8.json",
+        "_FORJA_HARNESS/phase_contracts/F9.json",
+        "_FORJA_HARNESS/test_forja_f8_static.py",
+        "_FORJA_HARNESS/test_forja_memoria_auditabilidade.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T00:51:00-03:00",
+      "motivo": "Aperfeiçoamento da memória: vínculo dos derivados ao SHA-256 do manifesto; política de pacote inclui F8 estático e memória no release hash",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_memoria_auditabilidade.py",
+        "_FORJA_HARNESS/forja_package.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T00:58:36-03:00",
+      "motivo": "Reforço final: rota estática F8/F9 rejeita PDF/rerender no pacote canônico",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_package.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:08:38-03:00",
+      "motivo": "Isolamento final do renderizador: fachada tardia apenas para compatibilidade legada; rota F8 estática não o carrega",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_f8_contract.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:10:00-03:00",
+      "motivo": "forja_email.py: capacidade de envio real da FORJA via OAuth Gmail existente, protegida por ser a mudanca de maior consequencia externa do harness",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_email.py",
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:25:31-03:00",
+      "motivo": "Fail-closed final: ledger F7 inválido agora gera L0 P0 estruturado, nunca not_applicable silencioso; regressão adicionada",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:27:00-03:00",
+      "motivo": "revisao cruzada Codex 04/08: recomputo de lastro do F7 nunca rodou (7 F7, 0 COMPUTED_LASTRO_GATES) por procurar artefato fact_ledger que ninguem emite - agora descobre o ledger promovido pela F3; ledger vazio/chave trocada/status ausente viram achado em vez de silencio; confinamento de quoteSource a pasta do caso; L13 recompoe subtracao em vez de cair na multiplicacao; elo 9-B deixa de isentar status desconhecido; 9 canarios novos",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:33:39-03:00",
+      "motivo": "Normalização final do identificador L0-recomputo-sem-insumo após revisão de concorrência; incorpora FORJA-LASTRO-v2 e sua suíte já revisadas",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:37:13-03:00",
+      "motivo": "revisao Codex + pareceres Helena/Efesto 04/08: economic_gates passa a distinguir severidade (fail so com P0; warn com P1) e o runner bloqueia em fail; invariante de texto na insercao de SVG (unica mutacao do DOCX apos o ultimo gate); detector de escritor de DOCX novo sob state/, que achou build_internal_report.py do Vale Trading; nome do gate L0 unificado",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_svg_docx.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:52:43-03:00",
+      "motivo": "Revisão Diabob: ledger canônico inválido não pode cair para snapshot histórico; guardas e documentação de FORJA-LASTRO-v2 alinhadas",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/forja_verificador.py",
+        "_FORJA_HARNESS/test_forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_verificador.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T01:53:04-03:00",
+      "motivo": "achados Codex 7 e 9 fechados em 04/08: base_dir do lastro passa a resolver a pasta real do cliente pelo FORJA_CASE_MANIFEST (o L2 acusava fonte inexistente contra quem transcreveu certo); L2 separa arquivo sumido de fonte nomeada e nao enderecada; isencao do L11 por marcador tipografico vira achado P2 auditavel em vez de silencio gameavel",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T02:04:19-03:00",
+      "motivo": "Revisão Diabob final: caminho explicitamente fornecido inválido não pode cair para ledger do caso; contraprova T11 e documentação de precedência",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T02:33:01-03:00",
+      "motivo": "Revisão Diabob final: impedir exigir=False como bypass de L9-L13 em texto econômico; contraprova T2 e MC-19",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T02:51:22-03:00",
+      "motivo": "Correção MC-20: memória de auditabilidade normaliza aliases históricos de fases e preserva a trilha; teste regressivo atualizado",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_memoria_auditabilidade.py",
+        "_FORJA_HARNESS/test_forja_memoria_auditabilidade.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T03:03:38-03:00",
+      "motivo": "Contraprovas D3 anti-overblocking: rotas PecaVisual e forja_visual_build permanecem verdes para produto não econômico; suíte de lastro agora registra 88 verificações",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T03:13:19-03:00",
+      "motivo": "Correção de auditabilidade da saída da regressão: decomposição impressa agora inclui explicitamente os 28 cenários do Plano 41; total 88",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T03:34:03-03:00",
+      "motivo": "Diabob: bloquear ledger_path explicitamente ausente",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:09:00-03:00",
+      "motivo": "forja_gate_liveness.py: primeira medicao de quem decide cada gate da esteira (15 computados por codigo, 42 atestados pelo proprio agente, 16 inexequiveis por falta de produtor, 14 deles no F8). Catraca em test_forja_gate_liveness.py impede que a superficie de autovalidacao cresca em silencio; modulo e teste entram na regua rapida e no manifesto",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_gate_liveness.py",
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:15:26-03:00",
+      "motivo": "Fail-closed L11: tipografia sem origem permanece na âncora; exigir=False direto gera L0 P0; canários e protocolo atualizados",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:16:58-03:00",
+      "motivo": "test_forja_lastro_rota_producao.py: prova no disco que o recomputo de lastro roda pela rota de producao (_validate_result), grava COMPUTED_LASTRO_GATES.json, derruba gate autoatestado sem transcricao e nao trava fato transcrito. Fecha o item da definicao de pronto do Plano 41 que estava provado so no nivel da funcao - o ponto cego que deixou o recomputo inerte por dois dias. Verificado por mutacao",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:17:34-03:00",
+      "motivo": "L11 anti-lavagem: origem posterior não converte cálculo tipografado em citação; regressão ampliada",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:22:18-03:00",
+      "motivo": "Contrato F7 alinhado ao L11 fail-closed: citação exige origem declarada; tipografia isolada permanece auditada",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/phase_contracts/F7.json"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:33:57-03:00",
+      "motivo": "Plano 41: classifica scripts standalone no baseline e protege a fronteira de regressões",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py",
+        "_FORJA_HARNESS/test_forja_lastro_rota_producao.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T10:44:14-03:00",
+      "motivo": "Ajuste documental do Plano 41: baseline protegido e fail-closed descritos sem contagem histórica",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:25:06-03:00",
+      "motivo": "F8 reconciliado com produtor real: _validate_static_f8 passa a emitir os 14 gates que o contrato exigia e que nenhum modulo sabia produzir - sao os mesmos limiares que ele ja computava, agora nomeados. test_forja_f8_gates_contrato.py reprova nas duas direcoes (gate exigido sem produtor e gate produzido fora do contrato), exige reprovacao pelo motivo certo e proibe trava em documento integro. forja_gate_liveness deixa de contar arquivo de teste como produtor, o que inflava a propria metrica. Liveness honesta: 29 computados, 42 autodeclarados, 2 inexequiveis",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_f8_contract.py",
+        "_FORJA_HARNESS/forja_gate_liveness.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:33:39-03:00",
+      "motivo": "conselho obrigatorio da F4 deixa de ser autoatestado: forja_conselho.py computa helena_present, cicero_present e council_decisions_recorded, e o runner passa a recompor esses gates em vez de aceitar o pass do agente (9 execucoes, 9 pass, zero reprovacoes ate hoje). test_forja_conselho.py reprova as seis formas de burlar o conselho e nao trava nenhum dos 4 pareceres reais aprovados. Liveness: 33 computados, 40 autodeclarados, 0 inexequiveis",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_close_cycle.py",
+        "_FORJA_HARNESS/forja_conselho.py",
+        "_FORJA_HARNESS/forja_f10_contract.py",
+        "_FORJA_HARNESS/forja_gate_liveness.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/forja_state_machine.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py",
+        "_FORJA_HARNESS/test_forja_n3_package.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:33:41-03:00",
+      "motivo": "F10: recomputo canônico dos três gates no fechamento e preservação no estado",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T12:34:50-03:00",
+      "motivo": "F10: régua com saída UTF-8 e proteção do contrato de fechamento",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:37:02-03:00",
+      "motivo": "Plano 41: inventário da memória distingue ledger canônico de snapshot histórico",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_memoria_auditabilidade.py",
+        "_FORJA_HARNESS/test_forja_memoria_auditabilidade.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:41:03-03:00",
+      "motivo": "F1: isolar sidecars de entradas externas; F7: saída ASCII para console Windows",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_injection_scan.py",
+        "_FORJA_HARNESS/test_f7_campos.py",
+        "_FORJA_HARNESS/test_forja_injection.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:42:59-03:00",
+      "motivo": "Plano 41: classifica as catracas standalone do conselho e do contrato F8 no baseline",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:43:49-03:00",
+      "motivo": "F1: sidecar também registra a prova de persistência efetiva",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_injection_scan.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:45:58-03:00",
+      "motivo": "F1: o canário valida também o sidecar persistido",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_injection.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T12:49:48-03:00",
+      "motivo": "Plano 41: fixa UTF-8 na prova de isolamento do scanner de PDFs externos",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_injection.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:14:16-03:00",
+      "motivo": "citations_policy_satisfied deixa de ser autoatestado: forja_citations.validar_politica_citacoes computa cobertura e liberacao de cada autoridade citada contra o verified_source_ledger, lendo os DOIS esquemas reais do acervo pelo mesmo extrator; runner recompoe em _recompute_politica_citacoes. Veredito warn para ledger nao conferivel - silencio nao pode significar auditado. No acervo real produz fail 3, warn 1, pass 1. Liveness 35 computados, 38 autodeclarados",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_citations.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:21:33-03:00",
+      "motivo": "Classifica a nova regressao de politica de citacoes no baseline fail-closed",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:27:46-03:00",
+      "motivo": "citation_identity_and_cnj_tribunal_resolved computado: LI1 confere o segmento CNJ contra o tribunal nomeado na vizinhanca (ancora no P0 do Vale Trading, identidade de liquidacao) e LI2 marca corte ambigua em P1. Nao duplica o par sumula x tribunal, que ja e G4 do verificador. Norma nao tem tribunal - artigo do CPC ficou fora depois de a primeira versao cobrar corte de tres artigos numa peca correta. forja_gate_liveness deixa de contar comentario como produtor",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_citations.py",
+        "_FORJA_HARNESS/forja_gate_liveness.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:30:34-03:00",
+      "motivo": "Protege a regressao de politica de citacoes no manifesto hash-bound",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_politica_citacoes.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:32:01-03:00",
+      "motivo": "Protege a regressao de identidade CNJ e tribunal",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_identidade_citacoes.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:38:53-03:00",
+      "motivo": "Protege a regressao de triagem de injecao e esquemas reais",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_injection_scan.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_injection_gate.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T13:39:11-03:00",
+      "motivo": "injection_triaged computado: forja_injection_scan.validar_triagem_injecao verifica se houve varredura declarada e se achado P0 tem triagem humana registrada, tolerante aos SETE esquemas distintos do artefato no acervo. Resumo com contagens zeradas e varredura limpa, nao deteccao - primeira versao reprovava a Cafelana por tratar dicionario nao vazio como P0. Runner recompoe em _recompute_injecao. Duplicata de forja_citations.py removida do manifesto. Liveness 36 computados, 37 autodeclarados",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_gate_liveness.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T14:15:05-03:00",
+      "motivo": "levas 5-7 da reducao de autovalidacao: paragraphs_sourced, official_sources_archived, quotes_compared, red_team_completed, adversarial_claims_rechecked, svg_lint_pass e markdown_lint_pass passam a ser computados",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_f8_contract.py",
+        "_FORJA_HARNESS/forja_fontes_oficiais.py",
+        "_FORJA_HARNESS/forja_gate_liveness.py",
+        "_FORJA_HARNESS/forja_paragrafos.py",
+        "_FORJA_HARNESS/forja_red_team.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_fontes_oficiais.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py",
+        "_FORJA_HARNESS/test_forja_gates_emitidos.py",
+        "_FORJA_HARNESS/test_forja_paragrafos.py",
+        "_FORJA_HARNESS/test_forja_red_team.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T14:17:16-03:00",
+      "motivo": "fixture da rota de producao passa a trazer red team e recheck, cobrados pelo recomputo novo",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_lastro_rota_producao.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T14:25:37-03:00",
+      "motivo": "Integra a onda de gates computados: proveniencia por paragrafo, fontes oficiais, red team, emissao F8/F10 e correcao da rota de lastro; baseline v21 verde",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T14:25:42-03:00",
+      "motivo": "baseline registra as 4 regressoes novas (paragrafos, fontes oficiais, red team, gates emitidos); taxonomia sem colisao de codigo MC",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T14:42:21-03:00",
+      "motivo": "levas 8-11: contexto F7, redacao F6, ingestao F1 e exploracao F2 passam a ser computados; detector de origem operacional ampliado na fonte unica",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_contexto.py",
+        "_FORJA_HARNESS/forja_editorial_fidelity.py",
+        "_FORJA_HARNESS/forja_ingestao.py",
+        "_FORJA_HARNESS/forja_redacao.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_contexto.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py",
+        "_FORJA_HARNESS/test_forja_ingestao.py",
+        "_FORJA_HARNESS/test_forja_redacao.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T14:44:54-03:00",
+      "motivo": "fixture da rota traz validacao de contexto, cobrada pelo recomputo da leva 8",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_lastro_rota_producao.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T14:48:56-03:00",
+      "motivo": "leva 9 e divida de esquema: forja_redacao, forja_artefatos com censo e catraca de vocabulario",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_artefatos.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_artefatos.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T15:03:34-03:00",
+      "motivo": "levas 12-16: p0, regimento, definicao de produto e entrega passam a ser computados",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_entrega.py",
+        "_FORJA_HARNESS/forja_p0.py",
+        "_FORJA_HARNESS/forja_produto.py",
+        "_FORJA_HARNESS/forja_regimento_gate.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_entrega.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py",
+        "_FORJA_HARNESS/test_forja_lastro_rota_producao.py",
+        "_FORJA_HARNESS/test_forja_p0.py",
+        "_FORJA_HARNESS/test_forja_produto.py",
+        "_FORJA_HARNESS/test_forja_regimento_gate.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T15:06:46-03:00",
+      "motivo": "fixture do runner monta case_manifest que mapeia para o disco, cobrado pela leva 16",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T15:15:16-03:00",
+      "motivo": "Integra gates computados adicionais do Opus (F0-F7/F9), ingestao, contexto, redacao, artefatos, P0, regimento, produto e entrega; corrige compatibilidade do relatorio Markdown no F0; baseline v22 verde",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T16:39:45-03:00",
+      "motivo": "levas 14 e 17, censo de disparo dos recomputos e migracao dos modulos para o leitor canonico",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_adversarial_gate.py",
+        "_FORJA_HARNESS/forja_contexto.py",
+        "_FORJA_HARNESS/forja_fontes_oficiais.py",
+        "_FORJA_HARNESS/forja_ingestao.py",
+        "_FORJA_HARNESS/forja_paragrafos.py",
+        "_FORJA_HARNESS/forja_recomputo_censo.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_replay.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_adversarial_gate.py",
+        "_FORJA_HARNESS/test_forja_gate_liveness.py",
+        "_FORJA_HARNESS/test_forja_lastro_rota_producao.py",
+        "_FORJA_HARNESS/test_forja_recomputo_censo.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T17:15:22-03:00",
+      "motivo": "leva 18: canario de mutacao, censo de formas e correcao de nove reprovacoes que eram do gate",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_entrega.py",
+        "_FORJA_HARNESS/forja_fontes_oficiais.py",
+        "_FORJA_HARNESS/forja_p0.py",
+        "_FORJA_HARNESS/forja_produto.py",
+        "_FORJA_HARNESS/forja_recomputo_censo.py",
+        "_FORJA_HARNESS/forja_regimento_gate.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_entrega.py",
+        "_FORJA_HARNESS/test_forja_fontes_oficiais.py",
+        "_FORJA_HARNESS/test_forja_p0.py",
+        "_FORJA_HARNESS/test_forja_produto.py",
+        "_FORJA_HARNESS/test_forja_regimento_gate.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T17:18:39-03:00",
+      "motivo": "leva 18 fechada: quarta mutacao emudecer no canario",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T17:20:11-03:00",
+      "motivo": "licao 153 registrada",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T17:25:46-03:00",
+      "motivo": "correcao: rota F3 recomputa artefatos Markdown na producao, com contraprova de runner",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T17:39:40-03:00",
+      "motivo": "corrige baseline: classifica quatro regressões standalone e consolida a correção da rota F3 Markdown",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T17:46:46-03:00",
+      "motivo": "leva 19: rota de producao lendo forma real, censo do lastro F7, laudo da lacuna de 35 gates",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_recomputo_censo.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_run.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T17:55:05-03:00",
+      "motivo": "corrige fixture F0 e registra rota de produção por forma no baseline",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T18:46:52-03:00",
+      "motivo": "leva 20: primeira execucao real dos gates F8, papeis do padrao da casa e calibracao do folio pelo template",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_conselho.py",
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/forja_regimento_gate.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_regimento_gate.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T18:51:30-03:00",
+      "motivo": "leva 20 fechada: alvo de normalizacao do folio separado do teto de tolerancia",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/forja_recomputo_censo.py",
+        "_FORJA_HARNESS/forja_run.py",
+        "_FORJA_HARNESS/test_forja_anti_cheat.py",
+        "_FORJA_HARNESS/test_forja_recomputo_censo.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T18:58:27-03:00",
+      "motivo": "Consolida correções revisadas do layout aprovado e da catraca do censo: calibra fólio e exceções estruturais sem liberar texto, e eleva o piso do censo para os 41 nomes medidos sem reescrever histórico.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/test_forja_recomputo_censo.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T18:59:47-03:00",
+      "motivo": "corrige auditoria estrutural: excecao de tamanho sem bypass de fonte e justificacao; rotulo EMENTA como cabecalho",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_docx_layout.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T19:05:45-03:00",
+      "motivo": "Atualiza a âncora F8 de peças reais: separa duas referências aprovadas de V8 e V9 com achados triados, preservando a detecção dos defeitos XML e sem contá-los como aprovação.",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T19:06:31-03:00",
+      "motivo": "Protege a âncora F8 contra peças reais no manifesto hash-bound, incluindo a calibração do template e a permanência dos achados XML triados.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_f8_pecas_reais.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T19:10:54-03:00",
+      "motivo": "leva 21: varredura tipografica do acervo e licoes 160-162",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T19:16:13-03:00",
+      "motivo": "leva 21 corrigida: medicao de justificacao refeita pelo leitor de heranca de estilo",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T19:17:44-03:00",
+      "motivo": "renumeracao de licao duplicada apos sessao paralela",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T19:34:45-03:00",
+      "motivo": "leva 22: varredura tipografica como instrumento permanente, reconhecimento de versao superada",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T19:57:35-03:00",
+      "motivo": "corrige falso pareamento de versoes: familia nominal, caso, deduplicacao completa e catraca contra erros e fonte",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-04T20:09:34-03:00",
+      "motivo": "protege instrumento tipografico e sua catraca; classifica F8 real e layout no baseline",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_varredura_tipografica.py",
+        "_FORJA_HARNESS/test_forja_varredura_tipografica.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T20:53:46-03:00",
+      "motivo": "leva 23: colisao de folio contra a margem da secao, rota canonica com peca real, F9 com veredito, canario de catraca",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/forja_entrega.py",
+        "_FORJA_HARNESS/forja_recomputo_censo.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_visual_build.py",
+        "_FORJA_HARNESS/test_forja_anti_cheat.py",
+        "_FORJA_HARNESS/test_forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_recomputo_censo.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T21:00:19-03:00",
+      "motivo": "proteção por hash dos canários e do censo de formas — auditoria Plan 41",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_canario_catraca.py",
+        "_FORJA_HARNESS/forja_canario_mutacao.py",
+        "_FORJA_HARNESS/forja_forma_artefatos.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_canario_catraca.py",
+        "_FORJA_HARNESS/test_forja_canario_mutacao.py",
+        "_FORJA_HARNESS/test_forja_forma_artefatos.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T21:16:46-03:00",
+      "motivo": "leva 23-B: Segoe UI reconhecida como sans da casa; tolerancia falsa removida do teste F8",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/test_forja_f8_pecas_reais.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T21:29:47-03:00",
+      "motivo": "leva 23-C: marcador de moeda tolera R com espaco; adequacao do Plano 41 conferida",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_lastro.py",
+        "_FORJA_HARNESS/test_forja_lastro.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T21:48:55-03:00",
+      "motivo": "leva 23-D: escrita atomica no scanner de injecao (Errno 22 por disputa de arquivo)",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_injection_scan.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T21:56:05-03:00",
+      "motivo": "leva 23-E: escrita atomica usa retry canonico para Errno 13/22",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_injection_scan.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T22:41:36-03:00",
+      "motivo": "Integra a onda de QA real: peça longa SVG, peças DOCX aprovadas, catracas e mutação/censo de recomputação; baseline v23 verde",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_docx_layout.py",
+        "_FORJA_HARNESS/test_forja_f8_pecas_reais.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T22:50:20-03:00",
+      "motivo": "Plano 41: calibração F8, anti-moldagem de layout e rastreio dos parâmetros de invocação visual",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_visual_build.py",
+        "_FORJA_HARNESS/test_forja_layout_antimoldagem.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T22:53:08-03:00",
+      "motivo": "leva 24: baseline do padrao aprovado, canario anti-moldagem, papeis de titulo e pull quote, registro de invocacao",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T23:04:14-03:00",
+      "motivo": "Integra a onda anti-moldagem e baseline aprovado do Opus: dois canários novos, módulo/âncoras BASELINE_APROVADO e atualização legítima do runner de régua; preservar fail-closed",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/BASELINE_APROVADO.json",
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_baseline_aprovado.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_baseline_aprovado.py"
+      ]
+    },
+    {
+      "em": "2026-08-04T23:04:41-03:00",
+      "motivo": "Plano 41: hash-bound do medidor, teste e snapshot do baseline aprovado",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-05T00:07:09-03:00",
+      "motivo": "F8-S anticircularidade: figura contada por referência+existência (2 falsos negativos corrigidos), FAIXAS deixa de ser decorativa, canário anti-moldagem do F8-S",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_assinatura_visual.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_visual_build.py",
+        "_FORJA_HARNESS/test_forja_assinatura_antimoldagem.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T00:15:39-03:00",
+      "motivo": "medidor de adoção da rota + registro do achado de 10%",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_adocao_rota.py",
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T00:22:31-03:00",
+      "motivo": "medidor de adoção: vínculo por DOCX exato e hash; canário contra marcador compartilhado na pasta",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_adocao_rota.py",
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/test_forja_adocao_rota.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T00:45:45-03:00",
+      "motivo": "05/08: registro no baseline das 6 suites criadas na onda anti-moldagem de 04/08 (catraca, peca longa, layout/assinatura antimoldagem, adocao de rota, baseline aprovado); as tres verificadas nesta sessao passam",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/test_forja_injection.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T00:54:18-03:00",
+      "motivo": "05/08: porta unica de producao (decisao unanime Helena+Efesto+Diabob sob delegacao do Igor) — medina_visual_kit.PecaVisual.salvar passa a rodar o verificador em toda peca, economica ou nao; suite test_forja_porta_unica registrada; medidor de adocao desduplicado por sha256",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/forja_adocao_rota.py",
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_gate_liveness.py",
+        "_FORJA_HARNESS/forja_regua.py",
+        "_FORJA_HARNESS/forja_replay.py",
+        "_FORJA_HARNESS/test_f7_campos.py",
+        "_FORJA_HARNESS/test_forja_porta_unica.py",
+        "_FORJA_HARNESS/test_licao41.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T01:01:00-03:00",
+      "motivo": "Integra canário F8-S anti-moldagem, medidor de adoção e porta única; corrige classificação de G10 como observação, mantém bloqueios de identidade/lastro e atualiza catálogo hash-bound",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-05T01:08:06-03:00",
+      "motivo": "05/08: remocao da duplicata de medina_visual_kit em PROTEGIDOS — o arquivo ja estava protegido; fica so a contraprova test_forja_porta_unica",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_regua.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T01:11:08-03:00",
+      "motivo": "Corrige provenance do contador F8-S: PDF existente é apenas lido para contagem, parâmetro explícito é distinguido e nenhum renderizador é usado",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/forja_assinatura_visual.py",
+        "_FORJA_HARNESS/forja_visual.py",
+        "_FORJA_HARNESS/test_forja_porta_unica.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T01:11:54-03:00",
+      "motivo": "05/08: porta unica sem bypass — removida a bandeira porta_unica_ja_validada e o corte por tamanho (ambos eram rota de fuga); laudo vinculado ao DOCX por sha256; docstring corrigida para descrever o codigo real",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T01:33:38-03:00",
+      "motivo": "05/08: laudo porta única deixa de parecer aprovado quando lastro/materialização falha após a conferência",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/test_forja_porta_unica.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T03:03:38-03:00",
+      "motivo": "Onda 2 da lapidacao ao rigor SQLite, com baseline 89/89 APROVADO antes deste rebaseline. forja_verificador.py: entra gate_s5_sobreabstracao (P1, 0/19 falso positivo) e SAI o gate de coerencia processual, revertido por reprovar 2 das 3 ancoras aprovadas do dono. forja_canario_mutacao.py e seu teste: a catraca passa a contar tambem o gate que reprova o artefato REAL, porque o exploration_100_complete saiu do censo por ter comecado a enxergar, e a catraca lia isso como cegueira; pisos numericos 40/35 preservados e ha contraprova da medida nova no proprio teste. forja_baseline.py: registro das suites de governanca e diversidade F2A em SUITES_SCRIPT.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py",
+        "_FORJA_HARNESS/forja_canario_mutacao.py",
+        "_FORJA_HARNESS/forja_verificador.py",
+        "_FORJA_HARNESS/test_forja_canario_mutacao.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T06:32:26-03:00",
+      "motivo": "amostragem dos achados de nivel de caractere no forja_injection_scan: um PDF de 945 paginas gerava 645.966 registros e laudo de 291 MB, acima do limite de 100 MB do GitHub, travando o push do repositorio. A contagem continua exata em contagens{}; o padrao_instrucao, que decide P0, nao e amostrado. Medido no PDF real: 645.966 identico antes e depois, laudo de 99,5 MB para 1,58 MB. Contraprova da amostragem adicionada ao test_forja_injection_gate.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_injection_scan.py",
+        "_FORJA_HARNESS/test_forja_injection_gate.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T07:31:16-03:00",
+      "motivo": "gates S2/S4 de identidade processual integrados ao verificador, com o except Exception: pass da primeira versao substituido por tratamento nomeado — fallback silencioso foi o defeito que derrubou o gate de coerencia processual. Caso sem declaracao continua indeterminado, nunca P0. Ancoras aprovadas intactas; baseline 90/90.",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_verificador.py"
+      ]
+    }
+  ]
+}

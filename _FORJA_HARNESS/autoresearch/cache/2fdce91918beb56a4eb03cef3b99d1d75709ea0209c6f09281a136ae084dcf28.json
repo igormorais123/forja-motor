@@ -1,0 +1,624 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "e787bcb56f5b05070776a6628f05d571411a8a1aa47cb7fbee53bef562b01bdd",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 88,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Require leitura completa do Evento 185]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Localizar Ata nos autos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Localizar ofícios nos autos; confirmar conteúdo e destinatário]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Confirmar passagens do acórdão]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Evento 152, fl. s.n., desembargadora Relatora, j. 2026]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta inicial, Evento 146, fl. s.n. - aditamento ministerial]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Decisão anterior, data prévia, não numerada explicitamente]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, art. 1.022, I, II, III, 1.025 do CPC]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 33, citação expressa]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 46, referência a precedente de repercussão geral]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, Seções II, III, IV, V]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 58]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Ata da 76ª Reunião do Conselho de Administração — documento nos autos]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 18-19, referência a \"Ata da 76ª Reunião\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 33]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 35]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 45]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[...]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 46]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[...]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 51]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[REsp 2.206.647/TO, citado na Minuta, parágrafo 2]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 9, análise do voto condutor]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 9, citação direta]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 25, citação extraída do acórdão]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 10, constatação da \"obscuridade insuperável\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 12, referência ao REsp nº 2.206.647/TO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 12]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 13]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 14, primeira objeção]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 14, segunda objeção]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 14, terceira objeção]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 14, quarta objeção]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 15]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 15]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 15, análise da lacuna]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Documento nos autos, mencionado na Minuta, parágrafo 18]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 19]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 20, citação de precedente STF]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 21, síntese do vício]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 31]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 31]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 32, referência ao texto do acórdão]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 32, extração textual]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 32, identificação do vício]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 33, qualificação]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 33, justificativa]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 33, referência à autoridade]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 33, citação direta]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 34, transcrição literal do REsp 2.107.601/MG]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 34, conexão normativa]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 35, jurisprudência consolidada]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 36, identificação dupla da lacuna]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 36, complemento]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 37, primeira imprecisão]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 37, segunda imprecisão]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 38, síntese crítica]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 39, inciso i, integração requerida]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 39, inciso ii]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 39, inciso iii]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 40, demarcação do vício]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 40, consequência processual]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 22, síntese do fundamento]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 22]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 22, identificação do vício de obscuridade]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 23]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Evento 146 - parecer ministerial]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 23]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 23, art. 489, § 1º, IV, e art. 1.022, I e II, do CPC]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 24, primeiro ponto]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 24, segundo ponto]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 24, terceiro ponto]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 24, quarto ponto]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 24, quinto ponto]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 24, conclusão sobre nexo com comando do STJ]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 25, qualificação da contradição]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[referência a ex-Presidente Lillian Campos]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 25, citação direta do acórdão]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 25, exposição da contradição lógica]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 25, síntese final]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 29, síntese dos pedidos de integração]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Art. 1.022, I e II, do CPC]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 45, autoridade máxima]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 45, transcrição integral da tese]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 46, transcrição literal]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 46, norma positivada]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Minuta, parágrafo 47]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 0.0,
+      "aprovado": false,
+      "p0": 2,
+      "p1": 0,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/metadiscurso-vazio",
+          "sev": "P0",
+          "trecho": "ão teórica [Minuta, parágrafo 37, terceira imprecisão; referência a teoria dogmática]. Em outras palavras, o acórdão \"identifica circunstâncias que reputa relevantes — ciência de advertência",
+          "problema": "conector anuncia importância sem acrescentar conteúdo: em outras palavras",
+          "acao": "apague a expressão e comece pelo fato, norma ou inferência que importa",
+          "versao": "FORJA-ESTILO-HUMANO-v2"
+        },
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P0",
+          "trecho": "Tarefa:** Embargos de Declaração — José Eduardo de Siqueira Campos (AI 0011025-31.2023.8.27.2700/TO) Data de elaboração: 08/07/2026 Tribunal: Tribunal de Justiça do Estado do Tocantins (TJTO) Partes:** - **Embargante:** José Eduardo de Siqueira Campos - **Órgão Judiciário:** 5ª Turma de Direito Público do TJTO - **Rela",
+          "problema": "travessão explicativo repetido (47 em 4450 palavras; limite=10)",
+          "acao": "converta apartes em frases autônomas ou integre a explicação ao período principal",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 47,
+          "limite": 10
+        }
+      ]
+    },
+    "I6": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 1,
+      "evidencia": [
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "ca-Petições-v1 Gen-0 Variante VB.* *Arquivo salvo em: C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabrica",
+          "problema": "caminho de computador vazou para a peça"
+        }
+      ]
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "phase": "F6_REDACAO_TEMPLATE",
+  "order": 6,
+  "producerRole": "forja-redator",
+  "reviewerRole": "forja-provenance-auditor",
+  "requiredInputs": ["blueprint", "fact_ledger", "proposition_ledger", "source_ledger"],
+  "requiredOutputs": ["draft_markdown", "paragraph_provenance"],
+  "requiredGates": ["template_selected", "paragraphs_sourced", "foreign_entities_clear", "human_voice_protocol_applied"],
+  "nextPhase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+  "retryPolicy": {"maxAttempts": 3, "idempotent": true}
+}

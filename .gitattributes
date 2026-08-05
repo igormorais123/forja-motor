@@ -1,0 +1,12 @@
+# NÃO converter fim de linha. Nunca.
+#
+# A FORJA prende artefatos por sha256 — fontes oficiais arquivadas, laudos de
+# gate, ledgers de evento. A conversão automática CRLF->LF do git altera os
+# BYTES do arquivo e portanto o hash, e o sistema passa a acusar que a cópia
+# arquivada "nao se sustenta" contra o hash declarado. Foi exatamente o que
+# aconteceu no primeiro teste de reconstituição a partir dos clones:
+# `STJ-TEMA-333-PAGINA: o hash declarado nao confere com o arquivo`.
+#
+# Num repositório de código comum a normalização é boa prática. Aqui ela
+# corromperia a cadeia de auditoria em silêncio.
+* -text

@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "f2_question_tree.schema.json",
+  "allOf": [
+    {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "specVersion",
+        "caseId",
+        "artifactType",
+        "phase",
+        "applicability",
+        "status",
+        "sourceHashes",
+        "producerRunId",
+        "createdAt",
+        "updatedAt",
+        "contentHash",
+        "issues"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "specVersion": {
+          "const": "N4.0-candidate"
+        },
+        "caseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifactType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "enum": [
+            "F0_RECONCILIACAO_FILA",
+            "F1_INGESTAO_SEGURA",
+            "F2_CLASSIFICACAO_PRODUTO_RISCO",
+            "F3_FONTES_REGIMENTO_LEIS",
+            "F4_BLUEPRINT_ESTRATEGICO",
+            "F5_PESQUISA_OFICIAL",
+            "F6_REDACAO_TEMPLATE",
+            "F7_AUDITORIA_JURIDICA_FACTUAL",
+            "F8_QA_VISUAL",
+            "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+            "F10_ENTREGA_EVIDENCIA_APRENDIZADO"
+          ]
+        },
+        "applicability": {
+          "enum": [
+            "required",
+            "conditional",
+            "not_applicable"
+          ]
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "pending_review",
+            "approved",
+            "blocked",
+            "stale",
+            "not_applicable"
+          ]
+        },
+        "sourceHashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "producerRunId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewerRunId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "contentHash": {
+          "type": "string",
+          "minLength": 16
+        },
+        "issues": {
+          "type": "array"
+        },
+        "justification": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "const": "not_applicable"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "justification"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewerRunId"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifactType": {
+          "const": "question_tree"
+        },
+        "phase": {
+          "const": "F2_CLASSIFICACAO_PRODUTO_RISCO"
+        },
+        "protocolVersion": {
+          "const": "FORJA-F2A-100-v1"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "not": {
+                  "const": "not_applicable"
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "questions",
+              "coverage"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "protocolVersion"
+            ]
+          },
+          "then": {
+            "required": [
+              "problemDefinition",
+              "diagnosticSynthesis",
+              "solutionHypotheses",
+              "downstreamHandoff",
+              "openDecisiveQuestions",
+              "draftRelease"
+            ],
+            "properties": {
+              "problemDefinition": {
+                "type": "string",
+                "minLength": 40
+              },
+              "diagnosticSynthesis": {
+                "type": "string",
+                "minLength": 80
+              },
+              "questions": {
+                "type": "array",
+                "minItems": 100,
+                "maxItems": 100,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "questionId",
+                    "lens",
+                    "category",
+                    "text",
+                    "caseAnchor",
+                    "whyItMatters",
+                    "materiality",
+                    "status",
+                    "answer",
+                    "epistemicStatus",
+                    "supportIds",
+                    "downstreamTargets"
+                  ],
+                  "properties": {
+                    "questionId": {
+                      "type": "string",
+                      "pattern": "^Q[0-9]{3}$"
+                    },
+                    "lens": {
+                      "enum": [
+                        "mandato_resultado",
+                        "fatos_cronologia",
+                        "prova_fontes",
+                        "processo_competencia",
+                        "direito_precedentes",
+                        "adversario_julgador",
+                        "riscos_etica_impactos",
+                        "alternativas_solucoes",
+                        "quantificacao_execucao",
+                        "comunicacao_visual_validacao"
+                      ]
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 12
+                    },
+                    "caseAnchor": {
+                      "type": "string",
+                      "minLength": 12
+                    },
+                    "whyItMatters": {
+                      "type": "string",
+                      "minLength": 12
+                    },
+                    "status": {
+                      "enum": [
+                        "answered",
+                        "blocked",
+                        "not_applicable"
+                      ]
+                    },
+                    "answer": {
+                      "type": "string",
+                      "minLength": 12
+                    },
+                    "epistemicStatus": {
+                      "enum": [
+                        "confirmed_document",
+                        "confirmed_official_source",
+                        "office_declaration",
+                        "legal_inference",
+                        "strategic_hypothesis",
+                        "not_verified",
+                        "not_applicable"
+                      ]
+                    },
+                    "supportIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "uniqueItems": true
+                    },
+                    "downstreamTargets": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "enum": [
+                          "F3",
+                          "F4",
+                          "F5",
+                          "F6",
+                          "F7"
+                        ]
+                      },
+                      "uniqueItems": true
+                    }
+                  }
+                }
+              },
+              "coverage": {
+                "type": "object",
+                "required": [
+                  "total",
+                  "material",
+                  "answeredMaterial",
+                  "blockedMaterial",
+                  "perLens"
+                ]
+              },
+              "solutionHypotheses": {
+                "type": "array",
+                "minItems": 2
+              },
+              "downstreamHandoff": {
+                "type": "object",
+                "required": [
+                  "F3",
+                  "F4",
+                  "F5",
+                  "F6",
+                  "F7"
+                ]
+              },
+              "openDecisiveQuestions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "draftRelease": {
+                "enum": [
+                  "blocked",
+                  "ready_for_drafting"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

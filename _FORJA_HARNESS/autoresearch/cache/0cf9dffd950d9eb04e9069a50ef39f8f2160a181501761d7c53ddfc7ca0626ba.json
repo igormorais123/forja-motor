@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "6c1e21b3bdd11e7b4bf3ecfd06131325aae06e7924e530bbe435dd663a8dfa37",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 16,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: datas de ingresso/saída confirmadas em documentação JUCERJ nos autos — evento 982, não consultado em fonte externa por acesso restrito a PJe com login]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso ao Memorando integral em base de dados federal — status SECUNDÁRIO, bridging via evento 1096, verificação pré-protocolo recomendada]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: consulta SCON — precedentes indicados nos embargos como AgInt no AREsp 1035029/SP e AgInt no REsp 1540683/PE; status SECUNDÁRIO — acesso via PJe, não verificados em fonte aberta]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: composição completa da 1ª Turma para sessão 10-17/07/2026 — status SECUNDÁRIO via eproc escritório, não verificável em portal público]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: SCON, acesso restrito]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: SCON, acesso restrito]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: caso jurisprudência específica sobre art. 489, §1º, IV, CPC e recebimento em REsp]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: data exata de registro da absorção/cisão em JUCERJ — pré-protocolo, confirmar via evento 982]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: SCON STJ, acesso restrito a PJe — status SECUNDÁRIO; consulta pública bloqueada; ponte via evento 61 (embargos) e evento 982 (apelação original); verificação pré-protocolo ao protocolar a peça]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: SCON STJ, acesso restrito — status SECUNDÁRIO; ponte via evento 61; verificação pré-protocolo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso ao Memorando integral em base de dados federal (CGU, TCU ou portal da Presidência) pré-protocolo; se indisponível, manter como SECUNDÁRIO com ponte via evento 1096 (contrarrazões) como prova de que a Fazenda/ANTAQ não contestaram a existência ou magnitude do crédito reconhecido]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: jurisprudência específica do STJ/STF sobre art. 489, §1º, IV, CPC e recebimento em REsp como violação a direitos fundamentais; possível citar REsp 1620000/SP ou similar sobre nulidade por falta de fundamentação constitucional; pré-protocolo confirmar existência]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[X]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[AUTOR]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[TRIBUNAL]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 0.0,
+      "aprovado": false,
+      "p0": 2,
+      "p1": 0,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P0",
+          "trecho": "ião (Fazenda Nacional) e ANTAQ em 14/12/2012 Embargante:** LIBRA SUL S.A. (OAB responsável: Fábio Medina Osório, OAB/RS 64.975) Embargadas:** UNIÃO — FAZENDA NACIONAL e AGÊNCIA NACIONAL DE TRANSPORTES AQUAVIÁRIOS — ANTAQ Relator (1ª Turma):** Desembargador Federal LEANDRO PAULSEN (GAB. 12) Sessão virtual:** 10 a 17 de ",
+          "problema": "travessão explicativo repetido (82 em 4651 palavras; limite=11)",
+          "acao": "converta apartes em frases autônomas ou integre a explicação ao período principal",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 82,
+          "limite": 11
+        },
+        {
+          "gate": "G10-escrita-humana/dogmatismo-retorico",
+          "sev": "P0",
+          "trecho": "**Interpretação:** - **VERIFICADO (12):** Fatos nos autos, documentação clara, sem dúvida - **SECUNDÁRIO (8):** Acesso restrito (PJe com login, SCON STJ bloqueado, DOU não co",
+          "problema": "intensificador categórico substitui demonstração: sem dúvida",
+          "acao": "apague o intensificador e mostre a prova, a norma e a inferência",
+          "versao": "FORJA-ESTILO-HUMANO-v2"
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

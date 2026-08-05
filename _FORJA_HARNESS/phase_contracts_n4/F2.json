@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "phase": "F2_CLASSIFICACAO_PRODUTO_RISCO",
+  "order": 2,
+  "producerRole": "forja-classificador",
+  "reviewerRole": "forja-product-auditor",
+  "requiredInputs": [
+    "case_manifest",
+    "document_index",
+    "command"
+  ],
+  "requiredOutputs": [
+    "product_classification",
+    "risk_classification",
+    "question_tree"
+  ],
+  "requiredGates": [
+    "product_defined",
+    "audience_defined",
+    "release_policy_defined",
+    "exploration_100_complete",
+    "answers_provenance_classified",
+    "downstream_handoff_ready"
+  ],
+  "nextPhase": "F3_FONTES_REGIMENTO_LEIS",
+  "retryPolicy": {
+    "maxAttempts": 2,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "n4_classification",
+    "question_tree"
+  ],
+  "n4RequiredGates": [
+    "n4_modules_classified",
+    "material_questions_open_or_routed",
+    "exploration_100_complete",
+    "answers_provenance_classified",
+    "downstream_handoff_ready"
+  ],
+  "baseContract": "../phase_contracts/F2.json"
+}

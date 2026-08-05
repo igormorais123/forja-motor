@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "cfaf11e1991250d272427fc1b334bced8dc3d9c983231a1e31db3b8b8bc3e436",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 10,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso restrito]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso restrito]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso offline]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso offline]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso restrito]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: acesso offline]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[BANIDO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[data: verificar]",
+          "problema": "placeholder de dado esquecido na peça"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[BANIDO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[BANIDO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 0.0,
+      "aprovado": false,
+      "p0": 1,
+      "p1": 0,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P0",
+          "trecho": "nal Federal da 4ª Região **Peça:** Memoriais em Medida Cautelar Fiscal **Cliente:** LIBRA SUL S.A. (Fábio Medina Osório, OAB/RS 64.975) **Fase:** 1.5 — Varredura crítica de precedentes e premissas (verificação de fonte primária antes da redação) **Data:** 2026-07-08 Metodologia: cada precedente citado na peça (Memoriai",
+          "problema": "travessão explicativo repetido (7 em 1176 palavras; limite=3)",
+          "acao": "converta apartes em frases autônomas ou integre a explicação ao período principal",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 7,
+          "limite": 3
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

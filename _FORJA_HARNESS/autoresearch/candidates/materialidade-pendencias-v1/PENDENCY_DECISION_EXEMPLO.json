@@ -1,0 +1,30 @@
+{
+  "protocolVersion": "FORJA-PEND-MAT-v1-candidate",
+  "productObjective": "Entregar parecer técnico com conclusões delimitadas pelo acervo disponível.",
+  "deliveryDecision": "proceed",
+  "lawyerMessage": "Encaminho o trabalho com o acervo disponível. Documentos posteriores poderão justificar ajuste pontual; o valor final não está certificado sem reprodução independente do cálculo.",
+  "mentionedItemIds": [
+    "P1"
+  ],
+  "items": [
+    {
+      "id": "P1",
+      "description": "Planilha nativa não recebida.",
+      "classification": "essential_to_claim",
+      "affectedClaim": "certificação do valor final",
+      "consequence": "não certificar o valor até reprodução independente",
+      "treatment": "qualify_claim",
+      "requestBeforeDelivery": false
+    },
+    {
+      "id": "P2",
+      "description": "Documento que apenas refinaria a cronologia.",
+      "classification": "useful_nonblocking",
+      "affectedClaim": "",
+      "consequence": "",
+      "treatment": "deliver_and_optional_adendum",
+      "requestBeforeDelivery": false
+    }
+  ]
+}
+

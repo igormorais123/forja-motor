@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-08-05T00:22:15-03:00",
+  "decisions": [
+    [
+      "ADR-J01",
+      "Contratos por fase",
+      "Aceita",
+      "Cada fase declara entradas, saídas, invariantes e resultado.",
+      "Torna promoção reproduzível e auditável.",
+      "Mudança de contrato exige manifesto, schema e teste coerentes."
+    ],
+    [
+      "ADR-J02",
+      "F2A bloqueante antes da redação",
+      "Aceita",
+      "Exploração de perguntas e lacunas antecede blueprint/texto.",
+      "Evita redigir sobre corpus insuficiente.",
+      "Lacuna P0/P1 impede promoção."
+    ],
+    [
+      "ADR-J03",
+      "Conselho como insumo",
+      "Aceita",
+      "Helena/Cícero produzem pareceres; não substituem fonte nem decisão final.",
+      "Preserva diversidade analítica sem criar autoridade fictícia.",
+      "Parecer deve ser rastreado e confrontado com evidência."
+    ],
+    [
+      "ADR-J04",
+      "F7 antes de F7-B",
+      "Aceita",
+      "Auditoria factual/citacional precede revisão editorial.",
+      "Estilo não mascara erro material.",
+      "F7-B altera forma sob gate de fidelidade."
+    ],
+    [
+      "ADR-J05",
+      "Estado fora do código",
+      "Aceita",
+      "State, telemetria, cache e renders são zonas operacionais separadas.",
+      "Evita confundir execução particular com contrato canônico.",
+      "Backups e limpeza preservam restauração verificável."
+    ],
+    [
+      "ADR-J06",
+      "Render é etapa verificável",
+      "Aceita",
+      "Materialização inclui comparação de fidelidade e inspeção de páginas.",
+      "Captura falhas de Word/PDF/layout.",
+      "Entrega somente após QA multimodal."
+    ],
+    [
+      "ADR-J07",
+      "Pós-protocolo é ramo de F10",
+      "Aceita",
+      "O retorno humano não cria F11 nem reabre a entrega ao escritório.",
+      "Preserva o limite operacional e acrescenta aprendizado posterior.",
+      "Ausência de retorno não desfaz entrega concluída."
+    ],
+    [
+      "ADR-J08",
+      "Protocolo exige elo de arquivo",
+      "Aceita",
+      "Nome, assunto ou assinatura isolados não bastam.",
+      "Evita nomear como protocolada uma simples versão final humana.",
+      "Só protocol_verified autoriza PEÇA PROTOCOLADA."
+    ],
+    [
+      "ADR-J09",
+      "Aprendizado tem autoridade crescente",
+      "Aceita",
+      "Candidato passa por decisão, fixture, teste e promoção no menor escopo.",
+      "Feedback real melhora peças futuras sem universalização silenciosa.",
+      "Nenhuma regra ativa sem âncora humana e recibo verde."
+    ],
+    [
+      "ADR-J10",
+      "Evolução arquitetural é isolada",
+      "Aceita",
+      "Candidata roda em worktree separado com shadow, canário e rollback.",
+      "A arquitetura aprende sem autoeditar produção.",
+      "Teto automático estudo_descritivo; promoção é externa ao AR."
+    ]
+  ]
+}

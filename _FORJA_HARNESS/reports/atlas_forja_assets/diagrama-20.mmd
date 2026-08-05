@@ -1,0 +1,21 @@
+flowchart TB
+    Saved["Resultado registrado"] --> Resolve["Localizar novamente o texto e as fontes usados"]
+    Resolve --> Hash{"O arquivo, sua origem e sua identificação conferem?"}
+    Hash -->|"não"| Block["Impedimento grave<br/>fonte revogada, alterada ou sem origem clara"]
+    Hash -->|"sim"| Rerun["Executar novamente as verificações"]
+    Rerun --> Compare{"O novo resultado confirma<br/>o que havia sido registrado?"}
+    Compare -->|"não"| Fraud["Impedir que o sistema aprove o próprio resultado"]
+    Compare -->|"sim"| Layers["Repetir cinco verificações independentes<br/>e conferir cada página"]
+    Layers --> Council{"Helena e Cícero aprovaram<br/>e indicaram os trechos examinados?"}
+    Council -->|"não"| Structural["Resultado apenas estrutural<br/>revisão humana obrigatória"]
+    Council -->|"sim"| Prospective{"Houve caso novo e testes capazes<br/>de revelar mudança de sentido?"}
+    Prospective -->|"não"| Structural
+    Prospective -->|"sim"| Eligible["A melhoria pode ser submetida<br/>à decisão humana de adoção"]
+
+    classDef evidence fill:#e9f4ec,stroke:#2f6f54,color:#1f4c39;
+    classDef blocker fill:#fdecea,stroke:#a33b2b,color:#64251b,stroke-width:2px;
+    classDef shadow fill:#fbf2ec,stroke:#9c5b38,color:#5b3522;
+    class Saved,Resolve,Hash,Rerun,Compare,Layers,Council,Prospective evidence;
+    class Block,Fraud blocker;
+    class Structural shadow;
+    style Eligible fill:#fff4d8,stroke:#9a6b18,color:#4b370d;

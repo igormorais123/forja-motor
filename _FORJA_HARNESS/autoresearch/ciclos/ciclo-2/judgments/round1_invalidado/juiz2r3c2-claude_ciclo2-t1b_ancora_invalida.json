@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz2r3c2-claude",
+  "judgeFamily": "claude",
+  "declarations": {"filesRead": ["PAR_ciclo2-t1b_ORD1_L.md","PAR_ciclo2-t1b_ORD1_R.md","PAR_ciclo2-t1b_ORD2_L.md","PAR_ciclo2-t1b_ORD2_R.md"], "externalAccess": false, "workspaceAccess": false},
+  "votes": [
+    {"order": 1, "winnerPosition": "R", "anchor": "Próxima ação única: conferir integralmente os autos, os treze anexos e as fontes oficiais indicadas; substituir cada marcador por prova e localizador ou remover a proposição; depois reexecutar os gates quantitativo, editorial e visual antes de qualquer protocolo.", "justificativa": "Texto R supera L por robustez: organização formal em capítulos, matriz de exibição categórica, quadro-resumo de pedidos sequenciado, relatório de gates explícito e conclusão operacional clara."},
+    {"order": 2, "winnerPosition": "L", "anchor": "Próxima ação única: conferir integralmente os autos, os treze anexos e as fontes oficiais indicadas; substituir cada marcador por prova e localizador ou remover a proposição; depois reexecutar os gates quantitativo, editorial e visual antes de qualquer protocolo.", "justificativa": "Mesmo texto vencedor agora em posição L de ORD2 (espelhamento correto)."}
+  ]
+}

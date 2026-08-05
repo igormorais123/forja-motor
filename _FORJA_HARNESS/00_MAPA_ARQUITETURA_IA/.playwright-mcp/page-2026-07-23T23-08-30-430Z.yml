@@ -1,0 +1,267 @@
+- generic [active] [ref=e1]:
+  - toolbar "Diagram actions" [ref=e2]:
+    - button "Toggle color theme" [pressed] [ref=e3] [cursor=pointer]:
+      - generic [ref=e4]: ☼
+      - generic [ref=e5]: Light
+    - button "Enter presentation stage" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: □
+      - generic [ref=e8]: Present
+    - button "Export diagram" [ref=e10] [cursor=pointer]:
+      - text: Export
+      - generic [ref=e11]: ▾
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - heading "TeiaJus — O Cardápio Completo de Possibilidades" [level=1] [ref=e16]
+        - text: BLUEPRINT / REV 01
+      - paragraph [ref=e17]: "tudo o que dá para pedir ao sistema: 28 comandos para pessoas, 31 ações para agentes e a linha especial de improbidade · 2026-07-23"
+    - generic "Guided diagram views" [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Guided views
+          - generic [ref=e22]: 0 / 5
+        - strong [ref=e24]: Explore this system
+      - button "Play guided story" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: ▶
+        - generic [ref=e28]: Play story
+      - navigation "Story chapters" [ref=e29]:
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - 'button "Open chapter 1 of 5: O cardápio inteiro. Chapter focus delta: 0 stay, 16 enter, 0 leave" [ref=e32] [cursor=pointer]':
+              - generic [ref=e33]: "01"
+              - generic [ref=e34]: O cardápio inteiro
+              - generic [ref=e35]:
+                - generic [ref=e36]: =0
+                - generic [ref=e37]: "+16"
+                - generic [ref=e38]: −0
+          - listitem [ref=e39]:
+            - 'button "Open chapter 2 of 5: Perguntar e investigar. Chapter focus delta: 0 stay, 4 enter, 0 leave" [ref=e40] [cursor=pointer]':
+              - generic [ref=e41]: "02"
+              - generic [ref=e42]: Perguntar e investigar
+              - generic [ref=e43]:
+                - generic [ref=e44]: =0
+                - generic [ref=e45]: "+4"
+                - generic [ref=e46]: −0
+          - listitem [ref=e47]:
+            - 'button "Open chapter 3 of 5: Trazer de fora. Chapter focus delta: 0 stay, 5 enter, 0 leave" [ref=e48] [cursor=pointer]':
+              - generic [ref=e49]: "03"
+              - generic [ref=e50]: Trazer de fora
+              - generic [ref=e51]:
+                - generic [ref=e52]: =0
+                - generic [ref=e53]: "+5"
+                - generic [ref=e54]: −0
+          - listitem [ref=e55]:
+            - 'button "Open chapter 4 of 5: Provar e decidir. Chapter focus delta: 0 stay, 3 enter, 0 leave" [ref=e56] [cursor=pointer]':
+              - generic [ref=e57]: "04"
+              - generic [ref=e58]: Provar e decidir
+              - generic [ref=e59]:
+                - generic [ref=e60]: =0
+                - generic [ref=e61]: "+3"
+                - generic [ref=e62]: −0
+          - listitem [ref=e63]:
+            - 'button "Open chapter 5 of 5: Entregar e proteger. Chapter focus delta: 0 stay, 4 enter, 0 leave" [ref=e64] [cursor=pointer]':
+              - generic [ref=e65]: "05"
+              - generic [ref=e66]: Entregar e proteger
+              - generic [ref=e67]:
+                - generic [ref=e68]: =0
+                - generic [ref=e69]: "+4"
+                - generic [ref=e70]: −0
+    - generic [ref=e71]:
+      - 'img "TeiaJus — O Cardápio Completo de Possibilidades tudo o que dá para pedir ao sistema: 28 comandos para pessoas, 31 ações para agentes e a linha especial de improbidade · 2026-07-23" [ref=e72]':
+        - generic [ref=e75]: Perguntar e investigar
+        - generic [ref=e77]: Trazer de fora — fontes oficiais e coletores
+        - generic [ref=e79]: Provar e decidir — nada de alto valor sobe sem assinatura humana
+        - generic [ref=e81]: Entregar e proteger
+        - group "Direct relationship explorer":
+          - 'button "Inspect relationship 1 of 16: Dossiê de um processo to Busca no próprio acervo, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 2 of 16: Busca no próprio acervo to Pesquisa em tudo de uma vez, acervo responde primeiro. Press Enter for details."'
+          - 'button "Inspect relationship 3 of 16: Pesquisa em tudo de uma vez to Missões de investigação, investigação profunda. Press Enter for details."'
+          - 'button "Inspect relationship 4 of 16: Missões de investigação to Coleta nacional de processos, achados viram coleta. Press Enter for details."'
+          - 'button "Inspect relationship 5 of 16: Coleta nacional de processos to Tudo do Superior Tribunal, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 6 of 16: Tudo do Superior Tribunal to Sanções e normas federais, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 7 of 16: Sanções e normas federais to Valor da condenação, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 8 of 16: Valor da condenação to Garimpo de improbidade, vertical especializada. Press Enter for details."'
+          - 'button "Inspect relationship 9 of 16: Garimpo de improbidade to Nota de chance de reversão, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 10 of 16: Nota de chance de reversão to Fila de revisão humana, alto valor entra na fila. Press Enter for details."'
+          - 'button "Inspect relationship 11 of 16: Fila de revisão humana to Partes enriquecidas, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 12 of 16: Partes enriquecidas to Ranking, painel e planilhas, acervo pronto para entrega. Press Enter for details."'
+          - 'button "Inspect relationship 13 of 16: Ranking, painel e planilhas to Auditoria e vigias externos, entrega conferida. Press Enter for details."'
+          - 'button "Inspect relationship 14 of 16: Auditoria e vigias externos to Segredos e desafios de acesso, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 15 of 16: Segredos e desafios de acesso to Backup validado e migração, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 16 of 16: Backup validado e migração to Dossiê de um processo, restauração ensaiada. Press Enter for details."'
+        - button "Focus Dossiê de um processo, Tudo sobre um caso pelo número nacional único., Perguntar e investigar" [ref=e84] [cursor=pointer]:
+          - generic [ref=e87]: Dossiê de um processo
+          - generic: Tudo sobre um caso pelo número nacional único.
+          - generic: Inclui partes, documentos, nota e trilha de origem de cada dado.
+        - button "Focus Busca no próprio acervo, Filtra 33 mil casos por tribunal, tema ou situação., Perguntar e investigar" [ref=e88] [cursor=pointer]:
+          - generic [ref=e91]: Busca no próprio acervo
+          - generic: Filtra 33 mil casos por tribunal, tema ou situação.
+          - generic: Responde na hora e sem custo; ausência não prova inexistência.
+        - button "Focus Pesquisa em tudo de uma vez, Uma pergunta, muitas fontes, um relatório único., Perguntar e investigar" [ref=e92] [cursor=pointer]:
+          - generic [ref=e95]: Pesquisa em tudo de uma vez
+          - generic: Uma pergunta, muitas fontes, um relatório único.
+          - generic: Cada fonte responde por si; falha de uma não apaga as outras.
+        - button "Focus Missões de investigação, Planeja de graça, executa e retoma quando quiser., Perguntar e investigar" [ref=e96] [cursor=pointer]:
+          - generic [ref=e99]: Missões de investigação
+          - generic: Planeja de graça, executa e retoma quando quiser.
+          - generic: A trilha inteira fica registrada e pode ser recuperada depois.
+        - button "Focus Coleta nacional de processos, Descobre processos novos por tribunal, em lote., Trazer de fora — fontes oficiais e coletores" [ref=e100] [cursor=pointer]:
+          - generic [ref=e103]: Coleta nacional de processos
+          - generic: Descobre processos novos por tribunal, em lote.
+          - generic: Metadados nacionais não trazem valor nem inteiro teor.
+        - button "Focus Tudo do Superior Tribunal, Acórdãos, decisões do dia, catálogo e coleta., Trazer de fora — fontes oficiais e coletores" [ref=e104] [cursor=pointer]:
+          - generic [ref=e107]: Tudo do Superior Tribunal
+          - generic: Acórdãos, decisões do dia, catálogo e coleta.
+          - generic: Cinco pedidos próprios; espelho oficial com data e selo.
+        - button "Focus Sanções e normas federais, Cinco listas de sancionados e leis do Senado., Trazer de fora — fontes oficiais e coletores" [ref=e108] [cursor=pointer]:
+          - generic [ref=e111]: Sanções e normas federais
+          - generic: Cinco listas de sancionados e leis do Senado.
+          - generic: Espelho local com data; ausência na lista não é certidão.
+        - button "Focus Valor da condenação, Coletores dedicados em Brasília e na 1ª Região., Trazer de fora — fontes oficiais e coletores" [ref=e112] [cursor=pointer]:
+          - generic [ref=e115]: Valor da condenação
+          - generic: Coletores dedicados em Brasília e na 1ª Região.
+          - generic: Valor sem documento âncora fica marcado como pista.
+        - button "Focus Garimpo de improbidade, Linha própria com oito comandos especializados., Provar e decidir — nada de alto valor sobe sem assinatura humana" [ref=e116] [cursor=pointer]:
+          - generic [ref=e119]: Garimpo de improbidade
+          - generic: Linha própria com oito comandos especializados.
+          - generic: De achado bruto a valor provado, com painel do funil.
+        - button "Focus Nota de chance de reversão, Classifica casos e aponta os de maior valor., Provar e decidir — nada de alto valor sobe sem assinatura humana" [ref=e120] [cursor=pointer]:
+          - generic [ref=e123]: Nota de chance de reversão
+          - generic: Classifica casos e aponta os de maior valor.
+          - generic: Só pontua com documento local conferido pelo selo digital.
+        - button "Focus Fila de revisão humana, Prepara, mostra e aplica decisões assinadas., Provar e decidir — nada de alto valor sobe sem assinatura humana" [ref=e124] [cursor=pointer]:
+          - generic [ref=e127]: Fila de revisão humana
+          - generic: Prepara, mostra e aplica decisões assinadas.
+          - generic: Promoção de alto valor exige revisor nominal e trecho literal.
+        - button "Focus Partes enriquecidas, Completa quem é quem com evidência arquivada., Provar e decidir — nada de alto valor sobe sem assinatura humana" [ref=e128] [cursor=pointer]:
+          - generic [ref=e131]: Partes enriquecidas
+          - generic: Completa quem é quem com evidência arquivada.
+          - generic: Cada parte aponta o documento oficial que a comprova.
+        - button "Focus Ranking, painel e planilhas, Exporta alvos e relatórios prontos para uso., Entregar e proteger" [ref=e132] [cursor=pointer]:
+          - generic [ref=e135]: Ranking, painel e planilhas
+          - generic: Exporta alvos e relatórios prontos para uso.
+          - generic: Sempre recriados do estado validado; nunca editados à mão.
+        - button "Focus Auditoria e vigias externos, Confere integridade e testa as fontes de fora., Entregar e proteger" [ref=e136] [cursor=pointer]:
+          - generic [ref=e139]: Auditoria e vigias externos
+          - generic: Confere integridade e testa as fontes de fora.
+          - generic: Amostra ao vivo compara o acervo com a fonte real.
+        - button "Focus Segredos e desafios de acesso, Cofre de chaves e leitura de desafios dos portais., Entregar e proteger" [ref=e140] [cursor=pointer]:
+          - generic [ref=e143]: Segredos e desafios de acesso
+          - generic: Cofre de chaves e leitura de desafios dos portais.
+          - generic: Inventário sem mostrar valores; solução paga só autorizada.
+        - button "Focus Backup validado e migração, Valida cópias, restaura e migra dados antigos., Entregar e proteger" [ref=e144] [cursor=pointer]:
+          - generic [ref=e147]: Backup validado e migração
+          - generic: Valida cópias, restaura e migra dados antigos.
+          - generic: Nada é promovido sem selo conferido e ensaio de volta.
+        - generic: acervo responde primeiro
+        - generic: investigação profunda
+        - generic: achados viram coleta
+        - generic: vertical especializada
+        - generic: alto valor entra na fila
+        - generic: acervo pronto para entrega
+        - generic: entrega conferida
+        - generic: restauração ensaiada
+        - toolbar "Semantic legend" [ref=e148]:
+          - generic [ref=e149]: Legend
+          - button "Inspect Database, 1 node" [ref=e150] [cursor=pointer]:
+            - generic [ref=e153]: Database
+            - generic: "1"
+          - button "Inspect Backend, 8 nodes" [ref=e154] [cursor=pointer]:
+            - generic [ref=e157]: Backend
+            - generic: "8"
+          - button "Inspect External, 3 nodes" [ref=e158] [cursor=pointer]:
+            - generic [ref=e161]: External
+            - generic: "3"
+          - button "Inspect Security, 2 nodes" [ref=e162] [cursor=pointer]:
+            - generic [ref=e165]: Security
+            - generic: "2"
+          - button "Inspect Frontend, 1 node" [ref=e166] [cursor=pointer]:
+            - generic [ref=e169]: Frontend
+            - generic: "1"
+          - button "Inspect Cloud, 1 node" [ref=e170] [cursor=pointer]:
+            - generic [ref=e173]: Cloud
+            - generic: "1"
+      - status [ref=e174]
+      - toolbar "Diagram view controls" [ref=e175]:
+        - button "Trace a directed route" [ref=e176] [cursor=pointer]: PATH
+        - button "Open semantic radar" [ref=e177] [cursor=pointer]: MAP
+        - button "Open semantic lens" [ref=e178] [cursor=pointer]: LENS
+        - button "Find a node" [ref=e179] [cursor=pointer]: ⌕
+        - button "Open diagram guide" [ref=e180] [cursor=pointer]: "?"
+        - button "Zoom out" [disabled] [ref=e181]: −
+        - button "Zoom in to reveal relationship labels and node context. Reset diagram view" [ref=e182] [cursor=pointer]: MAP 100%
+        - button "Zoom in" [ref=e183] [cursor=pointer]: +
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - heading "Consultar e cuidar do acervo — dez pedidos, um a um" [level=3] [ref=e188]
+        - list [ref=e189]:
+          - listitem [ref=e190]: "• Conferir a saúde do banco: integridade, contagens, lacunas e estado de recuperação (comando `saude`)."
+          - listitem [ref=e191]: "• Montar o dossiê completo de um processo pelo número nacional único (ação `get_case`, pelo balcão de agentes)."
+          - listitem [ref=e192]: "• Buscar casos no acervo com filtros estruturados de tribunal, tema e situação (ação `search_cases`, pelo balcão de agentes)."
+          - listitem [ref=e193]: "• Auditar integridade, literalidade das provas e uma amostra conferida ao vivo contra a fonte real (comando `auditar`)."
+          - listitem [ref=e194]: "• Migrar dados de tabelas antigas sem duplicar nem perder nada, repetível com segurança (comando `migrar`)."
+          - listitem [ref=e195]: "• Ver o catálogo de fontes de pesquisa e a política de custo de cada uma (comando `fontes`)."
+          - listitem [ref=e196]: "• Ver o estado do portão de evidência: quantos casos aguardam revisão humana e por quê (comando `evidencia-status`)."
+          - listitem [ref=e197]: "• Ver datas, selos e contagens do espelho local de sanções do governo federal (comando `cgu-status`)."
+          - listitem [ref=e198]: "• Medir a capacidade de resolver desafios de acesso dos portais e o saldo do serviço (comando `captcha-status`)."
+          - listitem [ref=e199]: "• Inventariar as chaves guardadas no cofre, sem nunca exibir os valores (comando `segredos-status`)."
+      - generic [ref=e200]:
+        - heading "Buscar fora e coletar — doze pedidos, um a um" [level=3] [ref=e203]
+        - list [ref=e204]:
+          - listitem [ref=e205]: "• Perguntar de uma vez ao acervo, às fontes oficiais e à web, com teto de gasto e relatório único (comando `pesquisar`)."
+          - listitem [ref=e206]: "• Executar uma missão de pesquisa autônoma e persistente, que pode ser retomada de onde parou (comando `missao`); planejar a missão sem gastar nada (ação `research_plan`) e recuperar a trilha completa depois (ação `research_mission_get`)."
+          - listitem [ref=e207]: "• Descobrir processos novos por tribunal na base nacional do Conselho Nacional de Justiça (comando `coletar`)."
+          - listitem [ref=e208]: "• Enriquecer as partes de cada processo com evidência oficial arquivada (comando `partes`)."
+          - listitem [ref=e209]: "• Pesquisar acórdãos nos espelhos oficiais de dez órgãos julgadores do Superior Tribunal de Justiça (comando `stj-buscar`)."
+          - listitem [ref=e210]: "• Acompanhar as decisões e acórdãos publicados no dia, com a íntegra oficial opcional (comando `stj-diario`)."
+          - listitem [ref=e211]: "• Espiar a situação processual de um caso no Superior Tribunal sem gravar nada (comando `stj-datajud`)."
+          - listitem [ref=e212]: "• Listar todos os conjuntos de dados abertos oficiais do Superior Tribunal (comando `stj-catalogo`) e conferir se essas fontes estão no ar e atualizadas (comando `stj-saude`)."
+          - listitem [ref=e213]: "• Gravar no acervo canônico os processos coletados do Superior Tribunal (ação `stj_collect`, pelo balcão de agentes)."
+          - listitem [ref=e214]: "• Atualizar o espelho local das cinco listas federais de sancionados e acordos de leniência (comando `cgu-atualizar`)."
+          - listitem [ref=e215]: "• Consultar o catálogo oficial de rotas do Portal da Transparência (comando `cgu-catalogo`)."
+          - listitem [ref=e216]: "• Rodar os vigias externos: testes isolados de cada fonte de fora, sem tocar no acervo (comando `canarios`)."
+      - generic [ref=e217]:
+        - heading "Classificar, provar e entregar — oito pedidos, um a um" [level=3] [ref=e220]
+        - list [ref=e221]:
+          - listitem [ref=e222]: "• Dar nota de chance de reversão e classe de valor a cada processo do acervo (comando `classificar`)."
+          - listitem [ref=e223]: "• Classificar somente documentos locais já conferidos pelo selo digital — nada de nota sem lastro (comando `classificar-documentos`)."
+          - listitem [ref=e224]: "• Preparar a fila de revisão humana dos casos de alto valor, com tudo o que o revisor precisa ver (comando `evidencia-preparar`)."
+          - listitem [ref=e225]: "• Aplicar as decisões assinadas pelo revisor humano, numa gravação única e íntegra (comando `evidencia-aplicar`)."
+          - listitem [ref=e226]: "• Converter os caminhos internos das provas para um formato restaurável em outro computador (comando `documentos-portabilizar`)."
+          - listitem [ref=e227]: "• Exportar o ranking de alvos em planilha, pronto para o trabalho do escritório (comando `ranking`)."
+          - listitem [ref=e228]: "• Validar um pacote de cópia de segurança: selos, bancos e integridade (comando `restauracao-validar`)."
+          - listitem [ref=e229]: "• Importar chaves de acesso para o cofre, aceitando apenas as da lista permitida (comando `segredos-importar`)."
+      - generic [ref=e230]:
+        - heading "Só pelo balcão de agentes — mais sete ações, além das já citadas" [level=3] [ref=e233]
+        - list [ref=e234]:
+          - listitem [ref=e235]: "• Perguntar ao sistema o que ele sabe fazer: recursos, políticas e limites vigentes (ação `capabilities`)."
+          - listitem [ref=e236]: "• Gerar o painel visual e a planilha de alvos diretamente do estado validado (ação `report`)."
+          - listitem [ref=e237]: "• Coletar o valor da condenação no tribunal de Brasília, com documento âncora (ação `collect_value_tjdft`)."
+          - listitem [ref=e238]: "• Coletar o valor da condenação na Justiça Federal da 1ª Região, com navegação assistida (ação `collect_value_trf1`)."
+          - listitem [ref=e239]: "• Resolver um desafio de acesso de imagem: primeiro leitura local gratuita, depois serviço pago se autorizado (ação `captcha_solve`)."
+          - listitem [ref=e240]: "• Levantar contatos institucionais públicos em sites de empresas — nunca dados pessoais enriquecidos (ação `apify_contact_enrich`, paga e sob teto)."
+          - listitem [ref=e241]: "• Regra geral do balcão de agentes: envelope padronizado, lista fechada de 31 ações, nada de comando livre; mudança no acervo pedida pela fábrica de petições exige autorização externa própria."
+      - generic [ref=e242]:
+        - heading "A linha de improbidade — oito comandos, um a um" [level=3] [ref=e245]
+        - list [ref=e246]:
+          - listitem [ref=e247]: "• Garimpar condenações por improbidade no diário oficial do tribunal de São Paulo (comando `garimpo-cjpg`)."
+          - listitem [ref=e248]: "• Garimpar condenações no portal do tribunal de Minas Gerais (comando `garimpo-tjmg`)."
+          - listitem [ref=e249]: "• Confirmar cada achado bruto do garimpo antes de aceitá-lo como caso real (comando `garimpo-confirmar`)."
+          - listitem [ref=e250]: "• Enriquecer os casos confirmados com partes, fase atual e documentos (comando `enriquecer`)."
+          - listitem [ref=e251]: "• Buscar a fase processual por rota alternativa quando o portal principal falha (comando `fase-fallback`)."
+          - listitem [ref=e252]: "• Ver o funil inteiro num painel: achados, confirmados, enriquecidos e com valor provado (comando `painel`)."
+          - listitem [ref=e253]: "• Coletar o valor da condenação em Brasília (comando `valor-tjdft`) e na Justiça Federal da 1ª Região (comando `valor-trf1`)."
+          - listitem [ref=e254]: • Os roteiros antigos e avulsos dessa linha foram aposentados; ficaram guardados numa etiqueta de resgate no histórico, recuperáveis se algum dia forem necessários.
+      - generic [ref=e255]:
+        - heading "Como ler o cardápio — modos, políticas e totais" [level=3] [ref=e258]
+        - list [ref=e259]:
+          - listitem [ref=e260]: "• Todo pedido tem um modo declarado: leitura (só consulta, nunca muda o acervo) ou escrita (muda o acervo, sempre com trilha do que gravou)."
+          - listitem [ref=e261]: • Todo pedido declara se usa a internet ou não; o que roda sem rede funciona até offline, direto no acervo local.
+          - listitem [ref=e262]: "• Pedidos pagos são minoria e nunca rodam sozinhos: missão de pesquisa, resolução paga de desafios de acesso e busca de contatos exigem autorização expressa e estimativa dentro do teto de gasto — sem isso, a chamada é barrada antes de sair do computador."
+          - listitem [ref=e263]: "• Os totais de hoje: 28 comandos no balcão humano, 31 ações no balcão de agentes (20 compartilhadas com a linha de comando e 11 exclusivas) e 8 comandos na linha de improbidade."
+          - listitem [ref=e264]: "• Fotografia do acervo na última revisão: 33.591 processos, 8.477 partes, 2.155 documentos com selo digital (100% do corpus), 32.619 registros de sanções e 72 decisões de alto valor aguardando revisor humano."
+          - listitem [ref=e265]: • Este cardápio nasce de uma matriz gerada automaticamente pelo próprio sistema — quando um comando muda, a matriz muda junto; a fonte técnica é a tabela de interfaces em CAPACIDADES_ATUAIS.md.
+    - paragraph [ref=e266]:
+      - text: Architecture diagram • Built with Archify
+      - generic [ref=e267]: • Hover to trace • R route • Click to focus • +/− zoom • M radar • [/] views • P play story • T theme • E export
+  - status

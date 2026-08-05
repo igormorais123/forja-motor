@@ -1,0 +1,231 @@
+- generic [active] [ref=e1]:
+  - toolbar "Diagram actions" [ref=e2]:
+    - button "Toggle color theme" [pressed] [ref=e3] [cursor=pointer]:
+      - generic [ref=e4]: ☼
+      - generic [ref=e5]: Light
+    - button "Enter presentation stage" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: □
+      - generic [ref=e8]: Present
+    - button "Export diagram" [ref=e10] [cursor=pointer]:
+      - text: Export
+      - generic [ref=e11]: ▾
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - heading "FORJA — fabricação de petições + melhoria contínua" [level=1] [ref=e16]
+        - text: BLUEPRINT / REV 01
+      - paragraph [ref=e17]: o caminho da peça (F0 a F10) e onde o AutoResearch aprende e devolve melhorias · linguagem simples · 2026-07-23
+    - generic "Guided diagram views" [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Guided views
+          - generic [ref=e22]: 0 / 4
+        - strong [ref=e24]: Explore this system
+      - button "Play guided story" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: ▶
+        - generic [ref=e28]: Play story
+      - navigation "Story chapters" [ref=e29]:
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - 'button "Open chapter 1 of 4: Fabricação da petição. Chapter focus delta: 0 stay, 12 enter, 0 leave" [ref=e32] [cursor=pointer]':
+              - generic [ref=e33]: "01"
+              - generic [ref=e34]: Fabricação da petição
+              - generic [ref=e35]:
+                - generic [ref=e36]: =0
+                - generic [ref=e37]: "+12"
+                - generic [ref=e38]: −0
+          - listitem [ref=e39]:
+            - 'button "Open chapter 2 of 4: Portões que travam. Chapter focus delta: 0 stay, 5 enter, 0 leave" [ref=e40] [cursor=pointer]':
+              - generic [ref=e41]: "02"
+              - generic [ref=e42]: Portões que travam
+              - generic [ref=e43]:
+                - generic [ref=e44]: =0
+                - generic [ref=e45]: "+5"
+                - generic [ref=e46]: −0
+          - listitem [ref=e47]:
+            - 'button "Open chapter 3 of 4: Onde entra o AutoResearch. Chapter focus delta: 0 stay, 7 enter, 0 leave" [ref=e48] [cursor=pointer]':
+              - generic [ref=e49]: "03"
+              - generic [ref=e50]: Onde entra o AutoResearch
+              - generic [ref=e51]:
+                - generic [ref=e52]: =0
+                - generic [ref=e53]: "+7"
+                - generic [ref=e54]: −0
+          - listitem [ref=e55]:
+            - 'button "Open chapter 4 of 4: O retorno à fábrica. Chapter focus delta: 0 stay, 3 enter, 0 leave" [ref=e56] [cursor=pointer]':
+              - generic [ref=e57]: "04"
+              - generic [ref=e58]: O retorno à fábrica
+              - generic [ref=e59]:
+                - generic [ref=e60]: =0
+                - generic [ref=e61]: "+3"
+                - generic [ref=e62]: −0
+    - generic [ref=e63]:
+      - img "FORJA — fabricação de petições + melhoria contínua o caminho da peça (F0 a F10) e onde o AutoResearch aprende e devolve melhorias · linguagem simples · 2026-07-23" [ref=e64]:
+        - generic [ref=e67]: Preparação do caso
+        - generic [ref=e69]: Estratégia e fontes
+        - generic [ref=e71]: Produção do texto
+        - generic [ref=e73]: Conferência e entrega
+        - generic [ref=e75]: Melhoria contínua — AutoResearch
+        - group "Direct relationship explorer":
+          - 'button "Inspect relationship 1 of 19: F0 Chegada do caso to F1 Leitura segura, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 2 of 19: F1 Leitura segura to F2 Entendimento, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 3 of 19: F2 Entendimento to F3 Fatos e tribunal, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 4 of 19: F3 Fatos e tribunal to F4 Estratégia, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 5 of 19: F4 Estratégia to F5 Fontes oficiais, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 6 of 19: F5 Fontes oficiais to F6 Redação, fontes prontas. Press Enter for details."'
+          - 'button "Inspect relationship 7 of 19: F6 Redação to F7 Auditoria, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 8 of 19: F7 Auditoria to F7-B Lapidação, sem erro grave. Press Enter for details."'
+          - 'button "Inspect relationship 9 of 19: F7-B Lapidação to F8 Conferência visual, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 10 of 19: F8 Conferência visual to F9 Pacote, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 11 of 19: F9 Pacote to F10 Entrega, aprovado. Press Enter for details."'
+          - 'button "Inspect relationship 12 of 19: F10 Entrega to Lições, lições da entrega. Press Enter for details."'
+          - 'button "Inspect relationship 13 of 19: F8 Conferência visual to Registros, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 14 of 19: Lições to Registros, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 15 of 19: Registros to Régua de nota, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 16 of 19: Régua de nota to Criar versões, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 17 of 19: Criar versões to Dar nota e escolher, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 18 of 19: Dar nota e escolher to Aplicar vencedora, vencedora. Press Enter for details."'
+          - 'button "Inspect relationship 19 of 19: Aplicar vencedora to F6 Redação, moldes e réguas melhorados. Press Enter for details."'
+        - button "Focus F0 Chegada do caso, pedido vira caso registrado, Preparação do caso" [ref=e78] [cursor=pointer]:
+          - generic [ref=e81]: F0 Chegada do caso
+          - generic: pedido vira caso registrado
+          - generic: fila conferida
+        - button "Focus F1 Leitura segura, documentos lidos com proteção, Preparação do caso" [ref=e82] [cursor=pointer]:
+          - generic [ref=e85]: F1 Leitura segura
+          - generic: documentos lidos com proteção
+          - generic: texto dos autos nunca dá ordens
+        - button "Focus F2 Entendimento, produto, risco e 100 perguntas, Preparação do caso" [ref=e86] [cursor=pointer]:
+          - generic [ref=e89]: F2 Entendimento
+          - generic: produto, risco e 100 perguntas
+          - generic: lacuna grave trava a linha
+        - button "Focus F3 Fatos e tribunal, fatos, datas e regras do tribunal, Preparação do caso" [ref=e90] [cursor=pointer]:
+          - generic [ref=e93]: F3 Fatos e tribunal
+          - generic: fatos, datas e regras do tribunal
+          - generic: cada fato com sua prova
+        - button "Focus F4 Estratégia, plano da peça + conselho, Estratégia e fontes" [ref=e94] [cursor=pointer]:
+          - generic [ref=e97]: F4 Estratégia
+          - generic: plano da peça + conselho
+          - generic: Helena e Cícero opinam
+        - button "Focus F5 Fontes oficiais, leis e julgados conferidos na fonte, Estratégia e fontes" [ref=e98] [cursor=pointer]:
+          - generic [ref=e101]: F5 Fontes oficiais
+          - generic: leis e julgados conferidos na fonte
+          - generic: citação sem conferência não entra
+        - button "Focus F6 Redação, texto no modelo do escritório, Produção do texto" [ref=e102] [cursor=pointer]:
+          - generic [ref=e105]: F6 Redação
+          - generic: texto no modelo do escritório
+          - generic: cada parágrafo com origem
+        - button "Focus F7 Auditoria, revisão de fatos e citações, Produção do texto" [ref=e106] [cursor=pointer]:
+          - generic [ref=e109]: F7 Auditoria
+          - generic: revisão de fatos e citações
+          - generic: zero erro grave para avançar
+        - button "Focus F7-B Lapidação, melhora só a forma do texto, Produção do texto" [ref=e110] [cursor=pointer]:
+          - generic [ref=e113]: F7-B Lapidação
+          - generic: melhora só a forma do texto
+          - generic: conteúdo fica intocado
+        - button "Focus F8 Conferência visual, documento conferido página a página, Conferência e entrega" [ref=e114] [cursor=pointer]:
+          - generic [ref=e117]: F8 Conferência visual
+          - generic [ref=e118]: documento conferido página a página
+          - generic [ref=e119]: defeito visual trava a entrega
+        - button "Focus F9 Pacote, conferência final + e-mail, Conferência e entrega" [ref=e120] [cursor=pointer]:
+          - generic [ref=e123]: F9 Pacote
+          - generic: conferência final + e-mail
+          - generic: anexos exatos
+        - button "Focus F10 Entrega, entrega com prova e lições, Conferência e entrega" [ref=e124] [cursor=pointer]:
+          - generic [ref=e127]: F10 Entrega
+          - generic: entrega com prova e lições
+          - generic: fecha com retrospectiva
+        - button "Focus Lições, o que o feedback ensinou, Melhoria contínua — AutoResearch" [ref=e128] [cursor=pointer]:
+          - generic [ref=e131]: Lições
+          - generic: o que o feedback ensinou
+          - generic: versão protocolada × nossa
+        - button "Focus Registros, histórico de cada caso, Melhoria contínua — AutoResearch" [ref=e132] [cursor=pointer]:
+          - generic [ref=e135]: Registros
+          - generic: histórico de cada caso
+          - generic: guardado em área privada
+        - button "Focus Régua de nota, critérios fixados antes, Melhoria contínua — AutoResearch" [ref=e136] [cursor=pointer]:
+          - generic [ref=e139]: Régua de nota
+          - generic: critérios fixados antes
+          - generic: nota de 0 a 100
+        - button "Focus Criar versões, alternativas de molde e régua, Melhoria contínua — AutoResearch" [ref=e140] [cursor=pointer]:
+          - generic [ref=e143]: Criar versões
+          - generic: alternativas de molde e régua
+          - generic: cada uma muda um aspecto
+        - button "Focus Dar nota e escolher, mesma régua para todas, Melhoria contínua — AutoResearch" [ref=e144] [cursor=pointer]:
+          - generic [ref=e147]: Dar nota e escolher
+          - generic: mesma régua para todas
+          - generic: "desempate: conteúdo visível"
+        - button "Focus Aplicar vencedora, com cópia de segurança, Melhoria contínua — AutoResearch" [ref=e148] [cursor=pointer]:
+          - generic [ref=e151]: Aplicar vencedora
+          - generic: com cópia de segurança
+          - generic: conferida antes de valer
+        - generic: fontes prontas
+        - generic: sem erro grave
+        - generic: aprovado
+        - generic: lições da entrega
+        - generic: vencedora
+        - generic: moldes e réguas melhorados
+        - toolbar "Semantic legend" [ref=e152]:
+          - generic [ref=e153]: Legend
+          - button "Inspect Message Bus, 2 nodes" [ref=e154] [cursor=pointer]:
+            - generic [ref=e157]: Message bus
+            - generic: "2"
+          - button "Inspect Security, 3 nodes" [ref=e158] [cursor=pointer]:
+            - generic [ref=e161]: Security
+            - generic: "3"
+          - button "Inspect Backend, 4 nodes" [ref=e162] [cursor=pointer]:
+            - generic [ref=e165]: Backend
+            - generic: "4"
+          - button "Inspect Database, 3 nodes" [ref=e166] [cursor=pointer]:
+            - generic [ref=e169]: Database
+            - generic: "3"
+          - button "Inspect External, 2 nodes" [ref=e170] [cursor=pointer]:
+            - generic [ref=e173]: External
+            - generic: "2"
+          - button "Inspect Frontend, 1 node" [ref=e174] [cursor=pointer]:
+            - generic [ref=e177]: Frontend
+            - generic: "1"
+          - button "Inspect Cloud, 3 nodes" [ref=e178] [cursor=pointer]:
+            - generic [ref=e181]: Cloud
+            - generic: "3"
+      - status [ref=e182]
+      - toolbar "Diagram view controls" [ref=e183]:
+        - button "Trace a directed route" [ref=e184] [cursor=pointer]: PATH
+        - button "Open semantic radar" [ref=e185] [cursor=pointer]: MAP
+        - button "Open semantic lens" [ref=e186] [cursor=pointer]: LENS
+        - button "Find a node" [ref=e187] [cursor=pointer]: ⌕
+        - button "Open diagram guide" [ref=e188] [cursor=pointer]: "?"
+        - button "Zoom out" [disabled] [ref=e189]: −
+        - button "Zoom in to reveal relationship labels and node context. Reset diagram view" [ref=e190] [cursor=pointer]: MAP 100%
+        - button "Zoom in" [ref=e191] [cursor=pointer]: +
+    - generic [ref=e192]:
+      - generic [ref=e193]:
+        - heading "Como ler este desenho" [level=3] [ref=e196]
+        - list [ref=e197]:
+          - listitem [ref=e198]: "• Linha de cima: o caso entra e é preparado"
+          - listitem [ref=e199]: "• Linha do meio: o texto nasce, é auditado e entregue"
+          - listitem [ref=e200]: "• Faixa de baixo: a fábrica aprende e se melhora"
+          - listitem [ref=e201]: • Setas cheias = caminho da peça · tracejadas = aprendizado
+      - generic [ref=e202]:
+        - heading "Portões que travam a linha" [level=3] [ref=e205]
+        - list [ref=e206]:
+          - listitem [ref=e207]: • Fato sem prova não vira afirmação na peça
+          - listitem [ref=e208]: • Citação de lei ou julgado só entra conferida na fonte
+          - listitem [ref=e209]: • Erro grave detectado interrompe até ser resolvido
+          - listitem [ref=e210]: • Defeito visual segura a entrega
+      - generic [ref=e211]:
+        - heading "Onde o AutoResearch entra" [level=3] [ref=e214]
+        - list [ref=e215]:
+          - listitem [ref=e216]: "• Matéria-prima: lições das entregas e registros dos casos"
+          - listitem [ref=e217]: • Cria versões melhores de moldes, réguas e mapas
+          - listitem [ref=e218]: • Todas recebem nota pela mesma régua, fixada antes
+          - listitem [ref=e219]: • A vencedora volta à fábrica com cópia de segurança
+      - generic [ref=e220]:
+        - heading "Limites de segurança" [level=3] [ref=e223]
+        - list [ref=e224]:
+          - listitem [ref=e225]: • Petição real nunca é alterada automaticamente
+          - listitem [ref=e226]: • Melhoria de molde passa por revisão humana
+          - listitem [ref=e227]: "• Resultado comprovado: mapa da fábrica foi de 92,8 a 100"
+          - listitem [ref=e228]: "• Tudo registrado: notas, versões e selo de integridade"
+    - paragraph [ref=e229]:
+      - text: Architecture diagram • Built with Archify
+      - generic [ref=e230]: • Hover to trace • R route • Click to focus • +/− zoom • M radar • [/] views • P play story • T theme • E export
+  - status

@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "f4_signature_brief.schema.json",
+  "allOf": [
+    {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "specVersion",
+        "caseId",
+        "artifactType",
+        "phase",
+        "applicability",
+        "status",
+        "sourceHashes",
+        "producerRunId",
+        "createdAt",
+        "updatedAt",
+        "contentHash",
+        "issues"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "specVersion": {
+          "const": "N4.0-candidate"
+        },
+        "caseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifactType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "enum": [
+            "F0_RECONCILIACAO_FILA",
+            "F1_INGESTAO_SEGURA",
+            "F2_CLASSIFICACAO_PRODUTO_RISCO",
+            "F3_FONTES_REGIMENTO_LEIS",
+            "F4_BLUEPRINT_ESTRATEGICO",
+            "F5_PESQUISA_OFICIAL",
+            "F6_REDACAO_TEMPLATE",
+            "F7_AUDITORIA_JURIDICA_FACTUAL",
+            "F8_QA_VISUAL",
+            "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+            "F10_ENTREGA_EVIDENCIA_APRENDIZADO"
+          ]
+        },
+        "applicability": {
+          "enum": [
+            "required",
+            "conditional",
+            "not_applicable"
+          ]
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "pending_review",
+            "approved",
+            "blocked",
+            "stale",
+            "not_applicable"
+          ]
+        },
+        "sourceHashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "producerRunId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewerRunId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "contentHash": {
+          "type": "string",
+          "minLength": 16
+        },
+        "issues": {
+          "type": "array"
+        },
+        "justification": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "const": "not_applicable"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "justification"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewerRunId"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifactType": {
+          "const": "signature_brief"
+        },
+        "phase": {
+          "const": "F4_BLUEPRINT_ESTRATEGICO"
+        },
+        "protocolVersion": {
+          "const": "FORJA-SIGNATURE-BRIEF-v1"
+        },
+        "decisiveQuestion": {
+          "type": "string",
+          "minLength": 20
+        },
+        "demonstratedConsequence": {
+          "type": "string",
+          "minLength": 10
+        },
+        "routes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "routeId",
+              "thesisIds",
+              "description",
+              "bestObjection",
+              "response",
+              "decision"
+            ],
+            "properties": {
+              "routeId": {
+                "type": "string",
+                "pattern": "^R[0-9]+$"
+              },
+              "thesisIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "description": {
+                "type": "string",
+                "minLength": 20
+              },
+              "anchorCandidateIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bestObjection": {
+                "type": "string",
+                "minLength": 10
+              },
+              "response": {
+                "type": "string",
+                "minLength": 10
+              },
+              "decision": {
+                "enum": [
+                  "selected",
+                  "rejected",
+                  "open"
+                ]
+              },
+              "decisionReason": {
+                "type": "string",
+                "minLength": 5
+              }
+            }
+          }
+        },
+        "selectedRouteId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "humanDecisionId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "singleRouteReason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "complexityReason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "motherSentence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decisiveFactIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decisiveDocumentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "anchorCandidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "anchorCandidateId",
+              "identity",
+              "expectedOperation"
+            ],
+            "properties": {
+              "anchorCandidateId": {
+                "type": "string",
+                "pattern": "^ANC-[A-Za-z0-9._-]+$"
+              },
+              "identity": {
+                "type": "string",
+                "minLength": 6
+              },
+              "expectedOperation": {
+                "enum": [
+                  "apply",
+                  "distinguish",
+                  "limit_scope",
+                  "argue_overruling"
+                ]
+              },
+              "fullTextObtained": {
+                "type": "boolean"
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "mandatoryContent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blockingIssues": {
+          "type": "array"
+        },
+        "thesisFamilyCoverage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "family",
+              "status"
+            ],
+            "properties": {
+              "family": {
+                "enum": [
+                  "competencia",
+                  "admissibilidade",
+                  "prejudiciais",
+                  "prescricao_decadencia",
+                  "nulidades",
+                  "merito_principal",
+                  "merito_subsidiario",
+                  "constitucional_prequestionamento",
+                  "consequencia_institucional"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "examinada_proposta",
+                  "examinada_descartada",
+                  "nao_aplicavel"
+                ]
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "routeIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "not": {
+                  "const": "not_applicable"
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "decisiveQuestion",
+              "routes",
+              "selectedRouteId",
+              "mandatoryContent"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

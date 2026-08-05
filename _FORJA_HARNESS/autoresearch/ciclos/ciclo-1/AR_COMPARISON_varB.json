@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-comparison",
+  "mascara": [
+    "I2",
+    "I4",
+    "I5",
+    "I6"
+  ],
+  "novoNull": [],
+  "regressoes": [],
+  "vetos": [],
+  "deltas": {
+    "I2": 0.0,
+    "I4": 0.0,
+    "I5": 0.0,
+    "I6": 0.0
+  },
+  "bloqueio": null,
+  "aprovado": true
+}

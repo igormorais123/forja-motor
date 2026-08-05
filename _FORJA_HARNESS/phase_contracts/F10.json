@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+  "order": 10,
+  "producerRole": "forja-delivery-reconciler",
+  "reviewerRole": "forja-evidence-auditor",
+  "requiredInputs": ["package_manifest", "delivery_evidence"],
+  "requiredOutputs": ["delivery_evidence", "run_metrics", "retrospective"],
+  "requiredGates": ["external_identifier_valid", "package_hash_matches", "management_synced"],
+  "nextPhase": null,
+  "retryPolicy": {"maxAttempts": 3, "idempotent": true}
+}

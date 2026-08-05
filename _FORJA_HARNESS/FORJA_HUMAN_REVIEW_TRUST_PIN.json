@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "trustStorePath": "~/.hermes/trust/FORJA_HUMAN_REVIEW_TRUST.json",
+  "trustStoreSha256": null,
+  "status": "unconfigured",
+  "note": "A inclusão de um revisor exige criar o trust store fora do workspace, registrar aqui seu SHA-256, revisar e rebaselinar a régua. A chave privada nunca entra na FORJA."
+}

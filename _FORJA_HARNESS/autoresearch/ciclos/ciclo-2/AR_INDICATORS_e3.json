@@ -1,0 +1,416 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "10231b64912e15bdcb2c010bbf327ef4d8bfac0bdf58a549db46b043a8ca7b27",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "d2e77c1dba64859b421c4afb0036294f910d1559177df8cd6c713acde49d3475",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "ecfcf271ecac6f283768f813f3b2edebd57322dc418500f80b5aa0adb19a7a1d"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 52,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: teor vigente e aplicabilidade do art. 9º, VII, da Lei nº 13.146/2015; conferir Doc. 1 e Doc. 2]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir no Doc. 1 o dispositivo integral, a eficácia e o alcance exato da curatela, a exigência de atuação conjunta e as procurações; confirmar nos documentos contratuais a razão social, o CNPJ e o endereço atuais da operadora]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir integralmente Docs. 3, 4, 5, 12 e 13, inclusive envelopes, hashes, participantes, datas e contexto]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: obter relatório atual e pedido médico completo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir Docs. 1, 2 e 11; teor vigente do art. 1º, § 2º, da Lei nº 12.764/2012 e dos arts. 9º, 84 e 85 da Lei nº 13.146/2015]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: incidência e teor vigente do art. 178, II, do CPC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: texto vigente do art. 101, I, do CDC; cláusulas contratuais; domicílio; organização judiciária; competência das Varas Cíveis de Brasília; eventual prevenção, conexão ou demanda anterior]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: base legal e prática do Juízo para proteção pontual desses dados]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: razão social, representação e CNPJ exatos; o número “029.043.365/0001-85” fornecido aparenta formatação incompatível com o padrão de CNPJ e não deve ser usado sem confirmação]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: decidir, antes do protocolo, se a estipulante deve integrar o polo ativo; se não integrar, limitar os comandos que afetem o contrato e o faturamento empresariais]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os Docs. 3 e 4 e obter explicação cadastral e arquivo nativo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir a íntegra, os participantes, as datas, a autenticidade e o contexto dos Docs. 5 e 12]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir Doc. 3 e obter contratos, códigos, comissões e comunicações estritamente ligadas à proposta]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir Doc. 4 e a trilha nativa por campo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: teor vigente e aplicabilidade dos arts. 408, 411 e 412 do CPC e do art. 10, § 2º, da MP nº 2.200-2/2001]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o documento e os requisitos vigentes dos arts. 3º e 4º da RN ANS nº 558/2022]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir íntegra, CID, datas, destinatário e redação do Doc. 6]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: arquivo transmitido, integridade, autoria, autorização, protocolo, destinatário, recibo e conteúdo efetivamente recebido pela Ré]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra da carta de exclusão, fundamento contratual e regulatório, processo ANS e prova da eficácia]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: comprovar conteúdo, envio, recebimento e íntegra dos Docs. 8 e 2]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Docs. 2 e 8]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir exames e obter relatório médico atual]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: somar individualmente os doze valores e conferir beneficiário, datas e relação com o contrato]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: prêmio, natureza e incidência do percentual, faturas e memórias de cálculo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Doc. 9 e histórico nativo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: texto oficial, vigência em julho de 2026, alterações, vocabulário normativo e exata aplicabilidade do art. 11 da Lei nº 9.656/1998 e dos arts. 16, §§ 3º e 4º, e 28 da RN ANS nº 558/2022]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra do Doc. 7, contrato, escopo e articulação oficial entre as RNs ANS nº 557/2022 e 558/2022]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: textos vigentes e pertinência dos arts. 6º, III e VIII, 14, 34, 47 e 51, IV, do CDC e dos arts. 113 e 422 do Código Civil]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: em fonte oficial SCON/STJ, número exato, órgão, relatoria, datas, fonte, trecho literal, localização e aderência fática de cada precedente; remover da versão final qualquer referência não confirmada]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: transcrever somente o teor exato e a localização no Doc. 1; conferir arts. 3º do Código Civil e 84 e 85 da Lei nº 13.146/2015]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: identidade, órgão, relatoria, data, trecho literal, localização e aderência em fonte oficial]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: arts. 4º e 9º da Lei nº 13.146/2015; art. 1º, § 2º, da Lei nº 12.764/2012; arts. 4º, I, e 6º, III, do CDC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: requisitos e textos vigentes dos arts. 396 a 400, especialmente art. 397, do CPC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Docs. 6 e 7 e legislação regulatória indicada]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: cartão/portal inativos, relatórios de ativos, pagamentos e eventual necessidade assistencial atual]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: arts. 300, 497, 536 e 537 do CPC; proporcionalidade do prazo e prática do Juízo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: proporcionalidade em relação ao custo da cobertura e prática atual do TJDFT]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: prazos regulatórios vigentes, indicação clínica, materiais, urgência e cobertura]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: individualizar a prova de cada circunstância]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: existência, situação, tese literal, data, fonte oficial e aderência; remover se não confirmado]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: julgados oficiais atuais do TJDFT e do STJ sobre circunstâncias efetivamente comparáveis]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: art. 6º, VIII, do CDC e normas processuais aplicáveis]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: necessidade de patrocínio por advogado diverso e regras ético-processuais aplicáveis]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: art. 292 do CPC, prática do TJDFT, proveito econômico da reintegração, valor do procedimento cirúrgico, cumulação dos pedidos e Doc. 3]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: inscrição, procuração, atuação dos curadores e potencial condição do subscritor como testemunha material]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: versão consolidada vigente e emendas até a data efetiva]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: dispositivos e regras éticas aplicáveis]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confirmar N/A após leitura oficial]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: art. 101, I, CDC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: art. 178, II, CPC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[DATA EFETIVA DA ASSINATURA/PROTOCOLO]",
+          "problema": "placeholder de dado esquecido na peça"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 0.0,
+      "aprovado": false,
+      "p0": 2,
+      "p1": 1,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P0",
+          "trecho": "TRAMITAÇÃO PRIORITÁRIA — PESSOA COM DEFICIÊNCIA** [VERIFICAR: teor vigente e aplicabilidade do art. 9º, VII, da Lei nº 13.146/2015; conferir Doc. 1 e Doc. 2] EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DE UMA DAS VARAS CÍVEIS DA CIRCUNSCRIÇÃO JUDICIÁRIA DE BRASÍLIA — DISTRITO FEDERAL AÇÃO DECLARATÓRIA DE INVALIDADE DE",
+          "problema": "travessão explicativo repetido (14 em 5526 palavras; limite=13)",
+          "acao": "converta apartes em frases autônomas ou integre a explicação ao período principal",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 14,
+          "limite": 13
+        },
+        {
+          "gate": "G10-escrita-humana/absolutismo-sem-lastro",
+          "sev": "P1",
+          "trecho": "A coincidência de familiares e estipulante é indício de conexão, mas não substitui a reconciliação documental. Até que a Ré esclareça a divergência, a DPS não pode ser tratada como inequivocamente vinculada ao contrato litigioso.",
+          "problema": "afirmação categórica com lastro aparente a conferir: inequivocamente",
+          "acao": "delimite a proposição; mantenha o absoluto somente se a fonte realmente o sustentar",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "lastroAparente": true
+        },
+        {
+          "gate": "G10-escrita-humana/ritmo-robotico",
+          "sev": "P0",
+          "trecho": "A curatela foi calibrada como veto à presunção de dolo pessoal, não como imunidade de curadores, estipulante ou terceiros. A cirurgia foi separada da reintegração e condicionada a relatório contemporâneo e pedido completo. A exibição deixou de ser lista massiva e virou matriz documento → fato → posse exclusiva, com pre",
+          "problema": "quatro frases seguidas repetem estrutura curta e ritmo quase uniforme",
+          "acao": "combine relações causais, varie a extensão e dê prioridade à frase que move o argumento",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "tamanhos": [
+            19,
+            14,
+            22,
+            19
+          ]
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

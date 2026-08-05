@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "specVersion": "N3.0-r2",
+  "generatedAt": "2026-07-23T14:31:28-03:00",
+  "status": "pass",
+  "commands": [
+    {
+      "name": "compile",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 0.341,
+      "tail": ""
+    },
+    {
+      "name": "n3_unittests",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 16.4,
+      "tail": "esolves_without_package) ... ok\ntest_n4_artifact_resolves_only_from_catalog_and_current_hash (test_forja_n3_server_routes.ForjaServerRouteTests.test_n4_artifact_resolves_only_from_catalog_and_current_hash) ... ok\ntest_tampered_artifact_is_rejected (test_forja_n3_server_routes.ForjaServerRouteTests.test_tampered_artifact_is_rejected) ... ok\ntest_concurrent_revision_conflict (test_forja_n3_state.ForjaN3StateTests.test_concurrent_revision_conflict) ... ok\ntest_idempotency (test_forja_n3_state.ForjaN3StateTests.test_idempotency) ... ok\ntest_legacy_highest_phase_blocks_silent_regression (test_forja_n3_state.ForjaN3StateTests.test_legacy_highest_phase_blocks_silent_regression) ... ok\ntest_partial_event_is_ignored (test_forja_n3_state.ForjaN3StateTests.test_partial_event_is_ignored) ... ok\ntest_progression_and_recovery (test_forja_n3_state.ForjaN3StateTests.test_progression_and_recovery) ... ok\ntest_regression_requires_reopen (test_forja_n3_state.ForjaN3StateTests.test_regression_requires_reopen) ... ok\ntest_returned_state_includes_synchronous_management_ack (test_forja_n3_state.ForjaN3StateTests.test_returned_state_includes_synchronous_management_ack) ... ok\ntest_closing_and_signature_are_not_numbered_or_orphaned (test_forja_n3_visual.ForjaN3VisualTests.test_closing_and_signature_are_not_numbered_or_orphaned) ... ok\ntest_composer_accepts_only_declared_visual_markers (test_forja_n3_visual.ForjaN3VisualTests.test_composer_accepts_only_declared_visual_markers) ... ok\ntest_conclusive_summary_after_merit_remains_a_regular_section (test_forja_n3_visual.ForjaN3VisualTests.test_conclusive_summary_after_merit_remains_a_regular_section) ... ok\ntest_known_bad_diagrams_are_rejected (test_forja_n3_visual.ForjaN3VisualTests.test_known_bad_diagrams_are_rejected) ... ok\ntest_later_opaque_shape_covering_text_fails (test_forja_n3_visual.ForjaN3VisualTests.test_later_opaque_shape_covering_text_fails) ... ok\ntest_markdown_and_duplicate_caption_leaks_fail (test_forja_n3_visual.ForjaN3VisualTests.test_markdown_and_duplicate_caption_leaks_fail) ... ok\ntest_pdf_reviewer_must_be_independent (test_forja_n3_visual.ForjaN3VisualTests.test_pdf_reviewer_must_be_independent) ... ok\ntest_valid_svg_passes (test_forja_n3_visual.ForjaN3VisualTests.test_valid_svg_passes) ... ok\ntest_visual_parser_handles_h4_blockquote_and_weighted_table (test_forja_n3_visual.ForjaN3VisualTests.test_visual_parser_handles_h4_blockquote_and_weighted_table) ... ok\ntest_visual_qa_runs_semantic_fidelity_gate (test_forja_n3_visual.ForjaN3VisualTests.test_visual_qa_runs_semantic_fidelity_gate) ... ok\ntest_permanent_failure_preserves_previous_pdf (test_word_visual_pipeline_retry.WordPdfRetryTests.test_permanent_failure_preserves_previous_pdf) ... ok\ntest_transient_failure_retries_and_promotes_atomically (test_word_visual_pipeline_retry.WordPdfRetryTests.test_transient_failure_retries_and_promotes_atomically) ... ok\n\n----------------------------------------------------------------------\nRan 63 tests in 15.885s\n\nOK"
+    },
+    {
+      "name": "test_forja_verificador.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 0.063,
+      "tail": "ok: 17 detecções + 15 não-travas confirmadas"
+    },
+    {
+      "name": "test_forja_citacoes.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 0.112,
+      "tail": "======================================================================\nTESTE DE REGRESSÃO U2 — ALUCINAÇÃO DE CITAÇÃO\n======================================================================\n\n[1/2] Testando DEVE_PEGAR (erros que devem ser detectados)...\n  ✓ 6/6 detectadas\n\n[2/2] Testando NAO_PODE_TRAVAR (não devem gerar P0)...\n  ✓ 6/6 não-travas confirmadas\n\n======================================================================\nOK: 6 detecções + 6 não-travas confirmadas"
+    },
+    {
+      "name": "test_forja_injection.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 13.561,
+      "tail": "============================================================\nTESTE U3 - Detecção de Prompt Injection\n============================================================\n\n=== TESTE A: PDF ENVENENADO ===\nPDF envenenado criado: C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\_FORJA_HARNESS\\cache\\test_injection_veneno.pdf\nPadrões de instrução detectados: 2\nCor invisível detectada: 0\nFonte microscópica detectada: 34\n[OK] ACUSOU padrão de instrução oculta (esperado)\n[AVISO] NÃO ACUSOU cor invisível (pdfplumber pode não extrair cor em PDFs reportlab — ok)\n[OK] ACUSOU texto 1pt (esperado)\n\n=== TESTE B: PDFs REAIS (ZERO PADRÕES ESPERADOS) ===\nTestando 15 PDFs reais...\n  [OK] 0783400-11.2024.8.07.0016-1774570729601-1016387-termo de curatela mateus assinado (2).pdf limpo (zero padrões)\n  [OK] 0783400-11.2024.8.07.0016-1774570774478-1016387-sentenca (2).pdf limpo (zero padrões)\n  [OK] Carta de Orientacao ao Beneficiario.pdf limpo (zero padrões)\n  [OK] Certidão Cartório Interdição Mateus (2).pdf limpo (zero padrões)\n  [OK] DPS.pdf limpo (zero padrões)\n  [OK] E-mail de Medina Osorio - Encaminha pedido de revisão de exclusão de beneficiário.pdf limpo (zero padrões)\n  [OK] E-mail de Medina Osorio - Encaminhamento de Petição Complementar – Pedido de revisão de exclusão de beneficiário.pdf limpo (zero padrões)\n  [OK] E-mail de Medina Osorio - Resposta SulAmérica - Protocolo_ 20260617049170.pdf limpo (zero padrões)\n  [OK] Exclusão_MATEUS GRASSI MEDINA OSORIO_Omissão DS_557.pdf limpo (zero padrões)\n  [OK] Laudo Médico Mateus_Dr. André Luis.pdf limpo (zero padrões)\n  [OK] Laudo Médico Mateus_Dr. Leonardo Paim.pdf limpo (zero padrões)\n  [OK] Peticao_Extrajudicial_SulAmerica_Mateus complementar.pdf limpo (zero padrões)\n  [OK] Peticao_Extrajudicial_SulAmerica_Mateus vf.pdf limpo (zero padrões)\n  [OK] Proposta Contratacao Cuidado 360 6003224-1.pdf limpo (zero padrões)\n  [OK] registro_6a10c22c6336456f.pdf limpo (zero padrões)\n\n[OK] Todos os 15 PDFs reais limpos (zero padrões de instrução)\n\n============================================================\n[PRONTO] Scan limpo nos PDFs reais + acusa PDF envenenado"
+    },
+    {
+      "name": "test_f7_campos.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 0.917,
+      "tail": "✓ Test sintético passou\n\n=== Resultado F7 (fonte N3 AZIMUT) ===\nCitações totais: 7\nCitações conferidas: 4\nCitações não conferidas (3):\n  - TJSP AGRAVO DE INSTRUMENTO 2131785-85.2022.8.26.0000\n  - art. 520 CPC\n  - Lei 14.905/2024\n[VERIFICAR]: nenhum encontrado\n✓ Test com a fonte N3 passou\n\n✓ Todos os testes passaram"
+    },
+    {
+      "name": "test_licao41.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 0.289,
+      "tail": "[OK  ] (a) nenhum asterisco literal sobra no parágrafo\n[OK  ] (a) trecho em itálico ganha run italic\n[OK  ] (a) trecho em negrito segue com run bold\n[OK  ] (a) não-trava: asterisco de multiplicação com espaços não vira itálico\n[OK  ] (b) 'Tema 1.365' extraído com o número completo\n[OK  ] (b) nenhum tema extraído como 'Tema 1' isolado\n[OK  ] (b) 'Tema 1368' e 'Tema 1.368' deduplicam para uma só citação\n[OK  ] (b) Tema 1368 (mesmo grafado com ponto) localiza STJ_TEMA_1368 no cache\n[OK  ] (c) Súmula 608 conferida no cache\n[OK  ] (c) Súmula 609 conferida no cache\n[OK  ] (c) Tema 1.368 conferido no cache (regex de milhar na cópia local)\n[OK  ] (c) não-trava: Súmula 999 sem fonte segue como não conferida\n[OK  ] (d) kit visual: zero asterisco literal em quadro/caixa\n[OK  ] (d) kit visual: **negrito** de célula vira run bold\n[OK  ] (d) kit visual: *itálico* de caixa vira run italic\n[OK  ] (e) Súmula 7/STJ e 7/STF NÃO fundem (citações distintas)\n[OK  ] (e) menção sem tribunal com DUAS cortes qualificadas fica separada (ambígua)\n[OK  ] (e) sem tribunal + cache dos DOIS tribunais = ambíguo, NÃO conferida\n[OK  ] (e) com tribunal declarado, confere só no cache daquele tribunal\n[OK  ] (e) sem tribunal mas cache de UM só tribunal = conferida (sem ambiguidade)\n[OK  ] (e) tribunal declarado ERRADO para o cache existente = não conferida\n[OK  ] (f) falha do verificador ABORTA o render (fail-closed)\n[OK  ] (f) nenhum DOCX nasce quando o gate falha\n[OK  ] (f) nenhum F7 falso é persistido quando o gate falha\n\nOK: todos os casos da Lição 41 passam"
+    },
+    {
+      "name": "test_forja_regua.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 0.196,
+      "tail": "[OK    ] S1 cache VAZIO não conta como conferência\n[OK    ] S1 cache SEM URL de captura não conta como conferência\n[OK    ] S1 não-trava: cache hash-bound conta no teste offline\n[OK    ] S2 F7 à mão SEM mdSha256 reprova\n[OK    ] S2 F7 com hash ERRADO reprova (forjado)\n[OK    ] S2 não-trava: F7 legítimo (hash bate) aprova\n[OK    ] S2 p0 > 0 reprova mesmo com hash certo\n[OK    ] S3 fonte alterado após o render reprova (F7 desatualizado)\n[OK    ] S3 consolidado: UM documento sem lastro derruba o conjunto\n[OK    ] S3 não-trava: consolidado legítimo aprova\n[OK    ] S4 parecer inexistente reprova\n[OK    ] S4 parecer de fachada (curto) reprova\n[OK    ] S4 parecer longo SEM recomendações numeradas reprova\n[OK    ] S4 não-trava: parecer real (conteúdo + recomendações) aprova\n[OK    ] S4 placeholder de template no parecer reprova\n[OK    ] S5 não-trava: hashes batendo passam\n[OK    ] S5 manifesto Windows confere os mesmos arquivos no Linux\n[OK    ] S5 colisão de separadores com hashes distintos reprova\n[OK    ] S5 arquivo protegido alterado sem rebaseline é DETECTADO\n[OK    ] S5 manifesto ausente/vazio reprova (não passa em silêncio)\n\nOK: régua pega todas as sabotagens simuladas"
+    },
+    {
+      "name": "_scripts_oneoff/validate_f7_integration.py",
+      "status": "pass",
+      "exitCode": 0,
+      "seconds": 1.471,
+      "tail": "      \"number\": \"14939\",\n        \"year\": \"2024\"\n      },\n      \"sourcePath\": null\n    },\n    {\n      \"tipo\": \"NORMA\",\n      \"classe\": \"LEI\",\n      \"numero\": \"9065\",\n      \"corte\": \"BR\",\n      \"rotulo\": \"Lei 9.065/1995\",\n      \"authorityIdentity\": {\n        \"court\": \"BR\",\n        \"kind\": \"LEI\",\n        \"number\": \"9065\",\n        \"year\": \"1995\"\n      },\n      \"sourcePath\": null\n    }\n  ],\n  \"verificarRestantes\": [\n    {\n      \"marcador\": \"[VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: valores e datas exatas dos desembolsos e o termo final adotado, conforme o título e a memória de cálculo da execução nos autos de origem.]\",\n      \"contexto\": \"o de execução superior a R$ 22 milhões. [VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: valores e datas exatas dos desembolsos e o termo final adotado, conforme o título e a memória de cálculo da execução nos autos de origem.] ## I. O CASO EM POUCAS LINHAS 4. A rec\"\n    },\n    {\n      \"marcador\": \"[VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: teor literal do capítulo de juros da sentença/acórdão exequendo, nos autos de origem.]\",\n      \"contexto\": \"sem fixar taxa convencional específica. [VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: teor literal do capítulo de juros da sentença/acórdão exequendo, nos autos de origem.] 5. Na execução provisória, a recorrida\"\n    },\n    {\n      \"marcador\": \"[VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: teor literal do capítulo de juros do título exequendo.]\",\n      \"contexto\": \"lo, aponta a taxa legal, que é a Selic. [VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: teor literal do capítulo de juros do título exequendo.] 14. **Segunda — as cláusulas invocadas\"\n    },\n    {\n      \"marcador\": \"[VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: ementa do AgInt no REsp 1.830.905/SC no SCON, para o contraste preciso.]\",\n      \"contexto\": \"tão puramente normativa aqui devolvida. [VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: ementa do AgInt no REsp 1.830.905/SC no SCON, para o contraste preciso.] 18. **Suposta convenção tripla.** Aind\"\n    },\n    {\n      \"marcador\": \"[VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: teor das fls. 44/73, 74/76 e fl. 34 dos autos de origem, para resposta cirúrgica em sustentação oral.]\",\n      \"contexto\": \"o título reportou-se aos juros legais. [VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: teor das fls. 44/73, 74/76 e fl. 34 dos autos de origem, para resposta cirúrgica em sustentação oral.] ## V. O TEMA 1368 JÁ FOI JULGADO — O CA\"\n    },\n    {\n      \"marcador\": \"[VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: conferir esta lista de dispositivos contra o REsp efetivamente protocolado (doc. 4), ajustando-a ao que foi devolvido.]\",\n      \"contexto\": \"da exequente — que delimita a execução. [VERIFICAR EM FONTE OFICIAL ANTES DO PROTOCOLO: conferir esta lista de dispositivos contra o REsp efetivamente protocolado (doc. 4), ajustando-a ao que foi devolvido.] ## VII. PEDIDOS 21. Ante o exposto, a\"\n    }\n  ],\n  \"autoridadesDecisivasComVigenciaConferida\": null\n}"
+    }
+  ],
+  "contracts": {
+    "status": "pass",
+    "count": 11
+  },
+  "json": {
+    "status": "pass",
+    "checked": 1705,
+    "invalid": []
+  },
+  "realWordIncluded": false,
+  "replayIncluded": false
+}

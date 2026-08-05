@@ -1,0 +1,20 @@
+flowchart LR
+    Intake["Demanda recebida"] --> Trust["Documentos conferidos"]
+    Trust --> Problem["Problema bem definido"]
+    Problem --> Alternatives["Alternativas comparadas"]
+    Alternatives --> Thesis["Teses, fundamentos e pedidos ligados às fontes"]
+    Thesis --> Challenge["Argumentos contrários, ciência e melhor objeção"]
+    Challenge --> Draft["Peça limpa e persuasiva"]
+    Draft --> Audit["Revisão jurídica, factual, de sentido e de apresentação"]
+    Audit --> Human["Decisão humana"]
+    Human --> Delivery["Entrega comprovada"]
+    Delivery --> Management["Gestão atualizada"]
+    Management --> Learn["Aprendizado organizado por causa"]
+    Learn -. "melhora comprovada" .-> Problem
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b;
+    classDef human fill:#fff4d8,stroke:#9a6b18,color:#4b370d;
+    classDef evidence fill:#e9f4ec,stroke:#2f6f54,color:#1f4c39;
+    class Intake,Trust,Problem,Alternatives,Thesis,Challenge,Draft,Audit,Management,Learn active;
+    class Human human;
+    class Delivery evidence;

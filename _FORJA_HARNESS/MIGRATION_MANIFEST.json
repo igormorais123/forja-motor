@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "FORJA-PHYSICAL-MIGRATION-1.0",
+  "generatedAt": "2026-07-16T23:20:18-03:00",
+  "sourceCommit": "4fca776f12d8e0411888677ae1bb6b917cdad96e",
+  "resultCommitBase": "2c76ee4e",
+  "policy": {
+    "runtimeRootsMoved": false,
+    "stateContractOrEvidenceDeleted": false,
+    "foreignProjectsAreForjaComponents": false,
+    "secretsMayEnterRepository": false
+  },
+  "verification": {
+    "trackedBlobsInspected": 2427,
+    "trackedBlobsMissing": 0,
+    "contentMismatches": 8,
+    "contentMismatchClass": "MAPA_IA regenerated after relocation",
+    "substantiveBlobMismatches": 0,
+    "restoreTest": {
+      "status": "passed",
+      "restoredFilesCompared": 955,
+      "hashMismatches": 0
+    }
+  },
+  "items": [
+    {
+      "origin": "Forja visual 3d/",
+      "destination": "C:/Users/IgorPC/.claude/projects/Forja visual 3d/projeto_3d/",
+      "gitTreeAtSourceCommit": "43808810cd940ef22b2a4780adff7cc34176d7f2",
+      "trackedFilesAtSource": 2250,
+      "class": "archived_visual_project",
+      "consumer": "historical visual material only; no FORJA runtime consumer",
+      "backup": "git object database at sourceCommit plus external archive",
+      "restore": "restore tracked content from sourceCommit and compare blob hashes; restore foreign FocoEdital only from its private backup",
+      "recommendation": "arquivar",
+      "executed": true
+    },
+    {
+      "origin": "blender_atlas/",
+      "destination": "C:/Users/IgorPC/.claude/projects/Forja visual 3d/blender_atlas/",
+      "gitTreeAtSourceCommit": "a36d7211f79b3a8d34183809a5e2e3b4e37d327a",
+      "trackedFilesAtSource": 5,
+      "class": "legacy_visual_tooling",
+      "consumer": "historical Blender atlas only",
+      "backup": "git object database at sourceCommit plus external archive",
+      "restore": "restore from sourceCommit and compare blob hashes",
+      "recommendation": "arquivar",
+      "executed": true
+    },
+    {
+      "origin": "reports/atlas_forja_blender_assets/",
+      "destination": "C:/Users/IgorPC/.claude/projects/Forja visual 3d/reports_atlas_blender/atlas_forja_blender_assets/",
+      "gitTreeAtSourceCommit": "8593762a1898ee4ddea33f87ed20b9e250218bf3",
+      "trackedFilesAtSource": 170,
+      "class": "archived_visual_report_assets",
+      "consumer": "archived Blender report only; current lawyer atlas remains in reports/atlas_forja_assets",
+      "backup": "git object database at sourceCommit plus external archive",
+      "restore": "restore from sourceCommit and compare blob hashes",
+      "recommendation": "arquivar",
+      "executed": true
+    },
+    {
+      "origin": "Forja visual 3d/PLANEJAMENTO_APLICATIVO_CONCURSOS_IA_2026-07-14/",
+      "destination": "C:/Users/IgorPC/.claude/backups/forja-cleanup-20260716/",
+      "class": "foreign_project",
+      "consumer": "none in FORJA; independent canonical project exists at C:/Users/IgorPC/.claude/projects/FocoEdital/focusedital",
+      "sourceRemoved": true,
+      "backup": {
+        "archive": "focusedital-duplicado-source-data-20260716.tar.gz",
+        "sha256": "48F1436624E71CEA6F8E5129F3E979C0D63EE6B430053B4E242F714FA809E616",
+        "containsSecrets": true,
+        "privateOnly": true
+      },
+      "restore": "follow C:/Users/IgorPC/.claude/backups/forja-cleanup-20260716/MANIFESTO_RESTAURACAO.md",
+      "recommendation": "excluir_do_escopo_forja",
+      "executed": true
+    }
+  ],
+  "residualRisk": {
+    "backupPolicy": "local_only",
+    "offDeviceBackup": "intentionally_disabled_by_user",
+    "impact": "local accidental deletion is recoverable; cloud or off-device upload is outside FORJA policy",
+    "requiredAction": "none"
+  }
+}

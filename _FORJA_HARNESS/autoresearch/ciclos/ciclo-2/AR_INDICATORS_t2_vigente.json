@@ -1,0 +1,585 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "76f189197dee8f166c995bd24f8cdd1e7f186ef7298ebb6217def77d9a42b824",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "d2e77c1dba64859b421c4afb0036294f910d1559177df8cd6c713acde49d3475",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "ecfcf271ecac6f283768f813f3b2edebd57322dc418500f80b5aa0adb19a7a1d"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 84,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: ...]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: relatoria, prevenção, competência, composição atual da Terceira Turma, pauta e modalidade do julgamento]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: classe, número, registro, partes, origem e fase processual atual]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra do título, exato alcance do reconhecimento judicial e redação oficial do art. 406 do Código Civil]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: teor integral e contexto das e-STJ fls. 56 e 77–78]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: identificação, processos representativos, fonte oficial, tese literal, localização, julgamento, publicação, trânsito, eventual modulação e alcance temporal do Tema 1.368/STJ]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: identificação, órgão, fonte oficial, inteiro teor, trecho literal, localização e pertinência do AgInt no AREsp nº 2.059.743/RJ]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra dos acórdãos, dos três instrumentos e do memorial da recorrida, especialmente e-STJ fls. 381–382]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: pedidos e causa de pedir do recurso especial; data de produção de efeitos e regras intertemporais da Lei nº 14.905/2024]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra do título e dos acórdãos; se houve referência direta, indireta ou por remissão a encargos convencionais]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: transcrição literal, pontuação, contexto, autoria, alcance e localização exata em e-STJ fl. 77]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: teor integral, dispositivo e contexto de e-STJ fl. 78]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conteúdo integral das contrarrazões, referências e redação oficial vigente dos dispositivos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: exato escopo do recurso especial, prequestionamento do art. 406 e inexistência de fundamento contratual incorporado ao acórdão]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: dispositivo do título, limites objetivos da coisa julgada e atos da fase executiva]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: cada premissa pela íntegra do título, dos acórdãos e da cronologia processual]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: se todas as premissas acima foram efetivamente assentadas e se o recurso não demanda revisão do conjunto probatório]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: texto literal, inclusive preposição, grafia, numeração, órgão julgador, processos representativos, fonte oficial, localização da tese e eventual retificação]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: alcance vinculante, natureza da obrigação, período alcançado e vedação exata de cumulação]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: limites dos pedidos formulados no recurso]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: termos iniciais literais no título e metodologia juridicamente aplicável]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: número, classe, partes, relatoria, órgão julgador, datas, fonte oficial, inteiro teor, trecho literal e localização; confirmar identidade entre as premissas do precedente e as deste caso]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR marco]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR índice]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR marco]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR Tema 1.368]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR eficácia e transição]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: índice pré-mora, marcos do título e alcance dos precedentes]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: apelação, trânsito, primeira decisão sobre os índices, intimações, impugnações e eventual preclusão]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: integralidade, tempestividade, objeto e resultado da impugnação; cronologia completa dos atos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: inexistência de decisão anterior preclusa e limites objetivos da coisa julgada]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: identificação, fonte oficial, inteiro teor, trecho literal, localização, órgão julgador, premissas e efetiva analogia; conteúdo do agravo em e-STJ fls. 131–132]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: comparação analítica dos títulos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: data, autoria, teor literal, existência e alcance das cláusulas e localizadores]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra dos acórdãos, especialmente e-STJ fls. 56 e 77–78]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: natureza da obrigação, sub-rogação, premissas efetivamente assentadas e eventual fundamento alternativo autônomo de direito]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: inteiro teor dos acórdãos e instrumentos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: frase literal em e-STJ fl. 382 e fundamentos completos dos acórdãos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: razões e pedidos integrais do recurso especial]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: textos oficiais das Súmulas 5 e 7; conteúdo dos instrumentos; existência de premissas suficientes no acórdão]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: aderência da questão recursal às premissas incontroversas]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: compatibilidade deste pedido subsidiário com o recurso interposto, ausência de inovação e consequência processual juridicamente adequada]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conteúdo do título e limites do pedido recursal]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: data de produção de efeitos da lei, alcance temporal do Tema 1.368 e natureza civil da dívida]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Lei nº 14.905/2024, redação oficial dos dispositivos, vigência, produção de efeitos, regulamentação, regra intertemporal e escopo do REsp]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: metodologia de cálculo juridicamente correta em cada período]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: íntegra do título e cronologia]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: todos os quatro elementos do gate de precedente e alcance temporal]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: precedente de segmentação, marcos do título e fundamentos dos acórdãos]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: cada fundamento, premissa e compatibilidade com os pedidos já formulados]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: prequestionamento, admissibilidade e escopo do recurso]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: Tema 1.368, período e premissas do título]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: data de corte, alcance e eventual modulação]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: termos do título e se a definição do índice pré-mora deve ser feita pelo STJ ou pela origem]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: texto, eficácia, transição e limites do REsp]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: cabimento, consequência processual e ausência de inovação recursal]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: data efetiva de assinatura e protocolo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: nomes, grafia, inscrições, poderes, representação e assinaturas]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: distribuição, prevenção e relatoria atual]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: todas as decisões anteriores sobre índices e respectivas impugnações]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: competência e composição vigente da Terceira Turma]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: julgamento virtual ou presencial, preferência, destaque e sustentação oral]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: art. 406 do Código Civil e demais dispositivos efetivamente prequestionados]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: versão consolidada vigente do RISTJ e emendas até a data da elaboração]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: teor e aplicabilidade do art. 343-A do RISTJ à síntese inicial]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: competência, composição, memoriais, pauta, sessão, preferência, destaque e sustentação oral]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: dispositivos efetivamente incidentes do Estatuto da OAB e da LOMAN; não inserir referências decorativas]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Cada desembolso<br/>\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Citação<br/>\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Concorrência dos encargos:<br/>Selic sem cumulação<br/>\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Novo regime legal<br/>\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Recálculo pela origem,<br/>sem sobreposição\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Rota da recorrente\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Premissa atribuída ao acórdão:<br/>índice não fixado\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Aplicação do art. 406\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Critério legal +<br/>segmentação temporal\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Fundamento alternativo da recorrida\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Contrato de compra e venda\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Definir alcance sobre<br/>a obrigação executada\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Instrumento de assunção\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Apólice\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[\"Premissas contratuais<br/>não atribuídas ao TJSP\"]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[NÃO VERIFICADOS]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 1.0,
+      "aprovado": true,
+      "p0": 0,
+      "p1": 1,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P1",
+          "trecho": ":** íntegra do título; cronologia; precedentes; índice pré-mora; escopo do REsp; lei nova; regimento; pauta. - **Roteamento:** F3 — pesquisa oficial de legislação, regimento e precedentes; F4 — ingestão/cotejo dos autos; F5 — estratégia após resolução das premissas; F6 — limpeza de todos os marcadores e fechamento da p",
+          "problema": "frequência de travessões pede revisão (16 em 7083 palavras)",
+          "acao": "confirme cada aparte; prefira frase autônoma quando a explicação for substantiva",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 16,
+          "limite": 16
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

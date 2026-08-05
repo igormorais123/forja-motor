@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "executedAt": "2026-07-29T01:09:32-03:00",
+  "sourceCaseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+  "sourceMessageId": "19f5cb168a52b35e",
+  "candidateId": "learn-b80a07dd026116a8",
+  "activeRuleId": "rule-learn-b80a07dd026116a8",
+  "scope": "product_type",
+  "scopeKey": "memoriais de apelação",
+  "origin": "human_selected",
+  "behaviorCode": "require_regression_test:reasoning",
+  "fixtureSha256": "890d253b3492292467c4798df3954eef90c798fe5b743e4085ee6aff8cc38553",
+  "prospectiveSuiteSha256": "3bbba58eaecfedd7ef797cd0c684560529e30ed0bcf6d7699f8cc818aaa89ab3",
+  "registrySha256": "683333624eca4dd162ccf0565ed6ef96b108a3c02471f54e20b45175c7d9ce2c",
+  "tests": {
+    "target": "test_forja_post_protocol.py::LearningRegistryTests",
+    "passed": 3,
+    "failed": 0
+  },
+  "result": "A lição promovida foi selecionada para um novo caso prospectivo do mesmo tipo e tornou-se requisito bloqueante da suíte pré-redação."
+}

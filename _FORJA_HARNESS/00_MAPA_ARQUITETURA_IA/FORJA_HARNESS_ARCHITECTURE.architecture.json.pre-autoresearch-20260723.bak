@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "FORJA Harness",
+    "subtitle": "pipeline canônico F0–F10 · contratos fail-closed, gates e técnicas por fase · sanitizado · 2026-07-23",
+    "output": "FORJA_HARNESS_ARCHITECTURE.html",
+    "visual_preset": "blueprint",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "happy-path",
+        "label": "Pipeline F0 a F10",
+        "focus": [
+          "f0",
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f7b",
+          "f8",
+          "f9",
+          "f10"
+        ],
+        "note": "Caminho principal em serpentina: preparação, estratégia, produção auditada e entrega."
+      },
+      {
+        "id": "gates-failclosed",
+        "label": "Gates bloqueantes",
+        "focus": [
+          "f1",
+          "f2",
+          "f3",
+          "f7",
+          "f7b",
+          "f8",
+          "f9"
+        ],
+        "note": "Fail-closed: lacuna, citação não conferida, infidelidade editorial ou falha visual interrompem a promoção."
+      },
+      {
+        "id": "conselho-fontes",
+        "label": "Conselho e fontes",
+        "focus": [
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7"
+        ],
+        "note": "Helena e Cícero opinam no blueprint; fonte oficial verbatim lastreia redação e auditoria."
+      },
+      {
+        "id": "editorial-fidelidade",
+        "label": "Editorial Fable 5",
+        "focus": [
+          "f7",
+          "f7b",
+          "f8"
+        ],
+        "note": "F7-B só recebe texto com zero P0 e devolve forma; substância é recomposta e conferida por hash."
+      },
+      {
+        "id": "evidencia-aprendizado",
+        "label": "Evidência e aprendizado",
+        "focus": [
+          "f8",
+          "f9",
+          "f10",
+          "state",
+          "learn"
+        ],
+        "note": "Estado privado, hashes, métricas de run e diff pós-entrega fecham o ciclo de melhoria."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "f0",
+      "type": "messagebus",
+      "label": "F0 Reconciliação",
+      "sublabel": "fila → case_manifest",
+      "tag": "mapping_valid",
+      "pos": [
+        30,
+        130
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f1",
+      "type": "security",
+      "label": "F1 Ingestão segura",
+      "sublabel": "injection scan · coverage ledger",
+      "tag": "conteúdo é dado, nunca instrução",
+      "pos": [
+        250,
+        130
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f2",
+      "type": "backend",
+      "label": "F2 Classificação + F2A",
+      "sublabel": "produto/risco · 100 perguntas",
+      "tag": "lacuna material bloqueia",
+      "pos": [
+        470,
+        130
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f3",
+      "type": "database",
+      "label": "F3 Fontes e regimento",
+      "sublabel": "fact ledger · cronologia · contradições",
+      "tag": "auditoria adversarial",
+      "pos": [
+        690,
+        130
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f4",
+      "type": "external",
+      "label": "F4 Blueprint + Conselho",
+      "sublabel": "pergunta jurisdicional · Helena + Cícero",
+      "tag": "decisões registradas",
+      "pos": [
+        910,
+        130
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f5",
+      "type": "database",
+      "label": "F5 Pesquisa oficial",
+      "sublabel": "fontes verbatim arquivadas",
+      "tag": "citation checklist",
+      "pos": [
+        1130,
+        130
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f6",
+      "type": "frontend",
+      "label": "F6 Redação",
+      "sublabel": "template timbrado · proveniência por parágrafo",
+      "tag": "voz humana",
+      "pos": [
+        1130,
+        430
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f7",
+      "type": "security",
+      "label": "F7 Auditoria jurídica",
+      "sublabel": "citações 6 modos · red team 9 perguntas",
+      "tag": "0 P0 obrigatório",
+      "pos": [
+        910,
+        430
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f7b",
+      "type": "backend",
+      "label": "F7-B Editorial Fable 5",
+      "sublabel": "só forma · fidelidade por hash",
+      "tag": "substância congelada",
+      "pos": [
+        690,
+        430
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f8",
+      "type": "cloud",
+      "label": "F8 QA visual",
+      "sublabel": "DOCX/PDF Word COM · SVG→EMF",
+      "tag": "100% das páginas",
+      "pos": [
+        470,
+        430
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f9",
+      "type": "cloud",
+      "label": "F9 Pacote de revisão",
+      "sublabel": "manifesto + hashes · e-mail humano",
+      "tag": "anexos exatos",
+      "pos": [
+        250,
+        430
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f10",
+      "type": "external",
+      "label": "F10 Entrega",
+      "sublabel": "evidência · métricas · retrospectiva",
+      "tag": "pareceres = elo bloqueante",
+      "pos": [
+        30,
+        430
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "state",
+      "type": "database",
+      "label": "Estado e telemetria",
+      "sublabel": "state/<caso> · runs · reason codes",
+      "tag": "zona privada",
+      "pos": [
+        470,
+        700
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "learn",
+      "type": "messagebus",
+      "label": "Aprendizado",
+      "sublabel": "diff protocolada × nossa",
+      "tag": "APRENDIZADOS_FEEDBACK_HUMANO",
+      "pos": [
+        140,
+        700
+      ],
+      "size": [
+        160,
+        66
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Preparação fail-closed",
+      "wraps": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Estratégia e fontes",
+      "wraps": [
+        "f4",
+        "f5"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Produção auditada",
+      "wraps": [
+        "f6",
+        "f7",
+        "f7b"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Materialização e entrega",
+      "wraps": [
+        "f8",
+        "f9",
+        "f10"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "security-group",
+      "label": "Zona privada — evidência operacional",
+      "wraps": [
+        "state",
+        "learn"
+      ],
+      "pad": 24
+    }
+  ],
+  "connections": [
+    {
+      "id": "f0-f1",
+      "from": "f0",
+      "to": "f1",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f1-f2",
+      "from": "f1",
+      "to": "f2",
+      "label": "injeção triada",
+      "variant": "security",
+      "labelAt": [
+        440,
+        122
+      ]
+    },
+    {
+      "id": "f2-f3",
+      "from": "f2",
+      "to": "f3",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f3-f4",
+      "from": "f3",
+      "to": "f4",
+      "label": "fatos lastreados",
+      "variant": "security",
+      "labelAt": [
+        880,
+        122
+      ]
+    },
+    {
+      "id": "f4-f5",
+      "from": "f4",
+      "to": "f5",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f5-f6",
+      "from": "f5",
+      "to": "f6",
+      "label": "fontes arquivadas",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        1224,
+        300
+      ]
+    },
+    {
+      "id": "f6-f7",
+      "from": "f6",
+      "to": "f7",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "f7-f7b",
+      "from": "f7",
+      "to": "f7b",
+      "label": "0 P0",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "right",
+      "labelDy": -10
+    },
+    {
+      "id": "f7b-f8",
+      "from": "f7b",
+      "to": "f8",
+      "label": "final_markdown",
+      "variant": "emphasis",
+      "fromSide": "left",
+      "toSide": "right",
+      "labelAt": [
+        660,
+        422
+      ]
+    },
+    {
+      "id": "f8-f9",
+      "from": "f8",
+      "to": "f9",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "f9-f10",
+      "from": "f9",
+      "to": "f10",
+      "label": "aprovado",
+      "variant": "emphasis",
+      "fromSide": "left",
+      "toSide": "right",
+      "labelDy": -10
+    },
+    {
+      "id": "f8-state",
+      "from": "f8",
+      "to": "state",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "f10-learn",
+      "from": "f10",
+      "to": "learn",
+      "label": "pós-entrega",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "orthogonal-v",
+      "labelDx": -16
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Contratos e orquestração",
+      "items": [
+        "FORJA_SPEC_MANIFEST + phase_contracts F0–F10",
+        "PHASE_RESULT com hashes e reason codes",
+        "Produtor ≠ revisor em cada fase",
+        "Promoção isolada: fase não pula gate"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Defesa anti-injeção (F1)",
+      "items": [
+        "Conteúdo dos autos é dado, nunca instrução",
+        "Scan: fonte <2pt, branco sobre branco, padrões de comando",
+        "Achado vira P0 de triagem humana"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Auditoria F7 — técnicas",
+      "items": [
+        "Taxonomia de citação em 6 modos de falha",
+        "Red team de 9 perguntas (9ª anti-bajulação)",
+        "Verificador determinístico das 30 lições",
+        "Fonte oficial re-executada + hash de excerto",
+        "Recibo humano assinado para claims críticos"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Fidelidade editorial F7-B",
+      "items": [
+        "Fable 5 via OAuth Max, sem API key",
+        "Fatos, pedidos, citações e fecho congelados",
+        "Orquestrador recompõe invariantes por hash",
+        "Divergência bloqueia e refaz da trilha auditada"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Materialização F8",
+      "items": [
+        "Template DOCX timbrado + Word COM (nunca Document() vazio)",
+        "Diagramas vetoriais SVG→EMF, legibilidade ≥8pt",
+        "QA visual de 100% das páginas, sem autocertificação",
+        "Hashes de imagem de página reproduzidos"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Evidência e aprendizado",
+      "items": [
+        "Hashes atuais e anexos exatos no pacote",
+        "Métricas por run + retrospectiva",
+        "Diff protocolada × nossa alimenta aprendizados"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "generated_at": "2026-08-05T00:56:25-03:00",
+  "files": [
+    {
+      "path": ".playwright-mcp/console-2026-07-23T04-29-58-830Z.log",
+      "bytes": 143,
+      "sha256": "ac631cdf93b65a200671003e6f2a88c6409488ec7e1f1fde28c2ca1f5c692b63"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T05-26-56-911Z.log",
+      "bytes": 143,
+      "sha256": "28c0775ff92f6bae0b4d47d70d9370f37650c58a72eb16430039b55a41f19574"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T05-41-02-275Z.log",
+      "bytes": 143,
+      "sha256": "7acde2734fc0cb973e1316bcc685c9780fb906812977442d83c1d13d68c525c7"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T05-45-51-150Z.log",
+      "bytes": 143,
+      "sha256": "b3d6e93d8ad580dc8ff16f5cb21f1d88b603d877f7ffa8f8b04dffd1c7306913"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T17-15-04-366Z.log",
+      "bytes": 143,
+      "sha256": "9767cd99571e990abcf4afcac0782654bf1b19f284171f22af679b3a21cffc99"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T17-24-53-095Z.log",
+      "bytes": 143,
+      "sha256": "7acde2734fc0cb973e1316bcc685c9780fb906812977442d83c1d13d68c525c7"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T17-39-07-687Z.log",
+      "bytes": 143,
+      "sha256": "9a82e94408f75b4dc64940232e6baf9a37272f6acc93ea642e03500eef2c54f2"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-23T23-08-30-118Z.log",
+      "bytes": 143,
+      "sha256": "476c33b294d4099a951074ce680901fa76fe941b964948e15a2f460bb98cca41"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-24T02-11-06-073Z.log",
+      "bytes": 299,
+      "sha256": "ab9d948428a4263d23a13c8ffd4374e711e6222dde14e413a070e9b5ecaf495a"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-24T02-11-34-249Z.log",
+      "bytes": 161,
+      "sha256": "500278e1dbb918e7e7d77660f6cc0cb47645701958d4e4dcdf8f3d37ae11b6be"
+    },
+    {
+      "path": ".playwright-mcp/console-2026-07-24T02-11-58-879Z.log",
+      "bytes": 143,
+      "sha256": "288a416e200815b35c2fa2d79b8110b83364de63c6b4d0f660939c594800a5c9"
+    },
+    {
+      "path": ".playwright-mcp/ddef3758-33e9-4ca3-8cfd-7acad668e631.png",
+      "bytes": 755426,
+      "sha256": "a1cc1ae789726dfb81719d0f616b12e6da3fc36f20014f5302686ed89b28d2fe"
+    },
+    {
+      "path": ".playwright-mcp/forja-fabrica-o-de-peti-es-melhoria-cont-nua.png",
+      "bytes": 755426,
+      "sha256": "a1cc1ae789726dfb81719d0f616b12e6da3fc36f20014f5302686ed89b28d2fe"
+    },
+    {
+      "path": ".playwright-mcp/MAPA_IA.md",
+      "bytes": 8612,
+      "sha256": "b9647ce1ce28accf2c580be0ff8f0b52100ad193e351e420276e1ac3f566d9e1"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T04-30-13-682Z.yml",
+      "bytes": 14809,
+      "sha256": "0dc62560beb9f1694f7ed8bfa291dd36535c077a7e194d62b3ee74e7c7a8f7fa"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T05-27-13-147Z.yml",
+      "bytes": 15217,
+      "sha256": "ac08a1329e95e57945ffc386c475e5c6b61c07528888b7573dbc93608a3214fd"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T05-41-02-533Z.yml",
+      "bytes": 11066,
+      "sha256": "02107816a0f5560cd22c84e75dd16760622600848e7ae9ca6db3ec9ec68a514b"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T05-45-51-404Z.yml",
+      "bytes": 15022,
+      "sha256": "c0f31716f3ca81acbb41ebc8867028ab4a042a1631f76457e6c1beac082842ea"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-15-04-590Z.yml",
+      "bytes": 25836,
+      "sha256": "04d3255ab0e59ebe8bc69421e4183eafd6db54054392ea7f1e6aac2f7d049756"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-16-25-727Z.yml",
+      "bytes": 26284,
+      "sha256": "476e3846755273cd6d3db9ab45fcccad5a09798de7b0ad070986feadc4d8b103"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-18-21-868Z.yml",
+      "bytes": 26220,
+      "sha256": "120a1712c7c341a50e18af798b599f95db5e4b11ffcaaec91d142cd44cf2a8e3"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-24-53-344Z.yml",
+      "bytes": 23010,
+      "sha256": "e085be930b7fd955c9056e4c78c629de69afe7e2fa70f182ac3e570da9639389"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-27-04-547Z.yml",
+      "bytes": 23370,
+      "sha256": "e8a51f4b4ea989b1ac3b763430bf3ea6f9249f3bda925f1e9d7b06db8fe2df1e"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-27-53-099Z.yml",
+      "bytes": 23370,
+      "sha256": "1923dd2fcd95b3bee94bbc3bb2fb426bc16b7aa6441554a743b433d0a78959af"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T17-39-08-133Z.yml",
+      "bytes": 23378,
+      "sha256": "e636bb80be7ae35ab62816a94d718ca46676289fd0f52d43a1a4600e12850cfa"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-23T23-08-30-430Z.yml",
+      "bytes": 24068,
+      "sha256": "9d3ba6b49a46fef6e04b812b525ae527bc2a8a75eec3ab3149e8aca919a91888"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-24T02-11-06-420Z.yml",
+      "bytes": 86,
+      "sha256": "28fd17f5fba681affece51ad2c9fa5d418a4d2819d28a23931c66c81ecd0aa49"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-24T02-11-34-287Z.yml",
+      "bytes": 88,
+      "sha256": "c51b73634c2d3dc9cb467c64b28e84962c9a36dc40cb8cf3945618b277263fb5"
+    },
+    {
+      "path": ".playwright-mcp/page-2026-07-24T02-11-59-698Z.yml",
+      "bytes": 27509,
+      "sha256": "c172043b9a95e820f4acd3feb02e98221721afc0749a7a5eec2525b3f2cd1338"
+    },
+    {
+      "path": "ajustar_fontes_diagrama.py",
+      "bytes": 1289,
+      "sha256": "d3ea916671dfe6ee3c9b69c2e2dd5bb1b06e1b0ce3b4ac9590fc08151cba6b89"
+    },
+    {
+      "path": "ANALISE_ARQUITETURAL_E_PROPOSTAS.md",
+      "bytes": 10220,
+      "sha256": "120a2991ba280605505973cab23fd8901831381059b222fc3749aaf8981eeb80"
+    },
+    {
+      "path": "ARCHIFY_ANALISE_DETALHADA.md",
+      "bytes": 7534,
+      "sha256": "319eaded099ec83a67e4ea0c36d37ce267c1222d14c4ca7e44781cc2b2460b04"
+    },
+    {
+      "path": "CENARIOS_E_FALHAS.json",
+      "bytes": 5433,
+      "sha256": "ff8c72592c4349f04b8a1401e7a9dbea2feb4e25e5ab3d142d5e5c11002002ba"
+    },
+    {
+      "path": "DECISOES_ARQUITETURAIS.json",
+      "bytes": 2952,
+      "sha256": "7caae4ea1b247d6eb15d2912d0870679d4df2c25c565ba76f1dc3cf41a230e98"
+    },
+    {
+      "path": "DOCUMENTACAO_ARQUITETURAL_COMPLETA.md",
+      "bytes": 27055,
+      "sha256": "81db422928044116630befe456ede221b79edb62fd249c64e5b092e3e692aa5f"
+    },
+    {
+      "path": "EXECUCAO_P0_ARQUITETURA_2026-07-22.md",
+      "bytes": 1771,
+      "sha256": "091b06bfcf4f4b63d23f98d64d923793a70bad1dc664705e87617a99253be703"
+    },
+    {
+      "path": "FORJA_AUTORESEARCH_LOOP.html",
+      "bytes": 619611,
+      "sha256": "8dde93a243c075b107c82ae0f541f270178348cc0022e8b35d22136535cbb407"
+    },
+    {
+      "path": "FORJA_AUTORESEARCH_LOOP.workflow.json",
+      "bytes": 8942,
+      "sha256": "966789e6b919e543e75eedc8af72a0c17c823990ad2b8d1a9898a78a32413b27"
+    },
+    {
+      "path": "FORJA_FLUXO_COMPLETO_COM_AUTORESEARCH.architecture.json",
+      "bytes": 19849,
+      "sha256": "6ad78f89573987b87f2356e238360fa2d9ac0fd9d1707f4cb735a9a13350481e"
+    },
+    {
+      "path": "FORJA_FLUXO_COMPLETO_COM_AUTORESEARCH.architecture.json.pre-ultracode.bak",
+      "bytes": 13169,
+      "sha256": "8987b141c24ea8efc7b2d9cef02a03fa115ab18f47e2e2ea9e328e35bcf3d02b"
+    },
+    {
+      "path": "FORJA_FLUXO_COMPLETO_COM_AUTORESEARCH.html",
+      "bytes": 642251,
+      "sha256": "a0bfae988a1f6f7c919f2e71f4df194dc98f7f3ba1ca060d462b52f81085f1b6"
+    },
+    {
+      "path": "FORJA_HARNESS_ARCHITECTURE.architecture.json",
+      "bytes": 9887,
+      "sha256": "a9dabfcfbd9c9378e7f45b8af15f4701323a1402dd9f393b94dcaa6c3867afdc"
+    },
+    {
+      "path": "FORJA_HARNESS_ARCHITECTURE.architecture.json.pre-autoresearch-20260723.bak",
+      "bytes": 11138,
+      "sha256": "2ee11934894a68500c7d3a6abc2969edb10dad53c8a91801279e6f188543c6d3"
+    },
+    {
+      "path": "FORJA_HARNESS_ARCHITECTURE.html",
+      "bytes": 623660,
+      "sha256": "b791725b6b608dd53db6840a2bbd482b2dd3d85d4e564ddc85c9afc4ab91dc4c"
+    },
+    {
+      "path": "FORJA_HARNESS_IMPROVEMENT_ROADMAP.html",
+      "bytes": 602367,
+      "sha256": "e0914353fa58b3566c5b0ef83cf71de84894a0b6abce9607945d7223e9d02230"
+    },
+    {
+      "path": "FORJA_HARNESS_IMPROVEMENT_ROADMAP.workflow.json",
+      "bytes": 3771,
+      "sha256": "6e5cc05ebc3fdc9350a1a76954c0f0cc02e54d1cc86694ba6c5e55d5bc1eff16"
+    },
+    {
+      "path": "FORJA_HARNESS_INTERFACE_CALLS.html",
+      "bytes": 607755,
+      "sha256": "9f3c4f05456c8308e08f56306b9fcc152bb35cd3273e13a53cab0008d6da1d5a"
+    },
+    {
+      "path": "FORJA_HARNESS_INTERFACE_CALLS.sequence.json",
+      "bytes": 3887,
+      "sha256": "becb5344e7207349fc0d6d7ba794bc07d136799b922313169384d38a1b413999"
+    },
+    {
+      "path": "FORJA_HARNESS_OPERATIONAL_FLOW.html",
+      "bytes": 607013,
+      "sha256": "9490c5dbc9fb8f686fc272d9b189a3d27f841c612308d6d7b687fdcc5fdae03d"
+    },
+    {
+      "path": "FORJA_HARNESS_OPERATIONAL_FLOW.workflow.json",
+      "bytes": 5194,
+      "sha256": "869ac280f4d887bed822232f4d14f7c72d5adc4060dec09db5554aca21442e98"
+    },
+    {
+      "path": "FORJA_HARNESS_TARGET_ARCHITECTURE.architecture.json",
+      "bytes": 5282,
+      "sha256": "8b7c203084103df474debd3110da951deb660be22612f64d77436c803abf67c7"
+    },
+    {
+      "path": "FORJA_HARNESS_TARGET_ARCHITECTURE.html",
+      "bytes": 608827,
+      "sha256": "12c48f9ee96ef64a17db0d1e6fcf7d126fba7dfa2c7edfccf9b42db618c58958"
+    },
+    {
+      "path": "FORJA_HARNESS_TRUST_DATAFLOW.dataflow.json",
+      "bytes": 6874,
+      "sha256": "75a5b1731223a93de1a2dd95091200cfb09fdb3423ee1a7de5f0271d0bcd285b"
+    },
+    {
+      "path": "FORJA_HARNESS_TRUST_DATAFLOW.html",
+      "bytes": 614118,
+      "sha256": "91e4cb0698e55103a2b86ff89e41b893356f789c5e05bcfabdf03b936b18c035"
+    },
+    {
+      "path": "graphify-out/.graphify_analysis.json",
+      "bytes": 95269,
+      "sha256": "617c1706208ee233af613d52575933ad60d985f11e173396cb47d896fc900021"
+    },
+    {
+      "path": "graphify-out/.graphify_learning.json",
+      "bytes": 3905,
+      "sha256": "4c9e8311b4fdcda94ef393d332846d43da470270e0f237f505f651cbfb47381c"
+    },
+    {
+      "path": "graphify-out/.graphify_python",
+      "bytes": 69,
+      "sha256": "f1f9da8238ad3b8fc51968113c025c31261897f22790c0970e87740340ed8bd3"
+    },
+    {
+      "path": "graphify-out/.graphify_root",
+      "bytes": 108,
+      "sha256": "92f39380aee2628eeac0ff0337fb53553db764e86a6d88167fb66debd6a95987"
+    },
+    {
+      "path": "graphify-out/.vocab.txt",
+      "bytes": 8735,
+      "sha256": "dcee79af8a67b4abc5cd8cbd20c73c37f7667b3e0e0ff0cb4d1d2369e966b481"
+    },
+    {
+      "path": "graphify-out/ANALISE_ESTRUTURAL.json",
+      "bytes": 16811,
+      "sha256": "0a49649d695e1aa2d0ad23caa593c2f93ffa0eba55231fca941c35996bb52a54"
+    },
+    {
+      "path": "graphify-out/cache/last_query_stamp",
+      "bytes": 18,
+      "sha256": "0b026c6b83ce0709a80a8c265a8f8550f38037ee6338a64409e213ec4f209668"
+    },
+    {
+      "path": "graphify-out/cache/MAPA_IA.md",
+      "bytes": 2041,
+      "sha256": "fe30b2916df95551ecb91853bd829288140821a8273b33aab09959a8d236f5e4"
+    },
+    {
+      "path": "graphify-out/graph.html",
+      "bytes": 3418507,
+      "sha256": "0a3d00e2e93b225f7cb2ef17d64e2c061762cdf2bfbb3793499bd33f8c0f6c68"
+    },
+    {
+      "path": "graphify-out/graph.json",
+      "bytes": 5408092,
+      "sha256": "e692ce55950b4859acb2d8ba92118ff4d518c5df48f71597c04d7c98244dd962"
+    },
+    {
+      "path": "graphify-out/graph.json.prev",
+      "bytes": 2962635,
+      "sha256": "b965aac1d23551f1e94eb201c0cb6e7a90c3acd1567ada64187ea1ed9c8f284e"
+    },
+    {
+      "path": "graphify-out/GRAPH_REPORT.md",
+      "bytes": 10252,
+      "sha256": "6721c86feca82eb19e8e8726e138d7b3c0fcafe22465e0f2eeaba4936fca307d"
+    },
+    {
+      "path": "graphify-out/MAPA_IA.md",
+      "bytes": 4715,
+      "sha256": "b89eecbdba76750a80815db5a463a8c96b224e34d401833af2514318a4a204d5"
+    },
+    {
+      "path": "graphify-out/memory/MAPA_IA.md",
+      "bytes": 2417,
+      "sha256": "5a79759b97df1064d49b76c16ca87d42a0098ef9c4b42c2a5e8a1d6080fd582b"
+    },
+    {
+      "path": "graphify-out/memory/query_20260724_213106_onde_integrar_gosto_jurídico_autônomo__diferenciaç.md",
+      "bytes": 1437,
+      "sha256": "e8bd27874f53d079724bb4c210912e660144bb1fced371bf36349d4c3ac89db8"
+    },
+    {
+      "path": "graphify-out/reflections/LESSONS.md",
+      "bytes": 1108,
+      "sha256": "a47824ec575e4a8e8b9fc6d6926313a5b92f1e0fee0937096e46d43ecd934678"
+    },
+    {
+      "path": "graphify-out/reflections/MAPA_IA.md",
+      "bytes": 2066,
+      "sha256": "73f5a1ac6a2a65256db46ac2e2358cc0f567b6a6d73610c59a262532ea5fee09"
+    },
+    {
+      "path": "GRAPHIFY_ANALISE_DETALHADA.md",
+      "bytes": 10244,
+      "sha256": "29b38bf949602939b8c4442f75ae478e665c6d9c3012e858666b1116e4eba2cd"
+    },
+    {
+      "path": "INTERFACES_INFERIORES.json",
+      "bytes": 4156531,
+      "sha256": "e36e779f36f94ae8aca44940bb0e96ad5f09b47acdf6d260252cb0bcf814de94"
+    },
+    {
+      "path": "INTERFACES_INFERIORES.md",
+      "bytes": 718457,
+      "sha256": "1520716cf2c3babfef64002a00d48c33674cb87fb3dc1b1f17fa6402b87bfc58"
+    },
+    {
+      "path": "INVENTARIO_ESTRUTURAL.json",
+      "bytes": 266068,
+      "sha256": "854b2c7eae275916b89ebfdbbe6d45e6cb37030d236dc971b0be5f7d44610391"
+    },
+    {
+      "path": "LEIA_PRIMEIRO.md",
+      "bytes": 2298,
+      "sha256": "ac447013b649259ed2242149f09c992ab5875c77f1c9584a145a6c22db13eb7c"
+    },
+    {
+      "path": "MAPA_IA.md",
+      "bytes": 11390,
+      "sha256": "a70f409a08e9832ae0f560cecaf3e1136000ae20a3c1e35ed611e696432a02a2"
+    },
+    {
+      "path": "MATRIZ_RASTREABILIDADE_INTERFACES.csv",
+      "bytes": 146101,
+      "sha256": "e2db01d08a6382a2105249d277d35bdd91bd904998d2ee47318abd5236f2d284"
+    }
+  ]
+}

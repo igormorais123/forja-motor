@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz1r3c2-claude",
+  "judgeFamily": "claude",
+  "declarations": {"filesRead": ["PAR_ciclo2-t1b_ORD1_L.md","PAR_ciclo2-t1b_ORD1_R.md","PAR_ciclo2-t1b_ORD2_L.md","PAR_ciclo2-t1b_ORD2_R.md"], "externalAccess": false, "workspaceAccess": false},
+  "votes": [
+    {"order": 1, "winnerPosition": "L", "anchor": "A tutela requerida preserva o estado contratual e a contraprestação: reintegração provisória de Mateus, reativação dos canais assistenciais e disponibilização de meio idôneo para pagamento do prêmio, até que a Ré apresente o procedimento", "justificativa": "Síntese executiva pedagogicamente superior, com Quadro 1 que demarca o que se pede agora versus o que se reserva à instrução. Blindagem processual de primeiro grau mais eficaz."},
+    {"order": 2, "winnerPosition": "R", "anchor": "A tutela requerida preserva o estado contratual e a contraprestação: reintegração provisória de Mateus, reativação dos canais assistenciais e disponibilização de meio idôneo para pagamento do prêmio, até que a Ré apresente o procedimento", "justificativa": "Mesmo texto em posição invertida, confirmando correspondência entre ORD2_R e ORD1_L."}
+  ]
+}

@@ -1,0 +1,11 @@
+flowchart TD
+    Start["prepare attempt"] --> Freeze["contextHash + contractHash + inputs"]
+    Freeze --> Work["produção isolada"]
+    Work --> Recheck["revalidar contexto/contrato/inputs"]
+    Recheck --> Gates["recalcular gates"]
+    Gates --> Decision{"todos aprovados?"}
+    Decision -->|não| Preserve["preservar attempt bloqueado"]
+    Decision -->|sim| Plan["PromotionPlan"]
+    Plan --> Commit["commit atômico"]
+    Commit --> Event["evento/recibo único"]
+    Event --> Canonical["visão canônica"]

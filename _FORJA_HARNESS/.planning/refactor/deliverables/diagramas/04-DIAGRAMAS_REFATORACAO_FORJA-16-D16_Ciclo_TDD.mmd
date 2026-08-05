@@ -1,0 +1,9 @@
+flowchart LR
+    Characterize["caracterizar"] --> Red["RED"]
+    Red --> Green["GREEN mínimo"]
+    Green --> Refactor["REFACTOR"]
+    Refactor --> Broad["suíte ampla"]
+    Broad --> Real{"efeito externo?"}
+    Real -->|sim| Canary["canário real"]
+    Real -->|não| Evidence["evidência"]
+    Canary --> Evidence

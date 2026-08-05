@@ -1,0 +1,39 @@
+stateDiagram-v2
+    state "Estudo encontrado" as descoberta
+    state "Identidade ainda não confirmada" as identidade_pendente
+    state "Identidade confirmada" as identidade_confirmada
+    state "Estudo rejeitado" as rejeitada
+    state "Incluído na pesquisa" as incluida
+    state "Excluído por critério declarado" as excluida
+    state "Conteúdo ainda não lido" as conteudo_pendente
+    state "Somente o resumo foi lido" as apenas_resumo
+    state "Conteúdo necessário conferido" as conteudo_verificado
+    state "Método e limites avaliados" as avaliacao_metodologica
+    state "Situação editorial conferida" as status_editorial
+    state "Pode ser usado com limites" as utilizavel_com_limites
+    state "Correção exige nova avaliação" as corrigida_reavaliar
+    state "Estudo retirado ou inválido" as retratada_bloqueada
+    state "Ligado à afirmação da peça" as mapeada_a_afirmacao
+    state "Uso apenas secundário" as uso_limitado
+    [*] --> descoberta
+    descoberta --> identidade_pendente
+    identidade_pendente --> identidade_confirmada: "autores, título e versão conferem"
+    identidade_pendente --> rejeitada: "dados não correspondem ao estudo"
+    identidade_confirmada --> incluida: "critérios atendidos"
+    identidade_confirmada --> excluida: "motivo explícito"
+    incluida --> conteudo_pendente
+    conteudo_pendente --> apenas_resumo
+    conteudo_pendente --> conteudo_verificado
+    conteudo_verificado --> avaliacao_metodologica
+    avaliacao_metodologica --> status_editorial
+    status_editorial --> utilizavel_com_limites
+    status_editorial --> corrigida_reavaliar
+    status_editorial --> retratada_bloqueada
+    corrigida_reavaliar --> avaliacao_metodologica
+    utilizavel_com_limites --> mapeada_a_afirmacao
+    apenas_resumo --> uso_limitado: "não sustenta sozinho uma afirmação decisiva"
+    uso_limitado --> mapeada_a_afirmacao
+    rejeitada --> [*]
+    excluida --> [*]
+    retratada_bloqueada --> [*]
+    mapeada_a_afirmacao --> [*]

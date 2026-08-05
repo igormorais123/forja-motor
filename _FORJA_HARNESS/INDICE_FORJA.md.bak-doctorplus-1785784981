@@ -1,0 +1,117 @@
+# Índice FORJA — 1 tela
+
+**Portas de entrada:** `README.md` para começar; `DOCUMENTACAO_TECNICA.md` para o mapa completo; `docs/` para arquitetura, configuração, desenvolvimento e testes.
+
+| Preciso de... | Vá para |
+|---|---|
+| Visão geral e começo rápido | `README.md` + `docs/GETTING-STARTED.md` |
+| Arquitetura e fluxo de dados | `docs/ARCHITECTURE.md` |
+| Configuração, flags e autenticação | `docs/CONFIGURATION.md` |
+| Alterar o código com segurança | `docs/DEVELOPMENT.md` |
+| Testes, régua e critérios de aceite | `docs/TESTING.md` |
+| Regras normativas (fases, milestones) | `FORJA_SPEC_MANIFEST.json` |
+| Estado da implementação N3 | `reports/IMPLEMENTACAO_FORJA_N3_2026-07-10.md` |
+| Estado final auditado da implementação N4 | `reports/CONSELHO_SINTESE_IMPLEMENTACAO_FORJA_N4_2026-07-11.md` |
+| Pareceres Efesto, Helena, Cícero e Diabob | `reports/CONSELHO_*_FORJA_N4_2026-07-11.md` |
+| Aprendizados consolidados do Conselho | `APRENDIZADOS_CONSELHO_N4_2026-07-11.md` |
+| Runbook completo de validação N4 | `RUNBOOK_VALIDACAO_CONSELHO_N4.md` |
+| PRD, TDD, Roadmap e Diagramas N4 | `planejamento/10_*.md` a `planejamento/13_*.md` |
+| Método PSO-Pet para definição, diagnóstico e desenho da petição | `planejamento/14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md` |
+| Roteiro preenchível PSO-Pet por caso | `templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md` |
+| Exploração inicial obrigatória em 100 perguntas | `templates/F2A_EXPLORACAO_100_PERGUNTAS.md` + `planejamento/20_F2A_EXPLORACAO_100_PERGUNTAS.md` |
+| Gerar/validar a árvore F2-A | `forja_exploracao_100.py` + `test_forja_exploracao_100.py` |
+| Validador e indicadores PSO-Pet | `forja_pso_pet.py` + `test_forja_pso_pet.py` |
+| Fila priorizada em operação (próximas peças, prontidão, score) | `python forja_fila.py` (`--proxima` consome o topo; `--dry` inspeciona; flag `filaPriorizadaV1`; regressão `test_forja_fila.py`) |
+| FORJA FILA (priorização painel→FORJA, R1.1 Helena): PRD, TDD, Diagramas e Mapa de implementação | `planejamento/15_PRD_FILA_PRIORIZADA.md` a `planejamento/18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md` |
+| Conselho quadripartite do sistema (11/07) e decisões acatadas/rejeitadas | `reports/conselho_2026-07-11/` (4 relatórios + `DECISOES_CONSELHO.md`) |
+| Benchmark real e relatório PSO-Pet | `reports/PSO_PET_BENCHMARK_REAL_2026-07-11.json` + `reports/RELATORIO_PSO_PET_SOLUCAO_PROBLEMAS_E_METRICAS_2026-07-11.md` |
+| Explicação visual da FORJA para advogados | `reports/FORJA_EXPLICADA_PARA_ADVOGADOS.html` (41 diagramas navegáveis, em linguagem simples; atualizado em 12/07/2026) |
+| Edição visual Blender 2D e auditoria comparativa (ARQUIVADAS em 16/07/2026) | `C:\Users\IgorPC\.claude\projects\Forja visual 3d\reports_atlas_blender\` (movidas para fora do harness junto com o projeto 3D eliminado; ver LEIA-ME.md de lá) |
+| Validar um caso N4 | `python forja_n4_validate.py <caseId>` |
+| Contratos e artefatos N4 | `n4_schemas/` + `phase_contracts_n4/` |
+| Pesquisa científica interdisciplinar | `forja_science.py` |
+| Busca jurídica integrada (TeiaJus + STJ) | `forja_legal_search.py` + `FORJA_SEARCH_CONFIG.json` (`search`, `case`, `stj-health`, `stj-catalog`, `stj-search`, `stj-daily`, `stj-datajud`, `stj-collect`; telemetria em `telemetria/legal_search/`) |
+| Integridade da entrega N4 | `forja_delivery_integrity.py` |
+| Plano N3 de integridade, contexto, visual e gestão | `planejamento/08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md` |
+| Auditoria de peça adversária, má-fé e pontos decisivos | `planejamento/09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md` + `forja_adversarial_audit.py` |
+| Validação completa N3 | `python validate_forja_n3.py --real-word --run-replay` |
+| Replay dos 21 estados e seis casos representativos | `reports/N3_SHADOW_REPLAY_2026-07-09.md` |
+| Eventos e estado N3 | `forja_state_machine.py` + `forja_run.py` + `phase_contracts/` |
+| Contexto e fidelidade semântica | `forja_context.py` + `forja_fidelity.py` |
+| Pacote e encerramento canônico | `forja_package.py` + `forja_close_cycle.py` |
+| Sincronização com a gestão | `forja_management_bridge.py` + `..\gestao_escritorio\scripts\sync_forja_gestao.py` |
+| Lições acumuladas (91) | `RETROSPECTIVAS.md` |
+| Anti-autocertificação E2E | `forja_n4_e2e_adversarial.py` + `reports/N4_E2E_ANTI_SELF_CERTIFICATION_2026-07-11.json` |
+| Métricas mecânicas antifraude | `forja_n4_anti_fraud_audit.py` + `reports/N4_ANTI_FRAUD_AUDIT_RESULT.json` |
+| Gates automáticos de qualidade | `forja_verificador.py` (+ `test_forja_verificador.py` — rodar após qualquer mudança) |
+| Escrita humana em peças e e-mails, sem vícios de IA | `PROTOCOLO_ESCRITA_HUMANA_FORJA.md` + `forja_estilo_humano.py` (+ `test_forja_estilo_humano.py`; bloqueia F6/F7/F9, render, pacote e rascunho; o corpo do e-mail é vinculado por hash) |
+| **Revisão e escrita final (F7-B)** — modelo editorial padrão `claude-opus-5` desde 25/07/2026 | `PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md` + `planejamento/21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md` + `forja_editorial.py` (shim legado: `forja_fable5.py`) + `forja_editorial_model.py` (allowlist) + `forja_editorial_fidelity.py` + `test_forja_editorial.py` (F7-B obrigatório; `final_markdown` é o cânone de F8) |
+| Executar F7-B | `python forja_editorial.py <caseId> <attempt-dir> --source audited_markdown.md --f7-gate f7_gate_result.json`; incorporar `EDITORIAL_RESULT.json` (nome legado `FABLE5_RESULT.json`) ao `PHASE_RESULT.json` integral antes de promover |
+| **Blindagem contra lastro aparente (L1-L8)** — transcrição verbatim como prova de leitura | `PROTOCOLO_LASTRO_DOCUMENTAL.md` + `forja_lastro.py` + `test_forja_lastro.py`; bloqueia em F7 (`fact_grounding_verbatim`) e na entrega (elo 9-B) |
+| Fonte prevalente e valor monetário (L9-L11) — **PLANEJADO, não implementado** | `planejamento!_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md` + § U13 de `planejamento_GATES_QUALIDADE_FORJA.md`. Extensão v2 DENTRO de `forja_lastro.py`: o v1 ancora proposição, não número. Origem: incidente Cafelana 02/08/2026 (faixas em R$ sem documento governante). Antes de citar como vigente, conferir o módulo |
+| Rodar o gate de lastro sobre um artefato | `python forja_lastro.py <peca.md> [--ledger fact_ledger.json] [--base-dir DIR] [--revisao revisao.json] [--exigir-criterio]` |
+| Auditar atualidade dos regimentos arquivados (E11) | `python forja_regimentos.py` (+ `RUNBOOK_AUDITORIA_REGIMENTOS.md`, `test_forja_regimentos.py`); exit 1 com bloqueio |
+| Incidente que originou a blindagem (lastro aparente, Vale Trading) | `INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md` |
+| **Bancada de modelos (6 modelos, mesma peça real, juízes cegos)** — protocolo, peças e conclusões | `bancada_cafelana_v7/LEIA-ME.md` + `RELATORIO_BANCADA_V7.md`; rodar com `bancada_dossie.py` → `bancada_executar.py` → `bancada_avaliar.py` → `bancada_juizes.py` → `bancada_relatorio.py` |
+| Números brutos da bancada (telemetria, canários, votos por critério, âncoras, auto-preferência) | `bancada_cafelana_v7/RESULTADOS_DETALHADOS_BANCADA_V7.md` — regerar com `python bancada_registro.py` |
+| **Identidade de modelo e captura multi-turno** (apelido ≠ modelo; `json` devolve só o último turno) | `test_forja_identidade_modelo.py` — rodar após mexer em `forja_headless.py`, `forja_editorial.py` ou `forja_editorial_model.py` |
+| Roteamento de modelo por fase, com perfis medidos | `planejamento/37_PLANO_HARNESS_MULTIMODELO.md` § 7 + `forja_modelos.py` (campo `forte_em`) |
+| **Baseline de testes — porta de entrada única** (não rodar pytest direto: sete regressões são scripts que ele não coleta) | `python forja_baseline.py [--json CAMINHO] [--quiet]` — 41/41 verdes em 26/07/2026 |
+| Contratos F7-B/F8 | `phase_contracts/F7.json` + `phase_contracts/F8.json` e extensões em `phase_contracts_n4/` |
+| Regressão do passe editorial | `python -m unittest -v test_forja_editorial.py test_forja_estilo_humano.py test_forja_n3_runner.py test_forja_n3_package.py test_forja_n3_headless.py` |
+| Evidência da execução viva Fable 5 | `reports/fable5_live_validation_20260715/` |
+| Regressão de render inline/extrator de citações/cache F7/kit visual | `test_licao41.py` (rodar após mexer em `forja_render_docx.py`, `forja_citations.py`, `forja_metricas_f7.py` ou `medina_visual_kit.py`) |
+| Bateria REAL com telemetria (pipeline completa sobre artefatos de produção) | `test_real_telemetria_licao41.py` (JSON em `telemetria/`; rodar antes de declarar manutenção concluída) |
+| Renderizar peça (md → DOCX+PDF+QA, formato simples) | `python forja_render_docx.py <peca.md> <saida> <titulo>` |
+| **Edição VISUAL LAW — ENTRADA ÚNICA DE PRODUÇÃO (desde 03/08/2026)** | `forja_visual_build.py`: gates F7 → brief `F7_5_BRIEF_VISUAL.json` → mapa automático (`forja_visual_mapa_gen.py`) → figuras (`forja_visual_figuras.py` + geradores em `medina_svg_kit.py`) → `forja_visual.compor()` → `montar_visual.py` (EMF/Word COM/PDF/QA) → gate F8-S (`forja_assinatura_visual.py`). ~7s por peça. Mapa manual `compor_<caso>_mapa.py` vira refinamento opcional, não pré-requisito. Linguagem visual: skill `padrao-visual-medina` |
+| Brief visual F7.5 (contrato) | `templates/F7_5_BRIEF_VISUAL.md` — o autor declara âncoras da capa, cadeia argumentativa e cronologia. Sem ele só saem as figuras estruturalmente seguras, e peça longa não fecha o piso |
+| Conselho e revisão cruzada do gate visual (03/08/2026) | `planejamento/25_CONSELHO_GATE_VISUAL_2026-08-03.md` (parecer dos 4, COM nota de superação parcial) + estado atual no topo do `planejamento/24_...md`. Revisão cruzada Codex achou defeito material no gate; lições 93-95 em `RETROSPECTIVAS.md` |
+| Gate de desenho do SVG (SVGC) | `_FERRAMENTAS\medina_svg_colisao.py` — **bloqueante** dentro de `svg_para_emf`, portanto em todo SVG que entra no Word. SVGC-01 texto ocluído por forma opaca posterior; SVGC-02 texto sobre texto; SVGC-04 cor inválida (`fill="ffffff"` sem `#`); avisos SVGC-03 (traço cruzando texto) e SVGC-05 (contraste < 2,0:1). Pega o defeito que o F8-S não vê por verificar presença e não corretude do desenho. Regressão: `test_medina_svg_colisao.py` |
+| Gate F8-S — assinatura visual | `forja_assinatura_visual.py` (verificação AFIRMATIVA de presença; taxonomia VIS-02/03/04/05/06/11; densidade por faixa de extensão). Hoje em **modo observação**: grava `F8S_ASSINATURA_VISUAL.json` e não bloqueia. Regressão: `test_forja_assinatura_visual.py` (testes de mutação) |
+| Rodar fase de IA headless (OAuth) | N2: `python forja_headless.py <caso> <FASE> "<prompt>"`; N3: iniciar tentativa em `forja_run.py` e informar `--attempt-dir` |
+| Fontes oficiais verbatim | `cache/fontes_oficiais/` (brutos em `raw/`) |
+| Artefatos de um caso | `state/case-<id>/producao/` |
+| Planejamento N2 (PRD/TDD/roadmap/diagramas/gates) | `planejamento/01..06_*.md` |
+| Plano de upgrade × estado da arte 2026 (U1-U11, adotados/rejeitados) | `planejamento/07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md` |
+| Scan anti-injeção de prompt em PDFs (F1) | `python forja_injection_scan.py <pasta-ou-pdfs>` (+ `test_forja_injection.py`) |
+| Regressão de alucinação de citação (6 modos) | `python test_forja_citacoes.py` (taxonomia em `planejamento/06_GATES...md`) |
+| Diff pós-entrega (protocolada × nossa) | `python forja_diff_docx.py <nossa.docx> <protocolada.docx> [saida.md]` |
+| Peças-modelo aprovadas por tipo (ler INTEIRA antes de redigir) | `..\_MODELOS\LEIA-ME.md` |
+| Protocolos da fábrica (regimento, padrão Word, feedback humano) | `..\CLAUDE.md` e `..\APRENDIZADOS_FEEDBACK_HUMANO.md` |
+| QA de páginas: densidade/branco/corte (M4.2) | `python forja_qa_paginas.py <pasta-pngs>` (+ `test_forja_qa_paginas.py`) |
+| Mutação semântica S1-S6 (M3.1, critério 3 N4) | `python forja_mutation_semantic.py <caso>` (+ `test_forja_mutation_semantic.py`) |
+| Ledger de citações materiais (M3.2, lição 52) | `python forja_ledger_material.py <caso>` (+ `test_forja_ledger_material.py`) |
+| Coerência F2 tribunal×CNJ e perfil PSO (M4.3) | `forja_f2_check.py` (+ `test_forja_f2_check.py`) |
+| Executor N3 — suíte dedicada (M4.1) | `test_forja_run.py` |
+| Alertas P0 no painel (M1.1) | `forja_alertas.py` (+ `test_forja_alertas.py`) |
+| Resumo da fila ao abrir sessão (M1.2) | `forja_local_context.py` (hook em `.claude/settings.json`) |
+| Métricas de gates e tempo por fase (M1.3) | `python forja_metricas_gates.py` → `reports/METRICAS_GATES.json` |
+| Ordem parecer→redação (M2.1) | `parecer_antes_da_redacao` em `forja_delivery.py` (+ `test_forja_ordem_parecer.py`) |
+| Ciclos prospectivos N4 (M3.3) | `RUNBOOK_CICLO_PROSPECTIVO.md` |
+| Plano de instalação de melhorias (M1-M4) | `planejamento/19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md` |
+| Painel de demandas | `..\gestao_escritorio\` (HTML gerado por `render_dashboard.py` — nunca editar direto) |
+| **AUTO-RESEARCH (ciclo AR)** — PRD/TDD v1.1 pós-review adversarial Codex | `planejamento/22_PRD_AUTORESEARCH_FORJA.md` + `planejamento/23_TDD_AUTORESEARCH_FORJA.md` |
+| Candidata AR — materialidade de pendências e entrega sem espera artificial (`estudo_descritivo`, não promovida) | `autoresearch/candidates/materialidade-pendencias-v1/` |
+| Propriedade intelectual da FORJA (registro INPI, marca, segredo de negócio; patente descartada) | `planejamento/24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md` |
+| **PARECER FINAL E CONSOLIDAÇÃO DO CONSELHO (25/07/2026)** — decisões de Helena e Cícero, migração Fable 5 → Opus 5 com revisão cruzada entre famílias, P0 do `art. 343-A`, reconciliação de cânone e ordem de execução | `planejamento/36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md` |
+| **CÂNONE DE EXECUÇÃO — PRD, TDD e roadmap (`FORJA-ASSINATURA-LITE-v1`)** | `planejamento/33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md` + `34_TDD_...md` + `35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md` |
+| Anexos a fundir no cânone (tarefa 0 da Onda 0): conchas do catálogo N4, registro de decisão, 13 testes negativos, registro de escopo | `planejamento/ANEXO_A_...md`, `ANEXO_B_...md`, `ANEXO_C_...md` |
+| Pareceres do conselho sobre o plano | `planejamento/pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md` + `CICERO_FORJA_COCRIACAO_2026-07-25.md` |
+| Consolidações de arquitetura (histórico e insumo) | `planejamento/31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md` + `32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md` |
+| Requisitos declarados pelo titular (entrevista Fábio Medina Osório, 25/07/2026) — fluxo desejado, 19 lacunas, padrões de pensamento e linguagem | `planejamento/29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md` |
+| Arquitetura dos 3 eixos (fonte do plano 31) — dialética, identidade Medina Osório e sistema de precedentes sobre o TeiaJus | `planejamento/30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md` |
+| Corpus AR (split HMAC por linhagem; sealed fora do workspace) | `python forja_ar_corpus.py --scan/--check/--report` → `autoresearch/AR_CORPUS.json` |
+| Painel de indicadores AR (I1–I10; null motivado; máscara pareada) | `python forja_ar_indicadores.py --md <peca> [--ledgers <dir>] / --comparar <a> <b>` |
+| Canários de falha única (públicos + camada secreta externa) | `python forja_ar_canarios.py --verificar [--secreto]` (kill por sensor; controles benignos vivos) |
+| Execução pareada vigente×variante | `forja_ar_runpair.py` (`--freeze/--register/--validate`) |
+| Julgamento cego pairwise (swap, 2 famílias, consolidação por hash) | `forja_ar_blind.py` (`--prepare/--consolidate`; mapping HMAC fora do workspace) |
+| Ciclo AR e gate de promoção (3 estados; log encadeado por hash) | `forja_ar_ciclo.py` (`snapshot/promotion/independent-review/human-approve/relatorio`) |
+| Regressão AR (23 testes, 12 sabotagens nominais — na Régua) | `python -m pytest test_forja_autoresearch.py -q` |
+| Relatório do ciclo AR-0 (piloto descritivo, σ por indicador) | `autoresearch/ciclos/ciclo-0/AR_CICLO_0_RELATORIO.md` |
+
+Fluxo padrão de um caso: RETROSPECTIVAS → scan anti-injeção nos PDFs (F1) → leitura da peça-modelo do tipo (`_MODELOS`) → **auditoria de regimento do tribunal (`forja_regimentos.py`)** → **perfil PSO-Pet proporcional em F2-F4** → **se houver peça adversária, auditoria A1 em F3/F4/F7** → pareceres obrigatórios de Helena e Cícero antes da redação → verificação independente de fatos/citações → **lastro verbatim no `fact_ledger` (L1-L8)** → auditoria F7 com zero P0 → **F7-B controlada: o modelo editorial revisa e escreve `final_markdown`; o resultado é incorporado ao resultado integral e o orquestrador recompõe hashes/invariantes** → triagem humana das dúvidas → render do `final_markdown` → QA visual → rascunho Gmail (nunca enviar) → painel → retrospectiva.
+| Camada evolutiva Karpathy (gerações, winners, convergência) | `forja_ar_evolucao.py` (`init/nova-geracao/selecionar/convergencia`) → `autoresearch/evolucao/<experimento>/` |
+| Ciclo AR-1 real (geração 0 do prompt-mestre; 2 rounds de juiz invalidados + 1 válido) | `autoresearch/ciclos/ciclo-1/AR_CICLO_1_RELATORIO.md` + `AR_PARECER_INDEPENDENTE_varB.md` |
+| Diagrama canônico do ciclo AR (archify workflow: raias por ator, anulações reais, gate humano) | `autoresearch/ciclos/ciclo-1/AR_CICLO_HUMANO.html` (fonte: `ar-ciclo-humano.workflow.json`) |
+| Ciclo AR-2 real (gen-1 hybrid perdeu; cegamento vazado pego e anulado; 2º gap v1) | `autoresearch/ciclos/ciclo-2/AR_CICLO_2_RELATORIO.md` + `AR_PROMOTION_NOTA.md` |
+| Protocolo canônico do juiz cego do ciclo AR (obrigatório em toda bancada) | `templates/AR_JUIZ_PROTOCOLO.md` |

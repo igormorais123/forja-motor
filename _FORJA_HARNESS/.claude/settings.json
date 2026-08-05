@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/IgorPC/.claude/projects/Escritório fabio osório/fabricas de melhoria de petições/_FORJA_HARNESS/forja_local_context.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

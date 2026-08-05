@@ -1,0 +1,17 @@
+{
+  "modelo": "gpt-5.5",
+  "familia": "codex",
+  "versao": "codex-cli 0.144.6",
+  "parametros": {
+    "reasoning_effort": "high",
+    "sandbox": "danger-full-access",
+    "invocacao": "codex exec --json (stdin)"
+  },
+  "promptHash": "ba2eba1068f37632982751f088c9f7f3e573bfd4dc8953ca6452c64220fcd35c",
+  "inputHash": "9c800fb9499391444f04af9c62713081ad532c4f709ddee60631c42aa4b5d4a0",
+  "outputPath": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\_FORJA_HARNESS\\autoresearch\\ciclos\\ciclo-2\\exec\\OUT_t1_vigente.md",
+  "outputSha256": "8b330917324887b0ce5d6d44e1b26eda8739e260b6498438baef1628acc71cf5",
+  "tokens": 506714,
+  "duracao": 421,
+  "repeticao": 0
+}

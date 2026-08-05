@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "specVersion": "N4.0-candidate",
+  "artifacts": {
+    "F2_N4_CLASSIFICATION.json": {
+      "type": "n4_classification",
+      "phase": "F2_CLASSIFICACAO_PRODUTO_RISCO",
+      "keys": [
+        "science"
+      ],
+      "schema": "f2_n4_classification.schema.json"
+    },
+    "F2_QUESTION_TREE.json": {
+      "type": "question_tree",
+      "phase": "F2_CLASSIFICACAO_PRODUTO_RISCO",
+      "keys": [
+        "questions",
+        "coverage"
+      ],
+      "schema": "f2_question_tree.schema.json"
+    },
+    "F3_EVENT_IDENTITY.json": {
+      "type": "event_identity",
+      "phase": "F3_FONTES_REGIMENTO_LEIS",
+      "keys": [
+        "events"
+      ],
+      "schema": "f3_event_identity.schema.json"
+    },
+    "F3_DOCUMENT_COMPARISON.json": {
+      "type": "document_comparison",
+      "phase": "F3_FONTES_REGIMENTO_LEIS",
+      "keys": [
+        "comparisonSets"
+      ],
+      "schema": "f3_document_comparison.schema.json"
+    },
+    "F3_REASONING_GRAPH.json": {
+      "type": "reasoning_graph",
+      "phase": "F3_FONTES_REGIMENTO_LEIS",
+      "keys": [
+        "nodes",
+        "edges"
+      ],
+      "schema": "f3_reasoning_graph.schema.json"
+    },
+    "F3_MAPA_DESTINATARIO.json": {
+      "type": "recipient_map",
+      "phase": "F3_FONTES_REGIMENTO_LEIS",
+      "keys": [
+        "recipient",
+        "competence",
+        "prevention",
+        "composition",
+        "positions"
+      ],
+      "schema": "f3_mapa_destinatario.schema.json"
+    },
+    "F3_CONDUCT_LEDGER.json": {
+      "type": "conduct_ledger",
+      "phase": "F3_FONTES_REGIMENTO_LEIS",
+      "keys": [
+        "conducts"
+      ],
+      "schema": "f3_conduct_ledger.schema.json"
+    },
+    "F4_COVERAGE_MATRIX.json": {
+      "type": "coverage_matrix",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "items"
+      ],
+      "schema": "f4_coverage_matrix.schema.json"
+    },
+    "F4_THESIS_MATURITY.json": {
+      "type": "thesis_maturity",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "theses"
+      ],
+      "schema": "f4_thesis_maturity.schema.json"
+    },
+    "F4_CASE_ACCEPTANCE_TESTS.json": {
+      "type": "case_acceptance_tests",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "suiteId",
+        "tests"
+      ],
+      "schema": "f4_case_acceptance_tests.schema.json"
+    },
+    "F4_DECISION_FACTOR_MAP.json": {
+      "type": "decision_factor_map",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "decisions"
+      ],
+      "schema": "f4_decision_factor_map.schema.json"
+    },
+    "F4_SETTLEMENT_MAP.json": {
+      "type": "settlement_map",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "interests",
+        "prohibitions"
+      ],
+      "schema": "f4_settlement_map.schema.json"
+    },
+    "F4_SIGNATURE_BRIEF.json": {
+      "type": "signature_brief",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "decisiveQuestion",
+        "routes",
+        "selectedRouteId",
+        "mandatoryContent"
+      ],
+      "schema": "f4_signature_brief.schema.json"
+    },
+    "F4_INTERTEMPORAL_MAP.json": {
+      "type": "intertemporal_map",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "temporalIssues"
+      ],
+      "schema": "f4_intertemporal_map.schema.json"
+    },
+    "F4_QUANTIFICATION_SCENARIOS.json": {
+      "type": "quantification_scenarios",
+      "phase": "F4_BLUEPRINT_ESTRATEGICO",
+      "keys": [
+        "scenarios"
+      ],
+      "schema": "f4_quantification_scenarios.schema.json"
+    },
+    "F5C_RESEARCH_PROTOCOL.json": {
+      "type": "science_research_protocol",
+      "phase": "F5_PESQUISA_OFICIAL",
+      "keys": [
+        "researchQuestion",
+        "databases",
+        "queries"
+      ],
+      "schema": "f5c_research_protocol.schema.json"
+    },
+    "F5C_STUDY_LEDGER.json": {
+      "type": "science_study_ledger",
+      "phase": "F5_PESQUISA_OFICIAL",
+      "keys": [
+        "studies"
+      ],
+      "schema": "f5c_study_ledger.schema.json"
+    },
+    "F5C_EVIDENCE_SYNTHESIS.json": {
+      "type": "science_evidence_synthesis",
+      "phase": "F5_PESQUISA_OFICIAL",
+      "keys": [
+        "synthesisStatus",
+        "contraryEvidenceSearch"
+      ],
+      "schema": "f5c_evidence_synthesis.schema.json"
+    },
+    "F5C_CLAIM_EVIDENCE_MAP.json": {
+      "type": "science_claim_evidence_map",
+      "phase": "F5_PESQUISA_OFICIAL",
+      "keys": [
+        "claims"
+      ],
+      "schema": "f5c_claim_evidence_map.schema.json"
+    },
+    "F7_CASE_TEST_RESULTS.json": {
+      "type": "case_test_results",
+      "phase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+      "keys": [
+        "suiteHash",
+        "draftHash",
+        "results"
+      ],
+      "schema": "f7_case_test_results.schema.json"
+    },
+    "F7_GLOBAL_CONSISTENCY.json": {
+      "type": "global_consistency",
+      "phase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+      "keys": [
+        "layers",
+        "findings"
+      ],
+      "schema": "f7_global_consistency.schema.json"
+    },
+    "F7_METACOGNITIVE_AUDIT.json": {
+      "type": "metacognitive_audit",
+      "phase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+      "keys": [
+        "premises",
+        "consensusChecks",
+        "recommendationChanges"
+      ],
+      "schema": "f7_metacognitive_audit.schema.json"
+    },
+    "F7_SCIENCE_AUDIT.json": {
+      "type": "science_audit",
+      "phase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+      "keys": [
+        "applicability",
+        "findings"
+      ],
+      "schema": "f7_science_audit.schema.json"
+    },
+    "F9_DELIVERY_SELECTION.json": {
+      "type": "delivery_selection",
+      "phase": "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+      "keys": [
+        "packageArtifactId",
+        "selectedArtifactId",
+        "packageHash",
+        "selectedHash",
+        "preSendMatch",
+        "layoutProfileId"
+      ],
+      "schema": "f9_delivery_selection.schema.json"
+    },
+    "F10_DELIVERY_INTEGRITY.json": {
+      "type": "delivery_integrity",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "keys": [
+        "packageArtifactId",
+        "selectedArtifactId",
+        "packageHash",
+        "selectedHash",
+        "preSendMatch",
+        "postDeliveryVerification"
+      ],
+      "schema": "f10_delivery_integrity.schema.json"
+    },
+    "F10_HUMAN_DIFF_CLASSIFICATION.json": {
+      "type": "human_diff_classification",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "keys": [
+        "changes",
+        "regressionProposals"
+      ],
+      "schema": "f10_human_diff_classification.schema.json"
+    },
+    "F10_POST_PROTOCOL_RETURN.json": {
+      "type": "post_protocol_return",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "schema": "post_protocol_return.schema.json",
+      "keys": [
+        "contentKey",
+        "evidenceKeys",
+        "caseResolution",
+        "humanArtifact"
+      ]
+    },
+    "F10_PROTOCOL_EVIDENCE.json": {
+      "type": "protocol_evidence",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "schema": "protocol_evidence.schema.json",
+      "keys": [
+        "protocolStatus",
+        "humanArtifactHash",
+        "evidenceLinks"
+      ]
+    },
+    "F10_POST_PROTOCOL_BASELINE_BACKFILL.json": {
+      "type": "post_protocol_baseline_backfill",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "schema": "post_protocol_baseline_backfill.schema.json",
+      "keys": [
+        "selectedArtifactId",
+        "selectedHash",
+        "selectedPath",
+        "deliveredAt",
+        "deliveryEvidenceId",
+        "provenance",
+        "preSendMatch"
+      ]
+    },
+    "F10_POST_PROTOCOL_DOCUMENT_COMPARISON.json": {
+      "type": "post_protocol_document_comparison",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "schema": "document_comparison.schema.json",
+      "keys": [
+        "contentKey",
+        "baseline",
+        "humanArtifact",
+        "summary",
+        "changes",
+        "privateComparisonHash"
+      ]
+    },
+    "F10_LEARNING_CANDIDATE.json": {
+      "type": "learning_candidate",
+      "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+      "schema": "learning_candidate.schema.json",
+      "keys": [
+        "contentKey",
+        "candidates"
+      ]
+    }
+  }
+}

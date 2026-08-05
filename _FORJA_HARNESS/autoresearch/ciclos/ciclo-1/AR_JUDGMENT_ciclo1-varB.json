@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "blind-ciclo1-varB",
+  "valid": true,
+  "errors": [],
+  "positionalInvalidations": 0,
+  "votes": [
+    {
+      "judgeId": "juiz1r3-claude",
+      "order": 1,
+      "position": "R",
+      "artifactSha256": "0bdcfae6c830b1306fb73ba23ddb980b13495958b8de45f9bbd498441771eb6d"
+    },
+    {
+      "judgeId": "juiz1r3-claude",
+      "order": 2,
+      "position": "L",
+      "artifactSha256": "0bdcfae6c830b1306fb73ba23ddb980b13495958b8de45f9bbd498441771eb6d"
+    },
+    {
+      "judgeId": "juiz2r3-claude",
+      "order": 1,
+      "position": "R",
+      "artifactSha256": "0bdcfae6c830b1306fb73ba23ddb980b13495958b8de45f9bbd498441771eb6d"
+    },
+    {
+      "judgeId": "juiz2r3-claude",
+      "order": 2,
+      "position": "L",
+      "artifactSha256": "0bdcfae6c830b1306fb73ba23ddb980b13495958b8de45f9bbd498441771eb6d"
+    }
+  ],
+  "winnerArtifactSha256": "0bdcfae6c830b1306fb73ba23ddb980b13495958b8de45f9bbd498441771eb6d",
+  "kappa": 1.0,
+  "smallNWarning": false
+}

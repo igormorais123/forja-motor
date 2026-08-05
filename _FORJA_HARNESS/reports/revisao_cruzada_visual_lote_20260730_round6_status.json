@@ -1,0 +1,10 @@
+{
+  "startedAt": "2026-08-03T11:58:16.3401157-03:00",
+  "finishedAt": "2026-08-03T12:12:38.1986371-03:00",
+  "exitCode": 0,
+  "modelRequested": "claude-opus-5",
+  "promptSha256": "88628af73b73c17faab4e9a0ab65984288792dfeb9e53aaad54cb907ae4eb75a",
+  "manifestSha256": "e41a01f0a7602de5215d0a9bb1576e1e1607e9fc76f08b0651ff9aec50747c13",
+  "rawOutputPath": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\_FORJA_HARNESS\\reports\\revisao_cruzada_visual_lote_20260730_round6_raw.json",
+  "rawOutputSha256": "6c6cacdd40d60dd730b32fcf7c10e061ffb079a91f2fbd3bf51099ba0f4564f0"
+}

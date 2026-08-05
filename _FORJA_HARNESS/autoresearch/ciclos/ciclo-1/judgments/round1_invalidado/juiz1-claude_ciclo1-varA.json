@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz1-claude",
+  "judgeFamily": "claude",
+  "declarations": {
+    "filesRead": [
+      "PAR_ciclo1-varA_ORD1_L.md",
+      "PAR_ciclo1-varA_ORD1_R.md",
+      "PAR_ciclo1-varA_ORD2_L.md",
+      "PAR_ciclo1-varA_ORD2_R.md",
+      "PAR_ciclo1-varB_ORD1_L.md",
+      "PAR_ciclo1-varB_ORD1_R.md",
+      "PAR_ciclo1-varB_ORD2_L.md",
+      "PAR_ciclo1-varB_ORD2_R.md"
+    ],
+    "externalAccess": false,
+    "workspaceAccess": false
+  },
+  "votes": [
+    {
+      "order": 1,
+      "winnerPosition": "L",
+      "anchor": "A peça foi reorganizada como inicial completa, com síntese executiva, cronologia, teses em camadas, tutela reversível, exibição vinculada a questões probatórias, prequestionamento, pedidos segmentados e quadros de visual law em Markdown.",
+      "justificativa": "L demonstra maior maturidade na decomposição estrutural, separação de teses (procedimental vs. subjetiva) com clareza operacional, e reconhecimento expresso dos fatos adversos sem comprometer a defesa. R mantém redundância e falta foco na pergunta central verificável."
+    },
+    {
+      "order": 2,
+      "winnerPosition": "L",
+      "anchor": "A tutela foi desenhada para sobreviver mesmo se o Juízo considerar possível a fraude.",
+      "justificativa": "L prioriza a bifurcação estratégica (procedimento vs. autoria subjetiva) e oferece saída reversível independente do mérito fraude. R não consegue separar adequadamente os eixos, deixando a reintegração refém da prova de boa-fé."
+    }
+  ]
+}

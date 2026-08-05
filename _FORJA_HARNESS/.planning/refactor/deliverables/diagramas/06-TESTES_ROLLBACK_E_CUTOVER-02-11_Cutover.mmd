@@ -1,0 +1,10 @@
+flowchart TD
+    Shadow["nova implementação em sombra"] --> Compare["comparar outputs"]
+    Compare --> Pilot["piloto bloqueante"]
+    Pilot --> Canary["canário por caso/flag"]
+    Canary --> Observe["telemetria + regressão"]
+    Observe --> Decision{"gate aprovado?"}
+    Decision -->|não| Rollback["desligar flag/manter shim"]
+    Decision -->|sim| Default["tornar caminho padrão"]
+    Default --> Window["janela sem uso legado"]
+    Window --> Remove["remover shim com restore"]

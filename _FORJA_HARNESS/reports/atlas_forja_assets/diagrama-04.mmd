@@ -1,0 +1,37 @@
+stateDiagram-v2
+    state "Nova demanda" as nova
+    state "Conferindo a entrada" as em_reconciliacao
+    state "Confirmando regras e fontes" as em_fontes
+    state "Planejando a estratégia" as em_planejamento
+    state "Pesquisando fundamentos" as em_pesquisa
+    state "Redigindo a peça" as em_redacao
+    state "Revisando fatos e direito" as em_auditoria
+    state "Conferindo a apresentação" as em_qa_visual
+    state "Pronta para revisão humana" as pronta_para_revisao
+    state "Aguardando prova da entrega" as aguardando_evidencia_entrega
+    state "Trabalho concluído" as cumprida
+    state "Trabalho cancelado" as cancelada
+    state "Parada por impedimento" as blocked
+    state "Pesquisa temporariamente limitada" as degraded
+    [*] --> nova
+    nova --> em_reconciliacao
+    em_reconciliacao --> blocked: comando/pasta conflitante
+    em_reconciliacao --> em_fontes: entrada íntegra
+    em_fontes --> blocked: falta fonte essencial ou regimento
+    em_fontes --> em_planejamento
+    em_planejamento --> em_pesquisa
+    em_planejamento --> blocked: divergência grave não decidida
+    em_pesquisa --> em_redacao
+    em_pesquisa --> degraded: fonte externa indisponível
+    degraded --> em_pesquisa: acesso restabelecido
+    em_redacao --> em_auditoria
+    em_auditoria --> em_planejamento: tese precisa redesenho
+    em_auditoria --> em_qa_visual: sem impedimento grave
+    em_qa_visual --> em_auditoria: arquivo regenerado
+    em_qa_visual --> pronta_para_revisao
+    pronta_para_revisao --> aguardando_evidencia_entrega
+    aguardando_evidencia_entrega --> cumprida: prova real
+    blocked --> em_reconciliacao: lacuna sanada
+    pronta_para_revisao --> cancelada: decisão humana
+    cumprida --> [*]
+    cancelada --> [*]

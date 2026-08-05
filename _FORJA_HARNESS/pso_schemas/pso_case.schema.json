@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pso_case.schema.json",
+  "title": "FORJA PSO-Pet case design",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "methodVersion",
+    "caseId",
+    "profile",
+    "executionMode",
+    "sourceRegistry",
+    "contextPlan",
+    "problemDefinition",
+    "diagnosis",
+    "requirements",
+    "options",
+    "selection",
+    "validation",
+    "interventionPlan",
+    "evaluationPlan"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "methodVersion": {"const": "PSO-PET-1.0"},
+    "caseId": {"type": "string", "minLength": 1},
+    "profile": {"enum": ["light", "full", "intensive"]},
+    "executionMode": {"enum": ["prospective", "retrospective_baseline"]},
+    "sourceRegistry": {"type": "array"},
+    "contextPlan": {"type": "object"},
+    "problemDefinition": {"type": "object"},
+    "diagnosis": {"type": "object"},
+    "requirements": {"type": "object"},
+    "options": {"type": "array"},
+    "selection": {"type": "object"},
+    "validation": {"type": "object"},
+    "interventionPlan": {"type": "object"},
+    "evaluationPlan": {"type": "object"}
+  },
+  "additionalProperties": true
+}

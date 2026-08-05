@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "FORJA Harness — roadmap de melhoria",
+    "subtitle": "Ondas pequenas, gates e reversibilidade",
+    "output": "FORJA_HARNESS_IMPROVEMENT_ROADMAP.html",
+    "visual_preset": "blueprint",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "roadmap",
+        "label": "Roadmap",
+        "focus": [
+          "wave0",
+          "wave1",
+          "wave2",
+          "wave3"
+        ],
+        "note": "Executar em ordem; cada onda exige evidência."
+      },
+      {
+        "id": "failure",
+        "label": "Gate de parada",
+        "focus": [
+          "wave0",
+          "block"
+        ],
+        "note": "Paridade ou regressão interrompe a migração."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "baseline",
+      "label": "Baseline"
+    },
+    {
+      "id": "boundary",
+      "label": "Fronteiras"
+    },
+    {
+      "id": "migration",
+      "label": "Migração"
+    },
+    {
+      "id": "quality",
+      "label": "Qualidade"
+    },
+    {
+      "id": "exception",
+      "label": "Bloqueios",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "stabilize",
+      "label": "Estabilizar",
+      "fromCol": 0,
+      "toCol": 2
+    },
+    {
+      "id": "evolve",
+      "label": "Evoluir",
+      "fromCol": 3,
+      "toCol": 5,
+      "variant": "emphasis"
+    }
+  ],
+  "mainPath": [
+    "wave0",
+    "wave1",
+    "wave2",
+    "wave3"
+  ],
+  "nodes": [
+    {
+      "id": "wave0",
+      "lane": "baseline",
+      "col": 0,
+      "width": 72,
+      "type": "security",
+      "label": "W0",
+      "sublabel": "Romper ciclo package/validator"
+    },
+    {
+      "id": "wave1",
+      "lane": "boundary",
+      "col": 2,
+      "width": 72,
+      "type": "backend",
+      "label": "W1",
+      "sublabel": "Extrair core com reexports"
+    },
+    {
+      "id": "wave2",
+      "lane": "migration",
+      "col": 3,
+      "width": 72,
+      "type": "backend",
+      "label": "W2",
+      "sublabel": "Package services + registry"
+    },
+    {
+      "id": "wave3",
+      "lane": "quality",
+      "col": 5,
+      "width": 72,
+      "type": "security",
+      "label": "W3",
+      "sublabel": "Migrar para pacote `forja/`"
+    },
+    {
+      "id": "block",
+      "lane": "exception",
+      "col": 2,
+      "width": 72,
+      "type": "security",
+      "label": "Parar",
+      "sublabel": "gate ou paridade falhou"
+    }
+  ],
+  "edges": [
+    {
+      "from": "wave0",
+      "to": "wave1",
+      "variant": "emphasis",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "wave1",
+      "to": "wave2",
+      "variant": "default",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "wave2",
+      "to": "wave3",
+      "variant": "default",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "wave0",
+      "to": "block",
+      "variant": "security",
+      "role": "error",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Sequência",
+      "items": [
+        "Baseline antes da mudança",
+        "Uma fronteira por onda"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Gate",
+      "items": [
+        "Falha interrompe promoção",
+        "Rollback permanece disponível"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Aceite",
+      "items": [
+        "Contrato e teste",
+        "Métrica antes/depois"
+      ]
+    }
+  ]
+}

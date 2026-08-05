@@ -1,0 +1,63 @@
+{
+  "serverPort": 8765,
+  "systemVersion": "2.0.0",
+  "timezone": "America/Sao_Paulo",
+  "dashboardTitle": "Gestão de Demandas - Escritório Medina Osório",
+  "continuity": {
+    "healthEndpoint": "/api/health",
+    "watchdogTask": "Medina Osorio - Gestao Escritorio Watchdog",
+    "watchdogIntervalMinutes": 10,
+    "startupScript": "scripts/ensure_server.ps1",
+    "updateTimeoutSeconds": 900,
+    "snapshotPollSeconds": 120
+  },
+  "gmail": {
+    "inboundQuery": "from:(medinaosorio.adv.br) after:2026/06/01 -in:trash -in:spam",
+    "sentQuery": "in:sent to:(medinaosorio.adv.br) after:2026/06/01 -in:trash -in:spam"
+  },
+  "whatsapp": {
+    "privacyMode": "sanitized",
+    "targetChats": [
+      {
+        "name": "Fábio Medina Osório",
+        "chatId": "60855441973370@lid",
+        "enabled": true
+      },
+      {
+        "name": "ClawdBot - INTEIA - Igor",
+        "chatId": "168032760508457@lid",
+        "enabled": true,
+        "note": "Candidato para contexto Igor/Hermes; confirmar se é o contato chamado Igor hermes 2 chip."
+      }
+    ],
+    "lookbackHours": 96,
+    "demandKeywords": [
+      "prazo",
+      "urgente",
+      "hoje",
+      "amanhã",
+      "petição",
+      "peça",
+      "memoriais",
+      "parecer",
+      "recurso",
+      "embargos",
+      "minuta",
+      "anexo",
+      "processo",
+      "protocolo"
+    ]
+  },
+  "alerts": {
+    "urgentWindowHours": 48,
+    "dailyAlertOnce": true,
+    "useAlarmForOverdue": true,
+    "useNotifyForUpcoming": true
+  },
+  "calendar": {
+    "title": "Revisar painel de demandas do escritorio",
+    "eventId": "ng681949ks18rfb9q00e9p6uh8",
+    "schedule": "Diariamente as 9h",
+    "timezone": "America/Sao_Paulo"
+  }
+}

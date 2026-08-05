@@ -1,0 +1,22 @@
+flowchart TB
+    F0["Etapa 1 · Conferir a demanda<br/>fila, canais de entrada e situação real"] --> F1["Etapa 2 · Organizar e conferir os documentos<br/>orientação, anexos, arquivos e instruções ocultas"]
+    F1 --> F2["Etapa 3 · Definir o tipo de peça e o risco<br/>produto, tribunal, risco e perfil"]
+    F2 --> F3["Etapa 4 · Confirmar tribunal, regras e fontes<br/>regimento, leis, fatos e sequência dos atos"]
+    F3 --> F4["Etapa 5 · Planejar a estratégia<br/>perguntas, teses, pedidos e pareceres"]
+    F4 --> F5["Etapa 6 · Pesquisar e validar fundamentos<br/>jurisprudência oficial e pesquisa científica, quando necessária"]
+    F5 --> F6["Etapa 7 · Redigir a peça<br/>modelo oficial do escritório e fontes conferíveis"]
+    F6 --> F7["Etapa 8 · Revisar fatos, direito e coerência<br/>inclui a melhor crítica que a parte contrária poderia fazer"]
+    F7 --> F8["Etapa 9 · Conferir apresentação e legibilidade<br/>Microsoft Word, PDF e todas as páginas"]
+    F8 --> F9["Etapa 10 · Preparar o material para revisão<br/>arquivo conferido e rascunho de e-mail, quando autorizado"]
+    F9 --> F10["Etapa 11 · Comprovar a entrega e registrar o aprendizado<br/>evidência, gestão, comparação e retrospectiva"]
+
+    F7 -->|"impedimento grave ou mudança de sentido"| F3
+    F7 -->|"tese mal desenhada"| F4
+    F5 -->|"fonte altera o problema"| F2
+    F8 -->|"arquivo precisa ser refeito"| F7
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b,stroke-width:2px;
+    classDef research fill:#edf2f8,stroke:#315f8c,color:#243f5c,stroke-width:2px;
+    classDef human fill:#fff4d8,stroke:#9a6b18,color:#4b370d,stroke-width:2px;
+    class F0,F1,F2,F3,F6,F8,F9,F10 active;
+    class F4,F5,F7 research;

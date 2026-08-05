@@ -1,0 +1,92 @@
+{
+  "versao": "BANCADA-CAFELANA-V7-JUIZES-v1",
+  "juiz": "grok-4.5",
+  "familiaJuiz": "xai",
+  "ordem": "invertida",
+  "rotulosApresentados": [
+    "P6",
+    "P5",
+    "P4",
+    "P3",
+    "P2",
+    "P1"
+  ],
+  "voto": {
+    "notas": {
+      "P6": {
+        "tese": 9,
+        "comando": 9,
+        "autoridade": 8,
+        "arquitetura": 9,
+        "escrita": 8,
+        "utilidade": 9
+      },
+      "P2": {
+        "tese": 9,
+        "comando": 6,
+        "autoridade": 8,
+        "arquitetura": 10,
+        "escrita": 9,
+        "utilidade": 9
+      },
+      "P3": {
+        "tese": 9,
+        "comando": 7,
+        "autoridade": 7,
+        "arquitetura": 8,
+        "escrita": 8,
+        "utilidade": 8
+      },
+      "P1": {
+        "tese": 8,
+        "comando": 8,
+        "autoridade": 8,
+        "arquitetura": 7,
+        "escrita": 9,
+        "utilidade": 8
+      },
+      "P4": {
+        "tese": 8,
+        "comando": 7,
+        "autoridade": 6,
+        "arquitetura": 8,
+        "escrita": 7,
+        "utilidade": 7
+      },
+      "P5": {
+        "tese": 2,
+        "comando": 1,
+        "autoridade": 1,
+        "arquitetura": 1,
+        "escrita": 2,
+        "utilidade": 1
+      }
+    },
+    "ranking": [
+      "P6",
+      "P2",
+      "P3",
+      "P1",
+      "P4",
+      "P5"
+    ],
+    "protocolaria": "P6",
+    "ancora": "Ainda que se adote a orientação de conhecimento apenas parcial, o resultado material permanece inalterado: o fundamento não devolvido ao colegiado subsiste intacto",
+    "porque": "P6 une a tese forte da unidade do dispositivo com enfrentamento expresso e pedido subsidiário do conhecimento parcial, sem abandonar a intempestividade e sem transformá-la em eixo autônomo frágil após a juntada e a QO da Corte Especial. P2 tem a melhor escada de pedidos e escrita mais cirúrgica, mas registra e pratica descumprimento da determinação de manter/reforçar a intempestividade. P3 e P4 ainda apostam demais na intempestividade autônoma e incham sanção ou autoridade; P1 é limpa, porém menos completa na escada; P5 está truncada e é imprópria para protocolo.",
+    "erroMaisGrave": {
+      "P6": "Extensão ainda elevada e dependência residual de verificação do teor da portaria do TRF1 na ponta subsidiária.",
+      "P2": "Descumpriu de modo consciente a determinação de manter/reforçar a intempestividade, rebaixando-a a mera preservação sem pretensão útil.",
+      "P3": "Manteve a intempestividade como causa autônoma de não conhecimento, reabrindo risco de incidente de regularização sem ganho real.",
+      "P4": "Usou autoridade não conferida (EREsp 1.414.755/PA) e sobrecarregou o capítulo sancionatório com imputações de má-fé além do lastro.",
+      "P1": "Não formula pedido sucessivo expresso de conhecimento parcial com preservação do óbice do art. 512/Súmula 284.",
+      "P5": "Peça incompleta: o texto se interrompe no meio da Síntese 1 e não chega a pedidos utilizáveis."
+    }
+  },
+  "ancoraValida": true,
+  "votoAnulado": false,
+  "custoUsd": 0.1925,
+  "tokensEntrada": 86955,
+  "tokensSaida": 3094,
+  "em": "2026-07-27T15:01:24-03:00",
+  "sha256Prompt": "2b90f061741ff344c512c09a168a874a2975e498849f3ecaf896b8517a5c89a7"
+}

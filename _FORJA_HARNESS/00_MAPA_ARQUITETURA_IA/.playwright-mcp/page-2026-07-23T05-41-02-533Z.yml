@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - toolbar "Diagram actions" [ref=e2]:
+    - button "Toggle color theme" [pressed] [ref=e3] [cursor=pointer]:
+      - generic [ref=e4]: ☼
+      - generic [ref=e5]: Light
+    - button "Enter presentation stage" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: □
+      - generic [ref=e8]: Present
+    - button "Export diagram" [ref=e10] [cursor=pointer]:
+      - text: Export
+      - generic [ref=e11]: ▾
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - heading "AutoResearch — melhoria contínua do mapa FORJA" [level=1] [ref=e16]
+        - text: BLUEPRINT / REV 01
+      - paragraph [ref=e17]: "experimento real: nota inicial 92,8 → versão vencedora com nota 100 em 3 rodadas · 2026-07-23"
+    - generic "Guided diagram views" [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Guided views
+          - generic [ref=e22]: 0 / 3
+        - strong [ref=e24]: Explore this system
+      - button "Play guided story" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: ▶
+        - generic [ref=e28]: Play story
+      - navigation "Story chapters" [ref=e29]:
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - 'button "Open chapter 1 of 3: Ciclo de melhoria. Chapter focus delta: 0 stay, 6 enter, 0 leave" [ref=e32] [cursor=pointer]':
+              - generic [ref=e33]: "01"
+              - generic [ref=e34]: Ciclo de melhoria
+              - generic [ref=e35]:
+                - generic [ref=e36]: =0
+                - generic [ref=e37]: "+6"
+                - generic [ref=e38]: −0
+          - listitem [ref=e39]:
+            - 'button "Open chapter 2 of 3: Desempate honesto. Chapter focus delta: 0 stay, 3 enter, 0 leave" [ref=e40] [cursor=pointer]':
+              - generic [ref=e41]: "02"
+              - generic [ref=e42]: Desempate honesto
+              - generic [ref=e43]:
+                - generic [ref=e44]: =0
+                - generic [ref=e45]: "+3"
+                - generic [ref=e46]: −0
+          - listitem [ref=e47]:
+            - 'button "Open chapter 3 of 3: Aplicação segura. Chapter focus delta: 0 stay, 5 enter, 0 leave" [ref=e48] [cursor=pointer]':
+              - generic [ref=e49]: "03"
+              - generic [ref=e50]: Aplicação segura
+              - generic [ref=e51]:
+                - generic [ref=e52]: =0
+                - generic [ref=e53]: "+5"
+                - generic [ref=e54]: −0
+    - generic [ref=e55]:
+      - 'img "AutoResearch — melhoria contínua do mapa FORJA experimento real: nota inicial 92,8 → versão vencedora com nota 100 em 3 rodadas · 2026-07-23" [ref=e56]':
+        - generic [ref=e59]: 01 / Documento alvo
+        - generic [ref=e61]: 02 / Preparação
+        - generic [ref=e63]: 03 / Ciclo de melhoria
+        - generic [ref=e65]: 04 / Controle de qualidade
+        - generic [ref=e67]: 05 / Aplicação do resultado
+        - generic [ref=e69]: 06 / Registro de evidência
+        - generic [ref=e71]: Preparar e fixar a régua
+        - generic [ref=e73]: Melhorar por rodadas
+        - generic [ref=e75]: Aplicar e provar
+        - group "Direct relationship explorer":
+          - 'button "Inspect relationship 1 of 12: Alvo to Regras, cópia de partida. Press Enter for details."'
+          - 'button "Inspect relationship 2 of 12: Regras to Régua, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 3 of 12: Régua to Criar versões, régua fixada. Press Enter for details."'
+          - 'button "Inspect relationship 4 of 12: Criar versões to Dar nota, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 5 of 12: Dar nota to Escolher, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 6 of 12: Escolher to Criar versões, ainda melhora: nova rodada. Press Enter for details."'
+          - 'button "Inspect relationship 7 of 12: Escolher to Desempate, empate de nota. Press Enter for details."'
+          - 'button "Inspect relationship 8 of 12: Desempate to Salvaguarda, vencedora definida. Press Enter for details."'
+          - 'button "Inspect relationship 9 of 12: Salvaguarda to Aplicar, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 10 of 12: Aplicar to Alvo, vira a versão oficial. Press Enter for details."'
+          - 'button "Inspect relationship 11 of 12: Dar nota to Diário, connects to. Press Enter for details."'
+          - 'button "Inspect relationship 12 of 12: Aplicar to Selo, connects to. Press Enter for details."'
+        - button "Focus Alvo, o desenho da arquitetura, Documento alvo › Preparar e fixar a régua" [ref=e84] [cursor=pointer]:
+          - generic [ref=e87]: Alvo
+          - generic: o desenho da arquitetura
+          - generic: versão oficial
+        - button "Focus Regras, cópia de partida e critérios, Preparação › Preparar e fixar a régua" [ref=e88] [cursor=pointer]:
+          - generic [ref=e91]: Regras
+          - generic: cópia de partida e critérios
+        - button "Focus Régua, nota de 0 a 100, fixada antes, Preparação › Preparar e fixar a régua" [ref=e92] [cursor=pointer]:
+          - generic [ref=e95]: Régua
+          - generic: nota de 0 a 100, fixada antes
+          - generic: 70 exigências dos contratos
+        - button "Focus Criar versões, 5 alternativas por rodada, Ciclo de melhoria › Melhorar por rodadas" [ref=e96] [cursor=pointer]:
+          - generic [ref=e99]: Criar versões
+          - generic: 5 alternativas por rodada
+          - generic: cada uma muda um aspecto
+        - button "Focus Dar nota, avaliação igual para todas, Ciclo de melhoria › Melhorar por rodadas" [ref=e100] [cursor=pointer]:
+          - generic [ref=e103]: Dar nota
+          - generic: avaliação igual para todas
+          - generic: automática e objetiva
+        - button "Focus Escolher, as melhores seguem adiante, Ciclo de melhoria › Aplicar e provar" [ref=e104] [cursor=pointer]:
+          - generic [ref=e107]: Escolher
+          - generic: as melhores seguem adiante
+        - button "Focus Desempate, conteúdo visível no desenho, Controle de qualidade › Melhorar por rodadas" [ref=e108] [cursor=pointer]:
+          - generic [ref=e111]: Desempate
+          - generic: conteúdo visível no desenho
+          - generic: atalho de nota é descartado
+        - button "Focus Salvaguarda, guarda a versão anterior, Aplicação do resultado › Melhorar por rodadas" [ref=e112] [cursor=pointer]:
+          - generic [ref=e115]: Salvaguarda
+          - generic: guarda a versão anterior
+        - button "Focus Aplicar, gera e confere o desenho final, Aplicação do resultado › Aplicar e provar" [ref=e116] [cursor=pointer]:
+          - generic [ref=e119]: Aplicar
+          - generic: gera e confere o desenho final
+        - button "Focus Diário, todas as notas registradas, Registro de evidência › Melhorar por rodadas" [ref=e120] [cursor=pointer]:
+          - generic [ref=e123]: Diário
+          - generic: todas as notas registradas
+        - button "Focus Selo, integridade dos arquivos, Registro de evidência › Aplicar e provar" [ref=e124] [cursor=pointer]:
+          - generic [ref=e127]: Selo
+          - generic: integridade dos arquivos
+        - generic: cópia de partida
+        - generic: régua fixada
+        - generic: "ainda melhora: nova rodada"
+        - generic: empate de nota
+        - generic: vencedora definida
+        - generic: vira a versão oficial
+        - toolbar "Semantic legend" [ref=e128]:
+          - generic [ref=e129]: Legend
+          - generic [ref=e130]:
+            - generic [ref=e133]: User UI
+            - generic: "0"
+          - button "Inspect Backend, 3 nodes" [ref=e134] [cursor=pointer]:
+            - generic [ref=e137]: Agent logic
+            - generic: "3"
+          - button "Inspect Security, 3 nodes" [ref=e138] [cursor=pointer]:
+            - generic [ref=e141]: Policy
+            - generic: "3"
+          - button "Inspect Message Bus, 1 node" [ref=e142] [cursor=pointer]:
+            - generic [ref=e145]: Tool action
+            - generic: "1"
+          - button "Inspect Database, 2 nodes" [ref=e146] [cursor=pointer]:
+            - generic [ref=e149]: Context / trace
+            - generic: "2"
+      - status [ref=e150]
+      - toolbar "Diagram view controls" [ref=e151]:
+        - button "Trace a directed route" [ref=e152] [cursor=pointer]: PATH
+        - button "Open semantic radar" [ref=e153] [cursor=pointer]: MAP
+        - button "Open semantic lens" [ref=e154] [cursor=pointer]: LENS
+        - button "Find a node" [ref=e155] [cursor=pointer]: ⌕
+        - button "Open diagram guide" [ref=e156] [cursor=pointer]: "?"
+        - button "Zoom out" [disabled] [ref=e157]: −
+        - button "Zoom in to reveal relationship labels and node context. Reset diagram view" [ref=e158] [cursor=pointer]: MAP 100%
+        - button "Zoom in" [ref=e159] [cursor=pointer]: +
+    - generic [ref=e160]:
+      - generic [ref=e161]:
+        - heading "Como a nota é dada (100 pontos)" [level=3] [ref=e164]
+        - list [ref=e165]:
+          - listitem [ref=e166]: • 25 — desenho tecnicamente correto, sem alertas
+          - listitem [ref=e167]: • 10 — todas as 13 etapas da fábrica presentes
+          - listitem [ref=e168]: • 20 — técnicas reais de trabalho retratadas
+          - listitem [ref=e169]: • 20 — exigências dos contratos de fase (70 no total)
+          - listitem [ref=e170]: • 15 — navegação guiada · 10 — sobriedade visual
+      - generic [ref=e171]:
+        - heading "Resultado real do experimento" [level=3] [ref=e174]
+        - list [ref=e175]:
+          - listitem [ref=e176]: • Nota inicial 92,8 → versão final com nota 100
+          - listitem [ref=e177]: • 3 rodadas, 9 versões avaliadas
+          - listitem [ref=e178]: • Todas as 70 exigências retratadas no desenho
+          - listitem [ref=e179]: • Nenhum alerta técnico pendente
+      - generic [ref=e180]:
+        - heading "Desempate honesto" [level=3] [ref=e183]
+        - list [ref=e184]:
+          - listitem [ref=e185]: • Uma versão tirou 100 escondendo conteúdo em texto auxiliar
+          - listitem [ref=e186]: "• Regra criada: o conteúdo deve aparecer no próprio desenho"
+          - listitem [ref=e187]: • A regra ficou registrada para as próximas rodadas
+      - generic [ref=e188]:
+        - heading "Aplicação com segurança" [level=3] [ref=e191]
+        - list [ref=e192]:
+          - listitem [ref=e193]: • Cópia de segurança antes de substituir a versão oficial
+          - listitem [ref=e194]: • Desenho final conferido tela a tela
+          - listitem [ref=e195]: • Selo de integridade recalculado ao terminar
+    - paragraph [ref=e196]:
+      - text: Workflow diagram • Built with Archify
+      - generic [ref=e197]: • Hover to trace • R route • Click to focus • +/− zoom • M radar • [/] views • P play story • T theme • E export
+  - status

@@ -1,0 +1,2021 @@
+{
+  "query": "autistic adults healthcare access unmet needs systematic review",
+  "routes": [
+    {
+      "status": "ok",
+      "source": "crossref",
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                4
+              ]
+            ],
+            "date-time": "2026-05-04T08:30:34Z",
+            "timestamp": 1777883434668,
+            "version": "3.51.4"
+          },
+          "reference-count": 60,
+          "publisher": "SAGE Publications",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2024-01-01T00:00:00Z",
+                "timestamp": 1704067200000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by-nc/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "journals.sagepub.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "The Journal of Medicine Access"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                1
+              ]
+            ]
+          },
+          "abstract": "<jats:sec>\n                    <jats:title>Objectives:</jats:title>\n                    <jats:p>This study sought to systematically review the existing literature on self-reported unmet healthcare needs in Southeastern Europe.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Methods:</jats:title>\n                    <jats:p>A systematic literature review of quantitative evidence in English and Bulgarian was performed in July 2023 using the following databases: Medline, Embase and EconLit. Publications were only included if they used self-reported unmet healthcare needs as an indicator of access to healthcare, concerned people living in Albania, Bosnia and Herzegovina, Bulgaria, Greece, Kosovo, Montenegro, Serbia, North Macedonia or Romania and if they were published after 2003. Quality assessment of the included publications was performed using the Appraisal tool for Cross-Sectional Studies (AXIS) tool.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Results:</jats:title>\n                    <jats:p>Twenty-three publications of varying quality were included in the review. Significantly more evidence was available for Greece, Bulgaria and Romania than for the rest of the region. Data collected through Pan-European surveys were commonly used, but almost half of the studies were only descriptive. Generally, the prevalence of unmet healthcare needs has decreased over the years. Unmet healthcare needs were higher among people of lower socioeconomic and educational status, ethnic minorities and migrants and high cost was consistently identified as the primary barrier to accessing healthcare.</jats:p>\n                  </jats:sec>\n                  <jats:sec>\n                    <jats:title>Conclusion:</jats:title>\n                    <jats:p>Unmet healthcare needs are more prevalent among already disadvantaged societal groups. A trend of a declining prevalence of unmet needs has been observed, but it is more notable in the more socioeconomically developed countries. Improving financial protection should be a priority for the healthcare systems.</jats:p>\n                  </jats:sec>",
+          "DOI": "10.1177/27550834241255838",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                23
+              ]
+            ],
+            "date-time": "2024-05-23T06:45:15Z",
+            "timestamp": 1716446715000
+          },
+          "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 9,
+          "title": [
+            "Unmet healthcare needs in Southeastern Europe: a systematic review"
+          ],
+          "prefix": "10.1177",
+          "volume": "8",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0004-3303-4845",
+              "authenticated-orcid": false,
+              "given": "Ivan",
+              "family": "Maslyankov",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "School of Health and Related Research, University of Sheffield, Sheffield, UK"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "179",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                23
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "bibr1-27550834241255838",
+              "unstructured": "United Nations. 2030 UN Sustainable Development Goal 3 – Ensure healthy lives and promote well-being for all at all ages. New York: United Nations, 2015, https://sdgs.un.org/goals/goal3 (accessed 11 July 2023)."
+            },
+            {
+              "key": "bibr2-27550834241255838",
+              "unstructured": "World Health Organization. WHO global impact framework. Geneva: World Health Organisation, 2019, https://www.who.int/about/what-we-do/thirteenth-general-programme-of-work-2019—2023 (accessed 11 July 2023)."
+            },
+            {
+              "key": "bibr3-27550834241255838",
+              "unstructured": "European Commission. European pillar of social rights – building a fairer and more inclusive European Union. Brussels: European Commission, 2021, https://ec.europa.eu/social/main.jsp?catId=1226&langId=en (accessed 11 July 2023)."
+            },
+            {
+              "key": "bibr4-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1258/135581902760082517"
+            },
+            {
+              "key": "bibr5-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/hec.3877"
+            },
+            {
+              "key": "bibr6-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.socscimed.2009.10.027"
+            },
+            {
+              "key": "bibr7-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1017/S1744133119000161"
+            },
+            {
+              "key": "bibr8-27550834241255838",
+              "unstructured": "Organisation for Economic Cooperation Development. Unmet needs for healthcare: Comparing approaches and results from international surveys. Paris: OECD Publishing, 2020, https://www.oecd.org/health/health-systems/Unmet-Needs-for-Health-Care-Brief-2020.pdf (accessed 21 July 2023)."
+            },
+            {
+              "key": "bibr9-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.2307/2955359"
+            },
+            {
+              "key": "bibr10-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/1476-072X-12-27"
+            },
+            {
+              "key": "bibr11-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/j.1525-1497.2005.40136.x"
+            },
+            {
+              "issue": "1",
+              "key": "bibr12-27550834241255838",
+              "first-page": "87",
+              "volume": "5",
+              "author": "Sibley LM",
+              "year": "2009",
+              "journal-title": "Healthc Policy"
+            },
+            {
+              "key": "bibr13-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/j.1475-6773.2006.00506.x"
+            },
+            {
+              "key": "bibr14-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.2105/AJPH.2008.154088"
+            },
+            {
+              "key": "bibr15-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jadohealth.2011.03.005"
+            },
+            {
+              "key": "bibr16-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10754-019-09271-0"
+            },
+            {
+              "key": "bibr17-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/eurpub/ckw219"
+            },
+            {
+              "key": "bibr18-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/s12939-016-0335-7"
+            },
+            {
+              "key": "bibr19-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1136/bmjopen-2021-048860"
+            },
+            {
+              "key": "bibr20-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3390/ijerph10052017"
+            },
+            {
+              "key": "bibr21-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10198-014-0629-x"
+            },
+            {
+              "key": "bibr22-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/eurpub/ckt165"
+            },
+            {
+              "key": "bibr23-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.healthpol.2007.12.005"
+            },
+            {
+              "key": "bibr24-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S0140-6736(09)61334-9"
+            },
+            {
+              "key": "bibr25-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.healthpol.2017.12.012"
+            },
+            {
+              "key": "bibr26-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.healthpol.2010.12.001"
+            },
+            {
+              "key": "bibr27-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1177/2333392816647892"
+            },
+            {
+              "key": "bibr28-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.healthpol.2022.05.015"
+            },
+            {
+              "key": "bibr29-27550834241255838",
+              "first-page": "1",
+              "volume": "20",
+              "author": "Dimova A",
+              "year": "2018",
+              "journal-title": "Health Syst Transit"
+            },
+            {
+              "key": "bibr30-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S0140-6736(16)31467-2"
+            },
+            {
+              "key": "bibr31-27550834241255838",
+              "volume-title": "Government at a glance: Western Balkans",
+              "author": "Organisation for Economic Cooperation Development",
+              "year": "2020"
+            },
+            {
+              "key": "bibr32-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1080/09581596.2017.1394575"
+            },
+            {
+              "key": "bibr33-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/s12913-016-1557-5"
+            },
+            {
+              "key": "bibr34-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s12134-023-01024-w"
+            },
+            {
+              "key": "bibr35-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3390/ijerph20116056"
+            },
+            {
+              "key": "bibr36-27550834241255838",
+              "first-page": "727",
+              "volume": "15",
+              "author": "Tsirona C",
+              "year": "2022",
+              "journal-title": "Int J Caring Sci"
+            },
+            {
+              "key": "bibr37-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S0140-6736(13)62291-6"
+            },
+            {
+              "key": "bibr38-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/1472-6963-9-52"
+            },
+            {
+              "key": "bibr39-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1177/0020731420902604"
+            },
+            {
+              "key": "bibr40-27550834241255838",
+              "volume-title": "Can people afford to pay for health care? New evidence on financial protection in Bulgaria",
+              "author": "Dimova A",
+              "year": "2022"
+            },
+            {
+              "key": "bibr41-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/eurpub/cks169"
+            },
+            {
+              "key": "bibr42-27550834241255838",
+              "unstructured": "Rohova M, Dimova A, Atanasova E. Access to health services of people in the Northeastern region of Bulgaria. Collection of abstracts and reports from the First National Conference ‘Public Health – Global Priority in Science and Practice’, Varna, 2017. https://journals.mu-varna.bg/index.php/conf/article/view/4225."
+            },
+            {
+              "key": "bibr43-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5272/jimab.2016223.1324"
+            },
+            {
+              "key": "bibr44-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/eurpub/ckt118"
+            },
+            {
+              "key": "bibr45-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/eurpub/ckw004"
+            },
+            {
+              "key": "bibr46-27550834241255838",
+              "first-page": "73",
+              "volume": "13",
+              "author": "Neculau A",
+              "year": "2020",
+              "journal-title": "Bull Transilv Univ Brasov"
+            },
+            {
+              "key": "bibr47-27550834241255838",
+              "volume-title": "Can people afford to pay for health care? New evidence on financial protection in Romania",
+              "author": "Scintee SG",
+              "year": "2022"
+            },
+            {
+              "issue": "9",
+              "key": "bibr48-27550834241255838",
+              "first-page": "1650",
+              "volume": "49",
+              "author": "Mitrasevic M",
+              "year": "2020",
+              "journal-title": "Iran J Public Health"
+            },
+            {
+              "key": "bibr49-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1371/journal.pone.0187866"
+            },
+            {
+              "key": "bibr50-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3325/cmj.2011.52.622"
+            },
+            {
+              "key": "bibr51-27550834241255838",
+              "volume-title": "New evidence on financial protection in Albania",
+              "author": "Tomini F",
+              "year": "2020"
+            },
+            {
+              "key": "bibr52-27550834241255838",
+              "volume-title": "Can people afford to pay for health care? New evidence on financial protection in North Macedonia",
+              "author": "Dimkovski V",
+              "year": "2021"
+            },
+            {
+              "key": "bibr53-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/eurpub/ckv040"
+            },
+            {
+              "key": "bibr54-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1136/bmjopen-2014-005619"
+            },
+            {
+              "key": "bibr55-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S2468-2667(16)30016-0"
+            },
+            {
+              "key": "bibr56-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S2468-2667(16)30018-4"
+            },
+            {
+              "key": "bibr57-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.puhe.2014.08.004"
+            },
+            {
+              "key": "bibr58-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10903-020-01086-3"
+            },
+            {
+              "key": "bibr59-27550834241255838",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s40615-022-01284-9"
+            },
+            {
+              "key": "bibr60-27550834241255838",
+              "volume-title": "Waiting times for health services: next in line",
+              "author": "Organisation for Economic Cooperation Development",
+              "year": "2020"
+            }
+          ],
+          "container-title": [
+            "The Journal of Medicine Access"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://journals.sagepub.com/doi/pdf/10.1177/27550834241255838",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://journals.sagepub.com/doi/full-xml/10.1177/27550834241255838",
+              "content-type": "application/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://journals.sagepub.com/doi/pdf/10.1177/27550834241255838",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                1
+              ]
+            ],
+            "date-time": "2026-05-01T01:45:44Z",
+            "timestamp": 1777599944000
+          },
+          "score": 41.0019,
+          "resource": {
+            "primary": {
+              "URL": "https://journals.sagepub.com/doi/10.1177/27550834241255838"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                1
+              ]
+            ]
+          },
+          "references-count": 60,
+          "alternative-id": [
+            "10.1177/27550834241255838"
+          ],
+          "URL": "https://doi.org/10.1177/27550834241255838",
+          "ISSN": [
+            "2755-0834",
+            "2755-0834"
+          ],
+          "issn-type": [
+            {
+              "value": "2755-0834",
+              "type": "print"
+            },
+            {
+              "value": "2755-0834",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                1
+              ]
+            ]
+          },
+          "article-number": "27550834241255838"
+        },
+        {
+          "institution": [
+            {
+              "name": "Holland Bloorview Kids Rehabilitation Hospital",
+              "place": [
+                "Toronto"
+              ],
+              "department": [
+                "Evidence to Care"
+              ]
+            }
+          ],
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                21
+              ]
+            ],
+            "date-time": "2026-05-21T19:54:08Z",
+            "timestamp": 1779393248263,
+            "version": "3.53.1"
+          },
+          "reference-count": 0,
+          "publisher": "F1000 Research Ltd",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    8,
+                    23
+                  ]
+                ],
+                "date-time": "2022-08-23T00:00:00Z",
+                "timestamp": 1661212800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": []
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                23
+              ]
+            ]
+          },
+          "DOI": "10.21956/hrbopenres.14489.r32654",
+          "type": "peer-review",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                21
+              ]
+            ],
+            "date-time": "2025-11-21T12:52:10Z",
+            "timestamp": 1763729530000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Peer Review Report For: Unmet healthcare needs in adults with childhood-onset neurodisabilities: a protocol for a systematic review [version 1; peer review: 2 approved]"
+          ],
+          "prefix": "10.21956",
+          "member": "2560",
+          "review": {
+            "type": "referee-report",
+            "stage": "post-publication",
+            "competing-interest-statement": "No competing interests were declared"
+          },
+          "contributor": [
+            {
+              "given": "Shauna",
+              "family": "Kingsnorth",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "reviewer"
+                }
+              ]
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                21
+              ]
+            ],
+            "date-time": "2025-11-21T12:52:12Z",
+            "timestamp": 1763729532000
+          },
+          "score": 40.403664,
+          "resource": {
+            "primary": {
+              "URL": "https://hrbopenresearch.org/articles/4-107/v1#referee-response-32654"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                23
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.21956/hrbopenres.14489.r32654",
+          "relation": {
+            "is-review-of": [
+              {
+                "id-type": "doi",
+                "id": "10.12688/hrbopenres.13309.1",
+                "asserted-by": "subject"
+              }
+            ]
+          },
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                23
+              ]
+            ]
+          }
+        },
+        {
+          "institution": [
+            {
+              "name": "Lund University",
+              "place": [
+                "Lund"
+              ],
+              "department": [
+                "Department of Clinical Sciences, Orthopaedics"
+              ]
+            }
+          ],
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                21
+              ]
+            ],
+            "date-time": "2026-05-21T18:33:56Z",
+            "timestamp": 1779388436017,
+            "version": "3.53.1"
+          },
+          "reference-count": 0,
+          "publisher": "F1000 Research Ltd",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    10,
+                    26
+                  ]
+                ],
+                "date-time": "2021-10-26T00:00:00Z",
+                "timestamp": 1635206400000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": []
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                26
+              ]
+            ]
+          },
+          "DOI": "10.21956/hrbopenres.14489.r30493",
+          "type": "peer-review",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                21
+              ]
+            ],
+            "date-time": "2025-11-21T13:17:06Z",
+            "timestamp": 1763731026000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Peer Review Report For: Unmet healthcare needs in adults with childhood-onset neurodisabilities: a protocol for a systematic review [version 1; peer review: 2 approved]"
+          ],
+          "prefix": "10.21956",
+          "member": "2560",
+          "review": {
+            "type": "referee-report",
+            "stage": "post-publication",
+            "competing-interest-statement": "No competing interests were declared"
+          },
+          "contributor": [
+            {
+              "given": "Elisabet",
+              "family": "Rodby-Bousquet",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "reviewer"
+                }
+              ]
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                21
+              ]
+            ],
+            "date-time": "2025-11-21T13:17:09Z",
+            "timestamp": 1763731029000
+          },
+          "score": 40.17974,
+          "resource": {
+            "primary": {
+              "URL": "https://hrbopenresearch.org/articles/4-107/v1#referee-response-30493"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                26
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.21956/hrbopenres.14489.r30493",
+          "relation": {
+            "is-review-of": [
+              {
+                "id-type": "doi",
+                "id": "10.12688/hrbopenres.13309.1",
+                "asserted-by": "subject"
+              },
+              {
+                "id-type": "doi",
+                "id": "10.12688/hrbopenres.13309.1",
+                "asserted-by": "object"
+              }
+            ]
+          },
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                10,
+                26
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                6
+              ]
+            ],
+            "date-time": "2026-07-06T20:17:00Z",
+            "timestamp": 1783369020250,
+            "version": "3.54.6"
+          },
+          "reference-count": 42,
+          "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+          "issue": "29",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    7,
+                    17
+                  ]
+                ],
+                "date-time": "2020-07-17T00:00:00Z",
+                "timestamp": 1594944000000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "abstract": "<jats:title>Abstract</jats:title><jats:sec><jats:title>Background:</jats:title><jats:p>People with autism spectrum disorder (ASD) have an increased susceptibility for many chronic health conditions compared with their peers. An increasing number of adolescents are transitioning from pediatric to adult healthcare services. Thus, being able to access appropriate healthcare services that can not only address specific needs of the person but enable them to better manage healthcare conditions and decrease the development of preventable disease is necessary. A systematic review was conducted to identify barriers and enablers of healthcare access for autistic adults.</jats:p></jats:sec><jats:sec><jats:title>Methods:</jats:title><jats:p>The studies included in the review were quantitative and qualitative and were published between 2003 and 2019. The participants for the review are considered to be adults (over 18 years of age) with a primary diagnosis of ASD.</jats:p></jats:sec><jats:sec><jats:title>Results:</jats:title><jats:p>In total, 1290 studies were initially identified and 13 studies were included based on the inclusion and exclusion criteria outlined in a previous protocol paper. The analysis of these studies identified areas of concern to access appropriate healthcare, such as clinician knowledge, the environment, and life events.</jats:p></jats:sec><jats:sec><jats:title>Conclusion:</jats:title><jats:p>Identifying the barriers to healthcare, highlights ways healthcare services can regulate scope of practice, the physical environment, and the process of managing health conditions, thus, autistic adults can strive for optimal health. This review contributes to peer-reviewed evidence for future research and up-to-date information when developing and piloting health interventions for autistic adults.</jats:p></jats:sec><jats:sec><jats:title>Ethics and dissemination:</jats:title><jats:p>There are no human participants, data, or tissue being directly studied for the purposes of the review; therefore, ethics approval and consent to participate is not applicable.</jats:p></jats:sec><jats:sec><jats:title>Registration and Status:</jats:title><jats:p>PROSPERO 2018 CRD42018116093</jats:p></jats:sec>",
+          "DOI": "10.1097/md.0000000000020899",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2020,
+                7,
+                17
+              ]
+            ],
+            "date-time": "2020-07-17T18:04:51Z",
+            "timestamp": 1595009091000
+          },
+          "page": "e20899",
+          "source": "Crossref",
+          "is-referenced-by-count": 60,
+          "title": [
+            "Healthcare access for autistic adults"
+          ],
+          "prefix": "10.1097",
+          "volume": "99",
+          "author": [
+            {
+              "given": "Shenae",
+              "family": "Calleja",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Fakir M. Amirul",
+              "family": "Islam",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Jonathan",
+              "family": "Kingsley",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Rachael",
+              "family": "McDonald",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "276",
+          "published-online": {
+            "date-parts": [
+              [
+                2020,
+                7,
+                17
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "R1-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "264",
+              "DOI": "10.1016/j.dhjo.2016.11.002",
+              "article-title": "Tracking health care service use and the experiences of adults with autism spectrum disorder without intellectual disability: a longitudinal study of service rates, barriers and satisfaction",
+              "volume": "10",
+              "author": "Vogan",
+              "year": "2017",
+              "journal-title": "Disabil Health J"
+            },
+            {
+              "key": "R2-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "51",
+              "DOI": "10.1177/1362361317709970",
+              "article-title": "Addressing medical needs of adolescents and adults with autism spectrum disorders in a primary care setting",
+              "volume": "22",
+              "author": "Saqr",
+              "year": "2017",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R4-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "814",
+              "DOI": "10.1177/1362361315577517",
+              "article-title": "The health status of adults on the autism spectrum",
+              "volume": "19",
+              "author": "Croen",
+              "year": "2015",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R5-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "774",
+              "DOI": "10.1177/1362361317714988",
+              "article-title": "A systematic review of quality of life of adults on the autism spectrum",
+              "volume": "22",
+              "author": "Ayres",
+              "year": "2017",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R6-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "77",
+              "DOI": "10.1007/s11606-015-3509-x",
+              "article-title": "Health conditions and functional status in adults with autism: a cross-sectional evaluation",
+              "volume": "31",
+              "author": "Fortuna",
+              "year": "2016",
+              "journal-title": "J Gen Intern Med"
+            },
+            {
+              "key": "R7-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "371",
+              "DOI": "10.1352/1944-7558-116.5.371",
+              "article-title": "Chronic disease risks in young adults with autism spectrum disorder: forewarned is forearmed",
+              "volume": "116",
+              "author": "Tyler",
+              "year": "2011",
+              "journal-title": "Am J Intellect Dev Disabil"
+            },
+            {
+              "key": "R9-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "806",
+              "DOI": "10.1002/aur.2086",
+              "article-title": "Mortality and cause of death of Australians on the autism spectrum",
+              "volume": "12",
+              "author": "Hwang",
+              "year": "2019",
+              "journal-title": "Autism Res"
+            },
+            {
+              "key": "R10-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "483",
+              "DOI": "10.1177/1362361315590805",
+              "article-title": "The experiences and needs of female adults with high-functioning autism spectrum disorder",
+              "volume": "20",
+              "author": "Baldwin",
+              "year": "2016",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R11-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "2",
+              "DOI": "10.1352/1934-9556-53.1.2",
+              "article-title": "Guidelines for dementia-related health advocacy for adults with intellectual disability and dementia: National Task Group on Intellectual Disabilities and Dementia Practices",
+              "volume": "53",
+              "author": "Bishop",
+              "year": "2015",
+              "journal-title": "Intellect Dev Disabil"
+            },
+            {
+              "key": "R12-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "35",
+              "DOI": "10.1186/1471-244X-9-35",
+              "article-title": "Psychiatric and psychosocial problems in adults with normal-intelligence autism spectrum disorders",
+              "volume": "9",
+              "author": "Hofvander",
+              "year": "2009",
+              "journal-title": "BMC Psychiatry"
+            },
+            {
+              "key": "R13-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "1062",
+              "DOI": "10.1016/j.ridd.2010.04.003",
+              "article-title": "Behavior problems: differences among intellectually disabled adults with co-morbid autism spectrum disorders and epilepsy",
+              "volume": "31",
+              "author": "Smith",
+              "year": "2010",
+              "journal-title": "Res Dev Disabil"
+            },
+            {
+              "key": "R14-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "e70855",
+              "DOI": "10.1371/journal.pone.0070855",
+              "article-title": "Discrimination and other barriers to accessing health care: perspectives of patients with mild and moderate intellectual disability and their carers",
+              "volume": "8",
+              "author": "Ali",
+              "year": "2013",
+              "journal-title": "PLoS One"
+            },
+            {
+              "key": "R15-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "1525",
+              "DOI": "10.2147/NDT.S84585",
+              "article-title": "Aggression in autism spectrum disorder: presentation and treatment options",
+              "volume": "12",
+              "author": "Fitzpatrick",
+              "year": "2016",
+              "journal-title": "Neuropsychiatr Dis Treat"
+            },
+            {
+              "key": "R16-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "27",
+              "DOI": "10.1186/1866-1955-5-27",
+              "article-title": "Prevalence of selected clinical problems in older adults with autism and intellectual disability",
+              "volume": "5",
+              "author": "Kats",
+              "year": "2013",
+              "journal-title": "J Neurodev Disord"
+            },
+            {
+              "key": "R17-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "2710",
+              "DOI": "10.1007/s10803-013-1833-8",
+              "article-title": "Social participation among young adults with an autism spectrum disorder",
+              "volume": "43",
+              "author": "Orsmond",
+              "year": "2013",
+              "journal-title": "J Autism Dev Disord"
+            },
+            {
+              "key": "R18-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "1242",
+              "DOI": "10.1111/jcpp.12085",
+              "article-title": "Diagnosing autism spectrum disorder: who will get a DSM-5 diagnosis?",
+              "volume": "54",
+              "author": "Kent",
+              "year": "2013",
+              "journal-title": "J Child Psychol Psychiatry"
+            },
+            {
+              "key": "R19-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "756",
+              "DOI": "10.1177/1362361314529627",
+              "article-title": "What should autism research focus upon? Community views and priorities from the United Kingdom",
+              "volume": "18",
+              "author": "Pellicano",
+              "year": "2014",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R20-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "109",
+              "DOI": "10.1002/gps.2711",
+              "article-title": "Ageing in people with autistic spectrum disorder",
+              "volume": "27",
+              "author": "Mukaetova-Ladinska",
+              "year": "2012",
+              "journal-title": "Int J Geriatr Psychiatry"
+            },
+            {
+              "key": "R21-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "e1312",
+              "DOI": "10.1542/peds.2011-0427",
+              "article-title": "A systematic review of medical treatments for children with autism spectrum disorders",
+              "volume": "127",
+              "author": "McPheeters",
+              "year": "2011",
+              "journal-title": "Pediatrics"
+            },
+            {
+              "key": "R22-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "e1303",
+              "DOI": "10.1542/peds.2011-0426",
+              "article-title": "A systematic review of early intensive intervention for autism spectrum disorders",
+              "volume": "127",
+              "author": "Warren",
+              "year": "2011",
+              "journal-title": "Pediatrics"
+            },
+            {
+              "key": "R23-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "8",
+              "DOI": "10.1136/adc.2004.062083",
+              "article-title": "Systematic review of prevalence studies of autism spectrum disorders",
+              "volume": "91",
+              "author": "Williams",
+              "year": "2006",
+              "journal-title": "Arch Dis Child"
+            },
+            {
+              "key": "R24-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "1081",
+              "DOI": "10.1016/j.jclinepi.2005.09.002",
+              "article-title": "Systematic review of qualitative studies exploring parental beliefs and attitudes toward childhood vaccination identifies common barriers to vaccination",
+              "volume": "58",
+              "author": "Mills",
+              "year": "2005",
+              "journal-title": "J Clin Epidemiol"
+            },
+            {
+              "key": "R25-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "1023",
+              "DOI": "10.1016/j.rasd.2012.01.005",
+              "article-title": "Systematic review of disparities in health care for individuals with autism spectrum disorders in the United States",
+              "volume": "6",
+              "author": "Tregnago",
+              "year": "2012",
+              "journal-title": "Res Autism Spectr Disord"
+            },
+            {
+              "key": "R26-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "3387",
+              "DOI": "10.1007/s10803-019-04049-2",
+              "article-title": "A systematic review of what barriers and facilitators prevent and enable physical healthcare services access for autistic adults",
+              "volume": "49",
+              "author": "Mason",
+              "year": "2019",
+              "journal-title": "J Autism Dev Disord"
+            },
+            {
+              "key": "R27-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "36",
+              "DOI": "10.1186/2046-4053-2-36",
+              "article-title": "Are systematic reviews up-to-date at the time of publication?",
+              "volume": "2",
+              "author": "Beller",
+              "year": "2013",
+              "journal-title": "Syst Rev"
+            },
+            {
+              "key": "R28-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "e14480",
+              "DOI": "10.1097/MD.0000000000014480",
+              "article-title": "The disparities of healthcare access for adults with autism spectrum disorder: protocol for a systematic review",
+              "volume": "98",
+              "author": "Calleja",
+              "year": "2019",
+              "journal-title": "Medicine (Baltimore)"
+            },
+            {
+              "key": "R31-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "201",
+              "DOI": "10.1097/01.XEB.0000511348.97198.8c",
+              "article-title": "Narrative synthesis: considerations and challenges",
+              "volume": "14",
+              "author": "Lisy",
+              "year": "2016",
+              "journal-title": "Int J Evid Based Healthc"
+            },
+            {
+              "key": "R32-20230915",
+              "first-page": "10",
+              "article-title": "A revised tool for assessing risk of bias in randomized trials",
+              "author": "Higgins",
+              "year": "2016",
+              "journal-title": "Cochrane Methods. Cochrane Database of Systematic Reviews"
+            },
+            {
+              "key": "R34-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "985",
+              "DOI": "10.1177/1362361313508024",
+              "article-title": "Defining crisis in families of individuals with autism spectrum disorders",
+              "volume": "18",
+              "author": "Weiss",
+              "year": "2013",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R35-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "761",
+              "DOI": "10.1007/s11606-012-2262-7",
+              "article-title": "Comparison of healthcare experiences in autistic and non-autistic adults: a cross-sectional online survey facilitated by an academic-community partnership",
+              "volume": "28",
+              "author": "Nicolaidis",
+              "year": "2013",
+              "journal-title": "J Gen Intern Med"
+            },
+            {
+              "key": "R36-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "483",
+              "DOI": "10.1177/1362361315590805",
+              "article-title": "The experiences and needs of female adults with high-functioning autism spectrum disorder",
+              "volume": "20",
+              "author": "Baldwin",
+              "year": "2015",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R37-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "928",
+              "DOI": "10.1177/1362361317702561",
+              "article-title": "A qualitative study of the service experiences of women with autism spectrum disorder",
+              "volume": "22",
+              "author": "Tint",
+              "year": "2017",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R38-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "784",
+              "DOI": "10.1177/1362361317702560",
+              "article-title": "General practice encounters for young patients with autism spectrum disorder in Australia",
+              "volume": "22",
+              "author": "Foley",
+              "year": "2017",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R39-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "246",
+              "DOI": "10.1352/1934-9556-51.4.246",
+              "article-title": "Treatment needs and adverse events related to dental treatment under general anesthesia for individuals with autism",
+              "volume": "51",
+              "author": "Rada",
+              "year": "2013",
+              "journal-title": "Intellect Dev Disabil"
+            },
+            {
+              "key": "R40-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "425",
+              "DOI": "10.1177/1362361304047225",
+              "article-title": "The health and social care needs of family carers supporting adults with autistic spectrum disorders",
+              "volume": "8",
+              "author": "Hare",
+              "year": "2004",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R41-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "119",
+              "DOI": "10.1016/j.childyouth.2015.11.025",
+              "article-title": "Barriers and facilitators of the transition to adulthood for foster youth with autism spectrum disorder: perspectives of service providers in Illinois",
+              "volume": "60",
+              "author": "Havlicek",
+              "year": "2016",
+              "journal-title": "Child Youth Serv Rev"
+            },
+            {
+              "key": "R42-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "453",
+              "DOI": "10.1016/j.pedhc.2015.10.012",
+              "article-title": "Fathers’ experience with autism spectrum disorder: nursing implications",
+              "volume": "30",
+              "author": "Frye",
+              "year": "2016",
+              "journal-title": "J Pediatr Health Care"
+            },
+            {
+              "key": "R43-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "824",
+              "DOI": "10.1177/1362361315576221",
+              "article-title": "“Respect the way I need to communicate with you”: healthcare experiences of adults on the autism spectrum",
+              "volume": "19",
+              "author": "Nicolaidis",
+              "year": "2015",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R44-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "1169",
+              "DOI": "10.1016/j.mcna.2014.06.011",
+              "article-title": "Primary care for adults on the autism spectrum",
+              "volume": "98",
+              "author": "Nicolaidis",
+              "year": "2014",
+              "journal-title": "Med Clin North Am"
+            },
+            {
+              "key": "R45-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "2",
+              "DOI": "10.1108/AIA-10-2015-0020",
+              "article-title": "Barriers to healthcare for people on the autism spectrum",
+              "volume": "2",
+              "author": "Dern",
+              "year": "2016",
+              "journal-title": "Adv Autism"
+            },
+            {
+              "key": "R46-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "532",
+              "DOI": "10.1177/1362361311405223",
+              "article-title": "‘I just don’t fit anywhere’: support experiences and future support needs of individuals with Asperger syndrome in middle adulthood",
+              "volume": "16",
+              "author": "Griffith",
+              "year": "2011",
+              "journal-title": "Autism"
+            },
+            {
+              "key": "R47-20230915",
+              "doi-asserted-by": "crossref",
+              "first-page": "820",
+              "DOI": "10.1177/1362361315611109",
+              "article-title": "Experiences of diagnosing autism spectrum disorder: a survey of professionals in the United Kingdom",
+              "volume": "20",
+              "author": "Rogers",
+              "year": "2015",
+              "journal-title": "Autism"
+            }
+          ],
+          "container-title": [
+            "Medicine"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://journals.lww.com/10.1097/MD.0000000000020899",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                8,
+                10
+              ]
+            ],
+            "date-time": "2024-08-10T08:15:48Z",
+            "timestamp": 1723277748000
+          },
+          "score": 37.69737,
+          "resource": {
+            "primary": {
+              "URL": "https://journals.lww.com/10.1097/MD.0000000000020899"
+            }
+          },
+          "subtitle": [
+            "A systematic review"
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2020,
+                7,
+                17
+              ]
+            ]
+          },
+          "references-count": 42,
+          "journal-issue": {
+            "issue": "29",
+            "published-online": {
+              "date-parts": [
+                [
+                  2020
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.1097/md.0000000000020899",
+          "ISSN": [
+            "0025-7974",
+            "1536-5964"
+          ],
+          "issn-type": [
+            {
+              "value": "0025-7974",
+              "type": "print"
+            },
+            {
+              "value": "1536-5964",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                7,
+                17
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                16
+              ]
+            ],
+            "date-time": "2026-06-16T18:45:49Z",
+            "timestamp": 1781635549466,
+            "version": "3.54.5"
+          },
+          "reference-count": 0,
+          "publisher": "Oxford University Press (OUP)",
+          "issue": "Supplement_1",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2025-01-01T00:00:00Z",
+                "timestamp": 1735689600000
+              },
+              "content-version": "vor",
+              "delay-in-days": 31,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                31
+              ]
+            ]
+          },
+          "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Unmet needs refer to the absence of necessary assistance for completing Activities of Daily Living (ADLs), and they are associated with severe health consequences, such as hospitalizations, emergency room visits, nursing home placement, and mortality among older adults. The high cost of unmet needs pose challenges at both individual and systemic levels. While the prior literature has focused on immediate consequences of unmet needs (such as going without bathing or toileting), this systematic review consolidates evidence to assess the impact of unmet needs on healthcare utilization and emphasizes the importance of improving community-based care to mitigate (costly) consequences. A comprehensive search of multiple databases, including Scopus, Web of Science, PubMed, and CINAHL, using appropriate keywords (unmet needs, acute healthcare utilization) identified 6,475 studies. After a rigorous screening process, eight studies met the inclusion criteria for analysis, focusing on non-institutionalized older adults in the U.S. with at least one ADL difficulty. Results show that individuals with unmet needs experience double the hospitalization rates compared to those with met needs. Emergency room visits are also 31% higher, especially among those with unmet self-care needs. From the hospital deaths, 74 % report to have experienced unmet needs at end-of-life. Sociodemographic factors, such as older age, being minority race, living alone, and cognitive impairment further exacerbate the risks acute healthcare utilization. Addressing unmet needs is crucial not only for improving quality of life among older adults but also for alleviating the strain on healthcare resources through targeted policy interventions.</jats:p>",
+          "DOI": "10.1093/geroni/igae098.3919",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                1
+              ]
+            ],
+            "date-time": "2025-01-01T19:18:54Z",
+            "timestamp": 1735759134000
+          },
+          "page": "1224-1225",
+          "source": "Crossref",
+          "is-referenced-by-count": 5,
+          "title": [
+            "UNMET NEEDS AND HEALTHCARE SERVICE UTILIZATION AMONG OLDER ADULTS: A SYSTEMATIC REVIEW"
+          ],
+          "prefix": "10.1093",
+          "volume": "8",
+          "author": [
+            {
+              "given": "Maham",
+              "family": "Khan",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Virginia Tech. , Blacksburg, Virginia, United States"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Laura",
+              "family": "Sands",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Virginia Tech , Blacksburg, Virginia, United States"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Cozette",
+              "family": "Comer",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Virginia Tech , Virginia Tech, Virginia, United States"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Jackson",
+              "family": "Hoch",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Virginia Tech , Virginia Tech, Virginia, United States"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "286",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                31
+              ]
+            ]
+          },
+          "container-title": [
+            "Innovation in Aging"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://academic.oup.com/innovateage/article-pdf/8/Supplement_1/1224/61313295/igae098.3919.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "syndication"
+            },
+            {
+              "URL": "https://academic.oup.com/innovateage/article-pdf/8/Supplement_1/1224/61313295/igae098.3919.pdf",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                1
+              ]
+            ],
+            "date-time": "2025-01-01T22:41:54Z",
+            "timestamp": 1735771314000
+          },
+          "score": 37.46093,
+          "resource": {
+            "primary": {
+              "URL": "https://academic.oup.com/innovateage/article/8/Supplement_1/1224/7939397"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                12
+              ]
+            ]
+          },
+          "references-count": 0,
+          "journal-issue": {
+            "issue": "Supplement_1",
+            "published-print": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  31
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.1093/geroni/igae098.3919",
+          "ISSN": [
+            "2399-5300"
+          ],
+          "issn-type": [
+            {
+              "value": "2399-5300",
+              "type": "electronic"
+            }
+          ],
+          "published-other": {
+            "date-parts": [
+              [
+                2024,
+                12
+              ]
+            ]
+          },
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "source": "pubmed",
+      "items": [
+        {
+          "uid": "41023709",
+          "pubdate": "2025 Sep 29",
+          "epubdate": "2025 Sep 29",
+          "source": "Syst Rev",
+          "authors": [
+            {
+              "name": "Birtwell K",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Planner C",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Epton T",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Gowen E",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Corsellis E",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Botha M",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Longley S",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Khan G",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Stratton C",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Wong G",
+              "authtype": "Author",
+              "clusterid": ""
+            }
+          ],
+          "lastauthor": "Wong G",
+          "title": "Optimising general practice support for autistic adults: a realist review protocol.",
+          "sorttitle": "optimising general practice support for autistic adults a realist review protocol",
+          "volume": "14",
+          "issue": "1",
+          "pages": "184",
+          "lang": [
+            "eng"
+          ],
+          "nlmuniqueid": "101580575",
+          "issn": "",
+          "essn": "2046-4053",
+          "pubtype": [
+            "Journal Article",
+            "Research Support, U.S. Gov't, Non-P.H.S."
+          ],
+          "recordstatus": "PubMed - indexed for MEDLINE",
+          "pubstatus": "3",
+          "articleids": [
+            {
+              "idtype": "pubmed",
+              "idtypen": 1,
+              "value": "41023709"
+            },
+            {
+              "idtype": "pmc",
+              "idtypen": 8,
+              "value": "PMC12482896"
+            },
+            {
+              "idtype": "pmcid",
+              "idtypen": 5,
+              "value": "pmc-id: PMC12482896;"
+            },
+            {
+              "idtype": "doi",
+              "idtypen": 3,
+              "value": "10.1186/s13643-025-02936-7"
+            },
+            {
+              "idtype": "pii",
+              "idtypen": 4,
+              "value": "10.1186/s13643-025-02936-7"
+            }
+          ],
+          "history": [
+            {
+              "pubstatus": "received",
+              "date": "2025/07/16 00:00"
+            },
+            {
+              "pubstatus": "accepted",
+              "date": "2025/08/15 00:00"
+            },
+            {
+              "pubstatus": "medline",
+              "date": "2025/09/30 06:39"
+            },
+            {
+              "pubstatus": "pubmed",
+              "date": "2025/09/30 06:38"
+            },
+            {
+              "pubstatus": "entrez",
+              "date": "2025/09/30 00:27"
+            },
+            {
+              "pubstatus": "pmc-release",
+              "date": "2025/09/29 00:00"
+            }
+          ],
+          "references": [],
+          "attributes": [
+            "Has Abstract"
+          ],
+          "pmcrefcount": 50,
+          "fulljournalname": "Systematic reviews",
+          "elocationid": "doi: 10.1186/s13643-025-02936-7",
+          "doctype": "citation",
+          "srccontriblist": [],
+          "booktitle": "",
+          "medium": "",
+          "edition": "",
+          "publisherlocation": "",
+          "publishername": "",
+          "srcdate": "",
+          "reportnumber": "",
+          "availablefromurl": "",
+          "locationlabel": "",
+          "doccontriblist": [],
+          "docdate": "",
+          "bookname": "",
+          "chapter": "",
+          "sortpubdate": "2025/09/29 00:00",
+          "sortfirstauthor": "Birtwell K",
+          "vernaculartitle": ""
+        },
+        {
+          "uid": "32605913",
+          "pubdate": "2020 Aug",
+          "epubdate": "2020 Aug 25",
+          "source": "BJGP Open",
+          "authors": [
+            {
+              "name": "Doherty AJ",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Atherton H",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Boland P",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Hastings R",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Hives L",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Hood K",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "James-Jenkinson L",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Leavey R",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Randell E",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Reed J",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Taggart L",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Wilson N",
+              "authtype": "Author",
+              "clusterid": ""
+            },
+            {
+              "name": "Chauhan U",
+              "authtype": "Author",
+              "clusterid": ""
+            }
+          ],
+          "lastauthor": "Chauhan U",
+          "title": "Barriers and facilitators to primary health care for people with intellectual disabilities and/or autism: an integrative review.",
+          "sorttitle": "barriers and facilitators to primary health care for people with intellectual disabilities and or autism an integrative review",
+          "volume": "4",
+          "issue": "3",
+          "pages": "",
+          "lang": [
+            "eng"
+          ],
+          "nlmuniqueid": "101713531",
+          "issn": "",
+          "essn": "2398-3795",
+          "pubtype": [
+            "Journal Article"
+          ],
+          "recordstatus": "PubMed",
+          "pubstatus": "257",
+          "articleids": [
+            {
+              "idtype": "pubmed",
+              "idtypen": 1,
+              "value": "32605913"
+            },
+            {
+              "idtype": "pmc",
+              "idtypen": 8,
+              "value": "PMC7465578"
+            },
+            {
+              "idtype": "pmcid",
+              "idtypen": 5,
+              "value": "pmc-id: PMC7465578;"
+            },
+            {
+              "idtype": "doi",
+              "idtypen": 3,
+              "value": "10.3399/bjgpopen20X101030"
+            },
+            {
+              "idtype": "pii",
+              "idtypen": 4,
+              "value": "bjgpopen20X101030"
+            }
+          ],
+          "history": [
+            {
+              "pubstatus": "received",
+              "date": "2019/10/23 00:00"
+            },
+            {
+              "pubstatus": "accepted",
+              "date": "2019/10/23 00:00"
+            },
+            {
+              "pubstatus": "pubmed",
+              "date": "2020/07/02 06:00"
+            },
+            {
+              "pubstatus": "medline",
+              "date": "2020/07/02 06:01"
+            },
+            {
+              "pubstatus": "entrez",
+              "date": "2020/07/02 06:00"
+            },
+            {
+              "pubstatus": "pmc-release",
+              "date": "2020/07/01 00:00"
+            }
+          ],
+          "references": [],
+          "attributes": [
+            "Has Abstract"
+          ],
+          "pmcrefcount": 82,
+          "fulljournalname": "BJGP open",
+          "elocationid": "pii: bjgpopen20X101030. doi: 10.3399/bjgpopen20X101030",
+          "doctype": "citation",
+          "srccontriblist": [],
+          "booktitle": "",
+          "medium": "",
+          "edition": "",
+          "publisherlocation": "",
+          "publishername": "",
+          "srcdate": "",
+          "reportnumber": "",
+          "availablefromurl": "",
+          "locationlabel": "",
+          "doccontriblist": [],
+          "docdate": "",
+          "bookname": "",
+          "chapter": "",
+          "sortpubdate": "2020/08/25 00:00",
+          "sortfirstauthor": "Doherty AJ",
+          "vernaculartitle": ""
+        }
+      ]
+    },
+    {
+      "status": "unavailable",
+      "source": "openalex",
+      "reason": "api_key_not_configured",
+      "items": []
+    }
+  ],
+  "found": 7
+}

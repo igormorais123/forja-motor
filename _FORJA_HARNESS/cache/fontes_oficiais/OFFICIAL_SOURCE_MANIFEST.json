@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21T20:28:00-03:00",
+  "cacheRoot": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\_FORJA_HARNESS\\cache\\fontes_oficiais",
+  "entries": {
+    "ANS_PORTABILIDADE_RN438_2018.txt": {
+      "sha256": "51bbcddff18f0411dfd01ca10a6c84e81075d67f1c2c8fd564068fdaf975536a",
+      "sourceUrl": "https://www.gov.br/ans/pt-br/assuntos/noticias/operadoras/ans-lanca-cartilha-e-faq-para-orientar-sobre-novas-regras-de-portabilidade/",
+      "capturedAt": null,
+      "identity": null
+    },
+    "ANS_RN558_2022_DLP_CPT.txt": {
+      "sha256": "d6e38c1aea6374f3abab77a3984e7960622998acbc8cd01ca0b459a90cbcc259",
+      "sourceUrl": "https://www.gov.br/ans/pt-br/assuntos/consumidor/cobertura-parcial-temporaria-cpt-para-doencas-e-lesoes-preexistentes",
+      "capturedAt": null,
+      "identity": null
+    },
+    "ANS_RN558_2022_TEXTO_INTEGRAL.txt": {
+      "sha256": "6384f0b21b56b2dd57d115512e211f6948817c7d181b5ce40442fa75c82c6a1f",
+      "sourceUrl": "https://www.ans.gov.br/component/legislacao/?view=legislacao&task=textoLei&format=raw&id=NDMzMA%3D%3D",
+      "capturedAt": null,
+      "identity": null
+    },
+    "ANS_SANCOES_NIP_RN489.txt": {
+      "sha256": "714220370326ae5831593f67dff8e7b5078f2b94c1522200ae62f36b2c9c4e31",
+      "sourceUrl": "https://www.ans.gov.br/component/legislacao/",
+      "capturedAt": null,
+      "identity": null
+    },
+    "BCB_SELIC_ACUMULADA_2014_2021.txt": {
+      "sha256": "db49cd5afe1f8ae40fd0e1fe1587e9fa105248b4f4cd17703c217606195ec9b6",
+      "sourceUrl": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.4390/dados?formato=json&dataInicial=01/05/2014&dataFinal=30/09/2021",
+      "capturedAt": "2026-07-08",
+      "identity": null
+    },
+    "PLANALTO_CC_ART406.txt": {
+      "sha256": "c2694fe39a5bb8aa7a731cf32f25e0abf4de925d971d77f4bd43928430d1f5cb",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm",
+      "capturedAt": "2026-07-08",
+      "identity": null
+    },
+    "PLANALTO_CDC_ART34.txt": {
+      "sha256": "65967d53cde3a728209d6e0cadfca078ffb5118ac31d637c6f37c324696bc305",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "capturedAt": null,
+      "identity": null
+    },
+    "PLANALTO_LEI_14905_2024.txt": {
+      "sha256": "8631a6350a5d8055400626e998145e5e0b1bca821a25606f9aa58107d74be9bf",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14905.htm",
+      "capturedAt": "2026-07-08",
+      "identity": null
+    },
+    "PLANALTO_LEI_9656_ART11_13.txt": {
+      "sha256": "470713e3373dfee27bd8b0b02547e7872870dbe8f3a039838c2d0d61e64320bf",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9656.htm",
+      "capturedAt": null,
+      "identity": null
+    },
+    "PLANALTO_LEI_9656_ART11_13_VERBATIM.txt": {
+      "sha256": "1176affae011a84da27837e05d53a0fb4f7a5beee564be91b5839f86fdb637c1",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9656compilado.htm",
+      "capturedAt": null,
+      "identity": null
+    },
+    "README_PESQUISA_MATEUS.md": {
+      "sha256": "5b5c337cbbba61909f2bfc988d2fe5c19a3fba5e62a696997b0d9b56d0b83742",
+      "sourceUrl": "https://www.ans.gov.br/acessoainformacao/",
+      "capturedAt": null,
+      "identity": null
+    },
+    "STATUS_CAPTURAS_09072026.md": {
+      "sha256": "3b59f7a5bb7143f56d82642b6219dd511a768b7af066b5d2b0d5a6206ff3398c",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9656.htm",
+      "capturedAt": null,
+      "identity": null
+    },
+    "STF_SUMULA_283.txt": {
+      "sha256": "de1a5c8e16ab22826a5d8ef03751092bce6355d22e07654dd57ce17261189b00",
+      "sourceUrl": "https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&sumula=2226",
+      "capturedAt": "2026-07-08T22:06:33.025Z",
+      "identity": {
+        "court": "STF",
+        "kind": "SUMULA",
+        "number": "283"
+      }
+    },
+    "STF_SUMULA_284.txt": {
+      "sha256": "504d820bc8c31a5ba2f075fd6c0aec856b0bba5c63a12103a9f8fd4d8ecd6698",
+      "sourceUrl": "https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&sumula=2230",
+      "capturedAt": "2026-07-08T22:06:35.193Z",
+      "identity": {
+        "court": "STF",
+        "kind": "SUMULA",
+        "number": "284"
+      }
+    },
+    "STF_SUMULAS_201_300.txt": {
+      "sha256": "53d0b537b391143e1dae8aeb1d36a3a795bb0c9a9113146aac52ef7e311f3c05",
+      "sourceUrl": "https://portal.stf.jus.br/textos/verTexto.asp?servico=jurisprudenciaSumula&pagina=sumula_201_300",
+      "capturedAt": "2026-07-08T22:05:20.252Z",
+      "identity": null
+    },
+    "STJ_RESP_2199164.txt": {
+      "sha256": "c4f4de04e8a1a037b88088229ce1d894ad20e9bc1099261cc5b30f932a5ddbfb",
+      "sourceUrl": "https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1368&cod_tema_final=1368",
+      "capturedAt": "2026-07-08",
+      "identity": {
+        "court": "STJ",
+        "kind": "RESP",
+        "number": "2199164"
+      }
+    },
+    "STJ_SUMULA_182.txt": {
+      "sha256": "4729b46f7534647740ae6fc516e14e367db9dd3f3a13d183b964a01a55938131",
+      "sourceUrl": "https://scon.stj.jus.br/SCON/pesquisar.jsp?b=SUMU&livre=@NUM=%27182%27",
+      "capturedAt": "2026-07-08T22:05:15.317Z",
+      "identity": {
+        "court": "STJ",
+        "kind": "SUMULA",
+        "number": "182"
+      }
+    },
+    "STJ_SUMULA_211.txt": {
+      "sha256": "27fd6dae2eafc5677b8ba2b5da42a4c0f04915787177a99ff34398fad79415ff",
+      "sourceUrl": "https://scon.stj.jus.br/SCON/pesquisar.jsp?b=SUMU&livre=@NUM=%27211%27",
+      "capturedAt": "2026-07-08T22:05:17.582Z",
+      "identity": {
+        "court": "STJ",
+        "kind": "SUMULA",
+        "number": "211"
+      }
+    },
+    "STJ_SUMULA_5.txt": {
+      "sha256": "390b4af9804b66a0aa59984c459b9d8be2f7da834a27a215f802d161d6cac059",
+      "sourceUrl": "https://scon.stj.jus.br/SCON/pesquisar.jsp?b=SUMU&livre=@NUM=%275%27",
+      "capturedAt": "2026-07-08T23:25:00.610Z",
+      "identity": {
+        "court": "STJ",
+        "kind": "SUMULA",
+        "number": "5"
+      }
+    },
+    "STJ_SUMULA_608.txt": {
+      "sha256": "f65ac23424a1adc75b6092c6296f0dfb10066a1067a08f6117daab0fb09dff1e",
+      "sourceUrl": "https://scon.stj.jus.br/SCON/pesquisar.jsp?livre=@NUM=%27608%27&b=SUMU",
+      "capturedAt": null,
+      "identity": {
+        "court": "STJ",
+        "kind": "SUMULA",
+        "number": "608"
+      }
+    },
+    "STJ_SUMULA_609.txt": {
+      "sha256": "04526ca4d568ef8be117e5023a6bd836dc9db6d3a389d37ceabc7e24a954c98b",
+      "sourceUrl": "https://scon.stj.jus.br/SCON/pesquisar.jsp?livre=@NUM=%27609%27&b=SUMU",
+      "capturedAt": null,
+      "identity": {
+        "court": "STJ",
+        "kind": "SUMULA",
+        "number": "609"
+      }
+    },
+    "STJ_SUMULA_7.txt": {
+      "sha256": "b1095ba83bf77b65f412e079988a395469d7690d674b1c5db7bbb99c3219d7e9",
+      "sourceUrl": "https://scon.stj.jus.br/SCON/pesquisar.jsp?b=SUMU&livre=@NUM=%277%27",
+      "capturedAt": "2026-07-08T22:05:39.791Z",
+      "identity": {
+        "court": "STJ",
+        "kind": "SUMULA",
+        "number": "7"
+      }
+    },
+    "STJ_TEMA_1368.txt": {
+      "sha256": "c4f4de04e8a1a037b88088229ce1d894ad20e9bc1099261cc5b30f932a5ddbfb",
+      "sourceUrl": "https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1368&cod_tema_final=1368",
+      "capturedAt": "2026-07-08",
+      "identity": {
+        "court": "STJ",
+        "kind": "TEMA",
+        "number": "1368"
+      }
+    }
+  },
+  "rejected": [
+    "MAPA_IA.md",
+    "SINTESE_ACHADOS_MATEUS_GRASSI_09072026.md",
+    "STF_SUMULA_150.txt",
+    "STF_SUMULA_269.txt",
+    "STF_SUMULA_271.txt",
+    "STF_SUMULA_383.txt",
+    "STJ_SUMULA_339.txt",
+    "STJ_SUMULA_523.txt"
+  ]
+}

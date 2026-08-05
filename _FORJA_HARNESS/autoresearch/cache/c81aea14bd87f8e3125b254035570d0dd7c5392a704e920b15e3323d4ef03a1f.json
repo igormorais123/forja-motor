@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "dffed4d7eff75bdb1aaac6bf0e3be21d776511668527b98d42257868df44a586",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I5": {
+      "valor": 1.0,
+      "aprovado": true,
+      "p0": 0,
+      "p1": 1,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P1",
+          "trecho": "EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DE UMA DAS VARAS CÍVEIS DA CIRCUNSCRIÇÃO JUDICIÁRIA DE BRASÍLIA — DISTRITO FEDERAL AÇÃO DECLARATÓRIA DE NULIDADE DE EXCLUSÃO DE BENEFICIÁRIO C/C OBRIGAÇÃO DE FAZER, EXIBIÇÃO DE DOCUMENTOS E INDENIZAÇÃO POR DANOS MORAIS, COM TUTELA DE URGÊNCIA FIGURA 1 | Três marcos documenta",
+          "problema": "frequência de travessões pede revisão (11 em 5280 palavras)",
+          "acao": "confirme cada aparte; prefira frase autônoma quando a explicação for substantiva",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 11,
+          "limite": 12
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

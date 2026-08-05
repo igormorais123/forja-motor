@@ -1,0 +1,58 @@
+{
+  "protocolVersion": "FORJA-FABLE5-FINAL-v1",
+  "caseId": "case-email-auto-19f3f25cb64df962-live-validation",
+  "phase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+  "subphase": "F7-B_REVISAO_EDITORIAL_ESCRITA_FINAL",
+  "rewriteAttempt": 1,
+  "model": "claude-fable-5",
+  "billing": "assinatura OAuth Claude Max (sem API key)",
+  "sourceSha256": "dffed4d7eff75bdb1aaac6bf0e3be21d776511668527b98d42257868df44a586",
+  "finalSha256": "c67694761758985254116be73a1ef17dfcd746746e9d1e718a0ed9ea7baa1fb2",
+  "generatedAt": "2026-07-15T20:40:56-03:00",
+  "fableReport": {
+    "sourceHash": "dffed4d7eff75bdb1aaac6bf0e3be21d776511668527b98d42257868df44a586",
+    "mudancas": [
+      {
+        "tipo": "vocabulario",
+        "onde": "parágrafo 6, final",
+        "antes": "e, nesta versão, ampliaria o objeto",
+        "depois": "e, neste momento, ampliaria o objeto"
+      },
+      {
+        "tipo": "corte-redundancia",
+        "onde": "parágrafo 31",
+        "antes": "não autoriza uma condenação privada",
+        "depois": "não autoriza condenação privada"
+      },
+      {
+        "tipo": "vocabulario",
+        "onde": "parágrafo 34, final",
+        "antes": "não pode eliminar o rito protetivo específico",
+        "depois": "não pode afastar o rito protetivo específico"
+      },
+      {
+        "tipo": "corte-redundancia",
+        "onde": "parágrafo 42",
+        "antes": "o poder de provar, por si só, um dolo exclusivo",
+        "depois": "o poder de provar, por si só, dolo exclusivo"
+      }
+    ],
+    "naoAlterado": [
+      "fatos",
+      "citacoes",
+      "pedidos",
+      "numeros",
+      "marcadores",
+      "ressalvas",
+      "fecho",
+      "assinaturas",
+      "estrutura de capítulos e parágrafos numerados",
+      "síntese, quadros e manifesto de anexos"
+    ],
+    "duvidas": [
+      "O capítulo VII anuncia 'MANIFESTO FUNCIONAL DOS ANEXOS JÁ LOCALIZADOS' sem texto próprio no corpo; a tabela de anexos aparece apenas após o fecho. Realocar a tabela para o capítulo VII seria mudança estrutural material e não foi feita.",
+      "A expressão 'migração' no parágrafo 39 usa aspas simples, destoando das aspas duplas do restante; padronizar alteraria trecho já entre aspas, então foi mantida como está.",
+      "No parágrafo 6, 'nesta versão' foi trocado por 'neste momento' por sugerir versionamento interno da peça; se a expressão original tinha sentido técnico pretendido, reverter."
+    ]
+  }
+}

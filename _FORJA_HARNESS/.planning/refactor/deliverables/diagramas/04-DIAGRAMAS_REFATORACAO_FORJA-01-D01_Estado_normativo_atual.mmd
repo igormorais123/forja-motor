@@ -1,0 +1,8 @@
+flowchart TD
+    Input["Caso/comando"] --> N2["N2 vigente<br/>snapshot legado"]
+    Input --> N3["N3 sombra<br/>events + attempts"]
+    N3 --> Events["FORJA_EVENTS.jsonl"]
+    Events --> State["FORJA_N3_STATE.json"]
+    N3 --> N4["N4 candidata<br/>pilot_blocking"]
+    N4 --> Package["package/close/delivery"]
+    N2 -. "compatibilidade" .-> N3

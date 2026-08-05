@@ -1,0 +1,8 @@
+stateDiagram-v2
+    [*] --> active_legacy
+    active_legacy --> facade: implementação nova disponível
+    facade --> observed: telemetria ligada
+    observed --> facade: uso detectado
+    observed --> removal_candidate: janela sem uso
+    removal_candidate --> removed: testes + restore aprovados
+    removed --> restored: regressão detectada

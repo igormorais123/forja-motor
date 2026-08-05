@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "note": "Exemplo apenas. O trust store real fica fora do workspace e seu caminho vem de FORJA_HUMAN_REVIEW_TRUST_STORE. A FORJA nunca gera nem armazena a chave privada.",
+  "reviewers": []
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 2,
+  "phase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+  "order": 10,
+  "producerRole": "forja-delivery-reconciler",
+  "reviewerRole": "forja-evidence-auditor",
+  "requiredInputs": [
+    "package_manifest",
+    "delivery_evidence"
+  ],
+  "requiredOutputs": [
+    "delivery_evidence",
+    "run_metrics",
+    "retrospective"
+  ],
+  "requiredGates": [
+    "external_identifier_valid",
+    "package_hash_matches",
+    "management_synced"
+  ],
+  "nextPhase": null,
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "delivery_integrity",
+    "human_diff_classification",
+    "post_protocol_return",
+    "protocol_evidence",
+    "post_protocol_baseline_backfill",
+    "post_protocol_document_comparison",
+    "learning_candidate"
+  ],
+  "n4RequiredGates": [
+    "delivery_integrity_confirmed",
+    "human_diff_classified",
+    "post_protocol_identity_resolved",
+    "post_protocol_baseline_resolved",
+    "n4_management_synced"
+  ],
+  "baseContract": "../phase_contracts/F10.json"
+}

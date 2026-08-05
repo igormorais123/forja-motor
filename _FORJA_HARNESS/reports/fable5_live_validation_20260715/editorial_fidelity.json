@@ -1,0 +1,14 @@
+{
+  "protocolVersion": "FORJA-FABLE5-FINAL-v1",
+  "approved": true,
+  "sourceSha256": "dffed4d7eff75bdb1aaac6bf0e3be21d776511668527b98d42257868df44a586",
+  "finalSha256": "c67694761758985254116be73a1ef17dfcd746746e9d1e718a0ed9ea7baa1fb2",
+  "gates": {
+    "editorial_source_hash_match": "pass",
+    "editorial_fidelity_pass": "pass",
+    "human_style_final_pass": "pass",
+    "fable5_oauth_confirmed": "pass"
+  },
+  "findings": [],
+  "method": "hashes e invariantes recompostos pelo orquestrador; sem autocertificação do modelo"
+}

@@ -1,0 +1,125 @@
+{
+  "versao": "BANCADA-CAFELANA-V7-DOSSIE-v1",
+  "sha256Dossie": "d2cc55ba16836fafb0a3434b8a3788e8cba67165ac6578a5ec34181b0b385786",
+  "bytes": 142075,
+  "pecas": [
+    {
+      "rotulo": "PECA_BASE_V6",
+      "arquivo": "_v6_2026-07-27/IMPUGNACAO_AGINT_CAFELANA_V6_27-07-2026_FONTE.md",
+      "papel": "Texto integral da V6, entregue em 27/07/2026. É a base sobre a qual a V7 trabalha.",
+      "bytes": 61606,
+      "sha256": "e480790262a2074297713522b5e0222d41e2acb7589fda345d1adb828b6daceb"
+    },
+    {
+      "rotulo": "RELATORIO_V6",
+      "arquivo": "_v6_2026-07-27/RELATORIO_V6_COMPARATIVO_E_MELHORIAS.md",
+      "papel": "O que a V6 mudou, por quê, quais gates rodaram e quais pendências ficaram declaradas.",
+      "bytes": 16000,
+      "sha256": "1375d1bc31d945db1e780809c517608e5c227799c152f5677ac722ea70c39e95"
+    },
+    {
+      "rotulo": "PARECER_HELENA_V6",
+      "arquivo": "_v6_2026-07-27/F4_PARECER_HELENA.md",
+      "papel": "Parecer estratégico obrigatório da fábrica sobre a V6.",
+      "bytes": 8282,
+      "sha256": "9003ec0336203ae2e50d4d660030128851acb810d71ebfe180d618d8cc025e80"
+    },
+    {
+      "rotulo": "PARECER_CICERO_V6",
+      "arquivo": "_v6_2026-07-27/F4_PARECER_CICERO.md",
+      "papel": "Parecer jurídico obrigatório da fábrica sobre a V6.",
+      "bytes": 16383,
+      "sha256": "704dbca0322ee90b954c42463744fa488b7b75cccde681c2a3066ebc6e70149c"
+    },
+    {
+      "rotulo": "DIRETRIZES_HUMANAS",
+      "arquivo": "PROTOCOLO_CAFELANA_AGINT_ARESP2698443_DIRETRIZES_HUMANAS.md",
+      "papel": "Determinações do titular do escritório. Não são sugestões.",
+      "bytes": 8850,
+      "sha256": "c1fee90f1ed45879882f68ef0828887672b7e8ece13d31b6b0c05177b6717753"
+    },
+    {
+      "rotulo": "FEEDBACK_TITULAR",
+      "arquivo": "PROTOCOLO_FEEDBACK_FABIO_2026-07-14.md",
+      "papel": "Feedback humano registrado sobre versões anteriores.",
+      "bytes": 2347,
+      "sha256": "2e6e084cd383d887ce3b7d4426131e7f8e9c8f79af7dfd3f8eb770a2eba15226"
+    },
+    {
+      "rotulo": "CRONOLOGIA_AUDITADA",
+      "arquivo": "CRONOLOGIA_PROCESSUAL_AUDITADA_2026-07-11.md",
+      "papel": "Linha do tempo processual auditada, com identidade de cada ato.",
+      "bytes": 18240,
+      "sha256": "a1de2e6fb6443598facf34d7f1a1e059f5d071669ca19f754fe7beb4e265cb1f"
+    },
+    {
+      "rotulo": "MATRIZ_A8_A9",
+      "arquivo": "MATRIZ_A8_X_A9_2026-07-14.md",
+      "papel": "Matriz de comparação entre os dois acórdãos em disputa.",
+      "bytes": 2685,
+      "sha256": "082b712c7166996bf84ffd78b22698d88b967e0eba554472eb77d1b9bc7f60da"
+    },
+    {
+      "rotulo": "RED_TEAM_PROCESSUAL",
+      "arquivo": "RED_TEAM_ACHADOS_PROCESSUAIS_2026-07-11.md",
+      "papel": "Achados do red team processual sobre o caso.",
+      "bytes": 5147,
+      "sha256": "5a300a82a80eca012e8da2969c9ec2d26cdebb09d325521ed663105e431e8e80"
+    }
+  ],
+  "autoridadesFechadas": {
+    "julgados": [
+      "1012795",
+      "1073856",
+      "1144667",
+      "1297346",
+      "1414755",
+      "1424404",
+      "1486095",
+      "1983319",
+      "2052364",
+      "2067695",
+      "2072941",
+      "2081901",
+      "2121998",
+      "2147272",
+      "2154123",
+      "2167635",
+      "2173368",
+      "2175353",
+      "2176193",
+      "2205559",
+      "2212710",
+      "2215924",
+      "2220387",
+      "2243316",
+      "227767",
+      "2436858",
+      "2465818",
+      "2488778",
+      "2504785",
+      "2629809",
+      "2638376",
+      "2698443",
+      "2743276",
+      "2762459",
+      "2799417",
+      "2851545",
+      "3134709",
+      "9393100",
+      "9467302",
+      "9528941"
+    ],
+    "sumulas": [
+      "126",
+      "182",
+      "211",
+      "284",
+      "344",
+      "7",
+      "83"
+    ],
+    "temas": []
+  },
+  "totalJulgados": 40
+}

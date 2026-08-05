@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "promotion-ciclo-1",
+  "status": "technical_candidate_passed",
+  "errors": [],
+  "sealed": "nao_consultado",
+  "budgetUse": {
+    "candidates": 0,
+    "holdoutQueries": 0,
+    "judgments": 4
+  }
+}

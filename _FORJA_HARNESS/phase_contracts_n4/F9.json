@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "phase": "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+  "order": 9,
+  "producerRole": "forja-fechador",
+  "reviewerRole": "forja-package-auditor",
+  "requiredInputs": [
+    "f7_gate_result",
+    "verified_source_ledger",
+    "context_validation",
+    "docx",
+    "pdf",
+    "visual_qa_ledger",
+    "format_fidelity"
+  ],
+  "requiredOutputs": [
+    "package_manifest",
+    "email_response"
+  ],
+  "requiredGates": [
+    "hashes_current",
+    "release_policy_satisfied",
+    "attachments_exact",
+    "email_claims_true",
+    "email_human_style_passed"
+  ],
+  "nextPhase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+  "retryPolicy": {
+    "maxAttempts": 2,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "delivery_selection"
+  ],
+  "n4RequiredGates": [
+    "delivery_selection_matches_package"
+  ],
+  "baseContract": "../phase_contracts/F9.json"
+}

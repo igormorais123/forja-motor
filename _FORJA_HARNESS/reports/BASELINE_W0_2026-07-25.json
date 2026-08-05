@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "geradoEm": "2026-07-25T18:23:32-03:00",
+  "python": "3.14.6",
+  "suitesDeclaradas": 36,
+  "suitesVerdes": 36,
+  "testesPytest": 305,
+  "subtestsPytest": 8,
+  "regressoesScript": 5,
+  "aprovado": true,
+  "suites": [
+    {
+      "suite": "test_forja_adversarial_audit.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 12,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "12 passed in 0.25s"
+    },
+    {
+      "suite": "test_forja_alertas.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 9,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "9 passed in 0.36s"
+    },
+    {
+      "suite": "test_forja_anti_cheat.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 12,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "12 passed in 1.27s"
+    },
+    {
+      "suite": "test_forja_anti_hallucination_v2.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 7,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "7 passed in 0.32s"
+    },
+    {
+      "suite": "test_forja_architecture.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 2,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "2 passed in 0.26s"
+    },
+    {
+      "suite": "test_forja_autoresearch.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 32,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "32 passed in 1.35s"
+    },
+    {
+      "suite": "test_forja_estilo_humano.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 17,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "17 passed in 0.33s"
+    },
+    {
+      "suite": "test_forja_exploracao_100.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 12,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "12 passed in 0.36s"
+    },
+    {
+      "suite": "test_forja_f2_check.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 11,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "11 passed in 0.20s"
+    },
+    {
+      "suite": "test_forja_fable5.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 11,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "11 passed in 0.35s"
+    },
+    {
+      "suite": "test_forja_injection.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 2,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "2 passed, 2 warnings in 13.08s"
+    },
+    {
+      "suite": "test_forja_ledger_material.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 7,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "7 passed in 0.25s"
+    },
+    {
+      "suite": "test_forja_legal_search.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 3,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "3 passed in 1.21s"
+    },
+    {
+      "suite": "test_forja_metadata.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 1,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "1 passed in 0.32s"
+    },
+    {
+      "suite": "test_forja_mutation_semantic.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 10,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "10 passed in 0.28s"
+    },
+    {
+      "suite": "test_forja_n3_context.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 5,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "5 passed in 0.21s"
+    },
+    {
+      "suite": "test_forja_n3_fidelity.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 3,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "3 passed in 0.41s"
+    },
+    {
+      "suite": "test_forja_n3_headless.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 3,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "3 passed in 0.21s"
+    },
+    {
+      "suite": "test_forja_n3_management.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 12,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "12 passed in 1.12s"
+    },
+    {
+      "suite": "test_forja_n3_metrics.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 1,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "1 passed in 0.24s"
+    },
+    {
+      "suite": "test_forja_n3_package.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 11,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "11 passed in 10.98s"
+    },
+    {
+      "suite": "test_forja_n3_runner.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 3,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "3 passed in 0.48s"
+    },
+    {
+      "suite": "test_forja_n3_server_routes.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 4,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "4 passed in 0.20s"
+    },
+    {
+      "suite": "test_forja_n3_state.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 7,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "7 passed in 0.78s"
+    },
+    {
+      "suite": "test_forja_n3_visual.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 10,
+      "failed": 0,
+      "subtests": 5,
+      "resumo": "10 passed, 5 subtests passed in 0.72s"
+    },
+    {
+      "suite": "test_forja_n4.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 62,
+      "failed": 0,
+      "subtests": 3,
+      "resumo": "62 passed, 3 subtests passed in 0.57s"
+    },
+    {
+      "suite": "test_forja_ordem_parecer.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 6,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "6 passed in 0.19s"
+    },
+    {
+      "suite": "test_forja_pso_pet.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 11,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "11 passed in 0.19s"
+    },
+    {
+      "suite": "test_forja_qa_paginas.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 8,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "8 passed in 0.55s"
+    },
+    {
+      "suite": "test_forja_reconcile.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 2,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "2 passed in 0.72s"
+    },
+    {
+      "suite": "test_forja_run.py",
+      "familia": "pytest",
+      "exit": 0,
+      "verde": true,
+      "passed": 9,
+      "failed": 0,
+      "subtests": 0,
+      "resumo": "9 passed in 0.84s"
+    },
+    {
+      "suite": "test_forja_citacoes.py",
+      "familia": "script",
+      "papel": "veneno de citação — taxonomia U1 em seis modos de falha",
+      "exit": 0,
+      "verde": true,
+      "resumo": "OK: 6 detecções + 6 não-travas confirmadas"
+    },
+    {
+      "suite": "test_forja_conselho_1107.py",
+      "familia": "script",
+      "papel": "gates do conselho de 11/07/2026",
+      "exit": 0,
+      "verde": true,
+      "resumo": "OK: 7 detecções/não-travas do visual + 3 do F3 confirmadas"
+    },
+    {
+      "suite": "test_forja_fila.py",
+      "familia": "script",
+      "papel": "priorização e prontidão da fila",
+      "exit": 0,
+      "verde": true,
+      "resumo": "OK: fila — 9 detecções + 10 não-travas confirmadas"
+    },
+    {
+      "suite": "test_forja_regua.py",
+      "familia": "script",
+      "papel": "sabotagem da régua — cinco fraudes simuladas",
+      "exit": 0,
+      "verde": true,
+      "resumo": "OK: régua pega todas as sabotagens simuladas"
+    },
+    {
+      "suite": "test_forja_verificador.py",
+      "familia": "script",
+      "papel": "gates determinísticos das 30 lições de RETROSPECTIVAS.md",
+      "exit": 0,
+      "verde": true,
+      "resumo": "ok: 17 detecções + 15 não-travas confirmadas"
+    }
+  ]
+}

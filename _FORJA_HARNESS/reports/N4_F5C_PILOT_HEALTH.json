@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "specVersion": "N4.0-candidate",
+  "caseId": "case-email-auto-19f3f25cb64df962",
+  "generatedAt": "2026-07-11T00:21:08-03:00",
+  "approved": true,
+  "mode": "rapid",
+  "findings": [],
+  "sourceHashes": {
+    "caseStudy": "1c6202c7438fe56e2316000c0827b702b6cdd51927c4f9ccf022864c7a3762d9",
+    "discovery": "97dd2411af0acad48b8f0a81cc2cd6b8ca6b4f5e25724c6eba7488cde6d1058d",
+    "crossref": "1420a168b2ac929f0557552ffe08b95d96d975a8c51b0a2f9572392a93494d0a",
+    "pmc": "9f1b58ee72ef02d1ea60c4b08789edcd447402afe9cd359f3a4c7a6ce32784b8"
+  }
+}

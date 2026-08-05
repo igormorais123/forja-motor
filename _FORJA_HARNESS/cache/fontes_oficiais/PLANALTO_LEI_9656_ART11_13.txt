@@ -1,0 +1,112 @@
+FONTE OFICIAL: https://www.planalto.gov.br/ccivil_03/leis/l9656.htm
+ESPELHO: https://www.planalto.gov.br/ccivil_03/leis/l9656compilado.htm
+DATA DE CAPTURA: 09/07/2026
+LEGISLAÇÃO: Lei 9.656, de 3 de junho de 1998 (Lei dos Planos de Saúde)
+
+================================================================================
+ARTIGO 11 - DOENÇAS E LESÕES PREEXISTENTES
+================================================================================
+
+É vedada a exclusão de cobertura às doenças e lesões preexistentes à data de
+contratação dos produtos de que tratam o inciso I e o § 1º desta Lei após vinte
+e quatro meses de vigência do aludido instrumento contratual, cabendo à
+respectiva operadora o ônus da prova e da demonstração do conhecimento prévio
+do consumidor ou beneficiário.
+
+Parágrafo Único:
+É vedada a suspensão da assistência à saúde do consumidor ou beneficiário,
+titular ou dependente, até a prova de que trata o caput, na forma da
+regulamentação a ser editada pela ANS.
+
+COMENTÁRIOS E IMPLICAÇÕES JURÍDICAS:
+- Período: 24 meses após vigência do contrato
+- Ônus da prova: OPERADORA (obrigação de demonstrar conhecimento prévio do beneficiário)
+- Vedação: proibição de suspensão de assistência durante período de comprovação
+- Regulamentação: delegada à ANS (RN 558/2022 é a norma vigente)
+
+================================================================================
+ARTIGO 13 - TÉRMINO E RESCISÃO DE CONTRATO
+================================================================================
+
+Parágrafo Único:
+Ficam proibidas a suspensão ou a rescisão unilateral de contrato, por iniciativa
+da operadora, salvo por ocorrência de fraude ou não pagamento da mensalidade
+por período superior a sessenta dias, consecutivos ou não, nos últimos doze
+meses de vigência do contrato, desde que o consumidor seja devidamente
+notificado pela operadora em até 50 dias do inadimplemento.
+
+COMENTÁRIOS E IMPLICAÇÕES JURÍDICAS:
+- Vedação geral: suspensão ou rescisão unilateral pela operadora
+- Exceções taxativas: (a) fraude; (b) não pagamento > 60 dias em 12 meses
+- Requisito procedimental: notificação com antecedência mínima 50 dias
+- Escopo: aplica-se a planos individuais e familiares
+- Referência cruzada: planos coletivos regidos por Lei 9.656/98, arts. 30-31
+  (regulados por RN 488/2022)
+
+================================================================================
+ARTIGO 30 - MANUTENÇÃO DE COBERTURA PARA RETIRADO OU DEMITIDO (COLETIVO)
+================================================================================
+
+O beneficiário que se desligar do plano coletivo por aposentadoria, poderá
+manter sua cobertura individual, observadas as seguintes condições:
+[...confira integralmente na fonte oficial]
+
+Nota: Vigência relativa a planos coletivos; regulado por RN 488/2022.
+
+================================================================================
+ARTIGO 31 - DEMISSÃO SEM JUSTA CAUSA (COLETIVO)
+================================================================================
+
+O beneficiário que se desligar do plano coletivo em virtude de dispensa sem
+justa causa, poderá manter sua cobertura individual, observadas as mesmas
+condições do artigo anterior.
+
+[...confira integralmente na fonte oficial]
+
+Nota: Vigência relativa a planos coletivos; regulado por RN 488/2022.
+
+================================================================================
+OBSERVAÇÕES CRÍTICAS PARA O CASO
+================================================================================
+
+1. APLICABILIDADE AO CASO MATEUS GRASSI:
+   - Plano coletivo empresarial SulAmérica (PME 3-29 vidas)
+   - Contratação: 19/07/2025
+   - Inclusão: 19/07/2025
+   - Exclusão: 18/06/2026 (por DLP alegada de K07/K07.1, não informada na DS)
+
+2. ÔNUS DA PROVA:
+   - Lei 9.656, art. 11: a OPERADORA carrega ônus de provar conhecimento prévio
+   - RN 558/2022: reforça esta distribuição de ônus
+   - ACHADO CRÍTICO: SulAmérica não cumpriu obrigação de instaurar processo
+     administrativo na ANS (art. 11 + RN 558 = obrigação legal)
+
+3. VEDAÇÃO DE SUSPENSÃO:
+   - Lei 9.656, art. 11 (parágrafo único): proibida suspensão até conclusão
+     de prova de conhecimento prévio
+   - A exclusão sem processo administrativo ANS = VIOLAÇÃO DIRETA
+
+4. VEDAÇÃO DE RESCISÃO UNILATERAL:
+   - Lei 9.656, art. 13 (parágrafo único): vedada rescisão unilateral salvo
+     fraude ou inadimplemento > 60 dias
+   - DLP ≠ fraude (exceto se provada má-fé deliberada)
+   - Não há alegação de inadimplemento nos autos
+   - CONCLUSÃO: Exclusão SulAmérica infringe art. 13
+
+5. REFERÊNCIA A PORTABILIDADE (RN 438/2018):
+   - Plano Bradesco anterior: tinha cobertura autorizada para cirurgia (K07/K07.1)
+   - Portabilidade: questionar se cirurgia foi comunicada de forma adequada
+     entre operadoras (portabilidade dispensa CPT?)
+   - INVESTIGAR: se Mateus migraria de Bradesco para SulAmérica, portabilidade
+     de carências aplicável (RN 438)?
+
+================================================================================
+DOCUMENTOS RELACIONADOS CAPTURADOS:
+- ANS_RN558_2022.txt (DLP, CPT, processo administrativo)
+- ANS_RN557_2022.txt (classificação planos, orientações)
+- ANS_PORTABILIDADE.txt (RN 438/2018)
+- ANS_SANCOES_NIP.txt (RN 489/2022, infrações)
+
+DATA DESTA CAPTURA: 09/07/2026
+ACENTUAÇÃO: UTF-8 PT-BR COMPLETA
+STATUS: PRONTO PARA REFERÊNCIA JURÍDICA

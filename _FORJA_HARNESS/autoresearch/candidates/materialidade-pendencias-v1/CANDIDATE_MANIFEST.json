@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "candidateId": "materialidade-pendencias-v1",
+  "createdAt": "2026-07-23T20:55:00-03:00",
+  "status": "estudo_descritivo",
+  "target": [
+    "F2_CLASSIFICACAO_PRODUTO_RISCO",
+    "F7_AUDITORIA_JURIDICA_FACTUAL",
+    "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+    "F10_ENTREGA_EVIDENCIA_APRENDIZADO"
+  ],
+  "failureAnchor": "RETROSPECTIVAS.md — Lição 84",
+  "hypothesis": "Classificar pendências por impacto no produto e na afirmação reduz espera e pedidos desnecessários sem aumentar conclusões falsas.",
+  "productionPromoted": false,
+  "requiredBeforePromotion": [
+    "execução pareada vigente versus candidata",
+    "canários de bloqueio excessivo e liberação indevida",
+    "julgamento cego com swap",
+    "não inferioridade por dimensão",
+    "revisão independente",
+    "aprovação humana Ed25519",
+    "sealed prospectivo consumível"
+  ]
+}
+

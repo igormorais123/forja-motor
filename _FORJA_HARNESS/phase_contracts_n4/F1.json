@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 2,
+  "phase": "F1_INGESTAO_SEGURA",
+  "order": 1,
+  "producerRole": "forja-leitor",
+  "reviewerRole": "forja-coverage-auditor",
+  "requiredInputs": [
+    "case_manifest",
+    "source_documents"
+  ],
+  "requiredOutputs": [
+    "document_index",
+    "coverage_ledger",
+    "injection_scan"
+  ],
+  "requiredGates": [
+    "critical_documents_indexed",
+    "coverage_declared",
+    "injection_triaged"
+  ],
+  "nextPhase": "F2_CLASSIFICACAO_PRODUTO_RISCO",
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "n4_document_coverage"
+  ],
+  "n4RequiredGates": [
+    "comparison_inputs_preserved"
+  ],
+  "baseContract": "../phase_contracts/F1.json"
+}

@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "methodVersion": "PSO-PET-1.0",
+  "caseId": "case-pso-fixture",
+  "profile": "full",
+  "executionMode": "prospective",
+  "frozenAt": "2026-07-11T10:00:00-03:00",
+  "finalProducedAt": "2026-07-11T11:00:00-03:00",
+  "producerRunId": "producer-a",
+  "reviewerRunId": "reviewer-b",
+  "sourceRegistry": [
+    {
+      "sourceId": "DOC-1",
+      "role": "primary_input",
+      "locator": "evento 10, p. 3"
+    },
+    {
+      "sourceId": "LAW-1",
+      "role": "official",
+      "locator": "art. 1"
+    },
+    {
+      "sourceId": "H",
+      "role": "human_decision",
+      "locator": "parecer Helena, item 2"
+    },
+    {
+      "sourceId": "C",
+      "role": "human_decision",
+      "locator": "parecer Cícero, conclusão"
+    },
+    {
+      "sourceId": "FINAL",
+      "role": "final_output",
+      "locator": "minuta final"
+    }
+  ],
+  "contextPlan": {
+    "problemKernel": "Decisão deixou de enfrentar prova documental material; definir veículo e pedido adequados.",
+    "issuePackets": [
+      {
+        "issueId": "I1",
+        "question": "A prova foi enfrentada?",
+        "evidenceRefs": [
+          "DOC-1",
+          "LAW-1"
+        ],
+        "returnConditions": [
+          "nova decisão",
+          "novo documento"
+        ]
+      }
+    ],
+    "archiveRefs": [
+      "autos integrais"
+    ]
+  },
+  "problemDefinition": {
+    "command": "Preparar resposta",
+    "currentState": "Decisão não examinou o documento material indicado.",
+    "currentStateEvidenceIds": [
+      "DOC-1"
+    ],
+    "desiredState": "Órgão enfrenta expressamente a prova e sua consequência jurídica.",
+    "gap": "Ausência de enfrentamento verificável.",
+    "interventionScope": "Demonstrar a omissão e pedir integração, sem rejulgamento incompatível.",
+    "boundaries": [
+      "cognição do recurso",
+      "prazo",
+      "prova já existente"
+    ],
+    "directOutcome": "Pronunciamento explícito sobre a prova material.",
+    "ultimateOutcome": "Alteração do resultado do processo.",
+    "problemStatement": "A decisão omitiu prova material e a peça deve obter seu enfrentamento no veículo cabível."
+  },
+  "diagnosis": {
+    "story": "A prova está nos autos, foi invocada e não aparece na cadeia decisória; a omissão impede verificar se sua consequência foi considerada.",
+    "interventionLever": "Evidenciar a ausência na cadeia alegação-prova-decisão e pedir integração específica.",
+    "factors": [
+      {
+        "factorId": "F1",
+        "kind": "cause",
+        "statement": "prova fora da fundamentação",
+        "evidenceIds": [
+          "DOC-1"
+        ]
+      },
+      {
+        "factorId": "F2",
+        "kind": "symptom",
+        "statement": "silêncio decisório",
+        "evidenceIds": [
+          "DOC-1"
+        ]
+      },
+      {
+        "factorId": "F3",
+        "kind": "consequence",
+        "statement": "incerteza sobre valoração",
+        "evidenceIds": [
+          "DOC-1"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "from": "F1",
+        "to": "F2",
+        "relation": "contributes_to",
+        "reason": "a prova não aparece na motivação"
+      },
+      {
+        "from": "F2",
+        "to": "F3",
+        "relation": "produces",
+        "reason": "o silêncio impede conhecer a valoração"
+      }
+    ],
+    "rivalExplanations": [
+      {
+        "rivalId": "R1",
+        "statement": "a prova foi implicitamente rejeitada",
+        "evidenceIds": [
+          "DOC-1"
+        ],
+        "discriminatingEvidence": "fundamento incompatível e explícito na decisão"
+      }
+    ]
+  },
+  "requirements": {
+    "functional": [
+      {
+        "requirementId": "RF1",
+        "text": "demonstrar omissão material",
+        "materiality": "decisive",
+        "negotiable": false
+      }
+    ],
+    "user": [
+      {
+        "requirementId": "RU1",
+        "text": "ordem decisória visível",
+        "materiality": "material",
+        "negotiable": false
+      }
+    ],
+    "boundaries": [
+      {
+        "requirementId": "RB1",
+        "text": "respeitar cognição",
+        "materiality": "decisive",
+        "negotiable": false
+      }
+    ],
+    "restrictions": [
+      {
+        "requirementId": "RR1",
+        "text": "síntese em até 15 páginas",
+        "materiality": "minor",
+        "negotiable": true
+      }
+    ]
+  },
+  "options": [
+    {
+      "optionId": "O1",
+      "label": "integração focal",
+      "vehicle": "embargos de declaração",
+      "evidenceStrategy": "cotejo literal",
+      "mechanism": "tornar visível a lacuna entre alegação, prova e decisão",
+      "directOutcome": "enfrentamento expresso",
+      "requirementsAddressed": [
+        "RF1",
+        "RU1",
+        "RB1",
+        "RR1"
+      ],
+      "viability": "viable",
+      "bestObjection": "mero inconformismo"
+    },
+    {
+      "optionId": "O2",
+      "label": "reserva recursal",
+      "vehicle": "recurso subsequente",
+      "evidenceStrategy": "prequestionamento e demonstração do prejuízo",
+      "mechanism": "preservar a questão para controle posterior",
+      "directOutcome": "admissibilidade da questão no recurso seguinte",
+      "requirementsAddressed": [
+        "RF1",
+        "RB1"
+      ],
+      "viability": "viable",
+      "bestObjection": "falta de esgotamento"
+    }
+  ],
+  "selection": {
+    "selectedOptionId": "O1",
+    "reason": "atua diretamente sobre a omissão com menor custo e maior aderência ao estado atual",
+    "rejectedReasons": {
+      "O2": "é contingência posterior"
+    },
+    "switchTriggers": [
+      "embargos rejeitados sem enfrentamento"
+    ]
+  },
+  "validation": {
+    "requirementChecks": [
+      {
+        "requirementId": "RF1",
+        "status": "planned",
+        "test": "cotejo alegação-prova-decisão"
+      },
+      {
+        "requirementId": "RU1",
+        "status": "planned",
+        "test": "ordem decisória na síntese"
+      },
+      {
+        "requirementId": "RB1",
+        "status": "planned",
+        "test": "pedido integrativo sem rejulgamento"
+      }
+    ],
+    "bestObjection": "a decisão rejeitou implicitamente a prova",
+    "response": "a fundamentação não contém premissa incompatível nem análise identificável da prova",
+    "failureConditions": [
+      "localização de fundamento explícito que enfrente a prova"
+    ],
+    "council": {
+      "helenaLocator": "H",
+      "ciceroLocator": "C"
+    }
+  },
+  "interventionPlan": {
+    "deadline": "dupla conferência",
+    "reviewer": "responsável humano",
+    "managementUpdate": true
+  },
+  "evaluationPlan": {
+    "directOutcomes": [
+      "decisão enfrenta a prova"
+    ],
+    "ultimateOutcomes": [
+      "eventual alteração do resultado"
+    ],
+    "rivalExplanations": [
+      "mudança decorreu de fundamento independente"
+    ],
+    "observationPlan": "comparar a decisão posterior com a matriz de questões e registrar o elo enfrentado",
+    "cimo": {
+      "context": "omissão sobre prova material",
+      "intervention": "cotejo focal",
+      "mechanism": "visibilidade da lacuna decisória",
+      "directOutcome": "enfrentamento expresso",
+      "limits": "não garante mudança do resultado"
+    }
+  }
+}

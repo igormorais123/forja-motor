@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "phase": "F4_BLUEPRINT_ESTRATEGICO",
+  "order": 4,
+  "producerRole": "forja-estrategista",
+  "reviewerRole": "forja-council-recorder",
+  "requiredInputs": [
+    "fact_ledger",
+    "chronology",
+    "contradictions",
+    "sources_map",
+    "adversarial_audit",
+    "question_tree"
+  ],
+  "requiredOutputs": [
+    "blueprint",
+    "proposition_ledger",
+    "helena_opinion",
+    "cicero_opinion",
+    "council_decisions",
+    "adversarial_strategy"
+  ],
+  "requiredGates": [
+    "jurisdictional_question_defined",
+    "helena_present",
+    "cicero_present",
+    "council_decisions_recorded",
+    "adversarial_decisions_recorded"
+  ],
+  "nextPhase": "F5_PESQUISA_OFICIAL",
+  "retryPolicy": {
+    "maxAttempts": 2,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "coverage_matrix",
+    "thesis_maturity",
+    "case_acceptance_tests",
+    "decision_factor_map",
+    "settlement_map",
+    "intertemporal_map",
+    "quantification_scenarios",
+    "signature_brief"
+  ],
+  "n4RequiredGates": [
+    "material_coverage_complete",
+    "thesis_roles_decided",
+    "case_tests_frozen_before_final_draft",
+    "conditional_modules_resolved"
+  ],
+  "baseContract": "../phase_contracts/F4.json"
+}

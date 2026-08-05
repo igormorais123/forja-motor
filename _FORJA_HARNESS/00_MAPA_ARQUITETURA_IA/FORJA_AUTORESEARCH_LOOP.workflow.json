@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "AutoResearch — melhoria contínua do mapa FORJA",
+    "subtitle": "experimento real: nota inicial 92,8 → versão vencedora com nota 100 em 3 rodadas · 2026-07-23",
+    "output": "FORJA_AUTORESEARCH_LOOP.html",
+    "visual_preset": "blueprint",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "ciclo-melhoria",
+        "label": "Ciclo de melhoria",
+        "focus": [
+          "target",
+          "manifest",
+          "scorer",
+          "mutate",
+          "evaluate",
+          "select"
+        ],
+        "note": "Parte-se do desenho atual, criam-se versões alternativas, todas recebem nota pela mesma régua e as melhores seguem para a próxima rodada."
+      },
+      {
+        "id": "controle-qualidade",
+        "label": "Desempate honesto",
+        "focus": [
+          "evaluate",
+          "select",
+          "goodhart"
+        ],
+        "note": "Nota alta não basta: versão que esconde o conteúdo em texto auxiliar é descartada; vence quem mostra tudo no próprio desenho."
+      },
+      {
+        "id": "aplicacao",
+        "label": "Aplicação segura",
+        "focus": [
+          "select",
+          "backup",
+          "apply",
+          "target",
+          "hashes"
+        ],
+        "note": "Antes de substituir a versão oficial, guarda-se cópia de segurança; o desenho final é conferido e recebe selo de integridade."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "artefato",
+      "label": "Documento alvo"
+    },
+    {
+      "id": "setup",
+      "label": "Preparação"
+    },
+    {
+      "id": "loop",
+      "label": "Ciclo de melhoria"
+    },
+    {
+      "id": "controle",
+      "label": "Controle de qualidade"
+    },
+    {
+      "id": "propagacao",
+      "label": "Aplicação do resultado"
+    },
+    {
+      "id": "trilha",
+      "label": "Registro de evidência"
+    }
+  ],
+  "phases": [
+    {
+      "id": "preparo",
+      "label": "Preparar e fixar a régua",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "evolucao",
+      "label": "Melhorar por rodadas",
+      "fromCol": 2,
+      "toCol": 4,
+      "variant": "emphasis"
+    },
+    {
+      "id": "entrega",
+      "label": "Aplicar e provar",
+      "fromCol": 5,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "mainPath": [
+    "target",
+    "manifest",
+    "scorer",
+    "mutate",
+    "evaluate",
+    "select"
+  ],
+  "nodes": [
+    {
+      "id": "target",
+      "lane": "artefato",
+      "col": 0,
+      "type": "external",
+      "width": 96,
+      "label": "Alvo",
+      "sublabel": "o desenho da arquitetura",
+      "tag": "versão oficial"
+    },
+    {
+      "id": "manifest",
+      "lane": "setup",
+      "col": 0,
+      "type": "backend",
+      "width": 96,
+      "label": "Regras",
+      "sublabel": "critérios do experimento"
+    },
+    {
+      "id": "scorer",
+      "lane": "setup",
+      "col": 1,
+      "type": "security",
+      "width": 96,
+      "label": "Régua",
+      "sublabel": "nota 0–100 fixada",
+      "tag": "70 exigências dos contratos"
+    },
+    {
+      "id": "mutate",
+      "lane": "loop",
+      "col": 2,
+      "type": "backend",
+      "width": 96,
+      "label": "Criar versões",
+      "sublabel": "5 versões por rodada",
+      "tag": "cada uma muda um aspecto"
+    },
+    {
+      "id": "evaluate",
+      "lane": "loop",
+      "col": 3,
+      "type": "backend",
+      "width": 96,
+      "label": "Dar nota",
+      "sublabel": "mesma régua para todas",
+      "tag": "automática e objetiva"
+    },
+    {
+      "id": "select",
+      "lane": "loop",
+      "col": 5,
+      "type": "messagebus",
+      "width": 96,
+      "label": "Escolher",
+      "sublabel": "melhores avançam"
+    },
+    {
+      "id": "goodhart",
+      "lane": "controle",
+      "col": 4,
+      "type": "security",
+      "width": 96,
+      "label": "Desempate",
+      "sublabel": "conteúdo visível",
+      "tag": "atalho de nota é descartado"
+    },
+    {
+      "id": "backup",
+      "lane": "propagacao",
+      "col": 4,
+      "type": "security",
+      "width": 96,
+      "label": "Salvaguarda",
+      "sublabel": "guarda a versão anterior"
+    },
+    {
+      "id": "apply",
+      "lane": "propagacao",
+      "col": 5,
+      "type": "cloud",
+      "width": 96,
+      "label": "Aplicar",
+      "sublabel": "gera e confere final"
+    },
+    {
+      "id": "log",
+      "lane": "trilha",
+      "col": 3,
+      "type": "database",
+      "width": 96,
+      "label": "Diário",
+      "sublabel": "notas registradas"
+    },
+    {
+      "id": "hashes",
+      "lane": "trilha",
+      "col": 5,
+      "type": "database",
+      "width": 96,
+      "label": "Selo",
+      "sublabel": "integridade dos arquivos"
+    }
+  ],
+  "edges": [
+    {
+      "id": "target-manifest",
+      "from": "target",
+      "to": "manifest",
+      "label": "cópia de partida",
+      "variant": "default",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "drop",
+      "labelSegment": 1,
+      "labelDy": 11
+    },
+    {
+      "id": "manifest-scorer",
+      "from": "manifest",
+      "to": "scorer",
+      "variant": "default"
+    },
+    {
+      "id": "scorer-mutate",
+      "from": "scorer",
+      "to": "mutate",
+      "label": "régua fixada",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "drop",
+      "labelSegment": 1,
+      "labelDy": 11
+    },
+    {
+      "id": "mutate-evaluate",
+      "from": "mutate",
+      "to": "evaluate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "evaluate-select",
+      "from": "evaluate",
+      "to": "select",
+      "variant": "emphasis"
+    },
+    {
+      "id": "select-mutate",
+      "from": "select",
+      "to": "mutate",
+      "label": "ainda melhora: nova rodada",
+      "variant": "dashed",
+      "role": "return",
+      "fromSide": "top",
+      "toSide": "top",
+      "route": "up-channel",
+      "labelSegment": 1
+    },
+    {
+      "id": "select-goodhart",
+      "from": "select",
+      "to": "goodhart",
+      "label": "empate de nota",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "right",
+      "route": "auto",
+      "labelDy": 11
+    },
+    {
+      "id": "goodhart-backup",
+      "from": "goodhart",
+      "to": "backup",
+      "label": "vencedora definida",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "drop",
+      "labelDy": 11
+    },
+    {
+      "id": "backup-apply",
+      "from": "backup",
+      "to": "apply",
+      "variant": "emphasis"
+    },
+    {
+      "id": "apply-target",
+      "from": "apply",
+      "to": "target",
+      "label": "vira a versão oficial",
+      "variant": "emphasis",
+      "role": "return",
+      "fromSide": "right",
+      "toSide": "right",
+      "route": "outside-right",
+      "labelAt": [
+        692,
+        337
+      ]
+    },
+    {
+      "id": "evaluate-log",
+      "from": "evaluate",
+      "to": "log",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "drop"
+    },
+    {
+      "id": "apply-hashes",
+      "from": "apply",
+      "to": "hashes",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "drop"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Como a nota é dada (100 pontos)",
+      "items": [
+        "25 — desenho tecnicamente correto, sem alertas",
+        "10 — todas as 13 etapas da fábrica presentes",
+        "20 — técnicas reais de trabalho retratadas",
+        "20 — exigências dos contratos de fase (70 no total)",
+        "15 — navegação guiada · 10 — sobriedade visual"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Resultado real do experimento",
+      "items": [
+        "Nota inicial 92,8 → versão final com nota 100",
+        "3 rodadas, 9 versões avaliadas",
+        "Todas as 70 exigências retratadas no desenho",
+        "Nenhum alerta técnico pendente"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Desempate honesto",
+      "items": [
+        "Uma versão tirou 100 escondendo conteúdo em texto auxiliar",
+        "Regra criada: o conteúdo deve aparecer no próprio desenho",
+        "A regra ficou registrada para as próximas rodadas"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Aplicação com segurança",
+      "items": [
+        "Cópia de segurança antes de substituir a versão oficial",
+        "Desenho final conferido tela a tela",
+        "Selo de integridade recalculado ao terminar"
+      ]
+    }
+  ]
+}

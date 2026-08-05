@@ -1,0 +1,609 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "FORJA — fabricação de petições + melhoria contínua",
+    "subtitle": "o caminho da peça (F0 a F10) e onde o AutoResearch aprende e devolve melhorias · linguagem simples · 2026-07-23",
+    "output": "FORJA_FLUXO_COMPLETO_COM_AUTORESEARCH.html",
+    "visual_preset": "blueprint",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "fabricacao",
+        "label": "Fabricação da petição",
+        "focus": [
+          "f0",
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f7b",
+          "f8",
+          "f9",
+          "f10"
+        ],
+        "note": "Da chegada do caso à entrega: cada etapa só avança quando a anterior prova que cumpriu suas exigências."
+      },
+      {
+        "id": "portoes",
+        "label": "Portões que travam",
+        "focus": [
+          "f1",
+          "f2",
+          "f7",
+          "f7b",
+          "f8"
+        ],
+        "note": "Falta de fato comprovado, citação não conferida ou defeito visual interrompem a linha: nada segue com pendência grave."
+      },
+      {
+        "id": "onde-entra",
+        "label": "Onde entra o AutoResearch",
+        "focus": [
+          "f10",
+          "learn",
+          "state",
+          "ar-regua",
+          "ar-versoes",
+          "ar-nota",
+          "ar-aplicar"
+        ],
+        "note": "Depois da entrega, as lições viram matéria-prima: o ciclo cria versões melhores de moldes, réguas e mapas da fábrica."
+      },
+      {
+        "id": "retorno",
+        "label": "O retorno à fábrica",
+        "focus": [
+          "ar-aplicar",
+          "f6",
+          "f7"
+        ],
+        "note": "A versão vencedora volta como molde e régua melhorados — nunca altera petição real sem revisão humana."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "f0",
+      "type": "messagebus",
+      "label": "F0 Chegada do caso",
+      "sublabel": "pedido vira caso registrado",
+      "tag": "fila conferida",
+      "pos": [
+        30,
+        120
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f1",
+      "type": "security",
+      "label": "F1 Leitura segura",
+      "sublabel": "documentos lidos com proteção",
+      "tag": "texto dos autos nunca dá ordens",
+      "pos": [
+        250,
+        120
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f2",
+      "type": "backend",
+      "label": "F2 Entendimento",
+      "sublabel": "produto, risco e 100 perguntas",
+      "tag": "lacuna grave trava a linha",
+      "pos": [
+        470,
+        120
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f3",
+      "type": "database",
+      "label": "F3 Fatos e tribunal",
+      "sublabel": "fatos, datas e regras do tribunal",
+      "tag": "cada fato com sua prova",
+      "pos": [
+        690,
+        120
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f4",
+      "type": "external",
+      "label": "F4 Estratégia",
+      "sublabel": "plano da peça + conselho",
+      "tag": "Helena e Cícero opinam",
+      "pos": [
+        910,
+        120
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f5",
+      "type": "database",
+      "label": "F5 Fontes oficiais",
+      "sublabel": "leis e julgados conferidos na fonte",
+      "tag": "citação sem conferência não entra",
+      "pos": [
+        1130,
+        120
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f6",
+      "type": "frontend",
+      "label": "F6 Redação",
+      "sublabel": "texto no modelo do escritório",
+      "tag": "cada parágrafo com origem",
+      "pos": [
+        1130,
+        400
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f7",
+      "type": "security",
+      "label": "F7 Auditoria",
+      "sublabel": "revisão de fatos e citações",
+      "tag": "zero erro grave para avançar",
+      "pos": [
+        910,
+        400
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f7b",
+      "type": "backend",
+      "label": "F7-B Lapidação",
+      "sublabel": "melhora só a forma do texto",
+      "tag": "conteúdo fica intocado",
+      "pos": [
+        690,
+        400
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f8",
+      "type": "cloud",
+      "label": "F8 Conferência visual",
+      "sublabel": "documento conferido página a página",
+      "tag": "defeito visual trava a entrega",
+      "pos": [
+        470,
+        400
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f9",
+      "type": "cloud",
+      "label": "F9 Pacote",
+      "sublabel": "conferência final + e-mail",
+      "tag": "anexos exatos",
+      "pos": [
+        250,
+        400
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "f10",
+      "type": "external",
+      "label": "F10 Entrega",
+      "sublabel": "entrega com prova e lições",
+      "tag": "fecha com retrospectiva",
+      "pos": [
+        30,
+        400
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "learn",
+      "type": "messagebus",
+      "label": "Lições",
+      "sublabel": "o que o feedback ensinou",
+      "tag": "versão protocolada × nossa",
+      "pos": [
+        30,
+        680
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "state",
+      "type": "database",
+      "label": "Registros",
+      "sublabel": "histórico de cada caso",
+      "tag": "guardado em área privada",
+      "pos": [
+        250,
+        680
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "ar-regua",
+      "type": "security",
+      "label": "Régua de nota",
+      "sublabel": "critérios fixados antes",
+      "tag": "nota de 0 a 100",
+      "pos": [
+        470,
+        680
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "ar-versoes",
+      "type": "backend",
+      "label": "Criar versões",
+      "sublabel": "alternativas de molde e régua",
+      "tag": "cada uma muda um aspecto",
+      "pos": [
+        690,
+        680
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "ar-nota",
+      "type": "backend",
+      "label": "Dar nota e escolher",
+      "sublabel": "mesma régua para todas",
+      "tag": "desempate: conteúdo visível",
+      "pos": [
+        910,
+        680
+      ],
+      "size": [
+        160,
+        66
+      ]
+    },
+    {
+      "id": "ar-aplicar",
+      "type": "cloud",
+      "label": "Aplicar vencedora",
+      "sublabel": "com cópia de segurança",
+      "tag": "conferida antes de valer",
+      "pos": [
+        1130,
+        680
+      ],
+      "size": [
+        160,
+        66
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Preparação do caso",
+      "wraps": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Estratégia e fontes",
+      "wraps": [
+        "f4",
+        "f5"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Produção do texto",
+      "wraps": [
+        "f6",
+        "f7",
+        "f7b"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Conferência e entrega",
+      "wraps": [
+        "f8",
+        "f9",
+        "f10"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "security-group",
+      "label": "Melhoria contínua — AutoResearch",
+      "wraps": [
+        "learn",
+        "state",
+        "ar-regua",
+        "ar-versoes",
+        "ar-nota",
+        "ar-aplicar"
+      ],
+      "pad": 24
+    }
+  ],
+  "connections": [
+    {
+      "id": "f0-f1",
+      "from": "f0",
+      "to": "f1",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f1-f2",
+      "from": "f1",
+      "to": "f2",
+      "variant": "security"
+    },
+    {
+      "id": "f2-f3",
+      "from": "f2",
+      "to": "f3",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f3-f4",
+      "from": "f3",
+      "to": "f4",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f4-f5",
+      "from": "f4",
+      "to": "f5",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f5-f6",
+      "from": "f5",
+      "to": "f6",
+      "label": "fontes prontas",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        1224,
+        290
+      ]
+    },
+    {
+      "id": "f6-f7",
+      "from": "f6",
+      "to": "f7",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "f7-f7b",
+      "from": "f7",
+      "to": "f7b",
+      "label": "sem erro grave",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "right",
+      "labelAt": [
+        880,
+        392
+      ]
+    },
+    {
+      "id": "f7b-f8",
+      "from": "f7b",
+      "to": "f8",
+      "variant": "emphasis",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "f8-f9",
+      "from": "f8",
+      "to": "f9",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "f9-f10",
+      "from": "f9",
+      "to": "f10",
+      "label": "aprovado",
+      "variant": "emphasis",
+      "fromSide": "left",
+      "toSide": "right",
+      "labelAt": [
+        220,
+        392
+      ]
+    },
+    {
+      "id": "f10-learn",
+      "from": "f10",
+      "to": "learn",
+      "label": "lições da entrega",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "orthogonal-v",
+      "labelAt": [
+        112,
+        560
+      ]
+    },
+    {
+      "id": "f8-state",
+      "from": "f8",
+      "to": "state",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "orthogonal-v"
+    },
+    {
+      "id": "learn-state",
+      "from": "learn",
+      "to": "state",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "state-regua",
+      "from": "state",
+      "to": "ar-regua",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "regua-versoes",
+      "from": "ar-regua",
+      "to": "ar-versoes",
+      "variant": "emphasis"
+    },
+    {
+      "id": "versoes-nota",
+      "from": "ar-versoes",
+      "to": "ar-nota",
+      "variant": "emphasis"
+    },
+    {
+      "id": "nota-aplicar",
+      "from": "ar-nota",
+      "to": "ar-aplicar",
+      "label": "vencedora",
+      "variant": "security",
+      "labelAt": [
+        1100,
+        672
+      ]
+    },
+    {
+      "id": "aplicar-f6",
+      "from": "ar-aplicar",
+      "to": "f6",
+      "label": "moldes e réguas melhorados",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "route": "orthogonal-v",
+      "labelAt": [
+        1224,
+        575
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Como ler este desenho",
+      "items": [
+        "Linha de cima: o caso entra e é preparado",
+        "Linha do meio: o texto nasce, é auditado e entregue",
+        "Faixa de baixo: a fábrica aprende e se melhora",
+        "Setas cheias = caminho da peça · tracejadas = aprendizado"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Portões que travam a linha",
+      "items": [
+        "Fato sem prova não vira afirmação na peça",
+        "Citação de lei ou julgado só entra conferida na fonte",
+        "Erro grave detectado interrompe até ser resolvido",
+        "Defeito visual segura a entrega"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Onde o AutoResearch entra",
+      "items": [
+        "Matéria-prima: lições das entregas e registros dos casos",
+        "Cria versões melhores de moldes, réguas e mapas",
+        "Todas recebem nota pela mesma régua, fixada antes",
+        "A vencedora volta à fábrica com cópia de segurança"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Limites de segurança",
+      "items": [
+        "Petição real nunca é alterada automaticamente",
+        "Melhoria de molde passa por revisão humana",
+        "Resultado comprovado: mapa da fábrica foi de 92,8 a 100",
+        "Tudo registrado: notas, versões e selo de integridade"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+URL: https://jurisprudencia.stf.jus.br/pages/search?base=sumulas&pesquisa_inteiro_teor=false&sinonimo=true&plural=true&page=1&pageSize=10&queryString=271&sort=_score&sortBy=desc
+Capturado: 2026-07-09T02:49:25.826Z
+
+school
+Curso de pesquisa
+wb_incandescent
+Dicas de pesquisa
+supervisor_account
+Solicitar pesquisa
+assignment
+Avaliar página
+menu_book
+Tesauro
+Entrar
+autorenew
+search
+Pesquisa avançadaadd
+e
+ou
+não
+" "
+" "~
+~
+$
+?
+( )
+Base
+Acórdãos
+(1.102)
+Decisões monocráticas
+(3.981)
+Informativos
+(11)
+Súmulas
+(4)
+Súmulas vinculantes(0)
+Situação
+arrow_drop_up
+ Aprovada (4)
+Ramo do Direito
+arrow_drop_up
+ Processual Penal (2)
+ Processual Civil (1)
+ Trabalhista (1)
+Data de aprovação
+arrow_drop_up
+De
+Até
+4 resultado(s) para: 271
+10 por página	
+mais relevantes	
+Página
+de 1
+1
+link
+Súmula 271
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Processual Civil
+Enunciado
+Concessão de mandado de segurança não produz efeitos patrimoniais em relação a período pretérito, os quais devem ser reclamados administrativamente ou pela via judicial própria.
+Súmula 210
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Processual Penal
+Enunciado
+O assistente do Ministério Público pode recorrer, inclusive extraordinariamente, na ação penal, nos casos dos arts. 584, § 1º, e 598 do Cód. de Proc. Penal.
+Referência legislativa
+
+Código de Processo Penal de 1941, art. 271.
+
+Súmula 208
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Processual Penal
+Enunciado
+O assistente do Ministério Público não pode recorrer, extraordinariamente, de decisão concessiva de "habeas corpus".
+Referência legislativa
+
+Código de Processo Penal de 1941, art. 271.
+
+Súmula 349
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Trabalhista
+Enunciado
+A prescrição atinge somente as prestações de mais de dois anos, reclamadas com fundamento em decisão normativa da Justiça do Trabalho, ou em convenção coletiva de trabalho, quando não estiver em causa a própria validade de tais atos.
+Precedentes
+
+AI 30832 Publicações: DJ de 17/12/1963 RTJ 31/409
+RE 53916 Publicações: DJ de 10/10/1963 RTJ 30/271
+AI 25505 Publicação: DJ de 16/11/1962
+RE 48818 Publicação: DJ de 02/10/1962
+RE 48818 EI Publicação: DJ de 23/08/1962
+RE 46043 EI Publicação: DJ de 24/05/1962
+RE 48913 Publicações: DJ de 02/04/1962 RTJ 27/553
+
+Página
+de 1
+1
+Reiniciar pesquisa
+Pesquisar
+Pesquisa avançada
+Com base no Tesauro do STF, também serão considerados sinônimos dos termos pesquisados.
+Serão considerados tanto o plural quanto o singular dos termos pesquisados.
+Copiar link da pesquisa
+Esta base contém apenas decisões selecionadas
+Colapsar
+Exportar para excel
+Exportar para CSV
+Copiar resultado
+Dados completos
+Expandir espelho
+Expandir
+Colapsar ocorrências
+Serão consideradas todas as palavras que compartilham os mesmos radicais dos termos pesquisados. Exemplo: uma busca por “indenização” retornará “indenizada”, “indenizar”, “indenizações” etc.
+Dentro das aspas, serão desativadas a busca por sinônimos e a busca por radicais.
+Todos os termos devem necessariamente aparecer no documento. Exemplo: direitos E humanos. Por se tratar do operador padrão, não é necessário explicitar o E na expressão de busca.
+Ao menos um dos termos deve aparecer no documento. Exemplo: droga OU entorpecente.
+O termo não pode aparecer no documento. Exemplo: prisão NÃO preventiva.
+Os termos devem aparecer no documento na exata ordem e com a exata grafia indicadas. Exemplo: "princípio da presunção de inocência". Além disso, os termos entre aspas perdem a função de operadores. Exemplo: presunção de "não" culpabilidade.
+Os termos podem aparecer no documento em qualquer ordem, desde que estejam separados, no máximo, pelo número de palavras indicado após o til. Exemplo: "provimento cargo"~5. Dentro dessa estrutura (aspas duplas + til), os únicos operadores admitidos são o OU e os parênteses; todos os demais (E, NÃO, ~, $, ?) são anulados.
+Quando posicionado logo após determinada palavra, o til permite o resgate de documentos que contenham pequenas variações do termo pesquisado. Exemplo: indenização~. O número de variações toleradas depende do número de caracteres do termo pesquisado: até 3 caracteres, o operador til não produz nenhum efeito; entre 4 e 6 caracteres, o operador til admite 1 variação; com mais de 6 caracteres, a busca contempla 2 variações. Conta-se como 1 variação: a troca de um caractere por outro (exemplo: de triagem para friagem); a remoção de um caractere (exemplo: de místico para mítico); a inserção de um novo caractere (exemplo: de recorre para recorrer); ou a troca de posição de dois caracteres adjacentes (exemplo: de 598356 para 598365).
+O sinal de dólar substitui um, nenhum ou mais de um caractere no início, no meio ou no final do termo. Exemplo: $constitucional.
+O ponto de interrogação substitui um único caractere no início, no meio ou no final do termo. Exemplo: RE 56394?.
+Os parênteses indicam a ordem de prioridade das operações, quando utilizado mais de um operador. Exemplo: direito E (privacidade OU intimidade).

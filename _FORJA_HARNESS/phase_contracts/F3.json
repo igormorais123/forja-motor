@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "phase": "F3_FONTES_REGIMENTO_LEIS",
+  "order": 3,
+  "producerRole": "forja-analista-fontes",
+  "reviewerRole": "forja-factual-auditor",
+  "requiredInputs": ["document_index", "coverage_ledger", "product_classification", "question_tree"],
+  "requiredOutputs": ["fact_ledger", "chronology", "contradictions", "sources_map", "adversarial_audit"],
+  "requiredGates": ["tribunal_identified", "regimento_available", "critical_facts_sourced", "adversarial_scope_classified", "adversarial_audit_complete"],
+  "nextPhase": "F4_BLUEPRINT_ESTRATEGICO",
+  "retryPolicy": {"maxAttempts": 3, "idempotent": true}
+}

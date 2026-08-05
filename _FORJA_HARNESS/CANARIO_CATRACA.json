@@ -1,0 +1,210 @@
+{
+  "versao": "FORJA-CANARIO-CATRACA-v1",
+  "catracasEncontradas": 17,
+  "examinadas": 15,
+  "reprovaramOImpossivel": 15,
+  "decorativas": [],
+  "puladasPorCusto": [
+    {
+      "suite": "test_forja_recomputo_censo.py",
+      "constante": "GATES_COM_VEREDITO_MIN",
+      "valor": 41,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "motivo": "o censo percorre 60+ tentativas reais por execução"
+    },
+    {
+      "suite": "test_forja_recomputo_censo.py",
+      "constante": "TENTATIVAS_MIN",
+      "valor": 55,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "motivo": "o censo percorre 60+ tentativas reais por execução"
+    }
+  ],
+  "declaradasSemUso": [],
+  "detalhe": [
+    {
+      "suite": "test_forja_artefatos.py",
+      "constante": "DESCONHECIDOS_MAX",
+      "valor": 83,
+      "direcao": "teto",
+      "usos": 4,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_artefatos.py",
+      "constante": "ARTEFATOS_MIN",
+      "valor": 80,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10000080,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_canario_mutacao.py",
+      "constante": "REPROVAM_MUTACAO_MIN",
+      "valor": 33,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10000033,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_canario_mutacao.py",
+      "constante": "EXAMINADOS_MIN",
+      "valor": 36,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10000036,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_forma_artefatos.py",
+      "constante": "CEGUEIRAS_MAX",
+      "valor": 0,
+      "direcao": "teto",
+      "usos": 2,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_forma_artefatos.py",
+      "constante": "RADICAIS_MIN",
+      "valor": 3000,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10003000,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_gate_liveness.py",
+      "constante": "COMPUTADOS_MIN",
+      "valor": 73,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10000073,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_gate_liveness.py",
+      "constante": "AUTODECLARADOS_MAX",
+      "valor": 0,
+      "direcao": "teto",
+      "usos": 4,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_gate_liveness.py",
+      "constante": "INEXEQUIVEIS_MAX",
+      "valor": 0,
+      "direcao": "teto",
+      "usos": 4,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_varredura_tipografica.py",
+      "constante": "ENTREGAVEIS_MIN",
+      "valor": 120,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10000120,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_varredura_tipografica.py",
+      "constante": "JUSTIFICACAO_ABAIXO_50_MAX",
+      "valor": 4,
+      "direcao": "teto",
+      "usos": 2,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_varredura_tipografica.py",
+      "constante": "TAMANHO_ABAIXO_90_MAX",
+      "valor": 29,
+      "direcao": "teto",
+      "usos": 2,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_varredura_tipografica.py",
+      "constante": "FONTE_ABAIXO_90_MAX",
+      "valor": 19,
+      "direcao": "teto",
+      "usos": 2,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_varredura_tipografica.py",
+      "constante": "TRES_DIMENSOES_MAX",
+      "valor": 4,
+      "direcao": "teto",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": -1,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    },
+    {
+      "suite": "test_forja_visual_build_peca_longa.py",
+      "constante": "SECOES_MINIMAS",
+      "valor": 16,
+      "direcao": "piso",
+      "usos": 3,
+      "declaradaSemUso": false,
+      "apertadaPara": 10000016,
+      "exit": 1,
+      "reprovou": true,
+      "erro": ""
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant O as Origem e gestão
+    participant F as FORJA
+    participant H as Helena
+    participant C as Cícero
+    participant I as Igor
+    participant B as Fábio
+    participant D as Entrega
+
+    O->>F: comando, prazo, pasta e anexos
+    F->>F: confere a entrada, define o tipo de peça e verifica as fontes
+    F->>H: diagnóstico, alternativas e melhor objeção
+    H-->>F: recomendações estratégicas e razões
+    F->>C: veículo, tese, pedidos e riscos jurídicos
+    C-->>F: orientação jurídica e limites da formulação
+    F->>F: redige, testa, gera os documentos e revisa
+    F->>I: peça, pontos pendentes e arquivo conferido
+    I->>B: revisão jurídica final
+    B-->>I: aprova, corrige ou muda estratégia
+    I->>F: decisão humana e versão aprovada
+    F->>D: versão aprovada e identificação segura do arquivo
+    D-->>F: evidência de envio ou protocolo
+    F->>O: atualiza gestão e aprendizado

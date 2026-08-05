@@ -1,0 +1,18 @@
+flowchart LR
+    Source["Documento ou fonte oficial"] --> Locator["Número, página, trecho, data e identificação do arquivo"]
+    Locator --> Fact["Fato, evento ou afirmação"]
+    Fact --> Confidence["O que está confirmado, condicionado ou incerto"]
+    Contrary["Fonte ou explicação contrária"] --> Confidence
+    Confidence --> Thesis["Tese principal, subsidiária ou reserva"]
+    Thesis --> Paragraph["Parágrafo com função definida"]
+    Paragraph --> Request["Pedido ou consequência processual"]
+    Request --> Test["Pergunta objetiva para conferir o pedido"]
+    Test --> Audit{"Sobrevive à melhor objeção?"}
+    Audit -->|"não"| Rework["Reabrir fato, fonte ou desenho da tese"]
+    Audit -->|"sim"| Eligible["Elegível para revisão humana"]
+
+    classDef evidence fill:#e9f4ec,stroke:#2f6f54,color:#1f4c39;
+    classDef challenge fill:#fbf2ec,stroke:#9c5b38,color:#5b3522;
+    class Source,Locator,Fact,Confidence,Thesis,Paragraph,Request,Test evidence;
+    class Contrary,Audit,Rework challenge;
+    style Eligible fill:#fff4d8,stroke:#9a6b18,color:#4b370d;

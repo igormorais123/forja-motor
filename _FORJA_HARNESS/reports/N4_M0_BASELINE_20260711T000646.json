@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "specVersion": "N4.0-candidate",
+  "generatedAt": "2026-07-11T00:06:46-03:00",
+  "initializeN3": true,
+  "caseCount": 21,
+  "n3Initialized": 21,
+  "protectedChanges": 0,
+  "cases": [
+    {
+      "caseId": "case-email-auto-19f38f30238ff4d3",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-auto-19f3ea400b7dec3d",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-auto-19f3ed5bdbdcf159",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-auto-19f3f25cb64df962",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 108,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 17,
+        "present": 0,
+        "p0": 0,
+        "p1": 17
+      }
+    },
+    {
+      "caseId": "case-email-azimut-19f3ed5bdbdcf159",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 54,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 21,
+        "present": 0,
+        "p0": 0,
+        "p1": 21
+      }
+    },
+    {
+      "caseId": "case-email-cafelana-agint-aresp-2698443-19f2f0876e358eab",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 30,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 23,
+        "present": 0,
+        "p0": 0,
+        "p1": 23
+      }
+    },
+    {
+      "caseId": "case-email-cafelana-edcl-19f1f9d3cc69c8c8",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-corsan-agerst-19f3dc9ff92081cd",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 93,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 21,
+        "present": 0,
+        "p0": 0,
+        "p1": 21
+      }
+    },
+    {
+      "caseId": "case-email-jalusa-prestes-5000447",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 3,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-jorge-haroldo-edcl-19f3c8200768b56e",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 4,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 6,
+        "present": 0,
+        "p0": 0,
+        "p1": 6
+      }
+    },
+    {
+      "caseId": "case-email-jose-eduardo-siqueira-campos-19f1f92c333b1e4e",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-laudo-pericial-contabil-19f1f9467513bbae",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-libra-sul-agint-stj-19f3c9350d875062",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 84,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 21,
+        "present": 0,
+        "p0": 0,
+        "p1": 21
+      }
+    },
+    {
+      "caseId": "case-email-memoriais-cautelar-fiscal-5002486",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-email-natura-cabreuva-19f3991ebc75fe03",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 60,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 21,
+        "present": 0,
+        "p0": 0,
+        "p1": 21
+      }
+    },
+    {
+      "caseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 85,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 21,
+        "present": 0,
+        "p0": 0,
+        "p1": 21
+      }
+    },
+    {
+      "caseId": "case-whatsapp-audio-cafelana-prevencao-20260708",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-whatsapp-audio-protocolo-aprendizados-20260708",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 23,
+        "present": 0,
+        "p0": 0,
+        "p1": 23
+      }
+    },
+    {
+      "caseId": "case-whatsapp-audio-roraima-senador-20260708",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-whatsapp-fabio-medina-osorio",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    },
+    {
+      "caseId": "case-whatsapp-igor-hermes-contexto",
+      "n3Initialized": true,
+      "legacyProtectedFiles": 2,
+      "protectedChanges": [],
+      "n4": {
+        "approved": true,
+        "mode": "shadow",
+        "expected": 0,
+        "present": 0,
+        "p0": 0,
+        "p1": 0
+      }
+    }
+  ]
+}

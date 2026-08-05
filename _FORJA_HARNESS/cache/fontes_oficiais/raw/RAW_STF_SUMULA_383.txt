@@ -1,0 +1,151 @@
+URL: https://jurisprudencia.stf.jus.br/pages/search?base=sumulas&pesquisa_inteiro_teor=false&sinonimo=true&plural=true&page=1&pageSize=10&queryString=383&sort=_score&sortBy=desc
+Capturado: 2026-07-09T02:49:34.941Z
+
+school
+Curso de pesquisa
+wb_incandescent
+Dicas de pesquisa
+supervisor_account
+Solicitar pesquisa
+assignment
+Avaliar página
+menu_book
+Tesauro
+Entrar
+autorenew
+search
+Pesquisa avançadaadd
+e
+ou
+não
+" "
+" "~
+~
+$
+?
+( )
+Base
+Acórdãos
+(1.572)
+Decisões monocráticas
+(9.378)
+Informativos
+(31)
+Súmulas
+(5)
+Súmulas vinculantes(0)
+Situação
+arrow_drop_up
+ Aprovada (5)
+Ramo do Direito
+arrow_drop_up
+ Administrativo (1)
+ Civil (1)
+ Penal (1)
+ Processual Civil (1)
+ Processual Penal (1)
+Data de aprovação
+arrow_drop_up
+De
+Até
+5 resultado(s) para: 383
+10 por página	
+mais relevantes	
+Página
+de 1
+1
+link
+Súmula 383
+keyboard_double_arrow_down
+file_copy
+Aprovação: 03/04/1964
+Ramo do Direito: Administrativo
+Enunciado
+A prescrição em favor da Fazenda Pública recomeça a correr, por dois anos e meio, a partir do ato interruptivo, mas não fica reduzida aquém de cinco anos, embora o titular do direito a interrompa durante a primeira metade do prazo.
+Súmula 525
+keyboard_double_arrow_down
+file_copy
+Aprovação: 03/12/1969
+Ramo do Direito: Penal
+Enunciado
+A medida de segurança não será aplicada em segunda instância, quando só o réu tenha recorrido.
+Referência legislativa
+
+Código de Processo Penal de 1941, art. 383; art. 386; art. 387; e art. 617.
+
+Súmula 453
+keyboard_double_arrow_down
+file_copy
+Aprovação: 01/10/1964
+Ramo do Direito: Processual Penal
+Enunciado
+Não se aplicam à segunda instância o art. 384 e parágrafo único do Código de Processo Penal, que possibilitam dar nova definição jurídica ao fato delituoso, em virtude de circunstância elementar não contida, explícita ou implicitamente, na denúncia ou queixa.
+Referência legislativa
+
+Código de Processo Penal de 1941, art. 383; art. 384, parágrafo único; e art. 617.
+
+Súmula 413
+keyboard_double_arrow_down
+file_copy
+Aprovação: 01/06/1964
+Ramo do Direito: Civil
+Enunciado
+O compromisso de compra e venda de imóveis, ainda que não loteados, dá direito à execução compulsória, quando reunidos os requisitos legais.
+Precedentes
+
+RE 38297 Publicações: DJ de 13/08/1959 RTJ 10/383
+AI 20553 Publicação: DJ de 23/07/1959
+RE 40983 Publicações: DJ de 22/01/1959 RTJ 8/265
+RE 38436 Publicações: DJ de 21/01/1959 RTJ 8/235
+RE 26411 EI Publicação: DJ de 29/11/1956
+RE 26411 Publicação: DJ de 20/01/1955
+RE 16677 Publicação: DJ de 02/04/1952
+RE 15868 Publicação: DJ de 10/09/1951
+
+Súmula 278
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Processual Civil
+Enunciado
+São cabíveis embargos em ação executiva fiscal contra decisão reformatória da de primeira instância, ainda que unânime.
+Precedentes
+
+AI 25567 Publicações: DJ de 12/09/1963 RTJ 31/383
+AI 28114 Publicações: DJ de 01/08/1963 RTJ 27/167
+AI 25583 Publicações: DJ de 16/05/1963 RTJ 27/432
+RE 27692 EI Publicações: DJ de 06/12/1962 RTJ 24/442
+RE 49737 Publicações: DJ de 18/10/1962 RTJ 23/408
+RE 4986 Publicação: DJ de 15/03/1951
+RE 11132 Publicação: DJ de 14/09/1949
+RE 7640 Publicação: DJ de 07/05/1947
+
+Página
+de 1
+1
+Reiniciar pesquisa
+Pesquisar
+Pesquisa avançada
+Com base no Tesauro do STF, também serão considerados sinônimos dos termos pesquisados.
+Serão considerados tanto o plural quanto o singular dos termos pesquisados.
+Copiar link da pesquisa
+Esta base contém apenas decisões selecionadas
+Colapsar
+Exportar para excel
+Exportar para CSV
+Copiar resultado
+Dados completos
+Expandir espelho
+Expandir
+Colapsar ocorrências
+Serão consideradas todas as palavras que compartilham os mesmos radicais dos termos pesquisados. Exemplo: uma busca por “indenização” retornará “indenizada”, “indenizar”, “indenizações” etc.
+Dentro das aspas, serão desativadas a busca por sinônimos e a busca por radicais.
+Todos os termos devem necessariamente aparecer no documento. Exemplo: direitos E humanos. Por se tratar do operador padrão, não é necessário explicitar o E na expressão de busca.
+Ao menos um dos termos deve aparecer no documento. Exemplo: droga OU entorpecente.
+O termo não pode aparecer no documento. Exemplo: prisão NÃO preventiva.
+Os termos devem aparecer no documento na exata ordem e com a exata grafia indicadas. Exemplo: "princípio da presunção de inocência". Além disso, os termos entre aspas perdem a função de operadores. Exemplo: presunção de "não" culpabilidade.
+Os termos podem aparecer no documento em qualquer ordem, desde que estejam separados, no máximo, pelo número de palavras indicado após o til. Exemplo: "provimento cargo"~5. Dentro dessa estrutura (aspas duplas + til), os únicos operadores admitidos são o OU e os parênteses; todos os demais (E, NÃO, ~, $, ?) são anulados.
+Quando posicionado logo após determinada palavra, o til permite o resgate de documentos que contenham pequenas variações do termo pesquisado. Exemplo: indenização~. O número de variações toleradas depende do número de caracteres do termo pesquisado: até 3 caracteres, o operador til não produz nenhum efeito; entre 4 e 6 caracteres, o operador til admite 1 variação; com mais de 6 caracteres, a busca contempla 2 variações. Conta-se como 1 variação: a troca de um caractere por outro (exemplo: de triagem para friagem); a remoção de um caractere (exemplo: de místico para mítico); a inserção de um novo caractere (exemplo: de recorre para recorrer); ou a troca de posição de dois caracteres adjacentes (exemplo: de 598356 para 598365).
+O sinal de dólar substitui um, nenhum ou mais de um caractere no início, no meio ou no final do termo. Exemplo: $constitucional.
+O ponto de interrogação substitui um único caractere no início, no meio ou no final do termo. Exemplo: RE 56394?.
+Os parênteses indicam a ordem de prioridade das operações, quando utilizado mais de um operador. Exemplo: direito E (privacidade OU intimidade).

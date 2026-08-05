@@ -1,0 +1,123 @@
+URL: https://jurisprudencia.stf.jus.br/pages/search?base=sumulas&pesquisa_inteiro_teor=false&sinonimo=true&plural=true&page=1&pageSize=10&queryString=269&sort=_score&sortBy=desc
+Capturado: 2026-07-09T02:49:16.722Z
+
+school
+Curso de pesquisa
+wb_incandescent
+Dicas de pesquisa
+supervisor_account
+Solicitar pesquisa
+assignment
+Avaliar página
+menu_book
+Tesauro
+Entrar
+autorenew
+search
+Pesquisa avançadaadd
+e
+ou
+não
+" "
+" "~
+~
+$
+?
+( )
+Base
+Acórdãos
+(1.610)
+Decisões monocráticas
+(9.858)
+Informativos
+(10)
+Súmulas
+(3)
+Súmulas vinculantes(0)
+Situação
+arrow_drop_up
+ Aprovada (3)
+Ramo do Direito
+arrow_drop_up
+ Civil (1)
+ Processual Civil (1)
+ Tributário (1)
+Data de aprovação
+arrow_drop_up
+De
+Até
+3 resultado(s) para: 269
+10 por página	
+mais relevantes	
+Página
+de 1
+1
+link
+Súmula 269
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Processual Civil
+Enunciado
+O mandado de segurança não é substitutivo de ação de cobrança.
+Súmula 582
+keyboard_double_arrow_down
+file_copy
+Aprovação: 15/12/1976
+Ramo do Direito: Tributário
+Enunciado
+É constitucional a Resolução nº 640/69, do Conselho de Política Aduaneira, que reduziu a alíquota do imposto de importação para a soda cáustica, destinada a zonas de difícil distribuição e abastecimento.
+Referência legislativa
+
+Emenda Constitucional nº 1/1969, art. 20, I. Decreto-Lei nº 730/1969, art. 5º. Resolução do Conselho de Política Aduaneira nº 640/1969. Comunicado nº 269/1969, CACEX.
+
+Súmula 375
+keyboard_double_arrow_down
+file_copy
+Aprovação: 03/04/1964
+Ramo do Direito: Civil
+Enunciado
+Não renovada a locação regida pelo D. 24.150, de 20.4.34, aplica-se o direito comum e não a legislação especial do inquilinato.
+Precedentes
+
+RE 48839 ED-EI Publicações: DJ de 10/10/1963 RTJ 30/229
+RE 49459 Publicações: DJ de 18/04/1963 RTJ 23/389
+RE 51708 Publicação: DJ de 03/04/1963
+RE 46765 EDv Publicações: DJ de 24/05/1962 RTJ 22/269
+RE 28427 EI Publicações: DJ de 12/04/1962 RTJ 22/184
+RE 48839 Publicação: DJ de 30/11/1961
+RE 46343 Publicações: DJ de 26/10/1961 RTJ 20/262
+RE 47854 Publicações: DJ de 19/10/1961 RTJ 20/305
+RE 44600 EI Publicação: DJ de 27/07/1961
+RE 46123 Publicações: DJ de 08/06/1961 RTJ 18/260
+RE 43412 Publicação: DJ de 19/10/1960
+
+Página
+de 1
+1
+Reiniciar pesquisa
+Pesquisar
+Pesquisa avançada
+Com base no Tesauro do STF, também serão considerados sinônimos dos termos pesquisados.
+Serão considerados tanto o plural quanto o singular dos termos pesquisados.
+Copiar link da pesquisa
+Esta base contém apenas decisões selecionadas
+Colapsar
+Exportar para excel
+Exportar para CSV
+Copiar resultado
+Dados completos
+Expandir espelho
+Expandir
+Colapsar ocorrências
+Serão consideradas todas as palavras que compartilham os mesmos radicais dos termos pesquisados. Exemplo: uma busca por “indenização” retornará “indenizada”, “indenizar”, “indenizações” etc.
+Dentro das aspas, serão desativadas a busca por sinônimos e a busca por radicais.
+Todos os termos devem necessariamente aparecer no documento. Exemplo: direitos E humanos. Por se tratar do operador padrão, não é necessário explicitar o E na expressão de busca.
+Ao menos um dos termos deve aparecer no documento. Exemplo: droga OU entorpecente.
+O termo não pode aparecer no documento. Exemplo: prisão NÃO preventiva.
+Os termos devem aparecer no documento na exata ordem e com a exata grafia indicadas. Exemplo: "princípio da presunção de inocência". Além disso, os termos entre aspas perdem a função de operadores. Exemplo: presunção de "não" culpabilidade.
+Os termos podem aparecer no documento em qualquer ordem, desde que estejam separados, no máximo, pelo número de palavras indicado após o til. Exemplo: "provimento cargo"~5. Dentro dessa estrutura (aspas duplas + til), os únicos operadores admitidos são o OU e os parênteses; todos os demais (E, NÃO, ~, $, ?) são anulados.
+Quando posicionado logo após determinada palavra, o til permite o resgate de documentos que contenham pequenas variações do termo pesquisado. Exemplo: indenização~. O número de variações toleradas depende do número de caracteres do termo pesquisado: até 3 caracteres, o operador til não produz nenhum efeito; entre 4 e 6 caracteres, o operador til admite 1 variação; com mais de 6 caracteres, a busca contempla 2 variações. Conta-se como 1 variação: a troca de um caractere por outro (exemplo: de triagem para friagem); a remoção de um caractere (exemplo: de místico para mítico); a inserção de um novo caractere (exemplo: de recorre para recorrer); ou a troca de posição de dois caracteres adjacentes (exemplo: de 598356 para 598365).
+O sinal de dólar substitui um, nenhum ou mais de um caractere no início, no meio ou no final do termo. Exemplo: $constitucional.
+O ponto de interrogação substitui um único caractere no início, no meio ou no final do termo. Exemplo: RE 56394?.
+Os parênteses indicam a ordem de prioridade das operações, quando utilizado mais de um operador. Exemplo: direito E (privacidade OU intimidade).

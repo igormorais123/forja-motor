@@ -1,0 +1,41 @@
+# Dados de caso NUNCA entram aqui — eles vivem em forja-acervo-auditoria.
+_FORJA_HARNESS/state/
+# cache/fontes_oficiais e dado do motor (sumulas verbatim conferidas) e fica.
+_FORJA_HARNESS/telemetria/
+
+# Segredos
+*.env
+*.pickle
+*.pem
+*token*
+*credential*
+*secret*
+
+# Ruído de execução
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+node_modules/
+.venv/
+
+# Acima do limite de 100 MB por arquivo do GitHub
+*.blend
+*.blend1
+
+# Saida gerada a partir de dado de cliente
+gestao_escritorio/data/
+gestao_escritorio/entregas_fabio_osorio/
+gestao_escritorio/logs/
+gestao_escritorio/*.html
+
+# COFRE LOCAL pós-protocolo — não sai desta máquina.
+# A peça efetivamente protocolada, a versão humana final e os diffs integrais
+# contra a nossa são o material mais sensível do acervo. A regra é anterior à
+# separação dos repositórios; 37 desses arquivos vazaram na primeira
+# sincronização e só o teste de reconstituição revelou.
+**/private/post_protocol/
+**/PEÇA PROTOCOLADA — */
+**/VERSÃO HUMANA FINAL — */
+_FORJA_HARNESS/reports/POST_PROTOCOL_LAST_RUN.json
+reports/POST_PROTOCOL_LAST_RUN.json

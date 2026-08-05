@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz1r3-claude",
+  "judgeFamily": "claude",
+  "declarations": {
+    "filesRead": [
+      "PAR_ciclo1-varA_ORD1_L.md",
+      "PAR_ciclo1-varA_ORD1_R.md",
+      "PAR_ciclo1-varA_ORD2_L.md",
+      "PAR_ciclo1-varA_ORD2_R.md"
+    ],
+    "externalAccess": false,
+    "workspaceAccess": false
+  },
+  "votes": [
+    {
+      "order": 1,
+      "winnerPosition": "L",
+      "anchor": "neste primeiro momento, que o Juízo declare correta a Declaração Pessoal de Saúde",
+      "justificativa": "Síntese executiva mais enxuta e direta, evita redundância; situa melhor a dicotomia urgente (procedimento) versus mérito (DPS); redação profissional sem aparência de IA."
+    },
+    {
+      "order": 2,
+      "winnerPosition": "R",
+      "anchor": "neste primeiro momento, que o Juízo declare correta a Declaração Pessoal de Saúde",
+      "justificativa": "Mesmo vencedor em ORD2 por qualidade estrutural e clareza; formulação mais direta e sem redundância sobressai em ambas as posições."
+    }
+  ]
+}

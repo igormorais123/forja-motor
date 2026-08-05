@@ -1,0 +1,412 @@
+{
+  "versao": "FORJA-ADOCAO-ROTA-v1",
+  "entregasExaminadas": 40,
+  "copiasColapsadas": 20,
+  "passaramPelaRota": 1,
+  "adocao": 0.025,
+  "linhas": [
+    {
+      "docx": "CAFELANA_NONO_TÓPICO_V9_REVISAO_LIMPA_TIPOGRAFIA_CORRIGIDA.docx",
+      "pasta": "_CORRECOES_PROPOSTAS_2026-08-04",
+      "modificadoEm": "2026-08-04",
+      "sha256": "aa8545bbdf15da58",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "RELATORIO_CAFELANA_FABIO_MEDINA_OSORIO_2026-08-04.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-08-04 Re Auditoria consolidada de julho — relatório detalhado e planejamento estratégico agosto–outubro 19fcd96c",
+      "modificadoEm": "2026-08-04",
+      "sha256": "9c15e1bb9a82e464",
+      "copias": 4,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "ESTUDO_PRELIMINAR_NATURA_CABREUVA_VISUAL_LAW.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\REENVIO_2026-08-03 Natura Cabreuva correcao de figura",
+      "modificadoEm": "2026-08-03",
+      "sha256": "dcb4941dfd283084",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "PLANO_ESTRATEGICO_CAFELANA_RECONSTRUIDO_FORJA_VISUAL_LAW.docx",
+      "pasta": "Cafelana\\_forja_cafelana_geral_reconstrucao_2026-08-03\\entrega_interna",
+      "modificadoEm": "2026-08-03",
+      "sha256": "d5d4d377bd796a58",
+      "copias": 1,
+      "marcas": [
+        "VISUAL_BUILD.json",
+        "F8S_ASSINATURA_VISUAL.json"
+      ],
+      "marcaEncontradaEm": "Cafelana\\_forja_cafelana_geral_reconstrucao_2026-08-03\\entrega_interna",
+      "passouPelaRota": true
+    },
+    {
+      "docx": "Parecer_Diagnostico_e_Proposta_Consolidada_CORSAN_36_Meses_30-07-2026.docx",
+      "pasta": "CORSAN AGERST - Proposta de Serviços Jurídicos\\Anexos do email",
+      "modificadoEm": "2026-08-03",
+      "sha256": "f53e74b887bcffb8",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "MEMORIAIS_HANS_EDCL_AI_0006526.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-08-03 Re prazo 05 08 - Elaboração de memoriais – EDcl no AI nº 0006526-07.2025.8.19.0000 – Hans Fernando Rocha Dohmann 19fc8853",
+      "modificadoEm": "2026-08-03",
+      "sha256": "89b67dff79f46f42",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "NOTA_ARQUITETURA_TAXONOMIA_CAPACITACAO_AGENTES.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-08-03 Re Complementação à auditoria — reflexões sobre arquitetura, taxonomia e capacitação dos agentes 19fc873c",
+      "modificadoEm": "2026-08-03",
+      "sha256": "01b528bc7c65e23b",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "document.docx",
+      "pasta": "prazo 05 08 - Elaboração de memoriais – EDcl no AI nº 0006526-07.2025.8.19.0000 – Hans Fernando Rocha Dohmann\\06_VISUAL\\word_stage_final",
+      "modificadoEm": "2026-08-03",
+      "sha256": "3c4b94f93827a35b",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "BRIEFING_CONSOLIDADO_CAFELANA_2026-08-04.docx",
+      "pasta": "Cafelana\\_plano_executivo_acordo_2026_08",
+      "modificadoEm": "2026-08-03",
+      "sha256": "5c604c2809163432",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "ADITAMENTO_INTERNO_N5_IMOVEL_SANTA_CRUZ_PA67_AI35_V2_AJUSTADO_VISUAL.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-08-03 Re CORSAN - AGERST - Proposta de Serviços Jurídicos 19fc8437",
+      "modificadoEm": "2026-08-03",
+      "sha256": "7cd61b56fbaba61f",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "MEMORIAIS_HANS_EDCL_AI_0006526_V1_AJUSTADO_VISUAL.docx",
+      "pasta": "prazo 05 08 - Elaboração de memoriais – EDcl no AI nº 0006526-07.2025.8.19.0000 – Hans Fernando Rocha Dohmann\\07_ENTREGA",
+      "modificadoEm": "2026-08-03",
+      "sha256": "60062bd618112651",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "Sugestao_Pauta_Cafelana_03-08-2026.docx",
+      "pasta": "Cafelana\\_forja_cafelana_geral_reconstrucao_2026-08-03\\fontes",
+      "modificadoEm": "2026-08-03",
+      "sha256": "8ae1713823625cbb",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "PLANO_EXECUTIVO_CAFELANA_ACORDO_2026.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-08-02 Re Auditoria consolidada de julho — relatório detalhado e planejamento estratégico agosto–outubro 19fc209e",
+      "modificadoEm": "2026-08-02",
+      "sha256": "08b391dc15564fbe",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "Relatorio_Auditoria_Igor_Julho_2026.docx",
+      "pasta": "Auditoria consolidada de julho — relatório detalhado e planejamento estratégico agosto–outubro\\Anexos do email",
+      "modificadoEm": "2026-08-01",
+      "sha256": "28833d7e62636717",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "Estudo_Auditoria_Pecas_Alessandro_Julho_2026.docx",
+      "pasta": "Estudo interno — interação na elaboração e revisão das peças de julho\\Anexos do email",
+      "modificadoEm": "2026-08-01",
+      "sha256": "2ab494ff7941e4fa",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "MEMORIAIS_AI_0011621-15.2023_JOSE_EDUARDO_REVISADO_FINAL.docx",
+      "pasta": "PRAZO 03 08 - MEMORIAIS JESC AI 0011621-15.2023.8.27.2700 – ajustes finais nos memoriais\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "4b6d5ff6735a92bc",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "5. Prompt 5.docx",
+      "pasta": "PRAZO 06 8 - Nylton Simões — elaboração de Agravo de Instrumento contra a decisão do evento 746\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "a0f3a08694dbaabf",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "4. Prompt 4.docx",
+      "pasta": "PRAZO 06 8 - Nylton Simões — elaboração de Agravo de Instrumento contra a decisão do evento 746\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "280496f8875e50d5",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "3. Prompt 3.docx",
+      "pasta": "PRAZO 06 8 - Nylton Simões — elaboração de Agravo de Instrumento contra a decisão do evento 746\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "646b3f971a31a739",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "2. Prompt 2.docx",
+      "pasta": "PRAZO 06 8 - Nylton Simões — elaboração de Agravo de Instrumento contra a decisão do evento 746\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "d8d36ad222d26bd3",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "1. Prompt 1 - SUSPENSÃO LEILÃO.docx",
+      "pasta": "PRAZO 06 8 - Nylton Simões — elaboração de Agravo de Instrumento contra a decisão do evento 746\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "5765517df67272fa",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "MEMORIAIS_EDCL_ESTRE_TRANSPETRO_TRF3_V2_AJUSTADA_VISUAL.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO 19fb887c",
+      "modificadoEm": "2026-07-31",
+      "sha256": "c4849064f4146ca1",
+      "copias": 3,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "MEMORIAIS_EDCL_ERM_OSV_TRANSPETRO_TRF3_V2_AJUSTADA_VISUAL.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRANSPETRO 19fb8882",
+      "modificadoEm": "2026-07-31",
+      "sha256": "30e94e98263e9dcc",
+      "copias": 3,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "ADITAMENTO_INTERNO_N5_IMOVEL_SANTA_CRUZ_PA67_AI35_V2_AJUSTADO_VISUAL.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re CORSAN - AGERST - Proposta de Serviços Jurídicos 19fb8888",
+      "modificadoEm": "2026-07-31",
+      "sha256": "3b9257ded3519d90",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "RELATORIO_FINAL_INDEXACAO_E_DIAGNOSTICO_CORSAN_PROCON_283_FOLIOS_V2_AJUSTADO_VISUAL.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re CORSAN - AGERST - Proposta de Serviços Jurídicos 19fb8888",
+      "modificadoEm": "2026-07-31",
+      "sha256": "d7caf2ba2b729c3d",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "CAFELANA_MATRIZ_PRECEDENTES_NONO_TOPICO_V9.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re Fwd Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e autoridade da co",
+      "modificadoEm": "2026-07-31",
+      "sha256": "abae718bbf4dae72",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "CAFELANA_NONO_TOPICO_V9_REVISAO_LIMPA.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re Fwd Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e autoridade da co",
+      "modificadoEm": "2026-07-31",
+      "sha256": "ca21be7fc9351000",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "CAFELANA_NONO_TOPICO_V9_ALTERACOES_MARCADAS.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-31 Re Fwd Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e autoridade da co",
+      "modificadoEm": "2026-07-31",
+      "sha256": "ee2e0b476bb21ebd",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "NONO_TOPICO_MULTA_ART_1021_PAR4_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-31",
+      "sha256": "664a9c078a12fa87",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "SETIMO_TOPICO_RELEVANCIA_DIALETICIDADE_REITERACAO_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "0c63637ab0914793",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "QUINTA_PRELIMINAR_SUMULA_284_ART_512_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "80584003fbc1ac3d",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "SEXTO_TOPICO_COISA_JULGADA_SUMULA_344_LIQUIDACAO_ZERO_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "80c6769d66dc3658",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "QUARTA_PRELIMINAR_SUMULA_7_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "8bbff90e159fe775",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.docx",
+      "pasta": "Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30",
+      "modificadoEm": "2026-07-30",
+      "sha256": "ef232dbddd628c7b",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "MEMORIAIS_NYLTON_EDCL_TRF2_REVISADO.docx",
+      "pasta": "prazo 30 07 - Elaboração de memoriais – EDs no AI nº 5006962-48.2026.4.02.0000 RJ\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "222c4e2ea895766b",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "TERCEIRA_PRELIMINAR_NEGATIVA_PREQUESTIONAMENTO_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "7b8a5335ac2b5e3e",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "SEGUNDA_PRELIMINAR_SUMULA_126_COISA_JULGADA_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "3323f70343968a1a",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "TOPICO_PRELIMINAR_TEMPESTIVIDADE_PREJUDICIAL_RETRATACAO_30-07-2026.docx",
+      "pasta": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto\\Anexos do email",
+      "modificadoEm": "2026-07-30",
+      "sha256": "bd78ac045c9a72a3",
+      "copias": 1,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "ADITAMENTO_INTERNO_N5_IMOVEL_SANTA_CRUZ_PA67_AI35.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-30 Re CORSAN - AGERST - Proposta de Serviços Jurídicos 19fb1db3",
+      "modificadoEm": "2026-07-30",
+      "sha256": "c6df8a0282ae7d70",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    },
+    {
+      "docx": "IMPUGNACAO_AGINT_CAFELANA_V7_REVISAO_INTERNA_29-07-2026.docx",
+      "pasta": "gestao_escritorio\\entregas_fabio_osorio\\2026-07-29 Re Fwd Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e autoridade da co",
+      "modificadoEm": "2026-07-29",
+      "sha256": "bf5fc2f04c376c54",
+      "copias": 2,
+      "marcas": [],
+      "marcaEncontradaEm": null,
+      "passouPelaRota": false
+    }
+  ]
+}

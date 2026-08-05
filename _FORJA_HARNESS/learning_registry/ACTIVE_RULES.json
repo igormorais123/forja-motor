@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "rules": [
+    {
+      "ruleId": "rule-learn-b80a07dd026116a8",
+      "candidateId": "learn-b80a07dd026116a8",
+      "sourceCaseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+      "scope": "product_type",
+      "scopeKey": "memoriais de apelação",
+      "layer": "reasoning",
+      "cause": "reasoning",
+      "impact": "material",
+      "behaviorCode": "require_regression_test:reasoning",
+      "fixtureId": "n4_fixtures\\post_protocol\\devolved_chapters_memoriais_apelacao.json",
+      "testId": "test_forja_post_protocol.py::LearningRegistryTests::test_devolved_chapters_fixture_is_machine_readable",
+      "testExecutionHash": "9f2c237d2dfeea247d5fafeb174813d3ce9f346c781cface211407c9d7596865",
+      "approvedBy": "office-email:19f5cb168a52b35e",
+      "active": true,
+      "promotedAt": "2026-07-29T01:08:36-03:00",
+      "ruleHash": "62f9975c1f7de391055c491922b98e18e4c12565f64933e5a7f99716a21ef051"
+    }
+  ],
+  "updatedAt": "2026-07-29T01:09:12-03:00",
+  "contentHash": "742dee11069c64bae12bea0711c130778a168251a697ee0c06f7c7be91dc9a9b"
+}

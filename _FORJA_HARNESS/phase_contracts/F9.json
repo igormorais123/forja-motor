@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "phase": "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+  "order": 9,
+  "producerRole": "forja-fechador",
+  "reviewerRole": "forja-package-auditor",
+  "requiredInputs": ["f7_gate_result", "verified_source_ledger", "context_validation", "docx", "visual_qa_ledger", "format_fidelity", "visual_build_manifest", "audit_memory_manifest", "audit_memory_markdown", "audit_memory_html"],
+  "requiredOutputs": ["package_manifest", "email_response", "audit_memory_manifest", "audit_memory_markdown", "audit_memory_html"],
+  "requiredGates": ["hashes_current", "release_policy_satisfied", "attachments_exact", "email_claims_true", "email_human_style_passed"],
+  "nextPhase": "F10_ENTREGA_EVIDENCIA_APRENDIZADO",
+  "retryPolicy": {"maxAttempts": 2, "idempotent": true}
+}

@@ -1,0 +1,1189 @@
+[
+  {
+    "schemaVersion": 1,
+    "artifactType": "F7_SEMANTIC_MUTATION",
+    "generatedAt": "2026-08-05T02:22:44-03:00",
+    "draft": "state\\case-email-auto-19f3f25cb64df962\\n4_cycle_m6\\CANONICAL_TEXT_FROM_FINAL_DOCX.txt",
+    "semanticMutationScore": 0.0,
+    "alvo": 0.8,
+    "suiteValida": false,
+    "suiteReprovaOriginal": "CT-V8-001",
+    "aprovado": false,
+    "aplicaveis": 14,
+    "mortos": 0,
+    "porFamilia": {
+      "S1_inversao_tese": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S2_troca_de_parte": {
+        "aplicaveis": 4,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S3_valor_ou_data": {
+        "aplicaveis": 4,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S4_troca_de_pedido": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S5_sobreabstracao": {
+        "aplicaveis": 4,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S6_deturpacao_precedente": {
+        "aplicaveis": 2,
+        "mortos": 0,
+        "score": 0.0
+      }
+    },
+    "familiasAbaixoDoAlvo": [
+      "S2_troca_de_parte",
+      "S3_valor_ou_data",
+      "S5_sobreabstracao",
+      "S6_deturpacao_precedente"
+    ],
+    "controlesBenignos": [
+      {
+        "controle": "neutro_adverbio",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "controlesMortos": [],
+    "mutantes": [
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r1-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bagravad[oa](s)?\\b",
+        "antes": "glutição, respiração e fala), agravada, no caso do Autor, pelas disf",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r1-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bagravad[oa](s)?\\b",
+        "antes": "o, respiração e fala — quadro agravado pelas disfunções sensoriais o",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r6-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bautor(es|a|as)?\\b",
+        "antes": "ações, resume-se a demanda: o Autor, pessoa com deficiência sob c",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r6-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bautor(es|a|as)?\\b",
+        "antes": "a, a reintegração imediata do Autor ao plano e a autorização/cust",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "sileiro, solteiro, nascido em 27/12/2004, inscrito no CPF sob o nº 039",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "ada decretada por sentença de 24/04/2025, proc. nº 0783400-11.2024.8.0",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": "ação da Ré em danos morais de R$ 60.000,00 e as demais providências adia",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": "rita. Postula-se a quantia de R$ 60.000,00 (sessenta mil reais), compatí",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "erial da alegação de omissão: Súmula 609 do STJ, ausência de exame prévio e r",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "olosa não se sustenta.  21. A Súmula 609 do Superior Tribunal de Justi",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r2-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bart(?:igo)?\\.?\\s*[\\d\\.]+(?:,\\s*(?:§\\s*\\d+º?|inciso\\s+[IVXL]+|caput))?\\s*(?:do|da)\\s*(?:CPC|CC|CF|CDC|Código de Processo Civil|Código Civil)",
+        "antes": "s e representantes autônomos (art. 34 do CDC: \"O fornecedor do produto ou ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r2-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bart(?:igo)?\\.?\\s*[\\d\\.]+(?:,\\s*(?:§\\s*\\d+º?|inciso\\s+[IVXL]+|caput))?\\s*(?:do|da)\\s*(?:CPC|CC|CF|CDC|Código de Processo Civil|Código Civil)",
+        "antes": "r (arts. 14 e 51, IV, do CDC; art. 422 do Código Civil).  24. Nem socorre a Ré o art",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "erial da alegação de omissão: Súmula 609 do STJ, ausência de exame prévio e r",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o1",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "por entidades de autogestão\" (Súmula 608 do STJ) — e a Ré não é autogestão. O",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "caseId": "case-email-auto-19f3f25cb64df962",
+    "suite": "state\\case-email-auto-19f3f25cb64df962\\n4_artifacts\\F4_CASE_ACCEPTANCE_TESTS.json"
+  },
+  {
+    "schemaVersion": 1,
+    "artifactType": "F7_SEMANTIC_MUTATION",
+    "generatedAt": "2026-08-05T02:22:44-03:00",
+    "draft": "state\\case-email-azimut-19f3ed5bdbdcf159\\producao\\MEMORIAL_AZIMUT_RESP_2237713.md",
+    "semanticMutationScore": 0.0,
+    "alvo": 0.8,
+    "suiteValida": true,
+    "suiteReprovaOriginal": null,
+    "aprovado": false,
+    "aplicaveis": 21,
+    "mortos": 0,
+    "porFamilia": {
+      "S1_inversao_tese": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S2_troca_de_parte": {
+        "aplicaveis": 6,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S3_valor_ou_data": {
+        "aplicaveis": 6,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S4_troca_de_pedido": {
+        "aplicaveis": 3,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S5_sobreabstracao": {
+        "aplicaveis": 6,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S6_deturpacao_precedente": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      }
+    },
+    "familiasAbaixoDoAlvo": [
+      "S2_troca_de_parte",
+      "S3_valor_ou_data",
+      "S4_troca_de_pedido",
+      "S5_sobreabstracao"
+    ],
+    "controlesBenignos": [
+      {
+        "controle": "neutro_conectivo2",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "controlesMortos": [],
+    "mutantes": [
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r8-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bexequente(s)?\\b",
+        "antes": "al que a não reproduziu. Se a exequente entendia aplicável taxa conve",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r8-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bexequente(s)?\\b",
+        "antes": " não o critério unilateral da exequente — que delimita a execução. [V",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r10-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\brecorrente(s)?\\b",
+        "antes": "Registro nº 2023/0448436-0) **Recorrente:** AZIMUT DO BRASIL FABRICAÇÃ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r10-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\brecorrente(s)?\\b",
+        "antes": "egal (Selic), como sustenta a recorrente, ou se juros de 1% ao mês cum",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r11-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\brecorrid[oa](s)?\\b",
+        "antes": "L FABRICAÇÃO DE IATES LTDA. **Recorrida:** BRADESCO AUTO/RE COMPANHIA",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r11-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\brecorrid[oa](s)?\\b",
+        "antes": " na execução e defendido pela recorrida.  2. Essa exata questão acaba",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "esencial da Terceira Turma de 18/08/2026 ## SÍNTESE (art. 343-A do RIS",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "REsp 2.199.164/PR, julgado em 15/10/2025, acórdão publicado em 20/10/2",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": "netária, alcançou bloqueio de R$ 41.376.950,92 (junho de 2022), a partir de ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": "tir de condenação original de R$ 10.500.000,00. Pelos fatores oficiais da Se",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r3-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,3}(?:[\\.,]\\d)?) ?%",
+        "antes": " a recorrente, ou se juros de 1% ao mês cumulados com correção",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r3-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,3}(?:[\\.,]\\d)?) ?%",
+        "antes": "cução provisória, calculada a 1% ao mês com cumulação de corre",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r0-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprovimento\\b",
+        "antes": "7, III, 1.039 e 1.040), com o provimento do recurso especial. ## VI. P",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r0-o1",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprovimento\\b",
+        "antes": "xposto, a recorrente pede o **provimento do Recurso Especial** para:  ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r4-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bacolhimento\\b",
+        "antes": "á conhece — e que culminou no acolhimento dos embargos de declaração, c",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r0-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\b(?:AREsp|AgInt no AREsp|REsp|AgRg no REsp|RE|ARE)\\s*(?:n[ºo.]?\\s*)?[\\d\\.\\-–]+(?:/[A-Z]{2})?",
+        "antes": "713/SP** (autuação originária AREsp nº 2.524.880/SP — Registro nº 2023/0448436-0)",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r0-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\b(?:AREsp|AgInt no AREsp|REsp|AgRg no REsp|RE|ARE)\\s*(?:n[ºo.]?\\s*)?[\\d\\.\\-–]+(?:/[A-Z]{2})?",
+        "antes": " no **Tema Repetitivo 1368** (REsp 2.199.164/PR, julgado em 15/10/2025, acórd",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "a Corte que releia cláusulas (Súmula 5) nem que reexamine provas (Sú",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": " 5) nem que reexamine provas (Súmula 7): os fatos são incontroversos",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r2-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bart(?:igo)?\\.?\\s*[\\d\\.]+(?:,\\s*(?:§\\s*\\d+º?|inciso\\s+[IVXL]+|caput))?\\s*(?:do|da)\\s*(?:CPC|CC|CF|CDC|Código de Processo Civil|Código Civil)",
+        "antes": "icável à condenação, à luz do art. 406 do Código Civil na redação anterior à Lei nº ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r2-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bart(?:igo)?\\.?\\s*[\\d\\.]+(?:,\\s*(?:§\\s*\\d+º?|inciso\\s+[IVXL]+|caput))?\\s*(?:do|da)\\s*(?:CPC|CC|CF|CDC|Código de Processo Civil|Código Civil)",
+        "antes": "), firmou-se a tese de que \"o art. 406 do Código Civil de 2002, antes da entrada em ",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "caseId": "case-email-azimut-19f3ed5bdbdcf159",
+    "suite": null
+  },
+  {
+    "schemaVersion": 1,
+    "artifactType": "F7_SEMANTIC_MUTATION",
+    "generatedAt": "2026-08-05T02:22:46-03:00",
+    "draft": "state\\case-email-corsan-agerst-19f3dc9ff92081cd\\producao\\DIAGNOSTICO_CORSAN_AGERST.md",
+    "semanticMutationScore": 0.0,
+    "alvo": 0.8,
+    "suiteValida": true,
+    "suiteReprovaOriginal": null,
+    "aprovado": false,
+    "aplicaveis": 12,
+    "mortos": 0,
+    "porFamilia": {
+      "S1_inversao_tese": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S2_troca_de_parte": {
+        "aplicaveis": 2,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S3_valor_ou_data": {
+        "aplicaveis": 7,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S4_troca_de_pedido": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S5_sobreabstracao": {
+        "aplicaveis": 2,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S6_deturpacao_precedente": {
+        "aplicaveis": 1,
+        "mortos": 0,
+        "score": 0.0
+      }
+    },
+    "familiasAbaixoDoAlvo": [
+      "S2_troca_de_parte",
+      "S3_valor_ou_data",
+      "S5_sobreabstracao",
+      "S6_deturpacao_precedente"
+    ],
+    "controlesBenignos": [],
+    "controlesMortos": [],
+    "mutantes": [
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r6-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bautor(es|a|as)?\\b",
+        "antes": "ico 0491/2026 (114 páginas) — autor Jefferson Zanette; data 17/06",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r6-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bautor(es|a|as)?\\b",
+        "antes": "rocurador Jefferson Zanette é autor de Parecer 0491/2026 e respon",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "unicipal Jefferson Zanette em 17 de junho de 2026, aponta a nulidade absoluta d",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "ico 0491/2026 foi assinado em 17 de junho de 2026 pelo Procurador Municipal Jef",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": " especificar (Edital expedido 06/07/2026).  **Análise preliminar com d",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "tividade — Resolução 69/2024 (04/09/2024) homologou TAACC \"com ressalv",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": "lão 01/2022 Item 4.18 (valor: R$ 4.104.152.317,84).  **Fato 4:** Resolução AGER",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r3-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,3}(?:[\\.,]\\d)?) ?%",
+        "antes": "tação acessada localmente (30-40% do acervo total):**  **AÇÃO I",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r3-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,3}(?:[\\.,]\\d)?) ?%",
+        "antes": ", probabilidade de perda é 60-70%. Com ação (Medidas 2A-2C), ne",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "al 9.316/2023, ADI 2095 STF e Súmula 473 STF. Minuta de Resolução AGER",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": " referenciada, ADI 2095 STF e Súmula 473 STF referenciadas). **Faltand",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r2-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\bconsolidou\\b",
+        "antes": "ÉDIA-ALTA. Jurisprudência não consolidou resposta; depende de interpre",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "caseId": "case-email-corsan-agerst-19f3dc9ff92081cd",
+    "suite": null
+  },
+  {
+    "schemaVersion": 1,
+    "artifactType": "F7_SEMANTIC_MUTATION",
+    "generatedAt": "2026-08-05T02:22:46-03:00",
+    "draft": "state\\case-email-libra-sul-agint-stj-19f3c9350d875062\\n4_cycle_m6\\CANONICAL_TEXT_FROM_FINAL_DOCX.txt",
+    "semanticMutationScore": 0.2,
+    "alvo": 0.8,
+    "suiteValida": true,
+    "suiteReprovaOriginal": null,
+    "aprovado": false,
+    "aplicaveis": 20,
+    "mortos": 4,
+    "porFamilia": {
+      "S1_inversao_tese": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S2_troca_de_parte": {
+        "aplicaveis": 6,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S3_valor_ou_data": {
+        "aplicaveis": 2,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S4_troca_de_pedido": {
+        "aplicaveis": 5,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S5_sobreabstracao": {
+        "aplicaveis": 3,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S6_deturpacao_precedente": {
+        "aplicaveis": 4,
+        "mortos": 4,
+        "score": 1.0
+      }
+    },
+    "familiasAbaixoDoAlvo": [
+      "S2_troca_de_parte",
+      "S3_valor_ou_data",
+      "S4_troca_de_pedido",
+      "S5_sobreabstracao"
+    ],
+    "controlesBenignos": [
+      {
+        "controle": "neutro_adverbio",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "controlesMortos": [],
+    "mutantes": [
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r0-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bagravante(s)?\\b",
+        "antes": "SUPERIOR TRIBUNAL DE JUSTIÇA  Agravante: AGÊNCIA NACIONAL DE TRANSPOR",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r0-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bagravante(s)?\\b",
+        "antes": "da pelo que é: uma posição da agravante, não um fato liquidado. O acó",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r1-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bagravad[oa](s)?\\b",
+        "antes": "NSPORTES AQUAVIÁRIOS — ANTAQ  Agravados: LIBRA SUL S.A., ALEXANDRE JO",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r1-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bagravad[oa](s)?\\b",
+        "antes": "etende remover.  1. A decisão agravada conheceu do agravo em recurso",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r10-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\brecorrente(s)?\\b",
+        "antes": "nte jurídica por afirmação da recorrente.  7. A ANTAQ afirma que prete",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r11-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\brecorrid[oa](s)?\\b",
+        "antes": "oder concedente | A conclusão recorrida resulta também do contrato de",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "ção da decisão monocrática de 12 de fevereiro de 2026;  •  SEM PREJUÍZO, O NÃO CONH",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "em deferimento.  Brasília/DF, 10 de julho de 2026.  FÁBIO MEDINA OSÓRIO  OAB/DF",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r0-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprovimento\\b",
+        "antes": " e, nessa extensão, negou-lhe provimento. O julgamento não se apoiou e",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r1-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bdesprovimento\\b",
+        "antes": "cial do recurso especial e ao desprovimento da extensão conhecida.  MEMOR",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r1-o1",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bdesprovimento\\b",
+        "antes": "DIDOS  O pedido principal é o desprovimento; a dialeticidade é usada apen",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r4-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bacolhimento\\b",
+        "antes": "mento da indisponibilidade ao acolhimento dos capítulos anteriores. Não",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r5-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bpedido principal\\b",
+        "antes": " VII — CONCLUSÃO E PEDIDOS  O pedido principal é o desprovimento; a dialetic",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r0-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\b(?:AREsp|AgInt no AREsp|REsp|AgRg no REsp|RE|ARE)\\s*(?:n[ºo.]?\\s*)?[\\d\\.\\-–]+(?:/[A-Z]{2})?",
+        "antes": "/DF 29.786  Agravo Interno no AREsp nº 2.578.181/SC  SÍNTESE DOS PONTOS ESSENCIAI",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "u as Súmulas 5 e 7 do STJ e a Súmula 283 do STF. Quanto aos corréus, preservo",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "amente o campo protegido pela Súmula 5 do STJ: a simples interpretação de c",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "amente o campo protegido pela Súmula 5 do STJ: a simples interpretação de c",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o1",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "oncretas. Incide, portanto, a Súmula 7 do STJ, segundo a qual a pretensão d",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r5-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STF\\b",
+        "antes": "u as Súmulas 5 e 7 do STJ e a Súmula 283 do STF. Quanto aos corréus, preservo",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r5-o1",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STF\\b",
+        "antes": " deficiência demonstrada, e a Súmula 283 do STF opera na extensão em que perm",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      }
+    ],
+    "caseId": "case-email-libra-sul-agint-stj-19f3c9350d875062",
+    "suite": "state\\case-email-libra-sul-agint-stj-19f3c9350d875062\\n4_artifacts\\F4_CASE_ACCEPTANCE_TESTS.json"
+  },
+  {
+    "schemaVersion": 1,
+    "artifactType": "F7_SEMANTIC_MUTATION",
+    "generatedAt": "2026-08-05T02:22:47-03:00",
+    "draft": "state\\case-email-natura-cabreuva-19f3991ebc75fe03\\producao\\ESTUDO_PRELIMINAR_NATURA_CABREUVA.md",
+    "semanticMutationScore": 0.25,
+    "alvo": 0.8,
+    "suiteValida": false,
+    "suiteReprovaOriginal": "TEST-CONTAINS-01",
+    "aprovado": false,
+    "aplicaveis": 12,
+    "mortos": 3,
+    "porFamilia": {
+      "S1_inversao_tese": {
+        "aplicaveis": 2,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S2_troca_de_parte": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S3_valor_ou_data": {
+        "aplicaveis": 4,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S4_troca_de_pedido": {
+        "aplicaveis": 1,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S5_sobreabstracao": {
+        "aplicaveis": 2,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S6_deturpacao_precedente": {
+        "aplicaveis": 3,
+        "mortos": 3,
+        "score": 1.0
+      }
+    },
+    "familiasAbaixoDoAlvo": [
+      "S1_inversao_tese",
+      "S3_valor_ou_data",
+      "S4_troca_de_pedido",
+      "S5_sobreabstracao"
+    ],
+    "controlesBenignos": [
+      {
+        "controle": "neutro_adverbio",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "controlesMortos": [],
+    "mutantes": [
+      {
+        "mutationId": "SEM-S1_inversao_tese-r0-o0",
+        "familia": "S1_inversao_tese",
+        "regra": "\\b([EéÉ]) cabível\\b",
+        "antes": " Pública (Súmula 339 do STJ: \"É cabível ação monitória contra a Fazen",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S1_inversao_tese-r1-o0",
+        "familia": "S1_inversao_tese",
+        "regra": "\\b([EéÉ]|são) cabíve(l|is)\\b",
+        "antes": " Pública (Súmula 339 do STJ: \"É cabível ação monitória contra a Fazen",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "pio de Cabreúva/SP  **Data:** 08 de julho de 2026 **Prazo interno da minuta fin",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "zo interno da minuta final:** 20 de julho de 2026 **Status:** arquitetura juríd",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "o no portal oficial do STF em 08/07/2026)).  5. **Quesitos 2 e 3 (prin",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "s no portal oficial do STF em 08/07/2026).  7. **Quesito 7 (se prescri",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r0-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprovimento\\b",
+        "antes": "judicial (inciso IV, mediante provimento do TJ-SP). É medida extrema, ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "tade do prazo (arts. 8º e 9º; Súmula 383 do STF, verbis: \"A prescrição em fav",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "urança não é via de cobrança (Súmula 269 do STF: \"O mandado de segurança não ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "vel contra a Fazenda Pública (Súmula 339 do STJ: \"É cabível ação monitória co",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r5-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STF\\b",
+        "antes": "tade do prazo (arts. 8º e 9º; Súmula 383 do STF, verbis: \"A prescrição em fav",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r5-o1",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STF\\b",
+        "antes": "urança não é via de cobrança (Súmula 269 do STF: \"O mandado de segurança não ",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      }
+    ],
+    "caseId": "case-email-natura-cabreuva-19f3991ebc75fe03",
+    "suite": "state\\case-email-natura-cabreuva-19f3991ebc75fe03\\n4_artifacts\\F4_CASE_ACCEPTANCE_TESTS.json"
+  },
+  {
+    "schemaVersion": 1,
+    "artifactType": "F7_SEMANTIC_MUTATION",
+    "generatedAt": "2026-08-05T02:23:10-03:00",
+    "draft": "state\\case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2\\n4_cycle_m6\\CANONICAL_TEXT_FROM_FINAL_DOCX.txt",
+    "semanticMutationScore": 0.1739,
+    "alvo": 0.8,
+    "suiteValida": true,
+    "suiteReprovaOriginal": null,
+    "aprovado": false,
+    "aplicaveis": 23,
+    "mortos": 4,
+    "porFamilia": {
+      "S1_inversao_tese": {
+        "aplicaveis": 0,
+        "mortos": 0,
+        "score": null
+      },
+      "S2_troca_de_parte": {
+        "aplicaveis": 5,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S3_valor_ou_data": {
+        "aplicaveis": 7,
+        "mortos": 2,
+        "score": 0.2857
+      },
+      "S4_troca_de_pedido": {
+        "aplicaveis": 3,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S5_sobreabstracao": {
+        "aplicaveis": 6,
+        "mortos": 0,
+        "score": 0.0
+      },
+      "S6_deturpacao_precedente": {
+        "aplicaveis": 2,
+        "mortos": 2,
+        "score": 1.0
+      }
+    },
+    "familiasAbaixoDoAlvo": [
+      "S2_troca_de_parte",
+      "S3_valor_ou_data",
+      "S4_troca_de_pedido",
+      "S5_sobreabstracao"
+    ],
+    "controlesBenignos": [
+      {
+        "controle": "neutro_adverbio",
+        "killed": false,
+        "killer": null
+      }
+    ],
+    "controlesMortos": [],
+    "mutantes": [
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r2-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bapelante(s)?\\b",
+        "antes": " DO ESTADO DO RIO DE JANEIRO  Apelantes: PATRICIA GRASSI OSÓRIO e FÁB",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r2-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bapelante(s)?\\b",
+        "antes": "premissas e resultado.  1. Os Apelantes apresentam estes memoriais pa",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r3-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bapelad[oa](s)?\\b",
+        "antes": "OSÓRIO e FÁBIO MEDINA OSÓRIO  Apeladas: POGGENPOHL MÓVEIS PLANEJADOS",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r6-o0",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bautor(es|a|as)?\\b",
+        "antes": "to: saber se R$ 10.000,00 por autor traduz, de modo proporcional,",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S2_troca_de_parte-r6-o1",
+        "familia": "S2_troca_de_parte",
+        "regra": "\\bautor(es|a|as)?\\b",
+        "antes": " O pedido de R$ 50.000,00 por autor é o parâmetro expressamente d",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": " Sessão ordinária presencial: 14 de julho de 2026, às 10h  MEMORIAIS DE APELAÇÃ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r0-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,2} de (?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de )(\\d{4})\\b",
+        "antes": "dem de nova instrução.  4. Em 22 de fevereiro de 2013, os Apelantes contrataram mob",
+        "killed": true,
+        "killer": "case_test:CT-PATRICIA-001"
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "o, Corte Especial, julgado em 21/08/2024, DJe 23/10/2024, definiu a Se",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r1-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{2}/\\d{2}/)(\\d{4})\\b",
+        "antes": "l, julgado em 21/08/2024, DJe 23/10/2024, definiu a Selic como taxa do",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": " recursal é estrito: saber se R$ 10.000,00 por autor traduz, de modo pro",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r2-o1",
+        "familia": "S3_valor_ou_data",
+        "regra": "R\\$ ?(\\d)([\\d\\.]*,\\d{2})",
+        "antes": "esidência pelo valor total de R$ 165.000,00, pago por três cheques de R$ ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S3_valor_ou_data-r3-o0",
+        "familia": "S3_valor_ou_data",
+        "regra": "\\b(\\d{1,3}(?:[\\.,]\\d)?) ?%",
+        "antes": "corresponde a aproximadamente 54,5% do valor total da contratação",
+        "killed": true,
+        "killer": "case_test:CT-PATRICIA-005"
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r0-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprovimento\\b",
+        "antes": "es que esta Colenda Câmara dê provimento à apelação para:  •  (i) MAJO",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r0-o1",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprovimento\\b",
+        "antes": "ESSENCIAIS  SÍNTESE | Objeto: provimento da apelação para majorar os d",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S4_troca_de_pedido-r2-o0",
+        "familia": "S4_troca_de_pedido",
+        "regra": "\\bprocedência\\b",
+        "antes": " DELIMITAÇÃO DO JULGAMENTO  A procedência não é rediscutida: o recurso ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r0-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\b(?:AREsp|AgInt no AREsp|REsp|AgRg no REsp|RE|ARE)\\s*(?:n[ºo.]?\\s*)?[\\d\\.\\-–]+(?:/[A-Z]{2})?",
+        "antes": "l.  17. Quanto aos índices, o REsp 1.795.982/SP, Rel. Min. Luis Felipe Salomã",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r0-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\b(?:AREsp|AgInt no AREsp|REsp|AgRg no REsp|RE|ARE)\\s*(?:n[ºo.]?\\s*)?[\\d\\.\\-–]+(?:/[A-Z]{2})?",
+        "antes": "ime dos consectários legais.  RESP 1.152.541/RS — MÉTODO BIFÁSICO No REsp 1.1",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "de o arbitramento, conforme a Súmula 362 do STJ, e os juros moratórios, por s",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r1-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bSúmula\\s*(?:n[ºo.]?\\s*)?\\d+(?:\\s*(?:do|da|/)\\s*(?:STJ|STF))?",
+        "antes": "ento; juros desde a citação | Súmula 362/STJ e taxa legal aplicável a cada",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r2-o0",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bart(?:igo)?\\.?\\s*[\\d\\.]+(?:,\\s*(?:§\\s*\\d+º?|inciso\\s+[IVXL]+|caput))?\\s*(?:do|da)\\s*(?:CPC|CC|CF|CDC|Código de Processo Civil|Código Civil)",
+        "antes": "esde a citação, nos termos do art. 405 do Código Civil.  17. Quanto aos índices, o R",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S5_sobreabstracao-r2-o1",
+        "familia": "S5_sobreabstracao",
+        "regra": "\\bart(?:igo)?\\.?\\s*[\\d\\.]+(?:,\\s*(?:§\\s*\\d+º?|inciso\\s+[IVXL]+|caput))?\\s*(?:do|da)\\s*(?:CPC|CC|CF|CDC|Código de Processo Civil|Código Civil)",
+        "antes": " definiu a Selic como taxa do art. 406 do Código Civil na redação anterior à Lei nº ",
+        "killed": false,
+        "killer": null
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o0",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "de o arbitramento, conforme a Súmula 362 do STJ, e os juros moratórios, por s",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      },
+      {
+        "mutationId": "SEM-S6_deturpacao_precedente-r4-o1",
+        "familia": "S6_deturpacao_precedente",
+        "regra": "\\b(Súmula\\s*(?:n[ºo.]?\\s*)?\\d+)(\\s*(?:do|/)\\s*)STJ\\b",
+        "antes": "ento; juros desde a citação | Súmula 362/STJ e taxa legal aplicável a cada",
+        "killed": true,
+        "killer": "verificador:G4-sumula"
+      }
+    ],
+    "caseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2"
+  }
+]

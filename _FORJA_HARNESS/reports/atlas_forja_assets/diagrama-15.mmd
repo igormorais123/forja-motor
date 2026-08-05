@@ -1,0 +1,25 @@
+flowchart TB
+    Opponent["Peça adversária integral"] --> Claims["Separar alegações, pedidos e citações"]
+    Claims --> Compare["Comparar com autos, decisões<br/>e manifestações anteriores"]
+    Compare --> Citation["Citação existe, pertence ao julgado<br/>e sustenta a afirmação?"]
+    Compare --> Contradiction["Contradição interna ou com documento?"]
+    Compare --> Omission["Ponto decisivo omitido?"]
+    Compare --> Conduct["Indício de conduta processual relevante?"]
+    Citation --> Refute["Tentar demonstrar que o possível erro não existe"]
+    Contradiction --> Refute
+    Omission --> Refute
+    Conduct --> Refute
+    Refute --> Verdict{"Achado sobrevive?"}
+    Verdict -->|"não"| Discard["Descartar e registrar o alarme incorreto"]
+    Verdict -->|"sim, sem acusação"| Strategy["Usar na resposta e nos pedidos"]
+    Verdict -->|"sim, exige acusação grave"| Cicero["Cícero ou responsável humano aprova a linguagem"]
+    Cicero --> Strategy
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b;
+    classDef challenge fill:#fbf2ec,stroke:#9c5b38,color:#5b3522;
+    classDef human fill:#fff4d8,stroke:#9a6b18,color:#4b370d;
+    classDef blocker fill:#fdecea,stroke:#a33b2b,color:#64251b;
+    class Opponent,Claims,Compare,Citation,Contradiction,Omission,Conduct,Refute,Verdict active;
+    class Strategy challenge;
+    class Cicero human;
+    class Discard blocker;

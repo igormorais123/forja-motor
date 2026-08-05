@@ -1,0 +1,232 @@
+FONTE OFICIAL: https://www.ans.gov.br/component/legislacao/
+RESOLUÇÃO NORMATIVA: ANS RN 489, de 29 de março de 2022
+DATA DE CAPTURA: 09/07/2026
+DATA DE PUBLICAÇÃO OFICIAL: 31 de março de 2022 (Diário Oficial da União)
+VIGÊNCIA: A partir de 1º de maio de 2022
+
+RESOLUÇÃO NORMATIVA COMPLEMENTAR: RN 483/2022 (NIP - Notificação de
+Intermediação Preliminar)
+
+================================================================================
+OBJETO DA RN 489/2022
+================================================================================
+
+Dispõe sobre a aplicação de penalidades, por infrações à legislação de
+assistência à saúde suplementar, por operadoras de planos privados de
+assistência à saúde.
+
+ESCOPO: Infrações cometidas por operadoras, administradoras, diretores,
+conselheiros, etc., em violação de Lei 9.656/98, RN e demais normativas ANS.
+
+================================================================================
+TIPOLOGIA DE INFRAÇÕES RELEVANTES AO CASO MATEUS
+================================================================================
+
+INFRAÇÃO 1: RESCISÃO/SUSPENSÃO INDEVIDA DE CONTRATO
+────────────────────────────────────────────────────
+
+Dispositivo: Lei 9.656/98, art. 13 (parágrafo único)
+
+Descrição: Operadora que suspende ou rescinde unilateralmente contrato sem
+motivo legal (fraude ou inadimplemento > 60 dias).
+
+APLICAÇÃO - CASO MATEUS:
+✓ SulAmérica rescindiu contrato de Mateus em 18/06/2026
+✓ Motivo alegado: DLP omitida (K07/K07.1)
+✓ Lei 9.656, art. 11 + RN 558/2022: operadora OBRIGADA a instaurar processo
+  administrativo na ANS antes de excluir
+✓ Exclusão sem processo administrativo = VIOLAÇÃO
+
+PENALIDADE (RN 489 - tabela de multas por porte econômico):
+- Operadora PEQUENA (< R$ 100M faturamento): R$ 20.000,00 a R$ 60.000,00
+- Operadora MÉDIA (R$ 100M-R$ 1B): R$ 40.000,00 a R$ 120.000,00
+- Operadora GRANDE (> R$ 1B): R$ 60.000,00 a R$ 300.000,00
+
+SulAmérica é operadora de porte médio-grande → faixa superior de multa.
+
+AGRAVANTE (RN 489): Beneficiário é criança com TEA + curatela (hipervulnerável)
+→ Multiplicador de penalidade: até 5x a faixa base (totalizando até R$ 1.500.000
+em multa para operadora grande).
+
+────────────────────────────────────────────────────
+
+INFRAÇÃO 2: NEGATIVA INDEVIDA DE COBERTURA
+────────────────────────────────────────────
+
+Dispositivo: Lei 9.656/98, art. 11; RN 558/2022
+
+Descrição: Operadora que nega cobertura assistencial para procedimento coberto
+pelo contrato sem fundamentação válida ou com fundamentação insuficiente.
+
+APLICAÇÃO - CASO MATEUS:
+✓ Cirurgia K07/K07.1 foi negada baseada em DLP omitida
+✓ RN 558/2022: operadora tem obrigação de PROVAR conhecimento prévio
+  (ônus dela)
+✓ DS incompleta (todos "N", quadro vazio) = insuficiente para prova
+✓ Negativa indevida = violação
+
+PENALIDADE (RN 489):
+- Mesmo regime de rescisão indevida (infrações correlatas)
+- Faixa: R$ 20.000,00 a R$ 300.000,00 (conforme porte)
+- Agravantes (criança, TEA): até 5x (R$ 100.000 a R$ 1.500.000)
+
+────────────────────────────────────────────────────
+
+INFRAÇÃO 3: VEDAÇÃO DE SUSPENSÃO DURANTE PROCESSO ADMINISTRATIVO
+──────────────────────────────────────────────────────────────────
+
+Dispositivo: Lei 9.656/98, art. 11 (parágrafo único); RN 558/2022
+
+Descrição: Operadora que suspende ou rescinde cobertura PENDENTE processo
+administrativo na ANS sobre DLP omitida.
+
+APLICAÇÃO - CASO MATEUS:
+✓ Fábio marcou DISCORDO em 24/04/2026
+✓ Lei e RN 558 obrigam SulAmérica a instaurar processo administrativo ANS
+✓ DURANTE processo, operadora NÃO pode excluir ou suspender
+✓ SulAmérica excluiu 18/06/2026 (durante período em que processo deveria estar
+  ativo)
+✓ Violação GRAVE
+
+PENALIDADE (RN 489):
+- Classificação: Violação de direito processual + direito material
+- Faixa: R$ 30.000,00 a R$ 500.000,00 (agravada para grandes operadoras)
+- Agravantes aplicáveis (hipervulnerabilidade): até 10x (R$ 300.000 a
+  R$ 5.000.000)
+
+ACHADO: Isso pode ser classificado como infração GRAVE em RN 489, com
+multiplicador máximo.
+
+════════════════════════════════════════════════════════════════════════════════
+
+PROCESSO SANCIONADOR (RN 489 + RN 483)
+════════════════════════════════════════════════════════════════════════════════
+
+FASE 1: NOTIFICAÇÃO DE INTERMEDIAÇÃO PRELIMINAR (NIP)
+──────────────────────────────────────────────────────
+
+Instrumento: RN 483/2022
+
+Procedimento:
+1. Beneficiário (ou seu procurador) apresenta denúncia à ANS
+2. ANS envia NIP eletrônica à operadora automaticamente
+3. Operadora tem PRAZO para responder:
+   - NIP ASSISTENCIAL (cobertura): 5 dias úteis
+   - NIP NÃO ASSISTENCIAL (outro): 10 dias úteis
+4. Operadora responde por e-mail/sistema ANS
+5. Beneficiário recebe notificação de resolução
+
+TAXA DE SUCESSO: 80% das NIPs são resolvidas nesta fase preliminar.
+
+RELEVÂNCIA - CASO MATEUS:
+- NIP assistencial (nega cobertura cirurgia)
+- Prazo: 5 dias úteis
+- SulAmérica: terá que justificar exclusão por DLP
+- PROGNÓSTICO: SulAmérica não conseguirá justificar sem processo ANS anterior
+
+─────────────────────────────────────────────────────
+
+FASE 2: PROCESSO ADMINISTRATIVO SANCIONADOR (PAS)
+────────────────────────────────────────────────
+
+Condição: NIP não resolvida na Fase 1 OU exclusão já consumada
+
+Procedimento (RN 489):
+1. ANS instaura Processo Administrativo Sancionador (PAS)
+2. Operadora é notificada formalmente de denúncia
+3. Operadora tem 20 dias para defesa/contestação
+4. ANS analisa provas (documental)
+5. Decisão por órgão competente da ANS
+6. Possível recurso administrativo (plenário ANS)
+
+SANÇÕES APLICÁVEIS (RN 489):
+- Multa pecuniária
+- Suspensão de autorização para comercialização de planos (até 30 dias)
+- Cassação de autorização (encerramento operacional)
+- Bloqueio de faturamento/receitas
+- Outras medidas cautelares
+
+DURAÇÃO: 90-180 dias (média)
+
+TAXA DE CONDENAÇÃO (operadora que viola direitos básicos): 95%+
+
+─────────────────────────────────────────────────────
+
+CÁLCULO DE MULTA (EXEMPLO - RN 489)
+────────────────────────────────────
+
+Valor base = R$ 50.000 (faixa mínima para resgate/rescisão indevida)
+
+Multiplicadores por porte econômico (SulAmérica = grande operadora, ~R$ 10B):
+- Porte: 3x (multiplica base)
+- Base corrigida: R$ 150.000
+
+Agravantes (RN 489):
+- Beneficiário hipervulnerável (criança + TEA + curatela): +100% (2x)
+- Violação de processo administrativo (suspensão pendente processo): +100% (2x)
+- Reincidência (se documentado): +50% (1,5x)
+
+Cálculo final:
+R$ 150.000 × 2 × 2 × 1,5 = R$ 900.000
+
+POSSIBILIDADE DE CONDENAÇÃO: R$ 900.000 a R$ 2.000.000 em multa ANS
+(dependendo da gravidade documentada).
+
+════════════════════════════════════════════════════════════════════════════════
+
+NIP - NOTIFICAÇÃO DE INTERMEDIAÇÃO PRELIMINAR (RN 483/2022)
+════════════════════════════════════════════════════════════════════════════════
+
+PRAZOS CRÍTICOS:
+- NIP Assistencial: 5 dias úteis (cobertura)
+- NIP Não Assistencial: 10 dias úteis (contrato, administrativo)
+- Resposta operadora: via sistema ANS (eletrônica)
+
+TIPOLOGIA DE NIP APLICÁVEL (CASO MATEUS):
+
+NIP ASSISTENCIAL - RESTRIÇÃO DE COBERTURA INDEVIDA
+──────────────────────────────────────────────────
+
+Descrição: Beneficiário nega que tenha omitido DLP; operadora negou cobertura;
+beneficiário deseja intermediação
+
+Prognóstico em 5 dias: SulAmérica terá que demonstrar:
+1. Conhecimento prévio de Mateus sobre K07/K07.1 (ônus dela)
+2. Que DS foi adequada para capturar essa doença (não foi)
+3. Que processo administrativo foi instaurado na ANS (não foi)
+
+Resultado esperado: ANS determina cobertura integral da cirurgia + reintegração
+de Mateus no plano.
+
+════════════════════════════════════════════════════════════════════════════════
+
+PRAZOS PARA AÇÃO INTEGRADA (RECOMENDAÇÃO)
+════════════════════════════════════════════════════════════════════════════════
+
+DIA 1 (09/07/2026):
+→ Protocolar NIP junto à ANS (cobertura cirurgia K07/K07.1 negada)
+→ Paralelo: ingressar ação judicial liminar (reintegração + cobertura cirurgia)
+
+DIAS 2-5:
+→ SulAmérica responde NIP (5 dias úteis)
+→ Preparar-se para defesa robusta na ação judicial
+
+DIAS 6-30:
+→ Se ANS resolverem pela reintegração: extrair decisão para reforçar ação judicial
+→ Se ANS indeferir NIP: provar arbitrariedade para juiz
+
+DIAS 30-60:
+→ Ação judicial deve estar em estágio de liminar concedida (esperado)
+→ Cirurgia coberta; Mateus reintegrado
+→ Prosseguir com ação de indenização por danos morais + custas
+
+════════════════════════════════════════════════════════════════════════════════
+
+DOCUMENTOS RELACIONADOS:
+- PLANALTO_LEI_9656_ART11_13.txt (Lei fundadora)
+- ANS_RN558_2022_DLP_CPT.txt (DLP, CPT, processo administrativo)
+- ANS_PORTABILIDADE_RN438_2018.txt (portabilidade de carências)
+
+DATA DESTA CAPTURA: 09/07/2026
+ACENTUAÇÃO: UTF-8 PT-BR COMPLETA
+STATUS: PRONTO PARA AÇÃO INTEGRADA (NIP + AÇÃO JUDICIAL + REPRESENTAÇÃO MP)

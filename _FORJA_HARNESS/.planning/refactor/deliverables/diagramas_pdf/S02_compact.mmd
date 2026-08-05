@@ -1,0 +1,8 @@
+flowchart TB
+C["Caracterizar comportamento"] --> R["RED: falha planejada"]
+R --> G["GREEN: mudança mínima"]
+G --> F["REFACTOR + suíte ampla"]
+F --> Q{"Afeta Word, pacote ou integração?"}
+Q -->|sim| X["Canário real + telemetria"]
+Q -->|não| Z["Concluir"]
+X --> Z

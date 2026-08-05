@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-canarios-initial",
+  "layer": "public",
+  "classes": [
+    {
+      "id": "placeholder_real",
+      "path": "placeholder_real",
+      "base": "base.md",
+      "mutation": "mutacao.md",
+      "control": "controle_benigno.md",
+      "targetSensor": "I4",
+      "licaoAncora": "Erro recorrente #3 (placeholder no PDF final; lições 12 e 18)",
+      "hashes": {
+        "base": "c6a0229c11c1c824537e09a60de699ba28cc9846ef72ba9cf159a52757a328a5",
+        "mutation": "efad9da3885228719eab779e93e31d80109a3e4f49434f6d9c98b03248c3b9e2",
+        "control": "dce05894be94023cdf8ec3fc15a19eaee66209728103bf175f74cbbcab30e628"
+      }
+    },
+    {
+      "id": "origem_operacional_real",
+      "path": "origem_operacional_real",
+      "base": "base.md",
+      "mutation": "mutacao.md",
+      "control": "controle_benigno.md",
+      "targetSensor": "I6",
+      "licaoAncora": "Feedback Fábio 11/07/2026 (origem operacional nunca aparece na peça)",
+      "hashes": {
+        "base": "c6a0229c11c1c824537e09a60de699ba28cc9846ef72ba9cf159a52757a328a5",
+        "mutation": "d35227837d61de517b80c229c5372b64dc62191e655c85a61bbc48c034379f31",
+        "control": "dce05894be94023cdf8ec3fc15a19eaee66209728103bf175f74cbbcab30e628"
+      }
+    },
+    {
+      "id": "estilo_ia_real",
+      "path": "estilo_ia_real",
+      "base": "base.md",
+      "mutation": "mutacao.md",
+      "control": "controle_benigno.md",
+      "targetSensor": "I5",
+      "licaoAncora": "Lições 5, 12 e 38 (cara de IA; protocolo de escrita humana)",
+      "hashes": {
+        "base": "c6a0229c11c1c824537e09a60de699ba28cc9846ef72ba9cf159a52757a328a5",
+        "mutation": "fa5c118a7d1d89761ea10c438242542c75b02451bc63375bd216ddea6a6e1b3b",
+        "control": "dce05894be94023cdf8ec3fc15a19eaee66209728103bf175f74cbbcab30e628"
+      }
+    },
+    {
+      "id": "sumula_trocada_real",
+      "path": "sumula_trocada_real",
+      "base": "base.md",
+      "mutation": "mutacao.md",
+      "control": "controle_benigno.md",
+      "targetSensor": "I2",
+      "licaoAncora": "Erro recorrente #1 e lição 41 (par súmula×tribunal trocado)",
+      "hashes": {
+        "base": "c6a0229c11c1c824537e09a60de699ba28cc9846ef72ba9cf159a52757a328a5",
+        "mutation": "c29fc9549d98dbb6ce4797adf465fb786a354c77b538bb030ee6694cbf3a9f97",
+        "control": "dce05894be94023cdf8ec3fc15a19eaee66209728103bf175f74cbbcab30e628"
+      }
+    },
+    {
+      "id": "citacao_removida_real",
+      "path": "citacao_removida_real",
+      "base": "base.md",
+      "mutation": "mutacao.md",
+      "control": "controle_benigno.md",
+      "targetSensor": "I1",
+      "licaoAncora": "Erro recorrente #1 (autoridade obrigatória ausente; diretriz 8 — suficiência)",
+      "hashes": {
+        "base": "c6a0229c11c1c824537e09a60de699ba28cc9846ef72ba9cf159a52757a328a5",
+        "mutation": "f58cca405b6bcffd13db2792f7d4e7094e9ddb1ae371745029d33cb3a1ca6928",
+        "control": "dce05894be94023cdf8ec3fc15a19eaee66209728103bf175f74cbbcab30e628"
+      },
+      "context": {
+        "authorities_ledger": [
+          {
+            "rotulo": "Súmula 7",
+            "aliases": [
+              "Súmula 7"
+            ],
+            "required": true,
+            "verified": true
+          },
+          {
+            "rotulo": "AREsp",
+            "aliases": [
+              "AREsp"
+            ],
+            "required": true,
+            "verified": true
+          }
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "EXEMPLO-I4-PLACEHOLDER",
+      "path": "exemplo_placeholder",
+      "targetSensor": "I4",
+      "base": "base.md",
+      "mutation": "mutacao.md",
+      "control": "controle_benigno.md",
+      "singleFailure": "placeholder nominal sintético",
+      "internal_working": true,
+      "context": {},
+      "hashes": {
+        "base": "62384f668e12906a8f746a20605469affe684da3bf0180c10f7f9a58a6dbd72b",
+        "mutation": "3049b230a848039ea308e434c5c1b478649fc57795570dbc121cfde131af9d93",
+        "control": "1259f1b8a7b6a2a79164cdf5f6e602a5bd1e38d129da6d5a92b4c167fc1ea84a"
+      }
+    }
+  ]
+}

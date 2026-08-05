@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "methodVersion": "PSO-PET-1.0",
+  "generatedAt": "2026-07-11T18:35:12-03:00",
+  "summary": {
+    "casesAudited": 4,
+    "psoPlansMeasured": 0,
+    "methodDimensionsNotMeasured": 32,
+    "circularEvidenceCases": 3,
+    "retrospectiveOnlyCases": 3,
+    "literalOnlyCases": 4,
+    "councilPendingCases": 3,
+    "sourceBlockedCases": 1,
+    "newActionableSignals": 14,
+    "semanticMutationRecall": 1.0,
+    "falseBlockingRate": 0.0
+  },
+  "mutationBenchmark": {
+    "mutations": 13,
+    "detected": 13,
+    "semanticMutationRecall": 1.0,
+    "benignControls": 5,
+    "falseBlockingRate": 0.0,
+    "specificity": 1.0,
+    "mutationResults": [
+      {
+        "name": "missing_input_evidence",
+        "expected": "PSO-SOURCE-MISSING",
+        "detected": true,
+        "codes": [
+          "PSO-SOURCE-MISSING"
+        ]
+      },
+      {
+        "name": "output_as_input_evidence",
+        "expected": "PSO-SOURCE-CIRCULAR",
+        "detected": true,
+        "codes": [
+          "PSO-SOURCE-CIRCULAR"
+        ]
+      },
+      {
+        "name": "no_problem_gap",
+        "expected": "PSO-PROBLEM-NO-GAP",
+        "detected": true,
+        "codes": [
+          "PSO-PROBLEM-NO-GAP"
+        ]
+      },
+      {
+        "name": "outcome_conflation",
+        "expected": "PSO-PROBLEM-OUTCOME-CONFLATION",
+        "detected": true,
+        "codes": [
+          "PSO-PROBLEM-OUTCOME-CONFLATION"
+        ]
+      },
+      {
+        "name": "missing_diagnostic_story",
+        "expected": "PSO-DIAG-STORY",
+        "detected": true,
+        "codes": [
+          "PSO-DIAG-STORY"
+        ]
+      },
+      {
+        "name": "missing_rival",
+        "expected": "PSO-DIAG-RIVAL",
+        "detected": true,
+        "codes": [
+          "PSO-DIAG-RIVAL"
+        ]
+      },
+      {
+        "name": "duplicate_option",
+        "expected": "PSO-OPTION-DUPLICATE",
+        "detected": true,
+        "codes": [
+          "PSO-OPTION-DUPLICATE"
+        ]
+      },
+      {
+        "name": "single_option",
+        "expected": "PSO-OPTION-ALTERNATIVES",
+        "detected": true,
+        "codes": [
+          "PSO-OPTION-ALTERNATIVES"
+        ]
+      },
+      {
+        "name": "missing_requirement_trace",
+        "expected": "PSO-TRACE-MISSING",
+        "detected": true,
+        "codes": [
+          "PSO-TRACE-MISSING"
+        ]
+      },
+      {
+        "name": "invalid_selection",
+        "expected": "PSO-SELECTION-ID",
+        "detected": true,
+        "codes": [
+          "PSO-SELECTION-ID"
+        ]
+      },
+      {
+        "name": "missing_best_objection",
+        "expected": "PSO-VALIDATION-OBJECTION",
+        "detected": true,
+        "codes": [
+          "PSO-VALIDATION-OBJECTION"
+        ]
+      },
+      {
+        "name": "context_dump",
+        "expected": "PSO-CONTEXT-BLOAT",
+        "detected": true,
+        "codes": [
+          "PSO-CONTEXT-BLOAT"
+        ]
+      },
+      {
+        "name": "temporal_fraud",
+        "expected": "PSO-TIME-ORDER",
+        "detected": true,
+        "codes": [
+          "PSO-TIME-ORDER"
+        ]
+      }
+    ],
+    "benignResults": [
+      {
+        "name": "benign_1",
+        "falseP0": false,
+        "codes": []
+      },
+      {
+        "name": "benign_2",
+        "falseP0": false,
+        "codes": []
+      },
+      {
+        "name": "benign_3",
+        "falseP0": false,
+        "codes": []
+      },
+      {
+        "name": "benign_4",
+        "falseP0": false,
+        "codes": []
+      },
+      {
+        "name": "benign_5",
+        "falseP0": false,
+        "codes": []
+      }
+    ]
+  },
+  "cases": [
+    {
+      "schemaVersion": 1,
+      "methodVersion": "PSO-PET-1.0",
+      "generatedAt": "2026-07-11T18:35:12-03:00",
+      "caseId": "case-email-auto-19f3f25cb64df962",
+      "methodStatus": "not_measured",
+      "readOnlyAudit": true,
+      "proxies": {
+        "questions": 5,
+        "circularQuestionSupport": [
+          "Q-001"
+        ],
+        "thesisCount": 1,
+        "alternativeComparisonMeasured": false,
+        "testCount": 10,
+        "semanticTestCount": 0,
+        "executionMode": "retrospective_baseline",
+        "councilPendingTheses": [
+          "THESIS-001"
+        ],
+        "sourceIntegrityCodes": []
+      },
+      "valueProfile": {
+        "methodVersion": "PSO-PET-1.0",
+        "dimensions": {
+          "PDI": {
+            "code": "PDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "DCI": {
+            "code": "DCI",
+            "status": "not_measured",
+            "score": null
+          },
+          "AQI": {
+            "code": "AQI",
+            "status": "not_measured",
+            "score": null
+          },
+          "RTI": {
+            "code": "RTI",
+            "status": "not_measured",
+            "score": null
+          },
+          "MSI": {
+            "code": "MSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "VSI": {
+            "code": "VSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "CDI": {
+            "code": "CDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "LVI": {
+            "code": "LVI",
+            "status": "not_measured",
+            "score": null
+          }
+        },
+        "decisionReadiness": "not_evaluated",
+        "bottlenecks": [],
+        "compositeScore": null,
+        "compositeReason": "PSO_CASE.json ausente; ausência não é nota zero"
+      },
+      "findings": [
+        {
+          "code": "PSO-AUDIT-CIRCULAR-EVIDENCE",
+          "severity": "p1",
+          "detail": "questões sustentadas somente pelo produto final: Q-001"
+        },
+        {
+          "code": "PSO-AUDIT-LITERAL-ONLY",
+          "severity": "p1",
+          "detail": "todos os testes observados são literais; inversão semântica continua não medida"
+        },
+        {
+          "code": "PSO-AUDIT-RETROSPECTIVE",
+          "severity": "p1",
+          "detail": "suíte criada depois do texto; não mede desenho prospectivo"
+        },
+        {
+          "code": "PSO-AUDIT-COUNCIL",
+          "severity": "p1",
+          "detail": "teses sem liberação conjunta: THESIS-001"
+        }
+      ],
+      "counts": {
+        "p0": 0,
+        "p1": 4
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "methodVersion": "PSO-PET-1.0",
+      "generatedAt": "2026-07-11T18:35:12-03:00",
+      "caseId": "case-email-cafelana-agint-aresp-2698443-19f2f0876e358eab",
+      "methodStatus": "not_measured",
+      "readOnlyAudit": true,
+      "proxies": {
+        "questions": 20,
+        "circularQuestionSupport": [],
+        "thesisCount": 4,
+        "alternativeComparisonMeasured": false,
+        "testCount": 10,
+        "semanticTestCount": 0,
+        "executionMode": "unknown",
+        "councilPendingTheses": [],
+        "sourceIntegrityCodes": [
+          "N4-SOURCE-ORIGIN-REVOKED",
+          "N4-SOURCE-REVOKED"
+        ]
+      },
+      "valueProfile": {
+        "methodVersion": "PSO-PET-1.0",
+        "dimensions": {
+          "PDI": {
+            "code": "PDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "DCI": {
+            "code": "DCI",
+            "status": "not_measured",
+            "score": null
+          },
+          "AQI": {
+            "code": "AQI",
+            "status": "not_measured",
+            "score": null
+          },
+          "RTI": {
+            "code": "RTI",
+            "status": "not_measured",
+            "score": null
+          },
+          "MSI": {
+            "code": "MSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "VSI": {
+            "code": "VSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "CDI": {
+            "code": "CDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "LVI": {
+            "code": "LVI",
+            "status": "not_measured",
+            "score": null
+          }
+        },
+        "decisionReadiness": "not_evaluated",
+        "bottlenecks": [],
+        "compositeScore": null,
+        "compositeReason": "PSO_CASE.json ausente; ausência não é nota zero"
+      },
+      "findings": [
+        {
+          "code": "PSO-AUDIT-LITERAL-ONLY",
+          "severity": "p1",
+          "detail": "todos os testes observados são literais; inversão semântica continua não medida"
+        },
+        {
+          "code": "PSO-AUDIT-SOURCE",
+          "severity": "p0",
+          "detail": "integridade de fonte bloqueada: N4-SOURCE-ORIGIN-REVOKED, N4-SOURCE-REVOKED"
+        }
+      ],
+      "counts": {
+        "p0": 1,
+        "p1": 1
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "methodVersion": "PSO-PET-1.0",
+      "generatedAt": "2026-07-11T18:35:12-03:00",
+      "caseId": "case-email-libra-sul-agint-stj-19f3c9350d875062",
+      "methodStatus": "not_measured",
+      "readOnlyAudit": true,
+      "proxies": {
+        "questions": 5,
+        "circularQuestionSupport": [
+          "Q-001",
+          "Q-003"
+        ],
+        "thesisCount": 1,
+        "alternativeComparisonMeasured": false,
+        "testCount": 10,
+        "semanticTestCount": 0,
+        "executionMode": "retrospective_baseline",
+        "councilPendingTheses": [
+          "THESIS-001"
+        ],
+        "sourceIntegrityCodes": []
+      },
+      "valueProfile": {
+        "methodVersion": "PSO-PET-1.0",
+        "dimensions": {
+          "PDI": {
+            "code": "PDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "DCI": {
+            "code": "DCI",
+            "status": "not_measured",
+            "score": null
+          },
+          "AQI": {
+            "code": "AQI",
+            "status": "not_measured",
+            "score": null
+          },
+          "RTI": {
+            "code": "RTI",
+            "status": "not_measured",
+            "score": null
+          },
+          "MSI": {
+            "code": "MSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "VSI": {
+            "code": "VSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "CDI": {
+            "code": "CDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "LVI": {
+            "code": "LVI",
+            "status": "not_measured",
+            "score": null
+          }
+        },
+        "decisionReadiness": "not_evaluated",
+        "bottlenecks": [],
+        "compositeScore": null,
+        "compositeReason": "PSO_CASE.json ausente; ausência não é nota zero"
+      },
+      "findings": [
+        {
+          "code": "PSO-AUDIT-CIRCULAR-EVIDENCE",
+          "severity": "p1",
+          "detail": "questões sustentadas somente pelo produto final: Q-001, Q-003"
+        },
+        {
+          "code": "PSO-AUDIT-LITERAL-ONLY",
+          "severity": "p1",
+          "detail": "todos os testes observados são literais; inversão semântica continua não medida"
+        },
+        {
+          "code": "PSO-AUDIT-RETROSPECTIVE",
+          "severity": "p1",
+          "detail": "suíte criada depois do texto; não mede desenho prospectivo"
+        },
+        {
+          "code": "PSO-AUDIT-COUNCIL",
+          "severity": "p1",
+          "detail": "teses sem liberação conjunta: THESIS-001"
+        }
+      ],
+      "counts": {
+        "p0": 0,
+        "p1": 4
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "methodVersion": "PSO-PET-1.0",
+      "generatedAt": "2026-07-11T18:35:12-03:00",
+      "caseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+      "methodStatus": "not_measured",
+      "readOnlyAudit": true,
+      "proxies": {
+        "questions": 5,
+        "circularQuestionSupport": [
+          "Q-001"
+        ],
+        "thesisCount": 1,
+        "alternativeComparisonMeasured": false,
+        "testCount": 10,
+        "semanticTestCount": 0,
+        "executionMode": "retrospective_baseline",
+        "councilPendingTheses": [
+          "THESIS-001"
+        ],
+        "sourceIntegrityCodes": []
+      },
+      "valueProfile": {
+        "methodVersion": "PSO-PET-1.0",
+        "dimensions": {
+          "PDI": {
+            "code": "PDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "DCI": {
+            "code": "DCI",
+            "status": "not_measured",
+            "score": null
+          },
+          "AQI": {
+            "code": "AQI",
+            "status": "not_measured",
+            "score": null
+          },
+          "RTI": {
+            "code": "RTI",
+            "status": "not_measured",
+            "score": null
+          },
+          "MSI": {
+            "code": "MSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "VSI": {
+            "code": "VSI",
+            "status": "not_measured",
+            "score": null
+          },
+          "CDI": {
+            "code": "CDI",
+            "status": "not_measured",
+            "score": null
+          },
+          "LVI": {
+            "code": "LVI",
+            "status": "not_measured",
+            "score": null
+          }
+        },
+        "decisionReadiness": "not_evaluated",
+        "bottlenecks": [],
+        "compositeScore": null,
+        "compositeReason": "PSO_CASE.json ausente; ausência não é nota zero"
+      },
+      "findings": [
+        {
+          "code": "PSO-AUDIT-CIRCULAR-EVIDENCE",
+          "severity": "p1",
+          "detail": "questões sustentadas somente pelo produto final: Q-001"
+        },
+        {
+          "code": "PSO-AUDIT-LITERAL-ONLY",
+          "severity": "p1",
+          "detail": "todos os testes observados são literais; inversão semântica continua não medida"
+        },
+        {
+          "code": "PSO-AUDIT-RETROSPECTIVE",
+          "severity": "p1",
+          "detail": "suíte criada depois do texto; não mede desenho prospectivo"
+        },
+        {
+          "code": "PSO-AUDIT-COUNCIL",
+          "severity": "p1",
+          "detail": "teses sem liberação conjunta: THESIS-001"
+        }
+      ],
+      "counts": {
+        "p0": 0,
+        "p1": 4
+      }
+    }
+  ]
+}

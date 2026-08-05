@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "FORJA-PLANNING-SNAPSHOT-1.0",
+  "generatedAt": "2026-07-15",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "00-CONTEXT.md",
+      "bytes": 4194,
+      "sha256": "76b8c7cea50e142260eedad285d54803604eefdf78016ac3c9796214514eaefb"
+    },
+    {
+      "path": "01-PRD_REFATORACAO_FORJA.md",
+      "bytes": 13452,
+      "sha256": "ec0bfebb80be8eae5e1da9409debfbadd1c89ed6d6d6099c8ded0f38b71d9cdd"
+    },
+    {
+      "path": "02-TDD_REFATORACAO_FORJA.md",
+      "bytes": 15039,
+      "sha256": "3f37fe73c7f5002b377fa005969a45c18a11e321fcb26da218cabd16537adce5"
+    },
+    {
+      "path": "03-ROADMAP_REFATORACAO_FORJA.md",
+      "bytes": 12685,
+      "sha256": "cd9b36efa61aa0ec37a418eb99e67250aeb3a0f096e13874e397616266928c3e"
+    },
+    {
+      "path": "04-DIAGRAMAS_REFATORACAO_FORJA.md",
+      "bytes": 10768,
+      "sha256": "c48161ed9691445a1137876b877b1ae72028c9b52bc55f2fe306b8ce1347bfb2"
+    },
+    {
+      "path": "05-MATRIZ_RASTREABILIDADE.md",
+      "bytes": 5356,
+      "sha256": "6aabaf4900d2ff84b114e6b79b05f1417e7255a09624e22fbdffc6d41cdd51c6"
+    },
+    {
+      "path": "06-TESTES_ROLLBACK_E_CUTOVER.md",
+      "bytes": 6613,
+      "sha256": "1130ca37d0a18b13248484a71c4dd035db32c54fd0097d3df89b62489dc59426"
+    },
+    {
+      "path": "plans/P00-BASELINE-PLAN.md",
+      "bytes": 4207,
+      "sha256": "e87b2267691143d7374381c22ccf28ee943fae063f32eab18b61d1199e112234"
+    },
+    {
+      "path": "plans/P01-TEST-DISCOVERY-PLAN.md",
+      "bytes": 3351,
+      "sha256": "8b42b8523be2a2ed509017ed97800a4fb607806abe2912d7cf3431a49ae7534f"
+    },
+    {
+      "path": "plans/P02-REGIMENTO-PLAN.md",
+      "bytes": 3051,
+      "sha256": "96c3c8635c0347811af9b796e4365012e912bc807cb619d0af3b674d863e1414"
+    },
+    {
+      "path": "plans/P03-CITATION-PLAN.md",
+      "bytes": 2872,
+      "sha256": "1d3fc06ec2a2e6e36c2101498077b86c10cf8f028fc6261184561ff197195699"
+    },
+    {
+      "path": "plans/P04-INJECTION-PLAN.md",
+      "bytes": 2726,
+      "sha256": "e81b264b6d946560b001632233f59f4c462674605f8921d882398b17c5fcb5a2"
+    },
+    {
+      "path": "plans/P05-ENVIRONMENT-PLAN.md",
+      "bytes": 2590,
+      "sha256": "89fb2487de6cfdbfd672982b4e358ffe5809ab089bfcd61049c7248e78b7e6a3"
+    },
+    {
+      "path": "plans/P06-CORE-FACADE-PLAN.md",
+      "bytes": 2836,
+      "sha256": "69be4796e527cc17753ec5fa0e37288492aada859676ad99c8b97d4a22a6f231"
+    },
+    {
+      "path": "plans/P07-CATALOGS-PLAN.md",
+      "bytes": 3536,
+      "sha256": "71b51fee5af0a5b14944caa90dbc3760b5296ec86fdc58dbf4cc7ae196233539"
+    },
+    {
+      "path": "plans/P08-STATE-PROMOTION-PLAN.md",
+      "bytes": 3088,
+      "sha256": "926e1dedc90c307571bd1649cfab832c9d840bb1824e74dc5e11031a24cdc3be"
+    },
+    {
+      "path": "plans/P09-DELIVERY-IDENTITY-PLAN.md",
+      "bytes": 2720,
+      "sha256": "9ebd55040941e6a8743366cdced74915b4c25d33c690859ccb4e7b732fa313c1"
+    },
+    {
+      "path": "plans/P10-MANAGEMENT-OUTBOX-PLAN.md",
+      "bytes": 2874,
+      "sha256": "2435e89ea30bc79c91df3fafabcd1748ca4cc1fee1ba7e8c05ccb06231acc82b"
+    },
+    {
+      "path": "plans/P11-RENDER-PIPELINE-PLAN.md",
+      "bytes": 3193,
+      "sha256": "6a07957fea3ebf6bfe3341b01f6b68cf9506e62594727428841d8adc303ac6dc"
+    },
+    {
+      "path": "plans/P12-VALIDATION-PIPELINE-PLAN.md",
+      "bytes": 2942,
+      "sha256": "50b236dbfcb893e5d6f3dd60c6f8edc4dde40e8fe8473bd878f3b5e8862f4364"
+    },
+    {
+      "path": "plans/P13A-CLI-FRAMEWORK-PLAN.md",
+      "bytes": 2172,
+      "sha256": "90403f6aab4ec9fe6db6c366bcebfdcbcc0a73c9a8131804cad6c20c77685f0c"
+    },
+    {
+      "path": "plans/P13B-CLI-WRAPPERS-PLAN.md",
+      "bytes": 2492,
+      "sha256": "a0c1ef3c07e75bcf16e442df90d6c3456c6812d618598303bfeca7dc361c3474"
+    },
+    {
+      "path": "plans/P14-PHYSICAL-SANITIZATION-PLAN.md",
+      "bytes": 4889,
+      "sha256": "f00970330101c0d45385cd40d52db9d9213d5a102a21d08c7c34966bef1c6247"
+    },
+    {
+      "path": "plans/P15-LIVE-ATLAS-PLAN.md",
+      "bytes": 2550,
+      "sha256": "9f986a43c0754221bb9f4640437c6543096b09cba55310c41eab0ee6658033e0"
+    },
+    {
+      "path": "plans/P16-REPLAY-CUTOVER-PLAN.md",
+      "bytes": 3584,
+      "sha256": "30dd26342975b34ef3974e68eff5a82ab7e7068a4e121afb8ec3710e45afd537"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1544,
+      "sha256": "d1df7019f98a75d80fd50e0da7faeae68173bef0ffe035c1c3adee8dab5779dd"
+    },
+    {
+      "path": "REFACTOR_PLAN_MANIFEST.json",
+      "bytes": 2331,
+      "sha256": "4205b4f56d6a6982cc7904dadb77406a8a5bba3eb138e22cf0055c4c2ae71608"
+    },
+    {
+      "path": "tools/build_master_report.py",
+      "bytes": 30278,
+      "sha256": "a9f90e7d6ee1ed3f6610baea9b8a82196a713cd68deff29f0916ccef100d2922"
+    },
+    {
+      "path": "tools/generate_hash_manifest.py",
+      "bytes": 1378,
+      "sha256": "bdc972a4a0827bf627a8356126ac10b3a3fed01b38813624047d2d0353bf0828"
+    },
+    {
+      "path": "tools/qa_master_report.py",
+      "bytes": 5333,
+      "sha256": "5a8041e7ff4d9f5a7009cb4d1a8046b72831a158232722274c77ac61558bd065"
+    },
+    {
+      "path": "tools/render_mermaid_atlas.py",
+      "bytes": 2470,
+      "sha256": "cf7fd269bbe048ef7cfa64a5bf6e6dd390b86d3fb867b45c6498f903a96a39af"
+    },
+    {
+      "path": "tools/validate_refactor_plan.py",
+      "bytes": 9568,
+      "sha256": "13c3ae8bb3b2cfea2d703c49f08de330d232ea04c6f3ec4101bddbc4ee17ceaf"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+# Roteiro interno — método de solução do problema da petição
+
+**Uso:** preencher em F2–F4 e atualizar por iteração até F7.  
+**Natureza:** artefato interno; não inserir este roteiro, seus rótulos ou caminhos na peça protocolável.  
+**Perfil:** leve | completo | intensivo  
+**Caso:**  
+**Produto:**  
+**Tribunal/órgão:**  
+**Ato que originou a necessidade:**  
+**Versão do roteiro:**  
+
+## 1. Comando e situação real
+
+- Pedido recebido:
+- Resultado prático esperado pelo solicitante:
+- Ato processual efetivamente identificado:
+- Documentos materiais disponíveis:
+- Documentos materiais ausentes:
+- Prazo e fonte da contagem:
+- Solução prematuramente pressuposta no comando, se houver:
+
+## 2. Emaranhado do caso
+
+- Eventos decisivos:
+- Pretensões em conflito:
+- Questões resolvidas:
+- Questões abertas:
+- Riscos laterais:
+- Efeitos sobre outros recursos, pedidos ou fases:
+
+## 3. Definição do problema
+
+**Contexto:**  
+**Situação atual comprovada:**  
+**Situação juridicamente possível ou necessária:**  
+**Lacuna entre as situações:**  
+**Objeto sobre o qual esta peça pode agir:**  
+**Limites de competência, cognição, prazo e prova:**  
+**Resultado direto pretendido:**  
+
+Definição em uma frase:
+
+> No contexto [...], a situação atual [...] diverge de [...] porque [...]. Esta peça pode atuar sobre [...] para produzir diretamente [...], dentro dos limites [...].
+
+## 4. História diagnóstica
+
+- Ponto decisório central:
+- Causas/fatores principais:
+- Relação entre eles:
+- Sintomas que não devem ser confundidos com causas:
+- Consequências processuais:
+- Elo atacável pela petição:
+- Melhor explicação rival:
+- Evidência que discriminaria entre as explicações:
+
+História diagnóstica concisa:
+
+> [...]
+
+## 5. Requisitos
+
+### Funcionais
+
+- [ ] responder à pergunta jurisdicional;
+- [ ] cobrir alegações/pedidos materiais;
+- [ ] ligar afirmações decisivas a fontes;
+- [ ] formular consequência e pedido compatíveis;
+- [ ] preservar principal, subsidiárias e reservas.
+
+Outros:
+
+### Destinatário e leitura
+
+- [ ] ordem decisória visível;
+- [ ] terminologia canônica;
+- [ ] fluência sem perda de precisão;
+- [ ] visual com função cognitiva demonstrada.
+
+Outros:
+
+### Condições não negociáveis
+
+- Lei/regimento:
+- Prazo:
+- Competência/cognição:
+- Prova disponível:
+- Instrução humana vinculante:
+
+### Restrições negociáveis
+
+- Extensão:
+- Profundidade subsidiária:
+- Elementos visuais:
+- Tempo/esforço adicional:
+
+## 6. Alternativas
+
+### Alternativa A
+
+- Veículo/tese:
+- Mecanismo esperado:
+- Provas necessárias:
+- Resultado direto:
+- Força:
+- Melhor objeção:
+- Risco residual:
+
+### Alternativa B
+
+- Veículo/tese:
+- Mecanismo esperado:
+- Provas necessárias:
+- Resultado direto:
+- Força:
+- Melhor objeção:
+- Risco residual:
+
+### Escolha
+
+- Alternativa escolhida:
+- Razão comparativa:
+- Elementos aproveitados da alternativa rejeitada:
+- Gatilho que faria mudar de alternativa:
+
+## 7. Arquitetura da intervenção
+
+- Pergunta jurisdicional:
+- Tese principal:
+- Melhor objeção e resposta:
+- Subsidiárias e gatilhos:
+- Mapa de prova:
+- Ordem decisória:
+- Pedidos:
+- Contingências:
+- Elementos visuais e função de cada um:
+
+## 8. Validação
+
+| Requisito | Componente da solução | Evidência/mecanismo | Resultado | Limite |
+|---|---|---|---|---|
+|  |  |  | passa/falha/bloqueado |  |
+
+- A solução atua sobre a causa/elo diagnosticado?
+- Há alternativa superior não examinada?
+- A melhor objeção foi respondida sem exagero?
+- O texto preserva a arquitetura e o sentido?
+- Helena: decisão, recomendação e localizador:
+- Cícero: decisão, recomendação e localizador:
+- Pendências antes de F6/F7:
+
+## 9. Plano processual
+
+- Prazo e dupla conferência:
+- Anexos:
+- Revisor e autorizador:
+- Providência regimental:
+- Forma de protocolo/envio:
+- Eventos a acompanhar:
+- Tese de reserva e gatilho:
+- Atualização da gestão:
+- Evidência de entrega:
+
+## 10. Avaliação e aprendizado
+
+- Resultado direto a observar:
+- Indicador anterior à intervenção:
+- Indicador posterior:
+- Explicações rivais para o resultado:
+- Falha de diagnóstico, desenho, redação, revisão ou execução:
+- Contexto em que a técnica pode ser reutilizada:
+- Limites de transferência:
+- Proposta de fixture/gate, se houver repetição suficiente:

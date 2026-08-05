@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "phase": "F8_QA_VISUAL",
+  "order": 8,
+  "producerRole": "forja-compositor-visual",
+  "reviewerRole": "forja-visual-auditor",
+  "requiredInputs": [
+    "final_markdown",
+    "audited_markdown",
+    "editorial_report",
+    "f7_gate_result",
+    "context_validation",
+    "template"
+  ],
+  "requiredOutputs": [
+    "docx",
+    "pdf",
+    "docx_layout_audit",
+    "visual_review_attestation",
+    "visual_qa_ledger",
+    "format_fidelity"
+  ],
+  "requiredGates": [
+    "svg_lint_pass",
+    "markdown_lint_pass",
+    "docx_body_justified_times_12_pass",
+    "docx_table_typography_consistent_min_8pt",
+    "docx_folio_collision_safe",
+    "docx_content_and_tracking_fidelity_pass",
+    "all_pages_reviewed_at_100_percent",
+    "independent_human_or_visual_agent_reviewer",
+    "no_automated_self_certification",
+    "human_visual_review_signed_receipt_for_strict_release",
+    "external_human_trust_store_verified_for_strict_release",
+    "page_image_hashes_reproduced",
+    "pdf_hash_bound",
+    "package_rerender_reproduced",
+    "semantic_fidelity_recomputed"
+  ],
+  "nextPhase": "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+  "retryPolicy": {
+    "maxAttempts": 4,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "n4_visual_semantic_audit"
+  ],
+  "n4RequiredGates": [
+    "visual_scales_units_sources_consistent"
+  ],
+  "baseContract": "../phase_contracts/F8.json"
+}

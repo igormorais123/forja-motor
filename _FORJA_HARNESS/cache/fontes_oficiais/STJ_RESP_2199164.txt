@@ -1,0 +1,15 @@
+FONTE OFICIAL: STJ - Pesquisa de Precedentes Qualificados (temas repetitivos)
+URL: https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1368&cod_tema_final=1368
+Capturado em: 2026-07-08
+
+TEMA REPETITIVO 1368 — CORTE ESPECIAL — DIREITO CIVIL
+Situacao: TRANSITO EM JULGADO (transito em 12/11/2025)
+Processo representativo: REsp 2.199.164/PR (origem TJPR), Relator Min. RICARDO VILLAS BOAS CUEVA
+Afetacao: 05/08/2025 | Julgado em: 15/10/2025 | Acordao publicado em: 20/10/2025
+
+Questao submetida: Definir se a taxa referencial do Sistema Especial de Liquidacao e Custodia (SELIC) deve ser considerada para a fixacao dos juros moratorios a que se referia o art. 406 do Codigo Civil antes da entrada em vigor da Lei n. 14.905/2024.
+
+TESE FIRMADA (verbatim do portal):
+"O art. 406 Codigo Civil de 2002, antes da entrada em vigor da Lei n° 14.905/2024, deve ser interpretado no sentido de que e a SELIC a taxa de juros de mora aplicavel as dividas de natureza civil, por ser esta a taxa em vigor para a atualizacao monetaria e a mora no pagamento de impostos devidos a Fazenda Nacional."
+
+Obs.: houve determinacao de suspensao nacional durante a afetacao (art. 256-L RISTJ); com o transito em julgado em 12/11/2025, o tema esta definido e o precedente e vinculante (CPC art. 927, III).

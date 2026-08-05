@@ -1,0 +1,20 @@
+flowchart LR
+    subgraph Current["Atual"]
+      Root["raiz: runtime + testes + CLIs"]
+      Mutable["state/cache/reports"]
+      Experiments["pilotos/one-offs"]
+      Foreign["cópia FocoEdital"]
+    end
+    subgraph Target["Alvo"]
+      Src["src/forja"]
+      Tests["tests"]
+      Tools["tools"]
+      Exp["experiments/migrations/archive"]
+      Var["var"]
+    end
+    Root --> Src
+    Root --> Tests
+    Root --> Tools
+    Experiments --> Exp
+    Mutable --> Var
+    Foreign -. "backup + link canônico" .-> Exp

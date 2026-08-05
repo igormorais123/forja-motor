@@ -1,0 +1,15 @@
+flowchart TD
+    CLI["CLI + wrappers"] --> APP["Application services"]
+    APP --> DOMAIN["Domain"]
+    APP --> PORTS["Ports"]
+    DOMAIN --> CATALOG["Canonical catalogs"]
+    DOMAIN --> GATES["Composable gates"]
+    PORTS --> EVENT["Event store"]
+    PORTS --> FS["Filesystem"]
+    PORTS --> WORD["Word/Medina"]
+    PORTS --> OFFICE["Management outbox"]
+    PORTS --> SEARCH["Legal/science search"]
+    PORTS --> TELE["Telemetry"]
+    LEGACY["N2 adapters"] --> APP
+    N3["N3 runtime"] --> APP
+    N4["N4 contracts"] --> DOMAIN

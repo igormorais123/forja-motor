@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "e2fc879b3188000bd8e84438730039b1166ced5cecc17d21bdf79bf0bfa73a90",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 25,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir no texto oficial consolidado da Lei nº 13.146/2015 o dispositivo exato e o alcance da prioridade processual]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: cotejar a qualificação e esta formulação com o dispositivo integral da sentença, o termo de curatela e a certidão correspondentes]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o texto oficial consolidado do art. 101, I, do CDC e eventual regra específica do TJDFT sobre distribuição entre as Varas Cíveis]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o enquadramento à luz do título de curatela e do texto oficial do art. 178, II, do CPC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os textos oficiais, a pertinência de cada dispositivo e a formulação técnica sobre o alcance probatório da assinatura eletrônica]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o documento integral e os requisitos exatos dos arts. 3º e 4º da RN ANS nº 558/2022]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir nos documentos a alíquota, a incidência jurídica do IOF, os valores e a composição integral de ambas as faturas]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o texto consolidado do art. 11 da Lei nº 9.656/1998 e a exata distribuição do ônus nele prevista]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir integralmente a versão vigente da RN ANS nº 558/2022, a numeração, o teor, as exceções, a vigência em 18/06/2026 e a aplicabilidade ao contrato coletivo empresarial]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o teor e a vigência das RNs nº 557/2022 e 558/2022, inclusive sua articulação e eventuais alterações posteriores]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir requisitos, procedimento e consequências dos arts. 396 a 400 do CPC]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o texto oficial de todos os dispositivos, sua pertinência ao caso, a natureza do intermediário e os pressupostos de solidariedade]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: consultar a fonte oficial do STJ, confirmar redação literal, vigência, alcance e aderência das Súmulas 608 e 609]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: localizar cada acórdão na fonte oficial do STJ; confirmar número, classe, órgão, relator, data, publicação, contexto fático, trecho literal e localização no voto ou na ementa antes de manter qualquer proposição]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os textos oficiais e o conteúdo integral da sentença]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: cotejar cada formulação com o texto literal, a página e o dispositivo da sentença; não protocolar paráfrase imprecisa]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: localizar o acórdão na fonte oficial do STJ e confirmar identidade, órgão, relator, data, trecho literal e aderência]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os textos oficiais e a pertinência exata de cada dispositivo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os textos oficiais e a adequação de cada dispositivo às medidas requeridas]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confirmar no portal oficial do STJ a existência, o status de julgamento, a tese literal, a data de publicação e a aplicabilidade do Tema nº 1.365]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir também o art. 373, § 1º, do CPC e adequar a base legal]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o critério nos arts. 291 e 292 do CPC, o valor integral do contrato ou benefício econômico, a inclusão ou não do IOF e a orientação atual do TJDFT para demandas de plano de saúde]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: inserir a data real do protocolo]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Não verificado]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 0.0,
+      "aprovado": false,
+      "p0": 1,
+      "p1": 0,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P0",
+          "trecho": "EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DE UMA DAS VARAS CÍVEIS DA CIRCUNSCRIÇÃO JUDICIÁRIA DE BRASÍLIA — DISTRITO FEDERAL MATEUS GRASSI MEDINA OSÓRIO**, brasileiro, solteiro, nascido em 27 de dezembro de 2004, inscrito no CPF nº 039.060.020-20, pessoa com deficiência e relativamente incapaz apenas para atos patri",
+          "problema": "travessão explicativo repetido (20 em 7144 palavras; limite=16)",
+          "acao": "converta apartes em frases autônomas ou integre a explicação ao período principal",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 20,
+          "limite": 16
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

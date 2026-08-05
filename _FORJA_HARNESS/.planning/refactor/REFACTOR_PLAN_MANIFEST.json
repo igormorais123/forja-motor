@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "FORJA-REFACTOR-PLAN-1.0",
+  "program": "FORJA_R1_REFATORACAO_ESTRUTURAL_SEGURA",
+  "version": "R1.0-plan",
+  "status": "planned_not_started",
+  "plannedAt": "2026-07-15",
+  "codeSourceCommit": "291fae0d57168e98ae10b0db866629b153ca9d5c",
+  "planningCommit": null,
+  "pathResolutionRoot": "_FORJA_HARNESS",
+  "planningSnapshot": {
+    "tracked": false,
+    "bootstrapPolicy": "copy_package_to_clean_worktree_then_verify_hash_manifest",
+    "hashManifest": "deliverables/PLANNING_PACKAGE_HASHES.json",
+    "note": "A entrega de planejamento não cria commit. Antes de R0, o pacote deve ser copiado para o worktree limpo e validado por hash, ou receber commit documental explícito."
+  },
+  "workspaceWasDirty": true,
+  "normativeState": {
+    "n2": "vigente",
+    "n3": "shadow_with_management_sidecar",
+    "n4": "pilot_blocking",
+    "f2a": "required_for_new_cases"
+  },
+  "documents": [
+    "README.md",
+    "00-CONTEXT.md",
+    "01-PRD_REFATORACAO_FORJA.md",
+    "02-TDD_REFATORACAO_FORJA.md",
+    "03-ROADMAP_REFATORACAO_FORJA.md",
+    "04-DIAGRAMAS_REFATORACAO_FORJA.md",
+    "05-MATRIZ_RASTREABILIDADE.md",
+    "06-TESTES_ROLLBACK_E_CUTOVER.md"
+  ],
+  "phases": [
+    "R0_baseline_isolado",
+    "R1_escudo_de_confianca",
+    "R2_reprodutibilidade_e_arquitetura",
+    "R3_core_e_fachadas",
+    "R4_estado_promocao_e_resolucao",
+    "R5_portas_entrega_e_gestao",
+    "R6_render_validacao_e_cli",
+    "R7_sanitizacao_fisica",
+    "R8_atlas_vivo",
+    "R9_replay_e_cutover"
+  ],
+  "hardGates": [
+    "all_tests_discovered",
+    "regimento_fail_closed",
+    "citation_source_not_self_certified",
+    "injection_scan_fail_closed",
+    "historical_replay_equivalent",
+    "word_pdf_visual_qa_real",
+    "backup_restore_verified",
+    "g9a_technical_refactor_complete",
+    "g9b_promotion_eligibility_separate",
+    "normative_manifest_unchanged_without_promotion"
+  ],
+  "deliverables": {
+    "pdf": "deliverables/PLANO_MESTRE_REFATORACAO_FORJA_2026-07-15.pdf",
+    "docx": "deliverables/PLANO_MESTRE_REFATORACAO_FORJA_2026-07-15.docx",
+    "visualQa": "deliverables/visual_qa_report.json",
+    "buildReport": "deliverables/build_report.json",
+    "mermaidReport": "deliverables/diagramas/render_report.json",
+    "hashManifest": "deliverables/PLANNING_PACKAGE_HASHES.json"
+  },
+  "executionAuthorized": false
+}

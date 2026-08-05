@@ -1,0 +1,2 @@
+{"gen":0,"casos":21,"furos_encontrados":4,"furos_corrigidos":["shorthand font:","texto sem font-size (default 16px)","viewBox decimal/virgula/offset (Graphviz)","matplotlib svg.fonttype=path inauditavel -> none"],"data":"2026-07-08"}
+{"gen":1,"variantes":4,"vencedora":"variant-d (Von Restorff + faixa de ancoras)","e2e":"6 EMFs -> Word COM -> PDF -> QA visual PASS","melhoria_nova":"largura_recomendada_cm() corrige diagrama gigante (graphviz 3 nos: 15cm -> 8.6cm)","tectonic_smoke":"PASS 13 pags 251KB","data":"2026-07-08"}

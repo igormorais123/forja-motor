@@ -1,0 +1,21 @@
+flowchart LR
+    Signal["Sinal recebido"] --> Reconcile{"Já existe demanda<br/>ou pasta compatível?"}
+    Reconcile -->|"sim"| Merge["Reunir com o que já existe, sem sobrescrever"]
+    Reconcile -->|"não"| Create["Criar demanda e pasta"]
+    Merge --> Inventory["Inventário de anexos"]
+    Create --> Inventory
+    Inventory --> Scan["Verificar integridade<br/>e procurar instruções ocultas"]
+    Scan --> Command["Comando arquivado"]
+    Command --> Tribunal["Identificar tribunal e órgão"]
+    Tribunal --> Rules["Regimento integral + emendas<br/>+ leis gerais"]
+    Rules --> Chronology["Sequência dos atos<br/>e relação entre recursos e decisões"]
+    Chronology --> Identity{"Ato atual impugnado<br/>está inequívoco?"}
+    Identity -->|"não"| Block["Impedimento grave<br/>não produzir versão pronta para protocolo"]
+    Identity -->|"sim"| Ledger["Registro inicial das fontes"]
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b;
+    classDef evidence fill:#e9f4ec,stroke:#2f6f54,color:#1f4c39;
+    classDef blocker fill:#fdecea,stroke:#a33b2b,color:#64251b,stroke-width:2px;
+    class Signal,Reconcile,Merge,Create,Inventory,Scan,Command,Tribunal active;
+    class Rules,Chronology,Identity,Ledger evidence;
+    class Block blocker;

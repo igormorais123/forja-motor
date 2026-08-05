@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "producerFamily": "openai",
+  "reviewerRequired": "claude-opus-5",
+  "reviewScope": "visual_and_content_fidelity",
+  "documents": [
+    {
+      "id": "cafelana_v8",
+      "frozenSource": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v7_2026-07-29\\IMPUGNACAO_AGINT_CAFELANA_V7_FONTE.md",
+      "visualMap": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\MAPA_VISUAL_V8.md",
+      "docx": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.docx",
+      "docxSha256": "ef232dbddd628c7b072f8b7fa552ae2698dcca8b1568a32ac0dacded4bae1ecb",
+      "pdf": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.pdf",
+      "pdfSha256": "bcb8540624be6734b5b353491d474320245d00ccf0b2d0dfe8ce3fef0f1c8aa9",
+      "pageCount": 26,
+      "qaDir": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\qa_release_round4",
+      "pagePattern": "pNN.png",
+      "svgs": [
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\cards_v8.svg",
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\fig1_dialeticidade_v8.svg",
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\fig2_tempestividade_v8.svg",
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\Cafelana\\contrarrazões ao AgInt no AREsp nº 2.698.443D\\_v8_visual_2026-07-30\\fig3_coisa_julgada_v8.svg"
+      ]
+    },
+    {
+      "id": "estre_v2",
+      "frozenSource": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO\\_forja\\ESTRE_MEMORIAIS_EDCL_TRF3_FINAL_MARKDOWN.md",
+      "visualMap": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO\\_forja\\MAPA_VISUAL_V2.md",
+      "docx": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO\\_forja\\MEMORIAIS_EDCL_ESTRE_TRANSPETRO_TRF3_V2_AJUSTADA_VISUAL.docx",
+      "docxSha256": "c4849064f4146ca13312dafbeb5fd31d241998b647fa8c9a5b8c21b1b5d46907",
+      "pdf": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO\\_forja\\MEMORIAIS_EDCL_ESTRE_TRANSPETRO_TRF3_V2_AJUSTADA_VISUAL.pdf",
+      "pdfSha256": "4ef6fd073ea8153b0eb9a4f166c99be3a6f2d59bd92783315cc8c91226762b6f",
+      "pageCount": 8,
+      "qaDir": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO\\_forja\\qa_release_round4",
+      "pagePattern": "pNN.png",
+      "svgs": [
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 8 - Elaboração de memoriais – ED no AI nº 5004634-21.2026.4.03.0000 - ESTRE AMBIENTAL X TRANSPETRO\\_forja\\DIAGRAMA_ENCADEAMENTO_ESTRE_V2.svg"
+      ]
+    },
+    {
+      "id": "erm_v2",
+      "identityResolution": {
+        "canonicalProcess": "5004633-36.2026.4.03.0000",
+        "canonicalCourt": "TRF3",
+        "legacyTransportLabel": "5004633-36.2026.4.02.0000",
+        "status": "resolved_internal_review_only",
+        "evidence": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\RESOLUCAO_IDENTIDADE_PROCESSUAL.md"
+      },
+      "frozenSource": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\ERM_MEMORIAIS_EDCL_TRF3_FINAL_MARKDOWN.md",
+      "visualMap": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\MAPA_VISUAL_V2.md",
+      "docx": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\MEMORIAIS_EDCL_ERM_OSV_TRANSPETRO_TRF3_V2_AJUSTADA_VISUAL.docx",
+      "docxSha256": "30e94e98263e9dccd151e9c281f50020bf86eb2cbe3e787a6bf62fe3d327be05",
+      "pdf": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\MEMORIAIS_EDCL_ERM_OSV_TRANSPETRO_TRF3_V2_AJUSTADA_VISUAL.pdf",
+      "pdfSha256": "e54f1052bc702a738bf100edcaa31c4311718d1aeb26f21f36d3f923f3de4601",
+      "pageCount": 8,
+      "qaDir": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\qa_release_round4",
+      "pagePattern": "pNN.png",
+      "svgs": [
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\PRAZO 03 08 - Elaboração de memoriais – ED no AI nº 5004633-36.2026.4.02.0000 - ERM OSV CONSTRUCAO NAVAL X TRA\\_forja\\DIAGRAMA_ENCADEAMENTO_ERM_V2.svg"
+      ]
+    },
+    {
+      "id": "corsan_procon_v2",
+      "frozenSource": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\RELATORIO_FINAL_INDEXACAO_E_DIAGNOSTICO_CORSAN_PROCON_283_FOLIOS.md",
+      "visualMap": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\MAPA_VISUAL_V2_CORSAN_PROCON.json",
+      "docx": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\RELATORIO_FINAL_INDEXACAO_E_DIAGNOSTICO_CORSAN_PROCON_283_FOLIOS_V2_AJUSTADO_VISUAL.docx",
+      "docxSha256": "d7caf2ba2b729c3de4f1a09b93ba71897b420e0a6f85dcf741d5b51cd89c7eb9",
+      "pdf": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\RELATORIO_FINAL_INDEXACAO_E_DIAGNOSTICO_CORSAN_PROCON_283_FOLIOS_V2_AJUSTADO_VISUAL.pdf",
+      "pdfSha256": "c1b50dbbaae07381f694ca48f6a07013658d34b184137c53ca67cb2a88169847",
+      "pageCount": 12,
+      "qaDir": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\qa_release_round4",
+      "pagePattern": "pNN.png",
+      "svgs": [
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\V2_FIG1_CRONOLOGIA_CORSAN_PROCON.svg",
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_indexacao_283_folios_2026-07-29\\V2_FIG2_CADEIA_DECISORIA_CORSAN_PROCON.svg"
+      ]
+    },
+    {
+      "id": "corsan_n5_v2",
+      "frozenSource": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\ADITAMENTO_INTERNO_N5_IMOVEL_SANTA_CRUZ_PA67_AI35.md",
+      "visualMap": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\MAPA_VISUAL_V2_CORSAN_N5.json",
+      "docx": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\ADITAMENTO_INTERNO_N5_IMOVEL_SANTA_CRUZ_PA67_AI35_V2_AJUSTADO_VISUAL.docx",
+      "docxSha256": "7cd61b56fbaba61fcea07330a39b28aca970fa6d69c6d2cda05851353d0599be",
+      "pdf": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\ADITAMENTO_INTERNO_N5_IMOVEL_SANTA_CRUZ_PA67_AI35_V2_AJUSTADO_VISUAL.pdf",
+      "pdfSha256": "b011644e63802ee57363e89f9166a50dbf408f3d195362ba338340ae40034e0f",
+      "pageCount": 59,
+      "qaDir": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\qa_v2_ajustado_visual",
+      "pagePattern": "pNN.png",
+      "svgs": [
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\V2_FIG1_ROTA_PRIORIDADES_CORSAN_N5.svg",
+        "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições\\CORSAN AGERST - Proposta de Serviços Jurídicos\\_integracao_santa_cruz_2026-07-30\\V2_FIG2_MAPA_FRENTES_RISCOS_PROVIDENCIAS.svg"
+      ]
+    }
+  ]
+}

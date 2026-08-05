@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "prospective-memoriais-apelacao-v1",
+  "productType": "memoriais de apelação",
+  "executionMode": "prospective",
+  "draftedBeforeFinalText": true,
+  "frozenAt": "2026-07-29T01:10:00-03:00",
+  "finalProducedAt": "2026-07-29T01:11:00-03:00",
+  "tests": [
+    {
+      "testId": "PP-PROSPECTIVE-001",
+      "learningCandidateId": "learn-b80a07dd026116a8",
+      "coverageKeys": [
+        "all_devolved_chapters",
+        "ancillary_requests"
+      ],
+      "severity": "blocking",
+      "method": "deterministic",
+      "evidenceRequired": [
+        "devolved_chapter_matrix"
+      ],
+      "evaluator": {
+        "kind": "contains",
+        "value": "MATRIZ_DE_CAPITULOS_DEVOLVIDOS"
+      }
+    }
+  ],
+  "countJustification": "Canário prospectivo unitário dedicado à lição promovida."
+}

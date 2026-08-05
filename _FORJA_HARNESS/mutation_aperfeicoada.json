@@ -1,0 +1,105 @@
+{
+ "schemaVersion": 1,
+ "artifactType": "MUTATION_LOTE_PAINEL",
+ "totalCasos": 6,
+ "casosResumo": [
+  {
+   "case": "case-email-auto-19f3f25cb64df962",
+   "score": 0.0,
+   "mortos": 0,
+   "aplicaveis": 14,
+   "suite_valida": false,
+   "controles_mortos": []
+  },
+  {
+   "case": "case-email-azimut-19f3ed5bdbdcf159",
+   "score": 0.0952,
+   "mortos": 2,
+   "aplicaveis": 21,
+   "suite_valida": true,
+   "controles_mortos": []
+  },
+  {
+   "case": "case-email-corsan-agerst-19f3dc9ff92081cd",
+   "score": 0.0,
+   "mortos": 0,
+   "aplicaveis": 12,
+   "suite_valida": true,
+   "controles_mortos": []
+  },
+  {
+   "case": "case-email-libra-sul-agint-stj-19f3c9350d875062",
+   "score": 0.25,
+   "mortos": 5,
+   "aplicaveis": 20,
+   "suite_valida": true,
+   "controles_mortos": []
+  },
+  {
+   "case": "case-email-natura-cabreuva-19f3991ebc75fe03",
+   "score": 0.25,
+   "mortos": 3,
+   "aplicaveis": 12,
+   "suite_valida": false,
+   "controles_mortos": []
+  },
+  {
+   "case": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+   "score": 0.2174,
+   "mortos": 5,
+   "aplicaveis": 23,
+   "suite_valida": true,
+   "controles_mortos": []
+  }
+ ],
+ "familiaResumo": {
+  "S1_inversao_tese": {
+   "score": 0.0,
+   "mortos": 0,
+   "aplicaveis": 2,
+   "casos": 1,
+   "pronto": false
+  },
+  "S2_troca_de_parte": {
+   "score": 0.0,
+   "mortos": 0,
+   "aplicaveis": 23,
+   "casos": 5,
+   "pronto": false
+  },
+  "S3_valor_ou_data": {
+   "score": 0.0667,
+   "mortos": 2,
+   "aplicaveis": 30,
+   "casos": 6,
+   "pronto": false
+  },
+  "S4_troca_de_pedido": {
+   "score": 0.0,
+   "mortos": 0,
+   "aplicaveis": 12,
+   "casos": 4,
+   "pronto": false
+  },
+  "S5_sobreabstracao": {
+   "score": 0.1739,
+   "mortos": 4,
+   "aplicaveis": 23,
+   "casos": 6,
+   "pronto": false
+  },
+  "S6_deturpacao_precedente": {
+   "score": 0.75,
+   "mortos": 9,
+   "aplicaveis": 12,
+   "casos": 5,
+   "pronto": false
+  }
+ },
+ "agregado": {
+  "score": 0.1471,
+  "mortos": 15,
+  "aplicaveis": 102,
+  "casosProntosParaProducao": 0
+ }
+}

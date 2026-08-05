@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant O as "Origem da demanda"
+    participant G as "Gestão do escritório"
+    participant F0 as "Etapa 1 · Conferir a demanda"
+    participant C as "Pasta do caso"
+    participant F1 as "Organização dos documentos"
+    participant S as "Registro do andamento"
+
+    O->>G: e-mail, WhatsApp/Hermes ou inclusão manual
+    G->>F0: demanda, prazo, responsável e situação
+    F0->>C: localizar comando e anexos
+    C-->>F0: encontrados, ausentes ou conflitantes
+    F0->>S: registrar vínculo e estado real
+    F0->>F1: entrada reconciliada
+    F1->>C: listar os documentos, identificá-los e verificar o que falta
+    F1->>F1: procurar instruções ocultas e arquivos inválidos
+    alt anexo crítico ou origem conflitante
+        F1->>S: registrar impedimento e pendência específica
+        S-->>G: próxima ação concreta
+    else conjunto de documentos íntegro
+        F1->>S: registrar conjunto de documentos aprovado
+        S-->>G: próxima etapa e horário da atualização
+    end

@@ -1,0 +1,146 @@
+FONTE OFICIAL: https://www.gov.br/ans/pt-br/assuntos/noticias/operadoras/ans-lanca-cartilha-e-faq-para-orientar-sobre-novas-regras-de-portabilidade/
+RESOLUÇÃO NORMATIVA: ANS RN 438, de 3 de dezembro de 2018
+DATA DE CAPTURA: 09/07/2026
+DATA DE PUBLICAÇÃO OFICIAL: 05 de dezembro de 2018 (Diário Oficial da União)
+VIGÊNCIA: A partir de 1º de março de 2019
+
+================================================================================
+OBJETO DA RN 438/2018
+================================================================================
+
+Regulamenta a portabilidade de carências para beneficiários de planos privados
+de assistência à saúde, revogando RN 186/2009.
+
+DEFINIÇÃO: Portabilidade de carências é o direito do beneficiário de MUDAR de
+plano de saúde SEM cumprir novos períodos de carência ou cobertura parcial
+temporária (CPT).
+
+================================================================================
+REQUISITOS PARA EXERCER PORTABILIDADE DE CARÊNCIAS
+================================================================================
+
+1. VINCULAÇÃO PRÉVIA:
+   - Estar filiado em plano de origem há MÍNIMO 2 ANOS (1ª portabilidade)
+   - OU estar há 3 ANOS se já cumpriu CPT na 1ª vinculação
+
+2. REGULARIDADE FINANCEIRA:
+   - Estar em dia com pagamento de mensalidade junto à operadora de origem
+   - Sem débitos acumulados
+
+3. PRAZO PARA CANCELAR PLANO DE ORIGEM:
+   - Solicitar cancelamento em até 5 dias úteis APÓS início de vigência
+     no plano de destino
+   - Operadora de origem não pode exigir aviso prévio adicional
+
+4. SIMULTANEIDADE DE COBERTURA:
+   - Não há lacuna entre operadoras (cobertura ininterrupta)
+
+================================================================================
+EFEITO DA PORTABILIDADE SOBRE CARÊNCIAS E CPT
+================================================================================
+
+ACHADO CRÍTICO - DISPENSA DE CARÊNCIA:
+Ao exercer portabilidade, o beneficiário:
+
+1. Dispensa-se de:
+   - Novos períodos de carência
+   - Nova Declaração de Saúde (DS)
+   - Nova análise de Doenças Preexistentes (DLP)
+
+2. A cobertura ANTERIOR (inclusive CPT em curso) é reconhecida:
+   - Se estava em CPT de 24 meses, o tempo já decorrido CONTA
+   - Beneficiário não recomeça contagem
+
+3. O NOVO plano recebe o histórico de carências do plano anterior:
+   - Não pode impor restrições maiores
+   - Não pode exigir CPT adicional
+
+================================================================================
+APLICAÇÃO ESPECIAL: PORTABILIDADE DISPENSA DLP?
+================================================================================
+
+QUESTÃO ABERTA: Mateus tinha cobertura no Bradesco (21/09/2020 a ~19/07/2025)
+→ Cirurgia K07/K07.1 já era conhecida do Bradesco?
+→ Ao trocar para SulAmérica, Mateus tinha direito a portabilidade de carências?
+
+ANÁLISE (RN 438/2018):
+- Se K07/K07.1 foi COMUNICADA ao Bradesco (e aceita/coberta):
+  * Portabilidade teria dispensado DS na SulAmérica?
+  * Resposta jurídica: SIM (reconhecimento de histórico anterior)
+
+- Se K07/K07.1 foi OMITIDA do Bradesco TAMBÉM:
+  * Ambas operadoras em posição idêntica
+  * Portabilidade não altera isso
+  * Mas: Mateus poderia ter prazo de 24 meses NO BRADESCO
+
+INVESTIGAÇÃO NECESSÁRIA:
+- Consultar autos do Bradesco sobre cirurgia (autorização/negativa)
+- Se cirurgia foi autorizada no Bradesco, SulAmérica não poderia
+  reavaliar (portabilidade vincula)
+
+================================================================================
+REQUISITOS DOCUMENTAIS PARA PORTABILIDADE
+================================================================================
+
+OPERADORA DE DESTINO DEVE ACEITAR:
+- Solicitação de portabilidade (verbal ou escrita)
+- Comprovação de período de 2+ anos no plano anterior
+- Qualquer documentação que beneficiário forneça
+
+OPERADORA DE ORIGEM DEVE FORNECER:
+- Extrato de contribuições/período vinculado (comprovando 2+ anos)
+- Declaração de ausência de débitos
+- Histórico de cobertura (inclusive qualquer CPT em curso)
+- NÃO pode exigir documentação "punitiva" (relatórios de uso, comprovantes)
+
+================================================================================
+VEDAÇÕES RELACIONADAS À PORTABILIDADE (RN 489/2022)
+================================================================================
+
+INFRAÇÃO: Operadora exigir indebidamente carências ou CPT a beneficiário
+portador de direito à portabilidade de carências.
+
+PENALIDADE: Multa de R$ 50.000,00 (conforme porte econômico, pode chegar a
+múltiplo dessa faixa).
+
+ACHADO - CASO MATEUS:
+- Se direito à portabilidade era aplicável, SulAmérica violou (exigiu CPT
+  implicitamente ao negar cobertura integral)
+- Fundamento adicional para NIP/representação à ANS
+
+================================================================================
+SITUAÇÃO PRÁTICA - MATEUS
+================================================================================
+
+CRONOLOGIA:
+1. 21/09/2020: Filiação ao Bradesco (com K07/K07.1? VERIFICAR)
+2. 19/07/2025: Filiação à SulAmérica (mudança)
+3. Período no Bradesco: ~4 anos 10 meses (> 24 meses → direito portabilidade)
+4. 01/04/2026: Pedido cirurgia SulAmérica
+5. 13/04/2026: TCB com alegação DLP omitida
+6. 24/04/2026: Fábio marca DISCORDO
+7. 18/06/2026: Exclusão SulAmérica efetivada
+
+QUESTÃO-CHAVE:
+Mateus tinha direito à portabilidade de carências ao mudar de Bradesco para
+SulAmérica? Se SIM:
+- DS não era vinculante (portabilidade = dispensa DS)
+- CPT não era aplicável (portabilidade = mantém histórico anterior)
+- DLP do Bradesco VINCULA SulAmérica
+- Exclusão é VIOLAÇÃO de portabilidade + RN 489
+
+INVESTIGAÇÃO:
+[ ] Verificar se cirurgia K07/K07.1 foi comunicada/autorizada no Bradesco
+[ ] Se SIM: extrair documentação de autorização (vincula SulAmérica)
+[ ] Se NÃO: questionar por que faltou em ambas DS (simultaneamente)
+[ ] Consultar contrato SulAmérica: reconheceu portabilidade de carências?
+
+================================================================================
+DOCUMENTOS RELACIONADOS:
+- PLANALTO_LEI_9656_ART11_13.txt (Lei fundadora)
+- ANS_RN558_2022_DLP_CPT.txt (DLP e CPT)
+- ANS_SANCOES_NIP.txt (RN 489/2022)
+
+DATA DESTA CAPTURA: 09/07/2026
+ACENTUAÇÃO: UTF-8 PT-BR COMPLETA
+STATUS: PRONTO PARA INVESTIGAÇÃO E REFERÊNCIA JURÍDICA

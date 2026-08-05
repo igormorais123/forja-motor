@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz2r3-claude",
+  "judgeFamily": "claude",
+  "declarations": {
+    "filesRead": [
+      "PAR_ciclo1-varA_ORD1_L.md",
+      "PAR_ciclo1-varA_ORD1_R.md",
+      "PAR_ciclo1-varA_ORD2_L.md",
+      "PAR_ciclo1-varA_ORD2_R.md"
+    ],
+    "externalAccess": false,
+    "workspaceAccess": false
+  },
+  "votes": [
+    {
+      "order": 1,
+      "winnerPosition": "R",
+      "anchor": "O que o certificado não resolve é questão distinta: a proposta foi concluída sete dias depois da DPS e o certificado descrito na minuta-base não individualiza quem marcou cada resposta médica, quem controlou o dispositivo, quem recebeu eventual código de autenticação nem se houve confirmação autônoma de cada campo.",
+      "justificativa": "Blindagem recursal superior pela separação precisa de eventos; mapeia 15 premissas críticas contra 7; identidade codificada dos atos e ledger de precedentes; cautelas anti-Súmula 7 mais robustas."
+    },
+    {
+      "order": 2,
+      "winnerPosition": "L",
+      "anchor": "O que o certificado não resolve é questão distinta: a proposta foi concluída sete dias depois da DPS e o certificado descrito na minuta-base não individualiza quem marcou cada resposta médica, quem controlou o dispositivo, quem recebeu eventual código de autenticação nem se houve confirmação autônoma de cada campo.",
+      "justificativa": "ORD2_L é idêntico a ORD1_R (swap confirmado); voto consistente pela mesma qualidade superior em rastreabilidade processual e mapeamento de premissas."
+    }
+  ]
+}

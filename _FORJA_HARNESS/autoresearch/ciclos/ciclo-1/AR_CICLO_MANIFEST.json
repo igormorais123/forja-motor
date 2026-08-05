@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "snapshot-ciclo-1",
+  "preregister": {
+    "schemaVersion": "FORJA-AR-v1",
+    "generatedAt": "1970-01-01T00:00:00Z",
+    "producerRunId": "forja-ar-initial-manifest",
+    "version": "v1.0-piloto-descritivo",
+    "status": "estudo_descritivo",
+    "holdoutVersion": "v0-prospectivo",
+    "secrets": {
+      "defaultDirectory": "%USERPROFILE%\\.forja_ar_secrets",
+      "environmentOverride": "FORJA_AR_SECRETS_DIR",
+      "note": "O diretório é criado somente sob demanda. Testes devem redirecioná-lo para tmp_path."
+    },
+    "splits": {
+      "method": "hmac_sha256_lineage",
+      "trainMax": 69,
+      "holdoutMax": 89,
+      "sealedMinPerStratum": 1,
+      "holdoutMinPerStratum": 1
+    },
+    "indicadores": [
+      {
+        "id": "I1",
+        "papel": "alvo",
+        "peso": 0.25
+      },
+      {
+        "id": "I2",
+        "papel": "veto",
+        "peso": 0.0
+      },
+      {
+        "id": "I3",
+        "papel": "alvo",
+        "peso": 0.25
+      },
+      {
+        "id": "I4",
+        "papel": "veto",
+        "peso": 0.0
+      },
+      {
+        "id": "I5",
+        "papel": "sentinela",
+        "peso": 0.0
+      },
+      {
+        "id": "I6",
+        "papel": "veto",
+        "peso": 0.0
+      },
+      {
+        "id": "I7",
+        "papel": "alvo",
+        "peso": 0.25
+      },
+      {
+        "id": "I8",
+        "papel": "veto",
+        "peso": 0.0
+      },
+      {
+        "id": "I9",
+        "papel": "alvo",
+        "peso": 0.25
+      },
+      {
+        "id": "I10",
+        "papel": "operacional",
+        "peso": 0.0
+      }
+    ],
+    "margens": {
+      "ruido_por_indicador": {
+        "I1": 0.0,
+        "I3": 0.0,
+        "I7": 0.0,
+        "I9": 0.0
+      },
+      "limiteAgregado": 0.0
+    },
+    "blind": {
+      "kappaMin": 0.6,
+      "positionalInvalidationsMax": 0,
+      "familiasMinimas": 1,
+      "notaFamilias": "Pré-registro ciclo-1 (23/07/2026, ANTES do snapshot): apenas 2 famílias autenticadas no ambiente (claude, codex). Gerador/executor = codex; juízes = 2 juízes claude com contextos independentes — família única NÃO-geradora preserva a defesa central anti-autopreferência. Restaurar familiasMinimas=2 quando houver 3ª família (ex.: gemini)."
+    },
+    "orcamentos": {
+      "candidatos_por_holdout": 5,
+      "consultas_holdout": 10,
+      "consultas_sealed_vitalicio": 3,
+      "julgamentos_llm_max": 200
+    },
+    "linhagens": {},
+    "historico": [
+      {
+        "data": "2026-07-23",
+        "evento": "calibracao_piloto_ciclo0",
+        "amostra": {
+          "total": 22,
+          "corpus_state": 5,
+          "extensao_v1": 17
+        },
+        "sigmaPorIndicador": {
+          "I2": 0.2875,
+          "I4": 0.4191,
+          "I5": 0.4191,
+          "I6": 0.4658,
+          "I1": null,
+          "I3": null,
+          "I7": null,
+          "I8": null
+        },
+        "decisao": "Determinísticos I2/I4/I5/I6 discriminam no corpus real (sigma 0.29-0.47) e nos 7 canários de falha única (kill 7/7, atribuição limpa, controles vivos). I1/I3/I7/I8 sem dado histórico (ledgers só prospectivos) — papéis de alvo mantidos com validação por canário (I1) e margens de ruído 0.0 (conservador pré-registrado). Sem alegação de eficácia: promoção real exige sealed prospectivo (PRD §13).",
+        "spotCheck": "flags I6 auditados manualmente: 7/7 verdadeiros positivos (caminho local vazado em peças históricas do experimento v1)"
+      }
+    ]
+  },
+  "preregisterHash": "c27cf57c7e24bc6afc680ece7be1549b36c82f1ea2c59795243af9978d64e6de",
+  "codeHashes": {
+    "forja_ar_corpus.py": "54806996b444948fb7702f22571b50024f56c5c337bf4dfee4129811ef53dd6f",
+    "forja_ar_indicadores.py": "f491d1974096f75eac15ce9c548a4500f7cb8bcba3e11090e6cec751f716985d",
+    "forja_ar_canarios.py": "a28391f2daafe0fe760fa3216e9e190d6dc85974bb00faa63128c39e83f26b5d",
+    "forja_ar_runpair.py": "9eb4ea1d0dd77d91665c6947a25ae0b4aac7316ae3f927717f7124216493212a",
+    "forja_ar_blind.py": "c6deecd8cca87ecb34083ba7a19c3f2bfb0cee5028bad5962b2acc8f6de47fd3",
+    "forja_ar_ciclo.py": "0ee7d4355e697da4f9ee109f14439cc865ee677f638439a92a021a311adf19cc"
+  },
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_mutation_semantic.py": "a6f6b1a66799acd9b19c8dfee1e607d4c7fccd900d09eeab248be36f771c4bc1",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "corpusHash": "eda420d29c58f321dde8cd9f034749927e9cd1e4840a779ebddcd6a84caa7942"
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "FORJA Auto-Research — o ciclo que se melhora sem poder trapacear",
+    "subtitle": "ciclo-1 real (23/07/2026) · geração 0 do prompt-mestre · nada propaga sem o Igor",
+    "quality_profile": "standard",
+    "output": "AR_CICLO_HUMANO.html",
+    "views": [
+      {
+        "id": "caminho-do-ciclo",
+        "label": "O caminho do ciclo",
+        "focus": ["snapshot", "canarios", "mutacoes", "runpair", "blind", "gate", "parecer", "igor"],
+        "note": "Do pré-registro congelado até a decisão que só o Igor pode tomar."
+      },
+      {
+        "id": "anulacoes-reais",
+        "label": "Onde o sistema se anulou",
+        "focus": ["blind", "round1", "round2", "protocolo"],
+        "note": "Dois julgamentos inteiros foram invalidados pelo próprio harness antes de um válido."
+      },
+      {
+        "id": "gate-humano",
+        "label": "Por que nada muda sozinho",
+        "focus": ["gate", "parecer", "igor", "baseline", "gen1"],
+        "note": "Três estados de aprovação; a propagação ao prompt vigente exige o recibo Ed25519 do Igor."
+      },
+      {
+        "id": "cofre",
+        "label": "O cofre fora do alcance",
+        "focus": ["secrets", "corpus", "canarios", "log"],
+        "note": "Chaves, sealed e canários secretos ficam fora do workspace de quem é medido; o log é encadeado por hash."
+      }
+    ]
+  },
+  "lanes": [
+    { "id": "mutador", "label": "Codex mutador — família geradora" },
+    { "id": "harness", "label": "Harness determinístico — sem opinião, só protocolo" },
+    { "id": "juizes", "label": "Juízes cegos — família não-geradora" },
+    { "id": "anulacao", "label": "Anulações reais do ciclo-1", "variant": "exception" },
+    { "id": "revisao", "label": "Revisão independente + gate humano" },
+    { "id": "cofre", "label": "Trilha e cofre — memória à prova de edição" }
+  ],
+  "phases": [
+    { "id": "preparar", "label": "Preparar", "fromCol": 0, "toCol": 1 },
+    { "id": "competir", "label": "Competir", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "julgar", "label": "Julgar", "fromCol": 4, "toCol": 4 },
+    { "id": "decidir", "label": "Decidir", "fromCol": 5, "toCol": 5, "variant": "dashed" }
+  ],
+  "groups": [],
+  "mainPath": ["snapshot", "canarios", "mutacoes", "runpair", "blind", "gate"],
+  "nodes": [
+    { "id": "baseline", "lane": "mutador", "col": 0, "type": "external", "label": "Prompt vigente", "sublabel": "mestre · 17,9 KB" },
+    { "id": "mutacoes", "lane": "mutador", "col": 2, "type": "backend", "label": "Gen-0: mutações", "sublabel": "expand · compress", "tag": "estratégia declarada", "width": 110 },
+    { "id": "gen1", "lane": "mutador", "col": 5, "type": "messagebus", "label": "Semente gen-1", "sublabel": "hybrid: varB + 4 recs" },
+    { "id": "snapshot", "lane": "harness", "col": 0, "type": "backend", "label": "Pré-registro", "sublabel": "A0 · critérios congelados" },
+    { "id": "canarios", "lane": "harness", "col": 1, "type": "security", "label": "A2 Canários", "sublabel": "8/8 sensores matam" },
+    { "id": "runpair", "lane": "harness", "col": 3, "type": "backend", "label": "A3 Par a par", "sublabel": "3 peças · 766k tokens", "tag": "mesmo insumo, hash" },
+    { "id": "gate", "lane": "harness", "col": 5, "type": "security", "label": "A5 Gate técnico", "sublabel": "não-inferior + vetos", "width": 110 },
+    { "id": "blind", "lane": "juizes", "col": 4, "type": "backend", "label": "A4 Juízo cego", "sublabel": "2 juízes × 2 ordens", "tag": "âncora literal" },
+    { "id": "round1", "lane": "anulacao", "col": 2, "type": "security", "label": "Round 1 anulado", "sublabel": "8/8 âncoras paráfrase", "width": 110 },
+    { "id": "round2", "lane": "anulacao", "col": 4, "type": "security", "label": "Round 2 anulado", "sublabel": "5/8 rótulos trocados", "width": 110 },
+    { "id": "protocolo", "lane": "anulacao", "col": 5, "type": "messagebus", "label": "Protocolo novo", "sublabel": "1 par por sessão" },
+    { "id": "parecer", "lane": "revisao", "col": 4, "type": "backend", "label": "A6 Parecer", "sublabel": "indep. · APTA 25/28" },
+    { "id": "igor", "lane": "revisao", "col": 5, "type": "security", "label": "Gate do Igor", "sublabel": "Ed25519 pendente · 0 propagado", "tag": "única chave" },
+    { "id": "secrets", "lane": "cofre", "col": 0, "type": "security", "label": "Cofre externo", "sublabel": "HMAC · sealed" },
+    { "id": "corpus", "lane": "cofre", "col": 1, "type": "database", "label": "Corpus 43 casos", "sublabel": "split por HMAC", "width": 110 },
+    { "id": "log", "lane": "cofre", "col": 5, "type": "database", "label": "AR_LOG.jsonl", "sublabel": "hash encadeado" }
+  ],
+  "edges": [
+    { "id": "abre-ciclo", "from": "snapshot", "to": "canarios", "variant": "default" },
+    { "id": "pista-liberada", "from": "canarios", "to": "mutacoes", "label": "sensores provados", "variant": "default", "fromSide": "top", "toSide": "bottom", "route": "drop", "labelAt": [260, 167] },
+    { "id": "muta-baseline", "from": "baseline", "to": "mutacoes", "variant": "default" },
+    { "id": "duas-variantes", "from": "mutacoes", "to": "runpair", "label": "2 variantes", "variant": "emphasis", "fromSide": "bottom", "toSide": "top", "route": "drop", "labelAt": [365, 167] },
+    { "id": "bundles-anonimos", "from": "runpair", "to": "blind", "label": "bundles anônimos", "variant": "emphasis", "fromSide": "bottom", "toSide": "top", "route": "drop", "labelAt": [465, 291] },
+    { "id": "vence-por-hash", "from": "blind", "to": "gate", "label": "vence por hash", "variant": "emphasis", "fromSide": "top", "toSide": "bottom", "route": "drop" },
+    { "id": "ancora-invalida", "from": "blind", "to": "round1", "label": "âncora ≠ literal", "variant": "security", "role": "error", "fromSide": "bottom", "toSide": "top", "route": "drop" },
+    { "id": "nova-rodada", "from": "round1", "to": "round2", "variant": "dashed" },
+    { "id": "vira-regra", "from": "round2", "to": "protocolo", "variant": "dashed", "fromSide": "bottom", "toSide": "bottom", "via": [[500, 527], [625, 527]] },
+    { "id": "round3-valido", "from": "protocolo", "to": "blind", "label": "round 3 válido", "variant": "security", "role": "return", "fromSide": "top", "toSide": "bottom", "route": "drop", "labelAt": [563, 415] },
+    { "id": "candidata-tecnica", "from": "gate", "to": "parecer", "label": "candidata técnica", "variant": "security", "fromSide": "right", "toSide": "left", "via": [[706, 540], [430, 540], [430, 615]], "labelAt": [488, 554] },
+    { "id": "apta-com-ressalvas", "from": "parecer", "to": "igor", "label": "com ressalvas", "variant": "emphasis", "labelAt": [563, 663] },
+    { "id": "ressalvas-viram-hybrid", "from": "parecer", "to": "gen1", "label": "ressalvas → hybrid", "variant": "dashed", "fromSide": "top", "toSide": "right", "via": [[500, 560], [714, 560], [714, 111]], "labelAt": [630, 550] },
+    { "id": "propagacao-pendente", "from": "igor", "to": "baseline", "label": "propagação só com recibo", "variant": "security", "fromSide": "bottom", "toSide": "left", "via": [[625, 662], [20, 662], [20, 111]], "labelAt": [300, 672] },
+    { "id": "tarefa-congelada", "from": "corpus", "to": "runpair", "label": "tarefa real congelada", "variant": "default", "fromSide": "top", "toSide": "bottom", "via": [[220, 290], [430, 290]], "labelAt": [300, 281] },
+    { "id": "chave-do-split", "from": "secrets", "to": "corpus", "label": "chave do split", "variant": "security", "labelAt": [154, 779] },
+    { "id": "decisoes-encadeadas", "from": "igor", "to": "log", "label": "decisão no log", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "route": "drop", "labelAt": [640, 687] }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "O que aconteceu de verdade (ciclo-1)",
+      "items": [
+        "Codex escreveu 2 mutações e 3 peças reais — 766k tokens",
+        "2 rounds de julgamento anulados pelo próprio sistema",
+        "varB (compress) venceu por unanimidade — kappa 1.0",
+        "varA (expand) não provou superioridade e perdeu"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Defesas nascidas de falhas reais",
+      "items": [
+        "Âncora literal via grep — derrubou 8/8 votos do round 1",
+        "1 par por sessão de juiz — matou a troca de rótulos (5/8)",
+        "Denominador congelado — apagar citação difícil não melhora nota",
+        "Sealed fora do workspace, orçamento vitalício de consultas"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "O que só o humano decide",
+      "items": [
+        "Gate em 3 estados: técnico → independente → humano",
+        "Recibo Ed25519 do Igor é a única chave de propagação",
+        "Parecer: 25/28 obrigações preservadas, 3 enfraquecidas",
+        "Gap v1 anotado: sealed debita sem avaliar — corrigir"
+      ]
+    }
+  ]
+}

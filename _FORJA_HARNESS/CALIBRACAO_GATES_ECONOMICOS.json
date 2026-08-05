@@ -1,0 +1,257 @@
+{
+  "versao": "FORJA-CALIBRA-GATES-ECONOMICOS-v1",
+  "versaoGates": "FORJA-LASTRO-v2",
+  "geradoEm": "2026-08-03T23:23:52-03:00",
+  "raiz": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições",
+  "documentosAnalisados": 2286,
+  "documentosEconomicos": 467,
+  "incidenciaPct": 20.4,
+  "valoresMonetariosEncontrados": 2491,
+  "valoresReconhecidosComoCitacao": 171,
+  "pctValoresCitados": 6.9,
+  "documentosQueL11ReprovariaSemLedger": 271,
+  "pctReprovacaoTetoSemLedger": 58.0,
+  "limitrofes": [
+    {
+      "arquivo": "Análise de caso pessoal Fábio Medina Osório - Plano de Saúde/EMAIL_COMPLEMENTO_19f632029d1770e3.md",
+      "valor": "R$ 20",
+      "reconhecido_como_citacao": true,
+      "trecho": "ue o > tratamento dado ao beneficiário foi mais gravoso por sua deficiência. > > > > O pedido de R$ 20 mil é defensável, mas a prova concreta é > indispensável. Devem ser documenta"
+    },
+    {
+      "arquivo": "Análise de caso pessoal Fábio Medina Osório - Plano de Saúde/EMAIL_COMPLEMENTO_19f632029d1770e3.md",
+      "valor": "R$ 20.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "S_NIVEL_SOL_V4_10-07-2026.docx > > > > 1. O dano moral está subdimensionado > > > > O pedido de R$ 20.000,00 é compatível com muitos precedentes do STJ para > negativas de cobertur"
+    },
+    {
+      "arquivo": "Análise de caso pessoal Fábio Medina Osório - Plano de Saúde/EMAIL_COMPLEMENTO_19f6587ac69ded6e.md",
+      "valor": "R$ 20",
+      "reconhecido_como_citacao": true,
+      "trecho": "ue o > tratamento dado ao beneficiário foi mais gravoso por sua deficiência. > > > > O pedido de R$ 20 mil é defensável, mas a prova concreta é > indispensável. Devem ser documenta"
+    },
+    {
+      "arquivo": "Análise de caso pessoal Fábio Medina Osório - Plano de Saúde/EMAIL_COMPLEMENTO_19f6587ac69ded6e.md",
+      "valor": "R$ 20.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "S_NIVEL_SOL_V4_10-07-2026.docx > > > > 1. O dano moral está subdimensionado > > > > O pedido de R$ 20.000,00 é compatível com muitos precedentes do STJ para > negativas de cobertur"
+    },
+    {
+      "arquivo": "Análise de caso pessoal Fábio Medina Osório - Plano de Saúde/PARECER_HELENA_V3_10-07-2026.md",
+      "valor": "R$ 2.409,99",
+      "reconhecido_como_citacao": true,
+      "trecho": "Não há relatório itemizado de maio/2026 que isole, por beneficiário, a origem exata da diferença de R$ 2.409,99. - `[LACUNA]` O campo “fechamento em 26/05/2026” não revela, sem o l"
+    },
+    {
+      "arquivo": "Análise de caso pessoal Fábio Medina Osório - Plano de Saúde/RELATORIO_CICERO_JURIDICO_NIVEL_SOL.md",
+      "valor": "R$ 60.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "a a documentação médica atual e à definição técnica de autorização, não de realização física. 11. **R$ 60.000,00 como “parâmetro”.** Sai enquanto não houver precedentes comparáveis"
+    },
+    {
+      "arquivo": "Assunto Laudo Pericial Contábil – Atualização de Valores – Proc. 0003453-28.1997.4.01.3400/REGISTRO_ALTERACOES_E_AUDITORIA.md",
+      "valor": "R$ 1,2",
+      "reconhecido_como_citacao": true,
+      "trecho": "da Selic acumulada da Administração Tributária/Manual de Cálculos; escolha conservadora declarada (−R$ 1,2 bi), com sensibilidade informada | | 7 | **Rubricas do quesito \"c\" fora d"
+    },
+    {
+      "arquivo": "Assunto Laudo Pericial Contábil – Atualização de Valores – Proc. 0003453-28.1997.4.01.3400/REGISTRO_ALTERACOES_E_AUDITORIA.md",
+      "valor": "R$ 70.221,51",
+      "reconhecido_como_citacao": true,
+      "trecho": "| 7 | **Rubricas do quesito \"c\" fora do total** | — | Sucumbência, diferença dez/95, Usicafé/Incex (R$ 70.221,51 e R$ 7.099,32 de 1996) e encargos de precatório identificados mas N"
+    },
+    {
+      "arquivo": "Assunto Laudo Pericial Contábil – Atualização de Valores – Proc. 0003453-28.1997.4.01.3400/RELATORIO_REVISAO_PARECER.md",
+      "valor": "R$ 11,75",
+      "reconhecido_como_citacao": true,
+      "trecho": "ding).** Quadro com o intervalo completo dos critérios: teto plausível (A com Selic capitalizada, R$ 11,755 bi) → piso teórico absoluto (só correção, R$ 3.761.170.734,52), passando"
+    },
+    {
+      "arquivo": "Assunto Laudo Pericial Contábil – Atualização de Valores – Proc. 0003453-28.1997.4.01.3400/RELATORIO_REVISAO_PARECER.md",
+      "valor": "R$ 6,72",
+      "reconhecido_como_citacao": true,
+      "trecho": "de índices (séries oficiais, não estimadas). - Nota: a estimativa interna anterior da \"tese União\" (R$ 6,728 bilhões na memória de cálculo interna) usava convenção não documentada;"
+    },
+    {
+      "arquivo": "Cafelana/ANEXO_AUDITABILIDADE_MEMORIA_CONCLUSOES_CAFELANA_2026-08-04.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "epositório de acordos da AGU. O decreto confirma que acordos da União com valor igual ou superior a R$ 50 milhões exigem autorização prévia e expressa do Advogado-Geral da União e "
+    },
+    {
+      "arquivo": "Cafelana/ANEXO_AUDITABILIDADE_MEMORIA_CONCLUSOES_CAFELANA_2026-08-04.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "10.201/2020, art. 2º, § 1º; procedimento PGU/AGU. **Raciocínio:** para valor igual ou superior a R$ 50 milhões, a autorização envolve Advogado-Geral da União e Ministro da área. O "
+    },
+    {
+      "arquivo": "Cafelana/DOSSIE_ESTRATEGICO_REUNIAO_ACORDO_2026-08-04.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "** | **Normativo do acordo:** Lei 9.469/1997 (autorização geral); Decreto 10.201/2020 (alçadas — ≥ R$ 50 mi exige autorização prévia e expressa do AGU **e** do Ministro de Estado c"
+    },
+    {
+      "arquivo": "Cafelana/DOSSIE_ESTRATEGICO_REUNIAO_ACORDO_2026-08-04.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "ogado são donos do procedimento e qual o Sapiens? (P2) qual o Ministério competente para a alçada ≥ R$ 50 mi e quem nos contata? (P3) proposto método com faixa, a AGU responde alça"
+    },
+    {
+      "arquivo": "Cafelana/MEMORANDO_ESTRATEGICO_CAFELANA_REUNIAO_2026-08-04.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "lhões, PGU/PGF/PGBacen podem autorizar diretamente ou por delegação; - em valor igual ou superior a R$ 50 milhões, exige-se autorização prévia e expressa do Advogado-Geral da União"
+    },
+    {
+      "arquivo": "Cafelana — rastreamento integral dos processos relacionados ao RE nº 1.395.147 PR/DOSSIE_RASTREAMENTO_PRELIMINAR_2026-07-23.md",
+      "valor": "R$ 1",
+      "reconhecido_como_citacao": true,
+      "trecho": "pagar a íntegra (ou valor de perícia revisada? ainda obscuro). **Montante em valores recentes**: \"R$ 1 bilhão\" é estimativa/capítulo de mídia (Conjur, JOTA fevereiro 2024). Valor e"
+    },
+    {
+      "arquivo": "Conteudo_Redes_Celina_Leao_VEJA_2026-07-17/ROTEIRO_CORTES_TRANSCRICAO_INTEGRAL.md",
+      "valor": "6 bilhões de reais",
+      "reconhecido_como_citacao": true,
+      "trecho": "echo:** “Acredito que até o final do mês fecharemos o acordo que permitirá o empréstimo da ordem de 6 bilhões de reais, que vai garantir a manutenção do BRB nas mãos dos brasiliens"
+    },
+    {
+      "arquivo": "Contrarrazões ao agravo interno da União — histórico processual, intempestividade do recurso originário e auto/EMAIL_COMPLEMENTO_19fb68d35e24d36b.md",
+      "valor": "R$ 524",
+      "reconhecido_como_citacao": true,
+      "trecho": "si só, fundamento para o conhecimento do recurso”. O capítulo mostra que o valor indicado — mais de R$ 524 milhões em dezembro de 1995, com atualização alegadamente bilionária — nã"
+    },
+    {
+      "arquivo": "CORSAN AGERST - Proposta de Serviços Jurídicos/EMAIL_COMPLEMENTO_19f95fbe53852e72.md",
+      "valor": "R$ 901.504,94",
+      "reconhecido_como_citacao": true,
+      "trecho": "fica o processo nº 5014418-07.2026.8.21.0026, fundado na CDA nº > 1542/2026, no valor declarado de R$ 901.504,94. O relatório separa > essa cobrança do processo sancionador da AGER"
+    },
+    {
+      "arquivo": "CORSAN AGERST - Proposta de Serviços Jurídicos/EMAIL_COMPLEMENTO_19fb0bee590faea0.md",
+      "valor": "R$ 901.504,94",
+      "reconhecido_como_citacao": true,
+      "trecho": "a o processo nº 5014418-07.2026.8.21.0026, fundado na CDA nº > > 1542/2026, no valor declarado de R$ 901.504,94. O relatório separa > > essa cobrança do processo sancionador da AGE"
+    },
+    {
+      "arquivo": "CORSAN AGERST - Proposta de Serviços Jurídicos/EMAIL_COMPLEMENTO_19fc8d40a33a724e.md",
+      "valor": "R$ 901.504,94",
+      "reconhecido_como_citacao": true,
+      "trecho": "a o processo nº 5014418-07.2026.8.21.0026, fundado na CDA nº > > 1542/2026, no valor declarado de R$ 901.504,94. O relatório separa > > essa cobrança do processo sancionador da AGE"
+    },
+    {
+      "arquivo": "Fwd Consulta técnico-pericial – Vale Trading S A para validação/EMAIL_COMPLEMENTO_19f9421deef9f0e3.md",
+      "valor": "R$ 1.072.604.895,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "ncipal, com a TIPI histórica como cenário subsidiário de controle. O percentual de 24% e o total de R$ 1.072.604.895,00 não foram tratados como resultados validados, pois a documen"
+    },
+    {
+      "arquivo": "Fwd Consulta técnico-pericial – Vale Trading S A para validação/EMAIL_COMPLEMENTO_19f9421deef9f0e3.md",
+      "valor": "R$ 1.072.604.895,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "m SECEX/Bacen, cenário TIPI subsidiário e abandono das formulações de maior risco (24% e o valor de R$ 1.072.604.895,00 como resultado final). > > Dois pontos para alinharmos: > > "
+    },
+    {
+      "arquivo": "Jalusa Prestes Abaide - Proc. 5000447-02.2011.4.04.7102/RELATORIO_MELHORIAS_NIVEL_3.md",
+      "valor": "R$ 1.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "\"TODO\", \"XXX\", placeholders; presentes todos os números de processo, portarias, pareceres, multa de R$ 1.000,00 e assinatura OAB/RS 64.975. - QA visual página a página (`QA_visual_"
+    },
+    {
+      "arquivo": "Mapeamento nacional — ações coletivas e de improbidade envolvendo a Transpetro (≥ R$ 50 milhões)/COMANDO_DO_EMAIL.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "te afetada, desde que o valor da causa ou o proveito econômico discutido seja igual ou superior a R$ 50 milhões. Critérios de pesquisa • Pesquisar por “Petrobras Transporte S.A.”, "
+    },
+    {
+      "arquivo": "Mapeamento nacional — ações coletivas e de improbidade envolvendo a Transpetro (≥ R$ 50 milhões)/COMANDO_DO_EMAIL.md",
+      "valor": "R$ 50",
+      "reconhecido_como_citacao": true,
+      "trecho": "igação, contrato, multa, restituição ou impacto patrimonial estimado em valor igual ou superior a R$ 50 milhões. • Quando o valor econômico não puder ser confirmado, incluir provis"
+    },
+    {
+      "arquivo": "Memoriais Cautelar Fiscal/DOSSIE_CASO.md",
+      "valor": "R$ 82.654.047,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "o patrimonial** da CDI às vésperas do fim da concessão. - Crédito alegado: R$ 58,6 mi na origem; **R$ 82.654.047,00 atualizado (06/2017)**. - Fundamento: Lei 8.397/92, art. 2º, IV,"
+    },
+    {
+      "arquivo": "Memoriais Cautelar Fiscal/DOSSIE_CASO.md",
+      "valor": "R$ 39,5",
+      "reconhecido_como_citacao": true,
+      "trecho": "ento: Lei 8.397/92, art. 2º, IV, V-\"b\", VI e IX. - Operações centrais imputadas: (i) pagamento de **R$ 39,5 milhões** de \"lucros cessantes\" pela CDI à **LTI — Libra Terminal Imbitu"
+    },
+    {
+      "arquivo": "Memoriais Cautelar Fiscal/MEMORIAIS_LIBRA_SUL_FONTE.md",
+      "valor": "R$ 82.654.047,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "rédito de R$ 3.259.616.863,61 perante a União — cifra cerca de quarenta vezes superior ao débito de R$ 82.654.047,00 que a cautelar visa a garantir. A ementa registrou a existência"
+    },
+    {
+      "arquivo": "Memoriais Cautelar Fiscal/PLANO_MEMORIAIS.md",
+      "valor": "R$ 3,26",
+      "reconhecido_como_citacao": true,
+      "trecho": "fusão patrimonial, desvio de finalidade, precedentes STJ não confrontados) ### Eixo 5 — Crédito de R$ 3,26 bi da CDI: reforço, não pilar (omissão sobre argumento do Ev. 1096, jamai"
+    },
+    {
+      "arquivo": "Natura Cabreúva - Parecer e Quesitos - prazo 20-07-2026/EMAIL_COMPLEMENTO_19f68683bffd0193.md",
+      "valor": "R$ 35.097.209,80",
+      "reconhecido_como_citacao": true,
+      "trecho": "ispositivo fixou 120 dias a partir de > 1º/01/2021, com encerramento em 30/04/2021; > - tratei os R$ 35.097.209,80 como estimativa da requerente, e não como > crédito líquido; > - "
+    },
+    {
+      "arquivo": "Natura Cabreúva - Parecer e Quesitos - prazo 20-07-2026/EMAIL_COMPLEMENTO_19f68683bffd0193.md",
+      "valor": "R$ 150.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "a Osório Advogados está celebrando contrato com a empresa Natura Cosméticos S.A., no valor bruto de R$ 150.000,00. > > > > Nesse contexto, ajustamos que você irá prestar consultori"
+    },
+    {
+      "arquivo": "Natura Cabreúva — matriz contábil e prova do requerimento de 2021/EMAIL_COMPLEMENTO_19f6e820386e6784.md",
+      "valor": "R$ 11.171.085,30",
+      "reconhecido_como_citacao": true,
+      "trecho": "Termo de Confissão tem cronograma mensal expresso (45 parcelas de R$ > 413.743,90; 27 pagas somam R$ 11.171.085,30 e as 18 remanescentes R$ > 7.447.390,20, batendo com o quadro con"
+    },
+    {
+      "arquivo": "Natura Cabreúva — matriz contábil e prova do requerimento de 2021/EMAIL_COMPLEMENTO_19f6e820386e6784.md",
+      "valor": "R$ 130,2",
+      "reconhecido_como_citacao": true,
+      "trecho": "> Pontos que exigem o seu olho: > > 1. Duas divergências contábeis registradas na nota (menção a R$ 130,2 > milhões antes do quadro de R$ 53.056.912,99; cifras com aparente erro > "
+    },
+    {
+      "arquivo": "Re Documentação da Natura – acesso à pasta/EMAIL_COMPLEMENTO_19f620982f23f7b0.md",
+      "valor": "R$ 35.097.209,80",
+      "reconhecido_como_citacao": true,
+      "trecho": "ivos de nome > genérico, ou encaminhem em complemento: > > 1. memória de cálculo consolidada dos R$ 35.097.209,80, parcela por > parcela ou período por período, com vencimentos, pa"
+    },
+    {
+      "arquivo": "Re Relatório Azimut/COMANDO_DO_EMAIL.md",
+      "valor": "R$ 10.500.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "culado à ação regressiva n. > 1102992-28.2014.8.26.0100. > > A condenação original corresponde a R$ 10.500.000,00, referentes a > desembolsos securitários realizados em maio e agos"
+    },
+    {
+      "arquivo": "Re Relatório Azimut/COMANDO_DO_EMAIL.md",
+      "valor": "R$ 41.376.950,91",
+      "reconhecido_como_citacao": true,
+      "trecho": "mbolsos securitários realizados em maio e agosto de 2014, ao passo que > a constrição atual atinge R$ 41.376.950,91, decorrente de bloqueio de > ativos financeiros via SISBAJUD. A "
+    },
+    {
+      "arquivo": "Re Relatório Azimut/EMAIL_COMPLEMENTO_19f61261dd27fb5f.md",
+      "valor": "R$ 10.500.000,00",
+      "reconhecido_como_citacao": true,
+      "trecho": "lado à ação regressiva n. 1102992-28.2014.8.26.0100. > > > > A condenação original corresponde a R$ 10.500.000,00, referentes a desembolsos securitários realizados em maio e agosto"
+    },
+    {
+      "arquivo": "URGENTE - Medida Cautelar Fiscal n.º 5002486-81.2012.4.04.7216 SC - analise a aperfeiçoamento de Embargos de D/EMAIL_COMPLEMENTO_19fa9aa4adfb0a5b.md",
+      "valor": "R$ 39,5",
+      "reconhecido_como_citacao": true,
+      "trecho": "com precisão o critério temporal.* > O acórdão identificou como fato desencadeador o pagamento de R$ 39,5 > milhões em 09/04/2008, mas distinguiu a Libra Sul com base na absorção >"
+    },
+    {
+      "arquivo": "URGENTE - Medida Cautelar Fiscal n.º 5002486-81.2012.4.04.7216 SC - analise a aperfeiçoamento de Embargos de D/EMAIL_COMPLEMENTO_19fa9aa4adfb0a5b.md",
+      "valor": "R$ 39,5",
+      "reconhecido_como_citacao": true,
+      "trecho": "r quem não exercia administração à época do fato desencadeador, > identificado como o pagamento de R$ 39,5 milhões em 09/04/2008. Todavia, > para manter a Libra Sul, utilizou como "
+    }
+  ],
+  "limite": "Reprovação sem ledger é TETO, não taxa esperada: mede o gate contra documento que ainda não tem memória documental. A medida de calibração é a separação citado × calculado."
+}

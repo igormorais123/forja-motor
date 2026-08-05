@@ -1,0 +1,327 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "315a5ee3cf51fc32f9508eedc5cfd1c576921ba91fc54410970e70803f84d4f3",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "d2e77c1dba64859b421c4afb0036294f910d1559177df8cd6c713acde49d3475",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "ecfcf271ecac6f283768f813f3b2edebd57322dc418500f80b5aa0adb19a7a1d"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 41,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: ...]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confirmar, nos documentos societários e cadastrais oficiais, a denominação empresarial, o CNPJ e o endereço atual de citação da Ré.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir a redação e a aplicabilidade do art. 343-A do RISTJ ou do dispositivo interno equivalente invocado como padrão de síntese; o processo tramitará no TJDFT, e a referência não deve ser apresentada como norma regente sem pertinência.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confrontar a identidade oficial, os laudos e a sentença de curatela; conferir, na fonte oficial vigente, o art. 1º, § 2º, da Lei nº 12.764/2012 e o art. 9º, VII, da Lei nº 13.146/2015.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: transcrever o dispositivo exato da sentença e conferir o trânsito em julgado, o termo de compromisso e a exigência de atuação conjunta dos curadores.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir, na legislação oficial vigente e na jurisprudência aplicável, o art. 101, I, do CDC, a competência material e territorial e a inexistência de cláusula ou peculiaridade capaz de alterar a conclusão.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o art. 178, II, do CPC, a extensão atual da intervenção obrigatória e a situação processual específica do Autor.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o contrato coletivo, a condição jurídica da estipulante, os comprovantes de pagamento, a titularidade dos pedidos de exibição e a jurisprudência sobre legitimidade do beneficiário em plano coletivo empresarial.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confrontar a proposta, a apólice, o certificado, a DPS, o cartão, as faturas e o sistema cadastral; explicar documentalmente a divergência entre 0058.0042.6597 e 0068.0043.2997.E e entre 19/07/2025 e 20/08/2025.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confirmar a grafia, a qualificação, o CNPJ, o registro profissional e a inserção contratual de Opportunity Assessoria em Seguros e Ricardo Arley; não atribuir representação à Ré sem prova do vínculo.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os arquivos nativos, os certificados completos, os carimbos de tempo, o identificador de cada envelope e a relação entre proposta, DPS e Carta de Orientação.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: abrir a captura certificada integral, validar autoria, integridade, datas, sequência, contexto anterior e posterior, participantes e cadeia de custódia; transcrever apenas as passagens indispensáveis com localizador exato.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: obter contratos anteriores, propostas, comunicações e registros que demonstrem a duração e a natureza da relação histórica.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir, na fonte oficial, os arts. 408, 411 e 412 do CPC e o art. 10, § 2º, da MP nº 2.200-2/2001; ajustar a formulação ao conteúdo exato dos certificados e à impugnação processual admissível.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o documento original e a redação vigente dos arts. 3º e 4º da RN ANS nº 558/2022, inclusive anexos e regras de transição.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir integralmente o TCB, seu certificado, o comprovante de envio e recebimento, a conversa correspondente, a carta de exclusão e a resposta de 24/06/2026; identificar o fundamento regulamentar textual e a data jurídica de eficácia.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir comprovantes de protocolo, recebimento, conteúdo e anexos das manifestações de 03/06/2026 e 05/06/2026.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os exames de 09/03/2026, o pedido de 01/04/2026, o protocolo, a indicação clínica, o relatório bucomaxilofacial atual e a documentação do DF Star.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: localizar e conferir a conversa integral sobre repetição ou atualização dos exames.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: recalcular os doze pagamentos a partir dos comprovantes; conferir CNPJ, datas, valores, competência, fechamento, lista nominal, prêmio, IOF, reajustes, estornos e razão da diferença de um centavo.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: validar cada data na fonte primária e acrescentar número de protocolo, evento, ID ou página.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir, em fonte oficial consolidada e vigente nas datas relevantes, o art. 11 da Lei nº 9.656/1998; os arts. 16, §§ 3º e 4º, 18, 19, 21 e 28 da RN ANS nº 558/2022; eventuais alterações, regras de transição, manuais e decisões administrativas aplicáveis.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir integralmente a RN ANS nº 557/2022, a RN ANS nº 558/2022, suas bases legais, alterações e relação de especialidade; verificar se a exclusão por elegibilidade possui hipótese autônoma aplicável aos fatos.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os arts. 396 a 400 do CPC, a pertinência, a existência, a custódia e a proporcionalidade de cada categoria documental; delimitar dados de terceiros e eventual tratamento sigiloso.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir eventual protocolo de portabilidade, guia de compatibilidade, documentos do plano de origem, prazos, requisitos e trilha de implantação.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o art. 34 do CDC, os arts. 113 e 422 do Código Civil, os arts. 6º, III e VIII, 14, 47 e 51, IV, do CDC e a jurisprudência vigente sobre responsabilidade por representantes autônomos em seguro-saúde.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: consultar a fonte oficial do STJ, confirmar a redação, vigência, alcance e aderência das Súmulas 608 e 609; verificar eventual distinção por plano coletivo empresarial.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: localizar no STJ os acórdãos integrais dos REsp nº 534.675/SP, 658.938/RJ e 1.077.911/SP; confirmar classe, número, partes, órgão julgador, relatoria, datas, publicação, trecho literal, página, ratio decidendi, contexto contratual, eventual superação e identidade estrutural com o caso.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o art. 3º do Código Civil; os arts. 84 e 85 da Lei nº 13.146/2015; o inteiro teor e o dispositivo da sentença de 24/04/2025; e o REsp nº 1.927.423/SP em fonte oficial, inclusive sua aderência.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o art. 1º, § 2º, da Lei nº 12.764/2012; os arts. 4º e 9º da Lei nº 13.146/2015; os arts. 4º, I, e 6º, III, do CDC; e a jurisprudência aplicável à hipervulnerabilidade em saúde suplementar.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os arts. 300, 497, 536 e 537 do CPC; comprovar cobertura anterior, adimplência, situação atual do cadastro e capacidade prática de reversão.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir os prazos legais e regulatórios vigentes para análise do procedimento e a cobertura contratual do plano 90614-EXECUTIVO.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: avaliar proporcionalidade, precedentes locais e suficiência dos prazos; confirmar se toda a exibição solicitada é tecnicamente possível em cinco dias ou se convém escalonar o dossiê.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: confirmar no STJ o status, a tese exata, a data de julgamento, a publicação, a modulação e a aplicabilidade do Tema Repetitivo nº 1.365.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: colher e juntar prova do impacto extrapatrimonial concreto, inclusive atendimentos frustrados, insegurança assistencial, repercussões pessoais e duração efetiva da desassistência; revisar o valor à luz da jurisprudência local atual.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o art. 6º, VIII, do CDC, o art. 373, § 1º, do CPC, os arts. 396 a 400 do CPC e os requisitos para ordem de preservação e exibição de logs; delimitar período, sistema, custodiante e formato.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir a pertinência e a redação dos arts. 5º, LIV e LV, e 93, IX, da Constituição; adequar o bloco ao tipo de ação e evitar prequestionamento genérico ou prematuro.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: revisar a compatibilidade entre pedidos principal e subsidiário, a cumulação, o interesse processual, a liquidez, os consectários e a necessidade de incluir a estipulante ou o intermediário após a exibição.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir o art. 292 do CPC, a base econômica adequada, o valor efetivo do prêmio, o período juridicamente relevante, a inclusão ou não de IOF e a necessidade de adequação ao proveito econômico.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: atualizar a data no dia da assinatura e confirmar o local.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[VERIFICAR: conferir inscrição, situação profissional, certificado digital, poderes e instrumento de mandato.]",
+          "problema": "marcador de lacuna no produto externo — resolver ou mover para o relatório interno"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 1.0,
+      "aprovado": true,
+      "p0": 0,
+      "p1": 1,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P1",
+          "trecho": "EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DE UMA DAS VARAS CÍVEIS DA CIRCUNSCRIÇÃO JUDICIÁRIA DE BRASÍLIA — DISTRITO FEDERAL TRAMITAÇÃO PRIORITÁRIA — PESSOA COM DEFICIÊNCIA** **INTERVENÇÃO DO MINISTÉRIO PÚBLICO** **TUTELA DE URGÊNCIA MATEUS GRASSI MEDINA OSÓRIO**, brasileiro, solteiro, nascido em 27/12/2004, inscrit",
+          "problema": "frequência de travessões pede revisão (12 em 6095 palavras)",
+          "acao": "confirme cada aparte; prefira frase autônoma quando a explicação for substantiva",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 12,
+          "limite": 14
+        }
+      ]
+    },
+    "I6": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

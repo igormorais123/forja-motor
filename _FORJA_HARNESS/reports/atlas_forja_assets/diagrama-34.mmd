@@ -1,0 +1,23 @@
+flowchart TD
+    Email["E-mail<br/>orientação, anexos e conversa relacionada"] --> Normalize["Registrar a demanda sem alterar a mensagem original"]
+    Whats["WhatsApp ou Hermes<br/>informação essencial ou áudio transcrito"] --> Normalize
+    Manual["Inclusão manual · decisão e contexto"] --> Normalize
+    Normalize --> Identity{"Cliente, caso, tipo de peça e prazo estão claros?"}
+    Identity -->|"não"| Clarify["Validação por e-mail, WhatsApp ou decisão humana registrada"]
+    Clarify --> Identity
+    Identity -->|"sim"| Link["Ligar a demanda à pasta correta do caso"]
+    Link --> Intake["Conferir a entrada e organizar os documentos"]
+    Intake --> Draft["Executar as etapas da FORJA"]
+    Draft --> Review["Igor e Fábio revisam a versão correta"]
+    Review --> Channel{"Canal autorizado?"}
+    Channel -->|"não"| Local["Manter o material no escritório<br/>sem registrar entrega inexistente"]
+    Channel -->|"sim"| Deliver["Criar rascunho ou enviar manualmente"]
+    Deliver --> Proof["Guardar o rascunho, a conversa,<br/>o protocolo ou o comprovante"]
+    Proof --> Management["Atualizar a gestão como concluída"]
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b;
+    classDef human fill:#fff4d8,stroke:#9a6b18,color:#4b370d;
+    classDef blocker fill:#fdecea,stroke:#a33b2b,color:#64251b;
+    class Email,Whats,Manual,Normalize,Link,Intake,Draft,Proof,Management active;
+    class Clarify,Review,Channel human;
+    class Local blocker;

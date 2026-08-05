@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "phase": "F5_PESQUISA_OFICIAL",
+  "order": 5,
+  "producerRole": "forja-pesquisador-oficial",
+  "reviewerRole": "forja-citation-auditor",
+  "requiredInputs": ["proposition_ledger", "sources_map"],
+  "requiredOutputs": ["source_ledger", "citation_checklist"],
+  "requiredGates": ["official_sources_archived", "final_use_policy_recorded", "quotes_compared"],
+  "conditionalGates": {
+    "economic": ["fonte_prevalente_validada", "data_base_registrada", "documentos_economicos_inventariados"]
+  },
+  "gateNotes": {
+    "fonte_prevalente_validada": "Quando a pesquisa contém material econômico, o ledger de fontes deve registrar a fonte governante como papel no fact_ledger; proposta não equivale a validação humana."
+  },
+  "nextPhase": "F6_REDACAO_TEMPLATE",
+  "retryPolicy": {"maxAttempts": 3, "idempotent": true}
+}

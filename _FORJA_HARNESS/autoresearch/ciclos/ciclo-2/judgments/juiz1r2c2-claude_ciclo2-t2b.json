@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz1r2c2-claude",
+  "judgeFamily": "claude",
+  "declarations": {"filesRead": ["PAR_ciclo2-t2b_ORD1_L.md","PAR_ciclo2-t2b_ORD1_R.md","PAR_ciclo2-t2b_ORD2_L.md","PAR_ciclo2-t2b_ORD2_R.md"], "externalAccess": false, "workspaceAccess": false},
+  "votes": [
+    {"order": 1, "winnerPosition": "R", "anchor": "# Relatório interno de melhorias\n\n## 1. Resultado\n\nFoi produzida uma versão integralmente reorganizada do memorial, com:\n\n- síntese executiva da controvérsia, fundamentos e pedido;\n- tese principal apresentada antes do desenvolvimento;\n- separação entre taxa legal, termos iniciais e técnica de cálculo;", "justificativa": "ORD1_R organiza o relatório em seções numeradas e itens com bullets, oferecendo legibilidade superior. ORD1_L usa paragrafação corrida que dispersa a informação."},
+    {"order": 2, "winnerPosition": "R", "anchor": "## 6. Precedentes mapeados\n\nNenhum precedente recebeu status **VERIFICADO**, pois a execução foi integralmente offline e limitada ao material do prompt.\n\n| Referência | Tribunal/órgão alegado | Tese atribuída | Trecho/local | Status | Providência |", "justificativa": "ORD2_R mantém seção dedicada aos precedentes com tabela de rastreabilidade clara. ORD2_L renumera as seções e fragmenta a auditoria, reduzindo a visibilidade de quais precedentes foram/não foram verificados."}
+  ]
+}

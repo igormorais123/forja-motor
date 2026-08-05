@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "forja-ar-indicadores",
+  "artifactSha256": "dbd0daba14ad139f9894bafcd6bc9db60e4559f5ff6cd2aff720429bbb6bac17",
+  "sensorVersions": {
+    "forja_verificador.py": "bd28f5e95b4ce0f8a64afd31f6570773db1db486997f01d1fe58fb52a70efc80",
+    "forja_metricas_f7.py": "7636b53a54466f33bbc44272791a58f99b3e59e5167c1b7a493b42a4075b31f9",
+    "forja_estilo_humano.py": "5b5278aeea44c43e3346bcf300614522010385a3b87e0951f3fc5a427ec04087",
+    "forja_human_review.py": "286b23595506cc92c5ae8a96e278f285e9e04bfd3a7eca1fef3bbc51ce400eb5"
+  },
+  "indicadores": {
+    "I1": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I10": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "pos_entrega_ausente"
+    },
+    "I2": {
+      "valor": 1.0,
+      "aprovado": true,
+      "violacoes": 0,
+      "evidencia": []
+    },
+    "I3": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I4": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 22,
+      "evidencia": [
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em SCON STJ]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em SCON STJ]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em arquivos locais]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em arquivos locais]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[...]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em arquivos locais]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[...]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICAÇÃO: Autos — Cópia Integral AI 0011025-31.2023.8.27.2700.pdf]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICAÇÃO: Cópia Integral AI, pp. 11/44/155]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICAÇÃO: Cópia Integral AI]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICAÇÃO: Cópia Integral AI]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO: portal.stf.jus.br]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO: portal.stf.jus.br]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO: portal.stf.jus.br]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em arquivo local]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[VERIFICADO em arquivo local]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[...]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P0",
+          "trecho": "[data]",
+          "problema": "placeholder de dado esquecido na peça"
+        },
+        {
+          "gate": "G2-placeholder",
+          "sev": "P1",
+          "trecho": "[Assinatura]",
+          "problema": "placeholder/marcador fora da lista aprovada — confirmar se é deliberado"
+        }
+      ]
+    },
+    "I5": {
+      "valor": 0.0,
+      "aprovado": false,
+      "p0": 3,
+      "p1": 0,
+      "evidencia": [
+        {
+          "gate": "G10-escrita-humana/metadiscurso-vazio",
+          "sev": "P0",
+          "trecho": "nsabilidade do agravante demanda dilação probatória\" (cópia integral, ementa, p. 659). Isso significa que, no momento de admitir a ação, o tribunal **não tinha** certeza ou indício concreto",
+          "problema": "conector anuncia importância sem acrescentar conteúdo: isso significa que",
+          "acao": "apague a expressão e comece pelo fato, norma ou inferência que importa",
+          "versao": "FORJA-ESTILO-HUMANO-v2"
+        },
+        {
+          "gate": "G10-escrita-humana/metadiscurso-vazio",
+          "sev": "P0",
+          "trecho": "l), ordenou que se verificasse **a presença dos requisitos mínimos do art. 17, § 6º**. Isso significa que há um **limiar de certeza mínima** abaixo do qual a admissão é vedada. O acórdão Eve",
+          "problema": "conector anuncia importância sem acrescentar conteúdo: isso significa que",
+          "acao": "apague a expressão e comece pelo fato, norma ou inferência que importa",
+          "versao": "FORJA-ESTILO-HUMANO-v2"
+        },
+        {
+          "gate": "G10-escrita-humana/travessao-repetido",
+          "sev": "P0",
+          "trecho": "hecimento de alertas de auditoria (Ofícios nº 794/2011 e 861/2011, da então Presidente do IGEPREV-TO) e alega \"adesão consciente ao resultado\" lesivo — perdas posteriores ao fundo, evento de mercado. Decisão do STJ (Evento 152, REsp 2.206.647/TO, Min. Gurgel de Faria, j. 27/01/2026)**: O Tribunal Superior de Justiça DE",
+          "problema": "travessão explicativo repetido (18 em 3384 palavras; limite=8)",
+          "acao": "converta apartes em frases autônomas ou integre a explicação ao período principal",
+          "versao": "FORJA-ESTILO-HUMANO-v2",
+          "contagem": 18,
+          "limite": 8
+        }
+      ]
+    },
+    "I6": {
+      "valor": 0.0,
+      "aprovado": false,
+      "violacoes": 10,
+      "evidencia": [
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "cedente STJ AgInt no AREsp 2.053.883/MS [VERIFICADO em arquivo local] qualifica: \"*in dubio pro societate* na admissibilida",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "configura improbidade (EREsp 908.790/RN [VERIFICADO em arquivo local]: \"o dolo não pode ser subentendido\"). - **Inabilidade",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "RE 1583894 SC.pdf, pp. 2/15 | VERIFICADO (web search + arquivo local) | | Tema 309 (RE 656.558/SP) estabelece que dolo é ne",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "1913638 MA / REsp 1930054 SE | VERIFICADO (web search, arquivo local) | | EREsp 908.790/RN — \"dolo não pode ser subentendid",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "o | 2.2. ED - EREsp 908790 RN.pdf, p. 10 | VERIFICADO (arquivo local) | | AgInt AREsp 2.053.883/MS — *in dubio pro societat",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "gInt no AREsp 2053883 MS.pdf, pp. 2/6/14 | VERIFICADO (arquivo local) | --- ### Tabela de Pedidos Segmentados por Vício",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "e não é admitido\" | STJ, EREsp 908.790/RN (1ª Seção) | Arquivo local 2.2. ED - EREsp 908790 RN.pdf | Pública/aberta (acórdã",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": ". 17, §6º\" | STJ, AgInt no AREsp 2.053.883/MS (2ª T) | Arquivo local 4.2. ED AgInt no AREsp 2053883 MS.pdf | Pública/aberta",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": "da voluntariedade...\" | STF, ARE 1.543.951/RS (2ª T) | Arquivo local 5.1. ED STF AGRG ARE 1543951 RS.pdf | Pública/aberta (",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        },
+        {
+          "gate": "G9-proveniencia",
+          "sev": "P0",
+          "trecho": ".\" | STJ, REsp 2.107.601/MG (Min. Gurgel) | SCON STJ / Arquivo local REsp 2107601 MG.pdf | Pública/aberta | VERIFICADO | Si",
+          "problema": "referência a arquivo/caminho interno vazou para a peça"
+        }
+      ]
+    },
+    "I7": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "ledger_ausente"
+    },
+    "I8": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "qa_visual_ausente"
+    },
+    "I9": {
+      "valor": null,
+      "evidencia": [],
+      "motivo_null": "julgamento_cego_ausente"
+    }
+  }
+}

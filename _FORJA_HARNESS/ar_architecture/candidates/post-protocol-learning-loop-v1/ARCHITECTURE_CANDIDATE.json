@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "lineage": "AR-Architecture",
+  "candidateId": "post-protocol-learning-loop-v1",
+  "title": "Loop pós-protocolo transacional e aprendizado verificável",
+  "status": "estudo_descritivo",
+  "producerRunId": "ar-arch-producer-a3b7537ffa2e4c848e9c45a5be58685c",
+  "reviewerRunId": "claude-opus-5-final-review-20260729",
+  "sourceHashes": [
+    "0601b64819dc4d196ffa67b3bcc7d81ddc41330641fe5a270b44a816c5b37b79",
+    "152ab2183a3ed6ea0ecc8e13c09b7f5c3cb024e448691168f49bf99357b79d60",
+    "1c720680cbdfeb34cae58aa987efd8e24774ae85db0ee29368b53b44e97b1740",
+    "24aac3509adca412e7a982143b6ca7f3f2fd97ccc60e67025e31afa02c570ead",
+    "3bbba58eaecfedd7ef797cd0c684560529e30ed0bcf6d7699f8cc818aaa89ab3",
+    "416b80d3978b0d2caa1128d54a4f021a61c0206ec95f2e61b63ddf9d6347678e",
+    "4722df67aa4c99f19d240c33febb3c6ecd85c4e474c001b1be2f472fa5c7e750",
+    "507faba57c3502abd85115a4469aa1dae191304582a7e820f95a19c1c45d1bc2",
+    "5135eff9083cac482a29cc1236afc37af3115821863b4992e9c54479375b6daf",
+    "660f10e4cba0add84d7a2726f1af6233a2c21fc526d4477a3ff4086cb6494460",
+    "6994c0da81ee996d6215d839ecf2858d93f917030d95a04e703fa0e72f9c2e9a",
+    "81b950b31362b64b4e7391f96b58e108b8fcac1a720ab0d830c22c537ad232fa",
+    "87c86de0a7c473a0b4af56a8361a5f344e0d9f5407bbb73d1c75d365edfd5841",
+    "890d253b3492292467c4798df3954eef90c798fe5b743e4085ee6aff8cc38553",
+    "923fd11933601d997b8ba46d48583cc6a24d49c51a9ea35ef0e7decdb1f0b8a7",
+    "a2b2bbb5bf32d91f284c89539e28f735f485cd7c4c5ffe75b2edf316db63d449",
+    "acca171404790fcd39d2c772cfd0dcac1a3bc6244b0d2b7d70539cec9e83a05c",
+    "b33f5ae08b4b0ea48cebfef272147fc151ef0a4f63ff97193ea0a301deb0c1c8",
+    "b46c2498f240f8e2d9275b7e0ba7095c02add5d7e246c349b82b32b31551c0b5",
+    "b52fd0a3df62220774d21418630472724446e83a783f1d10bf9b56dbd6ed9d6d",
+    "b59e3ed0690112d42932fa8a6a38a252e0475824afba90446b0830bba96ff1a3",
+    "c2f632fac275ccbdf41c18fd6a11863886ad99522cf2baf1714406417c302c08",
+    "cefd6b3e70e4be745093339b054c1b0746abee0ed1bda1d138f5788afe8f7360",
+    "d3e1ffeaeb7c5b9669a24ea990ada05d418ff2554434704cbe39f1f67c84309b",
+    "e4b0767f3edf92de2ca9d47ba730a5ccfaf8ad42438d9f50462ccd6f811ccc56",
+    "fb2cfff7c9a484c2f55b593dfd90d0722123cae54c23431af5057f072ab9ec5c"
+  ],
+  "sourceSnapshot": [
+    {
+      "path": "../.gitignore",
+      "sha256": "81b950b31362b64b4e7391f96b58e108b8fcac1a720ab0d830c22c537ad232fa"
+    },
+    {
+      "path": "../gestao_escritorio/scripts/audit_delivered_docs.py",
+      "sha256": "b46c2498f240f8e2d9275b7e0ba7095c02add5d7e246c349b82b32b31551c0b5"
+    },
+    {
+      "path": "../gestao_escritorio/scripts/gmail_gws_update.py",
+      "sha256": "416b80d3978b0d2caa1128d54a4f021a61c0206ec95f2e61b63ddf9d6347678e"
+    },
+    {
+      "path": "../gestao_escritorio/scripts/sync_forja_gestao.py",
+      "sha256": "6994c0da81ee996d6215d839ecf2858d93f917030d95a04e703fa0e72f9c2e9a"
+    },
+    {
+      "path": "FORJA_N3_CONFIG.json",
+      "sha256": "acca171404790fcd39d2c772cfd0dcac1a3bc6244b0d2b7d70539cec9e83a05c"
+    },
+    {
+      "path": "AR_ARCH_MANIFEST.json",
+      "sha256": "152ab2183a3ed6ea0ecc8e13c09b7f5c3cb024e448691168f49bf99357b79d60"
+    },
+    {
+      "path": "ar_architecture/schemas/architecture_candidate.schema.json",
+      "sha256": "923fd11933601d997b8ba46d48583cc6a24d49c51a9ea35ef0e7decdb1f0b8a7"
+    },
+    {
+      "path": "forja_post_protocol.py",
+      "sha256": "fb2cfff7c9a484c2f55b593dfd90d0722123cae54c23431af5057f072ab9ec5c"
+    },
+    {
+      "path": "forja_document_compare.py",
+      "sha256": "e4b0767f3edf92de2ca9d47ba730a5ccfaf8ad42438d9f50462ccd6f811ccc56"
+    },
+    {
+      "path": "forja_post_protocol_contracts.py",
+      "sha256": "24aac3509adca412e7a982143b6ca7f3f2fd97ccc60e67025e31afa02c570ead"
+    },
+    {
+      "path": "forja_learning.py",
+      "sha256": "1c720680cbdfeb34cae58aa987efd8e24774ae85db0ee29368b53b44e97b1740"
+    },
+    {
+      "path": "forja_learning_registry.py",
+      "sha256": "507faba57c3502abd85115a4469aa1dae191304582a7e820f95a19c1c45d1bc2"
+    },
+    {
+      "path": "forja_n4_common.py",
+      "sha256": "cefd6b3e70e4be745093339b054c1b0746abee0ed1bda1d138f5788afe8f7360"
+    },
+    {
+      "path": "forja_n4_validate.py",
+      "sha256": "5135eff9083cac482a29cc1236afc37af3115821863b4992e9c54479375b6daf"
+    },
+    {
+      "path": "forja_state_machine.py",
+      "sha256": "660f10e4cba0add84d7a2726f1af6233a2c21fc526d4477a3ff4086cb6494460"
+    },
+    {
+      "path": "generate_n4_contracts.py",
+      "sha256": "c2f632fac275ccbdf41c18fd6a11863886ad99522cf2baf1714406417c302c08"
+    },
+    {
+      "path": "test_forja_post_protocol.py",
+      "sha256": "b52fd0a3df62220774d21418630472724446e83a783f1d10bf9b56dbd6ed9d6d"
+    },
+    {
+      "path": "test_forja_ar_architecture.py",
+      "sha256": "d3e1ffeaeb7c5b9669a24ea990ada05d418ff2554434704cbe39f1f67c84309b"
+    },
+    {
+      "path": "n4_schemas/ARTIFACT_CATALOG.json",
+      "sha256": "0601b64819dc4d196ffa67b3bcc7d81ddc41330641fe5a270b44a816c5b37b79"
+    },
+    {
+      "path": "n4_schemas/post_protocol_return.schema.json",
+      "sha256": "4722df67aa4c99f19d240c33febb3c6ecd85c4e474c001b1be2f472fa5c7e750"
+    },
+    {
+      "path": "n4_schemas/protocol_evidence.schema.json",
+      "sha256": "87c86de0a7c473a0b4af56a8361a5f344e0d9f5407bbb73d1c75d365edfd5841"
+    },
+    {
+      "path": "n4_schemas/post_protocol_baseline_backfill.schema.json",
+      "sha256": "a2b2bbb5bf32d91f284c89539e28f735f485cd7c4c5ffe75b2edf316db63d449"
+    },
+    {
+      "path": "n4_schemas/document_comparison.schema.json",
+      "sha256": "b59e3ed0690112d42932fa8a6a38a252e0475824afba90446b0830bba96ff1a3"
+    },
+    {
+      "path": "n4_schemas/learning_candidate.schema.json",
+      "sha256": "b33f5ae08b4b0ea48cebfef272147fc151ef0a4f63ff97193ea0a301deb0c1c8"
+    },
+    {
+      "path": "n4_fixtures/post_protocol/devolved_chapters_memoriais_apelacao.json",
+      "sha256": "890d253b3492292467c4798df3954eef90c798fe5b743e4085ee6aff8cc38553"
+    },
+    {
+      "path": "n4_fixtures/post_protocol/prospective_memoriais_apelacao_suite.json",
+      "sha256": "3bbba58eaecfedd7ef797cd0c684560529e30ed0bcf6d7699f8cc818aaa89ab3"
+    }
+  ],
+  "baselineTreeHash": "f8d13d409339519ed5fb5511866fdc5d67f64825",
+  "candidateTreeHash": "3a06a07c01ad6c2ad55680a32e156ecb747fa60bbe28e83ba4766be98ca816c6",
+  "candidatePatchHash": "3a06a07c01ad6c2ad55680a32e156ecb747fa60bbe28e83ba4766be98ca816c6",
+  "proposal": {
+    "problem": "Retornos humanos protocolados não alimentavam uma regressão arquitetural retomável, testada e auditável.",
+    "hypothesis": "Captura transacional, diferença multicamada, promoção por fixture e worktree isolado reduzem a repetição de falhas.",
+    "scope": [
+      "F10",
+      "gmail",
+      "event-store",
+      "learning-registry"
+    ],
+    "productionMutation": false,
+    "isolation": "candidate_directory_read_only_production"
+  },
+  "experiments": {
+    "isolatedWorktree": {
+      "baseCommit": "6f6f66e4be3dca0a72b044498d1c9f408368dcaa",
+      "baseline": {
+        "passed": true,
+        "exitCode": 0,
+        "testsPassed": 75,
+        "testsFailed": 0,
+        "outputHash": "d8bd70fda81b41d23b0ef19a123ea6ece7ebf07f83e79cf8263d9da3cc67f9ff",
+        "timedOut": false,
+        "timeoutSeconds": 180,
+        "startedAt": "2026-07-29T01:22:28-03:00",
+        "finishedAt": "2026-07-29T01:22:33-03:00"
+      },
+      "baselineTargets": [
+        "test_gmail_management_matching.py",
+        "test_forja_n3_state.py",
+        "test_forja_architecture.py",
+        "test_forja_n4.py"
+      ],
+      "candidate": {
+        "passed": true,
+        "exitCode": 0,
+        "testsPassed": 110,
+        "testsFailed": 0,
+        "outputHash": "b1f1dc2ac9ee4adead57a4477338ac7d4e740ef976777267feda734e1462bd59",
+        "timedOut": false,
+        "timeoutSeconds": 180,
+        "startedAt": "2026-07-29T01:22:33-03:00",
+        "finishedAt": "2026-07-29T01:22:46-03:00"
+      },
+      "candidateTargets": [
+        "test_forja_post_protocol.py",
+        "test_gmail_management_matching.py",
+        "test_forja_n3_state.py",
+        "test_forja_architecture.py",
+        "test_forja_n4.py"
+      ],
+      "deltaComparable": false,
+      "productionMutation": false
+    },
+    "shadow": {
+      "passed": true,
+      "exitCode": 0,
+      "testsPassed": 110,
+      "testsFailed": 0,
+      "outputHash": "b1f1dc2ac9ee4adead57a4477338ac7d4e740ef976777267feda734e1462bd59",
+      "timedOut": false,
+      "timeoutSeconds": 180,
+      "startedAt": "2026-07-29T01:22:33-03:00",
+      "finishedAt": "2026-07-29T01:22:46-03:00"
+    },
+    "canary": {
+      "passed": true,
+      "exitCode": 0,
+      "testsPassed": 5,
+      "testsFailed": 0,
+      "outputHash": "f0fb3f3eb444925a474acb247d8b3efbe3da6445d6700c3ef730ffdac22d8429",
+      "timedOut": false,
+      "timeoutSeconds": 180,
+      "startedAt": "2026-07-29T01:22:46-03:00",
+      "finishedAt": "2026-07-29T01:22:49-03:00"
+    }
+  },
+  "metrics": {
+    "targetedTestsPassed": 115,
+    "targetedTestsFailed": 0,
+    "trackedVaultLeakCount": 0,
+    "trackedVaultLeaks": [],
+    "vaultIgnoreFailures": [],
+    "panelForbiddenKeyCount": 0,
+    "relevantImportCycleCount": 0,
+    "rollbackRehearsalPassed": true,
+    "baselineTestsPassed": 75,
+    "baselineTestsFailed": 0,
+    "candidateVsBaselinePassedDelta": null
+  },
+  "review": {
+    "reviewerModel": "claude-opus-5",
+    "reviewerRunId": "claude-opus-5-final-review-20260729",
+    "verdict": "approve",
+    "criticalHighResolved": true,
+    "reviewedAt": "2026-07-29T01:18:00-03:00",
+    "verifiedFixes": [
+      "second_ingest_preserves_human_decisions_by_change_fingerprint",
+      "prior_round_artifacts_are_archived_by_content_key",
+      "promotion_and_origin_resolution_require_content_key",
+      "candidate_git_metrics_use_tracked_and_check_ignore_probes",
+      "gmail_backfill_initializes_case_before_event",
+      "architecture_runner_uses_current_python_interpreter"
+    ],
+    "nonBlockingFindingsAtReview": [
+      {
+        "severity": "medium",
+        "code": "PP-AR-BASELINE-DELTA-ASYMMETRIC",
+        "status": "fixed_after_approval"
+      },
+      {
+        "severity": "low",
+        "code": "PP-INGEST-DUP-KEY",
+        "status": "fixed_after_approval"
+      },
+      {
+        "severity": "low",
+        "code": "PP-LEARN-PROMOTED-STATUS-CARRYOVER",
+        "status": "fixed_after_approval"
+      }
+    ],
+    "summary": "O único achado alto da segunda revisão foi encerrado. Não restou achado crítico ou alto."
+  },
+  "rollback": {
+    "recipe": "set features.n4PostProtocolV1=false; preserve captured local evidence",
+    "rehearsed": true,
+    "passed": true,
+    "evidence": {
+      "passed": true,
+      "featureBefore": true,
+      "featureAfter": false,
+      "entryPointsBlocked": true,
+      "preservesCapturedEvidence": true,
+      "configHash": "0c72f76378ea1c97069e8eba50aba346e58494c9a1000f387740da6137f78453",
+      "outputHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126"
+    }
+  },
+  "createdAt": "2026-07-29T01:09:58-03:00",
+  "updatedAt": "2026-07-29T01:22:52-03:00",
+  "contentHash": "fd03c3f3c9f7be6dd1e11742d45e165d8472e067182ac6c4647a06212e26d92c"
+}

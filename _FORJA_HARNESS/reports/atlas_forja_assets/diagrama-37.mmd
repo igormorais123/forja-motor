@@ -1,0 +1,23 @@
+flowchart TD
+    Questions["Questões, requisitos e pontos que devem ser respondidos"] --> Tests["Perguntas objetivas e testes de sentido"]
+    Tests --> Freeze["Fixar os critérios antes da versão final"]
+    Freeze --> Candidate["Primeira versão completa"]
+    Candidate --> Mechanical["Nomes, números, fontes, prazos e pedidos"]
+    Candidate --> Semantic["Ato processual, tese, negação, ressalva e sentido do conjunto"]
+    Candidate --> Adversarial["Melhor objeção e explicação rival"]
+    Candidate --> Meta["Premissas, concordâncias automáticas,<br/>mudanças de posição e distorção dos indicadores"]
+    Mechanical --> Result["Resultado de cada verificação<br/>sem esconder um problema grave em uma média"]
+    Semantic --> Result
+    Adversarial --> Result
+    Meta --> Result
+    Result --> Pass{"Todas as verificações obrigatórias foram aprovadas?"}
+    Pass -->|"não"| Cause{"O problema está na fonte, na estratégia,<br/>na redação ou na apresentação?"}
+    Cause --> Reopen["Voltar somente à etapa que causou o problema"]
+    Reopen --> Tests
+    Pass -->|"sim"| F8["Liberar para revisão visual"]
+
+    classDef audit fill:#edf2f8,stroke:#315f8c,color:#243f5c;
+    classDef blocker fill:#fdecea,stroke:#a33b2b,color:#64251b;
+    class Questions,Tests,Freeze,Candidate,Mechanical,Semantic,Adversarial,Meta,Result,Pass,Cause audit;
+    class Reopen blocker;
+    style F8 fill:#e9f4ec,stroke:#2f6f54,color:#1f4c39;

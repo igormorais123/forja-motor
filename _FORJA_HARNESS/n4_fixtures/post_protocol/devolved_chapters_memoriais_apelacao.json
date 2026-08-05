@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "pp-memoriais-apelacao-devolved-chapters-v1",
+  "productType": "memoriais de apelação",
+  "sourceCandidateId": "learn-b80a07dd026116a8",
+  "behaviorCode": "require_regression_test:reasoning",
+  "requiredCoverageKeys": [
+    "all_devolved_chapters",
+    "ancillary_requests"
+  ],
+  "expectedGate": "prospective_case_suite"
+}

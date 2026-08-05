@@ -1,0 +1,21 @@
+flowchart LR
+    Intake["E-mail, WhatsApp/Hermes<br/>ou comando manual"] --> Management["Gestão do escritório<br/>fila, prazo, responsável e evidência"]
+    Management --> Forja["FORJA<br/>onze etapas, da entrada à entrega,<br/>com registros e verificações"]
+    Case["Pasta do caso<br/>autos, anexos, regimento e leis"] --> Forja
+    Forja --> Council["Conselho obrigatório<br/>Helena + Cícero"]
+    Council --> Draft["Primeira versão da peça<br/>tese, fatos, fundamentos e pedidos"]
+    Draft --> Audit["Revisão dos fatos, do direito,<br/>do sentido e da apresentação"]
+    Audit --> Human["Revisão humana<br/>Igor + Fábio"]
+    Human --> Delivery["Envio ou protocolo<br/>com evidência real"]
+    Delivery --> Management
+    Delivery --> Learning["Comparação com a versão final<br/>e aprendizado para casos futuros"]
+    Learning --> Forja
+    Pso["Diagnóstico aprofundado<br/>problema, causas, alternativas<br/>e forma de conferir o resultado"] -. "melhoria em teste" .-> Forja
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b,stroke-width:2px;
+    classDef shadow fill:#fbf2ec,stroke:#9c5b38,color:#5b3522,stroke-width:2px;
+    classDef human fill:#fff4d8,stroke:#9a6b18,color:#4b370d,stroke-width:2px;
+    classDef evidence fill:#e9f4ec,stroke:#2f6f54,color:#1f4c39,stroke-width:2px;
+    class Intake,Management,Forja,Case,Draft,Audit,Delivery,Learning active;
+    class Council,Human human;
+    class Pso shadow;

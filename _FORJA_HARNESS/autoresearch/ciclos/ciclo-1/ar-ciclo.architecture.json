@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "FORJA AUTO-RESEARCH — ciclo AR",
+    "subtitle": "auto-aperfeiçoamento anti-trapaça · como construído e executado no ciclo-1 (23/07/2026)",
+    "output": "ar-ciclo.html",
+    "quality_profile": "standard",
+    "views": [
+      {
+        "id": "ciclo-real",
+        "label": "Fluxo do ciclo real",
+        "focus": [
+          "mutador",
+          "evolucao",
+          "runpair",
+          "blind",
+          "promotion",
+          "humano"
+        ],
+        "note": "Geração 0: mutações Codex → execução pareada → juiz cego com swap → gate de 3 estados → humano."
+      },
+      {
+        "id": "defesas",
+        "label": "Defesas anti-trapaça",
+        "focus": [
+          "canarios",
+          "indicadores",
+          "secrets",
+          "blind"
+        ],
+        "note": "Canários de falha única, não-inferioridade com máscara pareada, segredos HMAC fora do workspace."
+      }
+    ]
+  },
+  "layout": {
+    "mode": "grid",
+    "cols": 5,
+    "origin": [
+      40,
+      120
+    ],
+    "gapX": 60,
+    "gapY": 70,
+    "cellW": 132,
+    "cellH": 62
+  },
+  "components": [
+    {
+      "id": "mutador",
+      "type": "external",
+      "label": "Mutações Codex",
+      "sublabel": "expand · compress",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "canarios",
+      "type": "security",
+      "label": "Canários",
+      "sublabel": "falha única · kill 8/8",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "evolucao",
+      "type": "backend",
+      "label": "Evolução Karpathy",
+      "sublabel": "gerações · winners",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "runpair",
+      "type": "backend",
+      "label": "Execução pareada",
+      "sublabel": "3 lados · paridade",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "id": "blind",
+      "type": "security",
+      "label": "Juiz cego",
+      "sublabel": "swap · kappa 1.0",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "id": "promotion",
+      "type": "backend",
+      "label": "Promotion gate",
+      "sublabel": "3 estados · log hash",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "id": "humano",
+      "type": "frontend",
+      "label": "Gate humano",
+      "sublabel": "recibo Ed25519 (Igor)",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "id": "corpus",
+      "type": "database",
+      "label": "Corpus real",
+      "sublabel": "43 casos · split HMAC",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "id": "indicadores",
+      "type": "backend",
+      "label": "Indicadores I1–I10",
+      "sublabel": "sensores vivos FORJA",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "id": "secrets",
+      "type": "security",
+      "label": "Segredos externos",
+      "sublabel": "HMAC · sealed · canários",
+      "row": 3,
+      "col": 1
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Workspace _FORJA_HARNESS (Régua: 69 arquivos, 26 testes AR)",
+      "wraps": [
+        "mutador",
+        "canarios",
+        "evolucao",
+        "runpair",
+        "blind",
+        "promotion",
+        "corpus",
+        "indicadores"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "mutador-evolucao",
+      "from": "mutador",
+      "to": "evolucao",
+      "label": "variantes gen-N",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "evolucao-runpair",
+      "from": "evolucao",
+      "to": "runpair",
+      "variant": "emphasis"
+    },
+    {
+      "id": "corpus-runpair",
+      "from": "corpus",
+      "to": "runpair",
+      "label": "tarefa train",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "runpair-blind",
+      "from": "runpair",
+      "to": "blind",
+      "label": "outputs pareados",
+      "variant": "emphasis",
+      "labelAt": [
+        388,
+        248
+      ]
+    },
+    {
+      "id": "blind-promotion",
+      "from": "blind",
+      "to": "promotion",
+      "label": "kappa ≥ 0.6",
+      "variant": "emphasis",
+      "labelAt": [
+        576,
+        248
+      ]
+    },
+    {
+      "id": "canarios-promotion",
+      "from": "canarios",
+      "to": "promotion",
+      "label": "all-pass",
+      "fromSide": "right",
+      "toSide": "top",
+      "route": "orthogonal-h"
+    },
+    {
+      "id": "indicadores-promotion",
+      "from": "indicadores",
+      "to": "promotion",
+      "label": "não-inferioridade",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "route": "orthogonal-h"
+    },
+    {
+      "id": "secrets-corpus",
+      "from": "secrets",
+      "to": "corpus",
+      "label": "chave do split",
+      "variant": "security",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "promotion-humano",
+      "from": "promotion",
+      "to": "humano",
+      "label": "Ed25519",
+      "variant": "security"
+    }
+  ],
+  "cards": []
+}

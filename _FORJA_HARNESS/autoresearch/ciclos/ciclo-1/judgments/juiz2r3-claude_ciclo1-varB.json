@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz2r3-claude",
+  "judgeFamily": "claude",
+  "declarations": {
+    "filesRead": [
+      "PAR_ciclo1-varB_ORD1_L.md",
+      "PAR_ciclo1-varB_ORD1_R.md",
+      "PAR_ciclo1-varB_ORD2_L.md",
+      "PAR_ciclo1-varB_ORD2_R.md"
+    ],
+    "externalAccess": false,
+    "workspaceAccess": false
+  },
+  "votes": [
+    {
+      "order": 1,
+      "winnerPosition": "R",
+      "anchor": "Nenhum Doc. 1 a 13 foi lido ou conferido nesta execução.",
+      "justificativa": "Relatório mais objetivo e verificável, com matriz de risco numerada e gates claros; evita metalinguagem sobre ferramentas descartadas; utilidade prática ao revisor sem perder blindagem."
+    },
+    {
+      "order": 2,
+      "winnerPosition": "L",
+      "anchor": "Nenhum Doc. 1 a 13 foi lido ou conferido nesta execução.",
+      "justificativa": "ORD2_L idêntico a ORD1_R vence pelos mesmos critérios: relatório conciso, checklist de verificações obrigatórias e matriz de lastro com destino indicado."
+    }
+  ]
+}

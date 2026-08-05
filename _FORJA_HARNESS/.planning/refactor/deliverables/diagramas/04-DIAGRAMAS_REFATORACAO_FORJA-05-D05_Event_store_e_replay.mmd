@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant C as Command
+    participant L as Lock
+    participant E as EventStore
+    participant R as Reducer
+    participant S as Snapshot
+    C->>L: acquire(caseId)
+    C->>E: read(revision)
+    C->>C: validate transition
+    C->>E: append(event, expectedRevision)
+    E->>R: replay(events)
+    R->>S: atomic materialization
+    S-->>C: stateHash/revision
+    C->>L: release

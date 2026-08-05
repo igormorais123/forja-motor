@@ -1,0 +1,18 @@
+flowchart LR
+    Shadow["Agora<br/>observar sem interferir"] --> Light["Caso novo<br/>análise essencial"]
+    Light --> Full["Caso novo<br/>análise completa"]
+    Full --> Intensive["Caso novo<br/>análise aprofundada"]
+    Intensive --> Compare["Comparar erros, retrabalho<br/>e tempo com os casos anteriores"]
+    Compare --> Council["Helena + Cícero + revisão humana"]
+    Council --> Decision{"Ganho real sem<br/>sobrecarga ou falso bloqueio?"}
+    Decision -->|"não"| Revise["Rever a melhoria ou mantê-la apenas em observação"]
+    Decision -->|"sim"| Promote["Adotar somente<br/>as verificações comprovadamente úteis"]
+    Revise --> Shadow
+    Promote --> Monitor["Acompanhar novos erros<br/>e permitir retorno à versão anterior"]
+
+    classDef shadow fill:#fbf2ec,stroke:#9c5b38,color:#5b3522;
+    classDef planned fill:#f0f1f3,stroke:#707078,color:#3e3e44,stroke-dasharray:5 4;
+    classDef human fill:#fff4d8,stroke:#9a6b18,color:#4b370d;
+    class Shadow,Light,Full,Intensive,Compare,Revise planned;
+    class Council,Decision human;
+    class Promote,Monitor shadow;

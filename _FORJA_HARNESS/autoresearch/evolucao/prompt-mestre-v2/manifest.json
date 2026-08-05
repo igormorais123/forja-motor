@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "generatedAt": "1970-01-01T00:00:00Z",
+  "producerRunId": "evolucao-init-prompt-mestre-v2",
+  "experimento": "prompt-mestre-v2",
+  "alvo": "..\\PROMPT-FABRICA-MELHORIA-PETICAO.md",
+  "alvoSha256": "e1a27694dff276247aa0c74b36f90048531f53335e9212daa470fc2783a13b48",
+  "topK": 1,
+  "convergencia": {
+    "ganhoMin": 0.02,
+    "geracoesSemGanho": 3
+  },
+  "geracaoAtual": 1,
+  "geracoes": [
+    {
+      "numero": 0,
+      "variantes": [
+        {
+          "id": "varA",
+          "path": "autoresearch\\evolucao\\prompt-mestre-v2\\gen-0\\varA_expand.md",
+          "sha256": "d3fa27611fb7f79aede60634fa8d8d68d405b4a59b4ad4806fb84332aa88aeb5",
+          "estrategia": "expand",
+          "eixo": "incorpora cautelas das diretrizes 6-24 (origem operacional, cronologia com identidade, suficiencia da fonte, interno x externo, admissibilidade por fundamento, prescricao por matriz)",
+          "parent": "baseline"
+        },
+        {
+          "id": "varB",
+          "path": "autoresearch\\evolucao\\prompt-mestre-v2\\gen-0\\varB_compress.md",
+          "sha256": "8919f7848da22a4594fc402d6b18eafe2cbd42b95007a5ed7e0cccbf4383ad0a",
+          "estrategia": "compress",
+          "eixo": "mesma forca normativa consolidada em gates verificaveis e checklists enxutos",
+          "parent": "baseline"
+        }
+      ],
+      "resultado": [
+        {
+          "id": "varA",
+          "estrategia": "expand",
+          "venceuJuizCego": false,
+          "naoInferioridade": true,
+          "kappa": null
+        },
+        {
+          "id": "varB",
+          "estrategia": "compress",
+          "venceuJuizCego": "0bdcfae6c830b1306fb73ba23ddb980b13495958b8de45f9bbd498441771eb6d",
+          "naoInferioridade": true,
+          "kappa": 1.0
+        }
+      ],
+      "winner": "varB"
+    },
+    {
+      "numero": 1,
+      "variantes": [
+        {
+          "id": "varH",
+          "path": "autoresearch\\evolucao\\prompt-mestre-v2\\gen-1\\varH_hybrid.md",
+          "sha256": "5f1df884aa8c508dc10215f4f07cff546b223b5b5fdd92bdddd5340eae36e857",
+          "estrategia": "hybrid",
+          "eixo": "parent compress + reforco das 4 recomendacoes do parecer AR-1 (cobertura do ato impugnado, Helena nao-eletiva, fidelity do Fable, risco critico bloqueia liberacao)",
+          "parent": "gen-0/varB"
+        }
+      ],
+      "resultado": [
+        {
+          "id": "varH",
+          "estrategia": "hybrid",
+          "venceuJuizCego": false,
+          "naoInferioridade": true,
+          "kappa": 1.0
+        }
+      ],
+      "winner": null
+    }
+  ]
+}

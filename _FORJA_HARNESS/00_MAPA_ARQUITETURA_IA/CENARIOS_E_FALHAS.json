@@ -1,0 +1,184 @@
+{
+  "generated_at": "2026-08-05T00:22:15-03:00",
+  "scenarios": [
+    [
+      "S-J01",
+      "Executar caso novo",
+      "Corpus autorizado e manifesto válido",
+      "F1 → F2A → F3/F4 → F5 → F6 → F7/F7-B → F8 → QA → F10",
+      "Pacote interno com trilha de evidência",
+      "Qualquer gate bloqueante encerra promoção"
+    ],
+    [
+      "S-J02",
+      "Reprocessar após falha",
+      "PHASE_RESULT com reason code",
+      "Identificar fase → preservar estado → corrigir causa → repetir desde fronteira segura",
+      "Nova execução comparável",
+      "Não pular fase para esconder erro"
+    ],
+    [
+      "S-J03",
+      "Aplicar revisão editorial",
+      "F7 sem P0 material",
+      "Congelar substância → editar forma → diff factual → auditoria",
+      "Texto mais humano e fiel",
+      "Mudança de pedido/fato/autoridade reverte revisão"
+    ],
+    [
+      "S-J04",
+      "Materializar saída",
+      "Texto canônico e assets aprovados",
+      "Gerar DOCX/PDF → render → comparar → inspeção por página → manifestar",
+      "Artefato visual auditado",
+      "Falha visual bloqueia entrega"
+    ],
+    [
+      "S-J05",
+      "Assimilar retorno humano",
+      "Entrega exata registrada e e-mail elegível",
+      "Capturar → vincular caso → classificar prova → comparar → revisar candidatos",
+      "Original, cópia canônica, relatório e ledger por hash",
+      "Identidade, baseline ou OCR ambíguos bloqueiam o ramo"
+    ],
+    [
+      "S-J06",
+      "Aplicar lição promovida",
+      "Regra ativa compatível com o produto/caso",
+      "Resolver escopo → aplicar antes da redação → executar suíte prospectiva",
+      "Recibo verde e ausência da falha-alvo",
+      "Regra compatível não aplicada produz PP-LEARNING-NOT-APPLIED"
+    ],
+    [
+      "S-J07",
+      "Ensaiar evolução arquitetural",
+      "Falha recorrente e candidata declarada",
+      "Snapshot → worktree → shadow → canário → revisão → rollback",
+      "Relatório comparável em estudo_descritivo",
+      "Candidata não promove nem altera produção sozinha"
+    ]
+  ],
+  "failure_modes": [
+    [
+      "F-J01",
+      "Injeção no corpus",
+      "Documento tenta instruir o agente",
+      "Dados nunca são instruções",
+      "Quarentenar trecho e registrar detecção"
+    ],
+    [
+      "F-J02",
+      "Promoção sem contrato",
+      "Arquivo aparece sem PHASE_RESULT/hash",
+      "Manifesto + schemas",
+      "Rejeitar e reexecutar a fase"
+    ],
+    [
+      "F-J03",
+      "Lacuna material ignorada",
+      "P0/P1 chega à redação",
+      "F2A/F7 fail-closed",
+      "Bloquear e pedir fonte/decisão"
+    ],
+    [
+      "F-J04",
+      "Editorial altera substância",
+      "Diff muda fato/pedido/citação",
+      "Gate de fidelidade",
+      "Reverter e refazer somente a forma"
+    ],
+    [
+      "F-J05",
+      "Estado confundido com código",
+      "Execução particular vira regra",
+      "Zonas separadas",
+      "Restaurar contrato canônico e isolar state"
+    ],
+    [
+      "F-J06",
+      "Render defeituoso",
+      "Paginação/elemento visual quebra",
+      "QA página a página",
+      "Corrigir materialização sem alterar texto canônico"
+    ],
+    [
+      "F-J07",
+      "Baseline pós-protocolo errada",
+      "Hash não coincide com o envio",
+      "Resolver por artefato, hash e deliveredAt",
+      "Criar backfill próprio em pending_review; nunca sobrescrever F9/F10"
+    ],
+    [
+      "F-J08",
+      "Falso protocolo",
+      "E-mail diz protocolada sem elo verificável",
+      "Separar claimed de verified",
+      "Preservar como versão humana final e solicitar comprovante"
+    ],
+    [
+      "F-J09",
+      "Reingestão apaga decisões",
+      "Mesmo contentKey volta como candidato novo",
+      "Idempotência por fingerprint e histórico",
+      "Revalidar recibos e preservar decisões compatíveis"
+    ],
+    [
+      "F-J10",
+      "Lição promovida não entra na próxima peça",
+      "Suíte compatível não encontra requisito",
+      "Registry ativo + validador prospectivo",
+      "Bloquear com PP-LEARNING-NOT-APPLIED"
+    ],
+    [
+      "F-J11",
+      "AR altera produção ou perde evidência",
+      "Candidata escreve fora do worktree",
+      "Snapshot, overlay isolado e rollback ensaiado",
+      "Desabilitar feature preservando capturas e registrar falha"
+    ]
+  ],
+  "trust_zones": [
+    [
+      "Z0",
+      "Corpus",
+      "Fontes tratadas como dados",
+      "Defesa contra injeção"
+    ],
+    [
+      "Z1",
+      "Controle",
+      "Runner, manifesto e schemas",
+      "Autoridade de contrato"
+    ],
+    [
+      "Z2",
+      "Produção",
+      "Fases e artefatos intermediários",
+      "Promoção por gate"
+    ],
+    [
+      "Z3",
+      "Estado",
+      "Telemetria, cache e runs",
+      "Privado e restaurável"
+    ],
+    [
+      "Z4",
+      "Materialização/entrega",
+      "DOCX/PDF e pacote",
+      "Somente após QA"
+    ],
+    [
+      "Z5",
+      "Pós-protocolo",
+      "Original, diff e evidência",
+      "Conteúdo integral no cofre local"
+    ],
+    [
+      "Z6",
+      "Aprendizado",
+      "Candidatos, regras e candidatas arquiteturais",
+      "Autoridade cresce somente por decisão e teste"
+    ]
+  ]
+}

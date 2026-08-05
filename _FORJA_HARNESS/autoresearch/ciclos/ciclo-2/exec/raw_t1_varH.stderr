@@ -1,0 +1,18 @@
+2026-07-23T23:15:16.927431Z ERROR codex_core_skills::loader: skills scan reached its traversal limit (root: file:///C:/Users/IgorPC/.agents/skills)
+2026-07-23T23:15:17.039359Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\hermes\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039420Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\mirante-analytics\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039446Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\mirante-deploy\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039459Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\mirante-identity\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039706Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\omniroute-octopus\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039718Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\problem-solving-vila\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039725Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\relatorio-latex-inteia\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039730Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\revisar-anti-ia\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039735Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\skill-factory-ps\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039741Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\skills-guide\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039746Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\claude-mem\openclaw\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039752Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\claude-mem\openclaw\skills\do\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:17.039758Z ERROR codex_core::session::session: failed to load skill C:\Users\IgorPC\.agents\skills\claude-mem\openclaw\skills\make-plan\SKILL.md: missing YAML frontmatter delimited by ---
+2026-07-23T23:15:23.937030Z ERROR codex_core_skills::loader: skills scan reached its traversal limit (root: file:///C:/Users/IgorPC/.agents/skills)
+2026-07-23T23:15:23.937673Z ERROR codex_core_skills::loader: skills scan reached its traversal limit (root: file:///C:/Users/IgorPC/.agents/skills)
+2026-07-23T23:15:28.480053Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_reasoning_summaries` at line 88 column 5
+2026-07-23T23:18:48.647420Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_reasoning_summaries` at line 88 column 5

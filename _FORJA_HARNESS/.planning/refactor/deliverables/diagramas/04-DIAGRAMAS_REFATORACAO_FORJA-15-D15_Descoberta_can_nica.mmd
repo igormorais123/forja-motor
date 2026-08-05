@@ -1,0 +1,15 @@
+flowchart TD
+    Files["todos test_*.py"] --> Discover["discovery"]
+    Manifest["manifesto de suítes"] --> Discover
+    Discover --> Compare{"todo teste classificado?"}
+    Compare -->|não| Fail["falhar: órfão"]
+    Compare -->|sim| Unit["unit"]
+    Compare -->|sim| Contract["contract"]
+    Compare -->|sim| Integration["integration"]
+    Compare -->|sim| Mutation["mutation"]
+    Compare -->|sim| Real["real"]
+    Unit --> Report["relatório único"]
+    Contract --> Report
+    Integration --> Report
+    Mutation --> Report
+    Real --> Report

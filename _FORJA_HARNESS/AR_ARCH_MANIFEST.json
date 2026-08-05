@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "lineage": "AR-Architecture",
+  "status": "active_descriptive_only",
+  "maturityCeiling": "estudo_descritivo",
+  "pieceAutoresearchManifest": "autoresearch/AR_MANIFEST.json",
+  "pieceAutoresearchManifestImmutable": true,
+  "productionMutationAllowed": false,
+  "candidateRoot": "ar_architecture/candidates",
+  "schema": "ar_architecture/schemas/architecture_candidate.schema.json",
+  "stages": [
+    "proposed",
+    "shadow_passed",
+    "canary_passed",
+    "independently_reviewed",
+    "rollback_rehearsed",
+    "estudo_descritivo"
+  ],
+  "indicators": {
+    "targetedTestsPassed": {
+      "direction": "higher_is_better",
+      "minimum": 1,
+      "deterministic": true
+    },
+    "targetedTestsFailed": {
+      "direction": "lower_is_better",
+      "maximum": 0,
+      "deterministic": true
+    },
+    "trackedVaultLeakCount": {
+      "direction": "lower_is_better",
+      "maximum": 0,
+      "deterministic": true
+    },
+    "panelForbiddenKeyCount": {
+      "direction": "lower_is_better",
+      "maximum": 0,
+      "deterministic": true
+    },
+    "relevantImportCycleCount": {
+      "direction": "lower_is_better",
+      "maximum": 0,
+      "deterministic": true
+    },
+    "rollbackRehearsalPassed": {
+      "direction": "boolean_gate",
+      "required": true,
+      "deterministic": true
+    }
+  },
+  "gates": {
+    "shadow": "targeted suite passes without production mutation",
+    "canary": "Jalusa, concurrency, idempotency, baseline and panel canaries pass",
+    "independentReview": "reviewer differs from producer and verdict is approve",
+    "rollback": "feature-off configuration is valid and automation resolves to disabled",
+    "ceiling": "the first lineage cannot exceed estudo_descritivo"
+  },
+  "rollbackPolicy": {
+    "automaticOnlyForObjectiveTechnicalFailure": true,
+    "legalRegressionRequiresHumanDecision": true,
+    "defaultAction": "set features.n4PostProtocolV1=false and keep captured evidence intact"
+  }
+}

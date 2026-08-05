@@ -1,0 +1,17 @@
+flowchart LR
+    R0["R0 Baseline"] --> R1["R1 Escudo TDD"]
+    R1 --> R2["R2 Ambiente reproduzível"]
+    R2 --> R3A["R3-A Core"]
+    R2 --> R3B["R3-B Catálogos"]
+    R3A --> R4["R4 Estado/promoção"]
+    R3B --> R4
+    R4 --> R5["R5 Entrega/gestão"]
+    R3A --> R6A["R6-A Render"]
+    R3B --> R6B["R6-B Validadores"]
+    R3A --> R6C["R6-C CLIs"]
+    R5 --> R7["R7 Sanitização física"]
+    R6A --> R7
+    R6B --> R7
+    R6C --> R7
+    R7 --> R8["R8 Atlas vivo"]
+    R8 --> R9["R9 Replay/cutover"]

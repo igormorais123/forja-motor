@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-08-03T15:01:43.700129+00:00",
+  "nodes": {
+    "iface_forja_module_2f21c6d98c9873": {
+      "code_fingerprint": "06f5d1ff08c1cc797165396ffeaad05c49b34b64b1033c2e61ce029403e8624b",
+      "label": "forja_reasoning.py",
+      "last": "2026-07-30T18:34:45.744136+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-30T18:34:45.744136+00:00",
+          "outcome": "useful",
+          "q": "Analise criticamente os planos Van Aken e McKinsey e integre os recursos existentes da FORJA em uma nova versao consolidada"
+        }
+      ],
+      "score": 0.914844223,
+      "source_file": "forja_reasoning.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "iface_forja_module_70467976bb24f5": {
+      "code_fingerprint": "cb7f5acfcd6efa47d9f03ba382439e8929ec431e5c366101fc464bb2789d4d3b",
+      "label": "forja_exploracao_100.py",
+      "last": "2026-07-30T18:34:45.744136+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-30T18:34:45.744136+00:00",
+          "outcome": "useful",
+          "q": "Analise criticamente os planos Van Aken e McKinsey e integre os recursos existentes da FORJA em uma nova versao consolidada"
+        }
+      ],
+      "score": 0.914844223,
+      "source_file": "forja_exploracao_100.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "iface_forja_module_8c32fb30cc5c3d": {
+      "code_fingerprint": "96c1e79ce5f5fd2ca55bf01bfb5ff63a1865f6fb083477a65cdfcd391795eeee",
+      "label": "forja_pso_pet.py",
+      "last": "2026-07-30T18:34:45.744136+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-30T18:34:45.744136+00:00",
+          "outcome": "useful",
+          "q": "Analise criticamente os planos Van Aken e McKinsey e integre os recursos existentes da FORJA em uma nova versao consolidada"
+        }
+      ],
+      "score": 0.914844223,
+      "source_file": "forja_pso_pet.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "iface_forja_schema_541c81edd13202": {
+      "code_fingerprint": "5267db0b0974a2fc21d4e9df2148f60e363af85a0aaae2baad16927ce8fee17a",
+      "label": "n4_schemas/f2_question_tree.schema.json",
+      "last": "2026-07-30T18:34:45.744136+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-30T18:34:45.744136+00:00",
+          "outcome": "useful",
+          "q": "Analise criticamente os planos Van Aken e McKinsey e integre os recursos existentes da FORJA em uma nova versao consolidada"
+        }
+      ],
+      "score": 0.914844223,
+      "source_file": "n4_schemas/f2_question_tree.schema.json",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
+  "version": 1
+}

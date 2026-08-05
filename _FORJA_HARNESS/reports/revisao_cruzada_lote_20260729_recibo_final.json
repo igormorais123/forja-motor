@@ -1,0 +1,20 @@
+{
+  "reviewSessionId": "b037afb9-6900-4de5-a147-d33adf8377e5",
+  "reviewResultId": "c39d3d16-003e-4253-bb2a-62a909722cd8",
+  "reviewerModel": "claude-opus-5",
+  "effectiveModel": {
+    "modelUsage": "claude-opus-5",
+    "canonicalModel": "claude-opus-5",
+    "provider": "firstParty"
+  },
+  "familyAssurance": "cross_family",
+  "p0Count": 0,
+  "p1Count": 0,
+  "cases": {
+    "cafelana_v7": "aprovado_envio_interno",
+    "estre": "aprovado_envio_interno",
+    "erm_osv": "aprovado_envio_interno",
+    "corsan_procon": "aprovado_envio_interno"
+  },
+  "approvedForInternalSend": true
+}

@@ -1,0 +1,30 @@
+{
+ "variant-a": {
+  "svg": "variant-a.svg",
+  "viol_legibilidade": [],
+  "cores_fora_da_paleta": [],
+  "fontes_fora": [],
+  "score_objetivo": 10.0
+ },
+ "variant-b": {
+  "svg": "variant-b.svg",
+  "viol_legibilidade": [],
+  "cores_fora_da_paleta": [],
+  "fontes_fora": [],
+  "score_objetivo": 10.0
+ },
+ "variant-c": {
+  "svg": "variant-c.svg",
+  "viol_legibilidade": [],
+  "cores_fora_da_paleta": [],
+  "fontes_fora": [],
+  "score_objetivo": 10.0
+ },
+ "variant-d": {
+  "svg": "variant-d.svg",
+  "viol_legibilidade": [],
+  "cores_fora_da_paleta": [],
+  "fontes_fora": [],
+  "score_objetivo": 10.0
+ }
+}

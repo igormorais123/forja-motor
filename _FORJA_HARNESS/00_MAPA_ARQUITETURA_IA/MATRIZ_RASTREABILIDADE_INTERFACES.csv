@@ -1,0 +1,1343 @@
+﻿tipo,modulo,simbolo_contrato,assinatura_campos,linha,confianca,consumo_relacao
+function,calibrar_mapa_gen.py,carrega_manual,(path),37,EXTRACTED,defines
+function,calibrar_mapa_gen.py,acha_md,"(base, nome)",44,EXTRACTED,defines
+function,calibrar_mapa_gen.py,resolve,"(ancora, paragrafos)",49,EXTRACTED,defines
+function,calibrar_mapa_gen.py,cobre,"(manuais, gerados, paragrafos)",63,EXTRACTED,defines
+function,calibrar_mapa_gen.py,main,(),77,EXTRACTED,defines
+function,forja_adocao_rota.py,_sha_arquivo,(caminho),59,EXTRACTED,defines
+function,forja_adocao_rota.py,_entregas,(limite),70,EXTRACTED,defines
+function,forja_adocao_rota.py,_caminho_alvo,"(valor, marcador)",122,EXTRACTED,defines
+function,forja_adocao_rota.py,_alvo_do_marcador,(dados),145,EXTRACTED,defines
+function,forja_adocao_rota.py,_marca_aplica,"(marcador, docx)",155,EXTRACTED,defines
+function,forja_adocao_rota.py,_marcas_do_docx,(caminho),177,EXTRACTED,defines
+function,forja_adocao_rota.py,medir,(limite = <default>),185,EXTRACTED,defines
+function,forja_adocao_rota.py,main,(),222,EXTRACTED,defines
+cli-command,forja_adocao_rota.py,<global>,"--ultimas, --json",224,EXTRACTED,accepts_option
+function,forja_adversarial_audit.py,mandatory_prompt_for_phase,(phase: str) -> str,96,EXTRACTED,defines
+function,forja_adversarial_audit.py,response_product_required,(text: str) -> bool,102,EXTRACTED,defines
+function,forja_adversarial_audit.py,_official_url,(value: object) -> bool,108,EXTRACTED,defines
+function,forja_adversarial_audit.py,_citation_id,(index: int) -> str,116,EXTRACTED,defines
+function,forja_adversarial_audit.py,initialize_audit,"(source: Path, *, applicable: bool = <default>, reason: str = <default>) -> dict",120,EXTRACTED,defines
+function,forja_adversarial_audit.py,_validate_source,"(payload: dict, source_path: Path | None, p0: list[str]) -> None",184,EXTRACTED,defines
+function,forja_adversarial_audit.py,_validate_inventory_completeness,"(payload: dict, source_path: Path | None, p0: list[str]) -> None",194,EXTRACTED,defines
+function,forja_adversarial_audit.py,validate_adversarial_audit,"(payload: dict, *, source_path: Path | None = <default>) -> dict",206,EXTRACTED,defines
+function,forja_adversarial_audit.py,validate_adversarial_strategy,"(payload: dict, audit_path: Path) -> dict",344,EXTRACTED,defines
+function,forja_adversarial_audit.py,validate_adversarial_recheck,"(payload: dict, audit_path: Path, strategy_path: Path) -> dict",403,EXTRACTED,defines
+function,forja_adversarial_audit.py,validate_phase_artifacts,"(phase: str, artifacts: dict[str, Path], inputs: dict[str, dict]) -> list[str]",456,EXTRACTED,defines
+function,forja_adversarial_audit.py,main,() -> None,482,EXTRACTED,defines
+cli-command,forja_adversarial_audit.py,<global>,,486,EXTRACTED,accepts_option
+cli-command,forja_adversarial_audit.py,init,"source, output",485,EXTRACTED,accepts_option
+cli-command,forja_adversarial_audit.py,not-applicable,"output, --reason",488,EXTRACTED,accepts_option
+cli-command,forja_adversarial_audit.py,prompt,phase,495,EXTRACTED,accepts_option
+cli-command,forja_adversarial_audit.py,validate,"ledger, --source, --output",491,EXTRACTED,accepts_option
+function,forja_adversarial_gate.py,_motivo,(dados: dict) -> str | None,42,EXTRACTED,defines
+function,forja_adversarial_gate.py,_hashes_do_arquivo,(caminho) -> set,50,EXTRACTED,defines
+function,forja_adversarial_gate.py,validar_auditoria_adversarial,"(auditoria, estrategia = <default>, caminho_auditoria = <default>)",62,EXTRACTED,defines
+function,forja_adversarial_gate.py,validar_politica_liberacao,"(manifesto, gate_result = <default>)",224,EXTRACTED,defines
+function,forja_alertas.py,_now,(),34,EXTRACTED,defines
+function,forja_alertas.py,_now_iso,(),38,EXTRACTED,defines
+function,forja_alertas.py,_registro_enviados,(case_dir: Path) -> Path,42,EXTRACTED,defines
+function,forja_alertas.py,_pendentes,(case_dir: Path) -> Path,46,EXTRACTED,defines
+function,forja_alertas.py,_ler_json,"(path: Path, fallback)",50,EXTRACTED,defines
+function,forja_alertas.py,_dedup_ok,"(case_dir: Path, chave: str) -> bool",57,EXTRACTED,defines
+function,forja_alertas.py,_marcar_enviado,"(case_dir: Path, chave: str)",69,EXTRACTED,defines
+function,forja_alertas.py,_log_global,(evento: dict),78,EXTRACTED,defines
+function,forja_alertas.py,_demand_id_do_caso,(case_dir: Path) -> str | None,84,EXTRACTED,defines
+function,forja_alertas.py,_comentar_no_painel,"(demand_id: str, texto: str) -> bool",93,EXTRACTED,defines
+function,forja_alertas.py,_emitir,"(case_dir: Path, evento: dict, chave_dedup: str) -> dict",136,EXTRACTED,defines
+function,forja_alertas.py,notificar_p0,"(case_dir, gate: str, motivo: str, origem: str = <default>, demand_id: str | None = <default>) -> dict",167,EXTRACTED,defines
+function,forja_alertas.py,notificar_resolucao,"(case_dir, gate: str, demand_id: str | None = <default>) -> dict",185,EXTRACTED,defines
+function,forja_alertas.py,drenar_pendentes,(case_dir) -> dict,199,EXTRACTED,defines
+function,forja_ar_architecture.py,automation_enabled,(config: dict) -> bool,81,EXTRACTED,defines
+function,forja_ar_architecture.py,_semantic,(candidate: dict) -> dict,85,EXTRACTED,defines
+function,forja_ar_architecture.py,_write_candidate,"(path: Path, candidate: dict) -> None",89,EXTRACTED,defines
+function,forja_ar_architecture.py,validate_candidate,(candidate: dict) -> list[str],95,EXTRACTED,defines
+function,forja_ar_architecture.py,validate_manifest,(manifest: dict) -> list[str],112,EXTRACTED,defines
+function,forja_ar_architecture.py,create_candidate,"(candidate_id: str, *, title: str, problem: str, hypothesis: str, scope: list[str]) -> Path",136,EXTRACTED,defines
+function,forja_ar_architecture.py,_run_pytest,"(targets: list[str], *, cwd: Path = <default>, timeout: int = <default>) -> dict",210,EXTRACTED,defines
+function,forja_ar_architecture.py,_relevant_import_graph,"() -> dict[str, set[str]]",257,EXTRACTED,defines
+function,forja_ar_architecture.py,_cycle_count,"(graph: dict[str, set[str]]) -> int",278,EXTRACTED,defines
+function,forja_ar_architecture.py,_tracked_vault_leaks,(repo_root: Path | None = <default>) -> list[str],315,EXTRACTED,defines
+function,forja_ar_architecture.py,_vault_ignore_failures,(repo_root: Path) -> list[str],333,EXTRACTED,defines
+function,forja_ar_architecture.py,_rollback_rehearsal,(harness: Path) -> dict,353,EXTRACTED,defines
+function,forja_ar_architecture.py,_overlay_candidate,"(worktree_harness: Path, snapshot: list[dict]) -> None",405,EXTRACTED,defines
+function,forja_ar_architecture.py,evaluate_candidate,"(path: Path, *, review_path: Path) -> dict",422,EXTRACTED,defines
+function,forja_ar_architecture.py,main,() -> None,543,EXTRACTED,defines
+cli-command,forja_ar_architecture.py,<global>,,547,EXTRACTED,accepts_option
+cli-command,forja_ar_architecture.py,create,"candidate_id, --title, --problem, --hypothesis, --scope",546,EXTRACTED,accepts_option
+cli-command,forja_ar_architecture.py,evaluate,"candidate_id, --review",552,EXTRACTED,accepts_option
+function,forja_ar_blind.py,canonicalize,(text: str) -> str,20,EXTRACTED,defines
+function,forja_ar_blind.py,leak_scan,(text: str) -> list[str],44,EXTRACTED,defines
+function,forja_ar_blind.py,_sha_bytes,(data: bytes) -> str,49,EXTRACTED,defines
+function,forja_ar_blind.py,_sha_file,(path: Path) -> str,53,EXTRACTED,defines
+function,forja_ar_blind.py,_canonical,(value) -> bytes,57,EXTRACTED,defines
+function,forja_ar_blind.py,_mapping_path,(pair_id: str) -> Path,61,EXTRACTED,defines
+function,forja_ar_blind.py,prepare,"(runpair_dir: Path, blind_dir: Path, pair_id: str, *, key: bytes | None = <default>) -> dict",68,EXTRACTED,defines
+function,forja_ar_blind.py,_verify_mapping,"(mapping: dict, key: bytes) -> bool",125,EXTRACTED,defines
+function,forja_ar_blind.py,_mapping_leaked,"(workspace: Path, mapping_sha: str, external_path: Path) -> bool",132,EXTRACTED,defines
+function,forja_ar_blind.py,_cohen_kappa,"(votes_a: list[str], votes_b: list[str]) -> float | None",147,EXTRACTED,defines
+function,forja_ar_blind.py,consolidate,"(blind_dir: Path, judgment_paths: list[Path], pair_id: str, *, key: bytes | None = <default>, workspace: Path = <default>) -> dict",159,EXTRACTED,defines
+function,forja_ar_blind.py,main,(argv = <default>) -> int,251,EXTRACTED,defines
+cli-command,forja_ar_blind.py,<global>,"--prepare, --consolidate, --pair-id, --runpair-dir, --blind-dir, --judgment",254,EXTRACTED,accepts_option
+function,forja_ar_canarios.py,_sha,(path: Path) -> str,20,EXTRACTED,defines
+function,forja_ar_canarios.py,_load,(path: Path) -> dict,24,EXTRACTED,defines
+function,forja_ar_canarios.py,_adverse,"(indicator: str, base: dict, changed: dict) -> bool",28,EXTRACTED,defines
+function,forja_ar_canarios.py,verificar_manifest,(manifest_path: Path) -> dict,36,EXTRACTED,defines
+function,forja_ar_canarios.py,verificar,"(*, public_manifest: Path = <default>, secreto: bool = <default>) -> dict",95,EXTRACTED,defines
+function,forja_ar_canarios.py,main,(argv = <default>) -> int,122,EXTRACTED,defines
+cli-command,forja_ar_canarios.py,<global>,"--verificar, --secreto, --manifest",124,EXTRACTED,accepts_option
+function,forja_ar_ciclo.py,_canonical,(value) -> bytes,34,EXTRACTED,defines
+function,forja_ar_ciclo.py,_sha_bytes,(value: bytes) -> str,38,EXTRACTED,defines
+function,forja_ar_ciclo.py,_sha_file,(path: Path) -> str,42,EXTRACTED,defines
+function,forja_ar_ciclo.py,append_log,"(log_path: Path, ciclo: str, acao: str, inputs, resultado) -> dict",46,EXTRACTED,defines
+function,forja_ar_ciclo.py,verify_log,(log_path: Path) -> list[str],71,EXTRACTED,defines
+function,forja_ar_ciclo.py,snapshot,"(cycle_dir: Path, manifest_path: Path, *, corpus_path: Path | None = <default>, log_path: Path | None = <default>) -> Path",96,EXTRACTED,defines
+function,forja_ar_ciclo.py,_load_required,"(path: Path | None, name: str, errors: list[str]) -> dict",129,EXTRACTED,defines
+function,forja_ar_ciclo.py,consume_sealed,"(version: str, limit: int, evaluation: dict | None = <default>) -> tuple[bool, str]",140,EXTRACTED,defines
+function,forja_ar_ciclo.py,promotion,"(cycle_dir: Path, manifest_path: Path, *, comparison_path: Path | None, canary_path: Path | None, judgment_path: Path | None, use_sealed: bool = <default>, variant_sha: str | None = <default>, sealed_eval_path: Path | None = <default>) -> dict",169,EXTRACTED,defines
+function,forja_ar_ciclo.py,independent_review,"(decision_path: Path, opinion_path: Path, family: str, generator_family: str) -> dict",264,EXTRACTED,defines
+function,forja_ar_ciclo.py,human_approve,"(decision_path: Path, receipt_path: Path) -> dict",282,EXTRACTED,defines
+function,forja_ar_ciclo.py,cluster_interval,"(values_by_lineage: dict[str, list[float]], corpus_hash: str, samples: int = <default>) -> dict",309,EXTRACTED,defines
+function,forja_ar_ciclo.py,relatorio,"(cycle_dir: Path, panel_path: Path, output_path: Path | None = <default>) -> Path",331,EXTRACTED,defines
+function,forja_ar_ciclo.py,main,(argv = <default>) -> int,389,EXTRACTED,defines
+cli-command,forja_ar_ciclo.py,<global>,,393,EXTRACTED,accepts_option
+cli-command,forja_ar_ciclo.py,human-approve,"--decision, --receipt",413,EXTRACTED,accepts_option
+cli-command,forja_ar_ciclo.py,independent-review,"--decision, --parecer, --familia, --familia-geradora",408,EXTRACTED,accepts_option
+cli-command,forja_ar_ciclo.py,promotion,"--cycle-dir, --manifest, --comparison, --canary, --judgment, --no-sealed, --variant-sha, --sealed-eval",399,EXTRACTED,accepts_option
+cli-command,forja_ar_ciclo.py,relatorio,"--cycle-dir, --panel, --output",416,EXTRACTED,accepts_option
+cli-command,forja_ar_ciclo.py,snapshot,"--cycle-dir, --manifest, --corpus, --log",394,EXTRACTED,accepts_option
+cli-command,forja_ar_ciclo.py,verify-log,--log,392,EXTRACTED,accepts_option
+function,forja_ar_corpus.py,_read_json,"(path: Path, fallback = <default>)",23,EXTRACTED,defines
+function,forja_ar_corpus.py,_sha256_file,(path: Path) -> str,30,EXTRACTED,defines
+function,forja_ar_corpus.py,_canonical,(value) -> bytes,38,EXTRACTED,defines
+function,forja_ar_corpus.py,secrets_dir,"(*, create: bool = <default>) -> Path",42,EXTRACTED,defines
+function,forja_ar_corpus.py,load_hmac_key,"(*, create_dir: bool = <default>) -> bytes",56,EXTRACTED,defines
+function,forja_ar_corpus.py,_fold,(value: str) -> str,70,EXTRACTED,defines
+function,forja_ar_corpus.py,derivar_linhagem,"(case_id: str, case_folder: str = <default>, equivalencias: dict | None = <default>) -> str",75,EXTRACTED,defines
+function,forja_ar_corpus.py,atribuir_split,"(lineage_id: str, key: bytes, split_config: dict | None = <default>) -> str",92,EXTRACTED,defines
+function,forja_ar_corpus.py,_case_metadata,(case_dir: Path) -> dict,105,EXTRACTED,defines
+function,forja_ar_corpus.py,_artifact_candidates,"(case_dir: Path) -> list[tuple[int, Path, str]]",134,EXTRACTED,defines
+function,forja_ar_corpus.py,scan_corpus,"(state_dir: Path = <default>, *, manifest: dict | None = <default>, key: bytes | None = <default>, sealed_sink: list[dict] | None = <default>) -> dict",155,EXTRACTED,defines
+function,forja_ar_corpus.py,register_sealed_inventory,"(items: list[dict], manifest: dict) -> Path",260,EXTRACTED,defines
+function,forja_ar_corpus.py,check_corpus,"(corpus: dict, root: Path = <default>) -> list[str]",281,EXTRACTED,defines
+function,forja_ar_corpus.py,report,(corpus: dict) -> dict,298,EXTRACTED,defines
+function,forja_ar_corpus.py,main,(argv = <default>) -> int,313,EXTRACTED,defines
+cli-command,forja_ar_corpus.py,<global>,"--scan, --check, --report, --state-dir, --manifest",316,EXTRACTED,accepts_option
+function,forja_ar_evolucao.py,_sha_file,(path: Path) -> str,27,EXTRACTED,defines
+function,forja_ar_evolucao.py,_load,(path: Path) -> dict,31,EXTRACTED,defines
+function,forja_ar_evolucao.py,_save,"(path: Path, payload: dict) -> None",35,EXTRACTED,defines
+function,forja_ar_evolucao.py,_manifest_path,(experimento: str) -> Path,40,EXTRACTED,defines
+function,forja_ar_evolucao.py,init_experimento,"(experimento: str, alvo: Path, *, convergencia_ganho_min: float = <default>, convergencia_geracoes: int = <default>, top_k: int = <default>) -> dict",44,EXTRACTED,defines
+function,forja_ar_evolucao.py,registrar_geracao,"(experimento: str, variantes: list[dict]) -> dict",70,EXTRACTED,defines
+function,forja_ar_evolucao.py,selecionar_winner,"(experimento: str, geracao: int, resultados: list[dict]) -> dict",103,EXTRACTED,defines
+function,forja_ar_evolucao.py,verificar_convergencia,(experimento: str) -> dict,150,EXTRACTED,defines
+function,forja_ar_evolucao.py,main,(argv = <default>) -> int,169,EXTRACTED,defines
+cli-command,forja_ar_evolucao.py,<global>,,173,EXTRACTED,accepts_option
+cli-command,forja_ar_evolucao.py,convergencia,--experimento,183,EXTRACTED,accepts_option
+cli-command,forja_ar_evolucao.py,init,"--experimento, --alvo",172,EXTRACTED,accepts_option
+cli-command,forja_ar_evolucao.py,nova-geracao,"--experimento, --variantes",175,EXTRACTED,accepts_option
+cli-command,forja_ar_evolucao.py,selecionar,"--experimento, --geracao, --resultados",178,EXTRACTED,accepts_option
+function,forja_ar_indicadores.py,_canonical,(value) -> bytes,18,EXTRACTED,defines
+function,forja_ar_indicadores.py,_sha,(value: bytes | str) -> str,22,EXTRACTED,defines
+function,forja_ar_indicadores.py,_null,"(reason: str, evidence: list | None = <default>) -> dict",26,EXTRACTED,defines
+function,forja_ar_indicadores.py,_entries,"(context: dict, name: str) -> list[dict] | None",30,EXTRACTED,defines
+function,forja_ar_indicadores.py,_terms,"(item: dict, *keys: str) -> list[str]",37,EXTRACTED,defines
+function,forja_ar_indicadores.py,_contains,"(text: str, terms: list[str]) -> bool",48,EXTRACTED,defines
+function,forja_ar_indicadores.py,_sensor_versions,"() -> dict[str, str]",53,EXTRACTED,defines
+function,forja_ar_indicadores.py,_i1,"(text: str, context: dict) -> dict",61,EXTRACTED,defines
+function,forja_ar_indicadores.py,_i3,"(text: str, context: dict) -> dict",96,EXTRACTED,defines
+function,forja_ar_indicadores.py,_i7,"(text: str, context: dict) -> dict",120,EXTRACTED,defines
+function,forja_ar_indicadores.py,_i8,(context: dict) -> dict,140,EXTRACTED,defines
+function,forja_ar_indicadores.py,computar_indicadores,"(md_texto: str, contexto: dict | None = <default>) -> dict",182,EXTRACTED,defines
+function,forja_ar_indicadores.py,comparar,"(baseline: dict, variante: dict, manifest: dict | None = <default>) -> dict",244,EXTRACTED,defines
+function,forja_ar_indicadores.py,cache_key,"(md_texto: str, contexto: dict, sensor_versions: dict | None = <default>) -> str",286,EXTRACTED,defines
+function,forja_ar_indicadores.py,computar_com_cache,"(md_texto: str, contexto: dict, cache_dir: Path = <default>) -> tuple[dict, bool]",292,EXTRACTED,defines
+function,forja_ar_indicadores.py,_load_ledgers,(directory: Path | None) -> dict,304,EXTRACTED,defines
+function,forja_ar_indicadores.py,main,(argv = <default>) -> int,322,EXTRACTED,defines
+cli-command,forja_ar_indicadores.py,<global>,"--md, --comparar, --caso, --painel, --ledgers, --split, --manifest",325,EXTRACTED,accepts_option
+function,forja_ar_runpair.py,_sha,(path: Path) -> str,28,EXTRACTED,defines
+function,forja_ar_runpair.py,_canonical,(value) -> bytes,32,EXTRACTED,defines
+function,forja_ar_runpair.py,freeze_input,"(runpair_dir: Path, case_id: str, target: Path, *, claims_ledger: list | None = <default>, authorities_ledger: list | None = <default>, repetition: int = <default>) -> Path",36,EXTRACTED,defines
+function,forja_ar_runpair.py,sanitize_instructions,(text: str) -> str,68,EXTRACTED,defines
+function,forja_ar_runpair.py,register_manifest,"(runpair_dir: Path, side: str, manifest_path: Path) -> Path",79,EXTRACTED,defines
+function,forja_ar_runpair.py,validate_pair,(runpair_dir: Path) -> dict,105,EXTRACTED,defines
+function,forja_ar_runpair.py,_read_ledger,(path: Path | None) -> list,153,EXTRACTED,defines
+function,forja_ar_runpair.py,main,(argv = <default>) -> int,162,EXTRACTED,defines
+cli-command,forja_ar_runpair.py,<global>,"--freeze, --register, --validate, --runpair-dir, --caso, --alvo, --lado, --manifest, --claims-ledger, --authorities-ledger, --repeticao",165,EXTRACTED,accepts_option
+function,forja_artefatos.py,ler,(caminho) -> dict,121,EXTRACTED,defines
+function,forja_artefatos.py,nomes,"(especie: str, conceito: str) -> tuple",135,EXTRACTED,defines
+function,forja_artefatos.py,campo,"(dados: dict, especie: str, conceito: str, padrao = <default>)",145,EXTRACTED,defines
+function,forja_artefatos.py,lista,"(dados: dict, especie: str, conceito: str) -> list",160,EXTRACTED,defines
+function,forja_artefatos.py,censo,(raiz = <default>) -> dict,170,EXTRACTED,defines
+function,forja_artefatos.py,_relatar,(laudo: dict) -> None,204,EXTRACTED,defines
+cli-command,forja_artefatos.py,<global>,--json,226,EXTRACTED,accepts_option
+function,forja_assinatura_visual.py,_faixa,(paginas),48,EXTRACTED,defines
+function,forja_assinatura_visual.py,paginas_reais,(docx),55,EXTRACTED,defines
+function,forja_assinatura_visual.py,_tabelas,"(doc, todos_os_niveis = <default>)",108,EXTRACTED,defines
+function,forja_assinatura_visual.py,_caixas,(doc),131,EXTRACTED,defines
+function,forja_assinatura_visual.py,_figuras_exibidas,"(z, doc, nomes)",143,EXTRACTED,defines
+function,forja_assinatura_visual.py,_inventario,(docx),181,EXTRACTED,defines
+function,forja_assinatura_visual.py,avaliar,"(docx, paginas = <default>, tipo = <default>)",259,EXTRACTED,defines
+function,forja_assinatura_visual.py,main,(),320,EXTRACTED,defines
+cli-command,forja_assinatura_visual.py,<global>,"docx, --paginas, --tipo, --saida",322,EXTRACTED,accepts_option
+function,forja_authorities.py,normalize_number,(value: str | None) -> str,80,EXTRACTED,defines
+function,forja_authorities.py,tribunal_from_cnj,(value: str | None) -> str | None,84,EXTRACTED,defines
+function,forja_authorities.py,authority_key,"(item: dict) -> tuple[str, str, str]",92,EXTRACTED,defines
+function,forja_authorities.py,_context,"(text: str, start: int, end: int) -> str",116,EXTRACTED,defines
+function,forja_authorities.py,_entry,"(*, tipo: str, classe: str, numero: str, corte: str, rotulo: str, dados: tuple, text: str, start: int, end: int, identity: dict | None = <default>) -> dict",120,EXTRACTED,defines
+function,forja_authorities.py,extract_authorities,(text: str) -> list[dict],152,EXTRACTED,defines
+class,forja_axi.py,AxiError,(RuntimeError),112,EXTRACTED,defines
+method,forja_axi.py,AxiError.__init__,"(self, message: str, *, code: str = <default>, exit_code: int = <default>, help_commands: Sequence[str] = <default>) -> None",115,EXTRACTED,defines
+class,forja_axi.py,AxiArgumentParser,(argparse.ArgumentParser),129,EXTRACTED,defines
+method,forja_axi.py,AxiArgumentParser.__init__,"(self, *args: Any, **kwargs: Any) -> None",132,EXTRACTED,defines
+method,forja_axi.py,AxiArgumentParser.error,"(self, message: str) -> None",136,EXTRACTED,defines
+function,forja_axi.py,now_iso,() -> str,145,EXTRACTED,defines
+function,forja_axi.py,compact_path,(path: Path) -> str,149,EXTRACTED,defines
+function,forja_axi.py,_read_json,(path: Path) -> Any,157,EXTRACTED,defines
+function,forja_axi.py,_case_files,(state_root: Path) -> list[Path],174,EXTRACTED,defines
+function,forja_axi.py,_blocker_text,(blocker: Any) -> str,180,EXTRACTED,defines
+function,forja_axi.py,_truncate,"(text: str, limit: int, *, full: bool) -> tuple[str, bool]",193,EXTRACTED,defines
+function,forja_axi.py,_case_summary,"(path: Path, data: dict[str, Any]) -> dict[str, Any]",202,EXTRACTED,defines
+function,forja_axi.py,_load_cases,"(state_root: Path) -> tuple[list[dict[str, Any]], list[str]]",239,EXTRACTED,defines
+function,forja_axi.py,_select_fields,"(item: dict[str, Any], fields: Sequence[str]) -> dict[str, Any]",260,EXTRACTED,defines
+function,forja_axi.py,_parse_fields,"(raw: str | None, allowed: Sequence[str], default: Sequence[str]) -> list[str]",266,EXTRACTED,defines
+function,forja_axi.py,_queue_summary,"(queue: dict[str, Any]) -> dict[str, Any]",281,EXTRACTED,defines
+function,forja_axi.py,home_payload,"(state_root: Path = <default>) -> dict[str, Any]",294,EXTRACTED,defines
+function,forja_axi.py,cases_payload,"(state_root: Path = <default>, *, status: str | None = <default>, limit: int = <default>, fields: str | None = <default>, full: bool = <default>) -> dict[str, Any]",333,EXTRACTED,defines
+function,forja_axi.py,_resolve_case_path,"(state_root: Path, case_id: str) -> Path",372,EXTRACTED,defines
+function,forja_axi.py,case_payload,"(case_id: str, state_root: Path = <default>, *, fields: str | None = <default>, full: bool = <default>) -> dict[str, Any]",402,EXTRACTED,defines
+function,forja_axi.py,_queue_item,"(item: dict[str, Any]) -> dict[str, Any]",443,EXTRACTED,defines
+function,forja_axi.py,queue_payload,"(state_root: Path = <default>, *, section: str = <default>, limit: int = <default>, fields: str | None = <default>, full: bool = <default>) -> dict[str, Any]",456,EXTRACTED,defines
+function,forja_axi.py,commands_payload,"(name: str | None = <default>) -> dict[str, Any]",517,EXTRACTED,defines
+function,forja_axi.py,health_payload,"(state_root: Path = <default>) -> dict[str, Any]",552,EXTRACTED,defines
+function,forja_axi.py,_needs_quote,"(value: str, delimiter: str = <default>) -> bool",594,EXTRACTED,defines
+function,forja_axi.py,_toon_string,"(value: str, delimiter: str = <default>) -> str",608,EXTRACTED,defines
+function,forja_axi.py,_toon_primitive,"(value: Any, delimiter: str = <default>) -> str",625,EXTRACTED,defines
+function,forja_axi.py,_is_primitive,(value: Any) -> bool,643,EXTRACTED,defines
+function,forja_axi.py,_uniform_primitive_rows,"(items: list[Any]) -> tuple[bool, list[str]]",647,EXTRACTED,defines
+function,forja_axi.py,_encode_toon_value,"(key: str | None, value: Any, *, depth: int, lines: list[str]) -> None",659,EXTRACTED,defines
+function,forja_axi.py,encode_toon,(value: Any) -> str,740,EXTRACTED,defines
+function,forja_axi.py,render,"(payload: dict[str, Any], output_format: str) -> str",748,EXTRACTED,defines
+function,forja_axi.py,_extract_output_format,"(argv: list[str]) -> tuple[list[str], str]",754,EXTRACTED,defines
+function,forja_axi.py,build_parser,() -> AxiArgumentParser,785,EXTRACTED,defines
+function,forja_axi.py,_dispatch,"(args: argparse.Namespace, state_root: Path) -> dict[str, Any]",829,EXTRACTED,defines
+function,forja_axi.py,main,"(argv: Sequence[str] | None = <default>, *, state_root: Path = <default>, stdout: TextIO | None = <default>) -> int",867,EXTRACTED,defines
+cli-command,forja_axi.py,<global>,--version,794,EXTRACTED,accepts_option
+cli-command,forja_axi.py,case,"case_id, --fields, --full",805,EXTRACTED,accepts_option
+cli-command,forja_axi.py,cases,"--status, --limit, --fields, --full",799,EXTRACTED,accepts_option
+cli-command,forja_axi.py,commands,name,820,EXTRACTED,accepts_option
+cli-command,forja_axi.py,health,,825,EXTRACTED,accepts_option
+cli-command,forja_axi.py,home,,797,EXTRACTED,accepts_option
+cli-command,forja_axi.py,queue,"--section, --limit, --fields, --full",810,EXTRACTED,accepts_option
+function,forja_baseline.py,_run,"(args: list[str]) -> tuple[int, str]",91,EXTRACTED,defines
+function,forja_baseline.py,_pytest,(nome: str) -> dict,101,EXTRACTED,defines
+function,forja_baseline.py,_script,"(nome: str, papel: str) -> dict",116,EXTRACTED,defines
+function,forja_baseline.py,_parece_script_autonomo,(nome: str) -> bool,128,EXTRACTED,defines
+function,forja_baseline.py,_scripts_autonomos_nao_mapeados,() -> list[str],136,EXTRACTED,defines
+function,forja_baseline.py,coletar,() -> list[str],144,EXTRACTED,defines
+function,forja_baseline.py,executar,() -> dict,152,EXTRACTED,defines
+function,forja_baseline.py,_imprimir,(relatorio: dict) -> None,183,EXTRACTED,defines
+function,forja_baseline.py,main,() -> int,200,EXTRACTED,defines
+cli-command,forja_baseline.py,<global>,"--json, --quiet",202,EXTRACTED,accepts_option
+function,forja_baseline_aprovado.py,_resolver,(relativo: str) -> Path | None,74,EXTRACTED,defines
+function,forja_baseline_aprovado.py,_medir,(caminho: Path) -> dict,82,EXTRACTED,defines
+function,forja_baseline_aprovado.py,conferir,() -> dict,97,EXTRACTED,defines
+function,forja_baseline_aprovado.py,gravar,(motivo: str) -> dict,138,EXTRACTED,defines
+cli-command,forja_baseline_aprovado.py,<global>,--gravar,159,EXTRACTED,accepts_option
+class,forja_bench_modelos.py,Prova,(),60,EXTRACTED,defines
+function,forja_bench_modelos.py,_norm,(texto: str) -> str,129,EXTRACTED,defines
+function,forja_bench_modelos.py,gabarito,(prova: Prova) -> str,138,EXTRACTED,defines
+function,forja_bench_modelos.py,_sinal_afirmado,"(texto: str, sinal: str) -> bool",145,EXTRACTED,defines
+function,forja_bench_modelos.py,avaliar,"(prova: Prova, resposta: str) -> dict",170,EXTRACTED,defines
+function,forja_bench_modelos.py,_resumir,"(resultados: list[dict]) -> dict[str, dict]",209,EXTRACTED,defines
+function,forja_bench_modelos.py,rodar,"(modelos: list[str], *, teto_usd: float = <default>, max_tokens: int = <default>, condicoes: tuple[str, ...] = <default>) -> dict",224,EXTRACTED,defines
+function,forja_bench_modelos.py,reavaliar,(caminho: Path) -> dict,268,EXTRACTED,defines
+function,forja_bench_modelos.py,_imprimir,(relatorio: dict) -> None,300,EXTRACTED,defines
+function,forja_bench_modelos.py,main,() -> None,318,EXTRACTED,defines
+cli-command,forja_bench_modelos.py,<global>,,322,EXTRACTED,accepts_option
+cli-command,forja_bench_modelos.py,reavaliar,--arquivo,327,EXTRACTED,accepts_option
+cli-command,forja_bench_modelos.py,rodar,"--modelos, --teto-usd, --condicoes",321,EXTRACTED,accepts_option
+cli-command,forja_bench_modelos.py,ver,--arquivo,325,EXTRACTED,accepts_option
+function,forja_calibra_gates_economicos.py,relevante,(caminho: Path) -> bool,59,EXTRACTED,defines
+function,forja_calibra_gates_economicos.py,main,(argv: list[str]) -> int,69,EXTRACTED,defines
+function,forja_calibra_monetario.py,_texto,(caminho),56,EXTRACTED,defines
+function,forja_calibra_monetario.py,ocorrencias_ampla,(texto),63,EXTRACTED,defines
+function,forja_calibra_monetario.py,economico_estreito,(texto),75,EXTRACTED,defines
+function,forja_calibra_monetario.py,economico_amplo,(texto),80,EXTRACTED,defines
+function,forja_calibra_monetario.py,varrer,"(raiz, extensoes = <default>, limite_bytes = <default>)",84,EXTRACTED,defines
+function,forja_calibra_monetario.py,calibrar,"(raiz, amostra = <default>)",100,EXTRACTED,defines
+function,forja_calibra_monetario.py,_amostrar_contexto,"(texto, n)",152,EXTRACTED,defines
+function,forja_calibra_monetario.py,main,(),166,EXTRACTED,defines
+cli-command,forja_calibra_monetario.py,<global>,"--raiz, --saida",168,EXTRACTED,accepts_option
+function,forja_canario_catraca.py,catracas,(suites: list[str] | None = <default>) -> list[dict],57,EXTRACTED,defines
+function,forja_canario_catraca.py,_aperta,(entrada: dict) -> dict,91,EXTRACTED,defines
+function,forja_canario_catraca.py,canario,(suites: list[str] | None = <default>) -> dict,113,EXTRACTED,defines
+function,forja_canario_catraca.py,_relatar,(laudo: dict) -> None,136,EXTRACTED,defines
+cli-command,forja_canario_catraca.py,<global>,"--json, --suite",166,EXTRACTED,accepts_option
+function,forja_canario_mutacao.py,_muta_texto,"(texto: str, modo: str) -> str",84,EXTRACTED,defines
+function,forja_canario_mutacao.py,_muta,"(dados, modo: str)",95,EXTRACTED,defines
+function,forja_canario_mutacao.py,_vereditos,"(pasta: Path, resultado: dict) -> dict",122,EXTRACTED,defines
+function,forja_canario_mutacao.py,_tentativas,(base: Path) -> list,132,EXTRACTED,defines
+function,forja_canario_mutacao.py,_muta_arquivo,"(arquivo: Path, modo: str) -> None",139,EXTRACTED,defines
+function,forja_canario_mutacao.py,_internaliza_externos,"(pasta: Path, espelho: Path, resultado: dict, modo: str) -> dict",156,EXTRACTED,defines
+function,forja_canario_mutacao.py,canario,"(raiz = <default>, mutacoes = <default>, limite_por_gate: int = <default>) -> dict",207,EXTRACTED,defines
+function,forja_canario_mutacao.py,_relatar,(laudo: dict) -> None,299,EXTRACTED,defines
+cli-command,forja_canario_mutacao.py,<global>,"--json, --limite",330,EXTRACTED,accepts_option
+function,forja_case_tests.py,suite_hash,(payload: dict) -> str,19,EXTRACTED,defines
+function,forja_case_tests.py,_parse_aware_iso,(value: object) -> datetime | None,37,EXTRACTED,defines
+function,forja_case_tests.py,validate_suite,(payload: dict) -> list[dict],48,EXTRACTED,defines
+function,forja_case_tests.py,_deterministic,"(test: dict, text: str) -> tuple[str, str]",89,EXTRACTED,defines
+function,forja_case_tests.py,run_suite,"(suite: dict, draft_path: Path, *, reviewer_run_id: str, producer_run_id: str | None = <default>) -> dict",109,EXTRACTED,defines
+function,forja_case_tests.py,validate_results,"(payload: dict, suite: dict | None = <default>, draft_path: Path | None = <default>) -> list[dict]",162,EXTRACTED,defines
+function,forja_case_tests.py,main,() -> None,192,EXTRACTED,defines
+cli-command,forja_case_tests.py,<global>,"case, draft, --reviewer-run-id, --producer-run-id, --output",194,EXTRACTED,accepts_option
+function,forja_citations.py,tribunal_numero_cnj,(value),52,EXTRACTED,defines
+function,forja_citations.py,texto_da_peca,(path),56,EXTRACTED,defines
+function,forja_citations.py,normalizar_numero,(n),76,EXTRACTED,defines
+function,forja_citations.py,url_oficial,"(tipo, dados)",80,EXTRACTED,defines
+function,forja_citations.py,extrair_citacoes,(texto),115,EXTRACTED,defines
+function,forja_citations.py,procurar_cache_oficial,"(citacao, *, require_live = <default>)",119,EXTRACTED,defines
+function,forja_citations.py,normalizar_aspa,(texto),167,EXTRACTED,defines
+function,forja_citations.py,conferir_aspas,"(texto_peca, arquivo_fonte)",172,EXTRACTED,defines
+function,forja_citations.py,procurar_fonte_local,"(citacao, pasta_caso)",196,EXTRACTED,defines
+function,forja_citations.py,merge_by_id,"(existing, new_items)",225,EXTRACTED,defines
+function,forja_citations.py,append_unique,"(existing, value)",239,EXTRACTED,defines
+function,forja_citations.py,processar,"(case_key, peca_path)",246,EXTRACTED,defines
+function,forja_citations.py,_chave_autoridade,(identidade),351,EXTRACTED,defines
+function,forja_citations.py,_indice_do_ledger,(ledger),368,EXTRACTED,defines
+function,forja_citations.py,validar_politica_citacoes,"(texto, ledger)",415,EXTRACTED,defines
+function,forja_citations.py,_normalizar_tribunal,(bruto),513,EXTRACTED,defines
+function,forja_citations.py,validar_identidade_citacoes,"(texto, ledger = <default>)",517,EXTRACTED,defines
+function,forja_citations.py,main,(),575,EXTRACTED,defines
+function,forja_claim_binding.py,_entries,(payload: dict) -> list[dict],18,EXTRACTED,defines
+function,forja_claim_binding.py,bind_claims,"(markdown_path: Path, ledger_path: Path, output_path: Path) -> dict",26,EXTRACTED,defines
+function,forja_claim_binding.py,main,() -> int,91,EXTRACTED,defines
+cli-command,forja_claim_binding.py,<global>,"markdown, ledger, output",93,EXTRACTED,accepts_option
+function,forja_close_cycle.py,_canonical_manifest,"(case_dir: Path, expected_revision: int) -> tuple[dict, dict]",15,EXTRACTED,defines
+function,forja_close_cycle.py,create_package,"(case_dir: Path, definition: Path, *, expected_revision: int) -> dict",43,EXTRACTED,defines
+function,forja_close_cycle.py,register_draft,"(case_dir: Path, receipt_path: Path, *, expected_revision: int) -> dict",80,EXTRACTED,defines
+function,forja_close_cycle.py,confirm_delivery,"(case_dir: Path, evidence_path: Path, *, expected_revision: int) -> dict",131,EXTRACTED,defines
+function,forja_close_cycle.py,fulfill,"(case_dir: Path, *, expected_revision: int) -> dict",171,EXTRACTED,defines
+function,forja_close_cycle.py,main,() -> None,214,EXTRACTED,defines
+cli-command,forja_close_cycle.py,<global>,case,216,EXTRACTED,accepts_option
+cli-command,forja_close_cycle.py,confirm-delivery,"evidence, --expected-revision",224,EXTRACTED,accepts_option
+cli-command,forja_close_cycle.py,fulfill,--expected-revision,227,EXTRACTED,accepts_option
+cli-command,forja_close_cycle.py,package,"definition, --expected-revision",218,EXTRACTED,accepts_option
+cli-command,forja_close_cycle.py,register-draft,"receipt, --expected-revision",221,EXTRACTED,accepts_option
+function,forja_conselho.py,_ler,(caminho: Path | None) -> str | None,53,EXTRACTED,defines
+function,forja_conselho.py,_achados_parecer,"(persona: str, caminho: Path | None) -> list[dict]",62,EXTRACTED,defines
+function,forja_conselho.py,_linhas_de_decisao,(texto: str) -> list[list[str]],92,EXTRACTED,defines
+function,forja_conselho.py,_achados_decisoes_json,(texto: str) -> list[dict] | None,111,EXTRACTED,defines
+function,forja_conselho.py,_achados_decisoes,(caminho: Path | None) -> list[dict],189,EXTRACTED,defines
+function,forja_conselho.py,validar_conselho,"(*, helena: Path | None, cicero: Path | None, decisoes: Path | None) -> dict",229,EXTRACTED,defines
+function,forja_conselho.py,main,(argv: list[str]) -> int,252,EXTRACTED,defines
+function,forja_consistency.py,inspect_physical_document,"(*, docx_path: Path, pdf_path: Path, f8_path: Path, layout_profile_id: str, expected_docx_hash: str | None = <default>, expected_pdf_hash: str | None = <default>) -> dict",17,EXTRACTED,defines
+function,forja_consistency.py,validate_event_identity,(payload: dict) -> list[dict],80,EXTRACTED,defines
+function,forja_consistency.py,validate_comparison,(payload: dict) -> list[dict],99,EXTRACTED,defines
+function,forja_consistency.py,validate_intertemporal,(payload: dict) -> list[dict],116,EXTRACTED,defines
+function,forja_consistency.py,_eval_formula,"(formula: str, values: dict[str, float]) -> float",133,EXTRACTED,defines
+function,forja_consistency.py,validate_quantification,(payload: dict) -> list[dict],147,EXTRACTED,defines
+function,forja_consistency.py,validate_delivery,(payload: dict) -> list[dict],185,EXTRACTED,defines
+function,forja_consistency.py,validate_global,(payload: dict) -> list[dict],206,EXTRACTED,defines
+function,forja_consistency.py,validate_case,(case_dir: Path) -> dict,244,EXTRACTED,defines
+function,forja_consistency.py,main,() -> None,252,EXTRACTED,defines
+cli-command,forja_consistency.py,<global>,case,254,EXTRACTED,accepts_option
+function,forja_context.py,_norm,(text: str) -> str,18,EXTRACTED,defines
+function,forja_context.py,markdown_blocks,(text: str) -> list[dict],22,EXTRACTED,defines
+function,forja_context.py,validate_document_index,(index_payload: dict) -> list[dict],97,EXTRACTED,defines
+function,forja_context.py,_covered_pages,"(entry: dict, page_count: int) -> set[int]",119,EXTRACTED,defines
+function,forja_context.py,validate_coverage,"(index_payload: dict, coverage_payload: dict) -> list[dict]",138,EXTRACTED,defines
+function,forja_context.py,validate_fact_ledger,"(fact_payload: dict, source_ids: Iterable[str]) -> list[dict]",167,EXTRACTED,defines
+function,forja_context.py,validate_paragraph_provenance,"(markdown_text: str, provenance_payload: dict, fact_payload: dict, proposition_payload: dict) -> tuple[list[dict], list[dict]]",194,EXTRACTED,defines
+function,forja_context.py,validate_context,(case_dir: Path) -> dict,228,EXTRACTED,defines
+function,forja_context.py,main,() -> None,294,EXTRACTED,defines
+cli-command,forja_context.py,<global>,case_dir,296,EXTRACTED,accepts_option
+function,forja_contexto.py,_hashes_do_texto,(texto: str) -> set,47,EXTRACTED,defines
+function,forja_contexto.py,_declarado_bool,"(*fontes, chaves)",53,EXTRACTED,defines
+function,forja_contexto.py,_pendencias,(*fontes) -> list,77,EXTRACTED,defines
+function,forja_contexto.py,_liberacao_externa,(*fontes),91,EXTRACTED,defines
+function,forja_contexto.py,validar_contexto,"(validacao, gate_result = <default>, texto_auditado = <default>)",101,EXTRACTED,defines
+function,forja_delivery.py,achar,"(pasta, padroes)",30,EXTRACTED,defines
+function,forja_delivery.py,ref_ok,"(ref, allow_text = <default>)",38,EXTRACTED,defines
+function,forja_delivery.py,ref_text,(ref),52,EXTRACTED,defines
+function,forja_delivery.py,append_unique,"(existing, value)",58,EXTRACTED,defines
+function,forja_delivery.py,f7_com_lastro,(f7),65,EXTRACTED,defines
+function,forja_delivery.py,f5_checklist_ok,(path),112,EXTRACTED,defines
+function,forja_delivery.py,parecer_valido,(path),129,EXTRACTED,defines
+function,forja_delivery.py,_parse_iso,(texto),155,EXTRACTED,defines
+function,forja_delivery.py,parecer_antes_da_redacao,"(parecer, state)",162,EXTRACTED,defines
+function,forja_delivery.py,visual_com_lastro,(docx),186,EXTRACTED,defines
+function,forja_delivery.py,f3_com_regimento,(path),216,EXTRACTED,defines
+function,forja_delivery.py,main,(case_key),229,EXTRACTED,defines
+function,forja_delivery_integrity.py,_attachment,"(package: dict, artifact_id: str) -> dict",15,EXTRACTED,defines
+function,forja_delivery_integrity.py,select,"(case_dir: Path, artifact_id: str, *, layout_profile_id: str, producer_run_id: str, reviewer_run_id: str) -> dict",29,EXTRACTED,defines
+function,forja_delivery_integrity.py,confirm,"(case_dir: Path, *, mode: str, delivery_evidence_id: str | None, delivered_path: Path | None, producer_run_id: str, reviewer_run_id: str, delivered_at: str | None = <default>) -> dict",70,EXTRACTED,defines
+function,forja_delivery_integrity.py,main,() -> None,129,EXTRACTED,defines
+cli-command,forja_delivery_integrity.py,<global>,case,131,EXTRACTED,accepts_option
+cli-command,forja_delivery_integrity.py,confirm,"--mode, --delivery-evidence-id, --delivered-path, --delivered-at, --producer-run-id, --reviewer-run-id",138,EXTRACTED,accepts_option
+cli-command,forja_delivery_integrity.py,select,"artifact_id, --layout-profile-id, --producer-run-id, --reviewer-run-id",133,EXTRACTED,accepts_option
+function,forja_diabob.py,red_team,"(alvo: str, *, modelo: str = <default>, max_tokens: int = <default>, orcamento: fm.Orcamento | None = <default>, caso: str | None = <default>) -> dict",55,EXTRACTED,defines
+function,forja_diabob.py,main,() -> None,75,EXTRACTED,defines
+cli-command,forja_diabob.py,<global>,"--arquivo, --texto, --modelo, --caso, --json",77,EXTRACTED,accepts_option
+function,forja_diff_docx.py,extrair_paragrafos_docx,(caminho_docx),24,EXTRACTED,defines
+function,forja_diff_docx.py,similaridade_ratio,"(s1, s2)",50,EXTRACTED,defines
+function,forja_diff_docx.py,classificar_mudanca,"(texto_nosso, texto_protocolado)",58,EXTRACTED,defines
+function,forja_diff_docx.py,gerar_diff_markdown,"(paragrafos_nosso, paragrafos_protocolado, saida_path = <default>)",90,EXTRACTED,defines
+function,forja_diff_docx.py,main,(),231,EXTRACTED,defines
+class,forja_document_compare.py,Unit,(),48,EXTRACTED,defines
+class,forja_document_compare.py,Extracted,(),55,EXTRACTED,defines
+method,forja_document_compare.py,Extracted.visible_text,(self) -> str,65,EXTRACTED,defines
+function,forja_document_compare.py,_normalized_text,(value: str) -> str,69,EXTRACTED,defines
+function,forja_document_compare.py,_is_protocol_noise,(value: str) -> bool,77,EXTRACTED,defines
+function,forja_document_compare.py,comparable_units,"(units: Iterable[Unit], *, cross_format: bool = <default>) -> list[Unit]",81,EXTRACTED,defines
+function,forja_document_compare.py,_paragraph_text,"(element: ET.Element) -> tuple[str, dict]",95,EXTRACTED,defines
+function,forja_document_compare.py,_docx_part_units,"(raw: bytes, part: str) -> tuple[list[Unit], dict]",120,EXTRACTED,defines
+function,forja_document_compare.py,extract_docx,(path: Path) -> Extracted,145,EXTRACTED,defines
+function,forja_document_compare.py,extract_pdf,"(path: Path, *, allow_ocr: bool = <default>) -> Extracted",184,EXTRACTED,defines
+function,forja_document_compare.py,extract_document,"(path: Path, *, allow_ocr: bool = <default>) -> Extracted",253,EXTRACTED,defines
+function,forja_document_compare.py,classify_change,"(before: str, after: str) -> tuple[str, str, str, float, list[str]]",272,EXTRACTED,defines
+function,forja_document_compare.py,_tokens_with_locators,"(units: list[Unit]) -> tuple[list[str], list[str]]",329,EXTRACTED,defines
+function,forja_document_compare.py,_unique_ordered,(values: list[str]) -> list[str],339,EXTRACTED,defines
+function,forja_document_compare.py,_change_regions,"(opcodes: list[tuple[str, int, int, int, int]], *, bridge_tokens: int = <default>)",343,EXTRACTED,defines
+function,forja_document_compare.py,compare_documents,"(baseline_path: Path, human_path: Path, *, allow_ocr: bool = <default>) -> dict",362,EXTRACTED,defines
+function,forja_document_compare.py,render_markdown,"(comparison: dict, *, protocol_status: str, baseline_artifact_id: str, human_artifact_id: str) -> str",507,EXTRACTED,defines
+function,forja_document_compare.py,write_comparison,"(baseline_path: Path, human_path: Path, *, json_path: Path, markdown_path: Path, protocol_status: str, baseline_artifact_id: str, human_artifact_id: str, allow_ocr: bool = <default>) -> dict",575,EXTRACTED,defines
+function,forja_document_compare.py,main,() -> None,600,EXTRACTED,defines
+cli-command,forja_document_compare.py,<global>,"baseline, human, --json, --markdown, --protocol-status, --baseline-artifact-id, --human-artifact-id, --allow-ocr",602,EXTRACTED,accepts_option
+function,forja_docx_layout.py,_norm,(value: str | None) -> str,105,EXTRACTED,defines
+function,forja_docx_layout.py,_text_sha256,(text: str) -> str,109,EXTRACTED,defines
+function,forja_docx_layout.py,docx_content_signature,(path: Path) -> dict,113,EXTRACTED,defines
+function,forja_docx_layout.py,compare_docx_content,"(source: Path, output: Path) -> dict",219,EXTRACTED,defines
+function,forja_docx_layout.py,_paragraph_text,(paragraph) -> str,238,EXTRACTED,defines
+function,forja_docx_layout.py,_unique_header_parts,(document),244,EXTRACTED,defines
+function,forja_docx_layout.py,_right_margin_pt,"(section) -> tuple[float | None, bool]",257,EXTRACTED,defines
+function,forja_docx_layout.py,_folios_com_margem,(document),288,EXTRACTED,defines
+function,forja_docx_layout.py,_folio_rectangles,(document),339,EXTRACTED,defines
+function,forja_docx_layout.py,_vml_width_pt,(rect) -> float | None,350,EXTRACTED,defines
+function,forja_docx_layout.py,_set_vml_width_pt,"(rect, width_pt: float) -> None",356,EXTRACTED,defines
+function,forja_docx_layout.py,_style_chain,(style),372,EXTRACTED,defines
+function,forja_docx_layout.py,_effective_alignment,(paragraph) -> int,380,EXTRACTED,defines
+function,forja_docx_layout.py,_font_from_rpr,(rpr) -> str | None,390,EXTRACTED,defines
+function,forja_docx_layout.py,_size_from_rpr,(rpr) -> float | None,403,EXTRACTED,defines
+function,forja_docx_layout.py,_style_font_size,"(style) -> tuple[str | None, float | None]",415,EXTRACTED,defines
+function,forja_docx_layout.py,_effective_run_font_size,"(run_element, paragraph) -> tuple[str | None, float | None]",428,EXTRACTED,defines
+function,forja_docx_layout.py,_substantial_run_text,(run_element) -> str,436,EXTRACTED,defines
+function,forja_docx_layout.py,_has_visual_container,(paragraph) -> bool,444,EXTRACTED,defines
+function,forja_docx_layout.py,_is_heading,"(paragraph, text: str) -> bool",457,EXTRACTED,defines
+function,forja_docx_layout.py,_is_caption,(text: str) -> bool,471,EXTRACTED,defines
+function,forja_docx_layout.py,_is_signature,(text: str) -> bool,475,EXTRACTED,defines
+function,forja_docx_layout.py,_e_titulo_centralizado,"(paragraph, text: str) -> bool",521,EXTRACTED,defines
+function,forja_docx_layout.py,_role_for,"(paragraph, text: str, index: int, previous_role: str | None) -> str",533,EXTRACTED,defines
+function,forja_docx_layout.py,_load_exceptions,"(path: Path | None, docx_sha256: str) -> tuple[dict[int, dict], list[dict]]",588,EXTRACTED,defines
+function,forja_docx_layout.py,audit_docx_layout,"(path: Path, *, exceptions: Path | None = <default>) -> dict",621,EXTRACTED,defines
+function,forja_docx_layout.py,_set_run_font_size,"(run_element, font_name: str, size_pt: float) -> None",841,EXTRACTED,defines
+function,forja_docx_layout.py,normalize_medina_body,"(source: Path, output: Path) -> dict",861,EXTRACTED,defines
+function,forja_docx_layout.py,main,() -> int,951,EXTRACTED,defines
+cli-command,forja_docx_layout.py,<global>,"docx, --output, --json, --exceptions",953,EXTRACTED,accepts_option
+function,forja_editorial.py,_actual_model,"(payload: dict, canonical: str) -> str | None",98,EXTRACTED,defines
+function,forja_editorial.py,_recompor_stream,(saida: str) -> dict,108,EXTRACTED,defines
+function,forja_editorial.py,_invoke,"(prompt: str, *, alias: str, timeout_s: int = <default>) -> dict",141,EXTRACTED,defines
+function,forja_editorial.py,_strip_json_fence,(value: str) -> str,206,EXTRACTED,defines
+function,forja_editorial.py,_parse_result,"(result: str) -> tuple[str, dict]",213,EXTRACTED,defines
+function,forja_editorial.py,_normalize_anchor,(value: str) -> str,232,EXTRACTED,defines
+function,forja_editorial.py,_taste_receipt_findings,"(report: dict, source: str, final: str) -> list[dict]",236,EXTRACTED,defines
+function,forja_editorial.py,_gate_is_clear,(path: Path) -> bool,308,EXTRACTED,defines
+function,forja_editorial.py,run_editorial_pass,"(source_path: Path, output_dir: Path, *, gate_path: Path, case_id: str, artifact_suffix: str = <default>, editor_model: str | None = <default>, reviewer_model: str | None = <default>, reviewer_session: str | None = <default>, invoke = <default>) -> dict",332,EXTRACTED,defines
+function,forja_editorial.py,main,() -> int,517,EXTRACTED,defines
+cli-command,forja_editorial.py,<global>,"case, attempt_dir, --source, --f7-gate, --artifact-suffix, --editor-model, --reviewer-model, --reviewer-session",519,EXTRACTED,accepts_option
+function,forja_editorial_fidelity.py,_fold,(value: str) -> str,79,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_counter,"(pattern: re.Pattern, text: str) -> Counter",84,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_is_upper_title,(value: str) -> bool,97,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_heading_counter,(text: str) -> Counter,102,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_pedidos,(text: str) -> str | None,114,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_counter_delta,"(source: Counter, final: Counter) -> dict",127,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_authority_semantic_counter,(text: str) -> Counter,133,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_finding,"(gate: str, detail: str, **extra) -> dict",149,EXTRACTED,defines
+function,forja_editorial_fidelity.py,_family_findings,"(report: dict, strict: bool) -> list[dict]",153,EXTRACTED,defines
+function,forja_editorial_fidelity.py,validate_editorial_bundle,"(audited_path: Path, final_path: Path, report_path: Path, usage_path: Path | None = <default>, *, expected_model: str | None = <default>, strict_family: bool = <default>) -> dict",191,EXTRACTED,defines
+function,forja_editorial_fidelity.py,main,() -> int,389,EXTRACTED,defines
+cli-command,forja_editorial_fidelity.py,<global>,"audited, final, report",391,EXTRACTED,accepts_option
+class,forja_editorial_model.py,EditorialModel,(),23,EXTRACTED,defines
+method,forja_editorial_model.py,EditorialModel.can_execute,(self) -> bool,31,EXTRACTED,defines
+method,forja_editorial_model.py,EditorialModel.cli_model,(self) -> str,35,EXTRACTED,defines
+function,forja_editorial_model.py,resolve,(canonical_id: str | None = <default>) -> EditorialModel,68,EXTRACTED,defines
+function,forja_editorial_model.py,resolve_executable,(canonical_id: str | None = <default>) -> EditorialModel,80,EXTRACTED,defines
+function,forja_editorial_model.py,is_authorized,(canonical_id: str | None) -> bool,91,EXTRACTED,defines
+function,forja_editorial_model.py,family_of,(canonical_id: str | None) -> str | None,95,EXTRACTED,defines
+function,forja_editorial_model.py,family_assurance,"(producer_id: str | None, reviewer_id: str | None, *, producer_session: str | None = <default>, reviewer_session: str | None = <default>) -> str",100,EXTRACTED,defines
+function,forja_editorial_model.py,describe,"(canonical_id: str | None, session_id: str | None = <default>) -> dict",126,EXTRACTED,defines
+function,forja_email.py,_servico,(),42,EXTRACTED,defines
+function,forja_email.py,_cabecalho,"(msg: dict, nome: str) -> str",64,EXTRACTED,defines
+function,forja_email.py,listar,"(svc, limite: int = <default>) -> int",71,EXTRACTED,defines
+function,forja_email.py,_registrar,(evento: dict) -> None,87,EXTRACTED,defines
+function,forja_email.py,enviar_rascunho,"(svc, draft_id: str, confirmar: bool) -> int",94,EXTRACTED,defines
+function,forja_email.py,main,(argv: list[str]) -> int,126,EXTRACTED,defines
+cli-command,forja_email.py,<global>,"--listar, --enviar-rascunho, --confirmar",128,EXTRACTED,accepts_option
+function,forja_entrega.py,_reconciliacao_em_texto,(texto: str),68,EXTRACTED,defines
+function,forja_entrega.py,validar_reconciliacao,"(manifesto, relatorio = <default>)",84,EXTRACTED,defines
+function,forja_entrega.py,_entregaveis,(manifesto: dict) -> list,150,EXTRACTED,defines
+function,forja_entrega.py,validar_pacote,"(manifesto, email = <default>, base_dir = <default>, artefatos_existentes = <default>)",158,EXTRACTED,defines
+function,forja_estilo_humano.py,mandatory_prompt_for_phase,(phase: str) -> str,152,EXTRACTED,defines
+function,forja_estilo_humano.py,_sem_acentos,(value: str) -> str,161,EXTRACTED,defines
+function,forja_estilo_humano.py,_limpar_markdown,(texto: str) -> str,166,EXTRACTED,defines
+function,forja_estilo_humano.py,_limpar_email,(texto: str) -> str,179,EXTRACTED,defines
+function,forja_estilo_humano.py,_contexto,"(texto: str, inicio: int, fim: int, alcance: int = <default>) -> str",201,EXTRACTED,defines
+function,forja_estilo_humano.py,_achado,"(regra: str, severidade: str, trecho: str, problema: str, acao: str, **extra) -> dict",205,EXTRACTED,defines
+function,forja_estilo_humano.py,_paragrafos,(texto: str) -> list[str],218,EXTRACTED,defines
+function,forja_estilo_humano.py,_sentencas,(paragrafo: str) -> list[str],232,EXTRACTED,defines
+function,forja_estilo_humano.py,_tokens,(texto: str) -> list[str],237,EXTRACTED,defines
+function,forja_estilo_humano.py,_cv,(valores: list[int]) -> float,242,EXTRACTED,defines
+function,forja_estilo_humano.py,_padroes_fixos,(texto: str) -> list[dict],247,EXTRACTED,defines
+function,forja_estilo_humano.py,_conectores,"(texto: str, paragrafos: list[str]) -> list[dict]",273,EXTRACTED,defines
+function,forja_estilo_humano.py,_travessoes,(texto: str) -> list[dict],302,EXTRACTED,defines
+function,forja_estilo_humano.py,_dogmatismo,"(texto: str, paragrafos: list[str]) -> list[dict]",324,EXTRACTED,defines
+function,forja_estilo_humano.py,_redundancia,(paragrafos: list[str]) -> list[dict],348,EXTRACTED,defines
+function,forja_estilo_humano.py,_ritmo_robotico,(paragrafos: list[str]) -> list[dict],382,EXTRACTED,defines
+function,forja_estilo_humano.py,_simetria,(paragrafos: list[str]) -> list[dict],401,EXTRACTED,defines
+function,forja_estilo_humano.py,_conclusao_tautologica,(paragrafos: list[str]) -> list[dict],425,EXTRACTED,defines
+function,forja_estilo_humano.py,_email_especifico,"(texto: str, paragrafos: list[str]) -> list[dict]",453,EXTRACTED,defines
+function,forja_estilo_humano.py,analisar,"(texto: str, tipo: str = <default>) -> list[dict]",508,EXTRACTED,defines
+function,forja_estilo_humano.py,relatorio,"(texto: str, tipo: str = <default>) -> dict",536,EXTRACTED,defines
+function,forja_estilo_humano.py,main,() -> int,549,EXTRACTED,defines
+cli-command,forja_estilo_humano.py,<global>,"arquivo, --tipo",551,EXTRACTED,accepts_option
+function,forja_exploracao_100.py,_selection_rank,(question: dict) -> tuple,82,EXTRACTED,defines
+function,forja_exploracao_100.py,selectable_findings,(question: dict) -> list[dict],97,EXTRACTED,defines
+function,forja_exploracao_100.py,select_consultation_questions,"(payload: dict) -> tuple[list[str], list[dict]]",152,EXTRACTED,defines
+function,forja_exploracao_100.py,validate_dialectic,(payload: dict) -> list[dict],178,EXTRACTED,defines
+function,forja_exploracao_100.py,mandatory_prompt_for_phase,(phase: str) -> str,285,EXTRACTED,defines
+function,forja_exploracao_100.py,_issue,"(code: str, detail: str, severity: str = <default>) -> dict",429,EXTRACTED,defines
+function,forja_exploracao_100.py,_norm,(text: object) -> str,433,EXTRACTED,defines
+function,forja_exploracao_100.py,_texto,(value: object) -> str,439,EXTRACTED,defines
+function,forja_exploracao_100.py,_placeholder,(text: object) -> bool,449,EXTRACTED,defines
+function,forja_exploracao_100.py,build_scaffold,"(case_id: str, case_anchor: str) -> dict",454,EXTRACTED,defines
+function,forja_exploracao_100.py,validate_exploration_100,"(payload: dict, *, require_protocol: bool = <default>) -> list[dict]",514,EXTRACTED,defines
+function,forja_exploracao_100.py,gates_da_exploracao,"(payload: dict, *, require_protocol: bool = <default>) -> dict",650,EXTRACTED,defines
+function,forja_exploracao_100.py,render_consultation,"(payload: dict, *, template: Path | None = <default>) -> str",686,EXTRACTED,defines
+function,forja_exploracao_100.py,record_response,"(payload: dict, entry: dict) -> dict",757,EXTRACTED,defines
+function,forja_exploracao_100.py,main,() -> int,786,EXTRACTED,defines
+cli-command,forja_exploracao_100.py,<global>,,790,EXTRACTED,accepts_option
+cli-command,forja_exploracao_100.py,init,"--case-id, --case-anchor, --output",789,EXTRACTED,accepts_option
+cli-command,forja_exploracao_100.py,record-response,"path, --response",800,EXTRACTED,accepts_option
+cli-command,forja_exploracao_100.py,render-consultation,"path, --output",797,EXTRACTED,accepts_option
+cli-command,forja_exploracao_100.py,select-consultation,path,795,EXTRACTED,accepts_option
+cli-command,forja_exploracao_100.py,validate,path,793,EXTRACTED,accepts_option
+function,forja_f10_contract.py,_pass,(ok: bool) -> str,28,EXTRACTED,defines
+function,forja_f10_contract.py,_external_identifier_valid,(evidence: dict) -> bool,32,EXTRACTED,defines
+function,forja_f10_contract.py,_management_synced,"(state: dict, *, minimum_event_seq: int) -> bool",46,EXTRACTED,defines
+function,forja_f10_contract.py,compute_f10_gates,"(package_manifest: dict, evidence: dict, state: dict, *, minimum_synced_event_seq: int | None = <default>) -> dict[str, str]",55,EXTRACTED,defines
+function,forja_f10_contract.py,validate_f10_gates,(gates: dict | None) -> dict,89,EXTRACTED,defines
+function,forja_f2_check.py,tribunal_do_cnj,(numero: str) -> str | None,42,EXTRACTED,defines
+function,forja_f2_check.py,tribunais_do_texto,(texto: str) -> set[str],59,EXTRACTED,defines
+function,forja_f2_check.py,validar_classificacao,"(classificacao: dict, textos_do_caso: str = <default>) -> list[dict]",73,EXTRACTED,defines
+function,forja_f2_check.py,main,(argv = <default>) -> int,99,EXTRACTED,defines
+function,forja_f8_contract.py,inspect_pdf,"(*args, **kwargs)",22,EXTRACTED,defines
+function,forja_f8_contract.py,_validate_static_f8,"(artifact: dict, *, files: dict, release_policy: str) -> dict",29,EXTRACTED,defines
+function,forja_f8_contract.py,_svg_lint,(svg) -> str,109,EXTRACTED,defines
+function,forja_f8_contract.py,_markdown_lint,(ledger: dict) -> str,160,EXTRACTED,defines
+function,forja_f8_contract.py,_gates_do_contrato,"(ledger: dict, layout: dict | None, fidelity: dict | None, findings: list[str], *, release_policy: str) -> dict",181,EXTRACTED,defines
+function,forja_f8_contract.py,_validate_legacy_f8,"(artifact: dict, *, files: dict, release_policy: str = <default>) -> dict",252,EXTRACTED,defines
+function,forja_f8_contract.py,validate_f8,"(artifact: dict, *, files: dict, release_policy: str = <default>) -> dict",391,EXTRACTED,defines
+function,forja_fidelity.py,_norm,(value: str) -> str,33,EXTRACTED,defines
+function,forja_fidelity.py,_docx_text,(path: Path) -> str,40,EXTRACTED,defines
+function,forja_fidelity.py,_pdf_text,"(path: Path) -> tuple[str, int]",49,EXTRACTED,defines
+function,forja_fidelity.py,_segments,(block: dict) -> list[str],56,EXTRACTED,defines
+function,forja_fidelity.py,_coverage,"(segments: list[dict], target: str) -> tuple[float, list[dict]]",72,EXTRACTED,defines
+function,forja_fidelity.py,_number_tokens,(value: str) -> Counter,100,EXTRACTED,defines
+function,forja_fidelity.py,_missing_counter,"(source: Counter, target: Counter) -> list[dict]",123,EXTRACTED,defines
+function,forja_fidelity.py,_missing_numbers,"(source: Counter, target_text: str) -> list[dict]",131,EXTRACTED,defines
+function,forja_fidelity.py,_qualifier_counts,(value: str) -> Counter,142,EXTRACTED,defines
+function,forja_fidelity.py,compare_fidelity,"(markdown: Path, docx: Path, pdf: Path) -> dict",147,EXTRACTED,defines
+function,forja_fidelity.py,compare_docx_fidelity,"(markdown: Path, docx: Path) -> dict",204,EXTRACTED,defines
+function,forja_fidelity.py,write_fidelity,"(markdown: Path, docx: Path, pdf: Path, output: Path) -> dict",256,EXTRACTED,defines
+function,forja_fidelity.py,main,() -> None,262,EXTRACTED,defines
+cli-command,forja_fidelity.py,<global>,"markdown, docx, pdf, output",264,EXTRACTED,accepts_option
+function,forja_fila.py,_norm,(texto),59,EXTRACTED,defines
+function,forja_fila.py,_parse_date,(valor),65,EXTRACTED,defines
+function,forja_fila.py,_fase_num,(current_phase),75,EXTRACTED,defines
+function,forja_fila.py,classificar_prontidao,"(demanda, forja_state)",89,EXTRACTED,defines
+function,forja_fila.py,pontuar,"(demanda, hoje)",124,EXTRACTED,defines
+function,forja_fila.py,ordenar,(pontuadas),167,EXTRACTED,defines
+function,forja_fila.py,pendencia_operacao_assistida,"(config, hoje)",179,EXTRACTED,defines
+function,forja_fila.py,_aguardando_desde,(demanda),196,EXTRACTED,defines
+function,forja_fila.py,montar_fila,"(demandas, states, hoje)",203,EXTRACTED,defines
+function,forja_fila.py,_read_json,"(path, fallback)",268,EXTRACTED,defines
+function,forja_fila.py,_carregar_states,(),275,EXTRACTED,defines
+function,forja_fila.py,_relatorio_md,(fila),285,EXTRACTED,defines
+function,forja_fila.py,gerar,"(hoje = <default>, gravar = <default>, publicar_painel = <default>)",330,EXTRACTED,defines
+function,forja_fila.py,main,(argv = <default>),363,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_fontes,(ledger: dict) -> list,64,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_rotulo,(fonte: dict) -> str,72,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_primeiro,"(fonte: dict, campos) -> str | None",80,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_resolver,"(caminho: str, base_dir) -> Path",88,EXTRACTED,defines
+function,forja_fontes_oficiais.py,validar_fontes_arquivadas,"(ledger, base_dir = <default>)",95,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_itens_checklist,(checklist: dict) -> list,192,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_usou_citacao_textual,(item: dict) -> bool,200,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_cotejo_registrado,(item: dict) -> bool,211,EXTRACTED,defines
+function,forja_fontes_oficiais.py,_cotejo_em_texto,(texto: str) -> dict,239,EXTRACTED,defines
+function,forja_fontes_oficiais.py,validar_cotejo_citacoes,"(checklist, ledger = <default>)",279,EXTRACTED,defines
+function,forja_fontes_oficiais.py,validar_pesquisa_oficial,"(ledger, checklist, base_dir = <default>)",347,EXTRACTED,defines
+function,forja_forma_artefatos.py,_radical,(caminho: Path) -> str,49,EXTRACTED,defines
+function,forja_forma_artefatos.py,_lidos_pelo_censo,() -> set,53,EXTRACTED,defines
+function,forja_forma_artefatos.py,censo_de_formas,(raiz = <default>) -> dict,64,EXTRACTED,defines
+function,forja_forma_artefatos.py,_relatar,(laudo: dict) -> None,119,EXTRACTED,defines
+cli-command,forja_forma_artefatos.py,<global>,--json,144,EXTRACTED,accepts_option
+function,forja_gate_liveness.py,_nomes_declarados,"() -> dict[str, set[str]]",51,EXTRACTED,defines
+function,forja_gate_liveness.py,_alias,(nome: str) -> set[str],65,EXTRACTED,defines
+function,forja_gate_liveness.py,_observados,"() -> tuple[dict[str, dict], int]",77,EXTRACTED,defines
+function,forja_gate_liveness.py,_sem_produtor,"(declarados: dict[str, set[str]]) -> list[dict]",117,EXTRACTED,defines
+function,forja_gate_liveness.py,medir,() -> dict,163,EXTRACTED,defines
+function,forja_gate_liveness.py,relatar,(laudo: dict) -> None,222,EXTRACTED,defines
+function,forja_gate_liveness.py,main,(argv: list[str]) -> int,273,EXTRACTED,defines
+cli-command,forja_gate_liveness.py,<global>,"--json, --estrito",275,EXTRACTED,accepts_option
+function,forja_headless.py,append_unique,"(existing, value)",53,EXTRACTED,defines
+function,forja_headless.py,_invoke_headless,"(case_key, fase, prompt)",60,EXTRACTED,defines
+function,forja_headless.py,_confirmar_modelo,"(payload, fase)",93,EXTRACTED,defines
+function,forja_headless.py,_validate_n3_attempt,"(case_key, fase, attempt_dir)",110,EXTRACTED,defines
+function,forja_headless.py,_write_n3_attempt,"(case_dir, fase, payload, resultado, uso, custo, attempt, context)",121,EXTRACTED,defines
+function,forja_headless.py,run_phase,"(case_key, fase, prompt, *, attempt_dir = <default>)",146,EXTRACTED,defines
+function,forja_headless.py,main,(),199,EXTRACTED,defines
+cli-command,forja_headless.py,<global>,"case, phase, prompt, --attempt-dir",201,EXTRACTED,accepts_option
+function,forja_human_review.py,public_key_id,(public_key_raw: bytes) -> str,31,EXTRACTED,defines
+function,forja_human_review.py,canonical_receipt_bytes,(payload: dict) -> bytes,35,EXTRACTED,defines
+function,forja_human_review.py,build_unsigned_claim_receipt,"(*, reviewer_id: str, reviewed_at: str, public_key_id_value: str, generator_run_id: str, claim: str, claim_sha256: str, source_excerpt: str, source_excerpt_sha256: str, source_sha256: str, source_url: str, source_identity: dict, source_identity_sha256: str, document_sha256: str, document_proposition: str, document_proposition_sha256: str, document_paragraph_index: int, document_paragraph_sha256: str, authority_identity: dict, authority_identity_sha256: str) -> dict",45,EXTRACTED,defines
+function,forja_human_review.py,build_unsigned_visual_receipt,"(*, reviewer_id: str, reviewed_at: str, public_key_id_value: str, generator_run_id: str, reviewer_run_id: str, pdf_sha256: str, docx_sha256: str, page_count: int, page_image_sha256: list[str], required_checks: list[str], visual_attestation_sha256: str) -> dict",95,EXTRACTED,defines
+function,forja_human_review.py,_trusted_key,"(trust_store: dict, reviewer_id: str, key_id: str) -> tuple[dict | None, list[str]]",129,EXTRACTED,defines
+function,forja_human_review.py,_load_pinned_trust_store,"(trust_store_path: Path | None, trust_store_pin_path: Path | None) -> tuple[dict, list[str]]",146,EXTRACTED,defines
+function,forja_human_review.py,_validate_signed_receipt,"(receipt_path: Path, *, expected: dict, attestation_version: str, review_purpose: str, trust_store_path: Path | None = <default>, trust_store_pin_path: Path | None = <default>) -> dict",174,EXTRACTED,defines
+function,forja_human_review.py,validate_claim_review_receipt,"(receipt_path: Path, *, expected: dict, trust_store_path: Path | None = <default>, trust_store_pin_path: Path | None = <default>) -> dict",245,EXTRACTED,defines
+function,forja_human_review.py,validate_visual_review_receipt,"(receipt_path: Path, *, expected: dict, trust_store_path: Path | None = <default>, trust_store_pin_path: Path | None = <default>) -> dict",263,EXTRACTED,defines
+function,forja_import_audited_cycle.py,role_for,(path: Path) -> str,27,EXTRACTED,defines
+function,forja_import_audited_cycle.py,import_cycle,"(case_dir: Path, source_dir: Path) -> dict",34,EXTRACTED,defines
+function,forja_import_audited_cycle.py,main,() -> None,66,EXTRACTED,defines
+cli-command,forja_import_audited_cycle.py,<global>,"case, source_dir",68,EXTRACTED,accepts_option
+function,forja_ingestao.py,_lista,(valor) -> list,54,EXTRACTED,defines
+function,forja_ingestao.py,_tem_conteudo,(valor) -> bool,62,EXTRACTED,defines
+function,forja_ingestao.py,validar_indice_documentos,"(indice, base_dir = <default>)",70,EXTRACTED,defines
+function,forja_ingestao.py,validar_cobertura,(ledger),158,EXTRACTED,defines
+function,forja_ingestao.py,validar_ingestao,"(indice, ledger, base_dir = <default>)",224,EXTRACTED,defines
+function,forja_injection_scan.py,_esta_dentro_de,"(caminho, raiz)",97,EXTRACTED,defines
+function,forja_injection_scan.py,_id_origem,(caminho),106,EXTRACTED,defines
+function,forja_injection_scan.py,_gravar_json_seguro,"(caminho, payload)",112,EXTRACTED,defines
+function,forja_injection_scan.py,distancia_rgb,"(cor1, cor2)",153,EXTRACTED,defines
+function,forja_injection_scan.py,analisar_pdf,(caminho_pdf),167,EXTRACTED,defines
+function,forja_injection_scan.py,processar_entrada,(entrada),284,EXTRACTED,defines
+function,forja_injection_scan.py,_achatar,"(valor, profundidade = <default>)",335,EXTRACTED,defines
+function,forja_injection_scan.py,_houve_varredura,(scan),348,EXTRACTED,defines
+function,forja_injection_scan.py,_p0_detectado,(scan),359,EXTRACTED,defines
+function,forja_injection_scan.py,_tem_triagem,(scan),386,EXTRACTED,defines
+function,forja_injection_scan.py,validar_triagem_injecao,(scan),399,EXTRACTED,defines
+function,forja_injection_scan.py,main,(),432,EXTRACTED,defines
+function,forja_lastro.py,_negado,(antes: str) -> bool,214,EXTRACTED,defines
+function,forja_lastro.py,_norm,(texto: str) -> str,237,EXTRACTED,defines
+function,forja_lastro.py,_ctx,"(texto: str, ini: int, fim: int, alcance: int = <default>) -> str",249,EXTRACTED,defines
+function,forja_lastro.py,_conferivel_como_texto,(alvo: Path) -> bool,269,EXTRACTED,defines
+function,forja_lastro.py,validar_lastro_fatos,"(ledger: dict, *, base_dir: Path | str | None = <default>, exigir_transcricao: bool = <default>) -> list[dict]",278,EXTRACTED,defines
+function,forja_lastro.py,exigir_criterio_vigente,(ledger: dict) -> list[dict],436,EXTRACTED,defines
+function,forja_lastro.py,validar_decisoes_revisao,(payload: dict) -> list[dict],464,EXTRACTED,defines
+function,forja_lastro.py,analisar_texto,"(texto: str, tipo: str = <default>) -> list[dict]",496,EXTRACTED,defines
+function,forja_lastro.py,fatos_sem_lastro,(ledger: dict) -> list[str],565,EXTRACTED,defines
+function,forja_lastro.py,material_economico,(texto: str) -> bool,592,EXTRACTED,defines
+function,forja_lastro.py,_sha256_file,"(caminho: Path, *, bloco: int = <default>) -> str",602,EXTRACTED,defines
+function,forja_lastro.py,_normalizar_data_base,(valor: object) -> str | None,614,EXTRACTED,defines
+function,forja_lastro.py,_data_base_do_produto,(texto: str) -> str | None,643,EXTRACTED,defines
+function,forja_lastro.py,_numero_monetario,(valor: str) -> float | None,651,EXTRACTED,defines
+function,forja_lastro.py,_valores_monetarios,(texto: str) -> list[dict],677,EXTRACTED,defines
+function,forja_lastro.py,_fonte_path,"(fato: dict, base_dir: Path | None) -> Path | None",762,EXTRACTED,defines
+function,forja_lastro.py,_fonte_prevalente,(ledger: dict) -> list[dict],783,EXTRACTED,defines
+function,forja_lastro.py,_achado,"(gate: str, problema: str, *, sev: str = <default>, acao: str | None = <default>, **extra) -> dict",789,EXTRACTED,defines
+function,forja_lastro.py,validar_fonte_prevalente,"(ledger: dict | None, *, base_dir: Path | str | None = <default>, exigir: bool = <default>) -> list[dict]",798,EXTRACTED,defines
+function,forja_lastro.py,_anchor_entries,(ledger: dict) -> list[dict],841,EXTRACTED,defines
+function,forja_lastro.py,_texto_da_ancora,(entrada: dict) -> str,857,EXTRACTED,defines
+function,forja_lastro.py,_ancora_aponta_prevalente,"(entrada: dict, fontes: list[dict]) -> bool",864,EXTRACTED,defines
+function,forja_lastro.py,validar_data_base,"(texto: str, ledger: dict | None, *, exigir: bool = <default>) -> list[dict]",875,EXTRACTED,defines
+function,forja_lastro.py,validar_valores_monetarios,"(texto: str, ledger: dict | None, *, exigir: bool = <default>) -> list[dict]",898,EXTRACTED,defines
+function,forja_lastro.py,_descartes,(ledger: dict) -> list[dict],973,EXTRACTED,defines
+function,forja_lastro.py,_inventario_economico,(base_dir: Path | None) -> list[dict],982,EXTRACTED,defines
+function,forja_lastro.py,_examinado,"(item: dict, examinados: list) -> bool",1017,EXTRACTED,defines
+function,forja_lastro.py,_descartado,"(item: dict, descartes: list[dict]) -> bool",1030,EXTRACTED,defines
+function,forja_lastro.py,validar_hierarquia_fontes,"(ledger: dict | None, *, base_dir: Path | str | None = <default>, exigir: bool = <default>) -> list[dict]",1041,EXTRACTED,defines
+function,forja_lastro.py,validar_aritmetica_derivada,"(texto: str, ledger: dict | None, *, exigir: bool = <default>) -> list[dict]",1083,EXTRACTED,defines
+function,forja_lastro.py,validar_gates_economicos,"(texto: str, *, ledger: dict | None = <default>, base_dir: Path | str | None = <default>, exigir: bool | None = <default>) -> list[dict]",1147,EXTRACTED,defines
+function,forja_lastro.py,verificar_tudo,"(texto: str, *, ledger: dict | None = <default>, revisao: dict | None = <default>, base_dir: Path | str | None = <default>, tipo: str = <default>, exigir_criterio: bool = <default>, exigir_economico: bool | None = <default>) -> list[dict]",1174,EXTRACTED,defines
+function,forja_learning.py,_duplicates,(values: list[str]) -> set[str],37,EXTRACTED,defines
+function,forja_learning.py,_raw_keys,"(value: object, prefix: str = <default>) -> list[str]",42,EXTRACTED,defines
+function,forja_learning.py,validate_feedback_assimilation,(payload: dict) -> list[dict],56,EXTRACTED,defines
+function,forja_learning.py,validate_learning,(payload: dict) -> list[dict],158,EXTRACTED,defines
+function,forja_learning.py,validate_case,(case_dir: Path) -> dict,202,EXTRACTED,defines
+function,forja_learning.py,main,() -> None,207,EXTRACTED,defines
+cli-command,forja_learning.py,<global>,case,209,EXTRACTED,accepts_option
+function,forja_learning_registry.py,_load,() -> dict,26,EXTRACTED,defines
+function,forja_learning_registry.py,register_promoted_rule,"(*, source_case_id: str, candidate: dict, scope_key: str | None) -> dict",33,EXTRACTED,defines
+function,forja_learning_registry.py,active_rules,"(*, case_id: str, product_type: str | None = <default>, tribunal: str | None = <default>) -> list[dict]",82,EXTRACTED,defines
+function,forja_learning_registry.py,suite_learning_findings,"(case_dir: Path, suite: dict) -> list[dict]",100,EXTRACTED,defines
+function,forja_ledger_material.py,_parse_proposicoes,(path: Path) -> list[dict],46,EXTRACTED,defines
+function,forja_ledger_material.py,_source_ledger,(case_dir: Path) -> list[dict],70,EXTRACTED,defines
+function,forja_ledger_material.py,_casar_source_ledger,"(rotulo: str, ledger: list[dict]) -> dict | None",78,EXTRACTED,defines
+function,forja_ledger_material.py,montar,"(case_dir: Path, draft: Path) -> dict",87,EXTRACTED,defines
+function,forja_ledger_material.py,main,(argv = <default>) -> int,167,EXTRACTED,defines
+class,forja_legal_search.py,LegalSearchError,(RuntimeError),22,EXTRACTED,defines
+function,forja_legal_search.py,_now,() -> str,26,EXTRACTED,defines
+function,forja_legal_search.py,_canonical_hash,(value: Any) -> str,30,EXTRACTED,defines
+function,forja_legal_search.py,_atomic_write_json,"(path: Path, payload: Any) -> None",35,EXTRACTED,defines
+function,forja_legal_search.py,_sanitize,(value: Any) -> Any,45,EXTRACTED,defines
+function,forja_legal_search.py,load_config,(path: Path = <default>) -> dict,57,EXTRACTED,defines
+class,forja_legal_search.py,TeiaJusBridge,(),67,EXTRACTED,defines
+method,forja_legal_search.py,TeiaJusBridge.__init__,"(self, *, config_path: Path = <default>, telemetry_root: Path | None = <default>, python_executable: str | None = <default>) -> None",68,EXTRACTED,defines
+method,forja_legal_search.py,TeiaJusBridge.read_actions,(self) -> set[str],90,EXTRACTED,defines
+method,forja_legal_search.py,TeiaJusBridge.mutation_actions,(self) -> set[str],94,EXTRACTED,defines
+method,forja_legal_search.py,TeiaJusBridge.denied_actions,(self) -> set[str],98,EXTRACTED,defines
+method,forja_legal_search.py,TeiaJusBridge.execute,"(self, action: str, params: dict | None = <default>, *, allow_mutation: bool = <default>, artifact_dir: Path | None = <default>) -> dict",107,EXTRACTED,defines
+function,forja_legal_search.py,_common_parser,() -> argparse.ArgumentParser,221,EXTRACTED,defines
+function,forja_legal_search.py,main,() -> None,287,EXTRACTED,defines
+cli-command,forja_legal_search.py,<global>,--db,223,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,capabilities,,225,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,case,"numero_cnj, --include-raw, --artifact-dir",241,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,execute,"action, --params, --allow-mutation, --artifact-dir",246,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,health,,226,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,search,"query, --tribunal, --phase, --min-case-value, --min-conviction-value, --min-score, --has-conviction-value, --has-parties, --limit, --order, --artifact-dir",228,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,stj-catalog,"--dataset, --include-resources, --artifact-dir",254,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,stj-collect,"--max, --allow-mutation, --artifact-dir",280,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,stj-daily,"query, --days, --limit, --include-text, --match-mode, --artifact-dir",267,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,stj-datajud,"--limit, --source-timeout, --artifact-dir",275,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,stj-health,,252,EXTRACTED,accepts_option
+cli-command,forja_legal_search.py,stj-search,"query, --orgao, --limit, --resources-per-dataset, --match-mode, --artifact-dir",259,EXTRACTED,accepts_option
+function,forja_local_context.py,_fase,(nome),24,EXTRACTED,defines
+function,forja_local_context.py,_ts,(texto),29,EXTRACTED,defines
+function,forja_local_context.py,_caso,(pasta),36,EXTRACTED,defines
+function,forja_local_context.py,main,(),65,EXTRACTED,defines
+function,forja_management_bridge.py,sync_after_event,"(case_dir: Path, event: dict) -> dict",20,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,sha256_file,"(path: Path, block_size: int = <default>) -> str",79,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_write_text,"(path: Path, text: str) -> None",93,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_read_json,(path: Path) -> Any,100,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_redact,(value: Any) -> str,107,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_relative,"(path: Path, case_dir: Path) -> str",115,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_state_path,(case_dir: Path) -> Path | None,122,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_state,"(case_dir: Path) -> tuple[dict[str, Any], Path | None]",130,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_phase_status,"(phase: str, state: dict[str, Any]) -> str",136,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_canonical_phase,(value: Any) -> str,150,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_artifact_inventory,"(case_dir: Path, state: dict[str, Any]) -> list[dict[str, Any]]",155,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_control_files,(case_dir: Path) -> list[Path],210,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_summary_for_control,"(path: Path, case_dir: Path) -> dict[str, Any]",222,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_source_summary,"(case_dir: Path) -> dict[str, Any]",246,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_visual_summary,"(controls: list[dict[str, Any]]) -> dict[str, Any]",274,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,build_payload,"(case_dir: Path, *, generated_at: str | None = <default>) -> dict[str, Any]",288,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_md,"(payload: dict[str, Any], manifest_sha: str) -> str",363,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,_html_document,"(markdown: str, payload: dict[str, Any], manifest_sha: str) -> str",446,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,build_bundle,"(case_dir: Path, output_dir: Path | None = <default>) -> dict[str, Any]",461,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,validate_bundle,"(manifest_path: Path, *, expected_case_dir: Path | None = <default>) -> dict[str, Any]",489,EXTRACTED,defines
+function,forja_memoria_auditabilidade.py,main,(argv: list[str] | None = <default>) -> int,529,EXTRACTED,defines
+cli-command,forja_memoria_auditabilidade.py,<global>,,533,EXTRACTED,accepts_option
+cli-command,forja_memoria_auditabilidade.py,build,"case_dir, --output-dir",532,EXTRACTED,accepts_option
+cli-command,forja_memoria_auditabilidade.py,validate,"manifest, --case-dir",535,EXTRACTED,accepts_option
+function,forja_metacognition.py,validate_metacognition,(payload: dict) -> list[dict],13,EXTRACTED,defines
+function,forja_metacognition.py,validate_case,(case_dir: Path) -> dict,43,EXTRACTED,defines
+function,forja_metacognition.py,main,() -> None,48,EXTRACTED,defines
+cli-command,forja_metacognition.py,<global>,case,50,EXTRACTED,accepts_option
+function,forja_metadata.py,retry_transient_io,"(operation, *, tries: int = <default>, base_delay: float = <default>)",22,EXTRACTED,defines
+function,forja_metadata.py,_replace_core_text,"(xml: bytes, tag: str, value: str) -> bytes",41,EXTRACTED,defines
+function,forja_metadata.py,sanitize_docx,(path: Path) -> None,62,EXTRACTED,defines
+function,forja_metadata.py,sanitize_pdf,(path: Path) -> None,86,EXTRACTED,defines
+function,forja_metadata.py,sanitize_final_artifacts,"(docx: str | Path, pdf: str | Path) -> None",108,EXTRACTED,defines
+function,forja_metricas_f7.py,tribunal_numero_cnj,(value),18,EXTRACTED,defines
+function,forja_metricas_f7.py,extrair_citacoes_basico,(md_texto),23,EXTRACTED,defines
+function,forja_metricas_f7.py,cache_com_lastro,"(path, *, require_live = <default>)",36,EXTRACTED,defines
+function,forja_metricas_f7.py,procurar_em_cache_oficial,"(citacao, *, require_live = <default>)",55,EXTRACTED,defines
+function,forja_metricas_f7.py,extrair_marcadores_verificar,(md_texto),97,EXTRACTED,defines
+function,forja_metricas_f7.py,metricas_f7,"(md_texto, *, require_live = <default>)",112,EXTRACTED,defines
+function,forja_metricas_gates.py,_fase,(nome),26,EXTRACTED,defines
+function,forja_metricas_gates.py,_ts,(texto),32,EXTRACTED,defines
+function,forja_metricas_gates.py,_ler,(caminho),39,EXTRACTED,defines
+function,forja_metricas_gates.py,coletar,(),47,EXTRACTED,defines
+function,forja_metricas_gates.py,main,(argv = <default>),127,EXTRACTED,defines
+class,forja_modelos.py,ForjaModeloError,(RuntimeError),46,EXTRACTED,defines
+class,forja_modelos.py,Modelo,(),51,EXTRACTED,defines
+function,forja_modelos.py,modelo_remoto_proibido,(remoto: str | None) -> bool,150,EXTRACTED,defines
+function,forja_modelos.py,_confirmar_modelo_reportado,"(modelo: Modelo, payload: dict) -> None",164,EXTRACTED,defines
+class,forja_modelos.py,Orcamento,(),175,EXTRACTED,defines
+method,forja_modelos.py,Orcamento.restante,(self) -> float,182,EXTRACTED,defines
+method,forja_modelos.py,Orcamento.registrar,"(self, recibo: dict) -> None",185,EXTRACTED,defines
+function,forja_modelos.py,_segredo,(nome: str) -> str,190,EXTRACTED,defines
+function,forja_modelos.py,custo_usd,"(modelo: Modelo, entrada: int, saida: int) -> float",204,EXTRACTED,defines
+function,forja_modelos.py,_post,"(url: str, cabecalhos: dict, corpo: dict, timeout: int) -> dict",209,EXTRACTED,defines
+function,forja_modelos.py,_openrouter,"(modelo: Modelo, prompt: str, sistema: str | None, max_tokens: int, timeout: int) -> tuple[str, int, int, int]",224,EXTRACTED,defines
+function,forja_modelos.py,chamar,"(modelo_id: str, prompt: str, *, sistema: str | None = <default>, max_tokens: int = <default>, timeout: int = <default>, fase: str | None = <default>, papel: str | None = <default>, orcamento: Orcamento | None = <default>, registrar: bool = <default>) -> dict",250,EXTRACTED,defines
+function,forja_modelos.py,registrar_no_ledger,(recibo: dict) -> None,317,EXTRACTED,defines
+function,forja_modelos.py,familia_de,(modelo_id: str) -> str,326,EXTRACTED,defines
+function,forja_modelos.py,revisores_de,"(modelo_id: str, *, fase: str | None = <default>) -> list[str]",333,EXTRACTED,defines
+function,forja_modelos.py,modelos_da_fase,(fase: str) -> list[str],346,EXTRACTED,defines
+function,forja_modelos.py,gasto_acumulado,() -> dict,350,EXTRACTED,defines
+function,forja_modelos.py,main,() -> None,375,EXTRACTED,defines
+cli-command,forja_modelos.py,<global>,,383,EXTRACTED,accepts_option
+cli-command,forja_modelos.py,chamar,"modelo, prompt, --max-tokens, --fase, --papel",382,EXTRACTED,accepts_option
+cli-command,forja_modelos.py,gasto,,381,EXTRACTED,accepts_option
+cli-command,forja_modelos.py,listar,,380,EXTRACTED,accepts_option
+function,forja_mutation_semantic.py,_ano_mais_um,(m: re.Match) -> str,126,EXTRACTED,defines
+function,forja_mutation_semantic.py,_digito_mais_um,(m: re.Match) -> str,130,EXTRACTED,defines
+function,forja_mutation_semantic.py,_aplicar,"(texto: str, padrao: str, subst: str, ocorrencia: int) -> str | None",138,EXTRACTED,defines
+function,forja_mutation_semantic.py,_p0_por_gate,(texto: str) -> Counter,159,EXTRACTED,defines
+function,forja_mutation_semantic.py,_suite_mata,"(suite: dict, texto: str) -> str | None",166,EXTRACTED,defines
+function,forja_mutation_semantic.py,rodar,"(suite: dict, draft_path: Path) -> dict",179,EXTRACTED,defines
+function,forja_mutation_semantic.py,_achar_caso,(chave: str) -> Path,256,EXTRACTED,defines
+function,forja_mutation_semantic.py,_achar_draft,(case_dir: Path) -> Path | None,266,EXTRACTED,defines
+function,forja_mutation_semantic.py,main,(argv = <default>) -> int,286,EXTRACTED,defines
+function,forja_n3_common.py,name_with_legacy,"(name: str) -> tuple[str, ...]",43,EXTRACTED,defines
+function,forja_n3_common.py,resolve_name,"(name: str, available) -> str | None",48,EXTRACTED,defines
+class,forja_n3_common.py,ForjaN3Error,(RuntimeError),56,EXTRACTED,defines
+class,forja_n3_common.py,RevisionConflict,(ForjaN3Error),60,EXTRACTED,defines
+class,forja_n3_common.py,TransitionError,(ForjaN3Error),64,EXTRACTED,defines
+class,forja_n3_common.py,LockTimeout,(ForjaN3Error),68,EXTRACTED,defines
+function,forja_n3_common.py,now_iso,() -> str,72,EXTRACTED,defines
+function,forja_n3_common.py,new_id,(prefix: str) -> str,76,EXTRACTED,defines
+function,forja_n3_common.py,read_json,"(path: Path, fallback: Any = <default>) -> Any",80,EXTRACTED,defines
+function,forja_n3_common.py,atomic_write_text,"(path: Path, text: str, *, encoding: str = <default>) -> None",87,EXTRACTED,defines
+function,forja_n3_common.py,atomic_write_json,"(path: Path, payload: Any) -> None",101,EXTRACTED,defines
+function,forja_n3_common.py,sha256_bytes,(value: bytes) -> str,105,EXTRACTED,defines
+function,forja_n3_common.py,sha256_file,(path: Path) -> str,109,EXTRACTED,defines
+function,forja_n3_common.py,canonical_hash,(payload: Any) -> str,117,EXTRACTED,defines
+function,forja_n3_common.py,load_config,() -> dict,122,EXTRACTED,defines
+function,forja_n3_common.py,feature_enabled,(name: str) -> bool,129,EXTRACTED,defines
+function,forja_n3_common.py,resolve_case_dir,"(case_key: str | Path, *, state_root: Path | None = <default>) -> Path",133,EXTRACTED,defines
+function,forja_n3_common.py,ensure_within,"(path: Path, root: Path) -> Path",150,EXTRACTED,defines
+function,forja_n3_common.py,_pid_alive,(pid: int) -> bool,158,EXTRACTED,defines
+class,forja_n3_common.py,InterProcessLock,(),170,EXTRACTED,defines
+method,forja_n3_common.py,InterProcessLock.__init__,"(self, path: Path, *, timeout: float = <default>, stale_after: float = <default>)",173,EXTRACTED,defines
+method,forja_n3_common.py,InterProcessLock._can_reclaim,(self) -> bool,179,EXTRACTED,defines
+method,forja_n3_common.py,InterProcessLock.__enter__,(self) -> 'InterProcessLock',187,EXTRACTED,defines
+method,forja_n3_common.py,InterProcessLock.__exit__,"(self, exc_type: object, exc: object, tb: object) -> None",209,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_phase_number,(value: object) -> int | None,30,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_phase_regressions,(history: list[dict]) -> list[dict],35,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_artifact_candidates,"(case_dir: Path, raw: str, state_root: Path) -> list[Path]",57,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_artifact_audit,"(case_dir: Path, legacy: dict, state_root: Path) -> dict",64,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_json_audit,(case_dir: Path) -> list[dict],79,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_visual_roots,"(case_dir: Path, legacy: dict) -> list[Path]",89,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_visual_audit,"(case_dir: Path, legacy: dict, *, deep: bool) -> dict",97,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,replay_case,"(case_dir: Path, *, label: str | None, state_root: Path) -> dict",113,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,_render_markdown,(report: dict) -> str,184,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,run_replay,"(state_root: Path, output_json: Path, output_md: Path) -> dict",226,EXTRACTED,defines
+function,forja_n3_shadow_replay.py,main,() -> None,255,EXTRACTED,defines
+cli-command,forja_n3_shadow_replay.py,<global>,"--state-root, --output-json, --output-md",257,EXTRACTED,accepts_option
+function,forja_n4_anti_fraud_audit.py,_snapshot,"(case_dir: Path, sidecar: dict) -> dict",23,EXTRACTED,defines
+function,forja_n4_anti_fraud_audit.py,evaluate,(snapshot: dict) -> dict,40,EXTRACTED,defines
+function,forja_n4_anti_fraud_audit.py,run,() -> dict,106,EXTRACTED,defines
+function,forja_n4_baseline.py,_protected,"(case_dir: Path) -> dict[str, str]",18,EXTRACTED,defines
+function,forja_n4_baseline.py,run,"(*, initialize_n3: bool) -> dict",32,EXTRACTED,defines
+function,forja_n4_baseline.py,main,() -> None,74,EXTRACTED,defines
+cli-command,forja_n4_baseline.py,<global>,--initialize-n3,76,EXTRACTED,accepts_option
+function,forja_n4_common.py,issue,"(code: str, detail: str, *, severity: str = <default>, artifact: str | None = <default>) -> dict",99,EXTRACTED,defines
+function,forja_n4_common.py,semantic_payload,(payload: dict) -> dict,106,EXTRACTED,defines
+function,forja_n4_common.py,expected_content_hash,(payload: dict) -> str,110,EXTRACTED,defines
+function,forja_n4_common.py,artifact_path,"(case_dir: Path, filename: str) -> Path",114,EXTRACTED,defines
+function,forja_n4_common.py,build_envelope,"(case_dir: Path, filename: str, content: dict, *, source_hashes: list[str], producer_run_id: str, reviewer_run_id: str | None = <default>, applicability: str = <default>, status: str = <default>) -> dict",120,EXTRACTED,defines
+function,forja_n4_common.py,write_artifact,"(case_dir: Path, filename: str, payload: dict) -> Path",158,EXTRACTED,defines
+function,forja_n4_common.py,append_trace,"(case_dir: Path, action: str, *, run_id: str, detail: dict, status: str = <default>) -> None",173,EXTRACTED,defines
+function,forja_n4_common.py,validate_envelope,"(case_dir: Path, filename: str, payload: Any) -> list[dict]",186,EXTRACTED,defines
+function,forja_n4_common.py,load_artifact,"(case_dir: Path, filename: str) -> dict | None",226,EXTRACTED,defines
+function,forja_n4_common.py,validate_file,"(case_dir: Path, filename: str, validator: Callable[[dict], list[dict]] | None = <default>) -> tuple[dict | None, list[dict]]",230,EXTRACTED,defines
+function,forja_n4_common.py,ids_unique,"(items: list[dict], key: str, code: str) -> list[dict]",242,EXTRACTED,defines
+function,forja_n4_corpus.py,run,() -> dict,27,EXTRACTED,defines
+function,forja_n4_e2e_adversarial.py,_load,(path: Path) -> dict,21,EXTRACTED,defines
+function,forja_n4_e2e_adversarial.py,_save,"(path: Path, payload: dict) -> None",25,EXTRACTED,defines
+function,forja_n4_e2e_adversarial.py,_copy_case,"(source: Path, parent: Path) -> Path",31,EXTRACTED,defines
+function,forja_n4_e2e_adversarial.py,_codes,(report: dict) -> set[str],37,EXTRACTED,defines
+function,forja_n4_e2e_adversarial.py,run,(source: Path = <default>) -> dict,41,EXTRACTED,defines
+function,forja_n4_e2e_adversarial.py,main,() -> None,137,EXTRACTED,defines
+cli-command,forja_n4_e2e_adversarial.py,<global>,"--case, --output",139,EXTRACTED,accepts_option
+function,forja_n4_invalidation.py,invalidate,"(case_dir: Path, trigger: str, *, reason: str, actor: str = <default>) -> dict",32,EXTRACTED,defines
+function,forja_n4_invalidation.py,main,() -> None,59,EXTRACTED,defines
+cli-command,forja_n4_invalidation.py,<global>,"case, trigger, reason",61,EXTRACTED,accepts_option
+function,forja_n4_m6_cycles.py,_docx_semantic_text,(path: Path) -> str,76,EXTRACTED,defines
+function,forja_n4_m6_cycles.py,run,(key: str) -> dict,87,EXTRACTED,defines
+cli-command,forja_n4_m6_cycles.py,<global>,case,253,EXTRACTED,accepts_option
+function,forja_n4_m6_prepare.py,_extract_text,(docx_path: Path) -> str,42,EXTRACTED,defines
+function,forja_n4_m6_prepare.py,_render,"(pdf_path: Path, pages_dir: Path) -> list[Path]",53,EXTRACTED,defines
+function,forja_n4_m6_prepare.py,_contact_sheet,"(pages: list[Path], target: Path) -> None",64,EXTRACTED,defines
+function,forja_n4_m6_prepare.py,prepare,(key: str) -> dict,82,EXTRACTED,defines
+function,forja_n4_m6_prepare.py,approve,"(key: str, reviewer: str) -> dict",119,EXTRACTED,defines
+function,forja_n4_m6_prepare.py,main,() -> None,144,EXTRACTED,defines
+cli-command,forja_n4_m6_prepare.py,<global>,"command, case, --reviewer",146,EXTRACTED,accepts_option
+function,forja_n4_pilot_cafelana.py,run,() -> dict,21,EXTRACTED,defines
+function,forja_n4_pilot_science.py,_article_text,(xml: str) -> str,22,EXTRACTED,defines
+function,forja_n4_pilot_science.py,run,() -> dict,27,EXTRACTED,defines
+function,forja_n4_validate.py,_settlement,(payload: dict) -> list[dict],66,EXTRACTED,defines
+function,forja_n4_validate.py,_recipient_map_validator,(config: dict) -> Validator,119,EXTRACTED,defines
+function,forja_n4_validate.py,_pilot_blocking_finding,(item: dict) -> bool,150,EXTRACTED,defines
+function,forja_n4_validate.py,_target_phase,(case_dir: Path) -> str,154,EXTRACTED,defines
+function,forja_n4_validate.py,_required_files,(config: dict) -> set[str],162,EXTRACTED,defines
+function,forja_n4_validate.py,_source_registry_findings,"(case_dir: Path, case_manifest: dict, *, require_verifiable: bool = <default>) -> tuple[set[str], list[dict]]",173,EXTRACTED,defines
+function,forja_n4_validate.py,_registered_source_path,"(case_dir: Path, case_manifest: dict, digest: str) -> Path | None",214,EXTRACTED,defines
+function,forja_n4_validate.py,_result_core,(payload: dict) -> dict,231,EXTRACTED,defines
+function,forja_n4_validate.py,_council_ready,(theses: dict) -> bool,238,EXTRACTED,defines
+function,forja_n4_validate.py,_global_replay_findings,"(files: dict[str, dict]) -> list[dict]",252,EXTRACTED,defines
+function,forja_n4_validate.py,_effective_named_mode,"(config: dict, case_dir: Path, namespace: str, override: str | None = <default>) -> tuple[str, str]",353,EXTRACTED,defines
+function,forja_n4_validate.py,_effective_mode,"(config: dict, case_dir: Path, override: str | None = <default>) -> tuple[str, str]",380,EXTRACTED,defines
+function,forja_n4_validate.py,effective_signature_lite_mode,"(config: dict, case_dir: Path, override: str | None = <default>) -> tuple[str, str]",384,EXTRACTED,defines
+function,forja_n4_validate.py,_schema_findings,"(filename: str, payload: dict) -> list[dict]",391,EXTRACTED,defines
+function,forja_n4_validate.py,_cross_reference_findings,"(files: dict[str, dict]) -> list[dict]",411,EXTRACTED,defines
+function,forja_n4_validate.py,validate_case,"(case_dir: Path, *, target_phase: str | None = <default>, write: bool = <default>, mode_override: str | None = <default>) -> dict",435,EXTRACTED,defines
+function,forja_n4_validate.py,management_summary,(case_dir: Path) -> dict,564,EXTRACTED,defines
+function,forja_n4_validate.py,main,() -> None,656,EXTRACTED,defines
+cli-command,forja_n4_validate.py,<global>,"case, --target-phase, --no-write",658,EXTRACTED,accepts_option
+class,forja_official_sources.py,_OfficialHtmlText,(HTMLParser),42,EXTRACTED,defines
+method,forja_official_sources.py,_OfficialHtmlText.__init__,(self) -> None,45,EXTRACTED,defines
+method,forja_official_sources.py,_OfficialHtmlText.handle_starttag,"(self, tag: str, attrs) -> None",50,EXTRACTED,defines
+method,forja_official_sources.py,_OfficialHtmlText.handle_endtag,"(self, tag: str) -> None",54,EXTRACTED,defines
+method,forja_official_sources.py,_OfficialHtmlText.handle_data,"(self, data: str) -> None",58,EXTRACTED,defines
+function,forja_official_sources.py,normalize_evidence_text,(value: str) -> str,63,EXTRACTED,defines
+function,forja_official_sources.py,source_excerpt_sha256,(value: str) -> str,72,EXTRACTED,defines
+function,forja_official_sources.py,_extract_source_text,(path: Path) -> str,76,EXTRACTED,defines
+function,forja_official_sources.py,_response_text,"(body: bytes, content_type: str) -> str",98,EXTRACTED,defines
+function,forja_official_sources.py,_fetch_official,"(url: str, timeout: int = <default>) -> dict",117,EXTRACTED,defines
+function,forja_official_sources.py,_candidate_anchors,(text: str) -> list[str],148,EXTRACTED,defines
+function,forja_official_sources.py,validate_live_official_source,"(path: Path, record: dict, *, required_excerpt: str | None = <default>, fetcher = <default>) -> dict",166,EXTRACTED,defines
+function,forja_official_sources.py,_official_url,(value: str) -> bool,224,EXTRACTED,defines
+function,forja_official_sources.py,_urls_from_text,(text: str) -> list[str],233,EXTRACTED,defines
+function,forja_official_sources.py,_identity_from_name,(path: Path) -> dict | None,237,EXTRACTED,defines
+function,forja_official_sources.py,_identity_present,"(text: str, identity: dict | None) -> bool",256,EXTRACTED,defines
+function,forja_official_sources.py,build_manifest,"(cache_dir: Path = <default>, output: Path = <default>) -> dict",300,EXTRACTED,defines
+function,forja_official_sources.py,validate_cached_source,"(path: Path, manifest_path: Path = <default>, *, cache_dir: Path = <default>, require_live: bool = <default>, required_excerpt: str | None = <default>, fetcher = <default>) -> dict",334,EXTRACTED,defines
+function,forja_official_sources.py,sidecar_path,(source: Path) -> Path,376,EXTRACTED,defines
+function,forja_official_sources.py,validate_archived_source,"(path: Path, *, require_live: bool = <default>, required_excerpt: str | None = <default>, fetcher = <default>) -> dict",380,EXTRACTED,defines
+function,forja_official_sources.py,validate_source_path,"(path: Path, *, require_live: bool = <default>, required_excerpt: str | None = <default>, fetcher = <default>) -> dict",447,EXTRACTED,defines
+function,forja_official_sources.py,main,() -> int,472,EXTRACTED,defines
+cli-command,forja_official_sources.py,<global>,"--build-manifest, --validate, --live",474,EXTRACTED,accepts_option
+function,forja_p0.py,_payload,(achado: dict) -> dict,37,EXTRACTED,defines
+function,forja_p0.py,_severidade,(achado: dict) -> str,59,EXTRACTED,defines
+function,forja_p0.py,_resolvido,(achado: dict) -> bool,68,EXTRACTED,defines
+function,forja_p0.py,_achados,(resultado: dict) -> list,79,EXTRACTED,defines
+function,forja_p0.py,_declarado,(resultado: dict),88,EXTRACTED,defines
+function,forja_p0.py,validar_p0,"(resultado, *, produtor = <default>, revisor = <default>)",105,EXTRACTED,defines
+function,forja_package.py,release_policy_hash,() -> str,48,EXTRACTED,defines
+function,forja_package.py,_protocolable_content,"(item: dict, markdown: dict, files: dict | None = <default>) -> bool",74,EXTRACTED,defines
+function,forja_package.py,_artifact,"(state: dict, artifact_id: str) -> dict",114,EXTRACTED,defines
+function,forja_package.py,_f7_metrics,"(payload: dict, document_key: str | None) -> dict",131,EXTRACTED,defines
+function,forja_package.py,_pending_citations,(metrics: dict) -> list[str],140,EXTRACTED,defines
+function,forja_package.py,_unresolved_markers,(metrics: dict) -> list[str],145,EXTRACTED,defines
+function,forja_package.py,validate_f7,"(artifact: dict, *, document_key: str | None, release_policy: str, markdown: dict) -> dict",153,EXTRACTED,defines
+function,forja_package.py,_ledger_entries,(payload: Any) -> list[dict],202,EXTRACTED,defines
+function,forja_package.py,_citation_key,"(item: dict) -> tuple[str, str, str]",214,EXTRACTED,defines
+function,forja_package.py,_markdown_paragraphs,(markdown_path: Path) -> list[str],218,EXTRACTED,defines
+function,forja_package.py,_document_binding,"(item: dict, markdown: dict) -> tuple[dict, list[str]]",223,EXTRACTED,defines
+function,forja_package.py,_denied_search_actions,() -> set[str],268,EXTRACTED,defines
+function,forja_package.py,_brief_routes,"(case_dir: Path | None) -> tuple[str | None, set[str]]",276,EXTRACTED,defines
+function,forja_package.py,validate_source_ledger,"(artifact: dict, *, release_policy: str, expected_citations: list[dict] | None = <default>, markdown: dict | None = <default>, case_dir: Path | None = <default>) -> dict",292,EXTRACTED,defines
+function,forja_package.py,validate_context_artifact,"(artifact: dict, *, markdown: dict, release_policy: str) -> dict",420,EXTRACTED,defines
+function,forja_package.py,validate_fidelity,"(artifact: dict, *, files: dict) -> dict",435,EXTRACTED,defines
+function,forja_package.py,_email_claims,"(email_text: str, pending: list[str]) -> list[str]",494,EXTRACTED,defines
+function,forja_package.py,validate_adversarial_bundle,"(state: dict, item: dict) -> dict",506,EXTRACTED,defines
+function,forja_package.py,validate_definition,"(case_dir: Path, definition: dict) -> dict",554,EXTRACTED,defines
+function,forja_package.py,build_package,"(case_dir: Path, definition_path: Path, *, publish_pointer: bool = <default>) -> dict",767,EXTRACTED,defines
+function,forja_package.py,revalidate_package_manifest,"(case_dir: Path, manifest: dict) -> dict",851,EXTRACTED,defines
+function,forja_paragrafos.py,_norm,(texto: str) -> str,67,EXTRACTED,defines
+function,forja_paragrafos.py,_unidades,(prov: dict) -> list,71,EXTRACTED,defines
+function,forja_paragrafos.py,_tem_lastro,(unidade: dict) -> bool,79,EXTRACTED,defines
+function,forja_paragrafos.py,_e_editorial,(unidade: dict) -> bool,89,EXTRACTED,defines
+function,forja_paragrafos.py,_rotulo,(unidade: dict) -> str,99,EXTRACTED,defines
+function,forja_paragrafos.py,_hashes_do_texto,(texto: str) -> set,110,EXTRACTED,defines
+function,forja_paragrafos.py,validar_paragrafos_lastreados,"(prov, draft_texto = <default>)",117,EXTRACTED,defines
+function,forja_paragrafos.py,carregar_e_validar,(pasta),212,EXTRACTED,defines
+function,forja_phase_contracts.py,load_contract,(phase: str) -> dict,14,EXTRACTED,defines
+function,forja_phase_contracts.py,validate_all,() -> list[dict],49,EXTRACTED,defines
+function,forja_pilot_m4.py,append_unique_many,"(existing, values)",42,EXTRACTED,defines
+function,forja_pilot_m4.py,limpar_corpo,(doc),50,EXTRACTED,defines
+function,forja_pilot_m4.py,eh_titulo,(texto),58,EXTRACTED,defines
+function,forja_pilot_m4.py,montar_piloto,"(case_key, peca_fonte)",67,EXTRACTED,defines
+function,forja_post_protocol.py,safe_component,"(value: str, fallback: str, *, limit: int = <default>) -> str",105,EXTRACTED,defines
+function,forja_post_protocol.py,content_key,"(case_id: str, attachment_hash: str) -> str",111,EXTRACTED,defines
+function,forja_post_protocol.py,evidence_key,"(account_id: str, thread_id: str, message_id: str, attachment_id: str) -> str",115,EXTRACTED,defines
+function,forja_post_protocol.py,_record,"(case_dir: Path, event_type: str, key: str, payload: dict, *, artifact_hashes: dict | None = <default>) -> tuple[dict, bool]",119,EXTRACTED,defines
+function,forja_post_protocol.py,_parse_timestamp,(value: str | None) -> datetime | None,145,EXTRACTED,defines
+function,forja_post_protocol.py,_baseline_records,(case_dir: Path) -> list[dict],155,EXTRACTED,defines
+function,forja_post_protocol.py,resolve_ai_baseline,"(case_dir: Path, *, received_at: str) -> tuple[dict | None, list[str]]",179,EXTRACTED,defines
+function,forja_post_protocol.py,_delivery_timestamp,(message: dict) -> str,224,EXTRACTED,defines
+function,forja_post_protocol.py,_sent_baseline_candidates,"(demand: dict, *, human_suffix: str, received_at: str, get_message) -> list[dict]",235,EXTRACTED,defines
+function,forja_post_protocol.py,_walk_gmail_parts,(payload: dict),278,EXTRACTED,defines
+function,forja_post_protocol.py,backfill_baseline_from_gmail,"(case_dir: Path, demand: dict, *, human_suffix: str, received_at: str, get_message, get_attachment, shadow: bool) -> dict | None",286,EXTRACTED,defines
+function,forja_post_protocol.py,_select_return_parts,"(parts: list[dict]) -> tuple[list[dict], list[dict], str | None]",398,EXTRACTED,defines
+function,forja_post_protocol.py,_text_similarity,"(first: Path, second: Path) -> float",422,EXTRACTED,defines
+function,forja_post_protocol.py,_verified_protocol_link,(link: dict) -> bool,439,EXTRACTED,defines
+function,forja_post_protocol.py,classify_protocol,"(human_path: Path, *, declaration_text: str = <default>, evidence_paths: list[Path] | None = <default>, explicit_links: list[dict] | None = <default>) -> tuple[str, list[dict], list[str]]",447,EXTRACTED,defines
+function,forja_post_protocol.py,_folder_labels,"(protocol_status: str, piece_name: str, process_id: str, date_label: str) -> tuple[str, str]",514,EXTRACTED,defines
+function,forja_post_protocol.py,_index_path,(case_dir: Path) -> Path,527,EXTRACTED,defines
+function,forja_post_protocol.py,_load_index,(case_dir: Path) -> dict,531,EXTRACTED,defines
+function,forja_post_protocol.py,_set_index_state,"(case_dir: Path, ckey: str, state: str, **updates: Any) -> None",538,EXTRACTED,defines
+function,forja_post_protocol.py,_require_post_protocol_enabled,() -> None,551,EXTRACTED,defines
+function,forja_post_protocol.py,_block_capture,"(case_dir: Path, ckey: str, manifest_path: Path, manifest: dict, *, reason_codes: list[str], detail: str, human_artifact_id: str, protocol_status: str) -> dict",556,EXTRACTED,defines
+function,forja_post_protocol.py,_write_artifact_checked,"(case_dir: Path, filename: str, content: dict, source_hashes: list[str], validator, *, producer_run_id: str) -> dict",596,EXTRACTED,defines
+function,forja_post_protocol.py,_archive_prior_post_protocol_artifacts,"(case_dir: Path, incoming_content_key: str) -> None",622,EXTRACTED,defines
+function,forja_post_protocol.py,_sanitize_changes,(changes: list[dict]) -> list[dict],642,EXTRACTED,defines
+function,forja_post_protocol.py,_preserve_change_reviews,"(changes: list[dict], prior_changes: list[dict]) -> list[dict]",666,EXTRACTED,defines
+function,forja_post_protocol.py,_learning_candidates,"(changes: list[dict], existing: list[dict] | None = <default>) -> list[dict]",681,EXTRACTED,defines
+function,forja_post_protocol.py,_regression_proposals,(candidates: list[dict]) -> list[dict],750,EXTRACTED,defines
+function,forja_post_protocol.py,ingest_return,"(case_dir: Path, attachment_path: Path, *, account_id: str, thread_id: str, message_id: str, attachment_id: str, received_at: str, original_name: str | None = <default>, piece_name: str = <default>, process_id: str = <default>, declaration_text: str = <default>, evidence_paths: list[Path] | None = <default>, explicit_evidence_links: list[dict] | None = <default>, producer_run_id: str | None = <default>) -> dict",777,EXTRACTED,defines
+function,forja_post_protocol.py,promote_learning,"(case_dir: Path, candidate_id: str, *, content_key_value: str = <default>, approved_by: str, fixture_id: str, test_id: str, evidence_runs: list[str], evidence_case_ids: list[str] | None = <default>, scope: str = <default>, scope_key: str | None = <default>) -> dict",1269,EXTRACTED,defines
+function,forja_post_protocol.py,_learning_payload_for_content,"(case_dir: Path, candidate_id: str, content_key_value: str = <default>) -> tuple[Path, dict]",1434,EXTRACTED,defines
+function,forja_post_protocol.py,_write_learning_payload,"(case_dir: Path, path: Path, payload: dict) -> None",1459,EXTRACTED,defines
+function,forja_post_protocol.py,_write_human_diff_payload,"(case_dir: Path, path: Path, payload: dict) -> None",1472,EXTRACTED,defines
+function,forja_post_protocol.py,resolve_learning_origin,"(case_dir: Path, candidate_id: str, *, content_key_value: str, origin: str, evidence_id: str, decided_by: str) -> dict",1485,EXTRACTED,defines
+function,forja_post_protocol.py,rebuild_comparison,"(case_dir: Path, ckey: str, *, producer_run_id: str | None = <default>) -> dict",1539,EXTRACTED,defines
+function,forja_post_protocol.py,_message_header,"(message: dict, name: str) -> str",1715,EXTRACTED,defines
+function,forja_post_protocol.py,_case_for_demand,"(demand_id: str, demands: list[dict]) -> str | None",1722,EXTRACTED,defines
+function,forja_post_protocol.py,_sender_allowed,(message: dict) -> bool,1746,EXTRACTED,defines
+function,forja_post_protocol.py,scan_gmail,"(*, query: str, max_results: int = <default>, shadow: bool = <default>) -> dict",1762,EXTRACTED,defines
+function,forja_post_protocol.py,main,() -> None,1995,EXTRACTED,defines
+cli-command,forja_post_protocol.py,<global>,,1999,EXTRACTED,accepts_option
+cli-command,forja_post_protocol.py,ingest,"case, attachment, --account-id, --thread-id, --message-id, --attachment-id, --received-at, --original-name, --piece-name, --process-id, --declaration-text, --evidence",1998,EXTRACTED,accepts_option
+cli-command,forja_post_protocol.py,promote,"case, candidate_id, --content-key, --approved-by, --fixture-id, --test-id, --evidence-run, --evidence-case, --scope, --scope-key",2015,EXTRACTED,accepts_option
+cli-command,forja_post_protocol.py,rebuild,"case, content_key",2026,EXTRACTED,accepts_option
+cli-command,forja_post_protocol.py,resolve-origin,"case, candidate_id, --content-key, --origin, --evidence-id, --decided-by",2029,EXTRACTED,accepts_option
+cli-command,forja_post_protocol.py,scan-gmail,"--query, --max-results, --shadow",2011,EXTRACTED,accepts_option
+function,forja_post_protocol_contracts.py,_hash_findings,"(value: object, field: str, code: str) -> list[dict]",86,EXTRACTED,defines
+function,forja_post_protocol_contracts.py,_raw_key_findings,"(value: object, prefix: str = <default>) -> list[dict]",90,EXTRACTED,defines
+function,forja_post_protocol_contracts.py,validate_post_protocol_return,(payload: dict) -> list[dict],104,EXTRACTED,defines
+function,forja_post_protocol_contracts.py,validate_protocol_evidence,(payload: dict) -> list[dict],125,EXTRACTED,defines
+function,forja_post_protocol_contracts.py,validate_document_comparison,(payload: dict) -> list[dict],165,EXTRACTED,defines
+function,forja_post_protocol_contracts.py,validate_learning_candidate,(payload: dict) -> list[dict],185,EXTRACTED,defines
+function,forja_post_protocol_contracts.py,validate_post_protocol_baseline_backfill,(payload: dict) -> list[dict],246,EXTRACTED,defines
+function,forja_precedente.py,validate_legal_research_trace,"(payload: dict, mode: str = <default>, *, denied_actions: set[str] | None = <default>, case_dir: Path | None = <default>) -> list[dict]",66,EXTRACTED,defines
+function,forja_precedente.py,_regime_findings,"(rotulo: str, regime: dict) -> list[dict]",181,EXTRACTED,defines
+function,forja_precedente.py,_vigencia_findings,"(rotulo: str, card: dict, operation: str) -> list[dict]",223,EXTRACTED,defines
+function,forja_precedente.py,_contrario_findings,"(rotulo: str, card: dict) -> list[dict]",261,EXTRACTED,defines
+function,forja_precedente.py,validate_anchor_cards,"(entries: list[dict], *, selected_route_id: str | None = <default>, compared_route_ids: set[str] | None = <default>) -> list[dict]",294,EXTRACTED,defines
+function,forja_precedente.py,anchor_ids,(entries: list[dict]) -> set[str],407,EXTRACTED,defines
+function,forja_precedente.py,failed_anchor_routes,"(findings: list[dict], entries: list[dict]) -> set[str]",416,EXTRACTED,defines
+function,forja_produto.py,_texto,"(fonte: dict, campos) -> str | None",52,EXTRACTED,defines
+function,forja_produto.py,_conferir,"(fonte, campos, gate, rotulo, piso, achados, *, obrigatorio = <default>)",68,EXTRACTED,defines
+function,forja_produto.py,validar_definicao_produto,(classificacao),96,EXTRACTED,defines
+function,forja_produto.py,validar_pergunta_jurisdicional,(blueprint),136,EXTRACTED,defines
+function,forja_produto.py,validar_uso_final,(ledger),168,EXTRACTED,defines
+function,forja_pso_pet.py,issue,"(code: str, detail: str, *, severity: str = <default>, dimension: str | None = <default>) -> dict",26,EXTRACTED,defines
+function,forja_pso_pet.py,_text,(value: Any) -> bool,33,EXTRACTED,defines
+function,forja_pso_pet.py,_norm,(value: Any) -> str,37,EXTRACTED,defines
+function,forja_pso_pet.py,_ids,"(items: list[dict], key: str, code: str, findings: list[dict]) -> set[str]",41,EXTRACTED,defines
+function,forja_pso_pet.py,_parse_iso,(value: Any) -> datetime | None,53,EXTRACTED,defines
+function,forja_pso_pet.py,_registry,"(payload: dict) -> tuple[dict[str, dict], list[dict]]",63,EXTRACTED,defines
+function,forja_pso_pet.py,_check_refs,"(refs: list[str], registry: dict[str, dict], findings: list[dict], *, owner: str, allow_final: bool = <default>) -> None",78,EXTRACTED,defines
+function,forja_pso_pet.py,validate_plan,(payload: dict) -> list[dict],96,EXTRACTED,defines
+function,forja_pso_pet.py,_dimension,"(code: str, checks: list[tuple[str, bool, str]]) -> dict",259,EXTRACTED,defines
+function,forja_pso_pet.py,measure_plan,(payload: dict) -> dict,272,EXTRACTED,defines
+function,forja_pso_pet.py,audit_n4_case,(case_dir: Path) -> dict,371,EXTRACTED,defines
+function,forja_pso_pet.py,_valid_fixture,() -> dict,454,EXTRACTED,defines
+function,forja_pso_pet.py,mutation_benchmark,() -> dict,536,EXTRACTED,defines
+function,forja_pso_pet.py,benchmark,(state_root: Path) -> dict,588,EXTRACTED,defines
+function,forja_pso_pet.py,main,() -> None,610,EXTRACTED,defines
+cli-command,forja_pso_pet.py,<global>,,614,EXTRACTED,accepts_option
+cli-command,forja_pso_pet.py,audit-case,case,615,EXTRACTED,accepts_option
+cli-command,forja_pso_pet.py,benchmark,"--state-root, --output",617,EXTRACTED,accepts_option
+cli-command,forja_pso_pet.py,validate-plan,plan,613,EXTRACTED,accepts_option
+cli-command,forja_pso_pet.py,write-example,--output,620,EXTRACTED,accepts_option
+function,forja_qa_paginas.py,_densidade,"(img: Image.Image, y0: int = <default>, y1: int | None = <default>) -> float",36,EXTRACTED,defines
+function,forja_qa_paginas.py,analisar_pasta,(pasta: Path) -> dict,48,EXTRACTED,defines
+function,forja_qa_paginas.py,main,(argv = <default>) -> int,103,EXTRACTED,defines
+function,forja_reasoning.py,validate_question_tree,(payload: dict) -> list[dict],31,EXTRACTED,defines
+function,forja_reasoning.py,validate_coverage,(payload: dict) -> list[dict],89,EXTRACTED,defines
+function,forja_reasoning.py,_dependency_cycles,(edges: list[dict]) -> list[list[str]],112,EXTRACTED,defines
+function,forja_reasoning.py,validate_graph,(payload: dict) -> list[dict],138,EXTRACTED,defines
+function,forja_reasoning.py,validate_theses,(payload: dict) -> list[dict],160,EXTRACTED,defines
+function,forja_reasoning.py,validate_conducts,(payload: dict) -> list[dict],184,EXTRACTED,defines
+function,forja_reasoning.py,validate_decision_factors,(payload: dict) -> list[dict],199,EXTRACTED,defines
+function,forja_reasoning.py,nivel_probatorio,(kind: str | None) -> str,237,EXTRACTED,defines
+function,forja_reasoning.py,_fontes_do_mapa,"(payload: dict) -> dict[str, str]",242,EXTRACTED,defines
+function,forja_reasoning.py,_idade_em_horas,"(momento: str | None, agora: datetime | None = <default>) -> float | None",251,EXTRACTED,defines
+function,forja_reasoning.py,validate_recipient_map,"(payload: dict, *, freshness_hours: int | None = <default>, agora: datetime | None = <default>) -> list[dict]",262,EXTRACTED,defines
+function,forja_reasoning.py,validate_signature_brief,(payload: dict) -> list[dict],352,EXTRACTED,defines
+function,forja_reasoning.py,_pool_de_ids,"(case_dir: Path, filename: str, chave: str, bloco: str) -> set[str] | None",426,EXTRACTED,defines
+function,forja_reasoning.py,validate_brief_references,"(brief: dict, case_dir: Path) -> list[dict]",445,EXTRACTED,defines
+function,forja_reasoning.py,validate_case,(case_dir: Path) -> dict,520,EXTRACTED,defines
+function,forja_reasoning.py,main,() -> None,535,EXTRACTED,defines
+cli-command,forja_reasoning.py,<global>,case,537,EXTRACTED,accepts_option
+function,forja_recomputo_censo.py,_ler,(caminho) -> dict,32,EXTRACTED,defines
+function,forja_recomputo_censo.py,_texto,(caminho) -> str | None,45,EXTRACTED,defines
+function,forja_recomputo_censo.py,_artefatos_da_tentativa,"(pasta: Path, resultado: dict) -> list[dict]",52,EXTRACTED,defines
+function,forja_recomputo_censo.py,_raiz_do_caso,(pasta: Path) -> Path | None,70,EXTRACTED,defines
+function,forja_recomputo_censo.py,_irmao_promovido,"(pasta: Path, fase: str, nome: str) -> Path | None",77,EXTRACTED,defines
+function,forja_recomputo_censo.py,_produtores,"(pasta: Path, resultado: dict | None = <default>) -> list",92,EXTRACTED,defines
+function,forja_recomputo_censo.py,censo,(raiz = <default>) -> dict,260,EXTRACTED,defines
+function,forja_recomputo_censo.py,_relatar,(laudo: dict) -> None,294,EXTRACTED,defines
+cli-command,forja_recomputo_censo.py,<global>,--json,323,EXTRACTED,accepts_option
+function,forja_reconcile.py,classificar_integracoes,"(status, bridge)",38,EXTRACTED,defines
+function,forja_reconcile.py,finding,"(code, severity, detail)",65,EXTRACTED,defines
+function,forja_reconcile.py,reconciliar_gates,"(gates_anteriores, historico_anterior, findings, *, at)",69,EXTRACTED,defines
+function,forja_reconcile.py,evidencia_de_entrega,"(item, entregas, manual_entry)",114,EXTRACTED,defines
+function,forja_reconcile.py,auditar_demanda,"(item, entregas, manual_items, pastas_vistas, threads_vistos)",134,EXTRACTED,defines
+function,forja_reconcile.py,gravar_state,"(demanda, findings, case_status, evidence, integracoes)",197,EXTRACTED,defines
+function,forja_reconcile.py,main,(),250,EXTRACTED,defines
+function,forja_red_team.py,_itens_enumerados,(texto: str) -> int,43,EXTRACTED,defines
+function,forja_red_team.py,validar_red_team,(relatorio),47,EXTRACTED,defines
+function,forja_red_team.py,_itens_rechecados,(recheck: dict) -> list,88,EXTRACTED,defines
+function,forja_red_team.py,validar_recheck_adversarial,(recheck),98,EXTRACTED,defines
+function,forja_red_team.py,validar_exame_adversarial,"(relatorio, recheck)",174,EXTRACTED,defines
+function,forja_redacao.py,_origem_operacional,(texto: str) -> list,39,EXTRACTED,defines
+function,forja_redacao.py,_estilo_p0,(texto: str) -> list,49,EXTRACTED,defines
+function,forja_redacao.py,validar_redacao,"(prov, draft_texto = <default>)",54,EXTRACTED,defines
+function,forja_regimento_gate.py,_bloco,"(dados: dict, campos) -> dict",49,EXTRACTED,defines
+function,forja_regimento_gate.py,_mapa_em_texto,(texto: str) -> dict,79,EXTRACTED,defines
+function,forja_regimento_gate.py,_fatos_em_texto,(texto: str) -> list,94,EXTRACTED,defines
+function,forja_regimento_gate.py,validar_regimento,"(sources_map, fact_ledger = <default>)",114,EXTRACTED,defines
+function,forja_regimentos.py,_extrai_data,(bruto: str) -> date | None,90,EXTRACTED,defines
+function,forja_regimentos.py,_primeiro,"(padroes: list[str], texto: str) -> str | None",114,EXTRACTED,defines
+function,forja_regimentos.py,_data_do_rotulo,(texto: str) -> date | None,124,EXTRACTED,defines
+class,forja_regimentos.py,Regimento,(),152,EXTRACTED,defines
+method,forja_regimentos.py,Regimento.bloqueia,(self) -> bool,163,EXTRACTED,defines
+function,forja_regimentos.py,auditar_arquivo,"(caminho: Path, *, hoje: date, limite_dias: int) -> Regimento",167,EXTRACTED,defines
+function,forja_regimentos.py,auditar,"(raiz: Path, *, hoje: date | None = <default>, limite_dias: int = <default>) -> list[Regimento]",212,EXTRACTED,defines
+function,forja_regimentos.py,_relatorio,(regs: list[Regimento]) -> str,220,EXTRACTED,defines
+function,forja_regimentos.py,main,() -> int,243,EXTRACTED,defines
+cli-command,forja_regimentos.py,<global>,"--raiz, --limite-dias, --json, --hoje",245,EXTRACTED,accepts_option
+function,forja_regua.py,sha256_arquivo,(path),282,EXTRACTED,defines
+function,forja_regua.py,_manifest_key,(value),286,EXTRACTED,defines
+function,forja_regua.py,hashes_atuais,(),291,EXTRACTED,defines
+function,forja_regua.py,verificar_integridade,(manifest = <default>),296,EXTRACTED,defines
+function,forja_regua.py,rebaseline,(motivo),322,EXTRACTED,defines
+function,forja_regua.py,rodar_suite,"(nome, timeout = <default>)",350,EXTRACTED,defines
+function,forja_regua.py,main,(),373,EXTRACTED,defines
+function,forja_release_audit.py,audit_packages,(state_root: Path) -> dict,13,EXTRACTED,defines
+function,forja_release_audit.py,main,() -> int,46,EXTRACTED,defines
+cli-command,forja_release_audit.py,<global>,"--state-root, --output, --fail-on-blocked",48,EXTRACTED,accepts_option
+function,forja_render_docx.py,limpar_corpo,(doc),40,EXTRACTED,defines
+function,forja_render_docx.py,add_runs_com_negrito,"(p, texto, base_bold = <default>)",47,EXTRACTED,defines
+function,forja_render_docx.py,eh_assinatura,"(linha, contexto_pos_deferimento)",69,EXTRACTED,defines
+function,forja_render_docx.py,_tipo_produto,"(texto, titulo)",76,EXTRACTED,defines
+function,forja_render_docx.py,render,"(md_path, out_dir, titulo = <default>, tipo = <default>, *, case_dir = <default>, ledger_path = <default>, base_dir = <default>)",85,EXTRACTED,defines
+function,forja_replay.py,_fontes,(ledger: dict) -> list,44,EXTRACTED,defines
+function,forja_replay.py,_identificador,(fonte: dict) -> str,52,EXTRACTED,defines
+function,forja_replay.py,_replays,(ledger: dict) -> dict,60,EXTRACTED,defines
+function,forja_replay.py,_data,(valor) -> date | None,73,EXTRACTED,defines
+function,forja_replay.py,validar_replay,"(ledger, *, hoje = <default>, limite_dias = <default>)",82,EXTRACTED,defines
+function,forja_run.py,_artifact_path,(entry: dict) -> Path | None,44,EXTRACTED,defines
+function,forja_run.py,_read_gate_artifact,(path_value: Path | str | None) -> Any,49,EXTRACTED,defines
+function,forja_run.py,_resolve_input,"(case_dir: Path, state: dict, input_id: str) -> dict | None",61,EXTRACTED,defines
+function,forja_run.py,prepare_attempt,"(case_dir: Path, phase: str, *, expected_revision: int, run_id: str | None = <default>, actor: str = <default>) -> dict",90,EXTRACTED,defines
+function,forja_run.py,_raiz_do_caso,(alguma_saida: Path) -> Path | None,173,EXTRACTED,defines
+function,forja_run.py,_lastro_context_base,"(context: dict, referencia: Path | None = <default>) -> Path | None",188,EXTRACTED,defines
+function,forja_run.py,_achar_fact_ledger,"(artifacts: list[dict], referencia: Path | None) -> Path | None",216,EXTRACTED,defines
+function,forja_run.py,_severidade_economica,(findings: list[dict]) -> str,239,EXTRACTED,defines
+function,forja_run.py,_compute_lastro_gates,"(phase: str, artifacts: list[dict], context: dict) -> dict",247,EXTRACTED,defines
+function,forja_run.py,_recompute_injecao,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",374,EXTRACTED,defines
+function,forja_run.py,_recompute_politica_citacoes,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",399,EXTRACTED,defines
+function,forja_run.py,_recompute_definicao,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",445,EXTRACTED,defines
+function,forja_run.py,_recompute_regimento,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",528,EXTRACTED,defines
+function,forja_run.py,_recompute_contexto,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",570,EXTRACTED,defines
+function,forja_run.py,_recompute_red_team,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",622,EXTRACTED,defines
+function,forja_run.py,_recompute_conselho,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",656,EXTRACTED,defines
+function,forja_run.py,_recompute_ingestao,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",705,EXTRACTED,defines
+function,forja_run.py,_recompute_exploracao,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",738,EXTRACTED,defines
+function,forja_run.py,_recompute_pesquisa_oficial,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",772,EXTRACTED,defines
+function,forja_run.py,_recompute_paragrafos,"(contract: dict, artifacts: list[dict], attempt_dir: Path, result: dict) -> None",814,EXTRACTED,defines
+function,forja_run.py,_validate_result,"(attempt_dir: Path, contract: dict) -> tuple[dict, list[dict]]",863,EXTRACTED,defines
+function,forja_run.py,_validate_f7_source_ledger,"(phase: str, artifacts: list[dict]) -> None",973,EXTRACTED,defines
+function,forja_run.py,_validate_fable5_editorial,"(phase: str, artifacts: list[dict]) -> None",1006,EXTRACTED,defines
+function,forja_run.py,_validate_human_style,"(phase: str, artifacts: list[dict]) -> None",1041,EXTRACTED,defines
+function,forja_run.py,_promote_file,"(case_dir: Path, phase: str, artifact: dict) -> Path",1066,EXTRACTED,defines
+function,forja_run.py,promote_attempt,"(case_dir: Path, attempt_dir: Path, *, expected_revision: int, actor: str = <default>) -> dict",1103,EXTRACTED,defines
+function,forja_run.py,block_phase,"(case_dir: Path, phase: str, *, expected_revision: int, reason: str, blockers: list[str]) -> dict",1178,EXTRACTED,defines
+function,forja_run.py,main,() -> None,1190,EXTRACTED,defines
+cli-command,forja_run.py,<global>,case,1192,EXTRACTED,accepts_option
+cli-command,forja_run.py,block,"phase, --expected-revision, --reason, --blocker",1201,EXTRACTED,accepts_option
+cli-command,forja_run.py,promote,"attempt_dir, --expected-revision",1198,EXTRACTED,accepts_option
+cli-command,forja_run.py,start,"phase, --expected-revision, --run-id",1194,EXTRACTED,accepts_option
+function,forja_run_metrics.py,_safe_ledger,(path_value: str | None) -> dict,14,EXTRACTED,defines
+function,forja_run_metrics.py,build_metrics,(case_dir: Path) -> dict,22,EXTRACTED,defines
+function,forja_run_metrics.py,write_metrics,"(case_dir: Path, output: Path | None = <default>) -> dict",121,EXTRACTED,defines
+function,forja_run_metrics.py,main,() -> None,128,EXTRACTED,defines
+cli-command,forja_run_metrics.py,<global>,"case, --output",130,EXTRACTED,accepts_option
+function,forja_science.py,_get_json,"(base: str, params: dict, *, timeout: int = <default>) -> dict",21,EXTRACTED,defines
+function,forja_science.py,crossref_search,"(query: str, *, rows: int = <default>) -> dict",28,EXTRACTED,defines
+function,forja_science.py,crossref_by_doi,(doi: str) -> dict,36,EXTRACTED,defines
+function,forja_science.py,pubmed_search,"(query: str, *, rows: int = <default>) -> dict",49,EXTRACTED,defines
+function,forja_science.py,ncbi_fetch,"(identifier: str, *, database: str = <default>) -> dict",62,EXTRACTED,defines
+function,forja_science.py,openalex_search,"(query: str, *, rows: int = <default>, api_key: str | None = <default>) -> dict",76,EXTRACTED,defines
+function,forja_science.py,discover,"(query: str, *, rows: int = <default>) -> dict",87,EXTRACTED,defines
+function,forja_science.py,normalize_doi,(value: object) -> str | None,93,EXTRACTED,defines
+function,forja_science.py,_bibliographic_text,(value: object) -> str,99,EXTRACTED,defines
+function,forja_science.py,validate_classification,(payload: dict) -> list[dict],103,EXTRACTED,defines
+function,forja_science.py,validate_protocol,(payload: dict) -> list[dict],116,EXTRACTED,defines
+function,forja_science.py,validate_studies,(payload: dict) -> list[dict],127,EXTRACTED,defines
+function,forja_science.py,validate_claims,"(payload: dict, study_ledger: dict | None = <default>) -> list[dict]",171,EXTRACTED,defines
+function,forja_science.py,validate_synthesis,(payload: dict) -> list[dict],198,EXTRACTED,defines
+function,forja_science.py,validate_audit,(payload: dict) -> list[dict],210,EXTRACTED,defines
+function,forja_science.py,validate_case,(case_dir: Path) -> dict,222,EXTRACTED,defines
+function,forja_science.py,main,() -> None,244,EXTRACTED,defines
+cli-command,forja_science.py,<global>,,248,EXTRACTED,accepts_option
+cli-command,forja_science.py,search,"query, --rows",249,EXTRACTED,accepts_option
+cli-command,forja_science.py,validate,case,247,EXTRACTED,accepts_option
+function,forja_sources.py,classificar_produto,(texto),32,EXTRACTED,defines
+function,forja_sources.py,detectar_tribunal,(texto),45,EXTRACTED,defines
+function,forja_sources.py,validar_regimento,(path),65,EXTRACTED,defines
+function,forja_sources.py,localizar_regimento,"(tribunal, case_folder)",81,EXTRACTED,defines
+function,forja_sources.py,merge_by_id,"(existing, new_items)",94,EXTRACTED,defines
+function,forja_sources.py,merge_gates,"(existing, new_items)",107,EXTRACTED,defines
+function,forja_sources.py,append_unique,"(existing, value)",119,EXTRACTED,defines
+function,forja_sources.py,processar_caso,(state_path),126,EXTRACTED,defines
+function,forja_sources.py,main,(),246,EXTRACTED,defines
+function,forja_state_machine.py,_phase_index,(phase: str) -> int,85,EXTRACTED,defines
+function,forja_state_machine.py,_highest_completed_index,(state: dict) -> int,92,EXTRACTED,defines
+function,forja_state_machine.py,event_paths,(case_dir: Path) -> list[Path],100,EXTRACTED,defines
+function,forja_state_machine.py,load_events,(case_dir: Path) -> list[dict],108,EXTRACTED,defines
+function,forja_state_machine.py,_base_state,(case_dir: Path) -> dict,123,EXTRACTED,defines
+function,forja_state_machine.py,derive_state,"(case_dir: Path, events: list[dict] | None = <default>) -> dict",162,EXTRACTED,defines
+function,forja_state_machine.py,_validate_transition,"(events: list[dict], event_type: str, phase: str | None, payload: dict) -> None",303,EXTRACTED,defines
+function,forja_state_machine.py,_materialize_locked,"(case_dir: Path, events: list[dict]) -> dict",349,EXTRACTED,defines
+function,forja_state_machine.py,record_event,"(case_dir: Path, event_type: str, *, expected_revision: int, idempotency_key: str, phase: str | None = <default>, actor: str = <default>, run_id: str | None = <default>, attempt_id: str | None = <default>, demand_id: str | None = <default>, artifact_hashes: dict | None = <default>, payload: dict | None = <default>) -> tuple[dict, dict, bool]",357,EXTRACTED,defines
+function,forja_state_machine.py,tempfile_event,"(directory: Path, event_id: str) -> tuple[int, str]",436,EXTRACTED,defines
+function,forja_state_machine.py,initialize_case,"(case_dir: Path, *, demand_id: str | None = <default>, from_legacy: bool = <default>) -> dict",442,EXTRACTED,defines
+function,forja_state_machine.py,main,() -> None,491,EXTRACTED,defines
+cli-command,forja_state_machine.py,<global>,"case, --state-root",493,EXTRACTED,accepts_option
+cli-command,forja_state_machine.py,event,"type, --phase, --expected-revision, --idempotency-key, --actor, --payload",500,EXTRACTED,accepts_option
+cli-command,forja_state_machine.py,init,"--demand-id, --from-legacy",496,EXTRACTED,accepts_option
+cli-command,forja_state_machine.py,status,,499,EXTRACTED,accepts_option
+function,forja_svg_docx.py,_local,(tag: str) -> str,39,EXTRACTED,defines
+function,forja_svg_docx.py,_number,"(value: object, default: float = <default>) -> float",43,EXTRACTED,defines
+function,forja_svg_docx.py,_svg_ratio,(path: Path) -> float,48,EXTRACTED,defines
+function,forja_svg_docx.py,_paragraphs,(container),61,EXTRACTED,defines
+function,forja_svg_docx.py,_next_docpr_id,(document) -> int,71,EXTRACTED,defines
+function,forja_svg_docx.py,_new_svg_part,"(document, path: Path)",81,EXTRACTED,defines
+function,forja_svg_docx.py,_inline_svg,"(document, path: Path, width_cm: float, docpr_id: int)",88,EXTRACTED,defines
+function,forja_svg_docx.py,_validate_svg,(path: Path) -> dict,174,EXTRACTED,defines
+function,forja_svg_docx.py,inserir_svgs,"(docx_path: str | Path, figuras: dict) -> dict",193,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_e_entregavel,(caminho: Path) -> bool,64,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_caso_de,(caminho: Path) -> str,72,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_familia_de,"(caminho: Path) -> tuple[str, ...]",91,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_tem_marca_correcao,(nome: str) -> bool,102,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_tokens_do_caminho,(caminho: Path) -> set[str],114,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_mesmo_caso,"(a: Path, b: Path, familia: tuple[str, ...]) -> bool",127,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_marcar_superadas,(medidas: list) -> None,136,EXTRACTED,defines
+function,forja_varredura_tipografica.py,varrer,"(raiz = <default>, piso = <default>) -> dict",188,EXTRACTED,defines
+function,forja_varredura_tipografica.py,_relatar,"(laudo: dict, limite: int) -> None",258,EXTRACTED,defines
+cli-command,forja_varredura_tipografica.py,<global>,"--json, --limite",288,EXTRACTED,accepts_option
+function,forja_verificador.py,_ctx,"(texto, ini, fim, alcance = <default>)",113,EXTRACTED,defines
+function,forja_verificador.py,_indice_fontes_oficiais,(),142,EXTRACTED,defines
+function,forja_verificador.py,gate_g11,"(texto, fontes = <default>)",161,EXTRACTED,defines
+function,forja_verificador.py,gate_g1,(texto),210,EXTRACTED,defines
+function,forja_verificador.py,gate_g2,"(texto, tipo = <default>)",231,EXTRACTED,defines
+function,forja_verificador.py,gate_g3,(texto),258,EXTRACTED,defines
+function,forja_verificador.py,gate_g4,(texto),268,EXTRACTED,defines
+function,forja_verificador.py,gate_g5,(texto),290,EXTRACTED,defines
+function,forja_verificador.py,gate_g6,"(texto, tipo = <default>)",302,EXTRACTED,defines
+function,forja_verificador.py,gate_g7,(texto),317,EXTRACTED,defines
+function,forja_verificador.py,gate_g8,"(texto, tipo)",334,EXTRACTED,defines
+function,forja_verificador.py,gate_g9,"(texto, tipo)",354,EXTRACTED,defines
+function,forja_verificador.py,_carregar_contexto_lastro,"(case_dir = <default>, ledger = <default>, base_dir = <default>)",365,EXTRACTED,defines
+function,forja_verificador.py,verificar,"(texto, tipo = <default>, *, ledger = <default>, base_dir = <default>, case_dir = <default>, exigir_economico = <default>)",410,EXTRACTED,defines
+function,forja_visual.py,_norm,(s),46,EXTRACTED,defines
+function,forja_visual.py,_e_enderecamento,(linha),53,EXTRACTED,defines
+function,forja_visual.py,_consome_tabela,"(linhas, i)",58,EXTRACTED,defines
+function,forja_visual.py,_larguras_tabela,"(header, corpo, total = <default>)",66,EXTRACTED,defines
+class,forja_visual.py,_Mapa,(),82,EXTRACTED,defines
+method,forja_visual.py,_Mapa.__init__,"(self, mapa, texto_md)",83,EXTRACTED,defines
+method,forja_visual.py,_Mapa._valida,"(anc, texto_md, tipo)",140,EXTRACTED,defines
+function,forja_visual.py,compor,"(md_path, out_docx, mapa, *, case_dir = <default>, ledger_path = <default>, base_dir = <default>)",145,EXTRACTED,defines
+function,forja_visual_build.py,_tipo_produto,"(texto, titulo)",35,EXTRACTED,defines
+function,forja_visual_build.py,build,"(md_path, out_dir, titulo = <default>, tipo = <default>, montar_word = <default>, *, case_dir = <default>, ledger_path = <default>, base_dir = <default>)",44,EXTRACTED,defines
+cli-command,forja_visual_build.py,<global>,"md_path, out_dir, titulo, --case-dir, --ledger, --base-dir",200,EXTRACTED,accepts_option
+function,forja_visual_figuras.py,_limpa,(t),32,EXTRACTED,defines
+function,forja_visual_figuras.py,_chave,"(d, m, a)",36,EXTRACTED,defines
+function,forja_visual_figuras.py,_mascara,(texto),52,EXTRACTED,defines
+function,forja_visual_figuras.py,_datas,(texto),57,EXTRACTED,defines
+function,forja_visual_figuras.py,_oracao,"(frase, pos_data, limite = <default>)",84,EXTRACTED,defines
+function,forja_visual_figuras.py,_fonte_cronologica,(texto_md),116,EXTRACTED,defines
+function,forja_visual_figuras.py,extrair_cronologia,"(texto_md, minimo = <default>, maximo = <default>)",152,EXTRACTED,defines
+function,forja_visual_figuras.py,carregar_brief,(md_path),220,EXTRACTED,defines
+function,forja_visual_figuras.py,validar_brief,"(brief, texto_md)",229,EXTRACTED,defines
+function,forja_visual_figuras.py,extrair_encadeamento,"(texto_md, brief = <default>, minimo = <default>, maximo = <default>)",267,EXTRACTED,defines
+function,forja_visual_figuras.py,extrair_comparacao,"(texto_md, min_linhas = <default>, max_linhas = <default>)",287,EXTRACTED,defines
+function,forja_visual_figuras.py,gerar_figuras,"(texto_md, out_dir, mapa, largura_cm = <default>, brief = <default>)",313,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_norm,(s),38,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_e_enderecamento,(linha),45,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_varre,(texto_md),58,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_limpa,(t),200,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_ancora,"(par, alvo_norm = <default>, minimo = <default>, maximo = <default>)",204,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_frase,"(par, minimo = <default>, maximo = <default>)",224,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_titulo_precedente,(texto),262,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_rotulo_curto,"(texto, limite = <default>)",268,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_rotulos_sintese,"(sintese_linhas, maximo = <default>)",286,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,gerar_mapa,"(md_path, tipo = <default>, com_figuras = <default>, max_pulls = <default>, max_caixas = <default>)",328,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_autovalidar,"(mapa, texto_md)",474,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,_checa,"(anc, alvo, vistos, origem)",488,EXTRACTED,defines
+function,forja_visual_mapa_gen.py,gravar_mapa,"(md_path, destino = <default>, **kw)",499,EXTRACTED,defines
+function,forja_visual_qa.py,lint_text,(text: str) -> list[dict],27,EXTRACTED,defines
+function,forja_visual_qa.py,lint_docx,(path: Path) -> dict,41,EXTRACTED,defines
+function,forja_visual_qa.py,_overlap_ratio,"(left: tuple[float, float, float, float], right: tuple[float, float, float, float]) -> float",53,EXTRACTED,defines
+function,forja_visual_qa.py,inspect_pdf,"(pdf: Path, qa_dir: Path, *, generator_run_id: str, reviewer_run_id: str, dpi: int = <default>) -> dict",62,EXTRACTED,defines
+function,forja_visual_qa.py,run_visual_qa,"(pdf: Path, output: Path, *, qa_dir: Path, generator_run_id: str, reviewer_run_id: str, docx: Path | None = <default>, markdown: Path | None = <default>, fidelity_output: Path | None = <default>, svgs: list[Path] | None = <default>, manual_review: Path | None = <default>, pending_review_output: Path | None = <default>, layout_exceptions: Path | None = <default>) -> dict",127,EXTRACTED,defines
+function,forja_visual_qa.py,main,() -> None,221,EXTRACTED,defines
+cli-command,forja_visual_qa.py,<global>,"pdf, output, --qa-dir, --generator-run, --reviewer-run, --docx, --markdown, --fidelity-output, --svg, --manual-review, --pending-review-output, --layout-exceptions",223,EXTRACTED,accepts_option
+function,forja_visual_qa_structural.py,_svg_check,(path: Path) -> dict,21,EXTRACTED,defines
+function,forja_visual_qa_structural.py,_package_audit,(docx: Path) -> dict,47,EXTRACTED,defines
+function,forja_visual_qa_structural.py,_docx_lint,(docx: Path) -> dict,82,EXTRACTED,defines
+function,forja_visual_qa_structural.py,auditar_documento,"(docx: str | Path, *, markdown: str | Path | None = <default>, svgs: list[str | Path] | None = <default>) -> dict",94,EXTRACTED,defines
+function,forja_visual_qa_structural.py,write_audit,"(docx: str | Path, output: str | Path, *, markdown = <default>, svgs = <default>) -> dict",127,EXTRACTED,defines
+function,forja_visual_review.py,_rendered_page_map,"(rendered_pages: list[dict]) -> dict[int, dict]",37,EXTRACTED,defines
+function,forja_visual_review.py,build_pending_review,"(output: Path, *, pdf: Path, rendered_pages: list[dict], generator_run_id: str, docx: Path | None = <default>) -> dict",48,EXTRACTED,defines
+function,forja_visual_review.py,validate_visual_review,"(review_path: Path, *, pdf: Path, rendered_pages: list[dict], generator_run_id: str, expected_reviewer_run_id: str | None = <default>, docx: Path | None = <default>) -> dict",86,EXTRACTED,defines
+function,generate_n4_contracts.py,generate,() -> None,545,EXTRACTED,defines
+function,render_forja_atlas.py,slugify,(value: str) -> str,22,EXTRACTED,defines
+function,render_forja_atlas.py,mermaid_command,() -> str,28,EXTRACTED,defines
+function,render_forja_atlas.py,namespace_svg_ids,"(svg: str, diagram_index: int) -> str",35,EXTRACTED,defines
+function,render_forja_atlas.py,render_diagrams,"(markdown: str, assets: Path) -> tuple[str, list[dict]]",49,EXTRACTED,defines
+function,render_forja_atlas.py,build_html,"(source: Path, output: Path) -> dict",104,EXTRACTED,defines
+function,render_forja_atlas.py,main,() -> None,284,EXTRACTED,defines
+cli-command,render_forja_atlas.py,<global>,"--source, --output",286,EXTRACTED,accepts_option
+cli-command,run_post_protocol_job.ps1,run_post_protocol_job.ps1,"$Query, $MaxResults",1,EXTRACTED,accepts_option
+function,validate_forja_n3.py,run_command,"(name: str, command: list[str], *, timeout: int) -> dict",54,EXTRACTED,defines
+function,validate_forja_n3.py,validate_json_files,() -> dict,88,EXTRACTED,defines
+function,validate_forja_n3.py,main,() -> None,101,EXTRACTED,defines
+cli-command,validate_forja_n3.py,<global>,"--real-word, --run-replay, --output",103,EXTRACTED,accepts_option
+schema,phase_contracts/F0.json,F0,,1,EXTRACTED,validates_against
+schema,phase_contracts/F1.json,F1,,1,EXTRACTED,validates_against
+schema,phase_contracts/F10.json,F10,,1,EXTRACTED,validates_against
+schema,phase_contracts/F2.json,F2,,1,EXTRACTED,validates_against
+schema,phase_contracts/F3.json,F3,,1,EXTRACTED,validates_against
+schema,phase_contracts/F4.json,F4,,1,EXTRACTED,validates_against
+schema,phase_contracts/F5.json,F5,,1,EXTRACTED,validates_against
+schema,phase_contracts/F6.json,F6,,1,EXTRACTED,validates_against
+schema,phase_contracts/F7.json,F7,,1,EXTRACTED,validates_against
+schema,phase_contracts/F8.json,F8,,1,EXTRACTED,validates_against
+schema,phase_contracts/F9.json,F9,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/EXTENSIONS.json,EXTENSIONS,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F0.json,F0,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F1.json,F1,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F10.json,F10,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F2.json,F2,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F3.json,F3,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F4.json,F4,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F5.json,F5,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F6.json,F6,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F7.json,F7,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F8.json,F8,,1,EXTRACTED,validates_against
+schema,phase_contracts_n4/F9.json,F9,,1,EXTRACTED,validates_against
+schema,n4_schemas/ARTIFACT_CATALOG.json,ARTIFACT_CATALOG,,1,EXTRACTED,validates_against
+schema,n4_schemas/common.schema.json,common.schema.json,"applicability, artifactType, caseId, contentHash, createdAt, issues, justification, phase, producerRunId, reviewerRunId, schemaVersion, sourceHashes, specVersion, status, updatedAt",1,EXTRACTED,validates_against
+schema,n4_schemas/document_comparison.schema.json,document_comparison.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f10_delivery_integrity.schema.json,f10_delivery_integrity.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f10_human_diff_classification.schema.json,f10_human_diff_classification.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f2_n4_classification.schema.json,f2_n4_classification.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f2_question_tree.schema.json,f2_question_tree.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f3_conduct_ledger.schema.json,f3_conduct_ledger.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f3_document_comparison.schema.json,f3_document_comparison.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f3_event_identity.schema.json,f3_event_identity.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f3_mapa_destinatario.schema.json,f3_mapa_destinatario.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f3_reasoning_graph.schema.json,f3_reasoning_graph.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_case_acceptance_tests.schema.json,f4_case_acceptance_tests.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_coverage_matrix.schema.json,f4_coverage_matrix.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_decision_factor_map.schema.json,f4_decision_factor_map.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_intertemporal_map.schema.json,f4_intertemporal_map.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_quantification_scenarios.schema.json,f4_quantification_scenarios.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_settlement_map.schema.json,f4_settlement_map.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_signature_brief.schema.json,f4_signature_brief.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f4_thesis_maturity.schema.json,f4_thesis_maturity.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f5c_claim_evidence_map.schema.json,f5c_claim_evidence_map.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f5c_evidence_synthesis.schema.json,f5c_evidence_synthesis.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f5c_research_protocol.schema.json,f5c_research_protocol.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f5c_study_ledger.schema.json,f5c_study_ledger.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f7_case_test_results.schema.json,f7_case_test_results.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f7_global_consistency.schema.json,f7_global_consistency.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f7_metacognitive_audit.schema.json,f7_metacognitive_audit.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f7_science_audit.schema.json,f7_science_audit.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/f9_delivery_selection.schema.json,f9_delivery_selection.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/learning_candidate.schema.json,learning_candidate.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/N4_LAYOUT_PROFILES.json,N4_LAYOUT_PROFILES,,1,EXTRACTED,validates_against
+schema,n4_schemas/post_protocol_baseline_backfill.schema.json,post_protocol_baseline_backfill.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/post_protocol_return.schema.json,post_protocol_return.schema.json,,1,EXTRACTED,validates_against
+schema,n4_schemas/protocol_evidence.schema.json,protocol_evidence.schema.json,,1,EXTRACTED,validates_against
+schema,pso_schemas/pso_case.schema.json,FORJA PSO-Pet case design,"caseId, contextPlan, diagnosis, evaluationPlan, executionMode, interventionPlan, methodVersion, options, problemDefinition, profile, requirements, schemaVersion, selection, sourceRegistry, validation",1,EXTRACTED,validates_against
+schema,pso_schemas/PSO_CASE_EXAMPLE.json,PSO_CASE_EXAMPLE,,1,EXTRACTED,validates_against

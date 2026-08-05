@@ -1,0 +1,228 @@
+URL: https://jurisprudencia.stf.jus.br/pages/search?base=sumulas&pesquisa_inteiro_teor=false&sinonimo=true&plural=true&page=1&pageSize=10&queryString=150&sort=_score&sortBy=desc
+Capturado: 2026-07-09T02:49:07.615Z
+
+school
+Curso de pesquisa
+wb_incandescent
+Dicas de pesquisa
+supervisor_account
+Solicitar pesquisa
+assignment
+Avaliar página
+menu_book
+Tesauro
+Entrar
+autorenew
+search
+Pesquisa avançadaadd
+e
+ou
+não
+" "
+" "~
+~
+$
+?
+( )
+Base
+Acórdãos
+(5.460)
+Decisões monocráticas
+(50.247)
+Informativos
+(332)
+Súmulas
+(22)
+Súmulas vinculantes(4)
+Situação
+arrow_drop_up
+ Aprovada (22)
+Ramo do Direito
+arrow_drop_up
+ Tributário (10)
+ Administrativo (5)
+ Processual Civil (5)
+ Constitucional (1)
+ Processual Penal (1)
+Data de aprovação
+arrow_drop_up
+De
+Até
+22 resultado(s) para: 150
+10 por página	
+mais relevantes	
+Página
+de 3
+1
+2
+3
+link
+Súmula 150
+keyboard_double_arrow_down
+file_copy
+Aprovação: 13/12/1963
+Ramo do Direito: Processual Civil
+Enunciado
+Prescreve a execução no mesmo prazo de prescrição da ação.
+Súmula vinculante 57
+keyboard_double_arrow_down
+file_copy
+picture_as_pdf
+Vinculante
+Aprovação: 15/04/2020
+Ramo do Direito: Tributário
+Enunciado
+
+A imunidade tributária constante do art. 150, VI, d, da CF/88 aplica-se à importação e comercialização, no mercado interno, do livro eletrônico (e-book) e dos suportes exclusivamente utilizados para fixá-los, como leitores de livros eletrônicos (e-readers), ainda que possuam funcionalidades acessórias.
+
+Referência legislativa
+
+Constituição Federal de 1988, art. 150, VI, "d". Lei 11.417/2006, art. 2º, § 1º. Regimento Interno do Supremo Tribunal Federal, art. 354-E.
+
+Súmula vinculante 52
+keyboard_double_arrow_down
+file_copy
+picture_as_pdf
+Vinculante
+Aprovação: 18/06/2015
+Ramo do Direito: Tributário
+Enunciado
+
+Ainda quando alugado a terceiros, permanece imune ao IPTU o imóvel pertencente a qualquer das entidades referidas pelo art. 150, VI, "c", da Constituição Federal, desde que o valor dos aluguéis seja aplicado nas atividades para as quais tais entidades foram constituídas.
+
+Referência legislativa
+
+Constituição Federal de 1988, art. 150, VI, "c".
+
+Súmula 657
+keyboard_double_arrow_down
+file_copy
+Aprovação: 24/09/2003
+Ramo do Direito: Tributário
+Enunciado
+
+A imunidade prevista no art. 150, VI, d, da Constituição Federal abrange os filmes e papéis fotográficos necessários à publicação de jornais e periódicos.
+
+Referência legislativa
+
+Constituição Federal de 1988, art. 150, VI, "d".
+
+Súmula 730
+keyboard_double_arrow_down
+file_copy
+Aprovação: 26/11/2003
+Ramo do Direito: Tributário
+Enunciado
+
+A imunidade tributária conferida a instituições de assistência social sem fins lucrativos pelo art. 150, VI, c, da Constituição, somente alcança as entidades fechadas de previdência social privada se não houver contribuição dos beneficiários.
+
+Referência legislativa
+
+Constituição Federal de 1988, art. 150, VI, "c".
+
+Súmula 724
+keyboard_double_arrow_down
+file_copy
+Aprovação: 26/11/2003
+Ramo do Direito: Tributário
+Enunciado
+
+Ainda quando alugado a terceiros, permanece imune ao IPTU o imóvel pertencente a qualquer das entidades referidas pelo art. 150, VI, c, da Constituição, desde que o valor dos aluguéis seja aplicado nas atividades essenciais de tais entidades.
+
+Referência legislativa
+
+Constituição Federal de 1988, art. 150, VI, "c".
+
+Súmula 630
+keyboard_double_arrow_down
+file_copy
+Aprovação: 24/09/2003
+Ramo do Direito: Processual Civil
+Enunciado
+A entidade de classe tem legitimação para o mandado de segurança ainda quando a pretensão veiculada interesse apenas a uma parte da respectiva categoria.
+Precedentes
+
+RMS 21514 Publicações: DJ de 18/06/1993 RTJ 150/104
+MS 20936 Publicações: DJ de 11/09/1992 RTJ 142/446
+
+Súmula 655
+keyboard_double_arrow_down
+file_copy
+Aprovação: 24/09/2003
+Ramo do Direito: Constitucional
+Enunciado
+A exceção prevista no art. 100, caput, da Constituição, em favor dos créditos de natureza alimentícia, não dispensa a expedição de precatório, limitando-se a isentá-los da observância da ordem cronológica dos precatórios decorrentes de condenações de outra natureza.
+Precedentes
+
+RE 188156 Publicação: DJ de 07/05/1999
+ADI 47 Publicações: DJ de 13/06/1997 RTJ 166/3
+RE 205491 Publicação: DJ de 06/06/1997
+RE 199373 Publicação: DJ de 01/07/1996
+RE 181445 Publicação: DJ de 08/03/1996
+RE 167051 Publicações: DJ de 08/10/1993 RTJ 150/337
+ADI 571 MC Publicações: DJ de 26/02/1993 RTJ 144/732
+
+Súmula 658
+keyboard_double_arrow_down
+file_copy
+Aprovação: 24/09/2003
+Ramo do Direito: Tributário
+Enunciado
+São constitucionais os arts. 7º da Lei 7.787/89 e 1º da Lei 7.894/89 e da Lei 8.147/90, que majoraram a alíquota do Finsocial, quando devida a contribuição por empresas dedicadas exclusivamente à prestação de serviços.
+Referência legislativa
+
+Constituição Federal de 1988, art. 150, II; e art. 195. Ato das Disposições Constitucionais Transitórias de 1988, art. 56. Lei nº 7.787/1989, art. 7º. Lei nº 7.894/1989, art. 1º. Lei nº 8.147/1990, art. 1º. Decreto-Lei nº 1.940/1982.
+
+Súmula 629
+keyboard_double_arrow_down
+file_copy
+Aprovação: 24/09/2003
+Ramo do Direito: Processual Civil
+Enunciado
+A impetração de mandado de segurança coletivo por entidade de classe em favor dos associados independe da autorização destes.
+Precedentes
+
+MS 22132 Publicações: DJ de 18/10/1996 RTJ 166/166
+RE 193382 Publicação: DJ de 20/09/1996
+RE 141733 Publicação: DJ de 01/09/1995
+RE 182543 Publicações: DJ de 07/04/1995 RTJ 165/714
+RMS 21514 Publicações: DJ de 18/06/1993 RTJ 150/104
+MS 21278 AgR Publicações: DJ de 20/11/1992 RTJ 146/131
+MS 21281 Publicações: DJ de 20/11/1992 RTJ 145/521
+MS 20936 Publicações: DJ de 11/09/1992 RTJ 142/446
+MS 21070 Publicações: DJ de 22/02/1991 RTJ 134/666
+
+Página
+de 3
+1
+2
+3
+Reiniciar pesquisa
+Pesquisar
+Pesquisa avançada
+Com base no Tesauro do STF, também serão considerados sinônimos dos termos pesquisados.
+Serão considerados tanto o plural quanto o singular dos termos pesquisados.
+Copiar link da pesquisa
+Esta base contém apenas decisões selecionadas
+Colapsar
+Exportar para excel
+Exportar para CSV
+Próxima página
+Última página
+Copiar resultado
+Dados completos
+Expandir espelho
+Expandir
+Debates de aprovação
+Colapsar ocorrências
+Serão consideradas todas as palavras que compartilham os mesmos radicais dos termos pesquisados. Exemplo: uma busca por “indenização” retornará “indenizada”, “indenizar”, “indenizações” etc.
+Dentro das aspas, serão desativadas a busca por sinônimos e a busca por radicais.
+Todos os termos devem necessariamente aparecer no documento. Exemplo: direitos E humanos. Por se tratar do operador padrão, não é necessário explicitar o E na expressão de busca.
+Ao menos um dos termos deve aparecer no documento. Exemplo: droga OU entorpecente.
+O termo não pode aparecer no documento. Exemplo: prisão NÃO preventiva.
+Os termos devem aparecer no documento na exata ordem e com a exata grafia indicadas. Exemplo: "princípio da presunção de inocência". Além disso, os termos entre aspas perdem a função de operadores. Exemplo: presunção de "não" culpabilidade.
+Os termos podem aparecer no documento em qualquer ordem, desde que estejam separados, no máximo, pelo número de palavras indicado após o til. Exemplo: "provimento cargo"~5. Dentro dessa estrutura (aspas duplas + til), os únicos operadores admitidos são o OU e os parênteses; todos os demais (E, NÃO, ~, $, ?) são anulados.
+Quando posicionado logo após determinada palavra, o til permite o resgate de documentos que contenham pequenas variações do termo pesquisado. Exemplo: indenização~. O número de variações toleradas depende do número de caracteres do termo pesquisado: até 3 caracteres, o operador til não produz nenhum efeito; entre 4 e 6 caracteres, o operador til admite 1 variação; com mais de 6 caracteres, a busca contempla 2 variações. Conta-se como 1 variação: a troca de um caractere por outro (exemplo: de triagem para friagem); a remoção de um caractere (exemplo: de místico para mítico); a inserção de um novo caractere (exemplo: de recorre para recorrer); ou a troca de posição de dois caracteres adjacentes (exemplo: de 598356 para 598365).
+O sinal de dólar substitui um, nenhum ou mais de um caractere no início, no meio ou no final do termo. Exemplo: $constitucional.
+O ponto de interrogação substitui um único caractere no início, no meio ou no final do termo. Exemplo: RE 56394?.
+Os parênteses indicam a ordem de prioridade das operações, quando utilizado mais de um operador. Exemplo: direito E (privacidade OU intimidade).

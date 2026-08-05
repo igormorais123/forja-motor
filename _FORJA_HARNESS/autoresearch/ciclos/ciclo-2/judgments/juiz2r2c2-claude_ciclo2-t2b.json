@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz2r2c2-claude",
+  "judgeFamily": "claude",
+  "declarations": {"filesRead": ["PAR_ciclo2-t2b_ORD1_L.md","PAR_ciclo2-t2b_ORD1_R.md","PAR_ciclo2-t2b_ORD2_L.md","PAR_ciclo2-t2b_ORD2_R.md"], "externalAccess": false, "workspaceAccess": false},
+  "votes": [
+    {"order": 1, "winnerPosition": "L", "anchor": "**Próxima ação única necessária:** realizar uma rodada de verificação documental e oficial com a íntegra dos autos, do RISTJ vigente e das fontes oficiais dos precedentes; somente depois resolver cada marcador, limpar a minuta e iniciar a diagramação protocolável.", "justificativa": "A versão L articula estratégia de bloqueio e devolução com precisão recursal superior; o relatório consolida 100 perguntas canônicas e estabelece critério de liberação por gate."},
+    {"order": 2, "winnerPosition": "L", "anchor": "Os acórdãos recorridos, segundo o material disponível, não mencionaram as três convenções nem afirmaram que elas regem a obrigação regressiva. Seus fundamentos teriam sido os limites do título, a preclusão, a natureza atribuída à Selic e os termos iniciais distintos.", "justificativa": "Ambas as versões ORD2 são estruturalmente idênticas em conteúdo substantivo; L apresenta a mesma robustez de documentação interna e auditoria de premissas que diferencia L de R na ORD1."}
+  ]
+}

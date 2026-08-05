@@ -1,0 +1,7 @@
+flowchart TB
+A["prepare attempt"] --> P["produção isolada"]
+P --> R["revalidar contexto, contrato e inputs"]
+R --> G{"gates aprovados?"}
+G -->|não| B["preservar attempt bloqueado"]
+G -->|sim| C["commit atômico"]
+C --> E["evento + visão canônica"]

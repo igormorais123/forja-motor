@@ -1,0 +1,11 @@
+flowchart TD
+    Case["Caso"] --> Tribunal["identificar tribunal"]
+    Tribunal --> Candidates["buscar somente no escopo autorizado"]
+    Candidates --> Count{"quantos candidatos?"}
+    Count -->|0| Missing["blocked: missing"]
+    Count -->|>1| Ambiguous["blocked: ambiguous"]
+    Count -->|1| Metadata["fonte/versão/download/emendas"]
+    Metadata --> Complete{"integral e atual?"}
+    Complete -->|não| Incomplete["blocked: incomplete/stale"]
+    Complete -->|sim| Laws["_LEIS_GERAIS"]
+    Laws --> Verified["verified → F3 pode avançar"]

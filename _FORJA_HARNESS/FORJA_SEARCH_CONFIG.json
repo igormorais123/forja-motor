@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "enabled": true,
+  "adapter": "forja_legal_search.py",
+  "module": "teiajus.agent_api",
+  "projectRoot": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\Sistema de Busca Jurídica\\teiajus",
+  "defaultDb": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\Sistema de Busca Jurídica\\teiajus\\teiajus.db",
+  "timeoutSeconds": 1800,
+  "maxResults": 500,
+  "telemetryRoot": "telemetria/legal_search",
+  "policy": {
+    "readActions": [
+      "capabilities",
+      "health",
+      "search_cases",
+      "get_case",
+      "stj_health",
+      "stj_catalog",
+      "stj_search",
+      "stj_daily_decisions",
+      "stj_datajud_preview",
+      "research_sources",
+      "research_plan",
+      "research_search",
+      "research_mission_get"
+    ],
+    "mutationActions": [
+      "collect",
+      "migrate",
+      "classify",
+      "ranking",
+      "enrich_parties",
+      "audit",
+      "report",
+      "collect_value_tjdft",
+      "collect_value_trf1",
+      "stj_collect"
+    ],
+    "mutationRequiresExplicitFlag": true,
+    "arbitraryShell": false,
+    "rawCasePayloadDefault": false,
+    "deniedActions": [
+      "research_mission",
+      "captcha_solve",
+      "apify_contact_enrich"
+    ],
+    "deniedReason": "ação read_paid: consome crédito externo; vedada enquanto forjaAssinaturaLite.allowPaidResearch for false"
+  },
+  "phaseIntegration": {
+    "phase": "F5_PESQUISA_OFICIAL",
+    "artifactPattern": "F5_TEIAJUS_SEARCH_<requestId>.json",
+    "releasePolicy": "internal_working",
+    "legalRule": "resultado do TeiaJus é pista ou evidência de pesquisa; citação final continua sujeita aos gates de fonte oficial, literalidade, identidade do ato e atribuição da FORJA"
+  },
+  "stj": {
+    "status": "active",
+    "officialOpenData": "https://dadosabertos.web.stj.jus.br",
+    "scon": "https://processo.stj.jus.br/SCON/",
+    "processSearch": "https://processo.stj.jus.br/processo/pesquisa/?aplicacao=processos.ea",
+    "datajudAlias": "api_publica_stj",
+    "readActions": [
+      "stj_health",
+      "stj_catalog",
+      "stj_search",
+      "stj_daily_decisions",
+      "stj_datajud_preview"
+    ],
+    "mutationAction": "stj_collect",
+    "limitations": [
+      "processos em segredo de justiça não integram o conjunto diário oficial",
+      "espelho ou ementa não substitui a conferência da íntegra",
+      "conteúdo que exija login ou certificado não é inferido"
+    ],
+    "assumptions": [
+      {
+        "id": "STJ-A1",
+        "existsBecause": "o STJ publica espelhos mensais e metadados/textos diários como recursos CKAN distintos",
+        "expiresWhen": "o schema, os slugs ou a política de publicação oficial mudarem",
+        "verification": "stj_health + tests/test_stj.py + validação real com hash"
+      },
+      {
+        "id": "STJ-A2",
+        "existsBecause": "o JSON diário pode conter SeqDocumento sem TXT correspondente no ZIP",
+        "expiresWhen": "três lotes consecutivos apresentarem paridade total JSON×ZIP",
+        "verification": "textGapCount e teste de continuação após gap"
+      }
+    ]
+  }
+}

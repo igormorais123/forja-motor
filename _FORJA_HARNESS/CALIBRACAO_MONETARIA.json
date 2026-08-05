@@ -1,0 +1,86 @@
+{
+  "versao": "FORJA-CALIBRA-MONETARIO-v1",
+  "raiz": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições",
+  "extensoes": [
+    ".md",
+    ".txt"
+  ],
+  "documentos": 4958,
+  "regraAmpla": {
+    "descricao": "R$ OU sequência com separador de milhar (redação original, rejeitada)",
+    "documentosTocados": 1910,
+    "percentual": 38.5
+  },
+  "regraEstreita": {
+    "descricao": "exige marcador de moeda explícito; descarta numeral após rótulo normativo/processual",
+    "documentosTocados": 684,
+    "percentual": 13.8
+  },
+  "ocorrenciasComSeparadorDeMilhar": {
+    "total": 57031,
+    "referenciaJuridica": 16997,
+    "percentualReferenciaJuridica": 29.8
+  },
+  "documentosQueSoAReguaAmplaTocaria": 1226,
+  "amostraDeFalsoPositivo": [
+    {
+      "arquivo": "ARCHIFY_ARQUITETURA.md",
+      "referenciasJuridicasLidasComoDinheiro": 5,
+      "exemplos": [
+        "ão do objeto do REsp nº 2.237.713 SP | do",
+        "dos precedentes do REsp 2.237.713 SP | do",
+        "tes - AgInt no AREsp nº 2.698.443 DF | do"
+      ]
+    },
+    {
+      "arquivo": "CONTROLE_AUTOS_COMPLETOS_2026-07-19.md",
+      "referenciasJuridicasLidasComoDinheiro": 5,
+      "exemplos": [
+        "sé Eduardo — STJ | REsp 2.206.647/TO | `A",
+        "Cafelana — STJ | AREsp 2.698.443/DF, reg",
+        "MFA. | | Azimut | REsp 2.237.713/SP; AI"
+      ]
+    },
+    {
+      "arquivo": "GRAPHIFY_GRAFO.md",
+      "referenciasJuridicasLidasComoDinheiro": 1,
+      "exemplos": [
+        "es ao AgInt no AREsp nº 2.698.443D |"
+      ]
+    },
+    {
+      "arquivo": "RELATORIO_ORGANIZACAO_EMAILS_MEDINA_OSORIO.md",
+      "referenciasJuridicasLidasComoDinheiro": 1,
+      "exemplos": [
+        "es ao AgInt no AREsp nº 2.698.443D` |"
+      ]
+    },
+    {
+      "arquivo": "00_MAPA_ARQUITETURA_IA\\ARCHIFY_ANALISE_DETALHADA.md",
+      "referenciasJuridicasLidasComoDinheiro": 5,
+      "exemplos": [
+        "ão do objeto do REsp nº 2.237.713 SP | do",
+        "dos precedentes do REsp 2.237.713 SP | do",
+        "tes - AgInt no AREsp nº 2.698.443 DF | do"
+      ]
+    },
+    {
+      "arquivo": "00_MAPA_ARQUITETURA_IA\\EXECUCAO_P0_ARQUITETURA_2026-07-22.md",
+      "referenciasJuridicasLidasComoDinheiro": 0,
+      "exemplos": []
+    },
+    {
+      "arquivo": "00_MAPA_ARQUITETURA_IA\\GRAPHIFY_ANALISE_DETALHADA.md",
+      "referenciasJuridicasLidasComoDinheiro": 1,
+      "exemplos": [
+        "es ao AgInt no AREsp nº 2.698.443D |"
+      ]
+    },
+    {
+      "arquivo": "00_MAPA_ARQUITETURA_IA\\LEIA_PRIMEIRO.md",
+      "referenciasJuridicasLidasComoDinheiro": 0,
+      "exemplos": []
+    }
+  ],
+  "limite": "Mede INCIDÊNCIA da detecção, não correção do gate. Um documento corretamente detectado como econômico ainda pode passar ou reprovar nos gates L9-L13 por outros motivos."
+}

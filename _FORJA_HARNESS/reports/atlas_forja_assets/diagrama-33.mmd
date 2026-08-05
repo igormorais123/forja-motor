@@ -1,0 +1,27 @@
+stateDiagram-v2
+    state "Data apenas mencionada" as prazo_mencionado
+    state "Data a conferir" as a_conferir
+    state "Prazo confirmado" as prazo_confirmado
+    state "Prazo ainda indefinido" as sem_prazo_definido
+    state "Alerta: faltam 48 horas" as alerta_48h
+    state "Trabalho em andamento" as em_execucao
+    state "Peça pronta para revisão" as pronta_para_revisao
+    state "Aguardando envio ou protocolo" as aguardando_envio
+    state "Entrega comprovada" as cumprida
+    state "Prazo vencido sem prova de entrega" as vencida
+    state "Providência após o vencimento" as contingencia
+    [*] --> prazo_mencionado
+    prazo_mencionado --> a_conferir: "data extraída de mensagem ou documento"
+    a_conferir --> prazo_confirmado: "marco, regra, calendário e responsável conferidos"
+    a_conferir --> sem_prazo_definido: "não há base suficiente"
+    prazo_confirmado --> alerta_48h: "janela crítica"
+    prazo_confirmado --> em_execucao: "trabalho iniciado"
+    alerta_48h --> em_execucao
+    em_execucao --> pronta_para_revisao: "peça e revisão visual concluídos"
+    pronta_para_revisao --> aguardando_envio: "revisão ainda não é entrega"
+    aguardando_envio --> cumprida: "protocolo ou envio comprovado"
+    aguardando_envio --> vencida: "prazo passou sem evidência"
+    sem_prazo_definido --> a_conferir: "nova informação"
+    vencida --> contingencia: "ação humana e registro do ocorrido"
+    cumprida --> [*]
+    contingencia --> [*]

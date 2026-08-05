@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "phase": "F5_PESQUISA_OFICIAL",
+  "order": 5,
+  "producerRole": "forja-pesquisador-oficial",
+  "reviewerRole": "forja-citation-auditor",
+  "requiredInputs": [
+    "proposition_ledger",
+    "sources_map"
+  ],
+  "requiredOutputs": [
+    "source_ledger",
+    "citation_checklist"
+  ],
+  "requiredGates": [
+    "official_sources_archived",
+    "final_use_policy_recorded",
+    "quotes_compared"
+  ],
+  "nextPhase": "F6_REDACAO_TEMPLATE",
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "science_research_protocol",
+    "science_study_ledger",
+    "science_evidence_synthesis",
+    "science_claim_evidence_map"
+  ],
+  "n4RequiredGates": [
+    "science_evidence_ready_or_explicitly_blocked"
+  ],
+  "baseContract": "../phase_contracts/F5.json"
+}

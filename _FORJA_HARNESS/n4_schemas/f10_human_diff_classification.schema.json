@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "f10_human_diff_classification.schema.json",
+  "allOf": [
+    {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "specVersion",
+        "caseId",
+        "artifactType",
+        "phase",
+        "applicability",
+        "status",
+        "sourceHashes",
+        "producerRunId",
+        "createdAt",
+        "updatedAt",
+        "contentHash",
+        "issues"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "specVersion": {
+          "const": "N4.0-candidate"
+        },
+        "caseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifactType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "enum": [
+            "F0_RECONCILIACAO_FILA",
+            "F1_INGESTAO_SEGURA",
+            "F2_CLASSIFICACAO_PRODUTO_RISCO",
+            "F3_FONTES_REGIMENTO_LEIS",
+            "F4_BLUEPRINT_ESTRATEGICO",
+            "F5_PESQUISA_OFICIAL",
+            "F6_REDACAO_TEMPLATE",
+            "F7_AUDITORIA_JURIDICA_FACTUAL",
+            "F8_QA_VISUAL",
+            "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+            "F10_ENTREGA_EVIDENCIA_APRENDIZADO"
+          ]
+        },
+        "applicability": {
+          "enum": [
+            "required",
+            "conditional",
+            "not_applicable"
+          ]
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "pending_review",
+            "approved",
+            "blocked",
+            "stale",
+            "not_applicable"
+          ]
+        },
+        "sourceHashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "producerRunId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewerRunId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "contentHash": {
+          "type": "string",
+          "minLength": 16
+        },
+        "issues": {
+          "type": "array"
+        },
+        "justification": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "const": "not_applicable"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "justification"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewerRunId"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifactType": {
+          "const": "human_diff_classification"
+        },
+        "phase": {
+          "const": "F10_ENTREGA_EVIDENCIA_APRENDIZADO"
+        },
+        "comparisonId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocolStatus": {
+          "enum": [
+            "human_final_received",
+            "protocol_claimed",
+            "protocol_verified",
+            "identity_ambiguous",
+            "not_a_petition"
+          ]
+        },
+        "baselineHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "humanArtifactHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "feedbackAssimilation": {
+          "type": "object",
+          "description": "Ledger sanitizado de unidades conversacionais, sinais de feedback, origem intelectual das teses e mudanças de fluxo.",
+          "properties": {
+            "conversationUnits": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "signals": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "contributions": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "workflowChanges": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "required": [
+            "conversationUnits",
+            "signals",
+            "contributions",
+            "workflowChanges"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "not": {
+                  "const": "not_applicable"
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "changes",
+              "regressionProposals"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

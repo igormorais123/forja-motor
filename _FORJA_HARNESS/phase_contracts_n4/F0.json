@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "phase": "F0_RECONCILIACAO_FILA",
+  "order": 0,
+  "producerRole": "forja-reconciliador",
+  "reviewerRole": "forja-state-auditor",
+  "requiredInputs": [
+    "demandId",
+    "caseFolder",
+    "commandFile"
+  ],
+  "requiredOutputs": [
+    "case_manifest",
+    "reconciliation_report"
+  ],
+  "requiredGates": [
+    "mapping_valid",
+    "status_consistent"
+  ],
+  "nextPhase": "F1_INGESTAO_SEGURA",
+  "retryPolicy": {
+    "maxAttempts": 2,
+    "idempotent": true
+  },
+  "specVersion": "N4.0-candidate",
+  "mode": "candidate_shadow",
+  "n4RequiredOutputs": [
+    "n4_run_registration"
+  ],
+  "n4RequiredGates": [],
+  "baseContract": "../phase_contracts/F0.json"
+}

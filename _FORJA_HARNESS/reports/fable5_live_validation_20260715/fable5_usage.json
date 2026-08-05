@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-email-auto-19f3f25cb64df962-live-validation",
+  "phase": "F7_AUDITORIA_JURIDICA_FACTUAL",
+  "subphase": "F7-B_REVISAO_EDITORIAL_ESCRITA_FINAL",
+  "rewriteAttempt": 1,
+  "rejectedAttempts": [],
+  "model": "claude-fable-5",
+  "billing": "assinatura OAuth Claude Max (sem API key)",
+  "authMethod": "claude.ai",
+  "apiProvider": "firstParty",
+  "subscriptionType": "max",
+  "sessionId": "0d995bc1-8c51-4779-853f-ff3d7b8de346",
+  "sourceSha256": "dffed4d7eff75bdb1aaac6bf0e3be21d776511668527b98d42257868df44a586",
+  "finalSha256": "c67694761758985254116be73a1ef17dfcd746746e9d1e718a0ed9ea7baa1fb2",
+  "inputTokens": 4568,
+  "outputTokens": 16000,
+  "at": "2026-07-15T20:40:56-03:00"
+}

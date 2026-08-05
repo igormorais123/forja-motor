@@ -1,0 +1,185 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - img "Medina Osório Advogados" [ref=f3e5]
+        - generic [ref=f3e6]:
+          - generic [ref=f3e7]: Central operacional
+          - heading "Gestão do Escritório" [level=1] [ref=f3e8]
+          - generic [ref=f3e9]: "Dados: 12/07/2026, 12:51 · Serviço 2.0.0"
+      - generic [ref=f3e10]:
+        - generic [ref=f3e11]: Retrato offline
+        - button "Atualizar" [disabled] [ref=f3e14]
+        - button "Nova tarefa" [ref=f3e18] [cursor=pointer]
+    - navigation "Vistas da gestão" [ref=f3e22]:
+      - generic [ref=f3e23]:
+        - button "Hoje" [ref=f3e24] [cursor=pointer]
+        - button "Prazos" [ref=f3e27] [cursor=pointer]
+        - button "Demandas" [ref=f3e30] [cursor=pointer]
+        - button "Integrações" [ref=f3e33] [cursor=pointer]
+        - button "Entregas" [ref=f3e36] [cursor=pointer]
+  - main [ref=f3e39]:
+    - generic [ref=f3e40]: WhatsApp em modo sanitizado. O painel nunca exibe conversa bruta.
+    - generic [ref=f3e43]:
+      - generic "Gmail local atualizado com sucesso." [ref=f3e44]:
+        - generic [ref=f3e46]: Gmail
+        - text: Ativo
+      - generic "state=connected ok=True checkedAt=2026-07-12T15:50:44Z | service=active/running/success/0 | health=status=connected connected=True importedCount=12700 liveMessageCount=4402 lastMessageAt=2026-07-12T15:48:59.000Z lastErrorCategory=none" [ref=f3e47]:
+        - generic [ref=f3e49]: WhatsApp
+        - text: Ativo
+      - generic [ref=f3e50]:
+        - generic [ref=f3e52]: Hermes VPS
+        - text: Ativo
+      - generic "23/23 demandas vinculadas; 8 divergencia(s); 0 artefato(s) ausente(s)." [ref=f3e53]:
+        - generic [ref=f3e55]: FORJA
+        - text: Ativo
+      - generic "Alertas críticos no celular estão ativos." [ref=f3e56]:
+        - generic [ref=f3e58]: Celular
+        - text: Ativo
+      - generic "Lembrete diário das 9h está agendado." [ref=f3e59]:
+        - generic [ref=f3e61]: Agenda
+        - text: Agendado
+      - generic [ref=f3e62]:
+        - generic [ref=f3e64]: Entregas
+        - text: Ativo
+    - generic [ref=f3e65]:
+      - generic [ref=f3e67]:
+        - heading "Mapa de prazos" [level=2] [ref=f3e68]
+        - paragraph [ref=f3e69]: Prazo confirmado e data mencionada permanecem conceitos separados.
+      - generic [ref=f3e70]:
+        - generic [ref=f3e71]:
+          - generic [ref=f3e72]:
+            - generic [ref=f3e73]: Próximas seis semanas
+            - generic [ref=f3e74]: "Vermelho: prazo principal. Amarelo: data extraída que ainda exige conferência."
+          - generic [ref=f3e75]:
+            - generic [ref=f3e76]: 0 vencidas
+            - generic [ref=f3e77]: 0 futuras
+            - generic [ref=f3e78]: 1 a conferir
+        - generic [ref=f3e80]:
+          - generic [ref=f3e81]: Seg
+          - generic [ref=f3e82]: Ter
+          - generic [ref=f3e83]: Qua
+          - generic [ref=f3e84]: Qui
+          - generic [ref=f3e85]: Sex
+          - generic [ref=f3e86]: Sáb
+          - generic [ref=f3e87]: Dom
+          - generic [ref=f3e88]:
+            - generic [ref=f3e89]:
+              - generic [ref=f3e90]: 06/jul
+              - generic [ref=f3e91]: "3"
+            - button "Conferir · Natura/Cabreuva - parecer e quesitos" [ref=f3e92] [cursor=pointer]
+            - button "Prazo · Memoriais Cautelar Fiscal - Proc. 5002486-81.2012.4.04.7216" [ref=f3e93] [cursor=pointer]
+            - button "Conferir · Minuta de Embargos de Declaração - José Eduardo Siqueira Campos" [ref=f3e94] [cursor=pointer]
+          - generic [ref=f3e95]:
+            - generic [ref=f3e96]:
+              - generic [ref=f3e97]: "07"
+              - generic [ref=f3e98]: "3"
+            - button "Conferir · CORSAN/AGERST - parecer, análise de risco e proposta de serviços jurídicos" [ref=f3e99] [cursor=pointer]
+            - button "Conferir · Memoriais - Patrícia e Fábio - Proc. 0014560-09.2014.8.19.0209" [ref=f3e100] [cursor=pointer]
+            - button "Conferir · Jalusa Prestes Abaide - Proc. 5000447-02.2011.4.04.7102" [ref=f3e101] [cursor=pointer]
+          - generic [ref=f3e102]: "08"
+          - generic [ref=f3e105]:
+            - generic [ref=f3e106]:
+              - generic [ref=f3e107]: "09"
+              - generic [ref=f3e108]: "1"
+            - button "Conferir · Memoriais - Patrícia e Fábio - Proc. 0014560-09.2014.8.19.0209" [ref=f3e109] [cursor=pointer]
+          - generic [ref=f3e110]:
+            - generic [ref=f3e111]:
+              - generic [ref=f3e112]: "10"
+              - generic [ref=f3e113]: "3"
+            - button "Conferir · Memoriais - Patrícia e Fábio - Proc. 0014560-09.2014.8.19.0209" [ref=f3e114] [cursor=pointer]
+            - button "Conferir · Memoriais Cautelar Fiscal - Proc. 5002486-81.2012.4.04.7216" [ref=f3e115] [cursor=pointer]
+            - button "Conferir · Sistema de petições - transformar erros e feedbacks em protocolos" [ref=f3e116] [cursor=pointer]
+          - generic [ref=f3e117]: "11"
+          - generic [ref=f3e120]:
+            - generic [ref=f3e121]:
+              - generic [ref=f3e122]: "12"
+              - generic [ref=f3e123]: "2"
+            - button "Conferir · Cafelana - Contrarrazões ao AgInt no AREsp 2.698.443/DF" [ref=f3e124] [cursor=pointer]
+            - button "Conferir · Cafelana - Complementações e Ajustes - AgInt no AREsp nº 2.698.443/DF" [ref=f3e125] [cursor=pointer]
+          - generic [ref=f3e126]: "13"
+          - generic [ref=f3e129]:
+            - generic [ref=f3e130]:
+              - generic [ref=f3e131]: "14"
+              - generic [ref=f3e132]: "3"
+            - button "Prazo · Embargos/peça no AgInt no AREsp 1.883.361/RS - Jorge Haroldo" [ref=f3e133] [cursor=pointer]
+            - button "Prazo · Memoriais - Patrícia e Fábio - Proc. 0014560-09.2014.8.19.0209" [ref=f3e134] [cursor=pointer]
+            - button "Prazo · Material para elaboração de parecer - interessado Deltan Dallagnol" [ref=f3e135] [cursor=pointer]
+          - generic [ref=f3e136]:
+            - generic [ref=f3e137]:
+              - generic [ref=f3e138]: "15"
+              - generic [ref=f3e139]: "2"
+            - button "Prazo · Memoriais - AgInt no AREsp 2.578.181/SC - LIBRA SUL" [ref=f3e140] [cursor=pointer]
+            - 'button "Prazo · Re: Relatório Azimut" [ref=f3e141] [cursor=pointer]'
+          - generic [ref=f3e142]: "16"
+          - generic [ref=f3e145]:
+            - generic [ref=f3e146]:
+              - generic [ref=f3e147]: "17"
+              - generic [ref=f3e148]: "2"
+            - button "Conferir · Memoriais Cautelar Fiscal - Proc. 5002486-81.2012.4.04.7216" [ref=f3e149] [cursor=pointer]
+            - 'button "Prazo · Re: Análise de caso pessoal Fábio Medina Osório - Plano de Saúde" [ref=f3e150] [cursor=pointer]'
+          - generic [ref=f3e151]: "18"
+          - generic [ref=f3e154]: "19"
+          - generic [ref=f3e157]:
+            - generic [ref=f3e158]:
+              - generic [ref=f3e159]: "20"
+              - generic [ref=f3e160]: "1"
+            - button "Prazo · Natura/Cabreuva - parecer e quesitos" [ref=f3e161] [cursor=pointer]
+          - generic [ref=f3e162]: "21"
+          - generic [ref=f3e165]: "22"
+          - generic [ref=f3e168]: "23"
+          - generic [ref=f3e171]: "24"
+          - generic [ref=f3e174]: "25"
+          - generic [ref=f3e177]: "26"
+          - generic [ref=f3e180]: "27"
+          - generic [ref=f3e183]: "28"
+          - generic [ref=f3e186]: "29"
+          - generic [ref=f3e189]: "30"
+          - generic [ref=f3e192]:
+            - generic [ref=f3e193]:
+              - generic [ref=f3e194]: "31"
+              - generic [ref=f3e195]: "1"
+            - button "Conferir · Embargos/peça no AgInt no AREsp 1.883.361/RS - Jorge Haroldo" [ref=f3e196] [cursor=pointer]
+          - generic [ref=f3e197]: 01/ago
+          - generic [ref=f3e200]: "02"
+          - generic [ref=f3e203]: "03"
+          - generic [ref=f3e206]:
+            - generic [ref=f3e207]:
+              - generic [ref=f3e208]: "04"
+              - generic [ref=f3e209]: "1"
+            - button "Prazo · CORSAN/AGERST - parecer, análise de risco e proposta de serviços jurídicos" [ref=f3e210] [cursor=pointer]
+          - generic [ref=f3e211]: "05"
+          - generic [ref=f3e214]: "06"
+          - generic [ref=f3e217]:
+            - generic [ref=f3e218]:
+              - generic [ref=f3e219]: "07"
+              - generic [ref=f3e220]: "1"
+            - button "Conferir · Embargos/peça no AgInt no AREsp 1.883.361/RS - Jorge Haroldo" [ref=f3e221] [cursor=pointer]
+          - generic [ref=f3e222]: "08"
+          - generic [ref=f3e225]: "09"
+          - generic [ref=f3e228]: "10"
+          - generic [ref=f3e231]:
+            - generic [ref=f3e232]:
+              - generic [ref=f3e233]: "11"
+              - generic [ref=f3e234]: "1"
+            - button "Conferir · CORSAN/AGERST - parecer, análise de risco e proposta de serviços jurídicos" [ref=f3e235] [cursor=pointer]
+          - generic [ref=f3e236]: "12"
+          - generic [ref=f3e239]:
+            - generic [ref=f3e240]:
+              - generic [ref=f3e241]: "13"
+              - generic [ref=f3e242]: "1"
+            - button "Conferir · Memoriais - AgInt no AREsp 2.578.181/SC - LIBRA SUL" [ref=f3e243] [cursor=pointer]
+          - generic [ref=f3e244]: "14"
+          - generic [ref=f3e247]: "15"
+          - generic [ref=f3e250]: "16"
+        - generic [ref=f3e253]:
+          - generic [ref=f3e254]:
+            - generic [ref=f3e255]: Vencidas e risco imediato
+            - generic [ref=f3e256]: Sem prazo formal vencido.
+          - generic [ref=f3e257]:
+            - generic [ref=f3e258]: Próximos prazos
+            - generic [ref=f3e259]: Sem prazo formal futuro.
+            - generic [ref=f3e260]: Datas a conferir
+            - generic [ref=f3e261]:
+              - text: 12/07/2026 · data a conferir · E-mail
+              - button "Cafelana - Contrarrazões ao AgInt no AREsp 2.698.443/DF" [ref=f3e262] [cursor=pointer]

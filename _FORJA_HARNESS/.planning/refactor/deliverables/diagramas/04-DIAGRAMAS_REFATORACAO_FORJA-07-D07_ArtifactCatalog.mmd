@@ -1,0 +1,10 @@
+flowchart TD
+    Catalog["ArtifactCatalog"] --> Schema["Schemas"]
+    Catalog --> Contract["Contratos"]
+    Catalog --> Flags["Flags"]
+    Catalog --> Validators["Validadores"]
+    Catalog --> Metrics["Métricas"]
+    Catalog --> Docs["Docs/diagramas"]
+    Catalog --> Coverage["Teste de cobertura"]
+    Contextual["Regras contextuais"] --> Validators
+    Invalidation["Grafo de invalidação"] --> Coverage

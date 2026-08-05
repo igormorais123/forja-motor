@@ -1,0 +1,749 @@
+{
+  "status": "ok",
+  "source": "crossref",
+  "item": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          10
+        ]
+      ],
+      "date-time": "2026-07-10T02:09:07Z",
+      "timestamp": 1783649347849,
+      "version": "3.55.0"
+    },
+    "reference-count": 82,
+    "publisher": "Royal College of General Practitioners",
+    "issue": "3",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "BJGP Open"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2020,
+          8
+        ]
+      ]
+    },
+    "abstract": "<jats:sec><jats:title>Background</jats:title><jats:p>Globally, people with intellectual disabilities and/or autism experience health inequalities. Death occurs at a younger age and the prevalence of long-term morbidities is higher than in the general population. Despite this, their primary healthcare access rates are lower than the general population, their health needs are often unmet, and their views and experiences are frequently overlooked in research, policy, and practice.</jats:p></jats:sec><jats:sec><jats:title>Aim</jats:title><jats:p>To investigate the barriers and facilitators reported by individuals with intellectual disabilities, autism, or both, and/or their carers, to accessing and utilising primary health care for their physical and mental health needs.</jats:p></jats:sec><jats:sec><jats:title>Design &amp; setting</jats:title><jats:p>An integrative review was undertaken, which used systematic review methodology.</jats:p></jats:sec><jats:sec><jats:title>Method</jats:title><jats:p>Electronic databases MEDLINE, Embase, CINAHL (Cumulative Index to Nursing and Allied Health Literature), and Cochrane were searched for relevant studies (all languages) using a search strategy. Two researchers independently screened the results and assessed the quality of the studies.</jats:p></jats:sec><jats:sec><jats:title>Results</jats:title><jats:p>Sixty-three international studies were identified. Six main themes relating to barriers and facilitators emerged from an analysis of these studies. The main themes were: training; knowledge and awareness; communication; fear and embarrassment; involvement in healthcare decision-making; and time. All the themes were underpinned by the need for greater care, dignity, respect, collaborative relationships, and reasonable adjustments. Opposing barriers and facilitators were identified within each of the main themes.</jats:p></jats:sec><jats:sec><jats:title>Conclusion</jats:title><jats:p>Adolescents and adults with intellectual disabilities and/or autism experience several barriers to accessing and utilising primary health care. The findings highlight the reasonable adjustments and facilitators that can be implemented to ensure that these individuals are not excluded from primary health care.</jats:p></jats:sec>",
+    "DOI": "10.3399/bjgpopen20x101030",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2020,
+          7,
+          1
+        ]
+      ],
+      "date-time": "2020-07-01T04:47:21Z",
+      "timestamp": 1593578841000
+    },
+    "page": "bjgpopen20X101030",
+    "source": "Crossref",
+    "is-referenced-by-count": 207,
+    "title": [
+      "Barriers and facilitators to primary health care for people with intellectual disabilities and/or autism: an integrative review"
+    ],
+    "prefix": "10.3399",
+    "volume": "4",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3593-8069",
+        "authenticated-orcid": false,
+        "given": "Alison Jayne",
+        "family": "Doherty",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7072-1925",
+        "authenticated-orcid": false,
+        "given": "Helen",
+        "family": "Atherton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Paul",
+        "family": "Boland",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Richard",
+        "family": "Hastings",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Lucy",
+        "family": "Hives",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kerry",
+        "family": "Hood",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Lynn",
+        "family": "James-Jenkinson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ralph",
+        "family": "Leavey",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Elizabeth",
+        "family": "Randell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Janet",
+        "family": "Reed",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Laurence",
+        "family": "Taggart",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Neil",
+        "family": "Wilson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0747-591X",
+        "authenticated-orcid": false,
+        "given": "Umesh",
+        "family": "Chauhan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "1987",
+    "published-online": {
+      "date-parts": [
+        [
+          2020,
+          6,
+          30
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Hatton C Emerson E (2015) in International Review of Research in Developmental Disabilities, eds Hatton C Emerson E (Academic Press, Waltham, MA) In, eds. pp 1–9. Introduction: Health disparities, health inequity, and people with intellectual disabilities.",
+        "DOI": "10.1016/bs.irrdd.2015.04.001"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0140-6736(13)62026-7"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.3",
+        "unstructured": "Royal College of General Practitioners Care of people with intellectual disability. 24 Jun 2020. https://www.gponline.com/rcgp-curriculum/care-of-people-with-learning-disabilities."
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.4",
+        "unstructured": "Emerson E Baines S (2010) Health inequalities and people with learning disabilities in the UK: 2010. 17 Jun 2020. https://pureportal.strath.ac.uk/files-asset/7402206/vid_7479_IHaL2010_3HealthInequality2010.pdf."
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3148.2008.00432.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3109/13668250.2015.1105939"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.7",
+        "unstructured": "Walmsley J Johnson K (2003) Inclusive Research with People with Learning Disabilities: Past, Present and Futures (Jessica Kingsley, London)."
+      },
+      {
+        "issue": "4",
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.8",
+        "first-page": "469",
+        "article-title": "“I'm not a patient, I'm a person”: the experiences of individuals with intellectual disabilities and challenging behavior — a thematic synthesis of qualitative studies",
+        "volume": "20",
+        "author": "Griffith",
+        "year": "2013",
+        "journal-title": "Clin Psychol"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1258/1355819054338997"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/mrdd.20098"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s40474-016-0071-0"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.12",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Higgins J Green S (2019) Cochrane Handbook for Systematic Reviews of Interventions. 17 Jun 2020. https://training.cochrane.org/handbook.",
+        "DOI": "10.1002/9781119536604"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.13",
+        "unstructured": "Department of Health and Social Care (2001) Valuing People — A New Strategy for Learning Disability for the 21st Century [Policy paper]. 24 Jun 2020. https://www.gov.uk/government/publications/valuing-people-a-new-strategy-for-learning-disability-for-the-21st-century."
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1258/135581902760082517"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/1475-9276-12-18"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ijnurstu.2009.01.009"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3233/EFI-180221"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/1471-2288-8-45"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/jrsm.1128"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10826-011-9506-8"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3156.2009.00573.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jar.12007"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1369-7625.2006.00366.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1108/17530180200900027"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jar.12072"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.26",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/19315864.2018.1469700"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jar.12420"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/pon.4211"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ridd.2003.09.001"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.12968/bjon.2015.24.21.1054"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jar.12231"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.32",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1744629508090982"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1108/17530180200900028"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.34",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/hex.12528"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.35",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3156.2012.00742.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.36",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/13668250412331285163"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1352/1934-9556-54.2.94"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.38",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1365-2788.2010.01312.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.dhjo.2016.11.002"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5172/jamh.3.1.24"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.41",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/09687590600617451"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.42",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11606-012-2262-7"
+      },
+      {
+        "issue": "10",
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.43",
+        "first-page": "1555",
+        "article-title": "Caring for the developmentally disabled in the community",
+        "volume": "19",
+        "author": "Beange",
+        "year": "1990",
+        "journal-title": "Aust Fam Physician"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.44",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1352/0895-8017(2004)109<362:POSUBA>2.0.CO;2"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.45",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1049732316644415"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.46",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/bld.12121"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.47",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1469004703007001604"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.48",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1365-2788.2012.01606.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.49",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/bld.12181"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.50",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/bld.12152"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.51",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1475-3588.2008.00508.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.52",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1744629511423722"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.53",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1741-1130.2011.00314.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.54",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2196/jmir.1917"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.55",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3148.2007.00404.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.56",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/hsc.12291"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.57",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.7748/ldp.18.3.26.e1612"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.58",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1741-1130.2008.00167.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.59",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1362361316661261"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.60",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.rasd.2014.09.009"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.61",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1352/1934-9556-52.6.444"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.62",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1365-2648.2010.05595.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.63",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1370/afm.1231"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.64",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3148.2009.00527.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.65",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3156.2008.00510.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.66",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3156.2005.00312.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.67",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.rpsm.2016.09.005"
+      },
+      {
+        "issue": "1",
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.68",
+        "doi-asserted-by": "crossref",
+        "first-page": "73",
+        "DOI": "10.1111/j.1468-3156.2010.00620.x",
+        "article-title": "Inclusion and healthcare choices: the experiences of adults with learning disabilities",
+        "volume": "39",
+        "author": "Ferguson",
+        "year": "2011",
+        "journal-title": "Br J Learn Disabil"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.69",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jir.12274"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.70",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1108/20441281311294701"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.71",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5042/amhid.2010.0674"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.72",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1365-2788.2012.01637.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.73",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jar.12153"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.74",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/jocn.13873"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.75",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1471-6712.2009.00701.x"
+      },
+      {
+        "issue": "1",
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.76",
+        "first-page": "14",
+        "article-title": "Specialty: autism approaches need to be tailored to each person",
+        "volume": "61",
+        "author": "Baas",
+        "year": "2006",
+        "journal-title": "Pa Nurse"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.77",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.7748/ldp.2018.e1895"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.78",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/hsw/35.4.280"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.79",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/1362361317709970"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.80",
+        "unstructured": "Royal College of General Practitioners (2019) Urgent action needed to prevent more 'heart breaking' practice closures, says College. 17 Jun 2020. https://www.rcgp.org.uk/about-us/news/2019/may/urgent-action-needed-to-prevent-more-heart-breaking-practice-closures-says-college.aspx."
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.81",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1468-3148.2011.00641.x"
+      },
+      {
+        "key": "2020120311351023000_4.3.bjgpopen20X101030.82",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10803-017-3087-3"
+      }
+    ],
+    "container-title": [
+      "BJGP Open"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://syndication.highwire.org/content/doi/10.3399/bjgpopen20X101030",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          8,
+          8
+        ]
+      ],
+      "date-time": "2024-08-08T23:33:49Z",
+      "timestamp": 1723160029000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "http://bjgpopen.org/lookup/doi/10.3399/bjgpopen20X101030"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          6,
+          30
+        ]
+      ]
+    },
+    "references-count": 82,
+    "journal-issue": {
+      "issue": "3",
+      "published-online": {
+        "date-parts": [
+          [
+            2020,
+            8,
+            25
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2020,
+            8
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.3399/bjgpopen20X101030"
+    ],
+    "URL": "https://doi.org/10.3399/bjgpopen20x101030",
+    "relation": {},
+    "ISSN": [
+      "2398-3795"
+    ],
+    "issn-type": [
+      {
+        "value": "2398-3795",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          6,
+          30
+        ]
+      ]
+    }
+  }
+}

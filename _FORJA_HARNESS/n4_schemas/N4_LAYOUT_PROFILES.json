@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "medina-word-v1": {
+      "description": "Padrão Word ordinário Medina Osório",
+      "allowedAuthors": ["Medina Osório Advogados", "Medina Osorio Advogados"],
+      "requiresIndependentVisualQa": true,
+      "bodyFont": "Times New Roman",
+      "bodySizePt": 12,
+      "bodyAlignment": "justify",
+      "tableMinimumSizePt": 8,
+      "folioMaximumWidthPt": 36,
+      "requiresContentAndTrackingFidelity": true,
+      "requiresEveryPageReviewAt100Percent": true,
+      "forbidsAutomatedSelfCertification": true,
+      "marginPolicy": "PADRAO_WORD_MEDINA_OSORIO.md"
+    },
+    "medina-visual-law-v1": {
+      "description": "Variante visual law aprovada; diferenças deliberadas de margem não são comparadas ao Word ordinário",
+      "allowedAuthors": ["Medina Osório Advogados", "Medina Osorio Advogados"],
+      "requiresIndependentVisualQa": true,
+      "bodyFont": "Times New Roman",
+      "bodySizePt": 12,
+      "bodyAlignment": "justify",
+      "tableMinimumSizePt": 8,
+      "folioMaximumWidthPt": 36,
+      "requiresContentAndTrackingFidelity": true,
+      "requiresEveryPageReviewAt100Percent": true,
+      "forbidsAutomatedSelfCertification": true,
+      "marginPolicy": "padrao-visual-medina + ledger F8 independente"
+    }
+  }
+}

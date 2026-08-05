@@ -1,0 +1,500 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "f3_mapa_destinatario.schema.json",
+  "allOf": [
+    {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "specVersion",
+        "caseId",
+        "artifactType",
+        "phase",
+        "applicability",
+        "status",
+        "sourceHashes",
+        "producerRunId",
+        "createdAt",
+        "updatedAt",
+        "contentHash",
+        "issues"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "specVersion": {
+          "const": "N4.0-candidate"
+        },
+        "caseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifactType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "enum": [
+            "F0_RECONCILIACAO_FILA",
+            "F1_INGESTAO_SEGURA",
+            "F2_CLASSIFICACAO_PRODUTO_RISCO",
+            "F3_FONTES_REGIMENTO_LEIS",
+            "F4_BLUEPRINT_ESTRATEGICO",
+            "F5_PESQUISA_OFICIAL",
+            "F6_REDACAO_TEMPLATE",
+            "F7_AUDITORIA_JURIDICA_FACTUAL",
+            "F8_QA_VISUAL",
+            "F9_PACOTE_REVISAO_DRAFT_OPCIONAL",
+            "F10_ENTREGA_EVIDENCIA_APRENDIZADO"
+          ]
+        },
+        "applicability": {
+          "enum": [
+            "required",
+            "conditional",
+            "not_applicable"
+          ]
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "pending_review",
+            "approved",
+            "blocked",
+            "stale",
+            "not_applicable"
+          ]
+        },
+        "sourceHashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "producerRunId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewerRunId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "contentHash": {
+          "type": "string",
+          "minLength": 16
+        },
+        "issues": {
+          "type": "array"
+        },
+        "justification": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "const": "not_applicable"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "justification"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewerRunId"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifactType": {
+          "const": "recipient_map"
+        },
+        "phase": {
+          "const": "F3_FONTES_REGIMENTO_LEIS"
+        },
+        "protocolVersion": {
+          "const": "FORJA-RECIPIENT-MAP-v1"
+        },
+        "recipient": {
+          "type": "object",
+          "required": [
+            "court",
+            "identityStatus"
+          ],
+          "properties": {
+            "court": {
+              "type": "string",
+              "minLength": 2
+            },
+            "organ": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "rapporteur": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "identityStatus": {
+              "enum": [
+                "confirmed",
+                "unknown"
+              ]
+            },
+            "sourceIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "competence": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "confirmed",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            "basis": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sourceIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "prevention": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "confirmed",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            "originCaseId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "basis": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sourceIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "composition": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "confirmed",
+                "stale",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            "members": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "checkedAt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            },
+            "validUntil": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            },
+            "sourceIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "positionId",
+              "level",
+              "issueId",
+              "decisionIds",
+              "status",
+              "sourceIds"
+            ],
+            "properties": {
+              "positionId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "level": {
+                "enum": [
+                  "rapporteur",
+                  "organ",
+                  "same_section_other_organ",
+                  "section",
+                  "special_court",
+                  "plenary",
+                  "other"
+                ]
+              },
+              "issueId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decisionIds": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "asOf": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "summary": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "sourceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "divergences": {
+          "type": "array"
+        },
+        "appellateRoute": {
+          "type": "object"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "topologyScopeReason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sourceCatalog": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "sourceId",
+              "kind"
+            ],
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "decisao_integra",
+                  "acordao_integra",
+                  "ato_oficial_tribunal",
+                  "ementa",
+                  "espelho_oficial",
+                  "diario_eletronico",
+                  "metadado_datajud",
+                  "dado_administrativo",
+                  "resultado_busca"
+                ]
+              },
+              "locator": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "retrievedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "sha256": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "searchRuns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "queryId",
+              "action",
+              "executedAt"
+            ],
+            "properties": {
+              "queryId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "database": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "executedAt": {
+                "type": "string"
+              },
+              "params": {
+                "type": "object"
+              },
+              "resultIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "negativeResult": {
+                "type": "boolean"
+              },
+              "notSearched": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "replayRef": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "limitations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "not": {
+                  "const": "not_applicable"
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "recipient",
+              "competence",
+              "prevention",
+              "composition",
+              "positions"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

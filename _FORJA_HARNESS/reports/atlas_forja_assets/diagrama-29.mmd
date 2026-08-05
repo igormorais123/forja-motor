@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant R as "Responsável pelo fluxo"
+    participant K as "Regras da etapa"
+    participant A as "Tentativa isolada"
+    participant V as "Revisor independente"
+    participant M as "Registro dos arquivos aprovados"
+    participant E as "Histórico do caso"
+
+    R->>K: ler documentos necessários, resultado esperado e verificações
+    K-->>R: regras da etapa confirmadas
+    R->>A: abrir uma nova tentativa identificada
+    A->>A: trabalhar sem alterar a última versão válida
+    A->>V: resultado, fontes e identificação dos arquivos
+    alt resultado inválido ou verificação reprovada
+        V-->>R: problemas encontrados e etapa responsável
+        R->>E: registrar falha sem substituir versão válida
+    else saída válida
+        V->>M: registrar os arquivos aprovados
+        M->>E: registrar a mudança no histórico
+        E-->>R: autorizar a próxima etapa
+    end

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "FORJA-VISUAL-QA-1.0",
+  "status": "approved",
+  "pdf": "deliverables/PLANO_MESTRE_REFATORACAO_FORJA_2026-07-15.pdf",
+  "pages": 48,
+  "pageFormat": "A4_portrait",
+  "renderDpi": 130,
+  "allPagesInspected": true,
+  "inspectedPageRanges": [
+    "1-48"
+  ],
+  "contactSheets": 12,
+  "programmaticChecksPassed": true,
+  "diagramChecks": {
+    "mermaidSourcesRendered": 30,
+    "vectorDiagramsEmbeddedInDocx": 17,
+    "minimumPrintedFontPt": 8.0,
+    "labelsVisible": true,
+    "clippingDetected": false,
+    "overflowDetected": false
+  },
+  "documentChecks": {
+    "blankPagesDetected": false,
+    "unreplacedMarkersDetected": false,
+    "textOutsidePageDetected": false,
+    "institutionalMetadataPresent": true
+  },
+  "issues": [],
+  "notes": [
+    "Todas as páginas foram renderizadas e inspecionadas visualmente.",
+    "A página vazia identificada na versão intermediária foi removida antes desta aprovação.",
+    "A aprovação visual não autoriza a execução da refatoração."
+  ]
+}

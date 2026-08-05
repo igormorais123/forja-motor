@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "FORJA Harness — fluxo operacional",
+    "subtitle": "Pré-condições, caminho principal, gates e interrupções seguras",
+    "output": "FORJA_HARNESS_OPERATIONAL_FLOW.html",
+    "visual_preset": "blueprint",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "main",
+        "label": "Caminho principal",
+        "focus": [
+          "f1",
+          "f2a",
+          "f5",
+          "f7",
+          "f8",
+          "f10"
+        ],
+        "note": "Percurso normal até uma saída verificável."
+      },
+      {
+        "id": "gates",
+        "label": "Gates",
+        "focus": [
+          "f7",
+          "f10",
+          "block"
+        ],
+        "note": "Pontos que bloqueiam promoção quando falta evidência."
+      },
+      {
+        "id": "handoffs",
+        "label": "Passagens",
+        "focus": [
+          "f2a",
+          "f5",
+          "f7",
+          "f8",
+          "f10",
+          "block"
+        ],
+        "note": "Mudanças de responsabilidade entre camadas."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "intake",
+      "label": "Intake"
+    },
+    {
+      "id": "analysis",
+      "label": "Análise"
+    },
+    {
+      "id": "production",
+      "label": "Produção"
+    },
+    {
+      "id": "audit",
+      "label": "Auditoria"
+    },
+    {
+      "id": "materialize",
+      "label": "Materialização"
+    },
+    {
+      "id": "exception",
+      "label": "Bloqueios",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "orient",
+      "label": "Orientar",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "execute",
+      "label": "Executar",
+      "fromCol": 2,
+      "toCol": 4,
+      "variant": "emphasis"
+    },
+    {
+      "id": "assure",
+      "label": "Assegurar",
+      "fromCol": 5,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "mainPath": [
+    "f1",
+    "f2a",
+    "f5",
+    "f7",
+    "f8",
+    "f10"
+  ],
+  "nodes": [
+    {
+      "id": "f1",
+      "lane": "intake",
+      "col": 0,
+      "width": 72,
+      "type": "messagebus",
+      "label": "F1 Intake",
+      "sublabel": "fontes como dados"
+    },
+    {
+      "id": "f2a",
+      "lane": "analysis",
+      "col": 1,
+      "width": 72,
+      "type": "backend",
+      "label": "F2A",
+      "sublabel": "100 perguntas"
+    },
+    {
+      "id": "f5",
+      "lane": "production",
+      "col": 2,
+      "width": 72,
+      "type": "cloud",
+      "label": "F5",
+      "sublabel": "estrutura da peça"
+    },
+    {
+      "id": "f7",
+      "lane": "audit",
+      "col": 3,
+      "width": 72,
+      "type": "security",
+      "label": "F7/F7-B",
+      "sublabel": "fato + fidelidade"
+    },
+    {
+      "id": "f8",
+      "lane": "materialize",
+      "col": 4,
+      "width": 72,
+      "type": "cloud",
+      "label": "F8 Render",
+      "sublabel": "DOCX/PDF"
+    },
+    {
+      "id": "f10",
+      "lane": "materialize",
+      "col": 5,
+      "width": 72,
+      "type": "security",
+      "label": "F10",
+      "sublabel": "pacote auditável"
+    },
+    {
+      "id": "block",
+      "lane": "exception",
+      "col": 2,
+      "width": 72,
+      "type": "security",
+      "label": "Bloquear",
+      "sublabel": "P0/P1 ou injeção"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f1",
+      "to": "f2a",
+      "variant": "emphasis",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "f2a",
+      "to": "f5",
+      "variant": "default",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "f5",
+      "to": "f7",
+      "variant": "default",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "f7",
+      "to": "f8",
+      "variant": "default",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "f8",
+      "to": "f10",
+      "variant": "emphasis"
+    },
+    {
+      "from": "f2a",
+      "to": "block",
+      "variant": "security",
+      "role": "error",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Entrada controlada",
+      "items": [
+        "A rota começa no documento ou interface canônica",
+        "O escopo é reduzido antes de abrir conteúdo",
+        "Cada handoff tem responsabilidade explícita"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Fail closed",
+      "items": [
+        "Lacuna material interrompe promoção",
+        "Exceções permanecem visíveis",
+        "Ausência de evidência não vira sucesso"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Saída verificável",
+      "items": [
+        "Resultado ligado à evidência",
+        "Estado e versão são preservados",
+        "Mudança estrutural atualiza os mapas"
+      ]
+    }
+  ]
+}

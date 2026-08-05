@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "FORJA-AR-v1",
+  "judgeId": "juiz2-claude",
+  "judgeFamily": "claude",
+  "declarations": {
+    "filesRead": [
+      "PAR_ciclo1-varA_ORD1_L.md",
+      "PAR_ciclo1-varA_ORD1_R.md",
+      "PAR_ciclo1-varA_ORD2_L.md",
+      "PAR_ciclo1-varA_ORD2_R.md",
+      "PAR_ciclo1-varB_ORD1_L.md",
+      "PAR_ciclo1-varB_ORD1_R.md",
+      "PAR_ciclo1-varB_ORD2_L.md",
+      "PAR_ciclo1-varB_ORD2_R.md"
+    ],
+    "externalAccess": false,
+    "workspaceAccess": false
+  },
+  "votes": [
+    {
+      "order": 1,
+      "winnerPosition": "L",
+      "anchor": "A controvérsia não exige, neste primeiro momento, que o Juízo declare correta a Declaração Pessoal de Saúde — DPS.",
+      "justificativa": "Síntese executiva em tabela de matriz decisória é mais legível e hierarquizada que a narrativa de R. L oferece blindagem superior via separação clara entre elemento procedimental e elemento subjetivo, reduzindo risco de reexame por Súmula 7."
+    },
+    {
+      "order": 2,
+      "winnerPosition": "L",
+      "anchor": "A assinatura posterior da proposta comercial não foi confundida com a seleção anterior de cada resposta da DPS.",
+      "justificativa": "L decompõe autoria eletrônica em atos separados, economizando argumentação. Cronologia em tabela com coluna de alcance probatório evita inferências soltas. R apresenta redundância narrativa antes da tabela."
+    }
+  ]
+}

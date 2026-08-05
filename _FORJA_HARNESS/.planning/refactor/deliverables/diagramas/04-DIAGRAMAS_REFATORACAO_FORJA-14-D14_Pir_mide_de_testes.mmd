@@ -1,0 +1,6 @@
+flowchart TD
+    Real["Real<br/>Word/PDF/telemetria"]
+    Integration["Integração<br/>eventos/filesystem/outbox"]
+    Contract["Contrato/mutação<br/>schemas/gates"]
+    Unit["Unidade<br/>funções puras"]
+    Real --> Integration --> Contract --> Unit

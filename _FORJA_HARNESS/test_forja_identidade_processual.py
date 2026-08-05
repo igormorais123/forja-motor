@@ -1,0 +1,270 @@
+# -*- coding: utf-8 -*-
+"""
+test_forja_identidade_processual.py — Testes de regressão para gates S2 e S4.
+
+Testes contra sabotagens determinísticas:
+  (i) Declaração lastreada na minuta → deve ser recusada
+  (ii) Caso sem declaração → não gera P0 automático
+  (iii) Peça legítima que cita o papel do adversário → não reprova
+  (iv) S2 detecta: nome correto mas papel trocado na janela
+  (v) S4 detecta: direção contrária aparece massivamente
+"""
+import json
+import sys
+from pathlib import Path
+
+# Assumindo que o teste roda de dentro de _FORJA_HARNESS
+RAIZ = Path(__file__).resolve().parent
+
+from forja_identidade_processual import (
+    gate_s2_pareamento_nome_papel,
+    gate_s4_presenca_direcao_pedido,
+    validar_declaracao_completa,
+)
+
+
+def test_s2_sem_declaracao():
+    """(ii) Caso sem declaração → não gera P0."""
+    texto = "O agravante peticionou. O agravado respondeu."
+    achados = gate_s2_pareamento_nome_papel(texto, None)
+    assert achados == [], f"Gate S2 deve retornar vazio sem declaração, mas retornou: {achados}"
+    print("✓ test_s2_sem_declaracao")
+
+
+def test_s4_sem_declaracao():
+    """(ii) Caso sem declaração → não gera P0."""
+    texto = "Pede-se o provimento do recurso."
+    achados = gate_s4_presenca_direcao_pedido(texto, None)
+    assert achados == [], f"Gate S4 deve retornar vazio sem declaração, mas retornou: {achados}"
+    print("✓ test_s4_sem_declaracao")
+
+
+def test_s2_com_declaracao_valida_no_texto():
+    """(iii) Peça legítima que cita o papel do adversário → não reprova."""
+    # Cenário: Cafelana (agravada) pede desprovimento do agravo da União (agravante)
+    # A peça menciona legitimamente "o agravo da União contra Cafelana"
+    decl = {
+        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "adverso": {"nome": "UNIÃO", "papel": "agravante"},
+        "direcaoPedido": "desprovimento",
+    }
+
+    # Texto que menciona legitimamente o papel do adversário
+    texto = (
+        "A UNIÃO, na qualidade de agravante, interpôs agravo contra CAFELANA. "
+        "CAFELANA, como agravada, contesta o agravo. "
+        "O papel da agravada é responder aos termos do recurso."
+    )
+
+    achados = gate_s2_pareamento_nome_papel(texto, decl)
+    # Não deve reprovar porque CAFELANA aparece com seu papel correto na maioria das vezes
+    if achados:
+        assert all(a["sev"] != "P0" for a in achados), f"Gate S2 reprovou peça legítima: {achados}"
+    print("✓ test_s2_com_declaracao_valida_no_texto")
+
+
+def test_s2_detecta_troca():
+    """(iv) S2 detecta: nome correto mas papel trocado na janela."""
+    decl = {
+        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "adverso": {"nome": "UNIÃO", "papel": "agravante"},
+        "direcaoPedido": "desprovimento",
+    }
+
+    # Texto MUTADO: CAFELANA mas sempre chamada de agravante (papel errado)
+    texto = (
+        "CAFELANA, na qualidade de agravante, interpôs agravo. "
+        "CAFELANA, como agravante, pede provimento. "
+        "A agravante CAFELANA alega vício processual. "
+        "O papel de agravante pertence a CAFELANA neste caso."
+    )
+
+    achados = gate_s2_pareamento_nome_papel(texto, decl)
+    # Deve reprovar porque nenhuma janela tem o papel correto "agravada"
+    p0_count = sum(1 for a in achados if a["sev"] == "P0")
+    assert p0_count > 0, f"Gate S2 deveria detectar troca de papel em CAFELANA, mas retornou: {achados}"
+    print(f"✓ test_s2_detecta_troca ({p0_count} P0)")
+
+
+def test_s4_detecta_troca():
+    """(v) S4 detecta: direção contrária aparece massivamente."""
+    decl = {
+        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "adverso": {"nome": "UNIÃO", "papel": "agravante"},
+        "direcaoPedido": "desprovimento",
+    }
+
+    # Texto MUTADO: pede provimento em vez de desprovimento
+    texto = (
+        "Pede-se o provimento do agravo. "
+        "A reforma é o provimento da peça. "
+        "O provimento é necessário para corrigir a injustiça. "
+        "Requer-se o provimento da demanda."
+    )
+
+    achados = gate_s4_presenca_direcao_pedido(texto, decl)
+    # Deve reprovar porque "desprovimento" não aparece mas "provimento" sim
+    p0_count = sum(1 for a in achados if a["sev"] == "P0")
+    assert p0_count > 0, f"Gate S4 deveria detectar troca de direção, mas retornou: {achados}"
+    print(f"✓ test_s4_detecta_troca ({p0_count} P0)")
+
+
+def test_s4_com_direcao_presente():
+    """S4 com direção correta presente → não reprova."""
+    decl = {
+        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "adverso": {"nome": "UNIÃO", "papel": "agravante"},
+        "direcaoPedido": "desprovimento",
+    }
+
+    # Texto com direção correta
+    texto = (
+        "Pede-se o desprovimento do agravo interposto pela União. "
+        "O desprovimento é a solução cabível. "
+        "Requer-se, assim, o desprovimento da demanda."
+    )
+
+    achados = gate_s4_presenca_direcao_pedido(texto, decl)
+    # Não deve reprovar porque "desprovimento" está presente
+    if achados:
+        assert all(a["sev"] != "P0" for a in achados), f"Gate S4 reprovou com direção presente: {achados}"
+    print("✓ test_s4_com_direcao_presente")
+
+
+def test_estrutura_invalida():
+    """Declaração com estrutura inválida → não passa validação."""
+    decl_ruim = {
+        "cliente": {"nome": "CAFELANA", "papel": "papel_invalido"},
+    }
+
+    val = validar_declaracao_completa(decl_ruim)
+    assert not val.valida, "Validação deveria falhar"
+    assert any("papel" in e.lower() for e in val.erros), f"Deveria mencionar papel nos erros: {val.erros}"
+    print("✓ test_estrutura_invalida")
+
+
+CASO_REAL = Path("state/case-email-cafelana-agint-aresp-2698443-19f2f0876e358eab")
+
+
+def test_regiao_requerimento_nao_e_a_assinatura():
+    """O defeito real de 05/08/2026: a região caía no bloco de assinatura.
+
+    `_regiao_requerimento` pegava o ÚLTIMO marcador, e "pede deferimento" vem
+    DEPOIS da lista de pedidos. A região devolvida tinha 277 caracteres, era só
+    nome de advogado e OAB, e não continha verbo de pedido nenhum — o gate S4
+    ficava silenciosamente cego sobre o texto que mais importa.
+    """
+    from forja_identidade_processual import _regiao_requerimento
+    peca = (
+        "Preâmbulo longo da peça que ocupa a primeira metade inteira do texto e "
+        "existe só para que o corte pela metade tenha material de sobra. " * 6
+        + "\n\nAnte o exposto, requerem as agravadas o desprovimento do agravo interno.\n\n"
+        "Pede deferimento.\n\nBrasília/DF.\n\nFULANO DE TAL\nOAB/RS 00.000\n"
+    )
+    regiao = _regiao_requerimento(peca)
+    assert regiao, "nenhuma região de requerimento foi encontrada"
+    assert "requerem as agravadas" in regiao, (
+        "a região começou depois do pedido — provavelmente no bloco de assinatura")
+    assert "desprovimento" in regiao, "o pedido ficou fora da região"
+
+    # E o inverso: marcador cedo demais é argumentação, não requerimento.
+    argumentativo = "Ante o exposto no acórdão recorrido, " + ("texto. " * 400)
+    assert _regiao_requerimento(argumentativo) == "", (
+        "marcador na primeira metade foi tratado como requerimento — o gate leria "
+        "o corpo da peça como pedido da cliente")
+    print("✓ test_regiao_requerimento_nao_e_a_assinatura")
+
+
+def test_peca_aprovada_real_passa_limpa_e_o_mutante_do_fecho_nao():
+    """Contraprova contra a peça REAL, não contra texto inventado.
+
+    A âncora é a Impugnação ao AgInt da Cafelana (V4), aprovada pelo escritório.
+    Ela cita legitimamente as duas direções ao longo da argumentação; só o
+    requerimento é unívoco. Se este teste começar a acusar o original, o gate
+    está errado — regra da casa.
+    """
+    import re
+    from forja_identidade_processual import (carregar_declaracao,
+                                             gate_s4_presenca_direcao_pedido)
+    if not CASO_REAL.is_dir():
+        print("  (pulado: caso real ausente nesta cópia)")
+        return
+    decl = carregar_declaracao(CASO_REAL)
+    assert decl, "o caso real perdeu a declaração de identidade processual"
+
+    from forja_mutation_semantic import _achar_draft
+    draft = _achar_draft(CASO_REAL)
+    assert draft is not None, (
+        "o caso real saiu da bateria — _achar_draft deixou de enxergar "
+        "canonical_markdown")
+    texto = draft.read_text(encoding="utf-8")
+
+    assert not gate_s4_presenca_direcao_pedido(texto, decl), (
+        "o gate acusou a peça APROVADA pelo escritório")
+
+    ocorrencias = list(re.finditer(r"\bdesprovimento\b", texto))
+    assert ocorrencias, "a peça real deixou de conter a direção declarada"
+    ultima = ocorrencias[-1]
+    mutante = texto[:ultima.start()] + "provimento" + texto[ultima.end():]
+    achados = gate_s4_presenca_direcao_pedido(mutante, decl)
+    assert any(a["gate"] == "S4-direcao-no-requerimento" for a in achados), (
+        "inverter o pedido da própria cliente no fecho passou sem ser notado")
+    print(f"✓ test_peca_aprovada_real (original limpo; mutante do fecho pego por "
+          f"{[a['gate'] for a in achados]})")
+
+
+def test_lastro_em_artefato_derivado_e_recusado():
+    """Declaração lastreada na minuta nasceria mutada junto — tem de ser recusada.
+
+    Foi exatamente o que a primeira geração automática produziu: sourceKey
+    `canonical_markdown`, sha256 literalmente "[será preenchido]" e adverso
+    "TRANSPORTADORA OU ESTADO". Parecia declaração e era chute.
+    """
+    from forja_identidade_processual import validar_lastro_de_fonte_externa
+    decl = {
+        "cliente": {"nome": "X LTDA", "papel": "agravada"},
+        "adverso": {"nome": "UNIÃO", "papel": "agravante"},
+        "direcaoPedido": "desprovimento",
+        "lastro": {"sourceKey": "minuta", "sha256": "a" * 64,
+                   "trechoVerbatim": "trecho suficientemente longo para passar do piso"},
+    }
+    manifesto = {"n4SourceRegistry": {
+        "minuta": {"path": "C:/casos/x/producao/draft_markdown.md"},
+        "autuacao": {"path": "C:/casos/x/fontes/PETICAO_ADVERSA.pdf"},
+    }}
+    assert not validar_lastro_de_fonte_externa(decl, manifesto).valida, (
+        "lastro apontando para a minuta foi aceito — o gate nasceria cego")
+
+    decl["lastro"]["sourceKey"] = "autuacao"
+    assert validar_lastro_de_fonte_externa(decl, manifesto).valida, (
+        "lastro em fonte externa legítima foi recusado")
+    print("✓ test_lastro_em_artefato_derivado_e_recusado")
+
+
+def main():
+    try:
+        test_s2_sem_declaracao()
+        test_s4_sem_declaracao()
+        test_s2_com_declaracao_valida_no_texto()
+        test_s2_detecta_troca()
+        test_s4_detecta_troca()
+        test_s4_com_direcao_presente()
+        test_estrutura_invalida()
+        test_regiao_requerimento_nao_e_a_assinatura()
+        test_peca_aprovada_real_passa_limpa_e_o_mutante_do_fecho_nao()
+        test_lastro_em_artefato_derivado_e_recusado()
+        print("\n" + "="*70)
+        print("TODOS OS TESTES PASSARAM")
+        return 0
+    except AssertionError as e:
+        print(f"\n✗ TESTE FALHOU: {e}")
+        return 1
+    except Exception as e:
+        print(f"\n✗ ERRO: {e}")
+        import traceback
+        traceback.print_exc()
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

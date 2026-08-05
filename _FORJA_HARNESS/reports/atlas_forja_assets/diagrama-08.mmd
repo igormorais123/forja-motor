@@ -1,0 +1,21 @@
+flowchart TB
+    L0["Informação essencial neste momento<br/>problema, objetivo, decisões e impedimentos"]
+    L1["Uma ficha para cada questão<br/>pergunta, provas, dependências e próximo passo"]
+    L2["Quadros de apoio<br/>sequência dos atos, fatos, teses e pontos respondidos"]
+    L3["Documentos consultados quando necessários<br/>autos, anexos, regimento, precedentes e estudos"]
+    L4["Histórico preservado<br/>versões anteriores e material secundário"]
+
+    L0 --> L1
+    L1 -->|"indicação da origem"| L2
+    L2 -->|"falta de prova"| L3
+    L3 -->|"nova evidência"| L1
+    L2 -->|"não ativo agora"| L4
+    L4 -->|"condição de retorno"| L1
+    L1 --> Output["Tarefa de análise específica<br/>sem carregar o processo inteiro de uma vez"]
+
+    classDef active fill:#e8f1ef,stroke:#395c60,color:#21383b,stroke-width:2px;
+    classDef shadow fill:#fbf2ec,stroke:#9c5b38,color:#5b3522,stroke-width:2px;
+    classDef archive fill:#f0f1f3,stroke:#707078,color:#3e3e44;
+    class L2,L3 active;
+    class L0,L1,Output shadow;
+    class L4 archive;
