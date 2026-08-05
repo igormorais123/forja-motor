@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - _FERRAMENTAS
 
-Atualizado automaticamente em: **2026-08-05 13:32:40 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:10 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FERRAMENTAS`
 - Tipo: **pasta de caso/produção**

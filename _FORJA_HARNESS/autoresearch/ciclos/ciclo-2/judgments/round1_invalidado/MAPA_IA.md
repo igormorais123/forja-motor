@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - round1_invalidado
 
-Atualizado automaticamente em: **2026-08-05 13:33:24 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:45 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\autoresearch\ciclos\ciclo-2\judgments\round1_invalidado`
 - Tipo: **pasta auxiliar**

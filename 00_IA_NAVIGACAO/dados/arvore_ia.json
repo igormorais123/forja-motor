@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-05 13:32:41 -0300",
+  "generated_at": "2026-08-05 13:56:11 -0300",
   "root": "C:\\Users\\IgorPC\\.claude\\projects\\Escritório fabio osório\\fabricas de melhoria de petições",
   "children": {
     "rel": ".",
     "name": "fabricas de melhoria de petições",
     "kind": "raiz da fábrica",
-    "files_recursive": 24866,
+    "files_recursive": 24867,
     "children": [
       {
         "rel": ".agents",
@@ -342,7 +342,7 @@
         "rel": "_FORJA_HARNESS",
         "name": "_FORJA_HARNESS",
         "kind": "pasta de caso/produção",
-        "files_recursive": 9329,
+        "files_recursive": 9330,
         "children": [
           {
             "rel": "_FORJA_HARNESS/.agents",
@@ -1208,7 +1208,7 @@
             "rel": "_FORJA_HARNESS/reports",
             "name": "reports",
             "kind": "pasta de caso/produção",
-            "files_recursive": 1429,
+            "files_recursive": 1430,
             "children": [
               {
                 "rel": "_FORJA_HARNESS/reports/_rev_claude_20260730",

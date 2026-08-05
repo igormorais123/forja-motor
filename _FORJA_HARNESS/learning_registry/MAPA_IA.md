@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - learning_registry
 
-Atualizado automaticamente em: **2026-08-05 13:32:38 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:09 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\learning_registry`
 - Tipo: **pasta auxiliar**

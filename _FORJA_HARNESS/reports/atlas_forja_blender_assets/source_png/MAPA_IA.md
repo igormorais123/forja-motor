@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - source_png
 
-Atualizado automaticamente em: **2026-08-05 13:33:35 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:55 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\reports\atlas_forja_blender_assets\source_png`
 - Tipo: **pasta auxiliar**

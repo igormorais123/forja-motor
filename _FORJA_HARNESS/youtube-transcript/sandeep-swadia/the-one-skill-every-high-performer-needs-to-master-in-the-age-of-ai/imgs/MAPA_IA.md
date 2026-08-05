@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - imgs
 
-Atualizado automaticamente em: **2026-08-05 13:33:26 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:46 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\youtube-transcript\sandeep-swadia\the-one-skill-every-high-performer-needs-to-master-in-the-age-of-ai\imgs`
 - Tipo: **artefatos técnicos**

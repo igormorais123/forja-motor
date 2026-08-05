@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - erm_v2
 
-Atualizado automaticamente em: **2026-08-05 13:33:35 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:55 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\reports\_rev_claude_20260730\erm_v2`
 - Tipo: **pasta auxiliar**

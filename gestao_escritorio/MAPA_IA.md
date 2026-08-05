@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - gestao_escritorio
 
-Atualizado automaticamente em: **2026-08-05 13:32:39 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:10 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\gestao_escritorio`
 - Tipo: **gestão de demandas**
@@ -68,7 +68,7 @@ flowchart TD
 |---|---|---:|---:|---|
 | [.pytest_cache](<.pytest_cache/MAPA_IA.md>) | gestão de demandas | 4 arquivos / 2 subpastas | 2026-07-21 01:37 | painel, dados e rotinas de acompanhamento do escritório |
 | [assets](<assets/MAPA_IA.md>) | gestão de demandas | 3 arquivos / 0 subpastas | 2026-07-08 05:41 | painel, dados e rotinas de acompanhamento do escritório |
-| [data](<data/MAPA_IA.md>) | gestão de demandas | 33 arquivos / 5 subpastas | 2026-08-05 13:23 | painel, dados e rotinas de acompanhamento do escritório |
+| [data](<data/MAPA_IA.md>) | gestão de demandas | 33 arquivos / 5 subpastas | 2026-08-05 13:45 | painel, dados e rotinas de acompanhamento do escritório |
 | [entregas_fabio_osorio](<entregas_fabio_osorio/MAPA_IA.md>) | gestão de demandas | 205 arquivos / 141 subpastas | 2026-08-04 13:43 | painel, dados e rotinas de acompanhamento do escritório |
 | [hermes_prompts](<hermes_prompts/MAPA_IA.md>) | gestão de demandas | 8 arquivos / 0 subpastas | 2026-07-20 19:41 | painel, dados e rotinas de acompanhamento do escritório |
 | [logs](<logs/MAPA_IA.md>) | gestão de demandas | 7 arquivos / 0 subpastas | 2026-07-31 11:14 | painel, dados e rotinas de acompanhamento do escritório |
@@ -88,8 +88,8 @@ flowchart TD
 | [atualizacao_codex_prompt.md](<atualizacao_codex_prompt.md>) | outro | 3.7 KB | 2026-07-22 01:43 | arquivo não classificado automaticamente \| tópicos: Automação diária - Gestão de Demandas do Escritório Medina Osório |
 | [HERMES_VPS_OPERADOR.md](<HERMES_VPS_OPERADOR.md>) | outro | 4.0 KB | 2026-07-14 14:56 | arquivo não classificado automaticamente \| tópicos: Operador Hermes VPS - gestão de demandas do escritório; Regra de privacidade; Fonte de verdade e limite da fábrica |
 | [NOTA_DECISAO_PENDENCIAS_ENTREGA_2026-07-23.md](<NOTA_DECISAO_PENDENCIAS_ENTREGA_2026-07-23.md>) | outro | 3.5 KB | 2026-07-23 20:45 | arquivo não classificado automaticamente \| tópicos: Decisão operacional sobre pendências e entrega; Resultado; Fórmula recomendada para a resposta ao advogado |
-| [PAINEL_ESCRITORIO_MEDINA_OSORIO.html](<PAINEL_ESCRITORIO_MEDINA_OSORIO.html>) | outro | 1.1 MB | 2026-08-05 13:15 | arquivo não classificado automaticamente |
-| [painel_gestao_escritorio.html](<painel_gestao_escritorio.html>) | outro | 1.1 MB | 2026-08-05 13:15 | arquivo não classificado automaticamente |
+| [PAINEL_ESCRITORIO_MEDINA_OSORIO.html](<PAINEL_ESCRITORIO_MEDINA_OSORIO.html>) | outro | 1.1 MB | 2026-08-05 13:45 | arquivo não classificado automaticamente |
+| [painel_gestao_escritorio.html](<painel_gestao_escritorio.html>) | outro | 1.1 MB | 2026-08-05 13:45 | arquivo não classificado automaticamente |
 | [TRIAGEM_AUDIOS_FABIO_2026-07-10.md](<TRIAGEM_AUDIOS_FABIO_2026-07-10.md>) | outro | 2.8 KB | 2026-07-10 06:29 | arquivo não classificado automaticamente \| tópicos: TRIAGEM OPERACIONAL SANITIZADA — ÁUDIOS DO FÁBIO; Demandas jurídicas identificadas; 1. Plano de saúde / SulAmérica |
 
 ## Leitura por papel

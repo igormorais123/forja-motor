@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Índice Geral IA - Fábrica de Melhoria de Petições
 
-Atualizado automaticamente em: **2026-08-05 13:32:41 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:11 -0300**
 
 Este é o ponto de entrada para qualquer IA navegar a pasta sem perder contexto, ordem de leitura ou regras críticas.
 
@@ -58,7 +58,7 @@ flowchart TD
   N3af0ffc034["_FERRAMENTAS<br/>pasta de caso/produção<br/>82 arquivos"]
   ROOT --> N3af0ffc034
   click N3af0ffc034 "_FERRAMENTAS/MAPA_IA.md" "Abrir mapa"
-  N8239f77343["_FORJA_HARNESS<br/>pasta de caso/produção<br/>9329 arquivos"]
+  N8239f77343["_FORJA_HARNESS<br/>pasta de caso/produção<br/>9330 arquivos"]
   ROOT --> N8239f77343
   click N8239f77343 "_FORJA_HARNESS/MAPA_IA.md" "Abrir mapa"
   Na84ad51f6e["_LABORATÓRIO_MIROFISH — Vale Trading (EXPERIMENTAL — NÃO…<br/>pasta de caso/produção<br/>160 arquivos"]
@@ -326,7 +326,7 @@ flowchart TD
 | [_CONFERENCIA_VISUAL_2026-08-03](<_CONFERENCIA_VISUAL_2026-08-03/MAPA_IA.md>) | pasta de caso/produção | 5 arquivos / 0 subpastas | 2026-08-03 15:34 | contém peça, parecer, memorial, relatório ou plano |
 | [_CORRECOES_PROPOSTAS_2026-08-04](<_CORRECOES_PROPOSTAS_2026-08-04/MAPA_IA.md>) | pasta de caso/produção | 3 arquivos / 0 subpastas | 2026-08-05 07:07 | contém peça, parecer, memorial, relatório ou plano |
 | [_FERRAMENTAS](<_FERRAMENTAS/MAPA_IA.md>) | pasta de caso/produção | 82 arquivos / 9 subpastas | 2026-08-05 03:11 | contém peça, parecer, memorial, relatório ou plano |
-| [_FORJA_HARNESS](<_FORJA_HARNESS/MAPA_IA.md>) | pasta de caso/produção | 9329 arquivos / 626 subpastas | 2026-08-05 13:23 | contém peça, parecer, memorial, relatório ou plano |
+| [_FORJA_HARNESS](<_FORJA_HARNESS/MAPA_IA.md>) | pasta de caso/produção | 9330 arquivos / 626 subpastas | 2026-08-05 13:45 | contém peça, parecer, memorial, relatório ou plano |
 | [_LABORATÓRIO_MIROFISH — Vale Trading (EXPERIMENTAL — NÃO É PROVA)](<_LABORATÓRIO_MIROFISH — Vale Trading (EXPERIMENTAL — NÃO É PROVA)/MAPA_IA.md>) | pasta de caso/produção | 160 arquivos / 29 subpastas | 2026-07-26 15:53 | contém peça, parecer, memorial, relatório ou plano |
 | [_LEIS_GERAIS](<_LEIS_GERAIS/MAPA_IA.md>) | leis gerais obrigatórias | 3 arquivos / 0 subpastas | 2026-07-06 19:37 | Estatuto da OAB e LOMAN; considerar em toda peça |
 | [_MODELOS](<_MODELOS/MAPA_IA.md>) | pasta auxiliar | 1 arquivos / 0 subpastas | 2026-07-09 16:49 | conteúdo auxiliar ou residual |
@@ -366,8 +366,8 @@ flowchart TD
 | [Fwd Legal 500 & Medina Osório Advogados Próximos passos](<Fwd Legal 500 & Medina Osório Advogados Próximos passos/MAPA_IA.md>) | demanda operacional | 30 arquivos / 3 subpastas | 2026-07-29 16:49 | começar pelo comando e anexos antes de produzir |
 | [Fwd Re Solicita informações](<Fwd Re Solicita informações/MAPA_IA.md>) | demanda operacional | 7 arquivos / 1 subpastas | 2026-07-18 01:42 | começar pelo comando e anexos antes de produzir |
 | [Fwd Relatório Azimut](<Fwd Relatório Azimut/MAPA_IA.md>) | demanda operacional | 22 arquivos / 1 subpastas | 2026-07-08 04:19 | começar pelo comando e anexos antes de produzir |
-| [gestao_escritorio](<gestao_escritorio/MAPA_IA.md>) | gestão de demandas | 326 arquivos / 159 subpastas | 2026-08-05 13:23 | painel, dados e rotinas de acompanhamento do escritório |
-| [git-tools](<git-tools/MAPA_IA.md>) | pasta auxiliar | 10 arquivos / 0 subpastas | 2026-08-05 13:32 | conteúdo auxiliar ou residual |
+| [gestao_escritorio](<gestao_escritorio/MAPA_IA.md>) | gestão de demandas | 326 arquivos / 159 subpastas | 2026-08-05 13:45 | painel, dados e rotinas de acompanhamento do escritório |
+| [git-tools](<git-tools/MAPA_IA.md>) | pasta auxiliar | 10 arquivos / 0 subpastas | 2026-08-05 13:47 | conteúdo auxiliar ou residual |
 | [graphify-out](<graphify-out/MAPA_IA.md>) | pasta organizadora | 1035 arquivos / 4 subpastas | 2026-08-03 22:56 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [Jalusa Prestes Abaide - Proc. 5000447-02.2011.4.04.7102](<Jalusa Prestes Abaide - Proc. 5000447-02.2011.4.04.7102/MAPA_IA.md>) | caso jurídico com regimento | 170 arquivos / 16 subpastas | 2026-08-05 07:36 | identificar tribunal e ler regimento antes de redigir |
 | [Mapeamento nacional — ações coletivas e de improbidade envolvendo a Transpetro (≥ R$ 50 milhões)](<Mapeamento nacional — ações coletivas e de improbidade envolvendo a Transpetro (≥ R$ 50 milhões)/MAPA_IA.md>) | demanda operacional | 36 arquivos / 9 subpastas | 2026-08-03 13:35 | começar pelo comando e anexos antes de produzir |
@@ -395,14 +395,14 @@ flowchart TD
 | [Re Ajustes implementados — Azimut, SulAmérica, Cafelana, Natura e Roraima](<Re Ajustes implementados — Azimut, SulAmérica, Cafelana, Natura e Roraima/MAPA_IA.md>) | demanda operacional | 2 arquivos / 0 subpastas | 2026-07-16 19:39 | começar pelo comando e anexos antes de produzir |
 | [Re Documentação da Natura – acesso à pasta](<Re Documentação da Natura – acesso à pasta/MAPA_IA.md>) | demanda operacional | 4 arquivos / 0 subpastas | 2026-07-14 16:11 | começar pelo comando e anexos antes de produzir |
 | [Re Elaboração das contrarrazões ao AgInt no AREsp nº 2.698.443 DF](<Re Elaboração das contrarrazões ao AgInt no AREsp nº 2.698.443 DF/MAPA_IA.md>) | demanda operacional | 2 arquivos / 0 subpastas | 2026-07-08 04:13 | começar pelo comando e anexos antes de produzir |
-| [Re Relatório Azimut](<Re Relatório Azimut/MAPA_IA.md>) | demanda operacional | 183 arquivos / 14 subpastas | 2026-08-05 13:31 | começar pelo comando e anexos antes de produzir |
+| [Re Relatório Azimut](<Re Relatório Azimut/MAPA_IA.md>) | demanda operacional | 183 arquivos / 14 subpastas | 2026-08-05 13:55 | começar pelo comando e anexos antes de produzir |
 | [Re Roraima Senador Chico Rodrigues — dossiê interno para decisão](<Re Roraima Senador Chico Rodrigues — dossiê interno para decisão/MAPA_IA.md>) | demanda operacional | 5 arquivos / 0 subpastas | 2026-07-19 18:13 | começar pelo comando e anexos antes de produzir |
 | [Relatório sobre o Amplify — análise preliminar](<Relatório sobre o Amplify — análise preliminar/MAPA_IA.md>) | demanda operacional | 3 arquivos / 1 subpastas | 2026-07-19 19:07 | começar pelo comando e anexos antes de produzir |
 | [Solicitação de documentos pessoais para entrada no contrato social](<Solicitação de documentos pessoais para entrada no contrato social/MAPA_IA.md>) | fontes e anexos | 3 arquivos / 0 subpastas | 2026-07-08 19:05 | local de prova/documento; verificar antes de afirmar |
 | [URGENTE - Medida Cautelar Fiscal n.º 5002486-81.2012.4.04.7216 SC - analise a aperfeiçoamento de Embargos de D](<URGENTE - Medida Cautelar Fiscal n.º 5002486-81.2012.4.04.7216 SC - analise a aperfeiçoamento de Embargos de D/MAPA_IA.md>) | caso jurídico com regimento | 177 arquivos / 18 subpastas | 2026-07-29 19:42 | identificar tribunal e ler regimento antes de redigir |
 | [URGENTE — Medida Cautelar Fiscal — confirmação de entrega da revisão ainda hoje](<URGENTE — Medida Cautelar Fiscal — confirmação de entrega da revisão ainda hoje/MAPA_IA.md>) | demanda operacional | 2 arquivos / 0 subpastas | 2026-07-28 22:11 | começar pelo comando e anexos antes de produzir |
-| [WhatsApp - Fabio Medina Osorio - triagem de demandas](<WhatsApp - Fabio Medina Osorio - triagem de demandas/MAPA_IA.md>) | demanda WhatsApp | 1 arquivos / 0 subpastas | 2026-08-01 04:44 | triagem sanitizada; evitar expor conversa bruta |
-| [WhatsApp - Igor Hermes - contexto de organizacao](<WhatsApp - Igor Hermes - contexto de organizacao/MAPA_IA.md>) | demanda WhatsApp | 1 arquivos / 0 subpastas | 2026-08-01 18:44 | triagem sanitizada; evitar expor conversa bruta |
+| [WhatsApp - Fabio Medina Osorio - triagem de demandas](<WhatsApp - Fabio Medina Osorio - triagem de demandas/MAPA_IA.md>) | demanda WhatsApp | 1 arquivos / 0 subpastas | 2026-08-05 13:44 | triagem sanitizada; evitar expor conversa bruta |
+| [WhatsApp - Igor Hermes - contexto de organizacao](<WhatsApp - Igor Hermes - contexto de organizacao/MAPA_IA.md>) | demanda WhatsApp | 1 arquivos / 0 subpastas | 2026-08-05 13:44 | triagem sanitizada; evitar expor conversa bruta |
 | [WhatsApp Audio - Cafelana peça humana e prevenção - 2026-07-08](<WhatsApp Audio - Cafelana peça humana e prevenção - 2026-07-08/MAPA_IA.md>) | demanda WhatsApp | 1 arquivos / 0 subpastas | 2026-07-08 04:13 | triagem sanitizada; evitar expor conversa bruta |
 | [WhatsApp Audio - Protocolo de aprendizados IA - 2026-07-08](<WhatsApp Audio - Protocolo de aprendizados IA - 2026-07-08/MAPA_IA.md>) | demanda WhatsApp | 2 arquivos / 0 subpastas | 2026-07-10 05:24 | triagem sanitizada; evitar expor conversa bruta |
 | [WhatsApp Audio - Roraima Senador cliente - 2026-07-08](<WhatsApp Audio - Roraima Senador cliente - 2026-07-08/MAPA_IA.md>) | demanda WhatsApp | 3 arquivos / 0 subpastas | 2026-07-10 05:28 | triagem sanitizada; evitar expor conversa bruta |
@@ -444,8 +444,8 @@ flowchart TD
 | [&nbsp;&nbsp;&nbsp;&nbsp;planejamento](<_FORJA_HARNESS/planejamento/MAPA_IA.md>) | área de trabalho | 52 arquivos / 2 subpastas | 2026-08-05 04:03 | planejamento, execução, documentação ou material visual |
 | [&nbsp;&nbsp;&nbsp;&nbsp;private](<_FORJA_HARNESS/private/MAPA_IA.md>) | pasta organizadora | 1 arquivos / 1 subpastas | 2026-08-05 13:23 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [&nbsp;&nbsp;&nbsp;&nbsp;pso_schemas](<_FORJA_HARNESS/pso_schemas/MAPA_IA.md>) | pasta auxiliar | 2 arquivos / 0 subpastas | 2026-07-11 18:34 | conteúdo auxiliar ou residual |
-| [&nbsp;&nbsp;&nbsp;&nbsp;reports](<_FORJA_HARNESS/reports/MAPA_IA.md>) | pasta de caso/produção | 1429 arquivos / 14 subpastas | 2026-08-05 13:15 | contém peça, parecer, memorial, relatório ou plano |
-| [&nbsp;&nbsp;&nbsp;&nbsp;state](<_FORJA_HARNESS/state/MAPA_IA.md>) | pasta organizadora | 5644 arquivos / 464 subpastas | 2026-08-05 13:23 | agrega subpastas; abrir mapa filho conforme objetivo |
+| [&nbsp;&nbsp;&nbsp;&nbsp;reports](<_FORJA_HARNESS/reports/MAPA_IA.md>) | pasta de caso/produção | 1430 arquivos / 14 subpastas | 2026-08-05 13:45 | contém peça, parecer, memorial, relatório ou plano |
+| [&nbsp;&nbsp;&nbsp;&nbsp;state](<_FORJA_HARNESS/state/MAPA_IA.md>) | pasta organizadora | 5644 arquivos / 464 subpastas | 2026-08-05 13:45 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [&nbsp;&nbsp;&nbsp;&nbsp;telemetria](<_FORJA_HARNESS/telemetria/MAPA_IA.md>) | pasta organizadora | 750 arquivos / 22 subpastas | 2026-08-05 08:08 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [&nbsp;&nbsp;&nbsp;&nbsp;templates](<_FORJA_HARNESS/templates/MAPA_IA.md>) | pasta auxiliar | 5 arquivos / 0 subpastas | 2026-08-05 03:09 | conteúdo auxiliar ou residual |
 | [&nbsp;&nbsp;&nbsp;&nbsp;youtube-transcript](<_FORJA_HARNESS/youtube-transcript/MAPA_IA.md>) | pasta organizadora | 6 arquivos / 3 subpastas | 2026-07-24 18:23 | agrega subpastas; abrir mapa filho conforme objetivo |
@@ -566,7 +566,7 @@ flowchart TD
 | [&nbsp;&nbsp;&nbsp;&nbsp;Anexos do email](<Fwd Relatório Azimut/Anexos do email/MAPA_IA.md>) | fontes e anexos | 20 arquivos / 0 subpastas | 2026-07-08 04:19 | local de prova/documento; verificar antes de afirmar |
 | [&nbsp;&nbsp;&nbsp;&nbsp;.pytest_cache](<gestao_escritorio/.pytest_cache/MAPA_IA.md>) | gestão de demandas | 4 arquivos / 2 subpastas | 2026-07-21 01:37 | painel, dados e rotinas de acompanhamento do escritório |
 | [&nbsp;&nbsp;&nbsp;&nbsp;assets](<gestao_escritorio/assets/MAPA_IA.md>) | gestão de demandas | 3 arquivos / 0 subpastas | 2026-07-08 05:41 | painel, dados e rotinas de acompanhamento do escritório |
-| [&nbsp;&nbsp;&nbsp;&nbsp;data](<gestao_escritorio/data/MAPA_IA.md>) | gestão de demandas | 33 arquivos / 5 subpastas | 2026-08-05 13:23 | painel, dados e rotinas de acompanhamento do escritório |
+| [&nbsp;&nbsp;&nbsp;&nbsp;data](<gestao_escritorio/data/MAPA_IA.md>) | gestão de demandas | 33 arquivos / 5 subpastas | 2026-08-05 13:45 | painel, dados e rotinas de acompanhamento do escritório |
 | [&nbsp;&nbsp;&nbsp;&nbsp;entregas_fabio_osorio](<gestao_escritorio/entregas_fabio_osorio/MAPA_IA.md>) | gestão de demandas | 205 arquivos / 141 subpastas | 2026-08-04 13:43 | painel, dados e rotinas de acompanhamento do escritório |
 | [&nbsp;&nbsp;&nbsp;&nbsp;hermes_prompts](<gestao_escritorio/hermes_prompts/MAPA_IA.md>) | gestão de demandas | 8 arquivos / 0 subpastas | 2026-07-20 19:41 | painel, dados e rotinas de acompanhamento do escritório |
 | [&nbsp;&nbsp;&nbsp;&nbsp;logs](<gestao_escritorio/logs/MAPA_IA.md>) | gestão de demandas | 7 arquivos / 0 subpastas | 2026-07-31 11:14 | painel, dados e rotinas de acompanhamento do escritório |
@@ -672,7 +672,7 @@ flowchart TD
 | [&nbsp;&nbsp;&nbsp;&nbsp;Anexos do email](<prazo 30 07 - Elaboração de memoriais – EDs no AI nº 5006962-48.2026.4.02.0000 RJ/Anexos do email/MAPA_IA.md>) | fontes e anexos | 29 arquivos / 0 subpastas | 2026-07-30 16:42 | local de prova/documento; verificar antes de afirmar |
 | [&nbsp;&nbsp;&nbsp;&nbsp;ENTREGA_INTERNA_2026-07-29](<prazo 30 07 - Elaboração de memoriais – EDs no AI nº 5006962-48.2026.4.02.0000 RJ/ENTREGA_INTERNA_2026-07-29/MAPA_IA.md>) | pasta de caso/produção | 3 arquivos / 0 subpastas | 2026-07-29 00:07 | contém peça, parecer, memorial, relatório ou plano |
 | [&nbsp;&nbsp;&nbsp;&nbsp;Anexos do email](<PRAZO 31 07 - MEMORIAIS - JULGAMENTO DO AI N 0011621-15.2023.8.27.2700 - JESC - PROCESSO ESTRATÉGICO/Anexos do email/MAPA_IA.md>) | fontes e anexos | 25 arquivos / 0 subpastas | 2026-07-29 14:12 | local de prova/documento; verificar antes de afirmar |
-| [&nbsp;&nbsp;&nbsp;&nbsp;_entrega_externa_v4_2026-07-19](<Re Relatório Azimut/_entrega_externa_v4_2026-07-19/MAPA_IA.md>) | pasta de caso/produção | 61 arquivos / 3 subpastas | 2026-08-05 13:31 | contém peça, parecer, memorial, relatório ou plano |
+| [&nbsp;&nbsp;&nbsp;&nbsp;_entrega_externa_v4_2026-07-19](<Re Relatório Azimut/_entrega_externa_v4_2026-07-19/MAPA_IA.md>) | pasta de caso/produção | 61 arquivos / 3 subpastas | 2026-08-05 13:55 | contém peça, parecer, memorial, relatório ou plano |
 | [&nbsp;&nbsp;&nbsp;&nbsp;_forja_n3_reconstrucao_2026-07-10](<Re Relatório Azimut/_forja_n3_reconstrucao_2026-07-10/MAPA_IA.md>) | pasta de caso/produção | 36 arquivos / 2 subpastas | 2026-07-10 13:29 | contém peça, parecer, memorial, relatório ou plano |
 | [&nbsp;&nbsp;&nbsp;&nbsp;_forja_n3_reconstrucao_2026-07-14](<Re Relatório Azimut/_forja_n3_reconstrucao_2026-07-14/MAPA_IA.md>) | pasta de caso/produção | 35 arquivos / 2 subpastas | 2026-07-15 00:20 | contém peça, parecer, memorial, relatório ou plano |
 | [&nbsp;&nbsp;&nbsp;&nbsp;_forja_n3_reconstrucao_2026-07-16](<Re Relatório Azimut/_forja_n3_reconstrucao_2026-07-16/MAPA_IA.md>) | pasta de caso/produção | 26 arquivos / 2 subpastas | 2026-07-16 22:12 | contém peça, parecer, memorial, relatório ou plano |

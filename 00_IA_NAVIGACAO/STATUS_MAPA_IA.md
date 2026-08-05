@@ -1,17 +1,17 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Status do Mapa IA Vivo
 
-Última atualização: **2026-08-05 13:32:41 -0300**
+Última atualização: **2026-08-05 13:56:11 -0300**
 
 - Pastas mapeadas: **1963**
-- Arquivos mapeados: **24866**
+- Arquivos mapeados: **24867**
 - Tamanho mapeado: **17.2 GB**
 
 ## Principais tipos de arquivo
 
 - `.png`: 7652
 - `.json`: 7389
-- `.md`: 2491
+- `.md`: 2492
 - `.pdf`: 1453
 - `.py`: 1069
 - `.jpg`: 1030
@@ -34,7 +34,7 @@
 
 - dados/script: 8627
 - artefato técnico: 7717
-- outro: 4189
+- outro: 4190
 - imagem/visual: 1972
 - fonte/documento: 959
 - peça/trabalho: 950

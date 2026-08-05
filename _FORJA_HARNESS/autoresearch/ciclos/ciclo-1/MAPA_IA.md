@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - ciclo-1
 
-Atualizado automaticamente em: **2026-08-05 13:33:35 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:56 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\autoresearch\ciclos\ciclo-1`
 - Tipo: **pasta organizadora**

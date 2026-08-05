@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - youtube-transcript
 
-Atualizado automaticamente em: **2026-08-05 13:32:37 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:08 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\youtube-transcript`
 - Tipo: **pasta organizadora**

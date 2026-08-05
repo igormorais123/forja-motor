@@ -1,12 +1,12 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - git-tools
 
-Atualizado automaticamente em: **2026-08-05 13:32:39 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:10 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\git-tools`
 - Tipo: **pasta auxiliar**
 - Função para navegação: conteúdo auxiliar ou residual
-- Conteúdo recursivo: **10 arquivos**, **0 subpastas**, **39.5 KB**
+- Conteúdo recursivo: **10 arquivos**, **0 subpastas**, **43.2 KB**
 - Tipos de arquivo: .ps1: 7, .json: 1, .py: 1, .md: 1
 - Mapa raiz: [MAPA_IA.md](<../MAPA_IA.md>)
 - Índice geral: [INDICE_GERAL_IA.md](<../00_IA_NAVIGACAO/INDICE_GERAL_IA.md>)
@@ -43,7 +43,7 @@ _Sem subpastas diretas._
 | [restore_github_release_assets.ps1](<restore_github_release_assets.ps1>) | dados/script | 2.5 KB | 2026-07-11 13:07 | dado estruturado ou rotina técnica |
 | [restore_oversized_file.ps1](<restore_oversized_file.ps1>) | dados/script | 2.0 KB | 2026-07-11 13:07 | dado estruturado ou rotina técnica |
 | [split_oversized_file.ps1](<split_oversized_file.ps1>) | dados/script | 3.3 KB | 2026-07-11 13:07 | dado estruturado ou rotina técnica |
-| [sync_forja_repos.py](<sync_forja_repos.py>) | dados/script | 8.5 KB | 2026-08-05 13:20 | dado estruturado ou rotina técnica |
+| [sync_forja_repos.py](<sync_forja_repos.py>) | dados/script | 12.2 KB | 2026-08-05 13:47 | dado estruturado ou rotina técnica |
 | [sync_github.ps1](<sync_github.ps1>) | dados/script | 8.9 KB | 2026-08-05 13:23 | dado estruturado ou rotina técnica |
 | [test_sync_github.ps1](<test_sync_github.ps1>) | dados/script | 4.2 KB | 2026-08-05 07:02 | dado estruturado ou rotina técnica |
 | [STATUS_SYNC.md](<STATUS_SYNC.md>) | outro | 200 B | 2026-08-05 07:03 | arquivo não classificado automaticamente \| tópicos: Última sincronização com o GitHub |

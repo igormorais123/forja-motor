@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - refactor
 
-Atualizado automaticamente em: **2026-08-05 13:33:43 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:04 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\.planning\refactor`
 - Tipo: **pasta organizadora**

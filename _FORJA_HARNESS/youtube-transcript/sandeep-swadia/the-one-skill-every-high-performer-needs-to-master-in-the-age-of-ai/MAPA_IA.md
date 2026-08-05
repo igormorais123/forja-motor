@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - the-one-skill-every-high-performer-needs-to-master-in-the-age-of-ai
 
-Atualizado automaticamente em: **2026-08-05 13:33:32 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:53 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\youtube-transcript\sandeep-swadia\the-one-skill-every-high-performer-needs-to-master-in-the-age-of-ai`
 - Tipo: **pasta organizadora**

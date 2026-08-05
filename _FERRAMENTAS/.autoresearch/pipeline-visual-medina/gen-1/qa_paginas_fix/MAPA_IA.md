@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - qa_paginas_fix
 
-Atualizado automaticamente em: **2026-08-05 13:33:28 -0300**
+Atualizado automaticamente em: **2026-08-05 13:55:49 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FERRAMENTAS\.autoresearch\pipeline-visual-medina\gen-1\qa_paginas_fix`
 - Tipo: **artefatos técnicos**

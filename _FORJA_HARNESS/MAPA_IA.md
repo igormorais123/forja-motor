@@ -1,13 +1,13 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - _FORJA_HARNESS
 
-Atualizado automaticamente em: **2026-08-05 13:32:40 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:10 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS`
 - Tipo: **pasta de caso/produção**
 - Função para navegação: contém peça, parecer, memorial, relatório ou plano
-- Conteúdo recursivo: **9329 arquivos**, **626 subpastas**, **842.4 MB**
-- Tipos de arquivo: .json: 5621, .md: 1680, .png: 629, .pyc: 330, .py: 316, .svg: 156, .mmd: 138, .txt: 80, .pdf: 66, .jsonl: 55, +19 tipos
+- Conteúdo recursivo: **9330 arquivos**, **626 subpastas**, **842.4 MB**
+- Tipos de arquivo: .json: 5621, .md: 1681, .png: 629, .pyc: 330, .py: 316, .svg: 156, .mmd: 138, .txt: 80, .pdf: 66, .jsonl: 55, +19 tipos
 - Mapa raiz: [MAPA_IA.md](<../MAPA_IA.md>)
 - Índice geral: [INDICE_GERAL_IA.md](<../00_IA_NAVIGACAO/INDICE_GERAL_IA.md>)
 - Protocolo de navegação: [PROTOCOLO_NAVEGACAO_IA.md](<../00_IA_NAVIGACAO/PROTOCOLO_NAVEGACAO_IA.md>)
@@ -18,7 +18,7 @@ Atualizado automaticamente em: **2026-08-05 13:32:40 -0300**
 
 ```mermaid
 flowchart TD
-  Na81d4f690d["_FORJA_HARNESS<br/>pasta de caso/produção<br/>9329 arquivos / 626 subpastas"]
+  Na81d4f690d["_FORJA_HARNESS<br/>pasta de caso/produção<br/>9330 arquivos / 626 subpastas"]
   Nabe59c188b["subir: fabricas de melhoria de petições"]
   Na81d4f690d --> Nabe59c188b
   click Nabe59c188b "../MAPA_IA.md" "Abrir mapa superior"
@@ -193,8 +193,8 @@ flowchart TD
 | [planejamento](<planejamento/MAPA_IA.md>) | área de trabalho | 52 arquivos / 2 subpastas | 2026-08-05 04:03 | planejamento, execução, documentação ou material visual |
 | [private](<private/MAPA_IA.md>) | pasta organizadora | 1 arquivos / 1 subpastas | 2026-08-05 13:23 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [pso_schemas](<pso_schemas/MAPA_IA.md>) | pasta auxiliar | 2 arquivos / 0 subpastas | 2026-07-11 18:34 | conteúdo auxiliar ou residual |
-| [reports](<reports/MAPA_IA.md>) | pasta de caso/produção | 1429 arquivos / 14 subpastas | 2026-08-05 13:15 | contém peça, parecer, memorial, relatório ou plano |
-| [state](<state/MAPA_IA.md>) | pasta organizadora | 5644 arquivos / 464 subpastas | 2026-08-05 13:23 | agrega subpastas; abrir mapa filho conforme objetivo |
+| [reports](<reports/MAPA_IA.md>) | pasta de caso/produção | 1430 arquivos / 14 subpastas | 2026-08-05 13:45 | contém peça, parecer, memorial, relatório ou plano |
+| [state](<state/MAPA_IA.md>) | pasta organizadora | 5644 arquivos / 464 subpastas | 2026-08-05 13:45 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [telemetria](<telemetria/MAPA_IA.md>) | pasta organizadora | 750 arquivos / 22 subpastas | 2026-08-05 08:08 | agrega subpastas; abrir mapa filho conforme objetivo |
 | [templates](<templates/MAPA_IA.md>) | pasta auxiliar | 5 arquivos / 0 subpastas | 2026-08-05 03:09 | conteúdo auxiliar ou residual |
 | [youtube-transcript](<youtube-transcript/MAPA_IA.md>) | pasta organizadora | 6 arquivos / 3 subpastas | 2026-07-24 18:23 | agrega subpastas; abrir mapa filho conforme objetivo |

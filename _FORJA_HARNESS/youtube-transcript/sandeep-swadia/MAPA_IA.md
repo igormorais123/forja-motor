@@ -1,7 +1,7 @@
 <!-- IA_NAVIGACAO:GERADO_AUTO:v1 -->
 # Mapa IA - sandeep-swadia
 
-Atualizado automaticamente em: **2026-08-05 13:33:42 -0300**
+Atualizado automaticamente em: **2026-08-05 13:56:03 -0300**
 
 - Caminho: `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\_FORJA_HARNESS\youtube-transcript\sandeep-swadia`
 - Tipo: **pasta organizadora**

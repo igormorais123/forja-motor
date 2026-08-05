@@ -11,8 +11,14 @@ A separação em dois repositórios resolve o volume e resolve junto uma questã
 governança: o motor não carrega nome de cliente e pode ser lido por qualquer
 engenheiro; o acervo de auditoria carrega, e tem outro regime de acesso.
 
-    forja-harness             motor: código, contratos, schemas, testes, doutrina
-    forja-acervo-auditoria    state/, modelos aprovados, painel de gestão
+    forja-motor       código, contratos, schemas, testes, templates e doutrina
+    forja-auditoria   state/, modelos aprovados, dados do painel
+
+As pastas locais mantêm os nomes de criação (`forja-harness` e
+`forja-acervo-auditoria`); os repositórios remotos são `forja-motor` e
+`forja-auditoria`. Os dois primeiros remotos, de mesmo nome das pastas, foram
+abandonados por terem levado arquivos do cofre pós-protocolo no histórico — e o
+histórico do git não se limpa sem force-push, que aqui é operação do Igor.
 
 O acervo processual — autos, laudos, anexos — não vai a nenhum dos dois. Fica no
 disco de trabalho, e a origem dele é o e-mail.
@@ -48,6 +54,27 @@ LIMITE_BYTES = 95 * 2**20
 # teste de reconstituição — o nome "cache" enganou.
 IGNORAR_DIR = {".git", "__pycache__", "node_modules", ".venv", ".pytest_cache",
                ".mypy_cache", "telemetria"}
+
+# COFRE LOCAL — não sai desta máquina, em repositório nenhum.
+#
+# Retornos humanos pós-protocolo: a peça efetivamente protocolada, a versão
+# humana final e os diffs integrais contra a nossa. São o material mais sensível
+# do acervo e a regra de que ficam locais é anterior a esta separação.
+#
+# Não é hipótese: na primeira sincronização 37 desses arquivos foram parar no
+# repositório de auditoria, e só o teste de reconstituição a partir dos clones
+# revelou. O padrão está aqui, no `.gitignore` dos dois repositórios e no
+# `test_forja_post_protocol` — três camadas, porque uma falhou.
+COFRE_LOCAL = (
+    "private/post_protocol/",
+    "PEÇA PROTOCOLADA — ",
+    "VERSÃO HUMANA FINAL — ",
+    "reports/POST_PROTOCOL_LAST_RUN.json",
+)
+
+
+def _e_cofre(caminho_rel: str) -> bool:
+    return any(marca in caminho_rel for marca in COFRE_LOCAL)
 
 # (origem relativa à pasta de trabalho, destino relativo ao repo, subpastas excluídas)
 MAPA_MOTOR = [
@@ -143,7 +170,8 @@ def espelhar(origem: Path, destino: Path, excluir: tuple[str, ...],
             continue
         for nome in arqs:
             fonte = Path(raiz) / nome
-            if str(fonte.relative_to(TRABALHO)).replace(os.sep, "/") in vetados:
+            rel_trab = str(fonte.relative_to(TRABALHO)).replace(os.sep, "/")
+            if rel_trab in vetados or _e_cofre(rel_trab):
                 continue
             try:
                 tamanho = fonte.stat().st_size
