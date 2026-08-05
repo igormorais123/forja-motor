@@ -34,6 +34,11 @@ FORJA = Path(__file__).resolve().parent
 # código de saída e imprime o resumo na última linha. Não são adaptadas a pytest
 # porque o valor delas está no texto do relatório que produzem.
 SUITES_SCRIPT = {
+    # Não traz o marcador que o classificador procura no stdout, então o pytest o
+    # coletava e não achava teste nenhum. Declarado aqui, roda como script.
+    "test_licao41.py": (
+        "os três defeitos de ferramenta da Lição 41: itálico virando asterisco no "
+        "DOCX, 'Tema 1.365' lido como 'Tema 1', e súmula nunca localizada no cache"),
     "test_forja_fronteira.py": (
         "fronteira motor/acervo — classifica, acusa vazamento de dado de cliente "
         "e não acusa vocabulário nem valor sintético"),
@@ -139,19 +144,37 @@ def _parece_script_autonomo(nome: str) -> bool:
     return _SCRIPT_STDOUT_MARKER in texto
 
 
+# Suíte declarada fora do baseline, com motivo. Quarentena NÃO é exclusão: o
+# nome e a razão aparecem no relatório de toda execução. Uma suíte que fica de
+# fora sem aparecer é indistinguível de suíte que não existe — e foi assim que
+# seis arquivos `test_*.py` ficaram anos fora da rede, só por não terem o
+# prefixo `test_forja_`, entre eles a regressão do gate de colisão de SVG que o
+# protocolo da casa declara bloqueante.
+QUARENTENA = {
+    "test_real_telemetria_licao41.py": (
+        "renderiza duas peças reais ponta a ponta e uma delas reprova no gate de "
+        "layout com `structural_text_not_justified`. O gate está certo: a peça em "
+        "questão é o desvio de padrão Word já registrado no protocolo da casa. "
+        "Fica fora do veredito até alguém decidir se corrige a fonte ou se o alvo "
+        "sai da bateria — e não some do relatório enquanto isso."),
+}
+
+
 def _scripts_autonomos_nao_mapeados() -> list[str]:
     return sorted(
         caminho.name
-        for caminho in FORJA.glob("test_forja_*.py")
-        if caminho.name not in SUITES_SCRIPT and _parece_script_autonomo(caminho.name)
+        for caminho in FORJA.glob("test_*.py")
+        if caminho.name not in SUITES_SCRIPT and caminho.name not in QUARENTENA
+        and _parece_script_autonomo(caminho.name)
     )
 
 
 def coletar() -> list[str]:
     """Suítes pytest: tudo que casa o padrão e não é regressão em script."""
     return sorted(
-        caminho.name for caminho in FORJA.glob("test_forja_*.py")
-        if caminho.name not in SUITES_SCRIPT and not _parece_script_autonomo(caminho.name)
+        caminho.name for caminho in FORJA.glob("test_*.py")
+        if caminho.name not in SUITES_SCRIPT and caminho.name not in QUARENTENA
+        and not _parece_script_autonomo(caminho.name)
     )
 
 
@@ -182,6 +205,7 @@ def executar() -> dict:
         "subtestsPytest": sum(item.get("subtests", 0) for item in resultados),
         "regressoesScript": len(SUITES_SCRIPT),
         "aprovado": not vermelhas,
+        "quarentena": [{"suite": n, "motivo": m} for n, m in sorted(QUARENTENA.items())],
         "suites": resultados,
     }
 
@@ -200,6 +224,8 @@ def _imprimir(relatorio: dict) -> None:
         f"(+{relatorio['subtestsPytest']} subtests) · "
         f"{relatorio['regressoesScript']} regressões em script"
     )
+    for q in relatorio.get("quarentena") or []:
+        print(f"  [QUAR] {q['suite']:<38} fora do veredito — {q['motivo'][:200]}")
     print("  APROVADO" if relatorio["aprovado"] else "  REPROVADO — ver suítes marcadas acima")
 
 

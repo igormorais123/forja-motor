@@ -1,11 +1,11 @@
 {
-  "atualizadoEm": "2026-08-05T18:23:00-03:00",
+  "atualizadoEm": "2026-08-05T18:49:29-03:00",
   "hashes": {
     "_FORJA_HARNESS/forja_regua.py": "db5c26f195d00f013849c39024b4303ba1a049bbc89dac3924b7bad70723885c",
     "_FORJA_HARNESS/forja_gate_liveness.py": "022b753465977df5c01947a4594afb2603435df0599060686dc9b6481da04733",
     "_FORJA_HARNESS/forja_conselho.py": "0b2fee8358884dd7679a7a3991096334bc9fce6f79843ec8704392a30363c470",
     "_FORJA_HARNESS/forja_citations.py": "e88e14d406bfe73ed6299fdb49134e83c11ba0f53a907d56f4ccadd110b47789",
-    "_FORJA_HARNESS/forja_baseline.py": "700263779f10773bff5ba27ea2034e18651a1e8cfd9b874be06c2c398f024925",
+    "_FORJA_HARNESS/forja_baseline.py": "c1b7b8fd0257c86b076547af97ce4384c566bca2f00df58da546fcb023c837b4",
     "_FORJA_HARNESS/forja_verificador.py": "23f3ee0808e0afd2257d388074dec2893d6808159d6a58ae242b0a269595c528",
     "_FORJA_HARNESS/forja_estilo_humano.py": "b9f749f7a5b6e1db7e8cd5d8b568a1d38d7e268e318ba96a8f5dda9bfcbfc5df",
     "_FORJA_HARNESS/forja_run.py": "a602c557ca323243b07c693c1907d0bc9d76b6671967376c6526fc49528faed3",
@@ -1469,6 +1469,13 @@
       "em": "2026-08-05T18:23:00-03:00",
       "motivo": "licoes 216-223 e indice da fronteira",
       "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-05T18:49:29-03:00",
+      "motivo": "baseline passa a varrer test_*.py e nao so test_forja_*: 5 suites que estavam fora da rede entram (96 suites, 596 testes); quarentena declarada e visivel no relatorio",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/forja_baseline.py"
+      ]
     }
   ]
 }
