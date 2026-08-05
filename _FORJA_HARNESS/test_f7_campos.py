@@ -45,6 +45,12 @@ def test_f7_campos_real():
 
     md_path = forja_acervo.caminho("fonte-n3-memorial-resp")
     if md_path is None:
+        # Em pytest, "não verifiquei" é skip e não falha: falha diz que algo
+        # piorou, e o que houve foi o teste não ter sido exercido. O motivo vai
+        # junto, para que a ausência apareça em vez de sumir.
+        if not forja_acervo.autos_disponiveis():
+            import pytest
+            pytest.skip(forja_acervo.motivo_da_ausencia_dos_autos())
         raise AssertionError(forja_acervo.motivo_da_ausencia("fonte-n3-memorial-resp"))
 
     assert md_path.exists(), f"fonte N3 não encontrada: {md_path}"

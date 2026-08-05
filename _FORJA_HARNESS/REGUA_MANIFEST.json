@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-08-05T18:49:29-03:00",
+  "atualizadoEm": "2026-08-05T19:04:16-03:00",
   "hashes": {
     "_FORJA_HARNESS/forja_regua.py": "db5c26f195d00f013849c39024b4303ba1a049bbc89dac3924b7bad70723885c",
     "_FORJA_HARNESS/forja_gate_liveness.py": "022b753465977df5c01947a4594afb2603435df0599060686dc9b6481da04733",
@@ -104,7 +104,7 @@
     "_FORJA_HARNESS/test_forja_n3_visual.py": "9f616c6188b0c0ac9439d1b81bfcdb9b35d93c95c3bad0b5aba99e8d76413cbd",
     "_FORJA_HARNESS/test_forja_svg_docx.py": "cda13133942b3219ee4254a273700b5d65cef707e986303eb2fb61bcdc4499c1",
     "_FORJA_HARNESS/test_forja_anti_cheat.py": "736f30aee65d133b8e3c105f0b5d46fdcf24112f27747e72140d80e4f14aca38",
-    "_FORJA_HARNESS/test_f7_campos.py": "453ebe3da26b6c3235169f93fbd8d4f5568faac5589ebc66d8d5c78323e277df",
+    "_FORJA_HARNESS/test_f7_campos.py": "cfc717c906410acc43122a0c8c7fcdc11ab7c676a8338841ea6b57fc78d76167",
     "_FORJA_HARNESS/test_forja_injection.py": "1629f630f3faaacf821bdd7a88beecb0f3b2f638d89ad484bf707823053c7870",
     "_FORJA_HARNESS/test_forja_regua.py": "a4689a1dbce3c29f11fd9d855372f66b467a99c79a7497da6a7fd3f076178a39",
     "_FORJA_HARNESS/test_real_telemetria_licao41.py": "aabf9be5967bf91b66d3856b2d0a05c4983a058e22ad1863ef063dd7b9fc034d",
@@ -1475,6 +1475,13 @@
       "motivo": "baseline passa a varrer test_*.py e nao so test_forja_*: 5 suites que estavam fora da rede entram (96 suites, 596 testes); quarentena declarada e visivel no relatorio",
       "arquivosMudados": [
         "_FORJA_HARNESS/forja_baseline.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T19:04:16-03:00",
+      "motivo": "nao-verificado em pytest vira skip com motivo, nao falha",
+      "arquivosMudados": [
+        "_FORJA_HARNESS/test_f7_campos.py"
       ]
     }
   ]
