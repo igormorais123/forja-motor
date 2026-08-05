@@ -108,10 +108,17 @@ def main() -> int:
         falhas += 1
 
     if laudo["entregaveisMedidos"] < ENTREGAVEIS_MIN:
-        print(f"  FALHOU: só {laudo['entregaveisMedidos']} entregáveis medidos, abaixo do piso "
-              f"de {ENTREGAVEIS_MIN} — a conformidade ficaria boa por falta de material, e o "
-              "filtro de nome é a parte frágil deste instrumento")
-        falhas += 1
+        # Pouco material tem duas causas, e confundi-las é o defeito: se os autos
+        # não estão nesta máquina a verificação não aconteceu; se estão e o
+        # número caiu, o instrumento perdeu alcance e isso é regressão.
+        if not forja_acervo.autos_disponiveis():
+            print(f"  NÃO VERIFICADO: só {laudo['entregaveisMedidos']} entregáveis medidos — "
+                  + forja_acervo.motivo_da_ausencia_dos_autos())
+        else:
+            print(f"  FALHOU: só {laudo['entregaveisMedidos']} entregáveis medidos, abaixo do "
+                  f"piso de {ENTREGAVEIS_MIN} — a conformidade ficaria boa por falta de "
+                  "material, e o filtro de nome é a parte frágil deste instrumento")
+            falhas += 1
 
     for chave, teto, rotulo in (
         ("justificacaoAbaixoDe50", JUSTIFICACAO_ABAIXO_50_MAX, "justificação abaixo de 50%"),

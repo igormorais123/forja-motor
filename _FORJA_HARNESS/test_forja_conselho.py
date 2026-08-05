@@ -174,9 +174,17 @@ def main() -> int:
 
     # NÃO PODE TRAVAR — os pareceres reais do acervo, já aprovados.
     reais = 0
+    em_curso = 0
     for pasta in sorted(Path("state").glob("case-*")):
         helena, cicero = pasta / "F4_PARECER_HELENA.md", pasta / "F4_PARECER_CICERO.md"
         if not helena.is_file() or not cicero.is_file():
+            continue
+        # Só ancora em caso que a esteira registrou. Um caso EM CURSO tem o
+        # parecer no disco antes de estar pronto, e tratá-lo como aprovado faz o
+        # teste dizer "TRAVOU O APROVADO" quando o gate está certo e o parecer é
+        # que está incompleto — acusando o instrumento em vez do trabalho.
+        if not (pasta / "FORJA_STATE.json").is_file():
+            em_curso += 1
             continue
         reais += 1
         casos += 1
@@ -195,7 +203,8 @@ def main() -> int:
         print(f"REGRESSÃO: {falhas} de {casos} verificações do conselho falharam")
         return 1
     print(f"ok: {casos} verificações — o gate do conselho reprova as seis formas de burlá-lo "
-          f"e não trava nenhum dos {reais} pareceres reais aprovados")
+          f"e não trava nenhum dos {reais} pareceres reais aprovados"
+          + (f"; {em_curso} caso(s) em curso ficaram de fora da âncora" if em_curso else ""))
     return 0
 
 

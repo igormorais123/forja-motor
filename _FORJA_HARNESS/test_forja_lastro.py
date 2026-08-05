@@ -581,11 +581,20 @@ def _rodar_v2(tmp: Path) -> tuple[int, int]:
     # escreve caminho de pasta de caso. Acervo ausente NÃO vira aprovação — o
     # caso é reportado como não verificado.
     real = forja_acervo.caminho("plano-economico-real")
-    caso("T1 fixture real do acervo existe", real is not None and real.is_file(),
-         str(real) if real else forja_acervo.motivo_da_ausencia("plano-economico-real"))
+    # A fixture vive numa pasta de caso, e pastas de caso não vão a repositório.
+    # Onde os autos não estão, o certo é dizer que não verifiquei; onde estão e a
+    # fixture sumiu, é regressão de verdade.
+    if real is None and not forja_acervo.autos_disponiveis():
+        print("  NÃO VERIFICADO: T1 sobre produto real — "
+              + forja_acervo.motivo_da_ausencia_dos_autos())
+    else:
+        caso("T1 fixture real do acervo existe", real is not None and real.is_file(),
+             str(real) if real else forja_acervo.motivo_da_ausencia("plano-economico-real"))
     texto_real = real.read_text(encoding="utf-8", errors="replace") if (real and real.is_file()) else ""
-    ach = validar_gates_economicos(texto_real, ledger={})
-    caso("T1 produto real sem fonte prevalente bloqueia L9", any(a["gate"] == "L9-fonte-prevalente" for a in ach), str(ach[:2]))
+    if texto_real:
+        ach = validar_gates_economicos(texto_real, ledger={})
+        caso("T1 produto real sem fonte prevalente bloqueia L9",
+             any(a["gate"] == "L9-fonte-prevalente" for a in ach), str(ach[:2]))
 
     texto_ok = "Plano econômico CASO-04. Data-base: jul/2026. Valor da faixa: R$ 100.000,00."
     ledger_ok, fonte_ok = _fonte_ledger(tmp, anchors=[_ancora()])

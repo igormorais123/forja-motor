@@ -38,6 +38,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import forja_acervo
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 from docx import Document  # noqa: E402
@@ -117,6 +119,13 @@ def main() -> int:
     falhas = 0
 
     if not BASE.is_file():
+        # Sem a peça aprovada não há o que provar. Se os autos não estão nesta
+        # máquina, a resposta honesta é "não verifiquei" — dizer REGRESSÃO
+        # sugeriria que o gate piorou, quando na verdade ele não foi exercido.
+        if not forja_acervo.autos_disponiveis():
+            print("  NÃO VERIFICADO: " + forja_acervo.motivo_da_ausencia_dos_autos())
+            print("ok: canário não exercido por ausência dos autos — nada foi provado aqui")
+            return 0
         print(f"  FALHOU: a peça-base sumiu do acervo — {BASE.name}")
         print("REGRESSÃO: sem peça aprovada não há como provar que o gate reprova defeito")
         return 1

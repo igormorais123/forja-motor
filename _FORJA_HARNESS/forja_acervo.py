@@ -130,10 +130,46 @@ def valor(chave: str, padrao=None):
     return (dados.get("valores") or {}).get(chave, padrao)
 
 
+def autos_disponiveis() -> bool:
+    """As pastas de caso estão nesta máquina?
+
+    Distinto de `disponivel()`, que fala do acervo de AUDITORIA. Os autos —
+    laudos, anexos, os DOCX entregues — não estão em repositório nenhum por
+    decisão: são dezenas de gigabytes cuja origem é o e-mail.
+
+    A distinção existe porque vários testes medem material real e se recusam,
+    corretamente, a ficar verdes com pouca evidência. Sem esta função eles
+    dizem "REGRESSÃO" onde o certo é "não verifiquei": o primeiro esconde que
+    a verificação não aconteceu, e o segundo é a verdade.
+    """
+    encontrados = 0
+    for p in FABRICA.iterdir():
+        if not p.is_dir() or p.name.startswith((".", "_")):
+            continue
+        if p.name in {"gestao_escritorio", "git-tools", "00_IA_NAVIGACAO", "docs"}:
+            continue
+        try:
+            if any(f.suffix.lower() in {".pdf", ".docx"} for f in p.rglob("*")):
+                encontrados += 1
+        except OSError:
+            continue
+        if encontrados >= 3:
+            return True
+    return False
+
+
+def motivo_da_ausencia_dos_autos() -> str:
+    return ("os autos não estão nesta máquina — eles não vão a repositório "
+            "nenhum, e a origem deles é o e-mail. Esta verificação não foi "
+            "feita, e não passou")
+
+
 def motivo_da_ausencia(chave: str) -> str:
     """Frase pronta para quem precisa relatar que não pôde verificar."""
     if not disponivel():
         return ("o acervo de auditoria não está montado nesta máquina; "
                 "esta verificação não foi feita, e não passou")
+    if not autos_disponiveis():
+        return (f"o insumo {chave!r} vive nas pastas de caso, e " + motivo_da_ausencia_dos_autos())
     return (f"o acervo está montado mas não oferece {chave!r}; "
             "esta verificação não foi feita, e não passou")

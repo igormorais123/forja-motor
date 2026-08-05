@@ -40,6 +40,8 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import forja_acervo
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 from forja_assinatura_visual import avaliar  # noqa: E402

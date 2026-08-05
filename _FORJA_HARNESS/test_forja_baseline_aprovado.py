@@ -26,6 +26,7 @@ import sys
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
+import forja_acervo  # noqa: E402
 from forja_baseline_aprovado import ANCORAS, MANIFESTO, conferir  # noqa: E402
 
 
@@ -37,13 +38,23 @@ def main() -> int:
 
     laudo = conferir()
 
+    # Duas âncoras são peças que vivem nas pastas de caso, e essas pastas não vão
+    # a repositório nenhum. Numa árvore reconstituída a partir dos repositórios
+    # elas faltam sem que nada tenha se perdido — o que muda é que a verificação
+    # não aconteceu, e é isso que precisa ser dito.
+    autos = forja_acervo.autos_disponiveis()
+
     falhas = 0
     if laudo.get("ausentes"):
-        print(f"  FALHOU: âncora(s) ausente(s) do acervo: {', '.join(laudo['ausentes'])} — "
-              "peça aprovada que some leva junto a prova de que o gate a aprovava")
-        falhas += 1
+        if autos:
+            print(f"  FALHOU: âncora(s) ausente(s) do acervo: {', '.join(laudo['ausentes'])} — "
+                  "peça aprovada que some leva junto a prova de que o gate a aprovava")
+            falhas += 1
+        else:
+            print(f"  NÃO VERIFICADO: {', '.join(laudo['ausentes'])} — "
+                  + forja_acervo.motivo_da_ausencia_dos_autos())
 
-    if laudo["ancorasConferidas"] < len(ANCORAS):
+    if laudo["ancorasConferidas"] < len(ANCORAS) and autos:
         print(f"  FALHOU: só {laudo['ancorasConferidas']} de {len(ANCORAS)} âncoras foram "
               "conferidas — o baseline mede menos do que declara guardar")
         falhas += 1
@@ -64,8 +75,9 @@ def main() -> int:
               "`python forja_baseline_aprovado.py --gravar \"motivo\"`")
         return 1
 
-    print(f"ok: {laudo['ancorasConferidas']} âncoras do padrão aprovado intactas e com o mesmo "
-          "veredito — nenhum gate derivou contra o que a casa aprovou")
+    print(f"ok: {laudo['ancorasConferidas']} de {len(ANCORAS)} âncoras do padrão aprovado "
+          "intactas e com o mesmo veredito — nenhum gate derivou contra o que a casa aprovou"
+          + ("" if autos else "; as demais não puderam ser conferidas sem os autos"))
     return 0
 
 
