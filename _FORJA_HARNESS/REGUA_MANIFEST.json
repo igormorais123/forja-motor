@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-08-05T17:56:35-03:00",
+  "atualizadoEm": "2026-08-05T18:23:00-03:00",
   "hashes": {
     "_FORJA_HARNESS/forja_regua.py": "db5c26f195d00f013849c39024b4303ba1a049bbc89dac3924b7bad70723885c",
     "_FORJA_HARNESS/forja_gate_liveness.py": "022b753465977df5c01947a4594afb2603435df0599060686dc9b6481da04733",
@@ -1459,6 +1459,16 @@
         "_FORJA_HARNESS/test_forja_autoresearch.py",
         "_FORJA_HARNESS/test_forja_varredura_tipografica.py"
       ]
+    },
+    {
+      "em": "2026-08-05T18:18:41-03:00",
+      "motivo": "mapa da fronteira no disco e correcao da classificacao de arquivo oculto",
+      "arquivosMudados": []
+    },
+    {
+      "em": "2026-08-05T18:23:00-03:00",
+      "motivo": "licoes 216-223 e indice da fronteira",
+      "arquivosMudados": []
     }
   ]
 }

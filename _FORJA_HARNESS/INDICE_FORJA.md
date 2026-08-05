@@ -204,3 +204,28 @@ Igor com Helena e Cícero, não reparo de engenharia.
 `main` local está 26 commits à frente do remoto. Consequência prática para quem trabalha
 aqui: branch de trabalho nesta pasta pode receber commit de sincronização, e o GitHub não é
 cópia de segurança atual do acervo.
+
+## FRONTEIRA MOTOR / ACERVO (05/08/2026)
+
+A FORJA vive em dois repositórios privados e uma zona que não é versionada. Quem
+decide de que lado está cada arquivo é **uma função**, e não uma lista: o
+sincronizador e o gate consomem a mesma política.
+
+| recurso | o que faz |
+|---|---|
+| `forja_fronteira.py` | `classificar(caminho)` devolve MOTOR/ACERVO/LOCAL com o motivo; `varrer()` reprova nome de cliente, CNJ, CPF, CNPJ e OAB no motor; `--mapa` escreve `FRONTEIRA_DO_DISCO.md` na raiz; `--classificar` responde por um caminho |
+| `test_forja_fronteira.py` | 46 casos: classificação, detecção real, vocabulário que NÃO pode acusar, valor sintético, máscara da casa, degradação sem o acervo |
+| `forja_acervo.py` | a **única porta** pela qual o motor pede algo ao acervo: `caminho()`, `caso()`, `valor()`, `disponivel()`, `autos_disponiveis()` |
+| `forja_anonimizar.py` | troca nome de cliente por pseudônimo estável e mascara CNJ/OAB preservando ano, segmento e tribunal |
+| `git-tools/sync_forja_repos.py` | publica os dois repositórios; **roda a fronteira antes e não publica se ela reprovar** |
+| `git-tools/montar_forja.py` | clona os dois, sobrepõe e **roda o baseline** — montagem que não termina em prova é promessa |
+
+Registros que vivem no acervo e fazem o motor funcionar sem carregar cliente:
+`ACERVO_CASOS.json` (rótulo → caseId), `ACERVO_FIXTURES.json` (chave → caminho),
+`ACERVO_VALORES.json` (chave → valor esperado), `BASELINE_ANCORAS.json` (peças
+aprovadas) e a família `FRONTEIRA_*` (nomes protegidos, curadoria, pseudônimos).
+
+Estado medido em 05/08/2026: motor com 531 arquivos e **zero sinal de cliente**
+conferido em modo nominal contra o clone publicado; árvore montada a partir dos
+dois repositórios roda **91/91 suítes**. As pastas de caso continuam na raiz por
+decisão medida — ver Lição 223.

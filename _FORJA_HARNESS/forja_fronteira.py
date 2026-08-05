@@ -137,6 +137,16 @@ _LOCAL_MARCAS = [
     # por construção, e são refeitos a cada rodada do gerador.
     ("ARCHIFY_ARQUITETURA.md", "mapa de arquitetura gerado por varredura"),
     ("GRAPHIFY_GRAFO.md", "grafo gerado por varredura"),
+    (".claude/scheduled_tasks.lock", "trava de execução do agendador"),
+    (".claude/settings.local.json", "preferência local de máquina"),
+    ("scheduled_tasks.lock", "trava de execução"),
+    (".autoresearch/", "bancada de experimento do ciclo AR, regenerável"),
+    (".planning/", "planejamento de sessão de agente"),
+    ("_ocr_", "OCR intermediário de autos, refazível a partir do PDF"),
+    ("_CONFERENCIA_", "conferência pontual, datada"),
+    ("_CORRECOES_", "correções propostas numa data"),
+    ("_LABORATÓRIO_", "laboratório experimental, declaradamente não é prova"),
+    ("FRONTEIRA_DO_DISCO.md", "este mapa, reescrito a cada varredura"),
 ]
 
 # Binário que o motor legitimamente carrega. O gate não lê binário, então cada
@@ -250,9 +260,12 @@ ARQUIVOS_RAIZ_MOTOR = {
     "PROMPT-FABRICA-MELHORIA-PETICAO.md", "FAILURE_TAXONOMY.md",
     "QUALITY_BOARD.md", "ARCHIFY_ARQUITETURA.md", "GRAPHIFY_GRAFO.md",
     "ATUALIZAR_MAPA_IA.ps1", "INICIAR_MAPA_IA_VIVO.ps1",
-    "GITHUB_BACKUP_README.md", ".gitignore", ".gitattributes",
+    "GITHUB_BACKUP_README.md",
     ".graphifyignore", "README.md",
 }
+# `.gitignore` e `.gitattributes` pertencem ao repositório em que estão, e não ao
+# motor: o da pasta de trabalho lista caminhos de pasta de caso, e cada
+# repositório publicado tem o seu próprio, escrito para o que ele guarda.
 ARQUIVOS_RAIZ_ACERVO = {
     "ENTREGAS_FABIO_OSORIO.md", "CONTROLE_AUTOS_COMPLETOS_2026-07-19.md",
     "RELATORIO_SISTEMA_GESTAO_ESCRITORIO.md",
@@ -262,7 +275,18 @@ ARQUIVOS_RAIZ_ACERVO = {
 
 
 def _normalizar_sep(caminho: str) -> str:
-    return caminho.replace("\\", "/").lstrip("./")
+    """Normaliza separador e tira o prefixo `./`, sem tocar em arquivo oculto.
+
+    `lstrip("./")` parece resolver e não resolve: ele remove QUALQUER ponto ou
+    barra do começo, então `.gitignore` virava `gitignore` e `.claude/` virava
+    `claude/`. O efeito era silencioso e caro — as pastas de instrução de agente
+    `.claude`, `.agents` e `.codex` caíam em LOCAL e simplesmente não eram
+    publicadas, sem nada reprovar.
+    """
+    rel = caminho.replace("\\", "/")
+    while rel.startswith("./"):
+        rel = rel[2:]
+    return rel.lstrip("/")
 
 
 def classificar(caminho_rel: str) -> tuple[str, str]:
@@ -313,7 +337,12 @@ def classificar(caminho_rel: str) -> tuple[str, str]:
         return MOTOR, "pasta do sistema"
     if topo in _RAIZ_ACERVO:
         return ACERVO, "pasta de acervo de auditoria"
-    return LOCAL, "pasta de caso: os autos ficam no disco, e a origem deles é o e-mail"
+    # Catch-all deliberadamente conservador: o que não foi declarado fica LOCAL.
+    # O motivo precisa dizer isso, e não inventar explicação — a primeira versão
+    # chamava `docs/` de "pasta de caso", e um mapa gerado que erra o motivo
+    # mente com aparência de autoridade.
+    return LOCAL, ("não declarado em nenhum dos dois lados; na dúvida fica nesta "
+                   "máquina — as pastas de caso caem aqui por serem a maioria")
 
 
 # --------------------------------------------------------------------------
@@ -658,9 +687,64 @@ def gerar_registro(raiz: Path) -> dict:
     }
 
 
+MAPA_DO_DISCO = "FRONTEIRA_DO_DISCO.md"
+
+
+def escrever_mapa(raiz: Path) -> str:
+    """Escreve, na raiz da pasta de trabalho, de que lado está cada coisa.
+
+    Por que um mapa gerado e não uma reorganização de pastas. A ideia natural
+    era mover as pastas de caso para dentro de `_ACERVO_PROCESSUAL/`, deixando a
+    raiz só com o sistema. Medido em 05/08/2026: **57 das 73 pastas de caso são
+    citadas por caminho absoluto dentro da cadeia de auditoria** — 934 arquivos,
+    1.299 ocorrências, entre elas o `caseFolder` que a esteira resolve em
+    execução e que o gate de entrega reprova quando não existe. Mover quebraria a
+    proveniência de tudo isso; mover só as 16 soltas deixaria metade das pastas
+    de cada lado, que é pior do que qualquer um dos extremos.
+
+    Então a fronteira aparece no disco como informação, não como geografia: este
+    arquivo diz de que lado está cada entrada da raiz, e é reescrito a cada
+    varredura. Para um caminho específico, `--classificar` responde na hora.
+    """
+    linhas = [
+        "# Fronteira no disco — o que é motor, o que é acervo, o que fica aqui",
+        "",
+        "> Gerado por `forja_fronteira.py --mapa`. Não edite à mão: é reescrito a",
+        "> cada varredura. Para um caminho específico:",
+        "> `python _FORJA_HARNESS/forja_fronteira.py --classificar CAMINHO`",
+        "",
+        "As pastas de caso continuam na raiz de propósito. A cadeia de auditoria",
+        "cita 57 delas por caminho absoluto, e a esteira resolve o `caseFolder`",
+        "em execução — movê-las quebraria a proveniência de 934 artefatos.",
+        "",
+        "| entrada | lado | por quê |",
+        "|---|---|---|",
+    ]
+    for p in sorted(raiz.iterdir(), key=lambda x: (x.is_file(), x.name.lower())):
+        rel = p.name + ("/sonda" if p.is_dir() else "")
+        destino, motivo = classificar(rel)
+        nome = p.name + ("/" if p.is_dir() else "")
+        if len(nome) > 62:
+            nome = nome[:59] + "..."
+        linhas.append(f"| `{nome}` | {destino} | {motivo} |")
+    linhas += [
+        "",
+        "**MOTOR** vai para `forja-motor`, que será compartilhado e depois aberto.",
+        "**ACERVO** vai para `forja-auditoria`, privado, com nome de cliente.",
+        "**LOCAL** não vai a repositório nenhum: os autos, o cofre pós-protocolo,",
+        "caches e o que excede o limite de tamanho do GitHub.",
+        "",
+    ]
+    texto = "\n".join(linhas)
+    (raiz / MAPA_DO_DISCO).write_text(texto, encoding="utf-8")
+    return texto
+
+
 def _cli(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--raiz", type=Path, default=RAIZ_PADRAO)
+    ap.add_argument("--mapa", action="store_true",
+                    help="escreve FRONTEIRA_DO_DISCO.md na raiz e sai")
     ap.add_argument("--gerar-registro", action="store_true",
                     help="deriva o registro de nomes e grava no acervo")
     ap.add_argument("--classificar", metavar="CAMINHO",
@@ -668,6 +752,11 @@ def _cli(argv=None) -> int:
     ap.add_argument("--json", type=Path, help="grava o laudo completo")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args(argv)
+
+    if args.mapa:
+        escrever_mapa(args.raiz)
+        print(f"{MAPA_DO_DISCO} escrito na raiz da pasta de trabalho")
+        return 0
 
     if args.gerar_registro:
         registro = gerar_registro(args.raiz)
@@ -686,6 +775,12 @@ def _cli(argv=None) -> int:
         return 0
 
     laudo = varrer(args.raiz)
+    # Reescrito a cada varredura: um mapa que envelhece é pior do que mapa
+    # nenhum, porque parece atual.
+    try:
+        escrever_mapa(args.raiz)
+    except OSError:
+        pass
     if args.json:
         args.json.parent.mkdir(parents=True, exist_ok=True)
         args.json.write_text(json.dumps(laudo, ensure_ascii=False, indent=2),

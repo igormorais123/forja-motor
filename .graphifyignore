@@ -1,0 +1,53 @@
+
+
+# architecture-map-protocol:start
+# Saídas e dependências
+00_MAPA_ARQUITETURA_IA/
+architecture-map/
+graphify-out/
+.git/
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Conteúdo jurídico, mensagens, bancos, credenciais e binários: nunca entram
+# em extração semântica crua. O mapa oficial usa somente metadados estruturais.
+*.md
+*.txt
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+*.eml
+*.msg
+*.mbox
+*.pst
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.avi
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+state/
+telemetria/
+backups/
+cache/
+# architecture-map-protocol:end

@@ -69,6 +69,16 @@ CLASSIFICACAO = [
      "execução do ciclo sobre peça real"),
     ("_FORJA_HARNESS/RELATORIO_X_2026-08-05.md", fr.ACERVO, "registro datado"),
     ("_FORJA_HARNESS/INDICE_FORJA.md", fr.MOTOR, "doutrina, não datada"),
+    # Arquivo oculto: `lstrip("./")` removia qualquer ponto inicial e mandava
+    # `.gitignore` e as pastas de instrução de agente para LOCAL. O efeito era
+    # silencioso — elas simplesmente não eram publicadas, sem nada reprovar.
+    (".claude/settings.json", fr.MOTOR, "arquivo oculto: instrução de agente"),
+    (".codex/AGENTS.md", fr.MOTOR, "arquivo oculto: instrução de agente"),
+    # `.gitignore` pertence ao repositório em que está, e não ao motor: o da
+    # pasta de trabalho lista caminhos de pasta de caso, e cada repositório
+    # publicado tem o seu, escrito para o que ele guarda.
+    (".gitignore", fr.LOCAL, "ignore é do repositório, não do sistema"),
+    ("./_FORJA_HARNESS/forja_run.py", fr.MOTOR, "caminho com prefixo ./"),
 ]
 for caminho, esperado, porque in CLASSIFICACAO:
     obtido, motivo = fr.classificar(caminho)
