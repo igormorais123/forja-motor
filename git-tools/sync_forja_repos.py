@@ -85,15 +85,21 @@ def _iguais(a: Path, b: Path) -> bool:
 def _pastas_de_topo() -> list[Path]:
     """Só as pastas de topo que podem conter algo versionável.
 
-    A pasta de trabalho tem cerca de cem pastas de caso somando 16 GB. Todas
-    classificam como LOCAL, e percorrê-las custa minutos por execução sem mudar
-    uma linha do resultado.
+    A sonda é um caminho de markdown, e não um nome qualquer, porque dentro de
+    pasta de caso é a extensão que decide: o `.md` de trabalho vai ao acervo e o
+    binário dos autos fica no disco. Sondar com `"/sonda"` seco devolvia LOCAL
+    para toda pasta de caso e as excluía da varredura inteira — a decisão por
+    arquivo em `levantar()` nunca chegava a ser tomada.
+
+    Percorrer a árvore dos casos custa: são cerca de cem pastas somando 16 GB.
+    O custo é de caminhada em metadado, não de leitura — nenhum PDF é aberto —,
+    e o gate de fronteira já paga essa mesma caminhada a cada execução.
     """
     alvos = []
     for p in sorted(TRABALHO.iterdir()):
         if not p.is_dir() or p.name in NAO_PERCORRER:
             continue
-        destino, _ = fronteira.classificar(p.name + "/sonda")
+        destino, _ = fronteira.classificar(p.name + "/sonda.md")
         if destino != fronteira.LOCAL:
             alvos.append(p)
     return alvos

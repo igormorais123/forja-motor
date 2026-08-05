@@ -337,6 +337,18 @@ def classificar(caminho_rel: str) -> tuple[str, str]:
         return MOTOR, "pasta do sistema"
     if topo in _RAIZ_ACERVO:
         return ACERVO, "pasta de acervo de auditoria"
+    # Dentro de pasta de caso, o texto de trabalho vai ao acervo e o resto fica.
+    # A separação é por extensão porque é a única que distingue os dois sem
+    # depender de alguém declarar caso a caso: o markdown é o que a esteira e o
+    # advogado escrevem — análise, cronologia, minuta, relatório de melhorias —
+    # e some junto com a máquina se não for versionado. PDF de autos, DOCX
+    # protocolado, áudio e imagem digitalizada são o material recebido: pesam
+    # os 16 GB que quebraram o repositório único e são recuperáveis do e-mail e
+    # do próprio processo. O acervo é privado justamente para poder carregar o
+    # nome do cliente que estes arquivos trazem.
+    if rel.lower().endswith(".md"):
+        return ACERVO, ("documento de trabalho do processo: o markdown vai ao "
+                        "acervo privado; binário dos autos fica no disco")
     # Catch-all deliberadamente conservador: o que não foi declarado fica LOCAL.
     # O motivo precisa dizer isso, e não inventar explicação — a primeira versão
     # chamava `docs/` de "pasta de caso", e um mapa gerado que erra o motivo

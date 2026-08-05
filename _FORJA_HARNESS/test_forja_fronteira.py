@@ -52,7 +52,20 @@ CLASSIFICACAO = [
     ("gestao_escritorio/scripts/render_dashboard.py", fr.MOTOR, "código do painel"),
     ("gestao_escritorio/scripts/registrar_entrega_x_20260715.py", fr.ACERVO,
      "script de uma vez só amarrado a um caso"),
-    ("Pasta Do Cliente/autos.pdf", fr.LOCAL, "pasta de caso"),
+    # Dentro de pasta de caso a extensão é que decide, e os dois lados precisam
+    # estar presos: o texto de trabalho some com a máquina se não for versionado;
+    # o binário dos autos é o que pesava os 16 GB e volta do e-mail e do processo.
+    ("Pasta Do Cliente/autos.pdf", fr.LOCAL, "binário dos autos fica no disco"),
+    ("Pasta Do Cliente/ANALISE_DO_CASO.md", fr.ACERVO,
+     "markdown de trabalho do processo vai ao acervo privado"),
+    ("Pasta Do Cliente/subpasta/cronologia.MD", fr.ACERVO,
+     "a extensão vale em qualquer profundidade e em qualquer caixa"),
+    ("Pasta Do Cliente/peça final.docx", fr.LOCAL, "DOCX de caso não é markdown"),
+    # As marcas LOCAL correm antes e continuam mandando: mapa gerado por pasta,
+    # laboratório declaradamente experimental e OCR refazível são markdown e
+    # mesmo assim não sobem.
+    ("Pasta Do Cliente/MAPA_IA.md", fr.LOCAL, "mapa gerado, reescrito a cada varredura"),
+    ("_LABORATÓRIO_X — Y (EXPERIMENTAL)/nota.md", fr.LOCAL, "laboratório não é prova"),
     ("_FORJA_HARNESS/private/post_protocol/x.json", fr.LOCAL, "cofre pós-protocolo"),
     ("qualquer/PEÇA PROTOCOLADA — x.docx", fr.LOCAL, "cofre pós-protocolo"),
     ("_FORJA_HARNESS/__pycache__/x.pyc", fr.LOCAL, "cache"),
