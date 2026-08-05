@@ -37,13 +37,13 @@
 > se chama `build()`, e — mais importante — integrar a composição dentro do
 > render é a arquitetura **analisada e rejeitada** na Onda 2: construiria a peça
 > duas vezes, uma pobre e uma rica, deixando dois DOCX parecidos na mesma pasta.
-> É o modo de falha do caso Patrícia (Lição 48). A arquitetura correta é a
+> É o modo de falha do caso CASO-19 (Lição 48). A arquitetura correta é a
 > entrada única `forja_visual_build.build()`, com o render rebaixado a prévia.
 >
 > **2. A data de 06/08/2026 não se sustenta.** A revisão cruzada encontrou um
 > defeito material no próprio gate: a contagem de caixas casava células do
 > quadro zebrado, mascarando a ausência total de destaque (521 caixas fantasmas
-> no Aditamento CORSAN). Ligar o bloqueio com esse defeito seria pior que não
+> no Aditamento CASO-07). Ligar o bloqueio com esse defeito seria pior que não
 > ligar — deixaria passar peça pobre com muitas tabelas e reprovaria peça boa
 > sem elas. Corrigido em 03/08, mas o instrumento acumulou três defeitos
 > materiais em três dias e não deve barrar peça com prazo processual antes de
@@ -89,7 +89,7 @@
 
 **Ponto crítico trazido por Efesto**: Integração técnica (acoplamento em `forja_render_docx`, chamada viva no pipeline) é separada de construir Onda 2 (algoritmos de gerador). Ligar gate sem integração em produção = travamento garantido. Essa linha não cede.
 
-**Sequência validada por Cícero**: Capabilidade → enforcement, não enforcement → capabilidade. Figura em peça protocolada é prova; figura fabricada sem ancoragem semântica (Brief F7.5 ausente) cria risco legal maior que figura ausente (Lição 90, dados reais Cafelana V7). Conferência visual humana em amostra real é auditoria obrigatória de responsabilidade profissional, não atalho.
+**Sequência validada por Cícero**: Capabilidade → enforcement, não enforcement → capabilidade. Figura em peça protocolada é prova; figura fabricada sem ancoragem semântica (Brief F7.5 ausente) cria risco legal maior que figura ausente (Lição 90, dados reais CASO-04 V7). Conferência visual humana em amostra real é auditoria obrigatória de responsabilidade profissional, não atalho.
 
 **Helena convergiu** de "ligar AGORA sem integração" para "APÓS integração + conferência Igor", cedendo no timing técnico realista. Mantém inviolável: visual é padrão de saída, não opção; consistência Medina Osório é direito de cliente e ordem do dono do escritório.
 
@@ -118,7 +118,7 @@
 | Tese | Refutação | Quem trouxe | Refutador |
 |------|-----------|-------------|-----------|
 | Ligar gate hoje (30/07) | Onda 2 não integrada; travaria 100% das entregas. Evidência técnica inconteste. | Helena R1 | Efesto+diagnóstico |
-| Brief F7.5 é refinamento futuro | Risco jurídico (Lição 90: figura fabricada > figura ausente). Cicero com dados reais Cafelana V7. | Efesto R1 | Cicero+exemplos |
+| Brief F7.5 é refinamento futuro | Risco jurídico (Lição 90: figura fabricada > figura ausente). Cicero com dados reais CASO-04 V7. | Efesto R1 | Cicero+exemplos |
 | Observação silenciosa indefinida é segura | Fábrica fica em limbo. "Vamos ver se funciona por dois meses" é enganação. | Cicero R1 original | Efesto+Diabob R2 |
 | Fechar rota simples antes de Onda 2 | Travamento. Sem alternativa ativa, paralisa. | Efesto R1 | Todos convergem |
 | Visual é opção do agente | Visual é direito de saída, ordem inviolável do dono. Padrão Medina Osório é DNA da fábrica. | Diabob R1 | Helena+Cicero |

@@ -1,0 +1,120 @@
+FONTE OFICIAL — VERBATIM ARQUIVADO
+Documento: Regimento Interno do Superior Tribunal de Justiça
+Dispositivos: arts. 11, XIII; 21-E, V e §§ 2º, 2º-A e 3º; 259; 266, II e § 4º; 266-C; 267 (caput); 12, parágrafo único, IV
+Versão: consolidada até a ER 47/2024, COM as alterações da Emenda Regimental n. 53, de 30/06/2026 (DJe 01/07/2026) transcritas do próprio DJe
+URL oficial: https://www.stj.jus.br/sites/portalp/Leis-e-normas/Regimento-Interno
+Origem do verbatim: REGIMENTO_INTERNO_STJ.md do acervo (consolidação ER 47/2024) + cache/fontes_oficiais/STJ_ER_53_2026_DJe_2026-07-01.pdf (texto da ER 53/2026)
+Conferido em: 2026-08-05
+
+Nota: a ER 53/2026 DEU NOVA REDAÇÃO ao § 2º do art. 21-E e acrescentou o
+§ 2º-A; acrescentou o inciso IV ao parágrafo único do art. 12. Os arts. 259,
+266, 266-C e 267 não foram alterados pela ER 53/2026 (conferido por busca no
+texto integral da emenda). Verificar sempre emendas posteriores a 30/06/2026.
+
+=== Competência da Corte Especial (consolidação ER 47/2024) ===
+
+Art. 11. Compete à Corte Especial processar e julgar: [rol; transcrito o inciso pertinente]
+
+XIII - os embargos de divergência, se a divergência for entre Turmas de
+Seções diversas, entre Seções, entre Turma e Seção que não integre ou entre
+Turma e Seção com a própria Corte Especial;
+(Redação dada pela Emenda Regimental n. 24, de 2016)
+
+=== Competência das Seções ===
+
+Art. 12. Compete às Seções processar e julgar: [caput conforme consolidação ER 47/2024; rol]
+
+[Alterações da ER 53/2026, DJe 01/07/2026:]
+"Art. 12 .............................................
+Parágrafo único. .............................
+IV – julgar, nos termos e limites da regulamentação da Presidência, agravos
+internos e regimentais interpostos contra decisões do Presidente proferidas com
+fundamento no art. 21-E deste Regimento." (NR)
+
+[Da consolidação ER 47/2024, parágrafo único do art. 12:]
+I - julgar embargos de divergência, quando as Turmas divergirem entre si ou
+de decisão da Seção que integram;
+(Redação dada pela Emenda Regimental n. 24, de 2016)
+
+=== Atribuições do Presidente antes da distribuição ===
+
+Art. 21-E. São atribuições do Presidente antes da distribuição:
+(Incluído pela Emenda Regimental n. 24, de 2016)
+
+V - não conhecer de recurso inadmissível, prejudicado ou que não tiver
+impugnado especificamente todos os fundamentos da decisão recorrida;
+(Incluído pela Emenda Regimental n. 24, de 2016)
+
+§ 1º Opostos embargos de declaração contra decisão do Presidente, caberá
+a ele a sua análise.
+(Incluído pela Emenda Regimental n. 24, de 2016)
+
+[Redação dada pela ER 53/2026, DJe 01/07/2026:]
+§ 2º Interposto agravo interno ou regimental contra decisão proferida no exercício
+das competências previstas neste artigo, e não havendo retratação, poderá o
+Presidente, nos termos e limites da regulamentação da Presidência, relatar o
+recurso em sessão de julgamento virtual da respectiva Seção.
+§ 2º-A Na hipótese do § 2º, havendo oposição de membro do colegiado ao voto do
+Presidente proferido em sessão virtual, o voto será desconsiderado e retirado do
+sistema, o Presidente deixará de integrar o quórum de julgamento e perderá a
+relatoria do recurso, que será distribuído a integrante da respectiva Seção para
+julgamento pela Turma, sem prejuízo de decisão monocrática, na forma regimental.
+§ 3º O Presidente do Tribunal poderá delegar ao Vice-Presidente e aos Presidentes
+das Seções, dentro de suas respectivas áreas de atuação, a análise das matérias
+previstas neste artigo, observado o que dispõem os §§ 1º, 2º e 2º-A.
+
+=== Do Agravo Interno (consolidação ER 47/2024; não alterado pela ER 53/2026) ===
+
+Art. 259. Contra decisão proferida por Ministro caberá agravo interno
+para que o respectivo órgão colegiado sobre ela se pronuncie, confirmando-a ou
+reformando-a.
+(Incluído pela Emenda Regimental n. 24, de 2016)
+§ 1º O órgão do Tribunal competente para conhecer do agravo é o que seria
+competente para o julgamento do pedido ou recurso.
+§ 2º Na petição de agravo interno, o recorrente impugnará especificadamente
+os fundamentos da decisão agravada.
+§ 3º O agravo será dirigido ao relator, que intimará o agravado para
+manifestar-se sobre o recurso no prazo de quinze dias, ao final do qual, não
+havendo retratação, o relator levá-lo-á a julgamento pelo órgão colegiado, com
+inclusão em pauta.
+§ 4º Quando o agravo interno for declarado manifestamente inadmissível ou
+improcedente em votação unânime, o órgão colegiado, em decisão fundamentada,
+condenará o agravante a pagar ao agravado multa fixada entre 1% e 5% do valor
+atualizado da causa.
+§ 5º A interposição de qualquer outro recurso está condicionada ao depósito
+prévio do valor da multa prevista no § 4º, à exceção da Fazenda Pública e do
+beneficiário de gratuidade da justiça, que farão o pagamento ao final.
+§ 6º O agravo interno será submetido ao prolator da decisão, que poderá
+reconsiderá-la ou submeter o agravo ao julgamento da Corte Especial, da Seção
+ou da Turma, conforme o caso, computando-se também o seu voto.
+§ 7º Se a decisão agravada for do Presidente da Corte Especial ou da Seção,
+o julgamento será presidido por seu substituto, que votará no caso de empate.
+
+=== Dos Embargos de Divergência (consolidação ER 47/2024; não alterados pela ER 53/2026) ===
+
+Art. 266. Cabem embargos de divergência contra acórdão de Órgão
+Fracionário que, em recurso especial, divergir do julgamento atual de qualquer
+outro Órgão Jurisdicional deste Tribunal, sendo:
+(Redação dada pela Emenda Regimental n. 22, de 2016)
+I - os acórdãos, embargado e paradigma, de mérito;
+II - um acórdão de mérito e outro que não tenha conhecido do recurso,
+embora tenha apreciado a controvérsia.
+(Incluído pela Emenda Regimental n. 22, de 2016)
+§ 4º O recorrente provará a divergência com certidão, cópia ou citação
+de repositório oficial ou credenciado de jurisprudência, inclusive em mídia
+eletrônica, em que foi publicado o acórdão divergente, ou com a reprodução de
+julgado disponível na internet, indicando a respectiva fonte, e mencionará as
+circunstâncias que identificam ou assemelham os casos confrontados.
+(Redação dada pela Emenda Regimental n. 22, de 2016)
+
+Art. 266-C. Sorteado o relator, ele poderá indeferir os embargos de
+divergência liminarmente se intempestivos ou se não comprovada ou não
+configurada a divergência jurisprudencial atual, ou negar-lhes provimento caso
+a tese deduzida no recurso seja contrária a fixada em julgamento de recurso
+repetitivo ou de repercussão geral, a entendimento firmado em incidente de
+assunção de competência, a súmula do Supremo Tribunal Federal ou do Superior
+Tribunal de Justiça ou, ainda, a jurisprudência dominante acerca do tema.
+(Incluído pela Emenda Regimental n. 22, de 2016)
+
+Art. 267. Admitidos os embargos de divergência em decisão fundamentada,
+[caput — sequência do procedimento; transcrição parcial do caput conforme consolidação]

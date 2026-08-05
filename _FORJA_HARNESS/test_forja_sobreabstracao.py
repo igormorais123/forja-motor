@@ -36,7 +36,7 @@ def _ler_texto(caminho: Path) -> str:
 
 def test_sobreabstracao_baseline():
     """Executa o gate S5 nas âncoras aprovadas e confere sua identidade."""
-    baseline_path = Path(__file__).parent / "BASELINE_APROVADO.json"
+    baseline_path = Path(__file__).parent / "state" / "BASELINE_APROVADO.json"
 
     if not baseline_path.exists():
         print(f"ERRO: baseline não encontrado em {baseline_path}")

@@ -41,7 +41,7 @@ TABLE_MIN_SIZE_PT = 8.0
 # A sans da casa. `medina_visual_kit` a define como `SANS = "Segoe UI"` e a usa
 # em rótulo de tabela, legenda, linha de seção e citação recuada desde o padrão
 # aprovado pelo dono em 09/07/2026. Medido em 04/08/2026 nas peças reais do
-# Cafelana: a V4 (15/07) e a V8 (30/07) misturam Segoe UI e Times New Roman
+# CASO-04: a V4 (15/07) e a V8 (30/07) misturam Segoe UI e Times New Roman
 # dentro das mesmas tabelas, e as duas foram entregues.
 #
 # Isto está aqui porque eu classifiquei essa mistura como defeito antes de
@@ -307,7 +307,7 @@ def _folios_com_margem(document):
         # Seção de margem direita ZERO não tem banda de margem para o fólio
         # ocupar, e comparar contra ela é comparar contra nada. Medido em
         # 04/08/2026: três documentos do acervo — a capa fotográfica do parecer
-        # Natura e dois relatórios autorais — têm a seção de abertura com margem
+        # CASO-17 e dois relatórios autorais — têm a seção de abertura com margem
         # zero e o cabeçalho VINCULADO à seção seguinte, de margem normal. Como a
         # regra do compartilhamento é "vale a mais apertada", o zero da capa
         # arrastava o fólio da peça inteira para reprovação. É o falso positivo
@@ -483,7 +483,7 @@ def _is_signature(text: str) -> bool:
 # Dois elementos ESTRUTURAIS do padrão aprovado da casa que vinham sendo lidos
 # como corpo fora de tamanho. Medido em 04/08/2026 contra quatro peças reais e
 # entregues: `body_font_size_not_12pt` reprovou o bloco de qualificação das
-# partes na V8 do Cafelana e cinco parágrafos da síntese executiva nos memoriais
+# partes na V8 do CASO-04 e cinco parágrafos da síntese executiva nos memoriais
 # do AI 0011621-15 — todos a 10,5 pt, todos deliberados.
 #
 # A síntese executiva no estilo do art. 343-A do RISTJ é obrigatória em TODA
@@ -758,7 +758,7 @@ def audit_docx_layout(path: Path, *, exceptions: Path | None = None) -> dict:
                 issue_buckets["table_typography_unresolved"].append({"table": table_index, "group": group})
             # A mistura Times + sans da casa dentro de uma tabela é o padrão
             # aprovado, não descuido: rótulo em sans, conteúdo em serifada.
-            # Medido nas V4 e V8 do Cafelana, ambas entregues. O achado existe
+            # Medido nas V4 e V8 do CASO-04, ambas entregues. O achado existe
             # para pegar tabela colada de OUTRA fonte — Calibri, Arial, Verdana —,
             # e essas continuam reprovando.
             familia_da_casa = {_norm(BODY_FONT), _norm(HOUSE_SANS)}

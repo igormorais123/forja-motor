@@ -145,12 +145,12 @@ substitui os gates semânticos de cobertura, cronologia e consistência entre ca
 
 - Deltan: produto entregue ao escritório, mas áudio indicado como fundamental não está materializado;
   manter aberto até recuperação/reenvio e confronto do conteúdo com o parecer.
-- Cafelana: perguntas textuais e documentos foram tratados; quatro eventos antigos de áudio não estão
+- CASO-04: perguntas textuais e documentos foram tratados; quatro eventos antigos de áudio não estão
   recuperáveis no acervo atual. Registrar limite de cobertura, sem afirmar leitura integral dos áudios.
-- Natura/Cabreúva: relatório e e-mail apontaram riscos jurídicos, mas mensagem posterior de WhatsApp
+- CASO-17/CASO-17: relatório e e-mail apontaram riscos jurídicos, mas mensagem posterior de WhatsApp
   qualificou como fortalecimento algumas das mesmas teses. Registrar divergência, impedir que o padrão
   seja reutilizado e só comunicar correção com autorização específica.
-- CORSAN: manter bloqueada por documentos materiais ausentes; estilo ou pesquisa não suprem o acervo.
+- CASO-07: manter bloqueada por documentos materiais ausentes; estilo ou pesquisa não suprem o acervo.
 
 ## 7. Checklist de encerramento
 

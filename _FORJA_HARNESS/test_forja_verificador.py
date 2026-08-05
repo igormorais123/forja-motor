@@ -19,7 +19,7 @@ from forja_verificador import verificar
 
 DEVE_PEGAR = [
     # (texto com erro real de caso, gate esperado)
-    ("A Natura pode promover execução fiscal contra o Município após a inscrição em Dívida Ativa.", "G5"),
+    ("A CASO-17 pode promover execução fiscal contra o Município após a inscrição em Dívida Ativa.", "G5"),
     ("Súmula 7 do STF veda o reexame de prova.", "G4"),
     ("prescrição trienal de 3 anos (Código Civil, art. 205) aplicável ao caso", "G4"),
     ("Mandado de Segurança (CPC arts. 30-46) é via sumária.", "G4"),

@@ -1,4 +1,0 @@
-[
- {"id": "varA", "path": "autoresearch/evolucao/prompt-mestre-v2/gen-0/varA_expand.md", "estrategia": "expand", "eixo": "incorpora cautelas das diretrizes 6-24 (origem operacional, cronologia com identidade, suficiencia da fonte, interno x externo, admissibilidade por fundamento, prescricao por matriz)"},
- {"id": "varB", "path": "autoresearch/evolucao/prompt-mestre-v2/gen-0/varB_compress.md", "estrategia": "compress", "eixo": "mesma forca normativa consolidada em gates verificaveis e checklists enxutos"}
-]

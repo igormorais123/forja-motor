@@ -149,7 +149,7 @@ def main() -> int:
             print("  FALHOU: responsável ausente deveria gerar P1 sem bloquear")
             falhas += 1
 
-        # O Vale Trading usa o dialeto JSON `decisions[]`. Ele deve ser lido
+        # O CASO-23 usa o dialeto JSON `decisions[]`. Ele deve ser lido
         # como deliberação real; a ausência de responsável continua sendo P1,
         # não motivo para transformar um registro existente em "ausente".
         casos += 1

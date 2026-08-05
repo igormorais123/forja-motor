@@ -53,7 +53,7 @@ NAO_PODE_TRAVAR = [
      {"markdownSha256": __import__("hashlib").sha256(
          RASCUNHO.replace("\n", "\r\n").encode("utf-8")).hexdigest(),
       "paragraphs": [{"id": "P1", "supports": ["F1"]}]}, RASCUNHO),
-    ("lastro em texto corrido, dialeto Natura",
+    ("lastro em texto corrido, dialeto CASO-17",
      {"paragraphs": [{"id": "P1", "provenance": "fact_ledger/source_ledger",
                       "textPrefix": "O primeiro parágrafo afirma um fato"}]}, RASCUNHO),
 ]

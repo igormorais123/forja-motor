@@ -13,6 +13,8 @@ import json
 import sys
 from pathlib import Path
 
+import forja_acervo
+
 # Assumindo que o teste roda de dentro de _FORJA_HARNESS
 RAIZ = Path(__file__).resolve().parent
 
@@ -41,23 +43,23 @@ def test_s4_sem_declaracao():
 
 def test_s2_com_declaracao_valida_no_texto():
     """(iii) Peça legítima que cita o papel do adversário → não reprova."""
-    # Cenário: Cafelana (agravada) pede desprovimento do agravo da União (agravante)
-    # A peça menciona legitimamente "o agravo da União contra Cafelana"
+    # Cenário: CASO-04 (agravada) pede desprovimento do agravo da União (agravante)
+    # A peça menciona legitimamente "o agravo da União contra CASO-04"
     decl = {
-        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "cliente": {"nome": "CASO-04", "papel": "agravada"},
         "adverso": {"nome": "UNIÃO", "papel": "agravante"},
         "direcaoPedido": "desprovimento",
     }
 
     # Texto que menciona legitimamente o papel do adversário
     texto = (
-        "A UNIÃO, na qualidade de agravante, interpôs agravo contra CAFELANA. "
-        "CAFELANA, como agravada, contesta o agravo. "
+        "A UNIÃO, na qualidade de agravante, interpôs agravo contra CASO-04. "
+        "CASO-04, como agravada, contesta o agravo. "
         "O papel da agravada é responder aos termos do recurso."
     )
 
     achados = gate_s2_pareamento_nome_papel(texto, decl)
-    # Não deve reprovar porque CAFELANA aparece com seu papel correto na maioria das vezes
+    # Não deve reprovar porque CASO-04 aparece com seu papel correto na maioria das vezes
     if achados:
         assert all(a["sev"] != "P0" for a in achados), f"Gate S2 reprovou peça legítima: {achados}"
     print("✓ test_s2_com_declaracao_valida_no_texto")
@@ -66,30 +68,30 @@ def test_s2_com_declaracao_valida_no_texto():
 def test_s2_detecta_troca():
     """(iv) S2 detecta: nome correto mas papel trocado na janela."""
     decl = {
-        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "cliente": {"nome": "CASO-04", "papel": "agravada"},
         "adverso": {"nome": "UNIÃO", "papel": "agravante"},
         "direcaoPedido": "desprovimento",
     }
 
-    # Texto MUTADO: CAFELANA mas sempre chamada de agravante (papel errado)
+    # Texto MUTADO: CASO-04 mas sempre chamada de agravante (papel errado)
     texto = (
-        "CAFELANA, na qualidade de agravante, interpôs agravo. "
-        "CAFELANA, como agravante, pede provimento. "
-        "A agravante CAFELANA alega vício processual. "
-        "O papel de agravante pertence a CAFELANA neste caso."
+        "CASO-04, na qualidade de agravante, interpôs agravo. "
+        "CASO-04, como agravante, pede provimento. "
+        "A agravante CASO-04 alega vício processual. "
+        "O papel de agravante pertence a CASO-04 neste caso."
     )
 
     achados = gate_s2_pareamento_nome_papel(texto, decl)
     # Deve reprovar porque nenhuma janela tem o papel correto "agravada"
     p0_count = sum(1 for a in achados if a["sev"] == "P0")
-    assert p0_count > 0, f"Gate S2 deveria detectar troca de papel em CAFELANA, mas retornou: {achados}"
+    assert p0_count > 0, f"Gate S2 deveria detectar troca de papel em CASO-04, mas retornou: {achados}"
     print(f"✓ test_s2_detecta_troca ({p0_count} P0)")
 
 
 def test_s4_detecta_troca():
     """(v) S4 detecta: direção contrária aparece massivamente."""
     decl = {
-        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "cliente": {"nome": "CASO-04", "papel": "agravada"},
         "adverso": {"nome": "UNIÃO", "papel": "agravante"},
         "direcaoPedido": "desprovimento",
     }
@@ -112,7 +114,7 @@ def test_s4_detecta_troca():
 def test_s4_com_direcao_presente():
     """S4 com direção correta presente → não reprova."""
     decl = {
-        "cliente": {"nome": "CAFELANA", "papel": "agravada"},
+        "cliente": {"nome": "CASO-04", "papel": "agravada"},
         "adverso": {"nome": "UNIÃO", "papel": "agravante"},
         "direcaoPedido": "desprovimento",
     }
@@ -134,7 +136,7 @@ def test_s4_com_direcao_presente():
 def test_estrutura_invalida():
     """Declaração com estrutura inválida → não passa validação."""
     decl_ruim = {
-        "cliente": {"nome": "CAFELANA", "papel": "papel_invalido"},
+        "cliente": {"nome": "CASO-04", "papel": "papel_invalido"},
     }
 
     val = validar_declaracao_completa(decl_ruim)
@@ -143,7 +145,7 @@ def test_estrutura_invalida():
     print("✓ test_estrutura_invalida")
 
 
-CASO_REAL = Path("state/case-email-cafelana-agint-aresp-2698443-19f2f0876e358eab")
+CASO_REAL = Path("state") / (forja_acervo.caso("CASO-04") or "__sem_acervo__")
 
 
 def test_regiao_requerimento_nao_e_a_assinatura():
@@ -178,7 +180,7 @@ def test_regiao_requerimento_nao_e_a_assinatura():
 def test_peca_aprovada_real_passa_limpa_e_o_mutante_do_fecho_nao():
     """Contraprova contra a peça REAL, não contra texto inventado.
 
-    A âncora é a Impugnação ao AgInt da Cafelana (V4), aprovada pelo escritório.
+    A âncora é a Impugnação ao AgInt da CASO-04 (V4), aprovada pelo escritório.
     Ela cita legitimamente as duas direções ao longo da argumentação; só o
     requerimento é unívoco. Se este teste começar a acusar o original, o gate
     está errado — regra da casa.

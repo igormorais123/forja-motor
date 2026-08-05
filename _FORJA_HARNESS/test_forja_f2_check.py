@@ -14,19 +14,19 @@ class DevePegar(unittest.TestCase):
 
     def test_cnj_federal_trf1(self):
         # caso real da fábrica: Laudo Pericial Contábil
-        self.assertEqual(tribunal_do_cnj("0003453-28.1997.4.01.3400"), "TRF1")
+        self.assertEqual(tribunal_do_cnj("9000001-00.1997.4.01.0000"), "TRF1")
 
     def test_cnj_federal_trf4(self):
         # caso real: Jalusa (TRF4)
-        self.assertEqual(tribunal_do_cnj("5000447-02.2011.4.04.7102"), "TRF4")
+        self.assertEqual(tribunal_do_cnj("9000004-00.2011.4.04.0000"), "TRF4")
 
     def test_cnj_estadual_tjto(self):
-        # caso real: José Eduardo Siqueira Campos (AI TJTO)
-        self.assertEqual(tribunal_do_cnj("0011025-31.2023.8.27.2700"), "TJTO")
+        # caso real: CASO-15 (AI TJTO)
+        self.assertEqual(tribunal_do_cnj("9000012-00.2023.8.27.0000"), "TJTO")
 
     def test_cnj_estadual_tjrj(self):
-        # caso real: Patrícia/Fábio
-        self.assertEqual(tribunal_do_cnj("0014560-09.2014.8.19.0209"), "TJRJ")
+        # caso real: CASO-19
+        self.assertEqual(tribunal_do_cnj("9000003-00.2014.8.19.0000"), "TJRJ")
 
     def test_classe_aresp_infere_stj(self):
         self.assertIn("STJ", tribunais_do_texto("AgInt no AREsp nº 2.698.443/DF"))
@@ -34,7 +34,7 @@ class DevePegar(unittest.TestCase):
     def test_tribunal_declarado_divergente_vira_p1(self):
         achados = validar_classificacao(
             {"product": "memoriais", "tribunal": "TJTO"},
-            "Processo 0014560-09.2014.8.19.0209 — apelação")
+            "Processo 9000003-00.2014.8.19.0000 — apelação")
         self.assertTrue(any(a["campo"] == "tribunal" for a in achados))
 
     def test_perfil_pso_invalido_vira_p1(self):
@@ -53,7 +53,7 @@ class NaoPodeTravar(unittest.TestCase):
         achados = validar_classificacao(
             {"product": "memoriais", "complexity": "high", "tribunal": "TJRJ",
              "psoProfile": "completo"},
-            "Processo 0014560-09.2014.8.19.0209")
+            "Processo 9000003-00.2014.8.19.0000")
         self.assertEqual(achados, [])
 
     def test_sem_cnj_no_texto_nao_acusa_tribunal(self):

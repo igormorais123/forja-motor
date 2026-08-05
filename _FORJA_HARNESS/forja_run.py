@@ -818,7 +818,7 @@ def _recompute_paragrafos(contract: dict, artifacts: list[dict], attempt_dir: Pa
     Oito execuções, oito `pass`, nenhuma reprovação até 04/08/2026. É o gate que
     responde à pergunta que decide se a peça é protocolável — cada parágrafo
     afirma algo que os autos sustentam? — e um `pass` falso é o modo de falha do
-    incidente Vale Trading: texto bem escrito, lastro aparente, proposição sem
+    incidente CASO-23: texto bem escrito, lastro aparente, proposição sem
     âncora. O veredito `warn` existe para o dialeto que não declara hash, trecho
     nem numeração de linha: aí a cobertura não é conferível, e o gate diz isso em
     vez de aprovar.

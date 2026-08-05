@@ -2,7 +2,7 @@
 ## Medição real em 6 casos + Proposta de Rampa
 
 **Data da medição:** 2026-08-05  
-**Casos medidos:** 6 (auto, azimut, corsan/agerst, libra-sul, natura, patricia)  
+**Casos medidos:** 6 (auto, azimut, CASO-07/CASO-07, CASO-16, natura, patricia)  
 **Status:** Proposição de rampa honesta para produção
 
 ---
@@ -28,8 +28,8 @@
 |------|-------|--------|------------|-------|-------|
 | auto | 0.0 | 0 | 14 | Inválida | Suite reprova original |
 | azimut | 0.0 | 0 | 21 | Válida | Zero gates disparados |
-| corsan/agerst | 0.0 | 0 | 12 | Válida | Zero gates disparados |
-| libra-sul | 0.2 | 4 | 20 | Válida | S6: 1.0 (4/4) |
+| CASO-07/CASO-07 | 0.0 | 0 | 12 | Válida | Zero gates disparados |
+| CASO-16 | 0.2 | 4 | 20 | Válida | S6: 1.0 (4/4) |
 | natura | 0.25 | 3 | 12 | Inválida | S6: 1.0 (3/3); suite reprova original |
 | patricia | 0.174 | 4 | 23 | Válida | S6: 1.0 (2/2); S3: 0.286 (2/7) |
 
@@ -67,7 +67,7 @@
 
 **Problema:** Nenhum gate detecta agravante→agravado, autor→réu
 
-**Cenário mais grave:** Trocar "agravante" por "agravado" passa intacto. Peça que pede provimento para a ANTAQ mas a identifica como agravada vai para produção.
+**Cenário mais grave:** Trocar "agravante" por "agravado" passa intacto. Peça que pede provimento para a CASO-01 mas a identifica como agravada vai para produção.
 
 **Causa:** Nenhum gate no verificador confere identidade de partes
 
@@ -149,7 +149,7 @@
 - Ocorrências: 12 mutantes em 5 de 6 casos
 - Taxa de morte: 9/12 (0.75)
 - Sucesso em 3 casos: libra (1.0), natura (1.0), patricia (1.0)
-- Falha em 2 casos: auto (0.0 em 2 mutantes), agerst (0.0 em 1 mutante)
+- Falha em 2 casos: auto (0.0 em 2 mutantes), CASO-07 (0.0 em 1 mutante)
 
 **Problema:** "Firmou entendimento" → "afastou o entendimento" é detectado por verificador:G4-sumula em 75% dos casos. Por quê? G4 confere par súmula×tribunal:
 
@@ -158,7 +158,7 @@
 | Súmula 5 do STJ → Súmula 5 do STF | Troca tribunal | G4 dispara (1.0) |
 | Súmula 609 do STJ → afastou entendimento | Muda verbo | G4 dispara? |
 
-**Achado:** Verificador G4 está robocop em 3/5 casos — libra, natura e patricia têm contexto que permite detecção. Auto e agerst são documentos diagnósticos sem Súmulas; mutante S6 não dispara gate.
+**Achado:** Verificador G4 está robocop em 3/5 casos — libra, natura e patricia têm contexto que permite detecção. Auto e CASO-07 são documentos diagnósticos sem Súmulas; mutante S6 não dispara gate.
 
 **Causa:** G4 assume presença de Súmula; em diagnósticos preambulares, não há.
 
@@ -337,7 +337,7 @@ python3 forja_mutation_lote.py state/case-email-* --output mutation_panel.json
 
 **Arquivo:** `mutation_results_temp.json`  
 **Data:** 2026-08-05 02:22:47  
-**Casos:** 6 (auto, azimut, corsan, libra, natura, patricia)  
+**Casos:** 6 (auto, azimut, CASO-07, libra, natura, patricia)  
 **Formato:** JSON, uno por harness
 
 ---

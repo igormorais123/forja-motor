@@ -15,7 +15,7 @@ from typing import Any
 
 FORJA = Path(__file__).resolve().parent
 WORKSPACE = FORJA.parent
-CONFIG_PATH = FORJA / "FORJA_N3_CONFIG.json"
+CONFIG_PATH = FORJA / "state" / "FORJA_N3_CONFIG.json"
 
 PHASES = (
     "F0_RECONCILIACAO_FILA",

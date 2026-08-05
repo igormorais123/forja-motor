@@ -275,8 +275,8 @@ def gate_s2_pareamento_nome_papel(
     """
     Gate S2: pareamento nome ↔ papel da cliente.
 
-    O NOME da cliente NÃO é mutado por S2. Se a declaração diz "CAFELANA = agravada"
-    mas o texto passa a colar "CAFELANA" a "agravante", há divergência.
+    O NOME da cliente NÃO é mutado por S2. Se a declaração diz "CASO-04 = agravada"
+    mas o texto passa a colar "CASO-04" a "agravante", há divergência.
 
     Medida: proximidade em janela de ~200 caracteres. Conta as duas direções.
     Veredito por maioria: se maioria das ocorrências está em divergência, é P0.
@@ -403,7 +403,7 @@ def gate_s4_presenca_direcao_pedido(
     #
     # A regra global abaixo — "a direção declarada sumiu do texto inteiro" — só
     # dispara quando a troca é total. A mutação real troca UMA ocorrência por
-    # vez, e no caso Cafelana AgInt o texto tem `desprovimento` três vezes: uma
+    # vez, e no caso CASO-04 AgInt o texto tem `desprovimento` três vezes: uma
     # troca deixa duas, e a regra global fica cega.
     #
     # O que resolve é olhar onde a cliente fala em nome próprio. No corpo da

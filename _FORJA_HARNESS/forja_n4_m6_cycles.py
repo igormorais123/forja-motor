@@ -5,6 +5,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import forja_acervo
+
 from docx import Document
 
 from forja_case_tests import run_suite, suite_hash
@@ -20,7 +22,7 @@ REVIEWER = "forja-n4-m6-independent-review-20260711"
 
 CASES = {
     "patricia": {
-        "caseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+        "caseId": forja_acervo.caso("CASO-19"),
         "product": "memoriais de apelação",
         "response": False,
         "layout": "medina-visual-law-v1",
@@ -37,20 +39,20 @@ CASES = {
         "anchors": [("22 de fevereiro de 2013", "contains"), ("R$ 165.000,00", "contains"), ("três cheques de R$ 55.000,00", "contains"), ("R$ 90.000,00", "contains"), ("aproximadamente 54,5%", "contains"), ("R$ 10.000,00 por autor", "contains"), ("R$ 50.000,00 para cada autor", "contains"), ("método bifásico", "contains"), ("honorários recursais", "not_contains"), ("art. 944, parágrafo único", "not_contains")],
     },
     "libra": {
-        "caseId": "case-email-libra-sul-agint-stj-19f3c9350d875062",
+        "caseId": forja_acervo.caso("CASO-16"),
         "product": "memoriais de impugnação a agravo interno",
         "response": True,
         "layout": "medina-visual-law-v1",
         "science": False,
         "questions": [
-            ("Q-001", "procedural_event", "Qual é o recurso atual?", "Agravo interno da ANTAQ contra a decisão que conheceu do agravo para não conhecer do recurso especial.", "DOC-FINAL"),
+            ("Q-001", "procedural_event", "Qual é o recurso atual?", "Agravo interno da CASO-01 contra a decisão que conheceu do agravo para não conhecer do recurso especial.", "DOC-FINAL"),
             ("Q-002", "opponent_response", "Como tratar a Súmula 182/STJ?", "Somente no ponto restrito de impugnação específica; não como pedido de não conhecimento global.", "CMP-001"),
             ("Q-003", "fact", "Todos os fatos precederam todos os administradores?", "Não; a peça separa os fatos de 2008 da transferência de controle de 2011.", "DOC-FINAL"),
             ("Q-004", "request", "Qual é o resultado pretendido?", "Manutenção da decisão agravada, pelos limites de admissibilidade e pelas premissas do acórdão.", "REQUEST-001"),
             ("Q-005", "visual", "A cronologia e os quadros são legíveis?", "Sim, nas sete páginas inspecionadas individualmente.", "F8"),
         ],
         "thesis": "O agravo interno não supera os limites de admissibilidade nem as premissas temporais e fáticas reconhecidas pelo TRF4.",
-        "objection": "A ANTAQ pode sustentar que busca apenas requalificação jurídica dos fatos e que impugnou suficientemente a decisão.",
+        "objection": "A CASO-01 pode sustentar que busca apenas requalificação jurídica dos fatos e que impugnou suficientemente a decisão.",
         "anchors": [("Não se pede o não conhecimento global do agravo", "contains"), ("Súmula 182 do STJ", "contains"), ("dois grupos temporais distintos", "contains"), ("ocorreram em 2008", "contains"), ("transferência de controle realizada em 2011", "contains"), ("teoria da asserção", "contains"), ("Súmula 7 do STJ", "contains"), ("art. 1.021, § 1º, do CPC", "contains"), ("art. 259, § 2º, do RISTJ", "contains"), ("[VERIFICAR]", "not_contains")],
     },
     "health": {

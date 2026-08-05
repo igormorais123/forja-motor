@@ -87,7 +87,7 @@ python forja_lastro.py <peca.md> --ledger fact_ledger.json --base-dir <raiz-das-
 python test_forja_lastro.py     # 37 casos; exit 0 = ok
 ```
 
-A regressão é dupla por desenho: 12 casos de detecção e **11 de não-trava**. Recall sem especificidade premia trava excessiva, e um auditor que reprova o acerto é desligado na terceira vez — as duas frases reais corrigidas do caso Vale Trading estão fixadas em `NAO_PODE_TRAVAR`. Quatro casos verificam o acoplamento (contrato F7, `forja_delivery.py`, `forja_verificador.py`, baseline): gate importável mas desligado é decoração. Protocolo em `../PROTOCOLO_LASTRO_DOCUMENTAL.md`.
+A regressão é dupla por desenho: 12 casos de detecção e **11 de não-trava**. Recall sem especificidade premia trava excessiva, e um auditor que reprova o acerto é desligado na terceira vez — as duas frases reais corrigidas do caso CASO-23 estão fixadas em `NAO_PODE_TRAVAR`. Quatro casos verificam o acoplamento (contrato F7, `forja_delivery.py`, `forja_verificador.py`, baseline): gate importável mas desligado é decoração. Protocolo em `../PROTOCOLO_LASTRO_DOCUMENTAL.md`.
 
 ## QA visual estática e memória de auditabilidade
 

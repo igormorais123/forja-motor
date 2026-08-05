@@ -67,7 +67,7 @@ def relevante(caminho: Path) -> bool:
 
 
 def main(argv: list[str]) -> int:
-    saida = RAIZ / "_FORJA_HARNESS" / "CALIBRACAO_GATES_ECONOMICOS.json"
+    saida = RAIZ / "_FORJA_HARNESS" / "state" / "CALIBRACAO_GATES_ECONOMICOS.json"
     if "--saida" in argv:
         saida = Path(argv[argv.index("--saida") + 1])
 

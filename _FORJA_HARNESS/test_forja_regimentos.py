@@ -25,12 +25,12 @@ HOJE = date(2026, 7, 26)
 # Cabeçalhos reais do acervo. Cada um vem de uma pasta de caso diferente, e
 # nenhum pode ser reprovado por falta de leitura correta.
 CABECALHOS_REAIS = [
-    ("TRF4 Vale Trading",
+    ("TRF4 CASO-23",
      "**Consolidação oficial vigente:** incorporado até o Assento Regimental nº 37/2026\n"
      "**Fonte oficial:** https://www.trf4.jus.br/x.pdf\n"
      "**Data da verificação e do download:** 2026-07-23\n## Emendas posteriores\nNenhuma.",
      "incorporado até o Assento Regimental nº 37/2026", "2026-07-23"),
-    ("STJ Cafelana",
+    ("STJ CASO-04",
      "- **Versão**: Consolidada até a Emenda Regimental n. 47, de 19 de dezembro de 2024\n"
      "- **Fonte**: https://www.stj.jus.br/x\n"
      "- **Data de Download**: 06 de julho de 2026\n## Emendas posteriores\nER 48 a 53.",

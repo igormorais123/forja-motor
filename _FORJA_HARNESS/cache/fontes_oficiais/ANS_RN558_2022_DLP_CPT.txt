@@ -62,7 +62,7 @@ ARTIGO [APURADO]: Quando operadora SUSPEITA de DLP omitida:
    pendente de conclusão de processo administrativo na ANS referente à alegação
    de omissão de doença ou lesão preexistente."
 
-   IMPLICAÇÃO: SulAmérica não poderia excluir Mateus sem conclusão de processo
+   IMPLICAÇÃO: CASO-21 não poderia excluir Mateus sem conclusão de processo
    na ANS (que NÃO foi instaurado).
 
 ================================================================================
@@ -84,7 +84,7 @@ ARTIGO [APURADO]: Direitos do beneficiário em caso de discordância:
      * NÃO pode excluir beneficiário unilateralmente
 
 3. ACHADO CRÍTICO - VIOLAÇÃO NO CASO:
-   SulAmérica recebeu DISCORDO em 24/04/2026 de Fábio
+   CASO-21 recebeu DISCORDO em 24/04/2026 de Fábio
    → Obrigação legal: instaurar processo administrativo na ANS
    → Realidade: ANS não foi acionada (até onde documentos mostram)
    → Exclusão: efetivada 18/06/2026 SEM processo administrativo
@@ -101,7 +101,7 @@ Plano coletivo com 30 ou mais beneficiários ativos:
 - DLP recebe cobertura INTEGRAL
 - SEM CPT, SEM agravo, SEM exclusão
 
-RELEVÂNCIA AO CASO: Plano SulAmérica PME (3-29 vidas) = NÃO se enquadra
+RELEVÂNCIA AO CASO: Plano CASO-21 PME (3-29 vidas) = NÃO se enquadra
 nesta exceção (abaixo do limite de 30). Mateus estava sujeito a CPT/agravo.
 
 ================================================================================
@@ -138,7 +138,7 @@ APLICAÇÃO - CASO MATEUS:
 - Mateus tem TEA Grau 1 + curatela compartilhada desde 24/04/2025
 - DS assinada por Fábio (curador/procurador) com todos "N"
 - K07/K07.1 NÃO era conhecida por Fábio? (questionar: cirurgia já estava em
-  processo no Bradesco? Se sim, SulAmérica deveria saber via transferência)
+  processo no Bradesco? Se sim, CASO-21 deveria saber via transferência)
 - ARGUMENTO: Não configurada fraude; configurada omissão controvérsia;
   direito a processo administrativo garantido
 
@@ -152,7 +152,7 @@ SITUAÇÃO DO CASO MATEUS: VIOLAÇÕES IDENTIFICADAS
    - Vedação de suspensão ignorada (exclusão = suspensão + rescisão)
 
 2. VIOLAÇÃO DA RN 558/2022:
-   - Após DISCORDO (24/04/2026), SulAmérica obrigada a instaurar processo ANS
+   - Após DISCORDO (24/04/2026), CASO-21 obrigada a instaurar processo ANS
    - Processo NÃO foi instaurado
    - Exclusão (18/06/2026) ocorreu SEM respaldo administrativo ANS
 
@@ -163,7 +163,7 @@ SITUAÇÃO DO CASO MATEUS: VIOLAÇÕES IDENTIFICADAS
 
 4. FALTA DE PORTABILIDADE/COMUNICAÇÃO INTEROPERADORA:
    - Mateus tinha autorização no Bradesco (cirurgia)
-   - SulAmérica desconheceu? (questionar: protocolo de transferência)
+   - CASO-21 desconheceu? (questionar: protocolo de transferência)
    - INVESTIGAR: RN 438/2018 (portabilidade dispensa DLP?)
 
 ================================================================================
@@ -176,13 +176,13 @@ RECOMENDAÇÕES PARA AÇÃO JUDICIAL
    - Argumentar: exclusão nula + hipervulnerabilidade (TEA + curatela)
 
 2. AÇÃO PRINCIPAL:
-   - Reintegração do Mateus no plano SulAmérica
+   - Reintegração do Mateus no plano CASO-21
    - Cobertura de cirurgia autorizada
    - Indenização por danos (vide: Meses sem cobertura + desespero familiar)
    - Custas + sucumbência
 
 3. REPRESENTAÇÃO ADMINISTRATIVA (ANS):
-   - NIP contra SulAmérica (RN 483/2022)
+   - NIP contra CASO-21 (RN 483/2022)
    - Infração: rescisão indevida (RN 489/2022)
    - Pedido: multa + cassação de autorização (se reincidente)
 

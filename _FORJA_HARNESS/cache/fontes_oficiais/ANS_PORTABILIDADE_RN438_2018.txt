@@ -61,11 +61,11 @@ APLICAÇÃO ESPECIAL: PORTABILIDADE DISPENSA DLP?
 
 QUESTÃO ABERTA: Mateus tinha cobertura no Bradesco (21/09/2020 a ~19/07/2025)
 → Cirurgia K07/K07.1 já era conhecida do Bradesco?
-→ Ao trocar para SulAmérica, Mateus tinha direito a portabilidade de carências?
+→ Ao trocar para CASO-21, Mateus tinha direito a portabilidade de carências?
 
 ANÁLISE (RN 438/2018):
 - Se K07/K07.1 foi COMUNICADA ao Bradesco (e aceita/coberta):
-  * Portabilidade teria dispensado DS na SulAmérica?
+  * Portabilidade teria dispensado DS na CASO-21?
   * Resposta jurídica: SIM (reconhecimento de histórico anterior)
 
 - Se K07/K07.1 foi OMITIDA do Bradesco TAMBÉM:
@@ -75,7 +75,7 @@ ANÁLISE (RN 438/2018):
 
 INVESTIGAÇÃO NECESSÁRIA:
 - Consultar autos do Bradesco sobre cirurgia (autorização/negativa)
-- Se cirurgia foi autorizada no Bradesco, SulAmérica não poderia
+- Se cirurgia foi autorizada no Bradesco, CASO-21 não poderia
   reavaliar (portabilidade vincula)
 
 ================================================================================
@@ -104,7 +104,7 @@ PENALIDADE: Multa de R$ 50.000,00 (conforme porte econômico, pode chegar a
 múltiplo dessa faixa).
 
 ACHADO - CASO MATEUS:
-- Se direito à portabilidade era aplicável, SulAmérica violou (exigiu CPT
+- Se direito à portabilidade era aplicável, CASO-21 violou (exigiu CPT
   implicitamente ao negar cobertura integral)
 - Fundamento adicional para NIP/representação à ANS
 
@@ -114,26 +114,26 @@ SITUAÇÃO PRÁTICA - MATEUS
 
 CRONOLOGIA:
 1. 21/09/2020: Filiação ao Bradesco (com K07/K07.1? VERIFICAR)
-2. 19/07/2025: Filiação à SulAmérica (mudança)
+2. 19/07/2025: Filiação à CASO-21 (mudança)
 3. Período no Bradesco: ~4 anos 10 meses (> 24 meses → direito portabilidade)
-4. 01/04/2026: Pedido cirurgia SulAmérica
+4. 01/04/2026: Pedido cirurgia CASO-21
 5. 13/04/2026: TCB com alegação DLP omitida
 6. 24/04/2026: Fábio marca DISCORDO
-7. 18/06/2026: Exclusão SulAmérica efetivada
+7. 18/06/2026: Exclusão CASO-21 efetivada
 
 QUESTÃO-CHAVE:
 Mateus tinha direito à portabilidade de carências ao mudar de Bradesco para
-SulAmérica? Se SIM:
+CASO-21? Se SIM:
 - DS não era vinculante (portabilidade = dispensa DS)
 - CPT não era aplicável (portabilidade = mantém histórico anterior)
-- DLP do Bradesco VINCULA SulAmérica
+- DLP do Bradesco VINCULA CASO-21
 - Exclusão é VIOLAÇÃO de portabilidade + RN 489
 
 INVESTIGAÇÃO:
 [ ] Verificar se cirurgia K07/K07.1 foi comunicada/autorizada no Bradesco
-[ ] Se SIM: extrair documentação de autorização (vincula SulAmérica)
+[ ] Se SIM: extrair documentação de autorização (vincula CASO-21)
 [ ] Se NÃO: questionar por que faltou em ambas DS (simultaneamente)
-[ ] Consultar contrato SulAmérica: reconheceu portabilidade de carências?
+[ ] Consultar contrato CASO-21: reconheceu portabilidade de carências?
 
 ================================================================================
 DOCUMENTOS RELACIONADOS:

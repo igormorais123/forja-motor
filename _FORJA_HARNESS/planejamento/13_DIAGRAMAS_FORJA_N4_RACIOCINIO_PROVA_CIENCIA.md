@@ -437,10 +437,10 @@ Nada disso substitui os controles existentes. A candidata N4 depende de uma N3 r
 
 ```mermaid
 flowchart LR
-    P["Patrícia/Fábio: baseline retrospectiva"] --> OK["24/24, mutações 10/10, QA 6/6"]
-    L["Libra Sul: baseline retrospectiva"] --> OK2["24/24, mutações 10/10, QA 7/7"]
+    P["CASO-19/Fábio: baseline retrospectiva"] --> OK["24/24, mutações 10/10, QA 6/6"]
+    L["CASO-16: baseline retrospectiva"] --> OK2["24/24, mutações 10/10, QA 7/7"]
     S["Saúde: baseline retrospectiva"] --> OK3["24/24, mutações 10/10, QA 12/12"]
-    C["Cafelana: origem revogada"] --> STOP["Bloqueada até AgInt primário"]
+    C["CASO-04: origem revogada"] --> STOP["Bloqueada até AgInt primário"]
     OK --> MODE["pilot_blocking ampliado"]
     OK2 --> MODE
     OK3 --> MODE

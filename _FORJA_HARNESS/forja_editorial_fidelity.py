@@ -66,7 +66,7 @@ _OPERATIONAL_ORIGIN = [
     #
     # O risco aqui é o oposto do de sempre: mencionar e-mail pode ser FATO DA
     # CAUSA legítimo ("o requerimento foi protocolado por e-mail em 2021" é o
-    # eixo do caso Natura). Por isso os padrões exigem o verbo de recebimento
+    # eixo do caso CASO-17). Por isso os padrões exigem o verbo de recebimento
     # ou de compartilhamento colado ao canal — que é o que revela origem
     # operacional —, e não a palavra "e-mail" solta. Medido contra os treze
     # rascunhos reais do acervo: zero ocorrências.

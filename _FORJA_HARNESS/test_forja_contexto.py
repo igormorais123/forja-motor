@@ -45,11 +45,11 @@ def main() -> int:
 
     checar("validação ausente (fatos)", fatos(None), "fail")
     checar("validação ausente (contexto)", contexto(None), "fail")
-    # Ausência de declaração não é declaração falsa: o caso Natura real cai
+    # Ausência de declaração não é declaração falsa: o caso CASO-17 real cai
     # aqui, e o gate diz `warn` em vez de reprovar entrega aprovada.
     checar("recheque não declarado em dialeto nenhum",
            fatos({"approved": True, "tribunal": "TRF4"}), "warn")
-    # O caso Cafelana é real: o artefato admite que não reconferiu.
+    # O caso CASO-04 é real: o artefato admite que não reconferiu.
     checar("recheque negado pelo próprio artefato",
            fatos({"factsRechecked": False, "tribunal": "TRF1"}), "fail")
     checar("recheque declarado no dialeto de checks",

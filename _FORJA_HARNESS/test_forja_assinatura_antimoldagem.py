@@ -12,7 +12,7 @@ prova de que o gate reprova destruição real de qualidade. O censo prova o lado
 fácil — 74 de 356 documentos do acervo passam, então o gate não aprova tudo.
 Este teste prova o lado difícil, que é o que a acusação pede.
 
-Método: pegar a peça APROVADA PELO DONO (Cafelana V8, entregue em 30/07/2026,
+Método: pegar a peça APROVADA PELO DONO (CASO-04 V8, entregue em 30/07/2026,
 que hoje passa limpa) e destruí-la no OOXML, um elemento de cada vez, exigindo
 que o gate acuse a família certa. Se ele aprovar a peça destruída, o limiar é
 decorativo — e a suíte falha, mesmo com todo o resto verde.
@@ -47,8 +47,11 @@ from forja_assinatura_visual import avaliar  # noqa: E402
 RAIZ = Path(__file__).resolve().parent
 FABRICA = RAIZ.parent
 
-BASE = (FABRICA / "Cafelana" / "contrarrazões ao AgInt no AREsp nº 2.698.443D"
-        / "_v8_visual_2026-07-30" / "IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.docx")
+from forja_baseline_aprovado import caminho_da_ancora  # noqa: E402
+
+# A peça-base vem do registro de âncoras do acervo, e não de um caminho
+# escrito aqui: o motor não guarda nome de pasta de cliente.
+BASE = caminho_da_ancora("peca-aprovada-v8") or (FABRICA / "__sem_acervo__.docx")
 
 # Não se exige o código exato para não amarrar o teste à implementação: exige-se
 # que o gate acuse algo da família certa.

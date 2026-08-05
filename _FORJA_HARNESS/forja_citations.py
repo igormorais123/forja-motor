@@ -486,7 +486,7 @@ def validar_politica_citacoes(texto, ledger):
 # ---------------------------------------------------------------------------
 # Identidade de autoridade — gate `citation_identity_and_cnj_tribunal_resolved`
 # ---------------------------------------------------------------------------
-# Âncora real: o P0 mais grave do caso Vale Trading foi afirmar que um agravo
+# Âncora real: o P0 mais grave do caso CASO-23 foi afirmar que um agravo
 # "envolve as mesmas partes e a mesma liquidação" quando os números CNJ apontam
 # para liquidações distintas. O protocolo da casa manda identificar o tribunal
 # pelo número CNJ antes de qualquer coisa; até 04/08/2026 esse gate era

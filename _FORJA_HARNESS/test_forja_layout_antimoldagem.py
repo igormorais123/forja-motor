@@ -50,8 +50,11 @@ RAIZ = Path(__file__).resolve().parent
 FABRICA = RAIZ.parent
 
 # Peça aprovada e entregue, que hoje passa limpa no gate. É a base do estrago.
-BASE = (FABRICA / "Cafelana" / "contrarrazões ao AgInt no AREsp nº 2.698.443D"
-        / "_v8_visual_2026-07-30" / "IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.docx")
+from forja_baseline_aprovado import caminho_da_ancora  # noqa: E402
+
+# A peça-base vem do registro de âncoras do acervo, e não de um caminho
+# escrito aqui: o motor não guarda nome de pasta de cliente.
+BASE = caminho_da_ancora("peca-aprovada-v8") or (FABRICA / "__sem_acervo__.docx")
 
 # Cada estrago tem de produzir PELO MENOS um destes códigos. Não se exige o código
 # exato para não amarrar o teste à implementação: exige-se que o gate acuse algo

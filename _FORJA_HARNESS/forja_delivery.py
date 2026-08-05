@@ -186,7 +186,7 @@ def parecer_antes_da_redacao(parecer, state):
 def visual_com_lastro(docx):
     """Lastro do visual (conselho 11/07/2026, achado D3): DOCX visual só vale com
     FIDELIDADE_VISUAL.json (gravado pelo gate do forja_visual) cujo docxSha256 bata com
-    o arquivo real. Pega versão errada/desatualizada (Lição 48 — caso Patrícia).
+    o arquivo real. Pega versão errada/desatualizada (Lição 48 — caso CASO-19).
     Composições anteriores ao gate são aceitas por evidência legada
     (RELATORIO_VISUAL_LAW.json ou resultado.json na mesma pasta).
     Retorna (ok: bool, motivo: str)."""
@@ -204,8 +204,8 @@ def visual_com_lastro(docx):
         if real != sha:
             return False, "DOCX visual NÃO bate com o lastro (versão errada ou alterada após o gate) — re-rodar forja_visual"
         return True, "lastro de fidelidade ok"
-    # nomes legados encontrados nos casos reais pré-gate (Patrícia, Libra, Azimut,
-    # CORSAN, Natura) — composições novas sempre gravam FIDELIDADE_VISUAL.json
+    # nomes legados encontrados nos casos reais pré-gate (CASO-19, Libra, CASO-02,
+    # CASO-07, CASO-17) — composições novas sempre gravam FIDELIDADE_VISUAL.json
     for legado in ("RELATORIO_VISUAL_LAW.json", "RELATORIO_FINAL_VISUAL_LAW.json",
                    "resultado.json", "retorno.json", "visual_law_metadata.json"):
         if docx.with_name(legado).exists():
@@ -214,7 +214,7 @@ def visual_com_lastro(docx):
 
 
 def f3_com_regimento(path):
-    """Elo 2 com conteúdo (conselho 11/07/2026, achado C6 — lição Libra Sul): o mapa de
+    """Elo 2 com conteúdo (conselho 11/07/2026, achado C6 — lição CASO-16): o mapa de
     fontes deve CITAR o regimento interno do tribunal usado, não apenas existir.
     Retorna (ok: bool, motivo: str)."""
     path = Path(path)
@@ -314,7 +314,7 @@ def main(case_key):
                  "ref": str(f7_path) if f7_path else "NAO LOCALIZADO", "obs": f7_obs})
 
     # 9-B. Lastro verbatim do ledger de fatos (FORJA-LASTRO-v2, 26/07/2026).
-    # Âncora: no caso Vale Trading, o fato F012 estava marcado `confirmed_document`
+    # Âncora: no caso CASO-23, o fato F012 estava marcado `confirmed_document`
     # com localizador plausível e afirmava o OPOSTO do documento que citava. Passou
     # pelo red team interno, pelo gate F7 e por dois revisores externos de famílias
     # distintas — porque nenhum abriu a página. Citar o localizador não é ter lido o

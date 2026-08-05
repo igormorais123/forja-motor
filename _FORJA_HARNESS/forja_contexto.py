@@ -9,7 +9,7 @@ artefato e a sua **aderência ao texto auditado**.
 
 Medição dos seis `context_validation` reais em 04/08/2026:
 
-  factsRechecked   quatro `true`, um `false` (Cafelana, honesto), dois ausentes
+  factsRechecked   quatro `true`, um `false` (CASO-04, honesto), dois ausentes
                    porque o caso usa o dialeto do `f7_gate_result`
   pendências       três casos têm questão material pendente — e nos TRÊS o
                    release externo está negado. Ninguém do acervo declarou
@@ -118,7 +118,7 @@ def validar_contexto(validacao, gate_result=None, texto_auditado=None):
                                 chaves=("factsRechecked", "facts_rechecked"))
     if rechecado is None:
         # Ausência de declaração não é o mesmo que declaração falsa. Medido: o
-        # caso Natura não declara o recheque em dialeto nenhum, e a fase
+        # caso CASO-17 não declara o recheque em dialeto nenhum, e a fase
         # reportou `pass` — achado real, mas o gate aqui não pode atestar nem
         # acusar. `warn` é o que ele honestamente sabe dizer. `fail` fica para
         # o verificavelmente falso: recheque negado e hash de outro texto.

@@ -577,7 +577,7 @@ promoção
 - testes unitários de nomenclatura, hashing, idempotência e resolução;
 - testes de contrato de todos os schemas;
 - golden jurídico de caso com origem ativa e golden estrutural de Siqueira Campos;
-- Cafelana somente como poison/estrutura, marcada como origem revogada, nunca como referência jurídica;
+- CASO-04 somente como poison/estrutura, marcada como origem revogada, nunca como referência jurídica;
 - testes de DOCX com estruturas difíceis;
 - golden DOCX × PDF com carimbo, fólio e cabeçalho de tribunal;
 - canário Jalusa para falso pareamento Gmail/demanda;
@@ -725,7 +725,7 @@ Correções incorporadas:
 - normalizar DOCX × PDF carimbado;
 - isolar vault/diff do Git com teste;
 - corrigir idempotência, desempate de entregas, geração de schemas, track changes e reason codes;
-- retirar Cafelana do papel de golden jurídico.
+- retirar CASO-04 do papel de golden jurídico.
 
 Sugestões rejeitadas:
 

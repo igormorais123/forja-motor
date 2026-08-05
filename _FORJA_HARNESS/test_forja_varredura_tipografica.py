@@ -30,7 +30,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 from forja_varredura_tipografica import _marcar_superadas, varrer  # noqa: E402
 
 # Medido em 04/08/2026, já descontadas as versões superadas por correção posterior
-# do próprio escritório — sem esse desconto os números incluíam o parecer da Natura
+# do próprio escritório — sem esse desconto os números incluíam o parecer da CASO-17
 # de 20/07, que foi corrigido para 100% nas três dimensões em 21/07.
 # O piso de universo só sobe; os tetos de desvio só descem.
 ENTREGAVEIS_MIN = 120
@@ -52,23 +52,23 @@ def verificar_familias_nao_pareiam_documentos_distintos() -> list[str]:
         }
 
     medidas = [
-        item("01_PARECER_NATURA_CABREUVA_FINAL_LIMPO_PARA_ASSINATURA.docx",
-             "C:/fabrica/Caso Natura/01_PARECER_NATURA_CABREUVA_FINAL_LIMPO_PARA_ASSINATURA.docx",
+        item("01_PARECER_CASO17_FINAL_LIMPO_PARA_ASSINATURA.docx",
+             "C:/fabrica/Caso CASO-17/01_PARECER_CASO17_FINAL_LIMPO_PARA_ASSINATURA.docx",
              0.1, 0.2, 0.2),
-        item("01_PARECER_NATURA_CABREUVA_CORRIGIDO_JUSTIFICADO.docx",
-             "C:/fabrica/Caso Natura/01_PARECER_NATURA_CABREUVA_CORRIGIDO_JUSTIFICADO.docx",
+        item("01_PARECER_CASO17_CORRIGIDO_JUSTIFICADO.docx",
+             "C:/fabrica/Caso CASO-17/01_PARECER_CASO17_CORRIGIDO_JUSTIFICADO.docx",
              1.0, 1.0, 1.0),
-        item("02_PARECER_NATURA_CABREUVA_CONTROLE_DE_ALTERACOES.docx",
-             "C:/fabrica/Caso Natura/02_PARECER_NATURA_CABREUVA_CONTROLE_DE_ALTERACOES.docx",
+        item("02_PARECER_CASO17_CONTROLE_DE_ALTERACOES.docx",
+             "C:/fabrica/Caso CASO-17/02_PARECER_CASO17_CONTROLE_DE_ALTERACOES.docx",
              0.2, 0.2, 0.2),
-        item("02_PARECER_NATURA_CABREUVA_CORRIGIDO_CONTROLE_ALTERACOES.docx",
-             "C:/fabrica/Caso Natura/02_PARECER_NATURA_CABREUVA_CORRIGIDO_CONTROLE_ALTERACOES.docx",
+        item("02_PARECER_CASO17_CORRIGIDO_CONTROLE_ALTERACOES.docx",
+             "C:/fabrica/Caso CASO-17/02_PARECER_CASO17_CORRIGIDO_CONTROLE_ALTERACOES.docx",
              1.0, 1.0, 1.0),
-        item("PLANO_PESQUISA_NATURA_FINAL.docx",
-             "C:/fabrica/Caso Natura/PLANO_PESQUISA_NATURA_FINAL.docx",
+        item("PLANO_PESQUISA_CASO17_FINAL.docx",
+             "C:/fabrica/Caso CASO-17/PLANO_PESQUISA_CASO17_FINAL.docx",
              0.1, 0.1, 0.1),
         item("MEMORIAL_AZIMUT_N3_CORRIGIDA_ENTREGA.docx",
-             "C:/fabrica/Caso Natura/MEMORIAL_AZIMUT_N3_CORRIGIDA_ENTREGA.docx",
+             "C:/fabrica/Caso CASO-17/MEMORIAL_AZIMUT_N3_CORRIGIDA_ENTREGA.docx",
              1.0, 1.0, 1.0),
         item("03_PARECER_NATURA_CABREUA_FINAL.docx",
              "C:/fabrica/Caso A/03_PARECER_NATURA_CABREUA_FINAL.docx",
@@ -80,11 +80,11 @@ def verificar_familias_nao_pareiam_documentos_distintos() -> list[str]:
     _marcar_superadas(medidas)
     mapa = {x["peca"]: x["superadaPor"] for x in medidas}
     esperado = {
-        "01_PARECER_NATURA_CABREUVA_FINAL_LIMPO_PARA_ASSINATURA.docx":
-            "01_PARECER_NATURA_CABREUVA_CORRIGIDO_JUSTIFICADO.docx",
-        "02_PARECER_NATURA_CABREUVA_CONTROLE_DE_ALTERACOES.docx":
-            "02_PARECER_NATURA_CABREUVA_CORRIGIDO_CONTROLE_ALTERACOES.docx",
-        "PLANO_PESQUISA_NATURA_FINAL.docx": None,
+        "01_PARECER_CASO17_FINAL_LIMPO_PARA_ASSINATURA.docx":
+            "01_PARECER_CASO17_CORRIGIDO_JUSTIFICADO.docx",
+        "02_PARECER_CASO17_CONTROLE_DE_ALTERACOES.docx":
+            "02_PARECER_CASO17_CORRIGIDO_CONTROLE_ALTERACOES.docx",
+        "PLANO_PESQUISA_CASO17_FINAL.docx": None,
         "03_PARECER_NATURA_CABREUA_FINAL.docx": None,
     }
     return [f"{nome}: esperado {valor!r}, obtido {mapa.get(nome)!r}"

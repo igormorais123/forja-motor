@@ -10,6 +10,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import forja_acervo
+
 from PIL import Image, ImageDraw
 
 from forja_qa_paginas import analisar_pasta
@@ -95,7 +97,7 @@ class NaoPodeTravar(unittest.TestCase):
         self.assertFalse(any("em branco" in a["problema"] for a in r["achados"]))
 
     def test_pasta_real_aprovada_continua_aprovada(self):
-        real = Path("state/case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2/"
+        real = Path(f"state/{forja_acervo.caso('CASO-19')}/"
                     "producao/paginas")
         if not real.is_dir():
             self.skipTest("pasta real indisponível")

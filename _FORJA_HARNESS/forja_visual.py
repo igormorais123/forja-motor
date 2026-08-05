@@ -567,7 +567,7 @@ def compor(md_path, out_docx, mapa, *, case_dir=None, ledger_path=None, base_dir
         raise SystemExit(f"MAPA NÃO CONSUMIDO — âncoras sem parágrafo correspondente: {sobras}")
     # Lastro persistido do gate (conselho 11/07/2026): sem este JSON com hash batendo,
     # o elo 4-B do forja_delivery não fecha a demanda. Pega DOCX visual de versão
-    # errada/desatualizada (modo de falha do caso Patrícia — Lição 48).
+    # errada/desatualizada (modo de falha do caso CASO-19 — Lição 48).
     import hashlib
     import json as _json
     from datetime import datetime as _dt, timezone as _tz

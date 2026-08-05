@@ -62,7 +62,7 @@ with tempfile.TemporaryDirectory() as tmp:
     caso("F1 F3 inexistente reprova", False, f3_com_regimento(f3))
 
     f3.write_text("# Mapa de fontes\n\nSó jurisprudência do STJ, nada de norma interna.\n", encoding="utf-8")
-    caso("F2 F3 sem menção a regimento reprova (lição Libra Sul)", False, f3_com_regimento(f3))
+    caso("F2 F3 sem menção a regimento reprova (lição CASO-16)", False, f3_com_regimento(f3))
 
     f3.write_text("# Mapa de fontes\n\nRegimento consultado: REGIMENTO_INTERNO_STJ.md "
                   "(arts. 258-259, 343-A).\n", encoding="utf-8")

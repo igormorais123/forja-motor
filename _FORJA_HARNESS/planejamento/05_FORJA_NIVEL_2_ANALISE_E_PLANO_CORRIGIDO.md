@@ -241,7 +241,7 @@ Regra: `[NÃO VERIFICADO]` pode existir em artefato interno, mas bloqueia peça 
 
 **Objetivo:** criar ou reconciliar uma demanda sem perder contexto.  
 **Saídas:** pasta, comando, anexos, hash/lista de anexos, entrada no painel.  
-**Regras:** não sobrescrever pasta existente; não consolidar duas pastas Azimut apagando uma; deduplicar por `threadId`, assunto, processo e anexos.  
+**Regras:** não sobrescrever pasta existente; não consolidar duas pastas CASO-02 apagando uma; deduplicar por `threadId`, assunto, processo e anexos.  
 **Gate:** anexos esperados ausentes viram pendência explícita.
 
 ### F2 — Classificação do produto e risco
@@ -440,7 +440,7 @@ flowchart TD
 ## 14. Próximas ações recomendadas
 
 1. Implementar primeiro o schema de estado e a reconciliação de evidências; não começar por Claude headless.
-2. Rodar piloto N2 em caso já concluído, preferencialmente Cafelana ou Jalusa, comparando contra artefatos finais existentes.
+2. Rodar piloto N2 em caso já concluído, preferencialmente CASO-04 ou Jalusa, comparando contra artefatos finais existentes.
 3. Depois ligar ingestão Gmail/WhatsApp em modo sombra.
 4. Só promover automação para produção quando o fechamento com evidência estiver funcionando.
 

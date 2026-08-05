@@ -33,6 +33,8 @@ if __name__ != "__main__":
         "telemetria real standalone; executar python test_real_telemetria_licao41.py --sem-render"
     )
 
+import forja_acervo  # noqa: E402
+
 FORJA = Path(__file__).resolve().parent
 sys.path.insert(0, str(FORJA))
 
@@ -158,18 +160,17 @@ print("B2 — Render REAL ponta a ponta (Word COM + PDF + QA) de peças reais")
 print("=" * 72)
 
 NEGATIVE_STYLE_TARGETS = [
-    STATE / "case-email-corsan-agerst-19f3dc9ff92081cd" / "producao" / "DIAGNOSTICO_CORSAN_AGERST.md",
+    STATE / forja_acervo.caso("CASO-07") / "producao" / "DIAGNOSTICO_CORSAN_AGERST.md",
 ]
 RENDER_ALVOS = [
     (
-        FORJA.parent / "Cafelana" / "contrarrazões ao AgInt no AREsp nº 2.698.443D"
-        / "_entrega_fabio_2026-07-15" / "IMPUGNACAO_AGINT_CAFELANA_V4_15-07-2026_FONTE.md",
-        "Impugnação ao agravo interno — Cafelana",
+        forja_acervo.caminho("render-alvo-impugnacao-v4"),
+        "Impugnação ao agravo interno — CASO-04",
     ),
     (
-        STATE / "case-email-libra-sul-agint-stj-19f3c9350d875062" / "producao"
+        STATE / forja_acervo.caso("CASO-16") / "producao"
         / "MEMORIAIS_LIBRA_SUL_AGINT_ARESP_2578181.md",
-        "Memoriais — LIBRA SUL",
+        "Memoriais — CASO-16",
     ),
 ]
 b2 = {"controlesNegativos": [], "pecas": []}

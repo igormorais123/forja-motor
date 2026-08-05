@@ -13,12 +13,14 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import forja_acervo
+
 FORJA = Path(__file__).resolve().parent
 sys.path.insert(0, str(FORJA))
 
 from forja_assinatura_visual import _faixa, avaliar  # noqa: E402
 
-REFERENCIA = (FORJA / "state" / "case-email-libra-sul-agint-stj-19f3c9350d875062"
+REFERENCIA = (FORJA / "state" / forja_acervo.caso("CASO-16")
               / "producao" / "_visual"
               / "MEMORIAIS_LIBRA_SUL_AGINT_ARESP_2578181_VISUAL_LAW.docx")
 

@@ -1,8 +1,8 @@
 # Protocolo de lastro documental — FORJA-LASTRO-v2
 
-Módulo: `forja_lastro.py`. Regressão: `test_forja_lastro.py` (92 verificações de script, no baseline e na régua rápida). Catálogo: § U12 e § U13 de `planejamento/06_GATES_QUALIDADE_FORJA.md`. Incidentes: `INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md` e o incidente Cafelana de 02/08/2026.
+Módulo: `forja_lastro.py`. Regressão: `test_forja_lastro.py` (92 verificações de script, no baseline e na régua rápida). Catálogo: § U12 e § U13 de `planejamento/06_GATES_QUALIDADE_FORJA.md`. Incidentes: `INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md` e o incidente CASO-04 de 02/08/2026.
 
-Criado em 26/07/2026 por ordem do Igor, depois de alucinações de nível moderado a grave no caso Vale Trading.
+Criado em 26/07/2026 por ordem do Igor, depois de alucinações de nível moderado a grave no caso CASO-23.
 
 ## 1. Finalidade
 
@@ -34,7 +34,7 @@ Gate novo exige **falha observada**, nunca hipótese (regra herdada do ciclo AR,
 | **L9-fonte-prevalente** | P0 | produto econômico exige fato `role: fonte_prevalente`, validação humana nominal e SHA-256 conferida no arquivo em disco | faixas em reais produzidas sem documento governante |
 | **L10-data-base** | P0 | data-base expressa no produto coincide com a do fato prevalente, após normalização mensal | referência histórica usada no lugar da base do laudo |
 | **L11-valor-orfao** | **P1** (medido) | valor calculado tem âncora na tabela U6 ligada à fonte prevalente; valor citado de terceiro só é exceção com origem declarada | números circularam sem fonte autorizadora |
-| **L1-status-desconhecido** | P1 | status de fato que o gate não conhece é anunciado, para que "não auditado" nunca se pareça com "aprovado" | ledger da Cafelana: 0 de 11 fatos examinados por divergência de vocabulário |
+| **L1-status-desconhecido** | P1 | status de fato que o gate não conhece é anunciado, para que "não auditado" nunca se pareça com "aprovado" | ledger da CASO-04: 0 de 11 fatos examinados por divergência de vocabulário |
 | **L2-transcricao-manual** | P1 | fonte binária ou acima de 8 MB é declarada não conferível automaticamente, e não acusada de invenção | laudo prevalente de 2,14 GB; transcrição correta de PDF acusada de reconstrução de memória |
 | **L12-hierarquia-fonte** | P0 | inventário físico do caso é confrontado com a fonte eleita; concorrente posterior/superior é eleito ou descartado por escrito | laudo disponível na pasta não eleito |
 | **L13-aritmetica-derivada** | P0 | valor/faixa derivado é recomposto contra base, percentual, resultado e tolerância declarados | requisito 5: impedir número incompatível com premissa validada |
@@ -59,7 +59,7 @@ O parâmetro `exigir=False` não é uma exceção de governança: se `material_e
 
 **L1 e L2 (ledger).** Só valem para os status que afirmam lastro: `confirmed_document`, `confirmed_official_source`, `documented_fact`, `official_current_source`, `PROVADO`, `CONFLITANTE`. `legal_inference`, `strategic_hypothesis`, `documented_strategy`, `not_verified`, `blocked` e `pending` são honestos sobre o que são e passam intactos — o protocolo não persegue hipótese assumida, persegue hipótese vestida de fato. O parâmetro `exigir_transcricao=False` rebaixa L1 a P1 para ledger legado, que não pode ser reprovado retroativamente.
 
-> **Por que as duas listas são explícitas, e por que existe um gate para o que sobra.** Em 04/08/2026, ao medir o L1/L2 recém-computado contra o ledger real da Cafelana, o resultado foi **0 de 11 fatos auditados**: o caso escrevia `documented_fact` e `official_current_source`, o gate conhecia os prefixos `confirmed_`. Ele percorria os 11, pulava todos e devolvia aprovação **com saída idêntica à de um ledger integralmente conferido**. Acrescentar os sinônimos resolve o caso; declarar as duas listas e emitir `L1-status-desconhecido` para o que não está em nenhuma resolve a classe. Vocabulário novo vai surgir de novo — o que não pode voltar é ele significar aprovação. Uma terceira camada da mesma divergência: os fatos usam `locator` + `quoteSource` + `sha256`, e o gate exigia a palavra `support`, reprovando em P0 seis fatos bem formados. Localizador agora é reconhecido por qualquer um desses campos.
+> **Por que as duas listas são explícitas, e por que existe um gate para o que sobra.** Em 04/08/2026, ao medir o L1/L2 recém-computado contra o ledger real da CASO-04, o resultado foi **0 de 11 fatos auditados**: o caso escrevia `documented_fact` e `official_current_source`, o gate conhecia os prefixos `confirmed_`. Ele percorria os 11, pulava todos e devolvia aprovação **com saída idêntica à de um ledger integralmente conferido**. Acrescentar os sinônimos resolve o caso; declarar as duas listas e emitir `L1-status-desconhecido` para o que não está em nenhuma resolve a classe. Vocabulário novo vai surgir de novo — o que não pode voltar é ele significar aprovação. Uma terceira camada da mesma divergência: os fatos usam `locator` + `quoteSource` + `sha256`, e o gate exigia a palavra `support`, reprovando em P0 seis fatos bem formados. Localizador agora é reconhecido por qualquer um desses campos.
 >
 > **L2 e fonte não textual.** A conferência só é tentada em extensão de texto conhecida e abaixo de 8 MB. Antes disso o gate lia qualquer arquivo como UTF-8 e, não achando o trecho no binário, emitia P0 dizendo que a transcrição "pode ter sido reconstruída de memória" — a acusação mais grave do módulo, contra quem transcreveu corretamente de um PDF. Fonte não conferível vira `L2-transcricao-manual` em P1: o gate declara que não sabe, em vez de fingir que sabe.
 
@@ -141,7 +141,7 @@ Passar em FORJA-LASTRO-v2 significa apenas que a peça satisfez os requisitos le
 
 ## 7-A. Extensão implementada — v2, fonte prevalente e valor monetário (04/08/2026)
 
-O incidente Cafelana de 02/08/2026 (e-mail do Fábio, thread `19fbfa33e7ce7df9`) expôs o complemento deste módulo: **o v1 ancora proposição, não número.** Faixas em reais foram produzidas sem que nenhum documento tivesse sido declarado governante da base econômica, e nenhum gate perguntou "qual arquivo autoriza estes números e em que data-base?".
+O incidente CASO-04 de 02/08/2026 (e-mail do Fábio, thread `19fbfa33e7ce7df9`) expôs o complemento deste módulo: **o v1 ancora proposição, não número.** Faixas em reais foram produzidas sem que nenhum documento tivesse sido declarado governante da base econômica, e nenhum gate perguntou "qual arquivo autoriza estes números e em que data-base?".
 
 A extensão acrescenta L9 (fonte prevalente validada), L10 (data-base coincidente), L11 (valor monetário sem âncora), L12 (hierarquia física) e L13 (recomputo aritmético), **aqui dentro** e não em módulo próprio. A fonte prevalente entra como fato com `role: fonte_prevalente` — mesmo mecanismo do `criterio_vigente` do L7, que já resolve "qual registro governa hoje". A incidência é estreita e reexecutável por `material_economico()`; número com separador de milhar sem marcador de moeda não aciona a família. Plano completo, com sequência e critérios: `planejamento/41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md`; catálogo: § U13 de `planejamento/06_GATES_QUALIDADE_FORJA.md`.
 

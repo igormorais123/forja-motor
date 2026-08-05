@@ -25,7 +25,7 @@
 6-b. [ ] Mutação semântica: `python forja_mutation_semantic.py <caseId>` →
        `n4_artifacts/F7_SEMANTIC_MUTATION.json` com `semanticMutationScore >= 0.8`,
        `suiteValida = true` e zero controles benignos mortos (critério 3 de promoção).
-       Baselines de 12/07 para comparação: Patrícia 0.17, Libra Sul 0.20, Saúde 0.0 —
+       Baselines de 12/07 para comparação: CASO-19 0.17, CASO-16 0.20, Saúde 0.0 —
        famílias fracas nominadas no JSON indicam qual detector construir a seguir.
 7. [ ] Toda ocorrência inesperada vira nota no `MAPA_IA.md` do caso na hora (não depois).
 
@@ -45,5 +45,5 @@
 |---|---|---|---|---|---|
 | — | (nenhum ciclo prospectivo executado até 12/07/2026) | | | | |
 
-Baselines retrospectivas (Patrícia, Libra Sul, Saúde) NÃO contam — não houve
-congelamento anterior à redação. Cafelana AgInt: revogada (origem invalidada).
+Baselines retrospectivas (CASO-19, CASO-16, Saúde) NÃO contam — não houve
+congelamento anterior à redação. CASO-04 AgInt: revogada (origem invalidada).

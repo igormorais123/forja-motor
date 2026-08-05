@@ -50,7 +50,7 @@ def main() -> int:
            _red("Fizemos o red team e concluímos que está tudo certo."), "fail")
     checar("duas objeções só", _red("1. uma coisa\n2. outra coisa"), "fail")
     checar("as nove do protocolo", _red(NOVE), "pass")
-    # Seis objeções densas é o relatório real da Natura: não se reprova
+    # Seis objeções densas é o relatório real da CASO-17: não se reprova
     # retroativamente trabalho substantivo, mas também não se diz `pass`.
     checar("seis objeções — abaixo do protocolo", _red(SEIS), "warn")
 

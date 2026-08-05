@@ -34,6 +34,9 @@ FORJA = Path(__file__).resolve().parent
 # código de saída e imprime o resumo na última linha. Não são adaptadas a pytest
 # porque o valor delas está no texto do relatório que produzem.
 SUITES_SCRIPT = {
+    "test_forja_fronteira.py": (
+        "fronteira motor/acervo — classifica, acusa vazamento de dado de cliente "
+        "e não acusa vocabulário nem valor sintético"),
     "test_forja_lapidacao_governanca.py": "os invariantes da lapidação aprovam o legítimo e reprovam cada sabotagem",
     "test_forja_exploracao_diversidade.py": "formulário do F2A é acusado e exploração genuína passa limpa",
     "test_forja_adversarial_gate.py": "regressão autônoma do gate adversarial",
@@ -47,7 +50,7 @@ SUITES_SCRIPT = {
     "test_forja_regua.py": "sabotagem da régua — cinco fraudes simuladas",
     "test_forja_fila.py": "priorização e prontidão da fila",
     "test_forja_conselho_1107.py": "gates do conselho de 11/07/2026",
-    "test_forja_lastro.py": "blindagem contra lastro aparente — âncora Vale Trading 26/07/2026",
+    "test_forja_lastro.py": "blindagem contra lastro aparente — âncora CASO-23 26/07/2026",
     "test_forja_regimentos.py": "auditoria de atualidade dos regimentos arquivados (E11)",
     "test_forja_gate_liveness.py": "catraca da liveness dos gates — computação versus autodeclaração",
     "test_forja_lastro_rota_producao.py": "catraca da rota de produção — recomputa lastro no disco",

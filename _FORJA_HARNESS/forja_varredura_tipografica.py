@@ -24,7 +24,7 @@ Duas armadilhas que a primeira medição caiu, e que o código evita:
      alarmantes e falsos: parágrafo que herda a justificação do estilo não tem
      `w:jc` nenhum, e o XML do corpo inclui tabelas e caixas. Quem lê certo é
      `audit_docx_layout`, que percorre a cadeia de estilos. Pela leitura crua o
-     relatório do Cafelana aparecia com 0% de justificação; pela correta, 100%.
+     relatório do CASO-04 aparecia com 0% de justificação; pela correta, 100%.
 
 Uso:
     python forja_varredura_tipografica.py
@@ -105,7 +105,7 @@ def _tem_marca_correcao(nome: str) -> bool:
 
 
 _TOKENS_GENERICO_CASO = frozenset({
-    "agravo", "assinatura", "cafelana", "contrarrazoes", "de", "edcl", "embargos",
+    "agravo", "assinatura", "CASO-04", "contrarrazoes", "de", "edcl", "embargos",
     "escritorio", "entregas", "fabio", "gestao", "impugnacao", "memorial", "memoriais",
     "parecer", "peticao", "plano", "relatorio", "revisao",
 })
@@ -152,7 +152,7 @@ def _marcar_superadas(medidas: list) -> None:
     têm tamanho parecido.
 
     O agrupamento é por caso e não por pasta porque a correção costuma nascer em
-    outra pasta que a original — no Natura, o pacote pós-auditoria de 20/07 e a
+    outra pasta que a original — no CASO-17, o pacote pós-auditoria de 20/07 e a
     correção de 21/07 são diretórios diferentes do mesmo caso. Agrupar por pasta
     deixava a versão superada contando como defeito vivo.
     """

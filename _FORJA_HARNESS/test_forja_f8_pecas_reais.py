@@ -31,6 +31,8 @@ from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 RAIZ = Path(__file__).resolve().parent
+import forja_acervo  # noqa: E402
+
 FABRICA = RAIZ.parent
 
 from forja_docx_layout import FOLIO_SAFE_WIDTH_PT, _folio_rectangles, _vml_width_pt  # noqa: E402
@@ -39,35 +41,20 @@ from forja_visual_qa_structural import auditar_documento  # noqa: E402
 TEMPLATE = FABRICA / "_FERRAMENTAS" / "TEMPLATE_MEDINA_OSORIO_PETICAO.docx"
 
 # Peças aprovadas e entregues. Cada uma passou pelo olho do Fábio ou do Igor.
-PECAS_APROVADAS = [
-    FABRICA / "Cafelana" / "_forja_cafelana_geral_reconstrucao_2026-08-03" / "entrega_interna"
-    / "PLANO_ESTRATEGICO_CAFELANA_RECONSTRUIDO_FORJA_VISUAL_LAW.docx",
-    FABRICA / "AI 0011621-15.2023.8.27.2700 – ajustes finais nos memoriais" / "Anexos do email"
-    / "MEMORIAIS_AI_0011621-15.2023_JOSE_EDUARDO_FINAL.docx",
-]
+PECAS_APROVADAS = [c for c in (forja_acervo.caminho("peca-f8-plano-estrategico"),
+                               forja_acervo.caminho("peca-f8-memoriais-ai")) if c]
 
 # Não são falsos positivos e não podem entrar na lista acima: são peças reais
 # com defeitos já localizados na primeira execução. Mantê-las aqui transforma a
 # descoberta em regressão: se o gate deixar de acusar o defeito conhecido, a
 # suíte falha; se surgir outro achado, ele não é silenciosamente absorvido.
-PECAS_TRIADAS = [
-    (
-        FABRICA / "Cafelana" / "contrarrazões ao AgInt no AREsp nº 2.698.443D"
-        / "_v9_nono_topico_2026-07-31" / "CAFELANA_NONO_TOPICO_V9_REVISAO_LIMPA.docx",
-        {"body_font_size_not_12pt"},
-    ),
-    (
-        FABRICA / "Cafelana" / "contrarrazões ao AgInt no AREsp nº 2.698.443D"
-        / "_v8_visual_2026-07-30" / "IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.docx",
-        # Estava aqui com `table_typography_inconsistent`, e era ERRO MEU de
-        # triagem. A mistura de Segoe UI com Times New Roman dentro da tabela é
-        # a identidade da casa — rótulo em sans, conteúdo em serifada —, emitida
-        # pelo `medina_visual_kit` desde o padrão aprovado em 09/07/2026 e
-        # presente também na V4 de 15/07, igualmente entregue. O gate foi
-        # recalibrado; a peça nunca teve esse defeito.
-        set(),
-    ),
-]
+PECAS_TRIADAS = [(c, ach) for c, ach in (
+    (forja_acervo.caminho("peca-triada-nono-topico"), {"body_font_size_not_12pt"}),
+    # A V8 esteve aqui com `table_typography_inconsistent`, e era ERRO MEU de
+    # triagem: a mistura de Segoe UI com Times dentro da tabela é a identidade
+    # da casa, emitida pelo kit visual desde o padrão aprovado em 09/07/2026.
+    (forja_acervo.caminho("peca-triada-v8-visual"), set()),
+) if c]
 
 # Códigos que NÃO podem aparecer numa peça aprovada. Ficam de fora os que
 # apontam defeito real já triado e comunicado ao Igor em
@@ -119,7 +106,7 @@ def main() -> int:
     #      par abaixo, ela vira teto decorativo — o teto absoluto de 61 pt já era
     #      isso: nenhum documento do acervo o violava, e o achado nunca disparava.
     #      Contraprova: o fólio de 57,3 pt do template cabe nos 99,2 pt da margem
-    #      padrão. Prova: a família Natura usa margem de editor (51 pt) com o
+    #      padrão. Prova: a família CASO-17 usa margem de editor (51 pt) com o
     #      mesmo fólio, e ali ele realmente entra na mancha de texto.
     #      Triado em 04/08/2026: os quatro documentos acusados são um só desvio —
     #      documento montado com margens de editor reusando o fólio da casa —,

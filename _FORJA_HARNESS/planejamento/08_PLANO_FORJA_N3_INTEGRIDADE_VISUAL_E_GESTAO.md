@@ -318,7 +318,7 @@ Novo teste `forja_case_isolation.py`:
 - permite modelos e citações comuns por whitelist;
 - bloqueia F9 se houver entidade externa sem justificativa.
 
-Isso capturaria “LIBRA SUL” no relatório Azimut.
+Isso capturaria “CASO-16” no relatório CASO-02.
 
 ## 4.6 Cobertura, compressão e estouro de contexto
 
@@ -516,13 +516,13 @@ Transformar os defeitos reais em fixtures:
 
 | Fixture | Deve reprovar por |
 |---|---|
-| Natura p. 10 | sobreposição de degraus + legenda duplicada |
-| Libra Sul p. 9 | caixa opaca cobrindo rótulos |
-| Patrícia/Fábio p. 6 | colisões e total oculto |
-| CORSAN p. 3 | overflow horizontal dos cartões |
-| CORSAN p. 15 | rótulos sobrepostos à timeline |
-| Libra Sul p. 12 | `####` literal |
-| SVG Azimut/Natura/Patrícia | atributos inválidos |
+| CASO-17 p. 10 | sobreposição de degraus + legenda duplicada |
+| CASO-16 p. 9 | caixa opaca cobrindo rótulos |
+| CASO-19/Fábio p. 6 | colisões e total oculto |
+| CASO-07 p. 3 | overflow horizontal dos cartões |
+| CASO-07 p. 15 | rótulos sobrepostos à timeline |
+| CASO-16 p. 12 | `####` literal |
+| SVG de CASO-02, CASO-17 e CASO-19 | atributos inválidos |
 
 Essas páginas não devem ser apenas corrigidas; devem virar testes para que o mesmo erro não retorne.
 
@@ -926,7 +926,7 @@ Critério: pacote, draft e painel mostram os mesmos arquivos e o mesmo estado.
 
 ## Etapa 7 — Replay e promoção gradual
 
-- replay em Azimut, CORSAN, Libra Sul, Natura, Patrícia/Fábio e Plano de Saúde;
+- replay em CASO-02, CASO-07, CASO-16, CASO-17, CASO-19/Fábio e Plano de Saúde;
 - corrigir primeiro os módulos, não reescrever silenciosamente as peças;
 - gerar relatório antes/depois;
 - ativar N3 por novos casos;
@@ -985,10 +985,10 @@ Regras:
 | CT-03 | fato sem página/origem | impedir uso como fato comprovado |
 | CT-04 | ressalva retirada na conversão | reprovar fidelidade semântica |
 | CT-05 | número/data muda entre MD e PDF | reprovar pacote |
-| V-01 | Natura p. 10 | reprovar |
+| V-01 | CASO-17 p. 10 | reprovar |
 | V-02 | Libra p. 9 | reprovar |
-| V-03 | Patrícia p. 6 | reprovar |
-| V-04 | CORSAN p. 3 e p. 15 | reprovar |
+| V-03 | CASO-19 p. 6 | reprovar |
+| V-04 | CASO-07 p. 3 e p. 15 | reprovar |
 | V-05 | `####` e `>` literais | reprovar |
 | V-06 | atributos SVG inválidos | reprovar |
 | V-07 | PDF regenerado após inspeção | invalidar ledger |
@@ -1012,11 +1012,11 @@ Regras:
 
 | Caso | Capacidade que o replay precisa provar |
 |---|---|
-| Azimut | isolamento entre casos, fontes pendentes e relatório sem contaminação |
-| CORSAN | cartões, overflow horizontal, timeline e painel de entrega |
-| Libra Sul | H4/blockquotes, sobreposição opaca e integridade de memoriais longos |
-| Natura | legenda, sequência visual e colisão entre degraus |
-| Patrícia/Fábio | números, percentuais, caixas, JSON válido e total visível |
+| CASO-02 | isolamento entre casos, fontes pendentes e relatório sem contaminação |
+| CASO-07 | cartões, overflow horizontal, timeline e painel de entrega |
+| CASO-16 | H4/blockquotes, sobreposição opaca e integridade de memoriais longos |
+| CASO-17 | legenda, sequência visual e colisão entre degraus |
+| CASO-19/Fábio | números, percentuais, caixas, JSON válido e total visível |
 | Plano de Saúde | pacote com cinco produtos, fonte não verificada, regressão F9→F5 e dez anexos |
 
 Cada replay roda sobre cópia imutável do caso, produz relatório antes/depois e não substitui a peça histórica. O objetivo é provar o gate, não “embelezar” retroativamente o acervo.

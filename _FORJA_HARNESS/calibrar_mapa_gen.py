@@ -17,19 +17,21 @@ import json
 import sys
 from pathlib import Path
 
+import forja_acervo
+
 FORJA = Path(__file__).resolve().parent
 sys.path.insert(0, str(FORJA))
 
 from forja_visual_mapa_gen import gerar_mapa, _norm  # noqa: E402
 
 CASOS = [
-    ("azimut", "case-email-azimut-19f3ed5bdbdcf159", "MEMORIAL_AZIMUT_RESP_2237713.md"),
-    ("corsan", "case-email-corsan-agerst-19f3dc9ff92081cd", "DIAGNOSTICO_CORSAN_AGERST.md"),
-    ("libra", "case-email-libra-sul-agint-stj-19f3c9350d875062",
+    ("CASO-02", forja_acervo.caso("CASO-02"), "MEMORIAL_AZIMUT_RESP_2237713.md"),
+    ("CASO-07", forja_acervo.caso("CASO-07"), "DIAGNOSTICO_CORSAN_AGERST.md"),
+    ("libra", forja_acervo.caso("CASO-16"),
      "MEMORIAIS_LIBRA_SUL_AGINT_ARESP_2578181.md"),
-    ("natura", "case-email-natura-cabreuva-19f3991ebc75fe03",
+    ("CASO-17", forja_acervo.caso("CASO-17"),
      "ESTUDO_PRELIMINAR_NATURA_CABREUVA.md"),
-    ("patricia", "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+    ("patricia", forja_acervo.caso("CASO-19"),
      "MEMORIAIS_PATRICIA_FABIO_APELACAO.md"),
 ]
 

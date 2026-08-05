@@ -576,7 +576,7 @@ def verificar(texto, tipo="peca", *, ledger=None, base_dir=None, case_dir=None,
                     decl, manifest, base_dir=case_path).valida:
                 todas.extend(gate_s2_pareamento_nome_papel(texto, decl))
                 todas.extend(gate_s4_presenca_direcao_pedido(texto, decl))
-    # Blindagem contra lastro aparente (caso Vale Trading, 26/07/2026). Os gates
+    # Blindagem contra lastro aparente (caso CASO-23, 26/07/2026). Os gates
     # lexicais entram em toda rota; L1/L2/L7/L8 e L9--L13 só são calculados
     # quando a rota fornece o ledger/contexto documental real.
     from forja_lastro import analisar_texto as analisar_lastro, validar_gates_economicos

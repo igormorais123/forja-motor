@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Kit de composição das edições VISUAL LAW Medina Osório em Word.
 
-Generalização do builder validado da Cafelana (08/07/2026) — skill
+Generalização do builder validado da CASO-04 (08/07/2026) — skill
 `padrao-visual-medina`. Uso típico:
 
     from medina_visual_kit import PecaVisual
@@ -169,7 +169,7 @@ def romano(n: int) -> str:
 
     A lista ``ROM`` parava em XV, e ``abre()`` indexava direto: peça com a 16ª
     seção derrubava a composição inteira com ``IndexError`` — encontrado em
-    04/08/2026 compondo o markdown real do Cafelana pela rota canônica. Teto
+    04/08/2026 compondo o markdown real do CASO-04 pela rota canônica. Teto
     silencioso em constante é dívida esperando o documento comprido; quem chega
     lá é justamente a peça grande, que é a que mais custa refazer.
     """
@@ -238,7 +238,7 @@ class PecaVisual:
         self.saida = saida
         # Contexto documental opcional e explícito. Sem ele, uma peça visual
         # com valor monetário não pode ser salva: a rota ad hoc foi justamente
-        # o ponto cego do incidente Cafelana.
+        # o ponto cego do incidente CASO-04.
         self.case_dir = case_dir or os.environ.get("FORJA_CASE_DIR")
         self.ledger_path = ledger_path or os.environ.get("FORJA_LASTRO_LEDGER")
         self.base_dir = base_dir or os.environ.get("FORJA_LASTRO_BASE_DIR")

@@ -205,7 +205,7 @@ class PostProtocolPipelineTests(unittest.TestCase):
             self.baseline,
             [
                 "EXCELENTÍSSIMO SENHOR DESEMBARGADOR",
-                "Processo 0000001-11.2026.8.07.0001",
+                "Processo 9000017-00.2026.8.07.0000",
                 "A parte requer o provimento do recurso.",
             ],
         )
@@ -239,7 +239,7 @@ class PostProtocolPipelineTests(unittest.TestCase):
             self.human,
             [
                 "EXCELENTÍSSIMO SENHOR DESEMBARGADOR",
-                "Processo 0000001-11.2026.8.07.0001",
+                "Processo 9000017-00.2026.8.07.0000",
                 "A parte requer o provimento integral do recurso.",
             ],
         )
@@ -258,7 +258,7 @@ class PostProtocolPipelineTests(unittest.TestCase):
             received_at="2026-07-02T10:00:00-03:00",
             original_name="Petição final humana.docx",
             piece_name="Agravo interno",
-            process_id="0000001-11.2026.8.07.0001",
+            process_id="9000017-00.2026.8.07.0000",
             declaration_text=declaration,
             explicit_evidence_links=explicit_links,
         )
@@ -602,7 +602,7 @@ class DocumentExtractionTests(unittest.TestCase):
 
     def test_material_mutation_classifiers(self) -> None:
         scenarios = {
-            "procedural_identity": ("Processo 0000001-11.2026.8.07.0001", "Processo 0000002-22.2026.8.07.0001"),
+            "procedural_identity": ("Processo 9000017-00.2026.8.07.0000", "Processo 9000018-00.2026.8.07.0000"),
             "authority_citation": ("Segundo o REsp 1.", "Segundo o REsp 2."),
             "request_relief": ("Requer provimento.", "Requer improvimento."),
             "calculation": ("Valor de R$ 100,00.", "Valor de R$ 200,00."),

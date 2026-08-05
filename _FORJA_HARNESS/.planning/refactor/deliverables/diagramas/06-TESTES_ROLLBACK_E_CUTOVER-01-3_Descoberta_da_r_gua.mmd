@@ -1,6 +1,0 @@
-flowchart TD
-    All["todos test_*.py"] --> Classify["classificar"]
-    Classify --> Orphan{"órfão?"}
-    Orphan -->|sim| Fail["falhar a régua"]
-    Orphan -->|não| Suites["unit/contract/integration/mutation/real"]
-    Suites --> Report["relatório: executado/omitido/razão"]

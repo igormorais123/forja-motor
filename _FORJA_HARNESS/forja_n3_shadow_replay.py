@@ -10,6 +10,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import forja_acervo
+
 from forja_n3_common import FORJA, WORKSPACE, atomic_write_json, atomic_write_text, now_iso, read_json, sha256_file
 from forja_state_machine import derive_state, initialize_case
 
@@ -18,11 +20,11 @@ from medina_visual_lint import lint_svg  # noqa: E402
 
 
 REPRESENTATIVE_CASES = {
-    "Azimut": "case-email-azimut-19f3ed5bdbdcf159",
-    "CORSAN": "case-email-corsan-agerst-19f3dc9ff92081cd",
-    "Libra Sul": "case-email-libra-sul-agint-stj-19f3c9350d875062",
-    "Natura": "case-email-natura-cabreuva-19f3991ebc75fe03",
-    "Patrícia/Fábio": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
+    "CASO-02": forja_acervo.caso("CASO-02"),
+    "CASO-07": forja_acervo.caso("CASO-07"),
+    "CASO-16": forja_acervo.caso("CASO-16"),
+    "CASO-17": forja_acervo.caso("CASO-17"),
+    "CASO-19": forja_acervo.caso("CASO-19"),
     "Plano de Saúde": "case-email-auto-19f3f25cb64df962",
 }
 

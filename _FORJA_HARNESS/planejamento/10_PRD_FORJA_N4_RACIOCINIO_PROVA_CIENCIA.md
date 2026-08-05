@@ -73,7 +73,7 @@ A auditoria de artefatos reais do ciclo N3, registrada em `../reports/AUDITORIA_
 1. **Metadados contaminados em todos os documentos do ciclo auditado:** a verificação precisa ocorrer no arquivo final, depois do render e de qualquer regeneração.
 2. **Defeitos visuais que só apareceram em inspeção ampliada:** títulos de cards ultrapassaram bordas apesar do QA anterior; o corpus deve conter esses casos reais.
 3. **Registro de hashes dessincronizado do disco:** oito registros ficaram defasados depois de sanitização ou novo render; toda alteração física invalida hash e pacote dependente.
-4. **Versão divergente entregue ao revisor humano:** no caso Patrícia/Fábio, a cópia de revisão não correspondia à versão auditada; a seleção do anexo deve estar vinculada ao pacote aprovado.
+4. **Versão divergente entregue ao revisor humano:** no caso CASO-19/Fábio, a cópia de revisão não correspondia à versão auditada; a seleção do anexo deve estar vinculada ao pacote aprovado.
 5. **O próprio verificador pode errar:** a regra do art. 343-A do RISTJ estava invertida e foi corrigida após conferência oficial; gates determinísticos também precisam de hard negatives e fonte canônica.
 
 A mesma auditoria derrubou como **falso positivo** a crítica às margens 2,5/5,4 cm das peças visual law: elas pertenciam ao perfil visual aprovado. Portanto, a N4 deve conferir o arquivo contra o `layoutProfileId` selecionado para a peça — padrão Word ordinário ou variante visual law aprovada — e nunca forçar um único conjunto de margens sobre todos os produtos.
@@ -783,9 +783,9 @@ Até essa promoção, estes quatro documentos são o pacote de planejamento da c
 
 A arquitetura deste PRD foi implementada como candidata `N4.0-candidate`, sem substituir por presunção a especificação vigente. Estão ativos por flags: árvore de questões, cobertura, grafo de raciocínio, testes do caso, identidade terminológica, comparação documental, direito intertemporal, quantificação, evidência científica, metacognição, estratégia condicional, aprendizado, integridade de entrega e visão de gestão.
 
-Uma auditoria posterior revogou corretamente o antigo piloto Cafelana: ele derivava de minuta cuja própria origem registrava invalidação por confusão entre o AREsp de 2024 e o AgInt de 2026. Cafelana permanece com 24/24 artefatos, mas bloqueada por fonte revogada até a obtenção da íntegra do AgInt da União de 24/06/2026, e-STJ fls. 938/949.
+Uma auditoria posterior revogou corretamente o antigo piloto CASO-04: ele derivava de minuta cuja própria origem registrava invalidação por confusão entre o AREsp de 2024 e o AgInt de 2026. CASO-04 permanece com 24/24 artefatos, mas bloqueada por fonte revogada até a obtenção da íntegra do AgInt da União de 24/06/2026, e-STJ fls. 938/949.
 
-Patrícia/Fábio, Libra Sul e Saúde foram validados como **baselines retrospectivas**, não como ciclos prospectivos. Cada baseline possui 24/24 artefatos, zero P0, dois P1 de conselho, 10/10 testes, cobertura de mutação literal de 100%, rastreabilidade física reproduzível e QA visual automática por página. Como os textos finais já existiam antes das suítes, os três relatórios registram `promotionEligible=false`.
+CASO-19/Fábio, CASO-16 e Saúde foram validados como **baselines retrospectivas**, não como ciclos prospectivos. Cada baseline possui 24/24 artefatos, zero P0, dois P1 de conselho, 10/10 testes, cobertura de mutação literal de 100%, rastreabilidade física reproduzível e QA visual automática por página. Como os textos finais já existiam antes das suítes, os três relatórios registram `promotionEligible=false`.
 
 ### Adendo do Conselho - 11/07/2026
 A auditoria independente corrigiu a expressão acima. As três baselines preservam 24/24 artefatos, zero P0, 10/10 testes e 10/10 mutações **literais**, mas possuem dois P1 jurídicos cada: Helena não emitiu aprovação específica suficiente para uso final e Cícero rejeitou a versão corrente. O QA por página é automático e independente da geração, não revisão humana. Assim:
@@ -796,7 +796,7 @@ A auditoria independente corrigiu a expressão acima. As três baselines preserv
 - mutação literal não prova preservação de sentido;
 - liberação exige pareceres específicos, regimento registrado, citações materiais verificadas e entrega aplicável confirmada.
 
-A operação permanece limitada a `pilot_blocking` nesses três baselines e em Cafelana. Ativar `default_on` retroativamente bloquearia estados legados e, sobretudo, promoveria evidência retrospectiva como se fosse prospectiva. A promoção futura exige suíte congelada e datada antes da produção final de ciclos novos.
+A operação permanece limitada a `pilot_blocking` nesses três baselines e em CASO-04. Ativar `default_on` retroativamente bloquearia estados legados e, sobretudo, promoveria evidência retrospectiva como se fosse prospectiva. A promoção futura exige suíte congelada e datada antes da produção final de ciclos novos.
 
 ---
 

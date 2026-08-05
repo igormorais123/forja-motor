@@ -274,7 +274,7 @@ def _rotulo_curto(texto, limite=34):
         return limpo.upper().strip(" .:;—-")
     # Lead-in longo costuma terminar no núcleo ("Se, excepcionalmente, admitido
     # o agravo, no mérito subsidiário" -> "MÉRITO SUBSIDIÁRIO"). Truncar pela
-    # frente produz rótulo sem sentido, que foi o que saiu no Libra Sul.
+    # frente produz rótulo sem sentido, que foi o que saiu no CASO-16.
     cauda = re.split(r",\s*", limpo)[-1].strip()
     cauda = re.sub(r"^(no|na|em|de|do|da|ao|à|para|com)\s+", "", cauda, flags=re.I)
     if 8 <= len(cauda) <= limite:
@@ -287,7 +287,7 @@ def _rotulos_sintese(sintese_linhas, maximo=6):
     """Divide a síntese em linhas rotuladas a partir dos lead-ins em negrito.
 
     Sem isto, compor() cai no fallback de uma única linha "SÍNTESE" com o texto
-    inteiro num bloco — foi o que saiu no Libra Sul em 30/07/2026, e é
+    inteiro num bloco — foi o que saiu no CASO-16 em 30/07/2026, e é
     exatamente a leitura rápida transversal que se perde.
 
     CUIDADO: compor() localiza as âncoras por busca LITERAL no texto da síntese
@@ -302,7 +302,7 @@ def _rotulos_sintese(sintese_linhas, maximo=6):
     # linha da síntese. O gate de fidelidade de compor() procura esse trecho
     # como bloco contíguo no DOCX, e o rótulo da linha seguinte se intercala
     # entre a abertura e o próximo lead-in, partindo o bloco ao meio
-    # (reprovação real no Libra Sul, 30/07/2026). 170 dá margem para a
+    # (reprovação real no CASO-16, 30/07/2026). 170 dá margem para a
     # diferença de comprimento introduzida pela normalização.
     marcas = [(m.start(), m.group(0), m.group(1))
               for m in re.finditer(r"\*\*([^*\n]{3,80})\*\*", texto)
@@ -398,7 +398,7 @@ def gerar_mapa(md_path, tipo=None, com_figuras=True, max_pulls=6, max_caixas=3):
         candidatos.append((peso, e))
     # Fallback de densidade: documento de registro técnico (diagnóstico,
     # matriz, checklist) não usa o vocabulário argumentativo dos marcadores —
-    # no CORSAN nenhum dos 208 parágrafos elegíveis dispara peso. Sem isto, o
+    # no CASO-07 nenhum dos 208 parágrafos elegíveis dispara peso. Sem isto, o
     # produto interno sairia sem nenhum destaque, violando o piso do padrão.
     # Critério do fallback: parágrafo substancial, bem distribuído no texto.
     if len(candidatos) < alvo_pulls:

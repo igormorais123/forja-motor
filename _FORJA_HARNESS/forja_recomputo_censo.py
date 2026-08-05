@@ -125,7 +125,7 @@ def _produtores(pasta: Path, resultado: dict | None = None) -> list:
             conteudo = _texto(pasta / nome) if nome.endswith(".md") else _ler(pasta / nome)
             saida.append(validar_pergunta_jurisdicional(conteudo))
             break
-    # Os dois artefatos da F3 existem em JSON e em markdown; o Vale Trading só
+    # Os dois artefatos da F3 existem em JSON e em markdown; o CASO-23 só
     # tem o mapa em markdown e o Nylton só tem o ledger assim.
     mapa = (_ler(pasta / "sources_map.json") if (pasta / "sources_map.json").is_file()
             else _texto(pasta / "sources_map.md"))
@@ -145,7 +145,7 @@ def _produtores(pasta: Path, resultado: dict | None = None) -> list:
         # promovida junto. Uma tentativa descartada tem hash diferente por
         # definição — foi descartada —, e pareá-la com a estratégia vigente
         # acusa de "decisões tomadas sobre outra versão do exame" um caso onde
-        # o par promovido confere. Aconteceu com o Cafelana em 04/08/2026: era
+        # o par promovido confere. Aconteceu com o CASO-04 em 04/08/2026: era
         # a segunda vez que este censo inventava um `fail` de hash por parear
         # errado, e a primeira já estava documentada em `_irmao_promovido`.
         if estrategia and not (pasta / "adversarial_strategy.json").is_file():

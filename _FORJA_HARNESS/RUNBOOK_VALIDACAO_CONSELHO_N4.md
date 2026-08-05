@@ -31,7 +31,7 @@ python gestao_escritorio\scripts\render_dashboard.py
 - canários com `caseTestMode=retrospective_baseline`;
 - `promotionEligible=false` enquanto não houver mutação semântica e ciclos prospectivos;
 - conselho pendente visível;
-- Cafelana bloqueada;
+- CASO-04 bloqueada;
 - sidecar sem erro e painel HTTP 200;
 - P1 e citações não verificadas continuam visíveis.
 

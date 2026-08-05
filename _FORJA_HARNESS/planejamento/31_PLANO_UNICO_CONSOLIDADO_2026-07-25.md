@@ -69,7 +69,7 @@ Aresta de realimentação, reaproveitando a máquina de invalidação já previs
 
 Alimentado pelo TeiaJus, que **já tem o dado**: espelhos mensais dos dez órgãos julgadores do STJ com o campo relator, Diário com íntegras e `textSha256`, DataJud com `orgaoJulgador`. Nenhuma coleta nova.
 
-Fecha a lacuna G6 do documento 29 — a mesma falha que o escritório já apontou uma vez no caso Cafelana e que segue sem artefato.
+Fecha a lacuna G6 do documento 29 — a mesma falha que o escritório já apontou uma vez no caso CASO-04 e que segue sem artefato.
 
 **(2) `F4_SIGNATURE_BRIEF.json`** — exatamente como a crítica desenhou, com os nove campos do §1, produzido **dentro da execução F4 atual**, depois dos pareceres Helena e Cícero. Sem chamada adicional. Absorve o leque de teses: não há dois lugares onde rotas nascem.
 
@@ -149,7 +149,7 @@ Isso importa porque impede duas coisas: gastar orçamento de AUTO-RESEARCH com o
 ## 6. Três ondas
 
 **Onda 1 — sombra, e nada muda na saída**
-Régua verde primeiro, ou desvio classificado e aceito como baseline conhecido; rebaseline automático continua proibido. Schemas e validadores do mapa e do brief. F3-B produz o mapa; F4 produz o brief. **Nenhum output de F6 muda.** Verificação de completude e de grounding sobre casos históricos — Cafelana, Jalusa, Libra Sul e Natura, que já têm entrega e diff.
+Régua verde primeiro, ou desvio classificado e aceito como baseline conhecido; rebaseline automático continua proibido. Schemas e validadores do mapa e do brief. F3-B produz o mapa; F4 produz o brief. **Nenhum output de F6 muda.** Verificação de completude e de grounding sobre casos históricos — CASO-04, Jalusa, CASO-16 e CASO-17, que já têm entrega e diff.
 
 Critério de saída: os campos de prevenção e composição batem com a fonte oficial nos casos históricos; toda âncora declarada no brief existe nos ledgers.
 

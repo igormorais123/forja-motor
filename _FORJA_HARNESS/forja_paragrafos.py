@@ -4,7 +4,7 @@
 Até 04/08/2026 este gate era escrito pelo agente da F6: oito execuções, oito
 `pass`, nenhuma reprovação. Ele responde à pergunta que decide se a peça é
 protocolável — cada parágrafo afirma algo que os autos sustentam? — e um `pass`
-falso é exatamente o modo de falha do incidente Vale Trading de 26/07: texto
+falso é exatamente o modo de falha do incidente CASO-23 de 26/07: texto
 bem escrito, lastro aparente, proposição sem âncora.
 
 O artefato `paragraph_provenance.json` existe no acervo em CINCO dialetos,

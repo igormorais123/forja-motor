@@ -12,17 +12,17 @@ Este arquivo é o protocolo desta pasta para agentes não-Claude (Codex/GPT). As
 4. **Considerar a pasta mãe `_LEIS_GERAIS`** em toda peça: Estatuto da OAB (Lei 8.906/1994) e LOMAN (LC 35/1979). Ver `_LEIS_GERAIS\LEIA-ME.md`.
 5. **Registrar no relatório de melhorias** quais dispositivos regimentais e das leis gerais impactaram a peça (endereçamento, órgão competente, cabimento, prazo, sustentação oral etc.).
 
-## 2. Mapa de tribunais das pastas existentes (verificado em 06/07/2026)
+## 2. Mapa de tribunais das pastas existentes
 
-| Pasta | Tribunal | Regimento na pasta |
-|---|---|---|
-| Assunto Laudo Pericial Contábil – Proc. 0003453-28.1997.4.01.3400 | Justiça Federal / TRF1 | `REGIMENTO_INTERNO_TRF1.md` |
-| Cafelana (Ação Rescisória 0037913-65.2011.4.01.0000) | TRF1 | `REGIMENTO_INTERNO_TRF1.md` |
-| Cafelana\contrarrazões ao AgInt no AREsp nº 2.698.443D | STJ | `REGIMENTO_INTERNO_STJ.md` (também na raiz de Cafelana) |
-| Memoriais Cautelar Fiscal | TRF4 | `REGIMENTO_INTERNO_TRF4.md` |
-| Minuta de Embargos de Declaração — José Eduardo Siqueira Campos (AI 0011025-31.2023.8.27.2700) | TJTO | `REGIMENTO_INTERNO_TJTO.md` |
+O inventário — qual pasta de caso corresponde a qual tribunal e a qual
+regimento — vive no acervo, em `_FORJA_HARNESS/state/MAPA_TRIBUNAIS_POR_CASO.md`.
+Ele relaciona nome de cliente e número de processo, e por isso não fica aqui:
+este arquivo acompanha o motor, que é compartilhado.
 
-Avisos de atualidade: STJ consolidado até ER 47/2024 + ER 48–51 e 53 (junho/2026, mudaram competências de Turmas/Seções) em adendo; TRF1 consolidado até ER 5/2022 + posteriores em adendo (conferir Diário Eletrônico antes de peça crítica); TRF4 até Assento 35/2025; TJTO = Resolução 004/2001 integral + alterações posteriores em adendo.
+A regra continua sendo a desta seção: identificar o tribunal pelo número CNJ,
+pelo endereçamento e pelas decisões nos autos, e conferir o regimento vigente
+na data do protocolo antes de redigir.
+
 
 ## 3. Diagramação de excelência (obrigatório)
 
@@ -40,7 +40,7 @@ Regras de ouro:
 1. Diagramas dentro do Word SEMPRE vetoriais (EMF). Fluxo: SVG → `svg_para_emf` (Inkscape) → docx com parágrafos-marcador `{{FIG1}}` → `inserir_emf_word_com` (o próprio Word insere). **python-docx NÃO reconhece EMF — nunca usar `add_picture` com EMF.**
 2. PDF final SEMPRE via Word COM (`docx_para_pdf`). Nunca pandoc/LibreOffice para a versão final.
 3. Gate de QA visual obrigatório: `render_paginas` (pymupdf) + inspecionar TODAS as páginas antes de declarar pronto.
-4. Edição LaTeX estilo revista: modelo validado em `Cafelana\_revista\CAFELANA_CR_EDCL_REVISTA.tex`. Armadilhas conhecidas: `\\` não pode ficar aninhado em grupos `{...}` de nós TikZ; `\rowcolors` exige `\usepackage[table]{xcolor}`; Palatino/Times não têm o glifo "→" — usar `$\to$`.
+4. Edição LaTeX estilo revista: modelo validado em `o modelo LaTeX registrado no acervo sob a chave `modelo-revista-latex``. Armadilhas conhecidas: `\\` não pode ficar aninhado em grupos `{...}` de nós TikZ; `\rowcolors` exige `\usepackage[table]{xcolor}`; Palatino/Times não têm o glifo "→" — usar `$\to$`.
 5. **Legibilidade (resolve fontes pequenas)**: texto de diagrama nunca abaixo de 8pt no tamanho final impresso (viewBox 600 @ 15cm → font-size ≥ 12px). `svg_para_emf(..., largura_final_cm=...)` reprova automaticamente; tokens únicos de estilo em `_FERRAMENTAS\estilo_medina.py` (CORES, `ESTILO_GRAPHVIZ`, `TEMA_MERMAID`, `aplicar_estilo_matplotlib()`). Contra o efeito inverso ("diagrama gigante"), calcular a largura de inserção com `estilo_medina.largura_recomendada_cm(svg, alvo_pt=10)` em vez de 15cm fixo.
 6. **Imagens geradas por IA**: `gerar_imagem_ia(prompt, png)` (inference.sh). Permitido em capas de relatórios/pareceres ao cliente e ilustração institucional sóbria; PROIBIDO retratar fatos, pessoas ou provas em peça protocolada.
 
@@ -53,11 +53,11 @@ Especificação completa: `_FERRAMENTAS\PADRAO_WORD_MEDINA_OSORIO.md`. Regras de
 4. Parágrafos numerados; títulos de seção em romanos negrito sem recuo; endereçamento em caixa alta negrito; fecho "Nestes termos, pede deferimento." + assinaturas centralizadas.
 
 
-**Padrão visual aprovado (09/07/2026)**: a skill `padrao-visual-medina` (em `~\.claude\skills\`) é a referência visual OBRIGATÓRIA de toda petição desta fábrica — linguagem de design aprovada pelo Fábio/Igor (capa, síntese executiva, pull quotes, caixas, diagramas, quadro zebrado) nas versões LaTeX (V4) e Word (V1) do caso Cafelana, com processo de composição e receitas técnicas. Em conflito de precedência: fabrica-visual-peticoes rege protocolo/pipeline; padrao-visual-medina rege a linguagem visual. Kits reutilizáveis (09/07/2026): `_FERRAMENTAS\medina_visual_kit.py` (classe PecaVisual), `medina_svg_kit.py` (diagramas com gate de legibilidade + gate de overflow do viewBox) e `montar_visual.py` (EMF/PDF/render/anti-placeholder) — usar SEMPRE, nunca recriar. Peças validadas: Cafelana, EDcl José Eduardo (TJTO), Jalusa (TRF4), Memoriais LIBRA SUL (TRF4).
+**Padrão visual aprovado (09/07/2026)**: a skill `padrao-visual-medina` (em `~\.claude\skills\`) é a referência visual OBRIGATÓRIA de toda petição desta fábrica — linguagem de design aprovada pelo Fábio/Igor (capa, síntese executiva, pull quotes, caixas, diagramas, quadro zebrado) nas versões LaTeX (V4) e Word (V1) do caso CASO-04, com processo de composição e receitas técnicas. Em conflito de precedência: fabrica-visual-peticoes rege protocolo/pipeline; padrao-visual-medina rege a linguagem visual. Kits reutilizáveis (09/07/2026): `_FERRAMENTAS\medina_visual_kit.py` (classe PecaVisual), `medina_svg_kit.py` (diagramas com gate de legibilidade + gate de overflow do viewBox) e `montar_visual.py` (EMF/PDF/render/anti-placeholder) — usar SEMPRE, nunca recriar. Peças validadas: CASO-04, EDcl José Eduardo (TJTO), Jalusa (TRF4), Memoriais CASO-16 (TRF4).
 
 ## 4. Identidade visual Medina Osório Advogados (obrigatória em toda peça)
 
-- Logo em alta resolução: `Cafelana\_revista\logo_medina.png (fundo branco) / logo_medina_transp.png (fundo transparente — usar este sobre qualquer fundo que não seja branco puro)` (extraído da peça original, 600 dpi).
+- Logo em alta resolução: `_FERRAMENTASssets\logo_medina.png (fundo branco) / logo_medina_transp.png (fundo transparente — usar este sobre qualquer fundo que não seja branco puro)` (extraído da peça original, 600 dpi).
 - Cores institucionais: verde-petróleo `#395C60`, terracota `#D9926A` (variante escura para impressão `#9C5B38`), grafite `#49494D`; painéis claros `#EFF4F3` (petróleo) e `#FBF2EC` (terracota).
 - Corpo de texto: Times New Roman, justificado, parágrafos numerados; negrito mínimo e estratégico.
 - Rodapé: linha fina petróleo + `www.medinaosorio.com.br` (esquerda) e `Brasília | Porto Alegre | Rio de Janeiro` (direita). Fólio na margem direita, centralizado verticalmente.
@@ -65,7 +65,7 @@ Especificação completa: `_FERRAMENTAS\PADRAO_WORD_MEDINA_OSORIO.md`. Regras de
 
 ## 5. Estratégia visual (não decorar — cada elemento tem função cognitiva)
 
-Aplicar deliberadamente e documentar no relatório: primazia/recência (síntese executiva na abertura; quadro-resumo + pedidos no fim), Von Restorff (no máximo UMA caixa de destaque escuro por bloco argumentativo), fluência de processamento (numeração de parágrafos em cor institucional, topic sentences em negrito), dupla codificação (diagrama gêmeo junto de cada argumento-eixo), Gestalt (continuidade em timelines; destino comum em diagramas de convergência), ancoragem numérica (faixa de números-síntese do caso), padrão F (pull quotes na margem como camada de escaneamento). Referência aplicada: `Cafelana\_revista\RELATORIO_ESTRATEGIA_VISUAL.md`.
+Aplicar deliberadamente e documentar no relatório: primazia/recência (síntese executiva na abertura; quadro-resumo + pedidos no fim), Von Restorff (no máximo UMA caixa de destaque escuro por bloco argumentativo), fluência de processamento (numeração de parágrafos em cor institucional, topic sentences em negrito), dupla codificação (diagrama gêmeo junto de cada argumento-eixo), Gestalt (continuidade em timelines; destino comum em diagramas de convergência), ancoragem numérica (faixa de números-síntese do caso), padrão F (pull quotes na margem como camada de escaneamento). Referência aplicada: `o relatório de estratégia visual registrado no acervo sob `relatorio-estrategia-visual``.
 
 ## 6. Erros recorrentes minerados das entregas reais (checar SEMPRE antes de entregar)
 
@@ -74,7 +74,7 @@ Aplicar deliberadamente e documentar no relatório: primazia/recência (síntese
 3. **Placeholder esquecido no PDF final** (`[NOME]`, `[CRC-UF]`) — bloqueador P0; buscar `[` no texto final.
 4. **Diagramação quebrada que só aparece no render** (texto estourando borda, legenda cortada, rodapé colidido) — o QA página a página é o único detector.
 
-Casos-modelo: `Cafelana\AUDITORIA_FINAL_CAFELANA_SUPER.md` e `Jalusa...\DOCUMENTACAO_FINAL_APRENDIZADOS\03_APRENDIZADOS_ACERTOS_ERROS.md`. Visual law: se o elemento não reduz esforço cognitivo do julgador, sai da peça.
+Casos-modelo: `a auditoria final registrada no acervo sob `auditoria-final-super`` e `Jalusa...\DOCUMENTACAO_FINAL_APRENDIZADOS\03_APRENDIZADOS_ACERTOS_ERROS.md`. Visual law: se o elemento não reduz esforço cognitivo do julgador, sai da peça.
 
 ## 7. Anti-alucinação (inviolável)
 
@@ -97,7 +97,7 @@ Antes de redigir em processo volumoso, criar cronologia auditada e grafo dos ato
 
 Todo caso novo recebido por e-mail, WhatsApp/Hermes ou comando manual passa, após F1 e antes de pesquisa, conselho, blueprint ou redação, pela subfase `F2A_EXPLORACAO_PROBLEMA_100_PERGUNTAS`. O artefato `F2_QUESTION_TREE.json` deve usar `FORJA-F2A-100-v1`, conter exatamente 100 perguntas adaptadas ao caso, 10 em cada ótica canônica, e responder cada uma com classificação epistemológica e lastro quando factual. Lacuna não é resposta: fica `blocked`, com consequência e rota de diligência. A saída consolida problema, diagnóstico, pelo menos duas soluções e handoff para F3–F7. Questão material bloqueada impede peça protocolável. Contrato: `_FORJA_HARNESS\templates\F2A_EXPLORACAO_100_PERGUNTAS.md`; validador: `_FORJA_HARNESS\forja_exploracao_100.py`.
 
-## 7-D. Prescrição administrativa e prova por e-mail (inviolável — Natura/Cabreúva, 15/07/2026)
+## 7-D. Prescrição administrativa e prova por e-mail (inviolável — CASO-17, 15/07/2026)
 
 Prescrição contra a Fazenda exige matriz por fundo de direito, metodologia, parcela, ato de negativa,
 extensão e ciência; conclusão global sem essa decomposição é proibida. Requerimento por e-mail deve
@@ -122,7 +122,7 @@ O editor não pode criar ou alterar fatos, datas, números, valores, citações,
 
 **Entrada ÚNICA de produção:** `_FORJA_HARNESS\forja_visual_build.py`. Fluxo: gates F7 → brief `F7_5_BRIEF_VISUAL.json` → mapa automático (`forja_visual_mapa_gen.py`) → figuras (`forja_visual_figuras.py` + geradores em `_FERRAMENTAS\medina_svg_kit.py`) → `forja_visual.compor()` → `montar_visual.py` (EMF/Word COM/PDF/QA) → gate F8-S (`forja_assinatura_visual.py`). ~7 a 15 segundos por peça, fidelidade textual 100%. O mapa manual `compor_<caso>_mapa.py` virou refinamento opcional, não pré-requisito.
 
-**NÃO integrar `compor()` dentro de `forja_render_docx.render()`** — foi analisado e rejeitado: constrói a peça duas vezes, uma pobre e uma rica, e deixa dois DOCX parecidos na mesma pasta (modo de falha do caso Patrícia, Lição 48). O render simples é prévia; a produção passa pela entrada única.
+**NÃO integrar `compor()` dentro de `forja_render_docx.render()`** — foi analisado e rejeitado: constrói a peça duas vezes, uma pobre e uma rica, e deixa dois DOCX parecidos na mesma pasta (modo de falha do caso CASO-19, Lição 48). O render simples é prévia; a produção passa pela entrada única.
 
 **Brief F7.5** (`templates\F7_5_BRIEF_VISUAL.md`): o autor da peça declara âncoras da capa, cadeia argumentativa e cronologia. Custo de 1 a 2 minutos. Sem ele só saem as figuras estruturalmente seguras e peça longa não fecha o piso gráfico. **Nunca inferir conteúdo semântico de figura a partir de prosa argumentativa** — foi tentado e produziu cronologia misturando data do documento com prazo interno e fragmento de número CNJ lido como data, e cadeia de tese com a **tese da parte adversária** como elo do raciocínio da cliente. Cada frase era verbatim e o conjunto mentia. Figura fabricada é pior que figura ausente, porque parece prova.
 

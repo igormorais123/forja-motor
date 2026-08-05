@@ -15,7 +15,7 @@ Cópia arquivada de fonte oficial deve ser congelada — divergência ali é P0
 contrário, DEVE mudar com o tempo: o protocolo manda pesquisar emendas
 posteriores e anexá-las à seção final do próprio arquivo antes de cada peça.
 
-Medido em 04/08/2026: o regimento do caso Natura tem hash divergente do
+Medido em 04/08/2026: o regimento do caso CASO-17 tem hash divergente do
 declarado na F3 de 15/07 — porque o arquivo foi atualizado em 26/07 com a seção
 "Emendas posteriores", conferida no portal do TJSP. É o protocolo funcionando.
 Tratar isso como P0 reprovaria quem cumpriu a regra. Por isso a divergência de
@@ -57,14 +57,14 @@ def _bloco(dados: dict, campos) -> dict:
 
 
 # Os dois artefatos da F3 também existem em MARKDOWN no acervo — o mapa de fontes
-# do Vale Trading e o ledger de fatos do Nylton só existem nessa forma. Um leitor
+# do CASO-23 e o ledger de fatos do Nylton só existem nessa forma. Um leitor
 # que só abre JSON não erra: ele não vê, e reporta "ledger sem fatos" sobre um
 # ledger de nove fatos com localizador processual em cada linha. Foi o que este
 # gate fez em 04/08/2026, e o achado chegou a entrar num laudo de triagem como
 # defeito do caso antes de o censo de formas mostrar que o defeito era do gate.
 _LINHA_TABELA = re.compile(r"^\s*\|(.+)\|\s*$")
 # Aceita as duas maneiras reais de declarar o regimento no markdown: o nome do
-# arquivo (`REGIMENTO_INTERNO_TRF4.md`) e a prosa que o mapa do Vale Trading usa
+# arquivo (`REGIMENTO_INTERNO_TRF4.md`) e a prosa que o mapa do CASO-23 usa
 # ("Regimento Interno do TRF4, consolidação oficial até o Assento Regimental nº
 # 37/2026"). A regra da casa manda considerar o regimento vigente, não escrever
 # o nome de um arquivo — cobrar o formato reprovaria um mapa que cumpre a regra

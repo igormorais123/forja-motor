@@ -12,7 +12,7 @@
 > (`forja_assinatura_visual.py`) com testes de mutação. Pipeline completo roda
 > em **7 segundos por peça**, com fidelidade textual de 100%.
 >
-> **Prova.** A Impugnação Cafelana V7 — apontada na auditoria como a pior
+> **Prova.** A Impugnação CASO-04 V7 — apontada na auditoria como a pior
 > regressão, 31 páginas com zero diagramas — foi recomposta em 27 páginas com
 > capa institucional, quatro âncoras, treze linhas de síntese rotuladas, seis
 > pull quotes, caixas e quatro elementos gráficos vetoriais, **conforme no gate
@@ -45,7 +45,7 @@
 > cruzada. Ela confirmou um defeito material: a contagem de caixas de destaque
 > casava qualquer célula sem borda superior, **inclusive as do quadro zebrado** —
 > treze onde havia três, e 672 em documento cheio de tabela. O efeito não era
-> estatístico: **mascarava a ausência total de destaque**, e o Aditamento CORSAN
+> estatístico: **mascarava a ausência total de destaque**, e o Aditamento CASO-07
 > passava no critério de varredura por causa de 521 caixas fantasmas. Corrigido,
 > ele reprova corretamente.
 >
@@ -93,7 +93,7 @@
 
 A edição visual da FORJA não se degradou aos poucos. **Ela parou de acontecer em 10 de julho de 2026.**
 
-Entre 8 e 10 de julho houve uma janela em que quase toda a produção saiu em edição visual law: Cafelana, Jalusa, José Eduardo, Libra Sul, Azimut, Patrícia, CORSAN e Natura. São 25 arquivos `*VISUAL_LAW*.docx` no acervo, e **o mais recente é de 10/07/2026**. Nos vinte dias seguintes, com dezenas de entregas ao Fábio, a contagem é zero.
+Entre 8 e 10 de julho houve uma janela em que quase toda a produção saiu em edição visual law: CASO-04, Jalusa, José Eduardo, CASO-16, CASO-02, CASO-19, CASO-07 e CASO-17. São 25 arquivos `*VISUAL_LAW*.docx` no acervo, e **o mais recente é de 10/07/2026**. Nos vinte dias seguintes, com dezenas de entregas ao Fábio, a contagem é zero.
 
 A causa é de acoplamento, não de competência. O compositor `forja_visual.compor()` existe, funciona e é coberto por testes — mas **nenhum módulo de produção o importa**. Quem o chama são os testes automatizados e cinco scripts artesanais escritos à mão dentro de pastas de caso. A peça só sai visual se alguém, naquele caso específico, sentar e escrever o mapa visual manualmente. Foi o que aconteceu naquela janela de três dias, quando o kit era novidade e havia atenção humana em cima. Quando a atenção migrou para outros casos, a esteira voltou ao seu comportamento padrão — e o comportamento padrão é pobre.
 
@@ -111,9 +111,9 @@ A consequência prática para a sua ordem é direta: fechar o gate hoje, sozinho
 |---|---|---|
 | Arquivos `*VISUAL_LAW*.docx` no acervo | 25 | `find` na árvore inteira |
 | Data do mais recente | **10/07/2026** | carimbo de data dos mesmos arquivos |
-| Mapas visuais declarativos `compor_*_mapa.py` | **5** (Azimut, CORSAN, Libra, Natura, Patrícia) | `find` na árvore inteira |
+| Mapas visuais declarativos `compor_*_mapa.py` | **5** (CASO-02, CASO-07, Libra, CASO-17, CASO-19) | `find` na árvore inteira |
 | Casos em `state/` | mais de 30 | listagem do diretório |
-| Casos com trilha de entrega F10 executada | **3** (Azimut, Cafelana AgInt, Libra Sul) | `find` por `F10_TRILHA_EVIDENCIA.md` |
+| Casos com trilha de entrega F10 executada | **3** (CASO-02, CASO-04 AgInt, CASO-16) | `find` por `F10_TRILHA_EVIDENCIA.md` |
 | Lastros `FIDELIDADE_VISUAL.json` | 20 | `find` na árvore inteira |
 | Módulos de produção que importam `forja_visual` | **0** | `grep` em todos os `.py` do harness |
 
@@ -125,12 +125,12 @@ A frente de medição abriu os documentos como pacote e contou elementos. Os nú
 |---|---|---|---|---|---|---|
 | Modelo | EDcl José Eduardo V1 | 09/07 | 5 | 9 | sim | 30,9% |
 | Modelo | Jalusa V2 | 09/07 | 3 | 6 | sim | 34,1% |
-| Modelo | Libra Sul V2 | 09/07 | 3 | 7 | sim | 38,0% |
-| Modelo | Cafelana AgInt | 10/07 | 4 | 6 | sim | 33,6% |
-| Recente | Parecer Natura | 19/07 | 0 | 12 | não | 19,0% |
+| Modelo | CASO-16 V2 | 09/07 | 3 | 7 | sim | 38,0% |
+| Modelo | CASO-04 AgInt | 10/07 | 4 | 6 | sim | 33,6% |
+| Recente | Parecer CASO-17 | 19/07 | 0 | 12 | não | 19,0% |
 | Recente | Nota técnica | 21/07 | 0 | 26 | não | 87,8% |
 | Recente | Matriz de títulos | 20/07 | 0 | 1 | não | 100,0% |
-| Recente | Checklist CORSAN | 29/07 | 0 | 5 | não | 88,7% |
+| Recente | Checklist CASO-07 | 29/07 | 0 | 5 | não | 88,7% |
 
 Média de elementos vetoriais nas peças-modelo listadas: **3,75 por peça** (intervalo de 3 a 5). Média nas entregas recentes: **0,14**. Proporção de entregas recentes com zero elemento vetorial: **92%**.
 
@@ -445,7 +445,7 @@ Tudo o que a execução precisa já existe: `forja_visual.py` implementado e tes
 
 **Medição automatizada, direção consistente mas valores por documento não reconferidos:** a tabela da seção 2.2 e os percentuais dela derivados.
 
-**[Não verificado] e por isso fora do corpo do diagnóstico:** a alegação de que nos casos Patrícia e CORSAN uma versão visual completa teria sido gerada e uma versão simples entregue em seu lugar, com divergência de hash. A investigação levantou a hipótese, mas ela não foi confirmada arquivo a arquivo. Se confirmada, acrescenta uma quinta causa — descarte deliberado da versão visual — que a Onda 3 já cobriria, pois o gate confere o SHA do arquivo efetivamente entregue.
+**[Não verificado] e por isso fora do corpo do diagnóstico:** a alegação de que nos casos CASO-19 e CASO-07 uma versão visual completa teria sido gerada e uma versão simples entregue em seu lugar, com divergência de hash. A investigação levantou a hipótese, mas ela não foi confirmada arquivo a arquivo. Se confirmada, acrescenta uma quinta causa — descarte deliberado da versão visual — que a Onda 3 já cobriria, pois o gate confere o SHA do arquivo efetivamente entregue.
 
 **Revisão cruzada entre famílias de modelo (30/07/2026):** o documento passou por duas revisões independentes conduzidas pelo Claude Fable 5 — uma editorial e estratégica, outra de red team de engenharia com leitura do código. Foram incorporadas: a correção da média de elementos vetoriais; a definição de que *simplificado* é escala reduzida e nunca ausência; o gate de classificação automática do tipo de artefato; a definição programática do item 6; a separação da antiga Onda 1 em geração de mapa e geração de diagrama; a métrica operacional de cobertura; o teste de fidelidade textual sobre fragmentos; a instalação do gate no render em vez do F10; a condição de cinco casos conformes antes da ativação; o escopo temporal prospectivo; o gatilho de recalibração; e a revisão das estimativas de 20–25 para 32–42 horas.
 

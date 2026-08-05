@@ -18,7 +18,7 @@ sys.path.insert(0, str(FORJA.parent / "_FERRAMENTAS"))
 
 from medina_svg_colisao import analisar  # noqa: E402
 
-# Recorte verbatim de `fig2_obices_convergentes.svg` (peça Libra Sul, aprovada
+# Recorte verbatim de `fig2_obices_convergentes.svg` (peça CASO-16, aprovada
 # em 09/07/2026). O <rect> do fecho é pintado DEPOIS das caixas inferiores e
 # cobre o texto delas; e o fill do rótulo vem sem "#".
 DEFEITO_REAL = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371.3 224">

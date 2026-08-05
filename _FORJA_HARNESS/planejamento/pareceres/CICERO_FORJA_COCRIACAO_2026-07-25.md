@@ -38,7 +38,7 @@ Cânone examinado: `33_PRD` (requisitos), `34_TDD` (payloads e invariantes), `35
 
 | Objeto | Resultado |
 |---|---|
-| `REGIMENTO_INTERNO_STJ.md` na pasta Cafelana | **Art. 343 trata de precatórios de requisição de pagamento.** Nenhuma ocorrência de "343-A" no arquivo. |
+| `REGIMENTO_INTERNO_STJ.md` na pasta CASO-04 | **Art. 343 trata de precatórios de requisição de pagamento.** Nenhuma ocorrência de "343-A" no arquivo. |
 | Ocorrências de "343-A" no acervo da fábrica | **Todas** em produção nossa (`autoresearch/`), nenhuma em fonte regimental. |
 | Uso na forma de citação | Confirmado em cabeçalho de peça: `### 3.1 Síntese Executiva (art. 343-A RISTJ)` — a referência está entrando no corpo do documento, não apenas no roteiro interno. |
 | `CONTENT_CLASSES`, `CONTRIBUTION_ORIGINS`, `CONTRIBUTION_STATUS` em `forja_learning.py` | existem, conforme afirmado no PRD |

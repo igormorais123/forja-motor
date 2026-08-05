@@ -5,7 +5,7 @@ A distinção que este teste protege: hash divergente de **cópia arquivada** é
 (o arquivo deveria estar congelado), hash divergente de **regimento** é `warn`
 (o protocolo manda atualizá-lo com as emendas posteriores antes de cada peça).
 Confundir as duas coisas reprovaria quem cumpriu a regra inviolável da casa —
-foi exatamente o que o caso Natura fez, atualizando o .md em 26/07 depois da F3
+foi exatamente o que o caso CASO-17 fez, atualizando o .md em 26/07 depois da F3
 de 15/07.
 
 Uso: python test_forja_regimento_gate.py   (exit 0 = ok; exit 1 = regressão)
@@ -84,7 +84,7 @@ def main() -> int:
              {"facts": [{"factId": "F1", "epistemicClass": "documented",
                          "sourceIds": ["DOC-001"]}]}), "pass")
 
-    # A forma MARKDOWN dos dois artefatos da F3. O mapa do Vale Trading e o
+    # A forma MARKDOWN dos dois artefatos da F3. O mapa do CASO-23 e o
     # ledger do Nylton só existem assim, e enquanto o gate só abria JSON ele
     # reportava "ledger sem fatos" sobre um ledger de nove fatos com localizador
     # processual em cada linha — achado que chegou a entrar num laudo de triagem

@@ -1,9 +1,0 @@
-flowchart TD
-    Case["Case ID"] --> Package["AuditedPackage"]
-    Package --> Select["artifactId + sha256"]
-    Select --> Match{"hash confere?"}
-    Match -->|não| Block["bloquear"]
-    Match -->|sim| Draft["DeliveryDraft"]
-    Draft --> Evidence["evidência do canal"]
-    Evidence --> Receipt["DeliveryReceipt"]
-    Receipt --> Management["outbox de gestão"]

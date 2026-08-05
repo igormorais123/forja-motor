@@ -5,7 +5,7 @@ Em 04/08/2026 os dezesseis gates da F8 foram exercidos pela primeira vez contra
 peças REAIS e entregues — quatro delas, aprovadas pelo escritório. O gate de
 tipografia reprovou nas quatro, e a maior parte das reprovações era falsa:
 
-  - o bloco de qualificação das partes na V8 do Cafelana (10,5 pt);
+  - o bloco de qualificação das partes na V8 do CASO-04 (10,5 pt);
   - cinco parágrafos da SÍNTESE EXECUTIVA nos memoriais do AI 0011621-15
     (10,5 pt) — a síntese no estilo do art. 343-A do RISTJ é obrigatória em
     TODA peça desde 07/07/2026, por determinação do Prof. Fábio;
@@ -76,7 +76,7 @@ def _write_layout_fixture(
     entries = [
         ("executive_summary", "I. CASO EM EXAME. Ação fundada em perdas atribuídas a aplicações do IGEPREV/TO."),
         ("heading", "I — QUALIFICAÇÃO"),
-        ("qualification", "CAFELANA COMÉRCIO E REPRESENTAÇÕES DO BRASIL LTDA., já qualificadas nos autos em epígrafe, na condição de AGRAVADAS, por seu advogado"),
+        ("qualification", "CASO-04 COMÉRCIO E REPRESENTAÇÕES DO BRASIL LTDA., já qualificadas nos autos em epígrafe, na condição de AGRAVADAS, por seu advogado"),
         ("block_quote", "“Não se exige, nesta fase, exauriente avaliação do elemento subjetivo do tipo, mas tão somente a verificação da presença dos requisitos mínimos exigidos pelo art. 17, § 6º-B do CPC, conforme a prova documental disponível.”"),
         ("body", "O acórdão recorrido, ao manter a decisão agravada, deixou de enfrentar a questão do elemento subjetivo, o que caracteriza omissão qualificada e exige novo exame do fundamento central."),
     ]
@@ -128,7 +128,7 @@ def main() -> int:
            papel("4. Recurso provido em parte para determinar novo exame.",
                  anterior="executive_summary"), "executive_summary")
     checar("bloco de qualificação das partes",
-           papel("CAFELANA COMÉRCIO E REPRESENTAÇÕES DO BRASIL LTDA., MACHADENSE CAFÉ LTDA. e "
+           papel("CASO-04 COMÉRCIO E REPRESENTAÇÕES DO BRASIL LTDA., MACHADENSE CAFÉ LTDA. e "
                  "INTER CONTINENTAL DE CAFÉ S.A., já qualificadas nos autos em epígrafe, na "
                  "condição de AGRAVADAS, por seu advogado", index=3), "qualification")
     checar("citação recuada longa",

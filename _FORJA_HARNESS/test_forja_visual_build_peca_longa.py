@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """test_forja_visual_build_peca_longa.py — a peça grande e com figura.
 
-Em 04/08/2026, ao compor pela entrada canônica o markdown real do Cafelana —
+Em 04/08/2026, ao compor pela entrada canônica o markdown real do CASO-04 —
 18 seções e 2 figuras —, `forja_visual_build.build` estourou duas vezes seguidas
 por motivos independentes, e nenhum dos dois tinha teste:
 
@@ -35,6 +35,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import forja_acervo
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 RAIZ = Path(__file__).resolve().parent
@@ -45,11 +47,8 @@ if str(FERRAMENTAS) not in sys.path:
 # Markdown real, auditado, com seções acima do antigo teto e com figuras. É a
 # âncora do teste: se ele sumir do acervo, o teste diz isso em vez de passar
 # calado sobre um caminho que não existe mais.
-PECA_ANCORA = RAIZ / (
-    "state/case-cafelana-geral-reconstrucao-20260803/runs/run-cafelana-f7-repair-20260804"
-    "/F7_AUDITORIA_JURIDICA_FACTUAL/attempt-bd2edd42d0644bbba8379da16dc37b2d"
-    "/final_markdown.md"
-)
+PECA_ANCORA = forja_acervo.caminho("peca-ancora-longa") or (
+    RAIZ / "__peca_ancora_ausente__.md")
 SECOES_MINIMAS = 16
 
 

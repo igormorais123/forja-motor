@@ -27,7 +27,7 @@ Rejeito o **sequenciamento**, por três razões de negócio:
 - **J-B(julgador)** — série temporal de magistrado, viés correlacionado a escritório adversário, achado levado aos autos. Radioativo. Exposição de art. 34 do EAOAB e art. 41 da LOMAN. A contenção proposta está correta e deve ficar onde está: no fim, sob autorização.
 - **J-B(acordo)** — comparação de deságios em acordos análogos com o poder público, para demonstrar vantajosidade e risco de responsabilização do gestor. Isto é **análise econômica de proposta**. Qualquer consultoria faz. Nenhum juiz é analisado. Nenhuma conduta é imputada. O sujeito da análise é uma proposta, não uma pessoa.
 
-Empacotar os dois sob a mesma trava custou ao plano o item de maior valor comercial imediato — e há um caso vivo na fila esperando por ele: **CORSAN/AGERST**, que é literalmente uma negociação com o poder público sob pressão regulatória.
+Empacotar os dois sob a mesma trava custou ao plano o item de maior valor comercial imediato — e há um caso vivo na fila esperando por ele: **CASO-07/CASO-07**, que é literalmente uma negociação com o poder público sob pressão regulatória.
 
 [INFERÊNCIA] Este é o único componente do conjunto que gera receita atribuível em prazo curto sem depender de mandato novo.
 
@@ -95,7 +95,7 @@ O mesmo vale para a demonstração de recusa: ela **não precisa do plano**. A F
 | O Fábio responde a uma consulta bem formulada em até 5 dias úteis | **0.45** | [LACUNA] — nenhuma base observacional; a frase da entrevista é declaração de princípio, não comportamento medido |
 | A demonstração de recusa altera materialmente a percepção dele | 0.75 | ele nomeou desmoralização por pesquisa falsa de forma espontânea e repetida |
 | J-B(acordo) é separável de J-B(julgador) sem exposição relevante | 0.60 | reduzida pela contra-hipótese 2; depende do parecer do Cícero |
-| O mapa do destinatário fecha a falha do Cafelana | 0.80 | falha documentada; dado disponível no TeiaJus; risco residual é frescor de composição |
+| O mapa do destinatário fecha a falha do CASO-04 | 0.80 | falha documentada; dado disponível no TeiaJus; risco residual é frescor de composição |
 
 Não atribuo probabilidade a "o plano gera peça melhor". Não há base. É exatamente o que as ondas 2 e 3 existem para descobrir, e a revisão adversarial Fable já nomeou isso como risco empírico irredutível.
 

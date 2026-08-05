@@ -23,7 +23,7 @@ A FORJA N3.0-r2 está implementada como camada aditiva. A N2 continua sendo a es
 | atualização após evento N3 canônico | `forja_management_bridge.py` | **ativa somente para caso diretamente em `state/`** |
 | validação consolidada | `validate_forja_n3.py` | última execução completa publicada em 10/07: 11/11 grupos; reexecutar após mudanças |
 
-Evidência atual: `reports/N3_SHADOW_REPLAY_2026-07-09.md` reproduziu 21/21 estados e preservou 21/21 hashes. Seis casos abriram bloqueio real: Plano de Saúde por regressão e fonte pendente; Azimut, CORSAN, Libra Sul, Natura e Patrícia/Fábio por diagramas que o gate V2 rejeitou. O gate visual não foi ativado globalmente por essa razão.
+Evidência atual: `reports/N3_SHADOW_REPLAY_2026-07-09.md` reproduziu 21/21 estados e preservou 21/21 hashes. Seis casos abriram bloqueio real: Plano de Saúde por regressão e fonte pendente; CASO-02, CASO-07, CASO-16, CASO-17 e CASO-19/Fábio por diagramas que o gate V2 rejeitou. O gate visual não foi ativado globalmente por essa razão.
 
 Validação canônica:
 
@@ -125,7 +125,7 @@ flowchart LR
     F10 --> Gestão["Sidecar e painel do escritório"]
 ```
 
-Estado operacional após o Conselho de 11/07/2026: Cafelana, Patrícia/Fábio, Libra Sul e Saúde estão no piloto `pilot_blocking`. Cafelana permanece bloqueada; os outros três são baselines retrospectivas mecanicamente reproduzidas, com zero P0, dois P1 de conselho por caso, `promotionEligible=false` e `legalReleaseStatus=human_review_required`. Os demais casos ficam em sombra. Relatório canônico: `reports/CONSELHO_SINTESE_IMPLEMENTACAO_FORJA_N4_2026-07-11.md`.
+Estado operacional após o Conselho de 11/07/2026: CASO-04, CASO-19/Fábio, CASO-16 e Saúde estão no piloto `pilot_blocking`. CASO-04 permanece bloqueada; os outros três são baselines retrospectivas mecanicamente reproduzidas, com zero P0, dois P1 de conselho por caso, `promotionEligible=false` e `legalReleaseStatus=human_review_required`. Os demais casos ficam em sombra. Relatório canônico: `reports/CONSELHO_SINTESE_IMPLEMENTACAO_FORJA_N4_2026-07-11.md`.
 
 ## 4. Índice — onde está cada coisa
 
@@ -256,17 +256,17 @@ Regras: (1) exit code 1 só com P0; (2) TODA mudança no verificador passa por `
 - Os 5 rascunhos conferidos VIVOS no Gmail (`gws drafts list`) com thread ids corretos.
 - Painel: JSONs válidos (BOM em `status_integracoes.json`/`whatsapp_candidates.json` é tolerado por design — todos os leitores usam `utf-8-sig`); HTML regenerado pela API a cada comentário.
 - Cache de fontes: 15/15 arquivos com cabeçalho FONTE/URL/data. Manifest válido.
-- **Corrigido**: 6 FORJA_STATE.json defasados sincronizados com a realidade (5 entregues → `draft_awaiting_review` com draftId; Jorge Haroldo → `blocked`); estado do Azimut criado retroativamente (produção existia sem estado — P0) e o case duplicado `case-email-auto-19f3ed5bdbdcf159` marcado `superseded` apontando para o canônico.
+- **Corrigido**: 6 FORJA_STATE.json defasados sincronizados com a realidade (5 entregues → `draft_awaiting_review` com draftId; Jorge Haroldo → `blocked`); estado do CASO-02 criado retroativamente (produção existia sem estado — P0) e o case duplicado `case-email-auto-19f3ed5bdbdcf159` marcado `superseded` apontando para o canônico.
 - **Falso positivo do auditor-agente descartado**: "5 referências quebradas de planejamento" não existem (a doc usa o glob correto `01..06_*.md`) — ver Lição 34.
-- **Tolerado**: case Cafelana AgInt em F10 sem pasta `producao/` (entrega histórica está em `..\gestao_escritorio\entregas_fabio_osorio\`); sonda `drive_access_probe` do caso Natura mantida como evidência de inacessibilidade do Drive.
+- **Tolerado**: case CASO-04 AgInt em F10 sem pasta `producao/` (entrega histórica está em `..\gestao_escritorio\entregas_fabio_osorio\`); sonda `drive_access_probe` do caso CASO-17 mantida como evidência de inacessibilidade do Drive.
 
 **Aplicação da auditoria externa Efesto/5.5 (09/07, `reports/RELATORIO_EFESTO_AUDITORIA_FORJA_PETICOES_2026-07-09.md`)**:
 - **Circuito F7→F10 FECHADO** (recomendação central do relatório): `forja_render_docx.py` persiste `F7_VERIFICADOR_FORJA.json` na pasta de produção; `forja_delivery.py` ganhou o elo 9 bloqueante (`p0 == 0`) — peça com P0 não fecha F10. Testado ponta a ponta com caso descartável.
-- **P0 Libra Sul confirmado e corrigido**: rótulo estrutural "IDENTIFICAÇÃO DO PROCESSO" estava no DOCX entregue; removido, re-render limpo, rascunho substituído (r-2094364308504934560).
-- **CORSAN**: todas as menções a "13 inquéritos" amarradas à origem (e-mail do escritório, item 16) + léxico de fonte do G3 ampliado; rascunho substituído (r-9065022275353955467).
-- **Gates F3 defasados fechados por evidência**: o REGIMENTO_INTERNO_TJRJ.md JÁ EXISTIA na pasta do caso Patrícia/Fábio (gate não fora atualizado); Natura classificado como produto consultivo (parecer/quesitos — sem tribunal de endereçamento; reabrir o gate se o parecer final identificar processo concreto).
+- **P0 CASO-16 confirmado e corrigido**: rótulo estrutural "IDENTIFICAÇÃO DO PROCESSO" estava no DOCX entregue; removido, re-render limpo, rascunho substituído (r-2094364308504934560).
+- **CASO-07**: todas as menções a "13 inquéritos" amarradas à origem (e-mail do escritório, item 16) + léxico de fonte do G3 ampliado; rascunho substituído (r-9065022275353955467).
+- **Gates F3 defasados fechados por evidência**: o REGIMENTO_INTERNO_TJRJ.md JÁ EXISTIA na pasta do caso CASO-19/Fábio (gate não fora atualizado); CASO-17 classificado como produto consultivo (parecer/quesitos — sem tribunal de endereçamento; reabrir o gate se o parecer final identificar processo concreto).
 - **Distinção de status (pedida pelo relatório)**: `fulfilled` em `F0_RECONCILIACAO_FILA` = cumprimento por reconciliação/`manual_override` de demanda histórica, NÃO esteira F0-F10 completa; `fulfilled` só significa peça auditada quando `currentPhase = F10...` com trilha. Não normalizar estados legados em massa.
-- **F7 standalone**: casos entregues sem re-render nesta rodada (Patrícia/Fábio, Natura, Azimut) receberam `F7_VERIFICADOR_FORJA.json` gerado avulso (0 P0; Azimut com o P1 `[dia]` deliberado — preencher no protocolo é item do checklist F9/F10).
+- **F7 standalone**: casos entregues sem re-render nesta rodada (CASO-19/Fábio, CASO-17, CASO-02) receberam `F7_VERIFICADOR_FORJA.json` gerado avulso (0 P0; CASO-02 com o P1 `[dia]` deliberado — preencher no protocolo é item do checklist F9/F10).
 
 **Pequenas inconsistências conhecidas e toleradas**: `merge_gates` existe só em `forja_sources.py` (citations usa `merge_by_id`) — comportamentos ligeiramente diferentes de deduplicação, sem efeito prático observado; `read_json` tem nomes de parâmetro diferentes entre módulos (`fallback` × `fb`).
 
@@ -285,7 +285,7 @@ Regras: (1) exit code 1 só com P0; (2) TODA mudança no verificador passa por `
 
 ## 9. Números da produção (lote 1, 08-09/07/2026)
 
-5 casos entregues como rascunho no Gmail (Libra Sul, Patrícia/Fábio, CORSAN, Natura, Azimut), 1 bloqueado por documento externo (Jorge Haroldo). Padrão confirmado: nenhuma peça saiu protocolável direto do workflow — a verificação independente externa achou erro material em 5 de 5 casos (dois com achado que MUDOU a peça: Tema 1368 transitado e fatores Selic oficiais). É por isso que os gates existem e por isso a verificação em fonte oficial não é opcional.
+5 casos entregues como rascunho no Gmail (CASO-16, CASO-19/Fábio, CASO-07, CASO-17, CASO-02), 1 bloqueado por documento externo (Jorge Haroldo). Padrão confirmado: nenhuma peça saiu protocolável direto do workflow — a verificação independente externa achou erro material em 5 de 5 casos (dois com achado que MUDOU a peça: Tema 1368 transitado e fatores Selic oficiais). É por isso que os gates existem e por isso a verificação em fonte oficial não é opcional.
 
 ## 9-A. Camada visual law (PADRÃO das entregas desde 09/07/2026 — ordem do Igor)
 
@@ -297,7 +297,7 @@ Toda peça/documento entregável sai na **edição visual law** do padrão `padr
 4. **Diagramas**: SVGs com `medina_svg_kit` (fontes ≥ 9px; números SEMPRE conferidos contra o md).
 5. **Montagem**: `_FERRAMENTAS\montar_visual.py: montar(docx, figs)` — SVG→EMF (gate de legibilidade), inserção Word COM, PDF, páginas de QA; `anti_placeholder(pdf)` no final.
 6. **QA visual página a página** (inegociável) e só então o rascunho no Gmail.
-7. **Gate F10**: o `forja_delivery.py` tem elo bloqueante 4-B — sem um `*VISUAL_LAW*.docx` na pasta de produção (ou do caso), a demanda não fecha (adicionado 09/07/2026). Desde 11/07/2026 (conselho quadripartite, Lição 61) o elo exige também LASTRO: `forja_visual.py` grava `FIDELIDADE_VISUAL.json` (docxSha256/mdSha256) após o gate de fidelidade, e o elo 4-B recomputa o hash do DOCX — versão errada/alterada não fecha; composições pré-gate valem por evidência legada. Na mesma data: elo 2 valida que o F3 CITA o regimento do tribunal (lição Libra Sul), e trilha reprovada grava `trilhaBloqueadores` no FORJA_STATE.json + exit code 2 (Lição 62). Regressão: `test_forja_conselho_1107.py`.
+7. **Gate F10**: o `forja_delivery.py` tem elo bloqueante 4-B — sem um `*VISUAL_LAW*.docx` na pasta de produção (ou do caso), a demanda não fecha (adicionado 09/07/2026). Desde 11/07/2026 (conselho quadripartite, Lição 61) o elo exige também LASTRO: `forja_visual.py` grava `FIDELIDADE_VISUAL.json` (docxSha256/mdSha256) após o gate de fidelidade, e o elo 4-B recomputa o hash do DOCX — versão errada/alterada não fecha; composições pré-gate valem por evidência legada. Na mesma data: elo 2 valida que o F3 CITA o regimento do tribunal (lição CASO-16), e trilha reprovada grava `trilhaBloqueadores` no FORJA_STATE.json + exit code 2 (Lição 62). Regressão: `test_forja_conselho_1107.py`.
 
 `forja_render_docx.py` permanece para render simples + gates (F7); o verificador roda sobre o MESMO md, então vale para as duas saídas.
 
@@ -413,9 +413,9 @@ Plano: `planejamento/19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md` (M1-M4).
   GATE DE SANIDADE anti-autocertificação: suíte que reprova o ORIGINAL invalida
   o canal case_test (primeiro run real dava 24/24 falso com a minuta errada —
   o texto canônico é `n4_cycle_m6/CANONICAL_TEXT_FROM_FINAL_DOCX.txt`).
-  Baselines 12/07: Patrícia 0.17, Libra Sul 0.20, Saúde 0.0 (alvo 0.8 —
+  Baselines 12/07: CASO-19 0.17, CASO-16 0.20, Saúde 0.0 (alvo 0.8 —
   famílias fracas nominadas no JSON dizem qual detector construir; o conserto
-  da Súmula 362 no G4 já subiu S6 de Patrícia de 0/2 para 2/2).
+  da Súmula 362 no G4 já subiu S6 de CASO-19 de 0/2 para 2/2).
   Regressão: `test_forja_mutation_semantic.py` (10).
 - **M3.2 Ledger material** — `python forja_ledger_material.py <caso>` →
   `F5_LEDGER_MATERIAL.json` (citações extraídas × cache oficial/fonte local/
@@ -501,7 +501,7 @@ Evidências de 15/07/2026: regressão integrada com 42/42 testes e execução st
 
 ## 18. Gate visual e jurisprudencial anti-trapaça (21/07/2026)
 
-O incidente Natura demonstrou que lint automático e `approved=true` não provam diagramação. O arquivo enviado tinha somente 20 de 245 parágrafos de corpo justificados. A correção passou a usar quatro provas independentes e reproduzíveis:
+O incidente CASO-17 demonstrou que lint automático e `approved=true` não provam diagramação. O arquivo enviado tinha somente 20 de 245 parágrafos de corpo justificados. A correção passou a usar quatro provas independentes e reproduzíveis:
 
 1. `forja_docx_layout.py`: inspeção OOXML do corpo (Times New Roman 12, justificado), consistência de tabelas, fólio lateral e assinatura de fidelidade textual antes/depois;
 2. `forja_visual_review.py`: formulário inicialmente pendente, hashes exatos e oito checks obrigatórios em todas as páginas, sem preenchimento automático; em liberação estrita, `forja_human_review.py` exige recibo humano Ed25519 da inspeção visual integral;
@@ -583,7 +583,7 @@ sessão; âncora literal exclusiva do vencedor, verificada antes da devolutiva.
 
 Módulo `forja_lastro.py` (`FORJA-LASTRO-v1`). Protocolo completo em `PROTOCOLO_LASTRO_DOCUMENTAL.md`; incidente que o originou em `INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md`; catálogo em § U12 de `planejamento/06_GATES_QUALIDADE_FORJA.md`.
 
-**O problema.** No caso Vale Trading, três camadas de revisão — red team interno de 12 perguntas, gate F7 e dois revisores externos de famílias distintas — devolveram zero P0 sobre uma minuta que continha quatro P0. Todas examinaram o TEXTO. Os erros estavam na FONTE, e a fonte não fora aberta. O `fact_ledger` marcava F012 como `confirmed_document` com apoio em `E252-ANEXO-AI-p20-31`: a página existia, o documento existia, e o documento dizia o contrário.
+**O problema.** No caso CASO-23, três camadas de revisão — red team interno de 12 perguntas, gate F7 e dois revisores externos de famílias distintas — devolveram zero P0 sobre uma minuta que continha quatro P0. Todas examinaram o TEXTO. Os erros estavam na FONTE, e a fonte não fora aberta. O `fact_ledger` marcava F012 como `confirmed_document` com apoio em `E252-ANEXO-AI-p20-31`: a página existia, o documento existia, e o documento dizia o contrário.
 
 **O eixo.** Citar o localizador não é ter lido o localizador. A única prova barata de leitura é a transcrição verbatim — um modelo obrigado a colar o trecho tem de abrir a fonte; um modelo que só precisa citar a página pode inventá-la com aparência perfeita.
 
@@ -634,7 +634,7 @@ Estado em 26/07/2026: **16 arquivos, 16 em ordem, 0 bloqueio, 0 ressalva**. Acha
 
 Duas manutenções silenciosas que explicam sintomas anteriores: um `.git/index.lock` obsoleto de três dias travava todo o git e fazia o sync diário parar em 22/07; e a bateria REAL vinha reprovando desde E9/E10 porque peças de produção citavam o RISTJ sem verbatim arquivado — resolvido pelo arquivamento das fontes, não por afrouxamento do gate.
 
-Caso Vale Trading: permanece `internal_working`, bloqueado em F7 pelos dois gates humanos (`human_claim_review_signed_receipt` e `external_human_trust_store_verified`), que nenhum modelo pode satisfazer. As diligências externas pendentes estão declaradas no incidente e nos artefatos do caso, nunca descartadas em silêncio.
+Caso CASO-23: permanece `internal_working`, bloqueado em F7 pelos dois gates humanos (`human_claim_review_signed_receipt` e `external_human_trust_store_verified`), que nenhum modelo pode satisfazer. As diligências externas pendentes estão declaradas no incidente e nos artefatos do caso, nunca descartadas em silêncio.
 
 ## 23. Esteira visual reconstruída (30/07 a 03/08/2026)
 
@@ -646,7 +646,7 @@ Caso Vale Trading: permanece `internal_working`, bloqueado em F7 pelos dois gate
 
 `forja_visual_build.py` é a **única** rota de produção visual. Fluxo: gates F7 (fail-closed) → brief `F7_5_BRIEF_VISUAL.json` → mapa automático (`forja_visual_mapa_gen.py`) → figuras (`forja_visual_figuras.py` + geradores em `_FERRAMENTAS\medina_svg_kit.py`) → `forja_visual.compor()` → `montar_visual.py` (EMF/Word COM/PDF/QA) → gate F8-S. **7 a 15 segundos por peça, fidelidade textual 100%.**
 
-**Decisão registrada, não reabrir sem fato novo:** NÃO integrar `compor()` dentro de `forja_render_docx.render()`. Constrói a peça duas vezes, uma pobre e uma rica, e deixa dois DOCX parecidos na mesma pasta — modo de falha do caso Patrícia (Lição 48). O render simples é prévia; a produção passa pela entrada única.
+**Decisão registrada, não reabrir sem fato novo:** NÃO integrar `compor()` dentro de `forja_render_docx.render()`. Constrói a peça duas vezes, uma pobre e uma rica, e deixa dois DOCX parecidos na mesma pasta — modo de falha do caso CASO-19 (Lição 48). O render simples é prévia; a produção passa pela entrada única.
 
 ### 23.2 Nunca inferir conteúdo semântico de figura
 
@@ -674,7 +674,7 @@ Regressão: `test_forja_assinatura_visual.py` (mutação + teste-âncora) e `tes
 
 ### 23.5 Comitê não substitui revisão de código
 
-O conselho de quatro personas leu o dossiê do construtor e recomendou arquitetura já rejeitada, citando função inexistente. A circularidade de autovalidação — quem constrói escreve o gate, mede com ele e se aprova — só foi quebrada pela revisão cruzada com a outra família de modelo, lendo o XML. Achado material: a contagem de caixas casava qualquer célula sem borda superior, contando 521 fantasmas no CORSAN e **mascarando ausência total de destaque** (Lição 93).
+O conselho de quatro personas leu o dossiê do construtor e recomendou arquitetura já rejeitada, citando função inexistente. A circularidade de autovalidação — quem constrói escreve o gate, mede com ele e se aprova — só foi quebrada pela revisão cruzada com a outra família de modelo, lendo o XML. Achado material: a contagem de caixas casava qualquer célula sem borda superior, contando 521 fantasmas no CASO-07 e **mascarando ausência total de destaque** (Lição 93).
 
 ### 23.6 Calibração de material econômico
 

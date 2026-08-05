@@ -553,7 +553,7 @@ def health_payload(state_root: Path = STATE_ROOT) -> dict[str, Any]:
     checks = []
     targets = (
         ("stateRoot", state_root, "directory"),
-        ("specManifest", FORJA / "FORJA_SPEC_MANIFEST.json", "json"),
+        ("specManifest", FORJA / "state" / "FORJA_SPEC_MANIFEST.json", "json"),
         ("queue", state_root / "FILA_PRIORIZADA.json", "json"),
         ("architectureMap", FORJA / "00_MAPA_ARQUITETURA_IA" / "LEIA_PRIMEIRO.md", "file"),
         ("agentSkill", FORJA / ".agents" / "skills" / "forja" / "SKILL.md", "file"),

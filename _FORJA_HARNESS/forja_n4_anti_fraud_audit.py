@@ -7,16 +7,18 @@ import json
 import statistics
 from pathlib import Path
 
+import forja_acervo
+
 from forja_n3_common import FORJA, atomic_write_json, now_iso, read_json, sha256_file
 from forja_n4_e2e_adversarial import run as run_e2e
 
 
 WEIGHTS = {"provenance": 0.30, "temporal_honesty": 0.20, "mutation_discrimination": 0.25, "measured_consistency": 0.15, "management_truth": 0.10}
 CASES = [
-    "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
-    "case-email-libra-sul-agint-stj-19f3c9350d875062",
+    forja_acervo.caso("CASO-19"),
+    forja_acervo.caso("CASO-16"),
     "case-email-auto-19f3f25cb64df962",
-    "case-email-cafelana-agint-aresp-2698443-19f2f0876e358eab",
+    forja_acervo.caso("CASO-04"),
 ]
 
 

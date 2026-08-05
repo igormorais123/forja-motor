@@ -5,8 +5,8 @@ Decisão de arquitetura (30/07/2026, Igor + Efesto). Havia duas rotas com poder
 equivalente de gerar entregável:
 
   rota visual   forja_visual.compor() -> PecaVisual + SVG nativo no OOXML:
-                a linguagem visual aprovada em julho (Cafelana, Jalusa, José
-                Eduardo, Libra Sul).
+                a linguagem visual aprovada em julho (CASO-04, Jalusa, José
+                Eduardo, CASO-16).
 
 Não há uma segunda rota de materialização. Os SVGs são embutidos diretamente no
 DOCX como ``image/svg+xml`` e o QA lê OOXML, fidelidade, tipografia, metadados e

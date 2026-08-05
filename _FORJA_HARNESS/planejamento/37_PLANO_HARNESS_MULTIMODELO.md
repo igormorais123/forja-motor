@@ -221,7 +221,7 @@ Mas o desenho da FORJA não se apoia nelas. Apoia-se na bancada própria, contra
 
 ---
 
-## 7. Revisão do roteamento após a bancada Cafelana V7 (27/07/2026)
+## 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026)
 
 A bancada de 26/07 mediu **fidelidade de citação** em pergunta fechada. A de 27/07 mediu outra coisa: **peça inteira, caso real, seis modelos em isolamento, julgamento cego por três famílias em dupla ordem**. Relatório e artefatos em `bancada_cafelana_v7/`.
 

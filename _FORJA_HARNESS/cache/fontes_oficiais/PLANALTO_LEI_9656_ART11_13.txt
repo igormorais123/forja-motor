@@ -70,7 +70,7 @@ OBSERVAÇÕES CRÍTICAS PARA O CASO
 ================================================================================
 
 1. APLICABILIDADE AO CASO MATEUS GRASSI:
-   - Plano coletivo empresarial SulAmérica (PME 3-29 vidas)
+   - Plano coletivo empresarial CASO-21 (PME 3-29 vidas)
    - Contratação: 19/07/2025
    - Inclusão: 19/07/2025
    - Exclusão: 18/06/2026 (por DLP alegada de K07/K07.1, não informada na DS)
@@ -78,7 +78,7 @@ OBSERVAÇÕES CRÍTICAS PARA O CASO
 2. ÔNUS DA PROVA:
    - Lei 9.656, art. 11: a OPERADORA carrega ônus de provar conhecimento prévio
    - RN 558/2022: reforça esta distribuição de ônus
-   - ACHADO CRÍTICO: SulAmérica não cumpriu obrigação de instaurar processo
+   - ACHADO CRÍTICO: CASO-21 não cumpriu obrigação de instaurar processo
      administrativo na ANS (art. 11 + RN 558 = obrigação legal)
 
 3. VEDAÇÃO DE SUSPENSÃO:
@@ -91,13 +91,13 @@ OBSERVAÇÕES CRÍTICAS PARA O CASO
      fraude ou inadimplemento > 60 dias
    - DLP ≠ fraude (exceto se provada má-fé deliberada)
    - Não há alegação de inadimplemento nos autos
-   - CONCLUSÃO: Exclusão SulAmérica infringe art. 13
+   - CONCLUSÃO: Exclusão CASO-21 infringe art. 13
 
 5. REFERÊNCIA A PORTABILIDADE (RN 438/2018):
    - Plano Bradesco anterior: tinha cobertura autorizada para cirurgia (K07/K07.1)
    - Portabilidade: questionar se cirurgia foi comunicada de forma adequada
      entre operadoras (portabilidade dispensa CPT?)
-   - INVESTIGAR: se Mateus migraria de Bradesco para SulAmérica, portabilidade
+   - INVESTIGAR: se Mateus migraria de Bradesco para CASO-21, portabilidade
      de carências aplicável (RN 438)?
 
 ================================================================================

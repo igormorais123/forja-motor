@@ -1,3 +1,0 @@
-Windows PowerShell 5.1
-Copyright (C) Microsoft Corporation. Todos os direitos reservados.Instale o PowerShell mais recente para novos recursos e melhorias! https://aka.ms/PSWindows
-

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "porQue": "Acima do limite de 100 MB por arquivo do GitHub. Permanecem no disco de trabalho. Quando estão presos por hash num ledger de eventos, não podem ser regenerados nem encolhidos sem quebrar a cadeia de auditoria.",
+  "atualizadoEm": "2026-08-05 17:12:07",
+  "arquivos": [
+    {
+      "caminho": "_FORJA_HARNESS/state/case-email-auto-19f8cec883a0ac31/n3_artifacts/F1_INGESTAO_SEGURA/injection_scan.json",
+      "bytes": 305492145
+    },
+    {
+      "caminho": "_FORJA_HARNESS/state/case-email-auto-19f8cec883a0ac31/runs/vale-trading-20260723-f1/F1_INGESTAO_SEGURA/attempt-5c4a81e247964828bd6bb3bb6fc656b9/injection_scan.json",
+      "bytes": 305492145
+    }
+  ]
+}

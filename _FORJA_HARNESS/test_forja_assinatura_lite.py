@@ -110,7 +110,7 @@ class ModoOffTests(unittest.TestCase):
     """Em `off`, a feature não existe para efeito prático."""
 
     def test_namespace_declarado_na_config_nasce_off(self):
-        config = json.loads((FORJA / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
+        config = json.loads((FORJA / "state" / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
         espaco = config["forjaAssinaturaLite"]
         self.assertEqual("off", espaco["mode"])
         self.assertEqual([], espaco["pilotCases"])
@@ -143,7 +143,7 @@ class ModoOffTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             caso = Path(temp) / "case-x"
             caso.mkdir()
-            config = json.loads((FORJA / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
+            config = json.loads((FORJA / "state" / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
             requeridos = n4v._required_files(config)
             _, modo = n4v.effective_signature_lite_mode(config, caso)
             if modo != "off":
@@ -165,7 +165,7 @@ class ModoOffTests(unittest.TestCase):
 
     def test_modo_do_n4_nao_foi_alterado(self):
         """A generalização não pode ter mexido no namespace que tem pilotos vivos."""
-        config = json.loads((FORJA / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
+        config = json.loads((FORJA / "state" / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
         self.assertEqual("pilot_blocking", config["n4"]["mode"])
         self.assertEqual(4, len(config["n4"]["pilotCases"]))
 
@@ -252,7 +252,7 @@ class MapaDestinatarioTests(unittest.TestCase):
 def pergunta(qid="Q001", **kw):
     base = {
         "questionId": qid, "status": "blocked", "materiality": "decisive",
-        "caseAnchor": "Liquidação nº 5020376-80.2018.4.04.7100/RS",
+        "caseAnchor": "Liquidação nº 9000011-00.2018.4.04.0000/RS",
         "whyItMatters": "define o formato do produto entregue",
         "text": "O escritório tem acesso à tabela CIEX autêntica por NBM?",
         "questionType": "fact", "humanAuthority": "titular",
@@ -393,7 +393,7 @@ class RenderizacaoTests(unittest.TestCase):
     def test_render_preserva_acentuacao_e_pontuacao(self):
         texto = render_consultation(arvore(pergunta()))
         self.assertIn("O escritório tem acesso à tabela CIEX autêntica por NBM?", texto)
-        self.assertIn("Liquidação nº 5020376-80.2018.4.04.7100/RS", texto)
+        self.assertIn("Liquidação nº 9000011-00.2018.4.04.0000/RS", texto)
 
     def test_render_recusa_pergunta_sem_consequencia(self):
         with self.assertRaises(ValueError) as erro:
@@ -529,7 +529,7 @@ class FreshnessTests(unittest.TestCase):
         self.assertEqual([], validate_recipient_map(payload))
 
     def test_limite_vem_da_configuracao_da_feature(self):
-        config = json.loads((FORJA / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
+        config = json.loads((FORJA / "state" / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
         self.assertEqual(24, config["forjaAssinaturaLite"]["recipientMapFreshnessHours"])
 
 
@@ -584,7 +584,7 @@ class TeiaJusPolicyTests(unittest.TestCase):
         self.assertEqual(set(), novas & set(self.policy["mutationActions"]))
 
     def test_pesquisa_paga_desligada_na_feature(self):
-        config = json.loads((FORJA / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
+        config = json.loads((FORJA / "state" / "FORJA_N3_CONFIG.json").read_text(encoding="utf-8"))
         self.assertFalse(config["forjaAssinaturaLite"]["allowPaidResearch"])
 
 

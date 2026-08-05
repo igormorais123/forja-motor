@@ -56,7 +56,7 @@ def main() -> int:
            indice({"documents": [{"id": "D1", "path": "peticao.pdf", "sha256": digest,
                                   "critical": True}]}, temp), "pass")
     # O acervo prova que existe índice legítimo sem `documents[]`.
-    checar("acervo declarado só no topo, como a Natura",
+    checar("acervo declarado só no topo, como a CASO-17",
            indice({"keyDocuments": ["laudo", "decisão"],
                    "aggregateValidation": {"files": 200, "pdfPages": 3035}}), "pass")
     # Nenhum ato crítico apontado: avisa, não trava.

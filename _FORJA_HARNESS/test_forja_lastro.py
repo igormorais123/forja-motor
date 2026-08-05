@@ -4,7 +4,7 @@ test_forja_lastro.py — Regressão da blindagem contra lastro aparente.
 
 Duas listas, dois deveres:
   DEVE_PEGAR      -> as frases e ledgers que produziram alucinação real no caso
-                     Vale Trading. Se alguma passar, a blindagem regrediu.
+                     CASO-23. Se alguma passar, a blindagem regrediu.
   NAO_PODE_TRAVAR -> texto correto que usa as mesmas palavras de forma legítima.
                      Se algum disparar P0, o gate virou trava.
 
@@ -20,6 +20,8 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
+
+import forja_acervo
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -50,7 +52,7 @@ DEVE_PEGAR = [
     ("Aproximadamente 80% da diferença decorre do critério de câmbio.", "L4"),
 
     # L5 — o P0 mais grave do caso
-    ("O AI 5039469-52.2019.4.04.0000 envolve as mesmas partes e a mesma liquidação.", "L5"),
+    ("O AI 9000015-00.2019.4.04.0000 envolve as mesmas partes e a mesma liquidação.", "L5"),
     ("Trata-se do mesmo título executivo já reconhecido.", "L5"),
     ("A controvérsia corre nos mesmos autos.", "L5"),
 
@@ -74,8 +76,8 @@ NAO_PODE_TRAVAR = [
     "A SELIC corresponde a 423,94% do valor apurado a título de principal.",
 
     # L5 — identidade afirmada com os dois números à vista
-    "O AI 5039469-52.2019.4.04.0000 foi julgado na liquidação 5072582-42.2016.4.04.7100, "
-    "que não é a mesma liquidação destes autos, 5020376-80.2018.4.04.7100.",
+    "O AI 9000015-00.2019.4.04.0000 foi julgado na liquidação 9000014-00.2016.4.04.0000, "
+    "que não é a mesma liquidação destes autos, 9000011-00.2018.4.04.0000.",
     # negação de identidade não pode travar
     "Não se trata da mesma liquidação: os títulos executivos são distintos.",
 
@@ -196,7 +198,7 @@ def _rodar_lastro(tmp) -> tuple[int, int]:
         print("  FALHOU: transcrição real com acento/hifenação foi rejeitada")
         falhas += 1
 
-    # Vocabulário: o ledger real da Cafelana usava 'documented_fact' e
+    # Vocabulário: o ledger real da CASO-04 usava 'documented_fact' e
     # 'official_current_source' enquanto o gate só conhecia os prefixos
     # 'confirmed_'. Resultado medido em 04/08/2026: 0 de 11 fatos auditados, com
     # saída idêntica à de um ledger aprovado. Estes dois casos existem para que
@@ -237,7 +239,7 @@ def _rodar_lastro(tmp) -> tuple[int, int]:
 
     # L2 sobre fonte binária: antes desta guarda, transcrição correta tirada de
     # um PDF era acusada de ter sido reconstruída de memória — a acusação mais
-    # grave do módulo, contra quem fez certo. E o laudo prevalente da Cafelana
+    # grave do módulo, contra quem fez certo. E o laudo prevalente da CASO-04
     # tem 2,14 GB, que seriam lidos inteiros na memória.
     casos += 1
     pdf = tmp / "laudo.pdf"
@@ -489,21 +491,11 @@ def _rodar_acoplamento() -> tuple[int, int]:
     # sob `state/` reprova aqui e exige decisão explícita. Parecer Efesto de
     # 04/08/2026.
     casos += 1
-    conhecidos = {
-        "case-email-azimut-19f3ed5bdbdcf159/producao/_visual/montar_visual.py",
-        "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2/producao/_visual/montar_visual.py",
-        "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2/producao/_visual/substituir_placeholders_patricia.py",
-        # O pior dos quatro, e o único que a revisão Codex não viu: grava
-        # PARECER_INTERNO_VALE_TRADING_FORJA_REVISAO.docx direto na pasta do
-        # caso, a partir do final_markdown, sem verificador e sem gates. O
-        # produto chegou a entregas_fabio_osorio em 24/07 carregando o § 16 que
-        # o incidente de 26/07 classificou como o P0 mais grave. Fica listado,
-        # não apagado: é trilha de auditoria. Ver a nota no fim do
-        # INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md.
-        "case-email-auto-19f8cec883a0ac31/runs/vale-trading-20260723-f7/"
-        "F7_AUDITORIA_JURIDICA_FACTUAL/attempt-8ab0b2c44d554e8084e50fb38f950789/"
-        "build_internal_report.py",
-    }
+    conhecidos = set(forja_acervo.valor("escritores-docx-sob-state-conhecidos") or [])
+    if not conhecidos:
+        print("  FALHOU: " + forja_acervo.motivo_da_ausencia(
+            "escritores-docx-sob-state-conhecidos"))
+        falhas += 1
     achados_state = set()
     for py in Path("state").rglob("*.py"):
         try:
@@ -585,13 +577,17 @@ def _rodar_v2(tmp: Path) -> tuple[int, int]:
             print(f"  FALHOU v2: {nome}" + (f" — {detalhe}" if detalhe else ""))
             falhas += 1
 
-    real = Path(__file__).resolve().parent.parent / "Cafelana" / "_plano_executivo_acordo_2026_08" / "_PLANO_TEXTO.txt"
-    caso("T1 fixture real Cafelana existe", real.is_file(), str(real))
-    texto_real = real.read_text(encoding="utf-8", errors="replace") if real.is_file() else ""
+    # O insumo é material de cliente e vem do acervo por chave: o motor não
+    # escreve caminho de pasta de caso. Acervo ausente NÃO vira aprovação — o
+    # caso é reportado como não verificado.
+    real = forja_acervo.caminho("plano-economico-real")
+    caso("T1 fixture real do acervo existe", real is not None and real.is_file(),
+         str(real) if real else forja_acervo.motivo_da_ausencia("plano-economico-real"))
+    texto_real = real.read_text(encoding="utf-8", errors="replace") if (real and real.is_file()) else ""
     ach = validar_gates_economicos(texto_real, ledger={})
     caso("T1 produto real sem fonte prevalente bloqueia L9", any(a["gate"] == "L9-fonte-prevalente" for a in ach), str(ach[:2]))
 
-    texto_ok = "Plano econômico Cafelana. Data-base: jul/2026. Valor da faixa: R$ 100.000,00."
+    texto_ok = "Plano econômico CASO-04. Data-base: jul/2026. Valor da faixa: R$ 100.000,00."
     ledger_ok, fonte_ok = _fonte_ledger(tmp, anchors=[_ancora()])
     ach = validar_gates_economicos(texto_ok, ledger=ledger_ok, base_dir=fonte_ok.parent)
     caso("T2 fonte validada, data-base e âncora completas passam", not ach, str(ach))
@@ -621,7 +617,7 @@ def _rodar_v2(tmp: Path) -> tuple[int, int]:
     ach = validar_gates_economicos(texto_ok, ledger=ledger_t5, base_dir=fonte_t5.parent)
     caso("T5 hash divergente bloqueia L9", any(a["gate"] == "L9-fonte-prevalente" for a in ach), str(ach))
 
-    # A fonte prevalente real da Cafelana é um PDF de 2,14 GB. A integridade
+    # A fonte prevalente real da CASO-04 é um PDF de 2,14 GB. A integridade
     # precisa ser conferida em fluxo; read_bytes() aqui seria um risco de OOM.
     lastro_src = Path(__file__).with_name("forja_lastro.py").read_text(encoding="utf-8")
     caso("L9 calcula SHA-256 da fonte em fluxo",
@@ -829,7 +825,7 @@ if __name__ == "__main__":
     import tempfile
     from pathlib import Path
 
-    print(f"Regressão de lastro — âncora: caso Vale Trading, 26/07/2026")
+    print(f"Regressão de lastro — âncora: caso CASO-23, 26/07/2026")
     n1, f1 = _rodar_lexicais()
     with tempfile.TemporaryDirectory() as d:
         n2, f2 = _rodar_lastro(Path(d))

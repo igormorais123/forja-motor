@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """test_forja_identidade_citacoes.py — CNJ manda, rótulo é hipótese.
 
-Âncora real: o P0 mais grave do caso Vale Trading foi afirmar que um agravo
+Âncora real: o P0 mais grave do caso CASO-23 foi afirmar que um agravo
 "envolve as mesmas partes e a mesma liquidação" quando os números CNJ apontavam
 para liquidações distintas. O protocolo da casa manda identificar o tribunal
 pelo número CNJ antes de qualquer coisa, e até 04/08/2026 o gate que atesta isso
@@ -31,21 +31,21 @@ GATE = "citation_identity_and_cnj_tribunal_resolved"
 
 DEVE_REPROVAR = [
     ("CNJ do TRF4 atribuído ao TJSP",
-     "Nos autos 5020376-80.2018.4.04.7100, em trâmite no TJSP, a decisão foi mantida."),
+     "Nos autos 9000011-00.2018.4.04.0000, em trâmite no TJSP, a decisão foi mantida."),
     ("CNJ do TRF1 atribuído ao TRF4",
-     "O feito 0003453-28.1997.4.01.3400 tramita no TRF4 desde a distribuição."),
+     "O feito 9000001-00.1997.4.01.0000 tramita no TRF4 desde a distribuição."),
     ("CNJ do TJTO atribuído ao TJSP",
      "A apelação 1234567-89.2020.8.27.0100 foi julgada pelo TJSP em composição plena."),
 ]
 
 NAO_PODE_TRAVAR = [
     ("CNJ coerente com o tribunal nomeado",
-     "Nos autos 5020376-80.2018.4.04.7100, do TRF4, a decisão foi mantida."),
+     "Nos autos 9000011-00.2018.4.04.0000, do TRF4, a decisão foi mantida."),
     # O tribunal superior aparece legitimamente ao lado de um CNJ de origem:
     # o recurso sobe. Tratar isso como contradição reprovaria toda peça de
     # recurso especial da casa.
     ("recurso que subiu ao STJ",
-     "O REsp interposto nos autos 5020376-80.2018.4.04.7100 subiu ao STJ."),
+     "O REsp interposto nos autos 9000011-00.2018.4.04.0000 subiu ao STJ."),
     ("STF perto do CNJ de origem",
      "O ARE oriundo do processo 1234567-89.2020.8.26.0100 aguarda juízo no STF."),
     # Norma não tem tribunal. A primeira versão do gate cobrou corte de três
@@ -53,7 +53,7 @@ NAO_PODE_TRAVAR = [
     ("artigo de lei não tem tribunal",
      "Nos termos do art. 203 do CPC e do art. 678 do CPC, o ato é ordinatório."),
     ("dois CNJ distintos sem afirmar identidade",
-     "A liquidação 5020376-80.2018.4.04.7100 e a liquidação 5072582-42.2016.4.04.7100 "
+     "A liquidação 9000011-00.2018.4.04.0000 e a liquidação 9000014-00.2016.4.04.0000 "
      "correm ambas no TRF4 e não se confundem."),
     ("peça sem citação alguma",
      "Manifestação processual sem autoridade citada."),

@@ -2,7 +2,7 @@
 """
 test_forja_identidade_modelo.py — Regressão das duas falhas de captura de modelo.
 
-Âncora: bancada Cafelana V7, 27/07/2026. Nenhuma das duas era falha de modelo, e
+Âncora: bancada CASO-04 V7, 27/07/2026. Nenhuma das duas era falha de modelo, e
 as duas produziam artefato com proveniência falsa ou texto mutilado.
 
 **Apelido não é modelo.** `--model opus` resolveu para `claude-opus-4-8` e

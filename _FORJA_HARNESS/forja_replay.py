@@ -11,7 +11,7 @@ redundante ou gate cego:
     replay      a fonte oficial foi reaberta ao vivo, e respondeu?
     excerto     o trecho transcrito foi reencontrado na fonte reaberta?
 
-O `verified_source_ledger` da Cafelana traz um `liveReplay` por fonte com
+O `verified_source_ledger` da CASO-04 traz um `liveReplay` por fonte com
 status HTTP, hash do corpo, data de captura e casamento de excerto — dado bom o
 bastante para conferência real. Medido em 04/08/2026: quatro fontes, quatro
 `ok: true`, e duas com `excerptMatches` preenchido.

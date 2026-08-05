@@ -31,7 +31,7 @@ Descrição: Operadora que suspende ou rescinde unilateralmente contrato sem
 motivo legal (fraude ou inadimplemento > 60 dias).
 
 APLICAÇÃO - CASO MATEUS:
-✓ SulAmérica rescindiu contrato de Mateus em 18/06/2026
+✓ CASO-21 rescindiu contrato de Mateus em 18/06/2026
 ✓ Motivo alegado: DLP omitida (K07/K07.1)
 ✓ Lei 9.656, art. 11 + RN 558/2022: operadora OBRIGADA a instaurar processo
   administrativo na ANS antes de excluir
@@ -42,7 +42,7 @@ PENALIDADE (RN 489 - tabela de multas por porte econômico):
 - Operadora MÉDIA (R$ 100M-R$ 1B): R$ 40.000,00 a R$ 120.000,00
 - Operadora GRANDE (> R$ 1B): R$ 60.000,00 a R$ 300.000,00
 
-SulAmérica é operadora de porte médio-grande → faixa superior de multa.
+CASO-21 é operadora de porte médio-grande → faixa superior de multa.
 
 AGRAVANTE (RN 489): Beneficiário é criança com TEA + curatela (hipervulnerável)
 → Multiplicador de penalidade: até 5x a faixa base (totalizando até R$ 1.500.000
@@ -82,9 +82,9 @@ administrativo na ANS sobre DLP omitida.
 
 APLICAÇÃO - CASO MATEUS:
 ✓ Fábio marcou DISCORDO em 24/04/2026
-✓ Lei e RN 558 obrigam SulAmérica a instaurar processo administrativo ANS
+✓ Lei e RN 558 obrigam CASO-21 a instaurar processo administrativo ANS
 ✓ DURANTE processo, operadora NÃO pode excluir ou suspender
-✓ SulAmérica excluiu 18/06/2026 (durante período em que processo deveria estar
+✓ CASO-21 excluiu 18/06/2026 (durante período em que processo deveria estar
   ativo)
 ✓ Violação GRAVE
 
@@ -121,8 +121,8 @@ TAXA DE SUCESSO: 80% das NIPs são resolvidas nesta fase preliminar.
 RELEVÂNCIA - CASO MATEUS:
 - NIP assistencial (nega cobertura cirurgia)
 - Prazo: 5 dias úteis
-- SulAmérica: terá que justificar exclusão por DLP
-- PROGNÓSTICO: SulAmérica não conseguirá justificar sem processo ANS anterior
+- CASO-21: terá que justificar exclusão por DLP
+- PROGNÓSTICO: CASO-21 não conseguirá justificar sem processo ANS anterior
 
 ─────────────────────────────────────────────────────
 
@@ -157,7 +157,7 @@ CÁLCULO DE MULTA (EXEMPLO - RN 489)
 
 Valor base = R$ 50.000 (faixa mínima para resgate/rescisão indevida)
 
-Multiplicadores por porte econômico (SulAmérica = grande operadora, ~R$ 10B):
+Multiplicadores por porte econômico (CASO-21 = grande operadora, ~R$ 10B):
 - Porte: 3x (multiplica base)
 - Base corrigida: R$ 150.000
 
@@ -190,7 +190,7 @@ NIP ASSISTENCIAL - RESTRIÇÃO DE COBERTURA INDEVIDA
 Descrição: Beneficiário nega que tenha omitido DLP; operadora negou cobertura;
 beneficiário deseja intermediação
 
-Prognóstico em 5 dias: SulAmérica terá que demonstrar:
+Prognóstico em 5 dias: CASO-21 terá que demonstrar:
 1. Conhecimento prévio de Mateus sobre K07/K07.1 (ônus dela)
 2. Que DS foi adequada para capturar essa doença (não foi)
 3. Que processo administrativo foi instaurado na ANS (não foi)
@@ -208,7 +208,7 @@ DIA 1 (09/07/2026):
 → Paralelo: ingressar ação judicial liminar (reintegração + cobertura cirurgia)
 
 DIAS 2-5:
-→ SulAmérica responde NIP (5 dias úteis)
+→ CASO-21 responde NIP (5 dias úteis)
 → Preparar-se para defesa robusta na ação judicial
 
 DIAS 6-30:

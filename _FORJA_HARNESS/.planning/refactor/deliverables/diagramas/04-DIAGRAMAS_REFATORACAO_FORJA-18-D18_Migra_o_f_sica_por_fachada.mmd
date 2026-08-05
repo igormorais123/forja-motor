@@ -1,8 +1,0 @@
-flowchart TD
-    Baseline["teste de caracterização"] --> New["implementação em src/forja"]
-    New --> Facade["wrapper no caminho antigo"]
-    Facade --> Equivalence["equivalência"]
-    Equivalence --> Telemetry["telemetria de uso"]
-    Telemetry --> Window{"janela sem uso?"}
-    Window -->|não| Keep["manter wrapper"]
-    Window -->|sim| Remove["remoção com rollback"]

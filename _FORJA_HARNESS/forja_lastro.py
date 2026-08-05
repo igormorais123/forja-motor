@@ -2,7 +2,7 @@
 """
 forja_lastro.py — Blindagem contra alucinação por lastro aparente.
 
-Motivo (caso Vale Trading, 26/07/2026). Três camadas de revisão — red team interno
+Motivo (caso CASO-23, 26/07/2026). Três camadas de revisão — red team interno
 de doze perguntas, gate F7 e dois revisores externos de famílias distintas —
 devolveram zero P0 sobre uma minuta que continha quatro P0. Todas examinaram o
 TEXTO. Os erros estavam na FONTE, e a fonte não fora aberta.
@@ -121,7 +121,7 @@ _ROTULO_JURIDICO_LOCAL = re.compile(
 # `legal_inference`, `strategic_hypothesis` e `not_verified` são honestos sobre
 # o que são e não podem ser tratados como se afirmassem fato provado.
 #
-# Medido em 04/08/2026 no ledger real da Cafelana: dos 11 fatos, **zero** eram
+# Medido em 04/08/2026 no ledger real da CASO-04: dos 11 fatos, **zero** eram
 # alcançados por L1/L2, porque o caso escreve `documented_fact` e
 # `official_current_source` enquanto o gate só conhecia `confirmed_document` e
 # `confirmed_official_source` — sinônimos separados por uma palavra. O gate
@@ -262,7 +262,7 @@ def _ctx(texto: str, ini: int, fim: int, alcance: int = 60) -> str:
 _EXT_TEXTO = {".md", ".txt", ".json", ".csv", ".yaml", ".yml", ".html", ".xml", ".py", ".log", ".tex"}
 
 # Teto de leitura. Acima disto o custo de conferir supera o benefício e o risco
-# de estourar memória é real — o laudo prevalente da Cafelana tem 2,14 GB.
+# de estourar memória é real — o laudo prevalente da CASO-04 tem 2,14 GB.
 _LIMITE_LEITURA_BYTES = 8 * 1024 * 1024
 
 
@@ -329,7 +329,7 @@ def validar_lastro_fatos(ledger: dict, *, base_dir: Path | str | None = None,
         if status not in STATUS_COM_LASTRO:
             # Vocabulário desconhecido não pode significar silêncio. Um status
             # que o gate não conhece é indistinguível, na saída, de um fato
-            # auditado e aprovado — foi assim que o ledger da Cafelana passou
+            # auditado e aprovado — foi assim que o ledger da CASO-04 passou
             # com 0 de 11 fatos conferidos. Isento por natureza fica quieto;
             # desconhecido aparece.
             if status and status not in STATUS_SEM_LASTRO:
@@ -343,7 +343,7 @@ def validar_lastro_fatos(ledger: dict, *, base_dir: Path | str | None = None,
             continue
 
         # Localizador é o que permite ir ao documento e conferir. O ledger da
-        # Cafelana escreve `locator` + `quoteSource` + `sha256`, que é lastro
+        # CASO-04 escreve `locator` + `quoteSource` + `sha256`, que é lastro
         # mais forte que um `support` genérico — e mesmo assim os 6 fatos bem
         # formados reprovavam em P0 por não usarem a palavra esperada. Aceitar
         # só `support` transformava o gate em auditor que reprova o acerto,
@@ -407,7 +407,7 @@ def validar_lastro_fatos(ledger: dict, *, base_dir: Path | str | None = None,
                 # não achando o trecho no meio do binário, acusava o autor de
                 # ter reconstruído a citação de memória — a acusação mais grave
                 # que este módulo faz, contra quem transcreveu corretamente de
-                # um PDF. O laudo da Cafelana tem 2,14 GB: além do falso P0, a
+                # um PDF. O laudo da CASO-04 tem 2,14 GB: além do falso P0, a
                 # leitura carregaria o arquivo inteiro na memória.
                 achados.append({
                     "gate": "L2-transcricao-manual", "sev": "P1", "factId": fid,

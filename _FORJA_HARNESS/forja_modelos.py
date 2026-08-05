@@ -19,7 +19,7 @@ O que este módulo deliberadamente NÃO faz: julgar qualidade jurídica. Modelo
 externo propõe; a verificação de citação continua sendo trabalho do F7. O Kimi
 K3 foi retirado do registro por decisão do titular em 26/07/2026, após reprovar
 a bancada jurídica; seus resultados permanecem apenas na telemetria histórica.
-A bancada Cafelana V7, de 27/07/2026, confirmou a retirada num segundo teste
+A bancada CASO-04 V7, de 27/07/2026, confirmou a retirada num segundo teste
 independente: último lugar em todos os seis votos cegos, por unanimidade das
 três famílias de juiz, com a peça interrompida no meio da primeira síntese
 depois de gastar 30 mil dos 32 mil tokens de orçamento em raciocínio interno.
@@ -67,7 +67,7 @@ class Modelo:
 
 
 MODELOS: dict[str, Modelo] = {
-    # Perfis atualizados em 27/07/2026 com a bancada Cafelana V7 (seis modelos,
+    # Perfis atualizados em 27/07/2026 com a bancada CASO-04 V7 (seis modelos,
     # a mesma peça real, julgamento cego por três famílias em dupla ordem).
     # Relatório: `bancada_cafelana_v7/RELATORIO_BANCADA_V7.md`.
     "opus-5": Modelo(

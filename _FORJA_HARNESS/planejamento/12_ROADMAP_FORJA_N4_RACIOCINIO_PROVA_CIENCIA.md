@@ -680,7 +680,7 @@ Até lá, o status correto é **candidata em planejamento, desenvolvimento ou so
 | M5 | concluído | metacognição, classificação de correção humana, sidecar, painel e abertura de artefatos |
 | M6.1 | concluído | corpus 11/11 e telemetria real com Word e documentos de produção |
 | M6.2 | concluído como baseline | três casos reais com 24/24, zero P0/P1, QA integral e mutation score 100% |
-| M6.3 | concluído com correção | Patrícia/Fábio, Libra Sul e Saúde validados retrospectivamente; Cafelana revogada e bloqueada |
+| M6.3 | concluído com correção | CASO-19/Fábio, CASO-16 e Saúde validados retrospectivamente; CASO-04 revogada e bloqueada |
 | M6.4 | pendente de ciclos prospectivos | os três textos antecedem os testes e, por isso, `promotionEligible=false`; `default_on` não promovido |
 
 ### Revisão M6.4 pelo Conselho - 11/07/2026

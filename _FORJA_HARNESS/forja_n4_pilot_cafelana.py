@@ -1,9 +1,11 @@
-"""Materialize the first complete N4 shadow pilot over the audited Cafelana AgInt cycle."""
+"""Materialize the first complete N4 shadow pilot over the audited CASO-04 AgInt cycle."""
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
+
+import forja_acervo
 
 from forja_case_tests import run_suite, suite_hash
 from forja_consistency import inspect_physical_document
@@ -12,17 +14,17 @@ from forja_n4_common import build_envelope, write_artifact
 from forja_n4_validate import validate_case
 
 
-CASE_ID = "case-email-cafelana-agint-aresp-2698443-19f2f0876e358eab"
-PRODUCER = "cafelana-agint-n4-structural-producer"
-REVIEWER = "cafelana-agint-n4-independent-reviewer"
-ORIGIN_DRAFT = Path(r"C:\Users\IgorPC\.claude\projects\Escritório fabio osório\fabricas de melhoria de petições\Cafelana\contrarrazões ao AgInt no AREsp nº 2.698.443D\_forja_n3_reabertura_2026-07-10\MINUTA_CAFELANA_AGINT_N3_FONTE.md")
+CASE_ID = forja_acervo.caso("CASO-04")
+PRODUCER = "piloto-n4-structural-producer"
+REVIEWER = "piloto-n4-independent-reviewer"
+ORIGIN_DRAFT = forja_acervo.caminho("piloto-n4-rascunho-origem")
 
 
 def run() -> dict:
     if ORIGIN_DRAFT.is_file():
         origin_prefix = ORIGIN_DRAFT.read_text(encoding="utf-8-sig", errors="ignore")[:4096].lower()
         if "esta fonte foi invalidada" in origin_prefix:
-            raise RuntimeError("piloto Cafelana revogado: a minuta de origem foi invalidada; reconstrução exige a íntegra do AgInt de 24/06/2026")
+            raise RuntimeError("piloto CASO-04 revogado: a minuta de origem foi invalidada; reconstrução exige a íntegra do AgInt de 24/06/2026")
     case_dir = FORJA / "state" / CASE_ID
     pilot = case_dir / "n4_pilot"
     draft = pilot / "MINUTA_CAFELANA_AGINT_N4_PILOTO.md"
@@ -146,7 +148,7 @@ def run() -> dict:
     ]
     for index, (value, kind) in enumerate(test_specs, 1):
         tests.append({"testId": f"CT-CAF-{index:03d}", "question": f"Critério literal: {value}", "severity": "blocking", "method": "deterministic", "expected": f"{kind}: {value}", "evidenceRequired": ["audited_markdown"], "immutableFromHash": source_hashes["draft"], "status": "pending", "evaluator": {"kind": kind, "value": value, "ignoreCase": True}})
-    suite = {"suiteId": "CAFELANA-AGINT-N4-TDD-v1", "draftedBeforeFinalText": True, "tests": tests}
+    suite = {"suiteId": "PILOTO-N4-TDD-v1", "draftedBeforeFinalText": True, "tests": tests}
     suite["suiteHash"] = suite_hash(suite)
     save("F4_CASE_ACCEPTANCE_TESTS.json", suite)
     not_applicable("F4_DECISION_FACTOR_MAP.json", "As decisões integrais não compõem o pacote piloto; fatores decisórios não serão inferidos da minuta.")

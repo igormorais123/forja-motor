@@ -1,6 +1,0 @@
-[
-{"schemaVersion":"FORJA-AR-v1","judgeId":"juiz1c2-claude","pairId":"ciclo2-t1","votes":[{"order":1,"winnerPosition":"R"},{"order":2,"winnerPosition":"R"}],"nota":"votos brutos; rodada invalidada por cegamento comprometido"},
-{"schemaVersion":"FORJA-AR-v1","judgeId":"juiz2c2-claude","pairId":"ciclo2-t1","votes":[{"order":1,"winnerPosition":"R"},{"order":2,"winnerPosition":"R"}],"nota":"juiz identificou a variante pela referência ao parecer AR-1 no texto"},
-{"schemaVersion":"FORJA-AR-v1","judgeId":"juiz1c2-claude","pairId":"ciclo2-t2","votes":[{"order":1,"winnerPosition":"L"},{"order":2,"winnerPosition":"L"}],"nota":"votos brutos; rodada invalidada"},
-{"schemaVersion":"FORJA-AR-v1","judgeId":"juiz2c2-claude","pairId":"ciclo2-t2","votes":[{"order":1,"winnerPosition":"R"},{"order":2,"winnerPosition":"L"}],"nota":"juiz leu o título OUT_T2_VIGENTE dentro do bundle"}
-]

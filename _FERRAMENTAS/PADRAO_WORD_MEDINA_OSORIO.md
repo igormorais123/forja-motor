@@ -1,6 +1,6 @@
 # PADRÃO WORD MEDINA OSÓRIO — especificação canônica (extraída das peças reais)
 
-Extraído programaticamente em 08/07/2026 de 4 peças ORIGINAIS do escritório (Cafelana CR EDcl, Memoriais Patrícia e Fábio, EDcl José Eduardo, Quesitos Cabreúva) e conferido contra 5 finais da fábrica. Evidência bruta: `.autoresearch\padrao_word_extraido.json`.
+Extraído programaticamente em 08/07/2026 de 4 peças ORIGINAIS do escritório (CASO-04 CR EDcl, Memoriais CASO-19 e Fábio, EDcl José Eduardo, Quesitos CASO-17) e conferido contra 5 finais da fábrica. Evidência bruta: `.autoresearch\padrao_word_extraido.json`.
 
 ## REGRA NÚMERO 1 — nunca criar documento do zero
 
@@ -21,24 +21,24 @@ O timbre "MEDINA OSÓRIO ADVOGADOS" é **arte vetorial** embutida no cabeçalho 
 
 - **1ª página, cabeçalho** (`header3.xml`): timbre vetorial (logo coluna + wordmark) + "ADVOGADOS" espaçado em cor `#3A5C61` + filete horizontal.
 - **1ª página, rodapé** (`footer3.xml`): `www.medinaosorio.com.br` + `Brasília | Porto Alegre | Rio de Janeiro` com ícones, 10,5pt, cor `#4A4A4D`, + elementos decorativos de canto (faixas petróleo/terracota).
-- **Demais páginas, cabeçalho** (`header2.xml`): **fólio** (campo PAGE) com filete inferior, em shape ancorado à **margem direita, centralizado VERTICALMENTE na página** (`positionH relativeFrom="rightMargin"` + `positionV relativeFrom="margin" align="center"`) — confirmado no XML do template e no PDF protocolado da Cafelana (08/07/2026); não é "topo direito". Rodapé das demais páginas: vazio.
+- **Demais páginas, cabeçalho** (`header2.xml`): **fólio** (campo PAGE) com filete inferior, em shape ancorado à **margem direita, centralizado VERTICALMENTE na página** (`positionH relativeFrom="rightMargin"` + `positionV relativeFrom="margin" align="center"`) — confirmado no XML do template e no PDF protocolado da CASO-04 (08/07/2026); não é "topo direito". Rodapé das demais páginas: vazio.
 
 ## Corpo do texto (o DNA tipográfico)
 
 | Item | Valor (100% das peças originais) |
 |---|---|
-| Fonte | **Times New Roman 12** em todos os runs (356/356 na Cafelana) |
+| Fonte | **Times New Roman 12** em todos os runs (356/356 na CASO-04) |
 | Alinhamento | **Justificado** em todos os parágrafos |
 | Entrelinhas | **1,5** nas peças federais/STJ; 1,15 na EDcl TJTO (seguir a peça anterior do caso) |
 | Recuo de 1ª linha | **2,5 cm** (contrarrazões) ou 2,0 cm (memoriais/EDcl) — NUNCA os 1,25 cm da ABNT genérica |
 | Parágrafos | numerados (1., 2., 3. ...), topic sentence pode levar negrito |
 | Negrito | mínimo e estratégico; títulos de seção em romanos (I –, II –) em negrito, sem recuo |
 | Endereçamento | CAIXA ALTA em negrito, sem recuo, 1ª linha da peça |
-| Fecho | "Nestes termos, pede deferimento." + local/data + bloco de assinaturas centralizado (FÁBIO MEDINA OSÓRIO — OAB/DF 29.786-A) |
+| Fecho | "Nestes termos, pede deferimento." + local/data + bloco de assinaturas centralizado (FÁBIO MEDINA OSÓRIO — OAB/DF 29.7860-A) |
 
 ## Diagramas dentro da peça
 
-Regras da skill `fabrica-visual-peticoes` (autoridade): SVG → **EMF** via `svg_para_emf` (gate de legibilidade automático) → inserção via `inserir_emf_word_com` com largura de `estilo_medina.largura_recomendada_cm(svg)` → PDF pelo Word COM → QA visual página a página. As finais antigas (Cafelana, Jalusa) usaram PNG — daqui em diante é EMF.
+Regras da skill `fabrica-visual-peticoes` (autoridade): SVG → **EMF** via `svg_para_emf` (gate de legibilidade automático) → inserção via `inserir_emf_word_com` com largura de `estilo_medina.largura_recomendada_cm(svg)` → PDF pelo Word COM → QA visual página a página. As finais antigas (CASO-04, Jalusa) usaram PNG — daqui em diante é EMF.
 
 ## Desvios já flagrados (não repetir)
 

@@ -5,6 +5,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import forja_acervo
+
 from forja_n3_common import FORJA, ForjaN3Error, atomic_write_json, now_iso, read_json
 from forja_visual_review import REQUIRED_PAGE_CHECKS
 from forja_visual import _larguras_tabela, compor
@@ -43,11 +45,11 @@ class ForjaN3VisualTests(unittest.TestCase):
     def test_production_diagrams_are_checked_after_correction(self) -> None:
         roots = FORJA / "state"
         paths = [
-            roots / "case-email-natura-cabreuva-19f3991ebc75fe03" / "producao" / "_visual" / "fig2_escada_estrategias.svg",
-            roots / "case-email-libra-sul-agint-stj-19f3c9350d875062" / "producao" / "_visual" / "fig2_obices_convergentes.svg",
-            roots / "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2" / "producao" / "_visual" / "fig2_metodo_bifasico.svg",
-            roots / "case-email-corsan-agerst-19f3dc9ff92081cd" / "producao" / "_visual" / "fig1_vulnerabilidades.svg",
-            roots / "case-email-azimut-19f3ed5bdbdcf159" / "producao" / "_visual" / "fig2_selic_vs_juros.svg",
+            roots / forja_acervo.caso("CASO-17") / "producao" / "_visual" / "fig2_escada_estrategias.svg",
+            roots / forja_acervo.caso("CASO-16") / "producao" / "_visual" / "fig2_obices_convergentes.svg",
+            roots / forja_acervo.caso("CASO-19") / "producao" / "_visual" / "fig2_metodo_bifasico.svg",
+            roots / forja_acervo.caso("CASO-07") / "producao" / "_visual" / "fig1_vulnerabilidades.svg",
+            roots / forja_acervo.caso("CASO-02") / "producao" / "_visual" / "fig2_selic_vs_juros.svg",
         ]
         existing = [path for path in paths if path.exists()]
         if not existing:
@@ -57,7 +59,7 @@ class ForjaN3VisualTests(unittest.TestCase):
             len(existing),
             "corpus visual real parcialmente ausente; ausência parcial não pode virar falso-verde",
         )
-        # Quatro âncoras históricas foram corrigidas no acervo; o Azimut ainda
+        # Quatro âncoras históricas foram corrigidas no acervo; o CASO-02 ainda
         # conserva a mutação real de atributos SVG inválidos para provar que o
         # linter continua bloqueante. O teste não congela o acervo numa
         # fotografia em que todo defeito histórico permanece para sempre.
@@ -250,7 +252,7 @@ class ForjaN3VisualTests(unittest.TestCase):
                 "Nestes termos, pede deferimento.\n\n"
                 "Brasília/DF, 10 de julho de 2026.\n\n"
                 "**FÁBIO MEDINA OSÓRIO**  \n"
-                "OAB/RS 64.975 · OAB/DF 29.786\n",
+                "OAB/RS 90.007 · OAB/DF 90.016\n",
                 encoding="utf-8",
             )
             compor(markdown, output, {})
@@ -260,7 +262,7 @@ class ForjaN3VisualTests(unittest.TestCase):
             self.assertIn("Nestes termos, pede deferimento.", paragraphs)
             self.assertNotIn("2. Nestes termos, pede deferimento.", paragraphs)
             self.assertIn("FÁBIO MEDINA OSÓRIO", tables)
-            self.assertIn("OAB/RS 64.975 · OAB/DF 29.786", tables)
+            self.assertIn("OAB/RS 90.007 · OAB/DF 90.016", tables)
 
 
 if __name__ == "__main__":

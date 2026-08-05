@@ -10,11 +10,11 @@ próprio artefato que ele deveria auditar.
 
 Os seis dialetos de `source_ledger` medidos:
 
-  Vale Trading  5 fontes, 5 arquivadas, 5 hashes conferem
+  CASO-23  5 fontes, 5 arquivadas, 5 hashes conferem
   VerifACT      5 fontes, 4 arquivadas com hash conferindo, 1 sem nada
   Nylton        5 fontes, 5 arquivadas, nenhuma com hash
-  Natura       10 fontes, nenhuma arquivada
-  Cafelana      9 fontes, nenhuma arquivada, 3 com hash sem caminho
+  CASO-17       10 fontes, nenhuma arquivada
+  CASO-04      9 fontes, nenhuma arquivada, 3 com hash sem caminho
 
 O que o gate garante: que a fonte possa ser RECOTEJADA depois, de forma
 idêntica. URL viva conferida numa data não permite isso — a página muda, o

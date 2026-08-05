@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import forja_acervo
+
 from forja_metricas_f7 import metricas_f7
 
 
@@ -41,19 +43,16 @@ def test_f7_campos_real():
     rejeição de manifesto fabricado são cobertas por test_forja_anti_cheat.py.
     """
 
-    md_path = (
-        Path(__file__).resolve().parents[1]
-        / "Re Relatório Azimut"
-        / "_forja_n3_reconstrucao_2026-07-10"
-        / "MEMORIAL_AZIMUT_N3_FONTE.md"
-    )
+    md_path = forja_acervo.caminho("fonte-n3-memorial-resp")
+    if md_path is None:
+        raise AssertionError(forja_acervo.motivo_da_ausencia("fonte-n3-memorial-resp"))
 
     assert md_path.exists(), f"fonte N3 não encontrada: {md_path}"
 
     md_texto = md_path.read_text(encoding="utf-8")
     resultado = metricas_f7(md_texto, require_live=False)
 
-    print("\n=== Resultado F7 (fonte N3 AZIMUT) ===")
+    print("\n=== Resultado F7 (fonte N3 CASO-02) ===")
     print(f"Citações totais: {resultado['citacoesTotal']}")
     print(f"Citações conferidas: {resultado['citacoesConferidasEmFonte']}")
     print(f"Citações não conferidas ({len(resultado['citacoesNaoConferidas'])}):")
@@ -64,14 +63,13 @@ def test_f7_campos_real():
     # O inventário v2 enxerga também o número CNJ, artigos e diplomas legais.
     # Os três itens não têm captura oficial registrada neste corpus e devem
     # permanecer nominalmente bloqueados; escondê-los criaria falso-verde.
-    assert resultado["citacoesNaoConferidas"] == [
-        "TJSP AGRAVO DE INSTRUMENTO 2131785-85.2022.8.26.0000",
-        "art. 520 CPC",
-        "Lei 14.905/2024",
-    ], "mudou o conjunto conhecido de citações sem lastro; auditar antes de aceitar"
+    esperado = forja_acervo.valor("f7-citacoes-sem-lastro")
+    assert esperado is not None, forja_acervo.motivo_da_ausencia("f7-citacoes-sem-lastro")
+    assert resultado["citacoesNaoConferidas"] == esperado, (
+        "mudou o conjunto conhecido de citações sem lastro; auditar antes de aceitar")
     assert resultado["verificarRestantes"] == [], "a fonte N3 não pode conter marcador [VERIFICAR]"
     # nota 10/07/2026: o art. 343-A do RISTJ EXISTE (ER 53/2026); a fonte N3
-    # do memorial Azimut optou por não citá-lo (memorial não é petição inicial
+    # do memorial CASO-02 optou por não citá-lo (memorial não é petição inicial
     # nem recursal). Este guarda só detecta reintrodução silenciosa — se a
     # citação voltar por decisão deliberada, atualizar este teste.
     assert "343-A" not in md_texto, "a fonte N3 reintroduziu o art. 343-A sem decisao registrada"

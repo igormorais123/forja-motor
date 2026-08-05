@@ -7,6 +7,8 @@ import json
 import shutil
 import tempfile
 from pathlib import Path
+
+import forja_acervo
 from unittest.mock import patch
 
 from forja_case_tests import suite_hash
@@ -15,7 +17,7 @@ from forja_n4_validate import validate_case
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_CASE = ROOT / "state" / "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2"
+DEFAULT_CASE = ROOT / "state" / forja_acervo.caso("CASO-19")
 
 
 def _load(path: Path) -> dict:

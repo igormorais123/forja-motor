@@ -41,8 +41,8 @@ def _chave(d, m, a):
 
 
 # Números de processo no padrão CNJ contêm sequências que se parecem com data:
-# em 1102992-28.2014.8.26.0100 o trecho "8.26.0100" casa com dd.mm.aaaa e vira
-# um marco fantasma na linha do tempo (flagrado no Azimut, 30/07/2026). Também
+# em 9000006-00.2014.8.26.0000 o trecho "8.26.0100" casa com dd.mm.aaaa e vira
+# um marco fantasma na linha do tempo (flagrado no CASO-02, 30/07/2026). Também
 # mascaramos valores monetários e artigos com pontuação numérica.
 _CNJ = re.compile(r"\b\d{6,7}-?\d{0,2}\.?\d{0,4}\.?\d?\.?\d{2}\.?\d{4}\b")
 # 12+ caracteres: uma data dd/mm/aaaa tem 10 e não pode ser mascarada aqui.
@@ -116,7 +116,7 @@ _ORIGEM_OPERACIONAL = re.compile(
 def _fonte_cronologica(texto_md):
     """Devolve o trecho do md que DECLARA cronologia, ou None.
 
-    Decisão de projeto (30/07/2026, após inspeção visual do Azimut e do CORSAN):
+    Decisão de projeto (30/07/2026, após inspeção visual do CASO-02 e do CASO-07):
     varrer datas da prosa inteira mistura data do documento, prazo interno,
     data de julgado citado e ato processual numa única linha do tempo. Cada item
     sai verbatim e o conjunto ainda assim afirma uma sequência que o texto não
@@ -176,7 +176,7 @@ def extrair_cronologia(texto_md, minimo=3, maximo=7):
             # VÍNCULO OBRIGATÓRIO: a descrição do marco tem de conter a própria
             # data. Sem isso, o corte por fronteira de oração pode devolver um
             # trecho que fala de OUTRO ato — a figura afirmaria um vínculo
-            # temporal que o texto não estabelece (defeito Azimut, 30/07/2026).
+            # temporal que o texto não estabelece (defeito CASO-02, 30/07/2026).
             if not desc or rotulo not in desc:
                 continue
             if _ORIGEM_OPERACIONAL.search(desc):
@@ -268,7 +268,7 @@ def extrair_encadeamento(texto_md, brief=None, minimo=3, maximo=6):
     """Cadeia argumentativa. EXIGE brief declarado em F7.5.
 
     Decisão de projeto (30/07/2026): a versão anterior inferia a cadeia das
-    frases de abertura de cada seção. A inspeção visual do Azimut mostrou o
+    frases de abertura de cada seção. A inspeção visual do CASO-02 mostrou o
     resultado — o diagrama colocou a TESE DA PARTE ADVERSÁRIA como elo do
     raciocínio da cliente, além de dois conectivos terminados em dois-pontos e
     um fragmento de item de lista. Toda frase era verbatim e a cadeia era falsa.
@@ -372,7 +372,7 @@ def gerar_figuras(texto_md, out_dir, mapa, largura_cm=13.1, brief=None):
     else:
         mapa.pop("figs", None)
 
-    # Cards da capa. O padrão aprovado em 09/07/2026 (Libra Sul) usa ÂNCORAS
+    # Cards da capa. O padrão aprovado em 09/07/2026 (CASO-16) usa ÂNCORAS
     # FACTUAIS — "4 / óbices processuais cumulativos", "09/04/2008 / ato
     # alegado", "13 anos / decurso sem materialização": quatro dados na cara do
     # julgador. Índice de seções ("01 RESUMO") é bem mais fraco e foi o que a

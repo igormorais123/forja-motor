@@ -40,35 +40,41 @@ from pathlib import Path
 VERSAO = "FORJA-BASELINE-APROVADO-v1"
 RAIZ = Path(__file__).resolve().parent
 FABRICA = RAIZ.parent
-MANIFESTO = RAIZ / "BASELINE_APROVADO.json"
+MANIFESTO = RAIZ / "state" / "BASELINE_APROVADO.json"
+ANCORAS_ORIGEM = RAIZ / "state" / "BASELINE_ANCORAS.json"
 
-# Cada âncora diz O QUE ela guarda. Sem isso o baseline vira uma lista de arquivos
-# e ninguém sabe, seis meses depois, por que aquela peça está ali.
-ANCORAS = [
-    {
-        "id": "cafelana-v8",
-        "caminho": ("Cafelana/contrarrazões ao AgInt no AREsp nº 2.698.443D/"
-                    "_v8_visual_2026-07-30/IMPUGNACAO_AGINT_CAFELANA_V8_AJUSTADA_VISUAL.docx"),
-        "aprovadaEm": "2026-07-30",
-        "guarda": ("a identidade tipográfica da casa dentro de tabela — rótulo em Segoe UI, "
-                   "conteúdo em Times New Roman — e o fólio de 57,3 pt numa margem de 3,5 cm"),
-    },
-    {
-        "id": "cafelana-v4",
-        "caminho": ("Cafelana/contrarrazões ao AgInt no AREsp nº 2.698.443D/"
-                    "_v4_2026-07-15/IMPUGNACAO_AGINT_CAFELANA_V4_15-07-2026.docx"),
-        "aprovadaEm": "2026-07-15",
-        "guarda": ("a mesma mistura tipográfica numa entrega ANTERIOR, o que impede tratá-la "
-                   "como acidente de uma versão só"),
-    },
-    {
-        "id": "template-casa",
-        "caminho": "_FERRAMENTAS/TEMPLATE_MEDINA_OSORIO_PETICAO.docx",
-        "aprovadaEm": "2026-07-08",
-        "guarda": ("o fólio da casa medido, e não inferido: 57,3 pt. Toda peça nasce daqui, "
-                   "então um gate que reprova este arquivo reprova a fábrica inteira"),
-    },
-]
+# As âncoras nomeiam peças reais do escritório — caminho de pasta de cliente e,
+# no manifesto, o sha256 do documento. Isso é acervo, e ficava escrito aqui, no
+# motor: um repositório destinado a ser compartilhado carregava o caminho
+# completo de duas peças protocoladas. Agora a lista vem do acervo e o motor traz
+# só o código que confere.
+#
+# Sem o acervo montado, `ANCORAS` fica vazia e quem depende dela precisa dizer
+# que não pôde verificar — nunca tratar ausência de âncora como aprovação.
+def carregar_ancoras() -> list[dict]:
+    if not ANCORAS_ORIGEM.exists():
+        return []
+    try:
+        dados = json.loads(ANCORAS_ORIGEM.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    return list(dados.get("ancoras") or [])
+
+
+ANCORAS = carregar_ancoras()
+
+
+def caminho_da_ancora(identificador: str) -> Path | None:
+    """Caminho real da peça aprovada, resolvido pelo acervo.
+
+    É por aqui que os canários anti-moldagem alcançam a peça-base. Antes cada um
+    escrevia o caminho completo — com nome de pasta de cliente — dentro do
+    próprio teste, e a peça ficava nomeada em três lugares do motor.
+    """
+    for ancora in ANCORAS:
+        if ancora.get("id") == identificador:
+            return _resolver(ancora["caminho"])
+    return None
 
 
 def _resolver(relativo: str) -> Path | None:

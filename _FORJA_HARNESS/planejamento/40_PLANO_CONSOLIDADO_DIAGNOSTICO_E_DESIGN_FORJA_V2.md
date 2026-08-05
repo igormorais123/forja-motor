@@ -1989,11 +1989,11 @@ O F8-S automático passa a bloqueante quando duas condições **técnicas** fore
 
 ### 26.2 Trilha L — lastro documental
 
-**Origem:** dois incidentes irmãos. Vale Trading (26/07) — lastro aparente de **proposição**, que gerou o `FORJA-LASTRO-v1`. Cafelana (02/08, e-mail do Fábio de 03/08, thread `19fbfa33e7ce7df9`) — ausência de fonte prevalente e lastro ausente de **número**, que gera a v2.
+**Origem:** dois incidentes irmãos. CASO-23 (26/07) — lastro aparente de **proposição**, que gerou o `FORJA-LASTRO-v1`. CASO-04 (02/08, e-mail do Fábio de 03/08, thread `19fbfa33e7ce7df9`) — ausência de fonte prevalente e lastro ausente de **número**, que gera a v2.
 
 **Fonte canônica:** `..\PROTOCOLO_LASTRO_DOCUMENTAL.md`. **Catálogo:** § U12 (v1, vigente) e § U13 (v2, implementado e revalidado) de `06_GATES_QUALIDADE_FORJA.md`. **Plano-filho canônico de execução da v2:** [`41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md`](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md).
 
-**Sincronização com o Plano 41 (04/08/2026):** o plano-filho foi executado e revalidado. A implementação determinística de L9–L13 está no módulo e nas rotas reais, com regressões, calibração e relatório de evidência. O estado pendente não é mais a implementação: a ficha `FONTE_PREVALENTE.json` do caso Cafelana continua proposta, aguardando validação humana da fonte econômica prevalente e da data-base; também não houve promoção/cutover nem liberação externa.
+**Sincronização com o Plano 41 (04/08/2026):** o plano-filho foi executado e revalidado. A implementação determinística de L9–L13 está no módulo e nas rotas reais, com regressões, calibração e relatório de evidência. O estado pendente não é mais a implementação: a ficha `FONTE_PREVALENTE.json` do caso CASO-04 continua proposta, aguardando validação humana da fonte econômica prevalente e da data-base; também não houve promoção/cutover nem liberação externa.
 
 | Componente | Estado |
 |---|---|
@@ -2011,7 +2011,7 @@ O F8-S automático passa a bloqueante quando duas condições **técnicas** fore
 
 ### 26.3 Relação com as ondas G0–6
 
-As duas trilhas são **independentes do baseline GitHub G0** e não estão bloqueadas pelo `HOLD` da Onda 0. A trilha V já opera em produção e a trilha L foi implementada e revalidada como extensão aditiva do módulo existente, com regressões e evidência próprias. Isso não promove a trilha L para uso econômico no Cafelana: sem validação humana da fonte prevalente, ela continua bloqueadora para qualquer produto econômico. Quando a Onda 0 destravar, as ondas ainda previstas neste plano (Diagnóstico v2 e MAP) seguem em trilhas separadas, com o mesmo regime de promoção por evidência.
+As duas trilhas são **independentes do baseline GitHub G0** e não estão bloqueadas pelo `HOLD` da Onda 0. A trilha V já opera em produção e a trilha L foi implementada e revalidada como extensão aditiva do módulo existente, com regressões e evidência próprias. Isso não promove a trilha L para uso econômico no CASO-04: sem validação humana da fonte prevalente, ela continua bloqueadora para qualquer produto econômico. Quando a Onda 0 destravar, as ondas ainda previstas neste plano (Diagnóstico v2 e MAP) seguem em trilhas separadas, com o mesmo regime de promoção por evidência.
 
 ### 26.4 O princípio comum, que é o aprendizado de 03/08
 

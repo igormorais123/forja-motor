@@ -1,6 +1,0 @@
-flowchart TB
-I["arquivo inventariado"] --> S{"examinado integralmente?"}
-S -->|não| U["P0: unscanned + razão"]
-S -->|sim| T{"ameaça técnica?"}
-T -->|sim| B["P0: bloquear"]
-T -->|não| P["benigno: prosseguir"]

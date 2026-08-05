@@ -126,7 +126,7 @@ python validate_forja_n3.py --real-word --run-replay
 - [Taxonomia anti-alucinação](FAILURE_TAXONOMY_ANTI_ALUCINACAO.md)
 - [Protocolo de lastro documental (L1-L8)](PROTOCOLO_LASTRO_DOCUMENTAL.md)
 - [Runbook da auditoria de regimentos](RUNBOOK_AUDITORIA_REGIMENTOS.md)
-- [Incidente Vale Trading — lastro aparente](INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md)
+- [Incidente CASO-23 — lastro aparente](INCIDENTE_VALE_TRADING_LASTRO_APARENTE_2026-07-26.md)
 - [Protocolo editorial de escrita final](PROTOCOLO_EDITORIAL_ESCRITA_FINAL.md)
 
 ## Segurança jurídica

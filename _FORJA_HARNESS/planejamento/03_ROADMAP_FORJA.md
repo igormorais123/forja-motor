@@ -74,8 +74,8 @@
 
 **Casos piloto:**
 
-- Azimut, porque há duplicidade `Fwd Relatório Azimut` e `Re Relatório Azimut`;
-- José Eduardo Siqueira Campos, porque há entregável final local mas status pode precisar reconciliação;
+- CASO-02, porque há duplicidade `Fwd Relatório CASO-02` e `Re Relatório CASO-02`;
+- CASO-15, porque há entregável final local mas status pode precisar reconciliação;
 - Laudo Pericial Contábil, pelo mesmo motivo.
 
 **Critério de pronto:**
@@ -110,7 +110,7 @@
 
 **Casos piloto:**
 
-- Cafelana, por ter TRF1/STJ;
+- CASO-04, por ter TRF1/STJ;
 - Siqueira Campos, por TJTO;
 - Memoriais Cautelar Fiscal, por TRF4.
 
@@ -144,9 +144,9 @@
 
 **Casos piloto:**
 
-- Cafelana;
+- CASO-04;
 - Siqueira Campos;
-- LIBRA SUL ou Jorge Haroldo, se houver urgência STJ.
+- CASO-16 ou Jorge Haroldo, se houver urgência STJ.
 
 **Critério de pronto:**
 
@@ -179,7 +179,7 @@
 **Casos piloto:**
 
 - Jalusa, por ter documentação final e QA anterior;
-- Cafelana, por ter auditorias e versões comparáveis.
+- CASO-04, por ter auditorias e versões comparáveis.
 
 **Critério de pronto:**
 
@@ -240,9 +240,9 @@
 ## 4. Ordem de casos recomendada
 
 1. **Jalusa:** melhor para validar QA visual e comparação com entrega final.
-2. **Cafelana:** melhor para validar estratégia, STJ/TRF1, citações e auditoria.
+2. **CASO-04:** melhor para validar estratégia, STJ/TRF1, citações e auditoria.
 3. **Siqueira Campos:** melhor para validar regimento TJTO e embargos.
-4. **Azimut:** melhor para validar duplicidade de pastas e consolidação sem apagar.
+4. **CASO-02:** melhor para validar duplicidade de pastas e consolidação sem apagar.
 5. **Plano de Saúde Fábio/Mateus:** só depois de pasta, comando, anexos, órgão responsável e evidência mínima estarem mapeados.
 
 ---

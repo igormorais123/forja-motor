@@ -50,7 +50,7 @@ DEVE_REPROVAR = [
 
 NAO_PODE_TRAVAR = [
     # Resumo de contagens ZERADAS é varredura limpa. A primeira versão do gate
-    # tratou o dicionário não vazio como detecção e reprovou a Cafelana, que
+    # tratou o dicionário não vazio como detecção e reprovou a CASO-04, que
     # havia varrido corretamente e registrado o resultado.
     ("resumo com contagens zeradas",
      {"total_pdfs": 1, "resumo_p0": {"padroes_instrucao": 0, "cor_invisivel": 0,

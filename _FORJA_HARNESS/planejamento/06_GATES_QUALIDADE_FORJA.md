@@ -1,7 +1,7 @@
 # 05 — Gates de Qualidade do FORJA N2 (catálogo complementar)
 
 **Versão**: N2.3 | **Data**: 2026-07-15
-**Origem**: mineração das análises de resultados reais da fábrica — `APRENDIZADOS_FEEDBACK_HUMANO.md`, `Cafelana\AUDITORIA_FINAL_CAFELANA_SUPER.md`, `Cafelana\_ANALISE_SUN_TZU.md`, `Cafelana\contrarrazões...\RELATORIO_E_APRENDIZADOS.md`, Jalusa `DOCUMENTACAO_FINAL_APRENDIZADOS\` e `RELATORIO_MELHORIAS_NIVEL_3.md`, Siqueira Campos `AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md` e auditorias, Laudo Pericial `RELATORIO_MELHORIAS.md` e `REGISTRO_ALTERACOES_E_AUDITORIA.md`, `.autoresearch\fabrica-peticoes-v1\auditoria-regua.md`. Detalhe bruto em `fontes\ANALISE_PONTUAL_HARNESS_F0_F10.md`.
+**Origem**: mineração das análises de resultados reais da fábrica — `APRENDIZADOS_FEEDBACK_HUMANO.md`, `a auditoria final do caso, registrada no acervo`, a análise estratégica do caso, no acervo, o relatório de aprendizados do caso, no acervo, Jalusa `DOCUMENTACAO_FINAL_APRENDIZADOS\` e `RELATORIO_MELHORIAS_NIVEL_3.md`, Siqueira Campos `AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md` e auditorias, Laudo Pericial `RELATORIO_MELHORIAS.md` e `REGISTRO_ALTERACOES_E_AUDITORIA.md`, `.autoresearch\fabrica-peticoes-v1\auditoria-regua.md`. Detalhe bruto em `fontes\ANALISE_PONTUAL_HARNESS_F0_F10.md`.
 **Papel**: este documento é o catálogo complementar de qualidade do FORJA N2. Ele fica subordinado ao `FORJA_SPEC_MANIFEST.json`, ao PRD, ao TDD e ao Roadmap N2. Toda lição futura de pós-entrega entra AQUI (e no `APRENDIZADOS_FEEDBACK_HUMANO.md` quando vier de feedback humano).
 
 ---
@@ -27,17 +27,17 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 ### F3-F4 PESQUISA INTERNA E BLUEPRINT
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
-| G3.1 | **Dossiê local antes de pesquisa externa**: peça anterior do caso, decisão atacada, iter processual lidos ANTES de qualquer busca fora (casos como AREsp 2.698.443 não existem em busca pública — só no dossiê) | SIM | Cafelana RELATORIO_E_APRENDIZADOS.md |
+| G3.1 | **Dossiê local antes de pesquisa externa**: peça anterior do caso, decisão atacada, iter processual lidos ANTES de qualquer busca fora (casos como AREsp 2.698.443 não existem em busca pública — só no dossiê) | SIM | CASO-04 RELATORIO_E_APRENDIZADOS.md |
 | G3.2 | **Pergunta jurisdicional em UMA frase** registrada antes de estruturar argumentos (qual pergunta o julgador precisa responder?) | SIM | Jalusa 03_APRENDIZADOS §2.1 |
-| G3.3 | **Dupla contagem de prazo**: agente conta, auditor independente reconta (calendário, dias úteis, feriados); divergência registrada e resolvida | SIM | Cafelana (sábado contado como útil) |
+| G3.3 | **Dupla contagem de prazo**: agente conta, auditor independente reconta (calendário, dias úteis, feriados); divergência registrada e resolvida | SIM | CASO-04 (sábado contado como útil) |
 | G3.4 | Documento mencionado no comando/minuta localizado nos autos extraídos; não localizado = classificado LACUNA, nunca afirmado como fato | SIM | Siqueira (NOTA 00465/2025 assumida) |
 | G3.5 | Fato crítico classificado no ledger como fonte, declaração, inferência, hipótese ou não verificado | SIM | FORJA N2 |
-| G3.6 | **Identidade dos atos em processo volumoso**: cada recurso, decisão, retratação, destaque e intimação tem código, data, sujeito, ato impugnado, pedido, resultado, efeito e ponte aos autos. Falta da íntegra do ato atual bloqueia redação | SIM | feedback Fábio 11/07/2026 — Cafelana |
+| G3.6 | **Identidade dos atos em processo volumoso**: cada recurso, decisão, retratação, destaque e intimação tem código, data, sujeito, ato impugnado, pedido, resultado, efeito e ponte aos autos. Falta da íntegra do ato atual bloqueia redação | SIM | feedback Fábio 11/07/2026 — CASO-04 |
 
 ### F5 PESQUISA OFICIAL
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
-| G4.1 | Jurisprudência apenas de fonte primária oficial (SCON/STJ, portal STF, TRFs) — nunca Jusbrasil/resumo/memória do modelo | SIM | Cafelana AUDITORIA_FINAL_CAFELANA_SUPER.md |
+| G4.1 | Jurisprudência apenas de fonte primária oficial (SCON/STJ, portal STF, TRFs) — nunca Jusbrasil/resumo/memória do modelo | SIM | CASO-04 AUDITORIA_FINAL_CAFELANA_SUPER.md |
 | G4.2 | **Existência ≠ atribuição**: a frase citada foi localizada NO acórdão nomeado (caso real: frase do REsp 2.145.294-SC atribuída ao REsp 2.068.654-PA — ambos existem, atribuição errada) | SIM | auditoria-regua.md §2 |
 | G4.3 | Fonte não oficial pode orientar descoberta, mas não valida citação final | SIM | FORJA N2 |
 
@@ -45,7 +45,7 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
 | G5.1 | **Matriz de segurança factual** preenchida ANTES da redação — 5 colunas: Ponto / Fonte (arquivo+página/id) / Tipo (fato, alegação, inferência, lacuna) / Pode afirmar? / Formulação segura. Ponto crítico sem verificação bloqueia F6 | SIM | Jalusa §2.2 + Runbook + FORJA N2 |
-| G5.2 | **Questões processuais laterais varridas**: prevenção, preclusão, competência interna, composição ATUAL do órgão julgador, fatos supervenientes | SIM | Cafelana WhatsApp (Diretriz 4) |
+| G5.2 | **Questões processuais laterais varridas**: prevenção, preclusão, competência interna, composição ATUAL do órgão julgador, fatos supervenientes | SIM | CASO-04 WhatsApp (Diretriz 4) |
 | G5.3 | Conselho de personas com **decisões registradas** (acatado/rejeitado/por quê — ex.: Sun Tzu sugeriu corte de 700 palavras, rejeitado por instrução expressa do cliente). Análise Sun Tzu em 6 movimentos: terreno, forças, fraquezas, vitória sem luta, pontos a blindar, síntese | SIM | _ANALISE_SUN_TZU.md |
 | G5.4 | **Questão jurídica aberta → cenários A/B** (nunca apostar tudo num número/tese única; ex.: Laudo com R$ 10,53 bi vs R$ 7,49 bi conforme tese dos compensatórios) | NÃO (recomendado) | Laudo RELATORIO_MELHORIAS.md §2.1 |
 | G5.5 | Blueprint contém: síntese executiva 343-A prevista, prequestionamento expresso, terminologia anti-Súmula 7/279, fato superveniente em capítulo autônomo, plano visual justificado (elemento só entra se reduz esforço cognitivo do julgador — testar antes de gerar) | SIM | APRENDIZADOS_FEEDBACK_HUMANO.md |
@@ -55,8 +55,8 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 ### F6_REDACAO_TEMPLATE
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
-| G6.1 | Toda data/prazo/fato processual crítico com referência explícita aos autos (fl./id PJe); sem referência = `[VERIFICAR]` apenas em artefato interno e bloqueio antes de F9 | SIM | Cafelana (premissa não declarada) + FORJA N2 |
-| G6.2 | Citação de fala (desembargador, sessão) exige ata/transcrição; sem fonte = remover aspas ou remover argumento | SIM | Cafelana (fala do Des. Pablo Zuniga) |
+| G6.1 | Toda data/prazo/fato processual crítico com referência explícita aos autos (fl./id PJe); sem referência = `[VERIFICAR]` apenas em artefato interno e bloqueio antes de F9 | SIM | CASO-04 (premissa não declarada) + FORJA N2 |
+| G6.2 | Citação de fala (desembargador, sessão) exige ata/transcrição; sem fonte = remover aspas ou remover argumento | SIM | CASO-04 (fala do Des. Pablo Zuniga) |
 | G6.3 | Visual gerado pela rota oficial (`forja_visual_build.py` → `PecaVisual` → `forja_svg_docx.inserir_svgs`): SVG nativo no OOXML, tokens consumidos, largura por `largura_recomendada_cm` e lint geométrico | SIM | fabrica-visual-peticoes |
 | G6.4 | Documento protocolável nasce de template Medina Osório ou peça anterior; nunca de `Document()` vazio | SIM | FORJA N2 |
 
@@ -64,7 +64,7 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
 | G7.1 | **Conferência verbatim**: cada aspa e cada tese jurisprudencial conferida palavra a palavra na fonte primária, com registro fonte+página/URL por citação (checklist de fontes). Caso real: aspa "reclamam dilação probatória" não existia no acórdão → virou paráfrase | SIM | Siqueira AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md |
-| G7.2 | **Red team estruturado — 9 perguntas obrigatórias por escrito**: (1) melhor argumento contrário? (2) qual afirmação depende de documento fraco? (3) que termo pode ser atacado como exagero? (4) o pedido é útil e executável? (5) há norma citada de memória? (6) algum visual cria falsa certeza? (7) há documento mencionado que não está nos autos? (8) o relatório prova o cumprimento do pedido? (9) **a peça aceita alguma premissa do comando/e-mail que os AUTOS não sustentam?** (anti-bajulação: o insumo mais perigoso é o comando do chefe — caso CORSAN "54 cláusulas", premissa do e-mail sem lastro nos documentos). SIM nas perguntas 1, 2, 5, 7 ou 9 sem tratamento = bloqueia | SIM | Jalusa 02_FLUXO + Runbook §6 + U4 (plano upgrade 2026, sycophancy/Stanford) |
+| G7.2 | **Red team estruturado — 9 perguntas obrigatórias por escrito**: (1) melhor argumento contrário? (2) qual afirmação depende de documento fraco? (3) que termo pode ser atacado como exagero? (4) o pedido é útil e executável? (5) há norma citada de memória? (6) algum visual cria falsa certeza? (7) há documento mencionado que não está nos autos? (8) o relatório prova o cumprimento do pedido? (9) **a peça aceita alguma premissa do comando/e-mail que os AUTOS não sustentam?** (anti-bajulação: o insumo mais perigoso é o comando do chefe — caso CASO-07 "54 cláusulas", premissa do e-mail sem lastro nos documentos). SIM nas perguntas 1, 2, 5, 7 ou 9 sem tratamento = bloqueia | SIM | Jalusa 02_FLUXO + Runbook §6 + U4 (plano upgrade 2026, sycophancy/Stanford) |
 | G7.3 | Checklist do feedback humano aplicado integralmente (10 itens do `APRENDIZADOS_FEEDBACK_HUMANO.md`) | SIM | Diretriz 5 do Fábio |
 | G7.4 | Grep de termos proibidos no texto final: placeholders `[NOME]`, `[dia]`, TODO, XXX, tags de build, comentário interno, `[[VISUAL:` e `[VERIFICAR ...]` | SIM | auditoria-regua.md §5 + FORJA N2 |
 | G7.5 | **Grep de proveniência operacional**: “compartilhado pelo escritório”, “recebido por e-mail/WhatsApp”, Drive, pasta interna, arquivo/caminho local e `[FONTE: arquivo]` são P0 em peça; `forja_verificador.py` gate G9 | SIM | feedback Fábio 11/07/2026 |
@@ -92,7 +92,7 @@ Política de repetição: até três candidatas editoriais internas, sempre refe
 |---|---|---|---|
 | G8.1 | **QA estrutural após TODA regeneração**: pacote OOXML válido, fidelidade Markdown→DOCX, marcadores consumidos, tipografia, margens codificadas, SVGs válidos, colisão/clipping geométrico e ausência de artefatos auxiliares. A abertura humana do DOCX continua obrigatória para decidir paginação e legibilidade | SIM | Jalusa v2→v3 (defeito de materialização) |
 | G8.2 | **Sanitização de metadados** do DOCX e do relatório: autor "python-docx" → "Medina Osório Advogados"; remover propriedades que exponham geração por IA | SIM | Siqueira AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md P0 |
-| G8.3 | Data de protocolo real, endereçamento, número do processo, partes, nomes/OAB conferidos | SIM | Cafelana AUDITORIA_FINAL_CAFELANA_SUPER.md |
+| G8.3 | Data de protocolo real, endereçamento, número do processo, partes, nomes/OAB conferidos | SIM | CASO-04 AUDITORIA_FINAL_CAFELANA_SUPER.md |
 
 ### F9_PACOTE_REVISAO_DRAFT_OPCIONAL
 | Código | Gate | Bloqueador | Fonte da lição |
@@ -124,7 +124,7 @@ Checklist nominal do F7, complementar ao G7.1. Toda peça registra no relatório
 | 5 | Tese deturpada — inclui confundir *ratio decidendi* com *obiter dictum* (a frase existe no julgado, mas não é o que ele decide) e frase real atribuída ao precedente errado (erro histórico do caso 1) | ler a fonte inteira ou ao menos o capítulo decisório; conferir se a proposição citada é o que o julgado DECIDE | SIM |
 | 6 | **Precedente superado ou em risco** (tema repetitivo superveniente, afetação com suspensão, EDcl com efeitos infringentes pendentes, overruling) | para cada autoridade DECISIVA (as da tabela de lastro), conferir no portal de Precedentes Qualificados STJ/STF (Chrome real, perfil `scraping`) se há afetação/julgamento/trânsito POSTERIOR à data da autoridade | SIM |
 
-Regras operacionais: (a) modos 3-6 EXIGEM leitura da fonte — citação decisiva sem fonte no cache → capturar antes de manter na peça; (b) o modo 6 aplica-se SÓ às autoridades decisivas (tabela de lastro abaixo), não a citação de passagem; (c) o radar de vigência do modo 6 funciona nos dois sentidos — pega precedente nosso que caiu E acha precedente novo que decide a favor (prova interna: Tema 1368 superveniente mudou o eixo do memorial Azimut). Regressão automatizada: `test_forja_citacoes.py` (um veneno por modo).
+Regras operacionais: (a) modos 3-6 EXIGEM leitura da fonte — citação decisiva sem fonte no cache → capturar antes de manter na peça; (b) o modo 6 aplica-se SÓ às autoridades decisivas (tabela de lastro abaixo), não a citação de passagem; (c) o radar de vigência do modo 6 funciona nos dois sentidos — pega precedente nosso que caiu E acha precedente novo que decide a favor (prova interna: Tema 1368 superveniente mudou o eixo do memorial CASO-02). Regressão automatizada: `test_forja_citacoes.py` (um veneno por modo).
 
 ## Tabela de lastro das proposições decisivas (U6 — por caso, no relatório de melhorias)
 
@@ -136,7 +136,7 @@ Toda peça nasce com tabela de 10-15 linhas no máximo, no relatório de melhori
 
 É proveniência por PROPOSIÇÃO DECISIVA, não por frase (por frase polui a peça e infla trabalho). A tabela é também o insumo do modo 6 da taxonomia: as autoridades listadas aqui são as que recebem radar de vigência.
 
-## Blindagem contra lastro aparente (U12 — caso Vale Trading, 26/07/2026)
+## Blindagem contra lastro aparente (U12 — caso CASO-23, 26/07/2026)
 
 **A falha que originou o bloco.** Três camadas de revisão devolveram zero P0 sobre uma minuta que continha quatro. O red team interno de doze perguntas passou; o gate F7 passou; dois revisores externos de famílias distintas de modelo passaram. Todas examinaram o **texto**. Os erros estavam na **fonte**, e a fonte não fora aberta.
 
@@ -220,7 +220,7 @@ Esse gate investiga agressivamente, mas só acusa de forma conservadora. Diverg�
 fonte canônica continua sendo `forja_lastro.py` e o protocolo; esta tabela não
 substitui a execução dos testes nem a validação humana da fonte.
 
-Origem: e-mail do Fábio de 03/08/2026 (thread `19fbfa33e7ce7df9`) sobre as faixas econômicas do plano executivo Cafelana. Diagnóstico: **o U12 ancora PROPOSIÇÃO; nada ancorava NÚMERO.** O L1 exige transcrição verbatim do fato documental e o L4 exige que o percentual nomeie a base, mas nenhum gate ligava um valor em reais impresso no produto a um fato do ledger, nem conferia qual documento governa a base econômica do caso. O `forja_verificador.py` tinha zero tratamento de valor monetário.
+Origem: e-mail do Fábio de 03/08/2026 (thread `19fbfa33e7ce7df9`) sobre as faixas econômicas do plano executivo CASO-04. Diagnóstico: **o U12 ancora PROPOSIÇÃO; nada ancorava NÚMERO.** O L1 exige transcrição verbatim do fato documental e o L4 exige que o percentual nomeie a base, mas nenhum gate ligava um valor em reais impresso no produto a um fato do ledger, nem conferia qual documento governa a base econômica do caso. O `forja_verificador.py` tinha zero tratamento de valor monetário.
 
 | Gate | Sev. | O que exigirá | Âncora real |
 |---|---|---|---|
@@ -240,14 +240,14 @@ Acrescentado pela revisão adversarial de 03/08 (Opus 5 — Efesto, Helena, Diab
 
 **Ainda assim o L11 nasce em P1, e essa é a decisão.** Uma amostra de 20 valores classificada à mão mostrou **~55% de falso positivo** — valores de terceiro, citados ou normativos tratados como cálculo do escritório. Como P0, o gate travaria a maior parte das peças que apenas mencionam valor de julgado, que é o modo de falha que o § 5 do plano previu como o mais provável. A alternativa — continuar ajustando a heurística até a taxa parecer boa — seria a autovalidação circular que o próprio plano manda evitar. **A promoção a P0 exige nova medição pelo script, não impressão**, e há caso de regressão fixando o P1 para que a mudança seja deliberada.
 
-**Descoberta que gerou o `MC-15` da taxonomia — gate computado sobre conjunto vazio.** Ao ligar L1/L2 na rota de produção, medimos o ledger real da Cafelana: **0 de 11 fatos eram auditados**. O caso escreve `documented_fact` e `official_current_source`; o gate só conhecia `confirmed_document` e `confirmed_official_source` — sinônimos separados por uma palavra. Ele rodava, não achava nada e devolvia `pass`, com saída idêntica à de um ledger aprovado. Corrigido em três camadas: sinônimos reais reconhecidos; `locator`/`quoteSource`/`sourceIds` aceitos como localizador (os 6 fatos bem formados reprovavam em P0 por não usarem a palavra `support`); e **status desconhecido passou a emitir P1 explícito**, para que vocabulário novo nunca mais signifique silêncio. Além disso, o L2 lia qualquer fonte como UTF-8: transcrição correta tirada de PDF era acusada de ter sido "reconstruída de memória" — a acusação mais grave do módulo, contra quem fez certo — e o laudo prevalente da Cafelana tem 2,14 GB, que seriam carregados inteiros na memória. Agora fonte binária ou grande vira `L2-transcricao-manual` em P1; L9 e L12 calculam a SHA-256 em fluxo, sem reservar o arquivo inteiro na memória.
+**Descoberta que gerou o `MC-15` da taxonomia — gate computado sobre conjunto vazio.** Ao ligar L1/L2 na rota de produção, medimos o ledger real da CASO-04: **0 de 11 fatos eram auditados**. O caso escreve `documented_fact` e `official_current_source`; o gate só conhecia `confirmed_document` e `confirmed_official_source` — sinônimos separados por uma palavra. Ele rodava, não achava nada e devolvia `pass`, com saída idêntica à de um ledger aprovado. Corrigido em três camadas: sinônimos reais reconhecidos; `locator`/`quoteSource`/`sourceIds` aceitos como localizador (os 6 fatos bem formados reprovavam em P0 por não usarem a palavra `support`); e **status desconhecido passou a emitir P1 explícito**, para que vocabulário novo nunca mais signifique silêncio. Além disso, o L2 lia qualquer fonte como UTF-8: transcrição correta tirada de PDF era acusada de ter sido "reconstruída de memória" — a acusação mais grave do módulo, contra quem fez certo — e o laudo prevalente da CASO-04 tem 2,14 GB, que seriam carregados inteiros na memória. Agora fonte binária ou grande vira `L2-transcricao-manual` em P1; L9 e L12 calculam a SHA-256 em fluxo, sem reservar o arquivo inteiro na memória.
 
 **Fechamento Diabob de 04/08 — o canônico inválido não pode cair para snapshot.** A revisão encontrou uma segunda rota de autoengano: se `n3_artifacts/F3_FONTES_REGIMENTO_LEIS/fact_ledger.json` estivesse quebrado ao lado de `fact_ledger-*.json` válido, o verificador visual capturava o erro e seguia para o snapshot. Agora o arquivo canônico inválido encerra a descoberta com ledger vazio, e L9–L13 produzem P0; snapshot só é considerado quando o canônico não existe. A mesma regra vale para `ledger_path` explicitamente fornecido à `PecaVisual`: erro nele bloqueia, não ativa autodiscovery. As contraprovas estão em `test_forja_verificador.py` e T11 de `test_forja_lastro.py`, e a taxonomia registra `MC-18`.
 
 **Fechamento da superfície `exigir=False` (04/08).** A mesma revisão identificou que um caller ad hoc poderia chamar `validar_gates_economicos(..., exigir=False)` e obter lista vazia para texto com dinheiro. Agora essa combinação emite `L0-economico-desativado` P0; a opção continua inócua para texto sem material econômico. A contraprova entrou no T2, a regressão passou a 85 verificações naquele marco e hoje soma 88 com as contraprovas de rota não econômica; a taxonomia registra `MC-19`. Solução sem mecanismo explícito não é design, é preferência — e, neste caso, uma chave de conveniência não pode virar chave de bypass.
 **Fechamento da origem explicitamente ausente (04/08).** A continuação Diabob montou a combinação que faltava: `PecaVisual(ledger_path=<inexistente>, case_dir=<ledger-válido>)`. Antes, o primeiro argumento era ignorado por não ser arquivo e o segundo podia promover a peça; agora caminho explicitamente escolhido, mas ausente, diretório ou ilegível, fixa ledger vazio e bloqueia L9–L13. Autodiscovery só ocorre quando nenhum `ledger_path` foi escolhido. T11 acrescenta as duas contraprovas e a regressão passa a 90 verificações; a taxonomia registra `MC-22`.
 
-**Fechamento da superfície de vocabulário de fases (04/08).** A memória de auditabilidade reconhecia aliases antigos apenas para calcular o status; o histórico podia sumir e `currentPhase` podia sair com um identificador que já não existe nos contratos. O gerador agora normaliza aliases para os IDs canônicos de `phase_contracts` em status, histórico e estado corrente, preserva a trilha e testa a contraprova. O incidente foi catalogado como `MC-20`; a memória real da Cafelana foi regenerada e mostra F0–F6 concluídas, F7 bloqueada e F8–F10 não iniciadas.
+**Fechamento da superfície de vocabulário de fases (04/08).** A memória de auditabilidade reconhecia aliases antigos apenas para calcular o status; o histórico podia sumir e `currentPhase` podia sair com um identificador que já não existe nos contratos. O gerador agora normaliza aliases para os IDs canônicos de `phase_contracts` em status, histórico e estado corrente, preserva a trilha e testa a contraprova. O incidente foi catalogado como `MC-20`; a memória real da CASO-04 foi regenerada e mostra F0–F6 concluídas, F7 bloqueada e F8–F10 não iniciadas.
 
 Plano de execução, sequência e critérios de aceite: `41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md`.
 
@@ -298,7 +298,7 @@ Antes desta frente, 42 dos 73 gates declarados nos contratos eram escritos pelo 
 
 **Distinção que a medição impôs.** Hash divergente de cópia arquivada é P0 — o arquivo deveria estar congelado. Hash divergente de regimento é `warn` — o protocolo MANDA anexar as emendas posteriores ao próprio `.md` antes de cada peça. O mesmo mecanismo técnico carrega significados opostos conforme o artefato.
 
-**Achados abertos que a frente produziu e que dependem de decisão humana:** a pergunta jurisdicional é declarada em 4 dos 15 blueprints do acervo; o mapa de fontes do caso Cafelana não declara regimento algum.
+**Achados abertos que a frente produziu e que dependem de decisão humana:** a pergunta jurisdicional é declarada em 4 dos 15 blueprints do acervo; o mapa de fontes do caso CASO-04 não declara regimento algum.
 
 ---
 
@@ -375,7 +375,7 @@ por humano.
 
 ## § U14 — Porta única de produção (`FORJA-PORTA-UNICA-v1`)
 
-**Criado em 05/08/2026** por decisão unânime de Helena, Efesto e Diabob sob delegação expressa do Igor. Registro da deliberação: `CONSELHO_DELEGADO_5_DECISOES_2026-08-05.md`. Âncora real: o incidente Cafelana de 02/08/2026, cuja rota — script ad hoc chamando `PecaVisual` direto — **continuava aberta** em 05/08, três dias depois de o plano 41 ter sido dado como executado.
+**Criado em 05/08/2026** por decisão unânime de Helena, Efesto e Diabob sob delegação expressa do Igor. Registro da deliberação: `CONSELHO_DELEGADO_5_DECISOES_2026-08-05.md`. Âncora real: o incidente CASO-04 de 02/08/2026, cuja rota — script ad hoc chamando `PecaVisual` direto — **continuava aberta** em 05/08, três dias depois de o plano 41 ter sido dado como executado.
 
 **O que o gate faz.** `medina_visual_kit.PecaVisual.salvar()` é o ponto por onde passam os seis caminhos capazes de gerar DOCX pela classe: a entrada canônica `forja_visual_build.py` e os cinco `build_docx.py` de pastas de caso. Ali, antes de gravar, roda `forja_verificador.verificar()` em **toda** peça — econômica ou não — e grava `<peça>_PORTA_UNICA.json` ao lado do DOCX, aprovando ou não.
 

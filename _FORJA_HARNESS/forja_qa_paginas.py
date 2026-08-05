@@ -83,7 +83,7 @@ def analisar_pasta(pasta: Path) -> dict:
                             "problema": "página em branco no meio do documento"})
         # 1ª página isenta da checagem de borda: o template Medina Osório tem
         # rodapé institucional encostado na borda POR PROJETO (validado nos
-        # renders reais de Patrícia em 12/07 — densidade ~0.93 é o rodapé).
+        # renders reais de CASO-19 em 12/07 — densidade ~0.93 é o rodapé).
         if i > 0 and m["densidadeBordaInferior"] > DENSIDADE_BORDA_MAX:
             achados.append({
                 "sev": "P1", "pagina": m["pagina"],

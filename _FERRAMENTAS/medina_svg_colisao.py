@@ -410,7 +410,7 @@ def analisar(svg_path=None, texto=None):
         # gravado em JSON pela rota canônica de produção. Devolver `Path` fazia
         # `forja_visual_build` estourar `TypeError` ao escrever o
         # F8_QA_ESTRUTURAL.json — ou seja, toda peça COM figura quebrava, e só a
-        # peça sem figura passava. Descoberto em 04/08/2026 compondo o Cafelana.
+        # peça sem figura passava. Descoberto em 04/08/2026 compondo o CASO-04.
         "svg": str(svg_path),
         "elementos": len(itens),
         "textos": sum(1 for i in itens if i["tipo"] == "texto"),

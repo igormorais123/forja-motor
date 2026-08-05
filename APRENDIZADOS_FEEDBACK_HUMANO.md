@@ -14,7 +14,7 @@ argumento central. É exatamente onde o revisor humano gasta os 30-40% de audito
 
 ## Diretriz nº 1 — Síntese executiva estilo art. 343-A do RISTJ em TODA peça (Fábio, INVIOLÁVEL)
 
-E-mail de 2026-07-07 (Contrarrazões Cafelana): incluir "uma espécie de síntese da petição
+E-mail de 2026-07-07 (Contrarrazões CASO-04): incluir "uma espécie de síntese da petição
 logo ao início da manifestação, no estilo do novo regimento interno do STJ" — leitura ágil
 pelo julgador. **Padrão para todas as petições e manifestações perante o Judiciário,
 independentemente do tribunal de destino** (praxe interna determinada pelo Prof. Fábio,
@@ -40,7 +40,7 @@ Protocolo — anexo do e-mail de 2026-07-06). O que consolidar:
    quando houver efeitos infringentes, correção de eventos processuais, precedentes
    essenciais, coerência fundamentos ↔ pedidos.
 
-## Diretriz nº 3 — Os 4 ajustes humanos da Libra Sul (memoriais TRF4): o que faltou na nossa peça
+## Diretriz nº 3 — Os 4 ajustes humanos da CASO-16 (memoriais TRF4): o que faltou na nossa peça
 
 1. **Prequestionamento reforçado** — indicação EXPRESSA dos dispositivos legais e
    constitucionais, para resguardar acesso às Cortes Superiores. A IA fundamenta bem mas
@@ -54,7 +54,7 @@ Protocolo — anexo do e-mail de 2026-07-06). O que consolidar:
 4. **Gráficos como apoio, nunca eixo** — o elemento visual ilustra; a argumentação jurídica
    permanece o centro (converge com a diretriz 6 do Alessandro).
 
-## Diretriz nº 4 — Questões processuais estratégicas laterais (WhatsApp, Cafelana)
+## Diretriz nº 4 — Questões processuais estratégicas laterais (WhatsApp, CASO-04)
 
 A peça da IA não tratou **prevenção/preclusão** — inclusive se o momento de arguir prevenção
 já passou — nem avaliou a estratégia diante da composição ATUAL da turma. A peça humana
@@ -81,7 +81,7 @@ auditoria; a ponte para o julgador fica na peça.
 
 ## Diretriz nº 7 — Em processo grande, cronologia antes da tese (Fábio, 11/07/2026)
 
-O caso Cafelana demonstrou que uma cronologia superficial permite confundir dois recursos de
+O caso CASO-04 demonstrou que uma cronologia superficial permite confundir dois recursos de
 mesma família. Antes de nova redação, cada ato precisa de identidade própria: sujeito, data,
 classe/número, decisão impugnada, pedido, resultado, efeito e página/ID nos autos. Sem a íntegra
 do recurso atual e sem resolver a relação entre decisão de conversão, agravo das empresas,
@@ -137,7 +137,7 @@ subsequentes da FORJA; os hashes devem ser recalculados dos bytes entregues, o D
 passar novamente pelos gates jurídico e visual, e o ciclo só fecha com leitura de retorno do canal
 de envio. Artefato N4 com expectativa zero não pode ser reprovado por “incompletude” inexistente.
 
-## Diretriz nº 13 — Capítulo autônomo não é fundamento sobreposto (Cafelana, 15/07/2026)
+## Diretriz nº 13 — Capítulo autônomo não é fundamento sobreposto (CASO-04, 15/07/2026)
 
 Em Agravo Interno, nunca converter automaticamente a omissão de uma matéria em não conhecimento
 total. Primeiro decompor a decisão em capítulos autônomos; depois, dentro de cada capítulo
@@ -153,7 +153,7 @@ competente para cada dia excluído. Se o ato comprovar que o dia não contou e o
 for apenas documental, retirar a tese material ou tratá-la segundo o regime de saneamento vigente.
 O cálculo deve ser reproduzido dia a dia e congelado em testes positivos e negativos da versão final.
 
-## Diretriz nº 14 — Prescrição administrativa exige matriz por objeto, ato e parcela (Natura/Cabreúva, 15/07/2026)
+## Diretriz nº 14 — Prescrição administrativa exige matriz por objeto, ato e parcela (CASO-17/CASO-17, 15/07/2026)
 
 Em controvérsia contra a Fazenda, é proibido tratar “a prescrição” como etiqueta global. Antes da
 conclusão, decompor: fundo de direito; metodologia de cálculo; parcelas sucessivas; ato formal de
@@ -210,7 +210,7 @@ a auditoria jurídica/factual F7 e a leitura humana final.
 - [ ] Visual auxiliar, argumentação analítica ao lado?
 - [ ] Checklist de protocolo (tempestividade, data, eventos, precedentes, coerência)?
 - [ ] Red team pergunta 9 (anti-bajulação): a peça aceita alguma premissa do COMANDO/e-mail
-      que os AUTOS não sustentam? (caso CORSAN "54 cláusulas" — premissa do e-mail sem lastro;
+      que os AUTOS não sustentam? (caso CASO-07 "54 cláusulas" — premissa do e-mail sem lastro;
       o insumo mais perigoso é o comando do chefe. U4 do plano de upgrade 09/07/2026)
 - [ ] Taxonomia de citação em 6 modos conferida e registrada no relatório de melhorias
       (inexistente, nome trocado, misquote, pincite, tese deturpada/ratio×dictum, superado)?
@@ -248,7 +248,7 @@ a auditoria jurídica/factual F7 e a leitura humana final.
       numeradas e decisão registrada sobre cada uma? (obrigatório em toda peça — ordem do
       Igor 09/07/2026; arquivos F4_PARECER_HELENA.md / F4_PARECER_CICERO.md)
 
-## Diretriz nº 16 — O produto externo não é o ledger de auditoria (Natura/Cabreúva, 21/07/2026)
+## Diretriz nº 16 — O produto externo não é o ledger de auditoria (CASO-17/CASO-17, 21/07/2026)
 
 A versão revisada pelo escritório reduziu aproximadamente pela metade o texto anterior e melhorou a
 arquitetura editorial: conclusão inicial, metodologia curta, cronologia única, respostas autônomas
@@ -355,10 +355,10 @@ não vira regra global sem repetição independente, teste e aprovação express
 
 ## Diretriz nº 25 — Todo valor econômico declara de QUEM é, e a ordem de grandeza é confrontada com a meta declarada (04/08/2026)
 
-Incidente que a originou: em Cafelana, "Cafelana" é o nome informal de uma demanda com três credoras —
-Intercontinental de Café S/A (96,57% do crédito), Cafelana Com. Repr. do Brasil Ltda. (1,81%) e
+Incidente que a originou: em CASO-04, "CASO-04" é o nome informal de uma demanda com três credoras —
+Intercontinental de Café S/A (96,57% do crédito), CASO-04 Com. Repr. do Brasil Ltda. (1,81%) e
 Machadense Café Ltda. (1,62%). O plano executivo de 02/08/2026 e o e-mail de 04/08/2026 04:09 ancoraram
-toda a base econômica na linha individual da pessoa jurídica Cafelana e a apresentaram como universo do
+toda a base econômica na linha individual da pessoa jurídica CASO-04 e a apresentaram como universo do
 caso. A cifra tinha documento correto, fonte eleita, data-base coerente e aritmética fechada; descrevia o
 sujeito errado. Faixa de R$ 93 mi a R$ 192 mi onde o crédito é de R$ 10,53 bi (cenário A, 30/06/2026).
 
@@ -373,7 +373,7 @@ Regras que passam a valer:
 2. Nome de pasta, de demanda ou de cliente nunca é prova da identidade jurídica do objeto. Em demanda
    com litisconsórcio, a composição das partes é apurada na fonte antes de qualquer construção econômica.
 3. Resultado que difere em uma ou mais ordens de grandeza da meta que o cliente declarou por escrito
-   trava e exige justificativa nominal. Em Cafelana, Fábio havia declarado "mais de 12 bilhões" de valor
+   trava e exige justificativa nominal. Em CASO-04, Fábio havia declarado "mais de 12 bilhões" de valor
    contábil e "aceitamos até 6 bilhões": um teste de ordem de grandeza teria barrado a entrega.
 4. A meta econômica declarada pelo cliente é fato de contexto de mesma hierarquia que a meta temporal.
    Preservar o "quando" e perder o "quanto" é perda de contexto material, não detalhe.

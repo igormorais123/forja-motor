@@ -83,12 +83,12 @@ def main() -> int:
     # CONTRAPROVA da segunda calibração: os rótulos reais do acervo. Exigir a
     # palavra "jurisdicional" reprovava cinco blueprints que cumprem a regra —
     # e um deles nem tem juízo a quem perguntar, porque o produto é uma reunião.
-    checar("rótulo 'Pergunta central' (Natura Cabreúva)",
+    checar("rótulo 'Pergunta central' (CASO-17)",
            validar_pergunta_jurisdicional(
                "# Blueprint\n\n## Pergunta central\n\nQuais capítulos do crédito permanecem "
                "juridicamente exigíveis em 2026, dada a negativa de 2019?\n"
            )["gates"][GATE_PERGUNTA], "pass")
-    checar("rótulo numerado 'Pergunta decisória' (Cafelana)",
+    checar("rótulo numerado 'Pergunta decisória' (CASO-04)",
            validar_pergunta_jurisdicional(
                "# Blueprint\n\n## 1. Pergunta decisória\n\nComo conduzir uma reunião capaz de "
                "produzir fonte reconhecida sem converter lacuna em cifra?\n"

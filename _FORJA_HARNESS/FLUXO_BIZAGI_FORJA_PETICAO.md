@@ -501,10 +501,10 @@ Quatro casos reais serviram de bancada de teste para a camada nova:
 
 ```mermaid
 flowchart LR
-    P["Caso Patrícia/Fábio"] --> OK1["Todos os testes aprovados"]
-    L["Caso Libra Sul"] --> OK2["Todos os testes aprovados"]
+    P["Caso CASO-19/Fábio"] --> OK1["Todos os testes aprovados"]
+    L["Caso CASO-16"] --> OK2["Todos os testes aprovados"]
     S["Caso Saúde"] --> OK3["Todos os testes aprovados"]
-    C["Caso Cafelana"] --> STOP["Suspenso: a decisão de origem<br/>foi revogada — aguarda o novo recurso"]
+    C["Caso CASO-04"] --> STOP["Suspenso: a decisão de origem<br/>foi revogada — aguarda o novo recurso"]
     OK1 --> MODE["Piloto com travas ampliado"]
     OK2 --> MODE
     OK3 --> MODE

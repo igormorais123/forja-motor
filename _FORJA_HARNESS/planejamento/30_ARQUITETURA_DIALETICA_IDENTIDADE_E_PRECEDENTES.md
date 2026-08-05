@@ -129,7 +129,7 @@ Verificado hoje: **`_MODELOS` está vazio** — contém apenas `LEIA-ME.md` e `M
 Mas o inventário não é zero. Existem três corpora que ninguém contabilizou, e o segundo é o mais valioso de todos:
 
 **Corpus A — texto autoral direto (temos, pouco).**
-Os quesitos redigidos por ele no caso Cabreúva; os e-mails de demanda arquivados em `gestao_escritorio\entregas_fabio_osorio\` (dezenas de threads); esta entrevista. Registro: formulação de encomenda e escrita técnica, não peça.
+Os quesitos redigidos por ele no caso CASO-17; os e-mails de demanda arquivados em `gestao_escritorio\entregas_fabio_osorio\` (dezenas de threads); esta entrevista. Registro: formulação de encomenda e escrita técnica, não peça.
 
 **Corpus B — as revisões dele sobre a nossa produção (temos, e é o de maior sinal).**
 `APRENDIZADOS_FEEDBACK_HUMANO.md` (27 KB) e o diff entre a versão protocolada e a nossa, que o `forja_diff_docx.py` já produz. **Cada alteração que ele fez é uma regra dele, observada em ato.** É um corpus que cresce a cada entrega, que ninguém precisa pedir, e que responde à pergunta certa: não "como ele escreveria", mas "o que ele aceita assinar". O Codex nomeou isto como "padrão recorrente nas revisões" e está correto em dar-lhe peso.
@@ -330,7 +330,7 @@ Contenção — por engenharia, não por opinião, porque ele não pediu conten�
 - **parecer prévio do Cícero por uso**, pela exposição do art. 34 do Estatuto da OAB, da litigância de má-fé e do art. 41 da LOMAN;
 - **proibição de afirmar conduta ou intenção de pessoa identificada**: o achado descreve série, não motivação.
 
-A aplicação do deságio em acordos com o poder público é um **produto autônomo** e tem aplicação imediata ao caso CORSAN/AGERST que já está na fila. Comercialmente pode valer mais do que a fábrica de petições.
+A aplicação do deságio em acordos com o poder público é um **produto autônomo** e tem aplicação imediata ao caso CASO-07/CASO-07 que já está na fila. Comercialmente pode valer mais do que a fábrica de petições.
 
 ## 3.5 Camada 3 — Auditabilidade da própria pesquisa
 
@@ -364,7 +364,7 @@ Falta a camada de **TCU** (acórdãos e súmulas), **CNJ e CNMP**, **CGU e CRG**
 | Vigência conferida com data | citar precedente superado ou modulado |
 | Destinatário declarado por precedente | pesquisa em abstrato, que o titular rejeitou |
 | Resultado negativo registrado | a ilusão de cobertura, que é o pior erro de pesquisa |
-| Campos de prevenção preenchidos ou não apurados com motivo | a falha já cometida no caso Cafelana |
+| Campos de prevenção preenchidos ou não apurados com motivo | a falha já cometida no caso CASO-04 |
 
 Os quatro primeiros são bloqueadores P0. O quinto e o sexto são exigência de completude do artefato. O sétimo fecha uma lição que o escritório já nos deu uma vez.
 

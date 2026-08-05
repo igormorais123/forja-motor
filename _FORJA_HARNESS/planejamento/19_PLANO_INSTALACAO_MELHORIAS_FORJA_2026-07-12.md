@@ -79,7 +79,7 @@ JSON corrompido, injeta aviso e não quebra.
   + tabela markdown. Este JSON também alimenta o painel.
 
 Critério de aceite: rodar sobre os 30+ casos históricos sem erro; relatório aponta o
-gate que mais caiu (validação manual em 3 casos conhecidos: Patrícia, Libra Sul, Cafelana).
+gate que mais caiu (validação manual em 3 casos conhecidos: CASO-19, CASO-16, CASO-04).
 
 ---
 
@@ -128,7 +128,7 @@ Implementação em `forja_mutation_semantic.py`, com tipologia por família de r
 | S5 sobreabstração | proposição específica vira genérica sem lastro | cobertura/proposições (forja_context) |
 | S6 deturpação de precedente | ratio→dictum, tese do julgado invertida | ledger de citações (M3.2) |
 
-- Motor: aplicar cada operador sobre os 3 casos-baseline (Patrícia, Libra Sul, Saúde),
+- Motor: aplicar cada operador sobre os 3 casos-baseline (CASO-19, CASO-16, Saúde),
   rodar o pipeline de validação N4 completo e medir quantas mutações são bloqueadas.
   Score = bloqueadas/aplicadas por família. Mutações são geradas por regra determinística
   (regex/AST do markdown estruturado) SEMPRE que possível; onde exigir reescrita

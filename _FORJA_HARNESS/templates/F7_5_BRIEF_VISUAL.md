@@ -15,10 +15,10 @@ falsa:
 
 - **Cronologia catada da prosa** misturou, na mesma linha do tempo, a data do
   próprio documento, um prazo interno de minuta, a data de um julgado citado e
-  um fragmento de número CNJ lido como data (Azimut e CORSAN, 30/07/2026).
+  um fragmento de número CNJ lido como data (CASO-02 e CASO-07, 30/07/2026).
 - **Cadeia de tese inferida das aberturas de seção** colocou a **tese da parte
   adversária** como elo do raciocínio da cliente, além de dois conectivos
-  terminados em dois-pontos e um fragmento de item de lista (Azimut,
+  terminados em dois-pontos e um fragmento de item de lista (CASO-02,
   30/07/2026).
 
 Em ambos os casos cada frase era verbatim do texto e o conjunto mentia. Não é
@@ -42,7 +42,7 @@ longa não fecha o piso gráfico, acusando `VIS-03`.
   "ancoras": [
     ["4", "óbices processuais cumulativos"],
     ["09/04/2008", "ato alegado: pagamento pela CDI à LTI"],
-    ["2009-2012", "ingresso dos ex-diretores na LIBRA SUL"],
+    ["2009-2012", "ingresso dos ex-diretores na CASO-16"],
     ["13 anos", "decurso sem materialização de fumus ou periculum"]
   ],
   "cadeiaArgumentativa": [

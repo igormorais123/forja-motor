@@ -37,7 +37,7 @@ function Get-AssetRecord {
 }
 
 $root = [System.IO.Path]::GetFullPath($RepositoryRoot)
-$caseRelative = 'Assunto Laudo Pericial Contábil – Atualização de Valores – Proc. 0003453-28.1997.4.01.3400'
+$caseRelative = 'Assunto Laudo Pericial Contábil – Atualização de Valores – Proc. 9000001-00.1997.4.01.0000'
 $caseFolder = Join-Path $root $caseRelative
 $zipPath = Join-Path $caseFolder 'docs laudo pericia.zip'
 $partsFolder = Join-Path $caseFolder '_github_lfs_docs_laudo_pericia_zip'

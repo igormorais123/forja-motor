@@ -1434,7 +1434,7 @@ A implementação N4 estará pronta para promoção somente quando:
 
 ### Estado implementado em 11/07/2026
 
-O contrato foi comprovado retrospectivamente em Patrícia/Fábio, Libra Sul e Saúde. Cada caso materializou 24/24 artefatos, executou 10 testes ligados ao hash do texto final, matou 10/10 mutações literais, passou pelas cinco camadas reproduzidas e recebeu QA visual automática por página. Isso valida regressão mecânica e estrutura, não aprovação jurídica nem ciclo prospectivo: cada caso possui dois P1 de conselho, `executionMode=retrospective_baseline` e `promotionEligible=false`.
+O contrato foi comprovado retrospectivamente em CASO-19/Fábio, CASO-16 e Saúde. Cada caso materializou 24/24 artefatos, executou 10 testes ligados ao hash do texto final, matou 10/10 mutações literais, passou pelas cinco camadas reproduzidas e recebeu QA visual automática por página. Isso valida regressão mecânica e estrutura, não aprovação jurídica nem ciclo prospectivo: cada caso possui dois P1 de conselho, `executionMode=retrospective_baseline` e `promotionEligible=false`.
 
 ### Adendo técnico anti-autocertificação - 11/07/2026
 
@@ -1449,7 +1449,7 @@ O contrato foi comprovado retrospectivamente em Patrícia/Fábio, Libra Sul e Sa
 9. O QA visual atual é automático; seus registros carregam `reviewType=automated` e `humanReviewed=false`.
 10. Falha de sincronização N4 deixa a integridade da gestão como `stale`, sem interromper o fluxo N2/N3 em sombra.
 
-O registro de fontes foi ampliado de hash simples para `{path, sha256, status, reason, originPath}` sem quebrar o formato anterior. Fontes `revoked`, `stale`, ausentes, alteradas ou com declaração explícita de invalidação na origem geram P0. Essa regra detectou e retirou a falsa aprovação do piloto Cafelana.
+O registro de fontes foi ampliado de hash simples para `{path, sha256, status, reason, originPath}` sem quebrar o formato anterior. Fontes `revoked`, `stale`, ausentes, alteradas ou com declaração explícita de invalidação na origem geram P0. Essa regra detectou e retirou a falsa aprovação do piloto CASO-04.
 
 O modo operacional permanece `pilot_blocking` com lista explícita. A promoção para `default_on` exige `executionMode=prospective`, `frozenAt < finalProducedAt`, mutation score mínimo de 80% e camadas C1–C5 com evidência medida.
 

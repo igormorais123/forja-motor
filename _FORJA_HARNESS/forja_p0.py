@@ -37,7 +37,7 @@ _LIMITE_EXEMPLOS = 4
 def _payload(achado: dict) -> dict:
     """Alguns achados guardam os campos dentro de um JSON serializado em `detail`.
 
-    Achado real em 04/08/2026: o F7 do Cafelana declara 48 P0 e traz 49 achados
+    Achado real em 04/08/2026: o F7 do CASO-04 declara 48 P0 e traz 49 achados
     cuja severidade vive dentro da string
     `detail = '{"severity": "P0", "code": ...}'`. Lendo só o topo, o gate via
     zero P0, chamava de contradição uma contagem correta e acusava de mentir um

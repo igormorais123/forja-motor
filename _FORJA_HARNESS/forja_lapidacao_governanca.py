@@ -37,6 +37,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+import forja_acervo
+
 FORJA = Path(__file__).resolve().parent
 FABRICA = FORJA.parent
 STATE = FORJA / "state"
@@ -77,7 +79,7 @@ GATES_LASTRO = (
     "L12-hierarquia-fonte", "L13-aritmetica-derivada",
 )
 
-CASO_FAIL_CLOSED = "case-cafelana-geral-reconstrucao-20260803"
+CASO_FAIL_CLOSED = forja_acervo.caso("CASO-04-reconstrucao")
 
 # Extensões que não podem estar versionadas no repositório do engine. A regra do
 # dono: não levar casos, binários ou segredos ao repositório do engine.

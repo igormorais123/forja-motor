@@ -20,7 +20,7 @@ não há alegação a rechecar — e o veredito honesto é `not_applicable`, que
 preserva a diferença entre "nada a examinar" e "examinado e aprovado".
 
 Calibração deliberada: exigir exatamente 9 objeções reprovaria retroativamente
-relatórios reais e substantivos (o da Natura tem 6 objeções densas, cada uma
+relatórios reais e substantivos (o da CASO-17 tem 6 objeções densas, cada uma
 com resposta calibrada). Menos de 9 é `warn` com o número dito; ausência de
 enumeração é que reprova.
 """

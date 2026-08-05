@@ -408,7 +408,7 @@ def _p0_detectado(scan):
             valor = bloco.get(campo)
             # Um resumo é um dicionário de CONTAGENS: `{"cor_invisivel": 0,
             # "fonte_microscopica": 0}` significa que nada foi achado. Tratar o
-            # dicionário não vazio como detecção reprovava a Cafelana, cuja
+            # dicionário não vazio como detecção reprovava a CASO-04, cuja
             # varredura estava limpa — o gate acusaria justamente quem varreu
             # direito e registrou o resultado.
             if isinstance(valor, dict):

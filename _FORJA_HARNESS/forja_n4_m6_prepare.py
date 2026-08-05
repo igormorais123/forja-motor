@@ -7,6 +7,8 @@ import json
 import shutil
 from pathlib import Path
 
+import forja_acervo
+
 import fitz
 from docx import Document
 from PIL import Image, ImageDraw
@@ -19,15 +21,15 @@ ROOT = FORJA.parent
 
 CASES = {
     "patricia": {
-        "caseId": "case-email-patricia-fabio-memoriais-19f3c68ee6d8fef2",
-        "docx": ROOT / "Memoriais Apelação Patrícia e Fábio - Proc. 0014560-09.2014.8.19.0209" / "Anexos do email" / "MEMORIAIS - PATRICIA E FABIO - N3 SUPERIOR PARA REVISAO - 10-07-2026.docx",
-        "pdf": ROOT / "Memoriais Apelação Patrícia e Fábio - Proc. 0014560-09.2014.8.19.0209" / "Anexos do email" / "MEMORIAIS - PATRICIA E FABIO - N3 SUPERIOR PARA REVISAO - 10-07-2026.pdf",
+        "caseId": forja_acervo.caso("CASO-19"),
+        "docx": ROOT / "Memoriais Apelação CASO-19 e Fábio - Proc. 9000003-00.2014.8.19.0000" / "Anexos do email" / "MEMORIAIS - PATRICIA E FABIO - N3 SUPERIOR PARA REVISAO - 10-07-2026.docx",
+        "pdf": ROOT / "Memoriais Apelação CASO-19 e Fábio - Proc. 9000003-00.2014.8.19.0000" / "Anexos do email" / "MEMORIAIS - PATRICIA E FABIO - N3 SUPERIOR PARA REVISAO - 10-07-2026.pdf",
         "layoutProfileId": "medina-visual-law-v1",
     },
     "libra": {
-        "caseId": "case-email-libra-sul-agint-stj-19f3c9350d875062",
-        "docx": ROOT / "Memoriais AgInt AREsp 2578181 SC - LIBRA SUL" / "Anexos do email" / "MEMORIAIS LIBRA SUL - N3 SUPERIOR PARA REVISAO - 10-07-2026.docx",
-        "pdf": ROOT / "Memoriais AgInt AREsp 2578181 SC - LIBRA SUL" / "Anexos do email" / "MEMORIAIS LIBRA SUL - N3 SUPERIOR PARA REVISAO - 10-07-2026.pdf",
+        "caseId": forja_acervo.caso("CASO-16"),
+        "docx": forja_acervo.caminho("m6-memoriais-docx"),
+        "pdf": forja_acervo.caminho("m6-memoriais-pdf"),
         "layoutProfileId": "medina-visual-law-v1",
     },
     "health": {

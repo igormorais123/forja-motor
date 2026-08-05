@@ -63,7 +63,7 @@ Dos 8 bloqueios da primeira execução, **7 eram defeito do auditor, não do ace
 2. **Frontmatter YAML ignorado** — metade do acervo traz a data na primeira linha, e o auditor acusava "sem data".
 3. **Primeira data da linha, em vez da data depois do rótulo** — a linha de versão do TJRJ tem duas datas, e o parser devolvia 2024 para arquivo conferido em 2026. Daí também a ordenação por especificidade: "Data do download e conferência" tem de vencer "atualizado em".
 
-Por isso a regressão fixa **quatro cabeçalhos reais do acervo** (TRF4/Vale Trading, STJ/Cafelana, TJDFT/plano de saúde, TRF1/tabela) como não-travas.
+Por isso a regressão fixa **quatro cabeçalhos reais do acervo** (TRF4/CASO-23, STJ/CASO-04, TJDFT/plano de saúde, TRF1/tabela) como não-travas.
 
 ## Estado do acervo em 26/07/2026
 
@@ -79,7 +79,7 @@ Por isso a regressão fixa **quatro cabeçalhos reais do acervo** (TRF4/Vale Tra
 | TRE-PR | 1 | Res. 792/2017 compilada até a Res. 957/2025 | 26/07/2026 |
 | TRF1 | 3 | ER 1 a 5 (até 11/04/2022) | 06/07/2026 |
 | TRF2 | 1 | 14ª edição, até a ER 56, de 07/05/2026 | 20/07/2026 |
-| TRF4 | 3 | AR 37/2026 (Vale Trading); AR 35 nos dois legados | 23 e 06/07/2026 |
+| TRF4 | 3 | AR 37/2026 (CASO-23); AR 35 nos dois legados | 23 e 06/07/2026 |
 
 ### Conferência em fonte oficial feita nesta rodada
 

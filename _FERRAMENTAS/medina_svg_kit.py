@@ -80,7 +80,7 @@ def _gate_v2_enabled():
 def _overflow_texto(corpo, w, h, folga=2.0):
     """Estima a caixa de cada <text> e devolve os que saem do viewBox.
     O Inkscape CORTA no viewBox — texto de ponta cortado foi erro recorrente
-    (Cafelana fig1 08/07; Jalusa fig2 09/07). Heurística: Segoe UI ~0,52em/char
+    (CASO-04 fig1 08/07; Jalusa fig2 09/07). Heurística: Segoe UI ~0,52em/char
     (0,58 bold)."""
     probs = []
     for m in _re.finditer(
@@ -248,7 +248,7 @@ def cards_ancora(nome, dados, largura_cm=13.1):
     # A descrição do card é composta em CAIXA ALTA, e maiúscula é mais larga que
     # a média de 0,52em usada pelo gate de overflow — que só mede a borda do
     # viewBox e não a borda do card. Resultado: "CONTEXTO PROCESSUAL" passava no
-    # gate e saía cortado na borda do card (Cafelana V7, 30/07/2026). 0,60em
+    # gate e saía cortado na borda do card (CASO-04 V7, 30/07/2026). 0,60em
     # com a largura útil real (CW menos os 7pt de recuo de cada lado).
     chars = max(12, int((CW - 14) / (8 * 0.60)))
     blocos = [wrap(desc, chars) for _, _, _, desc in dados]
@@ -261,7 +261,7 @@ def cards_ancora(nome, dados, largura_cm=13.1):
                      f'stroke="{cor}" stroke-width="2.4"/>')
         # auto-ajuste: título bold em caixa alta ocupa ~0,66×fonte por
         # caractere; título longo em 15pt fixo estoura a borda do card
-        # (flagrado no QA da Cafelana AgInt em 10/07/2026: "4 FUNDAMENTOS"
+        # (flagrado no QA da CASO-04 AgInt em 10/07/2026: "4 FUNDAMENTOS"
         # com o S cortado). Piso de 9pt respeita o gate de legibilidade.
         fonte_num = min(15.0, max(9.0, (CW - 14) / (0.66 * max(1, len(num)))))
         t, _ = tblock(x + 7, 22, [num], round(fonte_num, 1), cor, "bold", "start")

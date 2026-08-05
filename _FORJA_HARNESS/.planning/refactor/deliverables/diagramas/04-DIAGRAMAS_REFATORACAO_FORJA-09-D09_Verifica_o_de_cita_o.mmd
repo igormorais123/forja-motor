@@ -1,9 +1,0 @@
-stateDiagram-v2
-    [*] --> candidate
-    candidate --> identity_verified: tribunal/classe/número
-    candidate --> rejected: identidade divergente
-    identity_verified --> content_verified: íntegra + trecho
-    identity_verified --> unverified: fonte indisponível
-    content_verified --> final_use_allowed: política satisfeita
-    final_use_allowed --> revoked: auditoria invalida
-    unverified --> identity_verified: nova diligência

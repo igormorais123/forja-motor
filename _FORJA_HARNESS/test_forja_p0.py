@@ -54,7 +54,7 @@ def main() -> int:
     checar("dialeto severityCounts",
            p0({"severityCounts": {"P0": 0, "P1": 6}, "findings": []}), "pass")
 
-    # Sexto dialeto, achado no F7 do Cafelana em 04/08/2026: a severidade mora
+    # Sexto dialeto, achado no F7 do CASO-04 em 04/08/2026: a severidade mora
     # dentro de um JSON serializado no campo `detail`. Lendo só o topo, o gate
     # via zero P0 sobre 48 declarados e acusava de contraditório um artefato
     # correto — reprovar trabalho bem-feito é o defeito mais caro de um gate.

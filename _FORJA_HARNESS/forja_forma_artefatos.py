@@ -94,7 +94,7 @@ def censo_de_formas(raiz=None) -> dict:
         # Cegueira só existe onde a forma ignorada está SOZINHA na pasta. Um
         # `.md` ao lado do `.json` que o leitor abre não esconde nada: o gate vê
         # o material pela outra porta. Contar esse caso como cegueira acusava o
-        # `adversarial_audit` do Vale Trading, onde as duas formas convivem —
+        # `adversarial_audit` do CASO-23, onde as duas formas convivem —
         # ruído que treinaria o operador a ignorar a catraca.
         invisiveis = [a for a in orfaos.get(radical, [])
                       if a.suffix.lower() in nao_lidas

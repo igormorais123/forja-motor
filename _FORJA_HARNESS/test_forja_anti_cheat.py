@@ -108,7 +108,7 @@ def corrupt_right_margin(path: Path) -> None:
 class ForjaAntiCheatTests(unittest.TestCase):
     def test_state_court_cnj_adi_cannot_masquerade_as_stf_authority(self) -> None:
         text = (
-            "A ADI nº 2080508-98.2020.8.26.0000 foi julgada pelo TJSP. "
+            "A ADI nº 9000010-00.2020.8.26.0000 foi julgada pelo TJSP. "
             "O Informativo 849 – STJ registra precedente federal distinto."
         )
         metrics = extrair_citacoes_basico(text)

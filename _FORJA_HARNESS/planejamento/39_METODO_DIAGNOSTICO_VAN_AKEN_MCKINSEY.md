@@ -34,7 +34,7 @@ Três conclusões, em ordem de importância.
 | `downstreamTargets` | 1 — `[F3,F4,F5,F6,F7]` em todas |
 | Palavras por resposta | 23 a 59 |
 
-Em 6 dos 7 casos, **100 de 100 perguntas saíram `answered` e nenhuma bloqueada**. Nos dois casos Melissa, 100 respondidas com 34 `supportIds`. O protocolo manda "não responder por memória ou para fechar 100" e manda reescrever cada pergunta com nomes de atos e datas do caso; nenhuma das duas regras sobreviveu ao contato com a cota. No Cafelana as perguntas ficaram genéricas — "Que evento criou a necessidade da peça atual?", "Que pedido pode parecer excessivo?".
+Em 6 dos 7 casos, **100 de 100 perguntas saíram `answered` e nenhuma bloqueada**. Nos dois casos Melissa, 100 respondidas com 34 `supportIds`. O protocolo manda "não responder por memória ou para fechar 100" e manda reescrever cada pergunta com nomes de atos e datas do caso; nenhuma das duas regras sobreviveu ao contato com a cota. No CASO-04 as perguntas ficaram genéricas — "Que evento criou a necessidade da peça atual?", "Que pedido pode parecer excessivo?".
 
 O mecanismo é identificável no código: o gate se chama `exploration_100_complete`. Ele premia completude numérica. Uma meta numérica vira alvo, e o alvo é atingido pelo caminho mais barato — preencher. Nenhum ajuste de conteúdo dentro do formato corrige isso, porque o incentivo está no formato.
 

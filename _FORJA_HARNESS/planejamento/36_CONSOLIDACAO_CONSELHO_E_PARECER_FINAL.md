@@ -47,7 +47,7 @@ Não repito afirmação de terceiro sem medir. O que verifiquei diretamente:
 | H2 | Gravar demonstração de recusa com a FORJA atual | **acatada com ajuste** | o ajuste é meu: **artefato real de caso real**, não encenação. Demo montada para a demo é teatro e viola a regra de evidência. Usar bloqueio já ocorrido no histórico |
 | H3 | Separar J-B(acordo) de J-B(julgador) | **acatada, com a formulação do Cícero** | ver §2.2; a separação se sustenta, mas por veículo processual e não por perfil de risco |
 | H4 | Três métricas de negócio | **acatada** | fecha a lacuna G19 do doc `29`, que o PRD identificou e não resolveu. Custo próximo de zero: derivam de artefato existente |
-| H5 | Reordenar 1B antes de 1A | **acatada** | 1B não depende de comportamento humano e fecha falha já apontada no Cafelana; 1A fica condicionada ao resultado de H1 |
+| H5 | Reordenar 1B antes de 1A | **acatada** | 1B não depende de comportamento humano e fecha falha já apontada no CASO-04; 1A fica condicionada ao resultado de H1 |
 | H6 | Fechar Portão 0 em paralelo | **acatada** | Régua verde ou desvio classificado permanece bloqueante, conforme revisão adversarial de 24/07 |
 | H7 | Nomear risco de concentração de cliente | **registrada, sem ação nesta versão** | é decisão de negócio do Igor, não de engenharia. Fica no registro para não ser descoberta tarde |
 

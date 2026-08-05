@@ -1,8 +1,0 @@
-flowchart LR
-    Change["onda executada"] --> Gate{"gate aprovado?"}
-    Gate -->|sim| Next["próxima onda"]
-    Gate -->|não| Preserve["preservar evidência"]
-    Preserve --> Flag["desligar flag/fachada"]
-    Flag --> Restore["restore por manifesto/hash"]
-    Restore --> Recheck["reexecutar baseline"]
-    Recheck --> Stop["parar e diagnosticar"]

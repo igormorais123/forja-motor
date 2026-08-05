@@ -4,7 +4,7 @@ Instalado e validado em 07/07/2026 (teste ponta a ponta SVG→EMF→docx→PDF a
 
 **Lição crítica**: python-docx NÃO reconhece EMF. O fluxo correto é: montar o docx com python-docx deixando parágrafos-marcador `{{FIG1}}` e chamar `inserir_emf_word_com` (o próprio Word insere o EMF vetorial no lugar). Nunca tentar `add_picture` com EMF.
 
-**Identidade Medina Osório** (extraída da peça original): logo em `Cafelana\_revista\logo_medina.png` (600 dpi); cores: verde-petróleo `#395C60`, terracota `#D9926A` (escura `#9C5B38`), grafite `#49494D`; rodapé: linha petróleo + `www.medinaosorio.com.br` | `Brasília | Porto Alegre | Rio de Janeiro`; corpo Times New Roman; fólio no topo direito.
+**Identidade Medina Osório** (extraída da peça original): logo em `_FERRAMENTASssets\logo_medina.png` (600 dpi); cores: verde-petróleo `#395C60`, terracota `#D9926A` (escura `#9C5B38`), grafite `#49494D`; rodapé: linha petróleo + `www.medinaosorio.com.br` | `Brasília | Porto Alegre | Rio de Janeiro`; corpo Times New Roman; fólio no topo direito.
 
 **Estilo e legibilidade (novo, 08/07/2026)**: `estilo_medina.py` é a fonte única de tokens (CORES, fontes, `ESTILO_GRAPHVIZ`, `TEMA_MERMAID`, `aplicar_estilo_matplotlib()`). Regra de fonte mínima: **8pt no tamanho final impresso** (viewBox 600 @ 15cm → font-size ≥ 12px). O gate é automático em `svg_para_emf(svg, emf, largura_final_cm=...)` — reprova e explica a correção. Auditoria avulsa: `checar_fontes_svg(svg, largura_cm)`.
 
@@ -43,7 +43,7 @@ Script pronto: `word_visual_pipeline.py` (nesta pasta) com todas as funções: `
 ## Pipeline LaTeX (edições estilo revista/visual law)
 
 - Compilador: **Tectonic** em `C:\Users\IgorPC\.local\tectonic\tectonic.exe`.
-- Modelo de referência pronto: `Cafelana\_revista\CAFELANA_CR_EDCL_REVISTA.tex` (capa editorial, pull quotes na margem, caixas tcolorbox para acórdão/precedente, diagramas TikZ, tabela zebrada, numeração de parágrafos).
+- Modelo de referência pronto: `o modelo LaTeX registrado no acervo sob a chave `modelo-revista-latex`` (capa editorial, pull quotes na margem, caixas tcolorbox para acórdão/precedente, diagramas TikZ, tabela zebrada, numeração de parágrafos).
 - Armadilhas conhecidas do Tectonic/PGF: (a) `\\` NÃO pode ficar aninhado dentro de grupos `{...}` em nós TikZ — deixar `\\` sempre no nível do nó; (b) `\rowcolors` exige `\usepackage[table]{xcolor}`; (c) Palatino Linotype não tem o glifo "→" — usar `$\to$`; (d) fontes do Windows funcionam via fontspec (Palatino Linotype, Segoe UI).
 
 ## O que NÃO usar

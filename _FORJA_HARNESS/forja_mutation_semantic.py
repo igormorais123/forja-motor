@@ -312,7 +312,7 @@ def _achar_draft(case_dir: Path) -> Path | None:
         registro = reg.get("n4SourceRegistry") or {}
         # `canonical_markdown` entrou depois de `draft`: casos entregues não
         # guardam minuta, guardam o texto canônico da peça que saiu. Sem esta
-        # chave o caso Cafelana AgInt — que é a Impugnação ao Agravo Interno, o
+        # chave o caso CASO-04 AgInt — que é a Impugnação ao Agravo Interno, o
         # caso mais difícil do acervo e o único com fonte externa registrada
         # para a identidade das partes — simplesmente não entrava na bateria.
         for chave in ("draft", "canonical_markdown"):

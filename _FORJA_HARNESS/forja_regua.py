@@ -97,7 +97,7 @@ PROTEGIDOS = [
     # o snapshot de hashes/vereditos permanecerem protegidos juntos.
     FORJA / "forja_baseline_aprovado.py",
     FORJA / "test_forja_baseline_aprovado.py",
-    FORJA / "BASELINE_APROVADO.json",
+    FORJA / "state" / "BASELINE_APROVADO.json",
     # O instrumento tipográfico é fonte de números de conformidade e sua
     # catraca decide se uma regressão entra na régua; ambos precisam ser
     # hash-bound, não apenas executados como suíte.

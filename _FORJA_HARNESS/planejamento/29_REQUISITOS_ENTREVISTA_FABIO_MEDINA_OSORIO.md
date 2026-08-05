@@ -94,7 +94,7 @@ Ele pediu duas aplicações concretas, ambas com a mesma mecânica.
 
 **(b) Benchmarking de acordos.** [corrigido] "quando você tem a capacidade de rastrear outros acordos em situações absolutamente idênticas... olha, em tantas situações análogas o acordo foi formado num cenário de deságio de 30%; aqui nesse caso concreto nós estamos oferecendo 40, 50% — a vantajosidade para o poder público é ainda muito maior; e se houver uma recusa, vejam, de repente o gestor público pode ser responsabilizado perante o Tribunal de Contas da União, de repente pode estar causando dano ao erário".
 
-Observação: (b) é um **produto autônomo** e tem aplicação imediata no caso CORSAN/AGERST que já está na fila. Comercialmente pode valer mais do que a fábrica de petições.
+Observação: (b) é um **produto autônomo** e tem aplicação imediata no caso CASO-07/CASO-07 que já está na fila. Comercialmente pode valer mais do que a fábrica de petições.
 
 Ele **não** pediu contenção. A contenção é imposta pela arquitetura, e a proposta externa está correta em impor: relatório interno, metodologia e universo amostral declarados, nunca composição automática de peça, decisão nominal do titular para usar. Acrescento duas exigências que a proposta não tem: **parecer do Cícero por uso** (exposição do art. 34 do EAOAB — imputação; litigância de má-fé; art. 41 da LOMAN) e **proibição de afirmar conduta de pessoa identificada** — o achado descreve série estatística, não intenção de juiz.
 
@@ -141,7 +141,7 @@ Termos ausentes de todo o código de produção: `aderência`, `ratio`, `prevent
 | **G3** | Requerimento motivado de complementação documental como saída contratada, cada item vinculado à tese/fato dependente | Existe só ad hoc em scripts de caso (`build_f3_verifact.py`), nunca como contrato com gate | Alta |
 | **G4** | Fixação versionada de **escopo, metodologia e objetivo** com aceite nominal do remetente | F2 fixa produto/risco/audiência/release, autodeclarados; sem `aceite {por, em}`, sem versionamento de mudança de escopo | Alta |
 | **G5** | Consulta de preferência doutrinária ao interlocutor; hierarquia de doutrina por matéria | Ausente | Média |
-| **G6** | **Topologia decisória**: prevenção, relator prevento, composição **atual** do órgão, posição da turma e da seção, divergência entre fracionários, via recursal projetada, matéria a prequestionar | Ausente. E o `CLAUDE.md` já registra esta falha como lição do caso Cafelana ("a peça da IA não tratou prevenção/preclusão") | **Crítica — falha conhecida e não corrigida** |
+| **G6** | **Topologia decisória**: prevenção, relator prevento, composição **atual** do órgão, posição da turma e da seção, divergência entre fracionários, via recursal projetada, matéria a prequestionar | Ausente. E o `CLAUDE.md` já registra esta falha como lição do caso CASO-04 ("a peça da IA não tratou prevenção/preclusão") | **Crítica — falha conhecida e não corrigida** |
 | **G7** | Roteamento **nominal** da pesquisa pela topologia (buscar pelo relator e pelos integrantes) | `forja_legal_search.py` busca por matéria, não por decisor | Alta |
 | **G8** | Extração de **ratio decidendi** separada de obiter dictum | Existe apenas como item de checklist na taxonomia U1 ("tese deturpada"), não como artefato | Alta |
 | **G9** | **Aderência fático-probatória**: identificação da ratio, moldura fática determinante do paradigma, confronto elemento a elemento, **operação declarada** (aplicar, distinguir, delimitar alcance ou sustentar superação), distinção possível pelo adversário e resposta antecipada | Ausente | **Crítica — é o "principalmente" dele, duas vezes** |
@@ -250,7 +250,7 @@ Instâncias: precedente ([literal] "uma autoridade, se ela não segue um precede
 Não construir tudo. Ordem por retorno sobre esforço, respeitando que os requisitos entram como **subfases** de F0–F10 (§3, correção 1).
 
 **Onda 1 — o que ele mais detalhou, e a falha que o escritório já apontou uma vez**
-1. **G6 + G7 — topologia decisória e roteamento nominal** (subfase F3-B). Falha conhecida do caso Cafelana, ainda sem artefato. Reaproveita `forja_legal_search.py` e `forja_f2_check.py`. Campos de prevenção preenchidos ou expressamente marcados como não apurados, com motivo.
+1. **G6 + G7 — topologia decisória e roteamento nominal** (subfase F3-B). Falha conhecida do caso CASO-04, ainda sem artefato. Reaproveita `forja_legal_search.py` e `forja_f2_check.py`. Campos de prevenção preenchidos ou expressamente marcados como não apurados, com motivo.
 2. **G1 + G2 + G3 — bloco de instrução** (subfases F1-B e F2-B). Barato porque o difícil já existe: o F2-A já produz pergunta bloqueada com consequência e rota de diligência. Falta rotear um subconjunto **para fora**, em lote ordenado por impacto, com razão da necessidade, e acrescentar o validador do antipadrão (não perguntar o que está no acervo).
 3. **G4 — fixação de escopo, metodologia e objetivo com aceite nominal** (subfase F2-C). Reaproveita integralmente a máquina de recibo assinado e trust store externo que já opera em F7 e F8.
 4. **G13 — contrato estilístico verificável** (subfase F6-B), estendendo `forja_estilo_humano.py`. É o que se demonstra mais rápido numa peça real.

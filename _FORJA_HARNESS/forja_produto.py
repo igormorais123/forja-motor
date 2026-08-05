@@ -122,7 +122,7 @@ def validar_definicao_produto(classificacao):
 #
 # Segunda calibração, 04/08/2026: exigir a palavra "jurisdicional" reprovou
 # CINCO blueprints reais que cumprem a regra com outro rótulo — "Pergunta
-# central" na Natura Cabreúva, "Pergunta decisória" no Cafelana. E o Cafelana
+# central" na CASO-17, "Pergunta decisória" no CASO-04. E o CASO-04
 # nem tem juízo a quem perguntar: o produto ali é uma reunião com a AGU. A regra
 # da casa não é a palavra; é a obrigação de escrever em UMA frase o que se pede
 # a quem decide, antes de arquitetar a peça. Cobrar o rótulo em vez da

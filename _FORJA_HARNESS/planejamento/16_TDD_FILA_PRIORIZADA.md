@@ -65,8 +65,8 @@ I/O fica em `main()`: ler JSONs (`utf-8-sig`, padrão da casa), chamar `montar_f
   "producao": [
     {
       "posicao": 1,
-      "demandaId": "email-corsan-agerst-19f3dc9ff92081cd",
-      "caseId": "case-email-corsan-agerst-19f3dc9ff92081cd",
+      "demandaId": "email-<caso>-<id>",
+      "caseId": "case-email-<caso>-<id>",
       "titulo": "...",
       "pasta": "...",
       "prazo": "2026-08-04",

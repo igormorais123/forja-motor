@@ -351,7 +351,7 @@ def _vault_ignore_failures(repo_root: Path) -> list[str]:
 
 
 def _rollback_rehearsal(harness: Path) -> dict:
-    config_path = harness / "FORJA_N3_CONFIG.json"
+    config_path = harness / "state" / "FORJA_N3_CONFIG.json"
     config = read_json(config_path, {}) or {}
     disabled = json.loads(json.dumps(config))
     disabled.setdefault("features", {})["n4PostProtocolV1"] = False
