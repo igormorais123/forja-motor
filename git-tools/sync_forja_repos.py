@@ -225,7 +225,10 @@ def anonimizar_antes_do_gate() -> list[str]:
     for caminho, rel, texto in anon.percorrer(TRABALHO, so_texto=True):
         novo, n, _ = anon.anonimizar_texto(texto, regras)
         if n:
-            caminho.write_text(novo, encoding="utf-8")
+            # `newline=""` porque `percorrer` já entrega o texto sem tradução:
+            # gravar sem isso trocaria LF por CRLF no arquivo inteiro e faria uma
+            # troca de nome aparecer no histórico como centenas de linhas.
+            caminho.write_text(novo, encoding="utf-8", newline="")
             trocados.append(rel)
     return trocados
 

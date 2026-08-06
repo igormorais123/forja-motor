@@ -91,7 +91,7 @@ Por isso a regressão fixa **quatro cabeçalhos reais do acervo** (TRF4/CASO-23,
 
 ### Decisões de manuseio que devem ser repetidas
 
-- Os dois arquivos do TRF4 parados no AR 35 (Jalusa e Memoriais Cautelar Fiscal) receberam **aviso expresso de desatualização** com a lista do que mudou e o endereço da íntegra atual. O corpo **não** foi reescrito: substituir texto de regimento por conta própria destrói rastreabilidade.
+- Os dois arquivos do TRF4 parados no AR 35 (CASO-14 e Memoriais Cautelar Fiscal) receberam **aviso expresso de desatualização** com a lista do que mudou e o endereço da íntegra atual. O corpo **não** foi reescrito: substituir texto de regimento por conta própria destrói rastreabilidade.
 - Onde a conferência dependia de diário eletrônico não aberto (TJTO, TJRJ), a pendência ficou **declarada no próprio arquivo**, não suprida.
 
 ## Limites

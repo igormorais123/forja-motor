@@ -2,7 +2,7 @@
 ## Medição real em 6 casos + Proposta de Rampa
 
 **Data da medição:** 2026-08-05  
-**Casos medidos:** 6 (auto, azimut, CASO-07/CASO-07, CASO-16, natura, patricia)  
+**Casos medidos:** 6 (auto, CASO-02, CASO-07, CASO-16, CASO-17, patricia)  
 **Status:** Proposição de rampa honesta para produção
 
 ---
@@ -27,10 +27,10 @@
 | Caso | Score | Mortos | Aplicáveis | Suite | Notas |
 |------|-------|--------|------------|-------|-------|
 | auto | 0.0 | 0 | 14 | Inválida | Suite reprova original |
-| azimut | 0.0 | 0 | 21 | Válida | Zero gates disparados |
-| CASO-07/CASO-07 | 0.0 | 0 | 12 | Válida | Zero gates disparados |
+| CASO-02 | 0.0 | 0 | 21 | Válida | Zero gates disparados |
+| CASO-07 | 0.0 | 0 | 12 | Válida | Zero gates disparados |
 | CASO-16 | 0.2 | 4 | 20 | Válida | S6: 1.0 (4/4) |
-| natura | 0.25 | 3 | 12 | Inválida | S6: 1.0 (3/3); suite reprova original |
+| CASO-17 | 0.25 | 3 | 12 | Inválida | S6: 1.0 (3/3); suite reprova original |
 | patricia | 0.174 | 4 | 23 | Válida | S6: 1.0 (2/2); S3: 0.286 (2/7) |
 
 **Observação:** 2 de 6 suites reprovam o original — minuta possivelmente errada ou suite genérica demais. O harness degradou corretamente (score usa só verificador).
@@ -48,7 +48,7 @@
 ### S1 — Inversão de Tese (0.0)
 
 **Dados:**
-- Ocorrências: 2 mutantes em 1 de 6 casos (natura)
+- Ocorrências: 2 mutantes em 1 de 6 casos (CASO-17)
 - Taxa de morte: 0/2 (0.0)
 
 **Problema:** Suíte não percebe "é cabível" → "não é cabível"
@@ -148,7 +148,7 @@
 **Dados:**
 - Ocorrências: 12 mutantes em 5 de 6 casos
 - Taxa de morte: 9/12 (0.75)
-- Sucesso em 3 casos: libra (1.0), natura (1.0), patricia (1.0)
+- Sucesso em 3 casos: CASO-16 (1.0), CASO-17 (1.0), patricia (1.0)
 - Falha em 2 casos: auto (0.0 em 2 mutantes), CASO-07 (0.0 em 1 mutante)
 
 **Problema:** "Firmou entendimento" → "afastou o entendimento" é detectado por verificador:G4-sumula em 75% dos casos. Por quê? G4 confere par súmula×tribunal:
@@ -158,7 +158,7 @@
 | Súmula 5 do STJ → Súmula 5 do STF | Troca tribunal | G4 dispara (1.0) |
 | Súmula 609 do STJ → afastou entendimento | Muda verbo | G4 dispara? |
 
-**Achado:** Verificador G4 está robocop em 3/5 casos — libra, natura e patricia têm contexto que permite detecção. Auto e CASO-07 são documentos diagnósticos sem Súmulas; mutante S6 não dispara gate.
+**Achado:** Verificador G4 está robocop em 3/5 casos — CASO-16, CASO-17 e patricia têm contexto que permite detecção. Auto e CASO-07 são documentos diagnósticos sem Súmulas; mutante S6 não dispara gate.
 
 **Causa:** G4 assume presença de Súmula; em diagnósticos preambulares, não há.
 
@@ -189,7 +189,7 @@ Proposta de implementação:
 
 1. **G-PARTIDO** — Identidade de partes trocada (S2)
    - Implementação: `forja_gate_partido.py` (100 linhas)
-   - Teste: auto + azimut (partes nominadas)
+   - Teste: auto + CASO-02 (partes nominadas)
    - Métrica: zero falsos positivos em acervo
    
 2. **G-DATA-COERENCIA** — Data argumentativa vs. cabeçalho (S3)
@@ -204,7 +204,7 @@ Proposta de implementação:
 
 4. **G-PEDIDO** — Coerência de pedido (S4)
    - Implementação: extrair marcador de pedido, procurar oposto no corpo
-   - Teste: libra + patricia
+   - Teste: CASO-16 + patricia
    - Métrica: zero falsos positivos
 
 ### Semana 3: Aumentar cobertura
@@ -337,7 +337,7 @@ python3 forja_mutation_lote.py state/case-email-* --output mutation_panel.json
 
 **Arquivo:** `mutation_results_temp.json`  
 **Data:** 2026-08-05 02:22:47  
-**Casos:** 6 (auto, azimut, CASO-07, libra, natura, patricia)  
+**Casos:** 6 (auto, CASO-02, CASO-07, CASO-16, CASO-17, patricia)  
 **Formato:** JSON, uno por harness
 
 ---

@@ -258,7 +258,12 @@ def percorrer(raiz: Path, so_texto: bool = False, estruturais: bool = False):
         if p.suffix.lower() not in extensoes:
             continue
         try:
-            texto = p.read_text(encoding="utf-8")
+            # `newline=""` desliga a tradução de quebra de linha na leitura, e a
+            # gravação abaixo faz o mesmo. Sem isso, um arquivo com LF volta ao
+            # disco com CRLF: uma troca de nome apareceu no diff como 443 linhas
+            # alteradas, e um diff assim esconde a mudança real em vez de
+            # mostrá-la.
+            texto = p.read_text(encoding="utf-8", newline="")
         except (OSError, UnicodeDecodeError):
             continue
         sinais = fr.sinais_no_texto(texto, nomes, padroes)
@@ -320,7 +325,7 @@ def _cli(argv=None) -> int:
             total_trocas += trocas
             print(f"  {trocas:4d}  {rel}")
             if args.aplicar and not args.seco:
-                p.write_text(novo, encoding="utf-8")
+                p.write_text(novo, encoding="utf-8", newline="")
 
     if args.estruturais and registro_est and args.aplicar and not args.seco:
         caminho_est.parent.mkdir(parents=True, exist_ok=True)

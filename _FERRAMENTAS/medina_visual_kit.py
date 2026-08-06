@@ -190,7 +190,7 @@ PHI = 1.6180339887498949
 _PAGINA_A4_EMU = 10692000            # 29,7 cm
 _LINHA_AUREA_EMU = round(_PAGINA_A4_EMU / PHI)   # 6.607.926 EMU = 18,3554 cm
 # o filete fica ~5,0pt acima da base do shape (padding interno do textbox);
-# delta medido no PDF renderizado (Jalusa, 09/07/2026) para a linha cair EXATA
+# delta medido no PDF renderizado (CASO-14, 09/07/2026) para a linha cair EXATA
 _CALIBRACAO_EMU = 67437              # 5,31 pt (refinado na 2ª medição, desvio final < 0,1pt)
 
 

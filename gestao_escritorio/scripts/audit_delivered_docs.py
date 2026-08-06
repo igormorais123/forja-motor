@@ -314,7 +314,7 @@ def match_demands(message, demands):
             matches.append(item.get("id"))
             continue
         # Termos soltos são úteis para triagem, mas não resolvem identidade.
-        # O falso vínculo Jalusa/WhatsApp mostrou que dois nomes no assunto não
+        # O falso vínculo CASO-14/WhatsApp mostrou que dois nomes no assunto não
         # bastam para ligar uma peça a um caso.
     return sorted(set(m for m in matches if m))
 

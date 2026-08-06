@@ -126,7 +126,7 @@ def _produtores(pasta: Path, resultado: dict | None = None) -> list:
             saida.append(validar_pergunta_jurisdicional(conteudo))
             break
     # Os dois artefatos da F3 existem em JSON e em markdown; o CASO-23 só
-    # tem o mapa em markdown e o Nylton só tem o ledger assim.
+    # tem o mapa em markdown e o CASO-18 só tem o ledger assim.
     mapa = (_ler(pasta / "sources_map.json") if (pasta / "sources_map.json").is_file()
             else _texto(pasta / "sources_map.md"))
     ledger_fatos = (_ler(pasta / "fact_ledger.json") if (pasta / "fact_ledger.json").is_file()

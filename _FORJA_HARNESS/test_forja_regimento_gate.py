@@ -85,7 +85,7 @@ def main() -> int:
                          "sourceIds": ["DOC-001"]}]}), "pass")
 
     # A forma MARKDOWN dos dois artefatos da F3. O mapa do CASO-23 e o
-    # ledger do Nylton só existem assim, e enquanto o gate só abria JSON ele
+    # ledger do CASO-18 só existem assim, e enquanto o gate só abria JSON ele
     # reportava "ledger sem fatos" sobre um ledger de nove fatos com localizador
     # processual em cada linha — achado que chegou a entrar num laudo de triagem
     # como defeito do caso.

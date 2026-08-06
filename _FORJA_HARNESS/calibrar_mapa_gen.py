@@ -27,7 +27,7 @@ from forja_visual_mapa_gen import gerar_mapa, _norm  # noqa: E402
 CASOS = [
     ("CASO-02", forja_acervo.caso("CASO-02"), "MEMORIAL_AZIMUT_RESP_2237713.md"),
     ("CASO-07", forja_acervo.caso("CASO-07"), "DIAGNOSTICO_CORSAN_AGERST.md"),
-    ("libra", forja_acervo.caso("CASO-16"),
+    ("CASO-16", forja_acervo.caso("CASO-16"),
      "MEMORIAIS_LIBRA_SUL_AGINT_ARESP_2578181.md"),
     ("CASO-17", forja_acervo.caso("CASO-17"),
      "ESTUDO_PRELIMINAR_NATURA_CABREUVA.md"),

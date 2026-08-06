@@ -291,7 +291,7 @@ Fechado por `test_forja_lastro_rota_producao.py`, que monta uma tentativa satisf
 
 ### O item que revelou dívida estrutural: as tentativas "aprovadas" do acervo não fecham hoje
 
-Submetidas ao contrato F7 vigente, as duas únicas tentativas F7 com `status: pass` do acervo — CASO-17 e Nylton — são reprovadas por `gates não aprovados: citation_identity_and_cnj_tribunal_resolved, citation_coverage_complete, live_official_source_replayed, source_excerpt_hash_match`. O contrato foi apertado e os produtores não acompanharam.
+Submetidas ao contrato F7 vigente, as duas únicas tentativas F7 com `status: pass` do acervo — CASO-17 e CASO-18 — são reprovadas por `gates não aprovados: citation_identity_and_cnj_tribunal_resolved, citation_coverage_complete, live_official_source_replayed, source_excerpt_hash_match`. O contrato foi apertado e os produtores não acompanharam.
 
 Não é defeito deste plano e não se conserta aqui: é a mesma classe medida em `forja_gate_liveness.py` e registrada como `MC-17`, que encontrou 17 gates declarados **nunca observados em resultados do acervo** — 14 deles no `F8_QA_VISUAL` e 3 no `F10_ENTREGA_EVIDENCIA_APRENDIZADO`. Isso não equivale a “sem produtor”: a medição viva encontrou 0 gates inexequíveis (sem produtor e nunca observados). Fica nomeado como dívida aberta de evidência histórica, com medição reexecutável, e não como pendência silenciosa deste plano.
 

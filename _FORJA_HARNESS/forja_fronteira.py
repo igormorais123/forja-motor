@@ -647,6 +647,51 @@ def carregar_curadoria(raiz: Path) -> tuple[set[str], set[str], set[str]]:
             {str(a).lower() for a in (d.get("ambiguos") or [])})
 
 
+def _componentes_distintivos(nomes: set[str], nao_e_cliente: set[str]) -> set[str]:
+    """Palavras isoladas de um nome composto, para que o prenome também proteja.
+
+    O registro guardava o nome completo e nada mais, e é pelo primeiro nome que
+    a casa escreve — "a peça do <prenome>", "o grafo do <prenome>". Medido em
+    05/08/2026: um plano escrito naquela tarde chegou ao repositório do motor
+    com o prenome de um cliente intacto, e o gate aprovou porque procurava o
+    nome inteiro. Oito outros arquivos do motor tinham o mesmo defeito.
+
+    Quem decide o que é vocabulário e o que é cliente é a curadoria, no acervo,
+    e não uma regra automática. Duas tentativas de automatizar isso falharam, e
+    as duas merecem ficar registradas:
+
+      Medir com o padrão contra o texto cru. O gate compara contra o texto sem
+      acento e em minúsculas; medir de um jeito e reprovar de outro fez a
+      primeira versão aprovar 31 palavras e a varredura seguinte acusar 54
+      arquivos legítimos — entre eles a palavra "construção", que é componente
+      de uma razão social e vocabulário corrente do mesmo jeito.
+
+      Aceitar a palavra que "não aparece hoje no motor". Parece auto-calibrante
+      e é o contrário: **trata o vazamento existente como prova de que a palavra
+      é legítima.** O prenome que motivou esta função foi excluído por esse
+      critério, justamente porque já havia vazado para nove arquivos.
+
+    Então esta função é deliberadamente burra: devolve os componentes, tira
+    ruído, sigla, nome da firma e o que a curadoria já absolveu. O gate acusa; a
+    curadoria absolve caso a caso, com a ocorrência à vista.
+    """
+    componentes: set[str] = set()
+    for nome in nomes:
+        partes = nome.split()
+        if len(partes) < 2:
+            continue
+        for palavra in partes:
+            dobrada = _dobrar(palavra)
+            if len(palavra) < _MIN_NOME:
+                continue
+            if dobrada in _RUIDO or dobrada in _SIGLAS or dobrada in _FIRMA:
+                continue
+            if dobrada in nao_e_cliente:
+                continue
+            componentes.add(palavra)
+    return componentes - nomes
+
+
 def gerar_registro(raiz: Path) -> dict:
     """Deriva o registro de nomes protegidos do painel e das pastas de caso.
 
@@ -688,6 +733,7 @@ def gerar_registro(raiz: Path) -> dict:
     nao_e_cliente, sementes, _ = carregar_curadoria(raiz)
     nomes = {n for n in nomes if _dobrar(n) not in nao_e_cliente}
     nomes |= sementes
+    nomes |= _componentes_distintivos(nomes, nao_e_cliente)
 
     return {
         "schema": "FORJA-FRONTEIRA-NOMES-v1",

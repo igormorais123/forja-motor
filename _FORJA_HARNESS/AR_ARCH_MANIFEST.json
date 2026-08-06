@@ -50,7 +50,7 @@
   },
   "gates": {
     "shadow": "targeted suite passes without production mutation",
-    "canary": "Jalusa, concurrency, idempotency, baseline and panel canaries pass",
+    "canary": "CASO-14, concurrency, idempotency, baseline and panel canaries pass",
     "independentReview": "reviewer differs from producer and verdict is approve",
     "rollback": "feature-off configuration is valid and automation resolves to disabled",
     "ceiling": "the first lineage cannot exceed estudo_descritivo"

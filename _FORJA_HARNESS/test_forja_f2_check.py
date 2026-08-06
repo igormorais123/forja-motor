@@ -17,7 +17,7 @@ class DevePegar(unittest.TestCase):
         self.assertEqual(tribunal_do_cnj("9000001-00.1997.4.01.0000"), "TRF1")
 
     def test_cnj_federal_trf4(self):
-        # caso real: Jalusa (TRF4)
+        # caso real: CASO-14 (TRF4)
         self.assertEqual(tribunal_do_cnj("9000004-00.2011.4.04.0000"), "TRF4")
 
     def test_cnj_estadual_tjto(self):

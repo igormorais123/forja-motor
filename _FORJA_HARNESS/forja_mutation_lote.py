@@ -8,7 +8,7 @@ Uso:
 
 Exemplos:
   python forja_mutation_lote.py state/case-email-*
-  python forja_mutation_lote.py state/case-email-libra state/case-email-patricia
+  python forja_mutation_lote.py state/case-email-<caso-a> state/case-email-<caso-b>
   python forja_mutation_lote.py --output mutation_panel.json
 """
 from __future__ import annotations

@@ -176,7 +176,7 @@ O resolvedor não será um segundo matcher. Ele endurece e reutiliza as rotas ex
 
 Resultado com menos de uma correspondência inequívoca vai para quarentena. Nome parecido nunca basta para vincular casos ou processos.
 
-O falso positivo histórico Jalusa/WhatsApp será canário obrigatório: o retorno deve cair no caso correto ou em quarentena, nunca ser “resolvido” por semelhança textual.
+O falso positivo histórico CASO-14/WhatsApp será canário obrigatório: o retorno deve cair no caso correto ou em quarentena, nunca ser “resolvido” por semelhança textual.
 
 ### PP2. Seleção da versão-base da FORJA
 
@@ -576,11 +576,11 @@ promoção
 
 - testes unitários de nomenclatura, hashing, idempotência e resolução;
 - testes de contrato de todos os schemas;
-- golden jurídico de caso com origem ativa e golden estrutural de Siqueira Campos;
+- golden jurídico de caso com origem ativa e golden estrutural de CASO-15 Campos;
 - CASO-04 somente como poison/estrutura, marcada como origem revogada, nunca como referência jurídica;
 - testes de DOCX com estruturas difíceis;
 - golden DOCX × PDF com carimbo, fólio e cabeçalho de tribunal;
-- canário Jalusa para falso pareamento Gmail/demanda;
+- canário CASO-14 para falso pareamento Gmail/demanda;
 - corrida concorrente de dois eventos no mesmo caso, com falha por `expected_revision`;
 - reenvio do mesmo anexo em nova mensagem/thread, sem nova captura;
 - duas entregas possíveis antes do retorno, com bloqueio por ambiguidade;
@@ -630,7 +630,7 @@ promoção
 
 **Saídas:** matcher Gmail/gestão existente endurecido, vault imutável e manifestos.  
 **Modo:** detecta e simula destino; não renomeia casos reais.  
-**Gate:** todos os retornos históricos localizáveis + canário Jalusa, zero pareamento incorreto e zero duplicação.
+**Gate:** todos os retornos históricos localizáveis + canário CASO-14, zero pareamento incorreto e zero duplicação.
 
 ### Onda 3. Evidência e nomenclatura
 
@@ -721,7 +721,7 @@ Correções incorporadas:
 - criar AR-Architecture separado;
 - limitar o primeiro ciclo arquitetural a `estudo_descritivo`;
 - usar event store com `expected_revision`;
-- endurecer o matcher existente e incluir o canário Jalusa;
+- endurecer o matcher existente e incluir o canário CASO-14;
 - normalizar DOCX × PDF carimbado;
 - isolar vault/diff do Git com teste;
 - corrigir idempotência, desempate de entregas, geração de schemas, track changes e reason codes;

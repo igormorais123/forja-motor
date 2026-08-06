@@ -1,6 +1,6 @@
 # Aprendizados dos retornos humanos — Medina Osório (protocolo vivo)
 
-> Fonte: e-mails de Fábio Medina Osório e Alessandro Granato Rodrigues (2026-07-06 a 2026-07-08)
+> Fonte: e-mails de Fábio Medina Osório e Alessandro Granato CASO-06 (2026-07-06 a 2026-07-08)
 > + sinais de WhatsApp sanitizados. Regra do Fábio (áudio 2026-07-08): todo trabalho, erro e
 > feedback prático VIRA protocolo/diretriz para a IA, preservando supervisão humana.
 > Este arquivo é o registro canônico. Minerado em 2026-07-08.
@@ -18,9 +18,9 @@ E-mail de 2026-07-07 (Contrarrazões CASO-04): incluir "uma espécie de síntese
 logo ao início da manifestação, no estilo do novo regimento interno do STJ" — leitura ágil
 pelo julgador. **Padrão para todas as petições e manifestações perante o Judiciário,
 independentemente do tribunal de destino** (praxe interna determinada pelo Prof. Fábio,
-confirmada também pelo Alessandro na diretriz 1 do caso Siqueira).
+confirmada também pelo Alessandro na diretriz 1 do caso CASO-15).
 
-## Diretriz nº 2 — As 8 regras de padronização do Alessandro (caso Siqueira Campos, EDcl/improbidade)
+## Diretriz nº 2 — As 8 regras de padronização do Alessandro (caso CASO-15 Campos, EDcl/improbidade)
 
 A peça protocolada foi a NOSSA com "pequenos refinamentos" (Versão Igor Revisada para
 Protocolo — anexo do e-mail de 2026-07-06). O que consolidar:
@@ -153,7 +153,7 @@ competente para cada dia excluído. Se o ato comprovar que o dia não contou e o
 for apenas documental, retirar a tese material ou tratá-la segundo o regime de saneamento vigente.
 O cálculo deve ser reproduzido dia a dia e congelado em testes positivos e negativos da versão final.
 
-## Diretriz nº 14 — Prescrição administrativa exige matriz por objeto, ato e parcela (CASO-17/CASO-17, 15/07/2026)
+## Diretriz nº 14 — Prescrição administrativa exige matriz por objeto, ato e parcela (CASO-17, 15/07/2026)
 
 Em controvérsia contra a Fazenda, é proibido tratar “a prescrição” como etiqueta global. Antes da
 conclusão, decompor: fundo de direito; metodologia de cálculo; parcelas sucessivas; ato formal de
@@ -248,7 +248,7 @@ a auditoria jurídica/factual F7 e a leitura humana final.
       numeradas e decisão registrada sobre cada uma? (obrigatório em toda peça — ordem do
       Igor 09/07/2026; arquivos F4_PARECER_HELENA.md / F4_PARECER_CICERO.md)
 
-## Diretriz nº 16 — O produto externo não é o ledger de auditoria (CASO-17/CASO-17, 21/07/2026)
+## Diretriz nº 16 — O produto externo não é o ledger de auditoria (CASO-17, 21/07/2026)
 
 A versão revisada pelo escritório reduziu aproximadamente pela metade o texto anterior e melhorou a
 arquitetura editorial: conclusão inicial, metodologia curta, cronologia única, respostas autônomas

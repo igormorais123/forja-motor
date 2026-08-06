@@ -57,7 +57,7 @@ def _bloco(dados: dict, campos) -> dict:
 
 
 # Os dois artefatos da F3 também existem em MARKDOWN no acervo — o mapa de fontes
-# do CASO-23 e o ledger de fatos do Nylton só existem nessa forma. Um leitor
+# do CASO-23 e o ledger de fatos do CASO-18 só existem nessa forma. Um leitor
 # que só abre JSON não erra: ele não vê, e reporta "ledger sem fatos" sobre um
 # ledger de nove fatos com localizador processual em cada linha. Foi o que este
 # gate fez em 04/08/2026, e o achado chegou a entrar num laudo de triagem como

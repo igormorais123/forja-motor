@@ -37,7 +37,9 @@ A auditoria do grafo real do CASO-04 (`forja_acervo.caso("CASO-04")`, 21 nós, 1
 - **`SRC_A8` (Nova Decisão de 28/04/2026) sustenta sozinho 4 das 5 teses** — PARTIAL, 1022, 211 e S7. É fragilidade concentrada: derrubada aquela peça, a impugnação perde quatro pilares de uma vez. O grafo sabe disso desde 15/07 e nunca contou a ninguém.
 - **`THESIS-FINE` não tem nenhuma aresta de entrada.** É uma tese sem lastro documental declarado no grafo — só sai dela a aresta para `REQUEST-FINE`. Ou falta a aresta, ou falta a fonte. Em ambos os casos é achado de auditoria, e passou pelo revisor independente.
 
-Quanto ao consumo: verifiquei todos os leitores (`forja_n4_validate`, `forja_reasoning`, `forja_pso_pet`, `forja_run_metrics`, `forja_n4_invalidation`). Eles leem o **conjunto de ids dos nós** para checar se um `supportId` de outro artefato existe. **A única travessia de aresta que existe em todo o harness é `_dependency_cycles` em `forja_reasoning.py:155`** — detecção de ciclo. Fora isso, as arestas são validadas quanto a endpoint e relação, e nunca percorridas.
+Quanto ao consumo: verifiquei todos os leitores (`forja_n4_validate`, `forja_reasoning`, `forja_pso_pet`, `forja_run_metrics`, `forja_n4_invalidation`). Eles leem o **conjunto de ids dos nós** para checar se um `supportId` de outro artefato existe. Fora isso, as arestas são validadas quanto a endpoint e relação, e nunca percorridas.
+
+**Correção da v1, trazida pela revisão adversarial de 05/08/2026 (achado 2).** A v1 deste plano afirmava que a única travessia de aresta do harness era `_dependency_cycles`, em `forja_reasoning.py:112`. A afirmação está certa quanto ao código e errada quanto ao efeito: aquela função só monta o grafo com arestas de relação `depends_on`. Varredura dos cinco `F3_REASONING_GRAPH.json` reais do harness — 49 arestas ao todo — devolve `supports` 19, `justifies` 12, `qualifies` 8, `records` 4, `limits` 4, `distinguishes` 2, e **zero `depends_on`**. Ou seja: a única travessia existente monta um grafo vazio e devolve lista vazia em toda execução, desde sempre. **Nenhuma aresta de raciocínio jurídico jamais foi percorrida nesta fábrica.** O defeito é maior do que a v1 descreveu, e o detector de ciclo é hoje um gate que não gateia nada.
 
 ### C. `paragraph_provenance.json` / `paragraph_evidence_map_n4.json`
 Grafo bipartido parágrafo → prova, já existente e populado (54 KB no CASO-17, 42 KB no CASO-18). Sem peso: um parágrafo que carrega a tese decisiva e um parágrafo de cortesia processual valem igual.
@@ -59,7 +61,7 @@ O `CLAUDE.md` determina, desde 11/07/2026, que processo volumoso tenha "cronolog
 ## 3. Os quatro defeitos transversais
 
 1. **O peso está onde não decide e falta onde decide.** A fila pontua e não tem aresta; o raciocínio jurídico tem aresta e não pontua.
-2. **Grafo que ninguém percorre é desenho.** Um único algoritmo de travessia em toda a casa, e é detector de ciclo.
+2. **Grafo que ninguém percorre é desenho.** Um único algoritmo de travessia em toda a casa, é detector de ciclo, e ele nunca rodou — procura uma relação que nenhum grafo real usa.
 3. **Uma dimensão por grafo** — o alerta central do vídeo. O reasoning graph só sabe "confirmado / não confirmado". Não sabe força, não sabe custo de perder aquela fonte, não sabe risco, não sabe idade.
 4. **Nada envelhece.** Regimento baixado em 06/07 pesa igual a um conferido hoje; precedente possivelmente superado pesa igual a um vigente. O protocolo já exige verificar atualidade — o grafo não representa isso.
 

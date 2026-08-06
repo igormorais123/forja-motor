@@ -1,6 +1,6 @@
 # PADRÃO WORD MEDINA OSÓRIO — especificação canônica (extraída das peças reais)
 
-Extraído programaticamente em 08/07/2026 de 4 peças ORIGINAIS do escritório (CASO-04 CR EDcl, Memoriais CASO-19 e Fábio, EDcl José Eduardo, Quesitos CASO-17) e conferido contra 5 finais da fábrica. Evidência bruta: `.autoresearch\padrao_word_extraido.json`.
+Extraído programaticamente em 08/07/2026 de 4 peças ORIGINAIS do escritório (CASO-04 CR EDcl, Memoriais CASO-19 e Fábio, EDcl José CASO-15, Quesitos CASO-17) e conferido contra 5 finais da fábrica. Evidência bruta: `.autoresearch\padrao_word_extraido.json`.
 
 ## REGRA NÚMERO 1 — nunca criar documento do zero
 
@@ -38,7 +38,7 @@ O timbre "MEDINA OSÓRIO ADVOGADOS" é **arte vetorial** embutida no cabeçalho 
 
 ## Diagramas dentro da peça
 
-Regras da skill `fabrica-visual-peticoes` (autoridade): SVG → **EMF** via `svg_para_emf` (gate de legibilidade automático) → inserção via `inserir_emf_word_com` com largura de `estilo_medina.largura_recomendada_cm(svg)` → PDF pelo Word COM → QA visual página a página. As finais antigas (CASO-04, Jalusa) usaram PNG — daqui em diante é EMF.
+Regras da skill `fabrica-visual-peticoes` (autoridade): SVG → **EMF** via `svg_para_emf` (gate de legibilidade automático) → inserção via `inserir_emf_word_com` com largura de `estilo_medina.largura_recomendada_cm(svg)` → PDF pelo Word COM → QA visual página a página. As finais antigas (CASO-04, CASO-14) usaram PNG — daqui em diante é EMF.
 
 ## Desvios já flagrados (não repetir)
 

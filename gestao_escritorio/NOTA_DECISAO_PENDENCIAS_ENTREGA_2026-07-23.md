@@ -8,10 +8,10 @@ Regra adotada: pendência só suspende a entrega quando altera a conclusão cent
 
 | Demanda | Vale esperar? | Entrega possível agora | Limite que deve aparecer na resposta ao advogado |
 |---|---|---|---|
-| Deltan | Não, para revisão interna | Parecer N4 como `internal_review_only` | O áudio, o recibo/anexos do RDE e certidões oficiais podem gerar ajuste pontual; a conclusão atual não os trata como verificados. |
-| CASO-17/CASO-17 | Não | Versão corrigida e condicionada, sem afirmar exigibilidade global | Documentos e conciliação pendentes podem alterar parcelas, valor e prova de causas conservativas, mas não impedem responder à tese de prescrição global com ressalvas. |
+| CASO-08 | Não, para revisão interna | Parecer N4 como `internal_review_only` | O áudio, o recibo/anexos do RDE e certidões oficiais podem gerar ajuste pontual; a conclusão atual não os trata como verificados. |
+| CASO-17 | Não | Versão corrigida e condicionada, sem afirmar exigibilidade global | Documentos e conciliação pendentes podem alterar parcelas, valor e prova de causas conservativas, mas não impedem responder à tese de prescrição global com ressalvas. |
 | CASO-23 | Não, para parecer técnico | Análise metodológica, crítica pericial e cenários | Os PDFs permitem prosseguir; sem planilha nativa e reprodução independente não se certifica valor final. |
-| CASO-07/CASO-07 | Não, para diagnóstico/proposta preliminar | Escopo, estratégia, riscos por hipótese e plano de auditoria | Sem auto, parecer, notificação e CDA não há conclusão de mérito sobre validade, exigibilidade ou chance de êxito desses atos específicos. |
+| CASO-07 | Não, para diagnóstico/proposta preliminar | Escopo, estratégia, riscos por hipótese e plano de auditoria | Sem auto, parecer, notificação e CDA não há conclusão de mérito sobre validade, exigibilidade ou chance de êxito desses atos específicos. |
 | CASO-04 / RE 1.395.147 | Não, para atualização de pesquisa | Dossiê preliminar e mapa das fontes já obtidas | A comparação definitiva e qualquer uso como paradigma dependem das íntegras oficiais ainda não recuperadas. |
 | Legal 500 | Não há pendência jurídica bloqueante | Nota de decisão comercial/técnica | Confirmar preço, escopo e integração antes da contratação; isso é diligência de decisão, não bloqueio de análise. |
 
@@ -31,7 +31,7 @@ Regra adotada: pendência só suspende a entrega quando altera a conclusão cent
 
 1. Vale: certificação de valor final e memória integralmente reproduzível.
 2. CASO-07: conclusão de mérito sobre os autos e inscrições não recebidos.
-3. Deltan: classificação como assinável/externa sem revisão humana final.
+3. CASO-08: classificação como assinável/externa sem revisão humana final.
 4. CASO-17: afirmação de cobrança global líquida ou de inexistência absoluta de prescrição parcelar.
 5. CASO-04: invocação definitiva do RE como paradigma sem as íntegras oficiais críticas.
 

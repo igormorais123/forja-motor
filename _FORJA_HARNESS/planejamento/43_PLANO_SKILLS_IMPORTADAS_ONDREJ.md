@@ -1,5 +1,10 @@
 # Plano 43 — o que vale importar de `davidondrej/skills` para a fábrica e para a FORJA
 
+> **Revisado em 05/08/2026.** O PRD de execução deste plano é
+> `planejamento/44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md` — requisitos R1-R9 com
+> critério de aceite, rollout em três ondas e métricas. O item 5 abaixo foi
+> corrigido após conferência no código.
+
 **05/08/2026.** Fonte estudada: `github.com/davidondrej/skills`, commit `04bd15abae135f5744e3dc825a4ab9c75d61fbfc`, 47 skills em cinco famílias. Repositório lido por inteiro (frontmatter das 47; corpo integral das candidatas).
 
 Este plano é de adaptação, não de instalação. A maior parte daquele repositório é infraestrutura pessoal de macOS de outra pessoa e não tem tradução para cá. O que vale são **seis disciplinas de processo**, e cada uma foi adotada porque fecha uma falha que esta fábrica já mediu e registrou — não porque a skill de origem era elegante.
@@ -97,7 +102,7 @@ Proposta de script: `forja_divergencia_instrucoes.py`, que recomputa a divergên
 
 Aquela skill existe porque classificadores de entrada derrubam ou rebaixam o modelo por superfície de texto, quase independentemente da intenção. Peça de improbidade, crime, corrupção e investigação é exatamente o vocabulário que dispara esse tipo de filtro.
 
-O protocolo editorial já exige confirmar o modelo efetivo na evidência. A pergunta a conferir — **não conferi, e por isso não afirmo** — é se o `EDITORIAL_RESULT.json` registra hoje o `stop_reason` e o modelo que de fato respondeu, ou só o modelo pedido. Se registrar só o pedido, um rebaixamento silencioso passa pelo gate `cross_model_review_verified` como se nada tivesse acontecido. Vale uma verificação em `forja_fable5.py` e `forja_editorial_model.py`.
+**Conferido em 05/08/2026 (revisão do plano):** o rebaixamento silencioso de modelo **já está bloqueado** — `forja_editorial.py` lê no envelope do executor qual modelo de fato consumiu tokens (`_actual_model`, linha 98) e derruba o run com `ForjaN3Error` quando diverge do declarado (linhas 399-404); o `editor_usage` grava o modelo efetivo, não o pedido. O que **não** existe é registro do `stop_reason`: nenhum `.py` do harness o captura. Uma recusa não troca o modelo — devolve texto vazio ou truncado, que os gates de fidelidade tendem a reprovar por outro motivo, sem dizer o motivo verdadeiro. A melhoria residual (registrar `stop_reason` no `editor_usage` para diagnóstico) está no PRD 44, requisito R7.
 
 ## 6. O que este plano não faz
 

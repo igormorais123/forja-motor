@@ -440,7 +440,7 @@ flowchart TD
 ## 14. Próximas ações recomendadas
 
 1. Implementar primeiro o schema de estado e a reconciliação de evidências; não começar por Claude headless.
-2. Rodar piloto N2 em caso já concluído, preferencialmente CASO-04 ou Jalusa, comparando contra artefatos finais existentes.
+2. Rodar piloto N2 em caso já concluído, preferencialmente CASO-04 ou CASO-14, comparando contra artefatos finais existentes.
 3. Depois ligar ingestão Gmail/WhatsApp em modo sombra.
 4. Só promover automação para produção quando o fechamento com evidência estiver funcionando.
 

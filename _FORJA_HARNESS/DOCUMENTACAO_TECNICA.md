@@ -256,7 +256,7 @@ Regras: (1) exit code 1 só com P0; (2) TODA mudança no verificador passa por `
 - Os 5 rascunhos conferidos VIVOS no Gmail (`gws drafts list`) com thread ids corretos.
 - Painel: JSONs válidos (BOM em `status_integracoes.json`/`whatsapp_candidates.json` é tolerado por design — todos os leitores usam `utf-8-sig`); HTML regenerado pela API a cada comentário.
 - Cache de fontes: 15/15 arquivos com cabeçalho FONTE/URL/data. Manifest válido.
-- **Corrigido**: 6 FORJA_STATE.json defasados sincronizados com a realidade (5 entregues → `draft_awaiting_review` com draftId; Jorge Haroldo → `blocked`); estado do CASO-02 criado retroativamente (produção existia sem estado — P0) e o case duplicado `case-email-auto-19f3ed5bdbdcf159` marcado `superseded` apontando para o canônico.
+- **Corrigido**: 6 FORJA_STATE.json defasados sincronizados com a realidade (5 entregues → `draft_awaiting_review` com draftId; CASO-12 CASO-12 → `blocked`); estado do CASO-02 criado retroativamente (produção existia sem estado — P0) e o case duplicado `case-email-auto-19f3ed5bdbdcf159` marcado `superseded` apontando para o canônico.
 - **Falso positivo do auditor-agente descartado**: "5 referências quebradas de planejamento" não existem (a doc usa o glob correto `01..06_*.md`) — ver Lição 34.
 - **Tolerado**: case CASO-04 AgInt em F10 sem pasta `producao/` (entrega histórica está em `..\gestao_escritorio\entregas_fabio_osorio\`); sonda `drive_access_probe` do caso CASO-17 mantida como evidência de inacessibilidade do Drive.
 
@@ -285,7 +285,7 @@ Regras: (1) exit code 1 só com P0; (2) TODA mudança no verificador passa por `
 
 ## 9. Números da produção (lote 1, 08-09/07/2026)
 
-5 casos entregues como rascunho no Gmail (CASO-16, CASO-19/Fábio, CASO-07, CASO-17, CASO-02), 1 bloqueado por documento externo (Jorge Haroldo). Padrão confirmado: nenhuma peça saiu protocolável direto do workflow — a verificação independente externa achou erro material em 5 de 5 casos (dois com achado que MUDOU a peça: Tema 1368 transitado e fatores Selic oficiais). É por isso que os gates existem e por isso a verificação em fonte oficial não é opcional.
+5 casos entregues como rascunho no Gmail (CASO-16, CASO-19/Fábio, CASO-07, CASO-17, CASO-02), 1 bloqueado por documento externo (CASO-12 CASO-12). Padrão confirmado: nenhuma peça saiu protocolável direto do workflow — a verificação independente externa achou erro material em 5 de 5 casos (dois com achado que MUDOU a peça: Tema 1368 transitado e fatores Selic oficiais). É por isso que os gates existem e por isso a verificação em fonte oficial não é opcional.
 
 ## 9-A. Camada visual law (PADRÃO das entregas desde 09/07/2026 — ordem do Igor)
 

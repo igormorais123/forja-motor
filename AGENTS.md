@@ -53,7 +53,7 @@ Especificação completa: `_FERRAMENTAS\PADRAO_WORD_MEDINA_OSORIO.md`. Regras de
 4. Parágrafos numerados; títulos de seção em romanos negrito sem recuo; endereçamento em caixa alta negrito; fecho "Nestes termos, pede deferimento." + assinaturas centralizadas.
 
 
-**Padrão visual aprovado (09/07/2026)**: a skill `padrao-visual-medina` (em `~\.claude\skills\`) é a referência visual OBRIGATÓRIA de toda petição desta fábrica — linguagem de design aprovada pelo Fábio/Igor (capa, síntese executiva, pull quotes, caixas, diagramas, quadro zebrado) nas versões LaTeX (V4) e Word (V1) do caso CASO-04, com processo de composição e receitas técnicas. Em conflito de precedência: fabrica-visual-peticoes rege protocolo/pipeline; padrao-visual-medina rege a linguagem visual. Kits reutilizáveis (09/07/2026): `_FERRAMENTAS\medina_visual_kit.py` (classe PecaVisual), `medina_svg_kit.py` (diagramas com gate de legibilidade + gate de overflow do viewBox) e `montar_visual.py` (EMF/PDF/render/anti-placeholder) — usar SEMPRE, nunca recriar. Peças validadas: CASO-04, EDcl José Eduardo (TJTO), Jalusa (TRF4), Memoriais CASO-16 (TRF4).
+**Padrão visual aprovado (09/07/2026)**: a skill `padrao-visual-medina` (em `~\.claude\skills\`) é a referência visual OBRIGATÓRIA de toda petição desta fábrica — linguagem de design aprovada pelo Fábio/Igor (capa, síntese executiva, pull quotes, caixas, diagramas, quadro zebrado) nas versões LaTeX (V4) e Word (V1) do caso CASO-04, com processo de composição e receitas técnicas. Em conflito de precedência: fabrica-visual-peticoes rege protocolo/pipeline; padrao-visual-medina rege a linguagem visual. Kits reutilizáveis (09/07/2026): `_FERRAMENTAS\medina_visual_kit.py` (classe PecaVisual), `medina_svg_kit.py` (diagramas com gate de legibilidade + gate de overflow do viewBox) e `montar_visual.py` (EMF/PDF/render/anti-placeholder) — usar SEMPRE, nunca recriar. Peças validadas: CASO-04, EDcl José CASO-15 (TJTO), CASO-14 (TRF4), Memoriais CASO-16 (TRF4).
 
 ## 4. Identidade visual Medina Osório Advogados (obrigatória em toda peça)
 
@@ -74,7 +74,7 @@ Aplicar deliberadamente e documentar no relatório: primazia/recência (síntese
 3. **Placeholder esquecido no PDF final** (`[NOME]`, `[CRC-UF]`) — bloqueador P0; buscar `[` no texto final.
 4. **Diagramação quebrada que só aparece no render** (texto estourando borda, legenda cortada, rodapé colidido) — o QA página a página é o único detector.
 
-Casos-modelo: `a auditoria final registrada no acervo sob `auditoria-final-super`` e `Jalusa...\DOCUMENTACAO_FINAL_APRENDIZADOS\03_APRENDIZADOS_ACERTOS_ERROS.md`. Visual law: se o elemento não reduz esforço cognitivo do julgador, sai da peça.
+Casos-modelo: `a auditoria final registrada no acervo sob `auditoria-final-super`` e o registro de acertos e erros arquivado no acervo sob `aprendizados-acertos-erros`. Visual law: se o elemento não reduz esforço cognitivo do julgador, sai da peça.
 
 ## 7. Anti-alucinação (inviolável)
 

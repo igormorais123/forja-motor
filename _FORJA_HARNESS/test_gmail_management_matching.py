@@ -27,15 +27,15 @@ class GmailManagementMatchingTests(unittest.TestCase):
             "titulo": "WhatsApp Fabio Medina Osorio",
             "clienteOuCaso": "Fabio Medina Osorio",
             "pasta": "WhatsApp Fabio",
-            "threadIds": ["thread-jalusa"],
-            "emailsResposta": ["jalusa-1"],
+            "threadIds": ["thread-caso14"],
+            "emailsResposta": ["caso14-1"],
             "respondidoComConteudo": True,
             "status": "cumprida",
-            "evidenciaResposta": "E-mail da Jalusa.",
+            "evidenciaResposta": "E-mail da CASO-14.",
         }]}
         repaired = repair_false_response_matches(
             data,
-            [message("jalusa-1", "thread-jalusa", "Re: Fotos enviadas por whatsapp cliente Jalusa")],
+            [message("caso14-1", "thread-caso14", "Re: Fotos enviadas por whatsapp cliente CASO-14")],
         )
         item = data["demandas"][0]
         self.assertEqual(1, repaired)
@@ -72,10 +72,10 @@ class GmailManagementMatchingTests(unittest.TestCase):
             "clienteOuCaso": "Cliente de Roraima",
             "pasta": "WhatsApp Audio - Roraima Senador cliente",
             "emailsResposta": [],
-            "threadIds": ["thread-jalusa"],
+            "threadIds": ["thread-caso14"],
         }]
         result = match_demands(
-            message("jalusa-1", "thread-jalusa", "Re: Fotos enviadas por whatsapp cliente Jalusa"),
+            message("caso14-1", "thread-caso14", "Re: Fotos enviadas por whatsapp cliente CASO-14"),
             demands,
         )
         self.assertEqual([], result)

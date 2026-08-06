@@ -204,7 +204,7 @@ def visual_com_lastro(docx):
         if real != sha:
             return False, "DOCX visual NÃO bate com o lastro (versão errada ou alterada após o gate) — re-rodar forja_visual"
         return True, "lastro de fidelidade ok"
-    # nomes legados encontrados nos casos reais pré-gate (CASO-19, Libra, CASO-02,
+    # nomes legados encontrados nos casos reais pré-gate (CASO-19, CASO-16, CASO-02,
     # CASO-07, CASO-17) — composições novas sempre gravam FIDELIDADE_VISUAL.json
     for legado in ("RELATORIO_VISUAL_LAW.json", "RELATORIO_FINAL_VISUAL_LAW.json",
                    "resultado.json", "retorno.json", "visual_law_metadata.json"):

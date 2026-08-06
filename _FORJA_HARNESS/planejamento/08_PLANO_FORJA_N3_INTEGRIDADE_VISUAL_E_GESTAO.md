@@ -986,7 +986,7 @@ Regras:
 | CT-04 | ressalva retirada na conversão | reprovar fidelidade semântica |
 | CT-05 | número/data muda entre MD e PDF | reprovar pacote |
 | V-01 | CASO-17 p. 10 | reprovar |
-| V-02 | Libra p. 9 | reprovar |
+| V-02 | CASO-16 p. 9 | reprovar |
 | V-03 | CASO-19 p. 6 | reprovar |
 | V-04 | CASO-07 p. 3 e p. 15 | reprovar |
 | V-05 | `####` e `>` literais | reprovar |

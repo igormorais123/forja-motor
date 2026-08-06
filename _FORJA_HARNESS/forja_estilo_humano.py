@@ -301,28 +301,40 @@ def _conectores(texto: str, paragrafos: list[str]) -> list[dict]:
 
 # Numeração de seção que o COMPOSITOR injeta ("I — CABIMENTO E TEMPESTIVIDADE"),
 # não aparte explicativo do autor. Sem esta exceção o gate cobra do texto um vício
-# que não está nele: o Agravo do Nylton tem 3 travessões em 3.504 palavras no
+# que não está nele: o Agravo do CASO-18 tem 3 travessões em 3.504 palavras no
 # markdown auditado e chegava a 10 no DOCX, todos títulos numerados por
-# `PecaVisual.abre()`. O efeito era perverso — quanto MAIS o autor seccionasse a
-# peça, mais "aparte" o gate enxergava. A exceção é estreita de propósito: exige
-# algarismo romano de um lado e palavra em caixa alta do outro.
-_TITULO_NUMERADO = re.compile(r"[IVXLCDM]+\s—\s[A-ZÀ-Þ]")
+# `PecaVisual.abre()`. O efeito era perverso: quanto MAIS o autor seccionasse a
+# peça, mais "aparte" o gate enxergava.
+#
+# A exceção precisa ser ESTREITA, sob pena de virar escape. A primeira versão
+# exigia só "romano + travessão + maiúscula", e a revisão cruzada (Codex,
+# 05/08/2026) a quebrou em duas linhas: `[IVXLCDM]+` aceita "XXXXXXXXXXXXXX", que
+# não é algarismo romano nenhum, e olhar apenas o token anterior deixava passar
+# "Precedente VIII — Sem Fundamento", que é prosa, não título. Duas condições
+# fecham isso:
+#   1. o algarismo tem de ser bem formado e estar na tabela de I a XXX;
+#   2. ele tem de ABRIR a linha — que é a posição de um título, e não a de um
+#      aparte no meio do período.
+_ROMANOS_SECAO = frozenset({
+    "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+    "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+    "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX",
+})
 
 
-def _inicio_token(texto: str, pos: int) -> int:
-    """Recua até o começo da palavra que antecede o travessão em `pos`."""
-    fim = pos
-    while fim > 0 and texto[fim - 1].isspace():
-        fim -= 1
-    ini = fim
-    while ini > 0 and not texto[ini - 1].isspace():
-        ini -= 1
-    return ini
+def _e_titulo_numerado(texto: str, pos: int) -> bool:
+    """O travessão em `pos` separa o número de seção do título que abre a linha?"""
+    inicio = texto.rfind("\n", 0, pos) + 1
+    prefixo = texto[inicio:pos].strip()
+    if prefixo not in _ROMANOS_SECAO:
+        return False
+    resto = texto[pos + 1:].lstrip()
+    return bool(resto) and resto[0].isupper()
 
 
 def _travessoes(texto: str) -> list[dict]:
     ocorrencias = [m for m in re.finditer(r"(?<=\s)—(?=\s)", texto)
-                   if not _TITULO_NUMERADO.match(texto, _inicio_token(texto, m.start()))]
+                   if not _e_titulo_numerado(texto, m.start())]
     palavras = len(re.findall(r"\b[\wÀ-ÿ]+\b", texto))
     limite = max(3, math.ceil(palavras / 450))
     if len(ocorrencias) > limite:

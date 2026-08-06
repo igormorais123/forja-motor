@@ -143,11 +143,11 @@ substitui os gates semânticos de cobertura, cronologia e consistência entre ca
 
 ## 6. Aplicação imediata aos incidentes auditados em 21–22/07/2026
 
-- Deltan: produto entregue ao escritório, mas áudio indicado como fundamental não está materializado;
+- CASO-08: produto entregue ao escritório, mas áudio indicado como fundamental não está materializado;
   manter aberto até recuperação/reenvio e confronto do conteúdo com o parecer.
 - CASO-04: perguntas textuais e documentos foram tratados; quatro eventos antigos de áudio não estão
   recuperáveis no acervo atual. Registrar limite de cobertura, sem afirmar leitura integral dos áudios.
-- CASO-17/CASO-17: relatório e e-mail apontaram riscos jurídicos, mas mensagem posterior de WhatsApp
+- CASO-17: relatório e e-mail apontaram riscos jurídicos, mas mensagem posterior de WhatsApp
   qualificou como fortalecimento algumas das mesmas teses. Registrar divergência, impedir que o padrão
   seja reutilizado e só comunicar correção com autorização específica.
 - CASO-07: manter bloqueada por documentos materiais ausentes; estilo ou pesquisa não suprem o acervo.

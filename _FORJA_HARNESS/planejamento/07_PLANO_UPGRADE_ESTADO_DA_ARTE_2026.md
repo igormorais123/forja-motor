@@ -16,7 +16,7 @@
 | Consenso do estado da arte | O que já temos (evidência) |
 |---|---|
 | Workflow determinístico com gates > agente autônomo (Anthropic, dez/2024; Gemini "orquestração ponta a ponta") | Fases F0-F10 com estados, gates, circuito F7→F10 bloqueante (testado ponta a ponta em 09/07) |
-| Recusa calibrada quando falta base (VLAIR elogia a recusa do Vincent AI) | Gate de suficiência; caso Jorge Haroldo bloqueado com `blockedReason` no estado — o bloqueio registrado JÁ é a "evidência de diligência" que o relatório Claude pede |
+| Recusa calibrada quando falta base (VLAIR elogia a recusa do Vincent AI) | Gate de suficiência; caso CASO-12 CASO-12 bloqueado com `blockedReason` no estado — o bloqueio registrado JÁ é a "evidência de diligência" que o relatório Claude pede |
 | Verificar EXISTÊNCIA não basta; erro letal é holding/quote deturpado (LePhantomCite: só 2 dos 5 tipos caem em lookup) | Verificação independente contra autos + cache oficial verbatim + lições 15/26/28 |
 | Crítica adversarial ancorada em sinal EXTERNO, nunca auto-reflexão (Self-Refine degrada sem sinal externo) | Auditores conferem contra PDFs/fontes; red team de 8 perguntas por escrito |
 | Proveniência fato/inferência/não-verificado (ALCE/RARR/ContextCite) | Mapa de fontes + matriz de segurança factual 5 colunas + marcadores [VERIFICAR] |
@@ -85,7 +85,7 @@ Veredito unânime dos 3 relatórios: o FORJA está no consenso e acima do mercad
 **U8. Biblioteca de peças-modelo do escritório (`_MODELOS/`) — padrão DraftWise, SEM RAG.**
 - *Fonte:* deep-research §DraftWise ("drafting de alto valor nasce de precedentes internos"); coerente com o filtro anti-RAG: o redator LÊ a peça-modelo INTEIRA via contexto longo — zero embeddings.
 - *O que:* pasta `_MODELOS/` na raiz da fábrica com a melhor peça APROVADA por tipo (memorial STJ, memoriais de instância ordinária, contrarrazões, EDcl, parecer/estudo, diagnóstico estratégico), sempre a versão final que o Fábio validou; arquivo-índice de 1 tela com "quando usar qual". Passo novo no fluxo: blueprint/redator lê a peça-modelo do tipo antes de redigir (herda voz institucional, estrutura, cautelas).
-- *Implementação:* curadoria (começar com as 5 edições visual law atuais QUANDO o Fábio aprovar + CASO-04/Jalusa históricas) + 1 linha no fluxo padrão do caso.
+- *Implementação:* curadoria (começar com as 5 edições visual law atuais QUANDO o Fábio aprovar + CASO-04/CASO-14 históricas) + 1 linha no fluxo padrão do caso.
 - *Pronto quando:* índice criado e o passo referenciado no protocolo.
 - *Risco anti-excesso:* modelo é REFERÊNCIA de voz/estrutura, não fôrma — o gate de personas/estilo continua valendo; nunca copiar trecho de mérito de outro caso.
 

@@ -38,7 +38,7 @@ CASES = {
         "objection": "A restituição material e a falta de repercussões pessoais individualizadas podem justificar a manutenção do quantum.",
         "anchors": [("22 de fevereiro de 2013", "contains"), ("R$ 165.000,00", "contains"), ("três cheques de R$ 55.000,00", "contains"), ("R$ 90.000,00", "contains"), ("aproximadamente 54,5%", "contains"), ("R$ 10.000,00 por autor", "contains"), ("R$ 50.000,00 para cada autor", "contains"), ("método bifásico", "contains"), ("honorários recursais", "not_contains"), ("art. 944, parágrafo único", "not_contains")],
     },
-    "libra": {
+    "CASO-16": {
         "caseId": forja_acervo.caso("CASO-16"),
         "product": "memoriais de impugnação a agravo interno",
         "response": True,
@@ -157,7 +157,7 @@ def run(key: str) -> dict:
     ]
     if key == "patricia":
         nodes.append({"id": "QUANT-001", "type": "calculation", "sourceArtifact": "F4_QUANTIFICATION_SCENARIOS.json"})
-    if key == "libra":
+    if key == "CASO-16":
         nodes.append({"id": "CMP-001", "type": "document", "sourceArtifact": "F3_DOCUMENT_COMPARISON.json"})
     if profile["science"]:
         nodes.append({"id": "SCIENCE", "type": "document", "sourceArtifact": "F5C_EVIDENCE_SYNTHESIS.json"})
@@ -168,8 +168,8 @@ def run(key: str) -> dict:
     save("F2_QUESTION_TREE.json", {"questions": questions, "coverage": {"total": len(questions), "material": len(questions), "answeredMaterial": len(questions), "blockedMaterial": 0}})
     save("F3_EVENT_IDENTITY.json", {"events": [{"eventId": "EVENT-001", "canonicalLabel": profile["product"], "sourceId": "DOC-FINAL", "locator": "endereçamento e síntese inicial", "allowedParaphrases": [], "forbiddenEquivalents": [], "temporalPosition": 1}], "surfaces": [{"surfaceId": "final", "text": canonical.read_text(encoding="utf-8"), "semanticContrast": False}]})
 
-    if key == "libra":
-        save("F3_DOCUMENT_COMPARISON.json", {"comparisonSets": [{"setId": "CMP-LIBRA-001", "documents": ["decisão agravada", "agravo interno", "memoriais finais"], "units": [{"unitId": "CMP-001", "priorArgument": "decisão aplicou óbices de admissibilidade e preservou premissas do TRF4", "priorResponse": "agravo interno busca superar os óbices", "currentArgument": "memoriais limitam a Súmula 182 ao ponto efetivamente deficiente", "classification": "repeated_with_new_basis", "novelElements": ["delimitação expressa do alcance da Súmula 182"], "prequestioningAssessment": "considered", "consequence": "rebuttal", "reviewStatus": "confirmed"}]}]})
+    if key == "CASO-16":
+        save("F3_DOCUMENT_COMPARISON.json", {"comparisonSets": [{"setId": "CMP-CASO16-001", "documents": ["decisão agravada", "agravo interno", "memoriais finais"], "units": [{"unitId": "CMP-001", "priorArgument": "decisão aplicou óbices de admissibilidade e preservou premissas do TRF4", "priorResponse": "agravo interno busca superar os óbices", "currentArgument": "memoriais limitam a Súmula 182 ao ponto efetivamente deficiente", "classification": "repeated_with_new_basis", "novelElements": ["delimitação expressa do alcance da Súmula 182"], "prequestioningAssessment": "considered", "consequence": "rebuttal", "reviewStatus": "confirmed"}]}]})
     else:
         na("F3_DOCUMENT_COMPARISON.json", "O canário não responde a uma peça adversária comparável neste ciclo.")
     save("F3_REASONING_GRAPH.json", {"nodes": nodes, "edges": [

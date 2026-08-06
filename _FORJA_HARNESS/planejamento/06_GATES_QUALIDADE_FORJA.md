@@ -1,7 +1,7 @@
 # 05 — Gates de Qualidade do FORJA N2 (catálogo complementar)
 
 **Versão**: N2.3 | **Data**: 2026-07-15
-**Origem**: mineração das análises de resultados reais da fábrica — `APRENDIZADOS_FEEDBACK_HUMANO.md`, `a auditoria final do caso, registrada no acervo`, a análise estratégica do caso, no acervo, o relatório de aprendizados do caso, no acervo, Jalusa `DOCUMENTACAO_FINAL_APRENDIZADOS\` e `RELATORIO_MELHORIAS_NIVEL_3.md`, Siqueira Campos `AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md` e auditorias, Laudo Pericial `RELATORIO_MELHORIAS.md` e `REGISTRO_ALTERACOES_E_AUDITORIA.md`, `.autoresearch\fabrica-peticoes-v1\auditoria-regua.md`. Detalhe bruto em `fontes\ANALISE_PONTUAL_HARNESS_F0_F10.md`.
+**Origem**: mineração das análises de resultados reais da fábrica — `APRENDIZADOS_FEEDBACK_HUMANO.md`, `a auditoria final do caso, registrada no acervo`, a análise estratégica do caso, no acervo, o relatório de aprendizados do caso, no acervo, CASO-14 `DOCUMENTACAO_FINAL_APRENDIZADOS\` e `RELATORIO_MELHORIAS_NIVEL_3.md`, CASO-15 Campos `AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md` e auditorias, Laudo Pericial `RELATORIO_MELHORIAS.md` e `REGISTRO_ALTERACOES_E_AUDITORIA.md`, `.autoresearch\fabrica-peticoes-v1\auditoria-regua.md`. Detalhe bruto em `fontes\ANALISE_PONTUAL_HARNESS_F0_F10.md`.
 **Papel**: este documento é o catálogo complementar de qualidade do FORJA N2. Ele fica subordinado ao `FORJA_SPEC_MANIFEST.json`, ao PRD, ao TDD e ao Roadmap N2. Toda lição futura de pós-entrega entra AQUI (e no `APRENDIZADOS_FEEDBACK_HUMANO.md` quando vier de feedback humano).
 
 ---
@@ -28,9 +28,9 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
 | G3.1 | **Dossiê local antes de pesquisa externa**: peça anterior do caso, decisão atacada, iter processual lidos ANTES de qualquer busca fora (casos como AREsp 2.698.443 não existem em busca pública — só no dossiê) | SIM | CASO-04 RELATORIO_E_APRENDIZADOS.md |
-| G3.2 | **Pergunta jurisdicional em UMA frase** registrada antes de estruturar argumentos (qual pergunta o julgador precisa responder?) | SIM | Jalusa 03_APRENDIZADOS §2.1 |
+| G3.2 | **Pergunta jurisdicional em UMA frase** registrada antes de estruturar argumentos (qual pergunta o julgador precisa responder?) | SIM | CASO-14 03_APRENDIZADOS §2.1 |
 | G3.3 | **Dupla contagem de prazo**: agente conta, auditor independente reconta (calendário, dias úteis, feriados); divergência registrada e resolvida | SIM | CASO-04 (sábado contado como útil) |
-| G3.4 | Documento mencionado no comando/minuta localizado nos autos extraídos; não localizado = classificado LACUNA, nunca afirmado como fato | SIM | Siqueira (NOTA 00465/2025 assumida) |
+| G3.4 | Documento mencionado no comando/minuta localizado nos autos extraídos; não localizado = classificado LACUNA, nunca afirmado como fato | SIM | CASO-15 (NOTA 00465/2025 assumida) |
 | G3.5 | Fato crítico classificado no ledger como fonte, declaração, inferência, hipótese ou não verificado | SIM | FORJA N2 |
 | G3.6 | **Identidade dos atos em processo volumoso**: cada recurso, decisão, retratação, destaque e intimação tem código, data, sujeito, ato impugnado, pedido, resultado, efeito e ponte aos autos. Falta da íntegra do ato atual bloqueia redação | SIM | feedback Fábio 11/07/2026 — CASO-04 |
 
@@ -44,7 +44,7 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 ### F4 PLANEJAMENTO (blueprint)
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
-| G5.1 | **Matriz de segurança factual** preenchida ANTES da redação — 5 colunas: Ponto / Fonte (arquivo+página/id) / Tipo (fato, alegação, inferência, lacuna) / Pode afirmar? / Formulação segura. Ponto crítico sem verificação bloqueia F6 | SIM | Jalusa §2.2 + Runbook + FORJA N2 |
+| G5.1 | **Matriz de segurança factual** preenchida ANTES da redação — 5 colunas: Ponto / Fonte (arquivo+página/id) / Tipo (fato, alegação, inferência, lacuna) / Pode afirmar? / Formulação segura. Ponto crítico sem verificação bloqueia F6 | SIM | CASO-14 §2.2 + Runbook + FORJA N2 |
 | G5.2 | **Questões processuais laterais varridas**: prevenção, preclusão, competência interna, composição ATUAL do órgão julgador, fatos supervenientes | SIM | CASO-04 WhatsApp (Diretriz 4) |
 | G5.3 | Conselho de personas com **decisões registradas** (acatado/rejeitado/por quê — ex.: Sun Tzu sugeriu corte de 700 palavras, rejeitado por instrução expressa do cliente). Análise Sun Tzu em 6 movimentos: terreno, forças, fraquezas, vitória sem luta, pontos a blindar, síntese | SIM | _ANALISE_SUN_TZU.md |
 | G5.4 | **Questão jurídica aberta → cenários A/B** (nunca apostar tudo num número/tese única; ex.: Laudo com R$ 10,53 bi vs R$ 7,49 bi conforme tese dos compensatórios) | NÃO (recomendado) | Laudo RELATORIO_MELHORIAS.md §2.1 |
@@ -63,8 +63,8 @@ A IA acerta o eixo jurídico e erra por **omissão de cautelas de advogado sêni
 ### F7_AUDITORIA_JURIDICA_FACTUAL
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
-| G7.1 | **Conferência verbatim**: cada aspa e cada tese jurisprudencial conferida palavra a palavra na fonte primária, com registro fonte+página/URL por citação (checklist de fontes). Caso real: aspa "reclamam dilação probatória" não existia no acórdão → virou paráfrase | SIM | Siqueira AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md |
-| G7.2 | **Red team estruturado — 9 perguntas obrigatórias por escrito**: (1) melhor argumento contrário? (2) qual afirmação depende de documento fraco? (3) que termo pode ser atacado como exagero? (4) o pedido é útil e executável? (5) há norma citada de memória? (6) algum visual cria falsa certeza? (7) há documento mencionado que não está nos autos? (8) o relatório prova o cumprimento do pedido? (9) **a peça aceita alguma premissa do comando/e-mail que os AUTOS não sustentam?** (anti-bajulação: o insumo mais perigoso é o comando do chefe — caso CASO-07 "54 cláusulas", premissa do e-mail sem lastro nos documentos). SIM nas perguntas 1, 2, 5, 7 ou 9 sem tratamento = bloqueia | SIM | Jalusa 02_FLUXO + Runbook §6 + U4 (plano upgrade 2026, sycophancy/Stanford) |
+| G7.1 | **Conferência verbatim**: cada aspa e cada tese jurisprudencial conferida palavra a palavra na fonte primária, com registro fonte+página/URL por citação (checklist de fontes). Caso real: aspa "reclamam dilação probatória" não existia no acórdão → virou paráfrase | SIM | CASO-15 AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md |
+| G7.2 | **Red team estruturado — 9 perguntas obrigatórias por escrito**: (1) melhor argumento contrário? (2) qual afirmação depende de documento fraco? (3) que termo pode ser atacado como exagero? (4) o pedido é útil e executável? (5) há norma citada de memória? (6) algum visual cria falsa certeza? (7) há documento mencionado que não está nos autos? (8) o relatório prova o cumprimento do pedido? (9) **a peça aceita alguma premissa do comando/e-mail que os AUTOS não sustentam?** (anti-bajulação: o insumo mais perigoso é o comando do chefe — caso CASO-07 "54 cláusulas", premissa do e-mail sem lastro nos documentos). SIM nas perguntas 1, 2, 5, 7 ou 9 sem tratamento = bloqueia | SIM | CASO-14 02_FLUXO + Runbook §6 + U4 (plano upgrade 2026, sycophancy/Stanford) |
 | G7.3 | Checklist do feedback humano aplicado integralmente (10 itens do `APRENDIZADOS_FEEDBACK_HUMANO.md`) | SIM | Diretriz 5 do Fábio |
 | G7.4 | Grep de termos proibidos no texto final: placeholders `[NOME]`, `[dia]`, TODO, XXX, tags de build, comentário interno, `[[VISUAL:` e `[VERIFICAR ...]` | SIM | auditoria-regua.md §5 + FORJA N2 |
 | G7.5 | **Grep de proveniência operacional**: “compartilhado pelo escritório”, “recebido por e-mail/WhatsApp”, Drive, pasta interna, arquivo/caminho local e `[FONTE: arquivo]` são P0 em peça; `forja_verificador.py` gate G9 | SIM | feedback Fábio 11/07/2026 |
@@ -90,15 +90,15 @@ Política de repetição: até três candidatas editoriais internas, sempre refe
 ### F8_QA_VISUAL
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
-| G8.1 | **QA estrutural após TODA regeneração**: pacote OOXML válido, fidelidade Markdown→DOCX, marcadores consumidos, tipografia, margens codificadas, SVGs válidos, colisão/clipping geométrico e ausência de artefatos auxiliares. A abertura humana do DOCX continua obrigatória para decidir paginação e legibilidade | SIM | Jalusa v2→v3 (defeito de materialização) |
-| G8.2 | **Sanitização de metadados** do DOCX e do relatório: autor "python-docx" → "Medina Osório Advogados"; remover propriedades que exponham geração por IA | SIM | Siqueira AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md P0 |
+| G8.1 | **QA estrutural após TODA regeneração**: pacote OOXML válido, fidelidade Markdown→DOCX, marcadores consumidos, tipografia, margens codificadas, SVGs válidos, colisão/clipping geométrico e ausência de artefatos auxiliares. A abertura humana do DOCX continua obrigatória para decidir paginação e legibilidade | SIM | CASO-14 v2→v3 (defeito de materialização) |
+| G8.2 | **Sanitização de metadados** do DOCX e do relatório: autor "python-docx" → "Medina Osório Advogados"; remover propriedades que exponham geração por IA | SIM | CASO-15 AUDITORIA_E_PROMPT_ULTIMO_NIVEL.md P0 |
 | G8.3 | Data de protocolo real, endereçamento, número do processo, partes, nomes/OAB conferidos | SIM | CASO-04 AUDITORIA_FINAL_CAFELANA_SUPER.md |
 
 ### F9_PACOTE_REVISAO_DRAFT_OPCIONAL
 | Código | Gate | Bloqueador | Fonte da lição |
 |---|---|---|---|
 | G9.1 | Pacote completo: DOCX + `MEMORIA_AUDITABILIDADE_FORJA.md` + `MEMORIA_AUDITABILIDADE_FORJA.html` + manifesto JSON hash-bound + relatório de melhorias (linguagem de negócio) + registro de alterações + checklist de fontes verificadas + relatório do red team com decisões | SIM | `forja_memoria_auditabilidade.py` + elo 13 de `forja_delivery.py`; rota visual sem PDF/rerender |
-| G9.2 | **Relatório atualizado por ÚLTIMO** (números reais da versão final — páginas, figuras, parágrafos; relatório defasado destrói confiança) | SIM | Jalusa erro 3.2 |
+| G9.2 | **Relatório atualizado por ÚLTIMO** (números reais da versão final — páginas, figuras, parágrafos; relatório defasado destrói confiança) | SIM | CASO-14 erro 3.2 |
 | G9.3 | Rascunho no Gmail é opcional e depende de `approvedRecipients`; NUNCA enviar automaticamente | SIM | regra de ouro FORJA N2 |
 | G9.4 | `pronta_para_revisao` não é `cumprida`; painel só muda para `cumprida` com evidência real | SIM | FORJA N2 |
 | G9.5 | Peça protocolável não admite rebaixamento para política interna; pacote registra versão/hash da régua e é revalidado antes de draft, entrega e cumprimento | SIM | `FORJA-LEGAL-RELEASE-v2` |

@@ -80,7 +80,7 @@ def _gate_v2_enabled():
 def _overflow_texto(corpo, w, h, folga=2.0):
     """Estima a caixa de cada <text> e devolve os que saem do viewBox.
     O Inkscape CORTA no viewBox — texto de ponta cortado foi erro recorrente
-    (CASO-04 fig1 08/07; Jalusa fig2 09/07). Heurística: Segoe UI ~0,52em/char
+    (CASO-04 fig1 08/07; CASO-14 fig2 09/07). Heurística: Segoe UI ~0,52em/char
     (0,58 bold)."""
     probs = []
     for m in _re.finditer(

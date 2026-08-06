@@ -149,7 +149,7 @@ Isso importa porque impede duas coisas: gastar orçamento de AUTO-RESEARCH com o
 ## 6. Três ondas
 
 **Onda 1 — sombra, e nada muda na saída**
-Régua verde primeiro, ou desvio classificado e aceito como baseline conhecido; rebaseline automático continua proibido. Schemas e validadores do mapa e do brief. F3-B produz o mapa; F4 produz o brief. **Nenhum output de F6 muda.** Verificação de completude e de grounding sobre casos históricos — CASO-04, Jalusa, CASO-16 e CASO-17, que já têm entrega e diff.
+Régua verde primeiro, ou desvio classificado e aceito como baseline conhecido; rebaseline automático continua proibido. Schemas e validadores do mapa e do brief. F3-B produz o mapa; F4 produz o brief. **Nenhum output de F6 muda.** Verificação de completude e de grounding sobre casos históricos — CASO-04, CASO-14, CASO-16 e CASO-17, que já têm entrega e diff.
 
 Critério de saída: os campos de prevenção e composição batem com a fonte oficial nos casos históricos; toda âncora declarada no brief existe nos ledgers.
 

@@ -193,7 +193,7 @@ def _inventario(docx):
     # Negrito medido em CARACTERES do corpo, não em contagem de runs. Duas
     # razões: um run pode ter uma palavra ou um parágrafo inteiro, e o filtro
     # por tamanho de fonte selecionava um subconjunto minúsculo como
-    # denominador, produzindo razões absurdas (27.500% no Libra recomposto).
+    # denominador, produzindo razões absurdas (27.500% no CASO-16 recomposto).
     # Também se excluem os runs de tabela e de moldura, onde o negrito é
     # estrutural (cabeçalho, rótulo) e não ênfase — foi a correção que prometi
     # ao rejeitar a proposta de tirar o negrito do padrão.

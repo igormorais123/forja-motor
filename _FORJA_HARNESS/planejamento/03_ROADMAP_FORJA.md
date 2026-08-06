@@ -111,7 +111,7 @@
 **Casos piloto:**
 
 - CASO-04, por ter TRF1/STJ;
-- Siqueira Campos, por TJTO;
+- CASO-15 Campos, por TJTO;
 - Memoriais Cautelar Fiscal, por TRF4.
 
 **Critério de pronto:**
@@ -145,8 +145,8 @@
 **Casos piloto:**
 
 - CASO-04;
-- Siqueira Campos;
-- CASO-16 ou Jorge Haroldo, se houver urgência STJ.
+- CASO-15 Campos;
+- CASO-16 ou CASO-12 CASO-12, se houver urgência STJ.
 
 **Critério de pronto:**
 
@@ -178,7 +178,7 @@
 
 **Casos piloto:**
 
-- Jalusa, por ter documentação final e QA anterior;
+- CASO-14, por ter documentação final e QA anterior;
 - CASO-04, por ter auditorias e versões comparáveis.
 
 **Critério de pronto:**
@@ -239,9 +239,9 @@
 
 ## 4. Ordem de casos recomendada
 
-1. **Jalusa:** melhor para validar QA visual e comparação com entrega final.
+1. **CASO-14:** melhor para validar QA visual e comparação com entrega final.
 2. **CASO-04:** melhor para validar estratégia, STJ/TRF1, citações e auditoria.
-3. **Siqueira Campos:** melhor para validar regimento TJTO e embargos.
+3. **CASO-15 Campos:** melhor para validar regimento TJTO e embargos.
 4. **CASO-02:** melhor para validar duplicidade de pastas e consolidação sem apagar.
 5. **Plano de Saúde Fábio/Mateus:** só depois de pasta, comando, anexos, órgão responsável e evidência mínima estarem mapeados.
 

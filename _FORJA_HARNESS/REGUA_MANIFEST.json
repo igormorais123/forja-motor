@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-08-05T19:04:16-03:00",
+  "atualizadoEm": "2026-08-05T21:53:00-03:00",
   "hashes": {
     "_FORJA_HARNESS/forja_regua.py": "db5c26f195d00f013849c39024b4303ba1a049bbc89dac3924b7bad70723885c",
     "_FORJA_HARNESS/forja_gate_liveness.py": "022b753465977df5c01947a4594afb2603435df0599060686dc9b6481da04733",
@@ -7,7 +7,7 @@
     "_FORJA_HARNESS/forja_citations.py": "e88e14d406bfe73ed6299fdb49134e83c11ba0f53a907d56f4ccadd110b47789",
     "_FORJA_HARNESS/forja_baseline.py": "c1b7b8fd0257c86b076547af97ce4384c566bca2f00df58da546fcb023c837b4",
     "_FORJA_HARNESS/forja_verificador.py": "23f3ee0808e0afd2257d388074dec2893d6808159d6a58ae242b0a269595c528",
-    "_FORJA_HARNESS/forja_estilo_humano.py": "b9f749f7a5b6e1db7e8cd5d8b568a1d38d7e268e318ba96a8f5dda9bfcbfc5df",
+    "_FORJA_HARNESS/forja_estilo_humano.py": "5aa6bc4293a05c79e366bea12fbb98fec346a7dedee29048db86635740bade3a",
     "_FORJA_HARNESS/forja_run.py": "a602c557ca323243b07c693c1907d0bc9d76b6671967376c6526fc49528faed3",
     "_FORJA_HARNESS/forja_headless.py": "429042f6e0e93f076e96926f24a8b0d9d8caaf03abbf087b7edb8d831605b2b0",
     "_FORJA_HARNESS/forja_editorial.py": "8c295119f0ca8757ce7ab06ada2264c2d647a19147c5fe0cc84ab961810b094e",
@@ -20,7 +20,7 @@
     "_FORJA_HARNESS/forja_visual_review.py": "e88cde49b0084827cea1462eff355e2285c44523b0e4a64cf125bccc7a716479",
     "_FORJA_HARNESS/forja_docx_layout.py": "d9cf14387cc877a72000aa2cb89cacdfd3a72e923aeca198e34155a3e72e3eaa",
     "_FORJA_HARNESS/test_forja_layout_antimoldagem.py": "39233304811d1c20b45d7e403ff30934a6ad7dc852421d5561b0c131df42f79f",
-    "_FORJA_HARNESS/forja_assinatura_visual.py": "bb85ad103caf8ab297fd134772db4f5420d8e074928cbefa867ac5f8471b1021",
+    "_FORJA_HARNESS/forja_assinatura_visual.py": "31d14156cdfef4d06b3115267ef2219837186628ae1a6cdf4048660363ba6234",
     "_FORJA_HARNESS/test_forja_assinatura_antimoldagem.py": "0222b98494f55ce017a46e0aa8f9394933602db72b9cd124e4d2b91b111dec05",
     "_FORJA_HARNESS/forja_adocao_rota.py": "6704e9fdaca634edd901e2452c60ca7dd64c197273dc2fa36435a9f0a2ccccc4",
     "_FORJA_HARNESS/test_forja_adocao_rota.py": "1c7435e9f49fb362c2830f96ab8dcf2e692c29b2316e251b053e3d02f6aa1a12",
@@ -49,12 +49,12 @@
     "_FORJA_HARNESS/forja_calibra_gates_economicos.py": "1bf2e42b610a542d5ec246ee9ada20a72ca92e0b5a456e8aed4293dca5a01fb1",
     "_FORJA_HARNESS/forja_email.py": "6847d598877687cd9c1355bf55140de2cba2105c6309605a11cc084ce6838920",
     "_FORJA_HARNESS/forja_render_docx.py": "aa34ad0938d397962d8a270840f271538de5c11a3e456be5b73137747af3e18c",
-    "_FORJA_HARNESS/forja_visual_build.py": "5b4b0808bb1237e98d1eee7f3ca27c25b8b8af48a28a480151d5b63d8f7d422f",
+    "_FORJA_HARNESS/forja_visual_build.py": "c48bebefb3a86d36b215c83e890e34e9a77f872f325eca177f143b73f35636f8",
     "_FORJA_HARNESS/forja_svg_docx.py": "62c0a8a115df0404ff85878d8f634e4e8c64f2e5d76b7b499f97d9107b20c183",
     "_FORJA_HARNESS/forja_visual_qa_structural.py": "7ed3fffb645e83ceb744ac443f93e7f64c089d9c12274bf7d87193405d5df8a0",
-    "_FORJA_HARNESS/forja_delivery.py": "0ef9a02eb183b658408a0582b72bf7409c960dcee148d9a33abc8a0434c24cfa",
+    "_FORJA_HARNESS/forja_delivery.py": "b1d3e271d1ed7570ef113f6bc72e317f3b89c8b34ac1b05fa0aa4dd3d61a159c",
     "_FORJA_HARNESS/forja_injection_scan.py": "78c000eb3bd8eb4d9ea179fa4c35da1bf56c7665ab376cbb6a3f1ddca48082fc",
-    "_FORJA_HARNESS/forja_visual.py": "0ca5465bb2556df4cb5ccac32f2bb4ef1f82a9e7fc22186d0c898273ea14b544",
+    "_FORJA_HARNESS/forja_visual.py": "80fbfc1455320729b1b6ae58a53ec990af3f4d643fcc3f904a30e4c8822b6f9c",
     "_FORJA_HARNESS/forja_fila.py": "ce55027245fb52829abbf0ad618d8bf91b46255dd342305bde7b5bfecc8974ad",
     "_FORJA_HARNESS/test_forja_fila.py": "550da597b8bd906d1fff5b9487656b06001980b56eb5aa6078ead498a62b5c1e",
     "_FORJA_HARNESS/test_licao41.py": "d66fb15272ff3ffe71ed665d51066046bc8ad366daad9dbbde56705d8c02a1a2",
@@ -70,15 +70,15 @@
     "_FORJA_HARNESS/test_forja_identidade_citacoes.py": "247b39f8d32527bb0d384de9297bcddaec9c3a7bef037acdd1e10590f91ec088",
     "_FORJA_HARNESS/forja_replay.py": "00bfaadba14e730219976e6b1cfd241aa29b51b62b196936455efb9cd00bc021",
     "_FORJA_HARNESS/forja_adversarial_gate.py": "4f35e39f7f0bf147c5975d750a27bf8d4f46d0edeb597515211d63899478c26e",
-    "_FORJA_HARNESS/forja_recomputo_censo.py": "57ceb49e841304732180c298440c3a44673faf7fd6f25c201aa4306ebc76bebb",
+    "_FORJA_HARNESS/forja_recomputo_censo.py": "84b740f471272427631d2f9c9725372b411f4b3d8668ca5fb23ce86efb699eda",
     "_FORJA_HARNESS/test_forja_adversarial_gate.py": "c6ee5b83b287d6bab3b6e02743d45c9b29a12a0487e46b1dc053294b50c6b0c9",
     "_FORJA_HARNESS/test_forja_recomputo_censo.py": "0f15076c8f9d086e571b2d9046105feb987b805816dac441039778fabf7012c2",
     "_FORJA_HARNESS/forja_p0.py": "cbca761cd256b0abbb805880ca54e12b80d376e5a04da72946fe9bbed1d777cb",
-    "_FORJA_HARNESS/forja_regimento_gate.py": "d3a2cecf72f7128fdcc2e6afefd8fc5ab441648da9f7d5b5c62fe6257e69e991",
+    "_FORJA_HARNESS/forja_regimento_gate.py": "18d2bf004f22e7d989aed8d8b07af7825c46414407847ec91783d89f0691234f",
     "_FORJA_HARNESS/forja_produto.py": "2adbcf15a73f9282a0eb9ccb9dc993c07c7d5df78cc3b748a7074f74851bfed9",
     "_FORJA_HARNESS/forja_entrega.py": "fdc0423d7b52234e2bcf264ea13730f63736625bc155b20a17e5dd165227c762",
     "_FORJA_HARNESS/test_forja_p0.py": "589d69171d8d74c9d110841cc491d676afc6bec8ddf74033a2fd5eb8a4f7fc84",
-    "_FORJA_HARNESS/test_forja_regimento_gate.py": "76820ea75ebfe329cb9db980ac4a8f7b27166e8ff4791e9b001f9f80669be669",
+    "_FORJA_HARNESS/test_forja_regimento_gate.py": "f27c078ddea4a98bdae41de657843968516eb65fb23b4f6a0fcc616982cef575",
     "_FORJA_HARNESS/test_forja_produto.py": "06b210470361496363a5cf2f696057a54d98c9b3bfd457a2cc380ac785d0a931",
     "_FORJA_HARNESS/test_forja_entrega.py": "678d086188678dc8c1b93da52c99c4fb3b5f1f1ba8d47cad4dc200853d488a23",
     "_FORJA_HARNESS/forja_artefatos.py": "a41728e59847fbe629d84aac6b8d772d5037079ac501f610d4abf09287e44817",
@@ -90,7 +90,7 @@
     "_FORJA_HARNESS/test_forja_contexto.py": "f731c43ef2f482d8fade89db05a5080e72dbc9d803dbe93f867321e1b9d52701",
     "_FORJA_HARNESS/test_forja_redacao.py": "b0226be7be34f98569311b7be58517a796aad569f38928110c502c1995ab7d5b",
     "_FORJA_HARNESS/forja_paragrafos.py": "ef0fd785b8f03db0a865f5d1e22b86e4fbc0977f54794134ae212cd34c64bddb",
-    "_FORJA_HARNESS/forja_fontes_oficiais.py": "2c2bf2bcf03a67ca68f2640d7ce04aa4abbc516c1762493a40ab02aa0a0dc90b",
+    "_FORJA_HARNESS/forja_fontes_oficiais.py": "cd7c368e87a68897dce33f130dba89cf35f4c103528e4c80257b72161268cae0",
     "_FORJA_HARNESS/forja_red_team.py": "48870590ae9ad7b3b6776131194585ceeafd0161137264f3649634d579b6488c",
     "_FORJA_HARNESS/test_forja_injection_gate.py": "9610b5d905788da848e9770fadd512bc571b3344ce7c5c29767b9f4969ed8ed1",
     "_FORJA_HARNESS/test_forja_paragrafos.py": "b9bca4d0381592cd0f7a41a4e1cfa1e8729b395f41863db4e2be95d3f1ec89e6",
@@ -108,8 +108,8 @@
     "_FORJA_HARNESS/test_forja_injection.py": "1629f630f3faaacf821bdd7a88beecb0f3b2f638d89ad484bf707823053c7870",
     "_FORJA_HARNESS/test_forja_regua.py": "a4689a1dbce3c29f11fd9d855372f66b467a99c79a7497da6a7fd3f076178a39",
     "_FORJA_HARNESS/test_real_telemetria_licao41.py": "aabf9be5967bf91b66d3856b2d0a05c4983a058e22ad1863ef063dd7b9fc034d",
-    "_FERRAMENTAS/medina_visual_kit.py": "2f4bf519529d1b03973bf78fc9ff90d25bb0e962bbc6487dbad7db608e0f0ada",
-    "_FERRAMENTAS/medina_svg_kit.py": "748613b33821e69e86cf028547366ff423ee2f9b260f1deb9be7a5c4239534d9",
+    "_FERRAMENTAS/medina_visual_kit.py": "6a1208c35a55f85435c0725349f107af5932a9015260177aa450b7bfcbed7f77",
+    "_FERRAMENTAS/medina_svg_kit.py": "a7f9074d920f9ac169efc6d10785218663d27c603a15d78ece679a688a111079",
     "_FERRAMENTAS/word_visual_pipeline.py": "e0cd9f0ce6e4e301231ee145c90073e616638be51b82d8adaa6577c4c3c2971a",
     "_FERRAMENTAS/montar_visual.py": "c6d5b1b7f89a0a73e7a3a952244d4768b9a2612c79e421c5cdd078b1d267dc30",
     "_FERRAMENTAS/estilo_medina.py": "c52bb199634adf0ec1225ecd449bdc2b1bb11c730b1e418595f6496805021b2e",
@@ -478,7 +478,7 @@
     },
     {
       "em": "2026-07-26T16:46:13-03:00",
-      "motivo": "E11 concluido (26/07/2026): auditoria de regimentos de 16 arquivos fechada em 16 em ordem, 0 bloqueio, 0 ressalva. Parser de forja_regimentos corrigido em tres pontos apurados contra o acervo real — le frontmatter YAML (data_download, download_em, versao_oficial), extrai a data DEPOIS do rotulo em vez da primeira data da linha (a linha de versao do TJRJ tinha duas datas e devolvia 2024 para arquivo conferido em 2026), e ordena rotulos por especificidade. Conferencia em fonte oficial nesta data: TRF4 no AR 37/2026 sem posterior; TRF2 na ER 56 de 07/05/2026 sem posterior; TRE-PR na Res 792/2017 compilada ate a Res 957/2025; TJSP com AR 594 e 595/2026 POSTERIORES a compilacao de 30/04/2026, registrado como ressalva de uso; TRF1 sem emenda posterior a ER 5/2022 localizada. Dois arquivos do TRF4 (Jalusa e Memoriais Cautelar Fiscal) estao no AR 35 e receberam aviso expresso de desatualizacao em vez de reescrita do corpo. Pendencias que dependem de diario eletronico ficaram declaradas nos proprios arquivos, nao supridas.",
+      "motivo": "E11 concluido (26/07/2026): auditoria de regimentos de 16 arquivos fechada em 16 em ordem, 0 bloqueio, 0 ressalva. Parser de forja_regimentos corrigido em tres pontos apurados contra o acervo real — le frontmatter YAML (data_download, download_em, versao_oficial), extrai a data DEPOIS do rotulo em vez da primeira data da linha (a linha de versao do TJRJ tinha duas datas e devolvia 2024 para arquivo conferido em 2026), e ordena rotulos por especificidade. Conferencia em fonte oficial nesta data: TRF4 no AR 37/2026 sem posterior; TRF2 na ER 56 de 07/05/2026 sem posterior; TRE-PR na Res 792/2017 compilada ate a Res 957/2025; TJSP com AR 594 e 595/2026 POSTERIORES a compilacao de 30/04/2026, registrado como ressalva de uso; TRF1 sem emenda posterior a ER 5/2022 localizada. Dois arquivos do TRF4 (CASO-14 e Memoriais Cautelar Fiscal) estao no AR 35 e receberam aviso expresso de desatualizacao em vez de reescrita do corpo. Pendencias que dependem de diario eletronico ficaram declaradas nos proprios arquivos, nao supridas.",
       "arquivosMudados": []
     },
     {
@@ -1482,6 +1482,23 @@
       "motivo": "nao-verificado em pytest vira skip com motivo, nao falha",
       "arquivosMudados": [
         "_FORJA_HARNESS/test_f7_campos.py"
+      ]
+    },
+    {
+      "em": "2026-08-05T21:53:00-03:00",
+      "motivo": "anonimizacao de nome de cliente em comentario e docstring: 11 arquivos protegidos passaram a citar o caso por pseudonimo (CASO-NN), sem mudanca de codigo executavel",
+      "arquivosMudados": [
+        "_FERRAMENTAS/medina_svg_kit.py",
+        "_FERRAMENTAS/medina_visual_kit.py",
+        "_FORJA_HARNESS/forja_assinatura_visual.py",
+        "_FORJA_HARNESS/forja_delivery.py",
+        "_FORJA_HARNESS/forja_estilo_humano.py",
+        "_FORJA_HARNESS/forja_fontes_oficiais.py",
+        "_FORJA_HARNESS/forja_recomputo_censo.py",
+        "_FORJA_HARNESS/forja_regimento_gate.py",
+        "_FORJA_HARNESS/forja_visual.py",
+        "_FORJA_HARNESS/forja_visual_build.py",
+        "_FORJA_HARNESS/test_forja_regimento_gate.py"
       ]
     }
   ]

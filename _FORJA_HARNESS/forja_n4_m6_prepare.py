@@ -26,7 +26,7 @@ CASES = {
         "pdf": ROOT / "Memoriais Apelação CASO-19 e Fábio - Proc. 9000003-00.2014.8.19.0000" / "Anexos do email" / "MEMORIAIS - PATRICIA E FABIO - N3 SUPERIOR PARA REVISAO - 10-07-2026.pdf",
         "layoutProfileId": "medina-visual-law-v1",
     },
-    "libra": {
+    "CASO-16": {
         "caseId": forja_acervo.caso("CASO-16"),
         "docx": forja_acervo.caminho("m6-memoriais-docx"),
         "pdf": forja_acervo.caminho("m6-memoriais-pdf"),

@@ -93,7 +93,7 @@
 
 A edição visual da FORJA não se degradou aos poucos. **Ela parou de acontecer em 10 de julho de 2026.**
 
-Entre 8 e 10 de julho houve uma janela em que quase toda a produção saiu em edição visual law: CASO-04, Jalusa, José Eduardo, CASO-16, CASO-02, CASO-19, CASO-07 e CASO-17. São 25 arquivos `*VISUAL_LAW*.docx` no acervo, e **o mais recente é de 10/07/2026**. Nos vinte dias seguintes, com dezenas de entregas ao Fábio, a contagem é zero.
+Entre 8 e 10 de julho houve uma janela em que quase toda a produção saiu em edição visual law: CASO-04, CASO-14, José CASO-15, CASO-16, CASO-02, CASO-19, CASO-07 e CASO-17. São 25 arquivos `*VISUAL_LAW*.docx` no acervo, e **o mais recente é de 10/07/2026**. Nos vinte dias seguintes, com dezenas de entregas ao Fábio, a contagem é zero.
 
 A causa é de acoplamento, não de competência. O compositor `forja_visual.compor()` existe, funciona e é coberto por testes — mas **nenhum módulo de produção o importa**. Quem o chama são os testes automatizados e cinco scripts artesanais escritos à mão dentro de pastas de caso. A peça só sai visual se alguém, naquele caso específico, sentar e escrever o mapa visual manualmente. Foi o que aconteceu naquela janela de três dias, quando o kit era novidade e havia atenção humana em cima. Quando a atenção migrou para outros casos, a esteira voltou ao seu comportamento padrão — e o comportamento padrão é pobre.
 
@@ -111,7 +111,7 @@ A consequência prática para a sua ordem é direta: fechar o gate hoje, sozinho
 |---|---|---|
 | Arquivos `*VISUAL_LAW*.docx` no acervo | 25 | `find` na árvore inteira |
 | Data do mais recente | **10/07/2026** | carimbo de data dos mesmos arquivos |
-| Mapas visuais declarativos `compor_*_mapa.py` | **5** (CASO-02, CASO-07, Libra, CASO-17, CASO-19) | `find` na árvore inteira |
+| Mapas visuais declarativos `compor_*_mapa.py` | **5** (CASO-02, CASO-07, CASO-16, CASO-17, CASO-19) | `find` na árvore inteira |
 | Casos em `state/` | mais de 30 | listagem do diretório |
 | Casos com trilha de entrega F10 executada | **3** (CASO-02, CASO-04 AgInt, CASO-16) | `find` por `F10_TRILHA_EVIDENCIA.md` |
 | Lastros `FIDELIDADE_VISUAL.json` | 20 | `find` na árvore inteira |
@@ -123,8 +123,8 @@ A frente de medição abriu os documentos como pacote e contou elementos. Os nú
 
 | Período | Peça | Data | Vetoriais | Tabelas | Sombreado | % negrito |
 |---|---|---|---|---|---|---|
-| Modelo | EDcl José Eduardo V1 | 09/07 | 5 | 9 | sim | 30,9% |
-| Modelo | Jalusa V2 | 09/07 | 3 | 6 | sim | 34,1% |
+| Modelo | EDcl José CASO-15 V1 | 09/07 | 5 | 9 | sim | 30,9% |
+| Modelo | CASO-14 V2 | 09/07 | 3 | 6 | sim | 34,1% |
 | Modelo | CASO-16 V2 | 09/07 | 3 | 7 | sim | 38,0% |
 | Modelo | CASO-04 AgInt | 10/07 | 4 | 6 | sim | 33,6% |
 | Recente | Parecer CASO-17 | 19/07 | 0 | 12 | não | 19,0% |

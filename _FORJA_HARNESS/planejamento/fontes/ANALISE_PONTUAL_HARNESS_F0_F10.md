@@ -1,12 +1,12 @@
 # Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas
-**Síntese executiva de 4 casos reais (Jalusa Nível 3/4, José Eduardo Embargos Ajustada, 2026-07-03 a 07)**
+**Síntese executiva de 4 casos reais (CASO-14 Nível 3/4, José CASO-15 Embargos Ajustada, 2026-07-03 a 07)**
 
 ---
 
 ## I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL
 
 ### 1. Pergunta Judicial como Centro Absoluto
-**Fonte:** Jalusa — 03_APRENDIZADOS_ACERTOS_ERROS.md, seção 2.1  
+**Fonte:** CASO-14 — 03_APRENDIZADOS_ACERTOS_ERROS.md, seção 2.1  
 **Lição:** Antes de redigir qualquer peça, formular a pergunta que o juiz fez em UMA FRASE. Só depois estruturar argumentos.
 
 **O que o protocolo atual capta:** sim (regimento + leis gerais), mas como verificação horizontal  
@@ -14,12 +14,12 @@
 
 **Impacto:** evita dispersão multitema; mantém aderência ao ato judicial concreto; reduz "peça sobre tudo" que perde força.
 
-**Evidência:** Jalusa desempenhou melhor quando começou pela Pergunta (Fase 1, Fluxo_Processo_Executado.md). José Eduardo teve vulnerabilidade inicial de "maximalismo de argumentos" que a auditoria corrigiu pós-facto (AUDITORIA_E_PROMPT.md, P0 item 8: "se a resposta for 'mérito', cortar").
+**Evidência:** CASO-14 desempenhou melhor quando começou pela Pergunta (Fase 1, Fluxo_Processo_Executado.md). José CASO-15 teve vulnerabilidade inicial de "maximalismo de argumentos" que a auditoria corrigiu pós-facto (AUDITORIA_E_PROMPT.md, P0 item 8: "se a resposta for 'mérito', cortar").
 
 ---
 
 ### 2. Matriz Fato-Alegação-Inferência-Lacuna como GATE Mandatório, Não Documentação Passiva
-**Fonte:** Jalusa 2.2; José Eduardo AUDITORIA_E_PROMPT.md; Runbook_Novos_Trabalhos.md seção 4
+**Fonte:** CASO-14 2.2; José CASO-15 AUDITORIA_E_PROMPT.md; Runbook_Novos_Trabalhos.md seção 4
 
 **Lição:** A matriz não é checklist administrativo. É EXECUTADA antes da redação. Cada ponto do comando vai para a matriz respondendo: qual é a fonte (arquivo+página), qual é o tipo, posso afirmar ou preciso pedir esclarecimento?
 
@@ -28,16 +28,16 @@
 - Lição comprovada: "tabela 5 colunas (Ponto | Fonte | Tipo | Pode afirmar | Formulação segura), preencher ANTES de escrever primeira frase"
 
 **Quando funcionou:**
-- Jalusa: 300 h/a, 8 h/a e NOTA 00465/2025 foram classificadas como "lacuna/controvérsia" → peça pediu esclarecimento em vez de afirmar → eliminou risco de impugnação por excesso.  
-- José Eduardo: após auditoria, todas as citações jurisprudenciais passaram por matriz (30 OK, 4 pendentes conferência manual) → rastreabilidade total.
+- CASO-14: 300 h/a, 8 h/a e NOTA 00465/2025 foram classificadas como "lacuna/controvérsia" → peça pediu esclarecimento em vez de afirmar → eliminou risco de impugnação por excesso.  
+- José CASO-15: após auditoria, todas as citações jurisprudenciais passaram por matriz (30 OK, 4 pendentes conferência manual) → rastreabilidade total.
 
 **Quando falhou:**
-- José Eduardo v1 tinha "maximalismo de argumentos sem lastro mínimo indiciário" → auditoria converteu em "últimas rodadas detectam que é merito não embargos" → corte profundo necessário.
+- José CASO-15 v1 tinha "maximalismo de argumentos sem lastro mínimo indiciário" → auditoria converteu em "últimas rodadas detectam que é merito não embargos" → corte profundo necessário.
 
 ---
 
 ### 3. Red Team Estruturado como Pré-requisito de PDF Final, Não Revisão Passiva
-**Fonte:** Jalusa 02_FLUXO seção "Fase 6"; Runbook seção 6 (8 perguntas obrigatórias)
+**Fonte:** CASO-14 02_FLUXO seção "Fase 6"; Runbook seção 6 (8 perguntas obrigatórias)
 
 **Lição:** Red team não é "ler de novo". São 8 perguntas específicas respondidas por escrito ANTES de gerar PDF:
 
@@ -50,52 +50,52 @@
 7. Há documento mencionado que não está nos autos?
 8. O relatório final prova o cumprimento?
 
-**Evidência:** Jalusa não teve red team explícito na v1 → base legal errada (art. 534 § 2º inadequado) só foi detectada DEPOIS da geração e durante QA jurídico. v3 gerou com base corrigida. José Eduardo teve red team estruturado na auditoria → AUDITORIA_E_PROMPT.md item 8: "Rodar revisão anti-protelatória: todo parágrafo deve responder 'qual vício do art. 1.022 estou integrando?'" → corrigiu 5 vulnerabilidades menores.
+**Evidência:** CASO-14 não teve red team explícito na v1 → base legal errada (art. 534 § 2º inadequado) só foi detectada DEPOIS da geração e durante QA jurídico. v3 gerou com base corrigida. José CASO-15 teve red team estruturado na auditoria → AUDITORIA_E_PROMPT.md item 8: "Rodar revisão anti-protelatória: todo parágrafo deve responder 'qual vício do art. 1.022 estou integrando?'" → corrigiu 5 vulnerabilidades menores.
 
-**Diferença:** o protocolo diz "rodar Diabob/red team antes da versão final" (regra 7, Jalusa 03_APRENDIZADOS). Runbook deixa explícito: QUAIS perguntas, QUANDO (antes de geração), COMO registrar respostas.
+**Diferença:** o protocolo diz "rodar Diabob/red team antes da versão final" (regra 7, CASO-14 03_APRENDIZADOS). Runbook deixa explícito: QUAIS perguntas, QUANDO (antes de geração), COMO registrar respostas.
 
 ---
 
 ### 4. Conferência Verbatim de Citações Jurisprudenciais como Gate Separado (Não Inline)
-**Fonte:** José Eduardo AUDITORIA_E_PROMPT.md P0 itens 1, 2; AUDITORIA_FINAL.md seção D
+**Fonte:** José CASO-15 AUDITORIA_E_PROMPT.md P0 itens 1, 2; AUDITORIA_FINAL.md seção D
 
 **Lição:** Toda citação direta de jurisprudência deve ser localizada em PDF/fonte oficial, comparada palavra por palavra com o texto da peça, ANTES de protocolo. Não vale "conheço esse precedente".
 
 **Quando funcionou:**
-- José Eduardo: 12 precedentes conferidos (REsp 2.206.647/TO, ARE 1.583.894/SC, ARE 1.550.203/AM etc.), todos com PDF ou lastro local na pasta. Após auditoria, 30/34 citações verificadas automaticamente, 4 conferidas manualmente por fragmentos.
+- José CASO-15: 12 precedentes conferidos (REsp 2.206.647/TO, ARE 1.583.894/SC, ARE 1.550.203/AM etc.), todos com PDF ou lastro local na pasta. Após auditoria, 30/34 citações verificadas automaticamente, 4 conferidas manualmente por fragmentos.
 - Resultado: quase zero risco de ataque a "jurisprudência inventada".
 
 **Quando falhou:**
-- Jalusa v2: base legal parecida (art. 534 § 2º vs. art. 524) mas função processual não bate → não foi conferida contra Planalto → detectada só em QA jurídico pós-geração.
-- José Eduardo v1: aspa "reclamam dilação probatória" foi atribuída ao acórdão, não existia literalmente → auditoria mandou remover → v1 gerou com erro.
+- CASO-14 v2: base legal parecida (art. 534 § 2º vs. art. 524) mas função processual não bate → não foi conferida contra Planalto → detectada só em QA jurídico pós-geração.
+- José CASO-15 v1: aspa "reclamam dilação probatória" foi atribuída ao acórdão, não existia literalmente → auditoria mandou remover → v1 gerou com erro.
 
 **Diferença de processo:**
-- Protocolo: "conferir norma em fonte oficial quando a citação sustenta pedido" (Jalusa 03_APRENDIZADOS regra 8)  
+- Protocolo: "conferir norma em fonte oficial quando a citação sustenta pedido" (CASO-14 03_APRENDIZADOS regra 8)  
 - Lição comprovada: "conferência verbatim PRÉ-GERAÇÃO, arquivo de fonte, página indicada, fragmento comparado com screenshot do PDF original, resultado registrado em relatório" (ver AUDITORIA_DA_VERSAO_AJUSTADA.md: "30 OK / 4 PENDENTES").
 
 ---
 
 ### 5. Visual Law Só Entra Se Reduz Esforço Cognitivo — Teste Concreto Antes de Geração
-**Fonte:** Jalusa 2.3; 04_RUNBOOK seção 7 (regras de entrada/saída)
+**Fonte:** CASO-14 2.3; 04_RUNBOOK seção 7 (regras de entrada/saída)
 
-**Lição:** "Visual law como organização, não decoração" (Jalusa 2.3) não é suficientemente preciso. É preciso TESTE CONCRETO:
+**Lição:** "Visual law como organização, não decoração" (CASO-14 2.3) não é suficientemente preciso. É preciso TESTE CONCRETO:
 - visual organiza sequência de fatos? (sim → entra)
 - visual separa prova de lacuna? (sim → entra)
 - visual mostra fluxo decisório? (sim → entra)
 - visual reduz esforço cognitivo do juiz? (não sei → faz prototipo PNG, lê com pessoa humana, pergunta)
 
 **Quando funcionou:**
-- Jalusa: 4 visuais (gráfico status, quadro suficiência, fluxo, linha tempo). Todos organizaram tese documental sem inventar números. QA: zero cortes, zero sobreposição, fonte ≥11pt.
-- José Eduardo: após auditoria, Figura 1 (admissibilidade) e Figura 4 (escala) foram refinadas para linguagem menos vulnerável ("lastro mínimo atual" em vez de "juízo de CERTEZA"; "não supre art. 17 § 6 II" em vez de "ATÍPICO").
+- CASO-14: 4 visuais (gráfico status, quadro suficiência, fluxo, linha tempo). Todos organizaram tese documental sem inventar números. QA: zero cortes, zero sobreposição, fonte ≥11pt.
+- José CASO-15: após auditoria, Figura 1 (admissibilidade) e Figura 4 (escala) foram refinadas para linguagem menos vulnerável ("lastro mínimo atual" em vez de "juízo de CERTEZA"; "não supre art. 17 § 6 II" em vez de "ATÍPICO").
 
 **Quando falhou:**
-- José Eduardo v1: Figura 4 tinha "ATIPICO" em vermelho → pareceu conclusão de mérito → auditoria mandou suavizar → v1 geraria com armadilha.
+- José CASO-15 v1: Figura 4 tinha "ATIPICO" em vermelho → pareceu conclusão de mérito → auditoria mandou suavizar → v1 geraria com armadilha.
 - Regra implícita: visual que pareça julgamento antecipado é pior que nenhum visual.
 
 ---
 
 ### 6. QA Visual Página por Página é Mandatório APÓS TODA regeneração — Contact Sheet Não Substitui Inspeção
-**Fonte:** Jalusa 2.5; 02_FLUXO Fase 9; 03_APRENDIZADOS erro 3.3; 04_RUNBOOK seção 9
+**Fonte:** CASO-14 2.5; 02_FLUXO Fase 9; 03_APRENDIZADOS erro 3.3; 04_RUNBOOK seção 9
 
 **Lição:** Depois de corrigir UMA coisa (jurídica, textual, visual), a paginação muda. Rodapé, margem, quebra — tudo se move. Não confiar em "PDF gerou com sucesso". Mandatório:
 
@@ -107,14 +107,14 @@
 6. Se encontrar problema, voltar para DOCX, corrigir, regenerar, repetir QA  
 
 **Evidência crítica:**
-- Jalusa v2→v3: após correção jurídica (art. 534 → 524), paginação mudou e rodapé da página final ficou colidido. QA automático não detectou (PDF "gerou"), mas inspeção visual página 6 revelou. Rodapé refeito, regenerado, reincpecioando.
+- CASO-14 v2→v3: após correção jurídica (art. 534 → 524), paginação mudou e rodapé da página final ficou colidido. QA automático não detectou (PDF "gerou"), mas inspeção visual página 6 revelou. Rodapé refeito, regenerado, reincpecioando.
 - Duração: 15-20 min por peça de 6-15 páginas.
 - Taxa de detecção: 40-60% dos erros finais só aparecem em inspeção visual.
 
 ---
 
 ### 7. Relatório Final Deve Ser Atualizado DEPOIS da Última Regeneração
-**Fonte:** Jalusa erro 3.2; 03_APRENDIZADOS regra 13
+**Fonte:** CASO-14 erro 3.2; 03_APRENDIZADOS regra 13
 
 **Lição:** Relatório que fala "3 visuais, 5 páginas" quando a versão final tem 4 visuais e 6 páginas cria desconfiança e perde rastreabilidade. Regra:
 - atualizar relatório sempre por último  
@@ -123,12 +123,12 @@
 - se houver risco residual, qualificar (baixo/médio/alto)
 
 **Quando funcionou:**
-- José Eduardo: AUDITORIA_DA_VERSAO_AJUSTADA.md deixa claro: "3 microcorreções foram aplicadas sem reescrever" + "status atual saneado" + "restam providências de fechamento (data, leitura final PDF)" → zero ambiguidade.
+- José CASO-15: AUDITORIA_DA_VERSAO_AJUSTADA.md deixa claro: "3 microcorreções foram aplicadas sem reescrever" + "status atual saneado" + "restam providências de fechamento (data, leitura final PDF)" → zero ambiguidade.
 
 ---
 
 ### 8. Metadata Sanitization é P0 Antes de Protocolo
-**Fonte:** José Eduardo AUDITORIA_E_PROMPT.md P0 item 3; AUDITORIA_DA_VERSAO_AJUSTADA.md melhora 7
+**Fonte:** José CASO-15 AUDITORIA_E_PROMPT.md P0 item 3; AUDITORIA_DA_VERSAO_AJUSTADA.md melhora 7
 
 **Lição:** DOCX e PDF gerados por `python-docx` carregam autor/criador="python-docx" em metadados. Antes de enviar para tribunal ou arquivo do escritório:
 - Remover metadados ou substituir por "Escritório Medina Osório", "Redação IA", etc.  
@@ -136,7 +136,7 @@
 
 **Risco:** se tribunal/parte contrária abre metadados e vê "python-docx" ou nome do autor que não é advogado, levanta questão sobre autoria/responsabilidade.
 
-**Comprovação:** José Eduardo v1 tinha metadados com python-docx, v1 ajustada removeu.
+**Comprovação:** José CASO-15 v1 tinha metadados com python-docx, v1 ajustada removeu.
 
 ---
 
@@ -151,8 +151,8 @@
 **Falso positivo:** baixo (depende da lista de termos)
 
 **Casos:**
-- Jalusa: 8 termos bloqueados testados (NOTA n. 00465, 300 horas-aula, TODO, XXX, [CONFERIR], [[VISUAL:) → zero achados na v3 final.
-- José Eduardo: 34 citações testadas para "[CONFERIR]" e fragmentos não localizados → 4 achados pendentes, marcados explicitamente.
+- CASO-14: 8 termos bloqueados testados (NOTA n. 00465, 300 horas-aula, TODO, XXX, [CONFERIR], [[VISUAL:) → zero achados na v3 final.
+- José CASO-15: 34 citações testadas para "[CONFERIR]" e fragmentos não localizados → 4 achados pendentes, marcados explicitamente.
 
 ---
 
@@ -167,7 +167,7 @@
 **Solução:** quando extrator falha, usar inspeção visual + screenshot fragmentado do PDF original.
 
 **Caso:**
-- José Eduardo: 34 citações → 30 verificadas por extração automática, 4 por conferência manual com screenshots fragmentados do Evento 185, Evento 152, precedentes em pastcoa local.
+- José CASO-15: 34 citações → 30 verificadas por extração automática, 4 por conferência manual com screenshots fragmentados do Evento 185, Evento 152, precedentes em pastcoa local.
 
 ---
 
@@ -186,8 +186,8 @@
 **Bloqueador:** sim — se houver corte, artefato quebrado ou colisão, volta para regeneração  
 
 **Caso:**
-- Jalusa: inspeção visual página 6 detectou rodapé colidido após alteração jurídica → regeneração forçada.
-- José Eduardo: contact sheet + 15 páginas individuais passaram sem cortes ou colisões.
+- CASO-14: inspeção visual página 6 detectou rodapé colidido após alteração jurídica → regeneração forçada.
+- José CASO-15: contact sheet + 15 páginas individuais passaram sem cortes ou colisões.
 
 ---
 
@@ -208,8 +208,8 @@
 **Bloqueador:** sim para pergunta 1, 2, 5, 7 (se revelar falha material, voltar para matriz)  
 
 **Casos:**
-- Jalusa: red team não foi estruturado em v1 → base legal errada escapou para v2 → detectada em F9.
-- José Eduardo: auditoria força red team pós-facto (AUDITORIA_E_PROMPT.md) → revela 5 vulnerabilidades (ARE 1.583.894 reposicionado, "juízo de CERTEZA" suavizado, "colenda Câmara" uniformizada, aspa fraca removida, Tema 1.108 menos vulnerável) → v1 ajustada reduz risco significativamente.
+- CASO-14: red team não foi estruturado em v1 → base legal errada escapou para v2 → detectada em F9.
+- José CASO-15: auditoria força red team pós-facto (AUDITORIA_E_PROMPT.md) → revela 5 vulnerabilidades (ARE 1.583.894 reposicionado, "juízo de CERTEZA" suavizado, "colenda Câmara" uniformizada, aspa fraca removida, Tema 1.108 menos vulnerável) → v1 ajustada reduz risco significativamente.
 
 ---
 
@@ -227,28 +227,28 @@
 **Bloqueador:** sim — se >30% dos claims forem "não verificado", projeto volta para intake/coleta
 
 **Casos:**
-- Jalusa: matriz executada de fato → NOTA 00465/2025 classificada como "lacuna" desde F4 → nunca entrou como fato afirmativo na minuta → zero risco de exposição.
-- José Eduardo: matriz não foi explícita em v1 → auditoria força registro de 34 citações × status (OK/pendente) → v1 ajustada herda transparência.
+- CASO-14: matriz executada de fato → NOTA 00465/2025 classificada como "lacuna" desde F4 → nunca entrou como fato afirmativo na minuta → zero risco de exposição.
+- José CASO-15: matriz não foi explícita em v1 → auditoria força registro de 34 citações × status (OK/pendente) → v1 ajustada herda transparência.
 
 ---
 
 ## III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO
 
 ### Erro 1: Base Legal Parecida Mas Inadequada
-**O que saiu:** Jalusa v1/v2 citava art. 534, § 2º, CPC (trata multa do art. 523, Fazenda Pública)  
+**O que saiu:** CASO-14 v1/v2 citava art. 534, § 2º, CPC (trata multa do art. 523, Fazenda Pública)  
 **Por que escapou:** norma "parecida" com a função processual desejada (astreintes) — confiança de memória  
 **Como foi detectado:** QA jurídico em F9, APÓS geração  
 **Dano:** seria atacável em eventual recurso; peça perde força  
 **Prevenção em F0-F10:** 
-- F6 (Redação): sempre que citar artigo que "sustenta pedido" (regra Jalusa 03_APRENDIZADOS 8), marcar para conferência.  
+- F6 (Redação): sempre que citar artigo que "sustenta pedido" (regra CASO-14 03_APRENDIZADOS 8), marcar para conferência.  
 - F7 (Red Team): pergunta 5 ("Alguma norma foi citada por memória?") força resposta explícita.  
 - F8 (Conferência Verbatim): baixar PDF de Planalto + comparar função processual do dispositivo com pedido formulado.  
-**Solução aplicada:** Jalusa v3 substituiu por arts. 396-400, 524 §§3-5, 534, 537 CPC.
+**Solução aplicada:** CASO-14 v3 substituiu por arts. 396-400, 524 §§3-5, 534, 537 CPC.
 
 ---
 
 ### Erro 2: Documento Mencionado Não Verificado Nos Autos
-**O que saiu:** José Eduardo v1 citava NOTA 00465/2025, Cota 00075/2025 sem localizar em autos extraídos  
+**O que saiu:** José CASO-15 v1 citava NOTA 00465/2025, Cota 00075/2025 sem localizar em autos extraídos  
 **Por que escapou:** "A minuta diz que existe" → assume verdade herdada de comando anterior  
 **Como foi detectado:** Matriz de segurança retroativa (auditoria força execução) → "não verificado"  
 **Dano:** seria fatal em protocolo; peça vulnerável a impugnação por falta de documento  
@@ -256,36 +256,36 @@
 - F3 (Auditoria anti-alucinação): buscar termo em autos extraídos; se não encontrar, classificar como "lacuna/controvérsia", pedir juntada em pedido.  
 - F4 (Matriz): "Pode afirmar?" → Não, se fonte for "minuta diz".  
 - F8 (QA Automático): bloqueador para [CONFERIR] não resolvido.  
-**Solução aplicada:** Jalusa v3 trata NOTA/PA 2010 como lacuna/controvérsia, pede esclarecimento.
+**Solução aplicada:** CASO-14 v3 trata NOTA/PA 2010 como lacuna/controvérsia, pede esclarecimento.
 
 ---
 
 ### Erro 3: Aspa Atribuída Não Existe Literalmente
-**O que saiu:** José Eduardo v1: "reclamam dilação probatória" atribuída ao acórdão, não existe no texto  
+**O que saiu:** José CASO-15 v1: "reclamam dilação probatória" atribuída ao acórdão, não existe no texto  
 **Por que escapou:** leitura rápida + confiança de "está óbvio lá"  
 **Como foi detectado:** Auditoria força conferência verbatim do Evento 185 → extração de texto não localiza aspa → [CONFERIR]  
 **Dano:** seria atacável; vulnerável a censura de distorção; peça perde confiabilidade  
 **Prevenção:**
 - F8 (Conferência Verbatim, pré-protocolo): toda aspa entre aspas deve ter página+linha no PDF original.  
 - Se não localizar literalmente, converter para paráfrase ("O acórdão entende que...") ou [CONFERIR] → não protocolar com [CONFERIR].  
-**Solução aplicada:** José Eduardo v1 ajustada: aspa saiu, entrou formulação ancorada em trecho conferido.
+**Solução aplicada:** José CASO-15 v1 ajustada: aspa saiu, entrou formulação ancorada em trecho conferido.
 
 ---
 
 ### Erro 4: Metadados Expõem Autoria IA
-**O que saiu:** José Eduardo v1 DOCX/PDF com autor="python-docx"  
+**O que saiu:** José CASO-15 v1 DOCX/PDF com autor="python-docx"  
 **Por que escapou:** processo de geração automático, não revisão de metadados  
 **Como foi detectado:** Auditoria de fechamento → verifica metadados de DOCX  
 **Dano:** tribunal ou parte abre proprietário de PDF → vê "python-docx" → questiona autoria, responsabilidade, autenticidade  
 **Prevenção:**
 - F10 (QA Final): gate obrigatória de "remover ou substituir metadados".  
 - Script Python: `os.remove metadados de DOCX` ou `pdfmetainfo --set-title="Embargos de Declaração"`.  
-**Solução aplicada:** José Eduardo v1 ajustada: metadados removidos ou neutralizados.
+**Solução aplicada:** José CASO-15 v1 ajustada: metadados removidos ou neutralizados.
 
 ---
 
 ### Erro 5: Placeholder Esquecido ([NOME], [DATA], [CRC-UF])
-**Achado:** Protocolo atuais já captura isso (regra anti-alucinação 03_APRENDIZADOS); Jalusa/José Eduardo não tiveram esse erro  
+**Achado:** Protocolo atuais já captura isso (regra anti-alucinação 03_APRENDIZADOS); CASO-14/José CASO-15 não tiveram esse erro  
 **Prevenção reforçada:**
 - F8 (QA Automático): grep por `[\[]` no texto extraído do PDF.  
 - F10 (Inspeção Visual): ler cada página com foco em "linha de assinatura", "data", "número de inscrição".
@@ -293,7 +293,7 @@
 ---
 
 ### Erro 6: Diagrama Ilegível (Fonte <8pt Impresso)
-**Achado:** Jalusa: fonte ≥11pt confirmada, zero problemas. José Eduardo: Figura 4 teve texto pequeno → redesenhada com fonte maior  
+**Achado:** CASO-14: fonte ≥11pt confirmada, zero problemas. José CASO-15: Figura 4 teve texto pequeno → redesenhada com fonte maior  
 **Prevenção:**
 - F7 (Visual Law): criar manifesto PNG para cada diagrama → indicar viewBox, font-size real, escala de inserção final.  
 - Cálculo: se viewBox=600 e inserção final=15cm, então font-size em pixels deve ser ≥(8pt * 72dpi / 2.54cm / (600px / 15cm)) = ≥12px.  
