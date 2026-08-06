@@ -11,13 +11,32 @@
       "aprovadoPor": "igor",
       "adotadaEm": "2026-08-06T00:42:29-03:00",
       "evidencia": {
-        "casos": 3,
-        "ocorrencias": 12,
-        "materiais": 12,
+        "casos": 1,
+        "ocorrencias": 1,
+        "materiais": 1,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T00:42:41-03:00",
-      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json"
+      "aplicadaEm": "2026-08-06T03:32:59-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json",
+      "lastroCorrigidoEm": "2026-08-06T03:31:15-03:00",
+      "lastroCorrigidoPorque": "A evidência original (3 casos, 12 materiais) vinha de três retornos que o gate PP-NOT-A-REVISION depois mostrou não serem revisão da nossa peça. Igor decidiu em 06/08/2026 manter a regra e corrigir o número: a cautela vale por si, o lastro que a justificava não existia."
+    },
+    {
+      "regraId": "regra-adf61f52e37f",
+      "classe": "reasoning:reasoning",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "Declarar o cerco antes de sustentar a tese: para cada capítulo, escrever o que a peça NÃO pede e NÃO reabre — mérito já precluso, reexame de prova, renúncia a pedido não devolvido, uso de um fundamento como multiplicador autônomo. O titular vem inserindo esses parágrafos de delimitação negativa à mão; a peça sai com a tese afirmativa e sem o cerco que bloqueia a leitura adversa.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T03:32:51-03:00",
+      "evidencia": {
+        "casos": 2,
+        "ocorrencias": 54,
+        "materiais": 54,
+        "confiancaMedia": 0.98
+      },
+      "aplicadaEm": "2026-08-06T03:32:59-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     }
   ]
 }

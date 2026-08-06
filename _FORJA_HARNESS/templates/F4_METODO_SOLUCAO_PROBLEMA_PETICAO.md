@@ -170,3 +170,15 @@ Outros:
 - Contexto em que a técnica pode ser reutilizada:
 - Limites de transferência:
 - Proposta de fixture/gate, se houver repetição suficiente:
+
+<!-- APRENDIDO-DO-RETORNO-HUMANO: início (gerado por forja_aprendizado.py) -->
+
+> Regras que vieram do retorno humano sobre peças protocoladas.
+> Escritas por `forja_aprendizado.py aplicar` — não edite à mão:
+> este bloco é reescrito. Para mudar uma regra, altere o registro
+> em `_FORJA_HARNESS/learning_registry/REGRAS_APRENDIDAS.json`.
+
+- **Declarar o cerco antes de sustentar a tese: para cada capítulo, escrever o que a peça NÃO pede e NÃO reabre — mérito já precluso, reexame de prova, renúncia a pedido não devolvido, uso de um fundamento como multiplicador autônomo. O titular vem inserindo esses parágrafos de delimitação negativa à mão; a peça sai com a tese afirmativa e sem o cerco que bloqueia a leitura adversa.**
+  <br>_regra-adf61f52e37f — classe `reasoning:reasoning`, observada em 2 caso(s), 54 mudança(s) material(is)._
+
+<!-- APRENDIDO-DO-RETORNO-HUMANO: fim -->
