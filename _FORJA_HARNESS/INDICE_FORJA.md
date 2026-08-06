@@ -33,6 +33,7 @@
 | Contratos e artefatos N4 | `n4_schemas/` + `phase_contracts_n4/` |
 | Pesquisa científica interdisciplinar | `forja_science.py` |
 | Busca jurídica integrada (TeiaJus + STJ) | `forja_legal_search.py` + `FORJA_SEARCH_CONFIG.json` (`search`, `case`, `stj-health`, `stj-catalog`, `stj-search`, `stj-daily`, `stj-datajud`, `stj-collect`; telemetria em `telemetria/legal_search/`) |
+| Estado do TeiaJus, o sistema por trás daquela busca | `C:\Users\IgorPC\.claude\projects\Escritório fabio osório\Sistema de Busca Jurídica\ENTREGA_2026-08-06.md` (F6 e F7 fechadas em 06/08; 33.591 casos, mas prova documental só em 2.155 — score ordena fila, evidência sustenta afirmação). Antes de montar varredura pública em caso novo, conferir `python -m teiajus fontes` |
 | Integridade da entrega N4 | `forja_delivery_integrity.py` |
 | Plano N3 de integridade, contexto, visual e gestão | `planejamento/08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md` |
 | Auditoria de peça adversária, má-fé e pontos decisivos | `planejamento/09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md` + `forja_adversarial_audit.py` |
