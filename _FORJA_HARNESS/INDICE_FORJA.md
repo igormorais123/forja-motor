@@ -94,6 +94,16 @@
 | Ciclos prospectivos N4 (M3.3) | `RUNBOOK_CICLO_PROSPECTIVO.md` |
 | Plano de instalação de melhorias (M1-M4) | `planejamento/19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md` |
 | Painel de demandas | `..\gestao_escritorio\` (HTML gerado por `render_dashboard.py` — nunca editar direto) |
+| **APRENDIZADO DO RETORNO HUMANO** — captura da peça protocolada, comparação, gate de comparabilidade, adoção e aplicação da regra | `forja_post_protocol.py` + `forja_aprendizado.py` (+ `test_forja_aprendizado.py`) |
+| Varredura do Gmail (consulta derivada da allowlist de remetentes, não de `has:attachment`) | `python forja_post_protocol.py scan-gmail [--shadow]` |
+| Gate de comparabilidade: a peça humana é revisão da nossa, ou outro documento? | `PP-NOT-A-REVISION` — piso de 0,30 de texto em comum (`_e_revisao`) |
+| Correção que veio no corpo do e-mail, sem anexo a comparar | `PP-NO-RETURN-ATTACHMENT` → `state/<caso>/n4_artifacts/F10_RETORNO_SEM_ANEXO.json` |
+| O que se repete no retorno do titular (ordenado por casos distintos) | `python forja_aprendizado.py padroes` |
+| Ler o texto real das correções de uma classe (do cofre local; não grava) | `python forja_aprendizado.py amostra <camada:causa>` |
+| Promover classe a regra, aplicar no destino e conferir | `python forja_aprendizado.py adotar/aplicar/conferir` |
+| A evidência de cada regra adotada ainda existe? | `python forja_aprendizado.py revalidar` |
+| Regras aprendidas em vigor | `learning_registry/REGRAS_APRENDIDAS.json` |
+| E-mail de agradecimento e estímulo à crítica (escrito por pessoa, nunca disparado) | `templates/F10_EMAIL_RETORNO_E_AGRADECIMENTO.md` |
 | **AUTO-RESEARCH (ciclo AR)** — PRD/TDD v1.1 pós-review adversarial Codex | `planejamento/22_PRD_AUTORESEARCH_FORJA.md` + `planejamento/23_TDD_AUTORESEARCH_FORJA.md` |
 | Candidata AR — materialidade de pendências e entrega sem espera artificial (`estudo_descritivo`, não promovida) | `autoresearch/candidates/materialidade-pendencias-v1/` |
 | Propriedade intelectual da FORJA (registro INPI, marca, segredo de negócio; patente descartada) | `planejamento/24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md` |

@@ -323,7 +323,8 @@ Plano completo com adoções, rejeições e critérios: `planejamento/07_PLANO_U
 | `test_forja_citacoes.py` + `conferir_aspas` em `forja_citations.py` | regressão de veneno de citação — um caso por modo da taxonomia de 6 falhas (inexistente, nome trocado, misquote, pincite, tese deturpada, precedente superado) | após qualquer mudança no processo de conferência |
 | `forja_metricas_f7.py` (+ `test_f7_campos.py`) | enriquece `F7_VERIFICADOR_FORJA.json`: citações não conferidas nominalmente, pontos a conferir remanescentes, campo de vigência das autoridades decisivas | dentro do render (`forja_render_docx.py`) |
 | `forja_diff_docx.py` | diff pós-entrega protocolada × nossa, pré-classificado (formato / estilo-voz / conteúdo jurídico), pronto para `APRENDIZADOS_FEEDBACK_HUMANO.md` | quando a versão protocolada voltar (Diretriz nº 5 do Fábio) |
-| `forja_learning.py` (`feedbackAssimilation`) | agrupa a rajada conversacional sem guardar conteúdo bruto, distingue texto humano de material importado e registra, tese por tese, quem suscitou, selecionou, validou e decidiu | em F10 após feedback ou retorno de versão humana; também antes de promover aprendizado amplo |
+| `forja_learning.py` (`feedbackAssimilation`) | agrupa a rajada conversacional sem guardar conteúdo bruto, distingue texto humano de material importado e registra, tese por tese, quem suscitou, selecionou, validou e decidiu | em F10 após feedback ou retorno de versão humana; também antes de promover aprendizado amplo. **Estado em 06/08/2026: validador e contrato existem, produtor não — zero artefatos no disco.** A correção que chega em prosa é registrada por `F10_RETORNO_SEM_ANEXO.json` e triada por pessoa (§ 25.3) |
+| `forja_aprendizado.py` (+ `test_forja_aprendizado.py`) | a correção humana vira regra aplicada e conferida: `padroes`, `amostra`, `adotar`, `aplicar`, `conferir`, `revalidar` | depois de todo retorno; `conferir` roda no gate 5-B do F10 (§ 25) |
 | `..\_MODELOS\LEIA-ME.md` | peça-modelo aprovada por tipo, lida INTEIRA antes de redigir (sem RAG) | blueprint/redator, antes da redação |
 
 Protocolo (sem código): taxonomia de 6 modos, red team com 9 perguntas, tabela de lastro das proposições decisivas e bloco "Pontos que exigem o seu olho" no e-mail — tudo em `planejamento/06_GATES_QUALIDADE_FORJA.md` e no checklist de `..\APRENDIZADOS_FEEDBACK_HUMANO.md`. Rejeições com fundamento (não reabrir sem fato novo): RAG/GraphRAG, governança de confidencialidade por IA, LLM-as-judge, RCT interno, firewall de saída dedicado, DataJud/Sinapses, rerankers de domínio.
@@ -746,3 +747,122 @@ tarefa agendada se executa com o comando literal de
 `(Get-ScheduledTask <nome>).Actions[0]`. Detalhe da armadilha secundária: ao
 simular novidade, remova só o item mais recente do retrato — zerar a lista vira
 *primeira leitura* e o vigia calado está certo.
+
+
+## 25. Aprendizado do retorno humano — da correção à mudança no sistema (06/08/2026)
+
+O loop pós-protocolo existia e funcionava: capturava a peça que o titular
+protocolou, comparava com a nossa e classificava cada mudança por camada, causa
+e impacto. O que não existia era o que vem depois — e o que vinha antes.
+
+### 25.1 O executor que faltava
+
+Seis casos reais já haviam produzido **1.096 candidatos a lição**. Destes,
+**1.095 parados e um promovido**. A causa não era desleixo: promover um
+candidato exigia criar à mão uma fixture e um teste, mais um SHA-256 copiado a
+dedo. Todos os 1.096 traziam um campo `destination` preenchido, e nenhuma linha
+de código o consumia — o destino foi projetado, o executor nunca foi escrito.
+
+`forja_aprendizado.py` fecha isso com quatro verbos e um princípio: **promover o
+padrão, não a ocorrência**. `padroes` agrega por `camada:causa` e ordena por
+recorrência entre **casos distintos** — um processo longo produz centenas de
+mudanças sozinho e dominaria qualquer ranking por volume. `adotar` registra a
+decisão humana guardando a evidência do momento. `aplicar` escreve a regra no
+destino (item no contrato da fase, instrução no template, lição no protocolo),
+de forma idempotente por bloco marcado. `conferir` verifica que ela continua lá
+— é a diferença entre registrar uma lição e aplicá-la.
+
+Um teste só, parametrizado pelo registro, confere cada regra contra o seu
+destino: adotar a próxima não custa uma linha de código. Era esse custo marginal
+que matava o desenho anterior.
+
+O **gate 5-B do F10** verifica o inverso do reflexo natural: não exige que o caso
+corrente já tenha aprendido — o retorno humano chega depois do protocolo, e isso
+travaria toda entrega. Verifica que nenhuma regra adotada antes tenha saído do
+seu destino.
+
+### 25.2 O gate que faltava antes: isto é revisão da nossa peça?
+
+Com o ciclo pronto, a leitura apontava `reasoning:reasoning` com 279 correções
+materiais em 5 casos — o maior padrão, e o candidato natural a virar regra. Ao
+abrir os textos, os pares comparados **não eram o mesmo trecho**.
+
+O comparador alinhava tokens de dois documentos quaisquer. Sem origem comum, ele
+casa parágrafos sem relação entre si e classifica cada par com confiança 0,98.
+Medido:
+
+| retorno | texto em comum com a nossa base | blocos preservados |
+|---|---|---|
+| três deles | 0,7% · 3,1% · 13,4% | 0 · 0 · 1 |
+| dois deles | 49,9% · 66,8% | 35 · 19 |
+
+Os três primeiros eram documento distinto, não revisão. Sozinhos produziram 496
+das mudanças e 228 das materiais — mais que o dobro do que veio dos dois
+retornos legítimos. **Agregado por classe, esse ruído tem a forma exata de um
+padrão do escritório.**
+
+`_e_revisao` mede a proporção de texto em comum (`sharedTokenRatio`, novo no
+resumo da comparação) e barra abaixo de 0,30 com `PP-NOT-A-REVISION`, nos dois
+caminhos que produzem comparação. O gate nasceu exigindo também um mínimo de
+blocos preservados e a suíte reprovou nove testes na hora: **a contagem cresce
+com o tamanho do documento e reprova peça curta por ser curta**. Ficou só a
+proporção, que é adimensional.
+
+`forja_aprendizado.py` refaz a pergunta na leitura, porque os candidatos de 2026
+nasceram antes do gate, e devolve os descartes com o motivo — filtro silencioso
+foi como o ruído passou por padrão na primeira vez.
+
+`amostra <classe>` abre o par real de textos a partir do cofre local e mostra na
+tela sem gravar nada. Sem ele foi possível olhar 279 correções materiais e não
+ter como perceber o problema, porque o texto nunca aparecia. **Contar não é
+ler.** Sanitização por hash protege o texto e, sem uma janela deliberada para
+lê-lo na triagem, também cega quem decide.
+
+`revalidar` compara a evidência registrada na adoção com a de hoje. Aplicado, ele
+acusou a primeira regra da casa: adotada com "3 casos, 12 correções materiais",
+lastro real de 1 e 1 depois do gate. A regra continuava sensata; a evidência,
+não. Não apaga nem reescreve — devolve a divergência para decisão humana.
+
+### 25.3 A cegueira ao e-mail, e a conta de 45 contra 5
+
+A varredura do Gmail pedia `has:attachment` e descartava em silêncio toda
+mensagem sem peça anexada. Uma correção escrita em prosa — *"tire aquele
+argumento"*, *"o prazo é outro"*, *"não use esse precedente"* — nunca chegava a
+ser lida. Havia até um esquema pronto para isso, `feedbackAssimilation`, com
+validador, contrato e seis tipos de retorno: **validador escrito, produtor
+nenhum, zero artefatos no disco**.
+
+Tirar o filtro sozinho não resolveu: sem ele a consulta traz a caixa inteira e a
+cota se esgota antes de chegar ao escritório — 60 de 60 mensagens vieram de
+remetente não autorizado. `consulta_padrao` deriva a consulta da própria lista
+de remetentes autorizados, que é a mesma que autoriza a ingestão. A rodada
+seguinte trouxe **45 correções do escritório vinculadas a caso conhecido, contra
+as 5 que a esteira via por anexo**: o loop enxergava cerca de um décimo do
+retorno do titular.
+
+Cada uma fica ancorada no caso em `F10_RETORNO_SEM_ANEXO.json`, idempotente por
+mensagem; a de demanda reconhecida sem caso FORJA aberto vai para lista própria,
+declarada como tal (10 com caso, 35 sem). Guarda-se localizador, assunto e data,
+**nunca o corpo** — o conteúdo vive no e-mail e quem tria abre a mensagem. Não
+há classificação automática de prosa: heurística sobre texto livre inventaria
+padrão, que é o erro que o gate de comparabilidade acabou de fechar.
+
+### 25.4 Regras aprendidas em vigor
+
+Duas, em `learning_registry/REGRAS_APRENDIDAS.json`:
+
+1. `evidence_annex:missing_input` → checklist do F1. Conferir que todo documento
+   citado no comando existe antes de redigir; insumo ausente vira bloqueador
+   nominado, nunca premissa. Lastro corrigido para 1 caso após o gate.
+2. `reasoning:reasoning` → template do F4. **Declarar o cerco antes de sustentar
+   a tese**: para cada capítulo, escrever o que a peça NÃO pede e NÃO reabre.
+   Veio de ler o que o titular insere à mão nos dois retornos aproveitáveis —
+   *"não se pretende a reabertura do mérito"*, *"sem alteração ou renúncia aos
+   demais pedidos"*. Escrevemos a tese afirmativa e omitimos o cerco que bloqueia
+   a leitura adversa. Lastro: 2 casos, 54 mudanças materiais.
+
+O e-mail de agradecimento e estímulo à crítica está em
+`templates/F10_EMAIL_RETORNO_E_AGRADECIMENTO.md`. É para escrever, não para
+disparar: agradecimento com molde reconhecível deixa de ser lido na segunda vez.
+
+Lições 237 a 249 em `RETROSPECTIVAS.md`.
