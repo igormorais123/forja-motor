@@ -191,6 +191,56 @@ with tempfile.TemporaryDirectory() as tmp:
             registro_real, contratos_real, templates_real, raiz_real)
 
 
+# ------------------------------------------------------- a regra chega ao agente
+# Estar no arquivo de destino não é estar na rota de produção. Sete das catorze
+# regras adotadas em 06/08/2026 foram escritas num roteiro que nenhuma execução
+# lê — a mesma assinatura do elo 4-B (3 casos na história) e do recomputo inerte
+# do F7. O que este bloco cobra é a entrega: a regra tem de aparecer no
+# RUN_CONTEXT da sua fase, seja qual for o arquivo escolhido como destino.
+import forja_run  # noqa: E402
+from forja_state_machine import initialize_case  # noqa: E402
+
+with tempfile.TemporaryDirectory() as tmp:
+    base = Path(tmp)
+    pasta_caso = base / "PASTA_DO_CASO"
+    pasta_caso.mkdir()
+    (pasta_caso / "COMANDO_MANUAL.md").write_text("# comando\n", encoding="utf-8")
+    case_dir = base / "case-entrega-regra"
+    case_dir.mkdir()
+    (case_dir / "FORJA_STATE.json").write_text(json.dumps({
+        "caseId": case_dir.name, "specVersion": "N2.0",
+        "currentPhase": "F0_RECONCILIACAO_FILA", "status": "pending",
+        "inputs": {"demandId": "email-teste", "caseFolder": str(pasta_caso),
+                   "commandFile": "COMANDO_MANUAL.md"},
+        "phaseHistory": [],
+    }), encoding="utf-8")
+    estado = initialize_case(case_dir, from_legacy=True)
+
+    registro_real = forja_run.REGISTRO_APRENDIZADO
+    forja_run.REGISTRO_APRENDIZADO = base / "REGISTRO.json"
+    forja_run.REGISTRO_APRENDIZADO.write_text(json.dumps({"regras": [
+        {"regraId": "regra-sintetica", "fase": "F0", "destino": "template",
+         "texto": "Texto que precisa alcançar quem executa a fase.",
+         "destinoArquivo": "_FORJA_HARNESS/templates/QUALQUER.md"},
+        {"regraId": "regra-de-outra-fase", "fase": "F9", "destino": "checklist",
+         "texto": "Não pertence a esta fase.", "destinoArquivo": "x"},
+    ]}), encoding="utf-8")
+    try:
+        preparo = forja_run.prepare_attempt(
+            case_dir, "F0_RECONCILIACAO_FILA",
+            expected_revision=estado["revision"])
+        ctx = json.loads(
+            (Path(preparo["attemptDir"]) / "RUN_CONTEXT.json").read_text(encoding="utf-8"))
+        entregues = ctx["instructions"].get("regrasAprendidas") or []
+        checar("a regra aprendida chega ao contexto de execução da fase",
+               [r["regraId"] for r in entregues] == ["regra-sintetica"],
+               f"vieram {[r.get('regraId') for r in entregues]}")
+        checar("regra de outra fase não é entregue junto",
+               "Não pertence" not in json.dumps(entregues, ensure_ascii=False))
+    finally:
+        forja_run.REGISTRO_APRENDIZADO = registro_real
+
+
 # ------------------------------------------------------- estado real da máquina
 # O ponto do teste: adotar a próxima regra não custa uma linha de código aqui.
 problemas = ap.conferir()
@@ -218,6 +268,16 @@ checar("nenhuma regra carrega dado de cliente", not _vazamentos,
 # nenhuma, e um texto muito acima disso costuma ser trecho colado.
 _longas = [r["regraId"] for r in registro["regras"] if len(str(r.get("texto", ""))) > 900]
 checar("nenhuma regra tem tamanho de trecho colado", not _longas, ", ".join(_longas[:3]))
+
+# E toda regra realmente adotada nesta máquina alcança quem executa a fase dela.
+_orfas = []
+for r in registro["regras"]:
+    fase = str(r.get("fase") or "")
+    ids = [x["regraId"] for x in forja_run._regras_aprendidas_da_fase(f"{fase}_QUALQUER")]
+    if r["regraId"] not in ids:
+        _orfas.append(f"{r['regraId']} (fase {fase or 'ausente'})")
+checar("toda regra adotada alcança o contexto de execução da sua fase",
+       not _orfas, "; ".join(_orfas[:3]))
 
 print(f"ok: {casos} casos — o retorno humano vira regra aplicada e conferida "
       f"({len(registro['regras'])} regra(s) ativa(s))" if not falhas

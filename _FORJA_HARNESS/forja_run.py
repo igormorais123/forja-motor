@@ -159,6 +159,9 @@ def prepare_attempt(
             "n4Rule": "Em shadow, produzir quando aplicável e registrar bloqueios sem relaxar critérios; não inventar dados para preencher artefatos.",
         },
     }
+    aprendidas = _regras_aprendidas_da_fase(phase)
+    if aprendidas:
+        context["instructions"]["regrasAprendidas"] = aprendidas
     if phase == "F2_CLASSIFICACAO_PRODUTO_RISCO":
         context["instructions"]["exploration100"] = {
             "protocolVersion": "FORJA-F2A-100-v1",
@@ -169,6 +172,39 @@ def prepare_attempt(
     context["contextHash"] = canonical_hash(context)
     atomic_write_json(attempt_dir / "RUN_CONTEXT.json", context)
     return {"attemptDir": str(attempt_dir), "context": context, "state": state}
+
+
+REGISTRO_APRENDIZADO = FORJA / "learning_registry" / "REGRAS_APRENDIDAS.json"
+
+
+def _regras_aprendidas_da_fase(phase: str) -> list[dict]:
+    """As regras que a casa aprendeu com o retorno humano, entregues ao agente.
+
+    Existe porque aplicar a regra no arquivo de destino não a faz chegar a
+    ninguém. Metade das regras adotadas em 06/08/2026 foi escrita num roteiro
+    que nenhuma execução lê — o mesmo modo de falha do elo 4-B e do recomputo
+    inerte do F7: o trabalho foi feito, ficou registrado, e a rota de produção
+    não passava por ali.
+
+    O contrato da fase já viaja inteiro dentro do RUN_CONTEXT, então a regra de
+    destino `checklist` chegava por carona. A de destino `template`, não. Aqui a
+    entrega deixa de depender de qual arquivo alguém escolheu como destino.
+    """
+    try:
+        registro = json.loads(REGISTRO_APRENDIZADO.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    curta = str(phase).split("_", 1)[0]
+    return [
+        {
+            "regraId": r.get("regraId"),
+            "texto": r.get("texto"),
+            "origem": "retorno_humano_pos_protocolo",
+            "destinoArquivo": r.get("destinoArquivo"),
+        }
+        for r in (registro.get("regras") or [])
+        if str(r.get("fase") or "") == curta and str(r.get("texto") or "").strip()
+    ]
 
 
 def _raiz_do_caso(alguma_saida: Path) -> Path | None:
