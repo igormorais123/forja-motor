@@ -1832,6 +1832,78 @@ def _sender_allowed(message: dict) -> bool:
     )
 
 
+def _registrar_retorno_sem_anexo(case_id: str | None, message: dict) -> None:
+    """Deixa a correção que veio no corpo do e-mail registrada no caso.
+
+    O relatório da varredura é sobrescrito a cada execução: registrar só nele
+    seria perder a correção na próxima rodada. Aqui ela fica ancorada no caso,
+    acumula por mensagem e é idempotente.
+
+    Guarda-se o localizador e o assunto, não o corpo. O assunto entra porque é
+    o que permite reencontrar a mensagem sem abrir uma a uma; o corpo é o
+    conteúdo da correção e vive no Gmail, não em artefato nosso. Quem tria abre
+    a mensagem — o mesmo desenho do resto do loop, que guarda hash e localizador
+    e nunca o trecho.
+    """
+    # Demanda reconhecida sem caso FORJA aberto ainda: a correção existe do
+    # mesmo jeito e não pode ficar só no relatório da varredura, que é
+    # sobrescrito. Vai para uma lista própria, declarada como sem caso.
+    caminho = (
+        FORJA / "state" / case_id / "n4_artifacts" / "F10_RETORNO_SEM_ANEXO.json"
+        if case_id else
+        FORJA / "private" / "post_protocol" / "RETORNOS_SEM_ANEXO_SEM_CASO.json"
+    )
+    case_id = case_id or "(sem caso FORJA aberto)"
+    atual = read_json(caminho, None) or {
+        "schema": "FORJA-RETORNO-SEM-ANEXO-v1",
+        "porque": ("Mensagens do escritório vinculadas a este caso que trazem correção "
+                   "no corpo do e-mail, sem peça anexada para comparar. Ficam aqui para "
+                   "triagem humana: não há diff possível, e classificar prosa por "
+                   "heurística seria inventar. O texto permanece no e-mail."),
+        "caseId": case_id,
+        "mensagens": [],
+    }
+    message_id = str(message.get("id") or "")
+    if any(item.get("messageId") == message_id for item in atual["mensagens"]):
+        return
+    atual["mensagens"].append({
+        "messageId": message_id,
+        "threadId": str(message.get("threadId") or ""),
+        "assunto": _message_header(message, "Subject"),
+        "recebidoEm": _message_header(message, "Date"),
+        "triagem": "pendente",
+    })
+    atual["atualizadoEm"] = now_iso()
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(caminho, atual)
+
+
+def consulta_padrao(*, desde: str = "2026/06/01") -> str:
+    """A consulta do varredor, derivada da lista de remetentes autorizados.
+
+    Antes ela filtrava por `has:attachment`, e a esteira ficava cega para a
+    correção que vem escrita no corpo do e-mail. Tirar só o filtro não bastava:
+    sem ele a consulta traz a caixa inteira, e a cota de mensagens se esgota em
+    correspondência que nem é do escritório — medido em 06/08/2026, 60 de 60
+    mensagens vieram de remetente não autorizado e nenhuma correção foi lida.
+
+    Filtrar por QUEM manda, e não por se veio anexo, resolve os dois: a
+    mensagem do escritório chega tendo anexo ou não, e a cota não se gasta com
+    o resto. A lista é a mesma que autoriza a ingestão — não há duas verdades
+    sobre quem é remetente legítimo.
+    """
+    gmail = ((load_config().get("postProtocol") or {}).get("gmail") or {})
+    remetentes = [f"@{str(item).lstrip('@')}" for item in gmail.get("allowedDomains") or []]
+    remetentes += [str(item) for item in gmail.get("allowedAddresses") or []]
+    base = f"in:anywhere after:{desde} -in:sent -in:trash -in:spam"
+    if not remetentes:
+        # Sem allowlist configurada nada seria ingerido de qualquer modo; a
+        # consulta ampla ao menos deixa o diagnóstico visível.
+        return base
+    alvo = " OR ".join(f"from:{item}" for item in remetentes)
+    return f"{base} ({alvo})"
+
+
 def scan_gmail(*, query: str, max_results: int = 100, shadow: bool = False) -> dict:
     """Consulta Gmail em leitura, usa o matcher da gestão e ingere vínculos únicos."""
     if not feature_enabled("n4PostProtocolV1"):
@@ -1899,6 +1971,9 @@ def scan_gmail(*, query: str, max_results: int = 100, shadow: bool = False) -> d
                     "matchCount": 1,
                     "attachmentCount": 0,
                 })
+                if not shadow:
+                    _registrar_retorno_sem_anexo(
+                        _case_for_demand(matches[0], demands), message)
             continue
         parts, evidence_parts, selection_reason = _select_return_parts(all_parts)
         if selection_reason:
@@ -2098,10 +2173,9 @@ def main() -> None:
     ingest.add_argument("--declaration-text", default="")
     ingest.add_argument("--evidence", action="append", type=Path, default=[])
     scan = sub.add_parser("scan-gmail")
-    # Sem `has:attachment`: a consulta que só trazia mensagens com anexo tornava
-    # a esteira estruturalmente cega para a correção que vem escrita no corpo do
-    # e-mail, que é como boa parte delas chega.
-    scan.add_argument("--query", default="in:anywhere after:2026/06/01 -in:sent -in:trash -in:spam")
+    # A consulta sai da lista de remetentes autorizados, e não de `has:attachment`
+    # — ver `consulta_padrao`.
+    scan.add_argument("--query", default=None)
     scan.add_argument("--max-results", type=int, default=100)
     scan.add_argument("--shadow", action="store_true")
     promote = sub.add_parser("promote")
@@ -2127,7 +2201,8 @@ def main() -> None:
     resolve_origin.add_argument("--decided-by", required=True)
     args = parser.parse_args()
     if args.command == "scan-gmail":
-        result = scan_gmail(query=args.query, max_results=args.max_results, shadow=args.shadow)
+        result = scan_gmail(query=args.query or consulta_padrao(),
+                            max_results=args.max_results, shadow=args.shadow)
     elif args.command == "promote":
         result = promote_learning(
             resolve_case_dir(args.case),

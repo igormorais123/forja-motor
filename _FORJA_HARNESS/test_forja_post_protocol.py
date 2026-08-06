@@ -773,6 +773,60 @@ class VaultIsolationTests(unittest.TestCase):
 
 
 class GmailBoundaryTests(unittest.TestCase):
+    def test_query_comes_from_the_sender_allowlist(self) -> None:
+        """Filtrar por quem manda, e não por se veio anexo.
+
+        Tirar `has:attachment` sozinho não bastava: sem filtro nenhum a consulta
+        traz a caixa inteira e a cota se esgota em correspondência que nem é do
+        escritório — medido em 06/08/2026, 60 de 60 mensagens vieram de
+        remetente não autorizado e nenhuma correção foi lida. Com o filtro por
+        remetente, a mesma cota trouxe 45 correções que estavam invisíveis.
+        """
+        from forja_post_protocol import consulta_padrao
+        with patch(
+            "forja_post_protocol.load_config",
+            return_value={"postProtocol": {"gmail": {
+                "allowedDomains": ["escritorio.exemplo"],
+                "allowedAddresses": ["titular@outro.exemplo"],
+            }}},
+        ):
+            consulta = consulta_padrao()
+        self.assertIn("from:@escritorio.exemplo", consulta)
+        self.assertIn("from:titular@outro.exemplo", consulta)
+        self.assertNotIn("has:attachment", consulta)
+
+    def test_body_only_correction_is_recorded_without_the_body(self) -> None:
+        from forja_post_protocol import _registrar_retorno_sem_anexo
+        import forja_post_protocol as pp
+        with tempfile.TemporaryDirectory() as tmp:
+            forja_real = pp.FORJA
+            pp.FORJA = Path(tmp)
+            try:
+                mensagem = {
+                    "id": "msg-1",
+                    "threadId": "thread-1",
+                    "payload": {"headers": [
+                        {"name": "Subject", "value": "Ajustes na peça"},
+                        {"name": "Date", "value": "Tue, 5 Aug 2026 10:00:00 -0300"},
+                    ]},
+                    "snippet": "tire o argumento do item 3 e corrija o prazo",
+                }
+                _registrar_retorno_sem_anexo("caso-x", mensagem)
+                _registrar_retorno_sem_anexo("caso-x", mensagem)  # idempotente
+                destino = pp.FORJA / "state" / "caso-x" / "n4_artifacts" / "F10_RETORNO_SEM_ANEXO.json"
+                dados = json.loads(destino.read_text(encoding="utf-8"))
+                self.assertEqual(1, len(dados["mensagens"]))
+                self.assertEqual("pendente", dados["mensagens"][0]["triagem"])
+                # O corpo da correção fica no e-mail; aqui só o localizador.
+                self.assertNotIn("tire o argumento", destino.read_text(encoding="utf-8"))
+
+                # Demanda sem caso FORJA aberto não some: vai para a lista própria.
+                _registrar_retorno_sem_anexo(None, {**mensagem, "id": "msg-2"})
+                avulsos = pp.FORJA / "private" / "post_protocol" / "RETORNOS_SEM_ANEXO_SEM_CASO.json"
+                self.assertEqual(1, len(json.loads(avulsos.read_text(encoding="utf-8"))["mensagens"]))
+            finally:
+                pp.FORJA = forja_real
+
     def test_scan_query_does_not_require_attachment(self) -> None:
         """Boa parte da correção do titular vem escrita no corpo do e-mail.
 
@@ -781,12 +835,9 @@ class GmailBoundaryTests(unittest.TestCase):
         não vinha com peça anexada. Elas agora chegam e, sem anexo a comparar,
         ficam registradas como `PP-NO-RETURN-ATTACHMENT` para triagem humana.
         """
-        codigo = Path(__file__).with_name("forja_post_protocol.py").read_text(
-            encoding="utf-8", errors="ignore")
-        linha = next(l for l in codigo.splitlines() if 'scan.add_argument("--query"' in l)
-        self.assertNotIn("has:attachment", linha)
-        from forja_post_protocol import REASON_CODES
+        from forja_post_protocol import REASON_CODES, consulta_padrao
         self.assertIn("PP-NO-RETURN-ATTACHMENT", REASON_CODES)
+        self.assertNotIn("has:attachment", consulta_padrao())
 
     def test_sender_allowlist_is_checked_from_configuration(self) -> None:
         message = {

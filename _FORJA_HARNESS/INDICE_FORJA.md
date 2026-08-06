@@ -4,6 +4,8 @@
 
 | Preciso de... | Vá para |
 |---|---|
+| Contrato de distribuição do motor genérico | `..\MOTOR_DISTRIBUICAO.md` |
+| Separação física e acervo privado desta instalação | `SEPARACAO_MOTOR_ACERVO_2026-08-05.md` + `..\GITHUB_BACKUP_README.md` |
 | Visão geral e começo rápido | `README.md` + `docs/GETTING-STARTED.md` |
 | Arquitetura e fluxo de dados | `docs/ARCHITECTURE.md` |
 | Configuração, flags e autenticação | `docs/CONFIGURATION.md` |
@@ -205,11 +207,22 @@ Igor com Helena e Cícero, não reparo de engenharia.
 aqui: branch de trabalho nesta pasta pode receber commit de sincronização, e o GitHub não é
 cópia de segurança atual do acervo.
 
-## FRONTEIRA MOTOR / ACERVO (05/08/2026)
+## FRONTEIRA MOTOR / ACERVO (06/08/2026)
 
-A FORJA vive em dois repositórios privados e uma zona que não é versionada. Quem
-decide de que lado está cada arquivo é **uma função**, e não uma lista: o
-sincronizador e o gate consomem a mesma política.
+A FORJA vive em dois repositórios fisicamente separados no PC e uma zona que
+não é versionada. `forja-motor` é o produto genérico, indistinguível e
+compartilhável por qualquer escritório; `forja-auditoria` é privado e recebe
+informação do escritório, identidade, configuração, casos e evidência
+operacional. A divisão é também de pasta:
+
+```text
+%USERPROFILE%\repos\
+├── forja-motor
+└── forja-auditoria
+```
+
+Quem decide de que lado está cada arquivo é **uma função**, e não uma lista:
+o sincronizador e o gate consomem a mesma política.
 
 | recurso | o que faz |
 |---|---|

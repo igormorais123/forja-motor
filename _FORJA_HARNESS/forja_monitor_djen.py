@@ -43,8 +43,11 @@ import argparse
 import hashlib
 import html
 import json
+import os
 import re
 import sys
+import tempfile
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -66,6 +69,35 @@ CABECALHO = {
 # Palavras que, no teor de um ato novo, pedem leitura humana imediata.
 URGENTE = re.compile(
     r"pauta|sustenta[çc][ãa]o|julgamento|ac[óo]rd[ãa]o|senten[çc]a|prazo|destaque", re.I)
+
+
+def gravar_json(caminho: Path, dados: dict, tentativas: int = 4) -> None:
+    """Grava o retrato sem deixar arquivo pela metade e sem morrer por disputa.
+
+    Escrever direto falhou em produção com `OSError: [Errno 22]` em dois dos
+    cinco processos, na execução pelo agendador — no Windows, antivírus,
+    indexador e o observador de mapas tocam o mesmo arquivo. Um vigia que perde
+    o retrato passa a acusar tudo como novidade na leitura seguinte.
+    """
+    texto = json.dumps(dados, ensure_ascii=False, indent=2)
+    ultimo = None
+    for tentativa in range(tentativas):
+        tmp = None
+        try:
+            fd, tmp = tempfile.mkstemp(dir=str(caminho.parent), suffix=".tmp")
+            with os.fdopen(fd, "w", encoding="utf-8") as fh:
+                fh.write(texto)
+            os.replace(tmp, caminho)
+            return
+        except OSError as e:
+            ultimo = e
+            if tmp:  # senão cada retentativa deixa um órfão na pasta de telemetria
+                try:
+                    os.unlink(tmp)
+                except OSError:
+                    pass
+            time.sleep(0.25 * (tentativa + 1))
+    raise ultimo
 
 
 def vigiados() -> dict:
@@ -126,9 +158,7 @@ def verificar(chave: str, cfg: dict) -> dict:
         "total": len(comunicacoes),
         "ultima": comunicacoes[0] if comunicacoes else None,
     }
-    retrato.write_text(json.dumps(
-        {**resultado, "comunicacoes": comunicacoes}, ensure_ascii=False, indent=2),
-        encoding="utf-8")
+    gravar_json(retrato, {**resultado, "comunicacoes": comunicacoes})
 
     if novas:
         with (DESTINO / f"{chave}_novidades.log").open("a", encoding="utf-8") as fh:

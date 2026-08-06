@@ -4,6 +4,19 @@ Este arquivo é o protocolo desta pasta para agentes não-Claude (Codex/GPT). As
 
 **Ele não é espelho do `CLAUDE.md`.** Medido em 03/08/2026: dos 107 trechos substantivos daqui, 78 não existem no `CLAUDE.md`, e 47 de lá não existem aqui — os dois compartilham 29. Antes de decidir com base neste arquivo, confira o outro; ao alterar um, decida explicitamente se a mudança vale para o outro. A reconciliação está pendente.
 
+## Fronteira MOTOR / ACERVO
+
+O FORJA Motor é somente o sistema genérico, indistinguível de um produto que
+qualquer escritório possa clonar, usar e compartilhar. Não coloque nele nome,
+marca, logo, contatos, configuração, casos, processos ou dados pessoais do
+escritório. Toda informação do escritório ou específica da instalação vai para
+`forja-auditoria`, o acervo privado.
+
+Essa fronteira é também física no PC: `%USERPROFILE%\repos\forja-motor` e
+`%USERPROFILE%\repos\forja-auditoria` são diretórios Git independentes. A
+montagem local alimenta os dois, mas não os transforma em uma pasta ou
+repositório único.
+
 ## 1. REGRA INVIOLÁVEL — Regimento do tribunal (exigência do chefe do escritório, 06/07/2026)
 
 1. **Identificar o tribunal de análise** da peça (número CNJ, endereçamento, decisões nos autos). Segmento J4 = Justiça Federal (TR indica o TRF); 8.27 = TJTO; AREsp/REsp = STJ; RE/ARE = STF.
@@ -202,3 +215,62 @@ O painel `gestao_escritorio\data\demandas.json` é quadro de comando, não prova
 ## Auto-research da fábrica — ciclo AR (23/07/2026)
 
 A melhoria contínua da esteira tem processo próprio: o ciclo AR (`_FORJA_HARNESS\planejamento\22_PRD_AUTORESEARCH_FORJA.md` e `23_TDD_AUTORESEARCH_FORJA.md`, v1.1 pós-review adversarial Codex). Regras operacionais: (1) mudança em prompt/template/protocolo de fase que se pretenda "melhoria" deve passar pelo ciclo AR — execução pareada, julgamento cego com swap e duas famílias de juiz, canários de falha única e gate de promoção em três estados com recibo Ed25519; (2) indicadores de qualidade usam ledgers congelados pré-geração (cobertura E correção) — nunca criar métrica nova sem defesa anti-exclusão e âncora em falha real de `RETROSPECTIVAS.md`; (3) os segredos do ciclo (chave HMAC, registro sealed, canários secretos) vivem em `%USERPROFILE%\.forja_ar_secrets\` e jamais entram em repositório ou prompt; (4) enquanto não houver sealed prospectivo consumível, o subsistema opera em `estudo_descritivo` e NENHUMA variante é promovida a produção. Comandos e artefatos: ver bloco AUTO-RESEARCH em `_FORJA_HARNESS\INDICE_FORJA.md`.
+
+## Ordem de pesquisa jurisprudencial (28/07/2026 — diretriz do Prof. Fábio, inviolável)
+
+Transmitida pelo Dr. Alessandro em 28/07/2026 e incorporada ao protocolo em
+06/08. A pesquisa de F3 percorre os níveis **nesta ordem** e para de subir quando
+encontra material aderente; o relatório de melhorias registra em que nível a peça
+se apoiou.
+
+1. STF — Plenário. 2. STF — pelo relator, quando já há processo no tribunal ou
+prevenção, e pelos demais integrantes das turmas. 3. STF — demais turmas.
+4. STJ — Órgão Especial. 5. STJ — pelo relator, quando o processo já está no STJ
+ou há informação de prevenção, e pelos demais integrantes das turmas. 6. STJ —
+demais turmas. 7. Tribunal local — Pleno ou Órgão Especial. 8. Tribunal local —
+decisões do relator, quando já está no TJ ou há competência por prevenção.
+9. Tribunal local — da câmara/turma julgadora, relatoria dos demais integrantes.
+
+Sem competência ou relatoria conhecidas, a pesquisa fica genérica entre turmas e
+câmaras dos respectivos tribunais.
+
+A ordem não é de hierarquia abstrata: ela persegue **quem vai julgar**, e é por
+isso que os níveis 2, 5 e 8 quebram a escada dos tribunais. Desde 06/08 o órgão
+julgador e a relatoria de qualquer processo se confirmam pelo número no cadastro
+nacional do CNJ, sem depender de informação de terceiro — então esses três níveis
+são a primeira parada real, não uma hipótese. Detalhe e origem em
+`APRENDIZADOS_FEEDBACK_HUMANO.md`, Diretriz nº 28.
+
+## Vigias diários da esteira (06/08/2026)
+
+Três tarefas agendadas no Windows, que apenas olham e avisam por arquivo na raiz
+do harness — nenhuma peticiona, envia mensagem ou decide.
+
+| tarefa | módulo | quando | flag |
+|---|---|---|---|
+| `FORJA-Monitor-STF` | `forja_monitor_stf.py` | 09:00 | `NOVIDADE_STF.md` |
+| `FORJA-Monitor-DJEN` | `forja_monitor_djen.py` | 09:15 | `NOVIDADE_PROCESSUAL.md` |
+| `FORJA-Fios-Abertos` | `forja_fios_abertos.py` | 09:30 | `FIO_SEM_RESPOSTA.md` |
+
+Os alvos moram no acervo (`monitor_djen_vigiados`, `monitor-stf-vigiados`,
+`fios_remetentes_casa`); sem ele, os módulos saem com código 2 e **dizem** que
+rodaram sem alvo. Saída 0 sem novidade, 10 com novidade, 1 em erro.
+
+Duas armadilhas medidas na rota agendada, ambas invisíveis no shell da sessão:
+`.ps1` sem BOM UTF-8 morre no `powershell.exe` do agendador, e sem
+`PYTHONIOENCODING=utf-8` o log e a flag saem com acentuação corrompida. Canário
+de tarefa agendada se roda com o comando literal de
+`(Get-ScheduledTask <nome>).Actions[0]`. Ver Lições 234 e 235 em
+`_FORJA_HARNESS/RETROSPECTIVAS.md`.
+
+## Fontes públicas do CNJ (06/08/2026)
+
+- **DataJud** — `POST api-publica.datajud.cnj.jus.br/api_publica_<alias>/_search`
+  com o número de 20 dígitos sem pontuação. Não indexa nome de parte; devolve
+  classe, assunto, **órgão julgador atual**, grau e movimentos com data.
+- **DJEN/Comunica** — `comunicaapi.pje.jus.br/api/v1/comunicacao`. Indexa **nome
+  de parte com polo** e devolve o **teor** integral de cada comunicação. O host
+  `comunica.pje.jus.br` devolve HTML e não serve.
+
+Campo ausente não é dado ausente: o dado pode estar no texto que o campo não
+indexa (Lição 232).

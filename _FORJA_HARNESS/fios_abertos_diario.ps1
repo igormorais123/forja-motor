@@ -4,6 +4,10 @@
 # que ninguém abre não avisa ninguém.
 
 $ErrorActionPreference = 'Stop'
+# O agendador nao herda o ambiente da sessao: sem isto o Python escreve na code
+# page do console e todo acento chega corrompido ao log e a flag.
+$env:PYTHONIOENCODING = 'utf-8'
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 $harness = Split-Path -Parent $MyInvocation.MyCommand.Path
 $logDir  = Join-Path $harness 'telemetria\fios_abertos'
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null

@@ -4,6 +4,19 @@ Regra criada em 06/07/2026 por determinação do chefe do escritório, após err
 
 Cada seção deste protocolo traz a data da ordem que a criou. Em conflito entre seções, vale a mais recente — e a seção diz qual determinação ela supera.
 
+## Fronteira MOTOR / ACERVO
+
+O FORJA Motor é somente o sistema genérico, indistinguível de um produto que
+qualquer escritório possa clonar, usar e compartilhar. Não coloque nele nome,
+marca, logo, contatos, configuração, casos, processos ou dados pessoais do
+escritório. Toda informação do escritório ou específica da instalação vai para
+`forja-auditoria`, o acervo privado.
+
+Essa fronteira é também física no PC: `%USERPROFILE%\repos\forja-motor` e
+`%USERPROFILE%\repos\forja-auditoria` são diretórios Git independentes. A
+montagem local alimenta os dois, mas não os transforma em uma pasta ou
+repositório único.
+
 ## REGRA INVIOLÁVEL: consideração do regimento do tribunal
 
 Em **toda** petição elaborada, melhorada ou revisada em qualquer subpasta desta fábrica:
@@ -160,13 +173,23 @@ adotada tiver saído do seu destino. O gate NÃO exige que o caso corrente já
 tenha aprendido — o retorno humano chega depois do protocolo, e exigi-lo
 travaria toda entrega por algo que ainda não existe.
 
-**A correção que vem escrita no e-mail conta igual.** A varredura do Gmail pedia
-`has:attachment` e descartava em silêncio toda mensagem sem peça anexada — a
-esteira era cega por construção para "tire aquele argumento", "o prazo é outro",
-"não use esse precedente", que é como boa parte da correção chega. O filtro caiu;
-mensagem de remetente autorizado vinculada a um caso, sem anexo comparável, fica
-registrada como `PP-NO-RETURN-ATTACHMENT` para triagem humana. Nenhum trecho do
-corpo é copiado: quem tria abre a mensagem.
+**A correção que vem escrita no e-mail conta igual — e é a maioria.** A varredura
+do Gmail pedia `has:attachment` e descartava em silêncio toda mensagem sem peça
+anexada: a esteira era cega por construção para "tire aquele argumento", "o prazo
+é outro", "não use esse precedente". Tirar o filtro sozinho não resolveu — sem
+ele a consulta traz a caixa inteira e a cota se esgota antes de chegar ao
+escritório. **A consulta agora sai da lista de remetentes autorizados**
+(`consulta_padrao`), que é a mesma que autoriza a ingestão. Medido em 06/08/2026,
+a primeira rodada com o filtro certo trouxe **45 correções do escritório
+vinculadas a caso conhecido, contra as 5 que a esteira via por anexo** — o loop
+enxergava cerca de um décimo do retorno do titular.
+
+Cada uma fica ancorada no caso em `F10_RETORNO_SEM_ANEXO.json`, idempotente por
+mensagem; a de demanda reconhecida sem caso FORJA aberto vai para lista própria,
+declarada como tal. Guarda-se localizador, assunto e data — **nunca o corpo**: o
+conteúdo da correção vive no e-mail e quem tria abre a mensagem. Não há
+classificação automática de prosa: heurística sobre texto livre inventaria
+padrão, que é exatamente o erro que o gate de comparabilidade acabou de fechar.
 
 **Agradecer e pedir mais.** Depois que o loop roda, o retorno é respondido com o
 template `_FORJA_HARNESS\templates\F10_EMAIL_RETORNO_E_AGRADECIMENTO.md`:
@@ -178,6 +201,31 @@ de aprendizado que nenhum gate automático substitui.
 
 Regressão: `_FORJA_HARNESS\test_forja_aprendizado.py`, no baseline. É um teste
 só, parametrizado pelo registro — adotar a próxima regra não custa código novo.
+
+## Ordem de pesquisa jurisprudencial (28/07/2026 — diretriz do Prof. Fábio, inviolável)
+
+Transmitida pelo Dr. Alessandro em 28/07/2026 e incorporada ao protocolo em
+06/08. A pesquisa de F3 percorre os níveis **nesta ordem** e para de subir quando
+encontra material aderente; o relatório de melhorias registra em que nível a peça
+se apoiou.
+
+1. STF — Plenário. 2. STF — pelo relator, quando já há processo no tribunal ou
+prevenção, e pelos demais integrantes das turmas. 3. STF — demais turmas.
+4. STJ — Órgão Especial. 5. STJ — pelo relator, quando o processo já está no STJ
+ou há informação de prevenção, e pelos demais integrantes das turmas. 6. STJ —
+demais turmas. 7. Tribunal local — Pleno ou Órgão Especial. 8. Tribunal local —
+decisões do relator, quando já está no TJ ou há competência por prevenção.
+9. Tribunal local — da câmara/turma julgadora, relatoria dos demais integrantes.
+
+Sem competência ou relatoria conhecidas, a pesquisa fica genérica entre turmas e
+câmaras dos respectivos tribunais.
+
+A ordem não é de hierarquia abstrata: ela persegue **quem vai julgar**, e é por
+isso que os níveis 2, 5 e 8 quebram a escada dos tribunais. Desde 06/08 o órgão
+julgador e a relatoria de qualquer processo se confirmam pelo número no cadastro
+nacional do CNJ, sem depender de informação de terceiro — então esses três níveis
+são a primeira parada real, não uma hipótese. Detalhe e origem em
+`APRENDIZADOS_FEEDBACK_HUMANO.md`, Diretriz nº 28.
 
 ## Hermes / gestão viva da fábrica (08/07/2026)
 

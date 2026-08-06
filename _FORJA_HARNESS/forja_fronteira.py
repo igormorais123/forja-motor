@@ -1,14 +1,26 @@
 # -*- coding: utf-8 -*-
 """forja_fronteira.py — o que é motor, o que é acervo, o que não sai desta máquina.
 
-A FORJA vive em dois repositórios privados e uma zona que não é versionada:
+A FORJA vive em dois diretórios Git fisicamente separados no PC e uma zona
+local que não é versionada:
+
+    %USERPROFILE%\\repos\\forja-motor
+    %USERPROFILE%\\repos\\forja-auditoria
+
+O primeiro é um produto genérico, indistinguível de um motor que qualquer
+escritório poderia clonar, usar e compartilhar. O segundo é o acervo privado
+da instalação: informações do escritório, identidade visual, configuração,
+casos, clientes e evidência operacional ficam ali. A separação física não é
+apenas um filtro de publicação; os dois destinos são pastas e repositórios
+independentes no disco:
 
     MOTOR    o sistema. Código, contratos, schemas, testes, templates, doutrina.
-             Vai ser compartilhado com outros advogados e depois aberto. Não
-             pode conter nome de cliente, número de processo nem peça.
+             Pode ser compartilhado com qualquer escritório. Não pode conter
+             dados de cliente, dados pessoais, identidade ou configuração
+             específica de uma banca.
     ACERVO   o que prova o que a esteira fez: `state/`, relatórios de execução,
-             modelos aprovados, painel de gestão, histórico por caso. Carrega
-             nome de cliente e tem outro regime de acesso.
+             modelos aprovados, painel de gestão, histórico por caso e toda
+             informação específica do escritório. Tem outro regime de acesso.
     LOCAL    o que não vai a repositório nenhum: os autos, o cofre pós-protocolo,
              caches e o que excede o limite de tamanho do GitHub.
 
@@ -269,13 +281,14 @@ ARQUIVOS_RAIZ_MOTOR = {
     "PROMPT-FABRICA-MELHORIA-PETICAO.md", "FAILURE_TAXONOMY.md",
     "QUALITY_BOARD.md", "ARCHIFY_ARQUITETURA.md", "GRAPHIFY_GRAFO.md",
     "ATUALIZAR_MAPA_IA.ps1", "INICIAR_MAPA_IA_VIVO.ps1",
-    "GITHUB_BACKUP_README.md",
+    "MOTOR_DISTRIBUICAO.md",
     ".graphifyignore", "README.md",
 }
 # `.gitignore` e `.gitattributes` pertencem ao repositório em que estão, e não ao
 # motor: o da pasta de trabalho lista caminhos de pasta de caso, e cada
 # repositório publicado tem o seu próprio, escrito para o que ele guarda.
 ARQUIVOS_RAIZ_ACERVO = {
+    "GITHUB_BACKUP_README.md",
     "ENTREGAS_FABIO_OSORIO.md", "CONTROLE_AUTOS_COMPLETOS_2026-07-19.md",
     "RELATORIO_SISTEMA_GESTAO_ESCRITORIO.md",
     "AUDITORIA_ORGANIZACAO_EMAILS_MEDINA_OSORIO_2026-07-07.md",
@@ -600,10 +613,11 @@ _SIGLAS = {
     "sp", "se", "to", "ia", "ppt", "pdf", "docx", "html",
 }
 
-# A firma não entra no registro. Ela não é cliente, e protegê-la reprovaria a
-# identidade visual inteira, que hoje está no motor. Que a marca Medina Osório
-# não deva ficar num motor destinado a outro escritório é questão separada e
-# está registrada no relatório da fronteira, não resolvida por este filtro.
+# A firma não entra no registro de nomes de clientes. Ela não é cliente, e
+# protegê-la como se fosse nome de caso faria o gate reprovar vocabulário do
+# próprio motor. Isso não autoriza identidade visual de uma banca no produto
+# genérico: marca, logo e configuração específicas pertencem ao acervo privado
+# e são uma regra de distribuição, não de anonimização de clientes.
 _FIRMA = {"medina", "osorio", "osório", "advogados", "inteia"}
 
 
@@ -772,9 +786,12 @@ def escrever_mapa(raiz: Path) -> str:
     proveniência de tudo isso; mover só as 16 soltas deixaria metade das pastas
     de cada lado, que é pior do que qualquer um dos extremos.
 
-    Então a fronteira aparece no disco como informação, não como geografia: este
-    arquivo diz de que lado está cada entrada da raiz, e é reescrito a cada
-    varredura. Para um caminho específico, `--classificar` responde na hora.
+    Então a fronteira da montagem aparece como informação, sem fingir que as
+    pastas de caso podem ser movidas. Os destinos publicados, porém, são
+    geograficamente separados em `%USERPROFILE%\\repos\\forja-motor` e
+    `%USERPROFILE%\\repos\\forja-auditoria`. Este arquivo diz de que lado está
+    cada entrada da montagem e é reescrito a cada varredura. Para um caminho
+    específico, `--classificar` responde na hora.
     """
     linhas = [
         "# Fronteira no disco — o que é motor, o que é acervo, o que fica aqui",
@@ -783,7 +800,9 @@ def escrever_mapa(raiz: Path) -> str:
         "> cada varredura. Para um caminho específico:",
         "> `python _FORJA_HARNESS/forja_fronteira.py --classificar CAMINHO`",
         "",
-        "As pastas de caso continuam na raiz de propósito. A cadeia de auditoria",
+        "Os destinos publicados são duas pastas Git independentes: `forja-motor`",
+        "(genérico) e `forja-auditoria` (privado e específico do escritório).",
+        "As pastas de caso continuam na montagem por propósito. A cadeia de auditoria",
         "cita 57 delas por caminho absoluto, e a esteira resolve o `caseFolder`",
         "em execução — movê-las quebraria a proveniência de 934 artefatos.",
         "",
@@ -799,8 +818,10 @@ def escrever_mapa(raiz: Path) -> str:
         linhas.append(f"| `{nome}` | {destino} | {motivo} |")
     linhas += [
         "",
-        "**MOTOR** vai para `forja-motor`, que será compartilhado e depois aberto.",
-        "**ACERVO** vai para `forja-auditoria`, privado, com nome de cliente.",
+        "**MOTOR** vai para `%USERPROFILE%\\repos\\forja-motor`: genérico,",
+        "compartilhável e sem identidade ou dado específico de uma banca.",
+        "**ACERVO** vai para `%USERPROFILE%\\repos\\forja-auditoria`: privado,",
+        "com informação do escritório, casos e evidência operacional.",
         "**LOCAL** não vai a repositório nenhum: os autos, o cofre pós-protocolo,",
         "caches e o que excede o limite de tamanho do GitHub.",
         "",

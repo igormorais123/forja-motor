@@ -34,8 +34,11 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
+import tempfile
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -70,6 +73,35 @@ def _vigiados() -> dict[str, dict]:
     verificou** — nunca tratar "nenhum processo vigiado" como "nada mudou".
     """
     return forja_acervo.valor("monitor-stf-vigiados", {}) or {}
+
+
+def gravar_json(caminho: Path, dados: dict, tentativas: int = 4) -> None:
+    """Grava o retrato sem deixar arquivo pela metade e sem morrer por disputa.
+
+    Escrever direto falhou em produção com `OSError: [Errno 22]` no vigia irmão,
+    na execução pelo agendador — no Windows, antivírus, indexador e o observador
+    de mapas tocam o mesmo arquivo. Um vigia que perde o retrato passa a acusar
+    tudo como novidade na leitura seguinte.
+    """
+    texto = json.dumps(dados, ensure_ascii=False, indent=2)
+    ultimo = None
+    for tentativa in range(tentativas):
+        tmp = None
+        try:
+            fd, tmp = tempfile.mkstemp(dir=str(caminho.parent), suffix=".tmp")
+            with os.fdopen(fd, "w", encoding="utf-8") as fh:
+                fh.write(texto)
+            os.replace(tmp, caminho)
+            return
+        except OSError as e:
+            ultimo = e
+            if tmp:  # senão cada retentativa deixa um órfão na pasta de telemetria
+                try:
+                    os.unlink(tmp)
+                except OSError:
+                    pass
+            time.sleep(0.25 * (tentativa + 1))
+    raise ultimo
 
 
 _DATA = re.compile(r"\d{2}/\d{2}/\d{4}")
@@ -127,8 +159,7 @@ def verificar(caso: str, cfg: dict) -> dict:
         "ultimoMovimento": movs[0] if movs else None,
         "totalMovimentos": len(movs),
     }
-    retrato.write_text(json.dumps(
-        {**resultado, "movimentos": movs}, ensure_ascii=False, indent=2), encoding="utf-8")
+    gravar_json(retrato, {**resultado, "movimentos": movs})
 
     if novos:
         log = DESTINO / f"{caso}_novidades.log"

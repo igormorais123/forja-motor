@@ -107,6 +107,41 @@ class CanarioDoVigiaDJEN(unittest.TestCase):
         with mock.patch.object(mon.forja_acervo, "valor", return_value={}):
             self.assertEqual(mon.vigiados(), {})
 
+    def test_disputa_de_arquivo_e_superada_por_retentativa(self):
+        """Em produção o retrato falhou com Errno 22 sob o agendador.
+
+        Antivírus, indexador e o observador de mapas tocam o mesmo arquivo. Se a
+        gravação desiste na primeira negativa, o retrato se perde e a leitura
+        seguinte acusa tudo como novidade.
+        """
+        alvo = Path(self.tmp.name) / "retrato.json"
+        real = mon.os.replace
+        chamadas = {"n": 0}
+
+        def replace_teimoso(origem, destino):
+            chamadas["n"] += 1
+            if chamadas["n"] < 3:
+                raise OSError(22, "Invalid argument")
+            return real(origem, destino)
+
+        with mock.patch.object(mon.os, "replace", side_effect=replace_teimoso), \
+                mock.patch.object(mon.time, "sleep"):
+            mon.gravar_json(alvo, {"ok": True})
+
+        self.assertEqual(chamadas["n"], 3)
+        self.assertEqual(json.loads(alvo.read_text(encoding="utf-8")), {"ok": True})
+        self.assertEqual(list(Path(self.tmp.name).glob("*.tmp")), [],
+                         "temporário não pode sobrar depois do sucesso")
+
+    def test_disputa_que_nao_cede_vira_erro_e_nao_silencio(self):
+        alvo = Path(self.tmp.name) / "retrato.json"
+        with mock.patch.object(mon.os, "replace",
+                               side_effect=OSError(22, "Invalid argument")), \
+                mock.patch.object(mon.time, "sleep"):
+            with self.assertRaises(OSError):
+                mon.gravar_json(alvo, {"ok": True})
+        self.assertFalse(alvo.exists(), "retrato antigo não pode virar arquivo pela metade")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

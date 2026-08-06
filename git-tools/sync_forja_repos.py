@@ -19,13 +19,16 @@ no disco, e a origem deles é o e-mail.
 este script.** A primeira versão trazia os próprios mapas, entre eles uma lista
 de quatro arquivos chamada `FORA_DO_MOTOR` escrita à mão. Medido em 05/08/2026,
 o repositório do motor tinha 1.843 arquivos com sinal de cliente: a lista não
-estava errada, estava irrelevante diante do volume. Política em um lugar só, com
-dois consumidores — o gate e esta rotina.
+estava errada, estava irrelevante diante do volume. Política em uma função só,
+com dois consumidores — o gate e esta rotina; os destinos físicos continuam
+separados.
 
-Os dois repositórios espelham a MESMA estrutura de caminhos da pasta de
-trabalho. É deliberado: reconstituir a árvore vira copiar um sobre o outro, sem
-tradução de caminho, e sem a classe de defeito em que `state/` chega num lugar
-diferente daquele onde o motor o procura.
+Os dois destinos são pastas e repositórios Git fisicamente independentes. Cada
+um recebe somente o conjunto de caminhos classificado para o seu lado, sempre
+preservando o caminho relativo da pasta de montagem. Isso mantém a porta
+`forja_acervo` estável sem fingir que o motor genérico e a auditoria privada
+ocupam uma única árvore pública. O motor pode ser compartilhado com outro
+escritório; informação específica da instalação pertence ao acervo.
 
 Uso:
     python sync_forja_repos.py            # sincroniza e envia

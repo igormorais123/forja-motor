@@ -820,3 +820,45 @@ disparado e restaurado com a flag subindo e descendo.
 **Lição 246 — regra adotada carrega um lastro que pode deixar de existir.** A primeira regra da casa foi adotada com "3 casos, 12 correções materiais". Depois do gate de comparabilidade, o lastro real dela virou 1 caso e 1 correção. A regra em si continuava sensata; a evidência dela, não — e o registro seguia afirmando um número falso, que é exatamente o que se guarda para responder depois "por que esta regra existe?". Daí `revalidar`, que recompara a evidência registrada com a de hoje e devolve a divergência para decisão humana. **Não apaga nem reescreve regra: quem adotou decide se mantém e corrige o lastro, ou revoga.**
 
 **Lição 247 — a esteira era cega por construção para a correção que vem no corpo do e-mail.** A consulta padrão do varredor do Gmail pedia `has:attachment`, e o código descartava em silêncio toda mensagem sem peça anexada. Uma correção escrita em prosa — "tire aquele argumento", "o prazo é outro", "não use esse precedente" — nunca chegava a ser lida, e é assim que boa parte delas chega. Havia até um esquema pronto, `feedbackAssimilation`, com validador, contrato e seis tipos de retorno: **validador escrito, produtor nenhum, zero artefatos no disco**. A consulta perdeu o filtro e a mensagem vinculada a um caso passa a ficar registrada como `PP-NO-RETURN-ATTACHMENT`, para triagem humana. Não se copia trecho do corpo: quem tria abre a mensagem.
+
+
+**Lição 248 — o filtro certo é por quem manda, não por se veio anexo; e a conta era 45 contra 5.** Tirar `has:attachment` da varredura do Gmail não bastou: sem filtro nenhum a consulta traz a caixa inteira e a cota de mensagens se esgota antes de chegar ao escritório — medido, 60 de 60 vieram de remetente não autorizado e nenhuma correção foi lida. A consulta passou a sair da própria lista de remetentes autorizados, que é a mesma que autoriza a ingestão, e a rodada seguinte trouxe **45 mensagens do escritório vinculadas a caso conhecido, com correção no corpo e sem peça anexada — contra as 5 que a esteira via por anexo**. Durante meses o loop de aprendizado enxergava cerca de um décimo do retorno que o titular mandava. **Um filtro técnico escolhido por conveniência de implementação definiu, sem que ninguém decidisse isso, o que a casa era capaz de aprender.**
+
+**Lição 249 — registro que vive só no relatório da rodada não é registro.** As 45 correções apareciam no relatório da varredura, que é sobrescrito a cada execução: na rodada seguinte teriam desaparecido. Agora cada uma fica ancorada no caso, em `F10_RETORNO_SEM_ANEXO.json`, acumulando por mensagem e de forma idempotente; a que veio de demanda reconhecida sem caso FORJA aberto vai para lista própria, declarada como tal — 10 com caso e 35 sem, e nenhuma perdida. Guarda-se localizador, assunto e data, nunca o corpo: o conteúdo da correção vive no e-mail, e quem tria abre a mensagem. É o mesmo desenho do resto do loop, que guarda hash e localizador e jamais o trecho.
+
+## Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)
+
+Depois de corrigir o BOM (Lição 235), forcei as três tarefas pelo agendador e li
+o que elas escreveram. Dois defeitos apareceram, nenhum dos quais o teste ou a
+execução manual mostravam.
+
+**Primeiro: acentuação corrompida.** O log saía com "ù a ·ltima palavra Ú minha"
+e "comunicaþÒo nova". Sem `PYTHONIOENCODING`, o Python escreve na code page do
+console e o PowerShell decodifica como UTF-8. A sessão interativa nunca mostra
+isso porque exporta a variável. Importa mais do que estética: o texto corrompido
+é o da **flag** que alguém vai ler de manhã. Corrigido nos três wrappers, com
+`[Console]::OutputEncoding` junto.
+
+**Segundo, e mais sério: `OSError: [Errno 22]` ao gravar o retrato**, em dois dos
+cinco processos, só na execução pelo agendador. Os dois vigias gravavam com
+`Path.write_text()` direto — sem escrita atômica, sem retentativa —, enquanto oito
+outros módulos do harness já usavam `os.replace`. No Windows, antivírus,
+indexador e o observador de mapas tocam o mesmo arquivo. **Um vigia que perde o
+retrato passa a acusar tudo como novidade na leitura seguinte**, e um alarme que
+grita todo dia é um alarme que ninguém lê. Corrigido nos dois com temporário +
+`os.replace` + quatro tentativas.
+
+O teste que escrevi para a correção reprovou a primeira versão dela: cada
+retentativa deixava um `.tmp` órfão na pasta de telemetria. A asserção que pegou
+isso não era sobre o conteúdo gravado, era sobre **o que sobra depois** — vale
+guardar como forma: teste de escrita atômica verifica o arquivo final, o
+resultado do erro e a ausência de resto.
+
+Prova final: três disparos consecutivos pelo agendador real, `LastTaskResult=0`
+nos três, cinco processos lidos por rodada, acentuação correta e nenhum
+temporário sobrando.
+
+O padrão maior, que já vale para além destes módulos: **a rota de produção tem
+ambiente próprio, e o shell da sessão é um ambiente privilegiado que mente por
+omissão** — herda variáveis, encoding e ausência de concorrência que a produção
+não tem. Toda vez que algo roda sozinho, o teste precisa rodar como ele roda.
