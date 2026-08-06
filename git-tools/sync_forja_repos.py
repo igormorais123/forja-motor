@@ -194,16 +194,62 @@ def publicar(repo: Path, seco: bool) -> str:
     return f"enviado: {msg}"
 
 
+def anonimizar_antes_do_gate() -> list[str]:
+    """Troca nome de cliente por pseudônimo nos textos do motor. Devolve o que mudou.
+
+    Por que a rotina faz isso em vez de só reprovar. Quem escreve doutrina e
+    plano dentro do motor escreve citando o caso pelo nome — é assim que a lição
+    fica verificável, e pedir que cada autor lembre do pseudônimo é a lição 87
+    outra vez. Sem este passo, um plano escrito à tarde faz a sincronização das
+    20:00 reprovar inteira, **inclusive a do acervo**, e o padrão histórico desta
+    casa é a falha noturna ir para um log que ninguém abre.
+
+    A troca é conservadora: só nomes que já estão no mapa de pseudônimos do
+    acervo, com destino estável (`CASO-04` é sempre o mesmo caso), e restrita a
+    `.md` e `.txt` — código e JSON não são reescritos automaticamente, porque
+    ali o nome costuma ser chave de configuração ou caminho vivo, e trocá-lo
+    quebra execução em vez de proteger.
+
+    O que ela não resolve continua reprovando: nome dentro de identificador
+    (`case-email-<cliente>`) exige decisão humana, e o gate logo abaixo é quem
+    barra. Anonimizar não substitui o gate; tira dele o trabalho repetitivo.
+    """
+    try:
+        import forja_anonimizar as anon
+    except ImportError:
+        return []
+    regras = anon.carregar_mapa(TRABALHO)
+    if not regras:
+        return []
+    trocados = []
+    for caminho, rel, texto in anon.percorrer(TRABALHO, so_texto=True):
+        novo, n, _ = anon.anonimizar_texto(texto, regras)
+        if n:
+            caminho.write_text(novo, encoding="utf-8")
+            trocados.append(rel)
+    return trocados
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--seco", action="store_true",
                     help="mostra o que faria, sem copiar, commitar ou enviar")
     ap.add_argument("--sem-gate", action="store_true",
                     help="publica mesmo com a fronteira reprovada (só para diagnóstico)")
+    ap.add_argument("--sem-anonimizar", action="store_true",
+                    help="não troca nome de cliente por pseudônimo antes do gate")
     args = ap.parse_args(argv)
 
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+    if not args.sem_anonimizar and not args.seco:
+        trocados = anonimizar_antes_do_gate()
+        if trocados:
+            print(f"anonimização: {len(trocados)} arquivo(s) tiveram nome de "
+                  f"cliente trocado por pseudônimo")
+            for rel in trocados[:10]:
+                print(f"  {rel}")
 
     # Gate ANTES de publicar. Publicar é irreversível na prática: histórico de
     # git não se limpa sem force-push, e foi assim que 40 arquivos do cofre

@@ -220,7 +220,13 @@ def compor(md_path, out_docx, mapa, *, case_dir=None, ledger_path=None, base_dir
                 if ini < 0:
                     raise SystemExit(f"MAPA INVÁLIDO — âncora de síntese não achada: {anc[:80]}")
                 fim = texto.find(m.rotulos_sintese[k + 1][1]) if k + 1 < len(m.rotulos_sintese) else len(texto)
-                partes.append((rot, texto[ini:fim].strip(" \r\n\t*")))
+                # A âncora do próximo rótulo aponta para o TEXTO do parágrafo, não
+                # para o seu marcador de lista. O corte deixava o "3." órfão no fim
+                # da linha anterior, e o leitor via um número solto pendurado em
+                # cada linha da síntese. Só sai marcador que esteja sozinho na
+                # última linha do trecho — "art. 805." no fim de frase permanece.
+                trecho = re.sub(r"\n[ \t]*\d+\.[ \t]*$", "", texto[ini:fim].rstrip())
+                partes.append((rot, trecho.strip(" \r\n\t*")))
             pv.sintese(partes, titulo=m.titulo_sintese)
         elif texto:
             pv.sintese([("SÍNTESE", texto)], titulo=m.titulo_sintese)

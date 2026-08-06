@@ -71,9 +71,19 @@ O esquema anterior de assets de release (`git-tools/restore_github_release_asset
 `large-assets-manifest.json`) atendia o repositório único e não é mais usado pela
 rotina; permanece no disco como forma de recuperar o que já foi enviado por ele.
 
-## O repositório único anterior
+## O repositório único anterior, e o que isso significa para o histórico
 
 `igormorais123/fabricas-de-melhoria-de-peticoes` misturava o motor com o acervo
 processual e deixou de conseguir subir em 31/07/2026: o primeiro commit não
 publicado sozinho tinha 3,47 GB, e commit é atômico. O script daquela rotina,
 `git-tools/sync_github.ps1`, está aposentado e sai sem fazer nada se for chamado.
+O repositório foi **arquivado** em 05/08/2026 — continua privado e legível, e
+deixou de aceitar escrita, para que ninguém volte a tratá-lo como cópia de
+segurança viva. Arquivamento é reversível pelo painel do GitHub.
+
+A consequência a ter em mente: o **histórico git desta pasta de trabalho existe
+só neste PC**. São 148 commits em 8 branches sem destino remoto, e não há como
+publicá-los sem antes filtrar os 16 GB que os acompanham. Você pode continuar
+commitando aqui normalmente; o que a sincronização protege é o **estado atual
+dos arquivos**, espelhado nos dois repositórios novos, não a linha do tempo que
+levou até ele.
