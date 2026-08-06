@@ -31,7 +31,7 @@ Este sistema só reconstrói inteiro com **dois** repositórios privados:
 | | conteúdo |
 |---|---|
 | `forja-motor` (este) | código, contratos, schemas, testes, doutrina |
-| `forja-auditoria` | `_FORJA_HARNESS/state/` (cadeia de auditoria por caso), modelos aprovados, relatórios de execução, painel de gestão |
+| `forja-auditoria` | `_FORJA_HARNESS/state/` (cadeia de auditoria por caso), modelos aprovados, relatórios de execução, painel de gestão, e o markdown de trabalho de cada processo |
 
 Os dois usam a **mesma estrutura de caminhos**. Reconstituir a árvore de trabalho é
 copiar um sobre o outro, sem tradução:
@@ -43,8 +43,11 @@ cp -r /tmp/acervo/. trabalho/          # sem o .git
 cd trabalho && python -X utf8 _FORJA_HARNESS/forja_baseline.py
 ```
 
-O acervo processual em si — autos, laudos, anexos de e-mail — **não vai para nenhum dos
-dois**. Fica no disco de trabalho, e a origem dele é o e-mail.
+Os autos em si — laudos, anexos de e-mail, PDF do processo, DOCX protocolado — **não vão
+para nenhum dos dois**. Ficam no disco de trabalho, e a origem deles é o e-mail. Dentro
+de uma pasta de caso a divisão é pela extensão: o `.md` que a esteira e o advogado
+escrevem vai ao acervo, porque some junto com a máquina se não for versionado; o binário
+recebido fica, porque pesa e volta do e-mail e do próprio processo.
 
 ## Como o motor alcança o acervo
 
