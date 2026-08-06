@@ -68,20 +68,34 @@ Auditado em 05/08/2026. A pasta de trabalho é o único git; as duas cascas `.gi
 vazias que existiam dentro dela (em `_FORJA_HARNESS/` e numa pasta de caso)
 foram removidas — não eram repositórios, mas convidavam a virar um.
 
-Fora dela, ficaram três cópias soltas, nenhuma sob git:
+Nenhuma cópia solta vaza para o GitHub, porque nenhuma está versionada. O risco
+é outro: material sensível fora do alcance do gate, e cópia antiga parecida com
+a pasta de trabalho o bastante para alguém abrir por engano.
+
+Duas foram removidas em 05/08/2026, por decisão do Igor:
+
+- `Downloads\_FORJA_HARNESS` — 3.312 arquivos, 146 MB, retrato de 19/07, com
+  **1.187 arquivos carregando CNJ, CPF, CNPJ, OAB e nome de cliente**. A
+  comparação por hash contra a árvore atual mostrou 2.693 idênticos, 547 em
+  versão mais velha e apenas 7 exclusivos substantivos — destes, dois só haviam
+  mudado de lugar (hoje em `state/`), três eram temporários do Word e dois foram
+  renomeados na reforma editorial de 25/07 e seguem verdes no baseline. Nada
+  insubstituível.
+- `repos\_teste_reconstituicao` — 16.022 arquivos, 649 MB, sobra do teste de
+  reconstituição do dia; refaz-se com `git-tools/montar_forja.py`.
+
+Ainda no disco, menores e de baixo risco:
 
 | caminho | tamanho | dado de cliente |
 |---|---|---|
-| `Downloads\_FORJA_HARNESS` (19/07) | 3.312 arquivos, 146 MB | **1.187 arquivos com CNJ, CPF, CNPJ, OAB e nome** |
 | `Downloads\Peticao_<caso>_FORJA_20260723` | 34 arquivos, 17 MB | 6 arquivos com CNPJ e OAB |
 | `Documents\FORJA_Valor_Unico_..._20260724` | 16 arquivos, 1,5 MB | nenhum |
-| `repos\_teste_reconstituicao` (05/08) | 16.022 arquivos, 649 MB | clone de teste, regenerável |
 
-Nenhuma delas vaza para o GitHub, porque nenhuma está versionada. O risco é
-outro: material sensível fora do alcance do gate, e uma cópia antiga que se
-parece com a pasta de trabalho o bastante para alguém abrir por engano. A de
-`repos\` é sobra do teste de reconstituição do dia e se refaz com
-`git-tools/montar_forja.py`.
+**Lacuna conhecida:** não foi possível confirmar se o disco `C:` está
+criptografado — a leitura do BitLocker exige elevação. Enquanto isso não for
+verificado, material de cliente fora da pasta de trabalho é legível por quem
+tiver a máquina em mãos. Conferir com `manage-bde -status C:` como
+administrador.
 
 ## Sincronizar
 
