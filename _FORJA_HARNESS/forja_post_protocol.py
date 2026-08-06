@@ -93,17 +93,21 @@ REASON_CODES = {
     "PP-SENDER-NOT-ALLOWED",
     "PP-CAPTURE-FAILED",
     "PP-NOT-A-REVISION",
+    "PP-NO-RETURN-ATTACHMENT",
 }
 
 # Piso de comparabilidade: abaixo dele o documento humano não é revisão da nossa
 # peça, e sim outro documento. Medido nos cinco retornos reais de 2026: os que
-# eram revisão deram 0,50 e 0,67 de texto em comum, com 35 e 19 sequências de
-# blocos preservadas; os que eram documento distinto deram 0,007, 0,031 e 0,134,
-# com 0, 0 e 1. Não há caso real entre 0,134 e 0,499, e os dois sinais concordam
-# em todos eles — por isso exigem-se ambos, para que uma métrica isolada com
-# comportamento estranho não deixe passar lixo.
+# eram revisão deram 0,50 e 0,67 de texto em comum; os que eram documento
+# distinto deram 0,007, 0,031 e 0,134. Não há caso real entre 0,134 e 0,499.
+#
+# A medida é PROPORÇÃO de texto em comum, e não contagem de blocos preservados.
+# A contagem foi testada junto e descartada: ela cresce com o tamanho do
+# documento, de modo que uma peça curta legitimamente revisada não alcança
+# piso nenhum e seria barrada por ser curta. Nos cinco retornos reais os dois
+# sinais concordavam, então exigir os dois não comprava separação — só
+# comprava um falso negativo em peça pequena.
 PISO_TEXTO_COMUM = 0.30
-PISO_BLOCOS_PRESERVADOS = 5
 
 
 def _e_revisao(comparison: dict) -> tuple[bool, dict]:
@@ -123,15 +127,13 @@ def _e_revisao(comparison: dict) -> tuple[bool, dict]:
         "sharedTokenRatio": resumo.get("sharedTokenRatio"),
         "retainedBlockRuns": resumo.get("retainedBlockRuns"),
         "pisoTextoComum": PISO_TEXTO_COMUM,
-        "pisoBlocosPreservados": PISO_BLOCOS_PRESERVADOS,
     }
     razao = resumo.get("sharedTokenRatio")
-    retidos = resumo.get("retainedBlockRuns")
-    if razao is None or retidos is None:
+    if razao is None:
         # Comparação de versão anterior do comparador, sem a medida. Não se
         # inventa aprovação por ausência de dado.
         return False, medidas
-    return (razao >= PISO_TEXTO_COMUM and retidos >= PISO_BLOCOS_PRESERVADOS), medidas
+    return razao >= PISO_TEXTO_COMUM, medidas
 VERSIONED_POST_PROTOCOL_ARTIFACTS = (
     "F10_POST_PROTOCOL_RETURN.json",
     "F10_PROTOCOL_EVIDENCE.json",
@@ -1881,6 +1883,22 @@ def scan_gmail(*, query: str, max_results: int = 100, shadow: bool = False) -> d
             if Path(part.get("filename") or "").suffix.lower() in SUPPORTED_RETURN_EXTENSIONS
         ]
         if not all_parts:
+            # Correção do titular que chega como texto do e-mail, sem peça
+            # anexada — "tire aquele argumento", "o prazo é outro", "não use
+            # esse precedente". Não há o que comparar, e por isso a esteira
+            # inteira é cega para ela; era literalmente descartada em silêncio,
+            # e a própria consulta padrão pedia `has:attachment`, de modo que a
+            # mensagem nem chegava a ser lida. Aqui ela passa a existir: fica
+            # registrada com o vínculo ao caso, para triagem humana. Nenhum
+            # trecho do corpo é copiado — quem tria abre a mensagem.
+            if len(matches) == 1:
+                quarantine.append({
+                    "messageId": message_id,
+                    "threadId": message.get("threadId"),
+                    "reasonCode": "PP-NO-RETURN-ATTACHMENT",
+                    "matchCount": 1,
+                    "attachmentCount": 0,
+                })
             continue
         parts, evidence_parts, selection_reason = _select_return_parts(all_parts)
         if selection_reason:
@@ -2080,7 +2098,10 @@ def main() -> None:
     ingest.add_argument("--declaration-text", default="")
     ingest.add_argument("--evidence", action="append", type=Path, default=[])
     scan = sub.add_parser("scan-gmail")
-    scan.add_argument("--query", default="in:anywhere after:2026/06/01 has:attachment -in:sent -in:trash -in:spam")
+    # Sem `has:attachment`: a consulta que só trazia mensagens com anexo tornava
+    # a esteira estruturalmente cega para a correção que vem escrita no corpo do
+    # e-mail, que é como boa parte delas chega.
+    scan.add_argument("--query", default="in:anywhere after:2026/06/01 -in:sent -in:trash -in:spam")
     scan.add_argument("--max-results", type=int, default=100)
     scan.add_argument("--shadow", action="store_true")
     promote = sub.add_parser("promote")

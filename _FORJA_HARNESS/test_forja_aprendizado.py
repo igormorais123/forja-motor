@@ -71,6 +71,49 @@ checar("candidato sem camada cai em unknown sem estourar",
        any(g["camada"] == "unknown" for g in ap.agrupar([{"_caso": "x"}])))
 
 
+# ------------------------------------------------------- comparabilidade
+# O filtro que separa correção de ruído. Sem ele, três retornos que não eram
+# revisão da nossa peça responderam por 496 das mudanças observadas em 2026 e,
+# agregados por classe, tinham a forma exata de um padrão do escritório.
+with tempfile.TemporaryDirectory() as tmp:
+    base = Path(tmp)
+    state_real = ap.STATE
+    ap.STATE = base / "state"
+    try:
+        def montar(caso: str, resumo: dict | None, quantos: int, sub: str = "n4_artifacts") -> None:
+            pasta = ap.STATE / caso / sub
+            pasta.mkdir(parents=True, exist_ok=True)
+            if resumo is not None:
+                (pasta / "F10_POST_PROTOCOL_DOCUMENT_COMPARISON.json").write_text(
+                    json.dumps({"summary": resumo}), encoding="utf-8")
+            (pasta / "F10_LEARNING_CANDIDATE.json").write_text(json.dumps({
+                "caseId": caso,
+                "candidates": [{"layer": "fact", "cause": "fact", "impact": "material",
+                                "confidence": 0.9} for _ in range(quantos)],
+            }), encoding="utf-8")
+
+        montar("caso-revisao", {"sharedTokenRatio": 0.5, "retainedBlockRuns": 35}, 3)
+        montar("caso-outro-documento", {"sharedTokenRatio": 0.03, "retainedBlockRuns": 0}, 76)
+        montar("caso-sem-medida", {"retainedBlockRuns": 40}, 20)
+        montar("caso-revisao", {"sharedTokenRatio": 0.5, "retainedBlockRuns": 35}, 9,
+               sub="n4_artifacts/post_protocol_history/abc")
+
+        vivos, descartados = ap.levantar_candidatos()
+        checar("candidato de comparação incomparável não entra", len(vivos) == 3,
+               f"vieram {len(vivos)}")
+        checar("o descarte é devolvido com o motivo, não some", len(descartados) == 2)
+        checar("comparação sem medida não é aprovada por omissão",
+               any(d["caso"] == "caso-sem-medida" for d in descartados))
+        checar("versão superada do mesmo retorno não conta duas vezes",
+               all(v["_caso"] == "caso-revisao" for v in vivos) and len(vivos) == 3)
+        # Reabre os incomparáveis, mas nunca a versão arquivada: contá-la seria
+        # contar duas vezes a mesma correção do titular.
+        checar("incluir_incomparaveis reabre os incomparáveis, não o histórico",
+               len(ap.levantar_candidatos(incluir_incomparaveis=True)[0]) == 99)
+    finally:
+        ap.STATE = state_real
+
+
 # ------------------------------------------------------- adotar e aplicar
 with tempfile.TemporaryDirectory() as tmp:
     base = Path(tmp)
@@ -108,6 +151,23 @@ with tempfile.TemporaryDirectory() as tmp:
         (ap.CONTRATOS / "F7.json").write_text(
             json.dumps({"phase": "F7", "gates": []}), encoding="utf-8")
         checar("conferir acusa regra apagada do destino", len(ap.conferir()) == 1)
+
+        # A regra guardou "3 casos"; se a recontagem der menos, quem decide é
+        # gente. Foi o que aconteceu de verdade em 06/08/2026: a primeira regra
+        # da casa nasceu de um lastro que o gate de comparabilidade dissolveu.
+        magros = [{"classe": "fact:fact", "camada": "fact", "causa": "fact",
+                   "casos": 1, "ocorrencias": 1, "materiais": 1, "confiancaMedia": 0.9}]
+        agrupar_real = ap.agrupar
+        levantar_real = ap.levantar_candidatos
+        ap.agrupar = lambda _c: magros
+        ap.levantar_candidatos = lambda **_k: ([], [])
+        try:
+            divs = ap.revalidar()
+            checar("revalidar acusa lastro que encolheu", len(divs) == 1)
+            checar("revalidar mostra o antes e o depois",
+                   divs and divs[0]["antes"]["casos"] == 3 and divs[0]["agora"]["casos"] == 1)
+        finally:
+            ap.agrupar, ap.levantar_candidatos = agrupar_real, levantar_real
 
         # Destino inválido e classe não observada param antes de escrever.
         for chamada, nome in (

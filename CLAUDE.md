@@ -121,25 +121,52 @@ ciclo é obrigatório e tem quatro passos, nesta ordem:
    a versão humana final ou a peça protocolada e a compara com a nossa. Ele é
    sanitizado por hash: guarda `beforeHash`, `afterHash` e localizador, nunca o
    trecho — o texto vive só no cofre local, fora de todo repositório.
-2. **Ler o padrão, não a ocorrência.** `python _FORJA_HARNESS\forja_aprendizado.py
-   padroes` agrega as correções por `camada:causa` e ordena por **recorrência
-   entre casos distintos**. Correção isolada é anedota; a que se repete em casos
-   diferentes é padrão do escritório. Contagem bruta não serve: um processo longo
-   produz centenas de mudanças sozinho.
-3. **Adotar com destino executável.** `forja_aprendizado.py adotar <classe>
+2. **Antes de tudo: isto é revisão da nossa peça?** O comparador alinha dois
+   documentos quaisquer; quando não há origem comum, ele casa parágrafos sem
+   relação entre si e classifica cada par com confiança alta. O gate
+   `PP-NOT-A-REVISION` mede a proporção de texto em comum e barra abaixo de
+   0,30. Medido em 06/08/2026: dos cinco retornos reais, três tinham 0,7%, 3,1%
+   e 13,4% e não eram revisão de nada — sozinhos respondiam por 496 mudanças e
+   228 classificadas como materiais. **Agregado por classe, esse ruído tem a
+   forma exata de um padrão do escritório**, e quase virou regra permanente.
+3. **Ler o padrão, não a ocorrência — e ler o texto, não só a contagem.**
+   `python _FORJA_HARNESS\forja_aprendizado.py padroes` agrega as correções por
+   `camada:causa` e ordena por **recorrência entre casos distintos**. Correção
+   isolada é anedota; a que se repete em casos diferentes é padrão do
+   escritório. Contagem bruta não serve: um processo longo produz centenas de
+   mudanças sozinho. **Nenhuma regra é adotada sem que alguém tenha lido
+   exemplos**: `amostra <classe>` abre o par real de textos a partir do cofre
+   local, mostra na tela e não grava nada. Contar não é ler — foi olhando só a
+   contagem que o ruído acima passou por padrão.
+4. **Adotar com destino executável.** `forja_aprendizado.py adotar <classe>
    --destino {checklist|template|doutrina} --fase Fn --regra "..." --aprovado-por
    <nome>`. A decisão é humana; o registro guarda a evidência de recorrência que
    existia no momento da adoção, para que se possa responder depois por que
    aquela regra existe.
-4. **Aplicar de verdade.** `forja_aprendizado.py aplicar` escreve a regra no
+5. **Aplicar de verdade.** `forja_aprendizado.py aplicar` escreve a regra no
    destino — item no contrato da fase, instrução no template ou lição no
    protocolo. **Registrar a frase não é aprender**; aprender é a próxima peça
    nascer diferente. A aplicação é idempotente e conferível.
+6. **Revalidar o lastro.** `forja_aprendizado.py revalidar` compara a evidência
+   registrada na adoção com a de hoje. Uma regra pode continuar sensata e ter
+   perdido o lastro — foi o que aconteceu com a primeira regra da casa, adotada
+   com "3 casos, 12 correções materiais" e reduzida a 1 caso e 1 correção pelo
+   gate de comparabilidade. O comando não apaga nem reescreve nada: devolve a
+   divergência para quem adotou decidir entre manter e corrigir a evidência, ou
+   revogar.
 
 **Gate 5-B do F10** (`forja_delivery.py`): nenhuma entrega fecha se uma regra
 adotada tiver saído do seu destino. O gate NÃO exige que o caso corrente já
 tenha aprendido — o retorno humano chega depois do protocolo, e exigi-lo
 travaria toda entrega por algo que ainda não existe.
+
+**A correção que vem escrita no e-mail conta igual.** A varredura do Gmail pedia
+`has:attachment` e descartava em silêncio toda mensagem sem peça anexada — a
+esteira era cega por construção para "tire aquele argumento", "o prazo é outro",
+"não use esse precedente", que é como boa parte da correção chega. O filtro caiu;
+mensagem de remetente autorizado vinculada a um caso, sem anexo comparável, fica
+registrada como `PP-NO-RETURN-ATTACHMENT` para triagem humana. Nenhum trecho do
+corpo é copiado: quem tria abre a mensagem.
 
 **Agradecer e pedir mais.** Depois que o loop roda, o retorno é respondido com o
 template `_FORJA_HARNESS\templates\F10_EMAIL_RETORNO_E_AGRADECIMENTO.md`:

@@ -58,6 +58,11 @@ REGISTRO = RAIZ / "learning_registry" / "REGRAS_APRENDIDAS.json"
 CONTRATOS = RAIZ / "phase_contracts"
 TEMPLATES = RAIZ / "templates"
 
+# O piso vem do pós-protocolo, que é quem define o gate. Repeti-lo aqui deixaria
+# a leitura e a produção divergirem no dia em que um dos dois mudasse.
+sys.path.insert(0, str(RAIZ))
+from forja_post_protocol import PISO_TEXTO_COMUM  # noqa: E402
+
 # Destinos possíveis de uma regra aprendida. Cada um tem custo e efeito
 # diferentes, e a escolha é do humano que adota — não do algoritmo.
 #
@@ -114,11 +119,11 @@ def comparabilidade(pasta_artefatos: Path) -> tuple[bool, dict]:
     comp = _ler_json(pasta_artefatos / "F10_POST_PROTOCOL_DOCUMENT_COMPARISON.json")
     resumo = (comp or {}).get("summary") or {}
     razao = resumo.get("sharedTokenRatio")
-    retidos = resumo.get("retainedBlockRuns")
-    medidas = {"sharedTokenRatio": razao, "retainedBlockRuns": retidos}
-    if razao is None or retidos is None:
+    medidas = {"sharedTokenRatio": razao,
+               "retainedBlockRuns": resumo.get("retainedBlockRuns")}
+    if razao is None:
         return False, medidas
-    return (razao >= 0.30 and retidos >= 5), medidas
+    return razao >= PISO_TEXTO_COMUM, medidas
 
 
 def levantar_candidatos(*, incluir_incomparaveis: bool = False) -> tuple[list[dict], list[dict]]:
@@ -528,6 +533,23 @@ def main(argv=None) -> int:
             marca = "[seco]" if args.seco else ("alterado" if mudou else "já estava")
             print(f"  {destino:9} {marca:10} {caminho.name}")
         return 0
+
+    if args.verbo == "revalidar":
+        divs = revalidar()
+        if not divs:
+            print("APROVADO — a evidência de toda regra adotada continua de pé.")
+            return 0
+        for d in divs:
+            a, b = d["antes"], d["agora"]
+            print(f"  {d['regraId']} — {d['classe']}")
+            print(f"    na adoção: {a.get('casos')} caso(s), {a.get('materiais')} material(is)")
+            print(f"    hoje     : "
+                  + ("classe ausente" if b is None
+                     else f"{b['casos']} caso(s), {b['materiais']} material(is)"))
+            print(f"    {d['nota']}")
+        print(f"\n{len(divs)} regra(s) com lastro menor do que o registrado.")
+        print("Decisão humana: manter a regra e corrigir a evidência, ou revogá-la.")
+        return 1
 
     problemas = conferir()
     if problemas:

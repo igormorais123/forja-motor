@@ -24,6 +24,7 @@ from forja_learning_registry import active_rules, register_promoted_rule, suite_
 from forja_n3_common import ForjaN3Error, RevisionConflict, read_json, sha256_file
 from forja_n4_common import ARTIFACT_SPECS, build_envelope, write_artifact
 from forja_post_protocol import (
+    _e_revisao,
     _case_for_demand,
     _sender_allowed,
     _select_return_parts,
@@ -685,6 +686,55 @@ class DocumentExtractionTests(unittest.TestCase):
         self.assertFalse(comparison["comparisonPolicy"]["layoutConclusionAllowed"])
 
 
+class ComparabilityGateTests(unittest.TestCase):
+    """A peça humana é revisão da nossa, ou é outro documento?
+
+    A pergunta vem antes de qualquer aprendizado. Sem ela, o alinhamento de
+    tokens casa parágrafos sem relação entre si, classifica cada par com
+    confiança alta e o agregado dessas mudanças toma a forma de um padrão do
+    escritório. Os números destes casos são os cinco retornos reais de 2026.
+    """
+
+    def test_revision_passes(self) -> None:
+        for razao, retidos in ((0.499, 35), (0.668, 19)):
+            with self.subTest(razao=razao):
+                ok, _ = _e_revisao({"summary": {"sharedTokenRatio": razao,
+                                                "retainedBlockRuns": retidos}})
+                self.assertTrue(ok)
+
+    def test_short_revision_is_not_punished_for_being_short(self) -> None:
+        # Peça curta e muito revisada não tem sequências longas de blocos
+        # preservados. Medir por contagem de blocos a reprovaria por tamanho —
+        # foi por isso que o gate ficou só na proporção de texto em comum.
+        ok, _ = _e_revisao({"summary": {"sharedTokenRatio": 0.62, "retainedBlockRuns": 0}})
+        self.assertTrue(ok)
+
+    def test_distinct_document_is_blocked(self) -> None:
+        for razao, retidos in ((0.007, 0), (0.031, 0), (0.134, 1)):
+            with self.subTest(razao=razao):
+                ok, _ = _e_revisao({"summary": {"sharedTokenRatio": razao,
+                                                "retainedBlockRuns": retidos}})
+                self.assertFalse(ok)
+
+    def test_missing_measure_does_not_approve(self) -> None:
+        # Comparação de versão anterior do comparador. Ausência de medida não é
+        # aprovação: era exatamente assim que os retornos incomparáveis de 2026
+        # entravam no aprendizado.
+        ok, _ = _e_revisao({"summary": {"retainedBlockRuns": 40, "changeCount": 12}})
+        self.assertFalse(ok)
+
+    def test_shared_ratio_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            base, humano = root / "a.txt", root / "b.txt"
+            texto = "Primeira linha do memorial.\nSegunda linha do memorial.\n"
+            base.write_text(texto, encoding="utf-8")
+            humano.write_text(texto + "Terceira linha acrescentada.\n", encoding="utf-8")
+            resumo = compare_documents(base, humano)["summary"]
+            self.assertGreater(resumo["sharedTokenRatio"], 0.5)
+            self.assertLess(resumo["sharedTokenRatio"], 1.0)
+
+
 class VaultIsolationTests(unittest.TestCase):
     def test_vault_and_full_diff_paths_are_ignored_and_untracked(self) -> None:
         candidates = [
@@ -723,6 +773,21 @@ class VaultIsolationTests(unittest.TestCase):
 
 
 class GmailBoundaryTests(unittest.TestCase):
+    def test_scan_query_does_not_require_attachment(self) -> None:
+        """Boa parte da correção do titular vem escrita no corpo do e-mail.
+
+        Enquanto a consulta padrão pedia `has:attachment`, essas mensagens
+        sequer eram lidas: a esteira era cega por construção para o retorno que
+        não vinha com peça anexada. Elas agora chegam e, sem anexo a comparar,
+        ficam registradas como `PP-NO-RETURN-ATTACHMENT` para triagem humana.
+        """
+        codigo = Path(__file__).with_name("forja_post_protocol.py").read_text(
+            encoding="utf-8", errors="ignore")
+        linha = next(l for l in codigo.splitlines() if 'scan.add_argument("--query"' in l)
+        self.assertNotIn("has:attachment", linha)
+        from forja_post_protocol import REASON_CODES
+        self.assertIn("PP-NO-RETURN-ATTACHMENT", REASON_CODES)
+
     def test_sender_allowlist_is_checked_from_configuration(self) -> None:
         message = {
             "payload": {
