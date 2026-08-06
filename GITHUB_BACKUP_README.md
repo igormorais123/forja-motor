@@ -44,6 +44,45 @@ não uma lista escrita à mão. Para conferir um caminho específico:
 python _FORJA_HARNESS\forja_fronteira.py --classificar "Pasta Do Caso\ANALISE.md"
 ```
 
+## O que protege isso de dar errado
+
+**Na escrita.** O hook em `.claude/settings.json` roda
+`_FORJA_HARNESS/forja_hook_fronteira.py` a cada Write/Edit: se o arquivo vai
+para o motor e carrega CNJ, CPF, CNPJ, OAB ou nome de cliente, o aviso sai na
+hora, para quem ainda tem o contexto na cabeça. Sem ele, quem escreve às 15h só
+descobre às 20h, quando a rotina reprova.
+
+**Na publicação.** O gate de fronteira, descrito acima. É ele que impede — o
+hook apenas avisa cedo.
+
+**Depois da publicação.** `git-tools/STATUS_SYNC.md` é reescrito a **cada**
+execução, inclusive quando ela falha, com o veredito, a hora e o que resolve.
+Era o elo que faltava: a rotina roda sozinha às 20:00 e, sem esse arquivo, o
+resultado existia apenas no código de saída da tarefa agendada — que ninguém
+consulta. Foi assim que o repositório único passou cinco dias sem conseguir
+subir enquanto parecia ser cópia de segurança.
+
+## Onde NÃO deve haver cópia
+
+Auditado em 05/08/2026. A pasta de trabalho é o único git; as duas cascas `.git`
+vazias que existiam dentro dela (em `_FORJA_HARNESS/` e numa pasta de caso)
+foram removidas — não eram repositórios, mas convidavam a virar um.
+
+Fora dela, ficaram três cópias soltas, nenhuma sob git:
+
+| caminho | tamanho | dado de cliente |
+|---|---|---|
+| `Downloads\_FORJA_HARNESS` (19/07) | 3.312 arquivos, 146 MB | **1.187 arquivos com CNJ, CPF, CNPJ, OAB e nome** |
+| `Downloads\Peticao_<caso>_FORJA_20260723` | 34 arquivos, 17 MB | 6 arquivos com CNPJ e OAB |
+| `Documents\FORJA_Valor_Unico_..._20260724` | 16 arquivos, 1,5 MB | nenhum |
+| `repos\_teste_reconstituicao` (05/08) | 16.022 arquivos, 649 MB | clone de teste, regenerável |
+
+Nenhuma delas vaza para o GitHub, porque nenhuma está versionada. O risco é
+outro: material sensível fora do alcance do gate, e uma cópia antiga que se
+parece com a pasta de trabalho o bastante para alguém abrir por engano. A de
+`repos\` é sobra do teste de reconstituição do dia e se refaz com
+`git-tools/montar_forja.py`.
+
 ## Sincronizar
 
 ```powershell

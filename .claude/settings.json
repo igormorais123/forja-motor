@@ -1,0 +1,27 @@
+{
+  "$comentario": [
+    "Configuração de projeto da Fábrica de Melhoria de Petições.",
+    "O hook abaixo avisa, no instante em que um arquivo do motor é escrito, que",
+    "ele carrega dado de cliente — número CNJ, CPF, CNPJ, inscrição na OAB ou",
+    "nome. Sem ele, quem escreve às 15h só descobre às 20h, quando a rotina de",
+    "sincronização reprova e nada é publicado; a essa altura o contexto de por",
+    "que aquele número estava ali já se perdeu.",
+    "Ele não substitui o gate de fronteira, que continua sendo a barreira que",
+    "impede a publicação. Fecha o intervalo entre escrever e descobrir.",
+    "CLAUDE_PROJECT_DIR mantém isto válido em qualquer máquina que clone o motor."
+  ],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -X utf8 \"$CLAUDE_PROJECT_DIR/_FORJA_HARNESS/forja_hook_fronteira.py\"",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

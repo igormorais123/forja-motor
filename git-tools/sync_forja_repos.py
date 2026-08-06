@@ -203,7 +203,11 @@ def publicar(repo: Path, seco: bool) -> str:
     return f"enviado: {msg}"
 
 
-ESTADO = Path(__file__).resolve().parent / "STATUS_SYNC.md"
+# O laudo de falha pode citar caminho, nome e identificador do arquivo que o
+# gate barrou. Portanto ele pertence ao acervo privado, nunca ao diretório
+# `git-tools/`, que é publicado no motor. Mantê-lo no motor faria o relatório
+# de uma reprovação virar a causa da reprovação seguinte.
+ESTADO = TRABALHO / "_FORJA_HARNESS" / "reports" / "GIT_SYNC_STATUS.md"
 
 
 def registrar_estado(veredito: str, linhas: list[str]) -> None:
