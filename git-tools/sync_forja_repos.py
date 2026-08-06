@@ -220,8 +220,13 @@ def registrar_estado(veredito: str, linhas: list[str]) -> None:
     três publicações seguidas por arquivo recém-criado com dado de caso: se
     tivesse acontecido de madrugada, o silêncio seria idêntico.
 
-    O arquivo é curto de propósito. Ele responde "deu certo ontem?" em uma linha
-    e diz o que fazer quando não deu; o detalhe fica na saída do comando.
+    **O laudo vai para o acervo, não para `git-tools/`.** A primeira versão desta
+    função gravava em `git-tools/STATUS_SYNC.md`, que é publicado no repositório
+    do motor — e o laudo de uma reprovação lista justamente os caminhos e nomes
+    que fizeram o gate reprovar. Ou seja: a correção escrita para tornar a falha
+    visível criava, ela própria, a via de vazamento que o gate existe para
+    fechar. O ponteiro em `git-tools/` continua lá, sem conteúdo, para quem
+    procura o estado no lugar antigo.
     """
     agora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     corpo = [f"# Última sincronização com o GitHub", "",
