@@ -232,6 +232,49 @@ def _frase(par, minimo=55, maximo=190):
     return None
 
 
+def _frase_destacavel(par, minimo=55, maximo=190, evitar=()):
+    """Frase para pull quote ou linha-síntese, nunca a que abre o parágrafo.
+
+    Pull quote e linha-síntese são impressas imediatamente ACIMA do parágrafo
+    de onde saíram. Se a frase escolhida for a primeira dele, o leitor vê a
+    mesma frase duas vezes seguidas, e o gate de escrita humana reprova por
+    redundância consecutiva — foi o que barrou o Adendo VII do mapeamento em
+    06/08/2026, com similaridade 1,00. O defeito passava despercebido porque
+    parágrafo de abertura longo faz `_frase` cair na segunda frase sozinha.
+
+    `evitar` recebe as frases já comprometidas com outro destaque. Sem isso, a
+    linha-síntese da seção e a pull quote do mesmo parágrafo escolhem a mesma
+    frase — que é a segunda metade do mesmo defeito.
+
+    Devolve None quando só a frase de abertura cabe: destaque redundante é pior
+    que destaque ausente, e o documento tem outros parágrafos candidatos.
+    """
+    limpo = _limpa(par)
+    frases = [f.strip() for f in _FIM_FRASE.split(limpo)]
+    # O critério é de POSIÇÃO, não de igualdade de frase. Comparar frases não
+    # resolve porque o divisor quebra também em dois-pontos: em "A consequência
+    # é direta: não existe fonte pública nacional que responda...", a segunda
+    # metade é frase distinta da primeira e ainda assim abre o parágrafo. O que
+    # produz a leitura duplicada é o destaque nascer da abertura, qualquer que
+    # seja o recorte.
+    ABERTURA = 80
+    for frase in frases:
+        if not frase or frase in evitar:
+            continue
+        if limpo.find(frase) < ABERTURA:
+            continue
+        # O divisor quebra em abreviação: "fundado nos arts. 7º e 8º da Lei" vira
+        # duas "frases", e a segunda entrou como linha-síntese de uma seção
+        # começando em "7º e 8º da Lei nº 9.966/2000 e vale por réu". Destaque
+        # que começa no meio de uma oração parece erro de recorte, e é.
+        letras = [c for c in frase if c.isalpha()]
+        if letras and not letras[0].isupper():
+            continue
+        if minimo <= len(frase) <= maximo:
+            return frase
+    return None
+
+
 # Marcadores de parágrafo que carrega decisão — base das pull quotes.
 # Calibrado contra os 5 mapas manuais: o humano destaca (a) conclusões, (b)
 # negações categóricas, (c) imputações de vício, (d) movimentos argumentativos
@@ -260,8 +303,18 @@ _DATA = re.compile(r"\b\d{1,2}[/.]\d{1,2}[/.]\d{2,4}\b|\b\d{1,2}\s+de\s+\w+\s+de
 
 
 def _titulo_precedente(texto):
+    """Rótulo da caixa: o identificador do precedente, quando houver um.
+
+    O padrão anterior era rotular "PRECEDENTE INVOCADO" tudo o que virasse
+    caixa. Mas a caixa também é escolhida por peso de citação — aspas bastam —,
+    e no Adendo VII do mapeamento (06/08/2026) três caixas sem precedente
+    nenhum saíram assim rotuladas, sendo que uma delas era uma ressalva nossa
+    sobre valor. O rótulo afirmava, na cara do leitor, uma coisa que o
+    parágrafo não continha. Rótulo é texto autoral e cai na mesma regra das
+    figuras: melhor neutro e verdadeiro do que específico e falso.
+    """
     m = _PRECEDENTE.search(texto)
-    return (m.group(0).upper() if m else "PRECEDENTE INVOCADO")
+    return (m.group(0).upper() if m else "DESTAQUE")
 
 
 # ---------------------------------------------------------------- geração
@@ -340,15 +393,17 @@ def gerar_mapa(md_path, tipo=None, com_figuras=True, max_pulls=6, max_caixas=3):
     alvo = _norm(texto_md)   # base de unicidade das âncoras
     mapa = {"tipo": tipo}
 
-    # --- linhas-síntese: primeira frase do 1º parágrafo de cada seção ---
+    # --- linhas-síntese: uma frase do 1º parágrafo de cada seção ---
     linhas_sintese = {}
+    comprometidas = set()   # frases já usadas: nenhum outro destaque as repete
     for sec in secoes:
         corpo = [e for e in elegiveis if e["secao"] == sec["t_sem_num"]]
         if not corpo:
             continue
-        frase = _frase(corpo[0]["par"], minimo=40, maximo=150)
+        frase = _frase_destacavel(corpo[0]["par"], minimo=40, maximo=150)
         if frase:
             linhas_sintese[sec["t_sem_num"]] = frase
+            comprometidas.add(frase)
     if linhas_sintese:
         mapa["linhas_sintese"] = linhas_sintese
 
@@ -393,7 +448,7 @@ def gerar_mapa(md_path, tipo=None, com_figuras=True, max_pulls=6, max_caixas=3):
         peso = sum(p for rx, p in _PESO if rx.search(e["par"]))
         if not peso:
             continue
-        if _frase(e["par"]) is None:
+        if _frase_destacavel(e["par"], evitar=comprometidas) is None:
             continue
         candidatos.append((peso, e))
     # Fallback de densidade: documento de registro técnico (diagnóstico,
@@ -405,7 +460,7 @@ def gerar_mapa(md_path, tipo=None, com_figuras=True, max_pulls=6, max_caixas=3):
         ja = {id(e) for _, e in candidatos}
         reserva = [e for e in elegiveis
                    if e["i"] not in usados and id(e) not in ja
-                   and len(_limpa(e["par"])) >= 140 and _frase(e["par"])]
+                   and len(_limpa(e["par"])) >= 140 and _frase_destacavel(e["par"], evitar=comprometidas)]
         if reserva:
             passo = max(1, len(reserva) // max(1, alvo_pulls - len(candidatos)))
             candidatos += [(1, e) for e in reserva[::passo]]
@@ -417,7 +472,9 @@ def gerar_mapa(md_path, tipo=None, com_figuras=True, max_pulls=6, max_caixas=3):
         # no máximo 2 por seção: mais que isso vira ruído na margem
         if por_secao.get(e["secao"], 0) >= 2:
             continue
-        pulls.append((_ancora(e["par"], alvo), _frase(e["par"])))
+        frase_pull = _frase_destacavel(e["par"], evitar=comprometidas)
+        pulls.append((_ancora(e["par"], alvo), frase_pull))
+        comprometidas.add(frase_pull)
         por_secao[e["secao"]] = por_secao.get(e["secao"], 0) + 1
         usados.add(e["i"])
     if pulls:

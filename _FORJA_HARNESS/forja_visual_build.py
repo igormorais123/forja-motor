@@ -203,8 +203,17 @@ if __name__ == "__main__":
     parser.add_argument("--case-dir")
     parser.add_argument("--ledger")
     parser.add_argument("--base-dir")
+    # `_tipo_produto` decide por palavra-chave no título e nos 1.800 primeiros
+    # caracteres. É bom palpite e erra: um relatório ao cliente que não diga
+    # "relatório" nas primeiras linhas é classificado como peça, e então cobra
+    # endereçamento e assinatura com OAB que ele não deve ter. Quem escreve sabe
+    # o que escreveu; a declaração explícita prevalece e a heurística fica de
+    # reserva. O gate NÃO é afrouxado: peça declarada continua sendo cobrada
+    # como peça.
+    parser.add_argument("--tipo", choices=("peca", "estudo"),
+                        help="declara o tipo do produto em vez de deduzi-lo")
     args = parser.parse_args()
-    r = build(args.md_path, args.out_dir, args.titulo,
+    r = build(args.md_path, args.out_dir, args.titulo, tipo=args.tipo,
               case_dir=args.case_dir, ledger_path=args.ledger,
               base_dir=args.base_dir)
     print(json.dumps(r, ensure_ascii=False, indent=2))
