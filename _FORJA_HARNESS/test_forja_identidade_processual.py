@@ -243,8 +243,73 @@ def test_lastro_em_artefato_derivado_e_recusado():
     print("✓ test_lastro_em_artefato_derivado_e_recusado")
 
 
+# --------------------------------------------------------------------------
+# S6 e S7 — a forma do caso vem de correções escritas do titular em julho e
+# agosto de 2026, em dois processos distintos; os identificadores aqui são
+# sintéticos, porque o gate da fronteira acusa número real em arquivo do motor
+# e tem razão. O que se reproduz é o modo de falha: os recursos citados a mais
+# EXISTEM e são do MESMO cliente, e é por isso que nenhum gate lexical os
+# apanha — só a lista externa do que pertence a este trabalho. O tema excluído
+# é verdadeiro sobre o caso e estranho ao que o tribunal pode decidir nele.
+# --------------------------------------------------------------------------
+DECL_ATOS = {
+    "atos": {"impugnado": "REsp 0.000.001/UF",
+             "relacionados": ["0000000-00.2022.8.26.0000"]},
+    "objeto": {"devolvido": "art. 406 do CC — SELIC como índice único",
+               "excluidos": ["salvados", "Tema 0.000", "multa do art. 523"]},
+}
+TEXTO_COM_ERRO = (
+    "Trata-se do REsp 0.000.001/UF, originado do AI 0000000-00.2022.8.26.0000. "
+    "Como já decidido no REsp 0.000.002/UF e no AREsp 0.000.003/UF, a questão "
+    "dos salvados também merece exame, além da multa do art. 523 do CPC."
+)
+TEXTO_LIMPO = (
+    "Trata-se do REsp 0.000.001/UF, originado do AI 0000000-00.2022.8.26.0000. "
+    "Aplica-se o art. 406 do Código Civil, com incidência da SELIC."
+)
+
+
+def test_s6_acusa_recurso_de_outro_desdobramento():
+    from forja_identidade_processual import gate_s6_identidade_do_ato
+    achados = gate_s6_identidade_do_ato(TEXTO_COM_ERRO, DECL_ATOS)
+    citados = " ".join(a["problema"] for a in achados)
+    assert "0.000.002" in citados, "não acusou o REsp de outro desdobramento"
+    assert "0.000.003" in citados, "não acusou o AREsp de outro desdobramento"
+    assert all(a["sev"] == "P0" for a in achados)
+    print("✓ S6 acusa ato de outro desdobramento do mesmo cliente")
+
+
+def test_s6_nao_acusa_o_que_foi_declarado():
+    from forja_identidade_processual import gate_s6_identidade_do_ato
+    assert gate_s6_identidade_do_ato(TEXTO_LIMPO, DECL_ATOS) == []
+    print("✓ S6 silencia quando todo ato citado foi declarado")
+
+
+def test_s7_acusa_tema_fora_do_objeto():
+    from forja_identidade_processual import gate_s7_objeto_devolvido
+    temas = " ".join(a["problema"] for a in gate_s7_objeto_devolvido(TEXTO_COM_ERRO, DECL_ATOS))
+    assert "salvados" in temas and "art. 523" in temas
+    assert gate_s7_objeto_devolvido(TEXTO_LIMPO, DECL_ATOS) == []
+    print("✓ S7 acusa tema declarado fora do objeto devolvido")
+
+
+def test_s6_s7_sem_declaracao_nao_opinam():
+    # A regra da casa: caso não declarado fica indeterminado, nunca reprovado
+    # por ausência. São 52 casos sem declaração — o contrário travaria todos.
+    from forja_identidade_processual import (
+        gate_s6_identidade_do_ato, gate_s7_objeto_devolvido)
+    for decl in ({}, None, {"cliente": {"nome": "X", "papel": "agravada"}}):
+        assert gate_s6_identidade_do_ato(TEXTO_COM_ERRO, decl) == []
+        assert gate_s7_objeto_devolvido(TEXTO_COM_ERRO, decl) == []
+    print("✓ S6 e S7 não opinam sem os blocos declarados")
+
+
 def main():
     try:
+        test_s6_acusa_recurso_de_outro_desdobramento()
+        test_s6_nao_acusa_o_que_foi_declarado()
+        test_s7_acusa_tema_fora_do_objeto()
+        test_s6_s7_sem_declaracao_nao_opinam()
         test_s2_sem_declaracao()
         test_s4_sem_declaracao()
         test_s2_com_declaracao_valida_no_texto()

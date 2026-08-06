@@ -191,6 +191,19 @@ conteúdo da correção vive no e-mail e quem tria abre a mensagem. Não há
 classificação automática de prosa: heurística sobre texto livre inventaria
 padrão, que é exatamente o erro que o gate de comparabilidade acabou de fechar.
 
+**Regra escrita que não pega vira gate (06/08/2026 — ordem do Igor).** A
+identidade dos atos recursais é INVIOLÁVEL aqui desde 11/07 e foi violada em
+dois clientes e dois tribunais depois disso; a síntese executiva estruturada,
+regra desde 07/07, precisou ser incluída à mão. Instrução escrita disputa
+atenção com todo o resto do prompt e perde. As duas viraram gate verificável:
+**S6** reprova identificador de processo ou recurso citado na peça e não
+declarado no bloco `atos` de `F2_IDENTIDADE_PROCESSUAL.json`; **S7** reprova
+tema declarado fora do `objeto.devolvido` e ainda assim sustentado. Como nos
+S2/S4: lastro externo declarado, e caso sem declaração não recebe veredito —
+nunca P0 por ausência. O erro que S6 fecha não é número errado, é o número
+CERTO de outro processo do mesmo cliente: o texto fica internamente coerente e
+nenhum gate lexical discorda dele.
+
 **Agradecer e pedir mais.** Depois que o loop roda, o retorno é respondido com o
 template `_FORJA_HARNESS\templates\F10_EMAIL_RETORNO_E_AGRADECIMENTO.md`:
 agradecer pelo específico, mostrar o que mudou na estrutura por causa daquela

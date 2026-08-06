@@ -29,6 +29,12 @@
       "classe": "evidence_annex:missing_input",
       "texto": "Antes de redigir, conferir que todo documento citado no comando existe nos autos ou no acervo do caso; insumo ausente vira bloqueador nominado, nunca premissa.",
       "origem": "retorno_humano_pos_protocolo"
+    },
+    {
+      "regraId": "regra-baec3fa38eeb",
+      "classe": "procedural_identity:fact",
+      "texto": "Declarar, antes de redigir, o objeto efetivamente devolvido ao tribunal e a lista de temas fora dele, no bloco objeto de F2_IDENTIDADE_PROCESSUAL.json. Verdadeiro sobre o caso não é o mesmo que decidível neste recurso.",
+      "origem": "retorno_humano_pos_protocolo"
     }
   ]
 }

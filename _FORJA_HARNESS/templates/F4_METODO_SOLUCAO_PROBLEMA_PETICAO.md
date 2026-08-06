@@ -180,5 +180,9 @@ Outros:
 
 - **Declarar o cerco antes de sustentar a tese: para cada capítulo, escrever o que a peça NÃO pede e NÃO reabre — mérito já precluso, reexame de prova, renúncia a pedido não devolvido, uso de um fundamento como multiplicador autônomo. O titular vem inserindo esses parágrafos de delimitação negativa à mão; a peça sai com a tese afirmativa e sem o cerco que bloqueia a leitura adversa.**
   <br>_regra-adf61f52e37f — classe `reasoning:reasoning`, observada em 2 caso(s), 54 mudança(s) material(is)._
+- **Nomear e enfrentar, em capítulo próprio, a objeção HOJE mais forte contra o provimento — não a do recurso original, a que a adversa efetivamente sustenta na última manifestação. Responder de forma individualizada a cada perna dela, sem depender de fórmula genérica.**
+  <br>_regra-d4fb73d8708d — classe `request_relief:reasoning`, observada em 2 caso(s), 9 mudança(s) material(is)._
+- **Separar a autoridade do que foi decidido NESTES autos, que é comando do rejulgamento, da força persuasiva do precedente paralelo, que é espelho. Nunca tratar os dois como equivalentes nem transpor dados de um processo paralelo para o pautado.**
+  <br>_regra-3b7115a40125 — classe `authority_citation:citation_scope`, observada em 2 caso(s), 10 mudança(s) material(is)._
 
 <!-- APRENDIDO-DO-RETORNO-HUMANO: fim -->

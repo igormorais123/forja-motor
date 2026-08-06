@@ -576,6 +576,15 @@ def verificar(texto, tipo="peca", *, ledger=None, base_dir=None, case_dir=None,
                     decl, manifest, base_dir=case_path).valida:
                 todas.extend(gate_s2_pareamento_nome_papel(texto, decl))
                 todas.extend(gate_s4_presenca_direcao_pedido(texto, decl))
+        # S6 e S7 dependem só dos blocos `atos` e `objeto` da declaração, e não
+        # do lastro de nome/papel: um caso pode ter a lista de atos conferida
+        # sem ter a autuação transcrita. Rodam fora do bloco acima de propósito,
+        # e continuam sem opinar quando os blocos não existem.
+        if decl:
+            from forja_identidade_processual import (
+                gate_s6_identidade_do_ato, gate_s7_objeto_devolvido)
+            todas.extend(gate_s6_identidade_do_ato(texto, decl))
+            todas.extend(gate_s7_objeto_devolvido(texto, decl))
     # Blindagem contra lastro aparente (caso CASO-23, 26/07/2026). Os gates
     # lexicais entram em toda rota; L1/L2/L7/L8 e L9--L13 só são calculados
     # quando a rota fornece o ledger/contexto documental real.

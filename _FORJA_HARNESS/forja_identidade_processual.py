@@ -86,6 +86,17 @@ def schema_identidade_processual() -> dict:
             "sha256": "string (hash do arquivo fonte para auditoria)",
             "trechoVerbatim": "string (trecho literal que sustenta a declaração, ≥25 chars)",
         },
+        # Blocos opcionais. Sem eles os gates S6 e S7 não rodam e não opinam —
+        # o caso fica indeterminado, nunca reprovado por ausência de declaração.
+        "atos": {
+            "impugnado": "string (o ato que ESTA peça impugna, com identificador)",
+            "proprios": "lista (identificadores deste mesmo trabalho: autos, recurso)",
+            "relacionados": "lista (o que pode ser citado legitimamente; tudo fora vira P0)",
+        },
+        "objeto": {
+            "devolvido": "string (o que o tribunal pode decidir neste recurso)",
+            "excluidos": "lista (temas fora do objeto; sustentá-los na peça vira P0)",
+        },
         "createdAt": "ISO 8601 timestamp",
         "note": "string (opcional: contexto do declarante, lacunas detectadas, etc.)",
     }
@@ -494,6 +505,125 @@ def _ctx(texto: str, ini: int, fim: int, alcance: int = 60) -> str:
     a = max(0, ini - alcance)
     b = min(len(texto), fim + alcance)
     return re.sub(r'\s+', ' ', texto[a:b]).strip()
+
+
+# ---------------------------------------------------------------------------
+# S6 e S7 — identidade do ato recursal e objeto devolvido (06/08/2026)
+#
+# Vieram de correção escrita do titular, em dois casos distintos e depois de a
+# regra já existir por escrito no protocolo da casa desde 11/07/2026. Em um
+# deles o titular teve de listar, um a um, os recursos do MESMO cliente que a
+# peça citava sem pertencerem àquele trabalho; no outro, apontou transposição
+# de dados de um processo paralelo para o processo efetivamente pautado, com
+# referências incorretas ao recurso, aos eventos e ao órgão julgador.
+#
+# O erro não é escrever um número errado: é escrever o número CERTO de outro
+# processo do mesmo cliente. O texto fica internamente coerente, e nenhum gate
+# lexical tem como discordar dele.
+#
+# Uma regra que vive só como instrução de prompt disputa atenção com todo o
+# resto e perde. Estes dois gates são a decisão do Igor em 06/08/2026 de
+# convertê-la em bloqueio verificável, no mesmo desenho dos S2/S4: **lastro
+# externo declarado, e caso sem declaração não tem veredito** — nunca P0
+# automático por ausência.
+# ---------------------------------------------------------------------------
+
+# Identificadores de ato processual que aparecem no corpo de uma peça.
+RE_ATOS = re.compile(
+    r"\b\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}\b"                    # CNJ
+    r"|\b(?:REsp|AREsp|AgInt|AgRg|EAREsp|EREsp|RE|ARE|AI|RO)\s*n?[º°.]?\s*"
+    r"[\d][\d.\-/]{3,}\b",                                          # recurso numerado
+    re.I,
+)
+
+
+def _atos_declarados(decl: Optional[dict]) -> set:
+    """Identificadores que a declaração reconhece como deste trabalho."""
+    if not decl:
+        return set()
+    bloco = decl.get("atos") or {}
+    declarados = []
+    for chave in ("impugnado", "proprios", "relacionados"):
+        valor = bloco.get(chave)
+        if isinstance(valor, str):
+            declarados.append(valor)
+        elif isinstance(valor, list):
+            declarados.extend(str(item) for item in valor)
+    return {_chave_ato(item) for item in declarados if str(item).strip()}
+
+
+def _chave_ato(bruto: str) -> str:
+    """Só os dígitos: compara identificador sem depender de pontuação ou rótulo."""
+    return re.sub(r"\D", "", str(bruto))
+
+
+def gate_s6_identidade_do_ato(texto: str, decl: Optional[dict]) -> list[dict]:
+    """Todo ato citado na peça foi declarado como pertencente a este trabalho?
+
+    O erro que ele fecha não é escrever um número errado: é escrever o número
+    CERTO **de outro processo do mesmo cliente**. Nenhum gate lexical apanha
+    isso, porque o texto fica internamente coerente — só uma lista externa do
+    que pertence a este trabalho separa um do outro.
+
+    Sem `atos` na declaração o gate não roda e não opina.
+    """
+    declarados = _atos_declarados(decl)
+    if not declarados:
+        return []
+    achados = []
+    vistos = set()
+    for m in RE_ATOS.finditer(texto):
+        bruto = m.group(0)
+        chave = _chave_ato(bruto)
+        if len(chave) < 6 or chave in declarados or chave in vistos:
+            continue
+        # O mesmo ato escrito de outro jeito — com e sem dígito verificador, com
+        # e sem sufixo do tribunal — difere no começo ou no fim, nunca no meio.
+        # A comparação por conteúdo em qualquer posição era frouxa demais: um
+        # número curto aparece por acaso dentro de um CNJ longo e seria
+        # absolvido, que é exatamente o erro que este gate existe para pegar.
+        if any(chave.startswith(alvo) or alvo.startswith(chave) or
+               chave.endswith(alvo) or alvo.endswith(chave)
+               for alvo in declarados):
+            continue
+        vistos.add(chave)
+        achados.append({
+            "sev": "P0",
+            "gate": "S6_IDENTIDADE_DO_ATO",
+            "problema": (f"ato processual citado e não declarado neste trabalho: "
+                         f"'{bruto.strip()}'. Ou ele pertence a outro desdobramento "
+                         f"do caso, ou falta declará-lo em atos.relacionados."),
+            "contexto": _ctx(texto, m.start(), m.end()),
+        })
+    return achados
+
+
+def gate_s7_objeto_devolvido(texto: str, decl: Optional[dict]) -> list[dict]:
+    """A peça sustenta tema que a declaração excluiu do objeto do recurso?
+
+    Nasceu da correção mais recorrente do titular: a peça trata de tudo o que é
+    verdadeiro sobre o caso, e não do que o tribunal pode decidir. A lista de
+    exclusões é declarada por pessoa — inferir escopo de prosa argumentativa é
+    o erro que a esteira já cometeu na figura de cronologia.
+    """
+    excluidos = ((decl or {}).get("objeto") or {}).get("excluidos") or []
+    if not excluidos:
+        return []
+    achados = []
+    for tema in excluidos:
+        tema = str(tema).strip()
+        if len(tema) < 4:
+            continue
+        for m in re.finditer(re.escape(tema), texto, re.I):
+            achados.append({
+                "sev": "P0",
+                "gate": "S7_OBJETO_DEVOLVIDO",
+                "problema": (f"a peça sustenta '{tema}', declarado FORA do objeto "
+                             f"devolvido ao tribunal neste recurso."),
+                "contexto": _ctx(texto, m.start(), m.end()),
+            })
+            break  # uma ocorrência basta para acusar o tema
+    return achados
 
 
 if __name__ == "__main__":

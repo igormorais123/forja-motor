@@ -102,7 +102,9 @@
 | Ler o texto real das correções de uma classe (do cofre local; não grava) | `python forja_aprendizado.py amostra <camada:causa>` |
 | Promover classe a regra, aplicar no destino e conferir | `python forja_aprendizado.py adotar/aplicar/conferir` |
 | A evidência de cada regra adotada ainda existe? | `python forja_aprendizado.py revalidar` |
-| Regras aprendidas em vigor | `learning_registry/REGRAS_APRENDIDAS.json` |
+| Regras aprendidas em vigor (7) | `learning_registry/REGRAS_APRENDIDAS.json` |
+| Gate S6 — ato citado na peça não declarado neste trabalho | `atos` em `F2_IDENTIDADE_PROCESSUAL.json` → `forja_identidade_processual.gate_s6_identidade_do_ato` |
+| Gate S7 — tema sustentado fora do objeto devolvido | `objeto` em `F2_IDENTIDADE_PROCESSUAL.json` → `gate_s7_objeto_devolvido` |
 | E-mail de agradecimento e estímulo à crítica (escrito por pessoa, nunca disparado) | `templates/F10_EMAIL_RETORNO_E_AGRADECIMENTO.md` |
 | **AUTO-RESEARCH (ciclo AR)** — PRD/TDD v1.1 pós-review adversarial Codex | `planejamento/22_PRD_AUTORESEARCH_FORJA.md` + `planejamento/23_TDD_AUTORESEARCH_FORJA.md` |
 | Candidata AR — materialidade de pendências e entrega sem espera artificial (`estudo_descritivo`, não promovida) | `autoresearch/candidates/materialidade-pendencias-v1/` |

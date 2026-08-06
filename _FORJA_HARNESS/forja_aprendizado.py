@@ -46,8 +46,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
+import time
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -99,9 +101,30 @@ def _ler_json(caminho: Path, padrao=None):
 
 
 def _escrever_json(caminho: Path, dados) -> None:
+    """Escrita atômica: temporário ao lado e troca.
+
+    A escrita direta falhou duas vezes em 06/08/2026 com `Errno 22` porque a
+    rotina de publicação lê a mesma árvore ao mesmo tempo. O registro de regras
+    é justamente o arquivo que não pode ficar meio escrito: `conferir` passaria a
+    reprovar entrega por um JSON truncado, e o gate 5-B travaria o F10 por um
+    defeito de gravação. Escrever ao lado e trocar torna a substituição atômica
+    no sistema de arquivos.
+    """
     caminho.parent.mkdir(parents=True, exist_ok=True)
-    caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n",
-                       encoding="utf-8", newline="")
+    texto = json.dumps(dados, ensure_ascii=False, indent=2) + "\n"
+    temporario = caminho.with_suffix(caminho.suffix + f".tmp{os.getpid()}")
+    temporario.write_text(texto, encoding="utf-8", newline="")
+    for tentativa in range(5):
+        try:
+            os.replace(temporario, caminho)
+            return
+        except OSError:
+            # Leitor concorrente com o arquivo aberto. A janela é curta; a
+            # alternativa de desistir deixaria o registro sem a regra adotada.
+            if tentativa == 4:
+                temporario.unlink(missing_ok=True)
+                raise
+            time.sleep(0.2 * (tentativa + 1))
 
 
 # --------------------------------------------------------------------------

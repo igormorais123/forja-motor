@@ -866,3 +866,69 @@ O e-mail de agradecimento e estímulo à crítica está em
 disparar: agradecimento com molde reconhecível deixa de ser lido na segunda vez.
 
 Lições 237 a 249 em `RETROSPECTIVAS.md`.
+
+
+## 26. S6 e S7 — identidade do ato e objeto devolvido (06/08/2026)
+
+Com a varredura corrigida, 45 correções do titular ficaram legíveis. Cinco delas
+foram lidas e produziram sete regras. Duas conclusões vieram junto e mudaram o
+desenho.
+
+### 26.1 Regra escrita que não pega
+
+A identidade dos atos recursais é regra INVIOLÁVEL do protocolo desde
+11/07/2026. Depois disso, o titular teve de corrigir à mão, em **dois clientes e
+dois tribunais diferentes**, a citação de recursos do mesmo cliente estranhos
+àquele trabalho e a transposição de dados de um processo paralelo para o
+pautado. A síntese executiva estruturada, regra desde 07/07, teve o mesmo
+destino.
+
+Instrução escrita compete com todo o resto do prompt e perde. Por decisão do
+Igor em 06/08, as duas viraram gate verificável.
+
+### 26.2 Os dois gates
+
+Ambos vivem em `forja_identidade_processual.py` e entram por
+`forja_verificador.verificar`, no desenho já provado dos S2/S4: **lastro externo
+declarado, e caso sem declaração não recebe veredito** — jamais P0 por ausência.
+Os blocos são opcionais em `F2_IDENTIDADE_PROCESSUAL.json`:
+
+| bloco | gate | o que reprova |
+|---|---|---|
+| `atos.{impugnado,proprios,relacionados}` | **S6_IDENTIDADE_DO_ATO** | identificador de processo ou recurso citado na peça e não declarado como deste trabalho |
+| `objeto.{devolvido,excluidos}` | **S7_OBJETO_DEVOLVIDO** | tema declarado fora do objeto devolvido e ainda assim sustentado na peça |
+
+S6 fecha um modo de falha que não deixa rastro lexical: **o recurso citado a
+mais existe, é do mesmo cliente e está escrito corretamente.** Depois dele o
+texto segue internamente coerente, e é por isso que nenhum gate de coerência
+interna discorda — o mesmo diagnóstico que derrubou a primeira tentativa de gate
+de identidade processual em 05/08. Só a lista externa separa um do outro.
+
+S7 nasce da correção mais recorrente do titular: a peça trata de tudo o que é
+verdadeiro sobre o caso em vez do que o tribunal pode decidir. A lista de
+exclusões é **declarada por pessoa** — inferir escopo de prosa argumentativa é o
+erro que a esteira já cometeu na figura de cronologia.
+
+Detalhe de implementação que veio de falha: dois identificadores do mesmo ato
+diferem no começo ou no fim (com e sem dígito verificador, com e sem sufixo do
+tribunal), nunca no meio. A primeira versão absolvia por conteúdo em qualquer
+posição, e um número curto contido por acaso dentro de um CNJ longo passava.
+
+### 26.3 As sete regras em vigor
+
+`learning_registry/REGRAS_APRENDIDAS.json`, todas com evidência medida:
+
+| destino | regra |
+|---|---|
+| checklist F1 | conferir que todo documento citado no comando existe antes de redigir |
+| checklist F1 | declarar o objeto devolvido e os temas fora dele antes de redigir |
+| template F4 | declarar o cerco: o que a peça NÃO pede e NÃO reabre |
+| template F4 | nomear e enfrentar a objeção HOJE mais forte contra o provimento |
+| template F4 | separar o precedente DESTES autos (comando) do paralelo (espelho) |
+| checklist F7 | recusar afirmação categórica onde o que decide é a ausência do fato |
+| checklist F7 | documento já juntado não recebe ressalva de verificação |
+
+As duas do F7 são complementares e precisam ser lidas juntas com a primeira do
+F1: exigir lastro antes de escrever, e não hedgear o que já está provado.
+
+Lições 250 a 254 em `RETROSPECTIVAS.md`.

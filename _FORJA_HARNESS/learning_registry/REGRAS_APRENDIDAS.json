@@ -16,7 +16,7 @@
         "materiais": 1,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T03:32:59-03:00",
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json",
       "lastroCorrigidoEm": "2026-08-06T03:31:15-03:00",
       "lastroCorrigidoPorque": "A evidência original (3 casos, 12 materiais) vinha de três retornos que o gate PP-NOT-A-REVISION depois mostrou não serem revisão da nossa peça. Igor decidiu em 06/08/2026 manter a regra e corrigir o número: a cautela vale por si, o lastro que a justificava não existia."
@@ -35,8 +35,93 @@
         "materiais": 54,
         "confiancaMedia": 0.98
       },
-      "aplicadaEm": "2026-08-06T03:32:59-03:00",
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-d4fb73d8708d",
+      "classe": "request_relief:reasoning",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "Nomear e enfrentar, em capítulo próprio, a objeção HOJE mais forte contra o provimento — não a do recurso original, a que a adversa efetivamente sustenta na última manifestação. Responder de forma individualizada a cada perna dela, sem depender de fórmula genérica.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T14:25:41-03:00",
+      "evidencia": {
+        "casos": 2,
+        "ocorrencias": 9,
+        "materiais": 9,
+        "confiancaMedia": 0.92
+      },
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-dc43932a30f2",
+      "classe": "reasoning:reasoning",
+      "destino": "checklist",
+      "fase": "F7",
+      "texto": "Recusar afirmação categórica onde o que decide é a ausência do fato concreto: não sustentar incompatibilidade abstrata e absoluta de uma tese jurídica, nem qualificar matéria como de ordem pública quando o argumento específico é mais forte.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T14:25:41-03:00",
+      "evidencia": {
+        "casos": 2,
+        "ocorrencias": 54,
+        "materiais": 54,
+        "confiancaMedia": 0.98
+      },
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F7.json"
+    },
+    {
+      "regraId": "regra-ca4fd7754082",
+      "classe": "fact:fact",
+      "destino": "checklist",
+      "fase": "F7",
+      "texto": "Documento já juntado aos autos não recebe ressalva de verificação: a peça não pode permanecer condicionada a material que o comando encaminhou. Ressalva é para o que falta, e o que falta é bloqueador nominado.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T14:25:42-03:00",
+      "evidencia": {
+        "casos": 2,
+        "ocorrencias": 15,
+        "materiais": 15,
+        "confiancaMedia": 0.92
+      },
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F7.json"
+    },
+    {
+      "regraId": "regra-3b7115a40125",
+      "classe": "authority_citation:citation_scope",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "Separar a autoridade do que foi decidido NESTES autos, que é comando do rejulgamento, da força persuasiva do precedente paralelo, que é espelho. Nunca tratar os dois como equivalentes nem transpor dados de um processo paralelo para o pautado.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T14:25:42-03:00",
+      "evidencia": {
+        "casos": 2,
+        "ocorrencias": 10,
+        "materiais": 10,
+        "confiancaMedia": 0.92
+      },
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-baec3fa38eeb",
+      "classe": "procedural_identity:fact",
+      "destino": "checklist",
+      "fase": "F1",
+      "texto": "Declarar, antes de redigir, o objeto efetivamente devolvido ao tribunal e a lista de temas fora dele, no bloco objeto de F2_IDENTIDADE_PROCESSUAL.json. Verdadeiro sobre o caso não é o mesmo que decidível neste recurso.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T14:25:42-03:00",
+      "evidencia": {
+        "casos": 2,
+        "ocorrencias": 7,
+        "materiais": 7,
+        "confiancaMedia": 0.92
+      },
+      "aplicadaEm": "2026-08-06T14:26:33-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json"
     }
   ]
 }
