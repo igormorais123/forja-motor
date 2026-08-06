@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forja.local/contracts/observation-ledger.schema.json",
+  "title": "FORJA observation ledger record",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schemaVersion", "opportunityId", "caseId", "disciplineId",
+    "triggerEventId", "triggerSequence", "registeredAt", "eligible",
+    "eligibilityReason", "dispatchEventId", "nonDispatchReason",
+    "artifactPath", "artifactSha256", "consumerEventId", "consumedSha256",
+    "humanReviewer", "humanAudit", "materialOutcome", "costMinutes",
+    "arExperimentId"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "opportunityId": {"type": "string", "minLength": 1},
+    "caseId": {"type": "string", "minLength": 1},
+    "disciplineId": {"type": "string", "pattern": "^D[1-6]$"},
+    "triggerEventId": {"type": "string", "minLength": 1},
+    "triggerSequence": {"type": "integer", "minimum": 0},
+    "registeredAt": {"type": "string", "minLength": 1},
+    "eligible": {"type": "boolean"},
+    "eligibilityReason": {"type": "string"},
+    "dispatchEventId": {"type": "string"},
+    "consumerSequence": {"type": ["integer", "null"], "minimum": 0},
+    "nonDispatchReason": {"type": "string"},
+    "artifactPath": {"type": "string"},
+    "artifactSha256": {"type": "string"},
+    "consumerEventId": {"type": "string"},
+    "consumedSha256": {"type": "string"},
+    "humanReviewer": {"type": ["string", "null"]},
+    "humanAudit": {"type": ["object", "boolean", "null"]},
+    "materialOutcome": {},
+    "costMinutes": {"type": ["number", "null"], "minimum": 0},
+    "arExperimentId": {"type": ["string", "null"]},
+    "recordSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "allOf": [
+    {"if": {"properties": {"eligible": {"const": false}}}, "then": {"required": ["eligibilityReason"]}}
+  ]
+}

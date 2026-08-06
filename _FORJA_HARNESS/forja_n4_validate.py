@@ -527,6 +527,15 @@ def validate_case(case_dir: Path, *, target_phase: str | None = None, write: boo
         all(promotion_requirements.values())
     )
     shadow_pass = not p0 if mode != "shadow" else True
+    # O lint GRAFO-01..06 é diagnóstico estrutural separado da promoção N4. Ele
+    # fica visível no laudo, mas nunca entra em `findings` nem altera
+    # `blocksCurrentFlow`: o grafo F3 nasce antes da pesquisa oficial e não
+    # recebe autoridade jurídica neste PRD.
+    graph_lint_report = None
+    graph_path = artifacts_dir / "F3_REASONING_GRAPH.json"
+    if graph_path.is_file():
+        from forja_grafo_lint import lint_file
+        graph_lint_report = lint_file(graph_path)
     report = {
         "schemaVersion": 1,
         "specVersion": SPEC_VERSION,
@@ -552,6 +561,7 @@ def validate_case(case_dir: Path, *, target_phase: str | None = None, write: boo
         "materialBlocks": material_blocks,
         "findings": findings,
         "artifactIds": sorted(files),
+        "graphLint": graph_lint_report,
     }
     report["validationHash"] = canonical_hash({key: value for key, value in report.items() if key != "validationHash"})
     if write:

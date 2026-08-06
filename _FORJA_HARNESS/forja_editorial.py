@@ -22,6 +22,7 @@ from pathlib import Path
 
 import forja_editorial_model as editorial_model
 from forja_editorial_fidelity import PROTOCOL_VERSION, validate_editorial_bundle
+from forja_stop_reason import record_stop_reason
 from forja_n3_common import (
     ForjaN3Error,
     atomic_write_json,
@@ -398,11 +399,33 @@ def run_editorial_pass(
         payload = invoke(retry_prefix + prompt)
         actual_model = _actual_model(payload, model.canonical_id)
         if actual_model != model.canonical_id:
+            record_stop_reason(
+                output_dir, payload,
+                expected_model=model.canonical_id,
+                actual_model=actual_model,
+                attempt=rewrite_attempt,
+            )
             raise ForjaN3Error(
                 "o envelope do Claude Code não comprova execução pelo modelo declarado no "
                 f"contrato do run ({model.canonical_id})"
             )
-        final, fable_report = _parse_result(str(payload.get("result") or ""))
+        try:
+            final, fable_report = _parse_result(str(payload.get("result") or ""))
+        except ForjaN3Error as exc:
+            record_stop_reason(
+                output_dir, payload,
+                expected_model=model.canonical_id,
+                actual_model=actual_model,
+                parse_error=str(exc),
+                attempt=rewrite_attempt,
+            )
+            raise
+        record_stop_reason(
+            output_dir, payload,
+            expected_model=model.canonical_id,
+            actual_model=actual_model,
+            attempt=rewrite_attempt,
+        )
         if fable_report.get("sourceHash") != source_hash:
             raise ForjaN3Error("o modelo editorial respondeu sobre hash de origem divergente")
         taste_findings = _taste_receipt_findings(fable_report, source, final)

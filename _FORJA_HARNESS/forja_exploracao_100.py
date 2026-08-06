@@ -20,6 +20,7 @@ from pathlib import Path
 
 from forja_n3_common import now_iso
 from forja_n4_common import SPEC_VERSION, expected_content_hash
+from forja_severidade import blocking_findings, normalized_severity
 
 
 PROTOCOL_VERSION = "FORJA-F2A-100-v1"
@@ -752,20 +753,34 @@ def gates_da_exploracao(payload: dict, *, require_protocol: bool = True) -> dict
     """Nomeia, como gates do contrato F2, o que `validate_exploration_100` computa."""
     findings = validate_exploration_100(payload or {}, require_protocol=require_protocol)
     codigos = {str(item.get("code") or "") for item in findings}
+    by_code = {}
+    for item in findings:
+        code = str(item.get("code") or "")
+        # Se o mesmo código aparecer com severidades distintas, a ocorrência
+        # mais severa prevalece. A decisão é por ocorrência, não por catálogo.
+        if normalized_severity(item) == "p0" or code not in by_code:
+            by_code[code] = item
     mapeados = set().union(*_GATES_EXPLORACAO.values())
     nao_mapeados = codigos - mapeados
 
     gates = {}
     for gate, seus_codigos in _GATES_EXPLORACAO.items():
-        atingido = bool(codigos & seus_codigos)
+        atingido = any(
+            code in seus_codigos and normalized_severity(by_code.get(code)) == "p0"
+            for code in codigos
+        )
         if gate == "exploration_100_complete":
-            # Achado de código novo, ainda não mapeado, reprova aqui em vez de
-            # passar despercebido. Gate que ignora o que não conhece aprova por
-            # omissão, e é assim que um verificador envelhece em silêncio.
-            atingido = atingido or bool(nao_mapeados)
+            # Código novo não pode desaparecer. Porém, durante a calibração, um
+            # achado P1 continua sendo informação e não se transforma em P0 só
+            # porque ainda não entrou no mapa de gates.
+            atingido = atingido or any(
+                code in nao_mapeados and normalized_severity(by_code.get(code)) == "p0"
+                for code in nao_mapeados
+            )
         gates[gate] = "fail" if atingido else "pass"
     return {"versao": PROTOCOL_VERSION, "findings": findings, "gates": gates,
-            "codigosNaoMapeados": sorted(nao_mapeados)}
+            "codigosNaoMapeados": sorted(nao_mapeados),
+            "blockingFindings": blocking_findings(findings)}
 
 
 _ROTULO_TIPO = {
@@ -916,7 +931,7 @@ def main() -> int:
             {"selectedQuestionIds": selecionadas, "findings": achados},
             ensure_ascii=False, indent=2,
         ))
-        return 1 if any(item["severity"] == "p0" for item in achados) else 0
+        return 1 if blocking_findings(achados) else 0
 
     if args.command == "render-consultation":
         texto = render_consultation(payload)
@@ -940,10 +955,10 @@ def main() -> int:
             "status": (atualizado.get("dialecticConsultation") or {}).get("status"),
             "findings": achados,
         }, ensure_ascii=False, indent=2))
-        return 1 if any(item["severity"] == "p0" for item in achados) else 0
+        return 1 if blocking_findings(achados) else 0
 
     findings = validate_exploration_100(payload) + validate_dialectic(payload)
-    blocking = [item for item in findings if item.get("severity", "p0") == "p0"]
+    blocking = blocking_findings(findings)
     print(json.dumps({"approved": not blocking, "findings": findings}, ensure_ascii=False, indent=2))
     return 1 if blocking else 0
 

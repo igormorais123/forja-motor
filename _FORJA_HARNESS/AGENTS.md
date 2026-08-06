@@ -23,7 +23,6 @@
 - Em raízes jurídicas, não execute extração semântica crua sobre autos, mensagens, anexos, bancos, estado, telemetria ou credenciais. O mapa oficial é sanitizado e metadata-only.
 - Estes artefatos complementam mapas canônicos; não substituem `MAPA.md`, `MAPA_IA.md`, `ESTADO_ATUAL.md`, manifestos, schemas ou documentação técnica local.
 <!-- architecture-map-protocol:end -->
-
 <!-- architecture-map-interfaces-v3:start -->
 ## Protocolo de interfaces inferiores
 
@@ -40,3 +39,18 @@
 - Preserve fachadas e consumidores durante migração; não execute big-bang.
 - Recalcule o Graphify e atualize arquitetura-alvo quando uma proposta mudar de status.
 <!-- strategy-v4:end -->
+
+## Descoberta das disciplinas instrumentadas (PRD 45)
+
+| Disciplina | Skill/caminho | Gatilho | Modo | Fonte prevalente |
+| --- | --- | --- | --- | --- |
+| D1 briefing de conselho | `forja_disciplinas.build_d1_briefing` / `F4_COUNSEL_BRIEFING.json` | antes do despacho F4 | manual assistido | question tree, proposition ledger e fontes hashadas |
+| D2 ponte evidencial | `forja_proposition_evidence.py` / `F5_PROPOSITION_EVIDENCE_MAP.json` | cada proposição decisiva em F5 | observe | proposition ledger + source ledger + reconciliação F7 |
+| D3 hipóteses de intake | `forja_disciplinas.build_d3_hypotheses` / `F2_INTAKE_HYPOTHESES.json` | depois de F1 com linhas abertas | manual assistido | acervo lido e declaração humana; sempre provisória |
+| D4 decisões incertas | `forja_disciplinas.build_d4_uncertain_decisions` / `F7_UNCERTAIN_DECISIONS.json` | antes do fechamento F7 | manual assistido | auditoria F7 e localizador da fonte |
+| D5 handoff cruzado | `forja_disciplinas.write_handoff` / `HANDOFF.md` | antes do despacho de revisão | manual | hash do artefato e recibo do revisor |
+| D6 fichas de decisão | `forja_disciplinas.write_d6_decision` / `decisoes/` | decisão de arquitetura/processo | manual | decisão nominal, fonte e critério de reabertura |
+
+As disciplinas não são disparadas automaticamente por semelhança semântica. O
+classificador de instruções recusado pelo R7 não existe; uma ferramenta futura
+pode comparar hashes e diffs, mas não classificar mérito sem nova decisão.

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "PRD45-F2A-SEVERITY",
+  "topic": "semântica de severidade do F2A",
+  "status": "decided",
+  "decision": "P0 bloqueia; P1 informa; severidade ausente ou desconhecida falha fechada como P0; seleção é única nos dois caminhos do runner.",
+  "source": "planejamento/45_PRD_INSTRUMENTACAO_FORJA.md#6",
+  "reopenWhen": "nova evidência de que a regra única não é aplicada em algum caminho do executor",
+  "decidedAt": "2026-08-06"
+}

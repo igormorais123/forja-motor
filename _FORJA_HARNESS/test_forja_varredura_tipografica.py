@@ -28,7 +28,12 @@ import sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 import forja_acervo  # noqa: E402
-from forja_varredura_tipografica import _marcar_superadas, varrer  # noqa: E402
+from forja_varredura_tipografica import (  # noqa: E402
+    FABRICA,
+    _e_entregavel,
+    _marcar_superadas,
+    varrer,
+)
 
 # Medido em 04/08/2026, já descontadas as versões superadas por correção posterior
 # do próprio escritório — sem esse desconto os números incluíam o parecer da CASO-17
@@ -94,6 +99,10 @@ def verificar_familias_nao_pareiam_documentos_distintos() -> list[str]:
 
 def main() -> int:
     falhas = 0
+    privado = FABRICA / "_FORJA_HARNESS" / "private" / "quarentena" / "PETICAO_FINAL.docx"
+    if _e_entregavel(privado):
+        print("  FALHOU: arquivo da área private entrou no universo de entregáveis")
+        falhas += 1
     familia_falhas = verificar_familias_nao_pareiam_documentos_distintos()
     if familia_falhas:
         print("  FALHOU: pareamento de versões superadas incorreto:")

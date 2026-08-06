@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forja.local/contracts/proposition-evidence-map.schema.json",
+  "title": "FORJA F5 proposition evidence map",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "caseId", "producerPhase", "producerRunId", "propositionLedger", "sourceLedger", "links", "blockedPropositions"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "specVersion": {"type": "string"},
+    "caseId": {"type": "string", "minLength": 1},
+    "producerPhase": {"const": "F5_PESQUISA_OFICIAL"},
+    "producerRunId": {"type": "string", "minLength": 1},
+    "propositionLedger": {"$ref": "#/$defs/artifactRef"},
+    "sourceLedger": {"$ref": "#/$defs/artifactRef"},
+    "links": {"type": "array", "items": {"$ref": "#/$defs/link"}},
+    "blockedPropositions": {"type": "array", "items": {"oneOf": [{"type": "string"}, {"$ref": "#/$defs/block"}]}}
+  },
+  "$defs": {
+    "artifactRef": {
+      "type": "object",
+      "required": ["artifactId", "sha256"],
+      "properties": {"artifactId": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}}
+    },
+    "link": {
+      "type": "object",
+      "required": ["linkId", "propositionId", "sourceId", "relation", "sourceLocator", "reviewStatus"],
+      "properties": {
+        "linkId": {"type": "string", "minLength": 1},
+        "propositionId": {"type": "string", "minLength": 1},
+        "sourceId": {"type": "string", "minLength": 1},
+        "relation": {"enum": ["supports", "qualifies", "contradicts", "does_not_reach"]},
+        "sourceLocator": {"type": "string", "minLength": 1},
+        "archivedSourceSha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+        "reviewStatus": {"type": "string", "minLength": 1}
+      }
+    },
+    "block": {
+      "type": "object",
+      "required": ["propositionId", "reason"],
+      "properties": {"propositionId": {"type": "string", "minLength": 1}, "reason": {"type": "string", "minLength": 1}}
+    }
+  }
+}

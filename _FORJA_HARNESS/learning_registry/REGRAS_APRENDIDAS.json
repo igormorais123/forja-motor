@@ -1,0 +1,23 @@
+{
+  "schema": "FORJA-APRENDIZADO-v1",
+  "porque": "Regras aprendidas do retorno humano sobre peças protocoladas. Cada uma nasceu de uma classe de correção que se repetiu, foi adotada por decisão humana e é aplicada num destino verificável. Nenhum trecho de peça entra aqui.",
+  "regras": [
+    {
+      "regraId": "regra-bb57fa5e9565",
+      "classe": "evidence_annex:missing_input",
+      "destino": "checklist",
+      "fase": "F1",
+      "texto": "Antes de redigir, conferir que todo documento citado no comando existe nos autos ou no acervo do caso; insumo ausente vira bloqueador nominado, nunca premissa.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T00:42:29-03:00",
+      "evidencia": {
+        "casos": 3,
+        "ocorrencias": 12,
+        "materiais": 12,
+        "confiancaMedia": 0.92
+      },
+      "aplicadaEm": "2026-08-06T00:42:41-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json"
+    }
+  ]
+}

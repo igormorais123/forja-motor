@@ -36,6 +36,7 @@ from forja_adversarial_audit import validate_phase_artifacts
 from forja_n4_common import ARTIFACT_SPECS
 from forja_exploracao_100 import validate_exploration_100
 from forja_editorial_fidelity import validate_editorial_bundle
+from forja_severidade import blocking_findings
 
 
 TEMPLATE = WORKSPACE / "_FERRAMENTAS" / "TEMPLATE_MEDINA_OSORIO_PETICAO.docx"
@@ -898,9 +899,10 @@ def _validate_result(attempt_dir: Path, contract: dict) -> tuple[dict, list[dict
             if not isinstance(question_tree, dict):
                 raise ForjaN3Error("question_tree deve ser JSON válido")
             exploration_findings = validate_exploration_100(question_tree, require_protocol=True)
-            if exploration_findings:
-                details = "; ".join(item["detail"] for item in exploration_findings[:8])
-                remaining = len(exploration_findings) - 8
+            blocking = blocking_findings(exploration_findings)
+            if blocking:
+                details = "; ".join(item["detail"] for item in blocking[:8])
+                remaining = len(blocking) - 8
                 if remaining > 0:
                     details += f"; e mais {remaining} achado(s)"
                 raise ForjaN3Error("exploração F2-A reprovada: " + details)
@@ -966,6 +968,7 @@ def _validate_result(attempt_dir: Path, contract: dict) -> tuple[dict, list[dict
         raise ForjaN3Error("auditoria adversarial reprovada: " + "; ".join(adversarial_findings))
     _validate_fable5_editorial(contract["phase"], validated)
     _validate_f7_source_ledger(contract["phase"], validated)
+    _validate_optional_instrumentation(contract["phase"], attempt_dir, result)
     _validate_human_style(contract["phase"], validated)
     return result, validated
 
@@ -1001,6 +1004,42 @@ def _validate_f7_source_ledger(phase: str, artifacts: list[dict]) -> None:
                 f"ledger probatório F7 reprovado em {final_id}: "
                 + "; ".join(validation["blocked"][:10])
             )
+
+
+def _validate_optional_instrumentation(phase: str, attempt_dir: Path, result: dict) -> None:
+    """Audita sidecars do PRD 45 sem transformá-los em gate canônico no piloto."""
+    if phase not in {"F5_PESQUISA_OFICIAL", "F7_AUDITORIA_JURIDICA_FACTUAL"}:
+        return
+    case_dir = attempt_dir.parents[3]
+    map_path = case_dir / "instrumentation" / "F5_PROPOSITION_EVIDENCE_MAP.json"
+    if not map_path.is_file():
+        return
+    from forja_proposition_evidence import validate_map
+
+    proposition_path = case_dir / "n3_artifacts" / "F4_BLUEPRINT_ESTRATEGICO" / "proposition_ledger.json"
+    source_path = case_dir / "n3_artifacts" / "F5_PESQUISA_OFICIAL" / "source_ledger.json"
+    f7_path = case_dir / "n3_artifacts" / "F7_AUDITORIA_JURIDICA_FACTUAL" / "verified_source_ledger.json"
+    map_payload = read_json(map_path, {}) or {}
+    proposition = read_json(proposition_path, {}) if proposition_path.is_file() else None
+    source = read_json(source_path, {}) if source_path.is_file() else None
+    f7 = read_json(f7_path, {}) if f7_path.is_file() else None
+    findings = validate_map(
+        map_payload,
+        proposition,
+        source,
+        f7_source_ledger=f7,
+        source_base_dir=source_path.parent if source_path.is_file() else None,
+    )
+    report = {
+        "schemaVersion": 1,
+        "phase": phase,
+        "mapPath": str(map_path),
+        "findings": findings,
+        "approvedForObservation": not any(item.get("severity") == "p0" for item in findings),
+        "pilotPolicy": "instrumentation_findings_do_not_block_canonical_phase",
+    }
+    atomic_write_json(attempt_dir / "COMPUTED_EVIDENCE_BRIDGE.json", report)
+    result["computedEvidenceBridge"] = report
 
 
 def _validate_fable5_editorial(phase: str, artifacts: list[dict]) -> None:

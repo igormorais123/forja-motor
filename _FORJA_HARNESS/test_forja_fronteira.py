@@ -75,6 +75,8 @@ CLASSIFICACAO = [
     # mesmo assim não sobem.
     ("Pasta Do Cliente/MAPA_IA.md", fr.LOCAL, "mapa gerado, reescrito a cada varredura"),
     ("_LABORATÓRIO_X — Y (EXPERIMENTAL)/nota.md", fr.LOCAL, "laboratório não é prova"),
+    ("_FORJA_HARNESS/private/quarentena/arquivo.md", fr.LOCAL,
+     "toda a área privada da FORJA fica somente no disco"),
     ("_FORJA_HARNESS/private/post_protocol/x.json", fr.LOCAL, "cofre pós-protocolo"),
     ("qualquer/PEÇA PROTOCOLADA — x.docx", fr.LOCAL, "cofre pós-protocolo"),
     ("_FORJA_HARNESS/__pycache__/x.pyc", fr.LOCAL, "cache"),

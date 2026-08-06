@@ -377,3 +377,116 @@ Regras que passam a valer:
    contábil e "aceitamos até 6 bilhões": um teste de ordem de grandeza teria barrado a entrega.
 4. A meta econômica declarada pelo cliente é fato de contexto de mesma hierarquia que a meta temporal.
    Preservar o "quando" e perder o "quanto" é perda de contexto material, não detalhe.
+
+## Diretriz nº 26 — Revisão humana que enxuga tende a levar junto o visual e o encadeamento condicional (06/08/2026)
+
+**Fato.** O Dr. Alessandro devolveu, em 05/08, a V3 dos memoriais da CASO-22
+nos dois agravos do TRF3. Nas duas peças a revisão foi competente: preservou
+identidade processual, dispositivos, pedidos e a linha argumentativa, e ganhou
+objetividade. O que ela levou junto, nas duas, foi de outra natureza — o quadro
+premissa/consequência, o diagrama da sequência decisória e, no CASO-10, o
+parágrafo que encadeava a condicional do não conhecimento. O **pedido** de não
+conhecimento sobreviveu; o raciocínio que o sustentava, não.
+
+**Por quê.** Quem enxuga procura redundância, e um quadro que sintetiza o que o
+texto já disse *parece* redundância. Não é: ele é o único elemento dimensionado
+para quem lê a peça uma vez só, na véspera da sessão. Com pauta marcada — e
+aqui há, para 20/08 —, a perda pesa mais do que pesaria numa peça de gaveta.
+
+**Como aplicar.** Ao receber peça revisada, o cotejo separa quatro classes, não
+três: correção de fato, ganho jurídico, preferência de estilo e **supressão de
+apoio cognitivo**. A quarta se relata sempre, com o custo de reinserção medido
+(aqui: uma página), e a decisão fica com quem assina.
+
+**Assimetria a registrar.** As duas revisões do mesmo autor, no mesmo dia,
+divergiram entre si: na peça da CASO-11 os valores econômicos foram generalizados
+e o prequestionamento genericizado; na do CASO-10 ambos permaneceram nominais.
+Peça irmã não herda a revisão da outra — cada uma se confere inteira.
+
+## Diretriz nº 27 — Data de fecho é campo com prazo, e ninguém relê o fecho (06/08/2026)
+
+A V3 do CASO-10 voltou fechando com "29 de julho de 2026", data da primeira
+minuta, para protocolo programado em 14/08. É correção de um campo, e por isso
+mesmo escapa: a revisão jurídica olha para o corpo. Vale para nós na direção
+inversa — toda peça devolvida a revisão humana sai com a data do protocolo
+previsto, não a da redação, e o cotejo de volta confere esse campo por primeiro.
+
+## Diretriz nº 28 — A pesquisa jurisprudencial tem ordem fixada pela casa, em nove níveis (28/07/2026)
+
+Transmitida pelo Dr. Alessandro em 28/07/2026, por diretriz do Prof. Fábio, no
+fio da Medida Cautelar Fiscal. Vale para uso persuasivo em qualquer peça e não
+estava registrada em lugar nenhum da fábrica até 06/08/2026 — a busca por
+"ordem de pesquisa" não retornava nada no protocolo, nos gates ou aqui.
+
+1. STF — Plenário.
+2. STF — pelo relator, quando já há processo no tribunal ou prevenção, e pelos
+   demais integrantes das turmas.
+3. STF — demais turmas.
+4. STJ — Órgão Especial.
+5. STJ — pelo relator, quando o processo já está no STJ ou há informação de
+   prevenção, e pelos demais integrantes das turmas.
+6. STJ — demais turmas.
+7. Tribunal local — Pleno ou Órgão Especial.
+8. Tribunal local — decisões do relator, quando já está no TJ ou há competência
+   por prevenção.
+9. Tribunal local — da câmara/turma julgadora, relatoria dos demais integrantes.
+
+Sem competência ou relatoria conhecidas, a pesquisa fica genérica entre turmas e
+câmaras dos respectivos tribunais.
+
+**Por quê.** A ordem não é de hierarquia abstrata: ela persegue quem vai
+julgar. Um precedente do próprio relator vale mais, na sessão, do que um
+precedente formalmente superior de quem não está na mesa — e essa é a razão de
+os níveis 2, 5 e 8 quebrarem a escada dos tribunais.
+
+**Como aplicar.** A pesquisa de F3 percorre os níveis nessa ordem e **para de
+subir** quando encontra material aderente; o relatório de melhorias registra em
+que nível a peça se apoiou e por que não desceu mais. Quando o órgão julgador
+já é conhecido — e desde 06/08 sabemos consultá-lo por número no cadastro
+nacional —, os níveis 2, 5 e 8 deixam de ser hipotéticos e passam a ser a
+primeira parada.
+
+## Diretriz nº 29 — Referência a evento dos autos é citação, e se confere como citação (31/07/2026)
+
+**O erro.** Nos memoriais do AI 9000013-00.2023.8.27.0000 (JESC), o parágrafo 14
+apontava o Evento 73 como fonte da Ata da 68ª Reunião Ordinária e dos Ofícios
+nº 794 e 861. O Evento 73 é a carta precatória. A revisão do escritório
+localizou os documentos onde de fato estão — Evento 31, ATA2, pp. 1–18 — e
+corrigiu antes do protocolo.
+
+**Por quê importa.** A conferência de citação da casa vigiava jurisprudência,
+súmula e dispositivo legal. Referência a evento do processo passava como se
+fosse dado do caso, não como afirmação verificável — e é a mais fácil de
+checar e a mais constrangedora de errar, porque o julgador abre o evento.
+
+**Como aplicar.** Todo par "documento → evento/ID/fl." entra na tabela de lastro
+com a mesma exigência das citações jurisprudenciais: quem afirma indica onde
+conferiu. Ponteiro para os autos sem conferência vira `[VERIFICAR]`, nunca
+afirmação.
+
+## Diretriz nº 30 — Precedente com número certo e matéria errada continua sendo citação falsa (22/07/2026)
+
+Na minuta dos EDcl do caso CASO-18, a revisão do escritório identificou a
+necessidade de corrigir a referência ao **REsp nº 1.608.950/MT**, cuja matéria
+não correspondia ao ponto para o qual foi invocado. O processo existe; a tese
+não é aquela. É o modo de falha "tese deturpada" da taxonomia de citação (U1),
+apanhado por revisão humana e não pelos nossos gates — porque conferir
+existência é barato e conferir aderência exige ler.
+
+A diretriz que o escritório formulou no mesmo e-mail, e que fica valendo para
+toda minuta: conferência da íntegra de todos os precedentes; validação da
+correspondência entre número, contexto e tese; identificação prévia dos óbices
+processuais; e formulação de pedidos principais **e subsidiários**.
+
+## Diretriz nº 31 — Linguagem de revisão não é linguagem de peça (30/07/2026)
+
+Nos memoriais do AI 9000022-00.2026.4.02.0000/RJ, o escritório teve de
+substituir formulações metalinguísticas do tipo "o ponto forte é…" por
+enunciados jurídicos diretos. São marcas de comentário interno de revisão que
+atravessaram para o produto — a mesma família da falha já catalogada de
+personas internas vazando na peça, com outra roupa: aqui não é o nome do
+revisor, é a **voz** dele.
+
+Em memoriais isso custa mais do que parece: o gênero exige impessoalidade, e
+avaliar o próprio argumento ("o ponto forte") sinaliza ao julgador que há um
+ponto fraco logo adiante.

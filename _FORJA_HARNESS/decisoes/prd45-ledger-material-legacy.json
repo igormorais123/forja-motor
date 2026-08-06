@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "PRD45-F5-LEDGER-MATERIAL",
+  "topic": "destino de F5_LEDGER_MATERIAL.json",
+  "status": "decided",
+  "decision": "Legado compatível, congelado e sem escrita de volta; não é fonte canônica nem projeção futura.",
+  "source": "planejamento/45_PRD_INSTRUMENTACAO_FORJA.md#1",
+  "reopenWhen": "novo contrato aprovado demonstrar substituto com consumidor, hash, canário e rollback",
+  "decidedAt": "2026-08-06"
+}

@@ -62,6 +62,15 @@ PISO_PARAGRAFOS = 20
 
 
 def _e_entregavel(caminho: Path) -> bool:
+    # `private/` guarda cofre e quarentena local. O nome do arquivo pode parecer
+    # uma peça final, mas ele não é produto da esteira nem candidato a entrega;
+    # incluí-lo faria uma cópia de origem piorar artificialmente a métrica.
+    try:
+        relativo = caminho.resolve().relative_to(FABRICA.resolve()).as_posix()
+    except ValueError:
+        relativo = ""
+    if relativo.startswith("_FORJA_HARNESS/private/"):
+        return False
     if any(t in str(caminho) for t in EXCLUIR):
         return False
     if _PROMPT.search(caminho.name):

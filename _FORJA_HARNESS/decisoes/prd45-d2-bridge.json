@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "PRD45-D2-BRIDGE",
+  "topic": "ponte F4-F5-F7",
+  "status": "decided",
+  "decision": "F5 produz F5_PROPOSITION_EVIDENCE_MAP.json no namespace experimental; F3_REASONING_GRAPH.json é somente leitura e não recebe escrita de volta.",
+  "source": "planejamento/45_PRD_INSTRUMENTACAO_FORJA.md#4",
+  "reopenWhen": "prova byte a byte de que o mapa não preserva a imutabilidade ou não pode ser reconciliado pela F7",
+  "decidedAt": "2026-08-06"
+}

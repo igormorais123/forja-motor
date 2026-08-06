@@ -1,4 +1,4 @@
-# Execução diária do vigia de andamentos do STF.
+﻿# Execução diária do vigia de andamentos do STF.
 # Registrado como tarefa agendada FORJA-Monitor-STF. Silencioso quando não há
 # novidade; quando há, deixa um arquivo visível na raiz do harness, porque log
 # que ninguém abre não avisa ninguém.

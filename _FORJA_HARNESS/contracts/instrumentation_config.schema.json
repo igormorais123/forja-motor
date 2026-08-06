@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forja.local/contracts/instrumentation-config.schema.json",
+  "title": "FORJA instrumentation rollout",
+  "type": "object",
+  "required": ["instrumentation"],
+  "properties": {
+    "instrumentation": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {"mode": {"enum": ["off", "observe", "candidate_shadow"]}}
+    }
+  },
+  "additionalProperties": true
+}

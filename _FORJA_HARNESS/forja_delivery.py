@@ -270,6 +270,27 @@ def main(case_key):
                  "ok": bool(visual) and v_ok, "ref": ref_text(visual),
                  "obs": v_motivo + "; composta via forja_visual.compor + mapa declarativo"})
     elo("5. Auditoria do caso", achar(pasta, ["*APRENDIZADOS*.md", "*AUDITORIA*.md", "CHECKLIST_FONTES*.md"]))
+    # 5-B. As lições já aprendidas continuam aplicadas.
+    #
+    # O gate NÃO é "este caso já aprendeu": o retorno humano chega depois do
+    # protocolo, e exigi-lo aqui travaria toda entrega por algo que ainda não
+    # existe. O que se verifica é o inverso e é verificável agora — que nenhuma
+    # regra adotada de casos anteriores tenha saído do seu destino. Sem isto, a
+    # casa adota a lição, alguém reescreve o contrato de fase por outra mão, e o
+    # registro segue afirmando que aprendemos enquanto a peça nova repete o erro.
+    try:
+        import forja_aprendizado
+        pendencias = forja_aprendizado.conferir()
+        n_regras = len(forja_aprendizado.carregar_registro()["regras"])
+    except Exception as exc:  # noqa: BLE001
+        pendencias, n_regras = [f"não foi possível conferir: {exc}"], 0
+    elos.append({
+        "elo": "5-B. Lições do retorno humano aplicadas",
+        "ok": not pendencias,
+        "ref": "learning_registry/REGRAS_APRENDIDAS.json",
+        "obs": (f"{n_regras} regra(s) ativa(s), todas presentes no destino"
+                if not pendencias else "; ".join(pendencias[:3])),
+    })
     elo("6. QA visual estrutural (piloto M4)", state_path.parent / "piloto" / "F8_QA_ESTRUTURAL.json",
         "OOXML, fidelidade, tipografia, metadados e SVG auditados sem renderização")
 

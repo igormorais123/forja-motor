@@ -57,7 +57,7 @@ Especificação completa: `_FERRAMENTAS\PADRAO_WORD_MEDINA_OSORIO.md`. Regras de
 
 ## 4. Identidade visual Medina Osório Advogados (obrigatória em toda peça)
 
-- Logo em alta resolução: `_FERRAMENTASssets\logo_medina.png (fundo branco) / logo_medina_transp.png (fundo transparente — usar este sobre qualquer fundo que não seja branco puro)` (extraído da peça original, 600 dpi).
+- Logo em alta resolução: `_FERRAMENTAS\assets\logo_medina.png (fundo branco) / logo_medina_transp.png (fundo transparente — usar este sobre qualquer fundo que não seja branco puro)` (extraído da peça original, 600 dpi).
 - Cores institucionais: verde-petróleo `#395C60`, terracota `#D9926A` (variante escura para impressão `#9C5B38`), grafite `#49494D`; painéis claros `#EFF4F3` (petróleo) e `#FBF2EC` (terracota).
 - Corpo de texto: Times New Roman, justificado, parágrafos numerados; negrito mínimo e estratégico.
 - Rodapé: linha fina petróleo + `www.medinaosorio.com.br` (esquerda) e `Brasília | Porto Alegre | Rio de Janeiro` (direita). Fólio na margem direita, centralizado verticalmente.

@@ -1,4 +1,4 @@
-# Execução diária do vigia de comunicações processuais (DJEN/CNJ).
+﻿# Execução diária do vigia de comunicações processuais (DJEN/CNJ).
 # Registrado como tarefa agendada FORJA-Monitor-DJEN. Silencioso quando não há
 # novidade; quando há, deixa um arquivo visível na raiz do harness, porque log
 # que ninguém abre não avisa ninguém.

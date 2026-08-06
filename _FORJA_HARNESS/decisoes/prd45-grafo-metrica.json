@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "PRD45-GRAFO-METRICA",
+  "topic": "métrica estrutural do grafo",
+  "status": "decided",
+  "decision": "GRAFO-01 a GRAFO-06 são diagnóstico estrutural e proxy de adoção; não são resultado jurídico material nem gate de produção.",
+  "source": "planejamento/45_PRD_INSTRUMENTACAO_FORJA.md#5",
+  "reopenWhen": "ontologia fechada, proveniência classificada e pisos prospectivos de arestas sustentadoras atingidos",
+  "decidedAt": "2026-08-06"
+}

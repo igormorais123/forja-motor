@@ -719,3 +719,91 @@ Havia uma terceira camada da mesma divergência, e ela ilustra o custo do gate m
 **Lição 236 — a correção escrita para tornar a falha visível abriu a via de vazamento que o gate existe para fechar.** Para acabar com o silêncio da rotina noturna (lição 232), fiz `registrar_estado` gravar o laudo em `git-tools/STATUS_SYNC.md` — mesmo lugar do script antigo, escolha que pareceu óbvia. Só que `git-tools/` é **publicado no repositório do motor**, e o laudo de uma reprovação lista exatamente os caminhos e nomes que fizeram o gate reprovar. Escrever a falha num arquivo público é publicar o dado que a falha estava impedindo de publicar. Quem viu foi a revisão de outra sessão, lendo o código; nenhum gate pegaria, porque no dia em que a rotina passa o arquivo é inócuo — ele só fica perigoso no dia em que ela falha. O laudo passou para `_FORJA_HARNESS/reports/`, no acervo; em `git-tools/` ficou um ponteiro sem conteúdo. **Todo artefato novo precisa da pergunta "de que lado da fronteira isto cai?" antes de escolher o caminho** — inclusive, e principalmente, artefato de diagnóstico.
 
 **Lição 232 — o cadastro respondia "existe"; era o TEOR que respondia "quanto", e eu declarei ao cliente que faltava ir aos autos sem ter tentado ler o teor.** Depois de fechar um censo nacional de 7.757 processos, restava um item: o valor da causa, que a base pública não traz como campo. Escrevi ao cliente que aquilo exigiria acesso às iniciais. Não exigia. A mesma base divulga o **inteiro teor** de cada comunicação, e decisões reproduzem os pedidos com as quantias — a decisão de recebimento trouxe os pedidos em dólar e as indisponibilidades deferidas, com mais de trezentos e quarenta milhões de reais constritos contra um só réu. **Campo ausente não é dado ausente: o dado pode estar no texto que o campo não indexa.** A mesma leitura de teor, feita nos processos vizinhos, revelou por acaso que dois agravos do próprio escritório estavam pautados para julgamento em duas semanas, com o prazo de sustentação oral correndo e a intimação divulgada três semanas antes sem que ninguém a visse. Duas consequências: (1) antes de dizer que um dado processual só existe nos autos, ler o teor do que a base divulga; (2) o achado por acaso virou `forja_monitor_djen.py`, com regressão própria e execução diária, porque descoberta que depende de sorte não se repete — é a Lição 87 outra vez. A lista de processos vigiados **não** mora no módulo: a fronteira reprovou a primeira versão, que trazia quatro números CNJ dentro do motor, e os alvos passaram a viver no acervo, sob `monitor_djen_vigiados`; sem ele o vigia roda sem alvo e diz que rodou assim.
+
+## Lição 233 — Chamei de bloqueador uma data que era simplesmente passado (06/08/2026)
+
+O relatório interno de conferência da V3 dos memoriais da CASO-11, escrito em
+05/08 com o contexto no limite, classificou como **BLOQUEADOR** a citação de um
+acórdão do TRF3 "julgado em 29/07/2025", ao argumento de que a data seria
+*futura* à do protocolo, previsto para agosto de 2026. 2025 é anterior a 2026.
+O relatório mandava, em três seções distintas, remover ou corrigir uma citação
+perfeitamente boa — e no dia seguinte a leitura do inteiro teor confirmou que
+ela estava exata em turma, qualidade e nome do lavrador.
+
+O erro não chegou ao escritório porque o e-mail enviado no mesmo dia tratou o
+precedente corretamente, como citação nova a conferir na fonte. Ou seja: o texto
+que saiu estava certo e o artefato interno que ficou estava errado. Se alguém
+tivesse aberto a pasta do caso em vez do fio de e-mail, teria removido a
+citação.
+
+Três coisas ficam disso. A primeira é que `forja_verificador` já cataloga
+"aritmética de intervalos de datas" como modo de falha, mas ele roda sobre a
+peça, não sobre os relatórios de conferência — e o relatório é justamente onde a
+conclusão errada se apresenta com cara de gate. A segunda é que o erro se
+apresentou com o vocabulário mais confiante do repertório ("RISCO BLOQUEADOR",
+"DEVE ser corrigido antes de protocolo"), o que mostra que ênfase não é sinal de
+verificação. A terceira é a única regra prática que sobrevive: **afirmação sobre
+data é conta, e conta se faz, não se estima** — se o relatório diz "futura",
+"anterior" ou "prescrito", os dois termos da comparação aparecem escritos ao
+lado da conclusão.
+
+Correção registrada em bloco no topo do próprio relatório, com a trilha do erro
+preservada abaixo em vez de apagada.
+
+## Lição 234 — O e-mail não respondido não aparece em nenhum gate (06/08/2026)
+
+A varredura de fim de trabalho olhava baseline, fronteira, painel de demandas e
+flags na raiz do harness. Tudo verde. O que estava aberto era outra coisa: dois
+retornos do advogado do escritório, de 05/08, devolvendo as versões revisadas
+das duas peças da CASO-22 — e um deles com uma promessa minha, por escrito,
+de devolver o cotejo antes de 14/08. Nenhum dos quatro instrumentos acima
+enxerga isso, porque a demanda que os originou já constava como cumprida: a
+peça foi entregue. O retorno sobre a entrega abre trabalho novo que o painel
+registra como o mesmo item já fechado.
+
+Foi o Igor quem apontou. A regra que fica: **entrega feita não fecha o fio** —
+enquanto houver mensagem do escritório posterior à última resposta minha em
+qualquer thread de caso, há trabalho aberto, independentemente da cor da demanda
+no painel.
+
+## Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)
+
+O vigia do DJEN foi instalado em 06/08 com teste de regressão, execução real e
+canário: apaguei uma comunicação do retrato, rodei o wrapper, vi a flag subir
+com o texto certo, restaurei. Declarei provado.
+
+O canário rodou no PowerShell 7 desta sessão. **A tarefa agendada invoca
+`powershell.exe`**, que é o Windows PowerShell 5.1 — e o 5.1 lê `.ps1` sem BOM
+como ANSI. Todo acento do arquivo virava byte inválido e o script morria em erro
+de parse antes da primeira linha útil. Os três wrappers agendados da casa
+estavam assim: DJEN, STF e o de fios recém-criado. Ou seja, o vigia do STF vinha
+"rodando" desde que foi instalado sem nunca ter executado uma linha.
+
+Isso não foi apanhado por nenhum teste porque os testes exercitam o módulo
+Python, que está correto; o defeito mora no invólucro. E não foi apanhado pelo
+canário porque **o canário e a produção usavam interpretadores diferentes**.
+
+Regra que fica: **canário de tarefa agendada se executa com o mesmo comando que
+o agendador executa** — literalmente `powershell.exe -NoProfile -ExecutionPolicy
+Bypass -File <caminho>`, copiado de `(Get-ScheduledTask X).Actions[0]`, e não o
+shell da sessão. Corolário prático para este ambiente: `.ps1` com acento nasce
+com BOM UTF-8, sempre.
+
+Segundo erro na mesma hora, menor e instrutivo: ao refazer o canário, zerei a
+lista de comunicações do retrato em vez de remover só a mais recente. Retrato
+vazio é *primeira leitura*, não novidade — o vigia acertou ao ficar calado e eu
+quase li isso como falha dele. Canário mal construído acusa o inocente.
+
+Correção verificada pela rota real: os três wrappers regravados com BOM, os três
+executados por `powershell.exe` com saída acentuada correta nos logs, e o alarme
+disparado e restaurado com a flag subindo e descendo.
+
+**Lição 237 — o loop de aprendizado coletava 1.096 lições e promovia uma; a culpa era da porta, não de quem passa por ela.** Medido em 06/08/2026: o loop pós-protocolo funcionava, seis casos reais tinham sido comparados, **1.096 candidatos a lição** classificados por camada, causa e impacto. Destes, **1.095 em `observed` e um promovido — 0,09%**. Ninguém deixou de querer aprender: promover um candidato exigia seis argumentos, entre eles um `--fixture-id` e um `--test-id` a serem criados à mão e um SHA-256 de 64 caracteres copiado a dedo. É a lição 87 no lugar mais caro possível — o mecanismo pelo qual a casa aprende com o titular. **Recurso cujo custo por unidade não cai não sobrevive ao volume, e aprendizado é justamente o que produz volume.**
+
+**Lição 238 — promova o padrão, não a ocorrência.** Uma correção isolada num caso é anedota; a mesma classe de correção em casos diferentes é padrão do escritório. Ordenar por recorrência **entre casos distintos**, e não por contagem bruta, colapsa 1.096 candidatos em 12 classes e ainda corrige um viés que passaria despercebido: um único processo longo produz centenas de mudanças sozinho e dominaria qualquer ranking por volume, sem revelar padrão nenhum. Medido: `reasoning:reasoning` em 5 casos com 279 mudanças materiais, contra `copy_style_voice` que parecia grande e concentra-se em poucos casos.
+
+**Lição 239 — o campo existia, o executor nunca foi escrito.** Todos os 1.096 candidatos traziam `destination` preenchido — 429 apontando para `regression_fixture`, 667 para `review_queue` — e **nenhuma linha de código consumia esse campo**. O desenho previu o destino e parou antes de construir quem o executa. Vale a busca antes de projetar: `grep` pelo nome do campo respondeu em segundos o que uma leitura de arquitetura levaria uma hora para sugerir, e mostrou que a peça faltante era menor do que parecia.
+
+**Lição 240 — o gate de aprendizado que parece certo é o errado.** O reflexo é exigir, no fechamento da demanda, que aquele caso tenha aprendido. Não funciona: o retorno humano chega **depois** do protocolo, e o gate travaria toda entrega por algo que ainda não existe. O que é verificável no momento da entrega é o inverso — que nenhuma regra adotada em casos anteriores tenha saído do seu destino. Sem isso a casa adota a lição, alguém reescreve o contrato de fase por outra mão, e o registro segue afirmando que aprendemos enquanto a peça nova repete o erro.
+
+**Lição 241 — um teste parametrizado pelo registro faz o custo marginal de aprender ser zero.** O desenho antigo pedia um teste novo por lição; o novo tem um teste só, que lê o registro de regras e confere cada uma contra o seu destino. Adotar a próxima regra não custa uma linha de código. O mesmo teste guarda a idempotência da aplicação — sem ela, cada execução acrescentaria as regras de novo ao arquivo de destino até ninguém mais o ler.

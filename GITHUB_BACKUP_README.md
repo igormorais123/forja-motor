@@ -55,16 +55,18 @@ descobre às 20h, quando a rotina reprova.
 **Na publicação.** O gate de fronteira, descrito acima. É ele que impede — o
 hook apenas avisa cedo.
 
-**Depois da publicação.** `git-tools/STATUS_SYNC.md` é reescrito a **cada**
-execução, inclusive quando ela falha, com o veredito, a hora e o que resolve.
-Era o elo que faltava: a rotina roda sozinha às 20:00 e, sem esse arquivo, o
+**Depois da publicação.** `_FORJA_HARNESS/reports/GIT_SYNC_STATUS.md`, no acervo
+privado, é reescrito a **cada** execução, inclusive quando ela falha, com o
+veredito, a hora e o que resolve. `git-tools/STATUS_SYNC.md` é somente o ponteiro
+fixo para esse laudo e nunca recebe caminhos ou identificadores da reprovação.
+Era o elo que faltava: a rotina roda sozinha às 20:00 e, sem o laudo privado, o
 resultado existia apenas no código de saída da tarefa agendada — que ninguém
 consulta. Foi assim que o repositório único passou cinco dias sem conseguir
 subir enquanto parecia ser cópia de segurança.
 
 ## Onde NÃO deve haver cópia
 
-Auditado em 05/08/2026. A pasta de trabalho é o único git; as duas cascas `.git`
+Auditado em 05/08/2026 e saneado em 06/08/2026. A pasta de trabalho é o único git; as duas cascas `.git`
 vazias que existiam dentro dela (em `_FORJA_HARNESS/` e numa pasta de caso)
 foram removidas — não eram repositórios, mas convidavam a virar um.
 
@@ -72,7 +74,7 @@ Nenhuma cópia solta vaza para o GitHub, porque nenhuma está versionada. O risc
 é outro: material sensível fora do alcance do gate, e cópia antiga parecida com
 a pasta de trabalho o bastante para alguém abrir por engano.
 
-Duas foram removidas em 05/08/2026, por decisão do Igor:
+Duas foram removidas em 06/08/2026, depois da verificação de redundância:
 
 - `Downloads\_FORJA_HARNESS` — 3.312 arquivos, 146 MB, retrato de 19/07, com
   **1.187 arquivos carregando CNJ, CPF, CNPJ, OAB e nome de cliente**. A
@@ -84,17 +86,22 @@ Duas foram removidas em 05/08/2026, por decisão do Igor:
 - `repos\_teste_reconstituicao` — 16.022 arquivos, 649 MB, sobra do teste de
   reconstituição do dia; refaz-se com `git-tools/montar_forja.py`.
 
-Ainda no disco, menores e de baixo risco:
+O pacote menor com dado de cliente não tinha duplicata inequívoca na pasta de
+trabalho. Por isso não foi apagado: saiu de `Downloads` e foi preservado em
+`_FORJA_HARNESS\private\quarentena_copias_externas\2026-08-06\Peticao_FORJA_2026-07-23`,
+classificado como `LOCAL` e fora dos dois repositórios. A mudança conservou
+34/34 arquivos e 17.615.404 bytes.
+
+Fora da pasta de trabalho resta apenas a cópia de pesquisa sem sinal de cliente:
 
 | caminho | tamanho | dado de cliente |
 |---|---|---|
-| `Downloads\Peticao_<caso>_FORJA_20260723` | 34 arquivos, 17 MB | 6 arquivos com CNPJ e OAB |
 | `Documents\FORJA_Valor_Unico_..._20260724` | 16 arquivos, 1,5 MB | nenhum |
 
 **Lacuna conhecida:** não foi possível confirmar se o disco `C:` está
 criptografado — a leitura do BitLocker exige elevação. Enquanto isso não for
-verificado, material de cliente fora da pasta de trabalho é legível por quem
-tiver a máquina em mãos. Conferir com `manage-bde -status C:` como
+verificado, o pacote local em quarentena continua legível por quem tiver a
+máquina em mãos. Conferir com `manage-bde -status C:` como
 administrador.
 
 ## Sincronizar

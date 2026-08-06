@@ -61,6 +61,15 @@ PROTEGIDOS = [
     FORJA / "forja_gate_liveness.py",
     FORJA / "forja_conselho.py",
     FORJA / "forja_citations.py",
+    # A fronteira é a barreira de publicação, não apenas um utilitário. A regra
+    # e sua contraprova ficam hash-bound e rodam em toda régua rápida.
+    FORJA / "forja_fronteira.py",
+    FORJA / "test_forja_fronteira.py",
+    # O hook reduz a janela entre escrever o dado e o gate noturno encontrá-lo.
+    # A barreira continua sendo o gate, mas o aviso e sua contraprova também são
+    # superfície de confiança: ambos ficam presos por hash e na régua rápida.
+    FORJA / "forja_hook_fronteira.py",
+    FORJA / "test_forja_hook_fronteira.py",
     # O baseline define a fronteira entre pytest e regressões standalone;
     # deixá-lo fora do manifesto permitiria ocultar uma suíte por classificação.
     FORJA / "forja_baseline.py",
@@ -230,6 +239,8 @@ PROTEGIDOS = [
 
 # Suítes rápidas (sem Word COM; a materialização oficial é OOXML/SVG estático).
 SUITES = [
+    "test_forja_fronteira.py",
+    "test_forja_hook_fronteira.py",
     "test_forja_verificador.py",
     "test_forja_estilo_humano.py",
     "test_forja_editorial.py",

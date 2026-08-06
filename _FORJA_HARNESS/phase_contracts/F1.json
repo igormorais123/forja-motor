@@ -4,9 +4,31 @@
   "order": 1,
   "producerRole": "forja-leitor",
   "reviewerRole": "forja-coverage-auditor",
-  "requiredInputs": ["case_manifest", "source_documents"],
-  "requiredOutputs": ["document_index", "coverage_ledger", "injection_scan"],
-  "requiredGates": ["critical_documents_indexed", "coverage_declared", "injection_triaged"],
+  "requiredInputs": [
+    "case_manifest",
+    "source_documents"
+  ],
+  "requiredOutputs": [
+    "document_index",
+    "coverage_ledger",
+    "injection_scan"
+  ],
+  "requiredGates": [
+    "critical_documents_indexed",
+    "coverage_declared",
+    "injection_triaged"
+  ],
   "nextPhase": "F2_CLASSIFICACAO_PRODUTO_RISCO",
-  "retryPolicy": {"maxAttempts": 3, "idempotent": true}
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "idempotent": true
+  },
+  "checklistAprendido": [
+    {
+      "regraId": "regra-bb57fa5e9565",
+      "classe": "evidence_annex:missing_input",
+      "texto": "Antes de redigir, conferir que todo documento citado no comando existe nos autos ou no acervo do caso; insumo ausente vira bloqueador nominado, nunca premissa.",
+      "origem": "retorno_humano_pos_protocolo"
+    }
+  ]
 }

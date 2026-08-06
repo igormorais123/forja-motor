@@ -106,6 +106,7 @@ TEXTO = {".md", ".py", ".json", ".txt", ".html", ".htm", ".yml", ".yaml",
 
 # LOCAL — não vai a repositório nenhum.
 _LOCAL_MARCAS = [
+    ("_FORJA_HARNESS/private/", "área privada local: nunca sai desta máquina"),
     ("private/post_protocol/", "cofre pós-protocolo: retorno humano da peça protocolada"),
     ("PEÇA PROTOCOLADA — ", "cofre pós-protocolo: a peça efetivamente protocolada"),
     ("VERSÃO HUMANA FINAL — ", "cofre pós-protocolo: versão humana final"),

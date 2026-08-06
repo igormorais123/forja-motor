@@ -18,7 +18,7 @@ Em **toda** petição elaborada, melhorada ou revisada em qualquer subpasta dest
 
 ## Diagramação de excelência (obrigatório)
 
-**Invocar a skill `fabrica-visual-peticoes`** (em `~\.claude\skills\`) em toda peça — ela consolida o protocolo completo. Arsenal instalado e documentado em `_FERRAMENTAS\LEIA-ME.md` + script `_FERRAMENTAS\word_visual_pipeline.py`. Regras: diagramas em Word SEMPRE vetoriais (SVG→EMF via Inkscape; inserção via Word COM — python-docx não aceita EMF); PDF final SEMPRE via Word COM; gate de QA visual página a página antes de declarar pronto. Identidade visual Medina Osório obrigatória: logo `_FERRAMENTASssets\logo_medina.png (fundo branco) / logo_medina_transp.png (fundo transparente — usar este sobre qualquer fundo que não seja branco puro)`, petróleo `#395C60`, terracota `#D9926A`, Times New Roman, rodapé institucional. Para edições LaTeX estilo revista, usar Tectonic e o modelo `o modelo LaTeX registrado no acervo sob a chave `modelo-revista-latex``. Estratégia visual com fundamento (primazia, Von Restorff, dupla codificação, Gestalt, ancoragem) — ver `o relatório de estratégia visual registrado no acervo sob `relatorio-estrategia-visual``.
+**Invocar a skill `fabrica-visual-peticoes`** (em `~\.claude\skills\`) em toda peça — ela consolida o protocolo completo. Arsenal instalado e documentado em `_FERRAMENTAS\LEIA-ME.md` + script `_FERRAMENTAS\word_visual_pipeline.py`. Regras: diagramas em Word SEMPRE vetoriais (SVG→EMF via Inkscape; inserção via Word COM — python-docx não aceita EMF); PDF final SEMPRE via Word COM; gate de QA visual página a página antes de declarar pronto. Identidade visual Medina Osório obrigatória: logo `_FERRAMENTAS\assets\logo_medina.png (fundo branco) / logo_medina_transp.png (fundo transparente — usar este sobre qualquer fundo que não seja branco puro)`, petróleo `#395C60`, terracota `#D9926A`, Times New Roman, rodapé institucional. Para edições LaTeX estilo revista, usar Tectonic e o modelo `o modelo LaTeX registrado no acervo sob a chave `modelo-revista-latex``. Estratégia visual com fundamento (primazia, Von Restorff, dupla codificação, Gestalt, ancoragem) — ver `o relatório de estratégia visual registrado no acervo sob `relatorio-estrategia-visual``.
 
 **Legibilidade e consistência (08/07/2026)**: tokens únicos de estilo em `_FERRAMENTAS\estilo_medina.py`; texto de diagrama nunca abaixo de 8pt impressos (viewBox 600 @ 15cm → font-size ≥ 12px); gate automático em `svg_para_emf(..., largura_final_cm=...)` — validado em bateria de 21 casos em 08/07/2026 (cobre shorthand `font:`, unidades pt/em/rem, texto sem font-size, viewBox do Graphviz). Largura de inserção: calcular com `estilo_medina.largura_recomendada_cm(svg, alvo_pt=10)`, nunca 15cm fixo (evita diagrama gigante). Precedência: em conflito entre skills visuais, `fabrica-visual-peticoes` manda. Imagens geradas por IA (`gerar_imagem_ia`): só em material ao cliente/institucional — nunca retratando fatos/pessoas/provas em peça protocolada.
 
@@ -111,6 +111,46 @@ O editor não pode criar ou alterar fatos, datas, números, valores, citações,
 5. Manter o **teste-âncora** contra a peça aprovada em 09/07: gate que reprova o padrão aprovado pelo dono está errado, não a peça.
 6. Defeito só é defeito contra o padrão aprovado — os retângulos cinza da capa e o vazio inferior são identidade, não erro.
 7. **Comitê de personas não substitui revisão de código**: o conselho leu o dossiê do construtor e recomendou arquitetura já rejeitada, citando função inexistente. A circularidade de autovalidação (quem constrói escreve o gate, mede com ele e se aprova) só foi quebrada pela revisão cruzada com a outra família de modelo, lendo o XML.
+
+## Aprendizado contínuo do retorno humano (06/08/2026 — ordem do Igor, INVIOLÁVEL)
+
+Toda correção que o titular faz numa peça é insumo do sistema, não só do caso. O
+ciclo é obrigatório e tem quatro passos, nesta ordem:
+
+1. **Capturar e comparar.** O loop pós-protocolo (`forja_post_protocol.py`) traz
+   a versão humana final ou a peça protocolada e a compara com a nossa. Ele é
+   sanitizado por hash: guarda `beforeHash`, `afterHash` e localizador, nunca o
+   trecho — o texto vive só no cofre local, fora de todo repositório.
+2. **Ler o padrão, não a ocorrência.** `python _FORJA_HARNESS\forja_aprendizado.py
+   padroes` agrega as correções por `camada:causa` e ordena por **recorrência
+   entre casos distintos**. Correção isolada é anedota; a que se repete em casos
+   diferentes é padrão do escritório. Contagem bruta não serve: um processo longo
+   produz centenas de mudanças sozinho.
+3. **Adotar com destino executável.** `forja_aprendizado.py adotar <classe>
+   --destino {checklist|template|doutrina} --fase Fn --regra "..." --aprovado-por
+   <nome>`. A decisão é humana; o registro guarda a evidência de recorrência que
+   existia no momento da adoção, para que se possa responder depois por que
+   aquela regra existe.
+4. **Aplicar de verdade.** `forja_aprendizado.py aplicar` escreve a regra no
+   destino — item no contrato da fase, instrução no template ou lição no
+   protocolo. **Registrar a frase não é aprender**; aprender é a próxima peça
+   nascer diferente. A aplicação é idempotente e conferível.
+
+**Gate 5-B do F10** (`forja_delivery.py`): nenhuma entrega fecha se uma regra
+adotada tiver saído do seu destino. O gate NÃO exige que o caso corrente já
+tenha aprendido — o retorno humano chega depois do protocolo, e exigi-lo
+travaria toda entrega por algo que ainda não existe.
+
+**Agradecer e pedir mais.** Depois que o loop roda, o retorno é respondido com o
+template `_FORJA_HARNESS\templates\F10_EMAIL_RETORNO_E_AGRADECIMENTO.md`:
+agradecer pelo específico, mostrar o que mudou na estrutura por causa daquela
+correção, e fazer **uma** pergunta. Escrito por pessoa, nunca disparado por
+automação — agradecimento com molde reconhecível deixa de ser lido na segunda
+vez. Correção humana é o insumo mais caro que a esteira recebe e a única fonte
+de aprendizado que nenhum gate automático substitui.
+
+Regressão: `_FORJA_HARNESS\test_forja_aprendizado.py`, no baseline. É um teste
+só, parametrizado pelo registro — adotar a próxima regra não custa código novo.
 
 ## Hermes / gestão viva da fábrica (08/07/2026)
 
