@@ -39,3 +39,8 @@ gestao_escritorio/*.html
 **/VERSÃO HUMANA FINAL — */
 _FORJA_HARNESS/reports/POST_PROTOCOL_LAST_RUN.json
 reports/POST_PROTOCOL_LAST_RUN.json
+
+# Aviso local: esta pasta e espelho de publicacao, nao pasta de
+# trabalho. Nao vai ao GitHub porque quem clona esta numa pasta de
+# trabalho legitima e o aviso seria falso la.
+NAO_TRABALHE_AQUI.md

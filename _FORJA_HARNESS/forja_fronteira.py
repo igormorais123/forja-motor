@@ -222,6 +222,14 @@ _MOTOR_EXCECOES = [
 _PREFIXOS_ONEOFF_PAINEL = ("registrar_", "apply_", "preencher_", "seed_",
                            "indexar_", "hermes_reconcile_")
 
+# Data no fim do nome do script: `corrigir_rota_<cliente>_20260805.py`. A lista
+# de prefixos acima é a lição 217 em miniatura — ela não previu `corrigir_`, e o
+# script novo chegou ao motor com número CNJ e razão social dentro. A data
+# resolve por construção: medido em 05/08/2026, os 19 scripts datados da pasta
+# são todos de uma vez só, e nenhuma das bibliotecas do painel — `server.py`,
+# `office_io.py`, `render_dashboard.py` — carrega data no nome.
+RE_SCRIPT_DATADO = re.compile(r"_(\d{8}|\d{4}-\d{2}-\d{2})(_[a-z]+)?\.py$", re.I)
+
 # Arquivo com data no nome é registro de um momento, não doutrina. A regra é
 # geral de propósito: uma lista dos 40 relatórios que hoje estão na raiz do
 # motor estaria desatualizada no próximo relatório escrito.
@@ -315,6 +323,9 @@ def classificar(caminho_rel: str) -> tuple[str, str]:
 
     if rel.startswith("gestao_escritorio/scripts/"):
         nome = rel.split("/")[-1]
+        if RE_SCRIPT_DATADO.search(nome):
+            return ACERVO, ("script com data no nome: registro de um dia, não "
+                            "biblioteca do painel")
         if nome.startswith(_PREFIXOS_ONEOFF_PAINEL):
             return ACERVO, ("script de uma vez só amarrado a um caso; nenhum "
                             "módulo o importa")

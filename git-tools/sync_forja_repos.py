@@ -59,7 +59,16 @@ LIMITE_BYTES = fronteira.LIMITE_BYTES
 # Arquivos que pertencem ao repositório e não à pasta de trabalho: não são
 # apagados na varredura de sobras.
 PROPRIOS_DO_REPO = {"README.md", ".gitignore", ".gitattributes",
-                    "ARTEFATOS_FORA_DO_REPOSITORIO.json"}
+                    "ARTEFATOS_FORA_DO_REPOSITORIO.json",
+                    # Aviso que só existe nesta máquina, ignorado pelo git de
+                    # cada repositório: o espelho do motor recebe `CLAUDE.md`,
+                    # `AGENTS.md` e as pastas de instrução de agente, então
+                    # parece uma pasta de trabalho completa e um agente aberto
+                    # ali funcionaria — até a sincronização seguinte apagar o
+                    # que foi escrito. Quem clona o motor em outro escritório
+                    # está numa pasta de trabalho legítima, e é por isso que o
+                    # aviso não vai ao GitHub.
+                    "NAO_TRABALHE_AQUI.md"}
 
 # Pastas que nem são percorridas. Diferente da classificação: aqui a razão é
 # custo — não adianta caminhar por 16 GB de autos para descartar tudo no fim.

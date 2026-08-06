@@ -2,7 +2,8 @@
 
 Data: 05/08/2026
 Origem: vídeo "Larguei tudo pra aprender Graph Engineering" (Lucas Montano, 31/07/2026, 15min) + auditoria dos grafos existentes no repositório nesta data.
-Status: plano. Nada implementado ainda.
+
+> **Status: diagnóstico válido, ordem de execução SUPERADA.** O PRD `43_PRD_GRAFOS_PONDERADOS.md` v3, de 05/08/2026, inverteu o primeiro movimento deste plano depois de medir a fórmula proposta contra os seis grafos reais: 12 das 20 teses saturam em lastro 1,000 e 8 dão 0,000, e 40% das teses não têm nenhuma aresta sustentadora. Os grafos não estão subponderados, estão despovoados e sem ontologia comum. **Não implemente o M1 deste plano** — vale o E0 do PRD v3, que mede completude sem peso. O diagnóstico das seções 2 e 3 abaixo permanece correto e é a base do PRD.
 
 ---
 

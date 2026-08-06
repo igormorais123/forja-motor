@@ -52,6 +52,15 @@ CLASSIFICACAO = [
     ("gestao_escritorio/scripts/render_dashboard.py", fr.MOTOR, "código do painel"),
     ("gestao_escritorio/scripts/registrar_entrega_x_20260715.py", fr.ACERVO,
      "script de uma vez só amarrado a um caso"),
+    # A lista de prefixos não previu `corrigir_`, e o script chegou ao motor com
+    # CNJ e razão social dentro. A data no nome resolve sem lista; a biblioteca
+    # do painel não tem data e precisa continuar do lado do motor.
+    ("gestao_escritorio/scripts/corrigir_rota_x_20260805.py", fr.ACERVO,
+     "script datado: registro de um dia"),
+    ("gestao_escritorio/scripts/registrar_avancos_20260805_madrugada.py", fr.ACERVO,
+     "script datado com sufixo depois da data"),
+    ("gestao_escritorio/scripts/server.py", fr.MOTOR, "biblioteca do painel"),
+    ("gestao_escritorio/scripts/office_io.py", fr.MOTOR, "biblioteca do painel"),
     # Dentro de pasta de caso a extensão é que decide, e os dois lados precisam
     # estar presos: o texto de trabalho some com a máquina se não for versionado;
     # o binário dos autos é o que pesava os 16 GB e volta do e-mail e do processo.
