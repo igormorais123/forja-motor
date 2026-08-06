@@ -102,20 +102,52 @@ def _escrever_json(caminho: Path, dados) -> None:
 # --------------------------------------------------------------------------
 # Leitura dos candidatos
 # --------------------------------------------------------------------------
-def levantar_candidatos() -> list[dict]:
-    """Todos os candidatos de todos os casos, com o caso de origem junto."""
+def comparabilidade(pasta_artefatos: Path) -> tuple[bool, dict]:
+    """A comparação que gerou estes candidatos era entre documentos comparáveis?
+
+    Quem responde é o pós-protocolo, pela medida de texto em comum e de blocos
+    preservados gravada no resumo da comparação. Aqui a pergunta é refeita na
+    leitura porque os candidatos de 2026 nasceram antes do gate existir: três
+    dos cinco retornos não eram revisão da nossa peça, e sozinhos responderam
+    por 496 das mudanças. Ler sem filtrar é aprender com ruído.
+    """
+    comp = _ler_json(pasta_artefatos / "F10_POST_PROTOCOL_DOCUMENT_COMPARISON.json")
+    resumo = (comp or {}).get("summary") or {}
+    razao = resumo.get("sharedTokenRatio")
+    retidos = resumo.get("retainedBlockRuns")
+    medidas = {"sharedTokenRatio": razao, "retainedBlockRuns": retidos}
+    if razao is None or retidos is None:
+        return False, medidas
+    return (razao >= 0.30 and retidos >= 5), medidas
+
+
+def levantar_candidatos(*, incluir_incomparaveis: bool = False) -> tuple[list[dict], list[dict]]:
+    """Candidatos aproveitáveis e a lista do que foi descartado, com o motivo.
+
+    O descarte é devolvido junto de propósito: filtro silencioso é como o ruído
+    passou por padrão na primeira leitura.
+    """
     saida: list[dict] = []
+    descartados: list[dict] = []
     if not STATE.is_dir():
-        return saida
-    for arq in STATE.rglob("F10_LEARNING_CANDIDATE.json"):
+        return saida, descartados
+    for arq in sorted(STATE.rglob("F10_LEARNING_CANDIDATE.json")):
+        # Versões superadas do mesmo retorno ficam arquivadas ao lado. Contá-las
+        # é contar duas vezes a mesma correção do titular.
+        if "post_protocol_history" in arq.parts:
+            continue
         dados = _ler_json(arq)
         if not isinstance(dados, dict):
             continue
         caso = dados.get("caseId") or arq.parent.parent.name
-        for c in dados.get("candidates") or []:
-            if isinstance(c, dict):
-                saida.append({**c, "_caso": caso})
-    return saida
+        itens = [c for c in (dados.get("candidates") or []) if isinstance(c, dict)]
+        ok, medidas = comparabilidade(arq.parent)
+        if not ok and not incluir_incomparaveis:
+            descartados.append({"caso": caso, "candidatos": len(itens), **medidas})
+            continue
+        for c in itens:
+            saida.append({**c, "_caso": caso})
+    return saida, descartados
 
 
 def agrupar(candidatos: list[dict]) -> list[dict]:
@@ -206,6 +238,41 @@ def adotar(classe: str, *, destino: str, fase: str, regra: str,
     reg["regras"].append(nova)
     _escrever_json(REGISTRO, reg)
     return nova
+
+
+def revalidar() -> list[dict]:
+    """A evidência que sustentava cada regra ainda existe nos dados de hoje?
+
+    Uma regra adotada carrega a recorrência medida no dia da adoção. Se aquela
+    medida vier a ser corrigida — porque um retorno foi reclassificado, ou
+    porque um gate de comparabilidade passou a excluir comparações que nunca
+    deveriam ter contado —, a regra continua no destino afirmando um lastro que
+    não existe mais. Foi o que ocorreu em 06/08/2026: a primeira regra da casa
+    nasceu com "3 casos, 12 correções materiais" e, depois de excluídos três
+    retornos que não eram revisão da nossa peça, o lastro real virou 1 caso e 1
+    correção. A regra em si continuava sensata; a evidência dela, não.
+
+    Isto não apaga nem reescreve regra: devolve a divergência para decisão
+    humana, que é de quem é.
+    """
+    atual = {g["classe"]: g for g in agrupar(levantar_candidatos()[0])}
+    divergencias = []
+    for r in carregar_registro()["regras"]:
+        antes = r.get("evidencia") or {}
+        agora = atual.get(r["classe"])
+        if agora is None:
+            divergencias.append({"regraId": r["regraId"], "classe": r["classe"],
+                                 "antes": antes, "agora": None,
+                                 "nota": "classe deixou de aparecer nos candidatos aproveitáveis"})
+            continue
+        if agora["casos"] < antes.get("casos", 0) or agora["materiais"] < antes.get("materiais", 0):
+            divergencias.append({
+                "regraId": r["regraId"], "classe": r["classe"],
+                "antes": {"casos": antes.get("casos"), "materiais": antes.get("materiais")},
+                "agora": {"casos": agora["casos"], "materiais": agora["materiais"]},
+                "nota": "lastro encolheu depois de recontagem",
+            })
+    return divergencias
 
 
 # --------------------------------------------------------------------------
@@ -324,6 +391,63 @@ def conferir() -> list[str]:
     return problemas
 
 
+def _amostrar(classe: str, limite: int) -> int:
+    """Mostra o texto real de algumas mudanças da classe, lido do cofre local.
+
+    Existe porque a contagem sozinha engana. A primeira leitura desta esteira
+    apontou 279 correções materiais de raciocínio em cinco casos e parecia o
+    maior padrão do escritório; ao abrir os textos, o alinhamento casava
+    parágrafos sem relação entre si em documentos que nem eram revisão da nossa
+    peça. Nenhuma regra deve ser adotada sem que alguém tenha lido exemplos.
+
+    Nada aqui é gravado: o texto sai na tela, vem do cofre local do caso e não
+    entra em artefato, registro ou repositório.
+    """
+    from forja_document_compare import extract_document
+
+    camada, _, causa = classe.partition(":")
+    if not causa:
+        print("classe no formato camada:causa, como aparece em `padroes`")
+        return 2
+    mostrados = 0
+    for arq in sorted(STATE.rglob("F10_POST_PROTOCOL_DOCUMENT_COMPARISON.json")):
+        if mostrados >= limite:
+            break
+        ok, _ = comparabilidade(arq.parent)
+        if not ok:
+            continue
+        comp = _ler_json(arq) or {}
+        alvos = [c for c in comp.get("changes") or []
+                 if c.get("layer") == camada and c.get("cause") == causa
+                 and c.get("impact") == "material"]
+        if not alvos:
+            continue
+        try:
+            base = {u.locator: u.text for u in extract_document(
+                Path(comp["baseline"]["path"]), allow_ocr=True).units}
+            humano = {u.locator: u.text for u in extract_document(
+                Path(comp["humanArtifact"]["path"]), allow_ocr=True).units}
+        except Exception as exc:  # documento fora do disco, caso arquivado
+            print(f"  [{arq.parent.parent.name}] documentos indisponíveis: {exc}")
+            continue
+        for c in alvos:
+            if mostrados >= limite:
+                break
+            mostrados += 1
+            antes = " ".join(base.get(l, "") for l in c.get("baselineLocator") or [])
+            depois = " ".join(humano.get(l, "") for l in c.get("humanLocator") or [])
+            print("=" * 74)
+            print(f"[{arq.parent.parent.name}] {c['changeId']} — {', '.join(c.get('reasonCodes') or [])}")
+            print(f"  NOSSA  : {antes[:600] or '(inserção)'}")
+            print(f"  HUMANA : {depois[:600] or '(remoção)'}")
+    if not mostrados:
+        print(f"nenhuma mudança material dessa classe em comparação aproveitável: {classe}")
+        return 1
+    print("=" * 74)
+    print("Texto lido do cofre local e não gravado em lugar nenhum.")
+    return 0
+
+
 # --------------------------------------------------------------------------
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -344,6 +468,11 @@ def main(argv=None) -> int:
     ap_ = sub.add_parser("aplicar", help="escreve as regras nos destinos")
     ap_.add_argument("--seco", action="store_true")
 
+    am = sub.add_parser("amostra", help="mostra as mudanças reais de uma classe")
+    am.add_argument("classe", help="no formato camada:causa")
+    am.add_argument("--limite", type=int, default=6)
+
+    sub.add_parser("revalidar", help="a evidência de cada regra ainda existe?")
     sub.add_parser("conferir", help="as regras estão presentes nos destinos?")
 
     args = ap.parse_args(argv)
@@ -351,11 +480,20 @@ def main(argv=None) -> int:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     if args.verbo == "padroes":
-        grupos = [g for g in agrupar(levantar_candidatos())
-                  if g["casos"] >= args.minimo_casos]
+        candidatos, descartados = levantar_candidatos()
+        grupos = [g for g in agrupar(candidatos) if g["casos"] >= args.minimo_casos]
         if args.json:
-            print(json.dumps(grupos, ensure_ascii=False, indent=2))
+            print(json.dumps({"grupos": grupos, "descartados": descartados},
+                             ensure_ascii=False, indent=2))
             return 0
+        if descartados:
+            print("Descartados por não serem revisão da nossa peça:")
+            for d in descartados:
+                razao = d["sharedTokenRatio"]
+                razao = "sem medida" if razao is None else f"{razao:.1%} de texto em comum"
+                print(f"  {d['caso'][:46]:48} {d['candidatos']:5} candidato(s) — {razao}")
+            print("  Comparar documentos sem origem comum casa trechos sem relação")
+            print("  e produz 'mudanças' com confiança alta. Não é aprendizado.\n")
         if not grupos:
             print("nenhuma classe de correção observada.")
             return 0
@@ -368,10 +506,13 @@ def main(argv=None) -> int:
         print("particularidade de um processo longo.")
         return 0
 
+    if args.verbo == "amostra":
+        return _amostrar(args.classe, args.limite)
+
     if args.verbo == "adotar":
         nova = adotar(args.classe, destino=args.destino, fase=args.fase,
                       regra=args.regra, aprovado_por=args.aprovado_por,
-                      grupos=agrupar(levantar_candidatos()))
+                      grupos=agrupar(levantar_candidatos()[0]))
         ev = nova["evidencia"]
         print(f"adotada {nova['regraId']} — {nova['classe']} → {nova['destino']}/{nova['fase']}")
         print(f"  evidência: {ev['casos']} caso(s), {ev['materiais']} material(is)")

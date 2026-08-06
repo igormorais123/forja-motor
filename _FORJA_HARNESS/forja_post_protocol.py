@@ -92,7 +92,46 @@ REASON_CODES = {
     "PP-OCR-LOW-CONFIDENCE",
     "PP-SENDER-NOT-ALLOWED",
     "PP-CAPTURE-FAILED",
+    "PP-NOT-A-REVISION",
 }
+
+# Piso de comparabilidade: abaixo dele o documento humano não é revisão da nossa
+# peça, e sim outro documento. Medido nos cinco retornos reais de 2026: os que
+# eram revisão deram 0,50 e 0,67 de texto em comum, com 35 e 19 sequências de
+# blocos preservadas; os que eram documento distinto deram 0,007, 0,031 e 0,134,
+# com 0, 0 e 1. Não há caso real entre 0,134 e 0,499, e os dois sinais concordam
+# em todos eles — por isso exigem-se ambos, para que uma métrica isolada com
+# comportamento estranho não deixe passar lixo.
+PISO_TEXTO_COMUM = 0.30
+PISO_BLOCOS_PRESERVADOS = 5
+
+
+def _e_revisao(comparison: dict) -> tuple[bool, dict]:
+    """A peça humana é revisão da nossa base, ou é outro documento?
+
+    Vem antes de qualquer aprendizado. Quando os dois documentos não têm
+    origem comum, o alinhamento de tokens casa trechos sem relação entre si, e
+    cada par casado vira uma "mudança" com camada, causa e confiança altas. O
+    efeito não é uma linha errada: é volume. Nos retornos de 2026, três pares
+    incomparáveis produziram 496 mudanças e 228 classificadas como materiais —
+    mais do que o dobro do que veio dos dois retornos que eram revisão de
+    verdade. Agregado por classe, esse ruído tem a forma exata de um padrão do
+    escritório, e foi assim que quase virou regra.
+    """
+    resumo = comparison.get("summary") or {}
+    medidas = {
+        "sharedTokenRatio": resumo.get("sharedTokenRatio"),
+        "retainedBlockRuns": resumo.get("retainedBlockRuns"),
+        "pisoTextoComum": PISO_TEXTO_COMUM,
+        "pisoBlocosPreservados": PISO_BLOCOS_PRESERVADOS,
+    }
+    razao = resumo.get("sharedTokenRatio")
+    retidos = resumo.get("retainedBlockRuns")
+    if razao is None or retidos is None:
+        # Comparação de versão anterior do comparador, sem a medida. Não se
+        # inventa aprovação por ausência de dado.
+        return False, medidas
+    return (razao >= PISO_TEXTO_COMUM and retidos >= PISO_BLOCOS_PRESERVADOS), medidas
 VERSIONED_POST_PROTOCOL_ARTIFACTS = (
     "F10_POST_PROTOCOL_RETURN.json",
     "F10_PROTOCOL_EVIDENCE.json",
@@ -1104,6 +1143,22 @@ def ingest_return(
             human_artifact_id=human_artifact_id,
             protocol_status=protocol_status,
         )
+    revisao, medidas = _e_revisao(comparison)
+    if not revisao:
+        return _block_capture(
+            case_dir,
+            ckey,
+            manifest_path,
+            manifest,
+            reason_codes=["PP-NOT-A-REVISION"],
+            detail=(
+                "nao_e_revisao_da_base:"
+                f"texto_comum={medidas['sharedTokenRatio']}:"
+                f"blocos_preservados={medidas['retainedBlockRuns']}"
+            ),
+            human_artifact_id=human_artifact_id,
+            protocol_status=protocol_status,
+        )
     private_comparison_path = folder / "COMPARAÇÃO_PRIVADA_IA_VS_HUMANO.json"
     atomic_write_json(private_comparison_path, comparison)
     markdown_path = folder / "MUDANÇAS_IA_VS_PEÇA_PROTOCOLADA.md"
@@ -1572,6 +1627,22 @@ def rebuild_comparison(case_dir: Path, ckey: str, *, producer_run_id: str | None
             manifest,
             reason_codes=["PP-OCR-LOW-CONFIDENCE"],
             detail="rebuild_ocr_low_confidence",
+            human_artifact_id=manifest["humanArtifactId"],
+            protocol_status=manifest["protocolStatus"],
+        )
+    revisao, medidas = _e_revisao(comparison)
+    if not revisao:
+        return _block_capture(
+            case_dir,
+            ckey,
+            manifest_path,
+            manifest,
+            reason_codes=["PP-NOT-A-REVISION"],
+            detail=(
+                "rebuild_nao_e_revisao_da_base:"
+                f"texto_comum={medidas['sharedTokenRatio']}:"
+                f"blocos_preservados={medidas['retainedBlockRuns']}"
+            ),
             human_artifact_id=manifest["humanArtifactId"],
             protocol_status=manifest["protocolStatus"],
         )

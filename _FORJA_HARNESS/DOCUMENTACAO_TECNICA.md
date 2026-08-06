@@ -679,3 +679,70 @@ O conselho de quatro personas leu o dossiê do construtor e recomendou arquitetu
 ### 23.6 Calibração de material econômico
 
 `forja_calibra_monetario.py` mede a incidência da detecção de conteúdo econômico sobre o acervo, para os gates L9–L13 planejados (plano 41). Existe porque a primeira medição foi feita por script não persistido e os números iriam ao cliente como evidência — **número em relatório de evidência sem meio de reexecução é atestação sem lastro**. Comando: `python forja_calibra_monetario.py --saida CALIBRACAO_MONETARIA.json`. Resultado de 03/08: a regra ampla tocaria 39,3% dos documentos contra 13,9% da estreita, e 29,7% das ocorrências com separador de milhar são citação normativa lida como dinheiro (Lição 102).
+
+## 24. Vigias e o fio de e-mail como superfície de trabalho (06/08/2026)
+
+### 24.1 O problema que os três vigias resolvem
+
+Até 06/08/2026 a esteira só enxergava trabalho que alguém tivesse **pedido**. Dois
+episódios no mesmo dia mostraram o custo disso.
+
+O primeiro: uma varredura feita para outro fim revelou, por acaso, que dois
+agravos do escritório estavam pautados para julgamento em duas semanas, com o
+prazo de sustentação oral correndo. As intimações haviam sido divulgadas três
+semanas antes. Achado que depende de acaso não se repete.
+
+O segundo: a varredura de fim de trabalho deu tudo verde — baseline, fronteira,
+painel de demandas, nenhuma flag — enquanto sete fios de e-mail do escritório
+esperavam resposta, o mais antigo havia duas semanas, um deles com uma promessa
+escrita minha e outro com uma **diretriz permanente** do escritório que não
+constava de documento nenhum da fábrica. Nenhum gate viu, porque a demanda que
+originou cada retorno já constava cumprida: a peça tinha sido entregue. O retorno
+**sobre** a entrega abre trabalho novo que o painel registra como o mesmo item
+fechado.
+
+### 24.2 Arquitetura comum aos três
+
+| camada | decisão | por quê |
+|---|---|---|
+| alvo | vive no acervo (`monitor_djen_vigiados`, `fios_remetentes_casa`), lido por `forja_acervo.valor()` | número de processo, nome de parte e endereço de escritório são dado de cliente; o motor é público e a fronteira reprova |
+| ausência de acervo | sai com código `2` e diz que rodou sem alvo | vigia mudo é indistinguível de vigia sem trabalho |
+| resposta inesperada da API | `RuntimeError`, não lista vazia | "não consegui ler" nunca pode virar "não há nada" |
+| aviso | arquivo na raiz do harness, não linha em log | log que ninguém abre não avisa ninguém |
+| ação | nenhuma — não peticiona, não envia, não decide | avisar continua sendo decisão de quem lê |
+
+### 24.3 Fontes públicas que a esteira passou a usar
+
+Duas rotas foram medidas em 05–06/08/2026 e dissolveram dependências que eu já
+havia declarado ao cliente como sendo de terceiro:
+
+- **Cadastro nacional de processos (DataJud/CNJ)** — `POST` em
+  `api-publica.datajud.cnj.jus.br/api_publica_<alias>/_search` com o número de 20
+  dígitos sem pontuação. **Não** indexa nome de parte, mas devolve classe,
+  assunto, órgão julgador atual, grau e a lista completa de movimentos com data.
+  Serve para confirmar órgão julgador e relatoria sem depender de informação de
+  terceiro — o que torna operacionais os níveis 2, 5 e 8 da ordem de pesquisa
+  jurisprudencial da casa.
+- **Diário nacional (DJEN/Comunica)** —
+  `comunicaapi.pje.jus.br/api/v1/comunicacao`. **Indexa nome de parte com polo** e
+  devolve o **teor** integral de cada comunicação. O host `comunica.pje.jus.br`
+  devolve HTML e não serve. Foi o teor, e não o cadastro, que respondeu perguntas
+  de valor que eu havia dado como dependentes de acesso aos autos.
+
+Lição derivada, registrada como 232: **campo ausente não é dado ausente** — o
+dado pode estar no texto que o campo não indexa.
+
+### 24.4 A armadilha do invólucro
+
+As tarefas agendadas invocam `powershell.exe`, o Windows PowerShell 5.1, que lê
+`.ps1` sem BOM como ANSI: todo acento vira erro de parse e o script morre antes
+da primeira linha útil. Os três wrappers estavam assim, e o vigia do STF vinha
+"rodando" desde a instalação sem nunca ter executado uma linha. Os testes não
+apanham porque exercitam o módulo Python, que está correto — o defeito mora no
+invólucro. E o canário não apanhou porque rodou no PowerShell 7 da sessão.
+
+Duas regras ficaram: wrapper com acento nasce com **BOM UTF-8**; e canário de
+tarefa agendada se executa com o comando literal de
+`(Get-ScheduledTask <nome>).Actions[0]`. Detalhe da armadilha secundária: ao
+simular novidade, remova só o item mais recente do retrato — zerar a lista vira
+*primeira leitura* e o vigia calado está certo.

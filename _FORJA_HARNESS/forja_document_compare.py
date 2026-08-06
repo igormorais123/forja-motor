@@ -379,6 +379,13 @@ def compare_documents(baseline_path: Path, human_path: Path, *, allow_ocr: bool 
         tag == "equal" and max(i2 - i1, j2 - j1) > 18
         for tag, i1, i2, j1, j2 in opcodes
     )
+    # Quanto do texto os dois documentos têm em comum. Serve para responder uma
+    # pergunta anterior a qualquer diff: a peça humana é REVISÃO da nossa, ou é
+    # outro documento? Quando é outro documento, o alinhamento de blocos casa
+    # trechos sem relação e cada par produz uma "mudança" com classificação e
+    # confiança altas — ruído que se acumula e passa por padrão do escritório.
+    equal_tokens = sum(i2 - i1 for tag, i1, i2, _j1, _j2 in opcodes if tag == "equal")
+    shared_ratio = 2 * equal_tokens / max(1, len(before_tokens) + len(after_tokens))
     change_index = 0
     for region_index, region in enumerate(_change_regions(opcodes), 1):
         region_id = f"region-{region_index:04d}"
@@ -496,6 +503,7 @@ def compare_documents(baseline_path: Path, human_path: Path, *, allow_ocr: bool 
             "nonMaterialCount": len(changes) - material,
             "unknownCount": unknown,
             "retainedBlockRuns": retained,
+            "sharedTokenRatio": round(shared_ratio, 4),
             "byLayer": dict(sorted(Counter(item["layer"] for item in changes).items())),
         },
         "changes": changes,
@@ -560,6 +568,7 @@ def render_markdown(comparison: dict, *, protocol_status: str, baseline_artifact
         "## Itens preservados",
         "",
         f"- {summary['retainedBlockRuns']} sequência(s) de blocos foram mantidas sem alteração.",
+        f"- Texto em comum entre os dois documentos: {summary.get('sharedTokenRatio', 0):.1%}.",
         "",
         "## Revisão e aprendizado",
         "",

@@ -229,3 +229,40 @@ Estado medido em 05/08/2026: motor com 531 arquivos e **zero sinal de cliente**
 conferido em modo nominal contra o clone publicado; árvore montada a partir dos
 dois repositórios roda **91/91 suítes**. As pastas de caso continuam na raiz por
 decisão medida — ver Lição 223.
+
+## VIGIAS — o que roda sozinho, e por que cada um existe (06/08/2026)
+
+Três tarefas agendadas no Windows. Nenhuma delas peticiona, envia mensagem ou
+decide qualquer coisa: todas apenas **olham** e, quando encontram algo, deixam um
+arquivo visível na raiz do harness — log que ninguém abre não avisa ninguém.
+
+| tarefa | módulo · wrapper | quando | o que faz | flag que levanta |
+|---|---|---|---|---|
+| `FORJA-Monitor-STF` | `forja_monitor_stf.py` · `monitor_stf_diario.ps1` | 09:00 | raspa a aba de andamentos de um processo do Supremo | `NOVIDADE_STF.md` |
+| `FORJA-Monitor-DJEN` | `forja_monitor_djen.py` · `monitor_djen_diario.ps1` | 09:15 | consulta a base nacional de comunicações, que cobre todos os tribunais e devolve o **teor** de cada ato; marca como urgente o que fala em pauta, sustentação, julgamento, acórdão, sentença, prazo ou destaque | `NOVIDADE_PROCESSUAL.md` |
+| `FORJA-Fios-Abertos` | `forja_fios_abertos.py` · `fios_abertos_diario.ps1` | 09:30 | lista os fios de e-mail em que a última palavra **não** é minha | `FIO_SEM_RESPOSTA.md` |
+
+Códigos de saída, iguais nos três: `0` sem novidade, `10` com novidade, `1` em
+erro, `2` sem alvo configurado.
+
+**Nenhum deles carrega dado de cliente.** Número de processo, nome de parte e
+endereço de escritório moram no acervo, sob `monitor_djen_vigiados` e
+`fios_remetentes_casa` em `ACERVO_VALORES.json`. Sem o acervo, os módulos rodam
+sem alvo e **dizem** que rodaram assim, em vez de rodar em silêncio.
+
+Regressões: `test_forja_monitor_djen.py` (9 casos) e `test_forja_fios_abertos.py`
+(6 casos), ambos com o defeito real que motivou o vigia como fixture — a
+intimação de pauta vista por acaso três semanas depois, e o retorno do escritório
+sobre peça já entregue.
+
+**Armadilha registrada (Lição 235):** as tarefas invocam `powershell.exe`, que é
+o Windows PowerShell 5.1 e lê `.ps1` **sem BOM** como ANSI — todo acento vira
+erro de parse e o script morre antes da primeira linha. Os três wrappers estavam
+assim até 06/08. Wrapper com acento nasce com BOM UTF-8, e canário de tarefa
+agendada se roda com o comando literal de
+`(Get-ScheduledTask <nome>).Actions[0]`, nunca no shell da sessão.
+
+Estado medido em 06/08/2026: fronteira **aprovada** com 575 arquivos no motor;
+baseline **104/104 suítes verdes**, 647 testes pytest, 66 subtests e 46
+regressões em script, com `test_real_telemetria_licao41.py` em quarentena
+declarada.

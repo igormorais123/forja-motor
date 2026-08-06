@@ -1,10 +1,10 @@
 # PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3
 
-**Versão:** 2.0 — reconstrução Efesto após red team Diabob  
-**Protocolo:** `FORJA-INSTRUMENTACAO-v2`  
-**Data:** 06/08/2026  
-**Modo:** arquitetura e especificação executável  
-**Estado:** pronto para implementação da Onda 0; este documento não altera produção por si só  
+**Versão:** 2.0 — reconstrução Efesto após red team Diabob
+**Protocolo:** `FORJA-INSTRUMENTACAO-v2`
+**Data:** 06/08/2026
+**Modo:** arquitetura e especificação executável
+**Estado:** pronto para implementação da Onda 0; este documento não altera produção por si só
 **Parecer adversarial:** `state/prd45-revisao/PARECER_DIABOB_CODEX.md`
 
 **Substitui normativamente:**
