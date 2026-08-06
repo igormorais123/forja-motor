@@ -291,6 +291,24 @@ def main(case_key):
         "obs": (f"{n_regras} regra(s) ativa(s), todas presentes no destino"
                 if not pendencias else "; ".join(pendencias[:3])),
     })
+
+    # 5-C. O titular escreveu a mesma cobrança em quatro matérias distintas no
+    # mesmo dia: "não localizado" não diz se falta habilitação nos autos, se o
+    # link está quebrado, se o documento não existe ou se a limitação é nossa —
+    # e as quatro têm soluções diferentes. O gate só morde quando o caso declara
+    # bloqueio; caso sem bloqueio passa sem precisar do artefato.
+    import forja_insumo_bloqueado
+    bloqueios = forja_insumo_bloqueado.validar(case_dir)
+    declarados = forja_insumo_bloqueado.carregar(case_dir) or {}
+    n_bloq = len(declarados.get("itens") or [])
+    elos.append({
+        "elo": "5-C. Insumo bloqueado com causa e diligências",
+        "ok": not bloqueios,
+        "ref": f"n4_artifacts/{forja_insumo_bloqueado.ARQUIVO}",
+        "obs": (("nenhum insumo bloqueado declarado" if not n_bloq
+                 else f"{n_bloq} bloqueio(s) com causa e diligências declaradas")
+                if not bloqueios else "; ".join(bloqueios[:3])),
+    })
     elo("6. QA visual estrutural (piloto M4)", state_path.parent / "piloto" / "F8_QA_ESTRUTURAL.json",
         "OOXML, fidelidade, tipografia, metadados e SVG auditados sem renderização")
 

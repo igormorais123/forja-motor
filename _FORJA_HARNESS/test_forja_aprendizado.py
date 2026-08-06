@@ -198,9 +198,26 @@ checar("toda regra adotada nesta máquina está presente no seu destino",
        problemas == [], "; ".join(problemas[:3]))
 
 registro = ap.carregar_registro()
-checar("o registro não guarda trecho de peça",
-       not any(len(str(r.get("texto", ""))) > 400 for r in registro["regras"]),
-       "uma regra longa demais costuma ser texto colado da peça")
+
+# O que precisa ficar fora do registro é dado de cliente, e quem sabe reconhecer
+# isso é o detector da fronteira — o mesmo que guarda a publicação. O critério
+# anterior era o comprimento do texto, proxy fraco que reprovou uma regra
+# legítima de nove níveis de hierarquia jurisprudencial: comprimento não é
+# vazamento, e a regra da casa pode ser longa quando o procedimento é longo.
+import forja_fronteira  # noqa: E402
+_nomes, _modo = forja_fronteira.carregar_nomes(ap.RAIZ.parent)
+_vazamentos = [
+    (r["regraId"], forja_fronteira.sinais_no_texto(str(r.get("texto", "")), _nomes))
+    for r in registro["regras"]
+]
+_vazamentos = [(rid, sinais) for rid, sinais in _vazamentos if sinais]
+checar("nenhuma regra carrega dado de cliente", not _vazamentos,
+       "; ".join(f"{rid}: {sinais}" for rid, sinais in _vazamentos[:2]))
+
+# Teto generoso, mas existente: regra que ninguém consegue reter não muda peça
+# nenhuma, e um texto muito acima disso costuma ser trecho colado.
+_longas = [r["regraId"] for r in registro["regras"] if len(str(r.get("texto", ""))) > 900]
+checar("nenhuma regra tem tamanho de trecho colado", not _longas, ", ".join(_longas[:3]))
 
 print(f"ok: {casos} casos — o retorno humano vira regra aplicada e conferida "
       f"({len(registro['regras'])} regra(s) ativa(s))" if not falhas

@@ -102,7 +102,9 @@
 | Ler o texto real das correções de uma classe (do cofre local; não grava) | `python forja_aprendizado.py amostra <camada:causa>` |
 | Promover classe a regra, aplicar no destino e conferir | `python forja_aprendizado.py adotar/aplicar/conferir` |
 | A evidência de cada regra adotada ainda existe? | `python forja_aprendizado.py revalidar` |
-| Regras aprendidas em vigor (7) | `learning_registry/REGRAS_APRENDIDAS.json` |
+| Regras aprendidas em vigor (14) | `learning_registry/REGRAS_APRENDIDAS.json` |
+| Insumo bloqueado: causa, diligências, consequência e rota ("não localizado" não é diagnóstico) | `python forja_insumo_bloqueado.py <case-dir> [--schema]` → `n4_artifacts/F1_INSUMO_BLOQUEADO.json`; elo 5-C do F10 |
+| Triagem das correções recebidas por e-mail | campo `triagem` em `F10_RETORNO_SEM_ANEXO.json` (49/49 triadas em 06/08/2026: 35 com lição, 14 sem) |
 | Gate S6 — ato citado na peça não declarado neste trabalho | `atos` em `F2_IDENTIDADE_PROCESSUAL.json` → `forja_identidade_processual.gate_s6_identidade_do_ato` |
 | Gate S7 — tema sustentado fora do objeto devolvido | `objeto` em `F2_IDENTIDADE_PROCESSUAL.json` → `gate_s7_objeto_devolvido` |
 | E-mail de agradecimento e estímulo à crítica (escrito por pessoa, nunca disparado) | `templates/F10_EMAIL_RETORNO_E_AGRADECIMENTO.md` |

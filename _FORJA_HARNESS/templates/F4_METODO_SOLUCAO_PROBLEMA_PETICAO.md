@@ -184,5 +184,13 @@ Outros:
   <br>_regra-d4fb73d8708d — classe `request_relief:reasoning`, observada em 2 caso(s), 9 mudança(s) material(is)._
 - **Separar a autoridade do que foi decidido NESTES autos, que é comando do rejulgamento, da força persuasiva do precedente paralelo, que é espelho. Nunca tratar os dois como equivalentes nem transpor dados de um processo paralelo para o pautado.**
   <br>_regra-3b7115a40125 — classe `authority_citation:citation_scope`, observada em 2 caso(s), 10 mudança(s) material(is)._
+- **Fato favorável tem alcance medido, não conclusão automática: dizer exatamente o que ele individualiza e o que ele NÃO exonera. Ausência de ciência de um dirigente individualiza autoria e dolo; não exonera todos os envolvidos.**
+  <br>_regra-a51656a85fa5 — classe `fact:fact`, observada em 2 caso(s), 15 mudança(s) material(is)._
+- **Cada conclusão declara a premissa que a sustenta, se ela é jurídica, fática, contábil ou mista, o documento que a comprova, o que ainda depende de confirmação e a consequência prática de aceitá-la ou rejeitá-la. Conclusão antecipada sem a premissa exposta não é conclusão, é aposta.**
+  <br>_regra-0c84ca8d5fba — classe `calculation:calculation`, observada em 2 caso(s), 5 mudança(s) material(is)._
+- **Ordem de busca da jurisprudência, na hierarquia persuasiva da casa: STF pleno; STF do relator do caso e dos integrantes da turma, quando já há processo ou prevenção; STF demais turmas; STJ Órgão Especial; STJ do relator e dos integrantes da turma nas mesmas condições; STJ demais turmas; pleno ou órgão especial do tribunal local; relator local quando já há competência ou prevenção; câmara ou turma julgadora e seus integrantes. Sem competência ou relatoria conhecida, a busca fica genérica entre turmas e câmaras.**
+  <br>_regra-091e8896c7db — classe `authority_citation:citation_scope`, observada em 2 caso(s), 10 mudança(s) material(is)._
+- **Escrever da perspectiva do advogado da parte, nunca da de quem julga: risco, objeção e precedente contrário são identificados e enfrentados, inclusive por distinção tecnicamente sustentável, mas jamais adotados nem antecipados como juízo desfavorável ao cliente. Enfrentar a objeção mais forte serve para vencê-la, não para conceder a ela.**
+  <br>_regra-f22b9c24ce84 — classe `reasoning:reasoning`, observada em 2 caso(s), 54 mudança(s) material(is)._
 
 <!-- APRENDIDO-DO-RETORNO-HUMANO: fim -->

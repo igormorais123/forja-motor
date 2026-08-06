@@ -932,3 +932,78 @@ As duas do F7 são complementares e precisam ser lidas juntas com a primeira do
 F1: exigir lastro antes de escrever, e não hedgear o que já está provado.
 
 Lições 250 a 254 em `RETROSPECTIVAS.md`.
+
+
+## 27. Leitura integral das 49 correções (06/08/2026)
+
+Com a varredura corrigida, as 49 mensagens do escritório vinculadas a caso
+ficaram legíveis. Foram lidas todas: **35 com lição, 14 sem**. A triagem fica
+registrada por mensagem (`triagem`, `triadaEm`) em `F10_RETORNO_SEM_ANEXO.json`,
+de modo que a próxima leitura começa onde esta parou.
+
+### 27.1 O padrão mais recorrente não estava na peça
+
+A mesma cobrança apareceu em **cinco matérias distintas**, quatro delas no mesmo
+dia: a esteira declarou "documento não localizado" sem dizer por quê. O titular
+pediu a distinção de quatro situações — falta de habilitação nos autos,
+restrição de permissão ou link, indisponibilidade na fonte, limitação da própria
+ferramenta — e exigiu que as diligências fossem esgotadas e **registradas** antes
+de considerar algo não localizado.
+
+Nenhum diff de documento acharia isto: o padrão não deixa marca no texto da peça.
+
+`forja_insumo_bloqueado.py` fecha o buraco com `F1_INSUMO_BLOQUEADO.json`:
+
+| campo | exige |
+|---|---|
+| `causa` | vocabulário fechado com as quatro situações; "não localizado", "inacessível" e afins são recusados como sintoma |
+| `diligencias` | onde, quando e resultado — sem elas, "indisponível na fonte" é indistinguível de "não procurei" |
+| `consequencia` | o que da peça fica sem lastro |
+| `rotaDeSolucao` | quem pode destravar e como |
+| `recebidos` | inventário do que chegou e foi conferido, exigido sempre que há bloqueio |
+
+O inventário veio da quinta matéria, onde a pergunta foi invertida: *"todo o
+material foi encaminhado — a documentação não foi aberta?"*. Um bloqueio só
+ganha sentido contra o que entrou: sem o inventário, "faltou tal peça" não
+distingue documento que não veio de documento que veio e não foi aberto.
+
+Elo **5-C** no F10. Caso sem bloqueio declarado passa sem o artefato — o gate
+mede qualidade de diagnóstico, não cria burocracia.
+
+### 27.2 O contrapeso que quase faltou
+
+Horas depois de adotar "enfrentar a objeção mais forte da adversa", a leitura
+trouxe a diretriz que a equilibra: **escrever da perspectiva do advogado da
+parte, nunca da de quem julga.** Risco, objeção e precedente contrário são
+identificados e enfrentados, inclusive por distinção tecnicamente sustentável,
+mas jamais adotados nem antecipados como juízo desfavorável ao cliente.
+
+Sozinha, a primeira regra empurraria a esteira mais fundo no modo juiz — que é
+justamente o defeito que o titular vinha corrigindo. Duas regras verdadeiras
+que, isoladas, se degradam. **Regra nova se lê contra as que já existem, e não
+só contra a evidência que a motivou.**
+
+### 27.3 A hierarquia de pesquisa que existia e a esteira não conhecia
+
+Nove níveis, do pleno do STF à câmara do tribunal local, com o refinamento que
+só quem litiga escreve: buscar **pelo relator e pelos integrantes da turma**
+quando já há processo no tribunal ou prevenção; sem competência ou relatoria
+conhecida, a busca fica genérica. Estava num e-mail de julho e nunca chegou a
+artefato nenhum.
+
+### 27.4 As 14 regras em vigor
+
+`learning_registry/REGRAS_APRENDIDAS.json`. Por destino:
+
+- **F1 (antes de redigir)** — conferir existência do insumo citado no comando;
+  declarar o objeto devolvido e os temas fora dele; diagnosticar insumo
+  bloqueado com causa, diligências, consequência e rota.
+- **F4 (roteiro do redator)** — declarar o cerco; enfrentar a objeção mais forte;
+  perspectiva do advogado e não do julgador; separar precedente destes autos do
+  paralelo; ordem de busca jurisprudencial; alcance medido do fato favorável;
+  premissa declarada por conclusão.
+- **F7 (conferência)** — recusar afirmação categórica; não ressalvar o que já
+  está nos autos; não colapsar categorias jurídicas no rótulo favorável;
+  qualificar natureza e peso da fonte citada.
+
+Lições 255 a 259 em `RETROSPECTIVAS.md`.

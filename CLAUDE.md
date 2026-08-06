@@ -191,6 +191,27 @@ conteúdo da correção vive no e-mail e quem tria abre a mensagem. Não há
 classificação automática de prosa: heurística sobre texto livre inventaria
 padrão, que é exatamente o erro que o gate de comparabilidade acabou de fechar.
 
+**"Não localizado" não é diagnóstico (06/08/2026 — INVIOLÁVEL).** Foi a cobrança
+mais recorrente que o titular já fez à esteira: a mesma, quase palavra por
+palavra, em **cinco matérias distintas**. Insumo que não se conseguiu ler exige
+causa em vocabulário fechado — falta de habilitação nos autos, restrição de
+permissão ou link, indisponibilidade na fonte, ou limitação da própria
+ferramenta —, diligências registradas com onde/quando/resultado, o que da peça
+fica sem lastro e quem pode destravar. Cada causa tem solução diferente;
+colapsá-las transfere ao titular o trabalho de descobrir qual era. E declarar o
+que faltou exige o **inventário do que foi recebido e conferido**: sem ele não
+se distingue documento que não veio de documento que veio e não foi aberto.
+`forja_insumo_bloqueado.py` → `F1_INSUMO_BLOQUEADO.json`, elo 5-C do F10; caso
+sem bloqueio declarado não precisa do artefato.
+
+**Advogado, não juiz (06/08/2026 — diretriz escrita do titular).** Risco,
+objeção e precedente contrário são identificados e enfrentados, inclusive por
+distinção tecnicamente sustentável — jamais adotados nem antecipados como juízo
+desfavorável ao cliente. Lê-se junto com a regra de enfrentar a objeção mais
+forte da adversa: enfrentar serve para vencer, não para conceder. Isoladas, as
+duas se degradam; **regra nova se confere contra as que já existem, e não só
+contra a evidência que a motivou.**
+
 **Regra escrita que não pega vira gate (06/08/2026 — ordem do Igor).** A
 identidade dos atos recursais é INVIOLÁVEL aqui desde 11/07 e foi violada em
 dois clientes e dois tribunais depois disso; a síntese executiva estruturada,

@@ -46,6 +46,10 @@ SUITES_SCRIPT = {
         "o retorno humano vira regra aplicada e conferida: recorrência entre casos "
         "distintos manda sobre volume, aplicar é idempotente, e toda regra adotada "
         "é conferida contra o destino real desta máquina"),
+    "test_forja_insumo_bloqueado.py": (
+        "'não localizado' não é diagnóstico: insumo bloqueado exige causa em "
+        "vocabulário fechado, diligências registradas, consequência e rota — a "
+        "cobrança que o titular repetiu em quatro matérias no mesmo dia"),
     "test_forja_lapidacao_governanca.py": "os invariantes da lapidação aprovam o legítimo e reprovam cada sabotagem",
     "test_forja_exploracao_diversidade.py": "formulário do F2A é acusado e exploração genuína passa limpa",
     "test_forja_adversarial_gate.py": "regressão autônoma do gate adversarial",

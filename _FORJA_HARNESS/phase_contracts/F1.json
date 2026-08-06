@@ -35,6 +35,12 @@
       "classe": "procedural_identity:fact",
       "texto": "Declarar, antes de redigir, o objeto efetivamente devolvido ao tribunal e a lista de temas fora dele, no bloco objeto de F2_IDENTIDADE_PROCESSUAL.json. Verdadeiro sobre o caso não é o mesmo que decidível neste recurso.",
       "origem": "retorno_humano_pos_protocolo"
+    },
+    {
+      "regraId": "regra-4645b2bfce0c",
+      "classe": "evidence_annex:missing_input",
+      "texto": "Insumo que não se conseguiu ler exige diagnóstico, nunca o rótulo do sintoma: classificar a causa entre falta de habilitação nos autos, restrição de permissão ou link, indisponibilidade na fonte e limitação da própria ferramenta; registrar as diligências tentadas com onde, quando e resultado; dizer o que da peça fica sem lastro e quem pode destravar.",
+      "origem": "retorno_humano_pos_protocolo"
     }
   ]
 }

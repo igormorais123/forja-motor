@@ -82,6 +82,18 @@
       "classe": "fact:fact",
       "texto": "Documento já juntado aos autos não recebe ressalva de verificação: a peça não pode permanecer condicionada a material que o comando encaminhou. Ressalva é para o que falta, e o que falta é bloqueador nominado.",
       "origem": "retorno_humano_pos_protocolo"
+    },
+    {
+      "regraId": "regra-b3dcc9eeebdf",
+      "classe": "legal_rule:legal_rule",
+      "texto": "Não colapsar categorias jurídicas distintas no rótulo mais favorável à cliente: arquivamento por mérito, ausência de materialidade, insuficiência probatória, prescrição, perda de objeto e encerramento procedimental não são absolvição; dolo específico, genérico, culpa, assunção de risco e cegueira deliberada não são a mesma coisa.",
+      "origem": "retorno_humano_pos_protocolo"
+    },
+    {
+      "regraId": "regra-a8eab333ae94",
+      "classe": "authority_citation:citation_scope",
+      "texto": "Qualificar a natureza e o peso do que se cita: decisão monocrática não é colegiada, notícia e agregador orientam a pesquisa mas não fundamentam conclusão sem fonte primária, e comunicação privada não vira premissa factual de peça ou parecer.",
+      "origem": "retorno_humano_pos_protocolo"
     }
   ]
 }
