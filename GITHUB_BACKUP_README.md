@@ -87,3 +87,20 @@ publicá-los sem antes filtrar os 16 GB que os acompanham. Você pode continuar
 commitando aqui normalmente; o que a sincronização protege é o **estado atual
 dos arquivos**, espelhado nos dois repositórios novos, não a linha do tempo que
 levou até ele.
+
+## Pendência aberta: dois repositórios órfãos com o cofre pós-protocolo
+
+`igormorais123/forja-harness` e `igormorais123/forja-acervo-auditoria` foram
+criados na manhã de 05/08/2026, na primeira tentativa de separar motor de
+acervo, e abandonados no mesmo dia quando a fronteira passou a ser decidida por
+código. Ficaram no GitHub, privados, carregando **22 e 504 caminhos do cofre
+pós-protocolo** — a peça efetivamente protocolada e a versão humana final, o
+material mais sensível do acervo, que por regra não sai desta máquina.
+
+Decisão do Igor em 05/08/2026: apagar os dois. Arquivar não resolveria, porque
+mantém o conteúdo legível. A remoção é bloqueada pelo guard global de comandos
+perigosos e precisa ser executada à mão, com o subcomando de remoção de
+repositório do `gh` aplicado a cada um dos dois nomes acima.
+
+Nada se perde nisso: `forja-motor` e `forja-auditoria` cobrem o que deve ficar
+versionado, e o cofre pós-protocolo é exatamente o que não deve.
