@@ -88,7 +88,7 @@ commitando aqui normalmente; o que a sincronização protege é o **estado atual
 dos arquivos**, espelhado nos dois repositórios novos, não a linha do tempo que
 levou até ele.
 
-## Pendência aberta: dois repositórios órfãos com o cofre pós-protocolo
+## Dois repositórios órfãos: desativados, exclusão pendente
 
 `igormorais123/forja-harness` e `igormorais123/forja-acervo-auditoria` foram
 criados na manhã de 05/08/2026, na primeira tentativa de separar motor de
@@ -97,10 +97,20 @@ código. Ficaram no GitHub, privados, carregando **22 e 504 caminhos do cofre
 pós-protocolo** — a peça efetivamente protocolada e a versão humana final, o
 material mais sensível do acervo, que por regra não sai desta máquina.
 
-Decisão do Igor em 05/08/2026: apagar os dois. Arquivar não resolveria, porque
-mantém o conteúdo legível. A remoção é bloqueada pelo guard global de comandos
-perigosos e precisa ser executada à mão, com o subcomando de remoção de
-repositório do `gh` aplicado a cada um dos dois nomes acima.
+Tratamento aplicado em 05/08/2026: os dois receberam um aviso no topo do README
+e na descrição, dizendo que estão desativados e para onde o conteúdo vivo foi, e
+em seguida foram arquivados — ficam somente-leitura e não voltam a receber
+escrita por engano.
 
-Nada se perde nisso: `forja-motor` e `forja-auditoria` cobrem o que deve ficar
-versionado, e o cofre pós-protocolo é exatamente o que não deve.
+**Exclusão pendente.** Arquivar tira do caminho, mas não remove: o cofre
+continua legível por quem tiver acesso à conta. O que fecha isso é apagar os
+dois, decisão já tomada e adiada por praticidade. A remoção pelo `gh` exige o
+escopo `delete_repo`, que o token não tem, e o guard global de comandos
+perigosos bloqueia o subcomando — então a rota simples é o painel do GitHub, em
+Settings → Danger Zone de cada um. Nada se perde: `forja-motor` e
+`forja-auditoria` cobrem o que deve ficar versionado, e o cofre pós-protocolo é
+exatamente o que não deve.
+
+O repositório único anterior está arquivado desde a mesma data e, por isso, não
+aceita nem edição de descrição — o GitHub já exibe o aviso de arquivado a quem
+o abre.
