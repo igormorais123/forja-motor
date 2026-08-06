@@ -142,9 +142,53 @@ class _Mapa:
             raise SystemExit(f"MAPA INVÁLIDO — âncora de {tipo} não existe no md: {anc[:90]}")
 
 
+_ESTRUTURAL_MD = re.compile(r"^\s*(\||#{1,6}\s|>|[-*+]\s|\d+[.)]\s|```|---\s*$)")
+# "**Processo:** 0001773-82…" é campo de ficha, não frase cortada: uma linha por
+# campo é a forma correta de escrevê-lo, e cada uma termina sem pontuação.
+_CAMPO_ROTULADO = re.compile(r"^\s*(\*\*[^*\n]{2,48}:\*\*|[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ ]{1,40}:)\s")
+_FIM_DE_FRASE = ('.', '!', '?', ':', ';', '"', '”', ')', '*', '_', '|')
+
+
+def detectar_hard_wrap(texto_md):
+    """Linhas de prosa quebradas no meio da frase — cada uma virará um parágrafo.
+
+    O compositor trata CADA LINHA do markdown como um parágrafo próprio e o numera.
+    Markdown quebrado em 80 colunas produz, então, a frase partida no meio com um
+    número em cada pedaço, e pull quotes cortados — defeito que nenhum outro gate
+    daqui enxerga, porque o texto está todo presente e a fidelidade dá 100%.
+    Foi encontrado em 06/08/2026 só ao olhar a página renderizada, depois de dois
+    documentos terem sido entregues assim (lição 230).
+    """
+    linhas = texto_md.split("\n")
+    suspeitas, dentro_codigo = [], False
+    for i, ln in enumerate(linhas[:-1]):
+        if ln.strip().startswith("```"):
+            dentro_codigo = not dentro_codigo
+        if dentro_codigo:
+            continue
+        atual, proxima = ln.strip(), linhas[i + 1].strip()
+        if not atual or not proxima:
+            continue
+        if _ESTRUTURAL_MD.match(ln) or _ESTRUTURAL_MD.match(linhas[i + 1]):
+            continue
+        if _CAMPO_ROTULADO.match(ln) or _CAMPO_ROTULADO.match(linhas[i + 1]):
+            continue
+        if not atual.endswith(_FIM_DE_FRASE):
+            suspeitas.append((i + 1, atual))
+    return suspeitas
+
+
 def compor(md_path, out_docx, mapa, *, case_dir=None, ledger_path=None, base_dir=None):
     md_path = Path(md_path)
     texto_md = md_path.read_text(encoding="utf-8")
+    if not (mapa or {}).get("permitir_hard_wrap"):
+        quebras = detectar_hard_wrap(texto_md)
+        if quebras:
+            amostra = "; ".join(f"linha {n}: …{t[-58:]}" for n, t in quebras[:4])
+            raise SystemExit(
+                f"HARD-WRAP NO MARKDOWN ({len(quebras)} linha(s) de prosa cortadas no meio "
+                f"da frase): cada uma virará um parágrafo numerado à parte e a frase sairá "
+                f"partida na página. Junte cada parágrafo em uma linha só. {amostra}")
     tipo = (mapa or {}).get("tipo", "peca")
     from forja_verificador import verificar as verificar_forja
     from forja_lastro import material_economico

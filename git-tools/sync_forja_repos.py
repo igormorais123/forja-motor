@@ -203,6 +203,37 @@ def publicar(repo: Path, seco: bool) -> str:
     return f"enviado: {msg}"
 
 
+ESTADO = Path(__file__).resolve().parent / "STATUS_SYNC.md"
+
+
+def registrar_estado(veredito: str, linhas: list[str]) -> None:
+    """Escreve, em lugar fixo, como terminou a última sincronização.
+
+    Esta rotina roda sozinha às 20:00. Sem isto, o resultado dela existe apenas
+    no código de saída da tarefa agendada, que ninguém consulta — e foi
+    exatamente assim que o repositório único passou cinco dias sem conseguir
+    subir enquanto parecia ser cópia de segurança. Em 05/08/2026 o gate reprovou
+    três publicações seguidas por arquivo recém-criado com dado de caso: se
+    tivesse acontecido de madrugada, o silêncio seria idêntico.
+
+    O arquivo é curto de propósito. Ele responde "deu certo ontem?" em uma linha
+    e diz o que fazer quando não deu; o detalhe fica na saída do comando.
+    """
+    agora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    corpo = [f"# Última sincronização com o GitHub", "",
+             f"**{veredito}** — {agora}", ""]
+    corpo += linhas
+    corpo += ["", "---", "",
+              "Gerado por `git-tools/sync_forja_repos.py` a cada execução, "
+              "inclusive quando ela falha.",
+              "Para rodar à mão, a partir da pasta de trabalho: "
+              "`python git-tools\\sync_forja_repos.py`."]
+    try:
+        ESTADO.write_text("\n".join(corpo) + "\n", encoding="utf-8", newline="")
+    except OSError:
+        pass
+
+
 def anonimizar_antes_do_gate() -> list[str]:
     """Troca nome de cliente por pseudônimo nos textos do motor. Devolve o que mudou.
 
@@ -277,14 +308,37 @@ def main(argv=None) -> int:
         if not args.sem_gate:
             print(f"REPROVADO — {len(laudo['violacoes'])} violação(ões) na fronteira. "
                   "Nada foi publicado.")
+            if not args.seco:
+                registrar_estado("REPROVADO — nada foi publicado", [
+                    f"O gate da fronteira encontrou {len(laudo['violacoes'])} "
+                    "arquivo(s) com sinal de cliente do lado do motor. "
+                    "**Os dois repositórios ficaram parados**, inclusive o do "
+                    "acervo: publicar é irreversível na prática, e meia "
+                    "publicação seria pior.",
+                    "",
+                    "| arquivo | sinal |",
+                    "|---|---|",
+                ] + [f"| `{v['caminho']}` | {', '.join(v['sinais'][:3])} |"
+                     for v in laudo["violacoes"][:15]] + [
+                    "",
+                    "O que costuma resolver, nesta ordem: se o sinal está em "
+                    "`.md` ou `.txt`, `python _FORJA_HARNESS\\forja_anonimizar.py "
+                    "--aplicar --so-texto` troca o nome por pseudônimo. Se está "
+                    "em código ou JSON, a decisão é humana — o nome costuma ser "
+                    "chave ou caminho vivo, e a saída é registrar o dado no "
+                    "acervo e lê-lo por `forja_acervo`.",
+                ])
             return 1
         print("AVISO: publicando com a fronteira reprovada, por --sem-gate.")
 
     por_destino, grandes = levantar()
     falhou = False
+    resumo: list[str] = ["| destino | arquivos | copiados | removidos | resultado |",
+                         "|---|---|---|---|---|"]
     for destino, repo in DESTINOS.items():
         if not (repo / ".git").is_dir():
             print(f"{destino}: repositório ausente em {repo}")
+            resumo.append(f"| {destino} | — | — | — | repositório ausente em `{repo}` |")
             falhou = True
             continue
         copiados, removidos = espelhar(por_destino[destino], repo, args.seco)
@@ -301,10 +355,23 @@ def main(argv=None) -> int:
         estado = publicar(repo, args.seco)
         print(f"{destino:6} {len(por_destino[destino]):5} arquivo(s) | "
               f"copiados={copiados:4} removidos={removidos:4} | {estado}")
+        resumo.append(f"| {destino} | {len(por_destino[destino])} | {copiados} | "
+                      f"{removidos} | {estado} |")
         falhou |= estado.startswith("ERRO")
     if grandes:
         print(f"{len(grandes)} arquivo(s) acima do limite ficaram fora, "
               "listados em ARTEFATOS_FORA_DO_REPOSITORIO.json")
+        resumo += ["", f"{len(grandes)} arquivo(s) acima do limite de 95 MB "
+                   "ficaram fora do commit, listados em "
+                   "`ARTEFATOS_FORA_DO_REPOSITORIO.json` na raiz de cada repositório."]
+    if not args.seco:
+        registrar_estado("FALHA ao publicar" if falhou else "OK",
+                         resumo + ["",
+                                   f"Fronteira em modo `{laudo['modo']}`."
+                                   + ("" if laudo["modo"] == "nominal" else
+                                      " **Sem a lista de nomes do acervo**: o gate "
+                                      "encontra CNJ, CPF, CNPJ e OAB, mas não nome "
+                                      "de cliente.")])
     return 1 if falhou else 0
 
 
