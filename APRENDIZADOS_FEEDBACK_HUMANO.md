@@ -490,3 +490,51 @@ revisor, é a **voz** dele.
 Em memoriais isso custa mais do que parece: o gênero exige impessoalidade, e
 avaliar o próprio argumento ("o ponto forte") sinaliza ao julgador que há um
 ponto fraco logo adiante.
+
+## Diretriz nº 32 — Memorial tem lógica própria de extensão, e ela não é um número de páginas (07/08/2026)
+
+Fonte: sócio do escritório, por e-mail de 07/08/2026, respondendo a pergunta minha
+sobre o corte de sete para cinco páginas entre a V1 e a V2 de um memorial em
+embargos de declaração em agravo de instrumento, matéria de improbidade. Ele
+ressalva que a diretriz final é do titular. Caso e partes ficam no acervo.
+
+**A pergunta que motivou:** a V2 encurtou o texto em cerca de um quarto sem perder
+nenhum dos quatro pedidos. Perguntei se isso era próprio de memoriais ou preferência
+do escritório para peça de qualquer natureza, porque muda como se calibra a primeira
+versão.
+
+**A resposta, em três partes.**
+
+1. **Não é preferência geral por peça curta.** Recursos, manifestações e
+   contrarrazões que exijam desenvolvimento mais amplo de premissas fáticas,
+   processuais ou jurídicas podem e muitas vezes devem ser mais longos. Se a
+   complexidade exigir, peça longa não é problema.
+
+2. **Memorial tem lógica própria.** A finalidade é apresentação sintética, clara e
+   objetiva da controvérsia e dos pontos efetivamente relevantes para o julgamento,
+   **sem reproduzir o recurso ou os embargos que já estão nos autos**. A peça deve
+   conduzir o julgador ao ponto de decisão, e não funcionar como segunda versão
+   integral do recurso. A primeira versão de um memorial já deve nascer calibrada
+   assim: síntese, objetividade e facilidade de leitura, sem abrir mão da construção
+   lógica e persuasiva.
+
+3. **O corte se faz por reorganização, não por supressão.** A passagem de sete para
+   cinco páginas veio de eliminar sobreposição entre seções e repetição de premissas,
+   e de concentrar o eixo argumentativo — preservando fatos processuais, vícios,
+   fundamentos normativos e efeitos pretendidos no quadro inicial, e concentrando o
+   desenvolvimento no ponto decisivo. No caso, esse ponto era que a instrução pode ser
+   necessária para provar o dolo, mas precisa partir de imputação subjetiva
+   previamente individualizada, e não de presunção decorrente do cargo, da assinatura
+   ou da voluntariedade da conduta.
+
+**O critério que ele oferece no lugar do número:** o desenvolvimento argumentativo
+deve ser lógico, encadeado, persuasivo e fluido, convidando à leitura. O que se evita
+é extensão que não agrega densidade ao argumento. Redundância só se justifica quando
+deliberada, para destacar ou reforçar um ponto central.
+
+**Como aplicar.** Em memorial, antes de redigir, identificar o único ponto de decisão
+e verificar se cada seção o aproxima; o que apenas repete peça já nos autos sai.
+Em outras espécies, manter a mesma vigilância contra redundância sem importar o
+parâmetro de extensão. Não converter isto em regra de contagem de páginas: o próprio
+Alessandro rejeita expressamente o número predeterminado, e a diretriz definitiva
+quanto ao padrão de cada tipo de peça cabe ao Prof. Fábio.

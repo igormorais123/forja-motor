@@ -71,6 +71,11 @@ class Modelo:
     # resposta numa pergunta jurídica de quatro linhas.
     raciocina: bool = False
     min_tokens: int = 1024
+    # Restrições medidas, não presumidas. `nao_afirma_fato` marca modelo que
+    # reprovou a bancada de fidelidade à fonte: ele pode dar ponto de vista, e
+    # não pode ser origem de dispositivo, precedente, número ou data. A régua
+    # está em `telemetria/bench_modelos/`, com a data da aferição.
+    restricoes: tuple[str, ...] = ()
 
 
 MODELOS: dict[str, Modelo] = {
@@ -164,6 +169,39 @@ MODELOS: dict[str, Modelo] = {
         fases=("F0", "F1", "F2A"),
         usd_entrada_por_milhao=1.0, usd_saida_por_milhao=6.0,
         raciocina=True, min_tokens=2048,
+    ),
+    # --- Vozes curtas do painel (07/08/2026, ordem do titular) ------------
+    # Entram para dar PONTO DE VISTA em poucos tópicos, não para trabalhar.
+    # A assinatura do Cursor já os paga; o custo real é atenção de quem lê, e
+    # por isso o painel corta o tamanho da resposta no código, não no prompt.
+    #
+    # Kimi K3 saiu do registro em 26/07/2026 por reprovar a bancada jurídica, e
+    # o titular decidiu em 07/08 não bani-lo. Ele volta com a restrição que a
+    # medição justifica, e não com perdão: na bancada de 26/07 ele fez 2 de 6
+    # corretas na condição cautelosa (2 invenções, 1 falha técnica) e **0 de 6
+    # na condição solta, com 4 invenções**. O Grok, na mesma prova, fez 6 de 6
+    # solto. Um modelo com esse perfil é útil como olhar e é perigoso como
+    # fonte — daí `nao_afirma_fato`, que o painel transforma em instrução e em
+    # veto de promoção enquanto a bancada disser isso.
+    "kimi-k3-cursor": Modelo(
+        id="kimi-k3-cursor", familia="moonshot", provedor="cursor",
+        remoto="kimi-k3-high",
+        forte_em=("ponto_de_vista_lateral", "parecer_curto", "leitura_de_tom"),
+        fases=("F4", "F7"),
+        usd_entrada_por_milhao=0.0, usd_saida_por_milhao=0.0,
+        restricoes=("nao_afirma_fato",),
+    ),
+    # GLM 5.2 nunca passou pela bancada da casa. Isso NÃO é o mesmo que ter
+    # reprovado, e os dois estados não podem colapsar num só: o K3 tem medida
+    # ruim, o GLM não tem medida. Enquanto não tiver, ele fica no primeiro
+    # degrau e a promoção é recusada por ausência de aferição, com esse motivo
+    # escrito — nunca por presunção de que seja pior ou melhor.
+    "glm-5.2-cursor": Modelo(
+        id="glm-5.2-cursor", familia="zhipu", provedor="cursor",
+        remoto="glm-5.2-high",
+        forte_em=("ponto_de_vista_lateral", "parecer_curto", "sintese"),
+        fases=("F4", "F7"),
+        usd_entrada_por_milhao=0.0, usd_saida_por_milhao=0.0,
     ),
 }
 
