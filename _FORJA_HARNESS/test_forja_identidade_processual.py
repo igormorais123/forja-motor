@@ -9,7 +9,6 @@ Testes contra sabotagens determinísticas:
   (iv) S2 detecta: nome correto mas papel trocado na janela
   (v) S4 detecta: direção contrária aparece massivamente
 """
-import json
 import sys
 from pathlib import Path
 

@@ -7,10 +7,9 @@ deste módulo escreve nos ledgers de F4/F5 ou no grafo F3.
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
-from typing import Any, Iterable, Mapping
+from typing import Iterable, Mapping
 
 from forja_n3_common import sha256_file
 from forja_severidade import blocking_findings

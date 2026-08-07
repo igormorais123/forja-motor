@@ -16,7 +16,6 @@ Uso: python test_forja_lastro.py   (exit 0 = ok; exit 1 = regressão)
 import io
 import hashlib
 import json
-import shutil
 import sys
 import tempfile
 from pathlib import Path

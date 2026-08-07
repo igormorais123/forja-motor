@@ -10,7 +10,7 @@ import argparse
 import json
 from pathlib import Path
 
-from forja_n3_common import FORJA, atomic_write_json, now_iso, read_json, sha256_file
+from forja_n3_common import FORJA, atomic_write_json, now_iso, sha256_file
 from forja_n4_validate import validate_case
 from forja_state_machine import initialize_case
 

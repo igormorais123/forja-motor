@@ -1222,5 +1222,60 @@ ninguém exige não reprova nenhum. Ficha: `decisoes/0002`.
 
 **Kimi K3 não foi banido.** Aparece na assinatura do Cursor (`kimi-k3-high`) e foi
 retirado do registro da FORJA em 26/07 após reprovar a bancada jurídica. Em 07/08 o Igor
-decidiu não bani-lo. Ele segue fora do registro de modelos e disponível na conta; usá-lo
-na esteira exigiria reinstalá-lo, o que é decisão nova e não está tomada.
+decidiu não bani-lo — e, ainda em 07/08, determinou reinstalá-lo como voz curta. A
+decisão nova foi tomada: ver § 31.
+
+
+## 31. Vozes curtas do Cursor e o placar de contribuição (07/08/2026)
+
+**A ordem.** Aproveitar Kimi K3 e GLM 5.2 pela assinatura do Cursor como parecer curto —
+poucos tokens, só o ponto de vista deles — e montar um sistema de pontuação que meça
+quanto cada modelo agrega, para poder promovê-los com o tempo.
+
+**O problema embutido, que não é do titular.** O K3 saiu do registro em 26/07 por
+reprovar a bancada jurídica: 2 de 6 corretas na condição cautelosa, com 2 invenções, e
+**0 de 6 na condição solta, com 4 invenções** — o Grok, na mesma prova solta, fez 6 de 6.
+Isso não torna o pedido errado; torna-o preciso. O K3 é bom de ângulo e péssimo de fonte,
+e as duas coisas convivem. O que não pode conviver é ele voltar sem a medição voltar
+junto. Daí o campo `restricoes` no `Modelo`: `nao_afirma_fato` vira instrução no prompt
+**e** marcação `podeAfirmarFato: false` no artefato, porque instrução em prompt é pedido
+e marcação em artefato é fato do registro.
+
+O GLM não carrega restrição, e isso é deliberado: ele nunca passou pela bancada, e **não
+aferido não é o mesmo que reprovado**. Colapsar os dois estados faz medição ruim virar
+preconceito e ausência de medição virar absolvição. As duas recusas de promoção têm
+mensagens diferentes, com o motivo de cada uma.
+
+**O painel** (`forja_painel_curto.py`): no máximo 4 observações de até 300 caracteres,
+alvo cortado em 6.000, `max_tokens=700`. **Os tetos são cortados no código, não pedidos
+no prompt** — pedir brevidade a um modelo é sugestão. Medido no primeiro uso real, sobre
+um blueprint com defeito plantado: 43 segundos para as duas vozes, US$ 0,00, e ambas
+pegaram o defeito (prazo contado sobre relato do cliente). O GLM estourou o teto numa
+observação, que saiu truncada **e declarada como truncada**: corte silencioso deixa a
+saída com cara de completa. O artefato declara que não é gate, não é conselho e não é
+fonte.
+
+**O placar** (`forja_contribuicao.py`). O índice é uma frase: de cada 100 observações,
+quantas mudaram a peça, descontadas as erradas. Três armadilhas e as defesas:
+
+| Armadilha | Defesa |
+|---|---|
+| Acatamento sozinho premia o óbvio | `duplicada` conta no denominador e não soma; quem só concorda tira zero |
+| Amostra pequena mente com confiança | `elegivel: false` abaixo de 12 observações **e** 3 casos distintos |
+| Contar não é ler | `amostra` abre o texto real do painel e não grava nada |
+
+`duplicada` exige `--duplicada-de`: sem apontar de quem é o eco, o veredito viraria o
+depósito do que se quer neutralizar sem julgar. A escada é `observador` → `consultivo` →
+`candidato`, sem pular degrau e sempre com `--aprovado-por`; `candidato` é recusado por
+`nao_afirma_fato` (com os números da bancada na mensagem) ou por falta de aferição.
+`revalidar` compara a evidência congelada na promoção com a de hoje e **não altera nada**.
+O ledger guarda decisão e localizador, nunca o texto.
+
+**Medido no primeiro caso real:** K3 com índice 75 e GLM com 50 — e **os dois recusados
+para promoção**, porque quatro observações num caso não são evidência de nada. É esse o
+comportamento desejado.
+
+O painel é **opcional** em F4 e F7, oferecido no `RUN_CONTEXT` como o repertório de
+skills oferece as suas. Não entrou em `requiredOutputs` de nenhuma fase, e há regressão
+que afere essa ausência. Ficha: `decisoes/0003`. Regressão:
+`test_forja_painel_contribuicao.py` (29 testes).

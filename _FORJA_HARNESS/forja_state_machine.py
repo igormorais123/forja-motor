@@ -11,7 +11,6 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any
 
 from forja_n3_common import (
     PHASES,

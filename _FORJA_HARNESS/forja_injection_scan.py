@@ -28,7 +28,6 @@ import re
 import hashlib
 import tempfile
 from pathlib import Path
-from collections import defaultdict
 
 from forja_metadata import retry_transient_io
 

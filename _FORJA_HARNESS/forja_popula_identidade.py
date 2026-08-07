@@ -24,7 +24,6 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from forja_identidade_processual import schema_identidade_processual
 
 RAIZ = Path(__file__).resolve().parent
 STATE_DIR = RAIZ / "state"

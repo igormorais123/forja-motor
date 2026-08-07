@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import re
-from pathlib import Path
 from xml.etree import ElementTree as ET
 
 from forja_n3_common import FORJA, atomic_write_json, now_iso, read_json, sha256_file

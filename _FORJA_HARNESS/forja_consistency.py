@@ -8,7 +8,6 @@ import json
 import operator
 import re
 from pathlib import Path
-from typing import Any
 
 from forja_n3_common import resolve_case_dir, sha256_file
 from forja_n4_common import ids_unique, issue, validate_file

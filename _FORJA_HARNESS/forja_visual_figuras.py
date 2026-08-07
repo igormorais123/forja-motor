@@ -13,7 +13,6 @@ ausente, porque parece prova.
 """
 import re
 import sys
-import unicodedata
 from pathlib import Path
 
 FORJA = Path(__file__).resolve().parent

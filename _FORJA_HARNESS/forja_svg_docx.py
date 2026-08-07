@@ -28,7 +28,6 @@ from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.opc.part import Part
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Cm
 
 
 SVG_CONTENT_TYPE = "image/svg+xml"

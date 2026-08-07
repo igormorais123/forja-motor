@@ -14,7 +14,7 @@ from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
 
-from forja_n3_common import InterProcessLock, atomic_write_json, now_iso, sha256_file
+from forja_n3_common import InterProcessLock, now_iso, sha256_file
 from forja_severidade import blocking_findings
 
 

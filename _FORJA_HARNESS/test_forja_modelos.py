@@ -66,10 +66,32 @@ class RegistroTests(unittest.TestCase):
                 with self.subTest(fase=fase):
                     self.assertIn(modelo.id, fm.modelos_da_fase(fase))
 
-    def test_kimi_k3_foi_retirado_de_todo_o_registro(self):
+    def test_kimi_k3_so_volta_como_voz_e_nunca_como_fonte(self):
+        """O K3 voltou ao registro em 07/08/2026, por ordem do titular.
+
+        Ele havia sido retirado em 26/07 por reprovar a bancada jurídica, e
+        este teste afirmava a ausência. A ordem nova o reinstala **como ponto
+        de vista curto**, não como trabalhador da esteira — então o que o teste
+        precisa guardar deixou de ser "não está no registro" e passou a ser o
+        motivo pelo qual ele saiu: 0 de 6 na condição solta, com 4 invenções.
+
+        Enfraquecer isto para `assertIn("kimi-k3-cursor", MODELOS)` apagaria a
+        medição. O que se afere é a restrição, as fases em que ele pode falar,
+        e que a rota antiga (paga, sem restrição declarada) não voltou junto.
+        """
         self.assertNotIn("kimi-k3", fm.MODELOS)
         self.assertNotIn("kimi-k3-assinatura", fm.MODELOS)
-        self.assertFalse(any(m.familia == "moonshot" for m in fm.MODELOS.values()))
+        k3 = fm.MODELOS["kimi-k3-cursor"]
+        self.assertIn("nao_afirma_fato", k3.restricoes)
+        self.assertEqual(k3.provedor, "cursor")
+        self.assertEqual(set(k3.fases), {"F4", "F7"})
+        # Nenhum modelo com `nao_afirma_fato` pode estar nas fases em que a
+        # esteira colhe fonte oficial e confere citação.
+        for modelo in fm.MODELOS.values():
+            if "nao_afirma_fato" in modelo.restricoes:
+                with self.subTest(modelo=modelo.id):
+                    self.assertNotIn("F5", modelo.fases)
+                    self.assertNotIn("F3", modelo.fases)
 
 
 class ConteudoVazioTests(unittest.TestCase):

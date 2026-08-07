@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 from typing import Iterable
 
-from forja_n3_common import ForjaN3Error, atomic_write_json, canonical_hash, read_json, sha256_file
+from forja_n3_common import atomic_write_json, canonical_hash, read_json, sha256_file
 
 
 FACT_CLASSES = {"PROVADO", "DECLARADO", "INFERENCIA", "CONFLITANTE", "NAO_VERIFICADO"}

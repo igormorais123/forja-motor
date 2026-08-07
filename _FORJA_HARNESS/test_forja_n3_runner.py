@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from forja_n3_common import PHASES, ForjaN3Error, atomic_write_json, read_json
+from forja_n3_common import PHASES, ForjaN3Error, atomic_write_json
 from forja_phase_contracts import load_contract, validate_all
 from forja_run import prepare_attempt, promote_attempt
 from forja_state_machine import derive_state, initialize_case

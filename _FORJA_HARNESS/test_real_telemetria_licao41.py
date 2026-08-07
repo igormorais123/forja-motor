@@ -40,7 +40,7 @@ sys.path.insert(0, str(FORJA))
 
 from docx import Document
 
-from forja_citations import extrair_citacoes, procurar_cache_oficial
+from forja_citations import extrair_citacoes
 from forja_metricas_f7 import metricas_f7
 
 STATE = FORJA / "state"

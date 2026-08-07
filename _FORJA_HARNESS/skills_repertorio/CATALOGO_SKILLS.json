@@ -572,15 +572,14 @@
         "red_team_report"
       ],
       "custoContexto": "medio",
-      "dependenciaExterna": "nenhuma",
+      "dependenciaExterna": [
+        "credito_pago",
+        "rede"
+      ],
       "riscoFabricacao": "alto",
       "reversibilidade": "total",
       "confereDepois": [
         "forja_adversarial_audit.py"
-      ],
-      "dependenciaExterna": [
-        "credito_pago",
-        "rede"
       ],
       "complementaDe": "forja-red-team",
       "alimentaArtefatos": [
@@ -1051,6 +1050,41 @@
       "alimentaArtefatos": [
         "material institucional ou ao cliente"
       ]
+    },
+    {
+      "id": "forja_painel_curto",
+      "origem": "projeto",
+      "adaptadaDe": [],
+      "fases": [
+        "F4",
+        "F7"
+      ],
+      "obrigatoria": false,
+      "opcionalPorDecisao": "decisoes/0003 — voz opcional que vira exigência dura contradiz o pedido de gastar pouco e cria dependência bloqueante de modelo que reprovou a bancada",
+      "alimenta": [],
+      "alimentaArtefatos": [
+        "F4_PAINEL_CURTO.json",
+        "F7_PAINEL_CURTO.json"
+      ],
+      "custoContexto": "baixo",
+      "dependenciaExterna": "assinatura do Cursor",
+      "riscoFabricacao": "alto",
+      "reversibilidade": "total",
+      "confereDepois": [
+        "forja_contribuicao.py placar"
+      ],
+      "naoEFonte": true,
+      "vozes": [
+        "kimi-k3-cursor",
+        "glm-5.2-cursor"
+      ],
+      "tetos": {
+        "observacoesPorVoz": 4,
+        "caracteresPorObservacao": 300,
+        "caracteresDoAlvo": 6000,
+        "maxTokens": 700
+      },
+      "nota": "Cortes aplicados no codigo, nao pedidos no prompt. kimi-k3-cursor carrega nao_afirma_fato: bancada de 26/07/2026 mediu 0 de 6 corretas na condicao solta, com 4 invencoes."
     }
   ],
   "rejeitadas": {
@@ -1188,11 +1222,5 @@
       "tratamento": "repertorio cita forja_editorial.py e nomeia o shim"
     }
   ],
-  "revisadoEm": {
-    "data": "2026-08-06",
-    "revisor": "Codex no gpt-5.6-sol, esforco high (familia distinta), leitura do material integral por stdin",
-    "modeloCodexNaForja": "gpt-5.6-luna, esforco max — ordem do titular 06/08/2026. GPT-5.5 proibido, travado em forja_modelos.modelo_remoto_proibido",
-    "resultado": "achados aplicados; tres derrubados por verificacao no codigo",
-    "registro": "REVISAO_CODEX_2026-08-06.md"
-  }
+  "revisadoEm": "2026-08-07"
 }

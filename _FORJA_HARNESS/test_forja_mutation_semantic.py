@@ -6,7 +6,6 @@ impede o score 1.0 falso (visto no primeiro run real de 12/07). NÃO_PODE_TRAVAR
 controles benignos vivem; texto sem padrões não explode; determinismo.
 Roda com: python test_forja_mutation_semantic.py
 """
-import json
 import tempfile
 import unittest
 from pathlib import Path

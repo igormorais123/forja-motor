@@ -185,6 +185,27 @@ def prepare_attempt(
                      "PROVENIÊNCIA (modelo, família, provedor), não o texto. Parecer da "
                      "mesma família que produz a peça reprova como eco."),
         }
+    if phase in ("F4_BLUEPRINT_ESTRATEGICO", "F7_AUDITORIA_JURIDICA_FACTUAL"):
+        # OPCIONAL, e é para continuar opcional. O painel dá o ângulo lateral de
+        # modelos de outras casas em poucas linhas; ele não é gate, não é saída
+        # obrigatória e não é fonte de fato. Aparece aqui pelo mesmo motivo do
+        # repertório de skills: recurso que o agente não lembra que existe é
+        # recurso ausente. Se um dia virar obrigação, vira por ADR.
+        from forja_painel_curto import VOZES_PADRAO as PAINEL_VOZES
+
+        context["instructions"]["painelCurto"] = {
+            "opcional": True,
+            "comando": ("python " + str(FORJA / "forja_painel_curto.py")
+                        + " --arquivo <documento> --caso <caseId> --fase "
+                        + phase.split("_", 1)[0]
+                        + f" --saida {phase.split('_', 1)[0]}_PAINEL_CURTO.json"),
+            "vozes": list(PAINEL_VOZES),
+            "rule": ("opinião lateral, curta e barata. NÃO é gate, NÃO é conselho "
+                     "obrigatório e NÃO é fonte: nada daqui vira fundamento, "
+                     "citação, número ou data. Depois de decidir sobre cada "
+                     "observação, colha os vereditos com "
+                     "`forja_contribuicao.py colher` — é o que mede se a voz agrega."),
+        }
     context["contextHash"] = canonical_hash(context)
     atomic_write_json(attempt_dir / "RUN_CONTEXT.json", context)
     return {"attemptDir": str(attempt_dir), "context": context, "state": state}

@@ -23,13 +23,11 @@ import re
 import zipfile
 from collections import Counter
 from pathlib import Path
-from typing import Any
 
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Pt
 from lxml import etree
 
 from forja_n3_common import atomic_write_json, now_iso, sha256_file

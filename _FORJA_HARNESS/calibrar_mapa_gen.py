@@ -13,7 +13,6 @@ parágrafo, que é o que importa).
 Uso: python calibrar_mapa_gen.py
 """
 import importlib.util
-import json
 import sys
 from pathlib import Path
 

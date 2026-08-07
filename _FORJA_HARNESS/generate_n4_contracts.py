@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 from copy import deepcopy
 
 from forja_n3_common import FORJA, PHASES, atomic_write_json, read_json

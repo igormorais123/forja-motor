@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 from forja_consistency import validate_comparison, validate_delivery, validate_event_identity, validate_global, validate_intertemporal, validate_quantification
 from forja_n3_common import FORJA, atomic_write_json, now_iso, read_json

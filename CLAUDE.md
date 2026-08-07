@@ -302,6 +302,25 @@ Cuidado com fonte desatualizada: a skill global `codex-integrado` traz tabelas c
 `gpt-5.5` e `gpt-5.5-mini`. Elas não valem aqui, e copiá-las sem conferir já produziu
 rótulo errado em documento da fábrica.
 
+**Vozes curtas e o placar que decide se elas ficam (07/08/2026 — ordem do Igor).** Kimi
+K3 (`kimi-k3-cursor`) e GLM 5.2 (`glm-5.2-cursor`) entram pela assinatura do Cursor como
+**opinião lateral curta**, opcional em F4 e F7, por `forja_painel_curto.py`: no máximo 4
+observações de 300 caracteres por voz, com os tetos cortados **no código**, não pedidos no
+prompt. Não é gate, não é conselho — Helena, Cícero e Diabob continuam sendo — e **não é
+fonte**: nada daqui vira fundamento, citação, número ou data. O K3 carrega
+`nao_afirma_fato` porque a bancada de 26/07 mediu 0 de 6 corretas na condição solta, com
+4 invenções; o GLM não carrega restrição porque **nunca foi aferido, e isso não é o mesmo
+que ter reprovado**.
+
+Quanto cada voz agrega se mede em `forja_contribuicao.py`, não por impressão: vereditos
+de vocabulário fechado, `duplicada` contando no denominador sem somar (quem só concorda
+tira zero), nada elegível abaixo de 12 observações **e** 3 casos distintos, e `amostra`
+para ler o texto real antes de decidir — contar não é ler. A escada é `observador →
+consultivo → candidato`, sem pular degrau e sempre com `--aprovado-por`. **O placar de
+contribuição não revoga a bancada de fidelidade à fonte**: são réguas de coisas
+diferentes. Ficha: `_FORJA_HARNESS\decisoes\0003`; detalhe em § 31 da
+`DOCUMENTACAO_TECNICA.md`.
+
 ## Repertório de skills por fase (06/08/2026 — ordem do Igor)
 
 Existem 402 skills instaladas entre Claude, Hermes, Codex e projeto, e até agora nenhuma

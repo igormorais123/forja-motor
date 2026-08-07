@@ -6,7 +6,6 @@ Os testes redirecionam MANUAL_JSON e LOG_GLOBAL para pastas temporárias —
 nunca tocam o painel real.
 """
 import json
-import os
 import tempfile
 import unittest
 from datetime import datetime, timedelta

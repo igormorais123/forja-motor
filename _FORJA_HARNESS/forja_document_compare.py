@@ -18,7 +18,7 @@ from typing import Iterable
 from xml.etree import ElementTree as ET
 
 from forja_n3_common import ForjaN3Error, atomic_write_json, atomic_write_text, canonical_hash, sha256_file
-from forja_post_protocol_contracts import IMPACTS, LAYERS, LAYER_CAUSES
+from forja_post_protocol_contracts import LAYERS, LAYER_CAUSES
 
 
 WORD_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"

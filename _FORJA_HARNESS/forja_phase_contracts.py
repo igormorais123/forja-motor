@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 
 from forja_n3_common import FORJA, PHASES, ForjaN3Error, canonical_hash, read_json
 

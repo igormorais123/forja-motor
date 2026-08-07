@@ -368,3 +368,27 @@ gate do conselho cujo valor recomputado não seja `pass`. Roda no F4, sempre.
 Desde 07/08/2026 `diabob_opinion` é **saída obrigatória** e `diabob_present` é **gate
 obrigatório** de `F4.json` (e do contrato N4). Sem o recibo a fase não promove, e a
 mensagem diz o que produzir. Ficha: `_FORJA_HARNESS/decisoes/0002`.
+
+
+## Vozes curtas e placar de contribuição (07/08/2026)
+
+Kimi K3 e GLM 5.2 pela assinatura do Cursor, como **opinião lateral curta**. Opcional em
+F4 e F7:
+
+```
+python _FORJA_HARNESS/forja_painel_curto.py --arquivo <doc> --caso <id> --fase F4 --saida F4_PAINEL_CURTO.json
+python _FORJA_HARNESS/forja_contribuicao.py colher --painel F4_PAINEL_CURTO.json --por <nome>
+python _FORJA_HARNESS/forja_contribuicao.py placar
+```
+
+Não é gate, não é conselho e **não é fonte**: nada daqui vira fundamento, citação, número
+ou data. Máximo 4 observações de 300 caracteres por voz, cortadas no código. O K3 carrega
+`nao_afirma_fato` — bancada de 26/07: 0 de 6 na condição solta, 4 invenções. O GLM não
+carrega, porque nunca foi aferido, o que **não** é o mesmo que ter reprovado.
+
+O placar mede o que foi feito com cada observação: `acatada`, `acatada_parcial`,
+`duplicada` (exige `--duplicada-de`), `rejeitada`, `errada`. `duplicada` conta no
+denominador e não soma — quem só concorda tira zero. Nada é elegível abaixo de 12
+observações **e** 3 casos distintos. Escada `observador → consultivo → candidato`, sem
+pular degrau, sempre com `--aprovado-por`. O placar **não revoga a bancada** de
+fidelidade à fonte. Ficha: `_FORJA_HARNESS/decisoes/0003`.

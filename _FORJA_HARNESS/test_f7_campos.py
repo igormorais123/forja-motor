@@ -1,6 +1,5 @@
 """Testes para metricas_f7: valida extração de citações, verificações e autoridades."""
 
-from pathlib import Path
 
 import forja_acervo
 
