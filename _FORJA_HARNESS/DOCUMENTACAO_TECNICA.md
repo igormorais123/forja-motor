@@ -1279,3 +1279,17 @@ O painel é **opcional** em F4 e F7, oferecido no `RUN_CONTEXT` como o repertór
 skills oferece as suas. Não entrou em `requiredOutputs` de nenhuma fase, e há regressão
 que afere essa ausência. Ficha: `decisoes/0003`. Regressão:
 `test_forja_painel_contribuicao.py` (29 testes).
+
+### 31-A. A camada autônoma, e os dois falsos positivos que a desenharam (07/08/2026)
+
+O placar de contribuição depende de veredito humano, e veredito humano é caro. `forja_painel_indicadores.py` é a camada que mede o que **não** precisa de julgamento — e que, por isso mesmo, **não promove ninguém**. Misturar as duas seria o modo de falha previsível: indicador barato e diário canibaliza métrica cara e rara.
+
+**A fila não é cronológica.** Julgar observação em que as duas vozes concordam quase não informa: o veredito move as duas notas na mesma direção. A informação por segundo do tempo humano está no que uma voz viu e a outra não, então a fila ordena por menor sobreposição.
+
+**O indicador principal mudou duas vezes, e as duas por falso positivo real.** Ele nasceu lexical: citar lei, súmula ou número apesar da instrução de não ser fonte. Na primeira execução acusou o GLM 5.2 — que tinha escrito `"Súmula 7 sobre matéria de qualificação jurídica" é a tese inteira comprada sem verificação`, ou seja, **citando o blueprint para criticá-lo**, o comportamento desejado. Excluí trecho entre aspas. Na execução seguinte ele acusou de novo, agora sem aspas nenhuma: `a própria Súmula 5/7 que ele invoca pode funcionar contra`. Também correto.
+
+Continuar refinando a regex até ela concordar comigo seria moldar o instrumento. A distinção real não é sintática, é **de origem**: citar o que o documento cita é ler; citar o que não está lá é inventar — e inventar é exatamente o modo de falha que a bancada mediu no K3. O indicador passou a comparar a citação contra o texto do alvo, o que só é possível no momento da geração. Painel antigo, sem o campo, sai `n/d` e nunca `0,0` — zero por ausência de medição seria mentira.
+
+**O eco lexical ficou declaradamente fraco.** Dois pares que uma pessoa classificou como eco deram 0,258 e **0,091** de Jaccard; o segundo dizia a mesma coisa com vocabulário quase disjunto. Baixar o limiar até capturá-lo casaria com duas classificações (n=2) e passaria a marcar como eco pares não relacionados, que deram 0,147. O limiar ficou em 0,25, o relatório chama a coluna de `ecoLex%` e diz na tela que ela **não** é a taxa de eco. Quem mede eco é o veredito `duplicada`, que é humano.
+
+**Medido em 3 casos reais do acervo, 12 observações por voz:** zero citações fora do documento nas duas vozes; repetição entre casos de 0,09 (K3) e 0,05 (GLM) — as duas leem o documento em vez de produzir texto genérico; K3 a 33,6 s por painel contra 21,4 s do GLM. Nenhuma promoção decorre disso: é higiene, não contribuição.

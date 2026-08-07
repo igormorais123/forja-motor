@@ -107,6 +107,38 @@ def _jaccard(a: set[str], b: set[str]) -> float:
     return len(a & b) / len(a | b)
 
 
+def citacoes_fora_do_documento(texto: str, alvo: str) -> list[str]:
+    """Citações que a voz trouxe e que **não estão no documento** que ela leu.
+
+    Este é o indicador que interessa, e ele nasceu de dois falsos positivos
+    seguidos do detector puramente lexical. O primeiro foi o GLM escrevendo
+    `"Súmula 7 ..." é a tese inteira comprada sem verificação` — citação entre
+    aspas, resolvida excluindo aspas. O segundo foi `a própria Súmula 5/7 que
+    ele invoca pode funcionar contra`, sem aspas nenhuma, e igualmente correto:
+    a voz falava da súmula que **o documento** invoca.
+
+    Continuar refinando a regex até ela concordar comigo seria moldar o
+    instrumento. A distinção real não é sintática, é de origem: **citar o que o
+    documento cita é ler; citar o que não está lá é inventar** — e inventar é o
+    modo de falha que a bancada mediu no Kimi K3.
+
+    Compara o número, não o rótulo: "Súmula 7", "súmula nº 7" e "Súmula 7/STJ"
+    são a mesma coisa para este fim, e o que se procura no documento é o número
+    ao lado da mesma palavra-chave.
+    """
+    alvo_norm = _norm(alvo)
+    fora = []
+    for bruto in re.findall(r"\b(?:s[úu]mula|art(?:igo)?s?\.?|tema|lei)\s*"
+                            r"(?:n\.?º?\s*)?([\d./-]+)", _norm(ASPAS.sub(" ", texto or ""))):
+        numeros = [n for n in re.split(r"[./-]", bruto) if n.isdigit()]
+        # Basta um dos números aparecer no documento para que a menção seja
+        # leitura, não invenção. "Súmula 5/7" casa com um documento que fale de
+        # qualquer uma das duas.
+        if numeros and not any(n in alvo_norm for n in numeros):
+            fora.append(bruto)
+    return fora
+
+
 def ancoragem_de(alvo: str):
     """Devolve uma função que mede o quanto uma observação vem do documento.
 
@@ -198,15 +230,22 @@ def medir_painel(dados: dict) -> dict:
                 # Gravada pelo painel no momento da geração; painel antigo não a
                 # tem, e `None` é o veredito honesto para isso.
                 "ancoragem": obs.get("ancoragem"),
+                # Lexical: só olha a forma. Fica para painel antigo, que não
+                # tem o campo abaixo, e para a fila, onde vale como aviso.
                 "violouNaoFonte": violou,
+                # De origem: o que a voz citou e o documento não tem. É o que
+                # distingue ler de inventar, e o que conta no agregado.
+                "citouForaDoDocumento": obs.get("citouForaDoDocumento"),
             })
         n = len(linhas) or 1
         por_voz[modelo] = {
             "modelo": modelo,
             "familia": bloco.get("familia"),
             "observacoes": len(linhas),
-            "violacoes": sum(1 for l in linhas if l["violouNaoFonte"]),
-            "taxaViolacao": round(100.0 * sum(1 for l in linhas if l["violouNaoFonte"]) / n, 1),
+            "violacoes": sum(1 for l in linhas if l["citouForaDoDocumento"]),
+            "violacoesLexicais": sum(1 for l in linhas if l["violouNaoFonte"]),
+            "semMedidaDeOrigem": sum(1 for l in linhas if l["citouForaDoDocumento"] is None),
+            "taxaViolacao": round(100.0 * sum(1 for l in linhas if l["citouForaDoDocumento"]) / n, 1),
             "ecoLexical": sum(1 for l in linhas if l["ecoLexicalDe"]),
             "sobreposicaoMedia": round(sum(l["sobreposicao"] for l in linhas) / n, 3),
             "segundos": bloco.get("segundos"),
@@ -247,12 +286,15 @@ def indicadores(pastas: list[Path] | None = None) -> dict:
                 "modelo": modelo, "familia": linha["familia"], "paineis": 0,
                 "casos": set(), "observacoes": 0, "violacoes": 0,
                 "ecoLexical": 0, "truncadas": 0, "descartadas": 0,
+                "violacoesLexicais": 0, "semMedidaDeOrigem": 0,
                 "sobreposicoes": [], "segundos": [],
             })
             alvo["paineis"] += 1
             alvo["casos"].add(medida["caso"])
             alvo["observacoes"] += linha["observacoes"]
             alvo["violacoes"] += linha["violacoes"]
+            alvo["violacoesLexicais"] += linha["violacoesLexicais"]
+            alvo["semMedidaDeOrigem"] += linha["semMedidaDeOrigem"]
             alvo["ecoLexical"] += linha["ecoLexical"]
             alvo["truncadas"] += linha["truncadas"]
             alvo["descartadas"] += linha["descartadas"]
@@ -359,13 +401,28 @@ def main(argv=None) -> int:
         print(f"{relatorio['paineis']} painel(éis) medido(s)\n")
         print(f"{'modelo':<20} {'obs':>4} {'casos':>6} {'viol%':>6} {'ecoLex%':>8} "
               f"{'repet':>6} {'seg':>6}")
+        parciais = 0
         for linha in relatorio["modelos"]:
             repet = linha["repeticaoEntreCasos"]
+            # Painel gerado antes do campo de origem não tem a medida. Imprimir
+            # 0,0% ali seria o zero silencioso que a casa proíbe: indistinguível
+            # de "medimos e não houve violação".
+            if linha["semMedidaDeOrigem"] >= linha["observacoes"]:
+                viol = "   n/d"
+                parciais += 1
+            else:
+                viol = f"{linha['taxaViolacao']:>6.1f}"
             print(f"{linha['modelo']:<20} {linha['observacoes']:>4} {linha['casos']:>6} "
-                  f"{linha['taxaViolacao']:>6.1f} {linha['ecoLexicalSugerido']:>6.1f} "
+                  f"{viol} {linha['ecoLexicalSugerido']:>7.1f} "
                   f"{(f'{repet:.2f}' if repet is not None else '  n/d'):>6} "
                   f"{(linha['segundosMedio'] or 0):>6.1f}")
-        print("\nviol% = citou lei, número ou data apesar da instrução de não ser fonte.")
+        if parciais:
+            print(f"\n[n/d] {parciais} voz(es) sem medida de origem: os painéis são "
+                  "anteriores\n      ao campo `citouForaDoDocumento`. Rode o painel de "
+                  "novo para medir —\n      zero por ausência de medição seria mentira.")
+        print("\nviol% = citou fonte que NÃO está no documento — inventou, em vez de ler.")
+        print("        Citar o que o documento cita é leitura, e dois falsos positivos")
+        print("        do detector puramente lexical foram o que produziu a distinção.")
         print("ecoLex% = SUGESTÃO de eco por vocabulário compartilhado, limiar 0,25.")
         print("        NÃO é a taxa de eco: paráfrase passa batido — medido, um par")
         print("        real de eco deu 0,091. Quem mede eco de verdade é o veredito")

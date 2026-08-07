@@ -392,3 +392,32 @@ denominador e não soma — quem só concorda tira zero. Nada é elegível abaix
 observações **e** 3 casos distintos. Escada `observador → consultivo → candidato`, sem
 pular degrau, sempre com `--aprovado-por`. O placar **não revoga a bancada** de
 fidelidade à fonte. Ficha: `_FORJA_HARNESS/decisoes/0003`.
+
+## Bloqueio se testa antes de declarar (07/08/2026 — ordem do Igor)
+
+Em dois dias a esteira declarou **três** bloqueios falsos. O inteiro teor de três
+acórdãos do STJ foi anunciado ao titular como inalcançável pela automação, em
+documento e em dois e-mails; faltava um parâmetro de consulta. Uma decisão do STF
+constava havia semanas como dependente de peticionamento eletrônico com procuração
+nos autos; tem acesso aberto, e o que faltava era o número de incidente. A última
+decisão de uma ação civil pública figurava como dependente de acesso aos autos; sai
+inteira pelo DJEN.
+
+A forma dos três é a mesma e não é falta de esforço: cada agente esgota **as rotas
+que já conhece**, escreve "não há caminho", e a redação fechada **remove o item da
+fila** — ninguém reaudita o que já tem causa registrada. Um deles escondia decisão
+materialmente adversa sobre o ponto que aguardava ordem do titular.
+
+Antes de declarar bloqueio, consulte `_FORJA_HARNESS/forja_rotas_fonte.py`. Ele
+guarda as rotas que funcionam, com a chave exata e a armadilha que engana, e também
+os pares fonte × tipo que a fonte **não serve a ninguém**. A metade negativa vale
+tanto quanto a positiva: é ela que separa `indisponivel_na_fonte` de
+`limitacao_da_ferramenta`, e chamar de limitação nossa o que o portal não entrega a
+ninguém manda o próximo agente caçar defeito inexistente.
+
+Cada item de `F1_INSUMO_BLOQUEADO.json` passou a exigir `fonte`, `tipoDocumento`,
+`rotasTentadas` e `revalidarApos` (no máximo 45 dias). O gate reprova quando sobra
+rota conhecida por tentar, quando a causa contradiz o que a fonte faz, e quando
+falta prazo. `--vencidos` devolve à fila o que o bloqueio tirou dela; `--probe`
+exercita as rotas ao vivo. Regressão: `test_forja_rotas_fonte.py`, com os três erros
+reais como fixture.

@@ -159,7 +159,7 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
     # A ancoragem é calculada AQUI, com o alvo em mãos, e só o número é gravado.
     # Guardar o texto do documento no artefato para medir depois duplicaria
     # conteúdo do caso sem necessidade — o número basta, e não reconstrói nada.
-    from forja_painel_indicadores import ancoragem_de
+    from forja_painel_indicadores import ancoragem_de, citacoes_fora_do_documento
 
     palavras_alvo = ancoragem_de(recorte)
     return {
@@ -174,7 +174,10 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
         **corte,
         "observacoes": [
             {"obsId": obs_id(registro.id, texto), "texto": texto,
-             "ancoragem": palavras_alvo(texto)}
+             "ancoragem": palavras_alvo(texto),
+             # Citar o que o documento cita é ler; citar o que não está lá é
+             # inventar. Só aqui o alvo está em mãos para saber a diferença.
+             "citouForaDoDocumento": citacoes_fora_do_documento(texto, recorte)}
             for texto in observacoes
         ],
     }
@@ -247,6 +250,10 @@ def main() -> int:
         parser.error("informe --arquivo ou --texto")
 
     resultado = painel(alvo, vozes=tuple(args.vozes), caso=args.caso, fase=args.fase)
+    # Localizador do alvo, para que um indicador criado depois possa ser
+    # recomputado sem chamar os modelos de novo — nova chamada devolveria texto
+    # diferente, com outros identificadores, e a fila contaria duas vezes.
+    resultado["alvoArquivo"] = str(args.arquivo) if args.arquivo else None
 
     if args.saida:
         args.saida.parent.mkdir(parents=True, exist_ok=True)

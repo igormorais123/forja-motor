@@ -206,6 +206,30 @@ se distingue documento que não veio de documento que veio e não foi aberto.
 `forja_insumo_bloqueado.py` → `F1_INSUMO_BLOQUEADO.json`, elo 5-C do F10; caso
 sem bloqueio declarado não precisa do artefato.
 
+**Bloqueio se testa contra o registro de rotas, e tem prazo (07/08/2026 — ordem
+do Igor, INVIOLÁVEL).** A causa em vocabulário fechado resolvia *comunicar* o
+impedimento e não *verificá-lo*. Em dois dias a esteira declarou **três**
+bloqueios falsos: o inteiro teor de três acórdãos do STJ, "inalcançável pela
+automação", dependia de um parâmetro de consulta; uma decisão do STF, tratada
+por semanas como dependente de procuração nos autos, tem acesso aberto e faltava
+só o número de incidente; e a última decisão de uma ação civil pública, dada
+como dependente de acesso aos autos, sai inteira pelo DJEN. Nos três o agente
+esgotou **as rotas que já conhecia** e escreveu "não há caminho" — e a redação
+fechada **remove o item da fila**, porque ninguém reaudita o que já tem causa
+registrada.
+
+Antes de declarar bloqueio, consulte `forja_rotas_fonte.py`: ele guarda o que
+cada tribunal serve, com a chave exata e a armadilha que engana, e também os
+pares que a fonte **não serve a ninguém** — esta metade é o que distingue
+`indisponivel_na_fonte` de `limitacao_da_ferramenta`. Cada item de
+`F1_INSUMO_BLOQUEADO.json` passou a exigir `fonte`, `tipoDocumento`,
+`rotasTentadas` e `revalidarApos` (no máximo 45 dias). O gate reprova quando
+sobra rota conhecida por tentar, quando a causa contradiz o que a fonte de fato
+faz, e quando falta prazo de revalidação. `--vencidos` devolve à fila o que o
+bloqueio tirou dela; `--probe` exercita as rotas ao vivo, para que o registro
+não vire mais uma afirmação velha sobre o mundo. Regressão:
+`test_forja_rotas_fonte.py`, com os três erros reais como fixture.
+
 **Advogado, não juiz (06/08/2026 — diretriz escrita do titular).** Risco,
 objeção e precedente contrário são identificados e enfrentados, inclusive por
 distinção tecnicamente sustentável — jamais adotados nem antecipados como juízo
