@@ -39,11 +39,18 @@ from forja_varredura_tipografica import (  # noqa: E402
 # do próprio escritório — sem esse desconto os números incluíam o parecer da CASO-17
 # de 20/07, que foi corrigido para 100% nas três dimensões em 21/07.
 # O piso de universo só sobe; os tetos de desvio só descem.
-ENTREGAVEIS_MIN = 120
-JUSTIFICACAO_ABAIXO_50_MAX = 4
-TAMANHO_ABAIXO_90_MAX = 29
-FONTE_ABAIXO_90_MAX = 19
-TRES_DIMENSOES_MAX = 4
+# Reancorado em 06/08/2026, quando o material recebido por e-mail saiu do escopo
+# por decisão do Igor. A população mudou por escolha, e não porque a conformidade
+# tenha melhorado: 23 arquivos deixaram de contar e o universo caiu de 142 para
+# 119 medidos. Reancorar os dois lados na mesma hora é o que impede a exclusão de
+# afrouxar a catraca duas vezes — uma por tirar arquivos, outra por manter tetos
+# calibrados numa população maior. A comparação com o retrato de 04/08 fica
+# perdida; isso é o custo da mudança de escopo, e não um efeito colateral oculto.
+ENTREGAVEIS_MIN = 119
+JUSTIFICACAO_ABAIXO_50_MAX = 3
+TAMANHO_ABAIXO_90_MAX = 24
+FONTE_ABAIXO_90_MAX = 15
+TRES_DIMENSOES_MAX = 3
 
 
 def verificar_familias_nao_pareiam_documentos_distintos() -> list[str]:

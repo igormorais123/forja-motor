@@ -55,7 +55,16 @@ ENTREGAVEL = re.compile(
 #   Prompt — arquivo de instrução, não peça.
 EXCLUIR = ("~$", "_compare_base", "TEMPLATE_", "SOURCE_", "__", "pre_layout",
            "audited_source", "_tmp_", "TEST", "ORIGINAL RECEBIDO", "VERSÃO HUMANA",
-           "propostas_justificacao", "node_modules")
+           "propostas_justificacao", "node_modules",
+           # Material que CHEGOU por e-mail, na mesma família de "ORIGINAL
+           # RECEBIDO" e "VERSÃO HUMANA": documento redigido fora da esteira,
+           # que não passou nem deveria passar pela diagramação da casa.
+           # Decisão do Igor em 06/08/2026, tomada com a ressalva registrada:
+           # entre os 23 excluídos há peças NOSSAS devolvidas revisadas pelo
+           # escritório, e o universo medido cai de 226 para 203. Os tetos
+           # abaixo foram reancorados na mesma hora, para que a exclusão não
+           # afrouxe a catraca por dois mecanismos ao mesmo tempo.
+           "Anexos do email")
 _PROMPT = re.compile(r"(?i)^\d+\.\s*Prompt\b|\bPrompt\s+\d+\b")
 
 PISO_PARAGRAFOS = 20

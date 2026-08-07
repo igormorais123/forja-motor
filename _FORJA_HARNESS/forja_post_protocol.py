@@ -94,6 +94,13 @@ REASON_CODES = {
     "PP-CAPTURE-FAILED",
     "PP-NOT-A-REVISION",
     "PP-NO-RETURN-ATTACHMENT",
+    # Três causas distintas de quarentena publicavam "PP-01" e ficavam com a
+    # mesma cara no relatório: anexo ambíguo, demanda não resolvida e demanda
+    # resolvida sem caso FORJA aberto. Cada uma tem destravamento diferente —
+    # escolher o anexo, corrigir o vínculo no painel, abrir o caso — e colapsá-las
+    # transfere para quem lê o trabalho de descobrir qual era.
+    "PP-NO-UNIQUE-DEMAND",
+    "PP-NO-FORJA-CASE",
 }
 
 # Piso de comparabilidade: abaixo dele o documento humano não é revisão da nossa
@@ -440,7 +447,11 @@ def _select_return_parts(parts: list[dict]) -> tuple[list[dict], list[dict], str
     scored: list[tuple[int, dict]] = []
     evidence: list[dict] = []
     for part in parts:
-        name = str(part.get("filename") or "").casefold()
+        # `_` é caractere de palavra, então `\bmemoriais\b` não casa em
+        # "MEMORIAIS_HANS_...". Como é assim que a própria esteira nomeia o que
+        # entrega, a peça de volta pontuava igual a um acórdão de anexo e o
+        # empate barrava tudo. Normaliza-se o separador antes de pontuar.
+        name = re.sub(r"[\s_.-]+", " ", str(part.get("filename") or "").casefold())
         if re.search(r"\b(comprovante|recibo|protocolo)\b", name):
             evidence.append(part)
             continue
@@ -455,9 +466,42 @@ def _select_return_parts(parts: list[dict]) -> tuple[list[dict], list[dict], str
     maximum = max(score for score, _part in scored)
     selected = [part for score, part in scored if score == maximum]
     remaining = evidence + [part for score, part in scored if score != maximum]
+    if len(selected) > 1:
+        selected, empatados = _desempatar_mesmo_documento(selected)
+        remaining = remaining + empatados
     if len(selected) != 1:
         return [], remaining + selected, "PP-01"
     return selected, remaining, None
+
+
+# O DOCX preserva parágrafo, tabela e estilo; do PDF só se extrai texto corrido.
+# Quando os dois são o mesmo documento, comparar o DOCX é estritamente melhor.
+PREFERENCIA_DE_FORMATO = {".docx": 0, ".odt": 1, ".pdf": 2}
+
+
+def _desempatar_mesmo_documento(selecionados: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Empate entre formatos da MESMA peça não é ambiguidade: é a peça duas vezes.
+
+    O escritório manda a peça em Word e em PDF na mesma mensagem, e os dois nomes
+    pontuam igual. Em 06/08/2026 isso barrou o retorno humano mais valioso do dia
+    — a V2 dos memoriais, revisada à mão sobre a nossa — que ficou em quarentena
+    como se o vínculo com o caso tivesse falhado. Empate entre documentos
+    diferentes continua sendo ambiguidade real e segue barrado.
+    """
+    def raiz(part: dict) -> str:
+        nome = Path(str(part.get("filename") or "")).stem.casefold()
+        return re.sub(r"[\s_.-]+", " ", nome).strip()
+
+    raizes = {raiz(part) for part in selecionados}
+    if len(raizes) != 1:
+        return selecionados, []
+    ordenados = sorted(
+        selecionados,
+        key=lambda part: PREFERENCIA_DE_FORMATO.get(
+            Path(str(part.get("filename") or "")).suffix.casefold(), 99
+        ),
+    )
+    return [ordenados[0]], ordenados[1:]
 
 
 def _text_similarity(first: Path, second: Path) -> float:
@@ -1977,11 +2021,14 @@ def scan_gmail(*, query: str, max_results: int = 100, shadow: bool = False) -> d
             continue
         parts, evidence_parts, selection_reason = _select_return_parts(all_parts)
         if selection_reason:
+            # O vínculo com o caso pode ter dado certo; quem não resolveu foi a
+            # escolha do anexo. Publicar 0 aqui fazia as duas causas terem a
+            # mesma cara na quarentena, e a leitura era sempre a errada.
             quarantine.append({
                 "messageId": message_id,
                 "threadId": message.get("threadId"),
                 "reasonCode": selection_reason,
-                "matchCount": 0,
+                "matchCount": len(matches),
                 "attachmentCount": len(all_parts),
             })
             continue
@@ -1989,7 +2036,7 @@ def scan_gmail(*, query: str, max_results: int = 100, shadow: bool = False) -> d
             quarantine.append({
                 "messageId": message_id,
                 "threadId": message.get("threadId"),
-                "reasonCode": "PP-01",
+                "reasonCode": "PP-NO-UNIQUE-DEMAND",
                 "matchCount": len(matches),
                 "attachmentCount": len(all_parts),
             })
@@ -2005,8 +2052,9 @@ def scan_gmail(*, query: str, max_results: int = 100, shadow: bool = False) -> d
             quarantine.append({
                 "messageId": message_id,
                 "threadId": message.get("threadId"),
-                "reasonCode": "PP-01",
+                "reasonCode": "PP-NO-FORJA-CASE",
                 "matchCount": 1,
+                "demandId": matches[0],
                 "attachmentCount": len(all_parts),
             })
             continue

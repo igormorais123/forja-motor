@@ -642,6 +642,33 @@ class DocumentExtractionTests(unittest.TestCase):
         self.assertEqual(["p"], [item["attachmentId"] for item in selected])
         self.assertEqual(["r"], [item["attachmentId"] for item in evidence])
 
+    def test_word_e_pdf_da_mesma_peca_nao_sao_ambiguidade(self) -> None:
+        """Fixture real: a V2 dos memoriais do EDcl no AI 0006526, 06/08/2026.
+
+        O escritório mandou a mesma peça em Word e em PDF, mais seis acórdãos.
+        Os dois nomes pontuavam igual e o retorno humano mais valioso do dia
+        ficou em quarentena. Vence o DOCX, que é o formato comparável.
+        """
+        docx = {"filename": "MEMORIAIS_HANS_EDCL_AI_0006526 V2.docx", "attachmentId": "w"}
+        pdf = {"filename": "MEMORIAIS_HANS_EDCL_AI_0006526 V2.pdf", "attachmentId": "p"}
+        acordaos = [
+            {"filename": "5 - REsp 2232623 AL.pdf", "attachmentId": "a1"},
+            {"filename": "1 - AgReg no ARE 1.475.101.pdf", "attachmentId": "a2"},
+        ]
+        selected, evidence, reason = _select_return_parts([docx, pdf, *acordaos])
+        self.assertIsNone(reason)
+        self.assertEqual(["w"], [item["attachmentId"] for item in selected])
+        self.assertIn("p", [item["attachmentId"] for item in evidence])
+
+    def test_empate_entre_pecas_diferentes_continua_barrado(self) -> None:
+        """A folga é só para formatos do mesmo documento. Duas peças distintas
+        com a mesma pontuação continuam sendo ambiguidade real."""
+        primeira = {"filename": "Memoriais do agravante.docx", "attachmentId": "1"}
+        segunda = {"filename": "Memoriais do litisconsorte.docx", "attachmentId": "2"}
+        selected, _evidence, reason = _select_return_parts([primeira, segunda])
+        self.assertEqual("PP-01", reason)
+        self.assertEqual([], selected)
+
     def test_docx_track_changes_uses_accepted_view_and_counts_revision(self) -> None:
         path = self.root / "tracked.docx"
         write_docx(path, ["TEXTO ANTIGO"])
