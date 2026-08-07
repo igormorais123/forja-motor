@@ -232,6 +232,11 @@ def _frase(par, minimo=55, maximo=190):
     return None
 
 
+# Teto de caracteres do destaque impresso na margem. Ver a nota na seleção dos
+# pulls: acima disso o bloco cresce o bastante para encontrar o fólio.
+PULL_MAX_MARGEM = 120
+
+
 def _frase_destacavel(par, minimo=55, maximo=190, evitar=()):
     """Frase para pull quote ou linha-síntese, nunca a que abre o parágrafo.
 
@@ -472,7 +477,16 @@ def gerar_mapa(md_path, tipo=None, com_figuras=True, max_pulls=6, max_caixas=3):
         # no máximo 2 por seção: mais que isso vira ruído na margem
         if por_secao.get(e["secao"], 0) >= 2:
             continue
-        frase_pull = _frase_destacavel(e["par"], evitar=comprometidas)
+        # A margem é estreita e o fólio mora no meio dela, verticalmente
+        # centrado. Uma frase de 190 caracteres vira cinco linhas ali e cruza a
+        # faixa do fólio: em 07/08/2026 o número da página saiu impresso por
+        # cima do destaque. O limite curto é da MARGEM, não do destaque em
+        # geral — a linha-síntese ocupa a largura do texto e continua com o
+        # limite maior.
+        frase_pull = _frase_destacavel(e["par"], maximo=PULL_MAX_MARGEM,
+                                       evitar=comprometidas)
+        if not frase_pull:
+            continue
         pulls.append((_ancora(e["par"], alvo), frase_pull))
         comprometidas.add(frase_pull)
         por_secao[e["secao"]] = por_secao.get(e["secao"], 0) + 1

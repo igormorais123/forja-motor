@@ -86,7 +86,7 @@ def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
 
     # ---- mapa (Onda 1A) + figuras (Onda 1B) ----
     mapa = gerar_mapa(md_path, tipo=tipo)
-    figs = gerar_figuras(texto, out_dir / "_figuras", mapa, brief=brief)
+    figs = gerar_figuras(texto, out_dir / "_figuras", mapa, brief=brief, tipo=tipo)
     t_mapa = time.monotonic()
 
     # ---- composição visual ----

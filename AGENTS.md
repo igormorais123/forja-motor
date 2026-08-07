@@ -362,7 +362,9 @@ python _FORJA_HARNESS/forja_conselho.py <helena.md> <cicero.md> <decisoes.md> F4
 
 `diabob_present` (L-C4) reprova prosa em vez de recibo, reprova parecer da mesma família
 que produz a peça (isso é eco, não red team) e deixa `unknown` com P1 quando o artefato
-não é declarado — nunca `pass` por omissão. Roda em `forja_run.py` no F4.
+não é declarado. `unknown` **não é `pass`**: `forja_run._recompute_conselho` reprova todo
+gate do conselho cujo valor recomputado não seja `pass`. Roda no F4, sempre.
 
-`diabob_opinion` ainda **não** está em `requiredOutputs` de `F4.json`: seria exigência
-dura sobre casos em curso. Ficha: `_FORJA_HARNESS/decisoes/0002`.
+Desde 07/08/2026 `diabob_opinion` é **saída obrigatória** e `diabob_present` é **gate
+obrigatório** de `F4.json` (e do contrato N4). Sem o recibo a fase não promove, e a
+mensagem diz o que produzir. Ficha: `_FORJA_HARNESS/decisoes/0002`.

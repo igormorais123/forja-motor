@@ -1195,11 +1195,30 @@ prazo é de 15 dias porque o cliente disse que foi intimado na sexta"), o Diabob
 do cliente e chamando isso de pergunta jurisdicional"*, exigindo o localizador nos autos
 — publicação, portal, DJEN ou certidão — antes de qualquer contagem.
 
-**O que não foi feito, e por quê.** `diabob_opinion` **não** entrou em `requiredOutputs`
-de `F4.json`: entraria como exigência dura e derrubaria qualquer F4 em curso. O gate já
-roda na rota real e já expõe a ausência. Promover a saída a obrigatória é o passo
-seguinte, depois que os casos vivos passarem a produzir o artefato — decisão consciente,
-registrada na ficha `decisoes/0002`.
+**Promoção ao contrato, no mesmo dia — e a correção de um fato que eu tinha errado.**
+Autorizada a promoção, `diabob_opinion` entrou em `requiredOutputs` e `diabob_present` em
+`requiredGates`, nos dois contratos da fase (`phase_contracts/F4.json` e
+`phase_contracts_n4/F4.json`).
+
+A justificativa que eu havia registrado para adiar — "entraria como exigência dura e
+derrubaria qualquer F4 em curso" — **estava errada sobre a rota real**.
+`forja_run._recompute_conselho` reprova todo gate do conselho cujo valor recomputado não
+seja `pass`, e `unknown` não é `pass`: a fase já parava desde 06/08. O que a promoção
+muda é **onde** e **com que mensagem** o caso é barrado, não **se**. Antes:
+`conselho obrigatório reprovado na recomputação (diabob_present)`, no meio do recomputo.
+Agora: `saídas obrigatórias ausentes: diabob_opinion`, na conferência de saídas, que diz
+o que produzir. Vale a pena registrar o modo de falha: eu inferi o comportamento do
+runner a partir do desenho do validador, em vez de ler a linha que decide — e o valor
+`unknown`, escolhido justamente para ser mais brando que `fail`, não era mais brando ali.
+
+Medido no acervo em 07/08: **9 de 9 tentativas F4 históricas não têm o artefato**.
+Nenhuma é revalidada — o contrato vale para promoção nova, e tentativa já promovida não
+volta ao portão. Elas aparecem como `unknown` no censo de recomputação, que passou a
+procurar o recibo, junto com `forja_import_audited_cycle.py`, que agora o reconhece pelo
+nome do arquivo. Regressão: quatro testes novos em `test_forja_cursor_grok.py`, entre
+eles o que exige que **o nome do gate no contrato seja o mesmo que o validador emite** —
+gate exigido por nome que ninguém emite reprovaria todo caso, e gate emitido com nome que
+ninguém exige não reprova nenhum. Ficha: `decisoes/0002`.
 
 **Kimi K3 não foi banido.** Aparece na assinatura do Cursor (`kimi-k3-high`) e foi
 retirado do registro da FORJA em 26/07 após reprovar a bancada jurídica. Em 07/08 o Igor

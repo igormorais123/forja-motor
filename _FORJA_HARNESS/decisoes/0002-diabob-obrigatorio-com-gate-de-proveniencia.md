@@ -1,6 +1,6 @@
 # 0002 — Diabob obrigatório no conselho, aferido por proveniência e não por prosa
 
-- Status: Aceita
+- Status: Aceita — promovida a exigência dura do contrato em 07/08/2026
 - Data: 06-07/08/2026
 - Quem decidiu: Igor
 
@@ -55,13 +55,30 @@ dos gates S2, S4, S6 e S7, onde caso sem declaração não recebe veredito.
 - A assinatura de `validar_conselho` ganhou `diabob=None` opcional, para não quebrar
   chamador antigo; a regressão cobre isso.
 
-## O que NÃO foi feito, e por quê
+## Promoção a exigência dura do contrato (07/08/2026)
 
-**`diabob_opinion` não entrou em `requiredOutputs` de `F4.json`.** Entraria como
-exigência dura e derrubaria qualquer F4 em curso no momento da mudança. O gate já roda e
-já expõe a ausência como `unknown`. Promover a saída obrigatória é o passo seguinte,
-depois que os casos vivos passarem a produzir o artefato — e é decisão consciente, não
-esquecimento.
+O Igor autorizou promover. `diabob_opinion` entrou em `requiredOutputs` e
+`diabob_present` em `requiredGates`, nos dois contratos da fase — `phase_contracts/F4.json`
+e `phase_contracts_n4/F4.json`.
+
+**Correção de fato registrada aqui.** A versão anterior deste ADR dizia que a promoção
+derrubaria "qualquer F4 em curso" e que até lá a ausência ficaria apenas visível como
+`unknown`. **Estava errado sobre a rota real.** `forja_run._recompute_conselho` reprova
+todo gate do conselho cujo valor recomputado não seja `pass` — e `unknown` não é `pass`.
+Desde 06/08 a fase já parava; o que faltava era a mensagem dizer o que produzir. Antes:
+`conselho obrigatório reprovado na recomputação (diabob_present)`. Agora a ausência é
+barrada antes, em `saídas obrigatórias ausentes: diabob_opinion`.
+
+O que a promoção muda de verdade, então, é **onde** e **como** o caso é barrado, não
+**se**. `unknown` continua não sendo `pass`; a promoção é adicional, não troca.
+
+Medido no acervo em 07/08/2026: **9 de 9 tentativas F4 históricas não têm o artefato.**
+Nenhuma delas é revalidada — o contrato vale para promoção nova, e tentativa já promovida
+não volta ao portão. Elas aparecem como `unknown` no censo de recomputação
+(`forja_recomputo_censo.py`, que passou a procurar o recibo), que é o veredito honesto.
+
+Também foram ligados dois pontos de entrada que conheciam Helena e Cícero e não o Diabob:
+o censo acima e `forja_import_audited_cycle.py`, que agora reconhece o arquivo pelo nome.
 
 **Kimi K3 não entrou na lista de proibidos.** Ele aparece na assinatura do Cursor
 (`kimi-k3-high`) e foi retirado do registro da FORJA em 26/07/2026 por decisão do

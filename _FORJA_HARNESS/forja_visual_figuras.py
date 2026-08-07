@@ -208,10 +208,23 @@ def extrair_cronologia(texto_md, minimo=3, maximo=7):
 
 BRIEF_NOME = "F7_5_BRIEF_VISUAL.json"
 
+# A legenda afirma de onde vem o dado, então ela muda com o produto. "Conforme
+# declarado nos autos" é verdade numa peça e é falso num estudo interno, que
+# não tem autos: em 07/08/2026 uma nota técnica saiu com essa legenda sob uma
+# cronologia montada a partir do brief do autor. Legenda é afirmação, não
+# enfeite — e afirmação errada sob figura correta é pior que figura sem
+# legenda, porque atribui lastro que não existe.
 _LEGENDAS = {
-    "cronologia": "Cronologia dos atos, conforme declarado nos autos.",
-    "comparacao": "Quadro comparativo dos critérios em confronto.",
-    "cadeia": "Encadeamento da tese: premissas e conclusão.",
+    "peca": {
+        "cronologia": "Cronologia dos atos, conforme declarado nos autos.",
+        "comparacao": "Quadro comparativo dos critérios em confronto.",
+        "cadeia": "Encadeamento da tese: premissas e conclusão.",
+    },
+    "estudo": {
+        "cronologia": "Cronologia dos fatos relevantes.",
+        "comparacao": "Quadro comparativo dos critérios em confronto.",
+        "cadeia": "Encadeamento do raciocínio: premissas e conclusão.",
+    },
 }
 
 _TOKEN_FATO = re.compile(r"\b\d[\d.,/º§-]*\b")
@@ -310,8 +323,12 @@ def extrair_comparacao(texto_md, min_linhas=2, max_linhas=6):
     return None
 
 
-def gerar_figuras(texto_md, out_dir, mapa, largura_cm=13.1, brief=None):
+def gerar_figuras(texto_md, out_dir, mapa, largura_cm=13.1, brief=None, tipo=None):
     """Desenha os SVGs que o mapa declarou. Devolve {tag: (svg, largura_cm)}.
+
+    `tipo` é o produto declarado ("peca" ou "estudo") e decide a legenda, que
+    afirma a procedência do dado. Omitir mantém o texto de peça, que é o
+    comportamento anterior.
 
     Se uma figura declarada não puder ser desenhada com lastro no texto, ela é
     REMOVIDA do mapa — o marcador ficaria literal no DOCX e o gate de marcadores
@@ -363,7 +380,7 @@ def gerar_figuras(texto_md, out_dir, mapa, largura_cm=13.1, brief=None):
         if not tipo_fig or tipo_fig in usados_tipo:
             continue
         usados_tipo.add(tipo_fig)
-        legenda = _LEGENDAS.get(tipo_fig, legenda)
+        legenda = _LEGENDAS.get(tipo or "peca", _LEGENDAS["peca"]).get(tipo_fig, legenda)
         figs_saida[tag] = (str(svg), largura_cm)
         mantidas.append((anc, tag, legenda))
 

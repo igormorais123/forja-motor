@@ -21,6 +21,8 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from lxml import etree
+
 from docx import Document
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.opc.part import Part
@@ -30,7 +32,12 @@ from docx.shared import Cm
 
 
 SVG_CONTENT_TYPE = "image/svg+xml"
+PNG_CONTENT_TYPE = "image/png"
 PIC_URI = "http://schemas.openxmlformats.org/drawingml/2006/picture"
+# Identificador fixo da extensão de SVG do Office. Não é escolha nossa: é o
+# valor que o Word procura para saber que aquele `blip` tem versão vetorial.
+SVG_EXT_URI = "{96DAC541-7B7A-43D3-8B79-37D633B846F1}"
+SVG_EXT_NS = "http://schemas.microsoft.com/office/drawing/2016/SVG/main"
 EMU_PER_CM = 360000
 FORJA = Path(__file__).resolve().parent
 sys.path.insert(0, str(FORJA.parent / "_FERRAMENTAS"))
@@ -85,11 +92,41 @@ def _new_svg_part(document, path: Path):
     return document.part.relate_to(part, RT.IMAGE)
 
 
+def _new_png_part(document, path: Path):
+    package = document.part.package
+    partname = package.next_partname("/word/media/image%d.png")
+    part = Part(partname, PNG_CONTENT_TYPE, path.read_bytes(), package)
+    return document.part.relate_to(part, RT.IMAGE)
+
+
+def _raster_de_reserva(svg: Path) -> Path:
+    """Rasteriza o SVG ao lado dele. Sem isto, o Word recusa o arquivo inteiro.
+
+    Descoberto em 07/08/2026: apontar `a:blip r:embed` direto para o SVG produz
+    OOXML que o Microsoft Word não abre — a mensagem é de arquivo corrompido, e
+    o documento inteiro fica inacessível ao destinatário. O suporte a SVG do
+    Office é uma EXTENSÃO: o `blip` aponta para um raster e o vetor entra em
+    `a:extLst`. Leitor moderno mostra o vetor; leitor antigo mostra o raster.
+
+    O defeito atravessou o QA porque ele lê o pacote com Python e nunca abriu o
+    resultado no programa que vai abri-lo. Auditar o XML prova que o XML é o
+    que se quis escrever, e não que o consumidor o aceita.
+    """
+    from word_visual_pipeline import svg_para_png
+
+    png = svg.with_suffix(".png")
+    svg_para_png(str(svg), str(png), dpi=300)
+    if not png.is_file() or png.stat().st_size == 0:
+        raise RuntimeError(f"raster de reserva não foi gerado para {svg.name}")
+    return png
+
+
 def _inline_svg(document, path: Path, width_cm: float, docpr_id: int):
     ratio = _svg_ratio(path)
     width = max(1, round(float(width_cm) * EMU_PER_CM))
     height = max(1, round(width / ratio))
     rid = _new_svg_part(document, path)
+    rid_png = _new_png_part(document, _raster_de_reserva(path))
 
     inline = OxmlElement("wp:inline")
     inline.set("distT", "0")
@@ -135,7 +172,20 @@ def _inline_svg(document, path: Path, width_cm: float, docpr_id: int):
 
     blip_fill = OxmlElement("pic:blipFill")
     blip = OxmlElement("a:blip")
-    blip.set(qn("r:embed"), rid)
+    # O `blip` aponta para o raster; o vetor vem logo abaixo, na extensão que o
+    # Office reserva para SVG. A ordem importa: `a:extLst` é o último filho de
+    # `a:blip`, e o Word recusa o arquivo se ele vier antes.
+    blip.set(qn("r:embed"), rid_png)
+    ext_list = OxmlElement("a:extLst")
+    ext = OxmlElement("a:ext")
+    ext.set("uri", SVG_EXT_URI)
+    # O prefixo `asvg` não está no mapa de namespaces do python-docx, então o
+    # elemento é criado direto pelo lxml, declarando o namespace nele mesmo.
+    svg_blip = etree.SubElement(ext, f"{{{SVG_EXT_NS}}}svgBlip",
+                                nsmap={"asvg": SVG_EXT_NS})
+    svg_blip.set(qn("r:embed"), rid)
+    ext_list.append(ext)
+    blip.append(ext_list)
     blip_fill.append(blip)
     source_rect = OxmlElement("a:srcRect")
     source_rect.set("l", "0")
@@ -226,7 +276,18 @@ def inserir_svgs(docx_path: str | Path, figuras: dict) -> dict:
         inline, rid, width, height = _inline_svg(document, svg, float(width_cm), docpr_id)
         docpr_id += 1
         paragraph._p.clear_content()
-        paragraph._p.append(inline)
+        # `wp:inline` NÃO é filho legítimo de `w:p`. Ele mora dentro de
+        # `w:r/w:drawing`, e sem esse invólucro o Word recusa o documento
+        # inteiro com mensagem de arquivo corrompido — o destinatário não abre
+        # nada, nem o texto. O defeito viveu de 03/08 a 07/08/2026 porque o QA
+        # da rota lê o pacote com Python, e biblioteca de leitura aceita XML
+        # que o Word rejeita: auditar a estrutura não é o mesmo que provar que
+        # o programa do leitor a aceita.
+        run = OxmlElement("w:r")
+        drawing = OxmlElement("w:drawing")
+        drawing.append(inline)
+        run.append(drawing)
+        paragraph._p.append(run)
         inserted[tag] = {
             "svg": str(svg),
             "svgSha256": hashlib.sha256(svg.read_bytes()).hexdigest(),
