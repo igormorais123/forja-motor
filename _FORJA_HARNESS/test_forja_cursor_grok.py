@@ -432,6 +432,24 @@ def test_gate_do_contrato_e_o_mesmo_que_o_validador_emite():
         assert "diabob_present" in exigidos & emitidos
 
 
+def test_o_agente_da_f4_recebe_o_comando_junto_com_a_exigencia():
+    """Exigir o artefato sem dizer como produzi-lo custaria uma tentativa.
+
+    O contrato viaja inteiro no RUN_CONTEXT, então o agente saberia QUE precisa
+    de `diabob_opinion`. Ele não saberia que o artefato é o recibo de uma
+    chamada a outra família — tentaria redigir o parecer, e o gate reprovaria
+    com razão. A instrução por fase é o que fecha o circuito.
+    """
+    origem = Path(__file__).with_name("forja_run.py").read_text(
+        encoding="utf-8", errors="replace")
+    trecho = origem.split('if phase == "F4_BLUEPRINT_ESTRATEGICO":', 1)
+    assert len(trecho) == 2, "a instrução por fase da F4 sumiu do RUN_CONTEXT"
+    bloco = trecho[1][:1400]
+    assert "conselhoDiabob" in bloco
+    assert "forja_diabob.py" in bloco
+    assert "F4_PARECER_DIABOB.json" in bloco
+
+
 def test_promocao_nao_afrouxa_a_recomputacao():
     """`unknown` continua não sendo `pass` — a promoção é adicional, não troca.
 

@@ -169,6 +169,22 @@ def prepare_attempt(
             "validator": str(FORJA / "forja_exploracao_100.py"),
             "rule": "exactly 100 case-adapted questions; 10 lenses x 10; answer, source or block; route F3-F7",
         }
+    if phase == "F4_BLUEPRINT_ESTRATEGICO":
+        # `diabob_opinion` virou saída obrigatória em 07/08/2026. O contrato
+        # sozinho diria ao agente QUE produzir e não COMO — e a única forma
+        # legítima é o comando, porque o artefato é o recibo da chamada a outra
+        # família de modelo, não um texto que se escreve. Sem esta instrução o
+        # agente tentaria redigir o parecer, e o gate reprovaria com razão,
+        # gastando uma tentativa para ensinar o que cabia dizer aqui.
+        context["instructions"]["conselhoDiabob"] = {
+            "artifactId": "diabob_opinion",
+            "arquivo": "F4_PARECER_DIABOB.json",
+            "comando": ("python " + str(FORJA / "forja_diabob.py")
+                        + " --arquivo <blueprint.md> --saida F4_PARECER_DIABOB.json"),
+            "rule": ("gere pelo comando, nunca à mão: o gate `diabob_present` afere a "
+                     "PROVENIÊNCIA (modelo, família, provedor), não o texto. Parecer da "
+                     "mesma família que produz a peça reprova como eco."),
+        }
     context["contextHash"] = canonical_hash(context)
     atomic_write_json(attempt_dir / "RUN_CONTEXT.json", context)
     return {"attemptDir": str(attempt_dir), "context": context, "state": state}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "porQue": "Acima do limite de 100 MB por arquivo do GitHub. Permanecem no disco de trabalho. Quando estão presos por hash num ledger de eventos, não podem ser regenerados nem encolhidos sem quebrar a cadeia de auditoria.",
-  "atualizadoEm": "2026-08-07 01:58:18",
+  "atualizadoEm": "2026-08-07 02:00:29",
   "arquivos": [
     {
       "caminho": "_FORJA_HARNESS/state/case-email-auto-19f8cec883a0ac31/n3_artifacts/F1_INGESTAO_SEGURA/injection_scan.json",
