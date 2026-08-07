@@ -51,25 +51,37 @@ def _falha_nas_tres(m: dict) -> bool:
             and m["fonte"] < PISO_FONTE)
 
 
-def medir(caminho: Path | str) -> dict | None:
+def medir(caminho: Path | str, *, motivos: list | None = None) -> dict | None:
     """Medida tipográfica de um DOCX. `None` quando não há o que julgar.
 
     Devolver `None` em vez de reprovar é deliberado: arquivo ilegível, curto
     demais ou de outro formato não é prova de desvio, e transformar ausência de
     medida em bloqueio faria a barreira reprovar por cegueira.
+
+    `motivos`, quando passado, recebe a causa de cada `None`. As três não pedem
+    a mesma providência — documento curto é anexo comum, ilegível pode ser
+    corrupção de transporte, e formato inesperado costuma ser engano de quem
+    anexou —, e um ledger que só diz "não inspecionado" obriga a abrir o arquivo
+    para descobrir qual delas era.
     """
     caminho = Path(caminho)
-    if caminho.suffix.lower() not in EXTENSOES:
+
+    def _sem_medida(causa):
+        if motivos is not None:
+            motivos.append({"arquivo": caminho.name, "motivo": causa})
         return None
+
+    if caminho.suffix.lower() not in EXTENSOES:
+        return _sem_medida("não é documento do Word")
     try:
         from forja_docx_layout import audit_docx_layout
         laudo = audit_docx_layout(caminho)
-    except Exception:  # noqa: BLE001
-        return None
+    except Exception as erro:  # noqa: BLE001
+        return _sem_medida(f"não abriu ({type(erro).__name__})")
     m = laudo.get("metrics") or {}
     paragrafos = m.get("bodyParagraphs") or 0
     if paragrafos < PISO_PARAGRAFOS:
-        return None
+        return _sem_medida(f"curto demais para medir ({paragrafos} parágrafos)")
     return {
         "arquivo": caminho.name,
         "paragrafos": paragrafos,
@@ -90,17 +102,16 @@ def avaliar(caminhos, *, material_de_terceiro=None) -> dict:
     declarados = {str(n).strip().casefold() for n in (material_de_terceiro or [])}
     medidos, bloqueados, liberados, cegos = [], [], [], []
     for caminho in caminhos:
-        m = medir(caminho)
+        # O arquivo que se anuncia como documento do Word e não produz medida é
+        # ponto cego: não barra — ausência de medida nunca foi prova de desvio —
+        # mas precisa aparecer, senão a barreira parece mais completa do que é.
+        # Descoberto ao testar base64 corrompido, que **não** levanta exceção:
+        # decodifica em lixo, e o anexo sumia em silêncio.
+        motivos = []
+        m = medir(caminho, motivos=motivos)
         if m is None:
-            # O arquivo se anuncia como documento do Word e não produziu medida:
-            # curto demais, ilegível, ou bytes que não abrem. Não é prova de
-            # desvio e por isso não barra — mas é ponto cego, e ponto cego que
-            # não aparece em lugar nenhum faz a barreira parecer mais completa
-            # do que é. Descoberto ao testar base64 corrompido, que **não**
-            # levanta exceção: decodifica em lixo e o anexo sumia em silêncio.
-            if Path(caminho).suffix.lower() in EXTENSOES:
-                cegos.append({"arquivo": Path(caminho).name,
-                              "motivo": "sem medida tipográfica"})
+            cegos.extend(x for x in motivos
+                         if Path(caminho).suffix.lower() in EXTENSOES)
             continue
         medidos.append(m)
         if not _falha_nas_tres(m):
@@ -203,6 +214,8 @@ def main(argv=None) -> int:
         marca = "REPROVA" if _falha_nas_tres(m) else "ok     "
         print(f"  {marca}  {m['arquivo'][:56]:58} "
               f"just {m['justificacao']:.0%}  tam {m['tamanho']:.0%}  fonte {m['fonte']:.0%}")
+    for c in veredito["naoInspecionados"]:
+        print(f"  cego     {c['arquivo'][:56]:58} {c['motivo']}")
     if not veredito["medidos"]:
         print("nenhum documento mensurável entre os arquivos informados.")
         return 0

@@ -113,6 +113,9 @@ def enviar_rascunho(svc, draft_id: str, confirmar: bool, terceiro=None) -> int:
     for m in veredito["medidos"]:
         print(f"anexo:    {m['arquivo'][:52]:54} just {m['justificacao']:.0%}  "
               f"tam {m['tamanho']:.0%}  fonte {m['fonte']:.0%}")
+    for c in veredito.get("naoInspecionados") or []:
+        # Não barra, mas quem envia precisa ver: este saiu sem conferência.
+        print(f"cego:     {c['arquivo'][:52]:54} {c['motivo']}")
     if not veredito["aprovado"]:
         print()
         print(gate.explicar(veredito))

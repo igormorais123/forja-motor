@@ -89,8 +89,15 @@ class _Falso:
     def __init__(self, mapa):
         self.mapa = mapa
 
-    def __call__(self, caminho):
-        return self.mapa.get(Path(caminho).name)
+    def __call__(self, caminho, *, motivos=None):
+        # `motivos` entrou na medição real em 06/08/2026, para que arquivo sem
+        # medida diga POR QUE não tem — curto, ilegível ou de outro formato.
+        # O dublê precisa aceitar a mesma assinatura, senão a regressão que
+        # protege a barreira quebra na coleta e a barreira fica sem teste.
+        medida = self.mapa.get(Path(caminho).name)
+        if medida is None and motivos is not None:
+            motivos.append({"arquivo": Path(caminho).name, "motivo": "sem medida no dublê"})
+        return medida
 
 
 medir_real = gate.medir
@@ -157,6 +164,9 @@ try:
     checar("e fica declarado como ponto cego, em vez de sumir",
            [x["arquivo"] for x in v["naoInspecionados"]] == ["corrompido.docx"],
            f"declarados: {v.get('naoInspecionados')}")
+    checar("o ponto cego diz a causa, não só que existe — curto, ilegível e "
+           "formato inesperado pedem providências diferentes",
+           all(x.get("motivo") for x in v["naoInspecionados"]))
 finally:
     gate.medir = medir_real
 

@@ -29,6 +29,8 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
+import subprocess
 import time
 import urllib.error
 import urllib.request
@@ -122,6 +124,24 @@ MODELOS: dict[str, Modelo] = {
         forte_em=("velocidade", "objecao_direta", "franqueza", "juiz_sem_autopreferencia"),
         fases=("F4", "F7"),
         usd_entrada_por_milhao=2.0, usd_saida_por_milhao=6.0,
+    ),
+    # O MESMO Grok 4.5, pela assinatura do Cursor em vez do OpenRouter (ordem do
+    # titular, 06/08/2026). Rota padrão do Diabob e da triagem rápida de F1.
+    #
+    # Custo declarado zero de propósito: não é grátis, é mensalidade — não há
+    # preço por chamada a registrar, e inventar centavos mentiria no ledger. O
+    # ledger continua contando as CHAMADAS, que é o que permite ver volume.
+    #
+    # Sem contagem de tokens: o CLI não a expõe. Preferimos zero declarado a
+    # estimativa por caractere, porque número estimado em ledger vira número
+    # citado depois. Quem precisar medir consumo usa a rota OpenRouter.
+    "grok-4.5-cursor": Modelo(
+        id="grok-4.5-cursor", familia="xai", provedor="cursor",
+        remoto="grok-4.5",
+        forte_em=("velocidade", "objecao_direta", "franqueza",
+                  "juiz_sem_autopreferencia", "primeira_passada", "volume"),
+        fases=("F1", "F4", "F7"),
+        usd_entrada_por_milhao=0.0, usd_saida_por_milhao=0.0,
     ),
     # Entrou no registro em 27/07/2026, pela bancada. É a alavanca de custo do
     # arranjo: US$ 0,11 contra US$ 0,61 do Sol na MESMA tarefa, em metade do
@@ -244,7 +264,114 @@ def _openrouter(modelo: Modelo, prompt: str, sistema: str | None,
     )
 
 
-DESPACHO = {"openrouter": _openrouter}
+def _cursor_binario() -> Path:
+    """Acha o `cursor-agent`. Ele não entra no PATH na instalação padrão do Windows."""
+    override = os.environ.get("FORJA_CURSOR_AGENT")
+    if override:
+        caminho = Path(override)
+        if caminho.is_file():
+            return caminho
+        raise ForjaModeloError(f"FORJA_CURSOR_AGENT aponta para arquivo inexistente: {override}")
+    local = Path(os.environ.get("LOCALAPPDATA", "")) / "cursor-agent" / "cursor-agent.cmd"
+    if local.is_file():
+        return local
+    achado = shutil.which("cursor-agent")
+    if achado:
+        return Path(achado)
+    raise ForjaModeloError(
+        "cursor-agent não encontrado. Instale o CLI do Cursor ou aponte FORJA_CURSOR_AGENT "
+        "para o executável")
+
+
+def _cursor_texto(bruto: str) -> str:
+    """Extrai o texto da resposta, aceitando JSON, JSON por linha ou texto puro.
+
+    O formato de saída do CLI muda entre versões. Preferir texto vazio a um
+    parse otimista: `chamar` levanta em conteúdo vazio, e falhar alto é melhor
+    do que devolver o log do agente como se fosse o parecer.
+    """
+    bruto = bruto.strip()
+    if not bruto:
+        return ""
+    try:
+        dados = json.loads(bruto)
+    except json.JSONDecodeError:
+        partes = []
+        for linha in bruto.splitlines():
+            linha = linha.strip()
+            if not linha.startswith("{"):
+                continue
+            try:
+                evento = json.loads(linha)
+            except json.JSONDecodeError:
+                continue
+            for chave in ("text", "content", "delta", "result", "message"):
+                valor = evento.get(chave)
+                if isinstance(valor, str) and valor:
+                    partes.append(valor)
+                    break
+        return "\n".join(partes) if partes else bruto
+    if isinstance(dados, str):
+        return dados
+    if isinstance(dados, dict):
+        for chave in ("result", "text", "content", "response", "output"):
+            valor = dados.get(chave)
+            if isinstance(valor, str) and valor.strip():
+                return valor
+        mensagens = dados.get("messages")
+        if isinstance(mensagens, list):
+            textos = [m.get("content") for m in mensagens
+                      if isinstance(m, dict) and isinstance(m.get("content"), str)]
+            if textos:
+                return "\n".join(textos)
+    return bruto
+
+
+def _cursor(modelo: Modelo, prompt: str, sistema: str | None,
+            max_tokens: int, timeout: int) -> tuple[str, int, int, int]:
+    """Roda o modelo pela assinatura do Cursor, em modo somente leitura.
+
+    Por que existe: o Grok 4.5 já estava no registro pelo OpenRouter, que cobra
+    por chamada. O CLI do Cursor entrega o mesmo modelo pela assinatura que o
+    titular já paga. O custo declarado aqui é zero — não porque seja grátis, mas
+    porque não é medido por chamada; a mensalidade é o custo, e fingir centavos
+    por chamada mentiria no ledger.
+
+    `--mode ask` é obrigatório e não é detalhe: sem ele o agente do Cursor tem
+    ferramenta de escrita e shell. Revisor externo não edita o caso.
+    """
+    binario = _cursor_binario()
+    completo = f"{sistema.strip()}\n\n{prompt}" if sistema else prompt
+    comando = [str(binario), "--print", "--output-format", "json",
+               "--mode", "ask", "--model", modelo.remoto or modelo.id, completo]
+    try:
+        proc = subprocess.run(  # noqa: S603 - binário resolvido acima, sem shell
+            comando, capture_output=True, text=True, encoding="utf-8",
+            errors="replace", timeout=timeout, stdin=subprocess.DEVNULL,
+        )
+    except subprocess.TimeoutExpired:
+        raise ForjaModeloError(
+            f"{modelo.id}: cursor-agent excedeu {timeout}s sem responder") from None
+    except OSError as erro:
+        raise ForjaModeloError(f"{modelo.id}: falha ao executar cursor-agent: {erro}") from None
+
+    saida_erro = (proc.stderr or "").strip()
+    if proc.returncode != 0:
+        if "Authentication required" in saida_erro or "auth" in saida_erro.casefold():
+            raise ForjaModeloError(
+                f"{modelo.id}: Cursor sem autenticação. Rode `cursor-agent login` no "
+                "terminal, ou defina CURSOR_API_KEY. O login abre navegador e é do "
+                "titular — nenhum agente faz por ele")
+        raise ForjaModeloError(
+            f"{modelo.id}: cursor-agent saiu com código {proc.returncode}: {saida_erro[:300]}")
+
+    conteudo = _cursor_texto(proc.stdout or "")
+    # O CLI não expõe contagem de tokens. Estimar por caracteres seria inventar
+    # número no ledger — que é o defeito que este harness existe para não ter.
+    return conteudo, 0, 0, 0
+
+
+DESPACHO = {"openrouter": _openrouter, "cursor": _cursor}
 
 
 def chamar(

@@ -53,18 +53,27 @@ ENTREGAVEL = re.compile(
 #   SOURCE_ / pre_layout / audited_source / _tmp_ / __ / TEST — estágio interno
 #     anterior à diagramação;
 #   Prompt — arquivo de instrução, não peça.
+# Marcas técnicas: convenções de nome que a esteira escreve sempre da mesma
+# forma. Casam com a caixa exata de propósito — `TEST` insensível pegaria
+# "teste" e "atestado" e apagaria peças legítimas da medição, que é o contrário
+# do que se quer.
 EXCLUIR = ("~$", "_compare_base", "TEMPLATE_", "SOURCE_", "__", "pre_layout",
-           "audited_source", "_tmp_", "TEST", "ORIGINAL RECEBIDO", "VERSÃO HUMANA",
-           "propostas_justificacao", "node_modules",
-           # Material que CHEGOU por e-mail, na mesma família de "ORIGINAL
-           # RECEBIDO" e "VERSÃO HUMANA": documento redigido fora da esteira,
-           # que não passou nem deveria passar pela diagramação da casa.
-           # Decisão do Igor em 06/08/2026, tomada com a ressalva registrada:
-           # entre os 23 excluídos há peças NOSSAS devolvidas revisadas pelo
-           # escritório, e o universo medido cai de 226 para 203. Os tetos
-           # abaixo foram reancorados na mesma hora, para que a exclusão não
-           # afrouxe a catraca por dois mecanismos ao mesmo tempo.
-           "Anexos do email")
+           "audited_source", "_tmp_", "TEST", "propostas_justificacao",
+           "node_modules")
+
+# Rótulos escritos por gente: pasta e arquivo nomeados à mão, onde a caixa varia
+# conforme quem digitou. Uma pasta renomeada para maiúsculas devolveria material
+# de terceiro à medição — o que faz a catraca disparar por algo que ela mesma
+# decidiu não medir. Achado do Codex em 06/08/2026, aceito só para esta família:
+# frase escrita por humano compara sem caixa, marca técnica compara com ela.
+#
+# "Anexos do email" entrou aqui em 06/08/2026 por decisão do Igor, com a
+# ressalva registrada: entre os 23 excluídos há peças NOSSAS devolvidas
+# revisadas pelo escritório, e o universo medido caiu de 142 para 119. Os tetos
+# foram reancorados na mesma hora, para a exclusão não afrouxar a catraca por
+# dois mecanismos ao mesmo tempo.
+EXCLUIR_SEM_CAIXA = ("original recebido", "versão humana", "versao humana",
+                     "anexos do email")
 _PROMPT = re.compile(r"(?i)^\d+\.\s*Prompt\b|\bPrompt\s+\d+\b")
 
 PISO_PARAGRAFOS = 20
@@ -80,7 +89,11 @@ def _e_entregavel(caminho: Path) -> bool:
         relativo = ""
     if relativo.startswith("_FORJA_HARNESS/private/"):
         return False
-    if any(t in str(caminho) for t in EXCLUIR):
+    inteiro = str(caminho)
+    if any(t in inteiro for t in EXCLUIR):
+        return False
+    sem_caixa = inteiro.casefold()
+    if any(t in sem_caixa for t in EXCLUIR_SEM_CAIXA):
         return False
     if _PROMPT.search(caminho.name):
         return False

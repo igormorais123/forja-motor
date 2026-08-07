@@ -347,6 +347,24 @@ def adotar(classe: str, *, destino: str, fase: str, regra: str,
     return nova
 
 
+def procedencia_nao_declarada() -> list[dict]:
+    """Regras adotadas antes de `origem` existir, e que por isso não a declaram.
+
+    Treze regras foram adotadas em 06/08/2026 penduradas na classe de diff mais
+    próxima, porque `adotar` exigia uma classe observada. A maioria veio de
+    correspondência do escritório, e a recorrência que elas exibem é de um
+    alinhamento de documentos que não tinha relação com aquela correção.
+
+    Isto não é divergência: é procedência por declarar. Devolvê-las junto das
+    divergências transformaria treze pendências de arqueologia num alarme que
+    ninguém consegue limpar — e alarme que não se limpa é alarme que se ignora.
+    Fica em lista própria, visível, até que alguém as declare uma a uma.
+    """
+    return [{"regraId": r["regraId"], "classe": r["classe"], "fase": r.get("fase"),
+             "texto": str(r.get("texto", ""))[:90]}
+            for r in carregar_registro()["regras"] if not r.get("origem")]
+
+
 def revalidar() -> list[dict]:
     """A evidência que sustentava cada regra ainda existe nos dados de hoje?
 
@@ -677,6 +695,15 @@ def main(argv=None) -> int:
 
     if args.verbo == "revalidar":
         divs = revalidar()
+        pendentes = procedencia_nao_declarada()
+        if pendentes:
+            print(f"Procedência por declarar — {len(pendentes)} regra(s) adotadas antes "
+                  f"de `origem` existir. A evidência de recorrência que elas exibem é "
+                  f"da classe de diff em que foram penduradas, não da correção que as "
+                  f"originou. Não é divergência; é arqueologia pendente:")
+            for p in pendentes:
+                print(f"  {p['regraId']} [{p['fase']}] {p['classe']} — {p['texto']}…")
+            print()
         if not divs:
             print("APROVADO — a evidência de toda regra adotada continua de pé.")
             return 0

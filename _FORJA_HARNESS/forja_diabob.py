@@ -22,7 +22,12 @@ from pathlib import Path
 
 import forja_modelos as fm
 
-MODELO_PADRAO = "grok-4.5"
+# Rota padrão desde 06/08/2026, por ordem do titular: o MESMO Grok 4.5, pela
+# assinatura do Cursor. `grok-4.5` (OpenRouter) fica como reserva — a mesma
+# família e o mesmo modelo, então cair para ela não muda o contraditório, só o
+# meio de transporte e o custo.
+MODELO_PADRAO = "grok-4.5-cursor"
+MODELO_RESERVA = "grok-4.5"
 SKILL = Path.home() / ".claude" / "skills" / "diabob" / "SKILL.md"
 
 PERSONA = """Você é Diabob: crítico contrarian, red team retórico e detector de autoengano.
@@ -59,14 +64,32 @@ def red_team(
     max_tokens: int = 2048,
     orcamento: fm.Orcamento | None = None,
     caso: str | None = None,
+    permitir_reserva: bool = True,
 ) -> dict:
-    """Roda o Diabob sobre um texto e devolve o recibo da chamada."""
+    """Roda o Diabob sobre um texto e devolve o recibo da chamada.
+
+    Se a rota do Cursor falhar (sem login, CLI ausente, tempo esgotado), cai
+    para a mesma família pelo OpenRouter e **declara a queda** no recibo. O
+    contraditório não pode parar por meio de transporte; o que não se admite é
+    a queda silenciosa, porque ela troca assinatura por gasto sem ninguém ver.
+    """
     if not alvo.strip():
         raise fm.ForjaModeloError("Diabob sem alvo: red team de texto vazio não é red team")
-    recibo = fm.chamar(
-        modelo, MOLDE.format(alvo=alvo.strip()), sistema=PERSONA,
-        max_tokens=max_tokens, fase="red_team", papel="diabob", orcamento=orcamento,
-    )
+    prompt = MOLDE.format(alvo=alvo.strip())
+    try:
+        recibo = fm.chamar(
+            modelo, prompt, sistema=PERSONA, max_tokens=max_tokens,
+            fase="red_team", papel="diabob", orcamento=orcamento,
+        )
+        recibo["rotaDegradada"] = None
+    except fm.ForjaModeloError as erro:
+        if not (permitir_reserva and modelo == MODELO_PADRAO):
+            raise
+        recibo = fm.chamar(
+            MODELO_RESERVA, prompt, sistema=PERSONA, max_tokens=max_tokens,
+            fase="red_team", papel="diabob", orcamento=orcamento,
+        )
+        recibo["rotaDegradada"] = f"{MODELO_PADRAO} indisponível: {erro}"
     recibo["caso"] = caso
     recibo["persona"] = "diabob"
     return recibo
@@ -94,6 +117,8 @@ def main() -> None:
     else:
         print(f"[diabob · {recibo['modelo']} · {recibo['segundos']}s · "
               f"US$ {recibo['custoUsd']:.4f}]\n")
+        if recibo.get("rotaDegradada"):
+            print(f"[rota degradada] {recibo['rotaDegradada']}\n")
         print(recibo["conteudo"])
 
 
