@@ -114,6 +114,10 @@ def main() -> None:
     parser.add_argument("--permitir-reserva", action="store_true",
                         help="autoriza cair para a rota PAGA do OpenRouter se a "
                              "assinatura do Cursor falhar; sem isso, falha alto")
+    parser.add_argument("--saida", type=Path,
+                        help="grava F4_PARECER_DIABOB.json com o parecer e a "
+                             "proveniencia da chamada (modelo, familia, provedor). "
+                             "E esse artefato que o gate do conselho confere")
     args = parser.parse_args()
 
     if args.arquivo:
@@ -125,6 +129,30 @@ def main() -> None:
 
     recibo = red_team(alvo, modelo=args.modelo, caso=args.caso,
                       permitir_reserva=args.permitir_reserva)
+
+    if args.saida:
+        # O artefato guarda a PROVENIÊNCIA junto com o parecer. É o que permite
+        # ao gate do conselho verificar que o contraditório veio de outra
+        # família de modelo, em vez de acreditar numa linha de prosa dizendo
+        # que veio. Sem segredo e sem token: só o que identifica a chamada.
+        args.saida.parent.mkdir(parents=True, exist_ok=True)
+        args.saida.write_text(json.dumps({
+            "contrato": "FORJA-F4-PARECER-DIABOB-v1",
+            "persona": "diabob",
+            "caso": recibo.get("caso"),
+            "modelo": recibo["modelo"],
+            "familia": recibo["familia"],
+            "provedor": recibo["provedor"],
+            "rotaDegradada": recibo.get("rotaDegradada"),
+            "segundos": recibo["segundos"],
+            "custoUsd": recibo["custoUsd"],
+            "em": recibo["em"],
+            "natureza": ("Insumo interno de auditoria. O Diabob propoe objecoes, "
+                         "nao afirma fatos. Nao vai para a peca, nao vira "
+                         "fundamento e nao substitui o F7."),
+            "parecer": recibo["conteudo"],
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"parecer em {args.saida}")
     if args.json:
         print(json.dumps(recibo, ensure_ascii=False, indent=2))
     else:
