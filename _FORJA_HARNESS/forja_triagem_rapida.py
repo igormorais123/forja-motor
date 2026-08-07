@@ -59,7 +59,7 @@ depende de informação que você não tem, diga de qual depende.
 Responda em português do Brasil."""
 
 MOLDE = """Documento: {nome}
-
+{contexto}
 --- TEXTO EXTRAÍDO ---
 {texto}
 --- FIM ---
@@ -94,7 +94,8 @@ def triar_documento(
     modelo: str = MODELO_PADRAO,
     max_tokens: int = 2048,
     orcamento: fm.Orcamento | None = None,
-    permitir_reserva: bool = True,
+    permitir_reserva: bool = False,
+    contexto: str | None = None,
 ) -> dict:
     """Tria um documento e devolve o achado bruto, com a proveniência da chamada."""
     texto = _ler(caminho).strip()
@@ -103,7 +104,16 @@ def triar_documento(
                 "nota": "arquivo sem texto extraído; conferir se a extração ou o OCR falhou"}
 
     truncado = len(texto) > LIMITE_CARACTERES
-    prompt = MOLDE.format(nome=caminho.name, texto=texto[:LIMITE_CARACTERES])
+    # Sem a identidade do caso, a categoria "documento fora do caso" é
+    # inrespondível — e o próprio modelo disse isso na primeira medição, em
+    # 07/08/2026: "sem o caso de destino da ingestão, não dá para dizer".
+    # Passar o contexto transforma uma categoria morta em categoria viva.
+    bloco = (f"Caso de destino desta ingestão: {contexto.strip()}\n"
+             if contexto and contexto.strip() else
+             "Caso de destino: NÃO INFORMADO — não conclua nada sobre pertencer "
+             "ou não a este caso; no máximo aponte o que precisaria ser cruzado.\n")
+    prompt = MOLDE.format(nome=caminho.name, contexto=bloco,
+                          texto=texto[:LIMITE_CARACTERES])
     try:
         recibo = fm.chamar(
             modelo, prompt, sistema=PERSONA, max_tokens=max_tokens,
@@ -112,6 +122,11 @@ def triar_documento(
         degradada = None
     except fm.ForjaModeloError as erro:
         if not (permitir_reserva and modelo == MODELO_PADRAO):
+            if modelo == MODELO_PADRAO:
+                raise fm.ForjaModeloError(
+                    f"triagem: a rota da assinatura falhou — {erro}\n"
+                    "Conserte o acesso (`cursor-agent login`); a reserva cobra por "
+                    "chamada e só entra com --permitir-reserva.") from None
             raise
         recibo = fm.chamar(
             MODELO_RESERVA, prompt, sistema=PERSONA, max_tokens=max_tokens,
@@ -141,12 +156,16 @@ def triar(
     *,
     modelo: str = MODELO_PADRAO,
     orcamento: fm.Orcamento | None = None,
+    permitir_reserva: bool = False,
+    contexto: str | None = None,
 ) -> dict:
     """Tria uma lista de arquivos e monta o artefato F1_TRIAGEM_RAPIDA."""
     resultados = []
     for alvo in alvos:
         try:
-            resultados.append(triar_documento(alvo, modelo=modelo, orcamento=orcamento))
+            resultados.append(triar_documento(
+                alvo, modelo=modelo, orcamento=orcamento,
+                permitir_reserva=permitir_reserva, contexto=contexto))
         except fm.ForjaModeloError as erro:
             resultados.append({"documento": alvo.name, "caminho": str(alvo),
                                "estado": "falhou", "erro": str(erro)})
@@ -177,6 +196,11 @@ def main() -> int:
                         help="grava o artefato F1_TRIAGEM_RAPIDA.json")
     parser.add_argument("--teto-usd", type=float, default=1.0,
                         help="teto da execucao; a rota do Cursor nao consome, a reserva sim")
+    parser.add_argument("--permitir-reserva", action="store_true",
+                        help="autoriza cair para a rota PAGA se a assinatura falhar")
+    parser.add_argument("--contexto",
+                        help="identidade do caso de destino (numero CNJ, partes, orgao). "
+                             "Sem isso a categoria 'documento fora do caso' fica sem resposta")
     args = parser.parse_args()
 
     arquivos: list[Path] = []
@@ -193,7 +217,9 @@ def main() -> int:
         parser.error("nenhum arquivo de texto encontrado nos alvos informados")
 
     laudo = triar(arquivos, modelo=args.modelo,
-                  orcamento=fm.Orcamento(teto_usd=args.teto_usd))
+                  orcamento=fm.Orcamento(teto_usd=args.teto_usd),
+                  permitir_reserva=args.permitir_reserva,
+                  contexto=args.contexto)
 
     if args.saida:
         args.saida.write_text(

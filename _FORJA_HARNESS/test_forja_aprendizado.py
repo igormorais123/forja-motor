@@ -195,6 +195,39 @@ with tempfile.TemporaryDirectory() as tmp:
         finally:
             ap.agrupar, ap.levantar_candidatos = agrupar_real2, levantar_real2
 
+        # A arqueologia era impossível por construção: `adotar` só cria regra
+        # nova, e as catorze adotadas antes de `origem` existir não tinham por
+        # onde ser corrigidas. Declarar troca a resposta a "por que esta regra
+        # existe?" sem tocar no texto aplicado no destino.
+        alvo = regra["regraId"]
+        antes_texto = regra["texto"]
+        d = ap.declarar_origem(alvo, origem="retorno_escrito",
+                               camada_sistema="supervisao",
+                               lastro_externo=[{"messageId": "m9"}],
+                               declarado_por="teste")
+        checar("declarar troca a origem da regra já adotada",
+               d["origem"] == "retorno_escrito" and d["camadaSistema"] == "supervisao")
+        checar("a evidência emprestada é substituída pela mensagem",
+               d["evidencia"]["mensagens"] == [{"messageId": "m9"}])
+        checar("e a medida antiga fica guardada, em vez de sumir",
+               d["evidenciaAnterior"]["casos"] == 3)
+        checar("declarar não reescreve a regra", d["texto"] == antes_texto)
+        checar("e a regra sai da lista de procedência por declarar",
+               all(p["regraId"] != alvo for p in ap.procedencia_nao_declarada()))
+        for chamada, nome in (
+            (lambda: ap.declarar_origem("regra-inexistente", origem="diff_documental",
+                                        declarado_por="t"),
+             "declarar regra inexistente é recusado"),
+            (lambda: ap.declarar_origem(alvo, origem="retorno_escrito",
+                                        declarado_por="t"),
+             "declarar origem escrita sem mensagem é recusado"),
+        ):
+            try:
+                chamada()
+                checar(nome, False, "não levantou erro")
+            except SystemExit:
+                checar(nome, True)
+
         # Destino inválido e classe não observada param antes de escrever.
         for chamada, nome in (
             (lambda: ap.adotar("fact:fact", destino="inventado", fase="F7",

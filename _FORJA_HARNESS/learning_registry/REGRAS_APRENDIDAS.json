@@ -19,7 +19,11 @@
       "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json",
       "lastroCorrigidoEm": "2026-08-06T03:31:15-03:00",
-      "lastroCorrigidoPorque": "A evidência original (3 casos, 12 materiais) vinha de três retornos que o gate PP-NOT-A-REVISION depois mostrou não serem revisão da nossa peça. Igor decidiu em 06/08/2026 manter a regra e corrigir o número: a cautela vale por si, o lastro que a justificava não existia."
+      "lastroCorrigidoPorque": "A evidência original (3 casos, 12 materiais) vinha de três retornos que o gate PP-NOT-A-REVISION depois mostrou não serem revisão da nossa peça. Igor decidiu em 06/08/2026 manter a regra e corrigir o número: a cautela vale por si, o lastro que a justificava não existia.",
+      "origem": "diff_documental",
+      "camadaSistema": "selecao_documentos",
+      "origemDeclaradaEm": "2026-08-07T00:09:46-03:00",
+      "origemDeclaradaPor": "igor"
     },
     {
       "regraId": "regra-adf61f52e37f",
@@ -132,13 +136,33 @@
       "aprovadoPor": "igor",
       "adotadaEm": "2026-08-06T19:28:16-03:00",
       "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19fd0a3ca5dc689b",
+            "assunto": "",
+            "recebidoEm": "2026-08-05"
+          },
+          {
+            "messageId": "19fd0a3c92a14a8e",
+            "assunto": "",
+            "recebidoEm": "2026-08-05"
+          }
+        ],
+        "casos": null,
+        "materiais": null
+      },
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json",
+      "evidenciaAnterior": {
         "casos": 1,
         "ocorrencias": 1,
         "materiais": 1,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T21:10:15-03:00",
-      "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json"
+      "origem": "retorno_escrito",
+      "camadaSistema": "supervisao",
+      "origemDeclaradaEm": "2026-08-07T00:08:05-03:00",
+      "origemDeclaradaPor": "igor"
     },
     {
       "regraId": "regra-b3dcc9eeebdf",
@@ -217,13 +241,33 @@
       "aprovadoPor": "igor",
       "adotadaEm": "2026-08-06T19:31:31-03:00",
       "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19fa9aa4adfb0a5b",
+            "assunto": "",
+            "recebidoEm": "2026-07-28"
+          },
+          {
+            "messageId": "19fd3a8659abfe29",
+            "assunto": "",
+            "recebidoEm": "2026-08-05"
+          }
+        ],
+        "casos": null,
+        "materiais": null
+      },
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md",
+      "evidenciaAnterior": {
         "casos": 2,
         "ocorrencias": 10,
         "materiais": 10,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T21:10:15-03:00",
-      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+      "origem": "retorno_escrito",
+      "camadaSistema": "recuperacao_fontes",
+      "origemDeclaradaEm": "2026-08-07T00:08:05-03:00",
+      "origemDeclaradaPor": "igor"
     },
     {
       "regraId": "regra-f22b9c24ce84",

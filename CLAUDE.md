@@ -284,6 +284,21 @@ O retrato de até onde ia cada consolidação em 06/07/2026 fica na memória do 
 
 A melhoria contínua da esteira tem processo próprio: o ciclo AR (`_FORJA_HARNESS\planejamento\22_PRD_AUTORESEARCH_FORJA.md` e `23_TDD_AUTORESEARCH_FORJA.md`, v1.1 pós-review adversarial Codex). Regras operacionais: (1) mudança em prompt/template/protocolo de fase que se pretenda "melhoria" deve passar pelo ciclo AR — execução pareada, julgamento cego com swap e duas famílias de juiz, canários de falha única e gate de promoção em três estados com recibo Ed25519; (2) indicadores de qualidade usam ledgers congelados pré-geração (cobertura E correção) — nunca criar métrica nova sem defesa anti-exclusão e âncora em falha real de `RETROSPECTIVAS.md`; (3) os segredos do ciclo (chave HMAC, registro sealed, canários secretos) vivem em `%USERPROFILE%\.forja_ar_secrets\` e jamais entram em repositório ou prompt; (4) enquanto não houver sealed prospectivo consumível, o subsistema opera em `estudo_descritivo` e NENHUMA variante é promovida a produção. Comandos e artefatos: ver bloco AUTO-RESEARCH em `_FORJA_HARNESS\INDICE_FORJA.md`.
 
+## Modelos externos da FORJA — o que roda e o que é proibido (06/08/2026 — ordem do Igor)
+
+Quando a FORJA usa o **Codex**, o modelo é o **`gpt-5.6-luna` no esforço `max`**. O
+**GPT-5.5 não entra em hipótese nenhuma**, em nenhuma fase, papel ou justificativa —
+está travado em `forja_modelos.modelo_remoto_proibido`, ao lado da proibição do Kimi K2
+(26/07/2026). Constantes: `CODEX_MODELO_FORJA` e `CODEX_ESFORCO_FORJA`.
+
+Quando a FORJA usa o **Grok 4.5** — Diabob em F4 e F7, triagem semântica em F1 —, a rota
+é a **assinatura do Cursor** (`grok-4.5-cursor`), com o OpenRouter (`grok-4.5`) apenas
+como reserva declarada em `rotaDegradada`.
+
+Cuidado com fonte desatualizada: a skill global `codex-integrado` traz tabelas com
+`gpt-5.5` e `gpt-5.5-mini`. Elas não valem aqui, e copiá-las sem conferir já produziu
+rótulo errado em documento da fábrica.
+
 ## Repertório de skills por fase (06/08/2026 — ordem do Igor)
 
 Existem 402 skills instaladas entre Claude, Hermes, Codex e projeto, e até agora nenhuma

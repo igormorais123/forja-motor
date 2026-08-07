@@ -22,10 +22,11 @@ from pathlib import Path
 
 import forja_modelos as fm
 
-# Rota padrão desde 06/08/2026, por ordem do titular: o MESMO Grok 4.5, pela
-# assinatura do Cursor. `grok-4.5` (OpenRouter) fica como reserva — a mesma
-# família e o mesmo modelo, então cair para ela não muda o contraditório, só o
-# meio de transporte e o custo.
+# Rota do Grok desde 06/08/2026, por ordem do titular: SEMPRE a assinatura
+# OAuth do Cursor. A rota `grok-4.5` do OpenRouter existe e cobra por chamada —
+# por isso ela NÃO é automática: cair nela em silêncio seria trocar a
+# assinatura que o titular paga por gasto novo que ele não pediu. Quem quiser
+# a reserva paga precisa dizer isso explicitamente, e o motivo fica no recibo.
 MODELO_PADRAO = "grok-4.5-cursor"
 MODELO_RESERVA = "grok-4.5"
 SKILL = Path.home() / ".claude" / "skills" / "diabob" / "SKILL.md"
@@ -64,14 +65,17 @@ def red_team(
     max_tokens: int = 2048,
     orcamento: fm.Orcamento | None = None,
     caso: str | None = None,
-    permitir_reserva: bool = True,
+    permitir_reserva: bool = False,
 ) -> dict:
     """Roda o Diabob sobre um texto e devolve o recibo da chamada.
 
-    Se a rota do Cursor falhar (sem login, CLI ausente, tempo esgotado), cai
-    para a mesma família pelo OpenRouter e **declara a queda** no recibo. O
-    contraditório não pode parar por meio de transporte; o que não se admite é
-    a queda silenciosa, porque ela troca assinatura por gasto sem ninguém ver.
+    O Grok roda **sempre pela assinatura OAuth do Cursor** (ordem do titular,
+    06/08/2026). Se essa rota falhar, o padrão é **falhar alto** com a instrução
+    de conserto — e não cair para o OpenRouter, que cobra por chamada. Gasto
+    novo é decisão do titular, não consequência silenciosa de um login vencido.
+
+    `permitir_reserva=True` habilita a rota paga por escolha explícita; a queda
+    fica declarada em `rotaDegradada`.
     """
     if not alvo.strip():
         raise fm.ForjaModeloError("Diabob sem alvo: red team de texto vazio não é red team")
@@ -84,6 +88,11 @@ def red_team(
         recibo["rotaDegradada"] = None
     except fm.ForjaModeloError as erro:
         if not (permitir_reserva and modelo == MODELO_PADRAO):
+            if modelo == MODELO_PADRAO:
+                raise fm.ForjaModeloError(
+                    f"Diabob: a rota da assinatura falhou — {erro}\n"
+                    "Conserte o acesso (`cursor-agent login`) em vez de gastar: a rota "
+                    "de reserva cobra por chamada e só entra com --permitir-reserva.") from None
             raise
         recibo = fm.chamar(
             MODELO_RESERVA, prompt, sistema=PERSONA, max_tokens=max_tokens,
@@ -102,6 +111,9 @@ def main() -> None:
     parser.add_argument("--modelo", default=MODELO_PADRAO)
     parser.add_argument("--caso")
     parser.add_argument("--json", action="store_true")
+    parser.add_argument("--permitir-reserva", action="store_true",
+                        help="autoriza cair para a rota PAGA do OpenRouter se a "
+                             "assinatura do Cursor falhar; sem isso, falha alto")
     args = parser.parse_args()
 
     if args.arquivo:
@@ -111,7 +123,8 @@ def main() -> None:
     else:
         parser.error("informe --arquivo ou --texto")
 
-    recibo = red_team(alvo, modelo=args.modelo, caso=args.caso)
+    recibo = red_team(alvo, modelo=args.modelo, caso=args.caso,
+                      permitir_reserva=args.permitir_reserva)
     if args.json:
         print(json.dumps(recibo, ensure_ascii=False, indent=2))
     else:

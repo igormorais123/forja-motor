@@ -365,6 +365,49 @@ def procedencia_nao_declarada() -> list[dict]:
             for r in carregar_registro()["regras"] if not r.get("origem")]
 
 
+def declarar_origem(regra_id: str, *, origem: str, camada_sistema: str | None = None,
+                    lastro_externo: list[dict] | None = None,
+                    declarado_por: str) -> dict:
+    """Declara a procedência de uma regra já adotada.
+
+    Existe porque a arqueologia era impossível por construção: `adotar` só cria
+    regra nova, e as catorze adotadas antes do campo `origem` não tinham por
+    onde ser corrigidas. Declarar não reescreve a regra nem o texto aplicado no
+    destino — mexe apenas na resposta à pergunta "por que esta regra existe?".
+
+    A troca de `diff_documental` para `retorno_escrito` substitui a evidência,
+    porque a recorrência guardada era da classe em que a regra foi pendurada e
+    nunca foi a prova dela. A medida antiga fica em `evidenciaAnterior`: apagá-la
+    esconderia que a casa já acreditou nela, e é isso que se está corrigindo.
+    """
+    if origem not in ORIGENS:
+        raise SystemExit(f"origem inválida: {origem}. Use uma de {sorted(ORIGENS)}")
+    if camada_sistema is not None and camada_sistema not in CAMADAS_SISTEMA:
+        raise SystemExit(f"camada fora do vocabulário: {camada_sistema}. "
+                         f"Use uma de {sorted(CAMADAS_SISTEMA)}")
+    reg = carregar_registro()
+    regra = next((r for r in reg["regras"] if r["regraId"] == regra_id), None)
+    if regra is None:
+        raise SystemExit(f"regra não encontrada: {regra_id}")
+    if origem == "retorno_escrito":
+        if not lastro_externo:
+            raise SystemExit(
+                "origem 'retorno_escrito' exige --lastro com ao menos uma mensagem: "
+                "a prova da regra é a mensagem, não um diff")
+        anterior = regra.get("evidencia") or {}
+        if anterior.get("casos") is not None:
+            regra["evidenciaAnterior"] = anterior
+        regra["evidencia"] = {"mensagens": lastro_externo,
+                              "casos": None, "materiais": None}
+    regra["origem"] = origem
+    if camada_sistema is not None:
+        regra["camadaSistema"] = camada_sistema
+    regra["origemDeclaradaEm"] = _agora()
+    regra["origemDeclaradaPor"] = declarado_por
+    _escrever_json(REGISTRO, reg)
+    return regra
+
+
 def revalidar() -> list[dict]:
     """A evidência que sustentava cada regra ainda existe nos dados de hoje?
 
@@ -621,6 +664,15 @@ def main(argv=None) -> int:
     am.add_argument("classe", help="no formato camada:causa")
     am.add_argument("--limite", type=int, default=6)
 
+    do = sub.add_parser("declarar-origem",
+                        help="declara a procedência de uma regra já adotada")
+    do.add_argument("regra_id")
+    do.add_argument("--origem", required=True, choices=sorted(ORIGENS))
+    do.add_argument("--camada-sistema", choices=sorted(CAMADAS_SISTEMA))
+    do.add_argument("--lastro", action="append", default=[], metavar="messageId|assunto|data",
+                    help="obrigatório em --origem retorno_escrito; repetível")
+    do.add_argument("--declarado-por", required=True)
+
     sub.add_parser("revalidar", help="a evidência de cada regra ainda existe?")
     sub.add_parser("conferir", help="as regras estão presentes nos destinos?")
 
@@ -691,6 +743,26 @@ def main(argv=None) -> int:
         for destino, caminho, mudou in res:
             marca = "[seco]" if args.seco else ("alterado" if mudou else "já estava")
             print(f"  {destino:9} {marca:10} {caminho.name}")
+        return 0
+
+    if args.verbo == "declarar-origem":
+        lastro = []
+        for bruto in args.lastro:
+            partes = [p.strip() for p in str(bruto).split("|")]
+            lastro.append({"messageId": partes[0],
+                           "assunto": partes[1] if len(partes) > 1 else None,
+                           "recebidoEm": partes[2] if len(partes) > 2 else None})
+        r = declarar_origem(args.regra_id, origem=args.origem,
+                            camada_sistema=args.camada_sistema,
+                            lastro_externo=lastro,
+                            declarado_por=args.declarado_por)
+        print(f"declarada {r['regraId']} — origem {r['origem']}, "
+              f"camada {r.get('camadaSistema') or '(não declarada)'}")
+        if r.get("evidenciaAnterior"):
+            ea = r["evidenciaAnterior"]
+            print(f"  evidência substituída: era {ea.get('casos')} caso(s), "
+                  f"{ea.get('materiais')} material(is) da classe `{r['classe']}` — "
+                  f"lastro emprestado, guardado em evidenciaAnterior")
         return 0
 
     if args.verbo == "revalidar":

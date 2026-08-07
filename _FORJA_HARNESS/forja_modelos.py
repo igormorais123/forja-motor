@@ -44,6 +44,11 @@ LEDGER = FORJA / "telemetria" / "modelos_ledger.jsonl"
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
+# Pasta vazia e dedicada onde o CLI do Cursor roda. Ele exige confiança no
+# diretório de trabalho; confiar a pasta do caso daria ao agente externo a
+# vizinhança dos autos, do ledger e dos artefatos. Aqui não há nada a explorar.
+CURSOR_SANDBOX = FORJA / "cache" / "cursor_sandbox"
+
 
 class ForjaModeloError(RuntimeError):
     """Falha de despacho de modelo. Nunca carrega segredo na mensagem."""
@@ -135,9 +140,13 @@ MODELOS: dict[str, Modelo] = {
     # Sem contagem de tokens: o CLI não a expõe. Preferimos zero declarado a
     # estimativa por caractere, porque número estimado em ledger vira número
     # citado depois. Quem precisar medir consumo usa a rota OpenRouter.
+    # O ID no Cursor NÃO é `grok-4.5`: conferido em 07/08/2026 por
+    # `cursor-agent --list-models`, ele expõe `cursor-grok-4.5-{low,medium,high}`
+    # e as variantes `-fast`. Usamos `high` porque contraditório é onde se paga
+    # por raciocínio, não por latência; a `-fast` fica para quem quiser trocar.
     "grok-4.5-cursor": Modelo(
         id="grok-4.5-cursor", familia="xai", provedor="cursor",
-        remoto="grok-4.5",
+        remoto="cursor-grok-4.5-high",
         forte_em=("velocidade", "objecao_direta", "franqueza",
                   "juiz_sem_autopreferencia", "primeira_passada", "volume"),
         fases=("F1", "F4", "F7"),
@@ -163,22 +172,40 @@ MODELOS_PROIBIDOS = {"moonshotai/kimi-k2", "moonshotai/kimi-k2.5",
                      "moonshotai/kimi-k2.6", "moonshotai/kimi-k2.7-code",
                      "moonshotai/kimi-k2-thinking", "moonshotai/kimi-k2-0905"}
 
+# GPT-5.5 está fora por ordem expressa do titular (06/08/2026): a FORJA usa a
+# geração 5.6, e o 5.5 não entra em hipótese nenhuma. Fica em conjunto próprio
+# porque `MODELOS_PROIBIDOS` documenta a decisão sobre o K2, com regressão que
+# afere isso — misturar as duas apagaria a razão de cada uma. A proibição pega
+# em `modelo_remoto_proibido`, que é por onde `chamar` reprova as duas.
+MODELOS_PROIBIDOS_GPT55 = {"gpt-5.5", "gpt-5.5-mini", "gpt-5.5-codex",
+                           "openai/gpt-5.5", "openai/gpt-5.5-mini"}
+
+# Quando a FORJA usa o Codex, o modelo é o gpt-5.6-luna no esforço máximo, por
+# ordem do titular (06/08/2026). Vale para revisão cruzada, red team por família
+# distinta e qualquer chamada da esteira — não para o que o Igor faz à mão fora
+# dela. O `-c model_reasoning_effort="max"` faz parte da ordem, não é opcional.
+CODEX_MODELO_FORJA = "gpt-5.6-luna"
+CODEX_ESFORCO_FORJA = "max"
+
 TETO_USD_POR_CHAMADA = 0.50
 TETO_USD_POR_EXECUCAO = 3.00
 
 
 def modelo_remoto_proibido(remoto: str | None) -> bool:
-    """Bloqueia a família K2, inclusive IDs que ainda não existiam no registro.
+    """Bloqueia a família K2 e a geração GPT-5.5, inclusive IDs futuros.
 
     A lista explícita documenta os IDs conhecidos. O teste por família evita
-    que um novo sufixo de K2 seja adicionado no futuro sem atualizar a lista.
+    que um novo sufixo seja adicionado no futuro sem atualizar a lista.
+
+    K2: ordem do titular de 26/07/2026, depois de reprovar a bancada jurídica.
+    GPT-5.5: ordem do titular de 06/08/2026 — a FORJA usa a geração 5.6, e o
+    5.5 não entra em hipótese nenhuma. O teste é por prefixo de versão para
+    pegar `gpt-5.5-mini`, `gpt-5.5-codex` e o que mais vier com esse número.
     """
     valor = (remoto or "").strip().casefold().replace("_", "-")
-    return (
-        valor in {"k2", "kimi-k2"}
-        or "kimi-k2" in valor
-        or "/k2" in valor
-    )
+    if valor in {"k2", "kimi-k2"} or "kimi-k2" in valor or "/k2" in valor:
+        return True
+    return "gpt-5.5" in valor
 
 
 def _confirmar_modelo_reportado(modelo: Modelo, payload: dict) -> None:
@@ -339,15 +366,30 @@ def _cursor(modelo: Modelo, prompt: str, sistema: str | None,
 
     `--mode ask` é obrigatório e não é detalhe: sem ele o agente do Cursor tem
     ferramenta de escrita e shell. Revisor externo não edita o caso.
+
+    O CLI exige confiança no diretório de trabalho. Em vez de confiar a pasta do
+    caso — que tem autos, ledger e artefatos —, ele roda numa **pasta vazia
+    dedicada**. Nosso uso é texto que entra e texto que sai: o modelo não precisa
+    de workspace nenhum, e pasta vazia não tem o que ser explorado. É por isso
+    que `--trust` aqui é seguro e na pasta do caso não seria.
     """
     binario = _cursor_binario()
     completo = f"{sistema.strip()}\n\n{prompt}" if sistema else prompt
+    # O prompt vai por STDIN, nunca por argumento. Medido em 07/08/2026: o
+    # wrapper `.cmd` passa pelo cmd.exe, que corta o argumento na primeira
+    # quebra de linha — o modelo respondia sobre a primeira linha e a resposta
+    # PARECIA um parecer. Foi assim que o Diabob devolveu "você só me nomeou,
+    # não há alvo" com o alvo dentro do prompt. Erro que não levanta exceção e
+    # produz texto plausível é o pior tipo, e por isso há regressão para ele.
     comando = [str(binario), "--print", "--output-format", "json",
-               "--mode", "ask", "--model", modelo.remoto or modelo.id, completo]
+               "--mode", "ask", "--trust",
+               "--model", modelo.remoto or modelo.id]
+    CURSOR_SANDBOX.mkdir(parents=True, exist_ok=True)
     try:
         proc = subprocess.run(  # noqa: S603 - binário resolvido acima, sem shell
             comando, capture_output=True, text=True, encoding="utf-8",
-            errors="replace", timeout=timeout, stdin=subprocess.DEVNULL,
+            errors="replace", timeout=timeout, input=completo,
+            cwd=str(CURSOR_SANDBOX),
         )
     except subprocess.TimeoutExpired:
         raise ForjaModeloError(

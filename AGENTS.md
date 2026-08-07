@@ -333,3 +333,19 @@ Custo declarado zero porque é mensalidade, não porque é grátis; tokens em ze
 CLI não os expõe e estimativa em ledger vira número citado depois.
 
 Regressão: `test_forja_cursor_grok.py` (22 testes, sem rede nem login).
+
+## Modelo do Codex na FORJA — fixo (06/08/2026, ordem do titular)
+
+Quando a FORJA usa o Codex, o modelo é **`gpt-5.6-luna` no esforço `max`**:
+
+```
+codex exec "<prompt>" -m gpt-5.6-luna -c 'model_reasoning_effort="max"' -s read-only < /dev/null
+```
+
+**GPT-5.5 não entra em hipótese nenhuma** — nenhuma fase, nenhum papel, nenhuma
+justificativa. A trava está no código: `forja_modelos.modelo_remoto_proibido` reprova
+qualquer remoto contendo `gpt-5.5`, ao lado da proibição do Kimi K2. Constantes
+`CODEX_MODELO_FORJA` e `CODEX_ESFORCO_FORJA`.
+
+A skill global `codex-integrado` traz tabelas com `gpt-5.5` e `gpt-5.5-mini`. Estão
+desatualizadas e não valem aqui.

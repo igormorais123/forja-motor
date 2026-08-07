@@ -1,7 +1,19 @@
-# Revisão cruzada do repertório — Codex GPT-5.5, 06/08/2026
+# Revisão cruzada do repertório — Codex, 06/08/2026
 
-Produtor: Claude Opus 5. Revisor: Codex GPT-5.5, família distinta, `reasoning: high`,
-105.044 tokens. `familyAssurance` deste artefato: `cross_family`.
+Produtor: Claude Opus 5. Revisor: Codex no **`gpt-5.6-sol`**, família distinta,
+`reasoning: high`, 105.044 tokens. `familyAssurance` deste artefato: `cross_family`.
+
+> **Correção de rótulo, 06/08/2026.** Esta ficha dizia "Codex GPT-5.5". Estava errado:
+> o `~/.codex-pro/config.toml` traz `model = "gpt-5.6-sol"` com esforço `high`, e foi
+> isso que rodou. O "5.5" veio da tabela desatualizada da skill `codex-integrado`,
+> repetida sem conferência — o mesmo modo de falha que este repertório existe para
+> pegar, aplicado ao próprio repertório.
+>
+> Além disso, por **ordem do titular de 06/08/2026**, quando a FORJA usa o Codex o
+> modelo é o **`gpt-5.6-luna` no esforço `max`**, e o **GPT-5.5 não entra em hipótese
+> nenhuma**. Esta revisão rodou no `sol` em esforço `high` — antes da ordem, e portanto
+> fora do padrão que agora vale. Os achados continuam válidos; a rota, não. A trava
+> está em `forja_modelos.modelo_remoto_proibido`, ao lado da do Kimi K2.
 
 ## Como a revisão foi feita, e por que isso importa
 

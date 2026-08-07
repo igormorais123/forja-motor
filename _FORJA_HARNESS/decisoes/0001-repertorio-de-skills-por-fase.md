@@ -77,7 +77,7 @@ Copiar e adaptar sete skills genéricas para a fábrica, em `.claude/skills/`:
 
 ## Revisão cruzada (06/08/2026)
 
-Revisado por Codex GPT-5.5, família distinta, sobre o material integral entregue por
+Revisado por Codex no `gpt-5.6-sol`, família distinta, sobre o material integral entregue por
 stdin — 105.044 tokens. `familyAssurance` deste artefato: `cross_family`. Registro
 completo em `skills_repertorio/REVISAO_CODEX_2026-08-06.md`.
 

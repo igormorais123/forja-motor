@@ -50,6 +50,27 @@ sem execução.
 de revisão independente. Qualquer executor que a produza serve; estas são as rotas
 conhecidas e testadas, não uma exclusividade.
 
+## O modelo do Codex na FORJA é fixo
+
+**Ordem do titular, 06/08/2026:** quando a FORJA usa o Codex, o modelo é o
+**`gpt-5.6-luna` no esforço `max`**. O **GPT-5.5 não entra em hipótese nenhuma** —
+em qualquer fase, em qualquer papel, sob qualquer justificativa.
+
+```
+codex exec "<prompt>" -m gpt-5.6-luna -c 'model_reasoning_effort="max"' -s read-only < /dev/null
+```
+
+A trava está no código, não só aqui: `forja_modelos.modelo_remoto_proibido` reprova
+qualquer remoto que contenha `gpt-5.5`, ao lado da proibição do Kimi K2. As constantes
+são `CODEX_MODELO_FORJA` e `CODEX_ESFORCO_FORJA`.
+
+Atenção a uma armadilha de leitura: a skill global `codex-integrado` traz tabelas com
+`gpt-5.5` e `gpt-5.5-mini`. Elas estão **desatualizadas** e não valem aqui. Foi
+exatamente por copiar aquela tabela sem conferir que a revisão de 06/08 foi rotulada
+como "GPT-5.5" quando o `~/.codex-pro/config.toml` dizia `gpt-5.6-sol`.
+
+O `esforço max` faz parte da ordem. Não é otimização de custo a ser negociada.
+
 ## Armadilhas conhecidas do Codex no Windows
 
 Estão na memória do projeto e já custaram uma rodada:
