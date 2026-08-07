@@ -139,6 +139,14 @@ _REL = re.compile(r'<Relationship\b[^>]*Id="([^"]+)"[^>]*Target="([^"]+)"', re.I
 _REL_ALT = re.compile(r'<Relationship\b[^>]*Target="([^"]+)"[^>]*Id="([^"]+)"', re.I)
 _REF_NO_CORPO = re.compile(r'r:(?:embed|link|id)="([^"]+)"')
 
+# Formatos que preservam o traço em qualquer ampliação. `.svg` entrou em
+# 07/08/2026: a rota canônica passou a embutir SVG nativo no OOXML e deixou de
+# gerar EMF, então o gate lia duas figuras vetoriais exibidas na página e
+# relatava "0 vetoriais, 2 raster", acusando VIS-03 num documento que tinha
+# exatamente o que ele exige. Gate cego para a rota vigente reprova o certo e
+# ensina a ignorá-lo, que é o pior estado possível de um controle.
+_EXTENSOES_VETORIAIS = (".emf", ".wmf", ".svg")
+
 
 def _figuras_exibidas(z, doc, nomes):
     """Figuras vetoriais REFERENCIADAS pelo documento — não arquivos no pacote.
@@ -165,7 +173,7 @@ def _figuras_exibidas(z, doc, nomes):
     exibidas = set()
     for rid in _REF_NO_CORPO.findall(doc):
         alvo = alvo_por_id.get(rid, "")
-        if not alvo.lower().endswith((".emf", ".wmf")):
+        if not alvo.lower().endswith(_EXTENSOES_VETORIAIS):
             continue
         # O alvo é relativo a `word/`. Referência sem arquivo é figura quebrada:
         # o Word mostra o quadro vazio com o X. Contá-la seria dar por presente
@@ -188,7 +196,7 @@ def _inventario(docx):
                           for n in nomes if re.match(r"word/header\d*\.xml$", n))
         vetoriais = _figuras_exibidas(z, doc, nomes)
     media = [n for n in nomes if n.startswith("word/media/")]
-    orfas = len([n for n in media if n.lower().endswith((".emf", ".wmf"))]) - len(vetoriais)
+    orfas = len([n for n in media if n.lower().endswith(_EXTENSOES_VETORIAIS)]) - len(vetoriais)
 
     # Negrito medido em CARACTERES do corpo, não em contagem de runs. Duas
     # razões: um run pode ter uma palavra ou um parágrafo inteiro, e o filtro
@@ -220,7 +228,7 @@ def _inventario(docx):
         # satisfazer o gate por cópia de arquivo.
         "vetoriaisOrfas": max(0, orfas),
         "imagensRaster": len([n for n in media
-                              if not n.lower().endswith((".emf", ".wmf"))]),
+                              if not n.lower().endswith(_EXTENSOES_VETORIAIS)]),
         "tabelas": doc.count("<w:tbl>"),
         "shading": len(re.findall(r'w:shd\s[^>]*w:fill="(?!auto)', doc)),
         # Caixas de destaque, contadas por TABELA e pela assinatura correta.

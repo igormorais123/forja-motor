@@ -162,7 +162,13 @@ def _produtores(pasta: Path, resultado: dict | None = None) -> list:
             helena=pasta / "helena_opinion.md" if (pasta / "helena_opinion.md").is_file() else None,
             cicero=pasta / "cicero_opinion.md" if (pasta / "cicero_opinion.md").is_file() else None,
             decisoes=next((pasta / n for n in ("council_decisions.md", "council_decisions.json")
-                           if (pasta / n).is_file()), None)))
+                           if (pasta / n).is_file()), None),
+            # O Diabob entrou no conselho em 06/08/2026. Aqui ele serve para
+            # MEDIR o acervo: tentativa anterior à ordem não tem o recibo e sai
+            # `unknown`, que é o veredito honesto — não `pass` por omissão.
+            diabob=next((pasta / n for n in ("F4_PARECER_DIABOB.json",
+                                             "diabob_opinion.json")
+                         if (pasta / n).is_file()), None)))
     if (pasta / "source_ledger.json").is_file():
         # `quotes_compared` só é aferível onde a F5 emitiu o checklist. Rodá-lo
         # sobre pasta que só tem o ledger mede a ausência do artefato, não o

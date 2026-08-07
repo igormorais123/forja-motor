@@ -396,6 +396,55 @@ def test_assinatura_antiga_do_validador_continua_funcionando(tmp_path):
 
 
 # --------------------------------------------------------------------------
+# Promoção a exigência dura do contrato da F4 (07/08/2026)
+# --------------------------------------------------------------------------
+
+def _contrato_f4(nome: str) -> dict:
+    caminho = Path(__file__).with_name(nome) / "F4.json"
+    return json.loads(caminho.read_text(encoding="utf-8"))
+
+
+@pytest.mark.parametrize("pasta", ["phase_contracts", "phase_contracts_n4"])
+def test_contrato_f4_exige_o_parecer_e_o_gate(pasta):
+    """O Diabob é saída obrigatória da F4, não recomendação em prosa.
+
+    Antes da promoção, a ausência do parecer só era pega na recomputação do
+    conselho, com mensagem sobre `diabob_present`. Agora ela é barrada antes,
+    onde a mensagem diz o que falta produzir.
+    """
+    contrato = _contrato_f4(pasta)
+    assert "diabob_opinion" in contrato["requiredOutputs"]
+    assert "diabob_present" in contrato["requiredGates"]
+
+
+def test_gate_do_contrato_e_o_mesmo_que_o_validador_emite():
+    """Contrato e validador têm de falar o mesmo nome, ou o gate nunca reprova.
+
+    A Lição 89 é sobre gate instalado onde ninguém passa; este teste cobre a
+    variante silenciosa: gate exigido por um nome que ninguém emite reprovaria
+    todo caso, e gate emitido com nome que ninguém exige não reprova nenhum.
+    """
+    from forja_conselho import validar_conselho
+    emitidos = set(validar_conselho(helena=None, cicero=None, decisoes=None)["gates"])
+    for pasta in ("phase_contracts", "phase_contracts_n4"):
+        exigidos = set(_contrato_f4(pasta)["requiredGates"])
+        assert exigidos & emitidos, f"{pasta}: nenhum gate do conselho é exigido"
+        assert "diabob_present" in exigidos & emitidos
+
+
+def test_promocao_nao_afrouxa_a_recomputacao():
+    """`unknown` continua não sendo `pass` — a promoção é adicional, não troca.
+
+    O runner reprova todo gate do conselho cujo valor recomputado não seja
+    `pass` (forja_run._recompute_conselho). Se algum dia `unknown` passar a ser
+    tolerado ali, este teste é o lugar onde a mudança tem de ser declarada.
+    """
+    origem = Path(__file__).with_name("forja_run.py").read_text(
+        encoding="utf-8", errors="replace")
+    assert 'if valor != "pass"' in origem
+
+
+# --------------------------------------------------------------------------
 # Complementaridade — a razão de a triagem existir
 # --------------------------------------------------------------------------
 

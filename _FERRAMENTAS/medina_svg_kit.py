@@ -181,11 +181,16 @@ def encadeamento(nome, etapas, largura_cm=13.1, rotulo_final="CONCLUSÃO"):
     W = largura_cm * CMPT
     PAD = 6.0
     BW = W - 2 * PAD
+    # O elo final é desenhado em NEGRITO, que é mais largo. Quebrar as linhas
+    # dele pela métrica da fonte normal é exatamente a dessincronia que o
+    # docstring de `_chars` adverte: passa no wrap e reprova no gate de
+    # overflow. Cada peso tem a sua largura.
     ch = _chars(BW - 22, 8.5)
+    ch_final = _chars(BW - 22, 8.5, bold=True)
     corpo, y = [], 8.0
     for k, texto in enumerate(etapas):
         final = (k == len(etapas) - 1)
-        linhas = wrap(str(texto), ch)
+        linhas = wrap(str(texto), ch_final if final else ch)
         alt = len(linhas) * 11.0 + (24 if final else 14)
         corpo.append(caixa(PAD, y, BW, alt, PET if final else PV,
                            None if final else PET, 1.0))

@@ -17,6 +17,7 @@ ROLE_RULES = (
     (re.compile(r"(?:FIDELITY|FIDELIDADE).*\.json$", re.I), "format_fidelity"),
     (re.compile(r"HELENA.*\.(?:md|json)$", re.I), "helena_opinion"),
     (re.compile(r"CICERO.*\.(?:md|json)$", re.I), "cicero_opinion"),
+    (re.compile(r"DIABOB.*\.json$", re.I), "diabob_opinion"),
     (re.compile(r"EMAIL.*\.(?:txt|md)$", re.I), "email_draft"),
     (re.compile(r"\.docx$", re.I), "final_docx"),
     (re.compile(r"\.pdf$", re.I), "final_pdf"),

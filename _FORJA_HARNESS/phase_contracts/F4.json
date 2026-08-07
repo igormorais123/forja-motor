@@ -5,8 +5,8 @@
   "producerRole": "forja-estrategista",
   "reviewerRole": "forja-council-recorder",
   "requiredInputs": ["fact_ledger", "chronology", "contradictions", "sources_map", "adversarial_audit", "question_tree"],
-  "requiredOutputs": ["blueprint", "proposition_ledger", "helena_opinion", "cicero_opinion", "council_decisions", "adversarial_strategy"],
-  "requiredGates": ["jurisdictional_question_defined", "helena_present", "cicero_present", "council_decisions_recorded", "adversarial_decisions_recorded"],
+  "requiredOutputs": ["blueprint", "proposition_ledger", "helena_opinion", "cicero_opinion", "diabob_opinion", "council_decisions", "adversarial_strategy"],
+  "requiredGates": ["jurisdictional_question_defined", "helena_present", "cicero_present", "diabob_present", "council_decisions_recorded", "adversarial_decisions_recorded"],
   "nextPhase": "F5_PESQUISA_OFICIAL",
   "retryPolicy": {"maxAttempts": 2, "idempotent": true}
 }
