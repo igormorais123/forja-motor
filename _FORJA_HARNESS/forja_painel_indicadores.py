@@ -236,17 +236,30 @@ def medir_painel(dados: dict) -> dict:
                 # De origem: o que a voz citou e o documento não tem. É o que
                 # distingue ler de inventar, e o que conta no agregado.
                 "citouForaDoDocumento": obs.get("citouForaDoDocumento"),
+                # Observação produzida sob defeito conhecido do instrumento.
+                # Sai do placar e da fila, com o motivo escrito no artefato —
+                # não se cobra do modelo o erro de quem montou o prompt.
+                "foraDeEscopo": obs.get("foraDeEscopo"),
+                # Observação que bateu no teto de caracteres e saiu cortada.
+                # Não é o mesmo que texto longo: aqui o leitor recebe uma
+                # frase pela metade, e o resto do raciocínio não chega.
+                "noTeto": obs["texto"].rstrip().endswith("…"),
             })
-        n = len(linhas) or 1
+        validas = [l for l in linhas if not l["foraDeEscopo"]]
+        n = len(validas) or 1
         por_voz[modelo] = {
             "modelo": modelo,
             "familia": bloco.get("familia"),
-            "observacoes": len(linhas),
-            "violacoes": sum(1 for l in linhas if l["citouForaDoDocumento"]),
-            "violacoesLexicais": sum(1 for l in linhas if l["violouNaoFonte"]),
-            "semMedidaDeOrigem": sum(1 for l in linhas if l["citouForaDoDocumento"] is None),
-            "taxaViolacao": round(100.0 * sum(1 for l in linhas if l["citouForaDoDocumento"]) / n, 1),
-            "ecoLexical": sum(1 for l in linhas if l["ecoLexicalDe"]),
+            "observacoes": len(validas),
+            "foraDeEscopo": len(linhas) - len(validas),
+            "violacoes": sum(1 for l in validas if l["citouForaDoDocumento"]),
+            "violacoesLexicais": sum(1 for l in validas if l["violouNaoFonte"]),
+            "semMedidaDeOrigem": sum(1 for l in validas if l["citouForaDoDocumento"] is None),
+            "taxaViolacao": round(100.0 * sum(1 for l in validas if l["citouForaDoDocumento"]) / n, 1),
+            "ecoLexical": sum(1 for l in validas if l["ecoLexicalDe"]),
+            "noTeto": sum(1 for l in validas if l["noTeto"]),
+            "caracteresMedios": round(sum(len(o["texto"]) for o in observacoes
+                                          if not o.get("foraDeEscopo")) / n),
             "sobreposicaoMedia": round(sum(l["sobreposicao"] for l in linhas) / n, 3),
             "segundos": bloco.get("segundos"),
             "truncadas": bloco.get("observacoesTruncadas", 0),
@@ -285,13 +298,17 @@ def indicadores(pastas: list[Path] | None = None) -> dict:
             alvo = agregado.setdefault(modelo, {
                 "modelo": modelo, "familia": linha["familia"], "paineis": 0,
                 "casos": set(), "observacoes": 0, "violacoes": 0,
-                "ecoLexical": 0, "truncadas": 0, "descartadas": 0,
+                "ecoLexical": 0, "truncadas": 0, "descartadas": 0, "foraDeEscopo": 0,
+                "noTeto": 0, "caracteres": [],
                 "violacoesLexicais": 0, "semMedidaDeOrigem": 0,
                 "sobreposicoes": [], "segundos": [],
             })
             alvo["paineis"] += 1
             alvo["casos"].add(medida["caso"])
             alvo["observacoes"] += linha["observacoes"]
+            alvo["foraDeEscopo"] += linha["foraDeEscopo"]
+            alvo["noTeto"] += linha["noTeto"]
+            alvo["caracteres"].append(linha["caracteresMedios"])
             alvo["violacoes"] += linha["violacoes"]
             alvo["violacoesLexicais"] += linha["violacoesLexicais"]
             alvo["semMedidaDeOrigem"] += linha["semMedidaDeOrigem"]
@@ -315,6 +332,7 @@ def indicadores(pastas: list[Path] | None = None) -> dict:
     for modelo, linha in agregado.items():
         casos = len(linha.pop("casos"))
         segundos = linha.pop("segundos")
+        caracteres = linha.pop("caracteres")
         sobrep = linha.pop("sobreposicoes")
         n = linha["observacoes"] or 1
         itens = repeticao.get(modelo) or []
@@ -329,6 +347,8 @@ def indicadores(pastas: list[Path] | None = None) -> dict:
             "taxaViolacao": round(100.0 * linha["violacoes"] / n, 1),
             "ecoLexicalSugerido": round(100.0 * linha["ecoLexical"] / n, 1),
             "sobreposicaoMedia": round(sum(sobrep) / len(sobrep), 3) if sobrep else 0.0,
+            "noTetoPct": round(100.0 * linha["noTeto"] / n, 1),
+            "caracteresMedios": round(sum(caracteres) / len(caracteres)) if caracteres else 0,
             "repeticaoEntreCasos": round(max(pares), 3) if pares else None,
             "segundosMedio": round(sum(segundos) / len(segundos), 1) if segundos else None,
         })
@@ -368,7 +388,7 @@ def fila(limite: int = 6, pastas: list[Path] | None = None) -> list[dict]:
                   for o in b.get("observacoes") or []}
         for modelo, linha in medida["vozes"].items():
             for item in linha["itens"]:
-                if item["obsId"] in decididas:
+                if item["obsId"] in decididas or item["foraDeEscopo"]:
                     continue
                 candidatos.append({
                     "obsId": item["obsId"], "modelo": modelo,
@@ -400,7 +420,7 @@ def main(argv=None) -> int:
             return 0
         print(f"{relatorio['paineis']} painel(éis) medido(s)\n")
         print(f"{'modelo':<20} {'obs':>4} {'casos':>6} {'viol%':>6} {'ecoLex%':>8} "
-              f"{'repet':>6} {'seg':>6}")
+              f"{'teto%':>6} {'chars':>6} {'repet':>6} {'seg':>6}")
         parciais = 0
         for linha in relatorio["modelos"]:
             repet = linha["repeticaoEntreCasos"]
@@ -414,8 +434,15 @@ def main(argv=None) -> int:
                 viol = f"{linha['taxaViolacao']:>6.1f}"
             print(f"{linha['modelo']:<20} {linha['observacoes']:>4} {linha['casos']:>6} "
                   f"{viol} {linha['ecoLexicalSugerido']:>7.1f} "
+                  f"{linha['noTetoPct']:>6.1f} {linha['caracteresMedios']:>6} "
                   f"{(f'{repet:.2f}' if repet is not None else '  n/d'):>6} "
                   f"{(linha['segundosMedio'] or 0):>6.1f}")
+        fora = sum(l["foraDeEscopo"] for l in relatorio["modelos"])
+        if fora:
+            # Exclusão silenciosa é o mesmo defeito do zero por ausência de
+            # medição: o número fica com cara de completo e não é.
+            print(f"\n[fora de escopo] {fora} observação(ões) excluída(s) do total "
+                  "acima.\n      Motivo por observação no próprio artefato do painel.")
         if parciais:
             print(f"\n[n/d] {parciais} voz(es) sem medida de origem: os painéis são "
                   "anteriores\n      ao campo `citouForaDoDocumento`. Rode o painel de "
@@ -427,6 +454,8 @@ def main(argv=None) -> int:
         print("        NÃO é a taxa de eco: paráfrase passa batido — medido, um par")
         print("        real de eco deu 0,091. Quem mede eco de verdade é o veredito")
         print("        `duplicada`, que é humano.")
+        print("teto%  = observações cortadas no limite de caracteres — o leitor recebe")
+        print("         frase pela metade, e o resto do raciocínio não chega.")
         print("repet = semelhança máxima da própria voz ENTRE casos distintos;")
         print("        alto significa texto genérico, não leitura do documento.")
         print("\nNada aqui promove ninguém. Promoção é `forja_contribuicao.py`.")

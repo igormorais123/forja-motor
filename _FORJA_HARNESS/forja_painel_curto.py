@@ -72,10 +72,28 @@ MOLDE = """Documento de trabalho abaixo. Dê o seu ponto de vista.
 
 --- DOCUMENTO ---
 {alvo}
---- FIM ---
+--- {fim} ---
 
 O que você vê aqui que um revisor cuidadoso deste escritório provavelmente
 deixaria passar?"""
+
+# Aviso de recorte, e ele não é cosmético.
+#
+# Medido em 07/08/2026, nos três primeiros casos reais: os três alvos passavam
+# de 6.000 caracteres, e as vozes gastaram 3 de 24 observações reclamando que "o
+# documento está cortado no item 8" e que "a peça está incompleta". **O corte
+# era meu.** Duas dessas observações afirmam um defeito inexistente na peça, com
+# aparência de achado acionável — o pior tipo de ruído.
+#
+# O artefato já gravava `alvoTruncado: true`. O flag existia para quem lê o
+# JSON e não para quem faz o trabalho: o prompt não dizia nada. Estado conhecido
+# pelo sistema e escondido do agente que depende dele é defeito de projeto, não
+# de modelo.
+AVISO_RECORTE = """
+ATENÇÃO: o texto acima é um RECORTE dos primeiros {n} caracteres de um documento
+maior. Ele termina no meio de propósito. NÃO comente que está cortado,
+incompleto ou sem fecho, e não conclua nada sobre pedidos, conclusão ou partes
+que não aparecem — isso é limitação de quem enviou, não defeito da peça."""
 
 
 def _agora() -> str:
@@ -151,8 +169,14 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
         sistema += ("\n\nATENÇÃO: você não é fonte de fato neste escritório. "
                     "Qualquer dado seu será descartado sem ser conferido.")
 
+    prompt = MOLDE.format(
+        alvo=recorte,
+        fim="RECORTE INTERROMPIDO AQUI" if cortado else "FIM DO DOCUMENTO")
+    if cortado:
+        prompt += AVISO_RECORTE.format(n=LIMITE_ALVO)
+
     recibo = fm.chamar(
-        modelo, MOLDE.format(alvo=recorte), sistema=sistema,
+        modelo, prompt, sistema=sistema,
         max_tokens=MAX_TOKENS, fase=fase or "painel_curto", papel="voz_curta",
     )
     observacoes, corte = extrair(recibo["conteudo"])

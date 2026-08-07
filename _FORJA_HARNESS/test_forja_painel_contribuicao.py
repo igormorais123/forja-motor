@@ -347,6 +347,68 @@ def test_ja_julgada_sai_da_fila(tmp_path, monkeypatch):
     assert len(fi.fila(limite=9, pastas=[tmp_path])) == antes - 1
 
 
+def test_recorte_e_declarado_ao_modelo_e_nao_so_ao_artefato():
+    """Estado que o sistema conhece e esconde de quem trabalha é defeito de projeto.
+
+    Medido em 07/08/2026: os três primeiros alvos reais passavam do teto, e as
+    vozes gastaram 3 de 24 observações dizendo que "o documento está cortado no
+    item 8" e que "a peça está incompleta". **O corte era nosso.** Duas dessas
+    observações afirmam defeito inexistente com cara de achado acionável.
+
+    O artefato já gravava `alvoTruncado: true` — para quem lê o JSON, não para
+    quem faz o trabalho.
+    """
+    origem = (Path(__file__).parent / "forja_painel_curto.py").read_text(
+        encoding="utf-8", errors="replace")
+    assert "AVISO_RECORTE" in origem
+    assert "if cortado:" in origem
+    assert "RECORTE INTERROMPIDO AQUI" in origem
+    assert "NÃO comente que está cortado" in pc.AVISO_RECORTE
+
+
+def test_observacao_fora_de_escopo_sai_do_placar_e_da_fila(tmp_path, monkeypatch):
+    """Não se cobra do modelo o erro de quem montou o prompt — mas se declara."""
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    caminho = _painel(tmp_path, "C1", "glm-5.2-cursor", ["boa", "artefato do teto"])
+    dados = json.loads(caminho.read_text(encoding="utf-8"))
+    dados["vozes"][0]["observacoes"][1]["foraDeEscopo"] = "recorte, não a peça"
+    caminho.write_text(json.dumps(dados, ensure_ascii=False), encoding="utf-8")
+
+    relatorio = fi.indicadores(pastas=[tmp_path])
+    linha = relatorio["modelos"][0]
+    assert linha["observacoes"] == 1
+    assert linha["foraDeEscopo"] == 1, "a exclusão tem de aparecer, não sumir"
+    assert [i["obsId"] for i in fi.fila(limite=9, pastas=[tmp_path])] == [
+        dados["vozes"][0]["observacoes"][0]["obsId"]]
+
+
+def test_observacao_cortada_no_teto_e_contada(tmp_path, monkeypatch):
+    """27% das observações do GLM chegavam pela metade e nada media isso.
+
+    Bater no teto não é o mesmo que escrever muito: o leitor recebe uma frase
+    interrompida e o resto do raciocínio não chega. É indicador de disciplina —
+    e foi a única diferença real que apareceu entre as duas vozes em 29
+    observações, junto com a latência.
+    """
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    caminho = _painel(tmp_path, "C1", "glm-5.2-cursor",
+                      ["cabe inteira", "esta foi cortada no limite…"])
+    linha = fi.indicadores(pastas=[tmp_path])["modelos"][0]
+    assert linha["noTetoPct"] == 50.0
+
+
+def test_nao_ha_perfil_posicional_entre_as_vozes():
+    """Medido e NEGATIVO — fica registrado para ninguém remedir por intuição.
+
+    A hipótese era que cada voz olhasse partes diferentes do documento, o que
+    daria um perfil de "melhor uso". Em 29 observações de 3 casos, as duas se
+    distribuíram quase igual (7/5/3 contra 6/5/3 por terços). Não há sinal, e
+    inventar um a partir de medianas de 0,35 contra 0,55 com esse n seria
+    fabricar perfil.
+    """
+    assert True, "resultado negativo registrado; ver Lição 276"
+
+
 def test_a_camada_automatica_nao_promove_ninguem():
     """A defesa contra a contra-hipótese de Helena: indicador barato canibaliza
     métrica cara. Nada do módulo de indicadores toca o degrau."""
