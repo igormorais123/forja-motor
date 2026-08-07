@@ -29,7 +29,16 @@ class SvgDocxTests(unittest.TestCase):
         svg.write_text(SVG_OK, encoding="utf-8")
         return docx, svg
 
-    def test_embute_svg_sem_pdf_png_ou_marker(self):
+    def test_embute_svg_sem_pdf_e_sem_marcador(self):
+        """O pacote leva o vetor, não leva PDF e não deixa marcador para trás.
+
+        A asserção de que o pacote não podia conter PNG foi retirada em
+        07/08/2026: ela codificava o desenho quebrado. O suporte a SVG do
+        Office é uma extensão do `blip`, e o `blip` precisa apontar para um
+        raster; sem ele o Word recusa o documento inteiro. O que a rota
+        continua não fazendo é RENDERIZAR para materializar a peça — e isso
+        quem prova é `test_qa_registra_explicitamente_ausencia_de_render`.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             docx, svg = self._fixture(Path(tmp))
             resultado = inserir_svgs(docx, {"{{FIG1}}": (svg, 10.0)})
@@ -37,9 +46,33 @@ class SvgDocxTests(unittest.TestCase):
             with zipfile.ZipFile(docx) as archive:
                 nomes = archive.namelist()
                 self.assertTrue(any(nome.endswith(".svg") for nome in nomes))
-                self.assertFalse(any(nome.endswith((".pdf", ".png")) for nome in nomes))
+                self.assertFalse(any(nome.endswith(".pdf") for nome in nomes))
                 self.assertNotIn("{{FIG1}}", archive.read("word/document.xml").decode("utf-8"))
                 self.assertIn('ContentType="image/svg+xml"', archive.read("[Content_Types].xml").decode("utf-8"))
+
+    def test_estrutura_que_o_word_exige(self):
+        """O invariante que faltava: OOXML que o Word aceita, e não só que abre no lxml.
+
+        De 03/08 a 07/08/2026 a rota canônica pendurou `wp:inline` direto em
+        `w:p`, sem `w:r/w:drawing`. Toda biblioteca Python lia o pacote sem
+        reclamar e o Microsoft Word recusava o arquivo inteiro, com mensagem de
+        documento corrompido — o destinatário não veria nem o texto.
+
+        Abrir o Word em teste não é viável aqui, então o teste guarda as três
+        marcas estruturais que a correção estabeleceu. Elas não substituem
+        abrir o arquivo no programa do leitor; tornam a regressão barata.
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            docx, svg = self._fixture(Path(tmp))
+            inserir_svgs(docx, {"{{FIG1}}": (svg, 10.0)})
+            with zipfile.ZipFile(docx) as archive:
+                doc = archive.read("word/document.xml").decode("utf-8")
+                nomes = archive.namelist()
+            self.assertIn("<w:drawing>", doc, "figura fora de w:drawing")
+            self.assertNotIn("<w:p><wp:inline", doc, "wp:inline pendurado direto no parágrafo")
+            self.assertIn("svgBlip", doc, "vetor não declarado na extensão de SVG do Office")
+            self.assertTrue(any(nome.endswith(".png") for nome in nomes),
+                            "sem raster de reserva o Word recusa o documento")
 
     def test_qa_registra_explicitamente_ausencia_de_render(self):
         with tempfile.TemporaryDirectory() as tmp:

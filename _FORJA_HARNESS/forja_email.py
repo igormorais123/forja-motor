@@ -84,6 +84,51 @@ def listar(svc, limite: int = 10) -> int:
     return 0
 
 
+def criar_rascunho(svc, *, para, assunto, corpo, anexos=(), responder_a=None) -> str:
+    """Compõe um rascunho com anexos e devolve o draftId.
+
+    Existia um vão entre produzir e entregar: a esteira sabia disparar o
+    rascunho pronto, e não sabia montar rascunho que levasse o arquivo que ela
+    mesma acabara de compor. Quem quisesse anexar precisava fazê-lo à mão no
+    Gmail, o que tira o envio da rota onde a barreira de anexo está instalada.
+
+    O rascunho é criado, não enviado. Quem envia é `enviar_rascunho`, que roda
+    a conferência do padrão da casa antes de qualquer coisa sair.
+    """
+    import mimetypes
+    from email.message import EmailMessage
+
+    msg = EmailMessage()
+    msg["To"] = ", ".join(para)
+    msg["Subject"] = assunto
+    msg.set_content(corpo)
+
+    for caminho in anexos:
+        caminho = Path(caminho)
+        if not caminho.is_file():
+            raise SystemExit(f"anexo inexistente: {caminho}")
+        tipo, _ = mimetypes.guess_type(caminho.name)
+        principal, _, secundario = (tipo or "application/octet-stream").partition("/")
+        msg.add_attachment(caminho.read_bytes(), maintype=principal,
+                           subtype=secundario or "octet-stream",
+                           filename=caminho.name)
+
+    corpo_api = {"message": {"raw": base64.urlsafe_b64encode(msg.as_bytes()).decode()}}
+    if responder_a:
+        # Sem o threadId a resposta vira mensagem solta e o destinatário
+        # reconstrói o contexto na mão.
+        original = svc.users().messages().get(userId="me", id=responder_a,
+                                              format="metadata").execute()
+        corpo_api["message"]["threadId"] = original.get("threadId")
+        assunto_original = _cabecalho(original, "Subject")
+        if assunto_original and not assunto.lower().startswith("re:"):
+            msg.replace_header("Subject", f"Re: {assunto_original}")
+            corpo_api["message"]["raw"] = base64.urlsafe_b64encode(msg.as_bytes()).decode()
+
+    criado = svc.users().drafts().create(userId="me", body=corpo_api).execute()
+    return criado["id"]
+
+
 def _registrar(evento: dict) -> None:
     """Trilha de envio. Sem isto, 'a FORJA enviou' seria narrativa, não evidência."""
     LEDGER_ENVIOS.parent.mkdir(parents=True, exist_ok=True)
@@ -151,13 +196,30 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--material-de-terceiro", action="append", default=[], metavar="ARQUIVO",
                     help="nome de anexo redigido fora do escritório, a encaminhar como veio; "
                          "repetível. Sem isto, anexo fora do padrão da casa barra o envio")
+    ap.add_argument("--criar-rascunho", action="store_true",
+                    help="compõe um rascunho com anexos e imprime o draftId; não envia")
+    ap.add_argument("--para", action="append", default=[], metavar="ENDERECO")
+    ap.add_argument("--assunto")
+    ap.add_argument("--corpo-arquivo", metavar="ARQUIVO",
+                    help="arquivo de texto com o corpo da mensagem")
+    ap.add_argument("--anexo", action="append", default=[], metavar="ARQUIVO")
+    ap.add_argument("--responder-a", metavar="MESSAGE_ID")
     args = ap.parse_args(argv)
 
-    if not args.listar and not args.enviar_rascunho:
+    if not args.listar and not args.enviar_rascunho and not args.criar_rascunho:
         ap.print_help()
         return 2
 
     svc = _servico()
+    if args.criar_rascunho:
+        if not (args.para and args.assunto and args.corpo_arquivo):
+            raise SystemExit("--criar-rascunho exige --para, --assunto e --corpo-arquivo")
+        draft_id = criar_rascunho(
+            svc, para=args.para, assunto=args.assunto,
+            corpo=Path(args.corpo_arquivo).read_text(encoding="utf-8"),
+            anexos=args.anexo, responder_a=args.responder_a)
+        print(draft_id)
+        return 0
     if args.listar:
         return listar(svc)
     return enviar_rascunho(svc, args.enviar_rascunho, args.confirmar,
