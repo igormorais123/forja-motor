@@ -156,6 +156,12 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
         max_tokens=MAX_TOKENS, fase=fase or "painel_curto", papel="voz_curta",
     )
     observacoes, corte = extrair(recibo["conteudo"])
+    # A ancoragem é calculada AQUI, com o alvo em mãos, e só o número é gravado.
+    # Guardar o texto do documento no artefato para medir depois duplicaria
+    # conteúdo do caso sem necessidade — o número basta, e não reconstrói nada.
+    from forja_painel_indicadores import ancoragem_de
+
+    palavras_alvo = ancoragem_de(recorte)
     return {
         "modelo": registro.id,
         "familia": registro.familia,
@@ -167,7 +173,8 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
         "alvoTruncado": cortado,
         **corte,
         "observacoes": [
-            {"obsId": obs_id(registro.id, texto), "texto": texto}
+            {"obsId": obs_id(registro.id, texto), "texto": texto,
+             "ancoragem": palavras_alvo(texto)}
             for texto in observacoes
         ],
     }

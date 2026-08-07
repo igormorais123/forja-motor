@@ -478,6 +478,11 @@ def podar_imports(caminho: Path) -> list[str]:
         texto = fh.read()
     linhas = texto.splitlines(keepends=True)
     arvore = ast.parse(texto)
+    # A linha que eu componho tem de terminar como as do arquivo. Compor com
+    # "\n" dentro de um arquivo CRLF deixa o arquivo misto e o diff mostra o
+    # bloco inteiro trocado — o mesmo ruído que o `newline=""` acabou de fechar,
+    # entrando pela outra porta.
+    quebra = "\r\n" if texto.count("\r\n") > texto.count("\n") - texto.count("\r\n") else "\n"
     mortos_por_linha: dict[int, set[str]] = defaultdict(set)
     for achado in achados:
         mortos_por_linha[achado["linha"]].add(achado["nome"])
@@ -501,17 +506,27 @@ def podar_imports(caminho: Path) -> list[str]:
                  if (alias.asname or alias.name.split(".")[0]) not in mortos]
         indentacao = linhas[inicio][:len(linhas[inicio]) - len(linhas[inicio].lstrip())]
 
-        if not vivos:
-            nova = ""
-        elif isinstance(no, ast.Import):
-            nomes = ", ".join(a.name + (f" as {a.asname}" if a.asname else "") for a in vivos)
-            nova = f"{indentacao}import {nomes}\n"
-        else:
-            nomes = ", ".join(a.name + (f" as {a.asname}" if a.asname else "") for a in vivos)
-            pontos = "." * no.level
-            nova = f"{indentacao}from {pontos}{no.module or ''} import {nomes}\n"
+        def _escrito(alias):
+            return alias.name + (f" as {alias.asname}" if alias.asname else "")
 
-        linhas[inicio:fim] = [nova] if nova else []
+        multilinha = fim - inicio > 1
+        if not vivos:
+            novas = []
+        elif isinstance(no, ast.Import):
+            novas = [f"{indentacao}import {', '.join(_escrito(a) for a in vivos)}{quebra}"]
+        elif multilinha:
+            # O arquivo escolheu a forma entre parênteses, provavelmente porque
+            # a linha única não caberia. Reescrever tudo numa linha só é
+            # reformatar código a pretexto de podar: o diff cresce, a linha
+            # estoura a largura da casa e quem revisa perde a mudança real.
+            cabeca = f"{indentacao}from {'.' * no.level}{no.module or ''} import ({quebra}"
+            corpo_import = [f"{indentacao}    {_escrito(a)},{quebra}" for a in vivos]
+            novas = [cabeca, *corpo_import, f"{indentacao}){quebra}"]
+        else:
+            nomes = ", ".join(_escrito(a) for a in vivos)
+            novas = [f"{indentacao}from {'.' * no.level}{no.module or ''} import {nomes}{quebra}"]
+
+        linhas[inicio:fim] = novas
         removidos.extend(sorted(mortos))
 
     novo = "".join(linhas)

@@ -54,6 +54,10 @@ SUITES_SCRIPT = {
         "anexo fora do padrão Word da casa não sai pela porta da FORJA: a barreira "
         "fica no disparo do rascunho, que é o único ponto por onde documento "
         "efetivamente sai, e reprova quem falha nas três dimensões"),
+    "test_forja_codigo_morto.py": (
+        "a poda de código morto não encosta em import protegido, em código nem na "
+        "quebra de linha do arquivo — e entrada declarada fora do repositório, "
+        "como o servidor MCP de e-mail, nunca vira candidata"),
     "test_forja_lapidacao_governanca.py": "os invariantes da lapidação aprovam o legítimo e reprovam cada sabotagem",
     "test_forja_exploracao_diversidade.py": "formulário do F2A é acusado e exploração genuína passa limpa",
     "test_forja_adversarial_gate.py": "regressão autônoma do gate adversarial",

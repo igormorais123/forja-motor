@@ -82,7 +82,10 @@ def _painel(tmp_path: Path, caso: str, modelo: str, textos: list[str]) -> Path:
         "decisoes": [{"obsId": o["obsId"], "modelo": modelo, "veredito": None,
                       "duplicadaDe": None, "motivo": None} for o in obs],
     }
-    caminho = tmp_path / f"{caso}_PAINEL.json"
+    # O nome importa: `forja_painel_indicadores._carregar` procura por
+    # `*PAINEL_CURTO*.json`. Fixture com outro nome passaria despercebida e o
+    # teste da fila mediria a lista vazia — foi o que aconteceu na primeira vez.
+    caminho = tmp_path / f"{caso}_PAINEL_CURTO.json"
     caminho.write_text(json.dumps(dados, ensure_ascii=False), encoding="utf-8")
     return caminho
 
@@ -253,6 +256,105 @@ def test_revalidar_acusa_perda_de_lastro_sem_apagar_nada(registro_isolado):
     fichas = fc.revalidar()
     assert fichas[0]["divergencias"]
     assert fc.carregar()["degraus"]["glm-5.2-cursor"]["degrau"] == "consultivo"
+
+
+# --------------------------------------------------------------------------
+# Camada autônoma — indicadores sem julgamento humano
+# --------------------------------------------------------------------------
+
+import forja_painel_indicadores as fi
+
+
+def test_citacao_afirmada_e_violacao():
+    # "art. 1.021" dispara `artigo` e também `cifra`, porque 1.021 tem forma de
+    # número com milhar. Sobreposição de padrões é aceitável: o que importa é
+    # que a violação apareça, não que ela seja classificada com um rótulo só.
+    assert "artigo" in fi.violacoes_de_fonte("aplique o art. 1.021 do CPC")
+    assert "súmula" in fi.violacoes_de_fonte("a Súmula 7 impede o reexame")
+
+
+def test_citacao_entre_aspas_nao_e_violacao():
+    """Fixture do falso positivo real de 07/08/2026.
+
+    O GLM 5.2 foi acusado de citar súmula quando estava **citando o blueprint
+    para criticá-lo** — o comportamento desejado. Sem a exclusão de aspas, o
+    indicador puniria justamente a voz que aponta o dado a conferir.
+    """
+    real = ('"Súmula 7 sobre matéria de qualificação jurídica dos fatos '
+            'incontroversos" é a tese inteira comprada sem verificação: é '
+            'preciso conferir se os fatos estão realmente incontroversos.')
+    assert fi.violacoes_de_fonte(real) == []
+
+
+def test_mencao_generica_nao_e_violacao():
+    """Apontar o dado a conferir sem afirmá-lo é o que se quer da voz curta."""
+    assert fi.violacoes_de_fonte(
+        "conferir o regimento do tribunal antes de prometer sustentação oral") == []
+
+
+def test_o_limiar_de_eco_nao_foi_moldado_ate_concordar_comigo():
+    """O par de eco mais fraco medido ficou em 0,091 — e continua abaixo do limiar.
+
+    Baixar o limiar até capturá-lo casaria com duas classificações humanas
+    (n=2) e passaria a marcar como eco pares comprovadamente não relacionados,
+    que deram 0,147. O indicador fica declaradamente fraco, e o veredito
+    `duplicada` continua sendo quem mede eco.
+    """
+    assert fi.LIMIAR_ECO_LEXICAL > 0.147
+    a = fi._palavras("O eixo depende de provar que os fatos são incontroversos, "
+                     "mas o blueprint não lista quais constam do acórdão")
+    b = fi._palavras("é preciso conferir se os fatos estão realmente "
+                     "incontroversos nos autos ou se houve juízo de prova")
+    assert fi._jaccard(a, b) < fi.LIMIAR_ECO_LEXICAL
+
+
+def test_ancoragem_sai_do_painel_e_nao_do_documento_guardado():
+    """O painel grava o número; o texto do caso não é duplicado no artefato."""
+    medir = fi.ancoragem_de("prazo intimação certidão publicação diário oficial")
+    assert medir("a intimação precisa de certidão") > 0
+    assert fi.ancoragem_de("")("qualquer coisa") is None
+
+
+def test_fila_ordena_por_discriminacao_e_nao_por_chegada(tmp_path, monkeypatch):
+    """Julgar eco informa pouco: as duas notas se movem juntas."""
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "vazio.json")
+    painel = {
+        "contrato": "FORJA-PAINEL-CURTO-v1", "caso": "C1", "fase": "F4",
+        "vozes": [
+            {"modelo": "kimi-k3-cursor", "familia": "moonshot", "observacoes": [
+                {"obsId": "aaa", "texto": "prazo intimação certidão publicação portal"},
+                {"obsId": "bbb", "texto": "composição atual da turma julgadora sessão"},
+            ]},
+            {"modelo": "glm-5.2-cursor", "familia": "zhipu", "observacoes": [
+                {"obsId": "ccc", "texto": "prazo intimação certidão publicação portal"},
+            ]},
+        ],
+        "falhas": [], "decisoes": [],
+    }
+    caminho = tmp_path / "C1_PAINEL_CURTO.json"
+    caminho.write_text(json.dumps(painel, ensure_ascii=False), encoding="utf-8")
+    ordem = [i["obsId"] for i in fi.fila(limite=9, pastas=[tmp_path])]
+    # `bbb` é a única que ninguém repetiu — tem de vir antes do par idêntico.
+    assert ordem[0] == "bbb"
+
+
+def test_ja_julgada_sai_da_fila(tmp_path, monkeypatch):
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    painel = _painel(tmp_path, "C1", "glm-5.2-cursor", ["uma coisa", "outra coisa"])
+    antes = len(fi.fila(limite=9, pastas=[tmp_path]))
+    _decidir(painel, ["acatada"])
+    fc.colher(painel, por="teste")
+    assert len(fi.fila(limite=9, pastas=[tmp_path])) == antes - 1
+
+
+def test_a_camada_automatica_nao_promove_ninguem():
+    """A defesa contra a contra-hipótese de Helena: indicador barato canibaliza
+    métrica cara. Nada do módulo de indicadores toca o degrau."""
+    origem = (Path(__file__).parent / "forja_painel_indicadores.py").read_text(
+        encoding="utf-8", errors="replace")
+    assert "promover" not in origem.replace("promove ninguém", "").replace(
+        "não promovem", "").replace("promove", "")
+    assert "degraus" not in origem
 
 
 # --------------------------------------------------------------------------

@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 import sys
 import tempfile
+from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -46,8 +47,18 @@ def escrever(base: Path, itens, recebidos=RECEBIDOS) -> Path:
     return caso
 
 
+# A data de revalidação é relativa e não fixa. Fixture com data escrita à mão
+# passa hoje e falha sozinha daqui a alguns meses, e regressão que quebra pelo
+# calendário ensina a equipe a ignorar o vermelho.
+_REVALIDAR = (date.today() + timedelta(days=14)).isoformat()
+
 COMPLETO = {
     "documento": "petição inicial da ação civil pública",
+    # O par fonte × tipo entrou em 07/08/2026: sem ele não se confere se sobrou
+    # rota conhecida por tentar, que foi a lacuna dos dois bloqueios falsos.
+    "fonte": "TRF4",
+    "tipoDocumento": "peticao_de_parte",
+    "rotasTentadas": [],
     "causa": "sem_habilitacao_nos_autos",
     "diligencias": [
         {"onde": "eproc do tribunal", "quando": "2026-08-04",
@@ -57,6 +68,7 @@ COMPLETO = {
     ],
     "consequencia": "o capítulo de fatos fica sem a redação original do pedido",
     "rotaDeSolucao": "habilitação nos autos pelo escritório, ou cópia integral pelo cliente",
+    "revalidarApos": _REVALIDAR,
 }
 
 with tempfile.TemporaryDirectory() as tmp:

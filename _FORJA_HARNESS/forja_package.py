@@ -14,7 +14,6 @@ from forja_n3_common import (
     ForjaN3Error,
     atomic_write_json,
     canonical_hash,
-    ensure_within,
     now_iso,
     read_json,
     resolve_name,

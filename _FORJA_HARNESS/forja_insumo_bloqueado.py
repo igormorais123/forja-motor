@@ -26,18 +26,38 @@ O vocabulário fechado aqui é o dele, e não uma taxonomia inventada. A exigên
 de registrar as diligências também: sem elas, "indisponível na fonte" é
 indistinguível de "não procurei".
 
+Em 07/08/2026 o módulo ganhou uma segunda camada, por ordem do titular, depois de
+dois bloqueios falsos declarados em dois dias. A causa em vocabulário fechado
+resolvia o problema de comunicar o impedimento, e não o de **verificá-lo**: nada
+exigia que as rotas conhecidas tivessem sido tentadas, e nada fazia um bloqueio
+declarado voltar à fila. A partir daqui cada item se ancora num par fonte × tipo
+de documento e conversa com ``forja_rotas_fonte``, que guarda o que cada tribunal
+serve e o que ele não serve. Enquanto sobrar rota conhecida sem tentativa, o
+bloqueio não está diagnosticado; e todo item nasce com data de revalidação,
+porque bloqueio sem prazo some da fila e ninguém reaudita o que já tem causa.
+
 Uso:
-    python forja_insumo_bloqueado.py <case-dir>          # confere e reprova
-    python forja_insumo_bloqueado.py <case-dir> --schema # imprime o modelo
+    python forja_insumo_bloqueado.py <case-dir>           # confere e reprova
+    python forja_insumo_bloqueado.py <case-dir> --schema  # imprime o modelo
+    python forja_insumo_bloqueado.py <raiz> --vencidos    # bloqueios a reauditar
 """
 from __future__ import annotations
 
 import json
 import sys
+from datetime import date, datetime
 from pathlib import Path
 
-VERSAO = "FORJA-INSUMO-BLOQUEADO-v1"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import forja_rotas_fonte as rotas_fonte  # noqa: E402
+
+VERSAO = "FORJA-INSUMO-BLOQUEADO-v2"
 ARQUIVO = "F1_INSUMO_BLOQUEADO.json"
+
+# Bloqueio que não expira desaparece da fila: ninguém reaudita o que já tem
+# causa registrada. Foi assim que uma decisão de acesso aberto ficou três
+# semanas fora do campo de visão do caso.
+REVALIDACAO_MAXIMA_DIAS = 45
 
 # As quatro situações que o titular pediu para distinguir, e mais nada. Uma
 # quinta categoria genérica reabriria a porta que este módulo fecha.
@@ -86,6 +106,13 @@ def modelo() -> dict:
         }],
         "itens": [{
             "documento": "identificação objetiva do que falta (peça, evento, anexo)",
+            # O par abaixo é o que liga o bloqueio ao registro de rotas. Sem ele
+            # não há como saber se sobrou porta conhecida por tentar, e o gate
+            # volta a ser uma checagem de redação.
+            "fonte": "STF, STJ, DJEN, TRF4, cliente, e-mail... quem deveria entregar",
+            "tipoDocumento": ("acordao, decisao, peticao_de_parte, comunicacao, "
+                              "andamentos, planilha, audio..."),
+            "rotasTentadas": ["chaves de forja_rotas_fonte já exercitadas"],
             "causa": f"enum ({', '.join(sorted(CAUSAS))})",
             "diligencias": [{
                 "onde": "portal, base ou pessoa consultada",
@@ -94,8 +121,17 @@ def modelo() -> dict:
             }],
             "consequencia": "o que da peça fica sem lastro por causa disto",
             "rotaDeSolucao": "quem pode destravar e como",
+            "revalidarApos": ("AAAA-MM-DD — quando este bloqueio volta à fila. "
+                              f"No máximo {REVALIDACAO_MAXIMA_DIAS} dias à frente"),
         }],
     }
+
+
+def _data(valor):
+    try:
+        return datetime.strptime(str(valor), "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return None
 
 
 def carregar(case_dir: Path | str):
@@ -109,7 +145,7 @@ def carregar(case_dir: Path | str):
     return dados if isinstance(dados, dict) else None
 
 
-def validar(case_dir: Path | str) -> list[str]:
+def validar(case_dir: Path | str, hoje=None) -> list[str]:
     """Problemas encontrados. Lista vazia significa aprovado.
 
     Caso sem o artefato é APROVADO, e não reprovado: a maioria dos casos não
@@ -120,6 +156,7 @@ def validar(case_dir: Path | str) -> list[str]:
     dados = carregar(case_dir)
     if dados is None:
         return []
+    hoje = hoje or date.today()
     problemas = []
     itens = dados.get("itens")
     if not isinstance(itens, list):
@@ -185,7 +222,103 @@ def validar(case_dir: Path | str) -> list[str]:
         ):
             if not str(item.get(campo) or "").strip():
                 problemas.append(f"{rotulo}: '{campo}' vazio — falta dizer {explicacao}")
+
+        problemas.extend(_conferir_rotas(item, rotulo, causa))
+        problemas.extend(_conferir_revalidacao(item, rotulo, hoje))
     return problemas
+
+
+def _conferir_rotas(item: dict, rotulo: str, causa: str) -> list[str]:
+    """As duas perguntas que os bloqueios falsos de 06 e 07/08/2026 não responderam.
+
+    A primeira é se ainda existe porta conhecida por tentar. A segunda é se a
+    causa declarada corresponde ao que a fonte de fato faz: quando o portal não
+    entrega aquele tipo de documento a ninguém, o impedimento não é nosso, e
+    chamá-lo de limitação da ferramenta manda o próximo agente procurar defeito
+    onde não há.
+    """
+    fonte = str(item.get("fonte") or "").strip()
+    tipo = str(item.get("tipoDocumento") or "").strip()
+    if not fonte or not tipo:
+        return [f"{rotulo}: falta 'fonte' e/ou 'tipoDocumento' — sem esse par não se "
+                f"confere quais rotas conhecidas já foram tentadas"]
+
+    problemas = []
+    tentadas = item.get("rotasTentadas")
+    if tentadas is not None and not isinstance(tentadas, list):
+        problemas.append(f"{rotulo}: 'rotasTentadas' deve ser lista")
+        tentadas = []
+
+    desconhecidas = [str(r) for r in (tentadas or []) if str(r) not in rotas_fonte.ROTAS]
+    if desconhecidas:
+        problemas.append(
+            f"{rotulo}: rota(s) {desconhecidas} não existem em forja_rotas_fonte — "
+            f"registre a rota lá antes de citá-la aqui, senão a tentativa não é conferível")
+
+    faltam = rotas_fonte.nao_tentadas(fonte, tipo, tentadas)
+    if faltam:
+        problemas.append(
+            f"{rotulo}: há rota conhecida que serve este par e não foi tentada: "
+            f"{', '.join(faltam)}. Enquanto sobrar porta por abrir, o bloqueio não "
+            f"está diagnosticado")
+
+    negativa = rotas_fonte.nao_servida(fonte, tipo)
+    if negativa and causa in CAUSAS:
+        admissiveis = tuple(negativa.get("causasAdmissiveis")
+                            or (negativa.get("causaCorreta"),))
+        if causa not in admissiveis:
+            problemas.append(
+                f"{rotulo}: a fonte não entrega '{tipo}' a ninguém ({negativa['porQue']}). "
+                f"Com isso a causa admissível é {' ou '.join(admissiveis)}, e não "
+                f"'{causa}'. {negativa['condicao']}")
+    return problemas
+
+
+def _conferir_revalidacao(item: dict, rotulo: str, hoje) -> list[str]:
+    """Bloqueio sem prazo sai da fila e não volta.
+
+    O prazo não promete que o impedimento caia; obriga alguém a olhar de novo.
+    Foi a ausência disso que deixou uma decisão de acesso aberto três semanas
+    fora do campo de visão de um caso que dependia dela.
+    """
+    bruto = item.get("revalidarApos")
+    quando = _data(bruto)
+    if quando is None:
+        return [f"{rotulo}: falta 'revalidarApos' (AAAA-MM-DD). Bloqueio sem data de "
+                f"revalidação sai da fila e ninguém o reaudita"]
+    if quando < hoje:
+        return [f"{rotulo}: 'revalidarApos' {quando.isoformat()} já venceu — "
+                f"reaudite o impedimento ou empurre a data com uma diligência nova"]
+    if (quando - hoje).days > REVALIDACAO_MAXIMA_DIAS:
+        return [f"{rotulo}: 'revalidarApos' {quando.isoformat()} está a mais de "
+                f"{REVALIDACAO_MAXIMA_DIAS} dias — prazo longo demais equivale a "
+                f"não revalidar"]
+    return []
+
+
+def vencidos(raiz: Path | str, hoje=None) -> list[dict]:
+    """Todos os bloqueios cuja revalidação venceu, em qualquer caso sob a raiz.
+
+    É o comando que devolve à fila aquilo que o bloqueio havia removido dela.
+    """
+    hoje = hoje or date.today()
+    achados = []
+    for alvo in sorted(Path(raiz).rglob(ARQUIVO)):
+        case_dir = alvo.parent.parent
+        dados = carregar(case_dir) or {}
+        for item in dados.get("itens") or []:
+            if not isinstance(item, dict):
+                continue
+            quando = _data(item.get("revalidarApos"))
+            if quando is None or quando < hoje:
+                achados.append({
+                    "caso": case_dir.name,
+                    "documento": str(item.get("documento") or "")[:80],
+                    "causa": item.get("causa"),
+                    "revalidarApos": item.get("revalidarApos"),
+                    "situacao": "sem data" if quando is None else "vencido",
+                })
+    return achados
 
 
 def main(argv=None) -> int:
@@ -196,8 +329,20 @@ def main(argv=None) -> int:
         print(json.dumps(modelo(), ensure_ascii=False, indent=2))
         return 0
     if not argv:
-        print("uso: python forja_insumo_bloqueado.py <case-dir> [--schema]")
+        print("uso: python forja_insumo_bloqueado.py <case-dir> [--schema|--vencidos]")
         return 2
+    if "--vencidos" in argv:
+        raiz = next((a for a in argv if not a.startswith("--")), ".")
+        achados = vencidos(raiz)
+        if not achados:
+            print("Nenhum bloqueio vencido. Todos têm revalidação em dia.")
+            return 0
+        for a in achados:
+            print(f"  [{a['situacao']}] {a['caso']}: {a['documento']} "
+                  f"(causa={a['causa']}, revalidarApos={a['revalidarApos']})")
+        print(f"\n{len(achados)} bloqueio(s) a reauditar. Bloqueio vencido volta à fila: "
+              f"foi por não voltar que um documento de acesso aberto ficou semanas parado.")
+        return 1
     problemas = validar(argv[0])
     if not problemas:
         dados = carregar(argv[0])
