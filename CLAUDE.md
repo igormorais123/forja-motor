@@ -292,8 +292,11 @@ está travado em `forja_modelos.modelo_remoto_proibido`, ao lado da proibição 
 (26/07/2026). Constantes: `CODEX_MODELO_FORJA` e `CODEX_ESFORCO_FORJA`.
 
 Quando a FORJA usa o **Grok 4.5** — Diabob em F4 e F7, triagem semântica em F1 —, a rota
-é a **assinatura do Cursor** (`grok-4.5-cursor`), com o OpenRouter (`grok-4.5`) apenas
-como reserva declarada em `rotaDegradada`.
+é **sempre a assinatura OAuth do Cursor** (`grok-4.5-cursor`, remoto
+`cursor-grok-4.5-high`), por ordem do titular. A rota do OpenRouter cobra por chamada e
+**não é automática**: se a assinatura falhar, o comando falha alto com a instrução de
+conserto, e a reserva paga só entra com `--permitir-reserva`. Gasto novo é decisão do
+titular, não consequência de um login vencido.
 
 Cuidado com fonte desatualizada: a skill global `codex-integrado` traz tabelas com
 `gpt-5.5` e `gpt-5.5-mini`. Elas não valem aqui, e copiá-las sem conferir já produziu

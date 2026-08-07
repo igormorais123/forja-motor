@@ -316,14 +316,15 @@ ainda não é verificada por gate.
 ## Grok 4.5 pela assinatura do Cursor (06/08/2026 — ordem do Igor)
 
 Modelo `grok-4.5-cursor` em `forja_modelos.py`, provedor `cursor`, executado por
-`cursor-agent --print --output-format json --mode ask`. O `--mode ask` é obrigatório:
+`cursor-agent --print --output-format json --mode ask --trust`, com o prompt por **stdin** (argumento multilinha e cortado pelo cmd.exe) e cwd numa pasta vazia dedicada. O `--mode ask` é obrigatório:
 sem ele o agente do Cursor tem escrita e shell, e revisor externo não edita o caso.
 
 Dois postos:
 
-1. **Diabob (F4 e F7), obrigatório** — `forja_diabob.py`. Reserva: `grok-4.5` pelo
-   OpenRouter, com a queda declarada em `rotaDegradada`. Degradar é permitido; degradar
-   em silêncio troca assinatura por gasto sem ninguém ver.
+1. **Diabob (F4 e F7), obrigatório** — `forja_diabob.py`. **Sem queda automática para
+   a rota paga:** se a assinatura falhar, falha alto e pede `cursor-agent login`. A
+   reserva do OpenRouter só entra com `--permitir-reserva`, e a queda fica em
+   `rotaDegradada`. Gasto novo é decisão do titular.
 2. **Triagem semântica da ingestão (F1)** — `forja_triagem_rapida.py`. Complementa, não
    substitui, o `forja_injection_scan.py`: aquele examina o PDF atrás de texto
    escondido, este lê o texto extraído atrás de sentido. Propõe suspeita para triagem
