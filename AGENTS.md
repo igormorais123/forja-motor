@@ -350,3 +350,19 @@ qualquer remoto contendo `gpt-5.5`, ao lado da proibição do Kimi K2. Constante
 
 A skill global `codex-integrado` traz tabelas com `gpt-5.5` e `gpt-5.5-mini`. Estão
 desatualizadas e não valem aqui.
+
+## Gate do Diabob (07/08/2026)
+
+O conselho obrigatório tem três vozes. A do Diabob é verificada por **proveniência**:
+
+```
+python _FORJA_HARNESS/forja_diabob.py --arquivo <blueprint> --saida F4_PARECER_DIABOB.json
+python _FORJA_HARNESS/forja_conselho.py <helena.md> <cicero.md> <decisoes.md> F4_PARECER_DIABOB.json
+```
+
+`diabob_present` (L-C4) reprova prosa em vez de recibo, reprova parecer da mesma família
+que produz a peça (isso é eco, não red team) e deixa `unknown` com P1 quando o artefato
+não é declarado — nunca `pass` por omissão. Roda em `forja_run.py` no F4.
+
+`diabob_opinion` ainda **não** está em `requiredOutputs` de `F4.json`: seria exigência
+dura sobre casos em curso. Ficha: `_FORJA_HARNESS/decisoes/0002`.

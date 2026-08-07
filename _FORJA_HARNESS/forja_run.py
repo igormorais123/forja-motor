@@ -704,10 +704,15 @@ def _recompute_conselho(contract: dict, artifacts: list[dict], attempt_dir: Path
     from forja_conselho import validar_conselho
 
     por_id = {item["artifactId"]: item["source"] for item in artifacts}
+    # O Diabob entrou no conselho obrigatório em 06/08/2026. O artefato é o
+    # recibo da chamada, não prosa: o gate confere que o contraditório veio de
+    # outra família de modelo. Caso que não o declara fica `unknown` com P1 —
+    # nunca `pass` por omissão, e nunca P0 retroativo.
     laudo = validar_conselho(
         helena=por_id.get("helena_opinion"),
         cicero=por_id.get("cicero_opinion"),
         decisoes=por_id.get("council_decisions"),
+        diabob=por_id.get("diabob_opinion"),
     )
     # A estratégia adversarial decide sobre a auditoria da F3 — e declara o hash
     # dela. Se não bater, as decisões foram tomadas sobre outra versão do exame,

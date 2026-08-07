@@ -92,12 +92,43 @@ def main() -> int:
         helena = _escrever(base, "helena.md", PARECER_OK)
         cicero = _escrever(base, "cicero.md", PARECER_OK.replace("HELENA", "CÍCERO"))
         decisoes = _escrever(base, "decisoes.md", DECISOES_OK)
+        # Desde 06/08/2026 o conselho obrigatório tem TRÊS vozes: Helena, Cícero
+        # e Diabob. O artefato do Diabob é o recibo da chamada, porque o que o
+        # gate afere é a proveniência — contraditório de outra família de modelo,
+        # não prosa dizendo que houve contraditório.
+        diabob = _escrever(base, "diabob.json", json.dumps({
+            "contrato": "FORJA-F4-PARECER-DIABOB-v1", "persona": "diabob",
+            "modelo": "grok-4.5-cursor", "familia": "xai", "provedor": "cursor",
+            "rotaDegradada": None, "parecer": "objeção fundamentada. " * 60,
+        }, ensure_ascii=False))
 
         # Contraprova primeiro: o caminho íntegro não pode reprovar.
         casos += 1
-        laudo = validar_conselho(helena=helena, cicero=cicero, decisoes=decisoes)
+        laudo = validar_conselho(helena=helena, cicero=cicero, decisoes=decisoes,
+                                 diabob=diabob)
         if any(v != "pass" for v in laudo["gates"].values()):
             print(f"  FALHOU: conselho completo e bem formado reprovou: {laudo['gates']}")
+            falhas += 1
+
+        # O Diabob ausente não reprova retroativamente, mas também não passa:
+        # fica sem veredito, que é a recusa de atestar o que não se viu.
+        casos += 1
+        sem_diabob = validar_conselho(helena=helena, cicero=cicero,
+                                      decisoes=decisoes)["gates"]["diabob_present"]
+        if sem_diabob != "unknown":
+            print(f"  FALHOU: conselho sem Diabob devia ficar unknown, veio {sem_diabob!r}")
+            falhas += 1
+
+        # Contraditório da mesma família é eco, não red team.
+        casos += 1
+        eco = _escrever(base, "eco.json", json.dumps({
+            "contrato": "FORJA-F4-PARECER-DIABOB-v1", "persona": "diabob",
+            "modelo": "opus-5", "familia": "anthropic", "provedor": "local",
+            "parecer": "objeção fundamentada. " * 60,
+        }, ensure_ascii=False))
+        if validar_conselho(helena=helena, cicero=cicero, decisoes=decisoes,
+                            diabob=eco)["gates"]["diabob_present"] != "fail":
+            print("  FALHOU: red team da mesma família do produtor não reprovou")
             falhas += 1
 
         # Parecer ausente.

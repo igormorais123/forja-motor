@@ -89,6 +89,72 @@ def _achados_parecer(persona: str, caminho: Path | None) -> list[dict]:
     return achados
 
 
+def _achados_diabob(caminho: Path | None) -> tuple[list[dict], str]:
+    """L-C4: o contraditório do Diabob existe e veio de OUTRA família de modelo.
+
+    Obrigatório desde 06/08/2026 por ordem do titular, ao lado de Helena e
+    Cícero. O que este gate afere é o que distingue contraditório de eco: a
+    Lição 99 registra que red team feito pelo mesmo modelo que produziu a
+    análise repete os próprios pontos cegos com voz mais dura. Por isso a
+    verificação é sobre a **proveniência da chamada**, não sobre o texto — prosa
+    dizendo "passou pelo Diabob" é exatamente o que não prova nada.
+
+    Caso que não declara o artefato **não recebe veredito** e leva um P1, como
+    nos gates S2/S4/S6/S7: nunca P0 por ausência de declaração, porque isso
+    reprovaria retroativamente todo caso anterior à ordem.
+    """
+    if caminho is None or not caminho.is_file():
+        return ([{"gate": "LC4-Diabob", "sev": "P1",
+                  "problema": ("contraditório do Diabob não declarado — a obrigatoriedade "
+                               "de 06/08/2026 não fica comprovada neste caso"),
+                  "acao": ("rode `python forja_diabob.py --arquivo <blueprint> "
+                           "--saida F4_PARECER_DIABOB.json` e declare o artefato"),
+                  "versao": VERSAO}], "unknown")
+
+    texto = _ler(caminho) or ""
+    try:
+        dados = json.loads(texto)
+    except (json.JSONDecodeError, ValueError):
+        return ([{"gate": "LC4-Diabob", "sev": "P0",
+                  "problema": ("parecer do Diabob não é o recibo da chamada — sem "
+                               "proveniência, não há como distinguir contraditório de eco"),
+                  "acao": "gere o artefato por `forja_diabob.py --saida`, não à mão",
+                  "versao": VERSAO}], "fail")
+
+    achados = []
+    parecer = str(dados.get("parecer") or "")
+    if len(parecer.encode("utf-8")) < _PISO_PARECER_BYTES:
+        achados.append({
+            "gate": "LC4-Diabob", "sev": "P0",
+            "problema": (f"parecer do Diabob tem {len(parecer.encode('utf-8'))} bytes — "
+                         "curto demais para ser contraditório"),
+            "acao": "reexecute o Diabob sobre o alvo real", "versao": VERSAO})
+
+    familia = str(dados.get("familia") or "").strip().casefold()
+    if not familia:
+        achados.append({
+            "gate": "LC4-Diabob", "sev": "P0",
+            "problema": "recibo do Diabob sem família de modelo declarada",
+            "acao": "gere o artefato por `forja_diabob.py --saida`", "versao": VERSAO})
+    elif familia == "anthropic":
+        achados.append({
+            "gate": "LC4-Diabob", "sev": "P0",
+            "problema": ("o contraditório foi feito pela MESMA família que produz a peça "
+                         "(anthropic) — isso é eco, não red team"),
+            "acao": "rode o Diabob na rota da casa (xAI pela assinatura do Cursor)",
+            "versao": VERSAO})
+
+    if dados.get("rotaDegradada"):
+        achados.append({
+            "gate": "LC4-Diabob", "sev": "P1",
+            "problema": f"o Diabob rodou por rota degradada: {dados['rotaDegradada']}",
+            "acao": "conserte o acesso da assinatura e reexecute quando possível",
+            "versao": VERSAO})
+
+    veredito = "fail" if any(a["sev"] == "P0" for a in achados) else "pass"
+    return achados, veredito
+
+
 def _linhas_de_decisao(texto: str) -> list[list[str]]:
     """Linhas de deliberação, seja em tabela markdown ou em lista numerada."""
     linhas = []
@@ -227,11 +293,18 @@ def _achados_decisoes(caminho: Path | None) -> list[dict]:
 
 
 def validar_conselho(*, helena: Path | None, cicero: Path | None,
-                     decisoes: Path | None) -> dict:
-    """Devolve achados e o veredito de cada gate do contrato F4."""
+                     decisoes: Path | None, diabob: Path | None = None) -> dict:
+    """Devolve achados e o veredito de cada gate do contrato F4.
+
+    `diabob` é opcional na assinatura para não quebrar chamador antigo, mas a
+    obrigatoriedade é real desde 06/08/2026: sem o artefato, o gate fica
+    `unknown` e o caso leva um P1 dizendo que a obrigatoriedade não foi
+    comprovada. `unknown` não é `pass` — é a recusa de atestar o que não se viu.
+    """
     ach_helena = _achados_parecer("Helena", helena)
     ach_cicero = _achados_parecer("Cícero", cicero)
     ach_decisoes = _achados_decisoes(decisoes)
+    ach_diabob, ver_diabob = _achados_diabob(diabob)
 
     def veredito(achados: list[dict]) -> str:
         if any(a["sev"] == "P0" for a in achados):
@@ -240,20 +313,24 @@ def validar_conselho(*, helena: Path | None, cicero: Path | None,
 
     return {
         "versao": VERSAO,
-        "findings": ach_helena + ach_cicero + ach_decisoes,
+        "findings": ach_helena + ach_cicero + ach_decisoes + ach_diabob,
         "gates": {
             "helena_present": veredito(ach_helena),
             "cicero_present": veredito(ach_cicero),
             "council_decisions_recorded": veredito(ach_decisoes),
+            "diabob_present": ver_diabob,
         },
     }
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) != 3:
-        print("uso: python forja_conselho.py <helena.md> <cicero.md> <council_decisions.md>")
+    if len(argv) not in (3, 4):
+        print("uso: python forja_conselho.py <helena.md> <cicero.md> "
+              "<council_decisions.md> [F4_PARECER_DIABOB.json]")
         return 2
-    laudo = validar_conselho(helena=Path(argv[0]), cicero=Path(argv[1]), decisoes=Path(argv[2]))
+    laudo = validar_conselho(
+        helena=Path(argv[0]), cicero=Path(argv[1]), decisoes=Path(argv[2]),
+        diabob=Path(argv[3]) if len(argv) == 4 else None)
     for nome, valor in laudo["gates"].items():
         print(f"{nome:32} {valor}")
     for achado in laudo["findings"]:

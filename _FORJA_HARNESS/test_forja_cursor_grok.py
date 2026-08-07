@@ -324,6 +324,78 @@ def test_triagem_isola_falha_de_um_documento(tmp_path, monkeypatch):
 
 
 # --------------------------------------------------------------------------
+# Gate do conselho — o Diabob obrigatório vira verificação, não promessa
+# --------------------------------------------------------------------------
+
+def _recibo(**troca) -> dict:
+    base = {"contrato": "FORJA-F4-PARECER-DIABOB-v1", "persona": "diabob",
+            "modelo": "grok-4.5-cursor", "familia": "xai", "provedor": "cursor",
+            "rotaDegradada": None, "parecer": "objeção fundamentada. " * 60}
+    base.update(troca)
+    return base
+
+
+def _gate(tmp_path, dados=None, nome="F4_PARECER_DIABOB.json", texto=None):
+    from forja_conselho import validar_conselho
+    caminho = None
+    if texto is not None:
+        caminho = tmp_path / nome
+        caminho.write_text(texto, encoding="utf-8")
+    elif dados is not None:
+        caminho = tmp_path / nome
+        caminho.write_text(json.dumps(dados, ensure_ascii=False), encoding="utf-8")
+    laudo = validar_conselho(helena=None, cicero=None, decisoes=None, diabob=caminho)
+    return laudo["gates"]["diabob_present"], laudo["findings"]
+
+
+def test_gate_aprova_recibo_real(tmp_path):
+    veredito, _ = _gate(tmp_path, _recibo())
+    assert veredito == "pass"
+
+
+def test_gate_nao_declarado_fica_unknown_e_nao_pass(tmp_path):
+    """`unknown` é a recusa de atestar o que não se viu — e não reprova caso antigo."""
+    veredito, achados = _gate(tmp_path)
+    assert veredito == "unknown"
+    assert any(a["gate"] == "LC4-Diabob" and a["sev"] == "P1" for a in achados)
+
+
+def test_gate_reprova_prosa_dizendo_que_passou(tmp_path):
+    """"Passou pelo Diabob" escrito à mão é exatamente o que não prova nada."""
+    veredito, _ = _gate(tmp_path, texto="Passou pelo Diabob. Tudo certo.",
+                        nome="F4_PARECER_DIABOB.md")
+    assert veredito == "fail"
+
+
+def test_gate_reprova_eco_da_mesma_familia(tmp_path):
+    """Lição 99: red team pelo mesmo modelo repete os pontos cegos com voz mais dura."""
+    veredito, achados = _gate(tmp_path, _recibo(familia="anthropic"))
+    assert veredito == "fail"
+    assert any("MESMA família" in a["problema"] for a in achados)
+
+
+def test_gate_reprova_casca_sem_parecer(tmp_path):
+    veredito, _ = _gate(tmp_path, _recibo(parecer="ok"))
+    assert veredito == "fail"
+
+
+def test_gate_avisa_rota_degradada_sem_reprovar(tmp_path):
+    """Rodar pela rota paga não invalida o contraditório — mas não passa calado."""
+    veredito, achados = _gate(tmp_path, _recibo(rotaDegradada="cursor caiu"))
+    assert veredito == "pass"
+    assert any(a["sev"] == "P1" and "degradada" in a["problema"] for a in achados)
+
+
+def test_assinatura_antiga_do_validador_continua_funcionando(tmp_path):
+    """Chamador que não conhece o Diabob não pode quebrar — só fica sem veredito."""
+    from forja_conselho import validar_conselho
+    laudo = validar_conselho(helena=None, cicero=None, decisoes=None)
+    assert laudo["gates"]["diabob_present"] == "unknown"
+    assert {"helena_present", "cicero_present",
+            "council_decisions_recorded"} <= set(laudo["gates"])
+
+
+# --------------------------------------------------------------------------
 # Complementaridade — a razão de a triagem existir
 # --------------------------------------------------------------------------
 

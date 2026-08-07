@@ -1153,3 +1153,55 @@ login. Protege o registro do modelo, o despacho, a leitura dos três formatos de
 CLI, a mensagem de erro útil, a queda declarada e o isolamento de falha por documento.
 O último teste ancora a complementaridade: se o scan lexical um dia passar a aceitar
 texto, a razão de existir da triagem precisa ser reavaliada, não presumida.
+
+## 30. Diabob obrigatório vira gate de proveniência (07/08/2026)
+
+A ordem de 06/08 pôs o Diabob no conselho obrigatório, ao lado de Helena e Cícero. No
+mesmo dia ficou declarado o problema: a obrigatoriedade era **só texto**, porque o
+`forja_conselho.py` validava apenas os dois pareceres. Pela regra da casa, regra escrita
+que não pega vira gate — a identidade dos atos recursais foi violada em dois clientes
+antes de virar o S6.
+
+**O que o gate afere: a proveniência da chamada, não o texto.** Prosa dizendo "passou
+pelo Diabob" é exatamente o que não prova nada, e é o formato que uma esteira apressada
+produz sozinha. `forja_diabob.py --saida F4_PARECER_DIABOB.json` grava o **recibo** —
+modelo, família, provedor, rota degradada, tempo, custo — junto com o parecer.
+
+`forja_conselho.py` ganhou `diabob_present` (L-C4), chamado por `forja_run.py` em todo
+F4. Comportamento medido em 07/08/2026 contra o artefato real e três fraudes plausíveis:
+
+| Situação | Veredito |
+|---|---|
+| recibo real, família `xai` | `pass` |
+| não declarado | `unknown` + P1 |
+| prosa em vez de recibo | `fail` |
+| família `anthropic` — a mesma que produz a peça | `fail`, nomeando o eco |
+| recibo com parecer de casca (2 bytes) | `fail` |
+| rota degradada declarada | `pass` + P1 |
+
+`unknown` não é `pass`: é a recusa de atestar o que não se viu. Escolhido em vez de P0
+para não reprovar retroativamente todo caso anterior à ordem — mesmo critério dos gates
+S2, S4, S6 e S7.
+
+**O teste legado me corrigiu no caminho.** `test_forja_conselho.py` afirmava que "o
+conselho completo e bem formado" passa em todos os gates, e passou a falhar — porque a
+definição de conselho completo mudou. A correção certa era a fixture, não o gate: ela
+agora inclui o recibo do Diabob, e ganhou duas verificações novas — ausência fica
+`unknown`, e contraditório da mesma família reprova. São 15 verificações, todas verdes.
+
+**Prova em caso real.** Rodado sobre um blueprint de teste com o vício plantado ("o
+prazo é de 15 dias porque o cliente disse que foi intimado na sexta"), o Diabob devolveu
+3.780 bytes em 66 segundos, US$ 0,00, e foi ao ponto: *"está contando prazo sobre boato
+do cliente e chamando isso de pergunta jurisdicional"*, exigindo o localizador nos autos
+— publicação, portal, DJEN ou certidão — antes de qualquer contagem.
+
+**O que não foi feito, e por quê.** `diabob_opinion` **não** entrou em `requiredOutputs`
+de `F4.json`: entraria como exigência dura e derrubaria qualquer F4 em curso. O gate já
+roda na rota real e já expõe a ausência. Promover a saída a obrigatória é o passo
+seguinte, depois que os casos vivos passarem a produzir o artefato — decisão consciente,
+registrada na ficha `decisoes/0002`.
+
+**Kimi K3 não foi banido.** Aparece na assinatura do Cursor (`kimi-k3-high`) e foi
+retirado do registro da FORJA em 26/07 após reprovar a bancada jurídica. Em 07/08 o Igor
+decidiu não bani-lo. Ele segue fora do registro de modelos e disponível na conta; usá-lo
+na esteira exigiria reinstalá-lo, o que é decisão nova e não está tomada.
