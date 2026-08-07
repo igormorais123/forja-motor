@@ -169,6 +169,32 @@ with tempfile.TemporaryDirectory() as tmp:
         finally:
             ap.agrupar, ap.levantar_candidatos = agrupar_real, levantar_real
 
+        # Correção escrita não tem recorrência de diff: a prova dela é a
+        # mensagem. Sem esta separação, a regra lida num e-mail do titular era
+        # pendurada na classe de diff mais próxima e passava a exibir números
+        # de um alinhamento sem relação nenhuma com ela — lastro emprestado.
+        escrita = ap.adotar("correspondencia:diretriz_escrita", destino="checklist",
+                            fase="F7", regra="Conferir a pauta na fonte oficial.",
+                            aprovado_por="teste", grupos=grupos,
+                            origem="retorno_escrito", camada_sistema="recuperacao_fontes",
+                            lastro_externo=[{"messageId": "abc", "assunto": "x"}])
+        checar("regra escrita guarda a mensagem, não estatística de diff",
+               escrita["evidencia"].get("mensagens") and escrita["evidencia"]["casos"] is None)
+        checar("a camada do sistema fica registrada",
+               escrita["camadaSistema"] == "recuperacao_fontes")
+        checar("classe não observada é aceita quando a origem é escrita",
+               escrita["origem"] == "retorno_escrito")
+
+        # E o revalidar não a compara com um agrupamento que nunca foi sua prova.
+        agrupar_real2, levantar_real2 = ap.agrupar, ap.levantar_candidatos
+        ap.agrupar = lambda _c: []
+        ap.levantar_candidatos = lambda **_k: ([], [])
+        try:
+            checar("regra escrita não vira divergência por falta de diff",
+                   all(d["regraId"] != escrita["regraId"] for d in ap.revalidar()))
+        finally:
+            ap.agrupar, ap.levantar_candidatos = agrupar_real2, levantar_real2
+
         # Destino inválido e classe não observada param antes de escrever.
         for chamada, nome in (
             (lambda: ap.adotar("fact:fact", destino="inventado", fase="F7",
@@ -180,6 +206,14 @@ with tempfile.TemporaryDirectory() as tmp:
             (lambda: ap.adotar("fact:fact", destino="checklist", fase="F7",
                                regra="   ", aprovado_por="t", grupos=grupos),
              "regra vazia é recusada"),
+            (lambda: ap.adotar("x:y", destino="checklist", fase="F7", regra="r",
+                               aprovado_por="t", grupos=grupos,
+                               origem="retorno_escrito"),
+             "origem escrita sem mensagem de lastro é recusada"),
+            (lambda: ap.adotar("fact:fact", destino="checklist", fase="F7", regra="r",
+                               aprovado_por="t", grupos=grupos,
+                               camada_sistema="camada_inventada"),
+             "camada de sistema fora do vocabulário é recusada"),
         ):
             try:
                 chamada()

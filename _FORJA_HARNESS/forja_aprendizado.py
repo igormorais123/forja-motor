@@ -230,16 +230,94 @@ def carregar_registro() -> dict:
     }
 
 
+# De onde a regra veio. A distinção existe porque as duas origens têm provas
+# de natureza diferente, e tratá-las igual produziu registro falso: as regras
+# lidas em e-mails do titular foram penduradas na classe de diff mais próxima
+# e passaram a exibir "2 casos, 54 mudanças materiais" — números de um
+# alinhamento de documentos que não tinha relação nenhuma com aquela correção.
+# A regra continuava certa; o lastro dela era emprestado.
+ORIGENS = {
+    "diff_documental": "medida na comparação entre a nossa peça e a versão humana",
+    "retorno_escrito": "dita por escrito pelo titular ou pela equipe, em mensagem",
+}
+
+# Em que camada do sistema a falha nasceu. Vocabulário do titular (mensagem de
+# 02/08/2026): "parece-me importante identificar em qual camada se originou o
+# erro". Sem isso, toda correção parece ser de redação — e a maioria não é.
+# Note que é ortogonal à camada do TEXTO (`classe`): um erro de fonte errada e
+# um de estilo podem produzir a mesma classe lexical e exigir consertos em
+# lugares completamente distintos do harness.
+CAMADAS_SISTEMA = {
+    "enquadramento": "o caso foi entendido como outra coisa no início",
+    "roteamento": "foi para a fase, o agente ou o núcleo errado",
+    "selecao_documentos": "os documentos certos não entraram na análise",
+    "recuperacao_fontes": "a fonte não foi buscada, ou veio de memória",
+    "instrucao_agente": "o prompt ou contrato de fase não pedia isso",
+    "ausencia_ferramenta": "não havia capacidade instalada para fazer",
+    "formatacao": "forma, estrutura ou padrão visual do produto",
+    "validacao": "o gate não existia, ou existia e não mordeu",
+    "supervisao": "faltou o ponto de conferência humana",
+}
+
+
+def _lastro_sem_cliente(item: dict) -> dict:
+    """Deixa passar só o que localiza a mensagem, sem identificar quem é.
+
+    Guardar o assunto era guardar razão social: assunto de mensagem do
+    escritório traz nome de parte, e este registro é arquivo do motor.
+    """
+    return {
+        "messageId": item.get("messageId"),
+        "recebidoEm": item.get("recebidoEm"),
+    }
+
+
 def adotar(classe: str, *, destino: str, fase: str, regra: str,
-           aprovado_por: str, grupos: list[dict]) -> dict:
-    """Registra a decisão de transformar uma classe de correção em regra."""
+           aprovado_por: str, grupos: list[dict],
+           origem: str = "diff_documental", camada_sistema: str | None = None,
+           lastro_externo: list[dict] | None = None) -> dict:
+    """Registra a decisão de transformar uma correção recorrente em regra."""
     if destino not in DESTINOS:
         raise SystemExit(f"destino inválido: {destino}. Use um de {sorted(DESTINOS)}")
-    grupo = next((g for g in grupos if g["classe"] == classe), None)
-    if grupo is None:
-        raise SystemExit(f"classe não observada nos candidatos: {classe}")
+    if origem not in ORIGENS:
+        raise SystemExit(f"origem inválida: {origem}. Use uma de {sorted(ORIGENS)}")
+    if camada_sistema is not None and camada_sistema not in CAMADAS_SISTEMA:
+        raise SystemExit(
+            f"camada de sistema fora do vocabulário: {camada_sistema}. "
+            f"Use uma de {sorted(CAMADAS_SISTEMA)}")
     if not regra.strip():
         raise SystemExit("a regra não pode ser vazia")
+
+    if origem == "diff_documental":
+        grupo = next((g for g in grupos if g["classe"] == classe), None)
+        if grupo is None:
+            raise SystemExit(f"classe não observada nos candidatos: {classe}")
+        evidencia = {k: grupo[k] for k in
+                     ("casos", "ocorrencias", "materiais", "confiancaMedia")}
+    else:
+        # Correção escrita não tem recorrência medida por diff: a prova dela é
+        # a mensagem. Guardamos só o localizador — messageId e data —, nunca o
+        # corpo, que continua vivendo no e-mail.
+        #
+        # E nunca o ASSUNTO. Em 06/08/2026 o gate da fronteira barrou a
+        # publicação do motor por causa de quatro regras cujo assunto de e-mail
+        # trazia razão social de parte e de cliente — assunto de mensagem do
+        # escritório quase sempre traz. O texto da regra era genérico; o nome
+        # entrou pela porta da proveniência.
+        #
+        # Este arquivo vive no lado do motor, que é para compartilhar com outros
+        # escritórios, e ali nome de cliente não entra nem como metadado. O
+        # messageId basta como localizador: quem precisa do assunto abre a
+        # mensagem.
+        if not lastro_externo:
+            raise SystemExit(
+                "origem 'retorno_escrito' exige --lastro com ao menos uma mensagem "
+                "(messageId e data): a prova da regra é a mensagem, não um diff")
+        evidencia = {
+            "mensagens": [_lastro_sem_cliente(item) for item in lastro_externo],
+            "casos": None,
+            "materiais": None,
+        }
 
     reg = carregar_registro()
     ident = "regra-" + hashlib.sha256(
@@ -255,11 +333,12 @@ def adotar(classe: str, *, destino: str, fase: str, regra: str,
         "texto": regra.strip(),
         "aprovadoPor": aprovado_por,
         "adotadaEm": _agora(),
-        # A evidência é a recorrência medida no momento da adoção. Guardá-la
+        "origem": origem,
+        "camadaSistema": camada_sistema,
+        # A evidência é o que sustentava a regra no momento da adoção. Guardá-la
         # permite responder depois "por que esta regra existe?" sem reabrir os
         # casos — e mostra se ela nasceu de padrão ou de episódio isolado.
-        "evidencia": {k: grupo[k] for k in
-                      ("casos", "ocorrencias", "materiais", "confiancaMedia")},
+        "evidencia": evidencia,
         "aplicadaEm": None,
         "destinoArquivo": None,
     }
@@ -287,6 +366,16 @@ def revalidar() -> list[dict]:
     divergencias = []
     for r in carregar_registro()["regras"]:
         antes = r.get("evidencia") or {}
+        # Regra vinda de mensagem escrita não tem recorrência de diff para
+        # recontar. Compará-la com o agrupamento produziria divergência todo
+        # dia, contra uma medida que nunca foi a prova dela.
+        if r.get("origem") == "retorno_escrito":
+            if not (antes.get("mensagens") or []):
+                divergencias.append({
+                    "regraId": r["regraId"], "classe": r["classe"],
+                    "antes": antes, "agora": None,
+                    "nota": "regra de retorno escrito sem nenhuma mensagem de lastro"})
+            continue
         agora = atual.get(r["classe"])
         if agora is None:
             divergencias.append({"regraId": r["regraId"], "classe": r["classe"],
@@ -334,10 +423,17 @@ def _aplicar_em_markdown(caminho: Path, regras: list[dict]) -> bool:
               "> em `_FORJA_HARNESS/learning_registry/REGRAS_APRENDIDAS.json`.",
               ""]
     for r in regras:
-        ev = r["evidencia"]
+        ev = r["evidencia"] or {}
+        camada = r.get("camadaSistema")
+        onde = f", camada `{camada}`" if camada else ""
+        if r.get("origem") == "retorno_escrito":
+            lastro = (f"lida em {len(ev.get('mensagens') or [])} mensagem(ns) "
+                      f"do escritório")
+        else:
+            lastro = (f"classe `{r['classe']}`, observada em {ev.get('casos')} caso(s), "
+                      f"{ev.get('materiais')} mudança(s) material(is)")
         linhas.append(f"- **{r['texto']}**")
-        linhas.append(f"  <br>_{r['regraId']} — classe `{r['classe']}`, observada em "
-                      f"{ev['casos']} caso(s), {ev['materiais']} mudança(s) material(is)._")
+        linhas.append(f"  <br>_{r['regraId']} — {lastro}{onde}._")
     linhas += ["", MARCA_FIM]
     bloco = "\n".join(linhas)
 
@@ -492,6 +588,13 @@ def main(argv=None) -> int:
     a.add_argument("--fase", required=True, help="F0..F10")
     a.add_argument("--regra", required=True, help="a regra, em uma frase imperativa")
     a.add_argument("--aprovado-por", required=True)
+    a.add_argument("--origem", default="diff_documental", choices=sorted(ORIGENS),
+                   help="de onde veio: medida no diff, ou dita por escrito")
+    a.add_argument("--camada-sistema", choices=sorted(CAMADAS_SISTEMA),
+                   help="em que camada do sistema a falha nasceu")
+    a.add_argument("--lastro", action="append", default=[], metavar="messageId|assunto|data",
+                   help="obrigatório em --origem retorno_escrito; repetível. "
+                        "Guarda o localizador da mensagem, nunca o corpo")
 
     ap_ = sub.add_parser("aplicar", help="escreve as regras nos destinos")
     ap_.add_argument("--seco", action="store_true")
@@ -538,12 +641,27 @@ def main(argv=None) -> int:
         return _amostrar(args.classe, args.limite)
 
     if args.verbo == "adotar":
+        lastro = []
+        for bruto in args.lastro:
+            partes = [p.strip() for p in str(bruto).split("|")]
+            # O assunto continua aceito na linha de comando, porque é assim que
+            # quem adota reconhece a mensagem — mas é descartado antes de
+            # chegar ao registro, que é arquivo do motor.
+            lastro.append({"messageId": partes[0],
+                           "assunto": partes[1] if len(partes) > 1 else None,
+                           "recebidoEm": partes[2] if len(partes) > 2 else None})
         nova = adotar(args.classe, destino=args.destino, fase=args.fase,
                       regra=args.regra, aprovado_por=args.aprovado_por,
-                      grupos=agrupar(levantar_candidatos()[0]))
+                      grupos=agrupar(levantar_candidatos()[0]),
+                      origem=args.origem, camada_sistema=args.camada_sistema,
+                      lastro_externo=lastro)
         ev = nova["evidencia"]
         print(f"adotada {nova['regraId']} — {nova['classe']} → {nova['destino']}/{nova['fase']}")
-        print(f"  evidência: {ev['casos']} caso(s), {ev['materiais']} material(is)")
+        if nova["origem"] == "retorno_escrito":
+            print(f"  lastro: {len(ev['mensagens'])} mensagem(ns) do escritório")
+        else:
+            print(f"  evidência: {ev['casos']} caso(s), {ev['materiais']} material(is)")
+        print(f"  camada do sistema: {nova['camadaSistema'] or '(não declarada)'}")
         print("  aplique com: python forja_aprendizado.py aplicar")
         return 0
 

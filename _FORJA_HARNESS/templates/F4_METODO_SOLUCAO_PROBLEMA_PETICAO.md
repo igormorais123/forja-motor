@@ -192,5 +192,13 @@ Outros:
   <br>_regra-091e8896c7db — classe `authority_citation:citation_scope`, observada em 2 caso(s), 10 mudança(s) material(is)._
 - **Escrever da perspectiva do advogado da parte, nunca da de quem julga: risco, objeção e precedente contrário são identificados e enfrentados, inclusive por distinção tecnicamente sustentável, mas jamais adotados nem antecipados como juízo desfavorável ao cliente. Enfrentar a objeção mais forte serve para vencê-la, não para conceder a ela.**
   <br>_regra-f22b9c24ce84 — classe `reasoning:reasoning`, observada em 2 caso(s), 54 mudança(s) material(is)._
+- **A hierarquia dos tribunais ordena a pesquisa, mas não a dispensa de aderência: nenhum julgado entra na peça sem relação real com a controvérsia. Precedente de tribunal superior impertinente ao caso vale menos que um da câmara julgadora que decide a mesma questão — e citá-lo pela posição institucional expõe a peça.**
+  <br>_regra-17cf476aadeb — lida em 1 mensagem(ns) do escritório, camada `recuperacao_fontes`._
+- **A síntese estruturada de abertura vale em qualquer tribunal, e não só no STJ: fatos processuais essenciais, teor da decisão impugnada, fundamentos, dispositivos invocados, pedidos e o efeito de cada um sobre o resultado. A peça NÃO menciona o dispositivo regimental nem a origem da estrutura — a forma é da casa, a fonte fica no bastidor.**
+  <br>_regra-251c754421e0 — lida em 2 mensagem(ns) do escritório, camada `formatacao`._
+- **Memorial de embargos de declaração se escreve por confronto, questão a questão: o que a parte pediu e sustentou; o que o acórdão efetivamente examinou e decidiu; qual o ponto omitido, contraditório, obscuro ou materialmente equivocado; e que repercussão concreta a integração tem sobre o resultado. Reproduzir os embargos ou enunciar o vício em abstrato não é memorial.**
+  <br>_regra-37292d1656f4 — lida em 1 mensagem(ns) do escritório, camada `instrucao_agente`._
+- **Pedido subsidiário se escreve executável: quando se admite que a medida adversa seja mantida, dizer exatamente com que limites — especialidade, objeto, método, período, data-base, custeio, acesso e proteção das informações sensíveis. Pedido subsidiário genérico devolve ao julgador a tarefa de desenhar o comando, e ele o desenhará sem nós.**
+  <br>_regra-f13a2ad246ae — lida em 1 mensagem(ns) do escritório, camada `instrucao_agente`._
 
 <!-- APRENDIDO-DO-RETORNO-HUMANO: fim -->

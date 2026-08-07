@@ -16,7 +16,7 @@
         "materiais": 1,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json",
       "lastroCorrigidoEm": "2026-08-06T03:31:15-03:00",
       "lastroCorrigidoPorque": "A evidência original (3 casos, 12 materiais) vinha de três retornos que o gate PP-NOT-A-REVISION depois mostrou não serem revisão da nossa peça. Igor decidiu em 06/08/2026 manter a regra e corrigir o número: a cautela vale por si, o lastro que a justificava não existia."
@@ -35,7 +35,7 @@
         "materiais": 54,
         "confiancaMedia": 0.98
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     },
     {
@@ -52,7 +52,7 @@
         "materiais": 9,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     },
     {
@@ -69,7 +69,7 @@
         "materiais": 54,
         "confiancaMedia": 0.98
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F7.json"
     },
     {
@@ -86,7 +86,7 @@
         "materiais": 15,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F7.json"
     },
     {
@@ -103,7 +103,7 @@
         "materiais": 10,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     },
     {
@@ -120,7 +120,7 @@
         "materiais": 7,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json"
     },
     {
@@ -137,7 +137,7 @@
         "materiais": 1,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F1.json"
     },
     {
@@ -154,7 +154,7 @@
         "materiais": 3,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F7.json"
     },
     {
@@ -171,7 +171,7 @@
         "materiais": 15,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     },
     {
@@ -188,7 +188,7 @@
         "materiais": 10,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/phase_contracts/F7.json"
     },
     {
@@ -205,7 +205,7 @@
         "materiais": 5,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     },
     {
@@ -222,7 +222,7 @@
         "materiais": 10,
         "confiancaMedia": 0.92
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     },
     {
@@ -239,7 +239,103 @@
         "materiais": 54,
         "confiancaMedia": 0.98
       },
-      "aplicadaEm": "2026-08-06T19:31:31-03:00",
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-17cf476aadeb",
+      "classe": "correspondencia:diretriz_escrita",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "A hierarquia dos tribunais ordena a pesquisa, mas não a dispensa de aderência: nenhum julgado entra na peça sem relação real com a controvérsia. Precedente de tribunal superior impertinente ao caso vale menos que um da câmara julgadora que decide a mesma questão — e citá-lo pela posição institucional expõe a peça.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T21:09:47-03:00",
+      "origem": "retorno_escrito",
+      "camadaSistema": "recuperacao_fontes",
+      "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19fd3a8659abfe29",
+            "recebidoEm": "2026-08-05"
+          }
+        ],
+        "casos": null,
+        "materiais": null
+      },
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-251c754421e0",
+      "classe": "correspondencia:diretriz_escrita",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "A síntese estruturada de abertura vale em qualquer tribunal, e não só no STJ: fatos processuais essenciais, teor da decisão impugnada, fundamentos, dispositivos invocados, pedidos e o efeito de cada um sobre o resultado. A peça NÃO menciona o dispositivo regimental nem a origem da estrutura — a forma é da casa, a fonte fica no bastidor.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T21:10:03-03:00",
+      "origem": "retorno_escrito",
+      "camadaSistema": "formatacao",
+      "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19fd2e22d985817d",
+            "recebidoEm": "2026-08-05"
+          },
+          {
+            "messageId": "19fd3a8659abfe29",
+            "recebidoEm": "2026-08-05"
+          }
+        ],
+        "casos": null,
+        "materiais": null
+      },
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-37292d1656f4",
+      "classe": "correspondencia:diretriz_escrita",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "Memorial de embargos de declaração se escreve por confronto, questão a questão: o que a parte pediu e sustentou; o que o acórdão efetivamente examinou e decidiu; qual o ponto omitido, contraditório, obscuro ou materialmente equivocado; e que repercussão concreta a integração tem sobre o resultado. Reproduzir os embargos ou enunciar o vício em abstrato não é memorial.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T21:10:03-03:00",
+      "origem": "retorno_escrito",
+      "camadaSistema": "instrucao_agente",
+      "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19fd2e22d985817d",
+            "recebidoEm": "2026-08-05"
+          }
+        ],
+        "casos": null,
+        "materiais": null
+      },
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-f13a2ad246ae",
+      "classe": "correspondencia:diretriz_escrita",
+      "destino": "template",
+      "fase": "F4",
+      "texto": "Pedido subsidiário se escreve executável: quando se admite que a medida adversa seja mantida, dizer exatamente com que limites — especialidade, objeto, método, período, data-base, custeio, acesso e proteção das informações sensíveis. Pedido subsidiário genérico devolve ao julgador a tarefa de desenhar o comando, e ele o desenhará sem nós.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-06T21:10:15-03:00",
+      "origem": "retorno_escrito",
+      "camadaSistema": "instrucao_agente",
+      "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19fd3a8659abfe29",
+            "recebidoEm": "2026-08-05"
+          }
+        ],
+        "casos": null,
+        "materiais": null
+      },
+      "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
     }
   ]
