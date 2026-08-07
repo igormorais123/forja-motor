@@ -312,3 +312,24 @@ conduz as nove perguntas por dentro — as duas rodam.
 
 Estado do gate: `forja_conselho.py` valida Helena e Cícero. A obrigatoriedade do Diabob
 ainda não é verificada por gate.
+
+## Grok 4.5 pela assinatura do Cursor (06/08/2026 — ordem do Igor)
+
+Modelo `grok-4.5-cursor` em `forja_modelos.py`, provedor `cursor`, executado por
+`cursor-agent --print --output-format json --mode ask`. O `--mode ask` é obrigatório:
+sem ele o agente do Cursor tem escrita e shell, e revisor externo não edita o caso.
+
+Dois postos:
+
+1. **Diabob (F4 e F7), obrigatório** — `forja_diabob.py`. Reserva: `grok-4.5` pelo
+   OpenRouter, com a queda declarada em `rotaDegradada`. Degradar é permitido; degradar
+   em silêncio troca assinatura por gasto sem ninguém ver.
+2. **Triagem semântica da ingestão (F1)** — `forja_triagem_rapida.py`. Complementa, não
+   substitui, o `forja_injection_scan.py`: aquele examina o PDF atrás de texto
+   escondido, este lê o texto extraído atrás de sentido. Propõe suspeita para triagem
+   humana, não bloqueia, e ausência de achado não é prova de documento limpo.
+
+Custo declarado zero porque é mensalidade, não porque é grátis; tokens em zero porque o
+CLI não os expõe e estimativa em ledger vira número citado depois.
+
+Regressão: `test_forja_cursor_grok.py` (22 testes, sem rede nem login).
