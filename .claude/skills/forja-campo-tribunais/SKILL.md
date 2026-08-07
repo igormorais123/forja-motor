@@ -18,8 +18,12 @@ autenticada e para as fontes que não respondem a busca simples.
    `python -m teiajus fontes` diz o que ele cobre. Mas atenção: o score do TeiaJus
    ordena a fila; **evidência documental sustenta afirmação**, e prova documental existe
    em 2.155 casos, não nos 33 mil.
-2. **Já está em `cache/fontes_oficiais/`?** Com data de conferência. Se sim e recente,
-   não recolete.
+2. **Já está em `cache/fontes_oficiais/`?** Com data de conferência. E a regra **muda
+   conforme a fase**:
+   - **F1, F3 e F5** — cache recente serve; não recolete.
+   - **F7** — não serve. O gate `live_official_source_replayed` exige reprodução ao
+     vivo, e `source_excerpt_hash_match` compara o recorte. Só vale cache com hash e
+     data conferidos **nesta rodada**. Reaproveitar cache antigo aqui é burlar o gate.
 3. **A fonte responde sem login?** Planalto e a API do BCB respondem direto — use
    `fetch-rendered`, que é ordens de grandeza mais barata. SCON/STJ e STF **não**: só
    por aqui.

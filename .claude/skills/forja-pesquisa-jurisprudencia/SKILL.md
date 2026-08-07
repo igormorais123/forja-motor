@@ -92,10 +92,17 @@ plausíveis e inexistentes com a mesma fluência da verdade. **Nada que sai daqu
 
 ## Critério de conclusão
 
-- `source_ledger` com toda citação conferida nominalmente, ou listada como pendente.
+- **Toda citação destinada à peça conferida nominalmente.** Pendente destinada ao uso
+  final **impede** fechar F5 — os gates `official_sources_archived` e `quotes_compared`
+  cobram isso. O que pode ficar listado como pendente é candidato **descartado ou não
+  usado**, e a lista precisa dizer qual é qual.
 - `citation_checklist` fechado, com o nível da Diretriz 28 em que a pesquisa parou.
 - Recorte verbatim arquivado para cada citação que a peça usa.
 - Vigência conferida, não presumida.
+- Se houver material econômico, os três gates condicionais de `F5.json` respondidos:
+  `fonte_prevalente_validada`, `data_base_registrada`,
+  `documentos_economicos_inventariados`. A nota do contrato é dura: **proposta não
+  equivale a validação humana** da fonte prevalente.
 
 ## Repertório das fases
 

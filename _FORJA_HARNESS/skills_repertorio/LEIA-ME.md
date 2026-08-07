@@ -1,7 +1,7 @@
 # Repertório de skills da FORJA — cardápio mestre
 
-> **Natureza deste diretório:** cardápio, não contrato. Nenhuma skill listada aqui é
-> obrigatória. O que obriga é o contrato da fase (`phase_contracts/F*.json`), o
+> **Natureza deste diretório:** cardápio, não contrato — **com quatro exceções
+> nomeadas** (abaixo). O que obriga é o contrato da fase (`phase_contracts/F*.json`), o
 > `CLAUDE.md` da fábrica e o `AGENTS.md`. Este repertório existe para que o agente
 > **saiba que o recurso existe** no momento em que ele resolveria o problema — e para
 > que decida, com critério escrito, usar ou não usar.
@@ -21,7 +21,41 @@ falha da Lição 89 (gate instalado na rota que ninguém percorre).
 3. Para uma consulta programática (qual skill serve a qual fase, custo, risco), leia
    `CATALOGO_SKILLS.json` em vez dos markdowns. Ele é a fonte legível por máquina.
 
-| Fase | Documento | O que a fase entrega |
+## As cinco skills que NÃO são opcionais
+
+O resto do repertório é escolha. Estas cinco são ordem escrita e o cardápio não as
+afrouxa:
+
+| Skill | Onde | Fundamento |
+|---|---|---|
+| `helena` | F4 | ordem do Igor, 09/07/2026; gate `helena_present` e elo bloqueante do F10 |
+| `cicero` | F4 | ordem do Igor, 09/07/2026; gate `cicero_present` e elo bloqueante do F10 |
+| `diabob` | F4 e F7 | **ordem do Igor, 06/08/2026**; executor `forja_diabob.py` no Grok 4.5, por determinação do titular de 26/07/2026 |
+| `fabrica-visual-peticoes` | F8 | "invocar em toda peça"; rege protocolo e pipeline visual |
+| `padrao-visual-medina` | F6 (estrutura) e F8 | "referência visual OBRIGATÓRIA de toda petição" |
+
+**O Diabob não é a mesma coisa que `forja-red-team`, e uma não substitui a outra.** A
+`forja-red-team` é o protocolo das nove perguntas, conduzido por dentro. O Diabob é o
+contraditório por **outra família de modelo** — Grok 4.5, uma terceira família ao lado
+de Claude e Codex. O motivo está escrito no próprio executor: red team feito pelo mesmo
+modelo que produziu a análise repete os pontos cegos com voz mais dura. Nomear o modelo
+é o que transforma o Diabob de tom em contraditório real.
+
+O parecer do Diabob é **insumo interno de auditoria**: não vai para a peça, não vira
+fundamento e não substitui o F7. Como todo modelo externo na FORJA, ele **propõe
+objeções, não afirma fatos**.
+
+Estado do gate, para não decorar errado: `forja_conselho.py` hoje valida os pareceres de
+Helena e Cícero. A obrigatoriedade do Diabob é **de protocolo, ainda não verificada por
+gate** — o que significa que depende de quem conduz a fase, e é exatamente o tipo de
+regra que a casa já viu sumir por isso.
+
+## Fases
+
+Coluna de entregas é **resumo**, não a lista completa: as saídas obrigatórias de cada
+fase estão no contrato, e só ele vale.
+
+| Fase | Documento | Principais entregas |
 |---|---|---|
 | F0 | [`F0.md`](F0.md) | `case_manifest`, `reconciliation_report` |
 | F1 | [`F1.md`](F1.md) | `document_index`, `coverage_ledger`, `injection_scan` |
@@ -38,8 +72,17 @@ falha da Lição 89 (gate instalado na rota que ninguém percorre).
 
 ## As oito perguntas que decidem se a skill entra
 
-Antes de invocar qualquer skill deste cardápio, responda. Se três ou mais respostas
-forem desfavoráveis, não use — trabalhe sem ela e registre a decisão.
+Não some as respostas. **Três delas são bloqueio absoluto** — uma só já veta, e nenhuma
+quantidade de vantagem nas outras compensa:
+
+- **Pergunta 7** — colide com regra inviolável: não use, ponto.
+- **Pergunta 8** — a ação é irreversível (envio externo, publicação, exclusão): não use
+  sem autorização expressa para aquela ação específica.
+- **Pergunta 6** — ninguém confere a saída: não use até existir quem confira.
+
+As outras cinco são graduais e se pesam entre si: custo de contexto, dependência
+externa, risco de fabricação, o que já existe na casa e o artefato alimentado. Elas
+informam a escolha; não a vetam sozinhas.
 
 | # | Pergunta | Por que importa |
 |---|---|---|
@@ -70,6 +113,17 @@ Cada ficha traz cinco marcadores fixos, sempre com o mesmo vocabulário:
 4. Entre skills visuais: `fabrica-visual-peticoes` rege protocolo e pipeline;
    `padrao-visual-medina` rege a linguagem de design.
 5. Entre duas skills equivalentes, vence a de menor dependência externa.
+
+## Divergências declaradas entre o `CLAUDE.md` e os contratos
+
+Estas duas existem hoje e o repertório **não escolhe um lado em silêncio**. Quem
+trabalhar nelas confira as duas fontes antes de agir, e quem for reconciliar decida
+explicitamente qual prevalece.
+
+| Assunto | `CLAUDE.md` diz | O contrato ou o código diz | Como o repertório trata |
+|---|---|---|---|
+| Onde a Diretriz 28 é percorrida | "a pesquisa de **F3** percorre os níveis nesta ordem" | `F3` é `F3_FONTES_REGIMENTO_LEIS`; a fase de pesquisa é `F5_PESQUISA_OFICIAL`, que produz `source_ledger` e `citation_checklist` | a ficha fica em **F5**, e F3 aponta a divergência. A ordem em si não muda em nenhuma leitura |
+| Executor da subfase F7-B | "a chamada é explícita por `forja_fable5.py`" | `forja_editorial.py` tem 25,8 KB e é o executor; `forja_fable5.py` tem 1,8 KB e o `INDICE_FORJA.md` o declara **shim legado** | o repertório cita `forja_editorial.py` e nomeia o shim. O `CLAUDE.md` está desatualizado neste ponto |
 
 ## Skills adaptadas à FORJA
 

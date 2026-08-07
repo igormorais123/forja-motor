@@ -88,10 +88,19 @@ def avaliar(caminhos, *, material_de_terceiro=None) -> dict:
     ninguém olhou que se esconde num lote liberado em bloco.
     """
     declarados = {str(n).strip().casefold() for n in (material_de_terceiro or [])}
-    medidos, bloqueados, liberados = [], [], []
+    medidos, bloqueados, liberados, cegos = [], [], [], []
     for caminho in caminhos:
         m = medir(caminho)
         if m is None:
+            # O arquivo se anuncia como documento do Word e não produziu medida:
+            # curto demais, ilegível, ou bytes que não abrem. Não é prova de
+            # desvio e por isso não barra — mas é ponto cego, e ponto cego que
+            # não aparece em lugar nenhum faz a barreira parecer mais completa
+            # do que é. Descoberto ao testar base64 corrompido, que **não**
+            # levanta exceção: decodifica em lixo e o anexo sumia em silêncio.
+            if Path(caminho).suffix.lower() in EXTENSOES:
+                cegos.append({"arquivo": Path(caminho).name,
+                              "motivo": "sem medida tipográfica"})
             continue
         medidos.append(m)
         if not _falha_nas_tres(m):
@@ -101,7 +110,8 @@ def avaliar(caminhos, *, material_de_terceiro=None) -> dict:
         else:
             bloqueados.append(m)
     return {"medidos": medidos, "bloqueados": bloqueados,
-            "liberadosPorDeclaracao": liberados, "aprovado": not bloqueados}
+            "liberadosPorDeclaracao": liberados, "naoInspecionados": cegos,
+            "aprovado": not bloqueados}
 
 
 def explicar(veredito: dict) -> str:
@@ -143,27 +153,41 @@ def avaliar_rascunho(svc, draft_id: str, *, material_de_terceiro=None) -> dict:
     msg = det.get("message") or {}
     mensagem_id = msg.get("id")
 
+    nao_inspecionados = []
     with tempfile.TemporaryDirectory() as tmp:
         caminhos = []
         for parte in _partes(msg.get("payload") or {}):
             nome = parte.get("filename") or ""
             if Path(nome).suffix.lower() not in EXTENSOES:
                 continue
-            corpo = parte.get("body") or {}
-            ident = corpo.get("attachmentId")
-            dados = corpo.get("data")
-            if ident and not dados:
-                anexo = svc.users().messages().attachments().get(
-                    userId="me", messageId=mensagem_id, id=ident).execute()
-                dados = anexo.get("data")
-            if not dados:
+            # Um anexo que não se consegue baixar ou decodificar não pode
+            # derrubar a conferência dos outros: a exceção subiria e barraria o
+            # envio inteiro por um defeito de transporte, não de conteúdo. Ele
+            # também não pode sumir em silêncio, porque aí a barreira passaria a
+            # ter um ponto cego que ninguém enxerga. Fica declarado.
+            try:
+                corpo = parte.get("body") or {}
+                ident = corpo.get("attachmentId")
+                dados = corpo.get("data")
+                if ident and not dados:
+                    anexo = svc.users().messages().attachments().get(
+                        userId="me", messageId=mensagem_id, id=ident).execute()
+                    dados = anexo.get("data")
+                if not dados:
+                    continue
+                # `Path(nome).name` descarta qualquer diretório vindo no campo
+                # `filename`, que é texto controlado por quem montou a mensagem.
+                destino = Path(tmp) / Path(nome).name
+                destino.write_bytes(base64.urlsafe_b64decode(dados))
+            except Exception as erro:  # noqa: BLE001
+                nao_inspecionados.append(
+                    {"arquivo": Path(nome).name, "motivo": f"{type(erro).__name__}"})
                 continue
-            destino = Path(tmp) / Path(nome).name
-            destino.write_bytes(base64.urlsafe_b64decode(dados))
             caminhos.append(destino)
         veredito = avaliar(caminhos, material_de_terceiro=material_de_terceiro)
     veredito["draftId"] = draft_id
     veredito["anexosDocx"] = len(veredito["medidos"])
+    veredito["naoInspecionados"] = nao_inspecionados + veredito["naoInspecionados"]
     return veredito
 
 

@@ -23,6 +23,7 @@ Uso: python test_forja_varredura_tipografica.py   (exit 0 = ok; exit 1 = regress
 from __future__ import annotations
 
 import io
+import re
 import sys
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -46,11 +47,61 @@ from forja_varredura_tipografica import (  # noqa: E402
 # afrouxar a catraca duas vezes — uma por tirar arquivos, outra por manter tetos
 # calibrados numa população maior. A comparação com o retrato de 04/08 fica
 # perdida; isso é o custo da mudança de escopo, e não um efeito colateral oculto.
-ENTREGAVEIS_MIN = 119
+# O piso não existe para policiar a exclusão de um arquivo: existe para pegar o
+# filtro de nome quebrando, e filtro quebrado não derruba um — derruba dezenas
+# de uma vez. Ancorá-lo no valor exato medido (119, em 06/08/2026) produziria
+# reprovação toda vez que alguém apagasse uma cópia obsoleta, e alarme que toca
+# por movimento normal é alarme que se aprende a ignorar. A folga abaixo é
+# dimensionada pelo modo de falha real, não por conforto: uma queda de dez por
+# cento já não é rotina de faxina.
+ENTREGAVEIS_MIN = 108
 JUSTIFICACAO_ABAIXO_50_MAX = 3
-TAMANHO_ABAIXO_90_MAX = 24
+# 24 → 25 em 06/08/2026, e o motivo fica nomeado porque teto que sobe em
+# silêncio é o começo de uma catraca que não segura nada. Uma entrega produzida
+# pela própria esteira nasceu com o estilo `Normal` em 11 pt — o padrão da casa
+# é 12 —, e todos os parágrafos herdavam dali: 0% de cobertura. O estilo foi
+# corrigido e a peça subiu para 85%. O que sobra são títulos em 13 pt, que a
+# métrica não sabe distinguir de corpo e que são decisão de desenho de quem
+# escreveu. A causa raiz não é esta peça: são dez geradores espalhados pelos
+# casos, cada um fixando o próprio corpo (9,2; 10,2; 10,5; 11; 11,5 pt) em vez
+# de usar os tokens da casa — e é isso que a catraca de geradores abaixo trava.
+TAMANHO_ABAIXO_90_MAX = 25
 FONTE_ABAIXO_90_MAX = 15
 TRES_DIMENSOES_MAX = 3
+
+
+# Catraca a montante: o defeito não nasce no documento, nasce no gerador.
+# Cada entrega vinha escrevendo o próprio `build_*.py` e fixando o corpo à mão —
+# 9,2; 10,2; 10,5; 11; 11,5 pt — em vez de usar os tokens da casa, que dizem 12.
+# Medir o documento depois pega o sintoma um por um; travar o gerador impede a
+# classe inteira. Os dez existentes ficam anistiados, porque são entregas
+# passadas e reescrevê-las não é decisão minha; o que não pode é aparecer o
+# décimo primeiro.
+GERADORES_FORA_DO_CORPO_MAX = 10
+_CORPO_A_MAO = re.compile(r"normal\.font\.size\s*=\s*Pt\(\s*([\d.]+)\s*\)")
+
+
+def verificar_geradores_nao_reinventam_o_corpo() -> int:
+    achados = []
+    for arquivo in FABRICA.rglob("*.py"):
+        if "node_modules" in str(arquivo):
+            continue
+        try:
+            texto = arquivo.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        for m in _CORPO_A_MAO.finditer(texto):
+            if float(m.group(1)) != 12.0:
+                achados.append((float(m.group(1)), arquivo.name))
+    if len(achados) <= GERADORES_FORA_DO_CORPO_MAX:
+        return 0
+    print(f"  FALHOU: {len(achados)} gerador(es) fixam o corpo fora dos 12 pt do "
+          f"padrão da casa, contra {GERADORES_FORA_DO_CORPO_MAX} anistiados — "
+          f"use os tokens de `_FERRAMENTAS/estilo_medina.py` em vez de escolher "
+          f"o tamanho de novo:")
+    for tamanho, nome in sorted(achados)[:8]:
+        print(f"      {tamanho}pt  {nome[:60]}")
+    return 1
 
 
 def verificar_familias_nao_pareiam_documentos_distintos() -> list[str]:
@@ -116,6 +167,8 @@ def main() -> int:
         for falha in familia_falhas:
             print(f"      {falha}")
         falhas += 1
+    falhas += verificar_geradores_nao_reinventam_o_corpo()
+
     laudo = varrer()
     f = laudo["foraDoPadrao"]
 

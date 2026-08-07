@@ -75,6 +75,52 @@ Copiar e adaptar sete skills genéricas para a fábrica, em `.claude/skills/`:
   Entraria como insumo interno de F4, jamais como texto protocolável.
 - `archify` — inútil para peça, útil para documentar o próprio harness.
 
+## Revisão cruzada (06/08/2026)
+
+Revisado por Codex GPT-5.5, família distinta, sobre o material integral entregue por
+stdin — 105.044 tokens. `familyAssurance` deste artefato: `cross_family`. Registro
+completo em `skills_repertorio/REVISAO_CODEX_2026-08-06.md`.
+
+Vinte achados viraram correção, três dos quais de risco: envio de e-mail e
+sincronização de painel estavam antecipados de F10 para F9, e a regra de cache da
+`forja-campo-tribunais` podia burlar o `live_official_source_replayed`. Duas obrigações
+invioláveis estavam ausentes: `_LEIS_GERAIS` em F3 e a obrigatoriedade de
+`fabrica-visual-peticoes` e `padrao-visual-medina` — que passaram a ser as **quatro**
+exceções nomeadas à natureza opcional do cardápio, ao lado de Helena e Cícero.
+
+Três achados P1 do revisor foram **derrubados** pela conferência do código, e ficam
+registrados para não voltarem: o executor de F7-B é `forja_editorial.py` e não o shim
+`forja_fable5.py` que o `CLAUDE.md` ainda nomeia; a Diretriz 28 roda em F5 pelos
+contratos, embora o `CLAUDE.md` diga F3; e `no_pdf_or_raster_rendering` afirma que a QA
+não rasterizou, não que a entrega dispensa PDF. As duas primeiras viraram **divergências
+declaradas** no `LEIA-ME.md` — o repertório expõe o conflito em vez de escolher em
+silêncio, e a reconciliação do `CLAUDE.md` fica pendente para o Igor.
+
+Um achado foi aceito em parte: a repetição de **narrativa histórica** entre fases é peso
+morto, embora a repetição das **fichas** siga deliberada. Fica como dívida declarada.
+
+## Correção de 06/08/2026 — Diabob é obrigatório
+
+Ordem do Igor, no mesmo dia. O conselho obrigatório passou de duas para **três** vozes:
+Helena, Cícero e **Diabob**. Com as duas skills visuais, são **cinco** as exceções à
+natureza opcional do cardápio.
+
+Isto corrigiu um erro de classificação meu, não só uma omissão: o catálogo marcava
+`diabob` como `status: preterida`, em favor da `forja-red-team`. Estava errado. As duas
+não são substitutas — a `forja-red-team` conduz as nove perguntas **por dentro**, e o
+Diabob traz o contraditório de **outra família de modelo** (`forja_diabob.py`, Grok 4.5,
+por determinação do titular de 26/07/2026). O próprio executor explica por quê: red team
+feito pelo mesmo modelo que produziu a análise repete os próprios pontos cegos com voz
+mais dura.
+
+Somado à `forja-revisao-cruzada` no Codex, F7 passa a ter **três famílias** sobre a mesma
+peça. O parecer do Diabob é insumo interno: propõe objeções, não afirma fatos, e não
+substitui o F7.
+
+`CLAUDE.md` e `AGENTS.md` atualizados. **Pendência declarada:** `forja_conselho.py`
+valida apenas Helena e Cícero — a obrigatoriedade do Diabob é de protocolo e ainda não
+é verificada por gate. Pela própria regra da casa, regra escrita que não pega vira gate.
+
 ## Critério de reabertura
 
 Fato novo que mostre skill do repertório sem uso em três casos consecutivos (sinal de

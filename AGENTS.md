@@ -298,3 +298,17 @@ O Codex interessa duas vezes aqui: como **revisor** da outra família em
 `forja-revisao-cruzada` (o gate `cross_model_review_verified` bloqueia `unverified`), e
 como produtor quando o Claude for o revisor. `familyAssurance` é recomposto pelo
 orquestrador e nunca aceito por declaração.
+
+## Conselho obrigatório ampliado (06/08/2026 — ordem do Igor)
+
+O conselho de F4 passou a ter três vozes obrigatórias: `helena` (estratégia), `cicero`
+(jurídico) e **`diabob`** (contraditório adversarial). O Diabob roda por
+`_FORJA_HARNESS/forja_diabob.py` no Grok 4.5 — terceira família de modelo, ao lado de
+Claude e Codex —, por determinação do titular de 26/07/2026.
+
+O parecer dele é insumo interno de auditoria: propõe objeções, não afirma fatos, não vai
+para a peça e não substitui o F7. Não se confunde com a skill `forja-red-team`, que
+conduz as nove perguntas por dentro — as duas rodam.
+
+Estado do gate: `forja_conselho.py` valida Helena e Cícero. A obrigatoriedade do Diabob
+ainda não é verificada por gate.

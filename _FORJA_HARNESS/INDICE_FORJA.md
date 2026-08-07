@@ -13,6 +13,7 @@
 | Testes, régua e critérios de aceite | `docs/TESTING.md` |
 | Regras normativas (fases, milestones) | `FORJA_SPEC_MANIFEST.json` |
 | **Que skill existe para a fase em que estou** (cardápio, não contrato) | `skills_repertorio/LEIA-ME.md` → um documento por fase (`F0.md` a `F10.md` + `TRANSVERSAIS.md`). Consulta por máquina: `skills_repertorio/CATALOGO_SKILLS.json`. Leia **apenas** o documento da fase corrente |
+| Revisão cruzada do repertório (Codex GPT-5.5, `cross_family`) e as 2 divergências abertas entre `CLAUDE.md` e contratos | `skills_repertorio/REVISAO_CODEX_2026-08-06.md` — 20 achados aplicados, 3 derrubados na conferência do código. **Pendente do Igor:** reconciliar `CLAUDE.md` quanto ao executor de F7-B (`forja_editorial.py` × shim `forja_fable5.py`) e à fase da Diretriz 28 (F3 × F5) |
 | Skills adaptadas à FORJA (7, em `..\.claude\skills\`) | `forja-ingestao-autos` (F1), `forja-exploracao-problema` (F2A), `forja-campo-tribunais` (F1/F3/F5/F7), `forja-pesquisa-jurisprudencia` (F5), `forja-red-team` (F4/F7), `forja-revisao-cruzada` (F7), `forja-saida-humana` (F6/F7/F9). Chamam os scripts da casa; não substituem nenhum |
 | Estado da implementação N3 | `reports/IMPLEMENTACAO_FORJA_N3_2026-07-10.md` |
 | Estado final auditado da implementação N4 | `reports/CONSELHO_SINTESE_IMPLEMENTACAO_FORJA_N4_2026-07-11.md` |

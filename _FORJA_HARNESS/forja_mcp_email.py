@@ -125,6 +125,13 @@ def enviar_rascunho(draft_id, material_de_terceiro=None):
         _registrar({"evento": "envio_barrado_por_anexo", "draftId": draft_id,
                     "arquivos": [m["arquivo"] for m in veredito["bloqueados"]]})
         raise ValueError(gate.explicar(veredito))
+    if veredito.get("naoInspecionados"):
+        # Ponto cego declarado: o anexo saiu sem passar pela conferência. Não
+        # barra — ausência de medida nunca foi prova de desvio —, mas fica na
+        # trilha, porque barreira com ponto cego invisível é pior que barreira
+        # nenhuma: ninguém sabe o que ela não viu.
+        _registrar({"evento": "anexo_nao_inspecionado", "draftId": draft_id,
+                    "itens": veredito["naoInspecionados"]})
     if veredito["liberadosPorDeclaracao"]:
         # Passar por declaração é decisão de quem envia, e fica na trilha: sem
         # o registro, a exceção vira o caminho normal em duas semanas.

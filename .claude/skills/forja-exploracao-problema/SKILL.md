@@ -79,11 +79,14 @@ por lembrança:
 Para o repertório completo, a skill `advogado-sobrehumano` tem o catálogo — puxe a
 seção de estratégia processual, não o arsenal inteiro.
 
-## A pergunta que fecha a fase
+## A pergunta que prepara F4
 
 **A pergunta jurisdicional, em uma frase.** Se ela não cabe numa frase, o blueprint de
-F4 vai ser coleção de argumentos sem eixo. É gate do catálogo e o custo de respondê-la
-é de minutos.
+F4 vai ser coleção de argumentos sem eixo.
+
+Cuidado com a fase: o gate `jurisdictional_question_defined` é de **F4**, não de F2.
+Aqui ela é antecipação e item de handoff — formulá-la em F2 é barato e evita que F4
+comece do zero, mas o bloqueio contratual está em F4 e é lá que ela se fecha.
 
 ## Quando esta skill não vale o custo
 
@@ -96,7 +99,7 @@ F4 vai ser coleção de argumentos sem eixo. É gate do catálogo e o custo de r
 
 - 100 perguntas adaptadas ao caso, 10 por ótica, nenhuma de enchimento.
 - Toda resposta classificada; todo `blocked` com consequência e rota.
-- Pergunta jurisdicional em uma frase.
+- Pergunta jurisdicional em uma frase, entregue no handoff (o gate dela é de F4).
 - Pelo menos duas soluções desenhadas.
 - `validate` sem erro, e o gate `answers_provenance_classified` satisfeito de fato, não
   por preenchimento.

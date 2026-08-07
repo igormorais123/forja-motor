@@ -51,9 +51,11 @@ Em F7 há **dois** passes, e é o segundo que costuma ser esquecido:
 
 - Vocabulário técnico jurídico. "Omissão qualificada", "fundamentação individualizada" e
   "erro de subsunção" são terminologia blindada exigida pelo escritório, não jargão.
-- A síntese executiva no início da peça. É determinação do Prof. Fábio de 07/07 e virou
-  o gate **S7** — instrução escrita disputa atenção com o resto do prompt e perde, então
-  virou verificação.
+- A síntese executiva no início da peça, no estilo do art. 343-A do RISTJ. É
+  determinação do Prof. Fábio de 07/07/2026 e vale para **todo** tribunal. Atenção ao
+  identificador: **S6** é identidade do ato recursal e **S7** é tema fora do
+  `objeto.devolvido` — nenhum dos dois é o gate da síntese. Ela é regra inviolável e não
+  tem gate lexical próprio, o que significa que depende de quem escreve e de quem revisa.
 - Marcador de auditoria em artefato interno. `[FONTE:]`, `[DECLARAÇÃO]`, `[INFERÊNCIA]` e
   `[VERIFICAR]` pertencem ao ledger — o que é proibido é aparecerem no protocolável.
 

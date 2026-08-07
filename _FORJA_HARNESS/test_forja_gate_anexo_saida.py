@@ -122,6 +122,41 @@ try:
            all(n in texto for n in lote))
     checar("e traz os três números medidos, para não ser preciso abrir o arquivo",
            "29%" in texto and "0%" in texto)
+
+    # Um anexo que não desce nem decodifica não pode derrubar a conferência dos
+    # outros: a exceção subiria e barraria o envio inteiro por defeito de
+    # transporte. Também não pode sumir — barreira com ponto cego invisível é
+    # pior que barreira nenhuma. Achado do Codex em 06/08/2026.
+    class _ServicoQuebrado:
+        """Devolve um rascunho com dois anexos: um íntegro e um corrompido."""
+        def users(self):
+            return self
+
+        def drafts(self):
+            return self
+
+        def messages(self):
+            return self
+
+        def attachments(self):
+            return self
+
+        def get(self, **_k):
+            return self
+
+        def execute(self):
+            return {"message": {"id": "m1", "payload": {"parts": [
+                {"filename": "corrompido.docx",
+                 "body": {"data": "isto-nao-e-base64-valido!!!"}},
+                {"filename": "leve.docx", "body": {"data": ""}},
+            ]}}}
+
+    v = gate.avaliar_rascunho(_ServicoQuebrado(), "rascunho-x")
+    checar("anexo ilegível não derruba a conferência do rascunho inteiro",
+           v["aprovado"] and v["medidos"] == [])
+    checar("e fica declarado como ponto cego, em vez de sumir",
+           [x["arquivo"] for x in v["naoInspecionados"]] == ["corrompido.docx"],
+           f"declarados: {v.get('naoInspecionados')}")
 finally:
     gate.medir = medir_real
 

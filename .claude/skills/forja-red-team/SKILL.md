@@ -22,8 +22,24 @@ Lê-se junto com a regra de enfrentar a objeção mais forte da adversa: **enfre
 para vencer, não para conceder**. Isoladas, as duas se degradam — uma vira otimismo
 cego, a outra vira parecer contra o próprio cliente.
 
-O Diabob genérico é contrarian por construção. Aplicado cru a caso de cliente, ele
-produz texto que concede. Use esta versão.
+## Esta skill NÃO substitui o Diabob
+
+Ordem do Igor de 06/08/2026: `diabob` é **obrigatório** em F4 e F7, ao lado de Helena e
+Cícero. As duas coisas são diferentes e as duas rodam:
+
+- **`forja-red-team` (esta)** — o protocolo das nove perguntas, conduzido por dentro,
+  com a calibragem "advogado, não juiz" e a decisão registrada sobre cada objeção.
+- **`diabob`** — o contraditório por **outra família de modelo**: `forja_diabob.py` no
+  Grok 4.5, por determinação do titular de 26/07/2026. Existe porque red team feito pelo
+  mesmo modelo que produziu a análise repete os próprios pontos cegos com voz mais dura.
+
+O parecer do Diabob é insumo interno de auditoria: **propõe objeções, não afirma
+fatos**, não vai para a peça e não substitui o F7. Trate cada objeção dele como as
+outras — acatada, rejeitada, por quê.
+
+A calibragem "advogado, não juiz" vale para o que **entra na peça**. O Diabob pode e
+deve ser duro no parecer interno; o que não pode é a peça conceder. Quem faz essa
+tradução é o redator, não ele.
 
 ## As nove perguntas
 

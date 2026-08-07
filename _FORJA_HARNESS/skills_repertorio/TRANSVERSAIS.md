@@ -16,6 +16,7 @@
 | Um gate aprovou o que não devia | `anti-trapaca-evaluator` |
 | Uma skill deste repertório precisa mudar | `skill-creator` |
 | Preciso de imagem institucional, fora da peça | `ai-image-generation` |
+| Vou arquivar cache, fonte ou artefato que pode ter dado do escritório | `forja_fronteira.py` (script, não skill) |
 
 ---
 
@@ -86,10 +87,26 @@
 ### `ai-image-generation` — Claude
 
 - **Faz:** gera imagem por modelos de difusão.
-- **Entra em:** F8 e F9, exclusivamente em material institucional ou ao cliente.
-- **Para quê:** capa de apresentação, ilustração de relatório. **Nunca** retratando fato, pessoa ou prova em peça protocolada — a autorização do protocolo é expressa e limitada.
+- **Entra em:** F8, e **só** em material institucional ou ao cliente produzido à parte. Está listada como "não usar" em F9 porque o pacote e o e-mail de entrega não levam ilustração gerada — a autorização é para o material separado, não para a entrega.
+- **Para quê:** capa de apresentação, ilustração de relatório institucional. **Nunca** retratando fato, pessoa ou prova em peça protocolada — a autorização do protocolo é expressa e limitada.
 - **Trade-off:** raster; não passa pelos gates de legibilidade e colisão porque não tem texto em SVG. Diagrama de peça é vetorial por regra.
 - **Marcadores:** contexto `médio` · dependência `crédito pago`, `rede` · fabricação `alto` · reversibilidade `parcial` · confere depois: decisão humana sobre uso externo.
+
+### `forja_fronteira.py` — script da casa, não skill
+
+Está aqui porque a pergunta 7 do cardápio mestre (colide com regra inviolável?) inclui
+a fronteira motor/acervo, e a rota para respondê-la é um comando, não uma skill.
+
+```
+python _FORJA_HARNESS\forja_fronteira.py --classificar <caminho>   # destino e motivo
+python _FORJA_HARNESS\forja_fronteira.py --json <laudo.json>       # laudo completo
+python _FORJA_HARNESS\forja_fronteira.py --mapa                    # FRONTEIRA_DO_DISCO.md
+```
+
+Rode **antes** de arquivar cache, fonte, fixture ou artefato que possa conter nome de
+cliente ou dado do escritório. O motor é genérico e feito para ser compartilhado; o
+acervo é privado. A fronteira já pegou a mesma falha quatro vezes, sempre com a mesma
+assinatura: querer que o teste ou a fixture fosse fiel ao incidente real.
 
 ---
 

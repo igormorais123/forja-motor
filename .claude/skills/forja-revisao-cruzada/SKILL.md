@@ -26,9 +26,13 @@ Declarar não é comprovar — esta é a diferença que a skill genérica não c
 
 ## Degradação é permitida; silêncio não
 
-Se a segunda família estiver indisponível, o caso **não para**: rebaixa para
-`cross_session_same_family` **com o motivo registrado**. O que é proibido é chegar em
-`unverified` sem dizer por quê, ou fingir `cross_family` sem execução.
+Se a segunda família estiver indisponível, **o trabalho interno continua** e rebaixa
+para `cross_session_same_family` **com o motivo registrado**. Não confunda: continuar
+trabalhando não é continuar liberando — em `strict_protocol`, só `cross_family` libera,
+e o caso rebaixado fica com a **promoção bloqueada** até a outra família revisar.
+
+O que é proibido é chegar em `unverified` sem dizer por quê, ou declarar `cross_family`
+sem execução.
 
 ## Sequência
 
@@ -41,6 +45,10 @@ Se a segunda família estiver indisponível, o caso **não para**: rebaixa para
 5. Registre `producerModel`, `reviewerModel`, o `familyAssurance` alcançado e, se
    houve rebaixamento, o motivo.
 6. Deixe o orquestrador recompor. Não escreva o campo à mão.
+
+**Esta skill não é o único caminho.** O que o gate exige é a **evidência recomputável**
+de revisão independente. Qualquer executor que a produza serve; estas são as rotas
+conhecidas e testadas, não uma exclusividade.
 
 ## Armadilhas conhecidas do Codex no Windows
 

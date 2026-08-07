@@ -95,7 +95,10 @@ recebe identificador próprio: data, sujeito, classe e número, ato impugnado, p
 efeito jurídico e ponte exata para os autos. É proibido escrever "o recurso" ou "a
 decisão anterior" quando há mais de um ato possível.
 
-Isso alimenta `F2_IDENTIDADE_PROCESSUAL.json` e é o lastro do gate **S6** — que reprova
+Isso alimenta `F2_IDENTIDADE_PROCESSUAL.json` — artefato **auxiliar**, produzido por
+`forja_identidade_processual.py`, que **não** consta das saídas obrigatórias de
+`F2.json`; ele existe e o gate o lê, mas não é entrega contratual de fase. É o lastro
+do gate **S6** — que reprova
 identificador citado na peça e não declarado. O erro que S6 fecha não é número errado:
 é o número **certo de outro processo do mesmo cliente**, que deixa o texto internamente
 coerente e nenhum gate lexical discorda.
