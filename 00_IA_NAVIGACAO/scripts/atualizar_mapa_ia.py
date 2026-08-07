@@ -232,6 +232,11 @@ def classify_dir(path: Path, direct_files: list[FileInfo], child_names: list[str
         return "ferramentas de produção visual", "scripts e padrões de diagramação/QA visual"
     if rel.startswith("gestao_escritorio"):
         return "gestão de demandas", "painel, dados e rotinas de acompanhamento do escritório"
+    if "skills_repertorio" in lower:
+        return (
+            "repertório de skills por fase",
+            "cardápio, não contrato; ler só o documento da fase corrente (F0..F10)",
+        )
     if "whatsapp" in lower:
         return "demanda WhatsApp", "triagem sanitizada; evitar expor conversa bruta"
     if "audio" in lower:

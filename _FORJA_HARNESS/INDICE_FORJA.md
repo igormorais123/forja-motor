@@ -12,6 +12,8 @@
 | Alterar o código com segurança | `docs/DEVELOPMENT.md` |
 | Testes, régua e critérios de aceite | `docs/TESTING.md` |
 | Regras normativas (fases, milestones) | `FORJA_SPEC_MANIFEST.json` |
+| **Que skill existe para a fase em que estou** (cardápio, não contrato) | `skills_repertorio/LEIA-ME.md` → um documento por fase (`F0.md` a `F10.md` + `TRANSVERSAIS.md`). Consulta por máquina: `skills_repertorio/CATALOGO_SKILLS.json`. Leia **apenas** o documento da fase corrente |
+| Skills adaptadas à FORJA (7, em `..\.claude\skills\`) | `forja-ingestao-autos` (F1), `forja-exploracao-problema` (F2A), `forja-campo-tribunais` (F1/F3/F5/F7), `forja-pesquisa-jurisprudencia` (F5), `forja-red-team` (F4/F7), `forja-revisao-cruzada` (F7), `forja-saida-humana` (F6/F7/F9). Chamam os scripts da casa; não substituem nenhum |
 | Estado da implementação N3 | `reports/IMPLEMENTACAO_FORJA_N3_2026-07-10.md` |
 | Estado final auditado da implementação N4 | `reports/CONSELHO_SINTESE_IMPLEMENTACAO_FORJA_N4_2026-07-11.md` |
 | Pareceres Efesto, Helena, Cícero e Diabob | `reports/CONSELHO_*_FORJA_N4_2026-07-11.md` |

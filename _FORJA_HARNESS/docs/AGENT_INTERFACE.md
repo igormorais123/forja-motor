@@ -8,6 +8,15 @@ agente usar os comandos canônicos.
 O desenho aplica os [princípios AXI](https://axi.md/) e usa
 [TOON](https://toonformat.dev/) como formato compacto padrão.
 
+`forja_axi.py` responde **onde o caso está**. A pergunta complementar — **que recursos
+existem na fase em que estou** — é respondida pelo repertório em
+[`skills_repertorio/`](../skills_repertorio/LEIA-ME.md): um documento por fase, de
+`F0.md` a `F10.md`, mais `TRANSVERSAIS.md`, e o catálogo legível por máquina
+`CATALOGO_SKILLS.json`, cujos campos `fases[]`, `alimenta[]` e `confereDepois[]` ligam
+cada skill aos artefatos e gates do contrato correspondente. Vale a mesma economia de
+contexto desta interface: leia **apenas** o documento da fase corrente — as fichas se
+repetem de propósito em cada fase onde a skill serve. É cardápio, não contrato.
+
 ## Uso
 
 ```powershell

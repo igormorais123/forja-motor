@@ -274,3 +274,27 @@ de tarefa agendada se roda com o comando literal de
 
 Campo ausente não é dado ausente: o dado pode estar no texto que o campo não
 indexa (Lição 232).
+
+## Repertório de skills por fase (06/08/2026)
+
+Antes de trabalhar numa fase da FORJA, consulte o documento daquela fase em
+`_FORJA_HARNESS/skills_repertorio/` — `F0.md` a `F10.md`, mais `TRANSVERSAIS.md`.
+Cardápio mestre em `LEIA-ME.md`; consulta por máquina em `CATALOGO_SKILLS.json`, que
+declara para cada skill os campos `fases[]`, `alimenta[]` e `confereDepois[]`.
+
+É cardápio, não contrato: nenhuma skill listada é obrigatória, salvo `helena` e
+`cicero` em F4. O contrato da fase prevalece sobre o repertório, e o script da casa
+prevalece sobre skill externa equivalente.
+
+Leia apenas o documento da fase corrente — as fichas se repetem de propósito nas fases
+onde a mesma skill serve.
+
+Sete skills adaptadas à fábrica vivem em `.claude/skills/`: `forja-ingestao-autos`,
+`forja-exploracao-problema`, `forja-campo-tribunais`, `forja-pesquisa-jurisprudencia`,
+`forja-red-team`, `forja-revisao-cruzada`, `forja-saida-humana`. Elas chamam os scripts
+da casa e não substituem nenhum.
+
+O Codex interessa duas vezes aqui: como **revisor** da outra família em
+`forja-revisao-cruzada` (o gate `cross_model_review_verified` bloqueia `unverified`), e
+como produtor quando o Claude for o revisor. `familyAssurance` é recomposto pelo
+orquestrador e nunca aceito por declaração.

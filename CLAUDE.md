@@ -281,3 +281,28 @@ O retrato de até onde ia cada consolidação em 06/07/2026 fica na memória do 
 ## Auto-research da fábrica — ciclo AR (23/07/2026)
 
 A melhoria contínua da esteira tem processo próprio: o ciclo AR (`_FORJA_HARNESS\planejamento\22_PRD_AUTORESEARCH_FORJA.md` e `23_TDD_AUTORESEARCH_FORJA.md`, v1.1 pós-review adversarial Codex). Regras operacionais: (1) mudança em prompt/template/protocolo de fase que se pretenda "melhoria" deve passar pelo ciclo AR — execução pareada, julgamento cego com swap e duas famílias de juiz, canários de falha única e gate de promoção em três estados com recibo Ed25519; (2) indicadores de qualidade usam ledgers congelados pré-geração (cobertura E correção) — nunca criar métrica nova sem defesa anti-exclusão e âncora em falha real de `RETROSPECTIVAS.md`; (3) os segredos do ciclo (chave HMAC, registro sealed, canários secretos) vivem em `%USERPROFILE%\.forja_ar_secrets\` e jamais entram em repositório ou prompt; (4) enquanto não houver sealed prospectivo consumível, o subsistema opera em `estudo_descritivo` e NENHUMA variante é promovida a produção. Comandos e artefatos: ver bloco AUTO-RESEARCH em `_FORJA_HARNESS\INDICE_FORJA.md`.
+
+## Repertório de skills por fase (06/08/2026 — ordem do Igor)
+
+Existem 402 skills instaladas entre Claude, Hermes, Codex e projeto, e até agora nenhuma
+ligação entre elas e as fases da esteira. A partir de agora, **antes de trabalhar numa
+fase, consulte o documento daquela fase** em `_FORJA_HARNESS\skills_repertorio\`:
+`F0.md` a `F10.md`, mais `TRANSVERSAIS.md`. O cardápio mestre com as oito perguntas de
+decisão está em `LEIA-ME.md`; a consulta legível por máquina, em
+`CATALOGO_SKILLS.json`.
+
+**Nada disso é obrigatório e nada disso é contrato.** É repertório: serve para o agente
+saber que o recurso existe no momento em que ele resolveria o problema, e para decidir
+com critério escrito usar ou não usar. O contrato da fase e este protocolo continuam
+prevalecendo. As únicas skills obrigatórias continuam sendo `/helena` e `/cicero` em F4.
+
+**Leia só a fase corrente.** As fichas se repetem em cada fase onde a skill serve — a
+redundância é deliberada, para que o agente de F7 não abra o documento de F1.
+
+Sete skills foram copiadas e adaptadas à fábrica, em `.claude\skills\`:
+`forja-ingestao-autos`, `forja-exploracao-problema`, `forja-campo-tribunais`,
+`forja-pesquisa-jurisprudencia`, `forja-red-team`, `forja-revisao-cruzada` e
+`forja-saida-humana`. Elas **chamam** os scripts da casa e não substituem nenhum; onde
+houver conflito entre skill e script, vale o script.
+
+Detalhe e motivação: § 28 de `_FORJA_HARNESS\DOCUMENTACAO_TECNICA.md`.

@@ -39,6 +39,12 @@ revisão humana, hashes ou gates jurídicos. Os comandos originais continuam
 sendo a única autoridade para alterar estado. Veja
 [Interface da FORJA para agentes](docs/AGENT_INTERFACE.md).
 
+Para saber **que recursos existem na fase em que você está**, o repertório fica em
+[`skills_repertorio/`](skills_repertorio/LEIA-ME.md): um documento por fase, de `F0.md` a
+`F10.md`, mais `TRANSVERSAIS.md`. É cardápio, não contrato — nenhuma skill listada é
+obrigatória, e o contrato da fase prevalece. Leia apenas o documento da fase corrente;
+para consulta programática use `skills_repertorio/CATALOGO_SKILLS.json`.
+
 ## Pré-requisitos
 
 - Windows PowerShell.

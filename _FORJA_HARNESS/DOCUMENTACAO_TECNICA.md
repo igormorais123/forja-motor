@@ -1007,3 +1007,51 @@ artefato nenhum.
   qualificar natureza e peso da fonte citada.
 
 Lições 255 a 259 em `RETROSPECTIVAS.md`.
+
+## 28. Repertório de skills por fase (06/08/2026)
+
+Ordem do Igor. Havia 402 skills instaladas entre Claude (238), Hermes (132), Codex (26)
+e projeto (6), e nenhuma ligação entre elas e as fases da esteira. Skill que o agente
+não lembra que existe no ponto em que ela resolveria o problema é skill que não existe
+— o mesmo modo de falha da Lição 89, o gate instalado na rota que ninguém percorre.
+
+**O que foi criado.** `skills_repertorio/`, com um documento por fase — `F0.md` a
+`F10.md`, mais `TRANSVERSAIS.md` e o cardápio mestre `LEIA-ME.md`. Cada documento traz
+a fase em uma tela (produtor, revisor, entradas, saídas, gates, scripts da casa), uma
+tabela de escolha em 30 segundos, as fichas das skills que servem ali, as combinações
+que funcionam e **o que não usar naquela fase, com o motivo**.
+
+**Natureza.** Cardápio, não contrato. Nenhuma skill do repertório é obrigatória, salvo
+`helena` e `cicero` em F4, que já eram por ordem anterior. O contrato da fase e o
+`CLAUDE.md` continuam prevalecendo.
+
+**Gestão de contexto.** O agente lê **apenas** o documento da fase corrente. As fichas
+se repetem em cada fase onde a skill serve — a redundância é deliberada, para que o
+agente de F7 não precise abrir o documento de F1. Para consulta programática existe
+`CATALOGO_SKILLS.json`, com `fases[]`, `alimenta[]` e os cinco eixos de modulação.
+
+**Os cinco eixos de cada ficha.** Custo de contexto (baixo, médio, alto); dependência
+externa (nenhuma, rede, login, crédito pago); risco de fabricação (nulo, baixo, alto);
+reversibilidade (total, parcial, nenhuma); e **quem confere depois** — o gate, script
+ou pessoa que valida a saída, nunca "ninguém". Nenhuma saída de skill entra na esteira
+como conclusão; toda saída entra como insumo.
+
+**As oito perguntas de decisão** estão no `LEIA-ME.md`. A primeira é a que mais corta:
+qual artefato do contrato esta skill alimenta? Se o agente não sabe responder, não
+invoca.
+
+**Sete skills adaptadas**, em `..\.claude\skills\`: `forja-ingestao-autos`,
+`forja-exploracao-problema`, `forja-campo-tribunais`, `forja-pesquisa-jurisprudencia`,
+`forja-red-team`, `forja-revisao-cruzada` e `forja-saida-humana`. Elas **não substituem
+nenhum script**: chamam `forja_injection_scan.py`, `forja_insumo_bloqueado.py`,
+`forja_exploracao_100.py`, `forja_regimentos.py`, `forja_adversarial_audit.py`,
+`forja_estilo_humano.py` e os demais, e acrescentam o que a versão genérica não sabe —
+a ordem de pesquisa da Diretriz 28, o vocabulário fechado de causa de bloqueio, a
+calibragem "advogado, não juiz", os dois passes de estilo de F7, e que
+`familyAssurance` é recomposto pelo orquestrador e nunca aceito por declaração.
+
+**Rejeições registradas** em `TRANSVERSAIS.md`, para não serem reabertas a cada rodada:
+diagramação genérica (produz figura fora da identidade e sem os gates de legibilidade,
+overflow e colisão), navegador redundante, jurídico duplicado, UI e frontend, a família
+`gsd-*` inteira, segurança de sessão e as skills de coleta e campanha. Duas ficaram em
+observação declarada: `proj-analise-juridica-preditiva` e `archify`.

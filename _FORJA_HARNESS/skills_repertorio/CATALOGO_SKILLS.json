@@ -83,7 +83,7 @@
       "confereDepois": ["forja_estilo_humano.py"]
     },
     {
-      "id": "forja-adr", "origem": "projeto", "fases": ["F0", "F2", "F4", "F7", "F10"],
+      "id": "forja-adr", "origem": "projeto", "fases": ["F0", "F4", "F7", "F10", "transversal"],
       "alimenta": ["decisoes de metodo da fabrica"],
       "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
       "confereDepois": ["revisao humana da ficha"]
@@ -168,7 +168,8 @@
       "armadilhas": ["stdin trava no Windows", "pipe derruba", "executor as vezes nao le o workspace e devolve parecer sem fonte"]
     },
     {
-      "id": "inteia-review-iterativo", "origem": "claude", "fases": ["F7", "transversal"],
+      "id": "inteia-review-iterativo", "origem": "claude", "fases": ["F7"],
+      "nota": "preferir forja-revisao-cruzada, que amarra o protocolo ao contrato do run",
       "alimenta": ["protocolo de revisao adversarial iterativa"],
       "custoContexto": "medio", "dependenciaExterna": "credito_pago", "riscoFabricacao": "alto", "reversibilidade": "total",
       "confereDepois": ["cross_model_review_verified"]

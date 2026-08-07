@@ -87,6 +87,7 @@ _FORJA_HARNESS/
 ├── telemetria/             registros de execução e qualidade
 ├── planejamento/           decisões arquiteturais e planos versionados
 ├── templates/              contratos e modelos internos
+├── skills_repertorio/      repertório de skills por fase (cardápio, não contrato)
 ├── docs/                   documentação canônica de operação e desenvolvimento
 ├── forja_*.py              módulos executáveis da esteira
 └── test_*.py               regressões unitárias e integradas
