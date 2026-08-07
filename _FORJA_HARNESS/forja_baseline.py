@@ -50,6 +50,10 @@ SUITES_SCRIPT = {
         "'não localizado' não é diagnóstico: insumo bloqueado exige causa em "
         "vocabulário fechado, diligências registradas, consequência e rota — a "
         "cobrança que o titular repetiu em quatro matérias no mesmo dia"),
+    "test_forja_gate_anexo_saida.py": (
+        "anexo fora do padrão Word da casa não sai pela porta da FORJA: a barreira "
+        "fica no disparo do rascunho, que é o único ponto por onde documento "
+        "efetivamente sai, e reprova quem falha nas três dimensões"),
     "test_forja_lapidacao_governanca.py": "os invariantes da lapidação aprovam o legítimo e reprovam cada sabotagem",
     "test_forja_exploracao_diversidade.py": "formulário do F2A é acusado e exploração genuína passa limpa",
     "test_forja_adversarial_gate.py": "regressão autônoma do gate adversarial",

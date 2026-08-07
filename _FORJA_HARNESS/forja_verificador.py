@@ -107,6 +107,14 @@ PROVENIENCIA_OPERACIONAL = [
     (r"(?:Google\s+)?Drive\s+(?:do|da|interno|compartilhado)", "repositório operacional vazou para a peça"),
     (r"\[FONTE\s*:\s*arquivo[^\]]*\]", "marcador interno de fonte vazou para a peça"),
     (r"[A-Za-z]:\\(?:Users|Documentos|Projetos|\.claude|\.hermes)\\", "caminho de computador vazou para a peça"),
+    # A paginação do PDF que recebemos é localizador do NOSSO arquivo, não dos
+    # autos: ela muda conforme quem exportou e como. Entrou aqui em 06/08/2026,
+    # depois que os memoriais do EDcl no AI 0006526 saíram com sete referências
+    # a "p. PDF" e quem as trocou por e-fl. foi o revisor humano, não o gate —
+    # que já existia e simplesmente não conhecia essa forma. Fl./e-fl., evento,
+    # ID e Doc. continuam livres, porque são localizadores processuais reais.
+    (r"\b(?:pp?\.|p[áa]ginas?)\s*(?:do\s+)?PDF\s*\d", "paginação do arquivo PDF usada como localizador dos autos"),
+    (r"\bPDF\s*(?:pp?\.|p[áa]ginas?)\s*\d", "paginação do arquivo PDF usada como localizador dos autos"),
 ]
 
 

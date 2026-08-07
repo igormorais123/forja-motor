@@ -915,3 +915,54 @@ não tem. Toda vez que algo roda sozinho, o teste precisa rodar como ele roda.
 **Lição 266 — a camada do texto não é a camada do sistema.** Pedido escrito do titular em 02/08/2026: *"parece-me importante identificar em qual camada se originou o erro"* — enquadramento, roteamento, seleção de documentos, recuperação de fontes, instrução do agente, ausência de ferramenta, formatação, validação ou supervisão. A nossa taxonomia classificava a correção pela camada do **texto** (fato, raciocínio, citação, cálculo), que responde o que mudou na peça e não onde consertar o harness. Dois erros com a mesma classe lexical podem exigir conserto em lugares completamente distintos: um pede gate, outro pede ferramenta que não existe. `camadaSistema` passou a ser campo da adoção, em vocabulário fechado — e é ele que diz onde a regra deve morder.
 
 **Lição 267 — tirar arquivo do escopo afrouxa a catraca duas vezes, e a segunda é invisível.** Dois documentos chegaram por e-mail em 06/08/2026, escritos fora da esteira e a caminho do cliente, e a catraca tipográfica reprovou. A decisão do Igor foi excluir material recebido do escopo, contra a minha recomendação de levar os documentos ao autor. Executada, a exclusão fez o universo medido cair de 142 para 119 e **derrubou o piso de 120**, que existe justamente para impedir que a conformidade fique boa por falta de material. O que fica é o método: quando se muda a população que um instrumento mede, reancoram-se os dois lados na mesma hora — piso e tetos —, senão a exclusão de arquivos ruins melhora os números sozinha e o teto calibrado numa população maior passa a admitir desvio novo em silêncio. Os tetos caíram de 4/29/19/4 para 3/24/15/3. A comparação com o retrato de 04/08 está perdida, e isso é o preço declarado da mudança de escopo, não um efeito colateral que alguém descobre depois.
+
+## Lição 237 — O retorno humano mais valioso do dia ficou em quarentena porque a peça veio em dois formatos (06/08/2026)
+
+Alessandro devolveu a V2 dos memoriais do EDcl no AI 0006526 — revisão humana
+de verdade sobre a nossa entrega de 03/08, com 268 mudanças e 0,4457 de texto em
+comum. O loop pós-protocolo não a ingeriu. A causa não foi o gate de
+comparabilidade: foi a **escolha do anexo**. O escritório manda a peça em Word e
+em PDF na mesma mensagem, os dois nomes pontuavam igual, e o empate era tratado
+como ambiguidade. Empate entre formatos do MESMO documento não é ambiguidade — é
+o documento duas vezes; vence o DOCX, que preserva parágrafo, tabela e estilo.
+Empate entre peças diferentes continua barrado.
+
+Havia um segundo defeito embaixo: a pontuação usava `\bmemoriais\b`, e `_` é
+caractere de palavra. **`MEMORIAIS_HANS_EDCL_AI_0006526 V2.docx` não casava com
+"memoriais"** — e é exatamente assim que a nossa própria esteira nomeia o que
+entrega. A peça de volta pontuava igual a um acórdão anexado de apoio. O
+detector foi derrotado pela convenção de nome da casa.
+
+## Lição 238 — Três causas de quarentena com o mesmo nome, no sistema que proíbe isso (06/08/2026)
+
+O relatório da varredura publicava `PP-01` para anexo ambíguo, para demanda não
+resolvida e para demanda resolvida sem caso FORJA aberto — e no primeiro caso
+publicava `matchCount: 0` **fixo no código**, de modo que uma falha de escolha de
+anexo tinha a cara exata de uma falha de vínculo. Passei a primeira hora
+investigando o vínculo, que estava certo o tempo todo.
+
+É a regra "«não localizado» não é diagnóstico", de 06/08, violada dentro da
+ferramenta escrita para aplicá-la. Cada causa tem destravamento diferente —
+escolher o anexo, corrigir o painel, abrir o caso — e colapsá-las transfere para
+quem lê o trabalho de descobrir qual era. Agora são `PP-01`,
+`PP-NO-UNIQUE-DEMAND` e `PP-NO-FORJA-CASE`, e o `matchCount` publicado é o real.
+
+## Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)
+
+A regra de citação do acervo é INVIOLÁVEL desde 11/07: a peça usa localizador
+processual — fl./e-fl., evento, ID, Doc. — e nunca revela a origem operacional do
+insumo. Os memoriais entregues em 03/08 citaram "acórdão, pp. PDF 145-146",
+"p. PDF 158", "contrarrazões, p. PDF 217" e mais quatro. **`p. PDF 158` é a página
+do arquivo que recebemos**, que muda conforme quem exportou; o revisor humano
+trocou por `e-fl. 159`.
+
+O gate existia — G9, proveniência operacional, com e-mail, WhatsApp, Drive, pasta
+interna e caminho de disco — e simplesmente não conhecia essa forma. Não era
+preciso gate novo, era preciso ensinar o que já havia: as duas linhas entraram em
+`PROVENIENCIA_OPERACIONAL`. Teste-âncora no baseline: o gate reprova a nossa
+versão sete vezes e aprova a do revisor zero vezes; e `e-fl.`, `evento` e `Doc.`
+seguem livres, senão a correção viraria trava.
+
+A lição maior é sobre o formato do erro. Não foi uma regra ausente nem uma regra
+esquecida: foi uma regra **implementada numa variante e cega para a irmã**. Gate
+lexical só enxerga a forma que alguém já viu falhar.

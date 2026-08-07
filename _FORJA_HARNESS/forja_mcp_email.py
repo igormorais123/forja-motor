@@ -108,9 +108,28 @@ def enviar_email(to, subject, body, cc=None, bcc=None, reply_to_message_id=None)
             "para": to, "assunto": subject}
 
 
-def enviar_rascunho(draft_id):
-    """Envia um rascunho já revisado, preservando o texto exato aprovado."""
+def enviar_rascunho(draft_id, material_de_terceiro=None):
+    """Envia um rascunho já revisado, preservando o texto exato aprovado.
+
+    Esta é a única saída da FORJA por onde um documento efetivamente sai: o
+    `enviar_email` monta só corpo. Até 06/08/2026 ela despachava o que estivesse
+    anexado sem olhar uma vez, e foi por aqui que dois documentos fora do padrão
+    da casa seguiram para o cliente.
+    """
+    import forja_gate_anexo_saida as gate
+
     svc = _servico()
+    veredito = gate.avaliar_rascunho(svc, draft_id,
+                                     material_de_terceiro=material_de_terceiro)
+    if not veredito["aprovado"]:
+        _registrar({"evento": "envio_barrado_por_anexo", "draftId": draft_id,
+                    "arquivos": [m["arquivo"] for m in veredito["bloqueados"]]})
+        raise ValueError(gate.explicar(veredito))
+    if veredito["liberadosPorDeclaracao"]:
+        # Passar por declaração é decisão de quem envia, e fica na trilha: sem
+        # o registro, a exceção vira o caminho normal em duas semanas.
+        _registrar({"evento": "anexo_liberado_por_declaracao", "draftId": draft_id,
+                    "arquivos": [m["arquivo"] for m in veredito["liberadosPorDeclaracao"]]})
     enviado = svc.users().drafts().send(userId="me", body={"id": draft_id}).execute()
     _registrar({"evento": "rascunho_enviado_por_mcp", "draftId": draft_id,
                 "messageId": enviado.get("id"), "threadId": enviado.get("threadId")})
@@ -165,11 +184,20 @@ FERRAMENTAS = [
             "Envia um rascunho existente, preservando exatamente o texto revisado. "
             "Prefira este caminho quando o rascunho já passou por revisão humana: "
             "remontar a mensagem quebraria a correspondência entre o que foi "
-            "aprovado e o que saiu. IRREVERSÍVEL."
+            "aprovado e o que saiu. IRREVERSÍVEL. Anexo .docx fora do padrão Word "
+            "do escritório nas três dimensões barra o envio; material redigido "
+            "fora da casa passa quando declarado nominalmente."
         ),
         "inputSchema": {
             "type": "object", "required": ["draft_id"],
-            "properties": {"draft_id": {"type": "string"}},
+            "properties": {
+                "draft_id": {"type": "string"},
+                "material_de_terceiro": {
+                    "type": "array", "items": {"type": "string"},
+                    "description": "nomes de arquivo redigidos fora do escritório, "
+                                   "que devem ser encaminhados como vieram",
+                },
+            },
         },
     },
     {
@@ -187,7 +215,8 @@ EXECUTORES = {
         a.get("to"), a.get("subject"), a.get("body"),
         cc=a.get("cc"), bcc=a.get("bcc"),
         reply_to_message_id=a.get("reply_to_message_id")),
-    "enviar_rascunho": lambda a: enviar_rascunho(a.get("draft_id")),
+    "enviar_rascunho": lambda a: enviar_rascunho(
+        a.get("draft_id"), material_de_terceiro=a.get("material_de_terceiro")),
     "listar_rascunhos": lambda a: listar_rascunhos(a.get("limite", 10)),
 }
 

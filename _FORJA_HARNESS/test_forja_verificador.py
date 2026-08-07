@@ -33,6 +33,11 @@ DEVE_PEGAR = [
     ("## SÍNTESE EXECUTIVA (art. 343-A do Regimento Interno do TJTO)", "G4"),
     ("A tese depende de confirmação. [VERIFICAR EM FONTE OFICIAL]", "G2"),
     ("O laudo foi compartilhado pelo escritório e recebido por e-mail.", "G9"),
+    # Erro real dos memoriais do EDcl no AI 0006526, entregues em 03/08/2026:
+    # sete referências à paginação do PDF recebido, como se fossem folha dos
+    # autos. Quem trocou por e-fl. foi o revisor humano em 06/08.
+    ("A formulação é afirmativa no voto (acórdão, p. PDF 158).", "G9"),
+    ("A defesa concorda apenas com a segunda proposição (contrarrazões, pp. PDF 217-218).", "G9"),
     (r"A prova está no caminho C:\Users\Equipe\processo\laudo.pdf.", "G9"),
     ("Não apenas a tese é frágil, mas também carece de prova.", "G10"),
     ("Vale destacar que, claramente, a medida é adequada.", "G10"),
@@ -51,6 +56,10 @@ NAO_PODE_TRAVAR = [
     "A votação ocorrerá antes do fim de julho, com o fim de se preservar o cronograma.",
     "P1: Qual é a força jurídica do Parecer 0491/2026?",
     "Súmula 473 do STF autoriza a autotutela administrativa.",
+    # A contraprova do mesmo caso: localizador processual verdadeiro não trava.
+    "A ementa registra a ressalva (acórdão, e-fl. 147) e o voto a afirma (e-fl. 159).",
+    "A manifestação ministerial consta do evento 249 e o memorial, do evento 252.",
+    "O documento acompanha esta manifestação como Doc. 3 — cópia integral do acórdão.",
     "Súmula 7 do STJ veda o reexame de matéria fática.",
     "A decisão foi proferida pela Ministra Regina Helena Costa, Relatora no Superior Tribunal de Justiça.",
     "Celebrado em 30/08/2023 e homologado cerca de 12 meses depois (04/09/2024).",

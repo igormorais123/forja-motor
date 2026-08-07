@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "contrato": "FORJA-REPERTORIO-SKILLS-v1",
+  "criadoEm": "2026-08-06",
+  "origem": "Ordem do Igor. Selecao entre 402 skills instaladas (238 Claude, 132 Hermes, 26 Codex, 6 projeto).",
+  "natureza": "Cardapio. Nenhuma skill aqui e obrigatoria, salvo as marcadas com obrigatoria=true. O contrato da fase prevalece.",
+  "comoUsar": "Filtre por fases[] para saber o que existe na fase corrente. Leia o markdown da fase apenas se precisar do detalhe.",
+  "eixos": {
+    "custoContexto": ["baixo", "medio", "alto"],
+    "dependenciaExterna": ["nenhuma", "rede", "login", "credito_pago"],
+    "riscoFabricacao": ["nulo", "baixo", "alto"],
+    "reversibilidade": ["total", "parcial", "nenhuma"]
+  },
+  "precedencia": [
+    "Regra inviolavel do CLAUDE.md da fabrica vence qualquer skill.",
+    "Contrato da fase (phase_contracts/F*.json) vence o cardapio.",
+    "Script da casa vence skill externa equivalente.",
+    "fabrica-visual-peticoes rege pipeline; padrao-visual-medina rege linguagem visual.",
+    "Entre equivalentes, vence a de menor dependencia externa."
+  ],
+  "skills": [
+    {
+      "id": "forja-ingestao-autos",
+      "origem": "projeto",
+      "adaptadaDe": ["pdf", "docx"],
+      "fases": ["F1", "F3"],
+      "alimenta": ["document_index", "coverage_ledger", "chronology"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["coverage_declared", "injection_triaged", "gate S6"]
+    },
+    {
+      "id": "forja-exploracao-problema",
+      "origem": "projeto",
+      "adaptadaDe": ["problem-solving-vila"],
+      "fases": ["F2"],
+      "alimenta": ["question_tree"],
+      "custoContexto": "alto", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["forja_exploracao_100.py", "answers_provenance_classified"]
+    },
+    {
+      "id": "forja-campo-tribunais",
+      "origem": "projeto",
+      "adaptadaDe": ["testar-navegador"],
+      "fases": ["F1", "F3", "F5", "F7"],
+      "alimenta": ["sources_map", "official_sources_archived", "live_official_source_replayed"],
+      "custoContexto": "alto", "dependenciaExterna": "login", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["forja_regimentos.py", "source_excerpt_hash_match"]
+    },
+    {
+      "id": "forja-pesquisa-jurisprudencia",
+      "origem": "projeto",
+      "adaptadaDe": ["garimpo-tribunais", "deep-research"],
+      "fases": ["F5", "F7"],
+      "alimenta": ["source_ledger", "citation_checklist"],
+      "custoContexto": "alto", "dependenciaExterna": "rede", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["quotes_compared", "citation_coverage_complete", "test_forja_citacoes.py"]
+    },
+    {
+      "id": "forja-red-team",
+      "origem": "projeto",
+      "adaptadaDe": ["diabob"],
+      "fases": ["F2", "F3", "F4", "F6", "F7"],
+      "alimenta": ["risk_classification", "adversarial_audit", "adversarial_strategy", "red_team_report"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["red_team_completed", "forja_adversarial_audit.py"]
+    },
+    {
+      "id": "forja-revisao-cruzada",
+      "origem": "projeto",
+      "adaptadaDe": ["codex-integrado", "inteia-review-iterativo"],
+      "fases": ["F7"],
+      "alimenta": ["cross_model_review_verified", "familyAssurance"],
+      "custoContexto": "medio", "dependenciaExterna": "credito_pago", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["recomposicao pelo orquestrador, nunca por declaracao"]
+    },
+    {
+      "id": "forja-saida-humana",
+      "origem": "projeto",
+      "adaptadaDe": ["revisar-anti-ia"],
+      "fases": ["F6", "F7", "F9"],
+      "alimenta": ["human_voice_protocol_applied", "anti_ai_style_passed", "human_style_final_pass", "email_human_style_passed"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "baixo", "reversibilidade": "total",
+      "confereDepois": ["forja_estilo_humano.py"]
+    },
+    {
+      "id": "forja-adr", "origem": "projeto", "fases": ["F0", "F2", "F4", "F7", "F10"],
+      "alimenta": ["decisoes de metodo da fabrica"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["revisao humana da ficha"]
+    },
+    {
+      "id": "forja-briefing-revisor", "origem": "projeto", "fases": ["F4", "F7"],
+      "alimenta": ["helena_opinion", "cicero_opinion", "red_team_report"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "total",
+      "confereDepois": ["forja_conselho.py"]
+    },
+    {
+      "id": "forja-briefing-pesquisa", "origem": "projeto", "fases": ["F5"],
+      "alimenta": ["final_use_policy_recorded"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "total",
+      "confereDepois": ["source_ledger"]
+    },
+    {
+      "id": "forja-handoff-caso", "origem": "projeto", "fases": ["F0", "transversal"],
+      "alimenta": ["case_manifest"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["mapping_valid"]
+    },
+    {
+      "id": "peticao-tres-escolhas", "origem": "projeto", "fases": ["F2", "F4"],
+      "alimenta": ["risk_classification", "council_decisions"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "baixo", "reversibilidade": "total",
+      "confereDepois": ["council_decisions_recorded"]
+    },
+    {
+      "id": "peticao-decisoes-incertas", "origem": "projeto", "fases": ["F2", "F4"],
+      "alimenta": ["handoff", "relatorio de melhorias"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "total",
+      "confereDepois": ["leitura humana"]
+    },
+    {
+      "id": "helena", "origem": "claude", "obrigatoria": true, "fases": ["F4"], "opcionalEm": ["F0", "F2", "F9"],
+      "alimenta": ["helena_opinion", "F4_PARECER_HELENA.md"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["helena_present", "elo bloqueante do F10"]
+    },
+    {
+      "id": "cicero", "origem": "claude", "obrigatoria": true, "fases": ["F4"], "opcionalEm": ["F2", "F6", "F7", "F9"],
+      "alimenta": ["cicero_opinion", "F4_PARECER_CICERO.md"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["cicero_present", "elo bloqueante do F10"]
+    },
+    {
+      "id": "advogado-sobrehumano", "origem": "claude", "fases": ["F2", "F3", "F4", "F6"],
+      "alimenta": ["question_tree", "contradictions", "blueprint", "draft_markdown"],
+      "custoContexto": "alto", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["conselho F4", "auditoria F7"]
+    },
+    {
+      "id": "problem-solving-vila", "origem": "claude", "fases": ["F2", "F4"],
+      "alimenta": ["question_tree", "blueprint"],
+      "custoContexto": "alto", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["forja_pso_pet.py"]
+    },
+    {
+      "id": "garimpo-tribunais", "origem": "claude", "fases": ["F5"],
+      "alimenta": ["source_ledger"],
+      "custoContexto": "alto", "dependenciaExterna": "rede", "riscoFabricacao": "baixo", "reversibilidade": "parcial",
+      "confereDepois": ["conferencia nominal na fonte oficial"]
+    },
+    {
+      "id": "deep-research", "origem": "claude", "fases": ["F3", "F5"],
+      "alimenta": ["sources_map", "source_ledger"],
+      "custoContexto": "alto", "dependenciaExterna": "rede", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["conferencia nominal", "citations_policy_satisfied"]
+    },
+    {
+      "id": "diabob", "origem": "claude", "fases": ["F4", "F7"], "nota": "preferir forja-red-team; a generica nao carrega a calibragem advogado-nao-juiz",
+      "alimenta": ["red_team_report"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["forja_adversarial_audit.py"]
+    },
+    {
+      "id": "codex-integrado", "origem": "claude", "fases": ["F6", "F7"],
+      "alimenta": ["reviewerModel", "cross_model_review_verified"],
+      "custoContexto": "medio", "dependenciaExterna": "credito_pago", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["cross_model_review_verified"],
+      "armadilhas": ["stdin trava no Windows", "pipe derruba", "executor as vezes nao le o workspace e devolve parecer sem fonte"]
+    },
+    {
+      "id": "inteia-review-iterativo", "origem": "claude", "fases": ["F7", "transversal"],
+      "alimenta": ["protocolo de revisao adversarial iterativa"],
+      "custoContexto": "medio", "dependenciaExterna": "credito_pago", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["cross_model_review_verified"]
+    },
+    {
+      "id": "revisar-anti-ia", "origem": "claude", "fases": ["F6", "F7", "F9"], "nota": "preferir forja-saida-humana, que le a regua do forja_estilo_humano.py",
+      "alimenta": ["anti_ai_style_passed"],
+      "custoContexto": "baixo", "dependenciaExterna": "nenhuma", "riscoFabricacao": "baixo", "reversibilidade": "total",
+      "confereDepois": ["forja_estilo_humano.py"]
+    },
+    {
+      "id": "fabrica-visual-peticoes", "origem": "claude", "fases": ["F8"], "regeCategoria": "pipeline e protocolo visual",
+      "alimenta": ["docx", "visual_build_manifest"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "baixo", "reversibilidade": "parcial",
+      "confereDepois": ["gates F8", "forja_assinatura_visual.py"]
+    },
+    {
+      "id": "padrao-visual-medina", "origem": "claude", "fases": ["F6", "F8"], "regeCategoria": "linguagem de design",
+      "alimenta": ["estrutura do draft_markdown", "mapa visual"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "baixo", "reversibilidade": "total",
+      "confereDepois": ["visual_review_attestation", "teste-ancora contra a peca aprovada em 09/07"]
+    },
+    {
+      "id": "docx", "origem": "claude", "fases": ["F1", "F6", "F7", "F8", "F9", "F10"], "papel": "leitura, nunca producao de peca",
+      "alimenta": ["document_index", "docx_layout_audit", "attachments_exact", "diff pos-protocolo"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "total",
+      "confereDepois": ["forja_delivery_integrity.py", "PP-NOT-A-REVISION"]
+    },
+    {
+      "id": "pdf", "origem": "claude", "fases": ["F1", "F3"], "proibidaEm": ["F8"],
+      "alimenta": ["document_index", "fact_ledger"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "total",
+      "confereDepois": ["fact_grounding_verbatim"]
+    },
+    {
+      "id": "xlsx", "origem": "claude", "fases": ["F1", "F3", "F5", "F7", "F10"],
+      "alimenta": ["matriz de seguranca factual", "chronology", "citation_checklist", "tabela de lastro", "agregacao de padroes"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["L9-L13", "citation_coverage_complete"]
+    },
+    {
+      "id": "fetch-rendered", "origem": "claude", "fases": ["F1", "F3", "F5"],
+      "alimenta": ["cache/fontes_oficiais/"],
+      "custoContexto": "baixo", "dependenciaExterna": "rede", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["data de conferencia no cache"],
+      "limite": "nao passa por login; SCON/STJ e STF exigem Chrome real"
+    },
+    {
+      "id": "navegador-drive", "origem": "claude", "fases": ["F0", "F1"],
+      "alimenta": ["source_documents"],
+      "custoContexto": "medio", "dependenciaExterna": "login", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["coverage_declared"],
+      "limite": "arquivo grande exige confirm=t no Chrome logado; caminho local jamais entra na peca"
+    },
+    {
+      "id": "speech-to-text", "origem": "claude", "fases": ["F0", "F1"],
+      "alimenta": ["commandFile", "source_documents"],
+      "custoContexto": "baixo", "dependenciaExterna": "credito_pago", "riscoFabricacao": "baixo", "reversibilidade": "parcial",
+      "confereDepois": ["leitura humana do trecho numerico"],
+      "limite": "citacao de fala em peca exige ata ou transcricao oficial"
+    },
+    {
+      "id": "google-workspace", "origem": "claude", "fases": ["F0", "F1", "F9", "F10"],
+      "alimenta": ["commandFile", "email_response", "delivery_evidence", "F10_RETORNO_SEM_ANEXO.json"],
+      "custoContexto": "baixo", "dependenciaExterna": "login", "riscoFabricacao": "nulo", "reversibilidade": "nenhuma",
+      "confereDepois": ["external_identifier_valid"],
+      "limite": "consulta sai da lista de remetentes autorizados; guarda localizador, nunca o corpo"
+    },
+    {
+      "id": "fabrica-melhoria-peticoes", "origem": "hermes", "fases": ["F0", "F9", "F10"],
+      "alimenta": ["reconciliation_report", "management_synced"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "nulo", "reversibilidade": "parcial",
+      "confereDepois": ["forja_reconcile.py"]
+    },
+    {
+      "id": "anti-trapaca-evaluator", "origem": "claude", "fases": ["F7", "F10", "transversal"],
+      "alimenta": ["calibracao de gate"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "baixo", "reversibilidade": "parcial",
+      "confereDepois": ["teste de regressao nomeando o caso que passou indevidamente"]
+    },
+    {
+      "id": "harness-engineering", "origem": "claude", "fases": ["F10", "transversal"],
+      "alimenta": ["retrospective"],
+      "custoContexto": "alto", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "total",
+      "confereDepois": ["ADR e regressao"]
+    },
+    {
+      "id": "autoresearch", "origem": "claude", "fases": ["F10", "transversal"],
+      "alimenta": ["ciclo AR"],
+      "custoContexto": "alto", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["gate de promocao em tres estados, recibo Ed25519"],
+      "limite": "sem sealed prospectivo consumivel opera em estudo_descritivo e nao promove variante"
+    },
+    {
+      "id": "skill-creator", "origem": "claude", "fases": ["F10", "transversal"],
+      "alimenta": ["manutencao deste repertorio"],
+      "custoContexto": "medio", "dependenciaExterna": "nenhuma", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["caso real de contraprova"]
+    },
+    {
+      "id": "ai-image-generation", "origem": "claude", "fases": ["F8", "F9"],
+      "alimenta": ["material institucional ou ao cliente"],
+      "custoContexto": "medio", "dependenciaExterna": "credito_pago", "riscoFabricacao": "alto", "reversibilidade": "parcial",
+      "confereDepois": ["decisao humana sobre uso externo"],
+      "limite": "nunca retratando fato, pessoa ou prova em peca protocolada"
+    }
+  ],
+  "rejeitadas": {
+    "diagramacaoGenerica": {
+      "skills": ["paperbanana-diagramas", "visual-thinking", "visual-law-inteia", "dataviz", "data-visualization", "archify"],
+      "motivo": "figura fora da identidade Medina Osorio e sem os gates de legibilidade, overflow e colisao do medina_svg_kit.py"
+    },
+    "navegadorRedundante": {
+      "skills": ["browse", "gstack", "playwright-cli", "browser-harness", "dogfood"],
+      "motivo": "forja-campo-tribunais tem o perfil logado; fetch-rendered cobre o resto"
+    },
+    "juridicoDuplicado": {
+      "skills": ["themis-nomos", "colmeia-juridico-peticoes", "osa-themis-juridico", "ciceromini", "helenamini"],
+      "motivo": "cicero e advogado-sobrehumano cobrem com mais profundidade"
+    },
+    "uiFrontend": {
+      "skills": ["impeccable", "ui-ux-pro-max", "interface-design", "refactoring-ui", "frontend-design", "ux-heuristics", "design-dna", "omni-figma"],
+      "motivo": "a FORJA entrega Word e PDF; nao ha interface"
+    },
+    "planejamentoParalelo": {
+      "skills": ["familia gsd-*"],
+      "motivo": "a FORJA ja tem contrato de fase, ADR e fila; duas maquinas de planejamento produzem gate que ninguem percorre"
+    },
+    "segurancaSessao": {
+      "skills": ["careful", "guard", "freeze", "decisions"],
+      "motivo": "cobertos por peticao-decisoes-incertas, forja-adr e o protocolo de escopo"
+    },
+    "coletaCampanha": {
+      "skills": ["apify-*", "eleitorais", "mirante-*", "hermes-finance-*", "midia, voz e video"],
+      "motivo": "nao tocam peca"
+    }
+  },
+  "emObservacao": [
+    {"id": "proj-analise-juridica-preditiva", "origem": "hermes", "motivo": "alinha-se a Diretriz 28, mas predicao sem lastro contraria a exigencia da fabrica; entraria so como insumo interno de F4"},
+    {"id": "archify", "origem": "claude", "motivo": "util para documentar o harness, inutil para peca; reavaliar se a documentacao de arquitetura crescer"}
+  ]
+}

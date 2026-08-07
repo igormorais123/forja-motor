@@ -91,7 +91,7 @@ def _registrar(evento: dict) -> None:
         fh.write(json.dumps(evento, ensure_ascii=False) + "\n")
 
 
-def enviar_rascunho(svc, draft_id: str, confirmar: bool) -> int:
+def enviar_rascunho(svc, draft_id: str, confirmar: bool, terceiro=None) -> int:
     det = svc.users().drafts().get(userId="me", id=draft_id, format="full").execute()
     msg = det.get("message") or {}
     para = _cabecalho(msg, "To")
@@ -103,6 +103,23 @@ def enviar_rascunho(svc, draft_id: str, confirmar: bool) -> int:
     print(f"assunto:  {assunto}")
     print(f"thread:   {msg.get('threadId')}")
     print(f"trecho:   {corpo[:160]}")
+
+    # A conferência roda TAMBÉM no ensaio: descobrir que o anexo está fora do
+    # padrão só na hora de confirmar é descobrir tarde, e o ensaio existe
+    # justamente para mostrar o que aconteceria.
+    import forja_gate_anexo_saida as gate
+
+    veredito = gate.avaliar_rascunho(svc, draft_id, material_de_terceiro=terceiro)
+    for m in veredito["medidos"]:
+        print(f"anexo:    {m['arquivo'][:52]:54} just {m['justificacao']:.0%}  "
+              f"tam {m['tamanho']:.0%}  fonte {m['fonte']:.0%}")
+    if not veredito["aprovado"]:
+        print()
+        print(gate.explicar(veredito))
+        _registrar({"em": datetime.now().astimezone().isoformat(timespec="seconds"),
+                    "evento": "envio_barrado_por_anexo", "draftId": draft_id,
+                    "arquivos": [m["arquivo"] for m in veredito["bloqueados"]]})
+        return 1
 
     if not confirmar:
         print("\nENSAIO — nada foi enviado. Repita com --confirmar para enviar de verdade.")
@@ -128,6 +145,9 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--listar", action="store_true", help="lista rascunhos com destinatário e assunto")
     ap.add_argument("--enviar-rascunho", metavar="DRAFT_ID", help="envia um rascunho já composto")
     ap.add_argument("--confirmar", action="store_true", help="sai do ensaio e envia de fato")
+    ap.add_argument("--material-de-terceiro", action="append", default=[], metavar="ARQUIVO",
+                    help="nome de anexo redigido fora do escritório, a encaminhar como veio; "
+                         "repetível. Sem isto, anexo fora do padrão da casa barra o envio")
     args = ap.parse_args(argv)
 
     if not args.listar and not args.enviar_rascunho:
@@ -137,7 +157,8 @@ def main(argv: list[str]) -> int:
     svc = _servico()
     if args.listar:
         return listar(svc)
-    return enviar_rascunho(svc, args.enviar_rascunho, args.confirmar)
+    return enviar_rascunho(svc, args.enviar_rascunho, args.confirmar,
+                           terceiro=args.material_de_terceiro)
 
 
 if __name__ == "__main__":
