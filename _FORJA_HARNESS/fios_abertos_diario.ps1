@@ -1,7 +1,13 @@
-﻿# Execução diária do varredor de fios de e-mail sem resposta minha.
+# Execução diária do varredor de fios de e-mail sem resposta minha.
 # Registrado como tarefa agendada FORJA-Fios-Abertos. Silencioso quando não há
-# fio aberto; quando há, deixa arquivo visível na raiz do harness, porque log
-# que ninguém abre não avisa ninguém.
+# fio aberto; quando há, deixa arquivo visível em `reports\`, porque log que
+# ninguém abre não avisa ninguém.
+#
+# O aviso lista assunto e cliente dos fios em aberto, então não pode nascer na
+# raiz do harness: ali é motor, e o gate de fronteira reprova a publicação
+# inteira por causa dele. `reports\` já é acervo e o aviso continua à vista.
+# Este é o terceiro vigia com o mesmo defeito de rota — os três nasceram do
+# mesmo molde, e por isso o erro se repetiu três vezes.
 
 $ErrorActionPreference = 'Stop'
 # O agendador nao herda o ambiente da sessao: sem isto o Python escreve na code
@@ -12,7 +18,8 @@ $harness = Split-Path -Parent $MyInvocation.MyCommand.Path
 $logDir  = Join-Path $harness 'telemetria\fios_abertos'
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $log     = Join-Path $logDir 'execucoes.log'
-$flag    = Join-Path $harness 'FIO_SEM_RESPOSTA.md'
+$flag    = Join-Path $harness 'reports\FIO_SEM_RESPOSTA.md'
+New-Item -ItemType Directory -Force -Path (Join-Path $harness 'reports') | Out-Null
 $carimbo = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
 
 Push-Location $harness

@@ -538,3 +538,57 @@ Em outras espécies, manter a mesma vigilância contra redundância sem importar
 parâmetro de extensão. Não converter isto em regra de contagem de páginas: o próprio
 Alessandro rejeita expressamente o número predeterminado, e a diretriz definitiva
 quanto ao padrão de cada tipo de peça cabe ao Prof. Fábio.
+
+## Diretriz nº 33 — Documento superveniente e mais completo não vira a fonte de tudo que ele revisa (08/08/2026)
+
+**Origem:** revisão do sócio sobre contrarrazões a recurso especial, matéria de
+indisponibilidade de bens em concessão de serviço público. Correção material da nossa
+versão, não ajuste de estilo.
+
+**O erro.** A peça atribuiu três montantes a uma tomada de contas final, por ser ela a
+fonte econômica superveniente e mais completa do resultado da concessão. Só um dos três
+vinha dali. Os outros dois tinham origem anterior e distinta: um de relatório de grupo
+de trabalho sobre encerramento da concessão, que somava provisões e dívidas perante
+terceiros; outro, do montante global com que a inicial justificou a pretensão cautelar,
+e que a sentença adotou como valor da causa.
+
+**Por que a IA erra assim.** Quando um documento consolida, revisa e supera dados
+anteriores, o modelo o trata como a fonte de todos os números que ele menciona. A
+consolidação, porém, *confronta* números de origem alheia — não os produz. A frase
+"apurado pela tomada de contas final" é verdadeira para o saldo que ela apurou e falsa
+para os valores que ela apenas reexaminou.
+
+**A formulação correta**, oferecida pelo próprio revisor: aquele documento é a
+referência governante para o resultado final e para o saldo que consolidou, e não deve
+ser indicado como fonte originária dos demais montantes, que foram *posteriormente
+confrontados* com o cenário que ele consolidou.
+
+**Como aplicar.** Todo valor citado em peça carrega duas perguntas separadas, e o
+lastro precisa responder às duas: de que documento o número *nasceu* e em que documento
+ele foi *reexaminado ou confirmado*. Documento consolidador entra como segunda resposta,
+nunca como primeira por conveniência. Vale para tomada de contas, laudo pericial,
+relatório de auditoria e parecer que revise cálculo anterior.
+
+## Diretriz nº 34 — A Súmula 126 olha o acórdão recorrido, não o que a parte suscitou (08/08/2026)
+
+**Origem:** mesma revisão. Eu havia sugerido abrir tópico próprio de Súmula 126/STJ
+porque a parte adversa formulara argumentação constitucional nos embargos de declaração
+e não interpusera recurso extraordinário. O sócio conferiu, confirmou que a matéria
+constitucional foi mesmo suscitada — e recusou a tese.
+
+**A distinção que eu perdi.** O pressuposto da súmula não é a parte ter suscitado
+matéria constitucional. É o **acórdão recorrido** ter se assentado, ao mesmo tempo, em
+fundamento constitucional e em fundamento infraconstitucional, **ambos autônomos e
+suficientes** para manter o resultado, sem que a parte vencida tenha impugnado o
+constitucional por recurso extraordinário. Provocar o tribunal a se manifestar sobre um
+artigo da Constituição não transforma esse artigo em fundamento determinante do julgado.
+
+**No caso**, o fundamento determinante era infraconstitucional — dispositivos da lei de
+concessões — somado a premissas fáticas. A tese cairia.
+
+**Como aplicar.** Antes de invocar óbice que dependa de fundamento autônomo do acórdão
+recorrido — Súmula 126, e pela mesma lógica a 283/STF —, localizar o fundamento **no
+voto condutor** e demonstrar que ele sustenta sozinho o resultado. Peça de admissibilidade
+alegada a partir do que a parte escreveu, e não do que o tribunal decidiu, é óbice que
+não existe. O erro é sedutor porque a premissa de fato estava certa: a matéria
+constitucional realmente havia sido suscitada.

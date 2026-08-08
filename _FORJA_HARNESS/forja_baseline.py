@@ -50,6 +50,11 @@ SUITES_SCRIPT = {
         "'não localizado' não é diagnóstico: insumo bloqueado exige causa em "
         "vocabulário fechado, diligências registradas, consequência e rota — a "
         "cobrança que o titular repetiu em quatro matérias no mesmo dia"),
+    "test_vigias_avisam_no_acervo.py": (
+        "nenhum dos vigias agendados grava o aviso na raiz do harness: o aviso "
+        "nomeia caso, a raiz é motor, e um arquivo desses reprova a "
+        "sincronização inteira — aconteceu três vezes em dois dias, uma por "
+        "vigia"),
     "test_forja_gate_anexo_saida.py": (
         "anexo fora do padrão Word da casa não sai pela porta da FORJA: a barreira "
         "fica no disparo do rascunho, que é o único ponto por onde documento "
