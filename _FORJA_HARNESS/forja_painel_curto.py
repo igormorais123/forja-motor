@@ -43,7 +43,18 @@ VERSAO = "FORJA-PAINEL-CURTO-v1"
 FORJA = Path(__file__).resolve().parent
 
 # As vozes do painel. Ordem estável: o artefato é comparável entre casos.
-VOZES_PADRAO = ("kimi-k3-cursor", "glm-5.2-cursor")
+#
+# `opus-5-cursor` é **controle, não par**: é a mesma família que escreve a peça
+# e que revisa em F7-B. Ele está aqui para dar régua — sem um modelo de ponta na
+# mesma prova, o índice de uma voz nova é número sem escala — e para medir
+# quanto a voz da própria casa acrescenta sobre as de fora. Concordância dele
+# com a análise principal é eco previsível, não confirmação (Lição 99).
+VOZES_PADRAO = ("kimi-k3-cursor", "glm-5.2-cursor", "grok-4.5-cursor",
+                "luna-5.6-cursor", "opus-5-cursor")
+
+# Voz que compartilha a família do produtor da peça. O artefato marca, e quem
+# lê o placar precisa saber antes de comparar índices.
+CONTROLE_MESMA_FAMILIA = ("opus-5-cursor",)
 
 # Tetos duros. O de entrada existe porque mandar a peça inteira para uma opinião
 # de quatro linhas é desperdício de contexto e de atenção; o de saída, porque
@@ -192,6 +203,11 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
         "provedor": registro.provedor,
         "restricoes": list(registro.restricoes),
         "podeAfirmarFato": "nao_afirma_fato" not in registro.restricoes,
+        # Régua da comparação, e não um detalhe: voz da mesma família do
+        # produtor não é par das outras. Sem esta marca, alguém compara o
+        # índice do controle com o das vozes de fora como se fossem a mesma
+        # coisa — que é o erro que a Lição 99 documenta.
+        "controleMesmaFamilia": registro.id in CONTROLE_MESMA_FAMILIA,
         "segundos": recibo["segundos"],
         "custoUsd": recibo["custoUsd"],
         "alvoTruncado": cortado,

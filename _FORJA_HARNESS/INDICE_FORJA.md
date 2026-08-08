@@ -307,3 +307,42 @@ Estado medido em 06/08/2026: fronteira **aprovada** com 575 arquivos no motor;
 baseline **104/104 suítes verdes**, 647 testes pytest, 66 subtests e 46
 regressões em script, com `test_real_telemetria_licao41.py` em quarentena
 declarada.
+
+
+## PODA — o que existe e ninguém chama (08/08/2026)
+
+Duas ferramentas novas, e a diferença entre elas importa: uma pergunta o que
+**não é usado**, a outra pergunta o que foi **desenhado e não acontece**.
+
+| O que fazer | Comando |
+|---|---|
+| O que ninguém chama? | `python forja_codigo_morto.py` |
+| Podar imports sem uso | `python forja_codigo_morto.py --podar-imports` |
+| O desenho bate com o uso? | `python forja_retrato_sistema.py` |
+| Catraca | `test_forja_codigo_morto.py` (regressão em script, declarada em `forja_baseline.SUITES_SCRIPT`) |
+
+O valor do varredor está nos **critérios**, não na lista. Cada um nasceu de um
+erro cometido durante a própria construção:
+
+1. **Inventário auto-gerado não é prova de vida.** `graphify-out/` e
+   `00_IA_NAVIGACAO/` catalogam todo arquivo do disco; enquanto contaram como
+   referência, a varredura devolveu **zero candidatos entre 166 módulos**, e o
+   zero era falso.
+2. **Comentário e docstring não são rota, mas comando em `subprocess` é.** A
+   varredura descarta prosa e preserva o resto das strings.
+3. **Quem chama pode estar fora do repositório.** `forja_mcp_email.py` está
+   registrado em `~/.claude.json` e quase foi apagado uma hora depois de ter
+   sido usado. `entradas_externas()` lê as configurações do Claude atrás de
+   `mcpServers[*].args`.
+4. **Citado só na documentação tem duas leituras opostas.** Se o protocolo
+   MANDA rodar o comando, ele não é código morto — é mandato descumprido, e
+   apagá-lo esconde a dívida em vez de pagá-la.
+
+Medido em 07/08/2026: 18 candidatos a módulo morto, **18 vivos** depois de
+verificação adversarial — sete deles salvos por um refutador depois de o
+investigador os ter dado por mortos. O que saiu foi a classe mecanicamente
+segura: 31 imports sem uso e 9 símbolos sem chamador. Lições 279 e 280.
+
+O `forja_retrato_sistema.py` mede outra coisa e delega a vida dos gates ao
+`forja_gate_liveness.py`, para não haver duas verdades. Ele responde quanto do
+que foi construído chega a rodar.

@@ -267,7 +267,12 @@ def medir_painel(dados: dict) -> dict:
             "itens": linhas,
         }
     return {"caso": dados.get("caso"), "fase": dados.get("fase"),
-            "arquivo": dados.get("_arquivo"), "vozes": por_voz}
+            "arquivo": dados.get("_arquivo"),
+            # Quantas vozes dividiram este painel. `ecoLex%` NÃO é comparável
+            # entre painéis de tamanhos diferentes: com cinco vozes há cinco
+            # vezes mais chance de alguém repetir você do que com duas.
+            "vozesNoPainel": len(por_voz),
+            "vozes": por_voz}
 
 
 def _carregar(pastas: list[Path]) -> list[dict]:
@@ -276,6 +281,10 @@ def _carregar(pastas: list[Path]) -> list[dict]:
         if not pasta.exists():
             continue
         for arquivo in sorted(pasta.rglob("*PAINEL_CURTO*.json")):
+            # Pasta com underscore é arquivo morto: painel de outro regime de
+            # vozes, guardado para histórico e fora da comparação corrente.
+            if any(parte.startswith("_") for parte in arquivo.relative_to(pasta).parts[:-1]):
+                continue
             try:
                 dados = json.loads(arquivo.read_text(encoding="utf-8"))
             except (OSError, ValueError):
@@ -353,7 +362,10 @@ def indicadores(pastas: list[Path] | None = None) -> dict:
             "segundosMedio": round(sum(segundos) / len(segundos), 1) if segundos else None,
         })
     saida.sort(key=lambda l: (l["taxaViolacao"], -l["observacoes"]))
+    tamanhos = sorted({m["vozesNoPainel"] for m in medidos})
     return {
+        "vozesPorPainel": tamanhos,
+        "ecoComparavel": len(tamanhos) <= 1,
         "contrato": VERSAO,
         "em": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
         "natureza": (
@@ -420,7 +432,7 @@ def main(argv=None) -> int:
             return 0
         print(f"{relatorio['paineis']} painel(éis) medido(s)\n")
         print(f"{'modelo':<20} {'obs':>4} {'casos':>6} {'viol%':>6} {'ecoLex%':>8} "
-              f"{'teto%':>6} {'chars':>6} {'repet':>6} {'seg':>6}")
+              f"{'teto%':>6} {'chars':>6} {'sobrMed':>8} {'repet':>6} {'seg':>6}")
         parciais = 0
         for linha in relatorio["modelos"]:
             repet = linha["repeticaoEntreCasos"]
@@ -435,8 +447,14 @@ def main(argv=None) -> int:
             print(f"{linha['modelo']:<20} {linha['observacoes']:>4} {linha['casos']:>6} "
                   f"{viol} {linha['ecoLexicalSugerido']:>7.1f} "
                   f"{linha['noTetoPct']:>6.1f} {linha['caracteresMedios']:>6} "
+                  f"{linha['sobreposicaoMedia']:>8.3f} "
                   f"{(f'{repet:.2f}' if repet is not None else '  n/d'):>6} "
                   f"{(linha['segundosMedio'] or 0):>6.1f}")
+        if not relatorio["ecoComparavel"]:
+            print(f"\n[atenção] painéis de {relatorio['vozesPorPainel']} vozes estão "
+                  "misturados. `ecoLex%` NÃO é comparável")
+            print("          entre eles: com mais vozes há mais chance de alguém "
+                  "repetir você.")
         fora = sum(l["foraDeEscopo"] for l in relatorio["modelos"])
         if fora:
             # Exclusão silenciosa é o mesmo defeito do zero por ausência de
@@ -450,10 +468,13 @@ def main(argv=None) -> int:
         print("\nviol% = citou fonte que NÃO está no documento — inventou, em vez de ler.")
         print("        Citar o que o documento cita é leitura, e dois falsos positivos")
         print("        do detector puramente lexical foram o que produziu a distinção.")
-        print("ecoLex% = SUGESTÃO de eco por vocabulário compartilhado, limiar 0,25.")
-        print("        NÃO é a taxa de eco: paráfrase passa batido — medido, um par")
-        print("        real de eco deu 0,091. Quem mede eco de verdade é o veredito")
-        print("        `duplicada`, que é humano.")
+        print("ecoLex% = observações acima do limiar 0,25 de vocabulário comum. Zero aqui")
+        print("          NÃO quer dizer 'sem eco': quer dizer que a régua lexical não")
+        print("          alcança. Leia junto com sobrMed, que é a medida contínua.")
+        print("sobrMed = sobreposição lexical média com a voz mais próxima. Medido em")
+        print("          07/08/2026 nas cinco vozes: TODOS os pares ficaram entre 0,043")
+        print("          e 0,070 — sem estrutura. A régua não distingue as vozes por")
+        print("          conteúdo, e quem faz isso é o veredito humano `duplicada`.")
         print("teto%  = observações cortadas no limite de caracteres — o leitor recebe")
         print("         frase pela metade, e o resto do raciocínio não chega.")
         print("repet = semelhança máxima da própria voz ENTRE casos distintos;")

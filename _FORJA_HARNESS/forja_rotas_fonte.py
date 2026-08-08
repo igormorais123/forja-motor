@@ -40,7 +40,6 @@ import sys
 import urllib.error
 import urllib.request
 from datetime import date, datetime
-from pathlib import Path
 
 VERSAO = "FORJA-ROTAS-FONTE-v1"
 

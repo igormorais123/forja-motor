@@ -42,10 +42,6 @@ FORJA = Path(__file__).resolve().parent
 sys.path.insert(0, str(FORJA.parent / "_FERRAMENTAS"))
 
 
-def _local(tag: str) -> str:
-    return tag.rsplit("}", 1)[-1]
-
-
 def _number(value: object, default: float = 0.0) -> float:
     match = re.search(r"-?\d+(?:\.\d+)?", str(value or ""))
     return float(match.group()) if match else default

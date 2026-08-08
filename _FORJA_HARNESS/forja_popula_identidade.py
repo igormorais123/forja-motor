@@ -22,7 +22,6 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
 
 
 RAIZ = Path(__file__).resolve().parent
@@ -49,14 +48,6 @@ STATE_DIR = RAIZ / "state"
 MAPEAMENTOS = {
     # Deixado vazio propositalmente. Preencher após verificação manual com a fonte real.
 }
-
-
-def encontrar_caso_por_id(case_id: str) -> Optional[Path]:
-    """Localiza diretório de caso por ID."""
-    casos = list(STATE_DIR.glob(f"{case_id}"))
-    if casos:
-        return casos[0]
-    return None
 
 
 def gerar_f2_identidade(

@@ -21,6 +21,7 @@ Uso:
 
 import hashlib
 import json
+import re
 import sys
 import unicodedata
 from datetime import date, datetime
@@ -282,6 +283,50 @@ def _carregar_states():
     return states
 
 
+_SO_RELOGIO = (
+    re.compile(r"\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(:\d{2})?([+-]\d{2}:\d{2})?"),
+    re.compile(r"\b\d+(\.\d+)?\s*h\b"),
+)
+
+
+def _assinatura(texto: str) -> str:
+    """Hash do relatório com o relógio apagado.
+
+    Serve para responder uma pergunta só: mudou alguma coisa na fila, ou só
+    passou o tempo? A hora da geração e o "parado há N h" mudam a cada
+    execução e não são notícia.
+    """
+    for padrao in _SO_RELOGIO:
+        texto = padrao.sub("<t>", texto)
+    return hashlib.sha256(texto.encode("utf-8")).hexdigest()
+
+
+def _gravar_relatorio(texto: str) -> Path:
+    """Grava o relatório datado, mas só quando a fila mudou de fato.
+
+    O vigia roda de meia em meia hora. Escrevendo sempre, em 27 dias saíram
+    1.242 arquivos para **124 conteúdos distintos** — 90% de repetição, e
+    ninguém relê nenhum deles: o artefato que os consumidores usam é o
+    `state/FILA_PRIORIZADA.json`, que é sobrescrito. O que o arquivo datado
+    tem de valor é marcar QUANDO a fila mudou, e isso o repetido apaga em vez
+    de registrar.
+
+    Quando nada mudou, devolve o arquivo anterior sem tocar no disco.
+    """
+    anteriores = sorted(REPORTS_DIR.glob("FILA_*.md"))
+    nova = _assinatura(texto)
+    if anteriores:
+        ultimo = anteriores[-1]
+        try:
+            if _assinatura(ultimo.read_text(encoding="utf-8")) == nova:
+                return ultimo
+        except OSError:
+            pass
+    destino = REPORTS_DIR / f"FILA_{datetime.now().strftime('%Y-%m-%d_%H%M')}.md"
+    destino.write_text(texto, encoding="utf-8")
+    return destino
+
+
 def _relatorio_md(fila):
     linhas = [
         "# FORJA FILA — priorização painel → FORJA",
@@ -347,8 +392,7 @@ def gerar(hoje=None, gravar=True, publicar_painel=None):
 
     atomic_write_json(STATE_DIR / "FILA_PRIORIZADA.json", fila)
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    rel_path = REPORTS_DIR / f"FILA_{datetime.now().strftime('%Y-%m-%d_%H%M')}.md"
-    rel_path.write_text(_relatorio_md(fila), encoding="utf-8")
+    rel_path = _gravar_relatorio(_relatorio_md(fila))
 
     if publicar_painel is None:
         publicar_painel = feature_enabled("filaPriorizadaV1")

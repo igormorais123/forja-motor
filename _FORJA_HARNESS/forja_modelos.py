@@ -203,6 +203,36 @@ MODELOS: dict[str, Modelo] = {
         fases=("F4", "F7"),
         usd_entrada_por_milhao=0.0, usd_saida_por_milhao=0.0,
     ),
+    # --- Vozes de comparação (07/08/2026, ordem do titular) ---------------
+    # Entraram para dar régua ao painel: sem um modelo de ponta na mesma prova,
+    # "o K3 tirou 75" é um número sem escala. Todas pela assinatura do Cursor,
+    # no mesmo grau `high` das demais — comparação com esforço desigual mede o
+    # esforço, não o modelo. A exceção é o Luna, que o titular pediu em `max`.
+    #
+    # ATENÇÃO ao Opus: ele é a MESMA família que escreve a peça e que revisa em
+    # F7-B. No painel ele é **controle, não par**: serve para medir quanto uma
+    # voz da própria casa acrescenta sobre as de fora, que é justamente o que a
+    # Lição 99 diz não se poder presumir. Concordância dele com a análise
+    # principal não é confirmação — é eco previsível.
+    "opus-5-cursor": Modelo(
+        id="opus-5-cursor", familia="anthropic", provedor="cursor",
+        remoto="claude-opus-5-high",
+        forte_em=("raciocinio_juridico", "parecer_curto", "controle_mesma_familia"),
+        fases=("F4", "F7"),
+        usd_entrada_por_milhao=0.0, usd_saida_por_milhao=0.0,
+    ),
+    # `gpt-5.6-luna-max` existe na assinatura do Cursor — conferido em
+    # 07/08/2026 por `cursor-agent --list-models`. Isso importa: a rota que já
+    # estava no registro (`luna-5.6`, OpenRouter) cobra US$ 1/6 por milhão, e a
+    # ordem permanente da casa é preferir a assinatura. O `max` é pedido
+    # expresso do titular, e é a única voz do painel fora do grau `high`.
+    "luna-5.6-cursor": Modelo(
+        id="luna-5.6-cursor", familia="openai", provedor="cursor",
+        remoto="gpt-5.6-luna-max",
+        forte_em=("custo_baixo", "primeira_passada", "parecer_curto", "volume"),
+        fases=("F4", "F7"),
+        usd_entrada_por_milhao=0.0, usd_saida_por_milhao=0.0,
+    ),
 }
 
 # Kimi K2 está fora por ordem expressa do titular (26/07/2026), não por preço.

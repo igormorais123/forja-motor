@@ -100,15 +100,6 @@ def caso(rotulo: str) -> str | None:
     return (dados.get("casos") or {}).get(rotulo)
 
 
-def pasta_de_caso(rotulo: str) -> Path | None:
-    """Pasta de estado do caso, em `state/<caseId>`."""
-    cid = caso(rotulo)
-    if not cid:
-        return None
-    alvo = FORJA / "state" / cid
-    return alvo if alvo.exists() else None
-
-
 VALORES = FORJA / "state" / "ACERVO_VALORES.json"
 
 

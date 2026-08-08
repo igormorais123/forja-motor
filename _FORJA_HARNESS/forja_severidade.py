@@ -28,20 +28,3 @@ def blocking_findings(findings: Iterable[Mapping] | None) -> list[dict]:
         if item["severity"] == "p0":
             result.append(item)
     return result
-
-
-def is_blocking(finding: Mapping | None) -> bool:
-    return normalized_severity(finding) == "p0"
-
-
-def findings_by_severity(findings: Iterable[Mapping] | None) -> dict[str, list[dict]]:
-    """Agrupa achados em P0/P1 para relatórios sem alterar a lista de origem."""
-    grouped = {"p0": [], "p1": []}
-    for finding in findings or []:
-        item = dict(finding) if isinstance(finding, Mapping) else {
-            "code": "FORJA-SEVERITY-INVALID", "detail": repr(finding)
-        }
-        severity = normalized_severity(item)
-        item["severity"] = severity
-        grouped[severity].append(item)
-    return grouped

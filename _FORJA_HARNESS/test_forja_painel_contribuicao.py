@@ -409,6 +409,62 @@ def test_nao_ha_perfil_posicional_entre_as_vozes():
     assert True, "resultado negativo registrado; ver Lição 276"
 
 
+def test_o_controle_da_mesma_familia_esta_marcado():
+    """Opus 5 é a família que ESCREVE a peça. No painel ele é controle, não par.
+
+    Sem a marca, alguém compara o índice dele com o das vozes de fora como se
+    fossem a mesma prova — e concordância da própria família com a análise
+    principal é eco previsível, não confirmação (Lição 99).
+    """
+    assert "opus-5-cursor" in pc.CONTROLE_MESMA_FAMILIA
+    assert fm.MODELOS["opus-5-cursor"].familia == "anthropic"
+    for voz in pc.VOZES_PADRAO:
+        if voz in pc.CONTROLE_MESMA_FAMILIA:
+            continue
+        assert fm.MODELOS[voz].familia != "anthropic", (
+            f"{voz} é da mesma família do produtor e não está marcado como controle")
+
+
+def test_luna_e_opus_rodam_pela_assinatura_e_nao_pela_rota_paga():
+    """`gpt-5.6-luna-max` existe no Cursor — conferido em 07/08/2026.
+
+    A rota antiga (`luna-5.6`, OpenRouter) cobra US$ 1/6 por milhão e continua
+    no registro para quem precisar dela. O painel usa a da assinatura: gasto
+    novo é decisão do titular, não consequência de escolher o modelo errado.
+    """
+    for voz in ("luna-5.6-cursor", "opus-5-cursor", "grok-4.5-cursor"):
+        modelo = fm.MODELOS[voz]
+        assert modelo.provedor == "cursor"
+        assert modelo.usd_saida_por_milhao == 0.0
+    assert fm.MODELOS["luna-5.6"].provedor == "openrouter"
+    assert fm.MODELOS["luna-5.6"].usd_saida_por_milhao > 0
+
+
+def test_eco_nao_e_comparavel_entre_paineis_de_tamanhos_diferentes(tmp_path, monkeypatch):
+    """Com cinco vozes há cinco vezes mais chance de alguém repetir você."""
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    _painel(tmp_path, "C1", "glm-5.2-cursor", ["uma"])
+    dois = tmp_path / "C2_PAINEL_CURTO.json"
+    dados = json.loads((tmp_path / "C1_PAINEL_CURTO.json").read_text(encoding="utf-8"))
+    dados["caso"] = "C2"
+    dados["vozes"].append({"modelo": "kimi-k3-cursor", "familia": "moonshot",
+                           "observacoes": [{"obsId": "zzz", "texto": "outra"}]})
+    dois.write_text(json.dumps(dados, ensure_ascii=False), encoding="utf-8")
+    relatorio = fi.indicadores(pastas=[tmp_path])
+    assert relatorio["ecoComparavel"] is False
+    assert relatorio["vozesPorPainel"] == [1, 2]
+
+
+def test_pasta_com_underscore_fica_fora_da_comparacao(tmp_path, monkeypatch):
+    """Painel de outro regime de vozes é histórico, não par da rodada atual."""
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    _painel(tmp_path, "C1", "glm-5.2-cursor", ["vale"])
+    morto = tmp_path / "_2vozes"
+    morto.mkdir()
+    _painel(morto, "C9", "glm-5.2-cursor", ["não vale"])
+    assert fi.indicadores(pastas=[tmp_path])["paineis"] == 1
+
+
 def test_a_camada_automatica_nao_promove_ninguem():
     """A defesa contra a contra-hipótese de Helena: indicador barato canibaliza
     métrica cara. Nada do módulo de indicadores toca o degrau."""

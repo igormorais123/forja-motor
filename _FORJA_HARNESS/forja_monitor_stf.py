@@ -107,11 +107,6 @@ def gravar_json(caminho: Path, dados: dict, tentativas: int = 4) -> None:
 _DATA = re.compile(r"\d{2}/\d{2}/\d{4}")
 
 
-def _texto_limpo(html: str) -> str:
-    html = re.sub(r"(?is)<(script|style).*?</\1>", " ", html)
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "\n", html)).strip()
-
-
 def _movimentos(html: str, limite: int = 40) -> list[str]:
     """Devolve as linhas de andamento, da mais recente para a mais antiga."""
     linhas = [ln.strip() for ln in re.sub(r"<[^>]+>", "\n", html).splitlines()]

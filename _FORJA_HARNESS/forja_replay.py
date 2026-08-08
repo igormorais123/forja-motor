@@ -49,14 +49,6 @@ def _fontes(ledger: dict) -> list:
     return []
 
 
-def _identificador(fonte: dict) -> str:
-    for campo in ("sourceId", "id", "identifier", "claim", "title"):
-        valor = fonte.get(campo)
-        if valor:
-            return str(valor)[:60]
-    return "fonte sem identificador"
-
-
 def _replays(ledger: dict) -> dict:
     bruto = ledger.get("liveReplay") or ledger.get("live_replay") or {}
     if isinstance(bruto, dict):

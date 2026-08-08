@@ -1,7 +1,11 @@
 ﻿# Execução diária do vigia de comunicações processuais (DJEN/CNJ).
 # Registrado como tarefa agendada FORJA-Monitor-DJEN. Silencioso quando não há
-# novidade; quando há, deixa um arquivo visível na raiz do harness, porque log
-# que ninguém abre não avisa ninguém.
+# novidade; quando há, deixa um arquivo visível em `reports\`, porque log que
+# ninguém abre não avisa ninguém.
+#
+# O aviso nomeia processo e cliente, então não pode nascer na raiz do harness:
+# ali é motor, e o gate de fronteira reprovaria a publicação inteira por causa
+# dele. `reports\` já é acervo e o aviso continua à vista.
 
 $ErrorActionPreference = 'Stop'
 # O agendador nao herda o ambiente da sessao: sem isto o Python escreve na code
@@ -12,7 +16,8 @@ $harness = Split-Path -Parent $MyInvocation.MyCommand.Path
 $logDir  = Join-Path $harness 'telemetria\monitor_djen'
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $log     = Join-Path $logDir 'execucoes.log'
-$flag    = Join-Path $harness 'NOVIDADE_PROCESSUAL.md'
+$flag    = Join-Path $harness 'reports\NOVIDADE_PROCESSUAL.md'
+New-Item -ItemType Directory -Force -Path (Join-Path $harness 'reports') | Out-Null
 $carimbo = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
 
 Push-Location $harness

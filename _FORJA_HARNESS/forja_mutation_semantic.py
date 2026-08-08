@@ -127,14 +127,6 @@ def _ano_mais_um(m: re.Match) -> str:
     return m.group(1) + str(int(m.group(2)) + 1)
 
 
-def _digito_mais_um(m: re.Match) -> str:
-    d = str((int(m.group(1)) + 1) % 10) or "1"
-    if d == "0":
-        d = "9"
-    return ("R$ " if m.group(0).startswith("R$") else "") + d + m.group(2) + \
-           ("%" if m.group(0).rstrip().endswith("%") else "")
-
-
 def _aplicar(texto: str, padrao: str, subst: str, ocorrencia: int) -> str | None:
     """Aplica a regra na N-ésima ocorrência (0-based). None se não aplicável."""
     matches = list(re.finditer(padrao, texto, re.I))
@@ -182,12 +174,6 @@ def _achados_por_gate(texto: str, case_dir: Path | None = None) -> Counter:
         return Counter((v["gate"], v.get("sev", "P0")) for v in verificar(texto, "peca", case_dir=case_dir))
     except Exception:
         return Counter()
-
-
-def _p0_por_gate(texto: str) -> Counter:
-    """Compatibilidade para consumidores que precisam só dos bloqueios P0."""
-    return Counter(gate for (gate, sev), n in _achados_por_gate(texto).items()
-                   for _ in range(n) if sev == "P0")
 
 
 def _suite_mata(suite: dict, texto: str) -> str | None:
