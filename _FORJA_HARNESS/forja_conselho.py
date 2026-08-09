@@ -38,7 +38,15 @@ VERSAO = "FORJA-CONSELHO-v1"
 # Um parecer precisa de recomendações para ser parecer. O protocolo pede
 # "recomendações numeradas", então a contagem é sobre itens numerados de
 # primeiro nível, e não sobre qualquer linha do documento.
-_ITEM_NUMERADO = re.compile(r"^\s{0,3}(\d{1,2})[.)]\s+\S", re.M)
+# O negrito antes do número é convenção corrente de Markdown, e a primeira
+# versão desta expressão o ignorava: um parecer real da Helena, com seis
+# recomendações sob "V. RECOMENDAÇÕES CRÍTICAS", reprovava por "sem
+# recomendações numeradas" porque cada uma começava em `**1. `. O gate acusava
+# de vazio um documento cheio — pior que não existir, porque manda reescrever
+# o que já está certo. Aceita-se marcador de lista antes e ênfase em volta do
+# número; o que continua exigido é o número em início de linha.
+_ITEM_NUMERADO = re.compile(
+    r"^\s{0,3}(?:[-*+]\s{1,3})?(?:\*\*|__|\*|_)?(\d{1,2})[.)](?:\*\*|__|\*|_)?\s+\S", re.M)
 _SECAO_RECOMENDACOES = re.compile(r"^#{1,4}\s*.*recomenda", re.M | re.I)
 
 # Piso de tamanho para separar parecer de esqueleto. Medido contra os pareceres

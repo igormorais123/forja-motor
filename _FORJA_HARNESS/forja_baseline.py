@@ -63,6 +63,10 @@ SUITES_SCRIPT = {
         "gate de aceite dos critérios que o titular escreveu no e-mail: exige prova de "
         "quem afirma ter concluído, e recusa destaque de margem cortado no meio de "
         "citação legal"),
+    "test_forja_baseline_contagem.py": (
+        "o relatório deste próprio baseline conta falha, erro de importação e subtest "
+        "pelo que eles são: a expressão anterior gravava `failed: 0` em toda execução "
+        "reprovada, e relatório que subnotifica é pior que relatório ausente"),
     "test_forja_skill.py": (
         "a skill da FORJA ainda descreve a FORJA que existe: todo script, contrato e "
         "referência que ela manda usar está no disco — porque skill é documentação que "
@@ -123,10 +127,35 @@ SUITES_SCRIPT = {
 # errada enquanto ainda não recebeu seu rótulo.
 _SCRIPT_STDOUT_MARKER = "sys.stdout = io.TextIOWrapper"
 
-_PYTEST_TAIL = re.compile(
-    r"(?:(?P<failed>\d+) failed[,\s])?(?P<passed>\d+) passed"
-    r"(?:, (?P<subtests>\d+) subtests passed)?"
-)
+# Contagens independentes, e não uma expressão única sobre a linha inteira.
+# A versão anterior era `(?:(\d+) failed[,\s])?(\d+) passed`: em "1 failed, 21
+# passed" o `[,\s]` consumia a vírgula, o dígito seguinte era um espaço, o
+# casamento retrocedia e o grupo opcional saía de cena — todo relatório do
+# baseline gravava `failed: 0`, inclusive quando reprovava. E "1 error in 0.2s",
+# que é como aparece um módulo que nem importa, não casava com nada.
+_PYTEST_PASSED = re.compile(r"(\d+) passed")
+_PYTEST_FAILED = re.compile(r"(\d+) failed")
+_PYTEST_ERROR = re.compile(r"(\d+) error")
+_PYTEST_SUBTESTS = re.compile(r"(\d+) subtests passed")
+
+
+def _contagens_pytest(resumo: str) -> dict[str, int]:
+    """passed/failed/errors/subtests da última linha do pytest.
+
+    `subtests` sai do texto antes de procurar `passed`, senão "3 subtests
+    passed" seria lido como o total da suíte quando ela não tiver outro.
+    """
+    sub = _PYTEST_SUBTESTS.search(resumo)
+    resto = _PYTEST_SUBTESTS.sub("", resumo)
+    def n(padrao, texto):
+        m = padrao.search(texto)
+        return int(m.group(1)) if m else 0
+    return {
+        "passed": n(_PYTEST_PASSED, resto),
+        "failed": n(_PYTEST_FAILED, resto),
+        "errors": n(_PYTEST_ERROR, resto),
+        "subtests": int(sub.group(1)) if sub else 0,
+    }
 
 
 def _run(args: list[str]) -> tuple[int, str]:
@@ -141,15 +170,16 @@ def _run(args: list[str]) -> tuple[int, str]:
 
 def _pytest(nome: str) -> dict:
     codigo, resumo = _run([sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider", nome])
-    achado = _PYTEST_TAIL.search(resumo)
+    c = _contagens_pytest(resumo)
     return {
         "suite": nome,
         "familia": "pytest",
         "exit": codigo,
         "verde": codigo == 0,
-        "passed": int(achado.group("passed")) if achado else 0,
-        "failed": int(achado.group("failed") or 0) if achado else 0,
-        "subtests": int(achado.group("subtests") or 0) if achado else 0,
+        "passed": c["passed"],
+        "failed": c["failed"],
+        "errors": c["errors"],
+        "subtests": c["subtests"],
         "resumo": resumo,
     }
 

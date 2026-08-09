@@ -155,6 +155,24 @@ def main() -> int:
             print("  FALHOU: parecer sem recomendações numeradas passou")
             falhas += 1
 
+        # Recomendação numerada em negrito — como um parecer real da Helena a
+        # escreveu, e como a primeira versão do gate a rejeitava. O gate acusava
+        # de "sem recomendações numeradas" um documento com seis, porque cada
+        # uma começava em `**1. ` e o `**` empurrava o dígito do início da linha.
+        # Acusar de vazio o que está cheio é pior que não conferir: manda
+        # reescrever o que já estava certo.
+        casos += 1
+        negrito = _escrever(base, "negrito.md",
+                            "# F4 — PARECER HELENA\n\n" + ("Análise. " * 90) +
+                            "\n\n## V. RECOMENDAÇÕES\n\n"
+                            "**1. Estrutura narrativa:** iniciar pelo fumus.\n\n"
+                            "**2. Peso do precedente:** diferenciar o voto divergente.\n\n"
+                            "- **3.** conferir a data de intimação.\n")
+        if validar_conselho(helena=negrito, cicero=cicero,
+                            decisoes=decisoes)["gates"]["helena_present"] != "pass":
+            print("  FALHOU: recomendação numerada em negrito foi tratada como ausente")
+            falhas += 1
+
         # Deliberações ausentes.
         casos += 1
         if validar_conselho(helena=helena, cicero=cicero,

@@ -98,6 +98,26 @@ def atomic_write_text(path: Path, text: str, *, encoding: str = "utf-8") -> None
         temp_path.unlink(missing_ok=True)
 
 
+def reescrever_preservando_quebras(path: Path, texto: str, *, encoding: str = "utf-8") -> None:
+    """Reescreve arquivo existente mantendo o CRLF ou LF que ele já usava.
+
+    `Path.write_text` abre em modo texto e, no Windows, traduz todo `\\n` para
+    `\\r\\n`. Um script que lê, troca uma palavra e regrava devolve o arquivo
+    inteiro reescrito: em 09/08/2026 isso quase entrou num commit com **4.152
+    linhas trocadas por elas mesmas** em treze documentos, e o defeito só
+    apareceu porque o tamanho do diff não batia com a mudança.
+
+    Para arquivo novo, use `atomic_write_text`, que fixa LF. Este aqui é para
+    edição de arquivo existente, onde a convenção já foi decidida por quem o
+    criou e mudá-la não é assunto de quem está trocando uma palavra.
+    """
+    fim = "\r\n" if path.exists() and b"\r\n" in path.read_bytes() else "\n"
+    corpo = texto.replace("\r\n", "\n")
+    if fim != "\n":
+        corpo = corpo.replace("\n", fim)
+    path.write_bytes(corpo.encode(encoding))
+
+
 def atomic_write_json(path: Path, payload: Any) -> None:
     atomic_write_text(path, json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 

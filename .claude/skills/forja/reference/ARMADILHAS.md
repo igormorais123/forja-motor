@@ -135,5 +135,18 @@ o destino antes de publicar.
 existe. Um `ls` aliasado para uma ferramenta ausente já me fez concluir que um script da
 casa tinha sumido.
 
+**`Path.write_text` reescreve o arquivo inteiro no Windows.** Ele abre em modo texto e
+traduz todo `\n` para `\r\n`; um script que lê, troca uma palavra e regrava devolve um
+diff com o arquivo inteiro trocado por ele mesmo. Em 09/08/2026 isso quase entrou num
+commit com **4.152 linhas** em treze documentos, e só apareceu porque o tamanho do diff
+não batia com a mudança. Para arquivo novo use `forja_n3_common.atomic_write_text`, que
+fixa LF; para editar existente, `reescrever_preservando_quebras`. E confira o `--numstat`
+antes de commitar: **diff maior que a mudança é sintoma, não detalhe.**
+
+**Busca por padrão com resultado vazio nunca confirma ausência.** Os gates `S6` e `S7`
+foram declarados inexistentes porque a busca usou `S6-`, seguindo o hífen dos vizinhos
+`S2-` e `S4-`; eles se chamam `S6_IDENTIDADE_DO_ATO` e `S7_OBJETO_DEVOLVIDO`. Em base com
+convenção mista, procure primeiro o radical — `grep -rn "S6"` — e refine depois.
+
 **Divisor de frase quebra em abreviação nos dois sentidos.** O filtro que pegava a metade
 que *começa* minúscula deixava passar a que *termina* em "art." — e ela começa maiúscula.
