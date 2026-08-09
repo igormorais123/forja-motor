@@ -191,5 +191,68 @@ class TestPoliticaDePublicacao(unittest.TestCase):
         self.assertEqual(ignorados, {"a"})
 
 
+
+class ArquivoPresoNaoDerrubaAPublicacao(unittest.TestCase):
+    """Um arquivo bloqueado fica de fora e é declarado; não aborta a passada.
+
+    Em 09/08/2026 a publicação inteira morreu com `PermissionError` num único
+    ledger de evento que outra sessão gravava naquele instante — e os 10.338
+    arquivos da cadeia de auditoria não subiram. Falhar num arquivo é aceitável;
+    falhar em todos por causa dele não é, e ficar de fora sem ninguém saber é a
+    falha silenciosa que a casa persegue.
+    """
+
+    def test_copia_que_falha_nao_interrompe_as_demais(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            origem, repo = base / "origem", base / "repo"
+            origem.mkdir(); repo.mkdir()
+            itens = []
+            for nome in ("a.json", "preso.json", "z.json"):
+                alvo = origem / nome
+                alvo.write_text(nome, encoding="utf-8")
+                itens.append((alvo, nome))
+
+            real = sync.shutil.copy2
+
+            def copia_com_um_preso(fonte, destino, *a, **k):
+                if Path(fonte).name == "preso.json":
+                    raise PermissionError(13, "Permission denied")
+                return real(fonte, destino, *a, **k)
+
+            sync.shutil.copy2 = copia_com_um_preso
+            try:
+                copiados, _removidos, presos = sync.espelhar(itens, repo, seco=False)
+            finally:
+                sync.shutil.copy2 = real
+
+            self.assertEqual(copiados, 2, "os dois arquivos sadios tinham de ser copiados")
+            self.assertEqual(len(presos), 1)
+            self.assertIn("preso.json", presos[0])
+            self.assertIn("PermissionError", presos[0])
+            self.assertTrue((repo / "a.json").is_file())
+            self.assertTrue((repo / "z.json").is_file())
+            self.assertFalse((repo / "preso.json").is_file())
+
+    def test_sem_bloqueio_nenhum_a_lista_de_presos_e_vazia(self):
+        """Contraprova: a passada normal não inventa arquivo preso."""
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            origem, repo = base / "origem", base / "repo"
+            origem.mkdir(); repo.mkdir()
+            (origem / "a.json").write_text("a", encoding="utf-8")
+            copiados, _rem, presos = sync.espelhar([(origem / "a.json", "a.json")],
+                                                   repo, seco=False)
+            self.assertEqual((copiados, presos), (1, []))
+
+    def test_comparacao_que_nao_pode_ler_nao_diz_que_sao_iguais(self):
+        """`_iguais` devolvia True por acidente se o arquivo estivesse preso?
+        Não: ele levantava e derrubava tudo. Agora devolve False, que manda
+        tentar copiar — e a cópia é quem decide."""
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            a = base / "a.json"; a.write_text("x", encoding="utf-8")
+            self.assertFalse(sync._iguais(a, base / "nao_existe.json"))
+
 if __name__ == "__main__":
     unittest.main()

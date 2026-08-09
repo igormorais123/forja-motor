@@ -89,9 +89,15 @@ def _iguais(a: Path, b: Path) -> bool:
     try:
         if a.stat().st_size != b.stat().st_size:
             return False
+        return filecmp.cmp(a, b, shallow=False)
     except OSError:
+        # Inclui o `PermissionError` do Windows quando outra sessão está
+        # gravando o arquivo naquele instante. Em 09/08/2026 isso derrubou a
+        # publicação inteira por causa de **um** ledger de evento aberto por um
+        # segundo — e a cadeia de auditoria de 10.338 arquivos não subiu.
+        # Não conseguir comparar não é "são iguais": devolver False manda
+        # tentar copiar, e a cópia tem o seu próprio tratamento.
         return False
-    return filecmp.cmp(a, b, shallow=False)
 
 
 def _pastas_de_topo() -> list[Path]:
@@ -247,10 +253,17 @@ def fora_da_publicacao(ignorados: set[str], novos: set[str],
     return set(ignorados) | (set(novos) if so_rastreados else set())
 
 
-def espelhar(itens: list[tuple[Path, str]], repo: Path, seco: bool) -> tuple[int, int]:
-    """Copia o que mudou e apaga o que sumiu. Devolve (copiados, removidos)."""
+def espelhar(itens: list[tuple[Path, str]], repo: Path,
+             seco: bool) -> tuple[int, int, list[str]]:
+    """Copia o que mudou e apaga o que sumiu.
+
+    Devolve (copiados, removidos, presos). `presos` são os arquivos que o
+    sistema não deixou ler ou escrever nesta passada — quase sempre porque
+    outra sessão os estava gravando no mesmo instante.
+    """
     esperados = {(repo / rel).resolve() for _, rel in itens}
     copiados = removidos = 0
+    presos: list[str] = []
 
     for fonte, rel in itens:
         alvo = repo / rel
@@ -258,7 +271,16 @@ def espelhar(itens: list[tuple[Path, str]], repo: Path, seco: bool) -> tuple[int
             continue
         if not seco:
             alvo.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(fonte, alvo)
+            try:
+                shutil.copy2(fonte, alvo)
+            except OSError as erro:
+                # Um arquivo bloqueado não pode derrubar a publicação inteira:
+                # em 09/08/2026 um único ledger de evento aberto por um segundo
+                # abortou a subida de 10.338 arquivos da cadeia de auditoria.
+                # Ele fica de fora **e é declarado**, que é a diferença entre
+                # falhar e falhar em silêncio. Na passada seguinte ele entra.
+                presos.append(f"{rel} ({type(erro).__name__})")
+                continue
         copiados += 1
 
     # Apagar do repositório o que não existe mais na pasta de trabalho — senão o
@@ -272,7 +294,12 @@ def espelhar(itens: list[tuple[Path, str]], repo: Path, seco: bool) -> tuple[int
                     continue
                 if alvo.resolve() not in esperados:
                     if not seco:
-                        alvo.unlink(missing_ok=True)
+                        try:
+                            alvo.unlink(missing_ok=True)
+                        except OSError as erro:
+                            presos.append(f"{alvo.relative_to(repo).as_posix()} "
+                                          f"({type(erro).__name__} ao remover)")
+                            continue
                     removidos += 1
 
     # Pasta que ficou oca depois da remoção. O Git não versiona diretório vazio,
@@ -289,7 +316,7 @@ def espelhar(itens: list[tuple[Path, str]], repo: Path, seco: bool) -> tuple[int
                     atual.rmdir()
             except OSError:
                 pass
-    return copiados, removidos
+    return copiados, removidos, presos
 
 
 def publicar(repo: Path, seco: bool) -> str:
@@ -510,14 +537,27 @@ def main(argv=None) -> int:
             resumo.append(f"| {destino} | — | — | — | repositório ausente em `{repo}` |")
             falhou = True
             continue
-        copiados, removidos = espelhar(por_destino[destino], repo, args.seco)
+        copiados, removidos, presos = espelhar(por_destino[destino], repo, args.seco)
         if grandes and not args.seco:
             escrever_manifesto(repo, grandes)
         estado = publicar(repo, args.seco)
         print(f"{destino:6} {len(por_destino[destino]):5} arquivo(s) | "
               f"copiados={copiados:4} removidos={removidos:4} | {estado}")
+        if presos:
+            # Declarado na tela e no laudo. Ficar de fora é aceitável; ficar de
+            # fora sem ninguém saber é o que a casa chama de falha silenciosa.
+            print(f"       {len(presos)} arquivo(s) presos por outro processo, "
+                  f"fora desta passada e conferíveis na próxima:")
+            for item in presos[:5]:
+                print(f"       - {item}")
+            if len(presos) > 5:
+                print(f"       - e mais {len(presos) - 5}")
         resumo.append(f"| {destino} | {len(por_destino[destino])} | {copiados} | "
                       f"{removidos} | {estado} |")
+        if presos:
+            resumo += ["", f"**{destino}: {len(presos)} arquivo(s) presos por outro "
+                       "processo nesta passada** e por isso fora dela. Entram na "
+                       "seguinte; a lista completa saiu na tela.", ""]
         falhou |= estado.startswith("ERRO")
     if grandes:
         print(f"{len(grandes)} arquivo(s) acima do limite ficaram fora, "
