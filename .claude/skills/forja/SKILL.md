@@ -18,11 +18,19 @@ Trabalhe de dentro de `_FORJA_HARNESS`. Os caminhos abaixo são relativos a ela.
 ## A regra que organiza todas as outras
 
 **Declarar não é fazer.** Todo gate desta casa nasceu de uma vez em que alguém escreveu
-que tinha feito. O runner recomputa doze famílias de gate — onze funções `_recompute_*`
-mais o lastro documental — e sobrescreve o que você declarou; o gate de aceite confere o artefato no disco; o gate do conselho afere a
-proveniência da chamada e não o texto. Escreva o que for verdade, e produza a prova.
+que tinha feito. Em F1 a F7 o runner recomputa doze famílias de gate — onze funções
+`_recompute_*` mais o lastro documental — e sobrescreve o que você declarou; o gate de
+aceite confere o artefato no disco; o gate do Diabob afere a proveniência da chamada, e
+não o texto. Escreva o que for verdade, e produza a prova.
 
 Corolário: **`unknown` não é `pass`.** Gate obrigatório sem veredito bloqueia a fase.
+
+**E não confunda isso com cobertura total**, porque a metade que falta é justamente onde
+você trabalha sem rede: **F8 e F10 não têm recomputação no runner**; `helena_present` e
+`cicero_present` só conferem que o parecer existe, tem corpo e traz itens numerados;
+`template_selected` aprova qualquer texto não vazio no campo. Onde a máquina não olha, a
+disciplina é sua — e [GATES.md](reference/GATES.md#o-que-cada-gate-não-prova) diz onde ela
+não olha.
 
 ## Comece aqui, sempre
 
@@ -36,6 +44,15 @@ python forja_avisos.py              # o que está esperando alguém dar ciência
 `forja_axi.py` nunca promove fase, entrega ou libera juridicamente. **`PASS` técnico,
 pacote existente ou fila verde não são aprovação jurídica.**
 
+Ao abrir uma tentativa, nesta ordem, antes de escolher qualquer comando:
+
+1. **`RUN_CONTEXT.json`** da tentativa — traz o contrato inteiro e as instruções da fase.
+2. O **`checklistAprendido`** do contrato: são as regras que o escritório pagou para
+   aprender, e nenhuma delas vira gate.
+3. **`skills_repertorio/<Fn>.md`** — só o da fase corrente; as fichas se repetem de
+   propósito.
+4. A referência **desta** skill que a decisão de agora exigir, e não mais que ela.
+
 ## O fluxo
 
 | Fase | Nome | Produz | Gates |
@@ -45,9 +62,9 @@ pacote existente ou fila verde não são aprovação jurídica.**
 | **F2** | produto e risco (+ exploração 100) | `product_classification`, `risk_classification`, `question_tree` | 6 |
 | **F3** | fontes, regimento e leis | `fact_ledger`, `chronology`, `contradictions`, `sources_map`, `adversarial_audit` | 5 |
 | **F4** | blueprint e conselho | `blueprint`, `proposition_ledger`, pareceres de Helena, Cícero e Diabob, `council_decisions`, `adversarial_strategy` | 6 |
-| **F5** | pesquisa oficial | `source_ledger`, `citation_checklist` | 3 (+3 econômicos) |
+| **F5** | pesquisa oficial | `source_ledger`, `citation_checklist` | 3 |
 | **F6** | redação | `draft_markdown`, `paragraph_provenance` | 4 |
-| **F7** | auditoria jurídica e factual | 11 artefatos, entre eles `final_markdown` | **21** (+5 econômicos) |
+| **F7** | auditoria jurídica e factual | 11 artefatos, entre eles `final_markdown` | **21** |
 | **F8** | QA visual | `docx`, `visual_qa_ledger`, `visual_build_manifest` e mais 3 | 16 |
 | **F9** | pacote de revisão | `package_manifest`, `email_response`, memória de auditoria | 5 |
 | **F10** | entrega, evidência e aprendizado | `delivery_evidence`, `run_metrics`, `retrospective` | 3 |
@@ -77,7 +94,9 @@ Fase a fase, com entradas, artefatos exatos e o que cada gate afere:
 | auditar antes de fechar | [GATES.md](reference/GATES.md) | `forja_verificador.py`, `forja_lastro.py` |
 | passar pela revisão editorial | [INVARIANTES.md](reference/INVARIANTES.md#modelo-editorial) | `forja_editorial.py` |
 | produzir Word e PDF | [VISUAL.md](reference/VISUAL.md) | `forja_visual_build.py`, depois `montar_visual.montar()` |
-| entregar | [FLUXO.md](reference/FLUXO.md#f9--pacote-de-revisão) | `forja_delivery.py`, `forja_envio_externo.py` |
+| montar o pacote de entrega | [FLUXO.md](reference/FLUXO.md#f9--pacote-de-revisão) | `package_manifest` e `email_response` — nenhum dos dois envia |
+| reconciliar depois de enviado | [FLUXO.md](reference/FLUXO.md#f10--entrega-evidência-e-aprendizado) | `forja_delivery.py <caseKey>` confere a trilha |
+| expor documento a modelo externo | [MODELOS.md](reference/MODELOS.md) | `forja_envio_externo.py` — recusa material dos autos |
 | processar retorno humano | [INVARIANTES.md](reference/INVARIANTES.md#aprendizado-contínuo-do-retorno-humano) | `forja_post_protocol.py`, `forja_aprendizado.py` |
 | escolher ou justificar modelo | [MODELOS.md](reference/MODELOS.md) | `forja_modelos.py` é a allowlist |
 | entender por que algo quebrou antes | [ARMADILHAS.md](reference/ARMADILHAS.md) | `RETROSPECTIVAS.md` tem o detalhe |
@@ -107,8 +126,10 @@ Todos os comandos, com as flags reais: **[reference/COMANDOS.md](reference/COMAN
 ## Antes de dizer "concluído"
 
 - Os artefatos de `requiredOutputs` existem no disco, não só na declaração.
-- `forja_verificador.py` sem P0. A única exceção documentada é o `[dia]` da data de
-  protocolo.
+- `forja_verificador.py` sem P0 — **e sem exceção executável**. O `[dia]` da data de
+  protocolo é P0 como qualquer outro placeholder (`G2-placeholder` casa `[DIA`, `[DATA`,
+  `[NOME`…) e derruba o build. Preencha a data, ainda que prevista, e reconfira; enquanto
+  ela estiver pendente, o artefato é `internal_working` e não se chama protocolável.
 - QA página a página feito **depois** da última regeneração — toda regeneração invalida o
   QA anterior.
 - Se houve retorno humano, o ciclo de aprendizado rodou até `aplicar`.
@@ -120,20 +141,34 @@ Todos os comandos, com as flags reais: **[reference/COMANDOS.md](reference/COMAN
 python forja_skill_doctor.py
 ```
 
-Ele confere se todo script, contrato, template e referência citados aqui existem no
-disco, e se toda flag `--assim` que esta skill passa a um comando existe no código dele.
-**Não confere se o texto está certo**: nenhum script sabe se a descrição de uma fase
-corresponde ao que ela faz. Isso continua sendo leitura humana.
+Ele confere seis coisas, e só essas seis: que existem no disco os **scripts**, os
+**contratos de fase**, os **templates Markdown** e os **arquivos de referência** citados
+aqui; que toda **flag** `--assim` passada a um comando aparece no código dele; e que todo
+**elo com âncora** encontra a seção de destino. Mais o frontmatter mínimo.
+
+**O que ele deixa passar** — a lista importa mais que a anterior: subcomando errado,
+argumento posicional omitido, contagem de gate desatualizada, divergência entre esta skill
+e `requiredOutputs`/`requiredGates`, template `.docx`, e **se o texto está certo**. Nenhum
+script sabe se a descrição de uma fase corresponde ao que ela faz. `APROVADO` significa
+"os nomes citados existem", nunca "a skill está correta".
 
 O motivo de ele existir está no próprio problema que esta skill resolve: uma skill é
 documentação que o agente segue **sem conferir a fonte** — é esse o ponto dela —, e isso
 a torna o lugar mais perigoso da casa para uma afirmação envelhecida.
 
-**Onde a fonte diverge:** em conflito entre esta skill e o contrato de fase, vale o
-contrato (`phase_contracts/F*.json`), que é lido pelo runner. Em conflito sobre regra do
-escritório, vale o `CLAUDE.md` da fábrica. O `AGENTS.md` da mesma pasta **não é cópia
-dele**: os dois divergiram e ambos são canônicos em paralelo — quem decidir por um confira
-o outro.
+**Onde a fonte diverge**, nesta ordem:
+
+1. **Fase, entradas, saídas e gates:** o contrato (`phase_contracts/F*.json`), que é o que
+   o runner lê. Esta skill nunca vence o contrato.
+2. **Flags e comportamento de comando:** o código do script. Esta skill descreve; ele
+   executa.
+3. **Regra jurídica e do escritório:** `CLAUDE.md` **e** `AGENTS.md` da fábrica, os dois,
+   cumulativamente. O `AGENTS.md` **não é cópia** do outro — eles divergiram, cada um tem
+   dezenas de trechos que o outro não tem, e nenhum revoga o outro genericamente. Em
+   conflito real sobre a mesma matéria, vale a ordem mais recente **quando ela declara
+   que supera a anterior**; sem essa declaração, registre a contradição e não libere.
+4. **Esta skill:** mapa operacional. Onde ela contrariar os três acima, ela está errada —
+   conserte-a.
 
 ## Repertório
 

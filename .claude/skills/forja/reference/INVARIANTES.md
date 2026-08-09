@@ -40,8 +40,14 @@ são diretórios Git independentes. A montagem local alimenta os dois e não os 
 peculiaridades regimentais.*
 
 Em **toda** peça: identificar o tribunal pelo número CNJ, endereçamento e decisões; ler
-`REGIMENTO_INTERNO_<TRIBUNAL>.md` da pasta do caso; se não existir, baixar a consolidação
-oficial e salvar com cabeçalho de metadados (fonte, versão, data do download).
+`REGIMENTO_INTERNO_<TRIBUNAL>.md` da pasta do caso. Ler o quê, especificamente:
+competência do órgão julgador, cabimento, processamento do recurso ou incidente, prazos
+regimentais, sustentação oral, pauta, embargos e agravo interno.
+
+Se o arquivo não existir, baixar a consolidação oficial mais recente e convertê-la para
+Markdown **com o texto integral — nunca resumo**, com cabeçalho de metadados (fonte,
+versão ou última emenda, data do download). O resumo é o erro: ele parece o documento e
+perde justamente o dispositivo que ninguém previu que seria necessário.
 
 **Nenhum regimento arquivado é vigente pelo que está escrito nele.** Antes de usar,
 pesquisar emendas posteriores à consolidação e anexá-las na seção final. A peça reflete o
@@ -109,6 +115,13 @@ peça reprova como eco. Caso que não declara fica `unknown`, e **`unknown` não
 O parecer do Diabob é insumo interno de auditoria: propõe objeções, **não afirma fatos**,
 não vai para a peça, não vira fundamento e não substitui o F7. Ele não se confunde com a
 skill `forja-red-team`, que conduz as nove perguntas por dentro — as duas rodam.
+
+**Para Helena e Cícero não há verificação equivalente, e é bom saber disso.**
+`helena_present` e `cicero_present` conferem que o arquivo existe, passa de um piso de
+bytes e traz itens numerados. Um arquivo com o tamanho certo e uma lista numerada passa.
+Só o Diabob tem recibo de proveniência. Consultar de verdade as duas skills é obrigação
+sua, e nenhum gate vai flagrar se você não consultar — que é exatamente a razão de a ordem
+existir por escrito.
 
 ## Revisão cruzada entre famílias
 

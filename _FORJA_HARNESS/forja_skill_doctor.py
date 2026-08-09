@@ -15,6 +15,7 @@ O que ele afere, e só isso:
 - todo contrato de fase citado existe em `phase_contracts/`;
 - todo template citado existe em `templates/`;
 - toda referência interna `reference/<arquivo>` existe na própria skill;
+- todo elo com âncora aponta para uma seção que existe no destino;
 - todo arquivo de referência da skill é apontado por `SKILL.md` (referência
   órfã é referência que ninguém abre — a Lição 89 na forma de documento).
 
@@ -50,6 +51,9 @@ _FLAG = re.compile(r"(--[a-z0-9][a-z0-9-]*)")
 _CONTRATO = re.compile(r"\bphase_contracts[\\/](F[0-9A-Za-z_.]+\.json)\b")
 _TEMPLATE = re.compile(r"\btemplates[\\/]([A-Za-z0-9_.\-]+\.md)\b")
 _REFERENCIA = re.compile(r"\breference[\\/]([A-Za-z0-9_.\-]+\.md)\b")
+# `[texto](reference/GATES.md#a-seção)` ou `[texto](GATES.md#a-seção)`
+_ELO_ANCORA = re.compile(r"\]\((?:reference[\\/])?([A-Za-z0-9_.\-]+\.md)#([^)\s]+)\)")
+_TITULO = re.compile(r"^#+\s+(.+)$", re.M)
 # Scripts que vivem em _FERRAMENTAS, não no harness.
 _FERRAMENTAS = {"montar_visual.py", "word_visual_pipeline.py", "forja_visual.py",
                 "medina_svg_kit.py", "medina_visual_kit.py", "estilo_medina.py"}
@@ -77,6 +81,18 @@ def _sem_bloco_de_codigo_negativo(texto: str) -> str:
     """
     return re.sub(r"<!--\s*doctor:ignora\s*-->.*?<!--\s*/doctor:ignora\s*-->",
                   "", texto, flags=re.S)
+
+
+def _ancora(titulo: str) -> str:
+    """O identificador que o GitHub gera para um título.
+
+    Cada espaço vira **um** hífen, e não um só para a sequência inteira: por isso
+    `## F1 — Ingestão segura` responde por `#f1--ingestão-segura`, com dois. Errar
+    essa regra faz um verificador acusar de quebrado o elo que funciona — foi o
+    que aconteceu na primeira tentativa deste gate.
+    """
+    t = re.sub(r"[^\w\s-]", "", titulo.strip().lower(), flags=re.U)
+    return t.replace(" ", "-")
 
 
 def auditar(base: Path) -> dict:
@@ -152,6 +168,19 @@ def auditar(base: Path) -> dict:
             achados.append({
                 "gate": "DOC4-referencia-quebrada", "sev": "P0", "arquivo": onde,
                 "problema": f"aponta para reference/{referencia}, que não existe"})
+
+    # DOC8: elo para uma seção que não existe. O caso real era um "ver GATES.md,
+    # seção do F8" apontando para uma seção que nunca foi escrita — o leitor cai
+    # no topo do arquivo e conclui que a informação não existe.
+    ancoras = {n.split("/", 1)[-1]: {_ancora(t) for t in _TITULO.findall(c)}
+               for n, c in arquivos.items()}
+    for nome, bruto in arquivos.items():
+        for alvo, ancora in _ELO_ANCORA.findall(_sem_bloco_de_codigo_negativo(bruto)):
+            if alvo in ancoras and ancora not in ancoras[alvo]:
+                achados.append({
+                    "gate": "DOC8-ancora-inexistente", "sev": "P1", "arquivo": nome,
+                    "problema": f"aponta para {alvo}#{ancora}, e não há seção com esse título",
+                    "acao": "conferir o título da seção de destino"})
 
     # Referência que existe e ninguém abre.
     apontadas = {r for r, _ in referencias}

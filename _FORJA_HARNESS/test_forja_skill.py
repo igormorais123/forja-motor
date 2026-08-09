@@ -86,6 +86,28 @@ with tempfile.TemporaryDirectory() as tmp:
     r = doctor.auditar(_skill(raiz / "d", CABECALHO + "Veja `phase_contracts/F7.json`."))
     checar("contrato de fase existente passa", r["aprovado"])
 
+    # --- elo para seção inexistente -----------------------------------------
+    # O caso real: um "ver GATES.md, seção do F8" apontando para uma seção que
+    # nunca foi escrita. Quem clica cai no topo e conclui que não há informação.
+    refs = {"GATES.md": "# Gates\n\n## Como ler um finding\n\ntexto\n"}
+    r = doctor.auditar(_skill(raiz / "l", CABECALHO + "Veja [x](reference/GATES.md#f8--qa-visual).",
+                              refs))
+    checar("elo para seção inexistente é achado",
+           any(a["gate"] == "DOC8-ancora-inexistente" for a in r["findings"]),
+           str(r["findings"])[:180])
+
+    r = doctor.auditar(_skill(raiz / "m", CABECALHO + "Veja [x](reference/GATES.md#como-ler-um-finding).",
+                              refs))
+    checar("elo para seção existente passa", r["aprovado"], str(r["findings"])[:180])
+
+    # A regra do GitHub: cada espaço vira um hífen, então o travessão deixa dois.
+    refs2 = {"F.md": "# F\n\n## F1 — Ingestão segura\n\ntexto\n"}
+    r = doctor.auditar(_skill(raiz / "n", CABECALHO + "Veja [x](reference/F.md#f1--ingestão-segura).",
+                              refs2))
+    checar("título com travessão gera dois hífens, e o elo certo não é acusado",
+           not any(a["gate"] == "DOC8-ancora-inexistente" for a in r["findings"]),
+           str(r["findings"])[:180])
+
     # --- referência quebrada e referência órfã ------------------------------
     r = doctor.auditar(_skill(raiz / "e", CABECALHO + "Leia [x](reference/NAO_EXISTE.md)."))
     checar("ponteiro para referência inexistente reprova",

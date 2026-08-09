@@ -28,6 +28,15 @@ com gate de colisão → QA estrutural → gate F8-S (`forja_assinatura_visual.p
 O PDF, o render página a página e a inserção de EMF saem depois, por
 `montar_visual.montar()`. O comando está em [COMANDOS.md](COMANDOS.md#produção-visual-f75-f8).
 
+**"Depois" é literal, e ignorá-lo é o erro mais caro desta página.** A tentativa F8 é
+estática: o contrato exige `renderingUsed`, `pdfCreated` e `pngCreated` falsos, e por isso
+`forja_visual_build.py` devolve `pdf: None`. Rodar `montar_visual.montar()` **sobre o DOCX
+canônico da tentativa** faz duas coisas ruins de uma vez: reprova o gate da fase e regrava
+o arquivo pelo Word, quebrando o hash já gravado na fidelidade. O PDF final — que é
+obrigatório, por ordem permanente do titular, e sai por Word COM — pertence à derivação do
+pacote de entrega, sobre uma cópia, com o QA página a página amarrado ao hash daquela
+derivação.
+
 **Não integrar `compor()` dentro de `forja_render_docx.render()`.** Foi analisado e
 rejeitado: constrói a peça duas vezes, uma pobre e uma rica, e deixa dois DOCX parecidos
 na mesma pasta. O render simples é prévia; a produção passa pela entrada única.

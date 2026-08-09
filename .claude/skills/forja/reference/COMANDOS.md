@@ -101,11 +101,18 @@ a ninguém, que é o que distingue `indisponivel_na_fonte` de `limitacao_da_ferr
 python forja_diabob.py --arquivo <blueprint.md> [--modelo grok-4.5-cursor] [--caso <id>] \
     [--saida F4_PARECER_DIABOB.json] [--permitir-reserva] [--json]
 python forja_conselho.py <helena.md> <cicero.md> <council_decisions.md> [F4_PARECER_DIABOB.json]
-python forja_painel_curto.py --arquivo <doc> --caso <id> --fase F4 [--saida F4_PAINEL_CURTO.json]
+python forja_painel_curto.py --arquivo <doc> --caso <id> --fase F4 \
+    --classe produto_proprio --confirmo-envio-externo [--saida F4_PAINEL_CURTO.json]
 ```
 
-Helena e Cícero entram pelas skills `/helena` e `/cicero`. O Diabob entra **pelo
-comando** — o gate afere a proveniência da chamada, não o texto.
+O painel curto **não é conselho e não é fonte**: nada dele vira fundamento, citação,
+número ou data. As duas flags acima são obrigatórias — sem elas o porteiro externo recusa
+e o comando encerra com código 2.
+
+Helena e Cícero entram pelas skills `/helena` e `/cicero`. O Diabob entra **pelo comando**,
+e só nele o gate afere a proveniência da chamada. Para Helena e Cícero, o gate confere
+apenas que o parecer existe, tem corpo e traz recomendações numeradas — a consulta real é
+disciplina sua, não fato computado.
 
 ## Verificação (F7)
 
@@ -130,7 +137,9 @@ python forja_visual_build.py <peca.md> <saida_dir> ["Título"] [--tipo peca|estu
 Material econômico exige `--ledger` e `--case-dir`: sem eles o gate `L9-fonte-prevalente`
 reprova a construção, e a mensagem parece um erro do build quando é um erro de lastro.
 
-O PDF e o render página a página saem de `montar_visual.montar()`, em `_FERRAMENTAS`:
+O PDF e o render página a página saem de `montar_visual.montar()`, em `_FERRAMENTAS` —
+**na derivação do pacote, sobre uma cópia, nunca sobre o DOCX canônico da tentativa F8**,
+que precisa declarar que não houve rasterização:
 
 ```python
 import sys; sys.path.insert(0, r"<raiz>/_FERRAMENTAS")
@@ -148,10 +157,23 @@ COM e uma trava a outra por meia hora, com o wrapper ainda reportando sucesso.
 ## Entrega e pós-entrega (F9, F10)
 
 ```
-python forja_delivery.py <caseKey>
-python forja_envio_externo.py ...            # porteiro de saída; nada externo sai fora dele
+python forja_delivery.py <caseKey>           # reconcilia a trilha; NÃO é remetente
 python forja_anexos_conferencia.py [--aplicar] [--todas]
 python forja_post_protocol.py scan-gmail [--shadow]
+```
+
+**Nenhum script desta skill envia coisa alguma ao cliente.** `email_response` é rascunho;
+`forja_delivery.py` confere a evidência de um envio que já ocorreu e grava a trilha. O ato
+de enviar acontece por canal expressamente autorizado, e sem identificador aceito pelo
+provedor a entrega se registra como **não enviada**.
+
+`forja_envio_externo.py` é outra coisa e vive em outro lugar: é o porteiro do que sai da
+máquina **para modelo externo** — exige a classe do documento, recusa material dos autos
+com recusa dura e registra hash e tamanho do que foi exposto, nunca o texto. A CLI dele
+só lista:
+
+```
+python forja_envio_externo.py [--classes] [--limite 20]
 ```
 
 Ciclo do aprendizado, na ordem — e nenhum passo é dispensável:
@@ -178,8 +200,8 @@ python forja_skill_doctor.py [--skill <pasta>] [--json]   # esta skill ainda bat
 python forja_regimentos.py [--raiz <dir>] [--limite-dias 90] [--json] [--hoje AAAA-MM-DD]
 python forja_regimento_pdf.py --pdf <arquivo> --tribunal STF --nome "..." \
     --url-oficial "..." --versao "..." --saida "REGIMENTO_INTERNO_STF.md"
-python forja_contribuicao.py ...            # placar de contribuição das vozes
-python forja_painel_indicadores.py ...      # indicadores automáticos das vozes
+python forja_contribuicao.py <subcomando>          # exige subcomando; `amostra` abre o texto real
+python forja_painel_indicadores.py indicadores|fila
 python forja_pso_pet.py validate-plan <arquivo>
 python forja_pso_pet.py audit-case <caso>
 ```

@@ -33,6 +33,15 @@ python forja_run.py <caso> promote <attempt-dir> --expected-revision <N>
 python forja_run.py <caso> block <FASE> --expected-revision <N> --reason "..." [--blocker <item>]
 ```
 
+**Leia o `checklistAprendido` do contrato da sua fase.** É onde o ciclo de aprendizado
+aterrissa: `forja_aprendizado.py aplicar` escreve ali a regra adotada, com `regraId` e a
+classe do retorno humano que a originou. Hoje o F1 tem três itens e o F7, quatro — entre
+eles não colapsar categorias jurídicas no rótulo mais favorável à cliente, não deixar
+ressalva de verificação sobre documento já juntado aos autos, e qualificar o peso do que
+se cita (monocrática não é colegiada; agregador orienta a busca e não sustenta a frase).
+Nenhum deles aparece nos gates: são regras que o escritório pagou para aprender e que só
+funcionam se alguém as ler.
+
 `start` prepara a tentativa e grava `RUN_CONTEXT.json` com o contrato inteiro e as
 instruções da fase. O agente trabalha dentro do diretório da tentativa e escreve
 `PHASE_RESULT.json`. `promote` valida e, só então, copia os artefatos para o lugar
@@ -52,6 +61,13 @@ Na ordem:
    disco, a recomputação devolve `fail` e a fase não promove.
 6. Auditoria adversarial, bundle editorial de F7, ledger de fontes e estilo humano são
    validados por último, cada um capaz de derrubar sozinho.
+
+**Onde a recomputação não alcança — leia antes de confiar nela.** As doze famílias cobrem
+F1 a F7. **F8 e F10 não têm recomputação no runner**: o F8 é validado depois, no
+empacotamento (`forja_package.py`), e o F10 pelos elos do `forja_delivery.py`. E o passo 3
+vem antes do 5 por um motivo: o runner **primeiro exige o `pass` declarado** e só então
+recomputa. Declaração continua sendo necessária; ela é que não é suficiente. Dizer "o
+runner recomputa tudo" é falso, e é a espécie de falsidade que faz alguém parar de olhar.
 
 As recomputações e quem as executa:
 
@@ -207,11 +223,25 @@ lastro. Opcional e barato: `python forja_painel_curto.py --arquivo <doc> --caso 
 
 `F5_PESQUISA_OFICIAL` · próxima: F6
 
+**Não faça em F3 a pesquisa que pertence aqui.** F3 **identifica** — tribunal, órgão,
+relatoria, regimento vigente, fatos, cronologia, contradições e o mapa das fontes que
+faltam. F4 **decide** a pergunta jurisdicional e as proposições. F5 **pesquisa**, e
+pesquisa sobre o `proposition_ledger` que só existe depois do F4. Pesquisar antes disso
+custa uma rodada inteira: você busca jurisprudência genérica e depois refaz tudo contra
+quem realmente vai julgar. Em F3, consulte jurisprudência apenas para resolver
+competência, relatoria, prevenção, vigência ou o escopo factual de uma diligência.
+
+O `CLAUDE.md` ainda descreve a ordem de pesquisa como coisa de F3; os contratos põem a
+pesquisa oficial em F5. Para executar a fase, vale o contrato.
+
 **Entra:** `proposition_ledger`, `sources_map`.
 **Sai:** `source_ledger`, `citation_checklist`.
 **Gates:** `official_sources_archived`, `final_use_policy_recorded`, `quotes_compared`.
-**Condicionais (`economic`):** `fonte_prevalente_validada`, `data_base_registrada`,
-`documentos_economicos_inventariados`.
+**Condicionais (`economic`), declarados no contrato:** `fonte_prevalente_validada`,
+`data_base_registrada`, `documentos_economicos_inventariados`. **O runner não lê o campo
+`conditionalGates`** — em nenhuma fase. Aqui eles são exigência escrita sem execução; quem
+os cumpre é você. O lastro econômico de verdade (L9–L13) é acionado em F7 pela detecção de
+material econômico, e esse sim reprova.
 
 Fonte oficial vai para `cache/fontes_oficiais/` com data de conferência. Antes de citar,
 confira lá; se faltar, capture. A API do BCB e o Planalto respondem direto; SCON/STJ e
@@ -255,9 +285,11 @@ no corpo da peça é bloqueador P0.
 `red_team_completed`, `adversarial_claims_rechecked`, `bad_faith_language_authorized`,
 `editor_model_confirmed`, `cross_model_review_verified`, `editorial_source_hash_match`,
 `editorial_fidelity_pass`, `human_style_final_pass`.
-**Condicionais (`economic`):** `fonte_prevalente_validada`, `data_base_coincidente`,
-`valor_monetario_ancorado`, `hierarquia_de_fontes_conferida`,
-`aritmetica_derivada_recomputada`.
+**Condicionais (`economic`), declarados no contrato:** `fonte_prevalente_validada`,
+`data_base_coincidente`, `valor_monetario_ancorado`, `hierarquia_de_fontes_conferida`,
+`aritmetica_derivada_recomputada`. O campo `conditionalGates` não é lido pelo runner; o
+que reprova de fato aqui são os L9–L13 do `forja_lastro.py`, acionados pela detecção de
+material econômico e pelo `--ledger` do build.
 
 ```
 python forja_verificador.py <peca.md> --tipo peca
@@ -287,7 +319,14 @@ Modelo editorial e revisão cruzada entre famílias: [MODELOS.md](MODELOS.md).
 `context_validation`, template.
 **Sai (6):** `docx`, `docx_layout_audit`, `visual_review_attestation`,
 `visual_qa_ledger`, `format_fidelity`, `visual_build_manifest`.
-**Gates (16):** ver [GATES.md](GATES.md#f8--qa-visual).
+**Gates (16):** `svg_lint_pass`, `markdown_lint_pass`,
+`docx_body_justified_times_12_pass`, `docx_table_typography_consistent_min_8pt`,
+`docx_folio_collision_safe`, `docx_content_and_tracking_fidelity_pass`,
+`document_scope_reviewed_at_100_percent`, `independent_human_or_visual_agent_reviewer`,
+`no_automated_self_certification`, `human_visual_review_signed_receipt_for_strict_release`,
+`external_human_trust_store_verified_for_strict_release`, `static_ooxml_qa_pass`,
+`svg_embeds_integrity_pass`, `semantic_fidelity_recomputed`, `static_qa_recomputed`,
+`no_pdf_or_raster_rendering`.
 
 Entrada única de produção:
 
@@ -295,6 +334,24 @@ Entrada única de produção:
 python forja_visual_build.py <peca.md> <saida_dir> "Título" --tipo peca \
   --case-dir <caso> --base-dir <caso> --ledger <caso>/_base_exportacoes/fact_ledger.json
 ```
+
+### A tentativa F8 não renderiza — e isso não dispensa o PDF
+
+O nome `no_pdf_or_raster_rendering` engana, e engana bem: **duas revisões externas
+independentes leram nele "a entrega não tem PDF"**, o que seria contrariar ordem
+inviolável do escritório. Lido em `forja_f8_contract.py`, ele exige `renderingUsed`,
+`pdfCreated` e `pngCreated` **falsos**, com `mode == "static_ooxml_svg"`. Ou seja: afere
+que **a QA desta fase foi estática sobre o OOXML**, não sobre uma imagem da página. Por
+isso `forja_visual_build.py` devolve `pdf: None`, e está certo.
+
+O PDF final continua **obrigatório** e sai por Word COM, com QA página a página — só que
+como derivação posterior, para o pacote de entrega, fora da tentativa F8. Duas
+consequências práticas:
+
+- **não rode `montar_visual.montar()` sobre o DOCX canônico da tentativa**: ele reabre e
+  regrava o arquivo, e o hash gravado na fidelidade deixa de corresponder;
+- **o recibo estático do F8 não prova o PDF derivado.** Vincule o QA do PDF ao hash do
+  DOCX e do PDF daquela derivação, e refaça-o depois de **toda** regeneração.
 
 Detalhe da esteira visual, do brief F7.5 e dos gates de SVG: [VISUAL.md](VISUAL.md).
 

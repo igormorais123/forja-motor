@@ -13,6 +13,7 @@
 - [Como ler um finding](#como-ler-um-finding)
 - [As 29 famílias](#as-29-famílias)
 - [As famílias que você mais vai encontrar](#as-famílias-que-você-mais-vai-encontrar)
+- [O que cada gate não prova](#o-que-cada-gate-não-prova)
 - [Gates citados na documentação que não existem no código](#gates-citados-na-documentação-que-não-existem-no-código)
 
 ## Como ler um finding
@@ -21,8 +22,11 @@ Todo finding tem `gate`, `sev` e `problema`. `sev` é `P0` (bloqueia) ou `P1` (r
 exige justificativa). O identificador diz de onde veio: o prefixo é a família, o sufixo
 descreve o defeito — `L9-fonte-prevalente`, `SVGC-01`, `ACE7-entrega-fragmentaria`.
 
-**Nenhum P0 é justificável por prosa.** A única exceção documentada da casa é o
-placeholder `[dia]` da data de protocolo.
+**Nenhum P0 é justificável por prosa, e não há exceção executável.** A documentação da
+casa já tratou o `[dia]` da data de protocolo como exceção tolerada; **o código não a
+concede** — `G2-placeholder` casa `[DIA`, `[DATA`, `[NOME`, `[CRC` e companhia, e
+`forja_visual_build.py` aborta diante de qualquer P0. Preencha a data, mesmo que prevista,
+e reconfira antes da liberação.
 
 ## As 29 famílias
 
@@ -39,7 +43,7 @@ placeholder `[dia]` da data de protocolo.
 | `LRP` | replay de fonte oficial | `forja_replay.py` | 9 |
 | `LQC`, `LFA` | fontes oficiais e cotejo | `forja_fontes_oficiais.py` | 15 |
 | `ACE` | aceite dos critérios do cliente | `forja_gate_aceite.py` | 8 |
-| `DOC` | integridade desta skill | `forja_skill_doctor.py` | 7 |
+| `DOC` | integridade desta skill | `forja_skill_doctor.py` | 9 |
 | `LPS` | parágrafos lastreados | `forja_paragrafos.py` | 7 |
 | `I` | invariantes de governança | `forja_lapidacao_governanca.py` | 6 |
 | `LRD` | redação e voz humana | `forja_redacao.py` | 6 |
@@ -98,8 +102,11 @@ explicativo repetido, entre outros) · `G11-regimento`.
 `LRG5-regimento-inexistente` · `LRG6-regimento-mudou-desde-a-f3` ·
 `LRG7-sem-secao-de-emendas` · `LRG9-fato-sem-lastro`.
 
-O `LRG6` é o que impede a peça de sair com o regimento que valia quando a pesquisa foi
-feita, e não o vigente na data do protocolo.
+O `LRG6` percebe que o arquivo do regimento **mudou desde a F3** — ele compara hash. Isso
+não é o mesmo que vigência: um arquivo velho, estável e com a seção de emendas passa
+tranquilamente. A atualidade até a data do protocolo continua exigindo pesquisa oficial
+registrada, e o `LRG7` só confere que a expressão "emendas posteriores" existe no texto,
+não que alguém as procurou.
 
 ### Red team — `forja_red_team.py`
 
@@ -128,6 +135,26 @@ conteúdo do artefato — confere existência, tipo e tamanho.
 ### Colisão em SVG — `_FERRAMENTAS/medina_svg_colisao.py`
 
 `SVGC-01` a `SVGC-05`. Detalhe e limiares em [VISUAL.md](VISUAL.md#os-gates-do-desenho).
+
+## O que cada gate não prova
+
+Levantado lendo os produtores em 09/08/2026, depois de uma auditoria adversarial. **Um
+gate verde é prova do que ele mede, e de nada além.** A lista abaixo é o contrário do
+resto deste documento: aqui está onde a máquina não olha, e onde portanto a peça depende
+inteiramente de quem a conduz.
+
+| Gate | O que ele realmente afere | O que ele **não** prova |
+|---|---|---|
+| `helena_present`, `cicero_present` | o parecer existe, passa de um piso de bytes e traz itens numerados | que Helena ou Cícero foram de fato consultados. **Não há verificação de proveniência** — ela existe só para o Diabob |
+| `template_selected` | há texto não vazio no campo de template do `paragraph_provenance` | que o DOCX nasceu do template do escritório. Não confere arquivo, hash, timbre nem cabeçalho |
+| `LRG6-regimento-mudou-desde-a-f3` | o hash do regimento arquivado mudou desde a F3 | que o regimento está **vigente**. Arquivo velho, estável e com seção de emendas passa. A atualidade continua exigindo pesquisa oficial registrada |
+| `LRG7-sem-secao-de-emendas` | a expressão "emendas posteriores" aparece no arquivo | que as emendas foram pesquisadas, quanto mais anexadas |
+| `no_pdf_or_raster_rendering` | a QA do F8 foi estática sobre OOXML (`renderingUsed`, `pdfCreated` e `pngCreated` falsos) | **nada sobre o PDF da entrega**, que continua obrigatório por Word COM em derivação posterior |
+| gates de aceite `ACE1`–`ACE6` | o artefato existe, não está vazio e tem o tipo certo | que o conteúdo responde ao que o cliente pediu. O gate mede o estado do mundo, nunca a qualidade |
+| `conditionalGates` dos contratos | — | **nada: o runner não lê esse campo.** Os "gates econômicos" de F5 e F7 são metadado contratual sem execução; em F7 o lastro econômico é acionado pela detecção de material econômico, não por ele |
+
+Corolário para o dia a dia: quando alguém disser "passou em todos os gates", a pergunta
+seguinte é **quais**, e a de depois é o que aqueles gates medem.
 
 ## Gates citados na documentação que não existem no código
 
