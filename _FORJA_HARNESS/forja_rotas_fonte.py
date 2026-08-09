@@ -189,6 +189,30 @@ ROTAS: dict[str, dict] = {
             "estas rotas em <data>', nunca 'não há emenda posterior'"),
         "verificadoEm": "2026-08-09",
     },
+    # ------------------------------------------------------------------ TRF4
+    "trf4-eproc-consulta-publica": {
+        "fonte": "TRF4",
+        "tipoDocumento": "peca_processual",
+        "serve": False,
+        "porQue": (
+            "a consulta pública do eproc do TRF4 está DESATIVADA. A página "
+            "externo_controlador.php?acao=processo_consulta_publica carrega com "
+            "HTTP 200, monta o menu inteiro e imprime uma única frase no corpo: "
+            "'A consulta pública está desativada.' Não há formulário, não há "
+            "captcha a resolver, não há campo de número de processo"),
+        "causaCorreta": "indisponivel_na_fonte",
+        "causasAdmissiveis": ("indisponivel_na_fonte",),
+        "condicao": (
+            "o HTTP 200 e a página completa fazem a rota parecer viva para quem "
+            "mede status ou tamanho; só o texto do corpo revela a recusa. E não "
+            "registre como sem_habilitacao_nos_autos quando o processo é de "
+            "terceiro: não somos parte e não há procuração a juntar, logo não "
+            "existe diligência de habilitação a fazer — mandar o próximo agente "
+            "atrás dela é mandá-lo a lugar nenhum. Para andamento e publicação, "
+            "a porta que funciona é o DJEN; para o conteúdo decisório que subiu, "
+            "as decisões dos tribunais superiores costumam transcrever a peça"),
+        "verificadoEm": "2026-08-09",
+    },
     # ----------------------------------------------------------------- DJEN
     "djen-comunicacao-por-processo": {
         "fonte": "DJEN",
