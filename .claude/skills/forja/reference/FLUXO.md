@@ -163,7 +163,7 @@ Contrato do artefato: `templates/F2A_EXPLORACAO_100_PERGUNTAS.md`.
 
 ```
 python forja_rotas_fonte.py --fonte STJ --tipo acordao
-python forja_legal_search.py stj-search --query "..."
+python forja_legal_search.py stj-search "termo"    # o termo é posicional, sem flag
 python forja_regimentos.py --limite-dias 90
 python forja_regimento_pdf.py --pdf <arquivo> --tribunal STF --nome "..." --url-oficial "..." --versao "..." --saida "REGIMENTO_INTERNO_STF.md"
 ```

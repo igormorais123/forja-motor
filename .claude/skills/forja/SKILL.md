@@ -30,7 +30,7 @@ Corolário: **`unknown` não é `pass`.** Gate obrigatório sem veredito bloquei
 python forja_axi.py                 # onde estão os casos, compacto e só de leitura
 python forja_axi.py case <case-id>  # um caso, sem corpo de artefato
 python forja_fila.py --proxima      # o que fazer agora
-python forja_alertas.py             # o que está esperando alguém
+python forja_avisos.py              # o que está esperando alguém dar ciência
 ```
 
 `forja_axi.py` nunca promove fase, entrega ou libera juridicamente. **`PASS` técnico,
@@ -72,7 +72,8 @@ Fase a fase, com entradas, artefatos exatos e o que cada gate afere:
 | identificar tribunal e regimento | [INVARIANTES.md](reference/INVARIANTES.md#regimento-do-tribunal) | `forja_regimentos.py`, `forja_regimento_pdf.py` |
 | pesquisar jurisprudência | [INVARIANTES.md](reference/INVARIANTES.md#ordem-de-pesquisa-jurisprudencial) | `forja_legal_search.py`, `forja_rotas_fonte.py` |
 | reunir o conselho | [INVARIANTES.md](reference/INVARIANTES.md#conselho-obrigatório) | `/helena`, `/cicero`, `forja_diabob.py`, `forja_conselho.py` |
-| redigir | [INVARIANTES.md](reference/INVARIANTES.md#tratamento-e-citação-do-acervo) | template obrigatório, `paragraph_provenance` |
+| redigir | [INVARIANTES.md](reference/INVARIANTES.md#o-que-a-peça-precisa-conter) | os 7 itens obrigatórios, antes de escrever a primeira linha |
+| citar os autos na peça | [INVARIANTES.md](reference/INVARIANTES.md#tratamento-e-citação-do-acervo) | só referência processual verdadeira |
 | auditar antes de fechar | [GATES.md](reference/GATES.md) | `forja_verificador.py`, `forja_lastro.py` |
 | passar pela revisão editorial | [INVARIANTES.md](reference/INVARIANTES.md#modelo-editorial) | `forja_editorial.py` |
 | produzir Word e PDF | [VISUAL.md](reference/VISUAL.md) | `forja_visual_build.py`, depois `montar_visual.montar()` |
@@ -120,8 +121,9 @@ python forja_skill_doctor.py
 ```
 
 Ele confere se todo script, contrato, template e referência citados aqui existem no
-disco. **Não confere se o texto está certo**: nenhum script sabe se a descrição de uma
-fase corresponde ao que ela faz. Isso continua sendo leitura humana.
+disco, e se toda flag `--assim` que esta skill passa a um comando existe no código dele.
+**Não confere se o texto está certo**: nenhum script sabe se a descrição de uma fase
+corresponde ao que ela faz. Isso continua sendo leitura humana.
 
 O motivo de ele existir está no próprio problema que esta skill resolve: uma skill é
 documentação que o agente segue **sem conferir a fonte** — é esse o ponto dela —, e isso

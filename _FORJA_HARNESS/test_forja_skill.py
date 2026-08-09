@@ -57,6 +57,28 @@ with tempfile.TemporaryDirectory() as tmp:
     checar("script que existe não gera achado", r["aprovado"],
            str(r["findings"])[:180])
 
+    # --- o defeito que DOC1 não pegava: script certo, flag de outro ----------
+    # O caso real: a skill mandava `forja_alertas.py --visto`, e `--visto` é de
+    # `forja_avisos.py`. Os dois arquivos existem, então DOC1 aprovava — e
+    # `forja_alertas.py` sem argumento sai com sucesso, imprimindo a docstring.
+    r = doctor.auditar(_skill(raiz / "i", CABECALHO +
+                              "Rode `python forja_alertas.py --visto <id> --por <nome>`."))
+    checar("flag que existe em outro script reprova",
+           any(a["gate"] == "DOC7-flag-inexistente" for a in r["findings"]),
+           str(r["findings"])[:180])
+    checar("e reprovar por flag também bloqueia", not r["aprovado"])
+
+    r = doctor.auditar(_skill(raiz / "j", CABECALHO +
+                              "Rode `python forja_avisos.py --visto <id> --por <nome>`."))
+    checar("a mesma flag no script certo passa", r["aprovado"],
+           str(r["findings"])[:180])
+
+    # A flag chega ao script pela continuação de linha, como no shell.
+    corpo = CABECALHO + "```\npython forja_baseline.py --json out.json \\\n    --flag-que-nao-existe\n```\n"
+    checar("flag na linha continuada por barra invertida também é conferida",
+           any(a["gate"] == "DOC7-flag-inexistente"
+               for a in doctor.auditar(_skill(raiz / "k", corpo))["findings"]))
+
     # --- contrato de fase inexistente ---------------------------------------
     r = doctor.auditar(_skill(raiz / "c", CABECALHO + "Veja `phase_contracts/F42.json`."))
     checar("contrato de fase inexistente reprova",
@@ -107,6 +129,7 @@ checar("ela cita um número plausível de scripts",
 if falhas:
     print(f"REGRESSÃO: {falhas} de {casos} casos falharam")
     raise SystemExit(1)
-print(f"ok: {casos} casos — o verificador pega script renomeado, contrato ausente e "
-      f"referência quebrada, e a skill da FORJA ainda descreve a FORJA que existe "
-      f"({real['conferidos']['scriptsCitados']} scripts citados, todos no disco)")
+print(f"ok: {casos} casos — o verificador pega script renomeado, flag de outro comando, "
+      f"contrato ausente e referência quebrada, e a skill da FORJA ainda descreve a FORJA "
+      f"que existe ({real['conferidos']['scriptsCitados']} scripts e "
+      f"{real['conferidos']['flagsConferidas']} flags citadas, todos no disco)")

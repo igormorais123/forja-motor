@@ -40,9 +40,15 @@ Fila e avisos:
 ```
 python forja_fila.py --dry             # ver a fila sem gravar
 python forja_fila.py --proxima         # a demanda do topo
-python forja_alertas.py                # avisos pendentes (nasce naoVisto e assim fica)
-python forja_alertas.py --visto <id> --por <nome> [--nota "..."]
+python forja_avisos.py [--todos] [--json]   # avisos pendentes (nasce naoVisto e assim fica)
+python forja_avisos.py --visto <id> --por <nome> [--nota "..."]
 ```
+
+**`forja_alertas.py` não é isso, e a troca é silenciosa.** Ele é a biblioteca do alerta
+de P0 no painel de gestão; a única CLI dele é `--drenar <case_dir>`. Chamado sem
+argumento, imprime a própria docstring e **sai com sucesso** — um agente lê a saída como
+"nenhum aviso pendente" e segue em frente. A caixa de avisos com destinatário e estado é
+`forja_avisos.py`.
 
 ## Mover um caso pela esteira
 
@@ -76,10 +82,10 @@ python forja_exploracao_100.py select-consultation <F2_QUESTION_TREE.json>
 python forja_exploracao_100.py render-consultation <F2_QUESTION_TREE.json> --output <saida>
 python forja_exploracao_100.py record-response <F2_QUESTION_TREE.json> --response <resposta.json>
 
-python forja_legal_search.py search [--query "..."] [--tribunal ...] [--limit 50]
-python forja_legal_search.py case --numero-cnj <cnj>
-python forja_legal_search.py stj-search [--query "..."] [--organs ...]
-python forja_legal_search.py stj-daily [--query "..."] [--days 30]
+python forja_legal_search.py search "termo" [--tribunal ...] [--limit 50] [--order ...]
+python forja_legal_search.py case <cnj>
+python forja_legal_search.py stj-search "termo" [--orgao "..."] [--limit 20]
+python forja_legal_search.py stj-daily "termo" [--days 7] [--limit 20]
 
 python forja_rotas_fonte.py [--fonte STF] [--tipo acordao]
 python forja_rotas_fonte.py --probe [--fonte STF]        # exercita as rotas ao vivo

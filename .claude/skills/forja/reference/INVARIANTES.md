@@ -9,7 +9,7 @@
 
 - [Fronteira motor / acervo](#fronteira-motor--acervo)
 - [Regimento do tribunal](#regimento-do-tribunal)
-- [Síntese executiva](#síntese-executiva)
+- [O que a peça precisa conter](#o-que-a-peça-precisa-conter)
 - [Conselho obrigatório](#conselho-obrigatório)
 - [Revisão cruzada entre famílias](#revisão-cruzada-entre-famílias)
 - [Modelo editorial](#modelo-editorial)
@@ -51,13 +51,41 @@ fonte, nunca de memória.
 Considerar também `_LEIS_GERAIS`: Estatuto da OAB (Lei 8.906/1994) e LOMAN (LC 35/1979).
 Registrar no relatório quais dispositivos foram considerados e como impactaram a peça.
 
-## Síntese executiva
+## O que a peça precisa conter
 
-*07/07/2026 — Prof. Fábio, por e-mail.*
+*08/07/2026 — INVIOLÁVEL, minerado dos retornos humanos. Canônico com checklist:
+`APRENDIZADOS_FEEDBACK_HUMANO.md`, na raiz da fábrica.*
 
-Síntese executiva no estilo do art. 343-A do RISTJ **no início de toda peça**, em qualquer
-tribunal. Síntese que passa de meia página deixa de ser síntese: o desenvolvimento é dos
-capítulos.
+O diagnóstico que originou esta ordem vale mais que a lista: **a IA acerta o eixo
+jurídico e erra por OMISSÃO nas cautelas de advogado sênior** — blindagem recursal e
+questões processuais laterais. Nenhum destes sete itens é estilo; todos são conteúdo.
+
+1. **Síntese executiva no estilo do art. 343-A do RISTJ, no início de toda peça**, em
+   qualquer tribunal (Prof. Fábio, e-mail de 07/07/2026). Passou de meia página, deixou de
+   ser síntese: o desenvolvimento é dos capítulos.
+2. **Prequestionamento expresso** — dispositivos legais **e** constitucionais carimbados —
+   com **terminologia blindada contra as Súmulas 7/STJ e 279/STF**: "omissão qualificada",
+   "fundamentação individualizada", "erro de subsunção". Não escreva nada que se leia como
+   pedido de reexame de prova.
+3. **Fato superveniente em capítulo autônomo**, com enquadramento fino. O visual é apoio
+   dele, nunca o eixo.
+4. **Varrer as questões processuais laterais no mapa do caso**: prevenção, preclusão,
+   competência interna, composição **atual** da turma e fatos supervenientes. A peça que
+   originou a lição estava certa no mérito e não tratou prevenção nem preclusão.
+5. **Em embargos de declaração e em improbidade**, as oito diretrizes do Dr. Alessandro: o
+   vício se formula como pergunta jurisdicional; admissibilidade não se mistura com
+   mérito; e dolo específico **não** é dolo genérico, nem culpa, nem culpa in vigilando,
+   nem assunção de risco, nem cegueira deliberada. Os pedidos vão **por vício**, e se
+   forem infringentes, pede-se a intimação da parte adversa.
+6. **Pós-entrega obrigatório**: retorno recebido → diferença entre a versão protocolada e
+   a nossa → classificação → atualização do `APRENDIZADOS_FEEDBACK_HUMANO.md`. É o ciclo
+   de [aprendizado contínuo](#aprendizado-contínuo-do-retorno-humano), e ele não é
+   opcional.
+7. **Prescrição administrativa por matriz, nunca por rótulo global**: separar fundo de
+   direito, metodologia, parcelas, negativa e ciência. E-mail não equivale a protocolo
+   (enviar ≠ receber ≠ ter competência ≠ processar); a modulação vem do dispositivo
+   oficial; o valor é estimativa até a conciliação por parcela; e processo administrativo,
+   protesto ou lei posterior não revivem sozinhos pretensão prescrita.
 
 ## Conselho obrigatório
 

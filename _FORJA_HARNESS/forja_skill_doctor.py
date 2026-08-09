@@ -11,6 +11,7 @@ quebrou.**
 O que ele afere, e só isso:
 
 - todo script `forja_*.py` citado na skill existe no disco;
+- toda flag `--assim` que a skill passa a um script aparece no código dele;
 - todo contrato de fase citado existe em `phase_contracts/`;
 - todo template citado existe em `templates/`;
 - toda referência interna `reference/<arquivo>` existe na própria skill;
@@ -38,6 +39,14 @@ SKILL_PADRAO = RAIZ / ".claude" / "skills" / "forja"
 
 # `_FORJA_HARNESS\forja_algo.py` ou `_FORJA_HARNESS/forja_algo.py` ou `forja_algo.py`
 _SCRIPT = re.compile(r"\b((?:_FORJA_HARNESS[\\/])?(?:forja|montar|compor)_[a-z0-9_]+\.py)\b")
+# O script e tudo o que vem depois dele na mesma linha lógica (a barra invertida
+# continua a linha, como no shell). É de onde saem as flags atribuídas a ele.
+# A continuação vem primeiro na alternativa de propósito: `[^\n`]` casa a barra
+# invertida e a leitura pararia na quebra de linha, deixando as flags da segunda
+# linha sem dono.
+_INVOCACAO = re.compile(
+    r"\b((?:forja|montar|compor)_[a-z0-9_]+\.py)((?:\\\n|[^\n`])*)")
+_FLAG = re.compile(r"(--[a-z0-9][a-z0-9-]*)")
 _CONTRATO = re.compile(r"\bphase_contracts[\\/](F[0-9A-Za-z_.]+\.json)\b")
 _TEMPLATE = re.compile(r"\btemplates[\\/]([A-Za-z0-9_.\-]+\.md)\b")
 _REFERENCIA = re.compile(r"\breference[\\/]([A-Za-z0-9_.\-]+\.md)\b")
@@ -82,10 +91,14 @@ def auditar(base: Path) -> dict:
                 "conferidos": {}}
 
     scripts_citados, contratos, templates, referencias = set(), set(), set(), set()
+    flags_citadas = set()
     for nome, bruto in arquivos.items():
         texto = _sem_bloco_de_codigo_negativo(bruto)
         for m in _SCRIPT.finditer(texto):
             scripts_citados.add((Path(m.group(1)).name, nome))
+        for m in _INVOCACAO.finditer(texto):
+            for flag in _FLAG.findall(m.group(2)):
+                flags_citadas.add((Path(m.group(1)).name, flag, nome))
         for m in _CONTRATO.finditer(texto):
             contratos.add((m.group(1), nome))
         for m in _TEMPLATE.finditer(texto):
@@ -105,6 +118,22 @@ def auditar(base: Path) -> dict:
                 "gate": "DOC1-script-inexistente", "sev": "P0", "arquivo": onde,
                 "problema": f"a skill manda usar {script}, que não existe em {local}",
                 "acao": "conferir se foi renomeado ou removido, e corrigir a skill"})
+
+    # DOC7 nasceu de um defeito real: a skill mandava rodar `forja_alertas.py
+    # --visto`, e as flags eram de `forja_avisos.py`. Como o arquivo citado
+    # existe, DOC1 aprovava. Pior: `forja_alertas.py` sem argumento imprime a
+    # docstring e sai com sucesso, e a saída se lê como "nada pendente". Um
+    # nome de flag procurado no fonte pega os dois estilos, argparse e sys.argv.
+    for script, flag, onde in sorted(flags_citadas):
+        alvo = (RAIZ / "_FERRAMENTAS" / script) if script in _FERRAMENTAS else (HARNESS / script)
+        if not alvo.exists():
+            continue  # já é DOC1; não acusar duas vezes o mesmo defeito
+        fonte = alvo.read_text(encoding="utf-8", errors="replace")
+        if f'"{flag}"' not in fonte and f"'{flag}'" not in fonte:
+            achados.append({
+                "gate": "DOC7-flag-inexistente", "sev": "P0", "arquivo": onde,
+                "problema": f"a skill passa {flag} a {script}, e essa flag não existe no código dele",
+                "acao": "conferir o argparse do script — a flag pode ser de outro comando"})
 
     for contrato, onde in sorted(contratos):
         if not (HARNESS / "phase_contracts" / contrato).exists():
@@ -151,6 +180,7 @@ def auditar(base: Path) -> dict:
         "conferidos": {
             "arquivos": len(arquivos),
             "scriptsCitados": len({s for s, _ in scripts_citados}),
+            "flagsConferidas": len({(s, f) for s, f, _ in flags_citadas}),
             "contratosCitados": len({c for c, _ in contratos}),
             "templatesCitados": len({t for t, _ in templates}),
             "referenciasCitadas": len(apontadas),
