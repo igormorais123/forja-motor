@@ -154,3 +154,46 @@ def test_case_id_cannot_escape_state_root(tmp_path: Path) -> None:
         assert exc.code == "USAGE_ERROR"
     else:
         raise AssertionError("path traversal should be rejected")
+
+
+def test_caso_em_esquema_legado_e_declarado_e_nao_omitido(tmp_path: Path) -> None:
+    """91 casos no disco, 28 lidos, e o resumo dizia "28 of 28 total".
+
+    Medido em 09/08/2026. A omissão era tolerável — 61 casos gravam o estado no
+    esquema anterior, que esta interface não lê. O que não era tolerável é a
+    frase afirmar completude sobre a população que ela não enxerga: entre os
+    invisíveis estava a demanda do TOPO DA FILA, com prazo vencido, e quem
+    seguisse a instrução de começar por aqui concluiria que o caso não existe.
+    """
+    state_root = _fixture(tmp_path)
+    _write_json(state_root / "case-legado" / "FORJA_STATE.json",
+                {"caseId": "case-legado", "specVersion": 1, "currentPhase": "F3"})
+
+    payload = forja_axi.cases_payload(state_root)
+    assert "legacy schema" in payload["count"], payload["count"]
+    assert payload["legacySchemaCases"]["count"] == 1
+    assert payload["legacySchemaCases"]["ids"] == ["case-legado"]
+    # E não é contrabandeado para dentro da lista lida: fase e status dele não
+    # foram traduzidos, porque ninguém conferiu a equivalência dos esquemas.
+    assert all(c["caseId"] != "case-legado" for c in payload["cases"])
+
+
+def test_caso_legado_nao_e_reportado_como_inexistente(tmp_path: Path) -> None:
+    """Dizer "not found" sobre caso que existe é pior que não lê-lo."""
+    state_root = _fixture(tmp_path)
+    _write_json(state_root / "case-legado" / "FORJA_STATE.json",
+                {"caseId": "case-legado", "specVersion": 1})
+    try:
+        forja_axi.case_payload("case-legado", state_root)
+    except forja_axi.AxiError as erro:
+        assert erro.code == "LEGACY_SCHEMA", erro.code
+        assert "FORJA_STATE.json" in " ".join(erro.help_commands)
+    else:
+        raise AssertionError("caso em esquema legado passou como se fosse legível")
+
+
+def test_sem_legado_o_resumo_nao_ganha_ruido(tmp_path: Path) -> None:
+    """Contraprova: instalação sem caso legado não vê a menção."""
+    payload = forja_axi.cases_payload(_fixture(tmp_path))
+    assert "legacy schema" not in payload["count"]
+    assert "legacySchemaCases" not in payload

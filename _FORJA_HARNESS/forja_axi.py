@@ -177,6 +177,31 @@ def _case_files(state_root: Path) -> list[Path]:
     return sorted(state_root.glob("case-*/FORJA_N3_STATE.json"))
 
 
+def _casos_em_esquema_legado(state_root: Path) -> list[str]:
+    """Casos com `FORJA_STATE.json` e sem `FORJA_N3_STATE.json`.
+
+    Medido em 09/08/2026: **91 casos no disco e 28 lidos por esta fachada.** Os
+    outros 61 gravam o estado no esquema anterior — `specVersion`,
+    `currentPhase`, `gateHistory` —, que não é o desta interface. A omissão
+    seria tolerável; o que não era é o `count` dizer "28 of 28 total", porque a
+    frase afirma completude sobre uma população que ela não enxerga. Entre eles
+    estava a demanda do **topo da fila**, com prazo vencido: quem seguisse a
+    instrução de começar por aqui concluiria que o caso não existe.
+
+    Esta função não traduz o esquema antigo, e é deliberado — mapear
+    `currentPhase` para `phase` inventaria equivalência que ninguém conferiu.
+    Ela devolve os identificadores, para que a fachada declare a população e
+    aponte onde ler.
+    """
+    if not state_root.is_dir():
+        return []
+    return sorted(
+        p.parent.name
+        for p in state_root.glob("case-*/FORJA_STATE.json")
+        if not (p.parent / "FORJA_N3_STATE.json").is_file()
+    )
+
+
 def _blocker_text(blocker: Any) -> str:
     if isinstance(blocker, str):
         return blocker
@@ -351,12 +376,28 @@ def cases_payload(
         cases = [item for item in cases if item["status"] == status]
     total = len(cases)
     visible = cases if full else cases[:limit]
+    legado = _casos_em_esquema_legado(state_root)
     payload: dict[str, Any] = {
-        "count": f"{len(visible)} of {total} total",
+        # Sem população legada, a frase é a de sempre — o contrato de saída não
+        # muda para quem não tem o problema. Havendo, ela deixa de dizer "total",
+        # porque aí a palavra seria falsa.
+        "count": (f"{len(visible)} of {total} readable "
+                  f"(+{len(legado)} in legacy schema, not read)"
+                  if legado else f"{len(visible)} of {total} total"),
         "statusFilter": status,
         "invalidStates": len(invalid),
         "cases": [_select_fields(item, selected_fields) for item in visible],
     }
+    if legado:
+        # Declarado, e não traduzido: a fachada diz que eles existem e onde
+        # olhar, sem afirmar fase nem status que ela não sabe ler.
+        payload["legacySchemaCases"] = {
+            "count": len(legado),
+            "note": "estado em FORJA_STATE.json (esquema anterior); "
+                    "esta interface lê FORJA_N3_STATE.json",
+            "readAt": "state/<case-id>/FORJA_STATE.json",
+            "ids": legado if full else legado[:limit],
+        }
     if total == 0:
         context = f" with status {status}" if status else ""
         payload["empty"] = f"0 cases found{context}"
@@ -382,6 +423,19 @@ def _resolve_case_path(state_root: Path, case_id: str) -> Path:
     path = state_root / case_id / "FORJA_N3_STATE.json"
     if path.is_file():
         return path
+    # O caso existe e esta interface não o lê: dizer "not found" seria falso, e
+    # foi o que aconteceu com a demanda do topo da fila em 09/08/2026.
+    legado = state_root / case_id / "FORJA_STATE.json"
+    if legado.is_file():
+        raise AxiError(
+            f"case {case_id} exists in the previous state schema and is not read here",
+            code="LEGACY_SCHEMA",
+            exit_code=1,
+            help_commands=(
+                f"Read `state/{case_id}/FORJA_STATE.json` directly",
+                "Run `python forja_axi.py cases --full` to see the legacy population",
+            ),
+        )
     candidates = [
         item.parent.name
         for item in _case_files(state_root)

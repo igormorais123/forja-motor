@@ -44,6 +44,13 @@ python forja_avisos.py              # o que está esperando alguém dar ciência
 `forja_axi.py` nunca promove fase, entrega ou libera juridicamente. **`PASS` técnico,
 pacote existente ou fila verde não são aprovação jurídica.**
 
+**E ela não vê todos os casos.** A fachada lê `FORJA_N3_STATE.json`; boa parte do acervo
+ainda grava o estado no esquema anterior, `FORJA_STATE.json`. Ela declara essa população
+no `count` e em `legacySchemaCases`, e responde `LEGACY_SCHEMA` — não "não encontrado" —
+quando você pedir um deles pelo nome. **Caso que ela não lê existe:** abra
+`state/<case-id>/FORJA_STATE.json`. Medido em 09/08/2026: 91 casos no disco, 28 legíveis
+aqui, e a demanda do topo da fila estava entre os 61 invisíveis.
+
 Ao abrir uma tentativa, nesta ordem, antes de escolher qualquer comando:
 
 1. **`RUN_CONTEXT.json`** da tentativa — traz o contrato inteiro e as instruções da fase.
