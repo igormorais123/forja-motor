@@ -37,6 +37,7 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
+import forja_envio_externo as envio
 import forja_modelos as fm
 
 VERSAO = "FORJA-PAINEL-CURTO-v1"
@@ -224,15 +225,27 @@ def ouvir(alvo: str, *, modelo: str, caso: str | None = None,
 
 
 def painel(alvo: str, *, vozes=VOZES_PADRAO, caso: str | None = None,
-           fase: str | None = None) -> dict:
+           fase: str | None = None, classe: str | None = None,
+           confirmado: bool = False, arquivo: str | None = None) -> dict:
     """Roda todas as vozes e monta o artefato.
 
     Falha de uma voz não derruba as outras: o painel é opinião, e opinião
     parcial continua servindo. A falha fica declarada, para que ninguém leia
     "duas vozes" onde só uma respondeu.
+
+    **Nada sai sem passar pelo porteiro.** Até 09/08/2026 esta função mandava
+    trecho de documento de cliente para cinco provedores de fora sem
+    classificação, sem confirmação e sem registro — e ninguém conseguia
+    responder o que tinha saído. Agora a classe do documento é obrigatória,
+    `autos` é recusa dura, e cada envio deixa recibo.
     """
     if not alvo.strip():
         raise fm.ForjaModeloError("painel sem alvo: não se opina sobre texto vazio")
+
+    recorte = alvo.strip()[:LIMITE_ALVO]
+    recibo_envio = envio.autorizar(
+        recorte, classe=classe or "", confirmado=confirmado,
+        destino=list(vozes), caso=caso, arquivo=arquivo)
 
     blocos, falhas = [], []
     for modelo in vozes:
@@ -258,6 +271,10 @@ def painel(alvo: str, *, vozes=VOZES_PADRAO, caso: str | None = None,
             "caracteresPorObservacao": LIMITE_CARACTERES,
             "maxTokens": MAX_TOKENS,
         },
+        # Recibo do que atravessou a porta, no próprio artefato: a pergunta
+        # "isto saiu daqui?" tem de ter resposta sem depender de alguém lembrar
+        # de abrir o ledger.
+        "envioExterno": recibo_envio,
         "vozes": blocos,
         "falhas": falhas,
         # Preenchido depois pelo humano ou pelo redator, e colhido por
@@ -278,6 +295,13 @@ def main() -> int:
     parser.add_argument("--caso")
     parser.add_argument("--fase")
     parser.add_argument("--vozes", nargs="*", default=list(VOZES_PADRAO))
+    parser.add_argument("--classe", choices=sorted(envio.CLASSES),
+                        help="origem do documento. `produto_proprio` é o que a "
+                             "fábrica escreveu e pode ir para crítica externa; "
+                             "`autos` e `misto` são recusados")
+    parser.add_argument("--confirmo-envio-externo", action="store_true",
+                        help="assume a decisão de mandar este texto a provedor "
+                             "de fora; fica registrado no ledger de envios")
     parser.add_argument("--saida", type=Path,
                         help="grava o artefato do painel (ex.: F4_PAINEL_CURTO.json)")
     args = parser.parse_args()
@@ -289,7 +313,14 @@ def main() -> int:
     else:
         parser.error("informe --arquivo ou --texto")
 
-    resultado = painel(alvo, vozes=tuple(args.vozes), caso=args.caso, fase=args.fase)
+    try:
+        resultado = painel(alvo, vozes=tuple(args.vozes), caso=args.caso,
+                           fase=args.fase, classe=args.classe,
+                           confirmado=args.confirmo_envio_externo,
+                           arquivo=str(args.arquivo) if args.arquivo else None)
+    except envio.EnvioBloqueado as erro:
+        print(f"[porteiro] {erro}")
+        return 2
     # Localizador do alvo, para que um indicador criado depois possa ser
     # recomputado sem chamar os modelos de novo — nova chamada devolveria texto
     # diferente, com outros identificadores, e a fila contaria duas vezes.

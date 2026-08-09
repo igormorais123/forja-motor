@@ -14,6 +14,7 @@ from pathlib import Path
 FORJA = Path(__file__).resolve().parent
 DADOS = FORJA / "telemetria" / "COMPARACAO_VOZES_DADOS.json"
 SAIDA = FORJA / "reports" / "COMPARACAO_VOZES_CURTAS_2026-08-08.html"
+SAIDA_ANONIMA = FORJA / "reports" / "COMPARACAO_VOZES_CURTAS_2026-08-08_PUBLICAVEL.html"
 
 ROTULOS = {
     "kimi-k3-cursor": "Kimi K3",
@@ -26,7 +27,25 @@ ROTULOS = {
 # escrito aqui. A versão anterior trazia três nomes de cliente no código do
 # motor: o relatório é genérico, os casos que ele mede não são, e quem escreve
 # o gerador não precisa saber de quem é a peça.
+ANONIMO = False
+
+
 def rotulo_caso(slug: str, dados: dict) -> str:
+    """Nome do caso — real na versão local, neutro na versão que sai da máquina.
+
+    A primeira publicação levou nome de cliente e trecho analítico sobre a peça
+    dele para uma URL externa. A fronteira MOTOR/ACERVO já dizia que informação
+    do escritório não sai; eu tratei o relatório como se ele fosse só sobre
+    modelos, quando metade do conteúdo é sobre as peças dos clientes.
+
+    `--anonimo` gera a versão publicável: os casos viram Caso A, B, C. O que se
+    perde é saber de qual cliente é cada observação, e isso não faz falta para
+    comparar modelos — que é o assunto do relatório.
+    """
+    if ANONIMO:
+        ordem = sorted((dados.get("rotulosCaso") or {}))
+        letra = chr(ord("A") + ordem.index(slug)) if slug in ordem else "?"
+        return f"Caso {letra}"
     return (dados.get("rotulosCaso") or {}).get(slug, slug)
 
 
@@ -52,9 +71,19 @@ def bloco_prompt(d: dict) -> str:
     return f"""
 <h2 id="tarefa">1 · A tarefa exata que foi pedida às cinco vozes</h2>
 
-<p>Nenhuma das cinco recebeu instrução diferente. O texto abaixo é o que foi
-enviado, palavra por palavra. As cinco leram o mesmo recorte do mesmo documento,
-na mesma ordem de campos, e responderam sem histórico de conversa.</p>
+<p>O texto abaixo é o que foi enviado, palavra por palavra. As cinco leram o
+mesmo recorte do mesmo documento e responderam sem histórico de conversa.</p>
+
+<div class="aviso aviso-negativo">
+<h4>Correção: as instruções <em>não</em> foram idênticas</h4>
+<p>A primeira versão desta página afirmava que nenhuma das cinco recebeu
+instrução diferente. <strong>Era falso.</strong> O código acrescenta um bloco
+exclusivo ao Kimi K3, porque ele carrega a restrição <code>nao_afirma_fato</code>:</p>
+<pre class="prompt">{e(d['prompt']['acrescimoRestrito'])}</pre>
+<p>A consequência é direta: o resultado do K3 na coluna <code>viol%</code> não é
+comparável ao das outras quatro, porque só ele foi avisado por escrito de que
+não seria lido como fonte. Achado do revisor externo.</p>
+</div>
 
 <h3>Instrução de sistema</h3>
 <pre class="prompt">{e(p['sistema'])}</pre>
@@ -148,9 +177,9 @@ def bloco_alvos(d: dict) -> str:
 <td><strong>{e(rotulo_caso(a['caso'], d))}</strong></td>
 <td>{e(a['fase'])}</td>
 <td><code>{e(a['arquivo'])}</code></td>
-<td class="num">{n(a['bytes'])}</td>
-<td class="num">{n(min(6000, a['bytes']))}</td>
-<td>{round(100 * min(6000, a['bytes']) / a['bytes'])}%</td>
+<td class="num">{n(a['caracteres'])}</td>
+<td class="num">{n(a['caracteresEnviados'])}</td>
+<td>{a['fracaoVista']}%</td>
 </tr>""")
     return f"""
 <h2 id="alvos">3 · Sobre o que elas opinaram</h2>
@@ -162,12 +191,15 @@ que é exatamente o que se quer submeter a um olhar de fora.</p>
 <div class="tabela-rolo">
 <table>
 <thead><tr><th>Caso</th><th>Fase</th><th>Arquivo</th>
-<th>Bytes do documento</th><th>Caracteres enviados</th><th>Fração vista</th></tr></thead>
+<th>Caracteres do documento</th><th>Caracteres enviados</th><th>Fração vista</th></tr></thead>
 <tbody>{''.join(linhas)}</tbody></table>
 </div>
 
 <p class="nota"><strong>Os três foram truncados</strong>, e as vozes foram
-avisadas disso. No alvo mais longo as vozes viram cerca de 15% do documento.
+avisadas disso. No alvo mais longo as vozes viram 16% do documento. A versão
+anterior desta tabela dividia o recorte em <em>caracteres</em> por um total em
+<em>bytes</em> e publicava 58%, 44% e 15% — números que não eram fração de nada.
+Achado do revisor externo.
 Qualquer conclusão delas sobre o fecho, os pedidos ou a conclusão da peça está
 fora de alcance por construção — e é por isso que o aviso de recorte existe.</p>
 """
@@ -297,45 +329,65 @@ total em dinheiro: US$ 0,00. Custo total em tempo de máquina:
 
 <h3>O que se lê nessa tabela</h3>
 
+<div class="aviso aviso-negativo">
+<h4>Leia esta tabela como descrição de três execuções, não como ranking</h4>
+<p>Cada linha vem de <strong>3 chamadas</strong> ao modelo, não de 12 medições
+independentes: as quatro observações de um painel saem da mesma geração, com o
+mesmo contexto e o mesmo estado. Não houve repetição, nem randomização da ordem
+das chamadas, nem semente registrada. Não há intervalo de confiança calculável.</p>
+<p>Duas condições também não foram iguais: o <strong>Luna correu em
+<code>max</code></strong> e as outras quatro em <code>high</code>; e o
+<strong>Kimi K3 recebeu uma instrução a mais</strong>. Qualquer diferença entre
+esses dois e o resto pode ser a condição, não o modelo.</p>
+</div>
+
 <div class="achados">
 
-<article class="achado achado-forte">
-<h4>Nenhuma das cinco inventou citação, em 60 observações</h4>
-<p>Inclusive o K3. Sob este formato — curto, avisado de que não é fonte, lendo um
-recorte — ele não inventou. <strong>Isso não revoga a bancada de 26/07</strong>,
-que mediu outra tarefa: reproduzir texto legal verbatim de memória. As duas
-medidas convivem, e a restrição continua valendo porque o risco que ela cobre é
-o outro.</p>
-<p class="dado">Vale registrar a taxa de falso positivo do detector lexical antes
-da correção de origem: <strong>2 em 60</strong> (3,3%), as duas do GLM, as duas
-legítimas.</p>
-</article>
-
 <article class="achado achado-ruim">
-<h4>O GLM entrega 58% das observações pela metade</h4>
-<p>Sete de doze bateram no teto de 300 caracteres. Média de 286 caracteres contra
-192 do Luna — ele escreve encostado no limite, então bate nele. Nenhuma das outras
-quatro cortou uma única observação.</p>
-<p class="dado">No regime anterior, com duas vozes, a taxa dele era 26,7%. Piorou
-com cinco. A causa provável é o alvo diferente entre as rodadas, não o número de
-vozes — mas as duas medições apontam o mesmo perfil.</p>
+<h4>O GLM 5.2 citou duas fontes que não estavam no que leu</h4>
+<p>Duas de doze observações trazem súmulas ausentes do recorte. O prompt proíbe
+citar lei, artigo, súmula ou precedente — então isto é <strong>desobediência ao
+formato</strong>. <strong>Não é prova de invenção:</strong> as súmulas existem e
+são pertinentes ao caso; elas só não estavam no texto que a voz recebeu.</p>
+<p class="dado">A versão anterior desta página dizia que <em>nenhuma das cinco
+inventou citação</em>. O detector que sustentava a frase absolvia qualquer
+citação cujo número aparecesse como sequência de dígitos em qualquer ponto do
+documento — <code>Súmula 7</code> passava por causa de um <code>7</code> dentro
+de uma data. Corrigido e remedido: o zero virou 2 em 60.</p>
 </article>
 
 <article class="achado">
-<h4>Velocidade: 21 s a 37 s, e o Opus é o mais lento</h4>
-<p>GLM 21,0 s · Luna 28,2 s · Grok 33,0 s · K3 33,5 s · Opus 37,4 s. O Opus tem
-também a maior variação entre casos — 22,7 s no alvo mais curto contra 46,2 s
-no mais longo.</p>
+<h4>Sete observações do GLM foram cortadas pelo nosso código</h4>
+<p>Ele escreve com média de 286 caracteres contra um teto de 300 que
+<strong>nós escolhemos</strong>; as outras quatro vozes ficam entre 192 e 256 e
+nunca encostam no limite. O que a coluna <code>teto%</code> mede é aderência a
+uma especificação nossa, não qualidade nem profundidade.</p>
+<p class="dado">Registro de um duplo padrão que estava nesta página: três
+observações do K3 foram <em>excluídas</em> do placar porque reclamavam de um
+truncamento causado por nós, com a justificativa de que não se cobra do modelo o
+erro de quem montou o prompt. As sete do GLM, cortadas por um limite igualmente
+nosso, eram <em>contadas contra ele</em>. Mesma classe, tratamento oposto.</p>
 </article>
 
 <article class="achado">
-<h4>Todas leem o documento em vez de repetir fórmula</h4>
-<p>A repetição da própria voz entre casos distintos ficou entre 0,059 (Grok) e
-0,135 (K3). Valores baixos: nenhuma está produzindo comentário genérico. O K3 é o
-mais alto dos cinco, o que com três casos é sinal fraco — vale reolhar quando
-houver mais.</p>
+<h4>Tempos observados, em ordem fixa de chamada</h4>
+<p>GLM 21,0 s · Luna 28,2 s · Grok 33,0 s · K3 33,5 s · Opus 37,4 s. As chamadas
+sempre correram na mesma sequência, com o Opus por último, e não foram
+intercaladas nem repetidas. Carga do provedor e posição na fila ficam
+confundidas com identidade do modelo: isto descreve <strong>estes três
+runs</strong>, não uma propriedade do modelo.</p>
 </article>
 
+<article class="achado">
+<h4>Baixa repetição de vocabulário da mesma voz entre casos</h4>
+<p>Entre 0,059 e 0,135. A versão anterior lia isso como <em>todas leem o
+documento em vez de repetir fórmula</em>. Não se sustenta: baixa coincidência de
+palavras não prova leitura, e a própria página mostra um par semanticamente
+idêntico com 0,091. O que o número diz é apenas que as vozes não repetem
+literalmente o mesmo texto entre casos.</p>
+</article>
+
+</div>
 </div>
 """
 
@@ -414,10 +466,10 @@ def bloco_observacoes(d: dict) -> str:
             itens = []
             for o in por_caso[caso][vid]:
                 marcas = []
-                if o["noTeto"]:
-                    marcas.append('<span class="chip chip-alerta">cortada no teto</span>')
+                if o["cortadaPeloHarness"]:
+                    marcas.append('<span class="chip chip-alerta">cortada pelo nosso código</span>')
                 if o["citouFora"]:
-                    marcas.append('<span class="chip chip-alerta">citou fora do documento</span>')
+                    marcas.append('<span class="chip chip-alerta">citou fonte ausente do recorte</span>')
                 itens.append(f"""<li data-voz="{e(vid)}">
 <p class="obs">{e(o['texto'])}</p>
 <p class="meta"><code>{e(o['obsId'])}</code> · {o['chars']} caracteres ·
@@ -430,14 +482,17 @@ ancoragem {o['ancoragem'] if o['ancoragem'] is not None else 'n/d'}
 <ol class="obs-lista">{''.join(itens)}</ol></div>""")
         secoes.append(f"""<section class="caso">
 <h3>{e(rotulo_caso(caso, d))} <span class="caso-meta">{e(alvo['fase'])} ·
-<code>{e(alvo['arquivo'])}</code> · {n(alvo['bytes'])} bytes, {round(100*min(6000,alvo['bytes'])/alvo['bytes'])}% visto</span></h3>
+<code>{e(alvo['arquivo'])}</code> · {n(alvo['caracteres'])} caracteres, {alvo['fracaoVista']}% visto</span></h3>
 {''.join(blocos)}</section>""")
     return f"""
 <h2 id="observacoes">7 · As 60 observações, na íntegra</h2>
 
-<p>Aqui está tudo que as cinco vozes disseram, sem seleção e sem resumo. É a
-única parte desta página que responde à pergunta que os indicadores não
-respondem — e é para ela que os seus vinte minutos vão.</p>
+<p>Tudo que as cinco vozes disseram, sem seleção. <strong>Sete das sessenta
+não estão na íntegra:</strong> elas passaram do teto de 300 caracteres e foram
+cortadas <em>pelo nosso código</em>, não pelo modelo — as sete são do GLM 5.2 e
+estão marcadas. O texto bruto anterior ao corte não foi preservado, então essas
+sete não são auditáveis. É um defeito do instrumento, apontado pelo revisor
+externo, e o conserto é preservar a resposta bruta nas próximas rodadas.</p>
 
 <div class="filtro" role="group" aria-label="Filtrar por voz">
 <button type="button" class="ativo" data-filtro="todas">Todas</button>
@@ -506,10 +561,16 @@ Ajustar o instrumento antes de saber se a voz agrega é otimizar a coisa errada.
 
 <article class="decisao">
 <h3>Decisão 3 · Julgar a fila</h3>
-<p>É o único caminho para qualquer promoção, e o único que responde <em>qual voz
-serve para quê</em>. A fila está ordenada por poder de discriminação: as
-observações que só uma voz teve vêm primeiro, porque julgar aquilo em que todas
-concordam move todas as notas na mesma direção e não separa ninguém.</p>
+<p>É o único caminho para qualquer promoção, e o único que responde <em>qual
+voz serve para quê</em>. A fila faz <strong>rodízio diagonal</strong>: cinco
+julgamentos cobrem as cinco vozes e os três casos; quinze cobrem cada par
+(voz, caso) exatamente uma vez.</p>
+<p class="nota">A versão anterior ordenava por sobreposição lexical — a mesma
+régua que a seção 6 mostra ser cega para conteúdo. Se você julgasse só os
+primeiros itens, a amostra do placar teria sido escolhida por uma métrica
+inválida e o placar herdaria o viés. A primeira tentativa de conserto também
+falhou: dava cinco observações do mesmo caso nos seis primeiros. Ambos os
+achados são do revisor externo.</p>
 <pre class="comando">python forja_painel_indicadores.py fila --limite 6</pre>
 <p>Cada item sai com o comando de registro pronto. Vocabulário fechado:</p>
 <div class="tabela-rolo">
@@ -548,6 +609,17 @@ sobre estrutura global da peça estão fora de alcance.</li>
 <li><strong>O grau de esforço do Luna é diferente</strong> (<code>max</code>
 contra <code>high</code> das outras quatro). Qualquer vantagem dele pode ser
 esforço, não modelo.</li>
+<li><strong>Sete das 60 observações não têm texto bruto preservado.</strong> Elas
+foram cortadas no teto e o original não foi guardado — não são auditáveis.</li>
+<li><strong>O detector de citação ainda tem falsos negativos conhecidos:</strong>
+não cobre nome de precedente, relator, órgão, tese, data solta nem valor, e
+ignora o que estiver entre aspas. Zero nesta coluna significa "não achei nas
+formas que sei procurar".</li>
+<li><strong>O painel envia trechos de documento de cliente a cinco rotas
+externas.</strong> Não há gate de sigilo, classificação nem consentimento no
+código. Isso vale para todo uso do painel, não só para esta medição.</li>
+<li><strong>Zero em 12 não é taxa zero.</strong> Mesmo supondo independência —
+que não há —, o limite superior a 95% de 0/12 fica acima de 20%.</li>
 <li><strong>Nenhum juiz automático foi usado, de propósito.</strong> Pedir a um
 modelo que classifique as observações dos outros seria LLM-as-judge, já rejeitado
 nesta fábrica em 09/07/2026 — e aqui pior, porque o juiz mais provável seria da
@@ -566,7 +638,7 @@ python forja_contribuicao.py placar</pre>
 <code>telemetria/COMPARACAO_VOZES_DADOS.json</code>. Geração:
 <code>gerar_relatorio_comparacao_vozes.py</code> — determinístico, sem
 transcrição manual de nenhuma observação. Regressão do subsistema:
-<code>test_forja_painel_contribuicao.py</code>, 45 testes.</p>
+<code>test_forja_painel_contribuicao.py</code>, 49 testes.</p>
 """
 
 
@@ -891,6 +963,10 @@ def conferir_fidelidade(corpo: str, d: dict) -> None:
 
 
 def main() -> None:
+    global ANONIMO
+    import sys
+    ANONIMO = "--anonimo" in sys.argv
+    destino = SAIDA_ANONIMA if ANONIMO else SAIDA
     d = json.loads(DADOS.read_text(encoding="utf-8"))
     ms = {m["modelo"]: m for m in d["indicadores"]["modelos"]}
     total_obs = len(d["observacoes"])
@@ -920,17 +996,24 @@ observações na íntegra e o trade-off das três decisões que restam.</p>
 
 <div class="veredito prosa">
 <h2 style="border:none;margin:0 0 12px;padding:0;">O que a medição já decide, e o que ela não decide</h2>
-<p><strong>Decide:</strong> nenhuma das cinco inventou citação em 60 observações;
-o GLM 5.2 entrega 58% das suas observações cortadas pela metade; o Opus 5 é o mais
-lento (37,4 s) e o GLM o mais rápido (21,0 s); todas as cinco leem o documento em
-vez de repetir fórmula genérica.</p>
-<p><strong>Não decide — e provei três vezes que não decide:</strong> qual voz
-serve para quê. A régua automática mede disciplina, não conteúdo. Isso depende de
-veredito humano, e há <strong>zero</strong> deles hoje.</p>
+<p><strong>Esta página foi reprovada numa revisão externa e reescrita.</strong>
+A versão de 08/08 afirmava condições iguais que não existiam, apresentava um
+detector defeituoso como prova de que ninguém inventou citação, e levava nome de
+cliente para fora da máquina. As correções estão marcadas seção a seção.</p>
+<p><strong>O que os dados sustentam:</strong> descrições de três chamadas por
+modelo, sob condições que <em>não</em> foram idênticas. O GLM citou duas fontes
+ausentes do recorte e teve sete respostas cortadas pelo nosso próprio teto. Os
+tempos observados vão de 21 s a 37 s, em ordem fixa de chamada.</p>
+<p><strong>O que os dados não sustentam:</strong> nenhum ranking entre os cinco.
+Nem qual voz serve para quê — a régua automática mede aderência a formato, não
+conteúdo, e isso foi confirmado por três resultados negativos.</p>
 <ul>
-<li>A amostra já atingiu o piso de elegibilidade: 12 observações e 3 casos por voz.</li>
-<li>O que falta são cerca de 20 minutos de julgamento na fila da seção 8.</li>
-<li>Nenhum número desta página promove nenhum modelo a nada.</li>
+<li>Condições desiguais: o Luna correu em <code>max</code>, os outros em
+<code>high</code>; o Kimi K3 recebeu uma instrução a mais.</li>
+<li>n real: <strong>3 chamadas</strong> por modelo, não 12 observações
+independentes. Sem repetição, sem randomização, sem intervalo de confiança.</li>
+<li>Vereditos humanos: <strong>zero</strong>. Nenhum número desta página promove
+nenhum modelo a nada, e nenhum deveria influenciar qual usar.</li>
 </ul>
 </div>
 
@@ -958,9 +1041,15 @@ transcrita à mão. Fábrica de Melhoria de Petições · harness FORJA.</p>
 <script>{JS}</script>
 """
     conferir_fidelidade(corpo, d)
-    SAIDA.parent.mkdir(parents=True, exist_ok=True)
-    SAIDA.write_text(corpo, encoding="utf-8")
-    print(f"{SAIDA}  ({n(len(corpo))} bytes)")
+    if ANONIMO:
+        vazados = [r for r in (d.get("rotulosCaso") or {}).values() if r in corpo]
+        if vazados:
+            raise FidelidadeError(
+                "versão publicável ainda traz nome de caso: " + ", ".join(vazados))
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    destino.write_text(corpo, encoding="utf-8")
+    print(f"{destino}  ({n(len(corpo))} bytes)"
+          + ("  [ANÔNIMA — casos como Caso A/B/C]" if ANONIMO else "  [LOCAL — nomes reais]"))
     print(f"fidelidade: {len(d['observacoes'])} observações conferidas caractere a "
           "caractere contra o JSON")
 

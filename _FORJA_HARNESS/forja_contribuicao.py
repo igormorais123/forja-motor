@@ -35,6 +35,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -84,6 +85,14 @@ def _ler_json(caminho: Path, padrao=None):
         return json.loads(caminho.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return padrao
+
+
+def _sha_do_painel(caminho: Path) -> str | None:
+    """SHA-256 do artefato lido, para amarrar o veredito ao texto julgado."""
+    try:
+        return hashlib.sha256(caminho.read_bytes()).hexdigest()
+    except OSError:
+        return None
 
 
 def carregar() -> dict:
@@ -150,6 +159,12 @@ def colher(painel: Path, *, por: str) -> dict:
             "em": _agora(),
             # Localizador, não conteúdo: o texto da observação fica no painel.
             "painel": str(painel),
+            # Hash do painel no momento do julgamento. Sem ele, a "evidência
+            # congelada" da promoção não estava congelada: o artefato podia ser
+            # reescrito depois e nada denunciaria que o veredito foi dado sobre
+            # outro texto. `revalidar` compara e acusa. Achado do revisor
+            # externo em 09/08/2026.
+            "painelSha256": _sha_do_painel(painel),
         }
         novas += 1
 

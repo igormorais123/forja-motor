@@ -163,6 +163,65 @@ ROTAS: dict[str, dict] = {
                   "esperaTexto": "\"", "minimoBytes": 2},
         "verificadoEm": "2026-08-07",
     },
+    # ------------------------------------------------- Diário Oficial da União
+    "dou-busca-no-acervo-digital": {
+        "fonte": "DOU",
+        "tipoDocumento": "ato_normativo",
+        "serve": True,
+        "url": ("https://www.in.gov.br/consulta/-/buscar/dou?q={termo}"
+                "&s=todos&exactDate=all&sortType=0"),
+        "chaves": {"termo": "termo de busca, com aspas para expressão exata"},
+        "armadilha": (
+            "duas, e as duas enganam. A primeira é o 403: a página recusa "
+            "requisição que mande só User-Agent, por mais recente que ele seja "
+            "— Chrome 128 e Chrome 131 foram os dois recusados —, e responde "
+            "com qualquer segundo cabeçalho, Accept ou Accept-Language. Quem "
+            "conclui 'bloqueia robô' pelo UA erra o diagnóstico. A segunda é o "
+            "falso positivo: com HTTP 200, o termo pesquisado aparece no corpo "
+            "do HTML mesmo sem resultado útil, porque o Liferay ecoa a consulta "
+            "no campo de busca e na URL. Procurar a string no HTML sempre "
+            "acha; o que vale é o rótulo 'N resultados para' e o bloco JSON"),
+        "probe": {"termo": "%22CIEX%22", "minimoBytes": 50000},
+        "verificadoEm": "2026-08-08",
+    },
+    "dou-ato-anterior-a-2000": {
+        "fonte": "DOU",
+        "tipoDocumento": "ato_normativo_historico",
+        "serve": False,
+        "porQue": (
+            "o acervo digital do in.gov.br não alcança as edições antigas. "
+            "Conferido em 08/08/2026 com a busca por 'CIEX', que devolveu 99 "
+            "resultados, todos de 2026 e nenhum relativo ao ato de 1979 "
+            "procurado. A busca funciona; o acervo é que começa depois"),
+        "causaCorreta": "indisponivel_na_fonte",
+        "causasAdmissiveis": ("indisponivel_na_fonte",),
+        "condicao": (
+            "não é limitação da nossa ferramenta e não adianta insistir na "
+            "mesma porta. A rota para edição antiga é a Hemeroteca Digital da "
+            "Biblioteca Nacional, em imagem, ou certidão do órgão de origem — "
+            "nenhuma das duas conferida ainda"),
+        "verificadoEm": "2026-08-08",
+    },
+    # ----------------------------------------------------- os autos do caso
+    "autos-varredura-textual": {
+        "fonte": "AUTOS",
+        "tipoDocumento": "qualquer",
+        "serve": True,
+        # Rota local: não há porta remota para exercitar. A dispensa do --probe
+        # é declarada aqui e conferida no teste, para que ninguém a herde sem
+        # querer ao criar a próxima rota de rede sem amostra.
+        "local": True,
+        "url": "leitura local dos volumes em PDF, por texto e por coordenada",
+        "chaves": {"termo": "expressão a localizar", "volumes": "todos, sempre"},
+        "armadilha": (
+            "o número de página do rodapé é do documento, não do volume: dois "
+            "volumes têm a mesma página 631 e só um tem a tabela. Registrar "
+            "página sem o volume produz localizador que não resolve. E texto "
+            "em duas colunas lado a lado sai intercalado na extração linear, "
+            "montando linhas que não existem — nesse caso, leia por coordenada"),
+        "probe": None,
+        "verificadoEm": "2026-08-08",
+    },
 }
 
 
@@ -232,6 +291,14 @@ def _abrir(url: str, timeout: int = 60):
         # bloqueio deliberado a robô e é exigência de cabeçalho.
         cabecalhos["Referer"] = "https://portal.stf.jus.br/processos/detalhe.asp"
         cabecalhos["X-Requested-With"] = "XMLHttpRequest"
+    if "in.gov.br" in url:
+        # A Imprensa Nacional dá 403 com User-Agent sozinho, por mais recente
+        # que ele seja — medido em 08/08/2026 com Chrome 128 e Chrome 131, os
+        # dois recusados. Basta um segundo cabeçalho, Accept ou Accept-Language,
+        # e ela responde 200. Não é filtro de robô por UA: é exigência de
+        # requisição com cara de navegador completo.
+        cabecalhos["Accept"] = "text/html,application/json,*/*"
+        cabecalhos["Accept-Language"] = "pt-BR,pt;q=0.9"
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
@@ -251,6 +318,10 @@ def probe(chave: str, timeout: int = 60) -> dict:
     if not rota.get("serve"):
         return {"rota": chave, "ok": None,
                 "nota": "entrada negativa: não há o que exercitar, ela afirma ausência"}
+    if rota.get("local"):
+        return {"rota": chave, "ok": None,
+                "nota": ("rota local: não há porta remota para exercitar. A "
+                         "dispensa é declarada no registro, não herdada")}
     amostra = dict(rota.get("probe") or {})
     if not amostra:
         return {"rota": chave, "ok": None, "nota": "sem amostra de conferência"}
@@ -298,8 +369,16 @@ def main(argv=None) -> int:
             print(json.dumps(resultados, ensure_ascii=False, indent=2))
         else:
             for r in resultados:
+                # três estados, e não dois: aprovado, reprovado e dispensado.
+                # Colapsar o dispensado em reprovado enche a saída de vermelho
+                # que ninguém pode consertar, e vermelho impossível ensina a
+                # equipe a ignorar o vermelho inteiro.
+                if r.get("ok") is None:
+                    print(f"  --   {r['rota']}: {r.get('nota') or 'sem conferência'}")
+                    continue
                 marca = "ok " if r.get("ok") else "FALHOU"
-                print(f"  {marca} {r['rota']}: {r.get('erro') or str(r.get('bytes')) + ' bytes'}")
+                print(f"  {marca} {r['rota']}: "
+                      f"{r.get('erro') or str(r.get('bytes')) + ' bytes'}")
         velhas = desatualizadas()
         if velhas:
             print(f"\n  conferência vencida (> {VALIDADE_DIAS} dias): {', '.join(velhas)}")

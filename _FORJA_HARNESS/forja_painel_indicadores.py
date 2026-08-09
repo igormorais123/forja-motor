@@ -126,17 +126,36 @@ def citacoes_fora_do_documento(texto: str, alvo: str) -> list[str]:
     são a mesma coisa para este fim, e o que se procura no documento é o número
     ao lado da mesma palavra-chave.
     """
-    alvo_norm = _norm(alvo)
-    fora = []
-    for bruto in re.findall(r"\b(?:s[úu]mula|art(?:igo)?s?\.?|tema|lei)\s*"
-                            r"(?:n\.?º?\s*)?([\d./-]+)", _norm(ASPAS.sub(" ", texto or ""))):
-        numeros = [n for n in re.split(r"[./-]", bruto) if n.isdigit()]
-        # Basta um dos números aparecer no documento para que a menção seja
-        # leitura, não invenção. "Súmula 5/7" casa com um documento que fale de
-        # qualquer uma das duas.
-        if numeros and not any(n in alvo_norm for n in numeros):
-            fora.append(bruto)
-    return fora
+    def referencias(fonte: str) -> set[tuple[str, str]]:
+        """Pares (tipo, número) citados num texto, com o número normalizado.
+
+        `1.021` e `1021` são o mesmo dispositivo: o ponto é separador de milhar
+        e some. Já a barra separa referências distintas — `Súmula 5/7` são duas
+        súmulas, `Lei 8.906/1994` é número e ano — então ela divide.
+        """
+        achados = set()
+        for chave, bruto in re.findall(
+                r"\b(s[úu]mula|art(?:igo)?s?|tema|lei)\.?\s*(?:n\.?º?\s*)?([\d./-]+)",
+                fonte):
+            tipo = chave[:3]  # sum | art | tem | lei
+            for parte in re.split(r"[/-]", bruto):
+                digitos = parte.replace(".", "").strip()
+                if digitos.isdigit():
+                    achados.add((tipo, digitos.lstrip("0") or "0"))
+        return achados
+
+    # O documento tem de citar a MESMA COISA: mesmo tipo e mesmo número.
+    #
+    # A versão anterior perguntava se o número aparecia como substring em
+    # qualquer ponto do documento, e o revisor externo mostrou o estrago:
+    # `Súmula 7` era absolvida por um `7` dentro de uma data, de um item de
+    # lista ou de outro número. Medido em 09/08/2026 contra um documento que não
+    # citava nenhum dos três, `Súmula 7`, `art. 1.021` e `Tema 1.170` passavam.
+    # O detector aprovava quase tudo — e o "zero violações" que virou manchete
+    # do relatório de 08/08 não media nada.
+    no_documento = referencias(_norm(alvo))
+    citadas = referencias(_norm(ASPAS.sub(" ", texto or "")))
+    return [f"{tipo} {num}" for tipo, num in sorted(citadas - no_documento)]
 
 
 def ancoragem_de(alvo: str):
@@ -391,7 +410,14 @@ def fila(limite: int = 6, pastas: list[Path] | None = None) -> list[dict]:
     """
     import forja_contribuicao as fc
 
-    decididas = {d["obsId"] for d in fc.carregar()["decisoes"]}
+    # A chave é (obsId, caso), a mesma que `forja_contribuicao.colher` usa.
+    #
+    # Com o `obsId` sozinho, a mesma observação — que é hash de modelo + texto
+    # normalizado, e portanto se repete quando uma voz diz a mesma frase em dois
+    # casos — sairia da fila nos dois lugares tendo sido julgada num só. O
+    # julgamento do caso B desapareceria sem que ninguém notasse. Achado do
+    # revisor externo em 09/08/2026.
+    decididas = {(d["obsId"], d.get("caso")) for d in fc.carregar()["decisoes"]}
     candidatos = []
     for painel in _carregar(pastas or [PAINEIS, FORJA / "state"]):
         medida = medir_painel(painel)
@@ -400,7 +426,8 @@ def fila(limite: int = 6, pastas: list[Path] | None = None) -> list[dict]:
                   for o in b.get("observacoes") or []}
         for modelo, linha in medida["vozes"].items():
             for item in linha["itens"]:
-                if item["obsId"] in decididas or item["foraDeEscopo"]:
+                if ((item["obsId"], painel.get("caso")) in decididas
+                        or item["foraDeEscopo"]):
                     continue
                 candidatos.append({
                     "obsId": item["obsId"], "modelo": modelo,
@@ -409,7 +436,48 @@ def fila(limite: int = 6, pastas: list[Path] | None = None) -> list[dict]:
                     "violouNaoFonte": item["violouNaoFonte"],
                     "texto": textos.get(item["obsId"], ""),
                 })
-    candidatos.sort(key=lambda c: (c["sobreposicao"], c["obsId"]))
+    # Rodízio entre as vozes, e não ordem por sobreposição.
+    #
+    # A versão anterior ordenava por `sobreposicao` — a mesma métrica que o
+    # relatório declarava inválida duas seções antes. O revisor externo pegou a
+    # contradição, e ela era pior do que incoerência de texto: se o humano julga
+    # só os seis primeiros, a amostra que alimenta o placar terá sido escolhida
+    # por uma régua reconhecidamente cega, e o placar herda o viés.
+    #
+    # O rodízio não promete escolher o que mais informa. Promete o que dá para
+    # garantir: **cada voz recebe o mesmo número de julgamentos**, que é o
+    # mínimo para uma comparação ser justa. Empate se resolve por caso e por id,
+    # para a ordem ser estável entre execuções.
+    candidatos.sort(key=lambda c: (c["modelo"], c["caso"], c["obsId"]))
+    posicao: dict[tuple[str, str], int] = defaultdict(int)
+    for c in candidatos:
+        chave = (c["modelo"], c["caso"])
+        c["_pos"] = posicao[chave]
+        posicao[chave] += 1
+
+    # Rodízio DIAGONAL, e a primeira tentativa não servia.
+    #
+    # Ordenar por (posição, caso, modelo) parecia rodízio e não era: com
+    # `--limite 6` a saída dava cinco observações do primeiro caso e duas de uma
+    # mesma voz. O revisor externo rodou o comando e mostrou o desequilíbrio —
+    # o comentário prometia uma coisa e o código fazia outra.
+    #
+    # A diagonal percorre os pares (modelo, caso) de modo que entradas
+    # consecutivas mudem AS DUAS coordenadas: modelo m recebe o caso
+    # (m + d) % nº_de_casos na volta d. Com 5 vozes e 3 casos, os primeiros 5
+    # itens são 5 vozes distintas em 3 casos distintos, e os primeiros 15
+    # cobrem cada par exatamente uma vez.
+    modelos = sorted({c["modelo"] for c in candidatos})
+    casos = sorted({c["caso"] for c in candidatos})
+    if not modelos or not casos:
+        return candidatos[:limite]
+
+    def ordem(c: dict) -> tuple:
+        m = modelos.index(c["modelo"])
+        volta = (casos.index(c["caso"]) - m) % len(casos)
+        return (c["_pos"], volta, m, c["obsId"])
+
+    candidatos.sort(key=ordem)
     return candidatos[:limite]
 
 
@@ -465,9 +533,11 @@ def main(argv=None) -> int:
             print(f"\n[n/d] {parciais} voz(es) sem medida de origem: os painéis são "
                   "anteriores\n      ao campo `citouForaDoDocumento`. Rode o painel de "
                   "novo para medir —\n      zero por ausência de medição seria mentira.")
-        print("\nviol% = citou fonte que NÃO está no documento — inventou, em vez de ler.")
-        print("        Citar o que o documento cita é leitura, e dois falsos positivos")
-        print("        do detector puramente lexical foram o que produziu a distinção.")
+        print("\nviol% = citou súmula, artigo, tema ou lei numerada que NÃO aparece no")
+        print("        recorte que a voz leu. O prompt proíbe citar fonte, então isto")
+        print("        mede DESOBEDIÊNCIA à regra do formato.")
+        print("        NÃO prova que a citação seja falsa: Súmula 7 existe e é")
+        print("        pertinente — ela só não estava no texto que a voz recebeu.")
         print("ecoLex% = observações acima do limiar 0,25 de vocabulário comum. Zero aqui")
         print("          NÃO quer dizer 'sem eco': quer dizer que a régua lexical não")
         print("          alcança. Leia junto com sobrMed, que é a medida contínua.")

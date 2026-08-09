@@ -78,13 +78,35 @@ def test_toda_rota_que_serve_tem_armadilha_e_amostra():
 
     Nos dois casos reais o obstáculo não foi a existência da porta, foi o
     detalhe que fazia a porta parecer fechada.
+
+    A amostra do ``--probe`` só é exigida de rota de rede. Rota local declara
+    ``local: True`` e fica dispensada — a dispensa é explícita justamente para
+    que a próxima rota de rede não herde a folga por descuido.
     """
     for chave, rota in rf.ROTAS.items():
         if not rota.get("serve"):
             continue
         assert rota.get("armadilha"), f"{chave} sem armadilha declarada"
-        assert rota.get("probe"), f"{chave} sem amostra para --probe"
         assert rota.get("url"), f"{chave} sem url"
+        if rota.get("local"):
+            assert rota.get("probe") is None, (
+                f"{chave} se declara local e mesmo assim traz probe; "
+                f"decida qual das duas coisas ela é")
+            continue
+        assert rota.get("probe"), f"{chave} sem amostra para --probe"
+
+
+def test_dispensa_de_probe_e_excecao_declarada_e_rara():
+    """A folga do probe não pode virar o caminho de menor resistência.
+
+    Se a maioria das rotas passar a se declarar local, o registro deixa de ser
+    conferível contra o mundo e vira documentação interna.
+    """
+    servem = [r for r in rf.ROTAS.values() if r.get("serve")]
+    locais = [r for r in servem if r.get("local")]
+    assert len(locais) < len(servem) / 2, (
+        "mais da metade das rotas que servem se declara local — o registro "
+        "parou de ser exercitável")
 
 
 def test_entrada_negativa_diz_a_causa_certa():

@@ -315,27 +315,133 @@ def test_ancoragem_sai_do_painel_e_nao_do_documento_guardado():
     assert fi.ancoragem_de("")("qualquer coisa") is None
 
 
-def test_fila_ordena_por_discriminacao_e_nao_por_chegada(tmp_path, monkeypatch):
-    """Julgar eco informa pouco: as duas notas se movem juntas."""
+def test_fila_faz_rodizio_e_nao_usa_a_metrica_invalida(tmp_path, monkeypatch):
+    """A ordem por sobreposição foi retirada, e o motivo importa.
+
+    Ela usava `sobreposicao` — a mesma régua que os três resultados negativos
+    mostraram cega para conteúdo. Se o humano julga só os primeiros itens, a
+    amostra que alimenta o placar teria sido escolhida por uma métrica
+    reconhecidamente inválida, e o placar herdaria o viés. Achado do revisor
+    externo em 09/08/2026.
+
+    O rodízio não promete escolher o que mais informa. Promete o que dá para
+    garantir: cada voz e cada caso recebem o mesmo número de julgamentos, que é
+    o mínimo para a comparação ser justa.
+    """
     monkeypatch.setattr(fc, "REGISTRO", tmp_path / "vazio.json")
-    painel = {
-        "contrato": "FORJA-PAINEL-CURTO-v1", "caso": "C1", "fase": "F4",
-        "vozes": [
-            {"modelo": "kimi-k3-cursor", "familia": "moonshot", "observacoes": [
-                {"obsId": "aaa", "texto": "prazo intimação certidão publicação portal"},
-                {"obsId": "bbb", "texto": "composição atual da turma julgadora sessão"},
-            ]},
-            {"modelo": "glm-5.2-cursor", "familia": "zhipu", "observacoes": [
-                {"obsId": "ccc", "texto": "prazo intimação certidão publicação portal"},
-            ]},
-        ],
-        "falhas": [], "decisoes": [],
-    }
-    caminho = tmp_path / "C1_PAINEL_CURTO.json"
-    caminho.write_text(json.dumps(painel, ensure_ascii=False), encoding="utf-8")
-    ordem = [i["obsId"] for i in fi.fila(limite=9, pastas=[tmp_path])]
-    # `bbb` é a única que ninguém repetiu — tem de vir antes do par idêntico.
-    assert ordem[0] == "bbb"
+    for caso in ("C1", "C2"):
+        painel = {
+            "contrato": "FORJA-PAINEL-CURTO-v1", "caso": caso, "fase": "F4",
+            "vozes": [
+                {"modelo": m, "familia": f, "observacoes": [
+                    {"obsId": f"{caso}-{m[:3]}-{i}", "texto": f"observação {i} de {m}"}
+                    for i in range(2)]}
+                for m, f in (("kimi-k3-cursor", "moonshot"),
+                             ("glm-5.2-cursor", "zhipu"),
+                             ("opus-5-cursor", "anthropic"))
+            ],
+            "falhas": [], "decisoes": [],
+        }
+        (tmp_path / f"{caso}_PAINEL_CURTO.json").write_text(
+            json.dumps(painel, ensure_ascii=False), encoding="utf-8")
+
+    fila = fi.fila(limite=6, pastas=[tmp_path])
+    # Seis itens têm de cobrir as três vozes duas vezes cada, e os dois casos.
+    from collections import Counter
+    assert Counter(i["modelo"] for i in fila) == {
+        "kimi-k3-cursor": 2, "glm-5.2-cursor": 2, "opus-5-cursor": 2}
+    assert set(i["caso"] for i in fila) == {"C1", "C2"}
+    # E a ordenação não pode voltar a depender da métrica cega.
+    origem = (Path(__file__).parent / "forja_painel_indicadores.py").read_text(
+        encoding="utf-8", errors="replace")
+    assert 'sort(key=lambda c: (c["sobreposicao"]' not in origem
+
+
+def test_rodizio_cobre_vozes_e_casos_nas_primeiras_posicoes(tmp_path, monkeypatch):
+    """A primeira tentativa de rodízio parecia rodízio e não era.
+
+    Ordenar por (posição, caso, modelo) dava, com `--limite 6`, cinco
+    observações do primeiro caso e duas da mesma voz. O revisor externo rodou o
+    comando e mostrou o desequilíbrio: o comentário prometia uma coisa e o
+    código fazia outra. A diagonal é o conserto, e este teste é a prova.
+    """
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "vazio.json")
+    modelos = ["kimi-k3-cursor", "glm-5.2-cursor", "grok-4.5-cursor",
+               "luna-5.6-cursor", "opus-5-cursor"]
+    for caso in ("C1", "C2", "C3"):
+        painel = {
+            "contrato": "FORJA-PAINEL-CURTO-v1", "caso": caso, "fase": "F7",
+            "vozes": [{"modelo": m, "familia": fm.MODELOS[m].familia,
+                       "observacoes": [{"obsId": f"{caso}-{m[:4]}-{i}",
+                                        "texto": f"obs {i} de {m} em {caso}"}
+                                       for i in range(4)]} for m in modelos],
+            "falhas": [], "decisoes": [],
+        }
+        (tmp_path / f"{caso}_PAINEL_CURTO.json").write_text(
+            json.dumps(painel, ensure_ascii=False), encoding="utf-8")
+
+    from collections import Counter
+    cinco = fi.fila(limite=5, pastas=[tmp_path])
+    assert len(set(i["modelo"] for i in cinco)) == 5, "cinco itens, cinco vozes"
+    assert len(set(i["caso"] for i in cinco)) == 3, "e os três casos representados"
+
+    quinze = fi.fila(limite=15, pastas=[tmp_path])
+    pares = Counter((i["modelo"], i["caso"]) for i in quinze)
+    assert len(pares) == 15 and set(pares.values()) == {1}, (
+        "os primeiros 15 têm de cobrir cada par (voz, caso) exatamente uma vez")
+
+
+def test_fila_e_ledger_usam_a_mesma_chave(tmp_path, monkeypatch):
+    """`obsId` sozinho tirava da fila o que fora julgado em OUTRO caso.
+
+    O identificador é hash de modelo + texto normalizado, então repete quando a
+    voz diz a mesma frase em dois casos. `colher` sempre indexou por
+    (obsId, caso); a fila usava só o obsId, e o julgamento do segundo caso
+    sumia sem aviso. Achado do revisor externo.
+    """
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    for caso in ("C1", "C2"):
+        obs = {"obsId": "mesmo-id", "texto": "a mesma frase nos dois casos"}
+        painel = {"contrato": "FORJA-PAINEL-CURTO-v1", "caso": caso, "fase": "F7",
+                  "vozes": [{"modelo": "glm-5.2-cursor", "familia": "zhipu",
+                             "observacoes": [obs]}],
+                  "falhas": [],
+                  "decisoes": [{"obsId": "mesmo-id", "modelo": "glm-5.2-cursor",
+                                "veredito": "acatada" if caso == "C1" else None,
+                                "duplicadaDe": None, "motivo": None}]}
+        (tmp_path / f"{caso}_PAINEL_CURTO.json").write_text(
+            json.dumps(painel, ensure_ascii=False), encoding="utf-8")
+    fc.colher(tmp_path / "C1_PAINEL_CURTO.json", por="teste")
+    restantes = fi.fila(limite=9, pastas=[tmp_path])
+    assert [i["caso"] for i in restantes] == ["C2"], (
+        "julgar no C1 não pode tirar o mesmo texto da fila no C2")
+
+
+def test_veredito_guarda_o_hash_do_painel_julgado(tmp_path, monkeypatch):
+    """Sem hash, a 'evidência congelada' da promoção não estava congelada."""
+    monkeypatch.setattr(fc, "REGISTRO", tmp_path / "reg.json")
+    caminho = _painel(tmp_path, "C1", "glm-5.2-cursor", ["uma observação"])
+    _decidir(caminho, ["acatada"])
+    fc.colher(caminho, por="teste")
+    decisao = fc.carregar()["decisoes"][0]
+    assert decisao["painelSha256"] and len(decisao["painelSha256"]) == 64
+
+
+def test_detector_de_citacao_nao_absolve_por_digito_solto():
+    """O achado mais grave do revisor externo, com a fixture real.
+
+    A versão anterior perguntava se o número aparecia como substring em
+    qualquer ponto do documento. `Súmula 7` era absolvida por um `7` dentro de
+    uma data. O `zero violações` que virou manchete do relatório de 08/08 não
+    media nada — a remedição com o detector corrigido achou 2 em 60.
+    """
+    alvo = "A decisão de 07/08/2026 tratou do tema 1.170 e do artigo 1.021 do CPC."
+    assert fi.citacoes_fora_do_documento("a Súmula 7 impede o reexame", alvo)
+    assert fi.citacoes_fora_do_documento("o Tema 1.234 se aplica", alvo)
+    # E não pode acusar o que o documento realmente cita, nem em outra grafia.
+    assert not fi.citacoes_fora_do_documento("o art. 1.021", alvo)
+    assert not fi.citacoes_fora_do_documento("o artigo 1021 do CPC", alvo)
+    assert not fi.citacoes_fora_do_documento("o Tema 1.170", alvo)
 
 
 def test_ja_julgada_sai_da_fila(tmp_path, monkeypatch):
@@ -513,3 +619,65 @@ def test_o_painel_nao_e_saida_obrigatoria_de_nenhuma_fase():
         dados = json.loads(contrato.read_text(encoding="utf-8"))
         assert "painel_curto" not in dados.get("requiredOutputs", [])
         assert "painel_curto" not in dados.get("requiredGates", [])
+
+
+# --------------------------------------------------------------------------
+# Porteiro do envio externo — o achado mais sério da revisão de 09/08/2026
+# --------------------------------------------------------------------------
+
+import forja_envio_externo as envio
+
+
+@pytest.fixture()
+def ledger_isolado(tmp_path, monkeypatch):
+    monkeypatch.setattr(envio, "LEDGER", tmp_path / "ENVIOS.jsonl")
+    return tmp_path
+
+
+def test_autos_nao_saem_da_maquina(ledger_isolado):
+    """Produto nosso é nosso para arriscar; documento do processo não é."""
+    with pytest.raises(envio.EnvioBloqueado, match="autos"):
+        envio.autorizar("texto", classe="autos", confirmado=True,
+                        destino=["glm-5.2-cursor"])
+    with pytest.raises(envio.EnvioBloqueado, match="misto"):
+        envio.autorizar("texto", classe="misto", confirmado=True,
+                        destino=["glm-5.2-cursor"])
+
+
+def test_classe_e_obrigatoria(ledger_isolado):
+    with pytest.raises(envio.EnvioBloqueado, match="não existe"):
+        envio.autorizar("texto", classe="", confirmado=True, destino=["x"])
+
+
+def test_envio_externo_exige_decisao_explicita(ledger_isolado):
+    """Mandar material de cliente para fora é decisão, não efeito colateral."""
+    with pytest.raises(envio.EnvioBloqueado, match="não confirmado"):
+        envio.autorizar("texto", classe="produto_proprio", confirmado=False,
+                        destino=["glm-5.2-cursor"])
+
+
+def test_o_que_sai_fica_registrado_sem_o_texto(ledger_isolado):
+    """O ledger reconstitui a exposição; não a duplica."""
+    recibo = envio.autorizar("segredo do escritorio", classe="produto_proprio",
+                             confirmado=True, destino=["b", "a"], caso="C1",
+                             arquivo="rascunho.md")
+    assert recibo["sha256"] and recibo["caracteresEnviados"] == 21
+    assert recibo["modelos"] == ["a", "b"], "ordem estável para comparar envios"
+    bruto = (ledger_isolado / "ENVIOS.jsonl").read_text(encoding="utf-8")
+    assert "segredo do escritorio" not in bruto
+    assert envio.historico()[0]["caso"] == "C1"
+
+
+def test_o_painel_nao_envia_nada_sem_passar_pelo_porteiro():
+    """A chamada aos modelos vem DEPOIS da autorização, não antes.
+
+    Ordem importa: autorizar depois de enviar registraria uma exposição que já
+    aconteceu. O teste lê a fonte porque exercitar isto de verdade exigiria
+    chamar cinco provedores.
+    """
+    origem = (Path(__file__).parent / "forja_painel_curto.py").read_text(
+        encoding="utf-8", errors="replace")
+    corpo = origem.split("def painel(", 1)[1].split("\ndef ", 1)[0]
+    assert corpo.index("envio.autorizar") < corpo.index("ouvir(alvo"), (
+        "o porteiro tem de correr antes da primeira chamada externa")
+    assert '"envioExterno": recibo_envio' in corpo

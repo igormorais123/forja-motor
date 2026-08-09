@@ -1303,3 +1303,13 @@ Continuar refinando a regex até ela concordar comigo seria moldar o instrumento
 Medido em 3 casos, 12 observações por voz: zero citações fora do documento nas cinco; `teto%` de 58,3% no GLM contra 0% em todas as outras; latência de 21,0 s (GLM) a 37,4 s (Opus); `repet` entre casos de 0,06 a 0,14. **Convergência lexical entre pares: todos os dez entre 0,043 e 0,070, sem estrutura** — a régua não distingue as vozes por conteúdo, e `ecoLex%` = 0,0 significa "não alcança", não "sem eco". Daí a coluna `sobrMed` ao lado, e a legenda dizendo isso na tela. Ver Lição 277.
 
 Painéis de tamanhos diferentes não se misturam: `ecoLex%` não é comparável entre eles, o relatório avisa quando há mistura, e pasta com underscore (`_2vozes/`) é histórico fora da comparação corrente.
+
+### 31-B. Porteiro do envio externo, e a revisão que o exigiu (09/08/2026)
+
+O relatório de comparação das cinco vozes foi submetido a revisão adversarial externa (Codex, `gpt-5.6-luna` em esforço `max`) depois de o titular dizer que não o achou justo nem honesto. A revisão reprovou o documento e encontrou, entre outras coisas, o defeito que este parágrafo conserta: **o painel enviava trechos de peças reais a cinco provedores de fora sem classificação, sem confirmação e sem registro**.
+
+`forja_envio_externo.py` é o porteiro. A régua não é "sensível" — adjetivo discutível a cada uso — e sim a **origem** do texto, que é fato: `produto_proprio` sai, `autos` e `misto` não saem. Envio exige `--confirmo-envio-externo`, porque mandar material de cliente para fora é decisão e não consequência de rodar um comando. Cada envio grava recibo em `telemetria/ENVIOS_EXTERNOS.jsonl` com data, caso, arquivo, sha256, caracteres, provedor e modelos — **hash e tamanho, nunca o texto**. O recibo também fica dentro do artefato do painel, em `envioExterno`, para que a pergunta "isto saiu daqui?" não dependa de alguém lembrar do ledger.
+
+**Outros achados da mesma revisão, todos corrigidos e com regressão:** o detector de citação absolvia por dígito solto (`Súmula 7` passava por um `7` numa data) e a remedição das 60 observações trocou o "zero violações" por 2 em 60; a fila ordenava pela métrica que o próprio relatório declarava inválida, e passou a rodízio diagonal — 5 itens cobrem 5 vozes e 3 casos, 15 cobrem cada par uma vez; a fila filtrava por `obsId` enquanto o ledger indexa por `(obsId, caso)`; o veredito não guardava hash do painel julgado. O relatório também afirmava que as cinco vozes receberam instrução idêntica, o que era falso — o K3 recebe um bloco a mais por causa da restrição `nao_afirma_fato`.
+
+Regressão: `test_forja_painel_contribuicao.py`, 54 testes.
