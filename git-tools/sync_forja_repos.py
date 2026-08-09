@@ -206,6 +206,36 @@ def estado_no_git(rels: list[str]) -> tuple[set[str], set[str], str | None]:
     return ignorados, set(novos) - ignorados, None
 
 
+def escrever_manifesto(repo: Path, grandes: list[tuple[str, int]]) -> bool:
+    """Grava o manifesto dos arquivos grandes só quando a lista muda.
+
+    A versão anterior reescrevia sempre, e o campo `atualizadoEm` garantia um
+    diff a cada execução: **todo sync produzia um commit cujo único conteúdo era
+    a hora do sync.** É literalmente o que o `_iguais` acima existe para evitar,
+    duas funções depois — "commit vazio de substância todo dia, e commit assim
+    treina o leitor a ignorar o histórico". A data continua no arquivo; ela só
+    para de andar sozinha quando nada mudou.
+    """
+    alvo = repo / "ARTEFATOS_FORA_DO_REPOSITORIO.json"
+    arquivos = [{"caminho": c, "bytes": b} for c, b in sorted(grandes)]
+    if alvo.is_file():
+        try:
+            if json.loads(alvo.read_text(encoding="utf-8")).get("arquivos") == arquivos:
+                return False
+        except (OSError, ValueError):
+            pass  # ilegível é o mesmo que ausente: reescreve
+    alvo.write_text(json.dumps({
+        "schemaVersion": 1,
+        "porQue": ("Acima do limite de 100 MB por arquivo do GitHub. Permanecem "
+                   "no disco de trabalho. Quando estão presos por hash num ledger "
+                   "de eventos, não podem ser regenerados nem encolhidos sem "
+                   "quebrar a cadeia de auditoria."),
+        "atualizadoEm": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "arquivos": arquivos,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    return True
+
+
 def fora_da_publicacao(ignorados: set[str], novos: set[str],
                        so_rastreados: bool) -> set[str]:
     """Quem fica de fora. Regra em uma função só, para poder ser testada.
@@ -482,15 +512,7 @@ def main(argv=None) -> int:
             continue
         copiados, removidos = espelhar(por_destino[destino], repo, args.seco)
         if grandes and not args.seco:
-            (repo / "ARTEFATOS_FORA_DO_REPOSITORIO.json").write_text(json.dumps({
-                "schemaVersion": 1,
-                "porQue": ("Acima do limite de 100 MB por arquivo do GitHub. Permanecem "
-                           "no disco de trabalho. Quando estão presos por hash num ledger "
-                           "de eventos, não podem ser regenerados nem encolhidos sem "
-                           "quebrar a cadeia de auditoria."),
-                "atualizadoEm": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "arquivos": [{"caminho": c, "bytes": b} for c, b in sorted(grandes)],
-            }, ensure_ascii=False, indent=2), encoding="utf-8")
+            escrever_manifesto(repo, grandes)
         estado = publicar(repo, args.seco)
         print(f"{destino:6} {len(por_destino[destino]):5} arquivo(s) | "
               f"copiados={copiados:4} removidos={removidos:4} | {estado}")

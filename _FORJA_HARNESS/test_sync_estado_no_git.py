@@ -126,6 +126,46 @@ class TestEstadoNoGit(unittest.TestCase):
             self.assertEqual(novos, {rel})
 
 
+class TestManifestoNaoAndaSozinho(unittest.TestCase):
+    """Todo sync gerava um commit cujo único conteúdo era a hora do sync.
+
+    O manifesto dos arquivos grandes era reescrito a cada execução e o campo
+    `atualizadoEm` garantia o diff. É o que o `_iguais` do mesmo módulo existe
+    para evitar, duas funções antes: commit vazio de substância treina o leitor
+    a ignorar o histórico. Percebido em 09/08/2026 ao conferir o que a
+    publicação da vez tinha de fato levado — o commit trazia só esse arquivo.
+    """
+
+    GRANDES = [("autos/laudo.pdf", 123), ("autos/anexos.zip", 456)]
+
+    def test_lista_igual_nao_reescreve(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            self.assertTrue(sync.escrever_manifesto(repo, self.GRANDES))
+            self.assertFalse(sync.escrever_manifesto(repo, self.GRANDES))
+
+    def test_lista_diferente_reescreve(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            sync.escrever_manifesto(repo, self.GRANDES)
+            self.assertTrue(sync.escrever_manifesto(
+                repo, self.GRANDES + [("autos/novo.pdf", 7)]))
+
+    def test_ordem_da_entrada_nao_conta_como_mudanca(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            sync.escrever_manifesto(repo, self.GRANDES)
+            self.assertFalse(sync.escrever_manifesto(
+                repo, list(reversed(self.GRANDES))))
+
+    def test_arquivo_ilegivel_e_o_mesmo_que_ausente(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            (repo / "ARTEFATOS_FORA_DO_REPOSITORIO.json").write_text(
+                "{isto não é json", encoding="utf-8")
+            self.assertTrue(sync.escrever_manifesto(repo, self.GRANDES))
+
+
 class TestPoliticaDePublicacao(unittest.TestCase):
     """A regra de decisão, isolada do Git: quem fica de fora em cada modo."""
 
