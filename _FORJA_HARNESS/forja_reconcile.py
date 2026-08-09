@@ -111,16 +111,43 @@ def reconciliar_gates(gates_anteriores, historico_anterior, findings, *, at):
     return ativos, historico
 
 
+def _texto_da_evidencia(bruto):
+    """Aceita a evidência como texto ou como registro estruturado.
+
+    O campo nasceu string e passou a ser gravado também como objeto com `em`,
+    `threadId` e a lista de `mensagens`. O reconciliador quebrava com
+    `AttributeError: 'dict' object has no attribute 'strip'` na primeira demanda
+    no formato novo — e, como ele é a porta única da reconciliação, o painel
+    inteiro parava de ser conferido por causa de um registro.
+    """
+    if isinstance(bruto, dict):
+        partes = []
+        if bruto.get("em"):
+            partes.append(str(bruto["em"]))
+        for m in (bruto.get("mensagens") or [])[:3]:
+            if isinstance(m, dict):
+                partes.append(f"{m.get('id', '?')} {m.get('assunto', '')}".strip())
+            else:
+                partes.append(str(m))
+        if not partes and bruto.get("threadId"):
+            partes.append(f"thread {bruto['threadId']}")
+        return " · ".join(partes).strip()
+    if isinstance(bruto, (list, tuple)):
+        return " · ".join(str(x) for x in bruto if x).strip()
+    return (bruto or "").strip()
+
+
 def evidencia_de_entrega(item, entregas, manual_entry):
     """Retorna (status, descricao). Evidência real exigida para cumprida (N2)."""
-    ev = (item.get("evidenciaResposta") or "").strip()
+    ev = _texto_da_evidencia(item.get("evidenciaResposta"))
     if ev:
         return "manual_override", f"Evidência registrada na demanda: {ev[:140]}"
     if item.get("emailsResposta"):
         return "sent_confirmed", f"E-mail(s) de resposta: {', '.join(item['emailsResposta'][:3])}"
     overrides = (manual_entry or {}).get("overrides") or {}
-    if (overrides.get("evidenciaResposta") or "").strip():
-        return "manual_override", f"Evidência em intervenção manual: {overrides['evidenciaResposta'][:140]}"
+    ev_manual = _texto_da_evidencia(overrides.get("evidenciaResposta"))
+    if ev_manual:
+        return "manual_override", f"Evidência em intervenção manual: {ev_manual[:140]}"
     # Cruzar com entregas arquivadas (por threadId/messageId nos assuntos arquivados)
     ids = set(item.get("emailsRecebidos") or []) | set(item.get("threadIds") or [])
     for d in (entregas or {}).get("deliveries", []):
