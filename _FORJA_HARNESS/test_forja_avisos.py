@@ -18,6 +18,9 @@ ciência nominada.
 """
 
 import json
+import sys
+import tempfile
+import types
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
