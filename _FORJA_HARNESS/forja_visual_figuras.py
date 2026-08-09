@@ -299,9 +299,18 @@ def extrair_encadeamento(texto_md, brief=None, minimo=3, maximo=6):
 def extrair_comparacao(texto_md, min_linhas=2, max_linhas=6):
     """Matriz comparativa a partir de tabela JÁ existente no markdown.
 
-    Estruturalmente segura: os dados já estão tabulados pelo autor; a figura só
-    troca o meio de apresentação. Usada quando a peça precisa de elemento
-    gráfico e não tem cronologia nem brief.
+    **Desligada em 09/08/2026, e a razão importa.** A ideia era que a figura só
+    trocasse o meio de apresentação de dados que o autor já tabulou. Mas
+    `compor()` preserva 100% do texto — é o gate de fidelidade —, então a tabela
+    original continua impressa. O resultado é o mesmo conteúdo duas vezes, uma
+    como "Figura 1" e outra como tabela, o que saiu num memorial entregue em
+    08/08/2026 e passou pelo QA página a página sem ser visto.
+    Densidade gráfica obtida por repetição é densidade falsa: não reduz esforço
+    do julgador, e a régua da casa manda tirar da peça o que não reduz.
+
+    A função fica aqui, e não foi apagada, porque o caminho certo existe e é
+    outro: substituir a tabela pela figura na composição. Isso exige mexer no
+    contrato de fidelidade e não se faz de passagem.
     """
     linhas = texto_md.splitlines()
     for k, linha in enumerate(linhas):
@@ -348,10 +357,6 @@ def gerar_figuras(texto_md, out_dir, mapa, largura_cm=13.1, brief=None, tipo=Non
                 cronologia(str(svg), [(str(d), str(t)) for d, t in eventos],
                            largura_cm=largura_cm)
                 return "cronologia"
-            comp = extrair_comparacao(texto_md)
-            if comp:
-                matriz(str(svg), comp[0], comp[1], largura_cm=largura_cm)
-                return "comparacao"
             return None
         if tag == "{{FIG2}}":
             etapas = extrair_encadeamento(texto_md, brief)
@@ -360,10 +365,6 @@ def gerar_figuras(texto_md, out_dir, mapa, largura_cm=13.1, brief=None, tipo=Non
                 return "cadeia"
             return None
         if tag == "{{FIG3}}":
-            comp = extrair_comparacao(texto_md)
-            if comp:
-                matriz(str(svg), comp[0], comp[1], largura_cm=largura_cm)
-                return "comparacao"
             return None
         return None
 

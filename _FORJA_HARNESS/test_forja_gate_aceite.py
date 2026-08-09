@@ -125,6 +125,22 @@ for f in TRUNCADAS:
 for f in INTEIRAS:
     checar(f"frase inteira é aceita: {f[:40]}", not mg._TERMINA_MAL.search(f))
 
+# --- rótulo da caixa de precedente ------------------------------------------
+# "AGINT" saiu impresso como rótulo na entrega de 08/08/2026: a alternativa sem
+# dígito casa antes do número que vem depois dela na mesma frase. Classe de
+# recurso não identifica julgado.
+ROTULOS = [
+    ("No AgInt no REsp nº 2.058.380/AM, a Quarta Turma fixou tese", "RESP Nº 2.058.380"),
+    ("O AgInt no AREsp nº 3.109.609/PR foi julgado pela Terceira Turma", "ARESP Nº 3.109.609"),
+    ("A exequente enfrenta o Tema 333 em seus próprios termos", "TEMA 333"),
+    ("Incide a Súmula 7 do Superior Tribunal de Justiça", "SÚMULA 7"),
+    ("A ressalva vale para o valor estimado até a conciliação", "DESTAQUE"),
+    ("Foi interposto AgInt contra a decisão, sem número declarado", "DESTAQUE"),
+]
+for texto, esperado in ROTULOS:
+    obtido = mg._titulo_precedente(texto)
+    checar(f"rótulo de caixa: {texto[:38]}", obtido == esperado, f"obtido {obtido!r}")
+
 if falhas:
     print(f"REGRESSÃO: {falhas} de {casos} casos falharam")
     raise SystemExit(1)

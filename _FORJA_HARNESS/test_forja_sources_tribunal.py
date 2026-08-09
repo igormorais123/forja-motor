@@ -17,7 +17,10 @@ a fronteira motor/acervo reprova qualquer um, e o número é montado em `_cnj`.
 
 import unittest
 
-from forja_sources import GATES_DESTE_MODULO, detectar_tribunal, merge_gates, nomes_de_tribunal
+from forja_sources import (
+    GATES_DESTE_MODULO, classificar_produto, detectar_tribunal, merge_gates,
+    nomes_de_tribunal,
+)
 
 
 def _cnj(segmento: str, tr: str) -> str:
@@ -123,6 +126,40 @@ class TestDeteccaoTribunal(unittest.TestCase):
     def test_nomes_de_tribunal_nao_casa_dentro_de_palavra(self):
         """Guarda contra o falso positivo óbvio: sigla colada em outra palavra."""
         self.assertEqual(nomes_de_tribunal("estj stfa tjxx"), set())
+
+
+class TestProdutoDeclaradoNaoProtocolavel(unittest.TestCase):
+    """Regimento de tribunal não se aplica a documento que não vai a protocolo.
+
+    Caso real: um plano interno de negociação declarava na seção de limites que
+    "o material não é peça protocolável", e mesmo assim caía em `indefinido` e
+    exigia regimento — gerando um P0 que nada podia resolver, porque não há
+    tribunal a identificar num documento que não será protocolado. A declaração
+    expressa da casa vence a heurística.
+    """
+
+    def test_declaracao_expressa_dispensa_regimento(self):
+        for frase in ("O material não é peça protocolável.",
+                      "Este documento não constitui peça judicial.",
+                      "O produto não será protocolado.",
+                      "Material não protocolável, de uso interno."):
+            with self.subTest(frase=frase):
+                produto, obrigatorio = classificar_produto(
+                    "Plano interno para a reunião\n" + frase)
+                self.assertEqual(produto, "produto_interno_nao_protocolavel")
+                self.assertFalse(obrigatorio)
+
+    def test_peca_de_verdade_continua_exigindo_regimento(self):
+        """A contraprova: a declaração é rara e específica, não vale por tema."""
+        produto, obrigatorio = classificar_produto(
+            "Elaborar memoriais para o agravo interno, a serem protocolados no STJ")
+        self.assertEqual(produto, "peca_judicial")
+        self.assertTrue(obrigatorio)
+
+    def test_mencao_a_protocolo_sem_negativa_nao_dispensa(self):
+        produto, obrigatorio = classificar_produto(
+            "Recurso a ser protocolado até sexta; conferir a peça protocolável")
+        self.assertTrue(obrigatorio)
 
 
 class TestGateNaoEhCicatriz(unittest.TestCase):

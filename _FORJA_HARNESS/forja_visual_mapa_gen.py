@@ -330,9 +330,17 @@ def _titulo_precedente(texto):
     sobre valor. O rótulo afirmava, na cara do leitor, uma coisa que o
     parágrafo não continha. Rótulo é texto autoral e cai na mesma regra das
     figuras: melhor neutro e verdadeiro do que específico e falso.
+
+    Só serve como rótulo o identificador que traz número. "AgInt" sozinho é
+    classe de recurso, não identifica julgado nenhum — e saiu impresso assim,
+    "AGINT", na entrega de 08/08/2026, porque a alternativa sem dígito casa
+    antes do "REsp nº ..." que vem depois dela na frase. O QA página a página
+    olhou a caixa e não olhou o rótulo.
     """
-    m = _PRECEDENTE.search(texto)
-    return (m.group(0).upper() if m else "DESTAQUE")
+    for m in _PRECEDENTE.finditer(texto):
+        if any(c.isdigit() for c in m.group(0)):
+            return m.group(0).upper()
+    return "DESTAQUE"
 
 
 # ---------------------------------------------------------------- geração

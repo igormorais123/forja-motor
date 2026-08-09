@@ -76,6 +76,20 @@ def main():
                        and (c["atualizado"] if c["atualizado"].tzinfo
                             else c["atualizado"].replace(tzinfo=timezone.utc)) >= limite)
 
+    # Os avisos vêm ANTES da fila: eles são o que alguém precisa saber agora, e
+    # a fila é o que estava lá ontem. Ficaram fora do contexto até 09/08/2026, e
+    # o preço foi o titular descobrir por outra via que o precedente do caso dele
+    # tinha sido embargado — o vigia sabia havia um dia.
+    try:
+        sys.path.insert(0, AQUI)
+        from forja_avisos import linhas_para_contexto
+        linhas = linhas_para_contexto()
+        if linhas:
+            print("\n".join(linhas))
+            print()
+    except Exception as exc:  # fail-open, como o resto do hook
+        print(f"## FORJA — caixa de avisos indisponível ({type(exc).__name__})")
+
     print("## FORJA — estado da fila (forja_local_context)")
     print(f"- casos: {len(casos)} | ativos: {len(ativos)} | entregues 7d: {entregues_7d}")
     for c in sorted(ativos, key=lambda c: (not c["p0"], c["fase"])):

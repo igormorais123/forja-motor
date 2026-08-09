@@ -63,9 +63,25 @@ CITACAO_ANTES_RE = re.compile(
 PONTO_DE_MILHAR_RE = re.compile(r"(?<=\d)\.(?=\d)")
 
 
+# Declaração expressa de que o produto não vai a protocolo. Não é palpite sobre
+# o texto: é frase que a própria casa escreveu no comando, e ela vence a
+# heurística. Sem esta regra, um plano interno de negociação que diz "o material
+# não é peça protocolável" na seção de limites caía em `indefinido`, exigia
+# regimento de tribunal e ficava com um P0 que nada podia resolver — porque não
+# existe tribunal a identificar num documento que não será protocolado.
+NAO_PROTOCOLAVEL_RE = re.compile(
+    r"n[ãa]o\s+(?:é|e|ser[áa]|constitui|se\s+trata\s+de)\s+"
+    r"(?:uma\s+)?(?:pe[çc]a\s+)?(?:protocol[áa]vel|protocolad\w+|"
+    r"pe[çc]a\s+judicial|pe[çc]a\s+process\w+)"
+    r"|material\s+n[ãa]o\s+protocol[áa]vel"
+    r"|n[ãa]o\s+ser[áa]\s+protocolad\w+", re.I)
+
+
 def classificar_produto(texto):
     """F2 mínima: tipo de produto define se regimento é obrigatório."""
     t = (texto or "").lower()
+    if NAO_PROTOCOLAVEL_RE.search(texto or ""):
+        return "produto_interno_nao_protocolavel", False
     judicial = ["memoriais", "memorial", "embargos", "contrarraz", "agravo", "apela",
                 "impugna", "recurso", "manifesta", "peti", "sustenta"]
     consultivo = ["parecer", "quesitos", "consultoria", "proposta de servi", "análise de risco", "due diligence"]

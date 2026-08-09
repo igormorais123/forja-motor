@@ -161,7 +161,38 @@ def verificar(caso: str, cfg: dict) -> dict:
         with log.open("a", encoding="utf-8") as fh:
             for m in novos:
                 fh.write(f"{agora}\t{m}\n")
+        # O log é a trilha; a caixa é o destinatário. Sem esta linha o vigia
+        # detecta e a informação para aqui — foi o que aconteceu com os embargos
+        # de 07/08/2026, vistos pelo vigia às 09h00 de 08/08 e desconhecidos do
+        # titular até 09/08. Detecção sem destinatário nomeado é telemetria.
+        try:
+            from forja_avisos import depositar
+            for m in novos:
+                depositar(origem="monitor_stf", chave=f"{caso}:{m}",
+                          titulo=f"{cfg['rotulo']} — movimento novo no STF",
+                          detalhe=m, caso=caso,
+                          urgencia="alta" if _movimento_grave(m) else "media")
+        except Exception as exc:  # vigia nunca cai por causa do aviso
+            print(f"[aviso] não consegui depositar na caixa: "
+                  f"{type(exc).__name__}: {exc}", file=sys.stderr)
     return resultado
+
+
+# Movimento que muda o que se pode afirmar sobre o processo lá fora. A lista é
+# curta de propósito: marcar tudo como urgente é o mesmo que não marcar nada.
+# Comparação sem acento porque o portal alterna "trânsito" e "Transitado" na
+# mesma coluna, e a primeira versão desta lista perdeu justamente o trânsito em
+# julgado por causa do circunflexo.
+_GRAVES = ("embargo", "agravo", "decisao", "acordao", "julgamento", "julgad",
+           "provido", "liminar", "tutela", "transit", "baixa", "pauta",
+           "sentenca", "vista")
+
+
+def _movimento_grave(movimento: str) -> bool:
+    import unicodedata
+    nfkd = unicodedata.normalize("NFKD", (movimento or "").lower())
+    texto = "".join(c for c in nfkd if not unicodedata.combining(c))
+    return any(k in texto for k in _GRAVES)
 
 
 def main(argv=None) -> int:

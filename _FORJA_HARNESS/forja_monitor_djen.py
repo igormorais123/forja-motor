@@ -165,6 +165,19 @@ def verificar(chave: str, cfg: dict) -> dict:
             for c in novas:
                 marca = "URGENTE" if c["urgente"] else "       "
                 fh.write(f"{agora}\t{marca}\t{c['data']}\t{c['tipo']}\t{c['resumo'][:200]}\n")
+        # Mesmo motivo do vigia do STF: o log é trilha, a caixa é destinatário.
+        try:
+            from forja_avisos import depositar
+            for c in novas:
+                depositar(origem="monitor_djen",
+                          chave=f"{chave}:{c['data']}:{c['resumo'][:120]}",
+                          titulo=f"{chave} — publicação nova no DJEN",
+                          detalhe=f"{c['data']} · {c['tipo']} · {c['resumo'][:160]}",
+                          caso=chave,
+                          urgencia="alta" if c["urgente"] else "media")
+        except Exception as exc:  # o vigia nunca cai por causa do aviso
+            print(f"[aviso] não consegui depositar na caixa: "
+                  f"{type(exc).__name__}: {exc}", file=sys.stderr)
     return resultado
 
 

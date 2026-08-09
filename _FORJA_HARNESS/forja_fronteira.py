@@ -174,6 +174,9 @@ _BINARIO_DECLARADO = [
     ("_FORJA_HARNESS/cache/fontes_oficiais/", "fonte oficial capturada verbatim"),
     ("_FORJA_HARNESS/cache/test_injection_veneno.pdf",
      "PDF de fixture da regressão de injeção indireta"),
+    ("_FORJA_HARNESS/exports/gpt-forja/assets/",
+     "arte de capa do pacote GPT: bigorna e documento na paleta da casa, sem "
+     "nome, marca ou logo de escritório — aberta e conferida em 09/08/2026"),
 ]
 
 # ACERVO — prova do que a esteira fez. Carrega cliente por natureza.
