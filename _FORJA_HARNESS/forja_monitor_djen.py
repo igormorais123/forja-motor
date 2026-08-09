@@ -136,7 +136,7 @@ def consultar(tribunal: str, numero: str, timeout: float = 90) -> list[dict]:
     return sorted(saida, key=lambda c: c["data"] or "", reverse=True)
 
 
-def verificar(chave: str, cfg: dict) -> dict:
+def verificar(chave: str, cfg: dict, avisar: bool = True) -> dict:
     DESTINO.mkdir(parents=True, exist_ok=True)
     retrato = DESTINO / f"{chave}.json"
     agora = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
@@ -166,9 +166,14 @@ def verificar(chave: str, cfg: dict) -> dict:
                 marca = "URGENTE" if c["urgente"] else "       "
                 fh.write(f"{agora}\t{marca}\t{c['data']}\t{c['tipo']}\t{c['resumo'][:200]}\n")
         # Mesmo motivo do vigia do STF: o log é trilha, a caixa é destinatário.
+        # `avisar=False` existe porque conferir a fiação do vigia não pode custar
+        # um aviso permanente: a caixa só sai por ciência nominada, e em
+        # 09/08/2026 três avisos de processo inventado ficaram lá, sendo a
+        # primeira coisa que toda sessão lia. Caixa que abre com ruído de teste
+        # deixa de ser lida, que é exatamente o que ela veio corrigir.
         try:
             from forja_avisos import depositar
-            for c in novas:
+            for c in novas if avisar else ():
                 depositar(origem="monitor_djen",
                           chave=f"{chave}:{c['data']}:{c['resumo'][:120]}",
                           titulo=f"{chave} — publicação nova no DJEN",
@@ -186,6 +191,9 @@ def main(argv=None) -> int:
     p.add_argument("--processo", help="verificar apenas um processo vigiado")
     p.add_argument("--listar", action="store_true", help="listar os processos vigiados")
     p.add_argument("--json", action="store_true", help="saída em JSON")
+    p.add_argument("--sem-aviso", action="store_true",
+                   help="não deposita na caixa de avisos; para conferir a fiação "
+                        "do vigia sem deixar aviso permanente")
     a = p.parse_args(argv)
 
     alvos = vigiados()
@@ -207,7 +215,7 @@ def main(argv=None) -> int:
     resultados, houve, erro = [], False, False
     for chave, cfg in casos.items():
         try:
-            r = verificar(chave, cfg)
+            r = verificar(chave, cfg, avisar=not a.sem_aviso)
         except (urllib.error.URLError, RuntimeError, OSError, json.JSONDecodeError,
                 KeyError) as e:
             erro = True

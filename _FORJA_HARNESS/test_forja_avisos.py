@@ -162,3 +162,59 @@ class TestCaixaCorrompidaNaoDerruba(BaseCaixa):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ---------------------------------------------------------------------------
+# Conferir a fiação do vigia não pode custar um aviso permanente (09/08/2026).
+#
+# A caixa só esvazia por ciência nominada — é essa permanência que a faz
+# funcionar. O efeito colateral apareceu no mesmo dia: três avisos de processo
+# inventado, deixados por uma verificação de fiação, viraram a primeira coisa
+# que toda sessão lia. Caixa que abre com ruído de teste deixa de ser lida, que
+# é exatamente o que ela veio corrigir.
+# ---------------------------------------------------------------------------
+
+class TestVigiaSemAviso(unittest.TestCase):
+    def _rodar(self, avisar):
+        """Executa `verificar` dos dois vigias contra fixture, sem rede."""
+        import forja_monitor_djen as djen
+        import forja_monitor_stf as stf
+
+        depositados = []
+        caixa_falsa = types.ModuleType("forja_avisos")
+        caixa_falsa.depositar = lambda **kw: depositados.append(kw)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            destino = Path(tmp)
+            with mock.patch.dict(sys.modules, {"forja_avisos": caixa_falsa}), \
+                 mock.patch.object(djen, "DESTINO", destino), \
+                 mock.patch.object(stf, "DESTINO", destino), \
+                 mock.patch.object(djen, "consultar", lambda *a, **k: [
+                     {"id": "1", "data": "2026-08-01", "tipo": "Intimação",
+                      "resumo": "pauta", "urgente": True}]), \
+                 mock.patch.object(stf, "consultar",
+                                   lambda *a, **k: (["Embargos de declaração"], "sha")):
+                # Primeira leitura nunca gera novidade: é o retrato inicial.
+                djen.verificar("x", {"tribunal": "TRF3", "numero": "1"}, avisar=avisar)
+                stf.verificar("y", {"incidente": "1", "rotulo": "r", "porque": "p"},
+                              avisar=avisar)
+                # Segunda leitura, com o retrato mudado, é o que dispara.
+                with mock.patch.object(djen, "consultar", lambda *a, **k: [
+                        {"id": "2", "data": "2026-08-09", "tipo": "Intimação",
+                         "resumo": "acórdão", "urgente": True},
+                        {"id": "1", "data": "2026-08-01", "tipo": "Intimação",
+                         "resumo": "pauta", "urgente": True}]), \
+                     mock.patch.object(stf, "consultar", lambda *a, **k: (
+                         ["Transitado em julgado", "Embargos de declaração"], "sha2")):
+                    djen.verificar("x", {"tribunal": "TRF3", "numero": "1"}, avisar=avisar)
+                    stf.verificar("y", {"incidente": "1", "rotulo": "r", "porque": "p"},
+                                  avisar=avisar)
+        return depositados
+
+    def test_por_padrao_o_vigia_deposita(self):
+        """A contraprova: sem ela, `--sem-aviso` poderia estar sempre ligado."""
+        origens = {d["origem"] for d in self._rodar(avisar=True)}
+        self.assertEqual(origens, {"monitor_djen", "monitor_stf"})
+
+    def test_com_sem_aviso_nada_chega_na_caixa(self):
+        self.assertEqual(self._rodar(avisar=False), [])

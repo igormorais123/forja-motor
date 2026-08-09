@@ -134,7 +134,7 @@ def consultar(incidente: str, timeout: float = 45) -> tuple[list[str], str]:
     return movs, hashlib.sha256("\n".join(movs).encode("utf-8")).hexdigest()
 
 
-def verificar(caso: str, cfg: dict) -> dict:
+def verificar(caso: str, cfg: dict, avisar: bool = True) -> dict:
     DESTINO.mkdir(parents=True, exist_ok=True)
     retrato = DESTINO / f"{caso}.json"
     agora = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
@@ -165,9 +165,12 @@ def verificar(caso: str, cfg: dict) -> dict:
         # detecta e a informação para aqui — foi o que aconteceu com os embargos
         # de 07/08/2026, vistos pelo vigia às 09h00 de 08/08 e desconhecidos do
         # titular até 09/08. Detecção sem destinatário nomeado é telemetria.
+        # `avisar=False` (--sem-aviso) existe para conferir a fiação sem deixar
+        # aviso permanente: a caixa só sai por ciência nominada, e três avisos
+        # de processo inventado abriram todas as sessões de 09/08/2026.
         try:
             from forja_avisos import depositar
-            for m in novos:
+            for m in novos if avisar else ():
                 depositar(origem="monitor_stf", chave=f"{caso}:{m}",
                           titulo=f"{cfg['rotulo']} — movimento novo no STF",
                           detalhe=m, caso=caso,
@@ -200,6 +203,9 @@ def main(argv=None) -> int:
     p.add_argument("--caso", help="verificar apenas um caso vigiado")
     p.add_argument("--listar", action="store_true", help="listar os casos vigiados")
     p.add_argument("--json", action="store_true", help="saída em JSON")
+    p.add_argument("--sem-aviso", action="store_true",
+                   help="não deposita na caixa de avisos; para conferir a fiação "
+                        "do vigia sem deixar aviso permanente")
     a = p.parse_args(argv)
 
     vigiados = _vigiados()
@@ -221,7 +227,7 @@ def main(argv=None) -> int:
     resultados, houve, erro = [], False, False
     for caso, cfg in casos.items():
         try:
-            r = verificar(caso, cfg)
+            r = verificar(caso, cfg, avisar=not a.sem_aviso)
         except (urllib.error.URLError, RuntimeError, OSError) as e:
             erro = True
             r = {"caso": caso, "erro": f"{type(e).__name__}: {e}"}
