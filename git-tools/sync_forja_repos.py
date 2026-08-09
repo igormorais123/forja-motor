@@ -244,6 +244,21 @@ def espelhar(itens: list[tuple[Path, str]], repo: Path, seco: bool) -> tuple[int
                     if not seco:
                         alvo.unlink(missing_ok=True)
                     removidos += 1
+
+    # Pasta que ficou oca depois da remoção. O Git não versiona diretório vazio,
+    # então o repositório já estava certo — mas quem abre a pasta vê onze nomes
+    # de skill que não existem mais e conclui que a remoção falhou. Aconteceu em
+    # 09/08/2026, comigo. Poda de baixo para cima, e só o que estiver vazio.
+    if repo.is_dir() and not seco:
+        for raiz, dirs, arqs in os.walk(repo, topdown=False):
+            atual = Path(raiz)
+            if atual == repo or ".git" in atual.parts:
+                continue
+            try:
+                if not any(atual.iterdir()):
+                    atual.rmdir()
+            except OSError:
+                pass
     return copiados, removidos
 
 
