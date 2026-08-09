@@ -196,7 +196,7 @@ um ato possível.** Sem a íntegra do ato atualmente impugnado, a produção per
 O erro que isso fecha não é número errado: é o número **certo de outro processo do mesmo
 cliente** — o texto fica internamente coerente e nenhum gate lexical discorda dele.
 Estado da verificação automática: veja
-[GATES.md](GATES.md#gates-citados-na-documentação-que-não-existem-no-código).
+[GATES.md](GATES.md#s6-e-s7-existem-e-nunca-opinaram-sobre-caso-nenhum).
 
 ## Exploração em 100 perguntas
 

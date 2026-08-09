@@ -99,7 +99,7 @@ rodou em três casos na história inteira.
 
 **Regra escrita que não pega precisa virar gate** — e o inverso também acontece: a seção
 do protocolo que criou os gates S6 e S7 nunca os implementou. Veja
-[GATES.md](GATES.md#gates-citados-na-documentação-que-não-existem-no-código).
+[GATES.md](GATES.md#s6-e-s7-existem-e-nunca-opinaram-sobre-caso-nenhum).
 
 **Comitê de personas não substitui revisão de código.** O conselho leu o dossiê do
 construtor e recomendou arquitetura já rejeitada, citando função inexistente. Quem

@@ -289,13 +289,21 @@ prevalece sobre skill externa equivalente.
 Leia apenas o documento da fase corrente — as fichas se repetem de propósito nas fases
 onde a mesma skill serve.
 
-Sete skills adaptadas à fábrica vivem em `.claude/skills/`: `forja-ingestao-autos`,
-`forja-exploracao-problema`, `forja-campo-tribunais`, `forja-pesquisa-jurisprudencia`,
-`forja-red-team`, `forja-revisao-cruzada`, `forja-saida-humana`. Elas chamam os scripts
-da casa e não substituem nenhum.
+**A porta da esteira é a skill `forja`**, em `.claude/skills/forja/` — a FORJA inteira
+num lugar só: as onze fases com artefatos e gates, os comandos literais com as flags
+reais, as ordens invioláveis, a esteira visual, os modelos autorizados e as armadilhas
+com o caso real atrás de cada uma. Ela se confere contra o disco por
+`python _FORJA_HARNESS/forja_skill_doctor.py`, com regressão no baseline.
+
+As sete fichas de fase que viviam aqui — `forja-ingestao-autos`, `forja-exploracao-problema`,
+`forja-campo-tribunais`, `forja-pesquisa-jurisprudencia`, `forja-red-team`,
+`forja-revisao-cruzada` e `forja-saida-humana` — **foram removidas em 09/08/2026**: o que
+cada uma dizia está dentro da porta. O Codex a carrega globalmente em
+`~/.agents/skills/forja/`, cópia gerada por `forja_skill_deploy.py`; edite a canônica, não
+a cópia.
 
 O Codex interessa duas vezes aqui: como **revisor** da outra família em
-`forja-revisao-cruzada` (o gate `cross_model_review_verified` bloqueia `unverified`), e
+revisão cruzada entre famílias (o gate `cross_model_review_verified` bloqueia `unverified`), e
 como produtor quando o Claude for o revisor. `familyAssurance` é recomposto pelo
 orquestrador e nunca aceito por declaração.
 
@@ -307,7 +315,7 @@ O conselho de F4 passou a ter três vozes obrigatórias: `helena` (estratégia),
 Claude e Codex —, por determinação do titular de 26/07/2026.
 
 O parecer dele é insumo interno de auditoria: propõe objeções, não afirma fatos, não vai
-para a peça e não substitui o F7. Não se confunde com a skill `forja-red-team`, que
+para a peça e não substitui o F7. Não se confunde com o red team das nove perguntas, que
 conduz as nove perguntas por dentro — as duas rodam.
 
 Estado do gate: `forja_conselho.py` valida Helena e Cícero. A obrigatoriedade do Diabob

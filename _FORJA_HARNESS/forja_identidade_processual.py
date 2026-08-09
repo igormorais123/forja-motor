@@ -557,6 +557,37 @@ def _chave_ato(bruto: str) -> str:
     return re.sub(r"\D", "", str(bruto))
 
 
+def _nao_conferido(decl: Optional[dict], gate: str, bloco: str,
+                   o_que: str) -> list[dict]:
+    """Silêncio por ausência de declaração; aviso por ausência do bloco.
+
+    Medido em 09/08/2026: dos 93 casos em `state/`, **um** tem declaração de
+    identidade processual e **nenhum** preenche `atos` ou `objeto.excluidos`.
+    Ou seja, S6 e S7 existem, estão ligados no verificador desde 06/08 e nunca
+    opinaram sobre nada — e devolviam lista vazia, que é indistinguível de
+    "conferido e limpo". É a Lição 87 outra vez, gate instalado na rota que
+    ninguém percorre, agravada por não dizer isso a ninguém.
+
+    A distinção é a mesma que já resolveu a conferência de anexos: `não
+    conferido` não é `sem pendência`. Caso que não declarou identidade nenhuma
+    continua em silêncio absoluto — a regra da casa é que ausência de declaração
+    nunca vira veredito. Caso que declarou e omitiu o bloco recebe **P1**, que
+    é aviso e não reprovação: alguém abriu a declaração e não listou o que este
+    gate precisa para funcionar.
+    """
+    if not decl:
+        return []
+    return [{
+        "sev": "P1",
+        "gate": f"{gate}_NAO_CONFERIDO",
+        "problema": (f"o gate não opinou: a declaração de identidade processual "
+                     f"existe mas não traz `{bloco}`, então {o_que} não foi "
+                     f"conferido. Isto não é defeito da peça — é conferência que "
+                     f"não aconteceu."),
+        "contexto": "",
+    }]
+
+
 def gate_s6_identidade_do_ato(texto: str, decl: Optional[dict]) -> list[dict]:
     """Todo ato citado na peça foi declarado como pertencente a este trabalho?
 
@@ -565,11 +596,13 @@ def gate_s6_identidade_do_ato(texto: str, decl: Optional[dict]) -> list[dict]:
     isso, porque o texto fica internamente coerente — só uma lista externa do
     que pertence a este trabalho separa um do outro.
 
-    Sem `atos` na declaração o gate não roda e não opina.
+    Sem declaração nenhuma o gate fica em silêncio. **Com declaração e sem o
+    bloco `atos`, ele diz que não conferiu** — ver `_nao_conferido`.
     """
     declarados = _atos_declarados(decl)
     if not declarados:
-        return []
+        return _nao_conferido(decl, "S6_IDENTIDADE_DO_ATO", "atos",
+                              "os atos que pertencem a este trabalho")
     achados = []
     vistos = set()
     for m in RE_ATOS.finditer(texto):
@@ -608,7 +641,8 @@ def gate_s7_objeto_devolvido(texto: str, decl: Optional[dict]) -> list[dict]:
     """
     excluidos = ((decl or {}).get("objeto") or {}).get("excluidos") or []
     if not excluidos:
-        return []
+        return _nao_conferido(decl, "S7_OBJETO_DEVOLVIDO", "objeto.excluidos",
+                              "os temas fora do objeto devolvido")
     achados = []
     for tema in excluidos:
         tema = str(tema).strip()
@@ -626,6 +660,35 @@ def gate_s7_objeto_devolvido(texto: str, decl: Optional[dict]) -> list[dict]:
     return achados
 
 
+def cobertura(base: Path) -> dict:
+    """Quantos casos S6 e S7 conseguem conferir hoje. Devolve as contagens.
+
+    A contraparte afirmativa do gate: procurar defeito nunca detecta pobreza.
+    Sem esta medição, dois gates que não opinam sobre caso nenhum parecem dois
+    gates que não encontraram nada.
+    """
+    total = declarados = com_atos = com_objeto = 0
+    sem_bloco: list[str] = []
+    for caso in sorted(p for p in base.iterdir() if p.is_dir()):
+        total += 1
+        alvo = caso / "n4_artifacts" / "F2_IDENTIDADE_PROCESSUAL.json"
+        if not alvo.is_file():
+            continue
+        declarados += 1
+        try:
+            decl = json.loads(alvo.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        tem_atos = bool(_atos_declarados(decl))
+        tem_objeto = bool((decl.get("objeto") or {}).get("excluidos"))
+        com_atos += tem_atos
+        com_objeto += tem_objeto
+        if not (tem_atos and tem_objeto):
+            sem_bloco.append(caso.name)
+    return {"casos": total, "comDeclaracao": declarados, "comAtos": com_atos,
+            "comObjetoExcluidos": com_objeto, "declaradosSemBloco": sem_bloco}
+
+
 if __name__ == "__main__":
     import sys
 
@@ -633,7 +696,18 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("uso: python forja_identidade_processual.py <case-dir>")
         print("      python forja_identidade_processual.py --schema")
+        print("      python forja_identidade_processual.py --cobertura")
         sys.exit(2)
+
+    if sys.argv[1] == "--cobertura":
+        c = cobertura(Path(__file__).resolve().parent / "state")
+        print(f"casos em state/                : {c['casos']}")
+        print(f"com declaração de identidade   : {c['comDeclaracao']}")
+        print(f"  com bloco `atos`  (S6 opina) : {c['comAtos']}")
+        print(f"  com `objeto.excluidos` (S7)  : {c['comObjetoExcluidos']}")
+        for nome in c["declaradosSemBloco"]:
+            print(f"  [declarado, bloco faltando] {nome}")
+        sys.exit(0)
 
     if sys.argv[1] == "--schema":
         import json

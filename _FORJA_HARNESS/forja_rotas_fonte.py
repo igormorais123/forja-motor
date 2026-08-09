@@ -66,14 +66,40 @@ ROTAS: dict[str, dict] = {
         },
         "armadilha": ("data errada devolve HTTP 200 com o texto 'Acórdão não encontrado', "
                       "e não um erro. A primeira tentativa parece resposta definitiva. "
-                      "O número de registro sai do DJEN junto com a data de DIVULGAÇÃO; "
-                      "varra duas semanas a partir dela e pare na primeira resposta acima "
-                      "de 500 bytes"),
+                      "Não varra às cegas: a MESMA URL sem o parâmetro dt_publicacao "
+                      "devolve HTML listando as datas de publicação disponíveis para "
+                      "aquele registro — peça a lista e baixe todas, porque processo com "
+                      "vários acórdãos precisa de todos. Ignore, nessa lista, a data de "
+                      "hoje, que vem do rodapé da página. Cuidado com o HOST: em "
+                      "scon.stj.jus.br o mesmo caminho responde 403 e cai no reCAPTCHA; "
+                      "só processo.stj.jus.br serve"),
         "observacao": ("funciona nos dias em que a busca textual do SCON cai com erro do "
-                       "mecanismo Oracle, porque é outro serviço"),
+                       "mecanismo Oracle, porque é outro serviço. Em 09/08/2026 baixou 54 "
+                       "acórdãos de 19 processos sem navegador e sem autenticação"),
         "probe": {"num_registro": "202300665947", "dt_publicacao": "15/06/2026",
                   "esperaTipo": "application/pdf", "minimoBytes": 50000},
-        "verificadoEm": "2026-08-07",
+        "verificadoEm": "2026-08-09",
+    },
+    "stj-jurisprudencia-busca-textual": {
+        "fonte": "STJ",
+        "tipoDocumento": "localizador",
+        "serve": False,
+        "porQue": ("a pesquisa de jurisprudência do SCON passou a exigir reCAPTCHA. "
+                   "scon.stj.jus.br/SCON/pesquisar.jsp devolve 403 a requisição direta e, "
+                   "no navegador, redireciona para a página inicial, que carrega o "
+                   "desafio. Resolver CAPTCHA não é opção"),
+        "causaCorreta": "indisponivel_na_fonte",
+        "causasAdmissiveis": ("indisponivel_na_fonte",),
+        "condicao": ("a causa é da fonte, e não nossa: o STJ mantém a busca para pessoa "
+                     "diante do desafio e deixou de servi-la a consulta automatizada. "
+                     "Chamar isso de limitação da ferramenta seria transferir a nós uma "
+                     "escolha do tribunal. E isto NUNCA justifica declarar um acórdão "
+                     "inalcançável: quem tem o número do processo chega ao inteiro teor "
+                     "por `stj-acordao-integra`, e quem não tem o número de registro o "
+                     "obtém na Consulta Processual, em processo.stj.jus.br/processo/"
+                     "pesquisa, que não tem CAPTCHA. O que se perde é a busca POR TEMA, "
+                     "não a busca por processo"),
+        "verificadoEm": "2026-08-09",
     },
     "stj-peticao-de-parte": {
         "fonte": "STJ",

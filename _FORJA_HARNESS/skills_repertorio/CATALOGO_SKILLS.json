@@ -46,309 +46,92 @@
   ],
   "skills": [
     {
-      "id": "forja-ingestao-autos",
+      "id": "forja",
       "origem": "projeto",
-      "adaptadaDe": [
-        "pdf",
-        "docx"
+      "substitui": [
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja",
+        "forja"
       ],
       "fases": [
+        "F0",
         "F1",
-        "F3"
-      ],
-      "alimenta": [
-        "document_index",
-        "coverage_ledger",
-        "chronology"
-      ],
-      "custoContexto": "medio",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "nulo",
-      "reversibilidade": "parcial",
-      "confereDepois": [
-        "coverage_declared",
-        "injection_triaged",
-        "gate S6"
-      ],
-      "alimentaArtefatos": [
-        "document_index",
-        "coverage_ledger",
-        "chronology"
-      ]
-    },
-    {
-      "id": "forja-exploracao-problema",
-      "origem": "projeto",
-      "adaptadaDe": [
-        "problem-solving-vila"
-      ],
-      "fases": [
-        "F2"
-      ],
-      "alimenta": [
-        "question_tree"
-      ],
-      "custoContexto": "alto",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "alto",
-      "reversibilidade": "parcial",
-      "confereDepois": [
-        "forja_exploracao_100.py",
-        "answers_provenance_classified"
-      ],
-      "alimentaArtefatos": [
-        "question_tree"
-      ]
-    },
-    {
-      "id": "forja-campo-tribunais",
-      "origem": "projeto",
-      "adaptadaDe": [
-        "testar-navegador"
-      ],
-      "fases": [
-        "F1",
-        "F3",
-        "F5",
-        "F7"
-      ],
-      "alimenta": [
-        "sources_map",
-        "official_sources_archived",
-        "live_official_source_replayed"
-      ],
-      "custoContexto": "alto",
-      "dependenciaExterna": [
-        "login",
-        "rede"
-      ],
-      "riscoFabricacao": "nulo",
-      "reversibilidade": "parcial",
-      "confereDepois": [
-        "forja_regimentos.py",
-        "source_excerpt_hash_match"
-      ],
-      "alimentaArtefatos": [
-        "sources_map",
-        "official_sources_archived",
-        "live_official_source_replayed"
-      ]
-    },
-    {
-      "id": "forja-pesquisa-jurisprudencia",
-      "origem": "projeto",
-      "adaptadaDe": [
-        "garimpo-tribunais",
-        "deep-research"
-      ],
-      "fases": [
-        "F5",
-        "F7"
-      ],
-      "alimenta": [
-        "source_ledger",
-        "citation_checklist"
-      ],
-      "custoContexto": "alto",
-      "dependenciaExterna": [
-        "rede",
-        "login"
-      ],
-      "riscoFabricacao": "alto",
-      "reversibilidade": "parcial",
-      "confereDepois": [
-        "quotes_compared",
-        "citation_coverage_complete",
-        "test_forja_citacoes.py"
-      ],
-      "alimentaArtefatos": [
-        "source_ledger",
-        "citation_checklist"
-      ]
-    },
-    {
-      "id": "forja-red-team",
-      "origem": "projeto",
-      "adaptadaDe": [
-        "diabob"
-      ],
-      "fases": [
         "F2",
         "F3",
         "F4",
-        "F6",
-        "F7"
-      ],
-      "alimenta": [
-        "risk_classification",
-        "adversarial_audit",
-        "adversarial_strategy",
-        "red_team_report"
-      ],
-      "custoContexto": "medio",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "alto",
-      "reversibilidade": "total",
-      "confereDepois": [
-        "red_team_completed",
-        "forja_adversarial_audit.py"
-      ],
-      "alimentaArtefatos": [
-        "risk_classification",
-        "adversarial_audit",
-        "adversarial_strategy",
-        "red_team_report"
-      ]
-    },
-    {
-      "id": "forja-revisao-cruzada",
-      "origem": "projeto",
-      "adaptadaDe": [
-        "codex-integrado",
-        "inteia-review-iterativo"
-      ],
-      "fases": [
-        "F6",
-        "F7"
-      ],
-      "alimenta": [
-        "cross_model_review_verified",
-        "familyAssurance"
-      ],
-      "custoContexto": "medio",
-      "dependenciaExterna": [
-        "credito_pago",
-        "rede"
-      ],
-      "riscoFabricacao": "alto",
-      "reversibilidade": "total",
-      "confereDepois": [
-        "recomposicao pelo orquestrador, nunca por declaracao"
-      ],
-      "nota": "rota conhecida, nao exclusiva: o gate exige a evidencia recomputavel, nao esta implementacao",
-      "alimentaArtefatos": [
-        "cross_model_review_verified",
-        "familyAssurance"
-      ]
-    },
-    {
-      "id": "forja-saida-humana",
-      "origem": "projeto",
-      "adaptadaDe": [
-        "revisar-anti-ia"
-      ],
-      "fases": [
+        "F5",
         "F6",
         "F7",
-        "F9"
-      ],
-      "alimenta": [
-        "human_voice_protocol_applied",
-        "anti_ai_style_passed",
-        "human_style_final_pass",
-        "email_human_style_passed"
-      ],
-      "custoContexto": "baixo",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "baixo",
-      "reversibilidade": "total",
-      "confereDepois": [
-        "forja_estilo_humano.py"
-      ],
-      "alimentaArtefatos": [
-        "human_voice_protocol_applied",
-        "anti_ai_style_passed",
-        "human_style_final_pass",
-        "email_human_style_passed"
-      ]
-    },
-    {
-      "id": "forja-adr",
-      "origem": "projeto",
-      "fases": [
-        "F0",
-        "F4",
-        "F7",
+        "F9",
         "F10",
         "transversal"
       ],
       "alimenta": [
-        "decisoes de metodo da fabrica"
-      ],
-      "custoContexto": "baixo",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "nulo",
-      "reversibilidade": "parcial",
-      "confereDepois": [
-        "revisao humana da ficha"
-      ],
-      "alimentaArtefatos": [
-        "decisoes de metodo da fabrica"
-      ]
-    },
-    {
-      "id": "forja-briefing-revisor",
-      "origem": "projeto",
-      "fases": [
-        "F4",
-        "F7"
-      ],
-      "alimenta": [
+        "document_index",
+        "coverage_ledger",
+        "chronology",
+        "question_tree",
+        "sources_map",
+        "official_sources_archived",
+        "live_official_source_replayed",
+        "source_ledger",
+        "citation_checklist",
+        "risk_classification",
+        "adversarial_audit",
+        "adversarial_strategy",
+        "red_team_report",
+        "cross_model_review_verified",
+        "familyAssurance",
+        "human_voice_protocol_applied",
+        "anti_ai_style_passed",
+        "human_style_final_pass",
+        "email_human_style_passed",
+        "decisoes de metodo da fabrica",
         "helena_opinion",
         "cicero_opinion",
-        "red_team_report"
-      ],
-      "custoContexto": "baixo",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "nulo",
-      "reversibilidade": "total",
-      "confereDepois": [
-        "forja_conselho.py"
-      ],
-      "alimentaArtefatos": [
-        "helena_opinion",
-        "cicero_opinion",
-        "red_team_report"
-      ]
-    },
-    {
-      "id": "forja-briefing-pesquisa",
-      "origem": "projeto",
-      "fases": [
-        "F5"
-      ],
-      "alimenta": [
-        "final_use_policy_recorded"
-      ],
-      "custoContexto": "baixo",
-      "dependenciaExterna": "nenhuma",
-      "riscoFabricacao": "nulo",
-      "reversibilidade": "total",
-      "confereDepois": [
-        "source_ledger"
-      ],
-      "alimentaArtefatos": [
-        "final_use_policy_recorded"
-      ]
-    },
-    {
-      "id": "forja-handoff-caso",
-      "origem": "projeto",
-      "fases": [
-        "F0",
-        "transversal"
-      ],
-      "alimenta": [
+        "final_use_policy_recorded",
         "case_manifest"
       ],
-      "custoContexto": "baixo",
+      "custoContexto": "variavel",
       "dependenciaExterna": "nenhuma",
       "riscoFabricacao": "nulo",
-      "reversibilidade": "parcial",
+      "reversibilidade": "total",
       "confereDepois": [
-        "mapping_valid"
+        "forja_skill_doctor.py",
+        "forja_skill_deploy.py --verificar"
       ],
       "alimentaArtefatos": [
+        "document_index",
+        "coverage_ledger",
+        "chronology",
+        "question_tree",
+        "sources_map",
+        "official_sources_archived",
+        "live_official_source_replayed",
+        "source_ledger",
+        "citation_checklist",
+        "risk_classification",
+        "adversarial_audit",
+        "adversarial_strategy",
+        "red_team_report",
+        "cross_model_review_verified",
+        "familyAssurance",
+        "human_voice_protocol_applied",
+        "anti_ai_style_passed",
+        "human_style_final_pass",
+        "email_human_style_passed",
+        "decisoes de metodo da fabrica",
+        "helena_opinion",
+        "cicero_opinion",
+        "final_use_policy_recorded",
         "case_manifest"
       ]
     },
@@ -566,7 +349,7 @@
         "F4",
         "F7"
       ],
-      "nota": "NAO e substituivel por forja-red-team: aquela e o protocolo das 9 perguntas por dentro, esta e o contraditorio por outra familia de modelo. Parecer e insumo interno de auditoria: propoe objecoes, nao afirma fatos; nao vai para a peca nem substitui o F7.",
+      "nota": "NAO e substituivel por forja: aquela e o protocolo das 9 perguntas por dentro, esta e o contraditorio por outra familia de modelo. Parecer e insumo interno de auditoria: propoe objecoes, nao afirma fatos; nao vai para a peca nem substitui o F7.",
       "estadoDoGate": "obrigatoriedade de protocolo, ainda nao verificada por gate. forja_conselho.py valida apenas Helena e Cicero.",
       "alimenta": [
         "red_team_report"
@@ -581,7 +364,7 @@
       "confereDepois": [
         "forja_adversarial_audit.py"
       ],
-      "complementaDe": "forja-red-team",
+      "complementaDe": "forja",
       "alimentaArtefatos": [
         "red_team_report"
       ]
@@ -623,7 +406,7 @@
       "fases": [
         "F7"
       ],
-      "nota": "preferir forja-revisao-cruzada, que amarra o protocolo ao contrato do run",
+      "nota": "preferir forja, que amarra o protocolo ao contrato do run",
       "alimenta": [
         "protocolo de revisao adversarial iterativa"
       ],
@@ -638,7 +421,7 @@
         "cross_model_review_verified"
       ],
       "status": "preterida",
-      "preferir": "forja-revisao-cruzada",
+      "preferir": "forja",
       "alimentaArtefatos": [
         "protocolo de revisao adversarial iterativa"
       ]
@@ -651,7 +434,7 @@
         "F7",
         "F9"
       ],
-      "nota": "preferir forja-saida-humana, que le a regua do forja_estilo_humano.py",
+      "nota": "preferir forja, que le a regua do forja_estilo_humano.py",
       "alimenta": [
         "anti_ai_style_passed"
       ],
@@ -663,7 +446,7 @@
         "forja_estilo_humano.py"
       ],
       "status": "preterida",
-      "preferir": "forja-saida-humana",
+      "preferir": "forja",
       "alimentaArtefatos": [
         "anti_ai_style_passed"
       ]
@@ -1107,7 +890,7 @@
         "browser-harness",
         "dogfood"
       ],
-      "motivo": "forja-campo-tribunais tem o perfil logado; fetch-rendered cobre o resto"
+      "motivo": "forja tem o perfil logado; fetch-rendered cobre o resto"
     },
     "juridicoDuplicado": {
       "skills": [
@@ -1145,7 +928,7 @@
         "freeze",
         "decisions"
       ],
-      "motivo": "cobertos por peticao-decisoes-incertas, forja-adr e o protocolo de escopo"
+      "motivo": "cobertos por peticao-decisoes-incertas, forja e o protocolo de escopo"
     },
     "coletaCampanha": {
       "skills": [

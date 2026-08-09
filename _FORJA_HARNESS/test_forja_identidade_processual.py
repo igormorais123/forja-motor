@@ -294,13 +294,62 @@ def test_s7_acusa_tema_fora_do_objeto():
 
 def test_s6_s7_sem_declaracao_nao_opinam():
     # A regra da casa: caso não declarado fica indeterminado, nunca reprovado
-    # por ausência. São 52 casos sem declaração — o contrário travaria todos.
+    # por ausência. São 92 casos sem declaração — o contrário travaria todos.
     from forja_identidade_processual import (
         gate_s6_identidade_do_ato, gate_s7_objeto_devolvido)
-    for decl in ({}, None, {"cliente": {"nome": "X", "papel": "agravada"}}):
+    for decl in ({}, None):
         assert gate_s6_identidade_do_ato(TEXTO_COM_ERRO, decl) == []
         assert gate_s7_objeto_devolvido(TEXTO_COM_ERRO, decl) == []
-    print("✓ S6 e S7 não opinam sem os blocos declarados")
+    print("✓ S6 e S7 não opinam sem declaração nenhuma")
+
+
+def test_declaracao_sem_o_bloco_avisa_que_nao_conferiu():
+    """`não conferido` não é `sem pendência` — a distinção dos anexos, aqui.
+
+    Antes de 09/08/2026 estes dois devolviam lista vazia, indistinguível de
+    "conferi e está limpo". Medido no dia: **um** caso em 93 tem declaração e
+    **nenhum** preenche os blocos, ou seja, os gates nunca opinaram sobre nada
+    e ninguém sabia. É P1, aviso, e não P0: ausência não vira reprovação.
+    """
+    from forja_identidade_processual import (
+        gate_s6_identidade_do_ato, gate_s7_objeto_devolvido)
+    decl = {"cliente": {"nome": "X", "papel": "agravada"}}
+    for gate, bloco in ((gate_s6_identidade_do_ato, "atos"),
+                        (gate_s7_objeto_devolvido, "objeto.excluidos")):
+        achados = gate(TEXTO_COM_ERRO, decl)
+        assert len(achados) == 1, f"{bloco}: esperava um aviso, veio {achados}"
+        assert achados[0]["sev"] == "P1", "ausência de bloco não pode ser P0"
+        assert "NAO_CONFERIDO" in achados[0]["gate"]
+        assert bloco in achados[0]["problema"]
+    print("✓ declaração sem o bloco avisa que não conferiu, sem reprovar")
+
+
+def test_cobertura_conta_a_populacao_real():
+    """A contraparte afirmativa: gate que só procura defeito não detecta pobreza."""
+    import json
+    import tempfile
+    from pathlib import Path
+    from forja_identidade_processual import cobertura
+
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        def caso(nome, decl=None):
+            d = base / nome
+            (d / "n4_artifacts").mkdir(parents=True)
+            if decl is not None:
+                (d / "n4_artifacts" / "F2_IDENTIDADE_PROCESSUAL.json").write_text(
+                    json.dumps(decl), encoding="utf-8")
+        caso("case-sem-declaracao")
+        caso("case-declarado-vazio", {"cliente": {"nome": "X"}})
+        caso("case-completo", DECL_ATOS)
+        c = cobertura(base)
+
+    assert c["casos"] == 3
+    assert c["comDeclaracao"] == 2
+    assert c["comAtos"] == 1 and c["comObjetoExcluidos"] == 1
+    assert c["declaradosSemBloco"] == ["case-declarado-vazio"], (
+        "o caso sem declaração não entra na lista: ele não prometeu nada")
+    print("✓ cobertura separa quem não declarou de quem declarou pela metade")
 
 
 def main():
@@ -309,6 +358,8 @@ def main():
         test_s6_nao_acusa_o_que_foi_declarado()
         test_s7_acusa_tema_fora_do_objeto()
         test_s6_s7_sem_declaracao_nao_opinam()
+        test_declaracao_sem_o_bloco_avisa_que_nao_conferiu()
+        test_cobertura_conta_a_populacao_real()
         test_s2_sem_declaracao()
         test_s4_sem_declaracao()
         test_s2_com_declaracao_valida_no_texto()

@@ -1,14 +1,16 @@
 ---
 name: forja
-description: Use para orientar-se, inspecionar estado e descobrir comandos da FORJA sem contornar gates jurídicos ou humanos.
+description: Ficha portátil da esteira FORJA - orientar-se, inspecionar o estado de um caso e descobrir o comando canônico sem contornar gate jurídico ou humano. Use ao trabalhar qualquer caso da fábrica de petições ou ao mexer no harness, e abra a skill completa `forja` para as onze fases, os gates e as ordens invioláveis.
 ---
 
 # FORJA
 
 > **Esta é a ficha portátil, e ela cobre só a navegação de estado.** A skill completa da
 > esteira — as onze fases, os artefatos, os gates, as ordens invioláveis e a esteira
-> visual — vive em `.claude/skills/forja/`, na raiz da fábrica. Se o seu agente lê
-> aquela pasta, comece por lá; esta ficha existe para quem não lê.
+> visual — vive em `.claude/skills/forja/`, na raiz da fábrica, e é espalhada para os
+> carregadores globais por `python _FORJA_HARNESS/forja_skill_deploy.py`. Neste PC o Codex
+> a encontra em `~/.agents/skills/forja/`. Comece por lá; esta ficha existe para o agente
+> que só enxerga a pasta do harness.
 
 Comece pela home viva e econômica:
 

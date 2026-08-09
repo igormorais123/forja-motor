@@ -8,9 +8,9 @@
 
 | Situação | Skill |
 |---|---|
-| Vou propor mudança de método, gate ou pipeline | `forja-adr` |
-| Vou acionar qualquer revisor independente | `forja-briefing-revisor` |
-| Vou passar o caso para outra sessão ou agente | `forja-handoff-caso` |
+| Vou propor mudança de método, gate ou pipeline | `forja` (registro de decisões (ADR)) |
+| Vou acionar qualquer revisor independente | `forja` (briefing do revisor) |
+| Vou passar o caso para outra sessão ou agente | `forja` (handoff entre sessões) |
 | Vou mudar prompt ou template e chamar isso de melhoria | `autoresearch` |
 | Quero auditar a esteira como sistema | `harness-engineering` |
 | Um gate aprovou o que não devia | `anti-trapaca-evaluator` |
@@ -22,7 +22,7 @@
 
 ## Fichas
 
-### `forja-adr` — projeto
+### registro de decisões (ADR) — dentro da skill `forja`
 
 - **Faz:** registra e consulta decisões de arquitetura e método da fábrica em fichas curtas e numeradas, **inclusive as rejeitadas**.
 - **Entra em:** F0, F2, F4, F7 e F10 — qualquer ponto onde se decide como a fábrica trabalha.
@@ -32,7 +32,7 @@
 - **Diferencial:** ADR registra decisão da fábrica; decisão sobre uma peça específica fica no relatório de melhorias do caso.
 - **Marcadores:** contexto `baixo` · dependência `nenhuma` · fabricação `nulo` · reversibilidade `parcial` · confere depois: revisão humana da ficha.
 
-### `forja-briefing-revisor` — projeto
+### briefing do revisor — dentro da skill `forja`
 
 - **Faz:** monta o briefing do revisor independente de modo que ele não receba pronta a conclusão de quem construiu.
 - **Entra em:** F4 (conselho), F7 (red team e revisão cruzada), e qualquer segunda opinião sobre gate ou arquitetura.
@@ -42,7 +42,7 @@
 - **Diferencial:** rege a **montagem** do briefing; o `forja_conselho.py` valida o parecer depois de pronto. São coisas diferentes e ambas necessárias.
 - **Marcadores:** contexto `baixo` · dependência `nenhuma` · fabricação `nulo` · reversibilidade `total` · confere depois: `forja_conselho.py`.
 
-### `forja-handoff-caso` — projeto
+### handoff entre sessões — dentro da skill `forja`
 
 - **Faz:** monta o pacote de continuidade do caso entre sessões e entre agentes.
 - **Entra em:** F0 e o fim de qualquer sessão longa.
@@ -118,11 +118,11 @@ contra as 402 skills instaladas e **rejeitadas com motivo**:
 | Família | Exemplos | Motivo |
 |---|---|---|
 | Diagramação genérica | `paperbanana-diagramas`, `visual-thinking`, `visual-law-inteia`, `dataviz`, `data-visualization`, `archify` | Produzem figura fora da identidade Medina Osório e sem os gates de legibilidade, overflow e colisão do `medina_svg_kit.py`. `archify` ainda serve para documentar o harness, mas não gera EMF e não entra em peça. |
-| Navegador redundante | `browse`, `gstack`, `playwright-cli`, `browser-harness`, `dogfood` | Quatro rotas para a mesma coisa. `forja-campo-tribunais` tem o perfil logado que os portais exigem; `fetch-rendered` cobre o resto. |
+| Navegador redundante | `browse`, `gstack`, `playwright-cli`, `browser-harness`, `dogfood` | Quatro rotas para a mesma coisa. `forja` (conferência ao vivo nos tribunais) tem o perfil logado que os portais exigem; `fetch-rendered` cobre o resto. |
 | Jurídico duplicado | `themis-nomos`, `colmeia-juridico-peticoes`, `osa-themis-juridico`, `ciceromini`, `helenamini` | `cicero` e `advogado-sobrehumano` cobrem com mais profundidade e já são os nomes que o protocolo cita. |
 | UI e frontend | `impeccable`, `ui-ux-pro-max`, `interface-design`, `refactoring-ui`, `frontend-design`, `ux-heuristics`, `design-dna`, `omni-figma` | A FORJA entrega Word e PDF. Não há interface. |
 | Planejamento paralelo | a família `gsd-*` (cerca de 70 skills) | A FORJA já tem contrato de fase (F0–F10), ADR e fila. Duas máquinas de planejamento produzem gate que ninguém percorre. |
-| Segurança de sessão | `careful`, `guard`, `freeze`, `decisions` | Cobertos por `peticao-decisoes-incertas`, `forja-adr` e pelo protocolo de escopo. |
+| Segurança de sessão | `careful`, `guard`, `freeze`, `decisions` | Cobertos por `peticao-decisoes-incertas`, `forja` (registro de decisões (ADR)) e pelo protocolo de escopo. |
 | Coleta e campanha | as 11 skills `apify-*`, eleitorais, Mirante, finanças, mídia, voz e vídeo | Nada disso toca peça. |
 
 **Duas em observação, não adotadas:**

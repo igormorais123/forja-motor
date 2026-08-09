@@ -148,6 +148,20 @@ checar("ela cita um número plausível de scripts",
        real.get("conferidos", {}).get("scriptsCitados", 0) >= 25,
        f"citou {real.get('conferidos', {}).get('scriptsCitados')}")
 
+# --- e as cópias que os quatro carregadores leem ----------------------------
+# A canônica correta não serve de nada se o Claude, o Codex, o Cursor e o Hermes
+# estiverem lendo uma versão de três semanas atrás. A cópia envelhece em
+# silêncio: é o modo de falha que o próprio deploy existe para evitar, e sem
+# esta aferição ninguém saberia qual das cinco está certa.
+import forja_skill_deploy as deploy  # noqa: E402
+
+d = deploy.espalhar(apenas_verificar=True)
+atrasadas = [x["destino"] for x in d.get("destinos", []) if not x["emDia"]]
+checar("as cópias dos quatro carregadores estão em dia com a canônica",
+       d.get("ok") is True,
+       "desatualizadas: " + ", ".join(atrasadas) +
+       " — rode `python forja_skill_deploy.py`" if atrasadas else str(d)[:200])
+
 if falhas:
     print(f"REGRESSÃO: {falhas} de {casos} casos falharam")
     raise SystemExit(1)

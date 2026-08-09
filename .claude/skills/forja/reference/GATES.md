@@ -14,7 +14,7 @@
 - [As 29 famílias](#as-29-famílias)
 - [As famílias que você mais vai encontrar](#as-famílias-que-você-mais-vai-encontrar)
 - [O que cada gate não prova](#o-que-cada-gate-não-prova)
-- [Gates citados na documentação que não existem no código](#gates-citados-na-documentação-que-não-existem-no-código)
+- [S6 e S7: existem, e nunca opinaram sobre caso nenhum](#s6-e-s7-existem-e-nunca-opinaram-sobre-caso-nenhum)
 
 ## Como ler um finding
 
@@ -156,22 +156,36 @@ inteiramente de quem a conduz.
 Corolário para o dia a dia: quando alguém disser "passou em todos os gates", a pergunta
 seguinte é **quais**, e a de depois é o que aqueles gates medem.
 
-## Gates citados na documentação que não existem no código
+## S6 e S7: existem, e nunca opinaram sobre caso nenhum
 
-Conferido no disco em 09/08/2026. **Não tente rodar estes:**
+Esta seção afirmou, em 09/08/2026, que os gates **S6** e **S7** citados no `CLAUDE.md`
+não existiam em lugar nenhum. **A afirmação era falsa** e sobreviveu poucas horas: os
+dois estão em `forja_identidade_processual.py` desde 06/08/2026, são chamados por
+`forja_verificador.py` e têm quatro regressões próprias. O `grep` que os encontra custa
+segundos — o mesmo que a Lição 296, uma entrada acima, manda dar antes de atribuir
+implementação a requisito.
 
-<!-- doctor:ignora -->
-| Citado como | Onde aparece | Estado real |
-|---|---|---|
-| gates **S6** e **S7** | `CLAUDE.md`, seção "Regra escrita que não pega vira gate" | **não implementados.** O código de `forja_identidade_processual.py` tem `S2-pareamento-nome-papel`, `S4-direcao-no-requerimento` e `S4-presenca-direcao`; `S5-sobreabstracao` está no verificador. S6 e S7 não existem em lugar nenhum |
-<!-- /doctor:ignora -->
+O que a medição mostrou no lugar é pior e mais útil:
 
-A ironia merece registro, porque ela é a lição: a seção que criou S6 e S7 argumenta que
-**instrução escrita disputa atenção com o resto do prompt e perde**, e que por isso a
-regra precisava virar gate verificável. A regra virou texto sobre virar gate. Enquanto
-S6 e S7 não existirem, a identidade dos atos recursais e o objeto devolvido continuam
-dependendo de quem conduz a fase — que é exatamente a condição em que a casa já os viu
-serem violados em dois clientes e dois tribunais.
+| | medido em 09/08/2026 |
+|---|---|
+| casos em `state/` | 93 |
+| com declaração de identidade processual | **1** |
+| com o bloco `atos`, de que o S6 depende | **0** |
+| com `objeto.excluidos`, de que o S7 depende | **0** |
+
+Os dois gates funcionam, estão na rota e **nunca tiveram sobre o que opinar**. É a
+Lição 87 — gate instalado na rota que ninguém percorre —, agravada porque devolviam
+lista vazia, indistinguível de "conferi e está limpo". Desde 09/08 a declaração que
+existe sem o bloco recebe **P1 `..._NAO_CONFERIDO`**, aviso e não reprovação, e
+`python _FORJA_HARNESS\forja_identidade_processual.py --cobertura` mostra a população.
+Caso que não declarou nada continua em silêncio: ausência de declaração nunca vira
+veredito.
+
+A conclusão original permanece de pé por outro caminho: enquanto ninguém preencher
+`atos` e `objeto`, a identidade dos atos recursais e o objeto devolvido continuam
+dependendo de quem conduz a fase — a condição em que a casa já os viu violados em dois
+clientes e dois tribunais. **A regra virou gate; o gate ainda não virou hábito.**
 
 **Antes de citar um gate por memória, procure o identificador no código.** Uma varredura
 que custa segundos:

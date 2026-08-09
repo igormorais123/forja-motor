@@ -34,8 +34,8 @@ afrouxa:
 | `fabrica-visual-peticoes` | F8 | "invocar em toda peça"; rege protocolo e pipeline visual |
 | `padrao-visual-medina` | F6 (estrutura) e F8 | "referência visual OBRIGATÓRIA de toda petição" |
 
-**O Diabob não é a mesma coisa que `forja-red-team`, e uma não substitui a outra.** A
-`forja-red-team` é o protocolo das nove perguntas, conduzido por dentro. O Diabob é o
+**O Diabob não é a mesma coisa que `forja` (red team das nove perguntas), e uma não substitui a outra.** A
+`forja` (red team das nove perguntas) é o protocolo das nove perguntas, conduzido por dentro. O Diabob é o
 contraditório por **outra família de modelo** — Grok 4.5, uma terceira família ao lado
 de Claude e Codex. O motivo está escrito no próprio executor: red team feito pelo mesmo
 modelo que produziu a análise repete os pontos cegos com voz mais dura. Nomear o modelo
@@ -134,13 +134,13 @@ escritório, vocabulário fechado de bloqueio, gates S6 e S7, `familyAssurance`)
 
 | Skill adaptada | Origem genérica | Fase |
 |---|---|---|
-| `forja-ingestao-autos` | `pdf`, `docx` | F1 |
-| `forja-exploracao-problema` | `problem-solving-vila` | F2 / F2A |
-| `forja-campo-tribunais` | `testar-navegador` | F1, F3, F5, F7 |
-| `forja-pesquisa-jurisprudencia` | `garimpo-tribunais`, `deep-research` | F5 |
-| `forja-red-team` | `diabob` | F4, F7 |
-| `forja-revisao-cruzada` | `codex-integrado`, `inteia-review-iterativo` | F7 |
-| `forja-saida-humana` | `revisar-anti-ia` | F6, F7, F9 |
+| `forja` (ingestão dos autos) | `pdf`, `docx` | F1 |
+| `forja` (exploração do problema) | `problem-solving-vila` | F2 / F2A |
+| `forja` (conferência ao vivo nos tribunais) | `testar-navegador` | F1, F3, F5, F7 |
+| `forja` (pesquisa de jurisprudência) | `garimpo-tribunais`, `deep-research` | F5 |
+| `forja` (red team das nove perguntas) | `diabob` | F4, F7 |
+| `forja` (revisão cruzada entre famílias) | `codex-integrado`, `inteia-review-iterativo` | F7 |
+| `forja` (saída com voz humana) | `revisar-anti-ia` | F6, F7, F9 |
 
 As versões genéricas continuam disponíveis e são citadas nas fichas quando o caso sai
 do escopo da fábrica.
