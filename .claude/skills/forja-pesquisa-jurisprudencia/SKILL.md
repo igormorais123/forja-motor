@@ -10,6 +10,10 @@ metadata:
 
 # Pesquisa de jurisprudência — F5
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 ## A ordem não é opcional
 
 Diretriz nº 28, transmitida pelo Dr. Alessandro em 28/07/2026. Percorra **nesta ordem**

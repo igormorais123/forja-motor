@@ -11,6 +11,10 @@ metadata:
 
 # Exploração do problema — F2A
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 Inviolável desde 14/07/2026. Todo caso novo recebido por e-mail, WhatsApp ou comando
 manual passa por aqui **depois de F1 e antes** de pesquisa, conselho, blueprint ou
 redação.

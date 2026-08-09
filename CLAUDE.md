@@ -362,10 +362,18 @@ prevalecendo. As únicas skills obrigatórias continuam sendo `/helena` e `/cice
 **Leia só a fase corrente.** As fichas se repetem em cada fase onde a skill serve — a
 redundância é deliberada, para que o agente de F7 não abra o documento de F1.
 
-Sete skills foram copiadas e adaptadas à fábrica, em `.claude\skills\`:
-`forja-ingestao-autos`, `forja-exploracao-problema`, `forja-campo-tribunais`,
-`forja-pesquisa-jurisprudencia`, `forja-red-team`, `forja-revisao-cruzada` e
-`forja-saida-humana`. Elas **chamam** os scripts da casa e não substituem nenhum; onde
-houver conflito entre skill e script, vale o script.
+**A porta da esteira é a skill `forja` (09/08/2026 — ordem do Igor).** Ela traz a FORJA
+inteira num lugar só: as onze fases com artefatos e gates, os comandos literais, as
+ordens invioláveis, a esteira visual, os modelos autorizados e as armadilhas com o caso
+real atrás de cada uma. Foi criada porque o agente não abria a pasta — e skill que o
+agente não lê no ponto certo é skill que não existe. Ela se confere sozinha contra o
+disco: `python _FORJA_HARNESS\forja_skill_doctor.py`, com regressão no baseline.
+
+As onze fichas de fase em `.claude\skills\` — `forja-ingestao-autos`,
+`forja-exploracao-problema`, `forja-campo-tribunais`, `forja-pesquisa-jurisprudencia`,
+`forja-red-team`, `forja-revisao-cruzada`, `forja-saida-humana`, `forja-adr`,
+`forja-briefing-pesquisa`, `forja-briefing-revisor` e `forja-handoff-caso` — continuam
+existindo e agora apontam para a porta. Elas **chamam** os scripts da casa e não
+substituem nenhum; onde houver conflito entre skill e script, vale o script.
 
 Detalhe e motivação: § 28 de `_FORJA_HARNESS\DOCUMENTACAO_TECNICA.md`.

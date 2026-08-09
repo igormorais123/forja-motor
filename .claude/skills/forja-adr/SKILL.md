@@ -10,6 +10,10 @@ metadata:
 
 # Registro de decisões da fábrica
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 Existe porque esta casa já pagou por não ter: o conselho de personas recomendou arquitetura que havia sido rejeitada, e as rejeições vivem hoje em prosa espalhada por planos, retrospectivas e no CLAUDE.md — legíveis para quem já sabe, invisíveis para quem chega.
 
 Local: `_FORJA_HARNESS/decisoes/NNNN-slug.md`. Numeração sequencial, sem reaproveitar número.

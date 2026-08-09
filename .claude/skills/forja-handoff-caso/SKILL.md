@@ -11,6 +11,10 @@ metadata:
 
 # Handoff de caso
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 Escreva o que permite a um agente sem nenhuma memória desta sessão continuar o caso sem perguntar, sem redescobrir e sem repetir erro caro. A revisão cruzada entre famílias depende disto: revisor que precisa reconstruir o caso do zero gasta a rodada reconstruindo em vez de revisando.
 
 ## Princípios

@@ -10,6 +10,10 @@ metadata:
 
 # Ingestão dos autos — F1
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 Esta skill **não substitui** as skills `pdf` e `docx`: ela as usa. O que ela acrescenta
 é o que a versão genérica não sabe — que o resultado da leitura é um artefato de fase
 com regras próprias.

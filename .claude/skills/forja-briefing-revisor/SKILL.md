@@ -10,6 +10,10 @@ metadata:
 
 # Briefing de revisor independente
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 Existe por uma falha medida nesta casa (lição 87-99 de `_FORJA_HARNESS/RETROSPECTIVAS.md`): o conselho leu o dossiê do construtor, recomendou arquitetura já rejeitada e citou função inexistente. Quem constrói escreveu o gate, mediu com ele e se aprovou. A circularidade só quebrou quando a outra família de modelo leu a fonte primária em vez do resumo.
 
 O revisor não é independente por ser outro modelo. É independente pelo que o briefing **não** contém.

@@ -11,6 +11,10 @@ metadata:
 
 # Saída humana — estilo antes do gate
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 ## Uma régua só
 
 O `forja_estilo_humano.py` é quem bloqueia. Esta skill **não cria segunda régua** — ela

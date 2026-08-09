@@ -63,6 +63,11 @@ SUITES_SCRIPT = {
         "gate de aceite dos critérios que o titular escreveu no e-mail: exige prova de "
         "quem afirma ter concluído, e recusa destaque de margem cortado no meio de "
         "citação legal"),
+    "test_forja_skill.py": (
+        "a skill da FORJA ainda descreve a FORJA que existe: todo script, contrato e "
+        "referência que ela manda usar está no disco — porque skill é documentação que "
+        "o agente segue sem conferir a fonte, e envelhecer aqui manda gente rodar "
+        "comando que não existe"),
     "test_forja_codigo_morto.py": (
         "a poda de código morto não encosta em import protegido, em código nem na "
         "quebra de linha do arquivo — e entrada declarada fora do repositório, "

@@ -10,6 +10,10 @@ metadata:
 
 # Briefing de pesquisa jurídica
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 O erro mais caro medido nas entregas reais não foi não achar julgado — foi achar e atribuir errado: frase real colada no precedente errado, nota de rodapé não localizável, tese confundida com *obiter dictum*. Briefing frouxo produz pesquisa que para no primeiro resultado plausível.
 
 Meta: **um parágrafo** que alguém sem nenhum contexto do caso executa sem fazer uma única pergunta de volta.

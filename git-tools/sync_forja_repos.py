@@ -154,6 +154,69 @@ def levantar() -> tuple[dict[str, list[tuple[Path, str]]], list[tuple[str, int]]
     return por_destino, grandes
 
 
+def estado_no_git(rels: list[str]) -> tuple[set[str], set[str], str | None]:
+    """Como a pasta de trabalho enxerga cada arquivo. (ignorados, novos, indisponível).
+
+    Por que existe. Esta rotina copia da **pasta de trabalho**, não do índice do
+    Git, e é a decisão certa: os ledgers de evento do acervo nascem a cada
+    execução e nunca estariam commitados na hora da sincronização — exigir
+    rastreamento pararia a publicação da cadeia de auditoria toda noite. O preço
+    era o silêncio: em 09/08/2026 um script que outra sessão ainda estava
+    escrevendo foi deliberadamente deixado fora do commit local e mesmo assim
+    subiu ao motor, porque a prudência do commit não se transferia para a
+    publicação.
+
+    São dois casos com respostas diferentes, e colapsá-los seria repetir o erro
+    da lição 295 — o gate que não sabe decidir escolhendo a resposta mais cara:
+
+    `ignorados`  alguém escreveu no `.gitignore` que aquilo não é para
+                 versionar. É declaração humana explícita, e publicar contra ela
+                 é contrariar quem declarou. **Não vão.** Medido em 09/08/2026
+                 eram 27 arquivos, todos documentação de dependência de terceiro
+                 copiada para dentro de uma pasta de caso.
+    `novos`      arquivo que existe e ainda não foi commitado. É o estado normal
+                 de quem trabalha; a resposta é **declarar**, não barrar.
+
+    Sem Git disponível, ou fora de repositório, devolve conjuntos vazios e o
+    motivo. A publicação segue — degradar aberto é o certo aqui, porque a
+    alternativa é a sincronização das 20:00 parar por uma conferência auxiliar —,
+    mas o laudo diz que não foi possível conferir.
+    """
+    def git(*args, entrada: bytes | None = None):
+        return subprocess.run(["git", "-C", str(TRABALHO), *args],
+                              input=entrada, capture_output=True)
+
+    try:
+        r = git("ls-files", "-z")
+    except OSError as e:
+        return set(), set(), f"git indisponível ({e.__class__.__name__})"
+    if r.returncode != 0:
+        return set(), set(), "a pasta de trabalho não é um repositório Git"
+
+    rastreados = set(r.stdout.decode("utf-8", "replace").split("\0")) - {""}
+    novos = sorted(set(rels) - rastreados)
+    if not novos:
+        return set(), set(), None
+
+    ign = git("check-ignore", "--stdin", "-z", entrada="\0".join(novos).encode())
+    # 0 = ignorou algum, 1 = nenhum ignorado. Qualquer outro código é erro real.
+    if ign.returncode not in (0, 1):
+        return set(), set(novos), "não foi possível consultar o .gitignore"
+    ignorados = set(ign.stdout.decode("utf-8", "replace").split("\0")) - {""}
+    return ignorados, set(novos) - ignorados, None
+
+
+def fora_da_publicacao(ignorados: set[str], novos: set[str],
+                       so_rastreados: bool) -> set[str]:
+    """Quem fica de fora. Regra em uma função só, para poder ser testada.
+
+    O ignorado sempre fica: é exclusão declarada por uma pessoa no `.gitignore`.
+    O novo só fica com `--so-rastreados`, porque no dia a dia ele é o ledger de
+    evento recém-escrito, não descuido.
+    """
+    return set(ignorados) | (set(novos) if so_rastreados else set())
+
+
 def espelhar(itens: list[tuple[Path, str]], repo: Path, seco: bool) -> tuple[int, int]:
     """Copia o que mudou e apaga o que sumiu. Devolve (copiados, removidos)."""
     esperados = {(repo / rel).resolve() for _, rel in itens}
@@ -293,6 +356,9 @@ def main(argv=None) -> int:
                     help="publica mesmo com a fronteira reprovada (só para diagnóstico)")
     ap.add_argument("--sem-anonimizar", action="store_true",
                     help="não troca nome de cliente por pseudônimo antes do gate")
+    ap.add_argument("--so-rastreados", action="store_true",
+                    help="publica apenas o que já está rastreado no Git da pasta de "
+                         "trabalho; o que ainda não foi commitado fica de fora")
     args = ap.parse_args(argv)
 
     if hasattr(sys.stdout, "reconfigure"):
@@ -344,6 +410,52 @@ def main(argv=None) -> int:
         print("AVISO: publicando com a fronteira reprovada, por --sem-gate.")
 
     por_destino, grandes = levantar()
+
+    # O que a pasta de trabalho diz sobre cada arquivo. Ver `estado_no_git`.
+    todos_rel = [rel for itens in por_destino.values() for _, rel in itens]
+    ignorados, novos, indisponivel = estado_no_git(todos_rel)
+    fora = fora_da_publicacao(ignorados, novos, args.so_rastreados)
+    if fora:
+        for destino in por_destino:
+            por_destino[destino] = [(p, r) for p, r in por_destino[destino]
+                                    if r not in fora]
+
+    nota_git: list[str] = []
+    if indisponivel:
+        print(f"AVISO: não foi possível conferir o estado no Git — {indisponivel}. "
+              "Tudo o que a fronteira aprovou foi publicado.")
+        nota_git = ["", f"**Estado no Git não conferido**: {indisponivel}. "
+                    "Publicou-se tudo o que a fronteira aprovou."]
+    else:
+        if ignorados:
+            print(f"{len(ignorados)} arquivo(s) ignorados pelo .gitignore da pasta de "
+                  "trabalho ficaram fora da publicação")
+            for rel in sorted(ignorados)[:5]:
+                print(f"  [ignorado] {rel}")
+        if novos:
+            verbo = "ficaram fora por --so-rastreados" if args.so_rastreados else \
+                    "ainda não estão commitados e mesmo assim foram publicados"
+            print(f"{len(novos)} arquivo(s) {verbo}")
+            for rel in sorted(novos)[:5]:
+                print(f"  [novo] {rel}")
+        if ignorados or novos:
+            nota_git = ["", "| estado na pasta de trabalho | arquivos | destino |",
+                        "|---|---|---|"]
+            if ignorados:
+                nota_git.append(f"| ignorado pelo `.gitignore` | {len(ignorados)} | "
+                                "**não publicado** — a exclusão é declaração humana |")
+            if novos:
+                nota_git.append(
+                    f"| existe, ainda não commitado | {len(novos)} | "
+                    + ("**não publicado** — `--so-rastreados` |" if args.so_rastreados
+                       else "publicado, e declarado aqui |"))
+            if novos and not args.so_rastreados:
+                nota_git += ["", "Publicar o não commitado é deliberado: os ledgers de "
+                             "evento do acervo nascem a cada execução e nunca estariam "
+                             "commitados na hora da sincronização. O que não pode é "
+                             "acontecer em silêncio. Para uma publicação estrita, "
+                             "`--so-rastreados`."]
+
     falhou = False
     resumo: list[str] = ["| destino | arquivos | copiados | removidos | resultado |",
                          "|---|---|---|---|---|"]
@@ -378,7 +490,7 @@ def main(argv=None) -> int:
                    "`ARTEFATOS_FORA_DO_REPOSITORIO.json` na raiz de cada repositório."]
     if not args.seco:
         registrar_estado("FALHA ao publicar" if falhou else "OK",
-                         resumo + ["",
+                         resumo + nota_git + ["",
                                    f"Fronteira em modo `{laudo['modo']}`."
                                    + ("" if laudo["modo"] == "nominal" else
                                       " **Sem a lista de nomes do acervo**: o gate "

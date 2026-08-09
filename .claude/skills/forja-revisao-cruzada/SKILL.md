@@ -10,6 +10,10 @@ metadata:
 
 # Revisão cruzada entre famílias — gate de produção
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 ## A regra
 
 O trabalho pode nascer no Claude ou no Codex, mas **a outra família revisa**. O contrato

@@ -9,6 +9,10 @@ metadata:
 
 # Campo — fontes oficiais e portais
 
+> **A porta da esteira é a skill `forja`.** Ela traz o fluxo inteiro, de F0 a F10, os
+> comandos, os gates e as ordens invioláveis. Esta ficha detalha um ponto do caminho e
+> pressupõe aquela leitura — abra-a primeiro se você chegou aqui sem contexto.
+
 Chrome real com perfil persistente (`scraping`). Esta é a rota para o que exige sessão
 autenticada e para as fontes que não respondem a busca simples.
 
