@@ -264,6 +264,27 @@ ROTAS: dict[str, dict] = {
         "probe": None,
         "verificadoEm": "2026-08-08",
     },
+    "pdf-imagem-ocr-local": {
+        "fonte": "AUTOS",
+        "tipoDocumento": "pdf sem camada textual",
+        "serve": True,
+        "local": True,
+        "url": "PyMuPDF, page.get_textpage_ocr(language='por', dpi=300, full=True)",
+        "chaves": {"language": "por", "dpi": "300 para acórdão; 200 basta para ofício"},
+        "armadilha": (
+            "esta rota existe porque a sua ausência já produziu bloqueio falso. "
+            "Extração linear devolvendo zero caractere prova que o PDF é imagem, "
+            "e NÃO prova que o documento é ilegível: o OCR está na mesma "
+            "biblioteca que acusou o zero, sem instalação nova nem custo. Em "
+            "76 páginas de paradigmas do STJ, o registro anterior escreveu "
+            "'exige OCR ou leitura visual, antes de qualquer citação' e tratou "
+            "isso como impedimento, quando era a rota. Duas cautelas reais: "
+            "abrir o documento pelo caminho absoluto, porque o objeto de página "
+            "morre se o Document sair de escopo, e declarar a página que o OCR "
+            "não conseguir ler em vez de deixá-la sair vazia e silenciosa"),
+        "probe": None,
+        "verificadoEm": "2026-08-09",
+    },
 }
 
 
