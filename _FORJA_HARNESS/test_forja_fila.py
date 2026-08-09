@@ -37,9 +37,18 @@ def demanda(**kw):
 
 # ---------- DEVE_PEGAR ----------
 
-# 1. anexos externos pendentes -> bloqueada_acesso
-cat, _ = classificar_prontidao(demanda(anexos={"externosPendentes": True}), None)
-caso("D1 anexos externos pendentes -> bloqueada_acesso", "bloqueada_acesso", cat)
+# 1. anexo externo CONFERIDO e ainda não obtido -> bloqueada_acesso
+#
+# Este caso mudou em 09/08/2026, e a versão anterior dele era o defeito: ela
+# afirmava que `externosPendentes: True` sozinho bastava para bloquear. Esse
+# campo nasce `True` por padrão em toda demanda criada automaticamente e nunca
+# é desligado — 75 das 84 demandas o carregavam, 53 delas já entregues, e as 22
+# abertas eram a fila inteira de bloqueios. O teste passava e o sistema mentia.
+# Bloquear agora exige declaração explícita de quem conferiu.
+cat, _ = classificar_prontidao(
+    demanda(anexos={"externosPendentes": True, "conferencia": "pendente",
+                    "observacao": "link do Drive sem permissão de leitura"}), None)
+caso("D1 anexo externo conferido e não obtido -> bloqueada_acesso", "bloqueada_acesso", cat)
 
 # 2. COMANDO_AUSENTE no F0 -> bloqueada_comando
 cat, _ = classificar_prontidao(demanda(), {"gates": [{"code": "COMANDO_AUSENTE", "severity": "P0"}]})
@@ -80,6 +89,47 @@ caso("D8 pronta_para_revisao -> aguardando_revisao_humana", "aguardando_revisao_
 
 # ---------- NÃO_PODE_TRAVAR ----------
 
+# O default de ingestão não é constatação: `externosPendentes: True` com a
+# observação da criação automática significa "ninguém olhou", e não conferir é
+# trabalho de triagem, não impedimento. Foi a confusão entre as duas coisas que
+# manteve 22 casos fora da fila, dois deles com prazo já vencido.
+from forja_fila import conferencia_de_anexos  # noqa: E402
+
+_default_ingestao = {"diretosBaixados": 0, "diretosEsperados": None,
+                     "externosPendentes": True,
+                     "observacao": "Criado automaticamente; anexos ainda precisam ser conferidos."}
+cat, motivo = classificar_prontidao(demanda(anexos=_default_ingestao), None)
+caso("N16 default de ingestão não bloqueia", "pronta", cat)
+caso("N16b e a falta de conferência continua dita", True, "não conferidos" in motivo)
+caso("N16c default de ingestão = nao_conferido", "nao_conferido",
+     conferencia_de_anexos(_default_ingestao))
+
+# O relatório de download dos anexos diretos também não é constatação sobre
+# links externos: era o texto de 15 dos 22 bloqueados, e diz o contrário do
+# bloqueio — que tudo o que veio anexado foi baixado.
+_baixou_tudo = {"diretosBaixados": 4, "diretosEsperados": 4, "externosPendentes": True,
+                "observacao": "4/4 anexos diretos do Gmail baixados."}
+caso("N17 relatório de download não vira pendência", "nao_conferido",
+     conferencia_de_anexos(_baixou_tudo))
+caso("N17b e o caso segue na fila", "pronta",
+     classificar_prontidao(demanda(anexos=_baixou_tudo), None)[0])
+
+# Desligado à mão por decisão humana continua valendo.
+caso("N18 flag desligada = sem pendência", "sem_pendencia",
+     conferencia_de_anexos({"externosPendentes": False}))
+
+# A sobreposição de conferência entra pela fila, não pelo painel — a fila nunca
+# escreve em demandas.json, mas precisa saber o que já foi conferido.
+_f = montar_fila([demanda(id="x", anexos=_default_ingestao)], {}, HOJE,
+                 conferencias={"case-x": {"conferencia": "sem_pendencia"}})
+caso("N19 conferência sobreposta zera o não-conferido", 0,
+     _f["resumo"]["anexosNaoConferidos"])
+caso("N19b e o caso continua pronto", 1, _f["resumo"]["prontas"])
+_f2 = montar_fila([demanda(id="x", anexos=_default_ingestao)], {}, HOJE,
+                  conferencias={"case-x": {"conferencia": "pendente"}})
+caso("N19c conferência que achou pendência bloqueia", 1, _f2["resumo"]["bloqueadas"])
+
+
 # 9. demanda limpa -> pronta
 cat, _ = classificar_prontidao(demanda(proximaAcao="redigir minuta com base nos autos"), None)
 caso("N9 demanda limpa -> pronta", "pronta", cat)
@@ -113,7 +163,8 @@ caso("N12 idade 30d soma cap +10", 10, p["score"])
 fila = montar_fila([demanda(status="cumprida")], {}, HOJE)
 caso("N13 fila vazia é documento válido", 0, fila["resumo"]["prontas"])
 caso("N13b resumo consistente", {"prontas": 0, "bloqueadas": 0, "emProducao": 0,
-                                 "aguardandoRevisaoHumana": 0, "aguardandoEvidencia": 0}, fila["resumo"])
+                                 "aguardandoRevisaoHumana": 0, "aguardandoEvidencia": 0,
+                                 "anexosNaoConferidos": 0}, fila["resumo"])
 
 # 14. em produção: F5 -> em_producao; F0 e F10 não
 cat, _ = classificar_prontidao(demanda(), {"currentPhase": "F5_CHECKLIST"})

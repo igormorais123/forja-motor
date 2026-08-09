@@ -59,6 +59,10 @@ SUITES_SCRIPT = {
         "anexo fora do padrão Word da casa não sai pela porta da FORJA: a barreira "
         "fica no disparo do rascunho, que é o único ponto por onde documento "
         "efetivamente sai, e reprova quem falha nas três dimensões"),
+    "test_forja_gate_aceite.py": (
+        "gate de aceite dos critérios que o titular escreveu no e-mail: exige prova de "
+        "quem afirma ter concluído, e recusa destaque de margem cortado no meio de "
+        "citação legal"),
     "test_forja_codigo_morto.py": (
         "a poda de código morto não encosta em import protegido, em código nem na "
         "quebra de linha do arquivo — e entrada declarada fora do repositório, "

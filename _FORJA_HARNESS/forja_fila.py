@@ -57,6 +57,38 @@ CATEGORIAS_BLOQUEIO = (
 )
 
 
+def conferencia_de_anexos(anexos):
+    """`nao_conferido` | `pendente` | `sem_pendencia`.
+
+    `externosPendentes` nasce `True` por padrão na ingestão automática, com a
+    observação "anexos ainda precisam ser conferidos" — ou seja, o campo nunca
+    afirmou que EXISTE anexo externo, só que ninguém olhou. Nada no código o
+    zerava. Medido em 09/08/2026: 75 das 84 demandas o carregavam, **53 delas já
+    cumpridas e entregues**, e as 22 abertas formavam a fila inteira de
+    bloqueios, com um motivo que afirmava um fato — "anexos do Drive pendentes"
+    — que ninguém tinha verificado em nenhuma delas.
+
+    Não conferido é trabalho de triagem, não impedimento. Chamar as duas coisas
+    pelo mesmo nome tira o caso da fila e não devolve nunca.
+    """
+    anexos = anexos or {}
+    declarado = anexos.get("conferencia")
+    if declarado in ("nao_conferido", "pendente", "sem_pendencia"):
+        return declarado
+    if not anexos.get("externosPendentes"):
+        # Alguém desligou de propósito — os únicos dois lugares no código que
+        # gravam `False` são scripts escritos à mão, por decisão humana.
+        return "sem_pendencia"
+    # `True` sozinho nunca vale como constatação. Os três pontos do código que o
+    # gravam são defaults de criação, e as observações que os acompanham são
+    # instrução ("conferir se há anexos"), não achado. Nada na esteira liga esse
+    # campo depois de ver um link de verdade. Ler prosa da observação para
+    # decidir seria inventar padrão sobre texto livre — o erro que o gate de
+    # comparabilidade já fechou em outro lugar. `pendente` exige declaração
+    # explícita em `conferencia`.
+    return "nao_conferido"
+
+
 def _norm(texto):
     """minúsculas sem acento — léxico estável a variação de digitação."""
     nfkd = unicodedata.normalize("NFKD", texto or "")
@@ -109,8 +141,10 @@ def classificar_prontidao(demanda, forja_state):
         return "bloqueada_comando", "nenhum COMANDO_*.md na pasta do caso"
 
     anexos = demanda.get("anexos") or {}
-    if anexos.get("externosPendentes"):
-        return "bloqueada_acesso", "anexos externos (Drive/TransferNow/WhatsApp) pendentes"
+    conferencia = conferencia_de_anexos(anexos)
+    if conferencia == "pendente":
+        return "bloqueada_acesso", (anexos.get("observacao")
+                                    or "anexo externo conferido e ainda não obtido")
     if "ANEXOS_INCOMPLETOS" in gates:
         return "bloqueada_acesso", gates["ANEXOS_INCOMPLETOS"].get("detail") or "anexos incompletos"
 
@@ -119,6 +153,8 @@ def classificar_prontidao(demanda, forja_state):
         if marcador in proxima:
             return "bloqueada_decisao_cliente", f"próxima ação depende do cliente ('{marcador}')"
 
+    if conferencia == "nao_conferido":
+        return "pronta", "sem bloqueador conhecido; anexos ainda não conferidos"
     return "pronta", "sem bloqueador conhecido"
 
 
@@ -201,16 +237,32 @@ def _aguardando_desde(demanda):
     return manual.get("updatedAt") or demanda.get("recebidoEm")
 
 
-def montar_fila(demandas, states, hoje):
-    """Documento canônico (TDD §3). Função pura: sem I/O, 'hoje' injetado."""
+def montar_fila(demandas, states, hoje, conferencias=None):
+    """Documento canônico (TDD §3). Função pura: sem I/O, 'hoje' injetado.
+
+    `conferencias` é a sobreposição de `state/ANEXOS_CONFERENCIA.json`, mapa de
+    caseId para veredito de conferência de anexos. Ela vive aqui e não em
+    `demandas.json` porque a fila nunca escreve no quadro de comando, que é
+    humano — mas precisa saber o que já foi conferido para não repetir a
+    pergunta.
+    """
+    conferencias = conferencias or {}
     producao, bloqueadas, em_producao, aguardando_ev, revisao_humana = [], [], [], [], []
+    nao_conferidos = []
     for demanda in demandas:
         if demanda.get("status") == "cumprida":
             state = states.get(demanda.get("id")) or {}
             if state.get("status") == "waiting_delivery_evidence":
                 aguardando_ev.append(demanda.get("id"))
             continue
-        categoria, motivo = classificar_prontidao(demanda, states.get(demanda.get("id")))
+        anexos_efetivos = dict(demanda.get("anexos") or {})
+        sobreposto = conferencias.get("case-" + (demanda.get("id") or "sem-id"))
+        if sobreposto and sobreposto.get("conferencia"):
+            anexos_efetivos["conferencia"] = sobreposto["conferencia"]
+        if conferencia_de_anexos(anexos_efetivos) == "nao_conferido":
+            nao_conferidos.append(demanda.get("id"))
+        categoria, motivo = classificar_prontidao(
+            {**demanda, "anexos": anexos_efetivos}, states.get(demanda.get("id")))
         base = {
             "demandaId": demanda.get("id"),
             "caseId": "case-" + (demanda.get("id") or "sem-id"),
@@ -259,7 +311,11 @@ def montar_fila(demandas, states, hoje):
         "resumo": {"prontas": len(producao), "bloqueadas": len(bloqueadas),
                    "emProducao": len(em_producao),
                    "aguardandoRevisaoHumana": len(revisao_humana),
-                   "aguardandoEvidencia": len(aguardando_ev)},
+                   "aguardandoEvidencia": len(aguardando_ev),
+                   # Deixar de bloquear não pode virar deixar de ver: o que
+                   # ninguém conferiu continua contado, na fila, com nome.
+                   "anexosNaoConferidos": len(nao_conferidos)},
+        "anexosNaoConferidos": sorted(nao_conferidos),
     }
 
 
@@ -337,6 +393,12 @@ def _relatorio_md(fila):
         f"{fila['resumo']['emProducao']} em produção | {fila['resumo']['aguardandoRevisaoHumana']} aguardando revisão humana | "
         f"{fila['resumo']['aguardandoEvidencia']} aguardando evidência",
         "",
+        (f"**Anexos ainda não conferidos: {fila['resumo']['anexosNaoConferidos']}.** "
+         "Não é bloqueio — é triagem que ninguém fez. O campo `externosPendentes` "
+         "nasce ligado na ingestão e nada o desliga, então ele diz 'ninguém olhou' "
+         "e nunca 'existe anexo faltando'. Conferido de verdade, declare "
+         "`anexos.conferencia` como `sem_pendencia` ou `pendente`."),
+        "",
         "## Próximas peças (prontas para produção)",
         "",
         "| # | Demanda | Prazo | Score | Fatores |",
@@ -372,13 +434,25 @@ def _relatorio_md(fila):
     return "\n".join(linhas)
 
 
+def _carregar_conferencias():
+    """`state/ANEXOS_CONFERENCIA.json` — ausente é conjunto vazio, não erro."""
+    arq = STATE_DIR / "ANEXOS_CONFERENCIA.json"
+    if not arq.is_file():
+        return {}
+    try:
+        return json.loads(arq.read_text(encoding="utf-8")).get("conferencias") or {}
+    except (OSError, ValueError):
+        return {}
+
+
 def gerar(hoje=None, gravar=True, publicar_painel=None):
     """Gera a fila. gravar=False -> só retorna o documento (modo --dry).
     publicar_painel: None -> segue a flag filaPriorizadaV1; bool -> força."""
     demandas_bytes = (DATA / "demandas.json").read_bytes()
     demandas_doc = json.loads(demandas_bytes.decode("utf-8-sig"))
     hoje = hoje or date.today()
-    fila = montar_fila(demandas_doc.get("demandas") or [], _carregar_states(), hoje)
+    fila = montar_fila(demandas_doc.get("demandas") or [], _carregar_states(), hoje,
+                       _carregar_conferencias())
     from forja_n3_common import load_config
     fila["operacaoAssistida"] = pendencia_operacao_assistida(load_config(), hoje)
     fila["geradoEm"] = now_iso()

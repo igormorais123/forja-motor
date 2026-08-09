@@ -119,6 +119,8 @@
 | Insumo bloqueado: causa, diligências, consequência e rota ("não localizado" não é diagnóstico) | `python forja_insumo_bloqueado.py <case-dir> [--schema]` → `n4_artifacts/F1_INSUMO_BLOQUEADO.json`; elo 5-C do F10. Desde 07/08/2026 cada item exige `fonte`, `tipoDocumento`, `rotasTentadas` e `revalidarApos` |
 | Bloqueios cuja revalidação venceu — devolve à fila o que o bloqueio tirou dela | `python forja_insumo_bloqueado.py <raiz> --vencidos` |
 | **Antes de declarar bloqueio:** o que cada tribunal serve, por qual porta, com a armadilha; e os pares que a fonte não serve a ninguém | `python forja_rotas_fonte.py [--fonte STF] [--tipo acordao]`; conferir ao vivo com `--probe` |
+| Regimento interno novo: PDF/EPUB oficial → arquivo-padrão da casa, texto integral, sem resumo | `python forja_regimento_pdf.py --pdf <arquivo> --tribunal STF --nome "..." --url-oficial ... --versao "..." --saida "<pasta do caso>/REGIMENTO_INTERNO_STF.md"`. Aceita EPUB, que às vezes é a edição mais nova. Nasce com "Emendas posteriores: NÃO PESQUISADO" — a pesquisa é humana |
+| Tribunal de análise do caso (F3): sigla de recurso > CNJ > tribunal nomeado, com filtro de citação | `forja_sources.detectar_tribunal`; devolve `(None, motivo)` distinguindo ausência de marcador e ambiguidade. Regressão: `test_forja_sources_tribunal.py` |
 | Triagem das correções recebidas por e-mail | campo `triagem` em `F10_RETORNO_SEM_ANEXO.json` (49/49 triadas em 06/08/2026: 35 com lição, 14 sem) |
 | Gate S6 — ato citado na peça não declarado neste trabalho | `atos` em `F2_IDENTIDADE_PROCESSUAL.json` → `forja_identidade_processual.gate_s6_identidade_do_ato` |
 | Gate S7 — tema sustentado fora do objeto devolvido | `objeto` em `F2_IDENTIDADE_PROCESSUAL.json` → `gate_s7_objeto_devolvido` |

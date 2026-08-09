@@ -147,6 +147,48 @@ ROTAS: dict[str, dict] = {
                      "manda o próximo agente caçar defeito inexistente"),
         "verificadoEm": "2026-08-07",
     },
+    "stf-regimento-interno-texto-integral": {
+        "fonte": "STF",
+        "tipoDocumento": "regimento_interno",
+        "serve": True,
+        "url": ("https://www.stf.jus.br/arquivo/cms/publicacaoCatalogoProduto"
+                "ConteudoTextual/anexo/regimentoInterno.epub"),
+        "chaves": {},
+        "armadilha": (
+            "o host www.stf.jus.br/arquivo/cms serve arquivo estático com um "
+            "curl comum, enquanto portal.stf.jus.br é SPA e devolve a mesma "
+            "casca de 54 KB para QUALQUER caminho — inclusive um inexistente, "
+            "com HTTP 200. Quem medir só o status conclui que baixou a página. "
+            "E há duas edições em circulação: em 09/08/2026 o PDF era a de 2023 "
+            "(até a ER 58/2022) e o epub, a de 2024 (até a ER 59/2023) — pegar "
+            "o PDF por ser o formato óbvio deixa uma emenda para trás"),
+        "probe": {"esperaTipo": "application/epub+zip", "minimoBytes": 100000},
+        "verificadoEm": "2026-08-09",
+    },
+    "stf-lista-de-emendas-regimentais": {
+        "fonte": "STF",
+        "tipoDocumento": "emendas_regimentais_posteriores",
+        "serve": False,
+        "porQue": (
+            "não existe página oficial que liste as emendas regimentais em "
+            "série consultável por máquina. O endereço histórico "
+            "portal.stf.jus.br/textos/verTexto.asp?servico=legislacaoRegimento"
+            "Interno agora redireciona para /erro-404/; o portal novo é SPA sem "
+            "API pública alcançável; digital.stf.jus.br é AngularJS e só abre "
+            "publicação por id já conhecido; noticias.stf.jus.br responde 202 "
+            "com corpo vazio a fetch e só entrega conteúdo em navegação real"),
+        "causaCorreta": "indisponivel_na_fonte",
+        "causasAdmissiveis": ("indisponivel_na_fonte",),
+        "condicao": (
+            "o que FUNCIONA é a busca do portal de notícias por navegação real "
+            "(https://noticias.stf.jus.br/?s=emenda+regimental) mais a data de "
+            "consolidação declarada na edição oficial mais nova. As duas juntas "
+            "dão indício forte, não prova: a busca é ordenada por relevância, "
+            "não por data, e emenda sem notícia não aparece. Conclusão honesta "
+            "é 'consolidação vai até a ER X e nada posterior foi localizado por "
+            "estas rotas em <data>', nunca 'não há emenda posterior'"),
+        "verificadoEm": "2026-08-09",
+    },
     # ----------------------------------------------------------------- DJEN
     "djen-comunicacao-por-processo": {
         "fonte": "DJEN",

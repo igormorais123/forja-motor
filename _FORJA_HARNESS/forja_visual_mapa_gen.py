@@ -234,6 +234,11 @@ def _frase(par, minimo=55, maximo=190):
 
 # Teto de caracteres do destaque impresso na margem. Ver a nota na seleção dos
 # pulls: acima disso o bloco cresce o bastante para encontrar o fólio.
+# Uma frase que termina assim foi cortada pelo divisor, não pelo autor.
+_TERMINA_MAL = re.compile(
+    r"(?i)(?:\b(?:arts?|incs?|als?|n[º°o]s?|fls?|cf|Min|Rel|Des|Dr|Sra?|Ltda|"
+    r"etc|séc|par)\.?|[:;,]|§)\s*$")
+
 PULL_MAX_MARGEM = 120
 
 
@@ -274,6 +279,14 @@ def _frase_destacavel(par, minimo=55, maximo=190, evitar=()):
         # que começa no meio de uma oração parece erro de recorte, e é.
         letras = [c for c in frase if c.isalpha()]
         if letras and not letras[0].isupper():
+            continue
+        # A mesma quebra em abreviação corta pelo OUTRO lado, e o filtro acima
+        # não a alcança: "…o dever de coerência do art." começa maiúscula e é
+        # uma frase inteira para o divisor, porque ele quebrou no ponto de
+        # "art.". Impressa na margem, ela termina no meio da citação legal e o
+        # leitor vê recorte defeituoso. Dois-pontos tem o mesmo efeito: anuncia
+        # o que vem depois e o destaque não traz.
+        if _TERMINA_MAL.search(frase):
             continue
         if minimo <= len(frase) <= maximo:
             return frase

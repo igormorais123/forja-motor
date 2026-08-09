@@ -28,6 +28,40 @@ CNJ_RE = re.compile(r"(\d{7})-?(\d{2})\.(\d{4})\.(\d)\.(\d{2})\.(\d{4})")
 
 TJ_POR_TR = {"27": "TJTO", "19": "TJRJ", "21": "TJRS", "26": "TJSP", "07": "TJDFT"}
 
+# Gates que ESTE módulo emite. Ele é dono deles: a cada execução, recalcula do
+# zero em vez de acumular. Sem isso um P0 levantado por defeito de detecção fica
+# preso no estado para sempre — foi o que manteve dois casos fora da fila por 37
+# horas depois que a causa já não existia.
+GATES_DESTE_MODULO = {
+    "TRIBUNAL_NAO_IDENTIFICADO", "REGIMENTO_AUSENTE", "REGIMENTO_FORA_DA_PASTA",
+    "REGIMENTO_INCOMPLETO", "LEIS_GERAIS_AUSENTES",
+}
+
+# Tribunal escrito por extenso ou pela sigla. Não é evidência tão forte quanto a
+# sigla do recurso ou o número CNJ, e por isso entra por último e só quando o
+# texto nomeia UM tribunal — peça que cita STF e STJ não diz onde tramita, e
+# chutar ali seria pior que continuar sem saber.
+NOMES_TRIBUNAL = [
+    (re.compile(r"\bSTF\b|\bSupremo Tribunal Federal\b", re.I), "STF"),
+    (re.compile(r"\bSTJ\b|\bSuperior Tribunal de Justi\w*\b", re.I), "STJ"),
+    (re.compile(r"\bTST\b|\bTribunal Superior do Trabalho\b", re.I), "TST"),
+    (re.compile(r"\bTSE\b|\bTribunal Superior Eleitoral\b", re.I), "TSE"),
+    (re.compile(r"\bSTM\b", re.I), "STM"),
+]
+TRF_NOME_RE = re.compile(r"\bTRF\s*-?\s*([1-6])\b|\bTribunal Regional Federal da ([1-6])[ªa]\s*Regi", re.I)
+TJ_NOME_RE = re.compile(r"\bTJ\s*-?\s*(AC|AL|AP|AM|BA|CE|DF|DFT|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)\b", re.I)
+
+# "Tema 1.410 do STJ" diz de onde vem o precedente, não onde o processo tramita.
+# Sem este filtro, dois pareceres consultivos do acervo — sem processo nenhum —
+# passariam a ter o STJ como tribunal de análise só porque citam um tema
+# repetitivo. Citar não é tramitar, e a diferença aqui é o que vem ANTES da
+# sigla, dentro da mesma oração.
+CITACAO_ANTES_RE = re.compile(
+    r"(?i)(tema|s[úu]mula|verbete|enunciado|precedent\w*|jurisprud\w*|entendimento|"
+    r"ac[óo]rd[ãa]o|julgad\w*|repetitiv\w*|repercuss[ãa]o geral|orienta[çc][ãa]o)"
+    r"[^.;:\n]{0,60}$")
+PONTO_DE_MILHAR_RE = re.compile(r"(?<=\d)\.(?=\d)")
+
 
 def classificar_produto(texto):
     """F2 mínima: tipo de produto define se regimento é obrigatório."""
@@ -42,13 +76,51 @@ def classificar_produto(texto):
     return "indefinido", True
 
 
+def nomes_de_tribunal(texto):
+    """Tribunais nomeados como FORO, sem ordem. Serve para decidir se há um só.
+
+    Menção em contexto de citação de precedente não conta — ela informa a origem
+    da tese, não o lugar onde o processo corre.
+    """
+    t = texto or ""
+    achados = set()
+
+    def registrar(m, sigla):
+        # O ponto do milhar em "Tema 1.410" não pode ser lido como fim de
+        # oração: era o que fazia o filtro perder justamente a citação mais
+        # comum, a de tema repetitivo.
+        antes = PONTO_DE_MILHAR_RE.sub("", t[:m.start()])
+        if CITACAO_ANTES_RE.search(antes):
+            return
+        achados.add(sigla)
+
+    for regex, sigla in NOMES_TRIBUNAL:
+        for m in regex.finditer(t):
+            registrar(m, sigla)
+    for m in TRF_NOME_RE.finditer(t):
+        registrar(m, f"TRF{m.group(1) or m.group(2)}")
+    for m in TJ_NOME_RE.finditer(t):
+        uf = m.group(1).upper()
+        registrar(m, "TJDFT" if uf in ("DF", "DFT") else f"TJ{uf}")
+    return achados
+
+
 def detectar_tribunal(texto):
-    """Retorna (tribunal, criterio) ou (None, None). Ordem: sigla superior > CNJ."""
+    """Retorna (tribunal, criterio) ou (None, motivo).
+
+    Ordem de força da evidência: sigla do recurso > número CNJ > tribunal
+    nomeado. Quando nada decide, `tribunal` é None e `motivo` explica se foi
+    ausência de marcador ou ambiguidade — as duas pedem diligências diferentes.
+    """
     t = texto or ""
     if re.search(r"\b(AREsp|REsp|EREsp|AgInt no AREsp|EDcl no AgInt)\b", t, re.I):
         return "STJ", "sigla de recurso ao STJ no título/pasta"
-    if re.search(r"\b(RE|ARE)\s*\d{6,}", t):
-        return "STF", "sigla de recurso extraordinário"
+    # `[\s._-]*` porque o número vem tanto como "RE 1395147" quanto como
+    # "RE 1.395.147/PR" ou "_re_1395147_" em nome de pasta; e re.I porque o
+    # slug de pasta é minúsculo. Sem isso a peça que diz "RE 1.395.147/PR" na
+    # primeira linha ficava sem tribunal.
+    if re.search(r"(?:\b|_)(?:RE|ARE)[\s._-]*\d[\d.]{5,}", t, re.I):
+        return "STF", "sigla de recurso extraordinário com número"
     m = CNJ_RE.search(t)
     if m:
         segmento, tr = m.group(4), m.group(5)
@@ -59,7 +131,14 @@ def detectar_tribunal(texto):
             if trib:
                 return trib, f"CNJ segmento J=8, TR={tr} (Justiça Estadual)"
             return f"TJ-{tr}", f"CNJ segmento J=8, TR={tr} (Justiça Estadual, sigla não mapeada)"
-    return None, None
+    nomeados = nomes_de_tribunal(t)
+    if len(nomeados) == 1:
+        unico = next(iter(nomeados))
+        return unico, f"tribunal nomeado no texto, e só ele ({unico})"
+    if len(nomeados) > 1:
+        return None, ("ambíguo: o texto nomeia " + ", ".join(sorted(nomeados))
+                      + " sem dizer onde tramita")
+    return None, "nenhum marcador de tribunal no título, na pasta ou no comando"
 
 
 def validar_regimento(path):
@@ -164,9 +243,11 @@ def processar_caso(state_path):
             "finalUseAllowed": True,
         })
     elif regimento_obrigatorio:
-        linhas.append("- Tribunal NÃO identificado automaticamente — exige classificação humana ou leitura da decisão.")
+        motivo = criterio or "causa não apurada"
+        linhas.append(f"- Tribunal NÃO identificado automaticamente — {motivo}.")
         gates.append({"code": "TRIBUNAL_NAO_IDENTIFICADO", "severity": "P0",
-                      "detail": "Sem tribunal não há regimento aplicável; classificar antes de redigir.", "at": now_iso()})
+                      "detail": f"Sem tribunal não há regimento aplicável; classificar antes de redigir. Causa: {motivo}.",
+                      "at": now_iso()})
     else:
         linhas.append("- Produto consultivo (parecer/quesitos): regimento de tribunal NÃO é bloqueador; jurisprudência de fonte oficial continua obrigatória (comando expresso do cliente).")
 
@@ -230,11 +311,20 @@ def processar_caso(state_path):
 
     tem_p0 = bool(p0s)
     state["currentPhase"] = "F3_FONTES_REGIMENTO_LEIS"
-    state["status"] = "blocked" if tem_p0 else state.get("status", "pending")
     state["updatedAt"] = now_iso()
     state.setdefault("phaseHistory", []).append(
         {"phase": "F3_FONTES_REGIMENTO_LEIS", "at": now_iso(), "status": "blocked" if tem_p0 else "ok"})
-    state["gates"] = merge_gates(state.get("gates") or [], gates)
+    # Descarta o veredito ANTERIOR deste módulo antes de gravar o novo: gate é
+    # conclusão de uma execução, não cicatriz permanente. Gates de outros
+    # módulos ficam intactos — este aqui não é dono deles.
+    anteriores = [g for g in (state.get("gates") or [])
+                  if g.get("code") not in GATES_DESTE_MODULO]
+    state["gates"] = merge_gates(anteriores, gates)
+    # O bloqueio olha o quadro inteiro, não só o que este módulo achou: um caso
+    # pode continuar travado por P0 de outra fase.
+    state["status"] = ("blocked" if any(g.get("severity") == "P0" for g in state["gates"])
+                       else ("pending" if state.get("status") == "blocked"
+                             else state.get("status", "pending")))
     state["sourceLedger"] = merge_by_id(state.get("sourceLedger") or [], ledger)
     state["artifacts"] = append_unique(state.get("artifacts") or [], str(mapa_path))
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
