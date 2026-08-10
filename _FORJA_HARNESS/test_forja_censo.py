@@ -59,6 +59,18 @@ class TestPopulacaoNuncaVirouTotal:
         assert dados["populacao"] == {"pastasDeCaso": 2, "lidos": 1, "completo": False}
         assert "CEN1" in {a["id"] for a in fc.gate_censo(dados)}
 
+    def test_pasta_sem_estado_e_estado_corrompido_dao_causas_distintas(self, raiz):
+        """'Não localizado' não é diagnóstico: cada causa pede conserto diferente."""
+        (raiz / "case-nua").mkdir(parents=True)
+        corrompido = raiz / "case-corrompido"
+        corrompido.mkdir(parents=True)
+        (corrompido / "FORJA_STATE.json").write_text("{{{", encoding="utf-8")
+
+        porques = {c["caseId"]: c["porque"] for c in fc.censo(raiz, resolucoes={})["casos"]}
+
+        assert "não tem arquivo de estado" in porques["case-nua"]
+        assert "presente e ilegível" in porques["case-corrompido"]
+
     def test_populacao_integra_nao_inventa_achado(self, raiz):
         demanda = raiz.parent / "demanda-ok"
         _entregavel(demanda, "peca.docx", 50_000)

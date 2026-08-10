@@ -183,9 +183,13 @@ def carregar_resolucoes(path: Path | None = None) -> dict:
     return dados.get("casos", {}) if isinstance(dados, dict) else {}
 
 
-def _situacao(legado, n3, provas, resolucao) -> tuple[str, str]:
+def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
     if legado is None and n3 is None:
-        return "ilegivel", "nenhum dos dois esquemas de estado pôde ser lido"
+        # "Não localizado" não é diagnóstico: a pasta sem arquivo de estado e o
+        # arquivo de estado corrompido pedem conserto diferente, e colapsá-los
+        # transfere a quem lê o trabalho de descobrir qual era.
+        return "ilegivel", ("arquivo de estado presente e ilegível" if existem
+                            else "a pasta do caso não tem arquivo de estado algum")
 
     estados = {str(d.get("status") or d.get("lifecycleStatus") or "").strip()
                for d in (legado, n3) if d}
@@ -216,8 +220,10 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
     casos: list[dict] = []
 
     for pasta in pastas:
-        legado = _ler_json(pasta / "FORJA_STATE.json")
-        n3 = _ler_json(pasta / "FORJA_N3_STATE.json")
+        arq_legado, arq_n3 = pasta / "FORJA_STATE.json", pasta / "FORJA_N3_STATE.json"
+        legado = _ler_json(arq_legado)
+        n3 = _ler_json(arq_n3)
+        existem = arq_legado.exists() or arq_n3.exists()
         case_id = pasta.name
 
         origem = (legado or {}).get("inputs", {}).get("caseFolder") or ""
@@ -226,7 +232,7 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
 
         provas = _entregaveis(demanda) if demanda and demanda.exists() else []
         resolucao = resolvidos.get(case_id)
-        situacao, porque = _situacao(legado, n3, provas, resolucao)
+        situacao, porque = _situacao(legado, n3, provas, resolucao, existem)
 
         estado_legado = (legado or {}).get("status")
         estado_n3 = (n3 or {}).get("lifecycleStatus")

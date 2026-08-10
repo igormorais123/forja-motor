@@ -25,6 +25,16 @@ não o texto. Escreva o que for verdade, e produza a prova.
 
 Corolário: **`unknown` não é `pass`.** Gate obrigatório sem veredito bloqueia a fase.
 
+Segundo corolário, de 09/08/2026: **"feito" também é declaração, e por muito tempo não
+teve prova.** O estado dizia `fulfilled` para duas coisas incompatíveis — *entregue* e
+*triado, não havia demanda* — e a palavra sendo a mesma, um caso substantivo abandonado
+ficava indistinguível de um e-mail administrativo corretamente descartado. É essa
+ambiguidade que produz a experiência de "deram por feito o que estava pela metade".
+`forja_censo.py` só chama de `entregue` o que tem arquivo em disco, com tamanho, **na
+pasta da demanda e não na de estado**; o resto vira `concluido_sem_prova` e espera
+declaração humana. A máquina não sabe distinguir lixo de ingestão de trabalho
+abandonado, então ela não chuta: ela pergunta.
+
 **E não confunda isso com cobertura total**, porque a metade que falta é justamente onde
 você trabalha sem rede: **F8 e F10 não têm recomputação no runner**; `helena_present` e
 `cicero_present` só conferem que o parecer existe, tem corpo e traz itens numerados;
@@ -35,11 +45,20 @@ não olha.
 ## Comece aqui, sempre
 
 ```
-python forja_axi.py                 # onde estão os casos, compacto e só de leitura
+python forja_censo.py               # a população inteira, com denominador declarado
+python forja_censo.py --devendo     # o que ainda se deve, prazo na frente
 python forja_axi.py case <case-id>  # um caso, sem corpo de artefato
 python forja_fila.py --proxima      # o que fazer agora
 python forja_avisos.py              # o que está esperando alguém dar ciência
 ```
+
+**Comece pelo censo, e não pela fila.** Em 09/08/2026 a fila oficial respondia "4
+prontas" sobre 91 pastas de caso, `forja_avisos.py` dizia "nenhum aviso" havendo caso
+parado desde 11/07, e `forja_axi.py` anunciava "28 of 28 total". Nenhuma das três mentia
+por bug isolado: as três liam um recorte e o anunciavam como retrato. `forja_censo.py` lê
+os dois esquemas de estado, **informa sobre quantos casos apurou antes de qualquer
+número** e se recusa a chamar de total o que é parcial. As outras três continuam úteis
+para o que fazem; nenhuma delas responde "o que a fábrica está devendo".
 
 `forja_axi.py` nunca promove fase, entrega ou libera juridicamente. **`PASS` técnico,
 pacote existente ou fila verde não são aprovação jurídica.**

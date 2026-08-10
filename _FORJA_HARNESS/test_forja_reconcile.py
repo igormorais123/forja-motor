@@ -106,5 +106,67 @@ class ForjaReconcileGateHistoryTests(unittest.TestCase):
         self.assertEqual(0, processo.returncode, processo.stdout + processo.stderr)
 
 
+class ReconciliacaoNaoPuxaOCasoParaTras(unittest.TestCase):
+    """Os dois defeitos medidos em 09/08/2026, presos como regressão.
+
+    A varredura de F0 reescrevia `currentPhase` para a primeira fase e empilhava
+    um carimbo em toda passagem. Um caso que entregou 94 arquivos se descrevia
+    como "em reconciliação", com vinte e três entradas idênticas no histórico e
+    o relógio sempre em zero. Nenhum leitor do estado tinha como distinguir isso
+    de uma fábrica parada.
+    """
+
+    def setUp(self) -> None:
+        self.temp = tempfile.TemporaryDirectory()
+        self.state_root = Path(self.temp.name) / "state"
+        self.demanda = {"id": "d1"}
+
+    def tearDown(self) -> None:
+        self.temp.cleanup()
+
+    def _gravar(self, status="pending"):
+        with patch.object(forja_reconcile, "STATE_DIR", self.state_root):
+            case_id = forja_reconcile.gravar_state(
+                self.demanda, [], status,
+                {"status": "none", "detail": "sem evidência"}, {"gmail": "offline"})
+        return read_json(self.state_root / case_id / "FORJA_STATE.json")
+
+    def _semear(self, **campos):
+        case_dir = self.state_root / "case-d1"
+        case_dir.mkdir(parents=True, exist_ok=True)
+        atomic_write_json(case_dir / "FORJA_STATE.json",
+                          {"caseId": "case-d1", "phaseHistory": [], **campos})
+
+    def test_fase_adiantada_sobrevive_a_varredura(self) -> None:
+        self._semear(currentPhase="F7_AUDITORIA_JURIDICA_FACTUAL")
+
+        self.assertEqual("F7_AUDITORIA_JURIDICA_FACTUAL", self._gravar()["currentPhase"])
+
+    def test_caso_novo_nasce_na_fase_da_reconciliacao(self) -> None:
+        self.assertEqual("F0_RECONCILIACAO_FILA", self._gravar()["currentPhase"])
+
+    def test_fase_desconhecida_nao_derruba_a_gravacao(self) -> None:
+        self._semear(currentPhase="F42_INVENTADA")
+
+        self.assertEqual("F0_RECONCILIACAO_FILA", self._gravar()["currentPhase"])
+
+    def test_passagem_sem_mudanca_nao_carimba_de_novo(self) -> None:
+        primeiro = self._gravar()
+        segundo = self._gravar()
+        terceiro = self._gravar()
+
+        self.assertEqual(1, len(terceiro["phaseHistory"]))
+        self.assertEqual(primeiro["updatedAt"], segundo["updatedAt"])
+        self.assertEqual(primeiro["updatedAt"], terceiro["updatedAt"])
+
+    def test_mudanca_de_situacao_carimba(self) -> None:
+        self._gravar("pending")
+
+        depois = self._gravar("blocked")
+
+        self.assertEqual(["pending", "blocked"],
+                         [e["status"] for e in depois["phaseHistory"]])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

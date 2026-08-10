@@ -20,6 +20,28 @@
 
 ## Orientar-se antes de agir
 
+### O censo vem primeiro
+
+```
+python forja_censo.py                  # panorama, com o denominador na primeira linha
+python forja_censo.py --devendo        # o que ainda se deve, prazo na frente
+python forja_censo.py --divergentes    # casos em que os dois esquemas de estado discordam
+python forja_censo.py --declarar <case-id> --motivo "..." --por <nome>
+```
+
+Ele é a única leitura que percorre **as duas** convenções de estado (`FORJA_STATE.json`
+e `FORJA_N3_STATE.json`) e a única que declara sobre quantos casos apurou antes de dar
+qualquer número. Achados: `CEN1` população incompleta, `CEN2` cumprido sem prova, `CEN3`
+esquemas divergentes, `CEN4` prazo vencido em caso aberto.
+
+`--declarar` existe porque a máquina não consegue distinguir e-mail administrativo
+descartado com acerto de trabalho abandonado. Ela classifica os dois como
+`concluido_sem_prova` e exige que uma pessoa diga qual era — com motivo e nome, como no
+`forja_insumo_bloqueado.py`. **Não declare em lote para zerar o contador:** o número
+existe para ser lido, não para ficar bonito.
+
+### A fachada de caso
+
 A fachada `forja_axi.py` é somente de leitura: ela responde **onde o caso está**, sem
 tocar em nada. A saída padrão é TOON; `--json` só quando um consumidor exigir.
 

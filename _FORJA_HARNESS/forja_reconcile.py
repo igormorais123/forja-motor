@@ -18,7 +18,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from forja_n3_common import now_iso, read_json
+from forja_n3_common import PHASES, now_iso, read_json
 
 FORJA = Path(__file__).resolve().parent
 RAIZ = FORJA.parent
@@ -221,6 +221,42 @@ def auditar_demanda(item, entregas, manual_items, pastas_vistas, threads_vistos)
     return findings, case_status, {"status": ev_status, "detail": ev_desc}
 
 
+ESTA_FASE = "F0_RECONCILIACAO_FILA"
+
+
+def _fase_preservada(anterior) -> str:
+    """A reconciliação nunca puxa um caso de volta para a primeira fase.
+
+    Até 09/08/2026 esta função não existia e `currentPhase` era reescrito como
+    F0 em toda passagem. O efeito era mudo e grave: um caso que atravessou F1 a
+    F10 e entregou 94 arquivos voltava a se descrever como "em reconciliação".
+    Somado ao carimbo repetido abaixo, produzia o retrato de uma fábrica que
+    nunca sai do lugar — e nenhum leitor do estado tinha como saber que a
+    regressão fora escrita por uma varredura, e não pelo trabalho.
+    """
+    atual = (anterior or {}).get("currentPhase")
+    if not atual or atual not in PHASES:
+        return ESTA_FASE
+    return atual if PHASES.index(atual) > PHASES.index(ESTA_FASE) else ESTA_FASE
+
+
+def _historico_sem_repetir(anterior, fase, case_status, instante):
+    """Carimbo novo só quando fase ou situação mudaram de fato.
+
+    O mesmo caso chegou a acumular vinte e três entradas idênticas de
+    `F0/fulfilled`. Cada passagem aparentava movimento e reescrevia o relógio,
+    de modo que a idade de todo caso lia zero dia — inclusive a de um parado
+    desde 11/07. Registro de história que grava não-eventos deixa de ser
+    história.
+    """
+    historico = list((anterior or {}).get("phaseHistory") or [])
+    ultimo = historico[-1] if historico else None
+    if ultimo and ultimo.get("phase") == fase and ultimo.get("status") == case_status:
+        return historico, False
+    historico.append({"phase": fase, "at": instante, "status": case_status})
+    return historico, True
+
+
 def gravar_state(demanda, findings, case_status, evidence, integracoes):
     case_id = "case-" + (demanda.get("id") or "sem-id")
     case_dir = STATE_DIR / case_id
@@ -244,12 +280,16 @@ def gravar_state(demanda, findings, case_status, evidence, integracoes):
         findings,
         at=instante,
     )
+    fase = _fase_preservada(anterior)
+    historico, mudou = _historico_sem_repetir(anterior, fase, case_status, instante)
     state = {
         "caseId": case_id,
         "specVersion": SPEC_VERSION,
         "createdAt": (anterior or {}).get("createdAt") or now_iso(),
-        "updatedAt": instante,
-        "currentPhase": "F0_RECONCILIACAO_FILA",
+        # Só carimba o relógio quando houve mudança. `updatedAt` reescrito por
+        # varredura mede a varredura, não o caso.
+        "updatedAt": instante if mudou else ((anterior or {}).get("updatedAt") or instante),
+        "currentPhase": fase,
         "status": case_status,
         "inputs": {
             "demandId": demanda.get("id"),
@@ -259,8 +299,7 @@ def gravar_state(demanda, findings, case_status, evidence, integracoes):
                 None,
             ),
         },
-        "phaseHistory": ((anterior or {}).get("phaseHistory") or [])
-        + [{"phase": "F0_RECONCILIACAO_FILA", "at": instante, "status": case_status}],
+        "phaseHistory": historico,
         "artifacts": (anterior or {}).get("artifacts") or [],
         "gates": gates,
         "gateHistory": gate_history,
