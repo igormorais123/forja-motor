@@ -471,7 +471,12 @@ if (Test-Path -LiteralPath $ForjaSyncPath) {
         $linked += 1
         $forjaItem = $forjaByDemand[[string]$item.id]
         $lifecycle = [string]$forjaItem.lifecycleStatus
-        if ($item.status -eq "cumprida" -and $lifecycle -in @("not_run","queued","running","blocked","ready_for_review","draft_awaiting_review")) { $conflicts += 1 }
+        # Uma entrega interna ao escritório pode estar cumprida e, ao mesmo
+        # tempo, a versão protocolável permanecer bloqueada por fonte material.
+        # O enriquecimento do painel já reconhece essa separação; o resumo da
+        # integração precisa usar a mesma regra para não fabricar divergência.
+        $managementFulfilled = $item.status -eq "cumprida" -and -not [string]::IsNullOrWhiteSpace([string]$item.evidenciaResposta)
+        if ($item.status -eq "cumprida" -and $lifecycle -in @("not_run","queued","running","blocked","ready_for_review","draft_awaiting_review") -and -not $managementFulfilled) { $conflicts += 1 }
         if ($item.status -eq "pronta_para_revisao" -and $lifecycle -notin @("ready_for_review","draft_awaiting_review")) { $conflicts += 1 }
         $auditArtifacts = ([string]$forjaItem.version).StartsWith("N3.0-r2") -or [string]$forjaItem.mode -eq "finalized_product_overlay"
         if ($auditArtifacts) {

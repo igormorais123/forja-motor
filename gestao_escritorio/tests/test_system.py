@@ -136,6 +136,11 @@ class ProductContractTests(unittest.TestCase):
         self.assertIn("'incomingMediaMissingWindow': len(incoming_media_missing)", source)
         self.assertIn("Midia registrada sem arquivo acessivel nao pode ser tratada como lida", source)
 
+    def test_forja_summary_does_not_conflict_with_evidenced_internal_delivery(self):
+        source = (SCRIPTS / "update_dashboard_local.ps1").read_text(encoding="utf-8")
+        self.assertIn('$managementFulfilled = $item.status -eq "cumprida"', source)
+        self.assertIn('-and -not $managementFulfilled) { $conflicts += 1 }', source)
+
     def test_completion_is_blocked_while_material_inputs_are_pending(self):
         item = {
             "id": "pendente",

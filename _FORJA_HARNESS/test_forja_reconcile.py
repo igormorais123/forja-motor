@@ -168,5 +168,49 @@ class ReconciliacaoNaoPuxaOCasoParaTras(unittest.TestCase):
                          [e["status"] for e in depois["phaseHistory"]])
 
 
+class OResumoNaoPodeComerAProva(unittest.TestCase):
+    """O que se confere contra a fonte não pode caber no que sobrou do corte.
+
+    Em 10/08/2026 um caso da casa aparecia no censo como "cumprido sem prova".
+    O painel registrava dois identificadores de mensagem — e os dois estavam
+    depois do caractere 140, onde a evidência era cortada antes de ser gravada
+    no estado. O censo lia o corte, não o registro, e acusava de falta de prova
+    um trabalho que tinha prova. Resumo é comodidade de leitura; localizador é
+    a única parte que se confere.
+    """
+
+    LONGO = ("Triagem sanitizada concluida em 13/07/2026. O audio recente foi "
+             "classificado e respondido com orientacao segura por e-mail Gmail "
+             "19f5e13fa8718832; a pendencia foi escalada ao titular por e-mail "
+             "Gmail 19f5e13843df63a3, sem assumir custo ou compromisso.")
+
+    def test_identificador_alem_do_corte_sobrevive(self) -> None:
+        resumo = forja_reconcile._resumo_com_localizadores(self.LONGO)
+
+        self.assertIn("19f5e13843df63a3", resumo)
+
+    def test_o_que_ja_estava_no_corte_nao_se_repete(self) -> None:
+        resumo = forja_reconcile._resumo_com_localizadores(self.LONGO)
+
+        self.assertEqual(1, resumo.count("19f5e13fa8718832"))
+
+    def test_texto_curto_sai_intacto_e_sem_apendice(self) -> None:
+        self.assertEqual("respondido por telefone",
+                         forja_reconcile._resumo_com_localizadores("respondido por telefone"))
+
+    def test_localizador_do_whatsapp_tambem_sobrevive(self) -> None:
+        texto = "x" * 150 + " entregue pelo WhatsApp 3EB0C0D4F1DCEF58A21FA1 por link"
+
+        self.assertIn("3EB0C0D4F1DCEF58A21FA1",
+                      forja_reconcile._resumo_com_localizadores(texto))
+
+    def test_a_evidencia_gravada_carrega_o_localizador(self) -> None:
+        """O caminho real: da demanda ao campo que o censo lê."""
+        _status, descricao = forja_reconcile.evidencia_de_entrega(
+            {"evidenciaResposta": self.LONGO}, {}, None)
+
+        self.assertIn("19f5e13843df63a3", descricao)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

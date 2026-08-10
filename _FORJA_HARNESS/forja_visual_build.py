@@ -41,6 +41,31 @@ def _tipo_produto(texto, titulo):
     return "peca"
 
 
+def _case_dir_efetivo(md_path, declarado=None):
+    """Resolve a pasta do caso sem permitir que a omissão do CLI desligue gates.
+
+    O feedback de 10/08/2026 depende de confrontar a peça com os anexos do
+    comando. Antes, bastava não passar ``--case-dir`` para esse contexto sumir.
+    Procuramos o comando nos ancestrais próximos e, na ausência, usamos a pasta
+    do markdown — sempre há um contexto concreto, nunca ``None`` silencioso.
+    """
+    if declarado:
+        return Path(declarado)
+    atual = Path(md_path).resolve().parent
+    for candidato in (atual, *list(atual.parents)[:4]):
+        if (candidato / "COMANDO_DO_EMAIL.md").is_file():
+            return candidato
+        try:
+            if any(p.is_dir() and "anexos do email" in p.name.casefold()
+                   for p in candidato.iterdir()):
+                return candidato
+        except OSError:
+            pass
+        if candidato == RAIZ:
+            break
+    return atual
+
+
 def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
           *, case_dir=None, ledger_path=None, base_dir=None):
     """Compõe a peça em edição visual law. Devolve o resumo com lastro e tempos."""
@@ -49,6 +74,7 @@ def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
     out_dir.mkdir(parents=True, exist_ok=True)
     texto = md_path.read_text(encoding="utf-8")
     tipo = tipo or _tipo_produto(texto, titulo)
+    case_dir = _case_dir_efetivo(md_path, case_dir)
 
     # ---- F7 fail-closed: nenhum artefato nasce com P0 ----
     from forja_verificador import verificar as gates_forja

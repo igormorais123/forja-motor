@@ -239,6 +239,49 @@ class TestPrazoNaFrente:
         assert fila[0]["caseId"] == "case-com"
 
 
+class TestNaoOlhadaNaoEOMesmoQueSemRota:
+    """Um alerta que ninguém consegue baixar é um alerta que ninguém lê.
+
+    A entrega anotada no WhatsApp não se confere desta máquina: exige abrir a
+    conversa. Enquanto o censo a chamava de "conferível e não conferida", ela
+    ficava para sempre no mesmo balde de quem simplesmente nunca foi olhada — e
+    o achado deixava de dizer o que fazer para baixá-lo.
+    """
+
+    ENTREGA = {"status": "fulfilled", "currentPhase": "F10",
+               "deliveryEvidence": {"status": "manual_override",
+                                    "detail": "entregue pelo WhatsApp 3EB0C0D4F1DCEF58A21FA1"}}
+
+    def _dados(self, raiz, conferencias):
+        _caso(raiz, "wpp", legado=dict(self.ENTREGA))
+        return fc.censo(raiz, resolucoes={}, conferencias=conferencias)
+
+    def test_sem_rota_gera_CEN6_e_nao_CEN5(self, raiz):
+        dados = self._dados(raiz, {"case-wpp": {"resultado": "sem_rota_automatica",
+                                                "motivo": "exige abrir a conversa"}})
+
+        ids = {a["id"] for a in fc.gate_censo(dados)}
+        assert "CEN6" in ids and "CEN5" not in ids
+
+    def test_nunca_olhada_continua_em_CEN5(self, raiz):
+        dados = self._dados(raiz, {})
+
+        ids = {a["id"] for a in fc.gate_censo(dados)}
+        assert "CEN5" in ids and "CEN6" not in ids
+
+    def test_o_motivo_da_falta_de_rota_chega_a_quem_le(self, raiz):
+        dados = self._dados(raiz, {"case-wpp": {"resultado": "sem_rota_automatica",
+                                                "motivo": "exige abrir a conversa"}})
+
+        assert "exige abrir a conversa" in dados["casos"][0]["porque"]
+
+    def test_nenhuma_das_duas_e_tratada_como_entregue(self, raiz):
+        """A distinção é de diagnóstico; a dívida continua de pé nos dois casos."""
+        for conf in ({}, {"case-wpp": {"resultado": "sem_rota_automatica", "motivo": "x"}}):
+            dados = self._dados(raiz, conf)
+            assert dados["casos"][0]["situacao"] == "entrega_declarada"
+
+
 class TestVocabularioFechado:
     def test_toda_situacao_atribuida_pertence_ao_vocabulario(self, raiz):
         demanda = raiz.parent / "d"

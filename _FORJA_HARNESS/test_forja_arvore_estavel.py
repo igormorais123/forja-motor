@@ -132,7 +132,15 @@ class TestVeredito(unittest.TestCase):
         vermelhas = [s for s in suites if not s["verde"] and not s.get("instavel")]
         instaveis = [s for s in suites if s.get("instavel")]
         return {"aprovado": not vermelhas and not instaveis,
-                "inconclusivo": bool(instaveis) and not vermelhas}
+                "inconclusivo": bool(instaveis) and not vermelhas,
+                "suitesVerdes": sum(1 for s in suites if s["verde"]),
+                "suitesInstaveis": len(instaveis)}
+
+    def test_instavel_nao_entra_na_contagem_de_verdes(self):
+        """Contar verde por subtração das vermelhas jogaria a instável para o
+        lado errado da conta — e o resumo diria 'todas verdes'."""
+        r = self._relatorio([{"verde": True}, {"verde": False, "instavel": True}])
+        self.assertEqual((r["suitesVerdes"], r["suitesInstaveis"]), (1, 1))
 
     def test_instavel_sozinho_nao_aprova_e_e_inconclusivo(self):
         r = self._relatorio([{"verde": True}, {"verde": False, "instavel": True}])

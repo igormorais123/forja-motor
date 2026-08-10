@@ -280,6 +280,11 @@ def coletar() -> list[str]:
 
 
 def executar() -> dict:
+    # Retrato de abertura. Um baseline verde medido sobre pasta em movimento é
+    # prova mais fraca do que um medido sobre pasta parada, e a diferença some
+    # se ninguém a registra. Isto não é veredito — é a condição da medição,
+    # declarada junto com ela.
+    arvore_antes = arvore.impressao()
     resultados = [_pytest(nome) for nome in coletar()]
     resultados += [
         {
@@ -304,12 +309,16 @@ def executar() -> dict:
         "geradoEm": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
         "python": sys.version.split()[0],
         "suitesDeclaradas": len(resultados),
-        "suitesVerdes": len(resultados) - len(vermelhas),
+        # Contar verde por subtração deixaria a instável do lado errado da
+        # conta: ela não é vermelha, e não é verde. Conta-se o que é.
+        "suitesVerdes": sum(1 for item in resultados if item["verde"]),
+        "suitesInstaveis": len(instaveis),
         "testesPytest": sum(item.get("passed", 0) for item in resultados),
         "subtestsPytest": sum(item.get("subtests", 0) for item in resultados),
         "regressoesScript": len(SUITES_SCRIPT),
         "instaveis": [{"suite": i["suite"], "porque": i["porque"],
                        "arvoreMexeu": i["arvoreMexeu"]} for i in instaveis],
+        "arvoreDuranteACorrida": arvore.mexeu(arvore_antes, arvore.impressao()),
         # `aprovado` continua exigindo zero vermelhas. Instável não aprova nada:
         # ele tem veredito próprio, logo abaixo, e sai por código de saída
         # distinto para que automação não o confunda com verde.
@@ -345,6 +354,11 @@ def _imprimir(relatorio: dict) -> None:
             print(f"           {caminho}")
         if d["total"] > len(d["amostra"][:6]):
             print(f"           … e mais {d['total'] - len(d['amostra'][:6])}")
+    d = relatorio.get("arvoreDuranteACorrida") or {}
+    if d.get("mexeu"):
+        print(f"  [chão] a pasta mudou em {d['total']} arquivo(s) durante a corrida "
+              f"({d['novos']} novo, {d['mudados']} alterado, {d['sumidos']} removido) "
+              f"— outra sessão trabalhando junto; o veredito vale para o que foi lido")
     if relatorio["aprovado"]:
         print("  APROVADO")
     elif relatorio.get("inconclusivo"):

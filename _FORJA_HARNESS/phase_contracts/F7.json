@@ -63,6 +63,8 @@
     "idempotent": true
   },
   "gateNotes": {
+    "G12-precedentes-comando": "Todo precedente identificado nos anexos do comando exige destino computável no F7_PRECEDENTES_DO_COMANDO.json: citado, distinguido expressamente ou não utilizado com justificativa substantiva e localizador no relatório. A rota visual bloqueia a ausência e confere se a autoridade marcada como citada ou distinguida realmente aparece na peça.",
+    "G13-tema-paradigma": "A primeira menção a tema repetitivo ou de repercussão geral deve trazer o paradigma no corpo ou em nota adjacente. O produtor usa mapeamentos confirmados e exige declaração no ledger para temas sem mapa seguro; não adivinha leading case.",
     "fact_grounding_verbatim": "FORJA-LASTRO-v2/L1-L2. Todo fato do fact_ledger com status confirmado exige transcrição verbatim no campo 'quote', além do localizador; quando há arquivo alcançável, o runner confere o trecho contra a fonte. Âncora: o fato F012 do caso CASO-23 estava marcado confirmed_document com localizador plausível e afirmava o oposto do documento citado; atravessou o red team interno, o gate F7 e dois revisores externos de famílias distintas porque nenhum abriu a página. Pendência declarada (groundingPending) é honesta e vira P1, mas continua bloqueando promoção.",
     "fonte_prevalente_validada": "FORJA-LASTRO-v2/L9: material econômico exige fato role='fonte_prevalente', validationStatus='validado', validador nominal, data e SHA-256 conferida contra o arquivo em disco.",
     "data_base_coincidente": "FORJA-LASTRO-v2/L10: a data-base expressa no produto deve coincidir, após normalização mensal, com a do fato prevalente.",

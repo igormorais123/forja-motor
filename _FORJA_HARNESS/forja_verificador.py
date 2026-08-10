@@ -593,6 +593,12 @@ def verificar(texto, tipo="peca", *, ledger=None, base_dir=None, case_dir=None,
                 gate_s6_identidade_do_ato, gate_s7_objeto_devolvido)
             todas.extend(gate_s6_identidade_do_ato(texto, decl))
             todas.extend(gate_s7_objeto_devolvido(texto, decl))
+        # Feedback humano de um caso real (10/08/2026): precedente
+        # selecionado e anexado ao comando não pode desaparecer silenciosamente,
+        # e a primeira menção a Tema precisa identificar o paradigma. O ledger
+        # declara a escolha jurídica; o produtor computa cobertura e presença.
+        from forja_precedentes_comando import analisar as analisar_precedentes_comando
+        todas.extend(analisar_precedentes_comando(texto, case_path))
     # Blindagem contra lastro aparente (caso CASO-23, 26/07/2026). Os gates
     # lexicais entram em toda rota; L1/L2/L7/L8 e L9--L13 só são calculados
     # quando a rota fornece o ledger/contexto documental real.

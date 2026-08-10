@@ -382,6 +382,14 @@ def _situacao(legado, n3, provas, resolucao, existem, conferencia=None) -> tuple
                 + (f" em {quando}" if quando else "")
                 + " — conferido que a mensagem existe, não que o conteúdo era o esperado")
         if localizador:
+            # Tentada e sem rota daqui é diferente de nunca tentada, e chamar as
+            # duas de "conferível e não conferida" produz um alerta que ninguém
+            # consegue baixar — que é como um gate deixa de ser lido.
+            if (conferencia or {}).get("resultado") == "sem_rota_automatica":
+                return "entrega_declarada", (
+                    f"entrega registrada com localizador {localizador}; a conferência "
+                    f"foi tentada e não há rota automática daqui "
+                    f"({conferencia.get('motivo', 'motivo não registrado')})")
             onde = {"gmail": "conferível contra a caixa de saída",
                     "whatsapp": "conferível contra o histórico da conversa",
                     "arquivo_em_disco": "o arquivo citado existe e foi conferido agora"}
@@ -450,6 +458,7 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None,
             "localizadorDaEntrega": localizador,
             "dialetoDoLocalizador": dialeto_localizador,
             "evidenciaDeclarada": detalhe_evidencia[:220] or None,
+            "conferencia": (conferidos.get(case_id) or {}).get("resultado"),
             "maiorEntregavel": max((p["bytes"] for p in provas), default=0),
             "prazo": _prazo_do_nome(titulo, hoje) if titulo else None,
             "pastaDaDemandaExiste": bool(demanda and demanda.exists()),
@@ -500,12 +509,18 @@ def gate_censo(dados: dict) -> list[dict]:
         achados.append({"id": "CEN2", "sev": "P0", "quantos": sem_prova,
                         "texto": "caso dado por cumprido sem entregável em disco e sem declaração "
                                  "de que não havia demanda — 'feito' aqui é palavra, não prova"})
-    declarada = dados["situacoes"]["entrega_declarada"]
-    if declarada:
-        achados.append({"id": "CEN5", "sev": "P1", "quantos": declarada,
+    declaradas = [c for c in dados["casos"] if c["situacao"] == "entrega_declarada"]
+    sem_rota = [c for c in declaradas if c.get("conferencia") == "sem_rota_automatica"]
+    nunca_olhadas = [c for c in declaradas if c not in sem_rota]
+    if nunca_olhadas:
+        achados.append({"id": "CEN5", "sev": "P1", "quantos": len(nunca_olhadas),
                         "texto": "entrega registrada com localizador e sem artefato arquivado — "
                                  "é conferível e não foi conferida, o que é dívida de auditoria "
                                  "e não de trabalho"})
+    if sem_rota:
+        achados.append({"id": "CEN6", "sev": "P1", "quantos": len(sem_rota),
+                        "texto": "entrega cuja conferência foi tentada e não tem rota automática "
+                                 "daqui — só se baixa abrindo a fonte à mão, e fica aberta até lá"})
     vereditos = {}
     for c in dados["casos"]:
         if c.get("arbitro"):

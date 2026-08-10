@@ -14,6 +14,7 @@ sem origem ou com status contraditório; Gmail sem login vira needs_login, nunca
 """
 
 import json
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -137,17 +138,37 @@ def _texto_da_evidencia(bruto):
     return (bruto or "").strip()
 
 
+# O localizador é a única parte da evidência que se confere contra a fonte, e é
+# onde a prosa costuma terminar ("...respondido por e-mail Gmail 19f5e13f..."):
+# cortar o texto pelo comprimento cortava justamente a prova. Medido em
+# 10/08/2026: um caso da casa constava como "cumprido sem prova" e tinha DOIS
+# identificadores de mensagem registrados no painel, ambos além do caractere 140.
+# A acusação era falsa, e nasceu do resumo — não do trabalho.
+_LOCALIZADOR = re.compile(r"\b(?:19[0-9a-f]{14}|[0-9a-f]{16}|3[A-F0-9]{15,31})\b")
+
+
+def _resumo_com_localizadores(texto, limite=140):
+    """Encurta a prosa e nunca encurta a prova."""
+    corte = texto[:limite]
+    perdidos = [x for x in dict.fromkeys(_LOCALIZADOR.findall(texto)) if x not in corte]
+    if not perdidos:
+        return corte
+    return f"{corte} · localizadores: {', '.join(perdidos)}"
+
+
 def evidencia_de_entrega(item, entregas, manual_entry):
     """Retorna (status, descricao). Evidência real exigida para cumprida (N2)."""
     ev = _texto_da_evidencia(item.get("evidenciaResposta"))
     if ev:
-        return "manual_override", f"Evidência registrada na demanda: {ev[:140]}"
+        return "manual_override", (
+            f"Evidência registrada na demanda: {_resumo_com_localizadores(ev)}")
     if item.get("emailsResposta"):
         return "sent_confirmed", f"E-mail(s) de resposta: {', '.join(item['emailsResposta'][:3])}"
     overrides = (manual_entry or {}).get("overrides") or {}
     ev_manual = _texto_da_evidencia(overrides.get("evidenciaResposta"))
     if ev_manual:
-        return "manual_override", f"Evidência em intervenção manual: {ev_manual[:140]}"
+        return "manual_override", (
+            f"Evidência em intervenção manual: {_resumo_com_localizadores(ev_manual)}")
     # Cruzar com entregas arquivadas (por threadId/messageId nos assuntos arquivados)
     ids = set(item.get("emailsRecebidos") or []) | set(item.get("threadIds") or [])
     for d in (entregas or {}).get("deliveries", []):
