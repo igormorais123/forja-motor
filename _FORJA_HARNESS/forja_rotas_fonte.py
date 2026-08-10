@@ -61,7 +61,7 @@ ROTAS: dict[str, dict] = {
         "url": ("https://processo.stj.jus.br/SCON/GetInteiroTeorDoAcordao"
                 "?num_registro={num_registro}&dt_publicacao={dt_publicacao}"),
         "chaves": {
-            "num_registro": "14 dígitos, SEM barra e SEM hífen (2023/0066594-7 vira 202300665947)",
+            "num_registro": "12 dígitos, SEM barra e SEM hífen (2023/0066594-7 vira 202300665947)",
             "dt_publicacao": "DD/MM/AAAA, a data exata de publicação no Diário",
         },
         "armadilha": ("data errada devolve HTTP 200 com o texto 'Acórdão não encontrado', "
@@ -238,6 +238,33 @@ ROTAS: dict[str, dict] = {
             "a porta que funciona é o DJEN; para o conteúdo decisório que subiu, "
             "as decisões dos tribunais superiores costumam transcrever a peça"),
         "verificadoEm": "2026-08-09",
+    },
+    "trf4-jurisprudencia-inteiro-teor": {
+        "fonte": "TRF4",
+        "tipoDocumento": "acordao",
+        "serve": True,
+        "url": ("https://jurisprudencia.trf4.jus.br/eproc2trf4/externo_controlador.php"
+                "?acao=jurisprudencia@jurisprudencia/pesquisar"),
+        "chaves": {
+            "termo": "o número CNJ do processo, com pontos e hífen",
+        },
+        "armadilha": (
+            "é OUTRO serviço, e não a consulta pública desativada de "
+            "`trf4-eproc-consulta-publica`: aqui o acórdão sai INTEIRO — relatório, "
+            "voto, ementa e extrato de ata. Declarar acórdão do TRF4 inalcançável "
+            "porque a consulta pública caiu é erro de rota, não bloqueio. "
+            "Duas armadilhas de operação: o campo de busca NÃO aceita "
+            "preenchimento por referência de elemento nem tecla Enter, é preciso "
+            "clicar na coordenada e digitar; e o ícone 'Exibir inteiro teor do "
+            "documento' abre uma URL com id_jurisprudencia que, essa sim, é "
+            "baixável por requisição direta, sem sessão e sem navegador. A busca "
+            "pelo número traz TODOS os documentos daquele processo — decisão "
+            "monocrática, acórdão de mérito e acórdão dos embargos —, e traz "
+            "também acórdãos de outros processos que citam o número"),
+        "observacao": (
+            "em 10/08/2026 devolveu o inteiro teor de dois agravos de instrumento "
+            "de 2019 que o acervo tinha apenas por ementa e dispositivo"),
+        "verificadoEm": "2026-08-10",
     },
     # ----------------------------------------------------------------- DJEN
     "djen-comunicacao-por-processo": {

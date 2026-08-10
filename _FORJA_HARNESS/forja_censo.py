@@ -89,7 +89,23 @@ DEVENDO = ("aberto", "aguardando_humano", "bloqueado", "entrega_declarada",
 # da mensagem enviada, que é conferível contra a caixa; 9 são prosa, que não é.
 # A distinção nasceu de um quase-erro: eu ia perguntar ao titular do escritório
 # se 19 demandas tinham sido entregues, e 19 traziam o ID do e-mail em que foram.
-_LOCALIZADOR = re.compile(r"\b(?:19[0-9a-f]{14}|[0-9a-f]{16})\b")
+#
+# Localizador tem mais de um alfabeto, e reconhecer um só é a mesma falha por
+# outro lado. Medido em 10/08/2026 sobre as 88 pastas com estado: 77 registros
+# citam o ID do Gmail, 1 cita o ID da mensagem do WhatsApp, 1 cita o arquivo
+# entregue e 5 são prosa. Enquanto só o dialeto do Gmail contava, os dois
+# primeiros caíam em `concluido_sem_prova` — P0 de "diz-se cumprido sem nada" —
+# tendo prova conferível registrada. Gate que não sabe ler a prova não deve
+# escolher a acusação mais grave.
+_GMAIL = re.compile(r"\b(?:19[0-9a-f]{14}|[0-9a-f]{16})\b")
+_WHATSAPP = re.compile(r"\b3[A-F0-9]{15,31}\b")
+# O caminho só vale se o arquivo existir agora: citado e ausente é prosa com
+# aparência de prova, que é pior do que prosa. Quase toda pasta desta casa tem
+# espaço no nome, então o padrão precisa atravessá-los — e, por atravessar,
+# arrasta as palavras da frase antes do caminho. Daí `_caminho_citado` ir
+# descascando token a token: quem decide é o disco, não o recorte.
+_ARQUIVO = re.compile(
+    r"(?:[\w\-–—()\[\]&+.]+[ /\\])*[\w\-–—()\[\]&+.]+\.(?:docx|pdf|zip|md)\b", re.I)
 
 _TERMINAIS = {"fulfilled", "fulfilled_by_forja_f10", "complete", "delivered", "closed",
               "superseded", "cumprida"}
@@ -196,16 +212,57 @@ def carregar_resolucoes(path: Path | None = None) -> dict:
     return dados.get("casos", {}) if isinstance(dados, dict) else {}
 
 
-def _evidencia(legado, n3) -> tuple[str | None, str]:
-    """(localizador, detalhe) do que o painel registrou sobre a entrega."""
+def _localizador(detalhe: str) -> tuple[str | None, str | None]:
+    """(valor, dialeto) do primeiro localizador conferível no texto.
+
+    Reconhecer o localizador não é conferir a entrega: continua sendo dívida de
+    auditoria, e é por isso que `entrega_declarada` está em `DEVENDO`. O que
+    muda é a acusação — de "cumprido sem nada" para "conferível e não conferido".
+    """
+    achado = _GMAIL.search(detalhe)
+    if achado:
+        return achado.group(0), "gmail"
+    achado = _WHATSAPP.search(detalhe)
+    if achado:
+        return achado.group(0), "whatsapp"
+    for bruto in _ARQUIVO.findall(detalhe):
+        achado = _caminho_citado(bruto)
+        if achado:
+            return achado, "arquivo_em_disco"
+    return None, None
+
+
+def _caminho_citado(bruto: str) -> str | None:
+    """O maior sufixo do trecho que é um arquivo existente. `None` se nenhum é.
+
+    O recorte vem de prosa, então costuma trazer palavras a mais na frente
+    ("Arquivo local: Pasta X/peça.docx"). Descascar da esquerda devolve o
+    caminho real sem precisar adivinhar onde ele começava.
+    """
+    tokens = bruto.split(" ")
+    for corte in range(len(tokens)):
+        trecho = " ".join(tokens[corte:])
+        alvo = Path(trecho)
+        if not alvo.is_absolute():
+            alvo = WORKSPACE / trecho
+        try:
+            if alvo.is_file():
+                return trecho
+        except OSError:  # caminho sintaticamente impossível no Windows
+            continue
+    return None
+
+
+def _evidencia(legado, n3) -> tuple[str | None, str | None, str]:
+    """(localizador, dialeto, detalhe) do que o painel registrou sobre a entrega."""
     for fonte in (legado, n3):
         ev = (fonte or {}).get("deliveryEvidence") or {}
         detalhe = str(ev.get("detail") or "").strip()
         if ev.get("status") in (None, "none", ""):
             continue
-        achado = _LOCALIZADOR.search(detalhe)
-        return (achado.group(0) if achado else None), detalhe
-    return None, ""
+        valor, dialeto = _localizador(detalhe)
+        return valor, dialeto, detalhe
+    return None, None, ""
 
 
 def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
@@ -230,11 +287,14 @@ def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
         if resolucao:
             return "triado_sem_demanda", (
                 f"declarado por {resolucao.get('por','?')}: {resolucao.get('motivo','')}".strip())
-        localizador, _ = _evidencia(legado, n3)
+        localizador, dialeto, _ = _evidencia(legado, n3)
         if localizador:
+            onde = {"gmail": "conferível contra a caixa de saída",
+                    "whatsapp": "conferível contra o histórico da conversa",
+                    "arquivo_em_disco": "o arquivo citado existe e foi conferido agora"}
             return "entrega_declarada", (
-                f"entrega registrada com localizador {localizador}, conferível contra a "
-                "caixa de saída; sem artefato arquivado aqui")
+                f"entrega registrada com localizador {localizador} "
+                f"({onde.get(dialeto, 'conferível')}); sem artefato arquivado aqui")
         return "concluido_sem_prova", (
             "declarado cumprido, sem entregável em disco, sem localizador conferível "
             "e sem declaração de que não havia demanda")
@@ -263,7 +323,7 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
         provas = _entregaveis(demanda) if demanda and demanda.exists() else []
         resolucao = resolvidos.get(case_id)
         situacao, porque = _situacao(legado, n3, provas, resolucao, existem)
-        localizador, detalhe_evidencia = _evidencia(legado, n3)
+        localizador, dialeto_localizador, detalhe_evidencia = _evidencia(legado, n3)
 
         estado_legado = (legado or {}).get("status")
         estado_n3 = (n3 or {}).get("lifecycleStatus")
@@ -288,6 +348,7 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
             "carimbosRepetidos": max(0, carimbos - fases),
             "entregaveis": len(provas),
             "localizadorDaEntrega": localizador,
+            "dialetoDoLocalizador": dialeto_localizador,
             "evidenciaDeclarada": detalhe_evidencia[:220] or None,
             "maiorEntregavel": max((p["bytes"] for p in provas), default=0),
             "prazo": _prazo_do_nome(titulo, hoje) if titulo else None,
