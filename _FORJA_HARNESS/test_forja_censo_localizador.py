@@ -131,5 +131,96 @@ class TestOrfaoSemEstado(unittest.TestCase):
                              ["case-orfao"])
 
 
+class TestDivergenciaSeApuraPorSentido(unittest.TestCase):
+    """`fulfilled` e `fulfilled_by_forja_f10` são o mesmo estado em dois
+    vocabulários, e a decisão de situação sempre os tratou assim. Comparar as
+    cadeias cruas acusava 5 divergências que não existiam."""
+
+    def _caso_com_dois_esquemas(self, raiz, legado, n3, modo="shadow"):
+        d = raiz / "case-x"
+        d.mkdir(parents=True)
+        (d / "FORJA_STATE.json").write_text(json.dumps(
+            {"caseId": "case-x", "status": legado,
+             "deliveryEvidence": {"status": "ok", "detail": "e-mail 19fc8853eadd3438"}}),
+            encoding="utf-8")
+        (d / "FORJA_N3_STATE.json").write_text(json.dumps(
+            {"caseId": "case-x", "lifecycleStatus": n3}), encoding="utf-8")
+        (d / "FORJA_CASE_MANIFEST.json").write_text(json.dumps({"mode": modo}),
+                                                    encoding="utf-8")
+        return d
+
+    def _um(self, legado, n3, modo="shadow", conferido=False):
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            self._caso_com_dois_esquemas(raiz, legado, n3, modo)
+            conf = {"case-x": {"resultado": "confere"}} if conferido else {}
+            return forja_censo.censo(raiz, resolucoes={},
+                                     conferencias=conf)["casos"][0]
+
+    def test_sinonimos_terminais_nao_sao_divergencia(self):
+        for n3 in ("fulfilled_by_forja_f10", "complete", "superseded"):
+            with self.subTest(n3=n3):
+                self.assertFalse(self._um("fulfilled", n3)["esquemasDivergem"])
+
+    def test_sombra_diferente_do_legado_e_esperado_e_nao_pendencia(self):
+        c = self._um("fulfilled", "pending", modo="shadow")
+        self.assertTrue(c["esquemasDivergem"])
+        self.assertEqual(c["arbitro"]["veredito"], "n3_e_sombra")
+
+    def test_n3_nao_sombra_parado_com_entrega_provada_e_achado(self):
+        """Contraprova do anterior: fora do modo sombra, o mesmo par acusa."""
+        c = self._um("fulfilled", "pending", modo="pilot_blocking", conferido=True)
+        self.assertEqual(c["arbitro"]["veredito"], "n3_parou_no_meio")
+
+    def test_sem_conferencia_o_arbitro_nao_escolhe_vencedor(self):
+        """Localizador registrado e não conferido não prova entrega — e o árbitro
+        que chutasse aqui estaria decidindo por impaciência, não por evidência."""
+        c = self._um("fulfilled", "pending", modo="pilot_blocking", conferido=False)
+        self.assertEqual(c["arbitro"]["veredito"], "conflito_real")
+
+    def test_carimbo_sem_prova_nao_vira_achado_proprio(self):
+        """Ele só ocorre junto de `concluido_sem_prova`: seria contar duas vezes."""
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            d = self._caso_com_dois_esquemas(raiz, "fulfilled", "pending")
+            (d / "FORJA_STATE.json").write_text(json.dumps(
+                {"caseId": "case-x", "status": "fulfilled",
+                 "deliveryEvidence": {"status": "ok", "detail": "entregue, sem id"}}),
+                encoding="utf-8")
+            dados = forja_censo.censo(raiz, resolucoes={}, conferencias={})
+            achados = forja_censo.gate_censo(dados)
+        self.assertEqual(dados["casos"][0]["arbitro"]["veredito"],
+                         "legado_carimbou_sem_prova")
+        self.assertEqual([a["id"] for a in achados if a["id"] == "CEN6"], [])
+
+
+class TestConferenciaNaoViraEntregue(unittest.TestCase):
+    """Conferir prova que a mensagem existe, não que o conteúdo era o esperado.
+
+    Se `entrega_conferida` virasse `entregue`, o relatório perderia a distinção
+    que a conferência acabou de criar — dois graus de prova com um nome só.
+    """
+
+    def test_conferido_e_situacao_propria_e_traz_destinatario(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            _caso(raiz, "case-x", "enviado em 19fc8853eadd3438")
+            dados = forja_censo.censo(raiz, resolucoes={}, conferencias={
+                "case-x": {"resultado": "confere", "para": "fulano@exemplo.com",
+                           "data": "Wed, 8 Jul 2026 20:13:11 -0300"}})
+        c = dados["casos"][0]
+        self.assertEqual(c["situacao"], "entrega_conferida")
+        self.assertIn("fulano@exemplo.com", c["porque"])
+        self.assertIn("não que o conteúdo", c["porque"])
+
+    def test_conferencia_que_nao_confere_nao_promove(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            _caso(raiz, "case-x", "enviado em 19fc8853eadd3438")
+            dados = forja_censo.censo(raiz, resolucoes={}, conferencias={
+                "case-x": {"resultado": "nao_encontrado"}})
+        self.assertEqual(dados["casos"][0]["situacao"], "entrega_declarada")
+
+
 if __name__ == "__main__":
     unittest.main()

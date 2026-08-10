@@ -264,6 +264,13 @@ ROTAS: dict[str, dict] = {
         "observacao": (
             "em 10/08/2026 devolveu o inteiro teor de dois agravos de instrumento "
             "de 2019 que o acervo tinha apenas por ementa e dispositivo"),
+        "probe": {"esperaTexto": "jurisprudencia", "minimoBytes": 3000},
+        "probeParcial": (
+            "o probe exercita só a porta: confirma que o serviço de jurisprudência "
+            "responde e monta o formulário. O documento em si depende de um "
+            "identificador que nasce da busca, e por isso não cabe amostra fixa "
+            "aqui — o identificador é do processo consultado, e processo é dado de "
+            "cliente, que não vive no motor"),
         "verificadoEm": "2026-08-10",
     },
     # ----------------------------------------------------------------- DJEN

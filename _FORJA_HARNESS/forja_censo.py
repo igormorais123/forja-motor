@@ -12,11 +12,16 @@ específico do que a queixa: **não havia como saber**. Três defeitos somados:
    `forja_axi.py` anunciava "28 of 28 total" sobre a mesma população — corrigido
    no mesmo dia, e a correção de um leitor não conserta a classe.
 
-2. Os dois esquemas discordam sobre o mesmo caso. O caso do plano de saúde
-   tem 94 arquivos entregues na pasta da demanda; o legado o descreve como
-   `F0_RECONCILIACAO_FILA / fulfilled`, carimbado vinte e três vezes, e o N3 o
-   descreve como `fulfilled_by_forja_f10`. Dois registros de verdade divergentes,
-   nenhum árbitro.
+2. Os dois esquemas parecem discordar sobre o mesmo caso — e a medição de
+   10/08/2026 mostrou que a pergunta estava mal feita. O exemplo que este texto
+   trazia, `fulfilled` contra `fulfilled_by_forja_f10`, é a mesma situação em
+   dois vocabulários, e a decisão de situação, logo abaixo, sempre os tratou como
+   equivalentes. Dos 17 casos acusados de divergir, 5 eram só isso. Os outros 12
+   têm o N3 em `mode: shadow`, declarado no manifesto do caso: **sombra não é um
+   segundo registro da verdade, é o diário do executor**, e só sabe o que passou
+   pelo runner. Cobrar coerência entre os dois era erro de categoria, e a
+   acusação de divergência escondia o único achado real — um carimbo de cumprido
+   sem prova nenhuma.
 
 3. `fulfilled` significa duas coisas incompatíveis: "entregue" e "triado, não
    havia demanda". Como a palavra é a mesma, um caso substantivo abandonado é
@@ -59,6 +64,7 @@ FORJA = Path(__file__).resolve().parent
 WORKSPACE = FORJA.parent
 STATE = FORJA / "state"
 RESOLUCOES = STATE / "CENSO_RESOLUCOES.json"
+CONFERENCIAS = STATE / "CENSO_CONFERENCIAS.json"
 
 VERSAO = "FORJA-CENSO-v1"
 
@@ -67,6 +73,7 @@ VERSAO = "FORJA-CENSO-v1"
 # rótulo livre deixa quem lê descobrindo sozinho qual era o problema.
 SITUACOES = (
     "entregue",             # terminal com prova em disco
+    "entrega_conferida",    # localizador conferido na fonte, com data e destinatário
     "entrega_declarada",    # sem artefato, mas com localizador conferível (ver abaixo)
     "triado_sem_demanda",   # terminal sem entregável, declarado por pessoa
     "aguardando_humano",    # esperando leitura, revisão ou ciência
@@ -111,6 +118,23 @@ _TERMINAIS = {"fulfilled", "fulfilled_by_forja_f10", "complete", "delivered", "c
               "superseded", "cumprida"}
 _BLOQUEADOS = {"blocked", "bloqueada"}
 _AGUARDANDO = {"draft_awaiting_review", "ready", "awaiting_review", "aguardando_revisao"}
+
+# Divergência se apura por sentido, nunca por texto. Os dois esquemas nasceram
+# em épocas diferentes e escrevem a mesma coisa com palavras diferentes:
+# `fulfilled` e `fulfilled_by_forja_f10` são o mesmo estado, e a própria decisão
+# de situação, logo acima, já os trata assim. Comparar as cadeias cruas
+# contradizia esta linha algumas dezenas de linhas adiante. Medido em
+# 10/08/2026: de 17 casos acusados de divergir, 4 eram só isto.
+_CLASSES = (("terminal", _TERMINAIS), ("bloqueado", _BLOQUEADOS),
+            ("aguardando", _AGUARDANDO))
+
+
+def _classe(estado) -> str:
+    e = str(estado or "").strip()
+    for nome, conjunto in _CLASSES:
+        if e in conjunto:
+            return nome
+    return e or "vazio"
 
 _ENTREGAVEL = {".docx", ".pdf"}
 _TAMANHO_MINIMO = 20_000  # abaixo disso é rascunho, gabarito ou placeholder
@@ -265,7 +289,68 @@ def _evidencia(legado, n3) -> tuple[str | None, str | None, str]:
     return None, None, ""
 
 
-def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
+# O árbitro entre os dois esquemas não é a data do arquivo nem a autoridade de
+# um deles: é o que dá para ver, mais o que cada esquema afirma ser.
+#
+# A medição de 10/08/2026 desmontou a pergunta original. Este módulo nasceu
+# dizendo que o legado e o N3 eram "dois registros de verdade divergentes, nenhum
+# árbitro" — e são 28 dos 29 registros N3 da casa em `mode: shadow`, declarado no
+# próprio manifesto do caso. **Sombra não é um segundo registro da verdade: é o
+# diário do executor**, e só sabe o que passou pelo runner. Caso entregue pela
+# rota manual não emite evento nenhum ali, então o N3 fica legitimamente em fase
+# intermediária. Os 12 divergentes eram todos sombra, um deles com 2.148 eventos
+# e atualizado no mesmo dia: não estava parado, estava vivo e narrando outra
+# coisa. Cobrar coerência entre os dois era erro de categoria, e a acusação de
+# divergência escondia o único achado real — um carimbo de cumprido sem prova.
+_ARBITRO = {
+    "n3_e_sombra": ("o N3 declara `mode: shadow` no manifesto do caso: ele "
+                    "registra o que passou pelo runner, não o que foi entregue. "
+                    "Diferir do legado aqui é o comportamento esperado, e não "
+                    "divergência a resolver"),
+    "n3_parou_no_meio": ("o N3 não é sombra, declara fase intermediária, e a "
+                         "evidência prova entrega: o registro deixou de ser "
+                         "atualizado"),
+    "legado_carimbou_sem_prova": ("o legado declara cumprido e não há entregável, "
+                                  "localizador nem declaração: o carimbo não se sustenta"),
+    "conflito_real": ("os dois estão informados e discordam; nenhum é desmentido "
+                      "pela evidência, então a decisão é humana"),
+}
+
+
+def _modo_do_caso(pasta: Path) -> str | None:
+    return ((_ler_json(pasta / "FORJA_CASE_MANIFEST.json") or {}).get("mode"))
+
+
+def _arbitrar(situacao: str, estado_legado, estado_n3, modo) -> dict:
+    """O que a evidência desmente — e o que sequer estava afirmando."""
+    provado = situacao in ("entregue", "entrega_conferida")
+    legado_terminal = _classe(estado_legado) == "terminal"
+
+    if legado_terminal and situacao == "concluido_sem_prova":
+        chave = "legado_carimbou_sem_prova"
+    elif modo == "shadow":
+        chave = "n3_e_sombra"
+    elif provado and _classe(estado_n3) != "terminal":
+        chave = "n3_parou_no_meio"
+    else:
+        chave = "conflito_real"
+    return {"veredito": chave, "porque": _ARBITRO[chave],
+            "evidencia": situacao, "modoDoN3": modo}
+
+
+def carregar_conferencias(path: Path | None = None) -> dict:
+    """O que já foi conferido na fonte, por `forja_conferir_entregas.py`.
+
+    Conferir prova que a mensagem existe, quando saiu e para quem — não que o
+    conteúdo era a peça certa. Por isso `entrega_conferida` é situação própria e
+    não vira `entregue`: são graus de prova diferentes, e colapsá-los devolveria
+    ao relatório a ambiguidade que a conferência acabou de tirar dele.
+    """
+    dados = _ler_json(path or CONFERENCIAS) or {}
+    return dados.get("casos", {}) if isinstance(dados, dict) else {}
+
+
+def _situacao(legado, n3, provas, resolucao, existem, conferencia=None) -> tuple[str, str]:
     if legado is None and n3 is None:
         # "Não localizado" não é diagnóstico: a pasta sem arquivo de estado e o
         # arquivo de estado corrompido pedem conserto diferente, e colapsá-los
@@ -288,6 +373,14 @@ def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
             return "triado_sem_demanda", (
                 f"declarado por {resolucao.get('por','?')}: {resolucao.get('motivo','')}".strip())
         localizador, dialeto, _ = _evidencia(legado, n3)
+        if localizador and (conferencia or {}).get("resultado") == "confere":
+            quando = conferencia.get("data") or conferencia.get("conferidoEm")
+            para = conferencia.get("para")
+            return "entrega_conferida", (
+                f"localizador {localizador} conferido na fonte"
+                + (f", enviado a {para}" if para else "")
+                + (f" em {quando}" if quando else "")
+                + " — conferido que a mensagem existe, não que o conteúdo era o esperado")
         if localizador:
             onde = {"gmail": "conferível contra a caixa de saída",
                     "whatsapp": "conferível contra o histórico da conversa",
@@ -301,9 +394,11 @@ def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
     return "aberto", "trabalho por fazer"
 
 
-def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> dict:
+def censo(state_root: Path | None = None, *, resolucoes: dict | None = None,
+          conferencias: dict | None = None) -> dict:
     raiz = state_root or STATE
     resolvidos = carregar_resolucoes() if resolucoes is None else resolucoes
+    conferidos = carregar_conferencias() if conferencias is None else conferencias
     hoje = datetime.now().date()
 
     pastas = sorted(p for p in raiz.glob("case-*") if p.is_dir())
@@ -322,12 +417,16 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
 
         provas = _entregaveis(demanda) if demanda and demanda.exists() else []
         resolucao = resolvidos.get(case_id)
-        situacao, porque = _situacao(legado, n3, provas, resolucao, existem)
+        situacao, porque = _situacao(legado, n3, provas, resolucao, existem,
+                                     conferidos.get(case_id))
         localizador, dialeto_localizador, detalhe_evidencia = _evidencia(legado, n3)
 
         estado_legado = (legado or {}).get("status")
         estado_n3 = (n3 or {}).get("lifecycleStatus")
-        divergem = bool(legado and n3 and estado_legado != estado_n3)
+        divergem = bool(legado and n3
+                        and _classe(estado_legado) != _classe(estado_n3))
+        arbitro = (_arbitrar(situacao, estado_legado, estado_n3, _modo_do_caso(pasta))
+                   if divergem else None)
 
         dias, desde = _idade_da_fase(legado)
         carimbos = len((legado or {}).get("phaseHistory") or [])
@@ -342,6 +441,7 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
             "estadoLegado": estado_legado,
             "estadoN3": estado_n3,
             "esquemasDivergem": divergem,
+            "arbitro": arbitro,
             "fase": (legado or {}).get("currentPhase"),
             "diasNaFase": dias,
             "faseDesde": desde,
@@ -406,10 +506,23 @@ def gate_censo(dados: dict) -> list[dict]:
                         "texto": "entrega registrada com localizador e sem artefato arquivado — "
                                  "é conferível e não foi conferida, o que é dívida de auditoria "
                                  "e não de trabalho"})
-    if dados["divergentes"]:
-        achados.append({"id": "CEN3", "sev": "P1", "quantos": dados["divergentes"],
-                        "texto": "os dois esquemas de estado discordam sobre o mesmo caso; "
-                                 "não há árbitro entre eles"})
+    vereditos = {}
+    for c in dados["casos"]:
+        if c.get("arbitro"):
+            vereditos[c["arbitro"]["veredito"]] = vereditos.get(
+                c["arbitro"]["veredito"], 0) + 1
+    if vereditos.get("n3_parou_no_meio"):
+        achados.append({"id": "CEN3", "sev": "P1", "quantos": vereditos["n3_parou_no_meio"],
+                        "texto": "o N3 não é sombra, declara fase intermediária e a entrega "
+                                 "está provada — registro parado, não trabalho parado"})
+    # `legado_carimbou_sem_prova` não vira achado próprio: por construção ele só
+    # ocorre quando a situação já é `concluido_sem_prova`, então seria o CEN2
+    # contado de novo com outro nome. O veredito fica no registro do caso, onde
+    # explica a causa; a contagem fica onde já estava.
+    if vereditos.get("conflito_real"):
+        achados.append({"id": "CEN7", "sev": "P1", "quantos": vereditos["conflito_real"],
+                        "texto": "os dois esquemas discordam e nenhum é desmentido pela "
+                                 "evidência; a decisão é humana, caso a caso"})
     vencidos = [c for c in dados["casos"]
                 if c["situacao"] in DEVENDO and (c.get("prazo") or {}).get("vencido")]
     if vencidos:
@@ -488,7 +601,14 @@ def main(argv=None) -> int:
             n = dados["situacoes"][s]
             if n:
                 print(f"  {s:<20} {n:>3}")
+        sombra = sum(1 for c in dados["casos"]
+                     if (c.get("arbitro") or {}).get("veredito") == "n3_e_sombra")
         print(f"\n  esquemas divergentes {dados['divergentes']:>3}")
+        if sombra:
+            # Sem esta linha o número cai de 17 para 1 sem explicação, e quem lê
+            # não distingue defeito consertado de defeito escondido.
+            print(f"  destes, {sombra} são N3 em modo sombra, que registra o "
+                  f"runner e não a entrega — esperado, não pendência")
 
     if achados:
         print("\nachados:")

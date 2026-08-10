@@ -73,15 +73,23 @@ def main() -> int:
         except Exception:
             pass
         Path(status_path).write_text("document_open_started", encoding="ascii")
-        doc = word.Documents.Open(
-            FileName=source,
-            ConfirmConversions=False,
-            ReadOnly=True,
-            AddToRecentFiles=False,
-            Revert=False,
-            OpenAndRepair=True,
-            NoEncodingDialog=True,
-        )
+        # `OpenAndRepair=True` dispara a passagem de reparo do Word em TODO
+        # documento, e ela não tem teto de tempo. Em 10/08/2026 três entregáveis
+        # de um mesmo caso estouraram os 75 segundos do processo pai sempre no
+        # mesmo ponto, `document_open_started`, e a mesma máquina os abria em
+        # 0,3 segundo sem esse parâmetro — inclusive o arquivo original,
+        # intocado, o que descartou defeito de conteúdo. O resultado foi um "não
+        # dá para converter" falso sobre documento saudável, e a falsa causa é
+        # cara: ela manda diagnosticar o arquivo em vez da ferramenta.
+        # O reparo continua disponível, mas como segunda tentativa: quem precisa
+        # dele é o arquivo corrompido, e esse falha na abertura normal primeiro.
+        abertura = dict(FileName=source, ConfirmConversions=False, ReadOnly=True,
+                        AddToRecentFiles=False, Revert=False, NoEncodingDialog=True)
+        try:
+            doc = word.Documents.Open(**abertura)
+        except Exception:
+            Path(status_path).write_text("document_open_repair", encoding="ascii")
+            doc = word.Documents.Open(**abertura, OpenAndRepair=True)
         Path(status_path).write_text("document_opened", encoding="ascii")
         Path(status_path).write_text("export_started", encoding="ascii")
         doc.ExportAsFixedFormat(destination, 17, False, 0, 0, 0, 0, False)
