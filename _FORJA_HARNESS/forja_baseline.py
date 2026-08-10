@@ -44,6 +44,9 @@ SUITES_SCRIPT = {
     "test_forja_fronteira.py": (
         "fronteira motor/acervo — classifica, acusa vazamento de dado de cliente "
         "e não acusa vocabulário nem valor sintético"),
+    "test_forja_licoes.py": (
+        "catraca da rastreabilidade das lições: citação por número tem de "
+        "resolver para uma lição só, e a duplicidade de numeração não pode crescer"),
     "test_forja_aprendizado.py": (
         "o retorno humano vira regra aplicada e conferida: recorrência entre casos "
         "distintos manda sobre volume, aplicar é idempotente, e toda regra adotada "
