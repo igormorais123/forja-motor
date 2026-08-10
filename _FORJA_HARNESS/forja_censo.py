@@ -67,16 +67,29 @@ VERSAO = "FORJA-CENSO-v1"
 # rótulo livre deixa quem lê descobrindo sozinho qual era o problema.
 SITUACOES = (
     "entregue",             # terminal com prova em disco
+    "entrega_declarada",    # sem artefato, mas com localizador conferível (ver abaixo)
     "triado_sem_demanda",   # terminal sem entregável, declarado por pessoa
     "aguardando_humano",    # esperando leitura, revisão ou ciência
     "bloqueado",            # impedimento declarado
     "aberto",               # trabalho por fazer
-    "concluido_sem_prova",  # diz-se cumprido, e não há entregável nem declaração
+    "concluido_sem_prova",  # diz-se cumprido, sem artefato, sem localizador, sem declaração
     "ilegivel",             # o estado não pôde ser lido
 )
 
-# Situações que ainda devem alguma coisa a alguém.
-DEVENDO = ("aberto", "aguardando_humano", "bloqueado", "concluido_sem_prova", "ilegivel")
+# Situações que ainda devem alguma coisa a alguém. `entrega_declarada` está aqui
+# de propósito: ela é conferível e não foi conferida, o que é dívida de auditoria
+# e não de trabalho.
+DEVENDO = ("aberto", "aguardando_humano", "bloqueado", "entrega_declarada",
+           "concluido_sem_prova", "ilegivel")
+
+# `deliveryEvidence` guarda o que o painel registrou sobre a entrega. Ele existe
+# em 83 dos 89 casos legíveis — proporção que sozinha o desqualifica como prova,
+# porque carimbo aplicado a 93% da população é padrão, não evidência. O que
+# separa os dois é o **localizador**: 74 desses registros citam o identificador
+# da mensagem enviada, que é conferível contra a caixa; 9 são prosa, que não é.
+# A distinção nasceu de um quase-erro: eu ia perguntar ao titular do escritório
+# se 19 demandas tinham sido entregues, e 19 traziam o ID do e-mail em que foram.
+_LOCALIZADOR = re.compile(r"\b(?:19[0-9a-f]{14}|[0-9a-f]{16})\b")
 
 _TERMINAIS = {"fulfilled", "fulfilled_by_forja_f10", "complete", "delivered", "closed",
               "superseded", "cumprida"}
@@ -183,6 +196,18 @@ def carregar_resolucoes(path: Path | None = None) -> dict:
     return dados.get("casos", {}) if isinstance(dados, dict) else {}
 
 
+def _evidencia(legado, n3) -> tuple[str | None, str]:
+    """(localizador, detalhe) do que o painel registrou sobre a entrega."""
+    for fonte in (legado, n3):
+        ev = (fonte or {}).get("deliveryEvidence") or {}
+        detalhe = str(ev.get("detail") or "").strip()
+        if ev.get("status") in (None, "none", ""):
+            continue
+        achado = _LOCALIZADOR.search(detalhe)
+        return (achado.group(0) if achado else None), detalhe
+    return None, ""
+
+
 def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
     if legado is None and n3 is None:
         # "Não localizado" não é diagnóstico: a pasta sem arquivo de estado e o
@@ -205,9 +230,14 @@ def _situacao(legado, n3, provas, resolucao, existem) -> tuple[str, str]:
         if resolucao:
             return "triado_sem_demanda", (
                 f"declarado por {resolucao.get('por','?')}: {resolucao.get('motivo','')}".strip())
+        localizador, _ = _evidencia(legado, n3)
+        if localizador:
+            return "entrega_declarada", (
+                f"entrega registrada com localizador {localizador}, conferível contra a "
+                "caixa de saída; sem artefato arquivado aqui")
         return "concluido_sem_prova", (
-            "declarado cumprido, sem entregável em disco e sem declaração de que "
-            "não havia demanda")
+            "declarado cumprido, sem entregável em disco, sem localizador conferível "
+            "e sem declaração de que não havia demanda")
     return "aberto", "trabalho por fazer"
 
 
@@ -233,6 +263,7 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
         provas = _entregaveis(demanda) if demanda and demanda.exists() else []
         resolucao = resolvidos.get(case_id)
         situacao, porque = _situacao(legado, n3, provas, resolucao, existem)
+        localizador, detalhe_evidencia = _evidencia(legado, n3)
 
         estado_legado = (legado or {}).get("status")
         estado_n3 = (n3 or {}).get("lifecycleStatus")
@@ -256,6 +287,8 @@ def censo(state_root: Path | None = None, *, resolucoes: dict | None = None) -> 
             "faseDesde": desde,
             "carimbosRepetidos": max(0, carimbos - fases),
             "entregaveis": len(provas),
+            "localizadorDaEntrega": localizador,
+            "evidenciaDeclarada": detalhe_evidencia[:220] or None,
             "maiorEntregavel": max((p["bytes"] for p in provas), default=0),
             "prazo": _prazo_do_nome(titulo, hoje) if titulo else None,
             "pastaDaDemandaExiste": bool(demanda and demanda.exists()),
@@ -306,6 +339,12 @@ def gate_censo(dados: dict) -> list[dict]:
         achados.append({"id": "CEN2", "sev": "P0", "quantos": sem_prova,
                         "texto": "caso dado por cumprido sem entregável em disco e sem declaração "
                                  "de que não havia demanda — 'feito' aqui é palavra, não prova"})
+    declarada = dados["situacoes"]["entrega_declarada"]
+    if declarada:
+        achados.append({"id": "CEN5", "sev": "P1", "quantos": declarada,
+                        "texto": "entrega registrada com localizador e sem artefato arquivado — "
+                                 "é conferível e não foi conferida, o que é dívida de auditoria "
+                                 "e não de trabalho"})
     if dados["divergentes"]:
         achados.append({"id": "CEN3", "sev": "P1", "quantos": dados["divergentes"],
                         "texto": "os dois esquemas de estado discordam sobre o mesmo caso; "

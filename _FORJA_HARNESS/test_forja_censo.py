@@ -121,6 +121,60 @@ class TestFeitoExigeProva:
 
         assert fc.censo(raiz, resolucoes={})["casos"][0]["situacao"] == "entregue"
 
+    def test_registro_com_localizador_nao_e_cumprido_sem_prova(self, raiz):
+        """O quase-erro de 09/08: eu ia perguntar ao titular se 19 demandas tinham
+        sido entregues, e 19 traziam o identificador do e-mail em que foram."""
+        demanda = raiz.parent / "demanda-enviada"
+        demanda.mkdir(parents=True)
+        _caso(raiz, "env", legado={
+            "status": "fulfilled", "currentPhase": "F0",
+            "deliveryEvidence": {"status": "manual_override",
+                                 "detail": "Entrega enviada no Gmail 19f7c58fce9fabcd"}},
+            demanda=demanda)
+
+        dados = fc.censo(raiz, resolucoes={})
+        caso = dados["casos"][0]
+
+        assert caso["situacao"] == "entrega_declarada"
+        assert caso["localizadorDaEntrega"] == "19f7c58fce9fabcd"
+        achados = {a["id"]: a for a in fc.gate_censo(dados)}
+        assert "CEN2" not in achados
+        assert achados["CEN5"]["sev"] == "P1"
+
+    def test_evidencia_so_em_prosa_continua_sem_prova(self, raiz):
+        """Carimbo em 93% da população é padrão, não evidência. O localizador separa."""
+        demanda = raiz.parent / "demanda-prosa"
+        demanda.mkdir(parents=True)
+        _caso(raiz, "prosa", legado={
+            "status": "fulfilled", "currentPhase": "F0",
+            "deliveryEvidence": {"status": "manual_override", "detail": "não é tarefa"}},
+            demanda=demanda)
+
+        dados = fc.censo(raiz, resolucoes={})
+
+        assert dados["casos"][0]["situacao"] == "concluido_sem_prova"
+        assert "CEN2" in {a["id"] for a in fc.gate_censo(dados)}
+
+    def test_artefato_em_disco_vence_o_registro_do_painel(self, raiz):
+        demanda = raiz.parent / "demanda-dupla"
+        _entregavel(demanda, "peca.pdf", 80_000)
+        _caso(raiz, "dupla", legado={
+            "status": "fulfilled", "currentPhase": "F10",
+            "deliveryEvidence": {"status": "manual_override", "detail": "Gmail 19abcdef01234567"}},
+            demanda=demanda)
+
+        assert fc.censo(raiz, resolucoes={})["casos"][0]["situacao"] == "entregue"
+
+    def test_entrega_declarada_continua_devendo_conferencia(self, raiz):
+        demanda = raiz.parent / "demanda-conferir"
+        demanda.mkdir(parents=True)
+        _caso(raiz, "conf", legado={
+            "status": "fulfilled", "currentPhase": "F0",
+            "deliveryEvidence": {"status": "sent_confirmed", "detail": "resposta 19fd9ed5a0acfb3f"}},
+            demanda=demanda)
+
+        assert [c["caseId"] for c in fc.devendo(fc.censo(raiz, resolucoes={}))] == ["case-conf"]
+
     def test_arquivo_pequeno_nao_conta_como_entrega(self, raiz):
         demanda = raiz.parent / "demanda-placeholder"
         _entregavel(demanda, "rascunho.docx", 500)
