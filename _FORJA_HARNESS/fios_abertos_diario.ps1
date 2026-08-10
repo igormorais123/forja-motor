@@ -1,4 +1,4 @@
-# Execução diária do varredor de fios de e-mail sem resposta minha.
+﻿# Execução diária do varredor de fios de e-mail sem resposta minha.
 # Registrado como tarefa agendada FORJA-Fios-Abertos. Silencioso quando não há
 # fio aberto; quando há, deixa arquivo visível em `reports\`, porque log que
 # ninguém abre não avisa ninguém.

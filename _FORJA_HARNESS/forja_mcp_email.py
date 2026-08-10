@@ -34,7 +34,9 @@ Registro em `.claude.json`:
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
+import mimetypes
 import sys
 from email.message import EmailMessage
 from pathlib import Path
@@ -43,7 +45,13 @@ RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ))
 
 PROTOCOLO = "2025-06-18"
-VERSAO = "1.0.0"
+VERSAO = "1.1.0"
+
+# O Gmail aceita 25 MB de anexo. O corpo vai em base64, que infla um terço, e a
+# mensagem carrega cabeçalhos: o teto útil fica abaixo do anunciado. Cortar aqui,
+# com o número na mensagem de erro, é melhor que descobrir pela recusa da API
+# depois de montar tudo.
+TETO_ANEXOS_BYTES = 18 * 1024 * 1024
 
 
 def _servico():
@@ -60,11 +68,80 @@ def _registrar(evento: dict) -> None:
 # Ferramentas
 # ---------------------------------------------------------------------------
 
-def enviar_email(to, subject, body, cc=None, bcc=None, reply_to_message_id=None):
-    """Compõe e envia. Devolve messageId e threadId reais da API."""
+def _anotar_veredito(veredito: dict, contexto: dict) -> None:
+    """Grava na trilha o que o gate viu — o que barrou, o que não conseguiu ver.
+
+    Compartilhado pelas duas saídas. Enquanto só o rascunho anexava, esta lógica
+    vivia dentro dele; ao abrir a segunda porta, duplicá-la garantiria que uma
+    delas passasse a registrar menos que a outra em algumas semanas.
+    """
+    import forja_gate_anexo_saida as gate
+
+    if not veredito["aprovado"]:
+        _registrar({**contexto, "evento": "envio_barrado_por_anexo",
+                    "arquivos": [m["arquivo"] for m in veredito["bloqueados"]]})
+        raise ValueError(gate.explicar(veredito))
+    if veredito.get("naoInspecionados"):
+        # Ponto cego declarado: o anexo saiu sem passar pela conferência. Não
+        # barra — ausência de medida nunca foi prova de desvio —, mas fica na
+        # trilha, porque barreira com ponto cego invisível é pior que barreira
+        # nenhuma: ninguém sabe o que ela não viu.
+        _registrar({**contexto, "evento": "anexo_nao_inspecionado",
+                    "itens": veredito["naoInspecionados"]})
+    if veredito["liberadosPorDeclaracao"]:
+        # Passar por declaração é decisão de quem envia, e fica na trilha: sem
+        # o registro, a exceção vira o caminho normal em duas semanas.
+        _registrar({**contexto, "evento": "anexo_liberado_por_declaracao",
+                    "arquivos": [m["arquivo"] for m in veredito["liberadosPorDeclaracao"]]})
+
+
+def _preparar_anexos(anexos, material_de_terceiro, contexto):
+    """Resolve os caminhos, submete ao gate da casa e devolve o que anexar.
+
+    Devolve uma lista de `(Path, bytes, sha256)`. O hash existe para o ledger:
+    ele registra QUAL arquivo saiu sem guardar o arquivo, que é a mesma regra
+    do loop pós-protocolo.
+    """
+    import forja_gate_anexo_saida as gate
+
+    caminhos, ausentes = [], []
+    for bruto in anexos:
+        p = Path(str(bruto)).expanduser()
+        (caminhos if p.is_file() else ausentes).append(p)
+    if ausentes:
+        # Anexo que não existe é erro de quem chamou, e precisa ser dito pelo
+        # nome. Enviar o e-mail sem ele seria pior: o destinatário recebe uma
+        # mensagem que promete um documento que não vai junto.
+        raise ValueError("anexo não encontrado no disco: "
+                         + "; ".join(str(p) for p in ausentes))
+
+    total = sum(p.stat().st_size for p in caminhos)
+    if total > TETO_ANEXOS_BYTES:
+        raise ValueError(
+            f"anexos somam {total/1048576:.1f} MB e o teto é "
+            f"{TETO_ANEXOS_BYTES/1048576:.0f} MB — divida o envio ou mande o PDF sem o DOCX")
+
+    _anotar_veredito(gate.avaliar(caminhos, material_de_terceiro=material_de_terceiro),
+                     contexto)
+
+    preparados = []
+    for p in caminhos:
+        dados = p.read_bytes()
+        preparados.append((p, dados, hashlib.sha256(dados).hexdigest()))
+    return preparados
+
+
+def enviar_email(to, subject, body, cc=None, bcc=None, reply_to_message_id=None,
+                 anexos=None, material_de_terceiro=None):
+    """Compõe e envia, com ou sem anexo. Devolve messageId e threadId da API."""
     if not to:
         raise ValueError("destinatário ausente")
     svc = _servico()
+
+    preparados = []
+    if anexos:
+        preparados = _preparar_anexos(anexos, material_de_terceiro,
+                                      {"para": to, "assunto": subject})
 
     msg = EmailMessage()
     msg["To"] = ", ".join(to)
@@ -74,6 +151,13 @@ def enviar_email(to, subject, body, cc=None, bcc=None, reply_to_message_id=None)
         msg["Bcc"] = ", ".join(bcc)
     msg["Subject"] = subject or ""
     msg.set_content(body or "")
+
+    for caminho, dados, _hash in preparados:
+        tipo, _ = mimetypes.guess_type(caminho.name)
+        principal, _, secundario = (tipo or "application/octet-stream").partition("/")
+        msg.add_attachment(dados, maintype=principal,
+                           subtype=secundario or "octet-stream",
+                           filename=caminho.name)
 
     corpo = {"raw": base64.urlsafe_b64encode(msg.as_bytes()).decode("ascii")}
 
@@ -103,40 +187,35 @@ def enviar_email(to, subject, body, cc=None, bcc=None, reply_to_message_id=None)
         "evento": "enviado_por_mcp", "para": to, "cc": cc or [],
         "assunto": subject, "messageId": enviado.get("id"),
         "threadId": enviado.get("threadId"), "caracteres": len(body or ""),
+        # Nome, tamanho e hash. Nunca o conteúdo: o documento vive na pasta do
+        # caso e na caixa de saída, e o ledger existe para dizer QUAL saiu.
+        "anexos": [{"arquivo": c.name, "bytes": len(d), "sha256": h}
+                   for c, d, h in preparados],
     })
     return {"messageId": enviado.get("id"), "threadId": enviado.get("threadId"),
-            "para": to, "assunto": subject}
+            "para": to, "assunto": subject,
+            "anexos": [c.name for c, _d, _h in preparados]}
 
 
 def enviar_rascunho(draft_id, material_de_terceiro=None):
     """Envia um rascunho já revisado, preservando o texto exato aprovado.
 
-    Esta é a única saída da FORJA por onde um documento efetivamente sai: o
-    `enviar_email` monta só corpo. Até 06/08/2026 ela despachava o que estivesse
-    anexado sem olhar uma vez, e foi por aqui que dois documentos fora do padrão
-    da casa seguiram para o cliente.
+    Até 10/08/2026 esta era a **única** saída da FORJA por onde um documento
+    efetivamente saía, porque o `enviar_email` montava só corpo. O efeito prático
+    apareceu quando havia seis arquivos prontos para o titular e a esteira não
+    tinha como despachá-los: capacidade que só existe por um caminho estreito é
+    capacidade que falta na hora em que se precisa dela. Hoje as duas portas
+    anexam, e **as duas passam pelo mesmo gate** — foi por aqui que, em
+    06/08/2026, dois documentos fora do padrão da casa seguiram para o cliente,
+    e abrir a segunda porta sem a mesma barreira teria reaberto exatamente esse
+    buraco.
     """
     import forja_gate_anexo_saida as gate
 
     svc = _servico()
     veredito = gate.avaliar_rascunho(svc, draft_id,
                                      material_de_terceiro=material_de_terceiro)
-    if not veredito["aprovado"]:
-        _registrar({"evento": "envio_barrado_por_anexo", "draftId": draft_id,
-                    "arquivos": [m["arquivo"] for m in veredito["bloqueados"]]})
-        raise ValueError(gate.explicar(veredito))
-    if veredito.get("naoInspecionados"):
-        # Ponto cego declarado: o anexo saiu sem passar pela conferência. Não
-        # barra — ausência de medida nunca foi prova de desvio —, mas fica na
-        # trilha, porque barreira com ponto cego invisível é pior que barreira
-        # nenhuma: ninguém sabe o que ela não viu.
-        _registrar({"evento": "anexo_nao_inspecionado", "draftId": draft_id,
-                    "itens": veredito["naoInspecionados"]})
-    if veredito["liberadosPorDeclaracao"]:
-        # Passar por declaração é decisão de quem envia, e fica na trilha: sem
-        # o registro, a exceção vira o caminho normal em duas semanas.
-        _registrar({"evento": "anexo_liberado_por_declaracao", "draftId": draft_id,
-                    "arquivos": [m["arquivo"] for m in veredito["liberadosPorDeclaracao"]]})
+    _anotar_veredito(veredito, {"draftId": draft_id})
     enviado = svc.users().drafts().send(userId="me", body={"id": draft_id}).execute()
     _registrar({"evento": "rascunho_enviado_por_mcp", "draftId": draft_id,
                 "messageId": enviado.get("id"), "threadId": enviado.get("threadId")})
@@ -163,11 +242,18 @@ FERRAMENTAS = [
     {
         "name": "enviar_email",
         "description": (
-            "Envia um e-mail de verdade pela conta do Igor. IRREVERSÍVEL — não há "
-            "desfazer. Use quando o envio já estiver autorizado. Para responder "
+            "Envia um e-mail de verdade pela conta do Igor, COM OU SEM ANEXO. "
+            "IRREVERSÍVEL — não há desfazer. Use quando o envio já estiver "
+            "autorizado. Para anexar, passe os caminhos em `anexos`: a ferramenta "
+            "lê os arquivos do disco e os embarca na mensagem, então NÃO existe "
+            "razão para prometer um documento no corpo e mandar só o texto. "
+            "Anexo .docx fora do padrão Word do escritório nas três dimensões "
+            "barra o envio inteiro; material redigido fora da casa passa quando "
+            "declarado nominalmente em `material_de_terceiro`. Para responder "
             "dentro de uma conversa existente, informe reply_to_message_id: e-mail "
             "solto sobre assunto em curso obriga o destinatário a reconstruir "
-            "contexto. Todo envio fica registrado em telemetria/ENVIOS_EMAIL.jsonl."
+            "contexto. Todo envio fica registrado em telemetria/ENVIOS_EMAIL.jsonl, "
+            "com nome, tamanho e hash de cada anexo — nunca o conteúdo."
         ),
         "inputSchema": {
             "type": "object",
@@ -182,6 +268,16 @@ FERRAMENTAS = [
                 "reply_to_message_id": {
                     "type": "string",
                     "description": "id da mensagem a responder, para manter o fio"},
+                "anexos": {
+                    "type": "array", "items": {"type": "string"},
+                    "description": "caminhos de arquivo no disco. Absolutos de "
+                                   "preferência. Teto de 18 MB somados."},
+                "material_de_terceiro": {
+                    "type": "array", "items": {"type": "string"},
+                    "description": "nomes de arquivo redigidos fora do escritório, "
+                                   "que devem ser encaminhados como vieram e por "
+                                   "isso não respondem ao padrão da casa",
+                },
             },
         },
     },
@@ -221,7 +317,9 @@ EXECUTORES = {
     "enviar_email": lambda a: enviar_email(
         a.get("to"), a.get("subject"), a.get("body"),
         cc=a.get("cc"), bcc=a.get("bcc"),
-        reply_to_message_id=a.get("reply_to_message_id")),
+        reply_to_message_id=a.get("reply_to_message_id"),
+        anexos=a.get("anexos"),
+        material_de_terceiro=a.get("material_de_terceiro")),
     "enviar_rascunho": lambda a: enviar_rascunho(
         a.get("draft_id"), material_de_terceiro=a.get("material_de_terceiro")),
     "listar_rascunhos": lambda a: listar_rascunhos(a.get("limite", 10)),

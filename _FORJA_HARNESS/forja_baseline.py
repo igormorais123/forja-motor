@@ -28,6 +28,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import forja_arvore_estavel as arvore
+
 FORJA = Path(__file__).resolve().parent
 
 # Regressões escritas como script autônomo. Cada uma comunica o veredito pelo
@@ -196,6 +198,45 @@ def _script(nome: str, papel: str) -> dict:
     }
 
 
+def _reavaliar_se_a_arvore_mexeu(item: dict) -> dict:
+    """Suíte vermelha ganha uma segunda leitura, com a árvore medida em volta.
+
+    A bateria leva minutos e outras sessões do agente escrevem na mesma pasta
+    nesse intervalo — medido em 10/08/2026, com módulo do motor alterado e teste
+    novo aparecendo no meio de uma execução. Uma suíte que varre a árvore pode
+    reprovar por causa disso e passar sozinha em seguida, o que já aconteceu com
+    a varredura tipográfica e com a da fronteira no mesmo dia.
+
+    A regra tem duas metades, e a segunda é que a impede de virar tapete:
+    **repetir verde não basta, a árvore precisa ter mexido.** Suíte que reprova
+    duas vezes continua vermelha; suíte que passa na segunda com a árvore parada
+    é falha intermitente de verdade e também continua vermelha, porque aí o
+    problema é dela.
+    """
+    if item["verde"] or item.get("familia") == "config":
+        return item
+
+    antes = arvore.impressao()
+    if item.get("familia") == "pytest":
+        segunda = _pytest(item["suite"])
+    else:
+        segunda = _script(item["suite"], item.get("papel", ""))
+    delta = arvore.mexeu(antes, arvore.impressao())
+
+    if not (segunda["verde"] and delta["mexeu"]):
+        return {**item, "segundaLeitura": {"verde": segunda["verde"],
+                                           "resumo": segunda["resumo"]},
+                "arvoreMexeu": delta}
+    return {
+        **item, "instavel": True, "verde": False,
+        "segundaLeitura": {"verde": True, "resumo": segunda["resumo"]},
+        "arvoreMexeu": delta,
+        "porque": (f"reprovou, a árvore mudou em {delta['total']} arquivo(s) "
+                   f"durante a leitura e a segunda passada ficou verde; o "
+                   f"baseline não afirma nem aprovação nem quebra"),
+    }
+
+
 def _parece_script_autonomo(nome: str) -> bool:
     try:
         texto = (FORJA / nome).read_text(encoding="utf-8", errors="replace")
@@ -254,7 +295,10 @@ def executar() -> dict:
         for nome in _scripts_autonomos_nao_mapeados()
     ]
     resultados += [_script(nome, papel) for nome, papel in sorted(SUITES_SCRIPT.items())]
-    vermelhas = [item for item in resultados if not item["verde"]]
+    resultados = [_reavaliar_se_a_arvore_mexeu(item) for item in resultados]
+    instaveis = [item for item in resultados if item.get("instavel")]
+    vermelhas = [item for item in resultados
+                 if not item["verde"] and not item.get("instavel")]
     return {
         "schemaVersion": 1,
         "geradoEm": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
@@ -264,7 +308,13 @@ def executar() -> dict:
         "testesPytest": sum(item.get("passed", 0) for item in resultados),
         "subtestsPytest": sum(item.get("subtests", 0) for item in resultados),
         "regressoesScript": len(SUITES_SCRIPT),
-        "aprovado": not vermelhas,
+        "instaveis": [{"suite": i["suite"], "porque": i["porque"],
+                       "arvoreMexeu": i["arvoreMexeu"]} for i in instaveis],
+        # `aprovado` continua exigindo zero vermelhas. Instável não aprova nada:
+        # ele tem veredito próprio, logo abaixo, e sai por código de saída
+        # distinto para que automação não o confunda com verde.
+        "aprovado": not vermelhas and not instaveis,
+        "inconclusivo": bool(instaveis) and not vermelhas,
         "quarentena": [{"suite": n, "motivo": m} for n, m in sorted(QUARENTENA.items())],
         "suites": resultados,
     }
@@ -275,7 +325,7 @@ def _imprimir(relatorio: dict) -> None:
     print("BASELINE FORJA — todas as suítes declaradas, nominalmente")
     print("=" * 78)
     for item in relatorio["suites"]:
-        marca = "ok  " if item["verde"] else "FALHA"
+        marca = "ok  " if item["verde"] else ("INST" if item.get("instavel") else "FALHA")
         print(f"  [{marca}] {item['suite']:<38} {item['resumo'][:34]}")
     print("-" * 78)
     print(
@@ -286,7 +336,23 @@ def _imprimir(relatorio: dict) -> None:
     )
     for q in relatorio.get("quarentena") or []:
         print(f"  [QUAR] {q['suite']:<38} fora do veredito — {q['motivo'][:200]}")
-    print("  APROVADO" if relatorio["aprovado"] else "  REPROVADO — ver suítes marcadas acima")
+    for i in relatorio.get("instaveis") or []:
+        d = i["arvoreMexeu"]
+        print(f"  [INST] {i['suite']:<38} {i['porque']}")
+        print(f"         mudaram {d['novos']} novo(s), {d['mudados']} alterado(s), "
+              f"{d['sumidos']} removido(s) durante a leitura:")
+        for caminho in d["amostra"][:6]:
+            print(f"           {caminho}")
+        if d["total"] > len(d["amostra"][:6]):
+            print(f"           … e mais {d['total'] - len(d['amostra'][:6])}")
+    if relatorio["aprovado"]:
+        print("  APROVADO")
+    elif relatorio.get("inconclusivo"):
+        print("  INCONCLUSIVO — nenhuma suíte quebrou, mas a árvore mudou durante a "
+              "leitura de pelo menos uma. Rode de novo com a pasta parada antes de "
+              "declarar o baseline verde.")
+    else:
+        print("  REPROVADO — ver suítes marcadas acima")
 
 
 def main() -> int:
@@ -309,7 +375,11 @@ def main() -> int:
     )
     if not args.quiet:
         print(f"  Relatório: {destino}")
-    return 0 if relatorio["aprovado"] else 1
+    if relatorio["aprovado"]:
+        return 0
+    # Código próprio: automação que trata "≠ 0" como quebra continua correta, e
+    # quem quiser distinguir "não deu para saber" de "quebrou" agora consegue.
+    return 2 if relatorio.get("inconclusivo") else 1
 
 
 if __name__ == "__main__":

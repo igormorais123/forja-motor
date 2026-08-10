@@ -185,9 +185,36 @@ python forja_post_protocol.py scan-gmail [--shadow]
 ```
 
 **Nenhum script desta skill envia coisa alguma ao cliente.** `email_response` é rascunho;
-`forja_delivery.py` confere a evidência de um envio que já ocorreu e grava a trilha. O ato
-de enviar acontece por canal expressamente autorizado, e sem identificador aceito pelo
-provedor a entrega se registra como **não enviada**.
+`forja_delivery.py` confere a evidência de um envio que já ocorreu e grava a trilha. Sem
+identificador aceito pelo provedor, a entrega se registra como **não enviada**.
+
+### Quem envia é o servidor MCP `forja-email`, e ele anexa
+
+Não é script: são ferramentas, e o agente as encontra no mesmo lugar onde procura as
+demais. `forja_mcp_email.py` expõe três.
+
+| ferramenta | o que faz |
+|---|---|
+| `enviar_email` | envia de verdade, **com ou sem anexo** (`anexos`: caminhos no disco, teto de 18 MB somados) |
+| `enviar_rascunho` | despacha rascunho já revisado, preservando o texto exato aprovado |
+| `listar_rascunhos` | só lista |
+
+**Não prometa no corpo um documento que você não anexou.** Até 10/08/2026 `enviar_email`
+montava só texto, e a saída para documento era exclusivamente o rascunho; a esteira chegou
+a ter seis arquivos prontos para o titular sem conseguir despachá-los. Hoje as duas portas
+anexam.
+
+**As duas passam pelo mesmo gate.** `.docx` fora do padrão Word da casa nas três dimensões
+— justificação, corpo 12 pt e Times New Roman — **barra o envio inteiro**, e a mensagem de
+erro traz os números. Material redigido fora do escritório passa quando declarado
+nominalmente em `material_de_terceiro`: a declaração é por nome de arquivo de propósito,
+porque flag booleana libera o lote, e é no lote liberado em bloco que se esconde o que
+ninguém olhou. O gate existe porque em 06/08/2026 dois documentos fora do padrão seguiram
+para o cliente com a medição funcionando o tempo todo.
+
+O envio é **irreversível** e fica em `telemetria/ENVIOS_EMAIL.jsonl` com nome, tamanho e
+hash de cada anexo — nunca o conteúdo. Responder no fio existente é o padrão: informe
+`reply_to_message_id`.
 
 `forja_envio_externo.py` é outra coisa e vive em outro lugar: é o porteiro do que sai da
 máquina **para modelo externo** — exige a classe do documento, recusa material dos autos
