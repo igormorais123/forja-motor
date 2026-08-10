@@ -182,6 +182,9 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Vigia a versão das TPU do CNJ")
     p.add_argument("--tabela", choices=sorted(TABELAS), help="verificar só uma tabela")
     p.add_argument("--json", action="store_true", help="saída em JSON")
+    p.add_argument("--sem-aviso", action="store_true",
+                   help="não deposita na caixa de avisos; para conferir a fiação "
+                        "do vigia sem deixar aviso permanente")
     args = p.parse_args(argv)
 
     DESTINO.mkdir(parents=True, exist_ok=True)
@@ -214,6 +217,29 @@ def main(argv=None) -> int:
         with (DESTINO / "mudancas.log").open("a", encoding="utf-8") as fh:
             for it in novidades:
                 fh.write(f"{agora}\t{it['tipo']}\t{it['versaoAnterior']} -> {it['versao']}\n")
+        # O log é trilha; a caixa é destinatário. Sem esta parte o vigia detecta
+        # e a informação para aqui — foi o que aconteceu com os embargos de
+        # 07/08/2026, vistos pelo vigia do STF às 09h00 e desconhecidos do
+        # titular no dia seguinte. Detecção sem destinatário nomeado é
+        # telemetria, e uma versão nova das TPU chega uma ou duas vezes por ano:
+        # é justamente o alerta que ninguém vai estar esperando.
+        try:
+            if not args.sem_aviso:
+                from forja_avisos import depositar
+                for it in novidades:
+                    depositar(
+                        origem="monitor_tpu",
+                        chave=f"{it['tipo']}:{it['versao']}",
+                        titulo=f"CNJ publicou nova versão da tabela de "
+                               f"{it['tabela']}",
+                        detalhe=(f"{it['versaoAnterior']} → {it['versao']}. "
+                                 f"O acervo do escritório continua na anterior "
+                                 f"até alguém baixar, guardar em diretório "
+                                 f"próprio e comparar."),
+                        urgencia="media")
+        except Exception as exc:  # o vigia nunca cai por causa do aviso
+            print(f"[aviso] não consegui depositar na caixa: "
+                  f"{type(exc).__name__}: {exc}", file=sys.stderr)
 
     if args.json:
         print(json.dumps({"verificadoEm": agora, "tabelas": itens,
