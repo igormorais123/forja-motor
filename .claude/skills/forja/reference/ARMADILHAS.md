@@ -109,6 +109,20 @@ por outra família, lendo o XML.
 **Fonte primária não é revisão de texto.** Num caso real, três camadas de revisão deram
 zero P0; abrir os autos deu seis.
 
+**Quando várias leituras independentes contam a mesma história improvável, o defeito está
+em quem escreve.** Três ferramentas distintas descreviam uma fábrica parada: 59 de 60
+casos nunca saíam da primeira fase, a idade de todo caso lia zero dia, e o mesmo caso
+tinha 23 carimbos idênticos. Nenhuma delas estava com defeito nessa parte. O escritor da
+reconciliação regravava `currentPhase` como F0 em toda passagem e empilhava um carimbo —
+inclusive nos casos que já tinham entregado. **A estatística media o escritor, não a
+fábrica.** Auditar os narradores um a um custou um dia.
+
+**A prova da entrega mora na pasta da DEMANDA, não na pasta de estado.** A pasta em
+`state/case-*/` guarda JSON de controle; o DOCX e o PDF ficam onde `inputs.caseFolder`
+aponta. Uma varredura no lugar errado produziu "42 casos cumpridos sem entregável" — e o
+primeiro deles tinha 94 arquivos entregues. **"Não achei" só vale acompanhado de onde se
+procurou**, exatamente como em insumo bloqueado.
+
 **Detecção sem destinatário nomeado é telemetria, não vigilância.** Um monitor capturou
 um embargo no dia seguinte ao protocolo, gravou no log e ali ficou — dois dias depois o
 titular ainda não sabia. Log é trilha; caixa de aviso é destinatário.
