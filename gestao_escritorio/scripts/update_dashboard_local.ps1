@@ -192,6 +192,13 @@ $data.updatedAt = Get-NowIso
 Update-LocalDemandState -DemandData $data
 
 $whatsappStatus = Invoke-JsonCommand { & "C:\Users\IgorPC\.hermes\bin\hermes-whatsapp-personal-access.ps1" -Action status }
+# O guardião pode reiniciar o coletor quando detecta a sessão desconectada e,
+# nessa janela curta, devolver exit 1 mesmo com o QR já pronto. Uma segunda
+# leitura bounded separa essa corrida transitória de falha real.
+if (-not $whatsappStatus.ok) {
+  Start-Sleep -Seconds 1
+  $whatsappStatus = Invoke-JsonCommand { & "C:\Users\IgorPC\.hermes\bin\hermes-whatsapp-personal-access.ps1" -Action status }
+}
 $phoneHealth = Invoke-JsonCommand { & "C:\Users\IgorPC\.hermes\bin\codex-phone.ps1" -Action health }
 
 $status = [ordered]@{

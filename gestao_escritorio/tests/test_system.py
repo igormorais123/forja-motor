@@ -11,6 +11,8 @@ SCRIPTS = ROOT / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 import dashboard_enrichment  # noqa: E402
+import apply_manual_updates  # noqa: E402
+import audit_delivered_docs  # noqa: E402
 import gmail_gws_update  # noqa: E402
 import hermes_bridge  # noqa: E402
 import hermes_office_panel_remote  # noqa: E402
@@ -51,6 +53,21 @@ class GmailExtractionTests(unittest.TestCase):
         mentioned = date.today() + timedelta(days=10)
         self.assertIsNone(gmail_gws_update.extract_deadline(f"Reunião realizada em {mentioned:%d/%m/%Y}."))
 
+    def test_delivery_audit_turns_timeout_into_structured_status(self):
+        original = audit_delivered_docs.run_gws
+        try:
+            def timeout(*_args, **_kwargs):
+                raise audit_delivered_docs.subprocess.TimeoutExpired("gws", 3)
+
+            audit_delivered_docs.run_gws = timeout
+            payload, status = audit_delivered_docs.gws_json(["gmail"], timeout=3)
+        finally:
+            audit_delivered_docs.run_gws = original
+        self.assertIsNone(payload)
+        self.assertFalse(status["ok"])
+        self.assertFalse(status["authRequired"])
+        self.assertIn("excedeu 3s", status["error"])
+
 
 class EnrichmentTests(unittest.TestCase):
     def test_quality_flags_missing_operational_links(self):
@@ -79,6 +96,28 @@ class EnrichmentTests(unittest.TestCase):
         codes = {issue["code"] for issue in enriched["derived"]["quality"]["issues"]}
         self.assertNotIn("forja_status_conflict", codes)
         self.assertNotIn("forja_delivery_conflict", codes)
+
+
+class ManualInterventionTests(unittest.TestCase):
+    def test_explicit_null_clears_historical_deadline(self):
+        data = {"demandas": [{"id": "monitor", "status": "aberta", "prazo": "2026-08-04"}]}
+        manual = {
+            "items": {
+                "monitor": {
+                    "overrides": {
+                        "prazo": None,
+                        "prazoTexto": "monitoramento contínuo; nenhum prazo atual confirmado",
+                    }
+                }
+            }
+        }
+        applied = apply_manual_updates.apply_manual(data, manual)
+        self.assertEqual(applied, 2)
+        self.assertIsNone(data["demandas"][0]["prazo"])
+        self.assertEqual(
+            data["demandas"][0]["prazoTexto"],
+            "monitoramento contínuo; nenhum prazo atual confirmado",
+        )
 
 
 class HermesBridgeContractTests(unittest.TestCase):
@@ -140,6 +179,11 @@ class ProductContractTests(unittest.TestCase):
         source = (SCRIPTS / "update_dashboard_local.ps1").read_text(encoding="utf-8")
         self.assertIn('$managementFulfilled = $item.status -eq "cumprida"', source)
         self.assertIn('-and -not $managementFulfilled) { $conflicts += 1 }', source)
+
+    def test_whatsapp_status_has_one_bounded_transient_retry(self):
+        source = (SCRIPTS / "update_dashboard_local.ps1").read_text(encoding="utf-8")
+        self.assertIn("if (-not $whatsappStatus.ok)", source)
+        self.assertIn("Start-Sleep -Seconds 1", source)
 
     def test_completion_is_blocked_while_material_inputs_are_pending(self):
         item = {

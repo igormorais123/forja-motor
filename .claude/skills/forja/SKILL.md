@@ -106,6 +106,11 @@ python forja_run.py <caso> block <FASE> --expected-revision <N> --reason "..."
 Fase a fase, com entradas, artefatos exatos e o que cada gate afere:
 **[reference/FLUXO.md](reference/FLUXO.md)**.
 
+A volta desse laço está automatizada em `.claude/workflows/forja.js`, que roda do
+`phaseCursor` do caso até a primeira fase que não promover — com um segundo agente lendo
+o disco para confirmar cada promoção, porque relato de quem executou não é prova.
+Como chamar: [COMANDOS.md](reference/COMANDOS.md#o-laço-quando-você-quiser-automatizá-lo).
+
 ## Rotas — o que abrir, conforme o que você vai fazer
 
 | Você vai… | Abra | E rode |

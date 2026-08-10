@@ -23,6 +23,7 @@
 - Em raízes jurídicas, não execute extração semântica crua sobre autos, mensagens, anexos, bancos, estado, telemetria ou credenciais. O mapa oficial é sanitizado e metadata-only.
 - Estes artefatos complementam mapas canônicos; não substituem `MAPA.md`, `MAPA_IA.md`, `ESTADO_ATUAL.md`, manifestos, schemas ou documentação técnica local.
 <!-- architecture-map-protocol:end -->
+
 <!-- architecture-map-interfaces-v3:start -->
 ## Protocolo de interfaces inferiores
 

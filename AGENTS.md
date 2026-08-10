@@ -195,10 +195,11 @@ O painel `gestao_escritorio\data\demandas.json` é quadro de comando, não prova
 - Em raízes jurídicas, não execute extração semântica crua sobre autos, mensagens, anexos, bancos, estado, telemetria ou credenciais. O mapa oficial é sanitizado e metadata-only.
 - Estes artefatos complementam mapas canônicos; não substituem `MAPA.md`, `MAPA_IA.md`, `ESTADO_ATUAL.md`, manifestos, schemas ou documentação técnica local.
 <!-- architecture-map-protocol:end -->
+
 <!-- architecture-map-interfaces-v3:start -->
 ## Protocolo de interfaces inferiores
 
-- Antes de alterar API interna, CLI, schema ou runner, leia `00_MAPA_ARQUITETURA_IA/INTERFACES_INFERIORES.md` e consulte `00_MAPA_ARQUITETURA_IA/graphify-out/graph.json`.
+- Antes de alterar API interna, CLI, AXI, schema ou runner, leia `00_MAPA_ARQUITETURA_IA/INTERFACES_INFERIORES.md` e consulte `00_MAPA_ARQUITETURA_IA/graphify-out/graph.json`.
 - Confirme arestas `AMBIGUOUS` no código; não trate resolução por nome como binding comprovado.
 - Depois de mudança de contrato, regenere a camada v3, valide consumidores e execute os testes do subsistema.
 <!-- architecture-map-interfaces-v3:end -->

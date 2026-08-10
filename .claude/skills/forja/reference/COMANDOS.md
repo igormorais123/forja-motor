@@ -83,6 +83,27 @@ python forja_run.py <caso> block <FASE> --expected-revision <N> --reason "..." [
 `<FASE>` é o identificador inteiro: `F1_INGESTAO_SEGURA`, `F7_AUDITORIA_JURIDICA_FACTUAL`
 e assim por diante — a lista está em [FLUXO.md](FLUXO.md).
 
+### O laço, quando você quiser automatizá-lo
+
+A volta do laço — descobrir a fase, abrir a tentativa, trabalhar, promover, repetir — está
+escrita como workflow em `.claude/workflows/forja.js`. Ele não decide gate nenhum e não
+substitui nada: quem move o caso continua sendo `forja_run.py`.
+
+```
+Workflow({ name: "forja", args: { caso: "<case-id>" } })
+Workflow({ name: "forja", args: { caso: "<case-id>", ate: "F7_AUDITORIA_JURIDICA_FACTUAL" } })
+```
+
+Quantas fases ele roda **não está escrito em lugar nenhum**: começa no `phaseCursor` do
+caso e para na primeira que não promover. Cada fase tem dois agentes — um executa, outro
+lê o disco e confirma. Divergência entre os dois é parada imediata, e é a razão de o
+segundo existir: um workflow que aceitasse "promovi" como resposta seria a falha que a
+esteira inteira existe para impedir.
+
+A ordem das onze fases está literal dentro do arquivo, porque script de workflow não lê
+arquivo — e é por isso que `test_forja_workflow.py` a compara com a cadeia `nextPhase`
+dos contratos a cada baseline. Editar uma sem a outra reprova.
+
 ## Ingestão e triagem (F1)
 
 ```

@@ -31,7 +31,23 @@ def run_gws(args, timeout=60):
 
 
 def gws_json(args, timeout=60):
-    proc = run_gws(args, timeout=timeout)
+    try:
+        proc = run_gws(args, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        # Uma consulta lenta do Gmail não pode derrubar a atualização inteira
+        # nem deixar apenas "Traceback" no painel. O chamador decide se
+        # preserva o retrato anterior ou pula a mensagem pontual.
+        return None, {
+            "ok": False,
+            "error": f"Consulta ao Gmail excedeu {timeout}s.",
+            "authRequired": False,
+        }
+    except OSError as exc:
+        return None, {
+            "ok": False,
+            "error": scrub_error(str(exc)),
+            "authRequired": False,
+        }
     if proc.returncode != 0:
         return None, {
             "ok": False,
