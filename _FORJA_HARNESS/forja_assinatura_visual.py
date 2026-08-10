@@ -264,11 +264,11 @@ def _inventario(docx):
     }
 
 
-def avaliar(docx, paginas=None, tipo="peca"):
+def avaliar(docx, paginas=None, tipo="peca", buscar_pdf_irmao=True):
     """Devolve o laudo de assinatura visual. Não bloqueia — só descreve."""
     inv = _inventario(docx)
     origem_paginas = "parametro_do_chamador" if paginas is not None else "desconhecida"
-    if paginas is None:
+    if paginas is None and buscar_pdf_irmao:
         paginas = paginas_reais(docx)
         if paginas is not None:
             # O módulo apenas lê um PDF já existente ao lado do DOCX para obter

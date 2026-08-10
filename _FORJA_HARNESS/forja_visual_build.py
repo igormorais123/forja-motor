@@ -66,6 +66,36 @@ def _case_dir_efetivo(md_path, declarado=None):
     return atual
 
 
+def _rebind_integrity_ledgers(docx_path):
+    """Vincula os recibos ao DOCX que efetivamente sai da porta única.
+
+    ``compor()`` grava os dois recibos antes de ``inserir_svgs()`` alterar o
+    pacote OOXML. O hash antigo, embora verdadeiro naquele instante, passava a
+    identificar um arquivo que já não existia. Recompomos somente o campo de
+    integridade depois da última mutação do DOCX e deixamos essa mudança
+    declarada no próprio recibo.
+    """
+    docx_path = Path(docx_path)
+    digest = hashlib.sha256(docx_path.read_bytes()).hexdigest()
+    recibos = (
+        docx_path.with_name("FIDELIDADE_VISUAL.json"),
+        docx_path.with_name(docx_path.stem + "_PORTA_UNICA.json"),
+    )
+    atualizados = []
+    instante = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+    for recibo in recibos:
+        if not recibo.is_file():
+            continue
+        dados = json.loads(recibo.read_text(encoding="utf-8"))
+        dados["docxSha256"] = digest
+        dados["integridadeVinculadaAposSvgOoxml"] = True
+        dados["integridadeVinculadaEm"] = instante
+        recibo.write_text(json.dumps(dados, ensure_ascii=False, indent=2),
+                          encoding="utf-8")
+        atualizados.append(str(recibo))
+    return {"docxSha256": digest, "recibosAtualizados": atualizados}
+
+
 def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
           *, case_dir=None, ledger_path=None, base_dir=None):
     """Compõe a peça em edição visual law. Devolve o resumo com lastro e tempos."""
@@ -127,6 +157,7 @@ def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
     if montar_word and figs:
         from forja_svg_docx import inserir_svgs
         svg_embeds = inserir_svgs(destino, figs)
+    integridade = _rebind_integrity_ledgers(destino)
     from forja_visual_qa_structural import auditar_documento
     qa_estrutural = auditar_documento(
         destino,
@@ -164,11 +195,11 @@ def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
     # conferência humana das peças de calibração (ordem do Igor, 30/07/2026).
     from forja_assinatura_visual import avaliar as avaliar_assinatura
     # A rota canônica insere SVG nativo no OOXML e não passa por Word COM, então
-    # normalmente não há PDF e não há contagem física de páginas. `avaliar` agora
-    # procura o PDF irmão por conta própria: quando ele existe (peça que já foi
-    # montada), a densidade é medida contra a extensão real; quando não existe, o
-    # laudo sai com `densidadeCalibrada: false` em vez de fingir precisão.
-    laudo = avaliar_assinatura(destino, None, tipo)
+    # normalmente não há PDF e não há contagem física de páginas. Um PDF irmão
+    # pode ser sobra de uma montagem anterior e não prova a extensão deste DOCX;
+    # por isso a porta única não o infere. A etapa que materializa o PDF deve
+    # chamar o avaliador com a contagem real e persistir o laudo final.
+    laudo = avaliar_assinatura(destino, None, tipo, buscar_pdf_irmao=False)
     (out_dir / "F8S_ASSINATURA_VISUAL.json").write_text(
         json.dumps(laudo, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -186,6 +217,7 @@ def build(md_path, out_dir, titulo="Peça FORJA", tipo=None, montar_word=True,
                  "figs": len(mapa.get("figs") or []),
                  "linhasSintese": len(mapa.get("linhas_sintese") or {})},
         "lastroFidelidadeTextual": str(destino.with_name("FIDELIDADE_VISUAL.json")),
+        "integridadeFinal": integridade,
         "qaEstrutural": str(out_dir / "F8_QA_ESTRUTURAL.json"),
         "veredictoLayout": veredito_layout,
         # COM QUE PARÂMETROS esta peça foi construída. Sem isto, um laudo verde

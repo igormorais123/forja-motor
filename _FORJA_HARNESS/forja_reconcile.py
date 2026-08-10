@@ -139,7 +139,7 @@ def _texto_da_evidencia(bruto):
 
 
 # O localizador é a única parte da evidência que se confere contra a fonte, e é
-# onde a prosa costuma terminar ("...respondido por e-mail Gmail 19f5e13f..."):
+# onde a prosa costuma terminar ("...respondido por e-mail Gmail 19a0b1c2..."):
 # cortar o texto pelo comprimento cortava justamente a prova. Medido em
 # 10/08/2026: um caso da casa constava como "cumprido sem prova" e tinha DOIS
 # identificadores de mensagem registrados no painel, ambos além do caractere 140.

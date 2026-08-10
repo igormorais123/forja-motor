@@ -181,27 +181,27 @@ class OResumoNaoPodeComerAProva(unittest.TestCase):
 
     LONGO = ("Triagem sanitizada concluida em 13/07/2026. O audio recente foi "
              "classificado e respondido com orientacao segura por e-mail Gmail "
-             "19f5e13fa8718832; a pendencia foi escalada ao titular por e-mail "
-             "Gmail 19f5e13843df63a3, sem assumir custo ou compromisso.")
+             "19a0b1c2d3e4f506; a pendencia foi escalada ao titular por e-mail "
+             "Gmail 19a0b1c2d3e4f507, sem assumir custo ou compromisso.")
 
     def test_identificador_alem_do_corte_sobrevive(self) -> None:
         resumo = forja_reconcile._resumo_com_localizadores(self.LONGO)
 
-        self.assertIn("19f5e13843df63a3", resumo)
+        self.assertIn("19a0b1c2d3e4f507", resumo)
 
     def test_o_que_ja_estava_no_corte_nao_se_repete(self) -> None:
         resumo = forja_reconcile._resumo_com_localizadores(self.LONGO)
 
-        self.assertEqual(1, resumo.count("19f5e13fa8718832"))
+        self.assertEqual(1, resumo.count("19a0b1c2d3e4f506"))
 
     def test_texto_curto_sai_intacto_e_sem_apendice(self) -> None:
         self.assertEqual("respondido por telefone",
                          forja_reconcile._resumo_com_localizadores("respondido por telefone"))
 
     def test_localizador_do_whatsapp_tambem_sobrevive(self) -> None:
-        texto = "x" * 150 + " entregue pelo WhatsApp 3EB0C0D4F1DCEF58A21FA1 por link"
+        texto = "x" * 150 + " entregue pelo WhatsApp 3EB0F1F1F1F1F1F1F1F1F1 por link"
 
-        self.assertIn("3EB0C0D4F1DCEF58A21FA1",
+        self.assertIn("3EB0F1F1F1F1F1F1F1F1F1",
                       forja_reconcile._resumo_com_localizadores(texto))
 
     def test_a_evidencia_gravada_carrega_o_localizador(self) -> None:
@@ -209,7 +209,7 @@ class OResumoNaoPodeComerAProva(unittest.TestCase):
         _status, descricao = forja_reconcile.evidencia_de_entrega(
             {"evidenciaResposta": self.LONGO}, {}, None)
 
-        self.assertIn("19f5e13843df63a3", descricao)
+        self.assertIn("19a0b1c2d3e4f507", descricao)
 
 
 if __name__ == "__main__":

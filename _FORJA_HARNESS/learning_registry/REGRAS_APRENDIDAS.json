@@ -381,6 +381,52 @@
       },
       "aplicadaEm": "2026-08-06T21:10:15-03:00",
       "destinoArquivo": "_FORJA_HARNESS/templates/F4_METODO_SOLUCAO_PROBLEMA_PETICAO.md"
+    },
+    {
+      "regraId": "regra-ee28e25dbcf6",
+      "classe": "correspondencia:diretriz_escrita",
+      "destino": "gate_computado",
+      "fase": "F7",
+      "texto": "Todo precedente anexado ao comando deve ser citado na peça, distinguido expressamente ou ter o não uso justificado no relatório, sempre com localizador verificável.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-10T11:16:00-03:00",
+      "origem": "retorno_escrito",
+      "camadaSistema": "validacao_computada",
+      "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19febd70c2804eca",
+            "recebidoEm": "2026-08-10"
+          }
+        ],
+        "casos": 1,
+        "materiais": 5
+      },
+      "aplicadaEm": "2026-08-10T11:16:00-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/forja_precedentes_comando.py"
+    },
+    {
+      "regraId": "regra-1f38820826f7",
+      "classe": "correspondencia:diretriz_escrita",
+      "destino": "gate_computado",
+      "fase": "F7",
+      "texto": "Na primeira menção de tema de repercussão geral ou recurso repetitivo, identificar também o processo paradigma ou leading case.",
+      "aprovadoPor": "igor",
+      "adotadaEm": "2026-08-10T11:16:00-03:00",
+      "origem": "retorno_escrito",
+      "camadaSistema": "validacao_computada",
+      "evidencia": {
+        "mensagens": [
+          {
+            "messageId": "19febd70c2804eca",
+            "recebidoEm": "2026-08-10"
+          }
+        ],
+        "casos": 1,
+        "materiais": 5
+      },
+      "aplicadaEm": "2026-08-10T11:16:00-03:00",
+      "destinoArquivo": "_FORJA_HARNESS/forja_precedentes_comando.py"
     }
   ]
 }

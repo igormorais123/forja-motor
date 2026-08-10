@@ -54,7 +54,7 @@ class TestDialetosDeLocalizador(unittest.TestCase):
     def test_id_do_whatsapp_e_localizador(self):
         """O caso real: pacote entregue ao titular pelo WhatsApp, com o ID da mensagem."""
         s, porque = self._situacao(
-            "Pacote ENTREGA_FINAL.zip entregue pelo WhatsApp 3EB0C0D4F1DCEF58A21FA1")
+            "Pacote ENTREGA_FINAL.zip entregue pelo WhatsApp 3EB0F1F1F1F1F1F1F1F1F1")
         self.assertEqual(s, "entrega_declarada")
         self.assertIn("conversa", porque)
 

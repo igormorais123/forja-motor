@@ -250,7 +250,7 @@ class TestNaoOlhadaNaoEOMesmoQueSemRota:
 
     ENTREGA = {"status": "fulfilled", "currentPhase": "F10",
                "deliveryEvidence": {"status": "manual_override",
-                                    "detail": "entregue pelo WhatsApp 3EB0C0D4F1DCEF58A21FA1"}}
+                                    "detail": "entregue pelo WhatsApp 3EB0F1F1F1F1F1F1F1F1F1"}}
 
     def _dados(self, raiz, conferencias):
         _caso(raiz, "wpp", legado=dict(self.ENTREGA))

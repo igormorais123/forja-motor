@@ -224,6 +224,14 @@ def render_paginas(pdf_path: str, pasta_saida: str, dpi: int = 100):
     """Gate de QA visual: renderiza cada página em PNG para inspeção obrigatória."""
     import fitz
     os.makedirs(pasta_saida, exist_ok=True)
+    # Um PDF novo pode ter menos páginas que a versão anterior. Sem limpar
+    # somente os PNGs canônicos produzidos por esta função, p10-p13 antigos
+    # sobrevivem ao render de uma peça agora com 9 páginas e falsificam o QA.
+    for nome in os.listdir(pasta_saida):
+        if re.fullmatch(r"p\d+\.png", nome, flags=re.IGNORECASE):
+            caminho = os.path.join(pasta_saida, nome)
+            if os.path.isfile(caminho):
+                os.unlink(caminho)
     d = fitz.open(pdf_path)
     saidas = []
     for i, pg in enumerate(d):
