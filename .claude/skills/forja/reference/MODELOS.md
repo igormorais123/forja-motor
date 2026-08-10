@@ -18,10 +18,21 @@
 |---|---|---|---|
 | Loop principal, redação, auditoria | Claude Opus 5 | assinatura Claude Max | todas as fases |
 | Revisão editorial (F7-B) | `claude-opus-5` | OAuth da assinatura, **sem API key** | F7-B |
-| Codex, quando usado | **`gpt-5.6-luna`**, esforço `max` | CLI Codex | revisão cruzada |
+| Codex — produção | **`gpt-5.6-luna`**, esforço `max` | CLI Codex | quando a esteira produz pelo Codex |
+| Codex — **revisão** | **`gpt-5.6-sol`**, esforço `high` | `forja_revisao_cruzada.py` | revisão cruzada, red team, auditoria |
 | Diabob (contraditório) | **Grok 4.5** | assinatura **do Cursor** (`grok-4.5-cursor`) | F4 e F7 |
 | Triagem semântica | Grok 4.5 | mesma rota | F1 |
 | Vozes curtas (opcional) | Kimi K3, GLM 5.2 | assinatura do Cursor | F4 e F7 |
+
+**O Codex tem dois postos, e a ordem de revisão é a mais recente (10/08/2026).** Ela
+supera a de 06/08 só na parte de revisão; produção continua no `luna`. Revisor e produtor
+não podem coincidir — é isso que o gate `cross_model_review_verified` protege.
+
+Não chame o Codex à mão para revisar: `forja_revisao_cruzada.py` fecha no código quatro
+armadilhas que já custaram tempo — `--cd` explícito (sem ele o Codex responde que o
+sandbox bloqueou a leitura, e o parecer sai sem fonte), MCPs desligados, sandbox somente
+leitura e prompt por **argumento**. **No Cursor é o inverso**: lá o prompt vai por stdin,
+porque o wrapper `.cmd` faz o cmd.exe cortar o argumento na primeira quebra de linha.
 
 A rota do Grok é **sempre** a assinatura do Cursor. O OpenRouter cobra por chamada e
 **não é automático**: se a assinatura falhar, o comando falha alto com a instrução de

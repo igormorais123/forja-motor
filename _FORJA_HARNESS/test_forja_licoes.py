@@ -83,6 +83,44 @@ checar("o identificador ignora acento e espaçamento, não o conteúdo",
 checar("títulos diferentes recebem identificadores diferentes",
        lic._ident("uma coisa") != lic._ident("outra coisa"))
 
+# ---------------------------------------------------------------------------
+# Índices de consulta. O defeito que estes casos existem para impedir não é o
+# índice errado: é o índice VELHO. Um mapa desatualizado é pior que mapa nenhum,
+# porque tem aparência de ordem e leva a lição errada com confiança.
+
+fora = lic.desatualizados()
+checar("os índices no disco ainda são o que a fonte produz", not fora,
+       "; ".join(p.name for p in fora) +
+       " — rode `python forja_licoes.py --documentar` depois de mexer nas lições")
+
+temas = lic.por_tema(r["itens"])
+checar("todo tema do vocabulário classifica pelo menos uma lição",
+       all(t in temas for t, _, _ in lic.TEMAS),
+       "temas vazios: " + ", ".join(t for t, _, _ in lic.TEMAS
+                                    if t not in temas) +
+       " — vocabulário que não acha nada é rótulo morto no índice")
+
+# Teto, não meta: as sem tema são dívida de classificação, e a régua só desce.
+# O número não é vergonha — é o que impede a lacuna de virar silêncio.
+SEM_TEMA_MAX = 107
+sem_tema = len(temas.get("sem-tema", []))
+checar("a fatia sem classificação temática não cresceu",
+       sem_tema <= SEM_TEMA_MAX,
+       f"{sem_tema} sem tema, contra o teto de {SEM_TEMA_MAX} medido em "
+       f"10/08/2026 — lição nova entrou sem nenhum termo do vocabulário")
+
+# Um tema que casasse em quase tudo devolveria o problema que ele resolve: a
+# primeira versão marcava `gate` em 49% do acervo por mencionar a palavra.
+maior = max((len(v) for t, v in temas.items() if t != "sem-tema"), default=0)
+checar("nenhum tema classifica a maioria do acervo",
+       maior <= len(r["itens"]) // 2,
+       f"o maior tema tem {maior} de {len(r['itens'])} lições — termo genérico "
+       f"demais transforma o índice em carimbo")
+
+todos = {t for x in r["itens"] for t in x["temas"]}
+checar("todo tema atribuído tem rótulo legível no índice",
+       all(lic.rotulo(t) for t in todos))
+
 if falhas:
     print(f"REGRESSÃO: {falhas} de {casos} casos falharam")
     raise SystemExit(1)

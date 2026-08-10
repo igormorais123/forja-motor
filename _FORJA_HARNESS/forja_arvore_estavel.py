@@ -71,6 +71,45 @@ def impressao(raiz: Path | None = None) -> dict[str, tuple[int, int]]:
     return retrato
 
 
+def _publicavel(caminho: str) -> str:
+    """O caminho como pode aparecer num relatório que vive no motor.
+
+    A amostra existe para responder "o que mexeu enquanto eu media", e o nome
+    do arquivo é o que responde isso. Só que a árvore medida cobre a fábrica
+    inteira, inclusive as pastas de entrega — e ali o nome do arquivo costuma
+    ser o nome do cliente. Foi o que aconteceu em 10/08/2026: o relatório da
+    bateria saiu com um nome de cliente dentro e a fronteira barrou a
+    publicação, corretamente.
+
+    O caminho é cortado no primeiro trecho que nomeia alguém, e a régua vale
+    para **cada componente**: `state/case-<cliente>/F7.json` esconde o nome na
+    pasta, não no do arquivo. Quem decide o que é nome de cliente é a própria
+    fronteira, e não uma lista mantida aqui, que divergiria dela na primeira
+    curadoria.
+
+    A checagem roda em todo caminho, inclusive nos do motor, e não só nos que
+    a fronteira classifica fora dele. A primeira versão dispensava o motor do
+    exame e o teste encontrou o buraco no mesmo dia: caminho que a fronteira
+    não sabe classificar cai em MOTOR por padrão, e sairia inteiro. No motor
+    de verdade o exame não custa nada, porque lá não há nome a achar.
+
+    O que sobra ainda responde a pergunta que a amostra existe para responder:
+    mexeu na área de entregas, não no código.
+    """
+    try:
+        import forja_fronteira as fr
+    except ImportError:  # o módulo é útil sozinho, num check rápido
+        return caminho
+    nomes, _ = fr.carregar_nomes(RAIZ)
+    partes = caminho.replace("\\", "/").split("/")
+    seguros = []
+    for parte in partes:
+        if fr.sinais_no_texto(parte, nomes):
+            return "/".join(seguros + ["… (omitido: nomeia caso ou cliente)"])
+        seguros.append(parte)
+    return caminho
+
+
 def mexeu(antes: dict, depois: dict, limite: int = 12) -> dict:
     """O que mudou entre dois retratos, com a lista contida e o total honesto."""
     novos = sorted(set(depois) - set(antes))
@@ -83,5 +122,5 @@ def mexeu(antes: dict, depois: dict, limite: int = 12) -> dict:
         "novos": len(novos), "sumidos": len(sumidos), "mudados": len(mudados),
         # A amostra é para quem lê decidir se aquilo explica a falha; o total,
         # ao lado, impede que a amostra passe por lista completa.
-        "amostra": (novos + mudados + sumidos)[:limite],
+        "amostra": [_publicavel(p) for p in (novos + mudados + sumidos)[:limite]],
     }

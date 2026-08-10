@@ -248,12 +248,30 @@ MODELOS_PROIBIDOS = {"moonshotai/kimi-k2", "moonshotai/kimi-k2.5",
 MODELOS_PROIBIDOS_GPT55 = {"gpt-5.5", "gpt-5.5-mini", "gpt-5.5-codex",
                            "openai/gpt-5.5", "openai/gpt-5.5-mini"}
 
-# Quando a FORJA usa o Codex, o modelo é o gpt-5.6-luna no esforço máximo, por
-# ordem do titular (06/08/2026). Vale para revisão cruzada, red team por família
-# distinta e qualquer chamada da esteira — não para o que o Igor faz à mão fora
-# dela. O `-c model_reasoning_effort="max"` faz parte da ordem, não é opcional.
+# Quando a FORJA usa o Codex para PRODUZIR, o modelo é o gpt-5.6-luna no esforço
+# máximo, por ordem do titular (06/08/2026). Vale para qualquer chamada de
+# produção da esteira — não para o que o Igor faz à mão fora dela. O
+# `-c model_reasoning_effort="max"` faz parte da ordem, não é opcional.
 CODEX_MODELO_FORJA = "gpt-5.6-luna"
 CODEX_ESFORCO_FORJA = "max"
+
+# Para REVISÃO, a ordem é outra e é posterior: gpt-5.6-sol no esforço alto, por
+# ordem do titular de 10/08/2026, em toda a FORJA. Ela supera, na parte de
+# revisão, a de 06/08 acima — que continua valendo para produção.
+#
+# A razão está registrada: na revisão cruzada de um memorial em liquidação,
+# nesse mesmo dia, o Sol encontrou três P0 que o produtor não via, entre eles um
+# QA declarado sobre render inexistente, uma contradição interna criada por
+# decisão do próprio produtor e uma contagem que vinha de deduplicação
+# destrutiva. O perfil já estava descrito no catálogo acima, em `sol-5.6`:
+# `revisao_adversarial` e `achar_erro_do_opus`.
+#
+# Revisão aqui é o que confere trabalho pronto — revisão cruzada entre famílias,
+# red team, auditoria de gate, conferência de citação e de número. Quem escreve
+# a peça continua no modelo de produção: revisor e produtor não podem ser o
+# mesmo, que é a razão de o gate `cross_model_review_verified` existir.
+CODEX_MODELO_REVISAO_FORJA = "gpt-5.6-sol"
+CODEX_ESFORCO_REVISAO_FORJA = "high"
 
 TETO_USD_POR_CHAMADA = 0.50
 TETO_USD_POR_EXECUCAO = 3.00

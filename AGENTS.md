@@ -344,13 +344,32 @@ CLI não os expõe e estimativa em ledger vira número citado depois.
 
 Regressão: `test_forja_cursor_grok.py` (22 testes, sem rede nem login).
 
-## Modelo do Codex na FORJA — fixo (06/08/2026, ordem do titular)
+## Modelo do Codex na FORJA — dois postos (06/08 e 10/08/2026, ordens do titular)
 
-Quando a FORJA usa o Codex, o modelo é **`gpt-5.6-luna` no esforço `max`**:
+Quando a FORJA usa o Codex **para produzir**, o modelo é **`gpt-5.6-luna` no esforço
+`max`**:
 
 ```
 codex exec "<prompt>" -m gpt-5.6-luna -c 'model_reasoning_effort="max"' -s read-only < /dev/null
 ```
+
+**Para revisão, o modelo é `gpt-5.6-sol` no esforço `high`**, em toda a FORJA, por ordem
+de 10/08/2026 — que supera a de 06/08 nessa parte. Constantes
+`CODEX_MODELO_REVISAO_FORJA` e `CODEX_ESFORCO_REVISAO_FORJA`. Não chame à mão: a rota é
+
+```
+python _FORJA_HARNESS\forja_revisao_cruzada.py --prompt PROMPT.md --cd <pasta> --saida REVISAO.md
+```
+
+O executor fecha no código quatro armadilhas medidas em 10/08: `--cd` explícito, sem o
+qual o Codex não lê o workspace e responde que o sandbox bloqueou — parecer sem fonte
+com cara de parecer; `mcp_servers={}`, senão os MCPs da sessão entram na chamada;
+sandbox somente leitura, porque revisor não altera artefato; e o prompt por **argumento**,
+nunca por stdin. **No Cursor é o inverso** — lá o prompt tem de ir por stdin, porque o
+wrapper `.cmd` faz o cmd.exe cortar o argumento na primeira quebra de linha.
+
+Revisor e produtor não podem coincidir, e a regressão afere isso: se coincidirem, o gate
+de revisão cruzada passa a aprovar o produtor revisando a si mesmo.
 
 **GPT-5.5 não entra em hipótese nenhuma** — nenhuma fase, nenhum papel, nenhuma
 justificativa. A trava está no código: `forja_modelos.modelo_remoto_proibido` reprova

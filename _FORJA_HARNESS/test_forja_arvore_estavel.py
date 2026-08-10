@@ -154,5 +154,60 @@ class TestVeredito(unittest.TestCase):
         self.assertFalse(r["inconclusivo"])
 
 
+class AmostraNaoNomeiaCliente(unittest.TestCase):
+    """A amostra de arquivos que mexeram é publicada dentro do motor.
+
+    O nome usado abaixo é inventado, e isso não é descuido: a doutrina da casa
+    manda usar o erro real como fixture, mas a fronteira proíbe nome de cliente
+    em código do motor — e a fronteira vence, porque o que a fixture precisa
+    reproduzir é a **forma** do caminho, não de quem ele é. Este mesmo teste
+    reprovou por isso na primeira versão, com o nome verdadeiro dentro. O caso
+    real fica registrado no acervo, que é onde ele pode ficar.
+
+    Em 10/08/2026 ela barrou a publicação da fábrica inteira, corretamente: o
+    relatório da bateria saiu com o nome de um cliente dentro, colhido do
+    caminho de um arquivo da pasta de entregas que mudou durante a corrida. O
+    caso real abaixo é a fixture; a correção é o resto.
+    """
+
+    def setUp(self):
+        # O registro de nomes protegidos vive fora do motor e muda com a
+        # curadoria. Se o teste dependesse dele, passaria ou falharia conforme
+        # a carteira do escritório — e um nome inventado, que é o único que
+        # pode ficar aqui, nunca estaria nele. Injetar o registro testa a
+        # lógica; o registro de verdade é problema da fronteira, que tem os
+        # próprios 58 casos.
+        import forja_fronteira as fr
+        self._real = fr.carregar_nomes
+        fr.carregar_nomes = lambda raiz: (["Fulano Comercio",
+                                           "fulano-comercio"], "injetado")
+
+    def tearDown(self):
+        import forja_fronteira as fr
+        fr.carregar_nomes = self._real
+
+    def test_caminho_do_motor_vai_inteiro(self):
+        alvo = r"_FORJA_HARNESS\forja_licoes.py"
+        self.assertEqual(arvore._publicavel(alvo), alvo)
+
+    def test_entrega_a_cliente_perde_o_nome_do_arquivo(self):
+        saida = arvore._publicavel(
+            r"gestao_escritorio\entregas_fabio_osorio\2026-08-10 Fulano Comercio.pdf")
+        self.assertNotIn("Fulano Comercio", saida)
+        self.assertIn("gestao_escritorio", saida)  # o diagnóstico sobrevive
+
+    def test_o_nome_escondido_na_pasta_tambem_cai(self):
+        """`state/case-<cliente>/F7.json` não nomeia ninguém no arquivo."""
+        saida = arvore._publicavel(
+            r"_FORJA_HARNESS\state\case-fulano-comercio\F7.json")
+        self.assertNotIn("fulano", saida.lower())
+        self.assertIn("state", saida)
+
+    def test_a_amostra_publicada_passa_pela_regua(self):
+        r = arvore.mexeu(
+            {}, {r"gestao_escritorio\entregas\Fulano Comercio.pdf": (1, 1)})
+        self.assertNotIn("Fulano Comercio", " ".join(r["amostra"]))
+
+
 if __name__ == "__main__":
     unittest.main()

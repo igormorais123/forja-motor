@@ -48,2293 +48,4398 @@
       "numero": 1,
       "titulo": "PDF grande derruba leitor",
       "id": "licao-abd08d4e3b45",
-      "linha": 11
+      "linha": 11,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 2,
       "titulo": "Alucinação de nomes de advogados",
       "id": "licao-b5b030670e35",
-      "linha": 12
+      "linha": 12,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "redacao"
+      ]
     },
     {
       "numero": 3,
       "titulo": "Artefatos internos vazaram para a peça",
       "id": "licao-a6df03803ac8",
-      "linha": 13
+      "linha": 13,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 4,
       "titulo": "Aspas com paráfrase de súmula",
       "id": "licao-ccd3a8d0175f",
-      "linha": 14
+      "linha": 14,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 5,
       "titulo": "Cara de IA no fecho",
       "id": "licao-adb9ffccaebf",
-      "linha": 15
+      "linha": 15,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 6,
       "titulo": "E-mail de resposta",
       "id": "licao-e1575528f6a2",
-      "linha": 16
+      "linha": 16,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 7,
       "titulo": "gws autorizado para escrita",
       "id": "licao-fab68187eefb",
-      "linha": 17
+      "linha": 17,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 8,
       "titulo": "Retângulos cinza no topo direito da 1ª página são arte do template oficial",
       "id": "licao-2ac7480a9dd6",
-      "linha": 18
+      "linha": 18,
+      "secao": "Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 9,
       "titulo": "Auditor de citações estourou contexto",
       "id": "licao-848a56c94912",
-      "linha": 26
+      "linha": 26,
+      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 10,
       "titulo": "Inversão de fatos espelhados",
       "id": "licao-0d8ed156bc55",
-      "linha": 27
+      "linha": 27,
+      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 11,
       "titulo": "Meta-rótulos de produção",
       "id": "licao-af703ac29dc3",
-      "linha": 28
+      "linha": 28,
+      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 12,
       "titulo": "E-mail do nível 2 vaza jargão interno",
       "id": "licao-4d19c4bce33d",
-      "linha": 29
+      "linha": 29,
+      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "redacao",
+        "entrega"
+      ]
     },
     {
       "numero": 13,
       "titulo": "gws drafts",
       "id": "licao-56770a6a1e25",
-      "linha": 30
+      "linha": 30,
+      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 14,
       "titulo": "Dado divergente entre casos",
       "id": "licao-71ada2f799aa",
-      "linha": 31
+      "linha": 31,
+      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "entrega"
+      ]
     },
     {
       "numero": 15,
       "titulo": "Número agregado sem fonte literal é alucinação de precisão",
       "id": "licao-d2d29c70d95f",
-      "linha": 37
+      "linha": 37,
+      "secao": "Caso 3 — CASO-07 (diagnóstico consultivo, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 16,
       "titulo": "Aritmética de intervalos de datas deve ser recalculada pelo auditor",
       "id": "licao-bcb90cec8117",
-      "linha": 39
+      "linha": 39,
+      "secao": "Caso 3 — CASO-07 (diagnóstico consultivo, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 17,
       "titulo": "Personas internas INTEIA vazam em documentos de cliente",
       "id": "licao-46aac178e306",
-      "linha": 41
+      "linha": 41,
+      "secao": "Caso 3 — CASO-07 (diagnóstico consultivo, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 19,
       "titulo": "Acesso a Drive de cliente: esgotar 3 vias antes de declarar bloqueio",
       "id": "licao-a8b90dfe5f56",
-      "linha": 45
+      "linha": 45,
+      "secao": "Caso 3 — CASO-07 (diagnóstico consultivo, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 20,
       "titulo": "Documento \"em tese\" (sem autos) é o pior cenário para alucinação de dispositivo legal",
       "id": "licao-19c6eb3fde25",
-      "linha": 53
+      "linha": 53,
+      "secao": "Caso 4 — CASO-17 (estudo preliminar em tese, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 21,
       "titulo": "Alucinação de INSTITUTO é pior que a de dispositivo e sobrevive a auditorias de citação",
       "id": "licao-4958ea2521cd",
-      "linha": 55
+      "linha": 55,
+      "secao": "Caso 4 — CASO-17 (estudo preliminar em tese, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 22,
       "titulo": "O produto do workflow pode precisar de reescrita integral e isso é aceitável no fluxo",
       "id": "licao-0d3958cc7ee5",
-      "linha": 57
+      "linha": 57,
+      "secao": "Caso 4 — CASO-17 (estudo preliminar em tese, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 23,
       "titulo": "Marcador de verificação com número de súmula é melhor que marcador genérico",
       "id": "licao-7febd40923f5",
-      "linha": 59
+      "linha": 59,
+      "secao": "Caso 4 — CASO-17 (estudo preliminar em tese, entregue 08/07/2026)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 24,
       "titulo": "O redator de workflow produz \"relatório de teses\", não peça, quando o produto é memorial",
       "id": "licao-9f3e5b0eaa02",
-      "linha": 65
+      "linha": 65,
+      "secao": "Caso 5 — CASO-02 (memorial REsp 2.237.713/SP, entregue 08/07/2026 — encerra o lote 1 da esteira)",
+      "data": "08/07/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 25,
       "titulo": "Instrução de leitura funcionou: direção da tese veio correta dos autos",
       "id": "licao-bbb10582a290",
-      "linha": 67
+      "linha": 67,
+      "secao": "Caso 5 — CASO-02 (memorial REsp 2.237.713/SP, entregue 08/07/2026 — encerra o lote 1 da esteira)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 26,
       "titulo": "Precedente sem lastro nos autos deve cair, não ganhar marcador",
       "id": "licao-6a9e6e58667e",
-      "linha": 69
+      "linha": 69,
+      "secao": "Caso 5 — CASO-02 (memorial REsp 2.237.713/SP, entregue 08/07/2026 — encerra o lote 1 da esteira)",
+      "data": "08/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 27,
       "titulo": "Numeração OAB em certidão do STJ vem no formato 'UF999999'; converter com fidelidade",
       "id": "licao-e43af6052920",
-      "linha": 71
+      "linha": 71,
+      "secao": "Caso 5 — CASO-02 (memorial REsp 2.237.713/SP, entregue 08/07/2026 — encerra o lote 1 da esteira)",
+      "data": "08/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 28,
       "titulo": "Verificação em fonte oficial não é burocracia: muda o resultado da peça",
       "id": "licao-688fc61a3d52",
-      "linha": 75
+      "linha": 75,
+      "secao": "Rodada de consolidação estrutural (09/07/2026, madrugada) — verificador automático + fontes oficiais + upgrade das peças",
+      "data": "09/07/2026",
+      "temas": [
+        "lastro",
+        "citacao"
+      ]
     },
     {
       "numero": 29,
       "titulo": "As lições viram código, não só prosa",
       "id": "licao-9a56162871e3",
-      "linha": 77
+      "linha": 77,
+      "secao": "Rodada de consolidação estrutural (09/07/2026, madrugada) — verificador automático + fontes oficiais + upgrade das peças",
+      "data": "09/07/2026",
+      "temas": [
+        "gate",
+        "citacao",
+        "redacao"
+      ]
     },
     {
       "numero": 30,
       "titulo": "Fontes abertas primeiro, navegador depois",
       "id": "licao-0e997622654b",
-      "linha": 79
+      "linha": 79,
+      "secao": "Rodada de consolidação estrutural (09/07/2026, madrugada) — verificador automático + fontes oficiais + upgrade das peças",
+      "data": "09/07/2026",
+      "temas": [
+        "lastro",
+        "citacao",
+        "visual"
+      ]
     },
     {
       "numero": 33,
       "titulo": "Estado que não é atualizado pelo caminho real de execução mente",
       "id": "licao-0be166e52406",
-      "linha": 89
+      "linha": 89,
+      "secao": "Auditoria geral Efesto (09/07/2026, madrugada)",
+      "data": "09/07/2026",
+      "temas": [
+        "automacao",
+        "evidencia"
+      ]
     },
     {
       "numero": 34,
       "titulo": "Conferir o achado do auditor antes de corrigir",
       "id": "licao-18814526ebec",
-      "linha": 91
+      "linha": 91,
+      "secao": "Auditoria geral Efesto (09/07/2026, madrugada)",
+      "data": "09/07/2026",
+      "temas": [
+        "gate",
+        "lastro"
+      ]
     },
     {
       "numero": 35,
       "titulo": "Circuito de gate só existe quando a etapa final é obrigada a consumi-lo",
       "id": "licao-c70794c014d7",
-      "linha": 95
+      "linha": 95,
+      "secao": "Aplicação da auditoria externa Efesto/5.5 (09/07/2026)",
+      "data": "09/07/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 36,
       "titulo": "Auditoria cruzada entre IAs funciona e é barata",
       "id": "licao-b0a60cef086d",
-      "linha": 97
+      "linha": 97,
+      "secao": "Aplicação da auditoria externa Efesto/5.5 (09/07/2026)",
+      "data": "09/07/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 37,
       "titulo": "Agente que \"transcreve\" conteúdo para outra camada RESUME (5 de 5)",
       "id": "licao-eec00044e80b",
-      "linha": 101
+      "linha": 101,
+      "secao": "Padrão visual law como default da fábrica (09/07/2026, tarde — ordem do Igor)",
+      "data": "09/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 38,
       "titulo": "QA visual página a página continua achando o que nenhum gate pega",
       "id": "licao-38007eef1117",
-      "linha": 103
+      "linha": 103,
+      "secao": "Padrão visual law como default da fábrica (09/07/2026, tarde — ordem do Igor)",
+      "data": "09/07/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "processual"
+      ]
     },
     {
       "numero": 39,
       "titulo": "Confrontar o sistema com a literatura vale a pena quando há filtro de saída forte",
       "id": "licao-680fef22bce2",
-      "linha": 107
+      "linha": 107,
+      "secao": "Plano de upgrade estado da arte executado (09/07/2026, noite)",
+      "data": "09/07/2026",
+      "temas": [
+        "citacao",
+        "autoengano"
+      ]
     },
     {
       "numero": 40,
       "titulo": "Os upgrades U1-U11 pagaram no primeiro caso em que rodaram juntos",
       "id": "licao-ef0609a259cd",
-      "linha": 111
+      "linha": 111,
+      "secao": "Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)",
+      "data": "09/07/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 41,
       "titulo": "Três defeitos de ferramenta descobertos em produção (consertar na próxima sessão de manutenção):",
       "id": "licao-d6cebcb3a2af",
-      "linha": 113
+      "linha": 113,
+      "secao": "Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)",
+      "data": "09/07/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 42,
       "titulo": "Captura de fonte oficial em três atalhos que funcionaram:",
       "id": "licao-b723ef6903ea",
-      "linha": 115
+      "linha": 115,
+      "secao": "Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)",
+      "data": "09/07/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 43,
       "titulo": "Teste sintético verde não prova ferramenta sã: a bateria REAL achou o que o unitário não alcançava",
       "id": "licao-7876376c49c5",
-      "linha": 119
+      "linha": 119,
+      "secao": "Bateria real com telemetria (09/07/2026, noite — pedido do Igor: \"nada de smoke\")",
+      "data": "09/07/2026",
+      "temas": [
+        "visual",
+        "evidencia"
+      ]
     },
     {
       "numero": 44,
       "titulo": "Review adversarial externo (Codex gpt-5.5, 09/07/2026 noite) pagou: 2 achados high reais que nenhum teste interno tinha pego",
       "id": "licao-954c68d3167c",
-      "linha": 121
+      "linha": 121,
+      "secao": "Bateria real com telemetria (09/07/2026, noite — pedido do Igor: \"nada de smoke\")",
+      "data": "09/07/2026",
+      "temas": [
+        "citacao",
+        "modelos",
+        "autoengano"
+      ]
     },
     {
       "numero": 45,
       "titulo": "\"Inexistência\" de dispositivo também é afirmação factual e exige fonte DATADA",
       "id": "licao-e3607c6b52fb",
-      "linha": 125
+      "linha": 125,
+      "secao": "Auditoria ultracode pós-rodada N3 (10/07/2026, tarde — 56 agentes: 12 auditores + verificação adversarial por achado)",
+      "data": "10/07/2026",
+      "temas": [
+        "citacao",
+        "processual"
+      ]
     },
     {
       "numero": 46,
       "titulo": "Metadado herdado de template é falha SISTÊMICA, não pontual: as 11 peças N3 saíram com autor \"thais mulati\" e título \"Proposta de Serviços e Honorários\" (DOCX E PDF)",
       "id": "licao-84e5f3e83d21",
-      "linha": 127
+      "linha": 127,
+      "secao": "Auditoria ultracode pós-rodada N3 (10/07/2026, tarde — 56 agentes: 12 auditores + verificação adversarial por achado)",
+      "data": "10/07/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 47,
       "titulo": "Auditor multi-agente também erra: verificação adversarial matou ~40% dos achados, e 2 \"confirmados\" caíram na checagem manual",
       "id": "licao-46101da97db2",
-      "linha": 129
+      "linha": 129,
+      "secao": "Auditoria ultracode pós-rodada N3 (10/07/2026, tarde — 56 agentes: 12 auditores + verificação adversarial por achado)",
+      "data": "10/07/2026",
+      "temas": [
+        "visual",
+        "autoengano"
+      ]
     },
     {
       "numero": 48,
       "titulo": "Reconciliação painel×disco pegou o risco operacional mais grave da rodada: a versão ENVIADA ao Fábio (03:42) era anterior à N3 e ainda continha o pedido de honorários recursais removido por erro jurídico; a N3 corrigida não foi enviada",
       "id": "licao-bf37bb6fe465",
-      "linha": 131
+      "linha": 131,
+      "secao": "Auditoria ultracode pós-rodada N3 (10/07/2026, tarde — 56 agentes: 12 auditores + verificação adversarial por achado)",
+      "data": "10/07/2026",
+      "temas": [
+        "gate",
+        "entrega"
+      ]
     },
     {
       "numero": 49,
       "titulo": "Resultado gravado pelo próprio fluxo não é prova independente",
       "id": "licao-2cf8f383bc20",
-      "linha": 135
+      "linha": 135,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "evidencia"
+      ]
     },
     {
       "numero": 50,
       "titulo": "Temporalidade precisa integrar o hash e ser interpretada, não comparada como texto",
       "id": "licao-15986884bebb",
-      "linha": 137
+      "linha": 137,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "evidencia"
+      ]
     },
     {
       "numero": 51,
       "titulo": "Matar a palavra procurada prova o detector literal, não a qualidade jurídica",
       "id": "licao-599c12df6c66",
-      "linha": 139
+      "linha": 139,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "citacao",
+        "evidencia"
+      ]
     },
     {
       "numero": 52,
       "titulo": "Caminho + SHA-256 prova identidade física do arquivo, não sustentação da proposição",
       "id": "licao-6a2debdb8dc4",
-      "linha": 141
+      "linha": 141,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "estado",
+        "fronteira",
+        "evidencia"
+      ]
     },
     {
       "numero": 53,
       "titulo": "Presença de parecer não equivale a decisão favorável do conselho",
       "id": "licao-da319f1c5cbc",
-      "linha": 143
+      "linha": 143,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 54,
       "titulo": "Aprovação estrutural, liberação jurídica e promoção são estados independentes",
       "id": "licao-5b36f5e2b17a",
-      "linha": 145
+      "linha": 145,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "citacao",
+        "processual",
+        "entrega"
+      ]
     },
     {
       "numero": 55,
       "titulo": "Zero esperado não é completude; é ausência de avaliação",
       "id": "licao-8417d298996b",
-      "linha": 147
+      "linha": 147,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 56,
       "titulo": "A gestão deve revalidar o maior alvo N4 auditado, não apenas a fase corrente da N3",
       "id": "licao-b205af813ffa",
-      "linha": 149
+      "linha": 149,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 57,
       "titulo": "Auditoria visual automática não deve se apresentar como revisão humana",
       "id": "licao-8b3f5f911761",
-      "linha": 151
+      "linha": 151,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 58,
       "titulo": "Dispersão de cenários escolhidos não é variância operacional",
       "id": "licao-490dd91b7399",
-      "linha": 153
+      "linha": 153,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 59,
       "titulo": "Auditor delegado também pode extrapolar o escopo de escrita",
       "id": "licao-d75e77b29a0d",
-      "linha": 155
+      "linha": 155,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 60,
       "titulo": "Documentação de fechamento precisa carregar as ressalvas reais, não apenas os números verdes",
       "id": "licao-3f2b0b00e0d2",
-      "linha": 157
+      "linha": 157,
+      "secao": "Conselho N4 e auditoria anti-autocertificação (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "visual",
+        "estado"
+      ]
     },
     {
       "numero": 61,
       "titulo": "Gate bloqueante sem lastro persistido é gate que já passou uma versão errada",
       "id": "licao-531c0e119970",
-      "linha": 161
+      "linha": 161,
+      "secao": "Conselho de auditoria quadripartite (11/07/2026 — Efesto, Helena, Cícero, Diabob)",
+      "data": "11/07/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "evidencia"
+      ]
     },
     {
       "numero": 62,
       "titulo": "Reprovação silenciosa é meio caminho para aprovação de fato",
       "id": "licao-338d220ec247",
-      "linha": 163
+      "linha": 163,
+      "secao": "Conselho de auditoria quadripartite (11/07/2026 — Efesto, Helena, Cícero, Diabob)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 63,
       "titulo": "O comando recebido não é a definição do problema",
       "id": "licao-67c8b51ae0e9",
-      "linha": 167
+      "linha": 167,
+      "secao": "Método de solução de problemas aplicado à petição (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "processual"
+      ]
     },
     {
       "numero": 64,
       "titulo": "Diagnóstico útil é história causal e decisória, não inventário de defeitos",
       "id": "licao-f497b9689a83",
-      "linha": 169
+      "linha": 169,
+      "secao": "Método de solução de problemas aplicado à petição (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 65,
       "titulo": "Estratégia sem alternativa comparada corre o risco de apenas detalhar a primeira ideia",
       "id": "licao-aaddf8700e27",
-      "linha": 171
+      "linha": 171,
+      "secao": "Método de solução de problemas aplicado à petição (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 66,
       "titulo": "Avaliar a petição exige medir resultados diretos e testar explicações rivais",
       "id": "licao-eed3f1aedb19",
-      "linha": 173
+      "linha": 173,
+      "secao": "Método de solução de problemas aplicado à petição (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 67,
       "titulo": "O produto final não pode provar sozinho as premissas usadas para produzi-lo",
       "id": "licao-e6e9b6de45cd",
-      "linha": 177
+      "linha": 177,
+      "secao": "Implementação e benchmark PSO-Pet (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 68,
       "titulo": "Dimensão não medida não recebe nota zero nem aprovação",
       "id": "licao-8844c62e5991",
-      "linha": 179
+      "linha": 179,
+      "secao": "Implementação e benchmark PSO-Pet (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "evidencia"
+      ]
     },
     {
       "numero": 69,
       "titulo": "Indicador elegante deve revelar gargalo, não escondê-lo numa média",
       "id": "licao-7e06f4863b04",
-      "linha": 181
+      "linha": 181,
+      "secao": "Implementação e benchmark PSO-Pet (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 70,
       "titulo": "Teste antifraude precisa combinar mutação semântica e controle benigno",
       "id": "licao-d38428367567",
-      "linha": 183
+      "linha": 183,
+      "secao": "Implementação e benchmark PSO-Pet (11/07/2026)",
+      "data": "11/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 71,
       "titulo": "Gate de validação contra dados reais ANTES de codificar o motor paga em minutos o que custaria horas",
       "id": "licao-88587f83c298",
-      "linha": 187
+      "linha": 187,
+      "secao": "FORJA FILA — priorização painel → FORJA (12/07/2026)",
+      "data": "12/07/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 72,
       "titulo": "Painel com hidratação viva tem DOIS pontos de injeção de dados; alimentar só um cria seção fantasma",
       "id": "licao-6f71676641e8",
-      "linha": 189
+      "linha": 189,
+      "secao": "FORJA FILA — priorização painel → FORJA (12/07/2026)",
+      "data": "12/07/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 73,
       "titulo": "Score perfeito com um único matador é artefato, não qualidade; instrumento de medição valida a si mesmo contra o original antes de medir",
       "id": "licao-e0dfd3e0650c",
-      "linha": 193
+      "linha": 193,
+      "secao": "Melhorias do plano 19 (12/07/2026)",
+      "data": "12/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 74,
       "titulo": "Inversão por prefixo \"não\" atravessa qualquer teste `contains`",
       "id": "licao-91937750e554",
-      "linha": 195
+      "linha": 195,
+      "secao": "Melhorias do plano 19 (12/07/2026)",
+      "data": "12/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 75,
       "titulo": "Visualização de estado precisa da regra \"maior fase alcançada\": cursor de fase mente após reconcile",
       "id": "licao-eb1a0a38679a",
-      "linha": 197
+      "linha": 197,
+      "secao": "Melhorias do plano 19 (12/07/2026)",
+      "data": "12/07/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 76,
       "titulo": "O redator final deve vir depois da auditoria material e antes da composição visual",
       "id": "licao-56882d839a85",
-      "linha": 201
+      "linha": 201,
+      "secao": "Revisão e escrita final Fable 5 (15/07/2026)",
+      "data": "15/07/2026",
+      "temas": [
+        "redacao",
+        "visual",
+        "fronteira"
+      ]
     },
     {
       "numero": 77,
       "titulo": "Modelo de escrita não pode certificar a própria fidelidade",
       "id": "licao-8d7322238625",
-      "linha": 203
+      "linha": 203,
+      "secao": "Revisão e escrita final Fable 5 (15/07/2026)",
+      "data": "15/07/2026",
+      "temas": [
+        "citacao",
+        "redacao",
+        "modelos",
+        "fronteira"
+      ]
     },
     {
       "numero": 78,
       "titulo": "Retry editorial parte da origem imutável, não da versão rejeitada",
       "id": "licao-770c3f9738c2",
-      "linha": 205
+      "linha": 205,
+      "secao": "Revisão e escrita final Fable 5 (15/07/2026)",
+      "data": "15/07/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 79,
       "titulo": "Múltiplos documentos exigem identidade de bundle, não pareamento por conveniência",
       "id": "licao-2cf80f949c14",
-      "linha": 207
+      "linha": 207,
+      "secao": "Revisão e escrita final Fable 5 (15/07/2026)",
+      "data": "15/07/2026",
+      "temas": [
+        "redacao",
+        "modelos",
+        "entrega"
+      ]
     },
     {
       "numero": 80,
       "titulo": "Review externo produz hipóteses; regressão e execução real decidem",
       "id": "licao-7376a26bb026",
-      "linha": 209
+      "linha": 209,
+      "secao": "Revisão e escrita final Fable 5 (15/07/2026)",
+      "data": "15/07/2026",
+      "temas": [
+        "gate",
+        "modelos",
+        "evidencia"
+      ]
     },
     {
       "numero": 81,
       "titulo": "Projeto eliminado tem que sair do disco e do git, não só da documentação",
       "id": "licao-cc61a0341c66",
-      "linha": 213
+      "linha": 213,
+      "secao": "Limpeza física e consolidação (16/07/2026)",
+      "data": "16/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 82,
       "titulo": "Estado F0 defasado gera alarme falso no contexto de sessão",
       "id": "licao-0634e705d940",
-      "linha": 215
+      "linha": 215,
+      "secao": "Limpeza física e consolidação (16/07/2026)",
+      "data": "16/07/2026",
+      "temas": [
+        "estado",
+        "automacao"
+      ]
     },
     {
       "numero": 83,
       "titulo": "Utilitário duplicado diverge em silêncio",
       "id": "licao-f678fa47978c",
-      "linha": 217
+      "linha": 217,
+      "secao": "Limpeza física e consolidação (16/07/2026)",
+      "data": "16/07/2026",
+      "temas": [
+        "acoplamento",
+        "evidencia"
+      ]
     },
     {
       "numero": 1,
       "titulo": "Plano bom nasce reprovado",
       "id": "licao-ed80c2f3f061",
-      "linha": 221
+      "linha": 221,
+      "secao": "AUTO-RESEARCH — instalação do ciclo AR (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "modelos",
+        "autoengano"
+      ]
     },
     {
       "numero": 2,
       "titulo": "Taxa sem denominador congelado premia exclusão",
       "id": "licao-d35301a28f71",
-      "linha": 228
+      "linha": 228,
+      "secao": "AUTO-RESEARCH — instalação do ciclo AR (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "citacao",
+        "estado"
+      ]
     },
     {
       "numero": 3,
       "titulo": "Canário de falha única com atribuição por sensor",
       "id": "licao-fad889e10328",
-      "linha": 232
+      "linha": 232,
+      "secao": "AUTO-RESEARCH — instalação do ciclo AR (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 4,
       "titulo": "O corpus histórico validou os sensores por acidente",
       "id": "licao-9f8d2f07f568",
-      "linha": 237
+      "linha": 237,
+      "secao": "AUTO-RESEARCH — instalação do ciclo AR (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 5,
       "titulo": "Manifesto da Régua pode dormir defasado",
       "id": "licao-6d47ac06c14c",
-      "linha": 242
+      "linha": 242,
+      "secao": "AUTO-RESEARCH — instalação do ciclo AR (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 1,
       "titulo": "O harness reprovou dois rounds de juiz antes de aceitar um",
       "id": "licao-15a40642879d",
-      "linha": 250
+      "linha": 250,
+      "secao": "Ciclo AR-1 — primeiro ciclo real de auto-aperfeiçoamento (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 2,
       "titulo": "Compress venceu expand na geração 0",
       "id": "licao-639eed3115f6",
-      "linha": 255
+      "linha": 255,
+      "secao": "Ciclo AR-1 — primeiro ciclo real de auto-aperfeiçoamento (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 3,
       "titulo": "Gap de v1 descoberto em uso real:",
       "id": "licao-56946ec037bb",
-      "linha": 260
+      "linha": 260,
+      "secao": "Ciclo AR-1 — primeiro ciclo real de auto-aperfeiçoamento (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 4,
       "titulo": "Karpathy sobre trilhos anti-trapaça funciona:",
       "id": "licao-c39e09087c9d",
-      "linha": 263
+      "linha": 263,
+      "secao": "Ciclo AR-1 — primeiro ciclo real de auto-aperfeiçoamento (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "modelos",
+        "evidencia"
+      ]
     },
     {
       "numero": 1,
       "titulo": "O vazamento de cegamento mais provável vem do ORQUESTRADOR, não do juiz",
       "id": "licao-a5f95cdbb478",
-      "linha": 269
+      "linha": 269,
+      "secao": "Ciclo AR-2 — geração 1 (hybrid) real: a variante perdeu e nada foi promovido (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 2,
       "titulo": "Juiz LLM não rastreia artefato através do swap sem instrução explícita",
       "id": "licao-8d5aa9931eed",
-      "linha": 275
+      "linha": 275,
+      "secao": "Ciclo AR-2 — geração 1 (hybrid) real: a variante perdeu e nada foi promovido (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 3,
       "titulo": "Gap v1 nº 2:",
       "id": "licao-23d694a165dd",
-      "linha": 279
+      "linha": 279,
+      "secao": "Ciclo AR-2 — geração 1 (hybrid) real: a variante perdeu e nada foi promovido (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 4,
       "titulo": "Resultado negativo é resultado",
       "id": "licao-56951911a660",
-      "linha": 282
+      "linha": 282,
+      "secao": "Ciclo AR-2 — geração 1 (hybrid) real: a variante perdeu e nada foi promovido (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 5,
       "titulo": "Custo de execução é achado de primeira ordem:",
       "id": "licao-c1757abbbf50",
-      "linha": 286
+      "linha": 286,
+      "secao": "Ciclo AR-2 — geração 1 (hybrid) real: a variante perdeu e nada foi promovido (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 84,
       "titulo": "Pendência não é sinônimo de bloqueador e checklist interno não é mensagem de entrega",
       "id": "licao-8823e300a02c",
-      "linha": 292
+      "linha": 292,
+      "secao": "Materialidade de pendências e entrega útil (23/07/2026)",
+      "data": "23/07/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 1,
       "titulo": "Toda lição virou código, não disciplina de prompt:",
       "id": "licao-4639ed47b75a",
-      "linha": 315
+      "linha": 315,
+      "secao": "Fechamento 100% das pendências dos ciclos AR-1/AR-2 (23/07/2026, noite)",
+      "data": "23/07/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 2,
       "titulo": "Custo virou indicador formal:",
       "id": "licao-6724e3fa8f20",
-      "linha": 319
+      "linha": 319,
+      "secao": "Fechamento 100% das pendências dos ciclos AR-1/AR-2 (23/07/2026, noite)",
+      "data": "23/07/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 3,
       "titulo": "Canários desentrelaçados da avaliação:",
       "id": "licao-d7a5c3ca2140",
-      "linha": 322
+      "linha": 322,
+      "secao": "Fechamento 100% das pendências dos ciclos AR-1/AR-2 (23/07/2026, noite)",
+      "data": "23/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 4,
       "titulo": "Locks transitórios do Windows domados:",
       "id": "licao-efed2429f465",
-      "linha": 325
+      "linha": 325,
+      "secao": "Fechamento 100% das pendências dos ciclos AR-1/AR-2 (23/07/2026, noite)",
+      "data": "23/07/2026",
+      "temas": [
+        "visual",
+        "automacao"
+      ]
     },
     {
       "numero": 5,
       "titulo": "Limitação que permanece (decisão de gasto do Igor):",
       "id": "licao-d70d8a1caad5",
-      "linha": 329
+      "linha": 329,
+      "secao": "Fechamento 100% das pendências dos ciclos AR-1/AR-2 (23/07/2026, noite)",
+      "data": "23/07/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "entrega",
+        "estado"
+      ]
     },
     {
       "numero": 85,
       "titulo": "Fonte primária não é revisão de texto, e nenhuma quantidade de revisão textual substitui abrir os autos",
       "id": "licao-2260e3655e22",
-      "linha": 336
+      "linha": 336,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 86,
       "titulo": "Citar o localizador não é ter lido o localizador",
       "id": "licao-e8440092d68f",
-      "linha": 338
+      "linha": 338,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "estado",
+        "evidencia"
+      ]
     },
     {
       "numero": 87,
       "titulo": "Achado forte gera excesso na redação, e o excesso vem depois da revisão",
       "id": "licao-01fe44413c32",
-      "linha": 340
+      "linha": 340,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 88,
       "titulo": "Punir pendência declarada com a pena da invenção ensina o sistema a esconder lacuna",
       "id": "licao-010930cd2ad4",
-      "linha": 342
+      "linha": 342,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "gate",
+        "lastro"
+      ]
     },
     {
       "numero": 89,
       "titulo": "Auditor que reprova o acerto é desligado na terceira vez",
       "id": "licao-b21b7d58d1cb",
-      "linha": 344
+      "linha": 344,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "gate",
+        "processual"
+      ]
     },
     {
       "numero": 90,
       "titulo": "Importável não é acoplado",
       "id": "licao-7690be5b13e1",
-      "linha": 346
+      "linha": 346,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "entrega",
+        "acoplamento",
+        "estado"
+      ]
     },
     {
       "numero": 91,
       "titulo": "Ledger que apaga o erro perde a lição",
       "id": "licao-5becbb8ae7dd",
-      "linha": 348
+      "linha": 348,
+      "secao": "Caso 7 — CASO-23 (consulta técnico-pericial, TRF4, 26/07/2026) e a blindagem de lastro",
+      "data": "26/07/2026",
+      "temas": [
+        "modelos",
+        "estado",
+        "fronteira"
+      ]
     },
     {
       "numero": 92,
       "titulo": "Apelido de modelo não é modelo, e a esteira inteira pode estar rodando outro",
       "id": "licao-d637f592bd64",
-      "linha": 354
+      "linha": 354,
+      "secao": "Bancada CASO-04 V7 — seis modelos na mesma peça real (27/07/2026)",
+      "data": "27/07/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 93,
       "titulo": "`--output-format json` devolve apenas o último turno",
       "id": "licao-3388db3feff5",
-      "linha": 356
+      "linha": 356,
+      "secao": "Bancada CASO-04 V7 — seis modelos na mesma peça real (27/07/2026)",
+      "data": "27/07/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 94,
       "titulo": "Escrever bem e obedecer são capacidades distintas, e o mesmo modelo pode ter uma sem a outra",
       "id": "licao-7a6670bc30ed",
-      "linha": 358
+      "linha": 358,
+      "secao": "Bancada CASO-04 V7 — seis modelos na mesma peça real (27/07/2026)",
+      "data": "27/07/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 95,
       "titulo": "Auto-preferência de juiz é número, não suspeita",
       "id": "licao-d90d71729418",
-      "linha": 360
+      "linha": 360,
+      "secao": "Bancada CASO-04 V7 — seis modelos na mesma peça real (27/07/2026)",
+      "data": "27/07/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 96,
       "titulo": "Invenção de precedente parece ser função do vazio, não do modelo",
       "id": "licao-85232db8342d",
-      "linha": 362
+      "linha": 362,
+      "secao": "Bancada CASO-04 V7 — seis modelos na mesma peça real (27/07/2026)",
+      "data": "27/07/2026",
+      "temas": [
+        "citacao",
+        "modelos"
+      ]
     },
     {
       "numero": 97,
       "titulo": "O auditor errou três vezes no mesmo dia, sempre reprovando o acerto",
       "id": "licao-890dc3899687",
-      "linha": 364
+      "linha": 364,
+      "secao": "Bancada CASO-04 V7 — seis modelos na mesma peça real (27/07/2026)",
+      "data": "27/07/2026",
+      "temas": [
+        "gate",
+        "citacao",
+        "modelos"
+      ]
     },
     {
       "numero": 87,
       "titulo": "Recurso que depende de esforço manual por caso não sobrevive ao volume",
       "id": "licao-7fbf4b2c9b84",
-      "linha": 370
+      "linha": 370,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "automacao"
+      ]
     },
     {
       "numero": 88,
       "titulo": "Gate que só procura defeito nunca detecta pobreza",
       "id": "licao-38bfd5418b00",
-      "linha": 372
+      "linha": 372,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 89,
       "titulo": "O gate na rota que ninguém percorre é gate nenhum",
       "id": "licao-c2bcde2c2b71",
-      "linha": 374
+      "linha": 374,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "acoplamento"
+      ]
     },
     {
       "numero": 90,
       "titulo": "Conteúdo semântico de figura não é inferível de prosa argumentativa",
       "id": "licao-e3c63bb4f9a3",
-      "linha": 376
+      "linha": 376,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "redacao",
+        "visual"
+      ]
     },
     {
       "numero": 91,
       "titulo": "Defeito só é defeito contra o padrão aprovado",
       "id": "licao-0484a30c02ed",
-      "linha": 378
+      "linha": 378,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "redacao",
+        "visual"
+      ]
     },
     {
       "numero": 92,
       "titulo": "O teste de mutação é o único que prova que o gate funciona",
       "id": "licao-dccfbbbda010",
-      "linha": 380
+      "linha": 380,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 93,
       "titulo": "Quem constrói não pode ser quem valida, e comitê que lê o resumo do construtor não escapa disso",
       "id": "licao-bae0dc84698f",
-      "linha": 382
+      "linha": 382,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual",
+        "modelos",
+        "autoengano"
+      ]
     },
     {
       "numero": 94,
       "titulo": "Detecção por cor quebra na primeira revisão da marca",
       "id": "licao-d5b6478f8ad9",
-      "linha": 384
+      "linha": 384,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 95,
       "titulo": "Aceitar crítica sem conferir é o mesmo erro de aceitar elogio sem conferir",
       "id": "licao-8bf1c7190f3b",
-      "linha": 386
+      "linha": 386,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 96,
       "titulo": "O padrão-ouro tinha defeito, e o gate não podia vê-lo",
       "id": "licao-8740821fc682",
-      "linha": 388
+      "linha": 388,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual"
+      ]
     },
     {
       "numero": 97,
       "titulo": "Duas variantes de capa foram aprovadas, e a constância não exige escolher uma só",
       "id": "licao-bd896061f767",
-      "linha": 390
+      "linha": 390,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 98,
       "titulo": "O defeito que \"só o zoom pega\" estava legível no XML o tempo todo",
       "id": "licao-65c29543bd29",
-      "linha": 392
+      "linha": 392,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "redacao",
+        "visual"
+      ]
     },
     {
       "numero": 99,
       "titulo": "~~Quatro peças já entregues carregam diagrama defeituoso~~ — AFIRMAÇÃO ERRADA, corrigida em 03/08/2026 (ver Lição 103)",
       "id": "licao-8514c9d73042",
-      "linha": 394
+      "linha": 394,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 100,
       "titulo": "Gate declarado não é gate computado; a casa escreveu a proteção certa e a deixou fora da estrada",
       "id": "licao-4a6746f532ca",
-      "linha": 396
+      "linha": 396,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "acoplamento",
+        "estado",
+        "autoengano"
+      ]
     },
     {
       "numero": 101,
       "titulo": "\"Rota única\" é hipótese a medir, não intuição de arquiteto",
       "id": "licao-3884fe72b601",
-      "linha": 398
+      "linha": 398,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "acoplamento"
+      ]
     },
     {
       "numero": 102,
       "titulo": "Medir a especificação contra o acervo pega o defeito antes de existir código; persistir a medição é o que a torna evidência",
       "id": "licao-d2d61df1a210",
-      "linha": 400
+      "linha": 400,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 103,
       "titulo": "Arquivo de produção não é arquivo entregue, e a diferença muda a decisão inteira",
       "id": "licao-b63870112589",
-      "linha": 402
+      "linha": 402,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 104,
       "titulo": "Varredura em massa não pode abortar por causa de um arquivo, e \"erro de caminho inválido\" nem sempre é do caminho",
       "id": "licao-d1a5129b4e6d",
-      "linha": 406
+      "linha": 406,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "automacao"
+      ]
     },
     {
       "numero": 105,
       "titulo": "\"A ferramenta não está disponível\" é conclusão que exige procurar pela coisa certa; e o validador de terceiro tem o escopo dele, não o seu",
       "id": "licao-6f24103582fc",
-      "linha": 412
+      "linha": 412,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 106,
       "titulo": "Repetir a operação inteira não converge quando a falha é transitória e itinerante; repescar converge",
       "id": "licao-2455a5563d87",
-      "linha": 418
+      "linha": 418,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "automacao"
+      ]
     },
     {
       "numero": 107,
       "titulo": "Fonte prevalente e valor monetário precisam ser gates de produção, não campos de confiança",
       "id": "licao-fbc84ef6614d",
-      "linha": 424
+      "linha": 424,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "estado"
+      ]
     },
     {
       "numero": 108,
       "titulo": "Gate computado sobre conjunto vazio é pior que gate declarado, porque parece trabalho feito",
       "id": "licao-c277607f64b4",
-      "linha": 426
+      "linha": 426,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "estado"
+      ]
     },
     {
       "numero": 109,
       "titulo": "Hash de fonte grande também precisa de lastro de execução",
       "id": "licao-58d521bc8d4e",
-      "linha": 436
+      "linha": 436,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "modelos"
+      ]
     },
     {
       "numero": 110,
       "titulo": "Baseline longo não substitui a régua curta",
       "id": "licao-9181e409de63",
-      "linha": 438
+      "linha": 438,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 111,
       "titulo": "Documento de auditabilidade descrito no plano não é documento obrigatório até bloquear a entrega",
       "id": "licao-6b68e61aeb8c",
-      "linha": 440
+      "linha": 440,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 112,
       "titulo": "A decisão de não renderizar precisa estar no contrato, não apenas no código da rota",
       "id": "licao-1f135a6092e6",
-      "linha": 442
+      "linha": 442,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 113,
       "titulo": "Compatibilidade legada não precisa contaminar a rota canônica",
       "id": "licao-1528bd15b690",
-      "linha": 444
+      "linha": 444,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "acoplamento"
+      ]
     },
     {
       "numero": 114,
       "titulo": "O gate que nunca rodou é indistinguível do gate que aprovou",
       "id": "licao-db2358a9b5b9",
-      "linha": 446
+      "linha": 446,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "estado"
+      ]
     },
     {
       "numero": 115,
       "titulo": "Duas sessões no mesmo arquivo batizam o mesmo gate com dois nomes",
       "id": "licao-026395985ed7",
-      "linha": 448
+      "linha": 448,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 116,
       "titulo": "Ledger inválido não pode desaparecer na mesma saída de “não aplicável”",
       "id": "licao-f195638ff587",
-      "linha": 450
+      "linha": 450,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 117,
       "titulo": "Fallback de snapshot é uma regressão de fonte prevalente, não uma cortesia de compatibilidade",
       "id": "licao-bfa91e734aef",
-      "linha": 452
+      "linha": 452,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 118,
       "titulo": "Resolver a pasta do caso é parte do lastro, e isenção lexical precisa deixar recibo",
       "id": "licao-070f48fdafe9",
-      "linha": 454
+      "linha": 454,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "visual",
+        "estado",
+        "evidencia"
+      ]
     },
     {
       "numero": 119,
       "titulo": "Caminho explícito inválido tem precedência sobre descoberta conveniente",
       "id": "licao-c19e03c48a72",
-      "linha": 456
+      "linha": 456,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 120,
       "titulo": "Contagem histórica não pode sobreviver sem rótulo",
       "id": "licao-dc69613791d0",
-      "linha": 458
+      "linha": 458,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 121,
       "titulo": "Parâmetro de conveniência não pode virar bypass de gate",
       "id": "licao-30ddcc3247c3",
-      "linha": 460
+      "linha": 460,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 122,
       "titulo": "Revalidação depois da correção é parte da correção",
       "id": "licao-52dd91d47bef",
-      "linha": 462
+      "linha": 462,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 123,
       "titulo": "Memória de auditabilidade também pode mentir por nome de fase",
       "id": "licao-009a4a21068b",
-      "linha": 464
+      "linha": 464,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 124,
       "titulo": "Anti-overblocking precisa de contraprova na rota, não só no detector",
       "id": "licao-9473853c269a",
-      "linha": 466
+      "linha": 466,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 125,
       "titulo": "Total correto com subtotais errados ainda é evidência ruim",
       "id": "licao-7ac19cdb169a",
-      "linha": 468
+      "linha": 468,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "evidencia"
+      ]
     },
     {
       "numero": 126,
       "titulo": "Caminho explicitamente ausente não é ausência de escolha",
       "id": "licao-27c2b7ccd02a",
-      "linha": 470
+      "linha": 470,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 116,
       "titulo": "A esteira nunca soube quantos dos seus gates ela mesma computa",
       "id": "licao-66d22507b91f",
-      "linha": 472
+      "linha": 472,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 117,
       "titulo": "Quase publiquei o número errado por confundir ausência de código com ausência de execução",
       "id": "licao-0732fa1364d9",
-      "linha": 474
+      "linha": 474,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 118,
       "titulo": "O contrato do F8 tinha 14 exigências que ninguém sabia cumprir, e o cumpridor estava do lado, calado",
       "id": "licao-8d105483ae03",
-      "linha": 476
+      "linha": 476,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual"
+      ]
     },
     {
       "numero": 119,
       "titulo": "A métrica moveu a favor de quem a escreveu, no mesmo dia em que nasceu",
       "id": "licao-2faf9f5f375b",
-      "linha": 478
+      "linha": 478,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 127,
       "titulo": "Gate declarado na F10 precisa ser recomputado no evento que encerra o caso",
       "id": "licao-f0a57f08ece9",
-      "linha": 480
+      "linha": 480,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 120,
       "titulo": "O conselho obrigatório era atestado por quem tinha interesse em passar",
       "id": "licao-83e688ced87e",
-      "linha": 482
+      "linha": 482,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 121,
       "titulo": "Piso de tamanho é o antídoto barato contra o arquivo criado para o gate",
       "id": "licao-43c95452b69b",
-      "linha": 484
+      "linha": 484,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 128,
       "titulo": "Scanner de fonte externa não pode escrever no lado da fonte",
       "id": "licao-05b2def6460d",
-      "linha": 486
+      "linha": 486,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 122,
       "titulo": "O gate mais caro da esteira era o mais confiado",
       "id": "licao-6c92f6824781",
-      "linha": 488
+      "linha": 488,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "citacao",
+        "estado"
+      ]
     },
     {
       "numero": 123,
       "titulo": "Quase criei a MC-15 dentro do gate feito para evitá-la",
       "id": "licao-9ec485ba0b81",
-      "linha": 490
+      "linha": 490,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 124,
       "titulo": "O gate de identidade nasceu cobrando tribunal de artigo do CPC",
       "id": "licao-503dcb583599",
-      "linha": 492
+      "linha": 492,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "citacao",
+        "processual"
+      ]
     },
     {
       "numero": 125,
       "titulo": "A métrica contava comentário como implementação",
       "id": "licao-423e41c8433e",
-      "linha": 494
+      "linha": 494,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 126,
       "titulo": "O mesmo artefato existe em sete formatos, e cada gate novo tropeça nisso",
       "id": "licao-4c9d14e7083a",
-      "linha": 496
+      "linha": 496,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 127,
       "titulo": "Resumo com contagens zeradas é varredura limpa, não detecção",
       "id": "licao-65b6a326a55a",
-      "linha": 498
+      "linha": 498,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 128,
       "titulo": "Um ledger real tinha dez fontes oficiais e nenhuma arquivada, e o gate chamado `official_sources_archived` dizia `pass`",
       "id": "licao-a393d804c227",
-      "linha": 500
+      "linha": 500,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 129,
       "titulo": "Três quartos das execuções de um gate mediam o conjunto vazio",
       "id": "licao-27659a0d383f",
-      "linha": 502
+      "linha": 502,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "autoengano"
+      ]
     },
     {
       "numero": 130,
       "titulo": "Exigir os nove do protocolo reprovaria o melhor relatório do acervo",
       "id": "licao-a6e029533d40",
-      "linha": 504
+      "linha": 504,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 131,
       "titulo": "O medidor de liveness dizia \"inerte\" para duas doenças diferentes",
       "id": "licao-5e53b4bbf4ab",
-      "linha": 506
+      "linha": 506,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 132,
       "titulo": "Grep não prova emissão, e foi grep que escondeu dois gates sem produtor",
       "id": "licao-ceb3e7f2af7d",
-      "linha": 508
+      "linha": 508,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "evidencia"
+      ]
     },
     {
       "numero": 133,
       "titulo": "A proveniência do VerifACT divergia por CRLF, não por conteúdo",
       "id": "licao-7840093f49b0",
-      "linha": 510
+      "linha": 510,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "fronteira"
+      ]
     },
     {
       "numero": 134,
       "titulo": "O validador da exploração existia e rodava; os gates que o atestam eram escritos à mão",
       "id": "licao-54f0ca130a9b",
-      "linha": 512
+      "linha": 512,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "citacao"
+      ]
     },
     {
       "numero": 135,
       "titulo": "Os detectores certos estavam instalados tarde demais",
       "id": "licao-5fc968813b88",
-      "linha": 514
+      "linha": 514,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 136,
       "titulo": "Ausência de declaração não é declaração falsa, e a diferença decide a severidade",
       "id": "licao-72b99764108a",
-      "linha": 516
+      "linha": 516,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 137,
       "titulo": "Três regras \"óbvias\" sobre ingestão morreram na medição",
       "id": "licao-d4dc2b349224",
-      "linha": 518
+      "linha": 518,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 138,
       "titulo": "A dívida de esquema ganhou um medidor antes de ganhar uma solução",
       "id": "licao-7840935ea668",
-      "linha": 520
+      "linha": 520,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 139,
       "titulo": "O achado P0 mais assustador do dia era um defeito já corrigido",
       "id": "licao-a3330f90d907",
-      "linha": 522
+      "linha": 522,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 140,
       "titulo": "Hash de cópia arquivada e hash de regimento significam coisas opostas",
       "id": "licao-ac4f95c08fe7",
-      "linha": 524
+      "linha": 524,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "processual"
+      ]
     },
     {
       "numero": 141,
       "titulo": "O gate mais perigoso da esteira protege o único artefato que o destinatário lê",
       "id": "licao-53f661858d4a",
-      "linha": 526
+      "linha": 526,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "entrega"
+      ]
     },
     {
       "numero": 142,
       "titulo": "Rótulo genérico satisfaz \"o campo existe\" e não define nada",
       "id": "licao-a68daf812452",
-      "linha": 528
+      "linha": 528,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 143,
       "titulo": "O blueprint mora em markdown, e o primeiro gate só sabia ler JSON",
       "id": "licao-3b5c9422d099",
-      "linha": 530
+      "linha": 530,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 144,
       "titulo": "Cometi contra mim mesmo, no censo, o erro que já tinha documentado horas antes",
       "id": "licao-fdfd70b45a29",
-      "linha": 532
+      "linha": 532,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado",
+        "autoengano"
+      ]
     },
     {
       "numero": 145,
       "titulo": "A superfície de autovalidação chegou a zero, e é aí que começa o risco novo",
       "id": "licao-9ef6fc0e494a",
-      "linha": 534
+      "linha": 534,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "autoengano"
+      ]
     },
     {
       "numero": 146,
       "titulo": "A dívida de esquema fechou pelo caminho barato, e o caro continua aberto",
       "id": "licao-aeae25308cfc",
-      "linha": 536
+      "linha": 536,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 147,
       "titulo": "O único jeito de saber se um gate sabe dizer não é destruir o artefato e olhar",
       "id": "licao-0b962658af55",
-      "linha": 538
+      "linha": 538,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 148,
       "titulo": "O instrumento errou duas vezes na primeira execução, e as duas eram sobre o que ele NÃO alcançava",
       "id": "licao-5378ff7f5405",
-      "linha": 540
+      "linha": 540,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "autoengano"
+      ]
     },
     {
       "numero": 149,
       "titulo": "Metade das reprovações do censo era do gate, não do caso",
       "id": "licao-ba2d6163c453",
-      "linha": 542
+      "linha": 542,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 150,
       "titulo": "Gate que nunca aprova é tão quebrado quanto gate que nunca reprova",
       "id": "licao-e9d79e3c7dbd",
-      "linha": 544
+      "linha": 544,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "autoengano"
+      ]
     },
     {
       "numero": 151,
       "titulo": "A dívida de esquema perigosa não é o nome do campo, é a FORMA do arquivo",
       "id": "licao-c0fa745689fa",
-      "linha": 546
+      "linha": 546,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 152,
       "titulo": "O laudo de triagem também é artefato, e também errou",
       "id": "licao-0cdb8ac60889",
-      "linha": 548
+      "linha": 548,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 153,
       "titulo": "O canário pegou a primeira regressão dele contra quem o escreveu, no mesmo dia",
       "id": "licao-34ff20d1056e",
-      "linha": 550
+      "linha": 550,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 154,
       "titulo": "Consertei o termômetro e por um momento acreditei ter consertado a esteira",
       "id": "licao-e40910138382",
-      "linha": 552
+      "linha": 552,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 155,
       "titulo": "Os dezesseis gates da F8 nunca conheceram uma peça real, e isso incide sobre a decisão de ligá-los",
       "id": "licao-7767e5be200b",
-      "linha": 554
+      "linha": 554,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "estado"
+      ]
     },
     {
       "numero": 156,
       "titulo": "\"O censo não chama o produtor\" era hipótese confortável; o material é que não existe",
       "id": "licao-4d3c633904eb",
-      "linha": 556
+      "linha": 556,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 157,
       "titulo": "O gate visual reprovava o próprio template do escritório, e ninguém sabia",
       "id": "licao-fafa2f7aaed7",
-      "linha": 558
+      "linha": 558,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 158,
       "titulo": "A síntese executiva obrigatória era lida como defeito tipográfico",
       "id": "licao-66c73aa4682b",
-      "linha": 560
+      "linha": 560,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "redacao",
+        "visual"
+      ]
     },
     {
       "numero": 159,
       "titulo": "Depois de tirar os falsos positivos, o gate achou o que existia para achar",
       "id": "licao-6e9792324ffc",
-      "linha": 562
+      "linha": 562,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 160,
       "titulo": "Corrigir o produtor muda o censo; não se corrige o histórico para melhorar o número",
       "id": "licao-4cb96f9acace",
-      "linha": 564
+      "linha": 564,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "lastro",
+        "estado"
+      ]
     },
     {
       "numero": 161,
       "titulo": "Forma de decisão também é contrato de entrada",
       "id": "licao-6692b3300f7f",
-      "linha": 566
+      "linha": 566,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 162,
       "titulo": "Contraprova real e veredito de produção não são a mesma coisa",
       "id": "licao-3382f6e1108c",
-      "linha": 568
+      "linha": 568,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 162,
       "titulo": "B — No acervo desta fábrica, timbre não é sinal de entregável",
       "id": "licao-4b3f786925e4",
-      "linha": 570
+      "linha": 570,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 163,
       "titulo": "Um padrão sem instrumento que o meça é uma intenção",
       "id": "licao-bfb1954c9fc8",
-      "linha": 572
+      "linha": 572,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 164,
       "titulo": "Abri o XML, li errado, e escrevi um laudo alarmista",
       "id": "licao-ddaffee87049",
-      "linha": 574
+      "linha": 574,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro"
+      ]
     },
     {
       "numero": 165,
       "titulo": "Medir a versão superada foi a TERCEIRA reincidência do mesmo erro num só dia",
       "id": "licao-34059e5d2e4b",
-      "linha": 577
+      "linha": 577,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 166,
       "titulo": "O alarme caiu de 33 para 4, e nenhum dos 4 é petição",
       "id": "licao-61fd614d2396",
-      "linha": 579
+      "linha": 579,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 167,
       "titulo": "O escritório consertou sozinho, e isso é dado sobre o processo",
       "id": "licao-3f66cb028d92",
-      "linha": 581
+      "linha": 581,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 168,
       "titulo": "O gate do fólio tinha um teto que o acervo inteiro respeitava",
       "id": "licao-3fe318e84d4b",
-      "linha": 583
+      "linha": 583,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual"
+      ]
     },
     {
       "numero": 169,
       "titulo": "Compor a peça REAL achou dois defeitos de produção que nenhum teste sintético acharia",
       "id": "licao-278f3033c78c",
-      "linha": 585
+      "linha": 585,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 170,
       "titulo": "Um canário que não alcança o que o gate lê mede a própria cobertura",
       "id": "licao-097caba11e39",
-      "linha": 587
+      "linha": 587,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "autoengano"
+      ]
     },
     {
       "numero": 171,
       "titulo": "Os cinco gates da F9 nunca tiveram material porque o leitor abria o nome errado",
       "id": "licao-e252672a294c",
-      "linha": 589
+      "linha": 589,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 172,
       "titulo": "Catraca que ninguém testa também é atestado",
       "id": "licao-69453db2ee8a",
-      "linha": 591
+      "linha": 591,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 173,
       "titulo": "O cético do painel refutou uma medição fresca citando documentação antiga",
       "id": "licao-bcdf0fd45546",
-      "linha": 593
+      "linha": 593,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual",
+        "autoengano"
+      ]
     },
     {
       "numero": 174,
       "titulo": "Reprovei o padrão do dono pela terceira vez no mesmo dia, e desta vez cheguei a \"corrigir\" a peça",
       "id": "licao-ddfa78d36353",
-      "linha": 595
+      "linha": 595,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 175,
       "titulo": "Três dos cinco achados de um painel de quinze agentes não sobreviveram a quinze minutos de conferência",
       "id": "licao-0ec9acf08ae9",
-      "linha": 597
+      "linha": 597,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 176,
       "titulo": "O erro que muda de vítima a cada execução não é de conteúdo",
       "id": "licao-c7842d110879",
-      "linha": 599
+      "linha": 599,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 177,
       "titulo": "Quatro vezes num dia o gate reprovou o padrão aprovado, e o motivo é estrutural",
       "id": "licao-79158417be53",
-      "linha": 601
+      "linha": 601,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 178,
       "titulo": "Quatro afrouxamentos seguidos e um verde perfeito no fim são indistinguíveis de um gate moldado",
       "id": "licao-24622be0b370",
-      "linha": 603
+      "linha": 603,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 179,
       "titulo": "O conselho de quatro personas perdeu duas e o consolidador escreveu \"o que os quatro concordam\"",
       "id": "licao-9eccf17b7aca",
-      "linha": 605
+      "linha": 605,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 180,
       "titulo": "Contar arquivo no pacote não é contar figura na página, e a diferença cabe num comando de cópia",
       "id": "licao-bc9aebfc1534",
-      "linha": 607
+      "linha": 607,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "visual"
+      ]
     },
     {
       "numero": 181,
       "titulo": "O canário anti-moldagem pagou o próprio custo em minutos",
       "id": "licao-808eae7e47d9",
-      "linha": 609
+      "linha": 609,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 182,
       "titulo": "Constante declarada, documentada e elogiada em comentário, nunca consultada com valor real",
       "id": "licao-c7ef43fc49f4",
-      "linha": 611
+      "linha": 611,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 183,
       "titulo": "A saída óbvia era estimar, e a medição a proibiu",
       "id": "licao-1c29539ab104",
-      "linha": 613
+      "linha": 613,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 184,
       "titulo": "O gate estrutural tem um limite que ainda precisa ser exercitado",
       "id": "licao-27ff83cd8f38",
-      "linha": 615
+      "linha": 615,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "redacao",
+        "visual"
+      ]
     },
     {
       "numero": 185,
       "titulo": "Terceira aparição do mesmo padrão: o gate guarda a porta que ninguém atravessa",
       "id": "licao-9e92ecfc2afc",
-      "linha": 617
+      "linha": 617,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 186,
       "titulo": "A rota declarada como \"entrada única de produção\" é chamada apenas por testes",
       "id": "licao-29939e982550",
-      "linha": 619
+      "linha": 619,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "acoplamento"
+      ]
     },
     {
       "numero": 187,
       "titulo": "O defeito de adoção foi descoberto por acaso três vezes, então virou instrumento",
       "id": "licao-a83171ec5653",
-      "linha": 621
+      "linha": 621,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 188,
       "titulo": "o gate verde por cegueira, cometido por quem construía a defesa contra ele",
       "id": "licao-03963a57bbb0",
-      "linha": 623
+      "linha": 623,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "evidencia"
+      ]
     },
     {
       "numero": 189,
       "titulo": "classifiquei estudo interno como petição e inventei uma crise de qualidade",
       "id": "licao-21d34e66f697",
-      "linha": 625
+      "linha": 625,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 190,
       "titulo": "o gate de estilo estava certo, e testar contra o padrão aprovado é o que provou isso",
       "id": "licao-c8961968f0a9",
-      "linha": 627
+      "linha": 627,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "redacao"
+      ]
     },
     {
       "numero": 191,
       "titulo": "a porta é melhor que a proibição",
       "id": "licao-64c23d9839d0",
-      "linha": 629
+      "linha": 629,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 192,
       "titulo": "laudo aprovado apontando para arquivo que não nasceu",
       "id": "licao-dd2f01bd0e94",
-      "linha": 631
+      "linha": 631,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "evidencia"
+      ]
     },
     {
       "numero": 193,
       "titulo": "a referência quebrada só aparece para quem tenta abrir",
       "id": "licao-35ff9c4de7e0",
-      "linha": 633
+      "linha": 633,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "redacao",
+        "evidencia"
+      ]
     },
     {
       "numero": 194,
       "titulo": "resumo de memória que inverte o diagnóstico",
       "id": "licao-b275796cd52f",
-      "linha": 635
+      "linha": 635,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 195,
       "titulo": "ler o código prova presença; só executar prova comportamento",
       "id": "licao-06462e01170b",
-      "linha": 637
+      "linha": 637,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado",
+        "fronteira",
+        "evidencia"
+      ]
     },
     {
       "numero": 196,
       "titulo": "o gate que reprova o padrão aprovado está errado, e o erro costuma ser de conceito",
       "id": "licao-9e1e7cad817f",
-      "linha": 639
+      "linha": 639,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 197,
       "titulo": "a catraca que confunde rigor novo com cegueira",
       "id": "licao-cc1ac59c451a",
-      "linha": 641
+      "linha": 641,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 198,
       "titulo": "a serialização auxiliar não pode ser capaz de derrubar a checagem",
       "id": "licao-87ab187672aa",
-      "linha": 643
+      "linha": 643,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 199,
       "titulo": "a checagem cuja precondição está nas mãos de quem ela deveria conferir",
       "id": "licao-d3b8637f450d",
-      "linha": 645
+      "linha": 645,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 201,
       "titulo": "a lição 200 estava errada na atribuição, e o erro tem causa estrutural",
       "id": "licao-d8365c5d645c",
-      "linha": 649
+      "linha": 649,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 202,
       "titulo": "a automação que falha em silêncio some do mapa mental de todo mundo",
       "id": "licao-b2805bbab126",
-      "linha": 651
+      "linha": 651,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 203,
       "titulo": "laudo grande demais para ser lido é laudo que ninguém confere",
       "id": "licao-0afd0fd91252",
-      "linha": 653
+      "linha": 653,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 204,
       "titulo": "antes de planejar a campanha, abra o arquivo que ela manda consultar",
       "id": "licao-e3b3cb423c40",
-      "linha": 655
+      "linha": 655,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "estado"
+      ]
     },
     {
       "numero": 205,
       "titulo": "antes de `filter-branch`, a tag de backup não é higiene: é a única cópia",
       "id": "licao-33936b346ff3",
-      "linha": 657
+      "linha": 657,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 206,
       "titulo": "um blob tem N caminhos; remover caminho não é remover blob",
       "id": "licao-07bdcf1e8e95",
-      "linha": 659
+      "linha": 659,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 207,
       "titulo": "diagnosticar UM bloqueio não prova que só existe um",
       "id": "licao-df4677fb758b",
-      "linha": 661
+      "linha": 661,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "evidencia"
+      ]
     },
     {
       "numero": 208,
       "titulo": "consolidar exclusão que não se entendeu é tão errado quanto restaurar o que foi limpo com razão",
       "id": "licao-c944ec58c3f9",
-      "linha": 663
+      "linha": 663,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 209,
       "titulo": "o teste que prova a separação não é conferir a lista de arquivos: é clonar e rodar",
       "id": "licao-93c997e53dcc",
-      "linha": 665
+      "linha": 665,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "citacao",
+        "evidencia"
+      ]
     },
     {
       "numero": 210,
       "titulo": "a regra que existia no `.gitignore` antigo e não foi portada vira vazamento no repositório novo",
       "id": "licao-33bf99cc15b2",
-      "linha": 667
+      "linha": 667,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 211,
       "titulo": "o DOCX com SVG nativo que passa no QA estrutural pode não abrir no Word",
       "id": "licao-885bcef09b5f",
-      "linha": 669
+      "linha": 669,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 212,
       "titulo": "emenda regimental recente muda peça pronta: o G11 pegou o que a memória não pegaria",
       "id": "licao-3e1b81c97d31",
-      "linha": 671
+      "linha": 671,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "processual"
+      ]
     },
     {
       "numero": 213,
       "titulo": "Drive bloqueado não é fim de linha: a conta logada no Chrome real resolve o que a API sem escopo não resolve",
       "id": "licao-e2d5f1245e3a",
-      "linha": 673
+      "linha": 673,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 214,
       "titulo": "o rascunho de agente segue errando nas mesmas quatro casas: partes, dispositivos, origem e autocontinência",
       "id": "licao-230956bd380f",
-      "linha": 675
+      "linha": 675,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 215,
       "titulo": "o comparador de fidelidade editorial amarra no artefato do executor, não nos arquivos passados na CLI",
       "id": "licao-3423d1bcaee8",
-      "linha": 677
+      "linha": 677,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "redacao"
+      ]
     },
     {
       "numero": 216,
       "titulo": "\"separado\" conferido por lista de arquivos não é separado; o dado de cliente mora DENTRO dos arquivos",
       "id": "licao-75599f9bb8a1",
-      "linha": 679
+      "linha": 679,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "processual"
+      ]
     },
     {
       "numero": 217,
       "titulo": "a lista escrita à mão não estava errada, estava irrelevante",
       "id": "licao-0f7474d41a94",
-      "linha": 681
+      "linha": 681,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "automacao"
+      ]
     },
     {
       "numero": 218,
       "titulo": "anonimizar a doutrina sem matar a doutrina: pseudônimo estável, tradução no acervo",
       "id": "licao-2159e3781296",
-      "linha": 683
+      "linha": 683,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "processual",
+        "fronteira"
+      ]
     },
     {
       "numero": 219,
       "titulo": "o gate que detecta nome de cliente não pode carregar a lista de nomes",
       "id": "licao-afb0e57131ea",
-      "linha": 685
+      "linha": 685,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "fronteira"
+      ]
     },
     {
       "numero": 220,
       "titulo": "\"não verifiquei\" e \"regressão\" são coisas diferentes, e confundi-las corrói o instrumento",
       "id": "licao-79d8cee2603b",
-      "linha": 687
+      "linha": 687,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 221,
       "titulo": "`lstrip(\"./\")` não remove o prefixo `./`: remove qualquer ponto ou barra do começo",
       "id": "licao-bb98024696b0",
-      "linha": 689
+      "linha": 689,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate",
+        "modelos",
+        "fronteira"
+      ]
     },
     {
       "numero": 222,
       "titulo": "mapa gerado que erra o motivo mente com aparência de autoridade",
       "id": "licao-7a579edcb386",
-      "linha": 691
+      "linha": 691,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "lastro",
+        "fronteira"
+      ]
     },
     {
       "numero": 223,
       "titulo": "não mover as pastas de caso foi decisão medida, não omissão",
       "id": "licao-ed1d0a9b725f",
-      "linha": 693
+      "linha": 693,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "fronteira"
+      ]
     },
     {
       "numero": 224,
       "titulo": "dentro da pasta de caso, quem decide o destino é a extensão, e cada lado tem um porquê diferente",
       "id": "licao-0460116270b4",
-      "linha": 695
+      "linha": 695,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 225,
       "titulo": "o gate protegia o nome completo, e a casa escreve pelo primeiro nome",
       "id": "licao-5b8051c27a25",
-      "linha": 697
+      "linha": 697,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 226,
       "titulo": "duas maneiras de errar ao automatizar a decisão do que é nome e o que é palavra",
       "id": "licao-05b2760ea76d",
-      "linha": 699
+      "linha": 699,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 227,
       "titulo": "`write_text` no Windows traduz a quebra de linha, e um diff inflado esconde a mudança real",
       "id": "licao-19dc47e296f3",
-      "linha": 701
+      "linha": 701,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 228,
       "titulo": "a rotina noturna que reprova por trabalho legítimo é a rotina que ninguém conserta",
       "id": "licao-f0cda93974b2",
-      "linha": 703
+      "linha": 703,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 229,
       "titulo": "a demonstração financeira só prova o que ela é obrigada a divulgar, e eu tratei o silêncio dela como prova",
       "id": "licao-d3aefeac2374",
-      "linha": 705
+      "linha": 705,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "evidencia"
+      ]
     },
     {
       "numero": 230,
       "titulo": "a fidelidade textual deu 100% e o documento estava quebrado; nenhum gate viu, porque todos mediam presença e nenhum media forma",
       "id": "licao-4f2959a69d2c",
-      "linha": 707
+      "linha": 707,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 231,
       "titulo": "\"medi uma base e ela não servia\" virou \"não existe fonte pública\", e a generalização foi para uma nota técnica ao cliente",
       "id": "licao-f42d00dab5c9",
-      "linha": 709
+      "linha": 709,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 232,
       "titulo": "a rotina automática que não escreve como terminou é a rotina que falha em silêncio, de novo",
       "id": "licao-d1e580dc8d38",
-      "linha": 711
+      "linha": 711,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 233,
       "titulo": "entre escrever o dado e descobrir o problema havia cinco horas",
       "id": "licao-2efbc22b88fd",
-      "linha": 713
+      "linha": 713,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 234,
       "titulo": "`.git` vazio não é repositório, e é justamente por isso que engana",
       "id": "licao-69ac881f2056",
-      "linha": 715
+      "linha": 715,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 235,
       "titulo": "o que sai da pasta de trabalho sai também do alcance de todos os gates",
       "id": "licao-291775a223da",
-      "linha": 717
+      "linha": 717,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 236,
       "titulo": "a correção escrita para tornar a falha visível abriu a via de vazamento que o gate existe para fechar",
       "id": "licao-7e48c22ff6bf",
-      "linha": 719
+      "linha": 719,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 232,
       "titulo": "o cadastro respondia \"existe\"; era o TEOR que respondia \"quanto\", e eu declarei ao cliente que faltava ir aos autos sem ter tentado ler o teor",
       "id": "licao-911e29863231",
-      "linha": 721
+      "linha": 721,
+      "secao": "Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)",
+      "data": "03/08/2026",
+      "temas": [
+        "estado",
+        "evidencia"
+      ]
     },
     {
       "numero": 237,
       "titulo": "o loop de aprendizado coletava 1.096 lições e promovia uma; a culpa era da porta, não de quem passa por ela",
       "id": "licao-5d7ab717eefa",
-      "linha": 801
+      "linha": 801,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 238,
       "titulo": "promova o padrão, não a ocorrência",
       "id": "licao-decb3d41d1d3",
-      "linha": 803
+      "linha": 803,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 239,
       "titulo": "o campo existia, o executor nunca foi escrito",
       "id": "licao-a7af63abe3dc",
-      "linha": 805
+      "linha": 805,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 240,
       "titulo": "o gate de aprendizado que parece certo é o errado",
       "id": "licao-8c8e42c39ea8",
-      "linha": 807
+      "linha": 807,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "entrega",
+        "aprendizado"
+      ]
     },
     {
       "numero": 241,
       "titulo": "um teste parametrizado pelo registro faz o custo marginal de aprender ser zero",
       "id": "licao-fde559db6105",
-      "linha": 809
+      "linha": 809,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "visual",
+        "estado"
+      ]
     },
     {
       "numero": 242,
       "titulo": "a maior \"correção do escritório\" que eu media era ruído do meu próprio comparador",
       "id": "licao-52d0f3eb0e33",
-      "linha": 812
+      "linha": 812,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 243,
       "titulo": "a pergunta que vem antes do diff: isto é revisão da nossa peça, ou é outro documento?",
       "id": "licao-a112b3d4effc",
-      "linha": 814
+      "linha": 814,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 244,
       "titulo": "contagem de blocos preservados pune peça curta; proporção de texto em comum, não",
       "id": "licao-813554ec7fe1",
-      "linha": 816
+      "linha": 816,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 245,
       "titulo": "contar não é ler; sem comando de amostra, ninguém vê o ruído",
       "id": "licao-6f9fcd1b72ba",
-      "linha": 818
+      "linha": 818,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 246,
       "titulo": "regra adotada carrega um lastro que pode deixar de existir",
       "id": "licao-449cbcf0d02b",
-      "linha": 820
+      "linha": 820,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "lastro",
+        "aprendizado",
+        "evidencia"
+      ]
     },
     {
       "numero": 247,
       "titulo": "a esteira era cega por construção para a correção que vem no corpo do e-mail",
       "id": "licao-d1ffccade566",
-      "linha": 822
+      "linha": 822,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 248,
       "titulo": "o filtro certo é por quem manda, não por se veio anexo; e a conta era 45 contra 5",
       "id": "licao-a477b40069ab",
-      "linha": 825
+      "linha": 825,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 249,
       "titulo": "registro que vive só no relatório da rodada não é registro",
       "id": "licao-8a6ee8608ed7",
-      "linha": 827
+      "linha": 827,
+      "secao": "Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 250,
       "titulo": "regra que já existia por escrito e continuou sendo violada: instrução não é gate",
       "id": "licao-0ee8937bc2bd",
-      "linha": 867
+      "linha": 867,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 251,
       "titulo": "o erro não é o número errado, é o número certo do processo errado",
       "id": "licao-805619bdd65b",
-      "linha": 869
+      "linha": 869,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 252,
       "titulo": "o gate da fronteira apanhou a mim, de novo, e de novo estava certo",
       "id": "licao-8b58544533d6",
-      "linha": 871
+      "linha": 871,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "fronteira"
+      ]
     },
     {
       "numero": 253,
       "titulo": "escrita direta em arquivo de registro falha quando a publicação lê a mesma árvore",
       "id": "licao-ffb7c95da059",
-      "linha": 873
+      "linha": 873,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "entrega",
+        "automacao"
+      ]
     },
     {
       "numero": 254,
       "titulo": "a leitura dos e-mails devolveu, em uma tarde, mais padrão do que seis casos de diff automático",
       "id": "licao-41255b1746b3",
-      "linha": 875
+      "linha": 875,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "citacao",
+        "entrega"
+      ]
     },
     {
       "numero": 255,
       "titulo": "o destaque nascia da abertura do parágrafo, e o leitor lia a mesma frase duas vezes",
       "id": "licao-7d90acca184e",
-      "linha": 877
+      "linha": 877,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 256,
       "titulo": "o rótulo da caixa afirmava um precedente que o parágrafo não tinha",
       "id": "licao-655340a51fcf",
-      "linha": 879
+      "linha": 879,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "citacao",
+        "visual"
+      ]
     },
     {
       "numero": 257,
       "titulo": "gravei quatro linhas e o diff acusou 659",
       "id": "licao-9e93c42a6fc1",
-      "linha": 881
+      "linha": 881,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 258,
       "titulo": "quase ensinei o gate a aprovar um artefato que o Word não abre",
       "id": "licao-1f8ed757d9ae",
-      "linha": 883
+      "linha": 883,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 259,
       "titulo": "varri três fontes públicas o dia inteiro para redescobrir o que o sistema do escritório já sabia",
       "id": "licao-2426ea261c83",
-      "linha": 886
+      "linha": 886,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 260,
       "titulo": "os dois únicos comandos que gravavam eram os dois únicos que não falavam",
       "id": "licao-702520b04afd",
-      "linha": 888
+      "linha": 888,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 255,
       "titulo": "o padrão mais recorrente do acervo não era sobre a peça: era sobre como dizemos que não conseguimos ler um documento",
       "id": "licao-8de6615a1fcf",
-      "linha": 891
+      "linha": 891,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 256,
       "titulo": "dizer o que faltou sem dizer o que foi lido não responde nada",
       "id": "licao-7aafdfb0e79f",
-      "linha": 893
+      "linha": 893,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 257,
       "titulo": "a esteira escrevia como juiz, e o escritório queria advogado",
       "id": "licao-efe1efee3801",
-      "linha": 895
+      "linha": 895,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 258,
       "titulo": "havia uma hierarquia de pesquisa jurisprudencial escrita e a esteira não a conhecia",
       "id": "licao-256906e93998",
-      "linha": 897
+      "linha": 897,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 259,
       "titulo": "49 mensagens, 35 com lição, 14 sem: a proporção justifica ler tudo",
       "id": "licao-f72da4711ec1",
-      "linha": 899
+      "linha": 899,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 261,
       "titulo": "apliquei metade do que a casa aprendeu num arquivo que rota nenhuma percorre",
       "id": "licao-149d50296079",
-      "linha": 901
+      "linha": 901,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "estado"
+      ]
     },
     {
       "numero": 261,
       "titulo": "erro de transporte lido como resposta do tribunal vira \"não consta\"",
       "id": "licao-fbed28e3634b",
-      "linha": 904
+      "linha": 904,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 262,
       "titulo": "a fila de alto valor estava ordenada por um número que não era condenação",
       "id": "licao-bf35e57f51b9",
-      "linha": 906
+      "linha": 906,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 263,
       "titulo": "o gate mais curto aprovou a árvore que o gate longo reprovou",
       "id": "licao-50510c0b5514",
-      "linha": 909
+      "linha": 909,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "automacao"
+      ]
     },
     {
       "numero": 264,
       "titulo": "a catraca tipográfica virou trava sem saída, e isso é decisão de dono, não de código",
       "id": "licao-246186288a33",
-      "linha": 911
+      "linha": 911,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "visual"
+      ]
     },
     {
       "numero": 265,
       "titulo": "as regras lidas em e-mail exibiam lastro emprestado",
       "id": "licao-953e2f348225",
-      "linha": 913
+      "linha": 913,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "lastro",
+        "entrega",
+        "evidencia"
+      ]
     },
     {
       "numero": 266,
       "titulo": "a camada do texto não é a camada do sistema",
       "id": "licao-d1d47edec5e7",
-      "linha": 915
+      "linha": 915,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 267,
       "titulo": "tirar arquivo do escopo afrouxa a catraca duas vezes, e a segunda é invisível",
       "id": "licao-45e404fdcdaa",
-      "linha": 917
+      "linha": 917,
+      "secao": "Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "entrega"
+      ]
     },
     {
       "numero": 268,
       "titulo": "medir não é impedir, e a barreira tem de ficar onde a coisa passa",
       "id": "licao-61172884e42d",
-      "linha": 970
+      "linha": 970,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 269,
       "titulo": "a fronteira me pegou pela quarta vez, sempre pelo mesmo motivo",
       "id": "licao-35a7baf5e56c",
-      "linha": 972
+      "linha": 972,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "fronteira"
+      ]
     },
     {
       "numero": 270,
       "titulo": "recurso que o agente não lembra que existe é recurso ausente, e a cura não é uma lista",
       "id": "licao-b9d15dd6e05a",
-      "linha": 974
+      "linha": 974,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 271,
       "titulo": "declarei irrecuperável o que estava desligado por uma linha nossa",
       "id": "licao-4822268bfd6a",
-      "linha": 976
+      "linha": 976,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 270,
       "titulo": "o base64 corrompido não levanta exceção: decodifica em lixo e o anexo some da conferência",
       "id": "licao-2158f3db42a4",
-      "linha": 978
+      "linha": 978,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "modelos",
+        "evidencia"
+      ]
     },
     {
       "numero": 271,
       "titulo": "o defeito não nascia no documento, nascia em dez geradores",
       "id": "licao-8001d35ca016",
-      "linha": 980
+      "linha": 980,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "redacao",
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 272,
       "titulo": "o mesmo filtro precisava de duas sensibilidades, não de uma",
       "id": "licao-e807bfbfb8c9",
-      "linha": 982
+      "linha": 982,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 273,
       "titulo": "dívida declarada não é alarme, e confundir as duas apaga as duas",
       "id": "licao-d75302d116b6",
-      "linha": 984
+      "linha": 984,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 274,
       "titulo": "a arqueologia era impossível por construção, e isso não aparecia em lugar nenhum",
       "id": "licao-8cbf24784dff",
-      "linha": 986
+      "linha": 986,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 275,
       "titulo": "a resposta estava escrita e parou um passo antes de existir",
       "id": "licao-e6084dfe96b2",
-      "linha": 988
+      "linha": 988,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 271,
       "titulo": "o gate certo não lê o texto, lê de onde ele veio",
       "id": "licao-e36229252062",
-      "linha": 990
+      "linha": 990,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 272,
       "titulo": "inferi o comportamento do runner pelo desenho do validador, e o `unknown` que eu chamei de brando derrubava a fase",
       "id": "licao-80c21bb40c89",
-      "linha": 992
+      "linha": 992,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 276,
       "titulo": "\"a ferramenta não alcança\" era falta de chave, e eu já tinha escrito isso ao cliente",
       "id": "licao-67a3ab6ba699",
-      "linha": 994
+      "linha": 994,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "citacao",
+        "entrega"
+      ]
     },
     {
       "numero": 277,
       "titulo": "a rota canônica produzia arquivo que o Word não abre, e o QA aprovava",
       "id": "licao-673f34337c31",
-      "linha": 996
+      "linha": 996,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 278,
       "titulo": "a legenda afirma procedência, e por isso não pode ser fixa",
       "id": "licao-5c204f8922da",
-      "linha": 998
+      "linha": 998,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "visual",
+        "automacao"
+      ]
     },
     {
       "numero": 273,
       "titulo": "o placar de contribuição quase nasceu premiando quem só concorda",
       "id": "licao-0dffc9a139ac",
-      "linha": 1000
+      "linha": 1000,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 274,
       "titulo": "reprovado e não aferido não podem ter a mesma cor",
       "id": "licao-59609b55f672",
-      "linha": 1002
+      "linha": 1002,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 281,
       "titulo": "o bloqueio declarado é uma afirmação sobre o mundo, e envelhece pior que qualquer outra",
       "id": "licao-836de64ec6e7",
-      "linha": 1004
+      "linha": 1004,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 279,
       "titulo": "a varredura de código morto quase apagou o servidor de e-mail que eu usara naquela sessão",
       "id": "licao-857195dfce86",
-      "linha": 1006
+      "linha": 1006,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 280,
       "titulo": "dezoito candidatos, dezoito vivos: o valor da varredura foi o que ela NÃO deixou apagar",
       "id": "licao-792a08ea4ea8",
-      "linha": 1008
+      "linha": 1008,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 282,
       "titulo": "o gate certo não pergunta se o bloqueio foi bem escrito, pergunta se ainda há porta por abrir",
       "id": "licao-51f8b69a9af8",
-      "linha": 1010
+      "linha": 1010,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 275,
       "titulo": "o sistema sabia que tinha cortado o texto e não contou a quem ia trabalhar com ele",
       "id": "licao-3b5db6b5ff5f",
-      "linha": 1012
+      "linha": 1012,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 276,
       "titulo": "o perfil de uso que eu esperava não existe, e o que existe é chato",
       "id": "licao-0b498de838f6",
-      "linha": 1014
+      "linha": 1014,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 277,
       "titulo": "a régua lexical não distingue modelos por conteúdo, e descobrir isso vale mais do que o número que ela dava",
       "id": "licao-250c982af388",
-      "linha": 1016
+      "linha": 1016,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "modelos",
+        "evidencia"
+      ]
     },
     {
       "numero": 283,
       "titulo": "arquivo morto quase nunca é um arquivo; é um produtor que grava sempre",
       "id": "licao-d084cd18e419",
-      "linha": 1018
+      "linha": 1018,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 278,
       "titulo": "construí um subsistema inteiro que mandava documento de cliente para fora e a pergunta nunca apareceu",
       "id": "licao-b7225fb83a56",
-      "linha": 1020
+      "linha": 1020,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 279,
       "titulo": "li um parecer enquanto ele ainda estava sendo escrito e relatei como completo",
       "id": "licao-2b9e724fa544",
-      "linha": 1022
+      "linha": 1022,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 284,
       "titulo": "o conselho e a revisão cruzada acharam erro que gate nenhum acharia, e os três erros eram de tipos diferentes",
       "id": "licao-0dc7c2bf18fb",
-      "linha": 1024
+      "linha": 1024,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "modelos"
+      ]
     },
     {
       "numero": 285,
       "titulo": "o gate que faltava era o do critério que o cliente escreveu, e ele é de uma espécie que a casa não tinha",
       "id": "licao-58caf30918e6",
-      "linha": 1026
+      "linha": 1026,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 286,
       "titulo": "o destaque na margem saiu cortado no meio de uma citação legal, e o gate que devia pegar isso olhava para o lado errado",
       "id": "licao-9ef235ffe6a4",
-      "linha": 1028
+      "linha": 1028,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "citacao"
+      ]
     },
     {
       "numero": 287,
       "titulo": "dois casos ficaram 37 horas fora da fila com um bloqueio que o próprio texto deles desmentia na primeira linha",
       "id": "licao-e24662ec0edd",
-      "linha": 1030
+      "linha": 1030,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "processual"
+      ]
     },
     {
       "numero": 288,
       "titulo": "o conserto do detector produziu um falso positivo, e só a medição contra o acervo inteiro o pegou",
       "id": "licao-15248baf7ab8",
-      "linha": 1032
+      "linha": 1032,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 289,
       "titulo": "a fila inteira de bloqueios da FORJA repousava sobre um campo que nunca afirmou o que dizia",
       "id": "licao-f672916c67bc",
-      "linha": 1034
+      "linha": 1034,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 290,
       "titulo": "o vigia viu, escreveu, e a informação não andou mais um metro",
       "id": "licao-df3c3ab5c477",
-      "linha": 1036
+      "linha": 1036,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 290,
       "titulo": "A — o conserto da 290, e o que ele ensinou sobre logs",
       "id": "licao-d99b5c87ced0",
-      "linha": 1038
+      "linha": 1038,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 291,
       "titulo": "\"limitação da ferramenta\" era limitação de uma rota, e a rota certa cabia numa linha",
       "id": "licao-6adb1b706441",
-      "linha": 1040
+      "linha": 1040,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 292,
       "titulo": "o achado que a leitura trouxe era o oposto do que a citação sugeria",
       "id": "licao-8b7602bcb134",
-      "linha": 1042
+      "linha": 1042,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "citacao"
+      ]
     },
     {
       "numero": 293,
       "titulo": "três defeitos visuais que o QA página a página aprovou",
       "id": "licao-1c97a66af3d6",
-      "linha": 1044
+      "linha": 1044,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "visual"
+      ]
     },
     {
       "numero": 294,
       "titulo": "duas sessões trabalhando o mesmo caso produziram duas peças diferentes, e eu escrevi por cima da outra",
       "id": "licao-625a688af7c3",
-      "linha": 1046
+      "linha": 1046,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 295,
       "titulo": "o terceiro bloqueio falso do dia tinha a resposta escrita na seção de limites do próprio comando",
       "id": "licao-d27dca7e78eb",
-      "linha": 1048
+      "linha": 1048,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 296,
       "titulo": "o subagente fabricou sete nomes de script, no padrão da casa, apresentados como citação",
       "id": "licao-2fce222566bb",
-      "linha": 1050
+      "linha": 1050,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "citacao"
+      ]
     },
     {
       "numero": 297,
       "titulo": "a seção que diz \"regra escrita que não pega vira gate\" não virou gate",
       "id": "licao-c33ad5c30a8f",
-      "linha": 1052
+      "linha": 1052,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 298,
       "titulo": "a skill agora se confere sozinha, e é isso que a distingue de mais um documento",
       "id": "licao-acd018a6ac63",
-      "linha": 1054
+      "linha": 1054,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 299,
       "titulo": "a prudência do commit não se transferia para a publicação",
       "id": "licao-f4e86a9dd28a",
-      "linha": 1056
+      "linha": 1056,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "automacao"
+      ]
     },
     {
       "numero": 304,
       "titulo": "o sandbox somente-leitura do Codex não lê nada neste Windows, e quase produziu um parecer inteiro escrito de memória",
       "id": "licao-10509eaa8492",
-      "linha": 1058
+      "linha": 1058,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "modelos"
+      ]
     },
     {
       "numero": 305,
       "titulo": "a skill mandava rodar o script errado, e o script errado sai com sucesso",
       "id": "licao-b7b39d31a951",
-      "linha": 1060
+      "linha": 1060,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 306,
       "titulo": "quatro auditorias adversariais encontraram, cada uma, o que a sua lente foi feita para ver",
       "id": "licao-4b8926ba1e48",
-      "linha": 1062
+      "linha": 1062,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 307,
       "titulo": "dois revisores independentes leram o mesmo nome de gate ao contrário, com três dias de intervalo",
       "id": "licao-c92a62d2be3b",
-      "linha": 1064
+      "linha": 1064,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "visual",
+        "entrega"
+      ]
     },
     {
       "numero": 300,
       "titulo": "a lição 297 estava errada, e o erro dela é o da 296, três parágrafos acima",
       "id": "licao-065cf9d33ef7",
-      "linha": 1066
+      "linha": 1066,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 308,
       "titulo": "o `grep` que a lição 296 mandou dar, eu dei, e ele mentiu por convenção de nome",
       "id": "licao-770c228c3e92",
-      "linha": 1068
+      "linha": 1068,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 309,
       "titulo": "a skill certa em cinco lugares, editada em um, e a cópia que ninguém sabe se está velha",
       "id": "licao-5f43900d257f",
-      "linha": 1070
+      "linha": 1070,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 310,
       "titulo": "o gate acusou de vazio um documento cheio, e isso é pior que não conferir",
       "id": "licao-b24a59a90ace",
-      "linha": 1072
+      "linha": 1072,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 311,
       "titulo": "o relatório do baseline dizia \"0 falhas\" em toda execução reprovada",
       "id": "licao-ebdfaf7b52b5",
-      "linha": 1074
+      "linha": 1074,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 312,
       "titulo": "`Path.write_text` reescreveu treze arquivos inteiros e quase entrou no commit",
       "id": "licao-4b385a922067",
-      "linha": 1076
+      "linha": 1076,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 313,
       "titulo": "a fachada dizia \"28 of 28 total\" sobre 91 casos, e a demanda do topo da fila era um dos invisíveis",
       "id": "licao-215deec104cb",
-      "linha": 1078
+      "linha": 1078,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 314,
       "titulo": "três leitores, três recortes, e nenhum deles avisando que era recorte",
       "id": "licao-38eb4ff7f9a3",
-      "linha": 1080
+      "linha": 1080,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 315,
       "titulo": "`fulfilled` queria dizer duas coisas incompatíveis, e foi isso que o titular sentiu como “deram por feito o que estava pela metade”",
       "id": "licao-cc4397ab168b",
-      "linha": 1082
+      "linha": 1082,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 316,
       "titulo": "procurei a prova da entrega na pasta errada e quase inverti o diagnóstico; quem me pegou foi a lente adversarial",
       "id": "licao-8c0188a31c82",
-      "linha": 1084
+      "linha": 1084,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega",
+        "evidencia",
+        "autoengano"
+      ]
     },
     {
       "numero": 317,
       "titulo": "a raiz não estava em nenhum leitor: um escritor puxava toda a fábrica de volta para a primeira fase",
       "id": "licao-6b759e424512",
-      "linha": 1086
+      "linha": 1086,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 318,
       "titulo": "a fronteira reprovou a lição que eu estava escrevendo sobre disciplina",
       "id": "licao-e3bcb25f4969",
-      "linha": 1088
+      "linha": 1088,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "fronteira"
+      ]
     },
     {
       "numero": 319,
       "titulo": "o reparo preventivo do Word produziu um “documento defeituoso” que não existia",
       "id": "licao-1850f03672ea",
-      "linha": 1090
+      "linha": 1090,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 320,
       "titulo": "escrevi a lição sobre vazar nome de cliente e vazei de novo no mesmo dia",
       "id": "licao-6d65e8059313",
-      "linha": 1092
+      "linha": 1092,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "redacao",
+        "fronteira"
+      ]
     },
     {
       "numero": 321,
       "titulo": "a esteira tinha seis arquivos prontos e respondeu que não dava para anexar",
       "id": "licao-14e0f48e1b51",
-      "linha": 1094
+      "linha": 1094,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 322,
       "titulo": "abrir a segunda porta é onde o risco mora, e o risco tinha data",
       "id": "licao-3859adbe6b4b",
-      "linha": 1096
+      "linha": 1096,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     },
     {
       "numero": 323,
       "titulo": "“o sistema saber que pode” é metade do trabalho, e tem teste próprio",
       "id": "licao-cf0f84705c5b",
-      "linha": 1098
+      "linha": 1098,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
     },
     {
       "numero": 324,
       "titulo": "o resumo comeu a prova, e o censo acusou de mentira um trabalho que estava feito",
       "id": "licao-77f649910dde",
-      "linha": 1100
+      "linha": 1100,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "redacao",
+        "estado",
+        "evidencia"
+      ]
     },
     {
       "numero": 325,
       "titulo": "alerta que ninguém consegue baixar é alerta que ninguém lê",
       "id": "licao-dfde2edfef0b",
-      "linha": 1102
+      "linha": 1102,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "entrega"
+      ]
     },
     {
       "numero": 326,
       "titulo": "identificador real de mensagem é dado do escritório, mesmo sem conteúdo",
       "id": "licao-47e7a0b5243c",
-      "linha": 1104
+      "linha": 1104,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate"
+      ]
     }
   ]
 }

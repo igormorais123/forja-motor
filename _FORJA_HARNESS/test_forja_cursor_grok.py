@@ -79,6 +79,36 @@ def test_constantes_do_codex_na_forja():
     assert not fm.modelo_remoto_proibido(fm.CODEX_MODELO_FORJA)
 
 
+def test_revisor_padrao_da_forja():
+    """Ordem do titular de 10/08/2026: revisão é `gpt-5.6-sol` no esforço alto.
+
+    Ela supera, só na parte de revisão, a ordem de 06/08 sobre o Codex. Por isso
+    o teste afere as duas: produção e revisão coexistem, e são distintas.
+    """
+    assert fm.CODEX_MODELO_REVISAO_FORJA == "gpt-5.6-sol"
+    assert fm.CODEX_ESFORCO_REVISAO_FORJA == "high"
+    assert not fm.modelo_remoto_proibido(fm.CODEX_MODELO_REVISAO_FORJA)
+    # Revisor e produtor precisam ser distintos: se um dia coincidirem, o gate
+    # de revisão cruzada passa a aprovar o produtor revisando a si mesmo.
+    assert fm.CODEX_MODELO_REVISAO_FORJA != fm.CODEX_MODELO_FORJA
+
+
+def test_executor_de_revisao_usa_as_constantes():
+    """O executor tem de LER a constante, não repetir o nome do modelo.
+
+    Sem isto, mudar a ordem no `forja_modelos` deixaria o executor para trás — e
+    a ordem passaria a valer só no papel.
+    """
+    fonte = (Path(__file__).parent / "forja_revisao_cruzada.py").read_text(encoding="utf-8")
+    assert "CODEX_MODELO_REVISAO_FORJA" in fonte
+    assert "CODEX_ESFORCO_REVISAO_FORJA" in fonte
+    # As quatro armadilhas medidas em 10/08/2026 ficam fechadas no código.
+    assert "--cd" in fonte, "sem --cd o executor não lê o workspace"
+    assert "mcp_servers={}" in fonte, "MCPs da sessão entram na chamada"
+    assert "read-only" in fonte, "revisor não altera artefato"
+    assert "stdin" not in fonte.split('"""')[2], "prompt vai por argumento, não por stdin"
+
+
 def test_chamar_recusa_modelo_proibido(monkeypatch):
     """A trava precisa pegar em `chamar`, não só na função de teste."""
     monkeypatch.setitem(

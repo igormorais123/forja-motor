@@ -4,6 +4,11 @@
 > Hermes na VPS (via Tailscale) e do estado real da FORJA no disco. Nada aqui foi
 > executado ainda.
 >
+> **Ampliado no mesmo dia por segunda leitura independente (Fable 5)**, que varreu as
+> partes da VPS que a primeira passagem não abriu. As adições estão marcadas ao longo
+> do texto; as afirmações de segunda mão que puderam ser conferidas na fonte foram
+> conferidas — a tabela dos dois corpora do §2 foi verificada no arquivo original.
+>
 > **Escopo:** fechar o vão entre "a regra está escrita" e "a regra pegou"; criar um
 > ciclo noturno que aprende dos casos do dia; e dar à FORJA uma janela diária de
 > trabalho automático seguro. Inclui os recursos do Hermes que valem ser trazidos e,
@@ -98,6 +103,37 @@ Ressalva de honestidade: o mecanismo do `relearn` tem **oito dias de vida**. O �
 defeito aberto por ele até agora é sobre o próprio runtime dele, e continua aberto. Isso
 prova que o detector detecta; não prova que o ciclo fecha.
 
+### 2.1 O que a segunda leitura acrescentou (Fable 5, conferido na fonte)
+
+**Precisão sobre a arquitetura.** "O Hermes roda em `memory_pipeline`" é simplificação:
+são quatro subsistemas separados — colheita (`memory_pipeline/`), sonhos narrativos
+(`/root/.harness/dreams/daily/`), a lógica de verificação (`colmeia_dream/core/`) e a
+fila de aprovação manual. A colheita não rende zero por falta de material: o inbox tem
+**~2.470 candidatos acumulados**; é o filtro de durabilidade + a exigência de decisão
+humana que fecham a saída. O problema deles não é colher — é decidir e aplicar.
+
+**Os dois corpora, e a entrega invertida.** A revisão forense de 02/08 do próprio Hermes
+(`docs/plans/2026-08-02-claude-opus5-review-sonhos-v08.md`, tabela conferida por mim no
+arquivo original) mediu os 179 sonhos registrados e achou dois corpora com naturezas
+opostas:
+
+| Medida | sonho `diagnostico` (n=84) | sonho `operacional` (n=80) |
+|---|---|---|
+| referência verificável a arquivo | **0%** | **76%** |
+| contém número/quantidade | **0%** | **82%** |
+| verbo de ação ("salvei", "verifiquei") | 23% | 81% |
+| é o que chega ao titular | **sim (WhatsApp)** | **não (fica local)** |
+
+O ritual verbal sem ancoragem é o único entregue; o sonho com lastro fica na prateleira.
+**A entrega está invertida** — e a frase-síntese do parecer de lá merece ser a epígrafe
+do nosso Bloco D: *"o sistema diagnosticou corretamente o próprio defeito 57 vezes e
+nunca o corrigiu, porque a lição nasce como prosa e morre como prosa."*
+
+Duas consequências diretas para este plano: (a) o sonho da FORJA nasce estruturado ou
+não nasce — está no Bloco D como trava; (b) **o que se entrega de manhã tem de ser o
+artefato com lastro, não um resumo bonito dele** — o modo de falha do Hermes foi entregar
+o ritual e engavetar a substância.
+
 ## 3. Bloco A — reaprendizado vira defeito
 
 A tese, na primeira linha do módulo deles: **conceito recorrente vira defeito, não lição
@@ -172,6 +208,18 @@ Catálogo fechado proposto:
 regra, a verificação **falha** e abre defeito `regra_ineficaz` — fechando o laço com o
 Bloco A sem intervenção humana.
 
+**Objeção da segunda leitura, acatada em parte.** O Fable 5 propôs descartar
+`efeito_na_producao` por inteiro: no Hermes o equivalente (`policy_effect`) opera sobre
+sonhos diários; a FORJA produz peças em volume baixo, e a classe pode simplesmente não
+ter oportunidade de reaparecer na janela — **ausência de recorrência não é prova de
+efeito**. A objeção está certa quanto ao risco e errada quanto ao remédio: descartar o
+tipo deixaria as regras de checklist/template de novo sem verificador nenhum, que é o
+buraco de hoje. O desenho fica assim: `efeito_na_producao` só emite veredito quando houve
+**denominador** — casos da mesma matéria produzidos na janela. Sem denominador, o
+resultado é `sem_sinal_ainda` e a verificação se reagenda; `sem_sinal_ainda` não é
+`passou`, pela mesma regra que `pulado` não é. O que o tipo afirma quando aprova é "a
+classe teve N oportunidades de reaparecer e não reapareceu", com N declarado.
+
 ### Alterações
 
 | Arquivo | Alteração |
@@ -219,7 +267,7 @@ poético sem extração operacional". E a nossa: já temos 326 lições. Um gera
 lições que ninguém lê não é aprendizado — é o `RETROSPECTIVAS.md` crescendo até virar
 inútil.
 
-Por isso o desenho tem três travas antes de qualquer coisa:
+Por isso o desenho tem quatro travas antes de qualquer coisa:
 
 1. **O sonho não escreve no `RETROSPECTIVAS.md`.** Ele só abre candidato no registro de
    aprendizado, abre defeito, ou escreve o relatório da noite. Promoção a lição ou regra
@@ -229,6 +277,12 @@ Por isso o desenho tem três travas antes de qualquer coisa:
 3. **O sonho lê estrutura, não a peça.** Ele nunca abre o texto do documento do cliente.
    Trabalha sobre veredito de gate, situação de caso, causa declarada e classe — e por
    isso não pode vazar dado do escritório para o insight.
+4. **Sonho estruturado, nunca verbal.** Candidato sem `{classe, localizador, destino
+   proposto}` é descartado no validador, antes de qualquer leitura humana. A âncora é a
+   medição dos dois corpora do §2.1: no Hermes, o corpus com 0% de referência verificável
+   é o que virou ritual — e o ritual foi o único entregue. Corolário de entrega: **o
+   briefing da manhã anexa o artefato estruturado da noite**, nunca só uma prosa sobre
+   ele.
 
 ### O que ele lê (tudo já existe no disco)
 
@@ -396,6 +450,25 @@ mais provável de ser "melhorada" por conveniência daqui a um mês.
 centenas de mudanças sozinho. A régua é **recorrência entre casos distintos**, que o
 `padroes` já usa, e agora também **queda da taxa depois da regra**.
 
+**Não trazer o `promote.py` (decay/fitness/imunidade).** [Adição da segunda leitura,
+acatada.] O Hermes dá a cada memória um fitness que decai com o tempo e uma poda
+periódica. Faz sentido para memória procedural de longo prazo; não faz para o nosso
+registro: aqui uma regra foi adotada ou não, foi verificada ou não, e se o conceito
+reaparece vira defeito. Regra "dormindo com fitness baixo" é exatamente o estado ambíguo
+que o Bloco A existe para eliminar. O voto nominal no momento da adoção substitui o
+fitness.
+
+**Não trazer o ciclo REM especulativo (`rem.py`).** [Adição da segunda leitura.] No
+Hermes ele gera hipóteses e ameaças especulativas, e a varredura encontrou os registros
+dominados por stubs sem ancoragem. A FORJA não precisa de ameaça especulativa; precisa de
+defeito real com localizador. A recombinação do nosso Bloco D responde outra pergunta —
+"o que de hoje já tinha acontecido antes" — sobre insumo estruturado, não sobre
+imaginação.
+
+**Não trazer o `orchestrator.py` de consolidação multi-ciclo.** [Adição da segunda
+leitura.] Consolidar exige vários ciclos de produção por dia; o turno da FORJA é um ciclo
+por noite. Complexidade sem substrato.
+
 ## 10. Ordem de execução e custo
 
 Os blocos A e B são **um só laço** e não devem ser separados: A sem B detecta e não
@@ -444,3 +517,7 @@ Critérios observáveis, definidos antes de construir para não serem ajustados 
    quando cada uma reaparecer. **Recomendo a segunda**: migrar por demanda gasta esforço
    onde há sinal, e a primeira produziria vinte verificadores escritos de uma vez, a maioria
    nunca exercitada.
+4. **Janela do limite de repetição do alerta.** [Levantada pela segunda leitura.] Janela
+   longa silencia falha nova da mesma classe; curta reintroduz o ruído. Proposta: 3 dias,
+   e o alerta silenciado conta no placar como `ruido_evitado` — silêncio também é decisão
+   e também se mede.

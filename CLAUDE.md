@@ -310,10 +310,33 @@ A melhoria contínua da esteira tem processo próprio: o ciclo AR (`_FORJA_HARNE
 
 ## Modelos externos da FORJA — o que roda e o que é proibido (06/08/2026 — ordem do Igor)
 
-Quando a FORJA usa o **Codex**, o modelo é o **`gpt-5.6-luna` no esforço `max`**. O
-**GPT-5.5 não entra em hipótese nenhuma**, em nenhuma fase, papel ou justificativa —
-está travado em `forja_modelos.modelo_remoto_proibido`, ao lado da proibição do Kimi K2
-(26/07/2026). Constantes: `CODEX_MODELO_FORJA` e `CODEX_ESFORCO_FORJA`.
+Quando a FORJA usa o **Codex para produzir**, o modelo é o **`gpt-5.6-luna` no esforço
+`max`**. O **GPT-5.5 não entra em hipótese nenhuma**, em nenhuma fase, papel ou
+justificativa — está travado em `forja_modelos.modelo_remoto_proibido`, ao lado da
+proibição do Kimi K2 (26/07/2026). Constantes: `CODEX_MODELO_FORJA` e
+`CODEX_ESFORCO_FORJA`.
+
+**Para revisão, o modelo é outro, e esta ordem é posterior (10/08/2026 — ordem do
+Igor): `gpt-5.6-sol` no esforço `high`, em toda a FORJA.** Ela supera, na parte de
+revisão, a ordem de 06/08 acima, que continua valendo para produção. Constantes:
+`CODEX_MODELO_REVISAO_FORJA` e `CODEX_ESFORCO_REVISAO_FORJA`; regressão em
+`test_forja_cursor_grok.py`, que também afere que **revisor e produtor não coincidem**
+— se coincidirem, o gate de revisão cruzada passa a aprovar o produtor revisando a si
+mesmo.
+
+Revisão aqui é o que confere trabalho pronto: revisão cruzada entre famílias, red team,
+auditoria de gate, conferência de citação e de número. A razão da escolha está medida:
+na revisão cruzada de um memorial em liquidação, em 10/08, o Sol encontrou três P0 que o
+produtor não via — um QA declarado sobre render que já não existia, uma contradição
+interna criada por decisão do próprio produtor e uma contagem que vinha de deduplicação
+destrutiva.
+
+**A rota é `forja_revisao_cruzada.py`**, e existe porque chamada feita à mão repete os
+mesmos erros: sem `--cd` o executor não lê o workspace e devolve "o sandbox bloqueou",
+que é parecer sem fonte com cara de parecer; os MCPs da sessão entram na chamada e
+estouram o contexto; e o prompt vai por **argumento**, nunca por stdin. Atenção à
+armadilha oposta: no Cursor o prompt tem de ir por **stdin**, porque o wrapper é um
+`.cmd` e o cmd.exe corta o argumento na primeira quebra de linha. Não uniformize os dois.
 
 Quando a FORJA usa o **Grok 4.5** — Diabob em F4 e F7, triagem semântica em F1 —, a rota
 é **sempre a assinatura OAuth do Cursor** (`grok-4.5-cursor`, remoto
