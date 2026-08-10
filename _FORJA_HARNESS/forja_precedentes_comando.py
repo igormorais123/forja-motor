@@ -11,6 +11,18 @@ O produtor resolve duas falhas observadas num caso real em 10/08/2026:
 O veredito é computado. O ledger declara escolhas jurídicas que a máquina não
 pode inventar; o código confere cobertura, consistência com os anexos e presença
 efetiva da autoridade no texto. Ausência do ledger não vira aprovação tácita.
+
+Regras do retorno humano que este produtor computa, e é por citá-las aqui que a
+ligação se confere nos dois sentidos (`forja_aprendizado.py conferir`):
+
+* `regra-ee28e25dbcf6` — todo precedente anexado ao comando deve ser citado,
+  distinguido expressamente ou ter o não uso justificado no relatório, sempre
+  com localizador verificável;
+* `regra-1f38820826f7` — na primeira menção de tema de repercussão geral ou
+  recurso repetitivo, identificar também o processo paradigma ou leading case.
+
+Apagar este gate sem revogar as regras faz o identificador sumir junto, e a
+conferência acusa — que é exatamente o modo de falha que ela existe para pegar.
 """
 from __future__ import annotations
 

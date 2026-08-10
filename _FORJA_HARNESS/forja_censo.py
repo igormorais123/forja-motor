@@ -76,6 +76,7 @@ SITUACOES = (
     "entrega_conferida",    # localizador conferido na fonte, com data e destinatário
     "entrega_declarada",    # sem artefato, mas com localizador conferível (ver abaixo)
     "triado_sem_demanda",   # terminal sem entregável, declarado por pessoa
+    "entrega_atestada",     # entregue, com prova de tipo que esta régua não lê
     "aguardando_humano",    # esperando leitura, revisão ou ciência
     "bloqueado",            # impedimento declarado
     "aberto",               # trabalho por fazer
@@ -370,7 +371,9 @@ def _situacao(legado, n3, provas, resolucao, existem, conferencia=None) -> tuple
         return "aguardando_humano", "esperando leitura, revisão ou ciência"
     if estados & _TERMINAIS:
         if resolucao:
-            return "triado_sem_demanda", (
+            # A situação vem da declaração, não é fixa: quem declara diz se não
+            # havia demanda ou se houve entrega cuja prova esta régua não lê.
+            return (resolucao.get("situacao") or "triado_sem_demanda"), (
                 f"declarado por {resolucao.get('por','?')}: {resolucao.get('motivo','')}".strip())
         localizador, dialeto, _ = _evidencia(legado, n3)
         if localizador and (conferencia or {}).get("resultado") == "confere":
@@ -546,11 +549,31 @@ def gate_censo(dados: dict) -> list[dict]:
     return achados
 
 
-def declarar(case_id: str, motivo: str, por: str, *, path: Path | None = None) -> Path:
+# O que uma pessoa pode declarar, e nada além disso. Vocabulário fechado pelo
+# mesmo motivo de sempre: rótulo livre transfere a quem lê o trabalho de
+# descobrir o que aconteceu.
+#
+# `entrega_atestada` nasceu de um caso medido em 10/08/2026. A prova que o censo
+# aceita é `.docx`/`.pdf` na pasta da demanda, porque a fábrica é de petições —
+# e um caso cujo produto foi um kit de mídia tem 289 arquivos e 386 MB
+# entregues, nenhum deles legível como prova. Não é entrega faltando: é prova de
+# um tipo que a régua não mede. Medida a população antes de criar a categoria:
+# dos 8 casos sem peça na pasta, 7 já fecharam pela conferência do localizador,
+# e sobra este. A saída não é afrouxar a régua para todos — seria aceitar
+# qualquer arquivo como prova de petição entregue —, é deixar a pessoa dizer o
+# que viu, respondendo por isso.
+DECLARAVEIS = ("triado_sem_demanda", "entrega_atestada")
+
+
+def declarar(case_id: str, motivo: str, por: str, *,
+             situacao: str = "triado_sem_demanda", path: Path | None = None) -> Path:
+    if situacao not in DECLARAVEIS:
+        raise CensoError(f"situação não declarável: {situacao!r}; "
+                         f"use uma de {DECLARAVEIS}")
     alvo = path or RESOLUCOES
     dados = _ler_json(alvo) or {"versao": VERSAO, "casos": {}}
     dados.setdefault("casos", {})[case_id] = {
-        "situacao": "triado_sem_demanda",
+        "situacao": situacao,
         "motivo": motivo,
         "por": por,
         "em": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
@@ -575,7 +598,11 @@ def main(argv=None) -> int:
     ap.add_argument("--devendo", action="store_true", help="só o que ainda deve alguma coisa")
     ap.add_argument("--divergentes", action="store_true", help="casos em que os dois esquemas discordam")
     ap.add_argument("--json", action="store_true")
-    ap.add_argument("--declarar", metavar="CASE_ID", help="declarar caso como triado sem demanda")
+    ap.add_argument("--declarar", metavar="CASE_ID",
+                    help="declarar o que a máquina não pode aferir sozinha")
+    ap.add_argument("--situacao", choices=DECLARAVEIS, default="triado_sem_demanda",
+                    help="`triado_sem_demanda` (padrão) ou `entrega_atestada`, "
+                         "para entrega cuja prova não é .docx/.pdf")
     ap.add_argument("--motivo")
     ap.add_argument("--por")
     args = ap.parse_args(argv)
@@ -584,7 +611,7 @@ def main(argv=None) -> int:
         if not args.motivo or not args.por:
             print("--declarar exige --motivo e --por: a declaração responde por quem a fez")
             return 2
-        alvo = declarar(args.declarar, args.motivo, args.por)
+        alvo = declarar(args.declarar, args.motivo, args.por, situacao=args.situacao)
         print(f"declarado em {alvo}")
         return 0
 

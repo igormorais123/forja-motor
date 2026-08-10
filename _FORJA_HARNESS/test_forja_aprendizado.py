@@ -308,6 +308,57 @@ with tempfile.TemporaryDirectory() as tmp:
         forja_run.REGISTRO_APRENDIZADO = registro_real
 
 
+# ------------------------------------------- regra que vira código, não texto
+# Em 10/08/2026 duas regras foram adotadas com destino `gate_computado` e
+# implementadas num produtor de gate. `_arquivo_de_destino` não conhecia esse
+# tipo, caiu no `else` e foi procurá-las na doutrina: o baseline reprovou
+# dizendo que a casa tinha esquecido a própria regra, e ela estava em código,
+# num arquivo que o conferidor não olhava. Diagnóstico errado com aparência de
+# achado grave — e o conserto que ele sugeria (reescrever a doutrina) teria
+# duplicado a regra em vez de ligá-la.
+with tempfile.TemporaryDirectory() as tmp:
+    produtor = Path(tmp) / "forja_gate_qualquer.py"
+    regra = {"regraId": "regra-teste-gate", "destino": "gate_computado",
+             "fase": "F7", "texto": "Frase que o código não repete.",
+             "aplicadaEm": "2026-08-10T00:00:00-03:00",
+             "destinoArquivo": produtor.relative_to(Path(tmp)).as_posix()}
+
+    raiz_real = ap.RAIZ
+    ap.RAIZ = Path(tmp) / "_FORJA_HARNESS"
+    try:
+        checar("o arquivo declarado manda sobre a dedução pelo tipo",
+               ap._arquivo_de_destino(regra) == produtor,
+               str(ap._arquivo_de_destino(regra)))
+
+        produtor.write_text("# computa outra coisa\n", encoding="utf-8")
+        registro_falso = {"regras": [regra]}
+        carregar_real = ap.carregar_registro
+        ap.carregar_registro = lambda: registro_falso
+        try:
+            acusa = ap.conferir()
+            checar("produtor que não cita a regra é acusado", len(acusa) == 1,
+                   "; ".join(acusa))
+            checar("a acusação fala do produtor, não da doutrina",
+                   "produtor" in acusa[0] and "identificador" in acusa[0], acusa[0])
+
+            produtor.write_text("# implementa regra-teste-gate\n", encoding="utf-8")
+            checar("citar o identificador fecha a ligação", ap.conferir() == [])
+
+            # A contraprova do texto: em `gate_computado` a frase da regra não
+            # prova nada, porque código não repete frase — se provasse, bastaria
+            # um comentário copiado para simular implementação.
+            produtor.write_text("# Frase que o código não repete.\n", encoding="utf-8")
+            checar("repetir a frase da regra não substitui o identificador",
+                   len(ap.conferir()) == 1)
+
+            checar("`aplicar` não escreve em destino de gate",
+                   all(d != "gate_computado" for d, _c, _m in ap.aplicar(seco=True)))
+        finally:
+            ap.carregar_registro = carregar_real
+    finally:
+        ap.RAIZ = raiz_real
+
+
 # ------------------------------------------------------- estado real da máquina
 # O ponto do teste: adotar a próxima regra não custa uma linha de código aqui.
 problemas = ap.conferir()

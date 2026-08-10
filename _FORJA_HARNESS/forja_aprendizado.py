@@ -79,11 +79,22 @@ from forja_post_protocol import PISO_TEXTO_COMUM  # noqa: E402
 # texto da peça não sai do cofre local, então uma fixture textual não pode ser
 # gerada por este módulo. Quando uma regra pedir teste, ele é escrito à mão e
 # referenciado — o que é raro e caro, e deve continuar sendo.
+#   gate_computado  vira código que reprova sozinho. É o destino mais forte e o
+#                   único que este módulo NÃO escreve: quem o implementa é uma
+#                   pessoa, num produtor de gate. Aqui só se registra qual
+#                   arquivo passou a computá-la, para que a ligação seja
+#                   auditável nos dois sentidos.
 DESTINOS = {
     "checklist": "item de conferência no contrato da fase",
     "template": "instrução no template que o redator recebe",
     "doutrina": "lição no protocolo da casa",
+    "gate_computado": "código que computa a regra e reprova sozinho",
 }
+
+# Destinos que este módulo escreve. `gate_computado` fica de fora de propósito:
+# injetar texto num `.py` produziria código quebrado, e a regra que vira gate
+# nasce de alguém escrevendo o produtor, não de um bloco gerado.
+DESTINOS_ESCRITOS = ("checklist", "template", "doutrina")
 
 MARCA_INICIO = "<!-- APRENDIDO-DO-RETORNO-HUMANO: início (gerado por forja_aprendizado.py) -->"
 MARCA_FIM = "<!-- APRENDIDO-DO-RETORNO-HUMANO: fim -->"
@@ -457,6 +468,16 @@ def revalidar() -> list[dict]:
 # Aplicação: a regra vira texto no destino
 # --------------------------------------------------------------------------
 def _arquivo_de_destino(regra: dict) -> Path:
+    # O arquivo onde a regra de fato pousou manda sobre a dedução pelo tipo. Sem
+    # esta linha, um destino que este módulo não deduz — `gate_computado`, cujo
+    # arquivo é escolhido por quem escreve o produtor — caía no `else` e ia
+    # procurar a regra na doutrina, acusando ausência de algo que estava
+    # implementado. Aconteceu em 10/08/2026 com duas regras adotadas no mesmo
+    # dia: o baseline reprovou dizendo que a casa tinha esquecido a própria
+    # regra, e ela estava em código, num arquivo que o conferidor não olhava.
+    declarado = regra.get("destinoArquivo")
+    if declarado:
+        return RAIZ.parent / declarado
     fase = regra["fase"]
     if regra["destino"] == "checklist":
         return CONTRATOS / f"{fase}.json"
@@ -465,6 +486,11 @@ def _arquivo_de_destino(regra: dict) -> Path:
         if not candidatos:
             raise SystemExit(f"nenhum template para a fase {fase} em {TEMPLATES}")
         return candidatos[0]
+    if regra["destino"] == "gate_computado":
+        raise SystemExit(
+            f"{regra['regraId']}: destino `gate_computado` exige `destinoArquivo` "
+            f"— o arquivo que computa a regra é escolhido por quem o escreve, "
+            f"não deduzido pela fase")
     return RAIZ.parent / "APRENDIZADOS_FEEDBACK_HUMANO.md"
 
 
@@ -532,6 +558,11 @@ def aplicar(seco: bool = False) -> list[tuple[str, Path, bool]]:
         return []
     por_arquivo: dict[Path, list[dict]] = defaultdict(list)
     for r in reg["regras"]:
+        # Regra que vira gate não é escrita por aqui: injetar o texto dela num
+        # `.py` produziria código quebrado. Ela já nasceu aplicada, pela mão de
+        # quem escreveu o produtor, e `conferir` é quem cobra a ligação.
+        if r["destino"] not in DESTINOS_ESCRITOS:
+            continue
         por_arquivo[_arquivo_de_destino(r)].append(r)
 
     resultado = []
@@ -571,6 +602,18 @@ def conferir() -> list[str]:
             problemas.append(f"{r['regraId']}: destino ausente — {caminho}")
             continue
         conteudo = caminho.read_text(encoding="utf-8", errors="ignore")
+        if r["destino"] == "gate_computado":
+            # Aqui a presença não pode ser buscada pelo texto da regra: código
+            # não repete a frase, ele a computa. O que prova a ligação é o
+            # identificador citado no produtor — e exigi-lo tem um efeito
+            # deliberado: quem apagar o gate e esquecer de revogar a regra é
+            # apanhado, porque o identificador some junto.
+            if r["regraId"] not in conteudo:
+                problemas.append(
+                    f"{r['regraId']}: o produtor {caminho.name} não cita o "
+                    f"identificador da regra; sem isso não há como saber se ele "
+                    f"ainda computa esta regra ou outra coisa")
+            continue
         if r["texto"] not in conteudo and r["regraId"] not in conteudo:
             problemas.append(f"{r['regraId']}: ausente do destino — {caminho.name}")
     return problemas

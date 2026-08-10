@@ -1,0 +1,6475 @@
+# Índice mestre — planejamento FORJA para consulta de IA
+
+> Porta de entrada para a coleção integral preparada. Cada documento possui índice próprio e preserva todo o conteúdo da origem.
+
+## Índice deste documento
+
+- [1. Como consultar](#1-como-consultar)
+- [2. Cobertura e garantias](#2-cobertura-e-garantias)
+- [3. Índice por categoria](#3-índice-por-categoria)
+- [4. Índice detalhado de todos os documentos e blocos](#4-índice-detalhado-de-todos-os-documentos-e-blocos)
+- [5. Rastreabilidade](#5-rastreabilidade)
+
+## 1. Como consultar
+
+1. Pesquise primeiro neste índice por tema, tipo ou título.
+2. Abra a cópia preparada indicada e use seu índice interno para chegar ao bloco exato.
+3. Leia o bloco integral antes de responder; síntese e palavras-chave servem apenas para recuperação.
+4. Para decisão material, confira o caminho e o SHA-256 do arquivo canônico.
+
+## 2. Cobertura e garantias
+
+- **Documentos de conteúdo:** 61
+- **Linhas de origem cobertas:** 26098
+- **Blocos indexados:** 1961
+- **Cobertura:** cada linha de cada origem pertence exatamente a um bloco indexado.
+- **Preservação:** os documentos canônicos não foram modificados.
+
+## 3. Índice por categoria
+
+### Análise
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [24 — Análise de propriedade intelectual da FORJA e plano de registro](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md) | 80 | 11 | Data: 23/07/2026 Autor da análise: Claude Fable 5 (sessão com Igor), a pedido do Igor Natureza: análise interna orientativa — não é parecer formal; validar com agente da propriedade industrial antes de protocolar no INPI Classificação: internalworking — não circular fora da operação |
+| [Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md) | 580 | 39 | Síntese executiva de 4 casos reais (CASO-14 Nível 3/4, José CASO-15 Embargos Ajustada, 2026-07-03 a 07) |
+
+### Anexo
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md) | 249 | 25 | Protocolo: FORJA-COCRIACAO-v1 Data: 25/07/2026. Estado: requisitos de produto aprovados para detalhamento técnico. Não autoriza implementação. |
+| [34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md) | 336 | 25 | Protocolo: FORJA-COCRIACAO-v1 Data: 25/07/2026. Estado: desenho técnico para revisão. Não autoriza implementação. Rege-se pelo PRD 33. Em conflito, prevalece o PRD. Ondas e portões estão no 35. |
+| [35 — Roteiro, portões e instrumentos de operação](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md) | 178 | 14 | Protocolo: FORJA-COCRIACAO-v1 Data: 25/07/2026. Estado: roteiro para aprovação. Não autoriza implementação. Rege-se pelo PRD 33 e pelo TDD 34. |
+
+### Auditoria
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [FORJA — Auditoria adversarial e pontos decisivos](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md) | 139 | 13 | Versão: A1 Data: 10/07/2026 Aplicação: toda peça que responda, confronte ou dependa de alegações formuladas por parte adversária. |
+
+### Diagramas
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [DIAGRAMAS — FORJA N2](04_DIAGRAMAS_FORJA.md) | 290 | 12 | Versão: N2.0 Data: 2026-07-08 Status: vigente para execução PRD: 01PRDFORJA.md TDD: 02TDDFORJA.md Roadmap: 03ROADMAPFORJA.md |
+| [DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md) | 540 | 20 | Versão proposta: N4.0 Data: 2026-07-10 Status: versão final dos diagramas de planejamento; não vigentes Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 PRD: 10PRDFORJAN4RACIOCINIOPROVACIENCIA.md TDD: 11TDDFORJAN4RACIOCINIOPROVACIENCIA.md Roadmap: 12ROADMAPFORJAN4RACIOCINIOPROVACIENCIA.md |
+| [Diagramas — FORJA FILA (priorização automática painel → FORJA)](17_DIAGRAMAS_FILA_PRIORIZADA.md) | 87 | 5 | Par de 15PRDFILAPRIORIZADA.md e 16TDDFILAPRIORIZADA.md. |
+
+### Documento de planejamento
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [F2-A — Exploração problematizadora em 100 perguntas](20_F2A_EXPLORACAO_100_PERGUNTAS.md) | 58 | 7 | Decisão de produto: 14/07/2026. Status: implementada para novos ciclos; histórico preservado. |
+| [Decisão arquitetural 21 — F7-B com Claude Fable 5](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md) | 111 | 16 | Status: aceita e implementada Data: 15/07/2026 Contrato: FORJA-FABLE5-FINAL-v1 |
+| [Hardening anti-alucinação v2 — plano, execução e rollback](24_HARDENING_ANTI_ALUCINACAO_V2.md) | 63 | 6 | Data: 23/07/2026 Método operacional: Efesto Escopo: F5, F7/F7-B, F9/F10 e pacotes já produzidos. |
+| [Gosto jurídico autônomo na FORJA](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md) | 141 | 8 | Protocolo: FORJA-GOSTO-EDGE-v1 Fonte estudada: transcrição integral, em inglês, do vídeo “The ONE Skill Every High Performer Needs To Master (in the age of AI)”, de Sandeep Swadia, publicado em 23/07/2026. URL: https://www.youtube.com/watch?v=Vko7hmwrJjc Transcrição local auditável: youtube-transcript/sandeep-swadia/the-one-skill-every-high-performer-needs-t… |
+| [26 — Arquitetura de três eixos: dialética com o advogado, identidade Medina Osório e sistema de precedentes](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md) | 409 | 30 | Estado: pesquisa, diagnóstico e planejamento. Nenhuma linha de código foi alterada. Fonte de requisitos: planejamento/25REQUISITOSENTREVISTAFABIOMEDINAOSORIO.md (entrevista de 25/07/2026). Insumos críticos incorporados: três documentos de IA externa (forjamedinaosorioarquitetura.md, gatesevalidadores.md, identidademedinaosorio.md) e o parecer do Codex de 25/… |
+| [Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md) | 663 | 43 | Data do estudo: 30/07/2026 Natureza: estudo metodológico e proposta de produto; não altera os contratos executáveis nesta entrega. Fontes primárias estudadas: Joan Ernst van Aken e Hans Berends, Problem Solving in Organizations: A Methodological Handbook for Business and Management Students; Ethan M. Rasiel e Paul N. Friga, The McKinsey Mind. |
+| [Parecer jurídico — FORJA-COCRIACAO-v1](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md) | 172 | 14 | Objeto: 33PRD, 34TDD, 35ROADMAP, e a questão suscitada no parecer estratégico sobre a separabilidade entre J-B(acordo) e J-B(julgador). Natureza: parecer consultivo interno. Não é peça, não é destinado a protocolo, não contém opinião sobre caso concreto de cliente. Data de corte: 2026-07-25. |
+| [Parecer Helena Strategos — FORJA-COCRIACAO-v1](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md) | 140 | 13 | Objeto: 33PRD, 34TDD, 35ROADMAPEGATES. Data: 2026-07-25. Modo: análise profunda 8+1. Veredito: APROVADO COM REORDENAÇÃO. O desenho está certo. A ordem está errada. |
+
+### Entrevista e requisitos
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [Transcrição bruta — entrevista de Igor com Fábio Medina Osório](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md) | 572 | 13 | Fonte primária: C:\Users\IgorPC\.claude\projects\C--Users-IgorPC--claude-projects-Escrit-rio-fabio-os-rio-fabricas-de-melhoria-de-peti--es--FORJA-HARNESS\466d9d53-9cdb-4b31-9297-1a899de940dd.jsonl:21 Data do registro: 25/07/2026 Duração marcada: 00:00–47:58 Natureza: transcrição automática; erros de reconhecimento de fala foram preservados. |
+| [25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md) | 314 | 21 | Fonte: transcrição de áudio de entrevista conduzida por Igor Morais Vasconcelos (Participante 1) com Fábio Medina Osório (Participante 2), 48 minutos, recebida em 25/07/2026. Natureza deste documento: fonte canônica de requisitos declarados pelo titular. Substitui inferência sobre "o que o escritório quer" nos pontos aqui cobertos. |
+
+### Gates e qualidade
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [05 — Gates de Qualidade do FORJA N2 (catálogo complementar)](06_GATES_QUALIDADE_FORJA.md) | 404 | 27 | Versão: N2.3 \| Data: 2026-07-15 Origem: mineração das análises de resultados reais da fábrica — APRENDIZADOSFEEDBACKHUMANO.md, a auditoria final do caso, registrada no acervo, a análise estratégica do caso, no acervo, o relatório de aprendizados do caso, no acervo, CASO-14 DOCUMENTACAOFINALAPRENDIZADOS\ e RELATORIOMELHORIASNIVEL3.md, CASO-15 Campos AUDITORIA… |
+| [Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA](25_CONSELHO_GATE_VISUAL_2026-08-03.md) | 230 | 13 | ## ✔ DECISÃO DO IGOR — 03/08/2026, posterior a este parecer e à nota abaixo  O Igor decidiu, e a decisão prevalece sobre o cronograma deste parecer. Ele acatou a recomendação apresentada: ligar depois do prazo de 05/08, não antes, e em duas etapas —  1. primeiro fechar a rota simples, que é o que de fato produz peça pobre |
+| [Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2)](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md) | 641 | 44 | Data: 03/08/2026 (noite) · revisão de integração: 03/08/2026 · revisão adversarial Opus 5 (Efesto, Helena, Diabob): 03/08/2026 · fechamento técnico Codex/Opus: 04/08/2026 · revalidação Diabob/Codex: 04/08/2026 Autor: Efesto (planejamento) · revisão de integração ao acervo pela sessão de 03/08 |
+
+### Mapa
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [Mapa de implementação — FORJA FILA](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md) | 76 | 9 | Roadmap executável da R1.1 (Helena, 16h estimadas). Cada marco tem gate de saída objetivo; nenhum marco seguinte começa com gate anterior aberto. Tudo aditivo e reversível por flag — padrão N2/N3 da casa. |
+| [Mapa IA - fontes](fontes/MAPA_IA.md) | 50 | 8 | Atualizado automaticamente em: 2026-08-07 02:09:10 -0300 |
+| [Mapa IA - planejamento](MAPA_IA.md) | 112 | 8 | Atualizado automaticamente em: 2026-08-07 02:09:14 -0300 |
+| [Mapa IA - pareceres](pareceres/MAPA_IA.md) | 51 | 8 | Atualizado automaticamente em: 2026-08-07 02:09:10 -0300 |
+
+### Método
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [Método de solução de problemas aplicado à elaboração de petições](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md) | 488 | 48 | Produto: FORJA — perfil metodológico PSO-Pet 1.0 Data: 2026-07-11 Status: especificação complementar em sombra; não promove N4 nem cria bloqueio automático Base: Van Aken, Joan; Berends, Hans. Problem Solving in Organizations: A Methodological Handbook for Business and Management Students. 3. ed. Cambridge University Press, 2018. DOI 10.1017/9781108236164. |
+| [Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md) | 344 | 32 | Documento: 39 Data: 2026-07-30 Autor: sessão Claude (primeira passada em Opus 5; revisão crítica na mesma sessão após troca para Fable 5 — ver §12) Status: estudo + plano de reforma. Não altera código nem contratos até decisão do Igor. Escopo: fases de exploração do problema (F2/F2A), pesquisa prévia (F3) e design da solução (F4/F5). |
+
+### Parecer
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [36 — Consolidação do conselho e parecer final de execução](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md) | 352 | 27 | Consolidador: Efesto Tekhton. Data: 2026-07-25. Objeto: pareceres de Helena e Cícero sobre FORJA-COCRIACAO-v1, mais a diretriz do Igor de 25/07/2026 sobre modelo editorial e revisão cruzada. Pareceres na íntegra: pareceres/HELENAFORJACOCRIACAO2026-07-25.md e pareceres/CICEROFORJACOCRIACAO2026-07-25.md. |
+
+### Plano
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [FORJA N2 — Análise crítica e planejamento corrigido](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md) | 455 | 46 | Data: 2026-07-08 Status: versão superior consolidada dos quatro planejamentos FORJA; originais reescritos para N2 em 2026-07-08 Escopo: registrar falhas/acertos e justificar a correção aplicada ao PRD, TDD, roadmap e diagramas Fontes analisadas: 01PRDFORJA.md, 02TDDFORJA.md, 03ROADMAPFORJA.md, 04DIAGRAMASFORJA.md |
+| [Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado)](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md) | 137 | 9 | Data: 09/07/2026 (v2 na mesma data, após revisão crítica da v1 contra os 3 relatórios) · Insumos: reports/deep-research-...md (ChatGPT), reports/CLAUDE Estado da Arte...md, reports/IA na Criação de Peças Jurídicas.md (Gemini) · Regra: nada quebra o que existe; só entra o que agrega no produto final — peça Word anexa ao e-mail, forte, sem pegadinhas, exigindo… |
+| [FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md) | 1201 | 75 | Status: proposta de implementação incremental — revisão 2 Revisado em: 09/07/2026 Base preservada: FORJA N2, fases F0–F10, Helena, Cícero, red team, verificadores, template Medina Osório, Word COM, SVG→EMF, Gmail em rascunho e revisão humana. Auditoria de origem: ../reports/AUDITORIACOMPLETAFORJA562026-07-09.md |
+| [19 — Plano de instalação das melhorias mapeadas na FORJA](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md) | 223 | 17 | Data: 12/07/2026. Origem: estudo completo do harness (sessão 12/07, três agentes de exploração sobre código, planejamento e telemetria) + veredito sobre o middleware paperclip. Status: PLANO APROVADO PARA EXECUÇÃO POR ORDEM DO IGOR (12/07). Implementação por milestone, cada milestone fecha com testes verdes + registro em RETROSPECTIVAS.md se gerar lição. |
+| [Plano mestre de refatoração segura da FORJA](21_PLANO_MESTRE_REFATORACAO_FORJA.md) | 22 | 3 | Status: planejamento concluído; execução não autorizada Data-base: 15/07/2026 Pacote canônico: ../.planning/refactor/ |
+| [Diagnóstico e plano — constância visual da FORJA](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md) | 456 | 35 | Lugar no plano geral: esta é a Trilha V da § 26 de 40PLANOCONSOLIDADODIAGNOSTICOEDESIGNFORJAV2.md, que é a fonte canônica de execução da FORJA. O estado resumido vive lá; o detalhe, aqui. Em divergência, vale o código. |
+| [Plano de implementação — FORJA‑ASSINATURA](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md) | 1560 | 61 | RECLASSIFICADO EM 25/07/2026 — visão longa e backlog experimental, não roteiro de execução. A tese deste plano permanece correta e o veredito adversarial Fable 5 de 24/07 (GO-COM-CONDIÇÕES) segue válido quanto a ela. O que foi retirado é a superfície: cinco a sete geometrias, três microbriefs, múltiplos drafts em produção, N-way, Condorcet, recall, memória d… |
+| [31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md) | 182 | 16 | Data: 25/07/2026. Estado: planejamento consolidado. Nenhuma linha de código foi alterada. |
+| [32 — Plano único consolidado v2: cocrição, identidade e precedentes](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md) | 617 | 54 | Data: 25/07/2026. Estado: pesquisa e planejamento revisados. Não autoriza implementação nem envio externo. |
+| [37 — FORJA como harness multimodelo](37_PLANO_HARNESS_MULTIMODELO.md) | 297 | 21 | Protocolo: FORJA-MULTIMODELO-v1 Data: 26/07/2026 Origem: determinação do Igor de 26/07/2026 — "a FORJA é sistema de multimodelos", cada modelo na parte em que é melhor, todos revisando uns aos outros. |
+| [Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md) | 829 | 57 | Versão: 2.1, implementada, endurecida após três revisões adversariais no Claude Code Opus 5 e auditada em operação Data: 29/07/2026 Status: implementação concluída; operação automática condicionada aos gates descritos neste documento Escopo: captura da peça humana final recebida por e-mail, prova de protocolo, comparação com a versão exata da FORJA, aprendiz… |
+| [Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md) | 2065 | 125 | Revisão final: 05/08/2026 — incorporada a auditoria sistêmica de prontidão, a revisão Fable 5 e a correção executável dos achados A3/A5/A7/A10/A12: despacho explícito sem fallback, invalidação por hash, compatibilidade de fachada, bloqueio visual sem falso-verde e revisão entre famílias antes de promoção. |
+| [42 — Plano de ponderação e inteligência dos grafos da fábrica](42_PLANO_GRAFOS_PONDERADOS.md) | 127 | 18 | Data: 05/08/2026 Origem: vídeo "Larguei tudo pra aprender Graph Engineering" (Lucas Montano, 31/07/2026, 15min) + auditoria dos grafos existentes no repositório nesta data. |
+| [Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md) | 112 | 13 | Revisado em 05/08/2026. O PRD de execução deste plano é planejamento/44PRDSKILLSDISCIPLINASPROCESSO.md — requisitos R1-R9 com critério de aceite, rollout em três ondas e métricas. O item 5 abaixo foi corrigido após conferência no código. |
+
+### PRD
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [PRD — FORJA N2](01_PRD_FORJA.md) | 355 | 43 | Produto: FORJA, harness de produção assistida e auditável para a Fábrica de Melhoria de Petições Medina Osório Versão: N2.0 Data: 2026-07-08 Status: vigente para execução Documento-mãe de correção: 05FORJANIVEL2ANALISEEPLANOCORRIGIDO.md Manifest: FORJAHARNESS/FORJASPECMANIFEST.json |
+| [PRD — FORJA N4: Raciocínio, Prova e Ciência](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md) | 836 | 87 | Produto: FORJA, harness de elaboração, revisão e entrega assistida de petições Versão proposta: N4.0 Data: 2026-07-10 Status: versão final do planejamento N4; candidata não vigente Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 Base vigente: ../FORJASPECMANIFEST.json |
+| [PRD — FORJA FILA: priorização automática painel → FORJA](15_PRD_FILA_PRIORIZADA.md) | 86 | 9 | Origem: recomendação R1.1 (achado H3, crítico) do parecer Helena de 11/07/2026 (reports/conselho2026-07-11/RELATORIOHELENA.md), autorizada pelo Igor em 12/07/2026. Objetivo de negócio: dobrar a vazão da fábrica (4 → 8 peças/semana viáveis) eliminando o gargalo de priorização manual — hoje cada demanda exige que alguém abra 17 pastas e decida "qual é a próxim… |
+| [PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça)](22_PRD_AUTORESEARCH_FORJA.md) | 135 | 15 | Versão 1.1 — 2026-07-23. Autor: Claude Fable 5 (estudo multi-agente wfaa83ac96) sob ordem do Igor. v1.0 REPROVADA em review adversarial Codex GPT-5.5 (13 P1, 2 P2); v1.1 incorpora todas — triagem na seção 14. |
+| [PRD — FORJA-ASSINATURA](27_PRD_FORJA_ASSINATURA.md) | 669 | 55 | RECLASSIFICADO EM 25/07/2026 — visão experimental de longo prazo. O PRD vigente para execução é planejamento/33PRDFORJAASSINATURALITECOCRIACAOPRECEDENTES.md. |
+| [33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md) | 479 | 52 | EMENDAS NORMATIVAS — 25/07/2026. Este documento vale acrescido da seção 9 de 36CONSOLIDACAOCONSELHOEPARECERFINAL.md (emendas E1 a E16: conselho Helena e Cícero, migração do modelo editorial Fable 5 para Opus 5 com revisão cruzada entre famílias, perímetro de sigilo, testes negativos, registro de escopo e Onda -1). Em conflito, prevalece a seção 9. Os ANEXOA/… |
+| [PRD — Grafo de raciocínio: completude antes de peso](43_PRD_GRAFOS_PONDERADOS.md) | 249 | 26 | SUBSTITUÍDO EM 05/08/2026 por planejamento/45PRDINSTRUMENTACAOFORJA.md, que unifica este documento com o PRD 44 da mesma data. Permanece legível como anexo histórico: a medição da § 1, os critérios de E0 e o critério aritmético de reabertura da ponderação seguem valendo por incorporação, e não foram |
+| [PRD — Disciplinas de processo importadas (skills da fábrica)](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md) | 493 | 34 | SUBSTITUÍDO EM 05/08/2026 por planejamento/45PRDINSTRUMENTACAOFORJA.md, que unifica este documento com o outro PRD da mesma data. Permanece legível como anexo histórico: os requisitos detalhados e os critérios de aceite aqui escritos seguem valendo por incorporação, e não foram redigitados no 45. |
+| [PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3](45_PRD_INSTRUMENTACAO_FORJA.md) | 521 | 45 | Versão: 2.0 — reconstrução Efesto após red team Diabob Protocolo: FORJA-INSTRUMENTACAO-v2 Data: 06/08/2026 Modo: arquitetura e especificação executável Estado: pronto para implementação da Onda 0; este documento não altera produção por si só Parecer adversarial: state/prd45-revisao/PARECERDIABOBCODEX.md |
+
+### Roadmap
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [ROADMAP — FORJA N2](03_ROADMAP_FORJA.md) | 287 | 14 | Versão: N2.0 Data: 2026-07-08 Status: vigente para execução PRD: 01PRDFORJA.md TDD: 02TDDFORJA.md Manifest: FORJAHARNESS/FORJASPECMANIFEST.json |
+| [ROADMAP — FORJA N4: Raciocínio, Prova e Ciência](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md) | 748 | 79 | Versão proposta: N4.0 Data: 2026-07-10 Status: versão final do plano de implementação; execução não iniciada Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 PRD: 10PRDFORJAN4RACIOCINIOPROVACIENCIA.md TDD: 11TDDFORJAN4RACIOCINIOPROVACIENCIA.md Diagramas: 13DIAGRAMASFORJAN4RACIOCINIOPROVACIENCIA.md |
+| [35 — Roadmap de execução: FORJA-ASSINATURA Lite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md) | 556 | 65 | EMENDAS NORMATIVAS — 25/07/2026. Este documento vale acrescido da seção 9 de 36CONSOLIDACAOCONSELHOEPARECERFINAL.md (emendas E1 a E16: conselho Helena e Cícero, migração do modelo editorial Fable 5 para Opus 5 com revisão cruzada entre famílias, perímetro de sigilo, testes negativos, registro de escopo e Onda -1). Em conflito, prevalece a seção 9. Os ANEXOA/… |
+
+### TDD
+
+| Documento | Linhas | Blocos | Síntese |
+| --- | ---: | ---: | --- |
+| [TDD — FORJA N2](02_TDD_FORJA.md) | 400 | 39 | Produto: FORJA, harness técnico para produção jurídica auditável Versão: N2.0 Data: 2026-07-08 Status: vigente para implementação PRD: 01PRDFORJA.md Roadmap: 03ROADMAPFORJA.md Diagramas: 04DIAGRAMASFORJA.md Manifest: FORJAHARNESS/FORJASPECMANIFEST.json Gates de qualidade: 06GATESQUALIDADEFORJA.md — catálogo canônico minerado das entregas reais; os contratos… |
+| [TDD — FORJA N4: Raciocínio, Prova e Ciência](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md) | 1537 | 112 | Versão proposta: N4.0 Data: 2026-07-10 Status: versão final do desenho técnico; não implementado Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 PRD: 10PRDFORJAN4RACIOCINIOPROVACIENCIA.md Roadmap: 12ROADMAPFORJAN4RACIOCINIOPROVACIENCIA.md Diagramas: 13DIAGRAMASFORJAN4RACIOCINIOPROVACIENCIA.md |
+| [TDD — FORJA FILA: desenho técnico e plano de testes](16_TDD_FILA_PRIORIZADA.md) | 143 | 9 | Par do PRD 15PRDFILAPRIORIZADA.md. Estilo da casa: módulo único, funções puras testáveis, escrita atômica, feature flag, modo sombra primeiro. |
+| [TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR)](23_TDD_AUTORESEARCH_FORJA.md) | 140 | 17 | Versão 1.1 — 2026-07-23. Par do PRD 22PRDAUTORESEARCHFORJA.md v1.1 (pós-review Codex). Executor designado: Codex GPT-5.5; auditor: Claude Fable 5. |
+| [TDD — FORJA-ASSINATURA](28_TDD_FORJA_ASSINATURA.md) | 1310 | 92 | RECLASSIFICADO EM 25/07/2026 — desenho experimental de longo prazo. O TDD vigente para execução é planejamento/34TDDFORJAASSINATURALITECOCRIACAOPRECEDENTES.md. |
+| [34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md) | 1001 | 59 | EMENDAS NORMATIVAS — 25/07/2026. Este documento vale acrescido da seção 9 de 36CONSOLIDACAOCONSELHOEPARECERFINAL.md (emendas E1 a E16: conselho Helena e Cícero, migração do modelo editorial Fable 5 para Opus 5 com revisão cruzada entre famílias, perímetro de sigilo, testes negativos, registro de escopo e Onda -1). Em conflito, prevalece a seção 9. Os ANEXOA/… |
+
+## 4. Índice detalhado de todos os documentos e blocos
+
+### 4.1. Transcrição bruta — entrevista de Igor com Fábio Medina Osório
+
+- **Arquivo preparado:** [00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md)
+- **Origem:** `C:\Users\IgorPC\.claude\projects\C--Users-IgorPC--claude-projects-Escrit-rio-fabio-os-rio-fabricas-de-melhoria-de-peti--es--FORJA-HARNESS\466d9d53-9cdb-4b31-9297-1a899de940dd.jsonl:21`
+- **Termos:** ela, participante, tem, pra, trabalho, ele, documental, então, pedido, pode, bloco, também
+- **Blocos:**
+  - [SRC-S001 · L1–L7 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s001)
+    - Assuntos: transcrição, bruta, entrevista, igor, fábio, medina, osório, fonte
+    - Trecho-guia: Fonte primária: C:\Users\IgorPC\.claude\projects\C--Users-IgorPC--claude-projects-Escrit-rio-fabio-os-rio-fabricas-de-melhoria-de-peti--es--FORJA-HARNESS\466d9d53-9cdb-4b31-9297-1a899de940dd.jsonl:21 Data do registro: 25/07/2026 Duração marcada: 00:00–47:58 Natureza: transcrição 
+  - [SRC-S002 · L8–L9 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s002)
+    - Assuntos: entrevista, integral, blocos, cinco, minutos
+    - Trecho-guia: Documento de consulta sobre Entrevista integral por blocos de cinco minutos.
+  - [SRC-S003 · L10–L79 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 00:00–04:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s003)
+    - Assuntos: participante, ela, ele, trabalho, pedido, pra, documental, delimitar
+    - Trecho-guia: É meio aí agora, o que é que eu penso de uma minuta, a gente trabalha com um processo complexos, então eu penso assim cada processo. É como assim fosse. Um corpo único anatomia de um corpo, né?
+  - [SRC-S004 · L80–L121 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 05:00–09:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s004)
+    - Assuntos: ela, participante, pode, documental, tem, isso, trabalho, complementação
+    - Trecho-guia: Quê, já nessa primeira etapa a IA tendo analisado, todo a documentação, ela já pode desde logo já? Solicitar a complementação documental já pode solicitar complementação documental, já pode já abreviar, inclusive o tempo, então ela ganha velocidade com isso, ela ganha enorme velo
+  - [SRC-S005 · L122–L163 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 10:00–14:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s005)
+    - Assuntos: ela, tem, participante, precedentes, mais, precedente, pra, então
+    - Trecho-guia: Capacitada, pra acessar os bancos de dados necessários, aí os bancos de dados são ela também pode fazer uma consulta sobre qual espécie de doutrina prefere ela pode pra não escolher aleatoriamente, ela pode ajudar exprudência, e ela já tem que estar e capacitada pra saber. Que o 
+  - [SRC-S006 · L164–L201 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 15:00–19:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s006)
+    - Assuntos: ela, participante, também, ele, capacidade, pode, ferramenta, não
+    - Trecho-guia: Ele tivesse a. Força coercitiva, ele constrange, porque ele mostra que se não houver a observência. Daquela decisão anterior constituída, como presidente, haverá uma quebra de isonomia, haverá uma quebra do princípio da igualdade.
+  - [SRC-S007 · L202–L271 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 20:00–24:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s007)
+    - Assuntos: participante, sempre, você, tem, também, ter, porque, ele
+    - Trecho-guia: Nós estamos caminhando para uma parametrização do risco jurídico também em termos mais auditáveis, e aí a caminha para esse cenário olha pra esse trabalho obviamente, ela precisa ter explicabilidade nas suas buscas nos seus rastrementos nos seus parâmetros nas suas pesquisas, ela
+  - [SRC-S008 · L272–L301 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 25:00–29:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s008)
+    - Assuntos: não, tem, participante, artesanal, vai, diferencial, acho, ser
+    - Trecho-guia: O nosso cérebro é único, portanto, a nossas experiências são únicas e essa troca, esse intercâmbio, eu acredito nessa fusão da inteligência humana, com a inteligência artificial e, portanto, a singularidade da nossa singularidade. Com esse trabalho também, portanto, eu acredito n
+  - [SRC-S009 · L302–L347 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 30:00–34:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s009)
+    - Assuntos: participante, não, trabalho, pra, texto, você, acho, isso
+    - Trecho-guia: Eu acho que isso é um grande diferencial a IA trabalhar em grupo, ela não vai sozinha, resolvendo, nunca nada como eu também resolve sozinho, então nós sabemos trabalhar em grupo junto com a IA.
+  - [SRC-S010 · L348–L433 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 35:00–39:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s010)
+    - Assuntos: participante, mais, tem, não, ser, muito, acho, isso
+    - Trecho-guia: O idioma precisa ser manejado de forma correta com observância das regras, mas de modo muito direto objetivo acessível, sem rebuscamento, eu acho que isso torna-se tudo mais claro. Quanto mais acessível, mais direto mais objetivo. Ah, foi o idioma e a forma de comunicação.
+  - [SRC-S011 · L434–L515 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 40:00–44:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s011)
+    - Assuntos: participante, mais, você, vai, pra, porque, ser, ter
+    - Trecho-guia: Viajar, até aos recursos públicos. Eles começarão a chegar no destino correto sem desvios. É, pelo menos os índices de desvios, se reduzirão drasticamente, eu acho que.
+  - [SRC-S012 · L516–L569 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Entrevista integral por blocos de cinco minutos > Bloco 45:00–47:59](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s012)
+    - Assuntos: participante, ser, vai, ele, pode, acho, ela, tem
+    - Trecho-guia: Ele tem a dignidade, ele tem dignidade, ele pode ser realizado, inclusive com um prazer, ele pode ser bem realizado. E eu acho que. Ele precisa, a pessoa precisa, é ter.
+  - [SRC-S013 · L570–L572 · Transcrição bruta — entrevista de Igor com Fábio Medina Osório > Instrução original enviada após a transcrição](00_TRANSCRICAO_BRUTA_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s013)
+    - Assuntos: ele, fluxo, instrução, original, enviada, após, transcrição, medina
+    - Trecho-guia: analise com cuidado e a fundo essa entrevista que o Fabio medina osorio deu dentro do contexto da forja ele deu o fluxo de trabalho como ele quer que a forja funcione falou bastante do fluxo que ele deseja. cada palavra é importante. esse é o parametro de cara humana e fluxo que 
+
+### 4.2. PRD — FORJA N2
+
+- **Arquivo preparado:** [01_PRD_FORJA.md](01_PRD_FORJA.md)
+- **Origem:** `01_PRD_FORJA.md`
+- **Termos:** evidência, não, fonte, final, oficial, deve, regimento, entrega, demanda, anexos, visual, igor
+- **Blocos:**
+  - [SRC-S001 · L1–L13 · PRD — FORJA N2](01_PRD_FORJA.md#src-s001)
+    - Assuntos: prd, versão, execução, produto, harness, produção, assistida, auditável
+    - Trecho-guia: Produto: FORJA, harness de produção assistida e auditável para a Fábrica de Melhoria de Petições Medina Osório Versão: N2.0 Data: 2026-07-08 Status: vigente para execução Documento-mãe de correção: 05FORJANIVEL2ANALISEEPLANOCORRIGIDO.md Manifest: FORJAHARNESS/FORJASPECMANIFEST.js
+  - [SRC-S002 · L14–L25 · PRD — FORJA N2 > 1. Visão](01_PRD_FORJA.md#src-s002)
+    - Assuntos: visão, regimento, evidência, anexo, organiza, produção, jurídica, fábrica
+    - Trecho-guia: FORJA N2 organiza a produção jurídica da fábrica em uma esteira auditável: entrada de demanda, reconciliação da fila, leitura de fontes, regimento, planejamento estratégico, redação, auditoria, QA visual, pacote de revisão e fechamento com evidência.
+  - [SRC-S003 · L26–L43 · PRD — FORJA N2 > 2. Problema](01_PRD_FORJA.md#src-s003)
+    - Assuntos: não, tratado, problema, whatsapp, prova, entrega, prd, fosse
+    - Trecho-guia: A fábrica tem demandas simultâneas vindas de e-mail, WhatsApp/Hermes, pastas locais e intervenções manuais. O risco não é apenas demora; é perder evidência, confundir status, aceitar jurisprudência não verificada, esquecer placeholder, usar regimento desatualizado, quebrar o padr
+  - [SRC-S004 · L44–L56 · PRD — FORJA N2 > 3. Objetivos](01_PRD_FORJA.md#src-s004)
+    - Assuntos: evidência, objetivos, regimento, anexo, visual, anexos, comando, e-mail
+    - Trecho-guia: 1. Reduzir fila mental e retrabalho sem aumentar risco jurídico. 2. Impedir entrega prematura quando houver pendência de fonte, regimento, anexo, citação, prazo, visual ou evidência. 3. Separar gestão de prova: demandas.json organiza; anexos, autos, PDFs, DOCX, e-mails e fontes o
+  - [SRC-S005 · L57–L71 · PRD — FORJA N2 > 4. Não objetivos](01_PRD_FORJA.md#src-s005)
+    - Assuntos: não, objetivos, painel, whatsapp, explícita, final, oficial, enviar
+    - Trecho-guia: Enviar e-mail automaticamente. Protocolar judicialmente. Assinar digitalmente. Marcar demanda como cumprida com base apenas no painel. Transcrever áudio de WhatsApp sem permissão explícita. Expor conversa bruta de WhatsApp no painel, chat ou relatório público. Usar probabilidade 
+  - [SRC-S006 · L72–L73 · PRD — FORJA N2 > 5. Personas](01_PRD_FORJA.md#src-s006)
+    - Assuntos: personas
+    - Trecho-guia: Documento de consulta sobre 5. Personas.
+  - [SRC-S007 · L74–L77 · PRD — FORJA N2 > 5. Personas > Igor](01_PRD_FORJA.md#src-s007)
+    - Assuntos: igor, porteiro, final, operador, fila, precisa, enxergar, estado
+    - Trecho-guia: Porteiro final e operador da fila. Precisa enxergar estado, bloqueios, próxima ação, urgência, anexos pendentes e evidência de entrega sem decidir detalhes técnicos de implementação.
+  - [SRC-S008 · L78–L81 · PRD — FORJA N2 > 5. Personas > Fábio Medina Osório](01_PRD_FORJA.md#src-s008)
+    - Assuntos: fábio, medina, osório, revisor, jurídico, destinatário, estratégico, precisa
+    - Trecho-guia: Revisor jurídico e destinatário estratégico. Precisa de pacote claro, peça forte, relatório objetivo, caminhos de evidência e pendências que possam ser decididas rapidamente.
+  - [SRC-S009 · L82–L85 · PRD — FORJA N2 > 5. Personas > Agentes IA](01_PRD_FORJA.md#src-s009)
+    - Assuntos: agentes, executam, leitura, triagem, pesquisa, blueprint, redação, auditoria
+    - Trecho-guia: Executam leitura, triagem, pesquisa, blueprint, redação, auditoria e QA dentro de contratos explícitos. Não podem inventar fonte, ocultar pendência ou transformar divergência em consenso falso.
+  - [SRC-S010 · L86–L91 · PRD — FORJA N2 > 5. Personas > FORJA](01_PRD_FORJA.md#src-s010)
+    - Assuntos: orquestrador, fases, estado, artefatos, gates, evidências, não, fonte
+    - Trecho-guia: Orquestrador de fases, estado, artefatos, gates e evidências. Não é fonte jurídica; é controle de processo.
+  - [SRC-S011 · L92–L105 · PRD — FORJA N2 > 6. Fonte de verdade](01_PRD_FORJA.md#src-s011)
+    - Assuntos: fonte, verdade, oficial, json, anexo, arquivado, tribunal, informação
+    - Trecho-guia: Documento de consulta sobre 6. Fonte de verdade.
+  - [SRC-S012 · L106–L107 · PRD — FORJA N2 > 7. Escopo funcional](01_PRD_FORJA.md#src-s012)
+    - Assuntos: escopo, funcional
+    - Trecho-guia: Documento de consulta sobre 7. Escopo funcional.
+  - [SRC-S013 · L108–L111 · PRD — FORJA N2 > 7. Escopo funcional > RF-01 — Reconciliação da fila](01_PRD_FORJA.md#src-s013)
+    - Assuntos: rf-01, reconciliação, fila, deve, ler, painel, comandos, pastas
+    - Trecho-guia: FORJA deve ler painel, comandos, pastas, status de integrações e evidências antes de criar ou alterar estado. Gmail/Hermes podem estar ok, degraded, needslogin ou offline.
+  - [SRC-S014 · L112–L115 · PRD — FORJA N2 > 7. Escopo funcional > RF-02 — Ingestão segura](01_PRD_FORJA.md#src-s014)
+    - Assuntos: rf-02, ingestão, segura, deve, criar, reconciliar, demanda, sobrescrever
+    - Trecho-guia: FORJA deve criar ou reconciliar demanda sem sobrescrever pasta existente, sem apagar duplicidade e sem assumir que anexos estão completos. Anexo faltante vira pendência.
+  - [SRC-S015 · L116–L119 · PRD — FORJA N2 > 7. Escopo funcional > RF-03 — Classificação do produto](01_PRD_FORJA.md#src-s015)
+    - Assuntos: rf-03, classificação, produto, deve, classificar, demanda, petição, memorial
+    - Trecho-guia: FORJA deve classificar a demanda como petição, memorial, embargos, parecer, laudo, proposta ou administrativo antes de aplicar molde de peça.
+  - [SRC-S016 · L120–L125 · PRD — FORJA N2 > 7. Escopo funcional > RF-04 — Classificação operacional](01_PRD_FORJA.md#src-s016)
+    - Assuntos: operacional, rf-04, classificação, deve, não, caso, classificar, demanda
+    - Trecho-guia: FORJA deve classificar a demanda por tipo de produto, tribunal provável, prazo, urgência, pasta, anexos esperados, destinatário de revisão e evidência mínima para avançar. O bloqueio nasce de lacuna operacional concreta, não de rótulo genérico.
+  - [SRC-S017 · L126–L129 · PRD — FORJA N2 > 7. Escopo funcional > RF-05 — Regimento e leis gerais](01_PRD_FORJA.md#src-s017)
+    - Assuntos: regimento, rf-05, leis, gerais, antes, redigir, deve, identificar
+    - Trecho-guia: Antes de redigir, FORJA deve identificar tribunal, ler o regimento integral da pasta, conferir metadados e emendas posteriores, e consultar LEISGERAIS.
+  - [SRC-S018 · L130–L140 · PRD — FORJA N2 > 7. Escopo funcional > RF-06 — Ledger de fontes](01_PRD_FORJA.md#src-s018)
+    - Assuntos: rf-06, ledger, fontes, fonte, deve, classificar, afirmações, críticas
+    - Trecho-guia: FORJA deve classificar afirmações críticas como:
+  - [SRC-S019 · L141–L144 · PRD — FORJA N2 > 7. Escopo funcional > RF-07 — Blueprint estratégico](01_PRD_FORJA.md#src-s019)
+    - Assuntos: blueprint, rf-07, estratégico, deve, gerar, teses, riscos, lacunas
+    - Trecho-guia: FORJA deve gerar blueprint com teses, riscos, lacunas, ordem argumentativa e divergências reais do conselho. Decisão acatada ou rejeitada precisa de motivo.
+  - [SRC-S020 · L145–L148 · PRD — FORJA N2 > 7. Escopo funcional > RF-08 — Pesquisa oficial](01_PRD_FORJA.md#src-s020)
+    - Assuntos: oficial, rf-08, pesquisa, pode, usar, buscadores, descoberta, mas
+    - Trecho-guia: FORJA pode usar buscadores e IA como descoberta, mas citação final só passa com fonte oficial ou arquivo oficial arquivado.
+  - [SRC-S021 · L149–L152 · PRD — FORJA N2 > 7. Escopo funcional > RF-09 — Redação em template](01_PRD_FORJA.md#src-s021)
+    - Assuntos: rf-09, redação, template, peça, protocolável, deve, partir, template_medina_osorio_peticao
+    - Trecho-guia: Peça protocolável deve partir de TEMPLATEMEDINAOSORIOPETICAO.docx ou cópia de peça anterior do caso. Documento vazio criado por código é proibido para entrega final.
+  - [SRC-S022 · L153–L156 · PRD — FORJA N2 > 7. Escopo funcional > RF-10 — Auditoria](01_PRD_FORJA.md#src-s022)
+    - Assuntos: rf-10, auditoria, deve, verificar, fatos, citações, prazos, placeholders
+    - Trecho-guia: FORJA deve verificar fatos, citações, prazos, placeholders, anexos mencionados, regimento, leis gerais, metadados sensíveis e coerência jurídica.
+  - [SRC-S023 · L157–L160 · PRD — FORJA N2 > 7. Escopo funcional > RF-11 — QA visual](01_PRD_FORJA.md#src-s023)
+    - Assuntos: rf-11, visual, word, deve, gerar, pdf, via, quando
+    - Trecho-guia: FORJA deve gerar PDF via Word COM quando for Word, renderizar todas as páginas e inspecionar timbre, fólio, rodapé, margens, fontes, diagramas e sobreposição.
+  - [SRC-S024 · L161–L164 · PRD — FORJA N2 > 7. Escopo funcional > RF-12 — Pacote de revisão](01_PRD_FORJA.md#src-s024)
+    - Assuntos: rf-12, pacote, revisão, deve, produzir, docx, pdf, relatório
+    - Trecho-guia: FORJA deve produzir DOCX, PDF, relatório, checklist de fontes/pendências e preview visual. Draft Gmail é opcional e exige approvedRecipients.
+  - [SRC-S025 · L165–L170 · PRD — FORJA N2 > 7. Escopo funcional > RF-13 — Fechamento com evidência](01_PRD_FORJA.md#src-s025)
+    - Assuntos: evidência, rf-13, fechamento, pode, marcar, cumprida, quando, houver
+    - Trecho-guia: FORJA só pode marcar cumprida quando houver evidência real de entrega ou intervenção manual documentada.
+  - [SRC-S026 · L171–L188 · PRD — FORJA N2 > 8. Fases do produto](01_PRD_FORJA.md#src-s026)
+    - Assuntos: produto, fases, pendências, anexos, demanda, classificação, pacote, aprendizado
+    - Trecho-guia: Documento de consulta sobre 8. Fases do produto.
+  - [SRC-S027 · L189–L211 · PRD — FORJA N2 > 9. Estados](01_PRD_FORJA.md#src-s027)
+    - Assuntos: estados, pronta_para_revisao, cumprida, alto, nível, nova, em_reconciliacao, em_fontes
+    - Trecho-guia: nova emreconciliacao emfontes emplanejamento empesquisa emredacao emauditoria emqavisual prontapararevisao aguardandoevidenciaentrega cumprida blocked degraded cancelada
+  - [SRC-S028 · L212–L225 · PRD — FORJA N2 > 10. Gates humanos](01_PRD_FORJA.md#src-s028)
+    - Assuntos: igor, gates, humanos, fonte, bloquear, fábio, autorizar, gate
+    - Trecho-guia: Documento de consulta sobre 10. Gates humanos.
+  - [SRC-S029 · L226–L227 · PRD — FORJA N2 > 11. Requisitos não funcionais](01_PRD_FORJA.md#src-s029)
+    - Assuntos: requisitos, não, funcionais
+    - Trecho-guia: Documento de consulta sobre 11. Requisitos não funcionais.
+  - [SRC-S030 · L228–L234 · PRD — FORJA N2 > 11. Requisitos não funcionais > Segurança](01_PRD_FORJA.md#src-s030)
+    - Assuntos: nunca, segurança, enviar, e-mail, protocolar, tratar, anotação, solta
+    - Trecho-guia: Nunca enviar e-mail. Nunca protocolar. Nunca tratar anotação solta como prova de entrega. Nunca avançar demanda sem comando, pasta e anexos esperados registrados.
+  - [SRC-S031 · L235–L240 · PRD — FORJA N2 > 11. Requisitos não funcionais > Confiabilidade](01_PRD_FORJA.md#src-s031)
+    - Assuntos: confiabilidade, toda, fase, grava, estado, artefatos, falha, técnica
+    - Trecho-guia: Toda fase grava estado e artefatos. Falha técnica vira blocked ou degraded, não ok. Retentativas automáticas têm limite e log.
+  - [SRC-S032 · L241–L245 · PRD — FORJA N2 > 11. Requisitos não funcionais > Auditabilidade](01_PRD_FORJA.md#src-s032)
+    - Assuntos: auditabilidade, cada, artefato, final, deve, indicar, fontes, pendências
+    - Trecho-guia: Cada artefato final deve indicar fontes, pendências, decisões e evidência de QA. Custos reais devem ser registrados por fase quando houver custo de modelo/API.
+  - [SRC-S033 · L246–L250 · PRD — FORJA N2 > 11. Requisitos não funcionais > Organização operacional](01_PRD_FORJA.md#src-s033)
+    - Assuntos: organização, operacional, evidência, painel, remoto, quando, existir, mostra
+    - Trecho-guia: Painel remoto, quando existir, mostra campos úteis de execução: caso, fase, P0/P1/P2, próximo passo, evidência e caminhos de artefatos. WhatsApp, e-mail, Hermes e intervenção manual entram como comando, anexos, origem e evidência arquivada.
+  - [SRC-S034 · L251–L258 · PRD — FORJA N2 > 11. Requisitos não funcionais > Visual](01_PRD_FORJA.md#src-s034)
+    - Assuntos: visual, usar, identidade, medina, osório, diagramas, entram, reduzirem
+    - Trecho-guia: Usar identidade Medina Osório. Diagramas só entram se reduzirem esforço cognitivo. Texto de diagrama nunca abaixo de 8 pt no tamanho final impresso.
+  - [SRC-S035 · L259–L274 · PRD — FORJA N2 > 12. Critérios de aceite](01_PRD_FORJA.md#src-s035)
+    - Assuntos: nenhum, nenhuma, final, vira, critérios, aceite, data, fonte
+    - Trecho-guia: 1. Nenhuma fase final aceita [NÃO VERIFICADO], [VERIFICAR], [NOME], [DATA], [CRC-UF] ou placeholder equivalente. 2. Nenhuma citação final entra sem fonte oficial ou arquivo oficial arquivado. 3. Nenhum regimento é aceito sem fonte, versão, data de download e seção de emendas post
+  - [SRC-S036 · L275–L276 · PRD — FORJA N2 > 13. Métricas](01_PRD_FORJA.md#src-s036)
+    - Assuntos: métricas
+    - Trecho-guia: Documento de consulta sobre 13. Métricas.
+  - [SRC-S037 · L277–L284 · PRD — FORJA N2 > 13. Métricas > Qualidade](01_PRD_FORJA.md#src-s037)
+    - Assuntos: qualidade, detectadas, antes, citações, removidas, falta, fonte, oficial
+    - Trecho-guia: citações removidas por falta de fonte oficial; fatos reclassificados de fato documental para declaração/inferência; pendências P0 detectadas antes do draft; placeholders encontrados antes do PDF final; páginas com defeito visual detectadas no render.
+  - [SRC-S038 · L285–L291 · PRD — FORJA N2 > 13. Métricas > Operação](01_PRD_FORJA.md#src-s038)
+    - Assuntos: operação, tempo, demandas, até, pronta_para_revisao, bloqueado, fonte, anexo
+    - Trecho-guia: tempo até prontapararevisao; tempo bloqueado por fonte, anexo, login, regimento ou QA; demandas abertas, vencidas, =48h, sem resposta com peça, pendência de anexos; demandas não marcadas como cumpridas por falta de evidência.
+  - [SRC-S039 · L292–L300 · PRD — FORJA N2 > 13. Métricas > Custo](01_PRD_FORJA.md#src-s039)
+    - Assuntos: custo, real, fase, retries, diferença, estimativa, casos, bloqueados
+    - Trecho-guia: custo real por fase; retries por fase; diferença entre estimativa e custo real; casos bloqueados por orçamento.
+  - [SRC-S040 · L301–L314 · PRD — FORJA N2 > 14. Dependências locais verificadas](01_PRD_FORJA.md#src-s040)
+    - Assuntos: presente, inkscape, exe, tectonic, dependências, locais, verificadas, checagem
+    - Trecho-guia: Documento de consulta sobre 14. Dependências locais verificadas.
+  - [SRC-S041 · L315–L329 · PRD — FORJA N2 > 15. Regra de execução](01_PRD_FORJA.md#src-s041)
+    - Assuntos: regra, execução, antes, executar, qualquer, implementação, agente, automação
+    - Trecho-guia: Antes de executar qualquer implementação, agente ou automação deve abrir:
+  - [SRC-S042 · L330–L339 · PRD — FORJA N2 > 16. Dimensão obrigatória para peças de resposta — A1](01_PRD_FORJA.md#src-s042)
+    - Assuntos: resposta, dimensão, obrigatória, peças, peça, deve, não, toda
+    - Trecho-guia: Toda contrarrazão, contraminuta, contestação, réplica, impugnação, resposta ou manifestação que confronte peça adversária deve executar a auditoria descrita em 09AUDITORIAADVERSARIALPONTOSDECISIVOS.md.
+  - [SRC-S043 · L340–L355 · PRD — FORJA N2 > 17. Adendo vigente — F7-B revisão editorial e escrita final (15/07/2026)](01_PRD_FORJA.md#src-s043)
+    - Assuntos: json, modelo, não, adendo, f7-b, editorial, artefatos, vigente
+    - Trecho-guia: Este adendo é posterior à redação histórica N2.0 e incorpora a decisão implementada sem renumerar as fases F0–F10: após a auditoria F7 alcançar zero P0, e antes de qualquer composição F8, o texto auditado passa por F7-BREVISAOEDITORIALESCRITAFINAL.
+
+### 4.3. TDD — FORJA N2
+
+- **Arquivo preparado:** [02_TDD_FORJA.md](02_TDD_FORJA.md)
+- **Origem:** `02_TDD_FORJA.md`
+- **Termos:** json, não, entrada, oficial, saída, bloqueia, fontes, final, deve, status, fase, draft
+- **Blocos:**
+  - [SRC-S001 · L1–L16 · TDD — FORJA N2](02_TDD_FORJA.md#src-s001)
+    - Assuntos: tdd, técnico, manifest, gates, catálogo, este, produto, harness
+    - Trecho-guia: Produto: FORJA, harness técnico para produção jurídica auditável Versão: N2.0 Data: 2026-07-08 Status: vigente para implementação PRD: 01PRDFORJA.md Roadmap: 03ROADMAPFORJA.md Diagramas: 04DIAGRAMASFORJA.md Manifest: FORJAHARNESS/FORJASPECMANIFEST.json Gates de qualidade: 06GATES
+  - [SRC-S002 · L17–L24 · TDD — FORJA N2 > 1. Objetivo técnico](02_TDD_FORJA.md#src-s002)
+    - Assuntos: técnico, objetivo, sistema, deve, pesquisa, oficial, visual, evidência
+    - Trecho-guia: Implementar FORJA como orquestrador local, persistente e bloqueante para demandas jurídicas da fábrica. O sistema deve coordenar ingestão, fontes, regimento, planejamento, pesquisa oficial, redação, auditoria, QA visual, pacote de revisão e fechamento com evidência.
+  - [SRC-S003 · L25–L26 · TDD — FORJA N2 > 2. Topologia](02_TDD_FORJA.md#src-s003)
+    - Assuntos: topologia
+    - Trecho-guia: Documento de consulta sobre 2. Topologia.
+  - [SRC-S004 · L27–L33 · TDD — FORJA N2 > 2. Topologia > PC local Igor](02_TDD_FORJA.md#src-s004)
+    - Assuntos: local, igor, gestao_escritorio, painel, dados, fila, forja_harness, orquestrador
+    - Trecho-guia: gestaoescritorio como painel e dados de fila. FORJAHARNESS como orquestrador, estado, logs e documentação. Word COM para DOCX/PDF final. Inkscape, Graphviz, Mermaid CLI e Tectonic para visual law quando aplicável.
+  - [SRC-S005 · L34–L39 · TDD — FORJA N2 > 2. Topologia > VPS Hermes](02_TDD_FORJA.md#src-s005)
+    - Assuntos: vps, hermes, não, fonte, sinais, whatsapp, apenas, quando
+    - Trecho-guia: Fonte de sinais WhatsApp apenas quando sanitizados. Não processar nem expor conversa bruta. Não usar VPS antiga como destino padrão.
+  - [SRC-S006 · L40–L47 · TDD — FORJA N2 > 2. Topologia > Google](02_TDD_FORJA.md#src-s006)
+    - Assuntos: google, gmail, gws, leitura, draft, quando, autenticado, calendar
+    - Trecho-guia: Gmail/gws para leitura/draft quando autenticado. Calendar é lembrete humano, não executor técnico. Automação real deve ser Codex automation, Windows Task Scheduler ou serviço local validado.
+  - [SRC-S007 · L48–L68 · TDD — FORJA N2 > 3. Componentes](02_TDD_FORJA.md#src-s007)
+    - Assuntos: gerar, componentes, json, fonte, anexos, citações, registrar, componente
+    - Trecho-guia: Nomes acima são contratos funcionais. A implementação pode usar scripts ou serviços diferentes, desde que preserve entradas, saídas e gates.
+  - [SRC-S008 · L69–L95 · TDD — FORJA N2 > 4. Estrutura de arquivos](02_TDD_FORJA.md#src-s008)
+    - Assuntos: json, estrutura, arquivos, state, text, forja_harness, forja_spec_manifest, planejamento
+    - Trecho-guia: Se a pasta state/ ainda não existir, a primeira implementação deve criá-la.
+  - [SRC-S009 · L96–L97 · TDD — FORJA N2 > 5. Schema de estado](02_TDD_FORJA.md#src-s009)
+    - Assuntos: schema, estado
+    - Trecho-guia: Documento de consulta sobre 5. Schema de estado.
+  - [SRC-S010 · L98–L121 · TDD — FORJA N2 > 5. Schema de estado > FORJASTATE.json](02_TDD_FORJA.md#src-s010)
+    - Assuntos: json, t00, forjastate, forja_state, caseid, case-, specversion, createdat
+    - Trecho-guia: Documento de consulta sobre FORJASTATE.json.
+  - [SRC-S011 · L122–L133 · TDD — FORJA N2 > 5. Schema de estado > Status válidos](02_TDD_FORJA.md#src-s011)
+    - Assuntos: status, válidos, pending, running, blocked, degraded, ready_for_review, waiting_delivery_evidence
+    - Trecho-guia: pending running blocked degraded readyforreview waitingdeliveryevidence fulfilled cancelled failed
+  - [SRC-S012 · L134–L141 · TDD — FORJA N2 > 5. Schema de estado > Severidade de bloqueio](02_TDD_FORJA.md#src-s012)
+    - Assuntos: severidade, bloqueio, impede, peça, final, draft, marcação, pronta
+    - Trecho-guia: P0: impede peça final, draft ou marcação como pronta. P1: permite continuar fase interna, mas exige correção antes de F9. P2: melhoria ou alerta de qualidade.
+  - [SRC-S013 · L142–L173 · TDD — FORJA N2 > 6. Extensão em demandas.json](02_TDD_FORJA.md#src-s013)
+    - Assuntos: json, null, extensão, demandas, version, enabled, true, caseid
+    - Trecho-guia: Regra: o JSON operacional registra somente o que serve para execução e auditoria: IDs, pasta, comando, anexos, gates, fontes, evidências, artefatos e custos. Conteúdo completo de comunicação só entra quando for artefato necessário do caso, com caminho e origem.
+  - [SRC-S014 · L174–L175 · TDD — FORJA N2 > 7. Contratos por fase](02_TDD_FORJA.md#src-s014)
+    - Assuntos: contratos, fase
+    - Trecho-guia: Documento de consulta sobre 7. Contratos por fase.
+  - [SRC-S015 · L176–L182 · TDD — FORJA N2 > 7. Contratos por fase > F0 — Reconciliação da fila](02_TDD_FORJA.md#src-s015)
+    - Assuntos: json, reconciliação, fila, entrada, demandas, intervencoes_manuais, status_integracoes, comandos
+    - Trecho-guia: Entrada: demandas.json, intervencoesmanuais.json, statusintegracoes.json, comandos, pastas, evidências. Saída: estado de integrações, pendências e FORJASTATE.json criado/atualizado. Bloqueia se: demanda sem pasta, sem comando, sem origem ou com status contraditório. Observação: G
+  - [SRC-S016 · L183–L188 · TDD — FORJA N2 > 7. Contratos por fase > F1 — Ingestão segura](02_TDD_FORJA.md#src-s016)
+    - Assuntos: comando, ingestão, segura, entrada, pasta, e-mail, sinal, sanitizado
+    - Trecho-guia: Entrada: e-mail/comando/sinal sanitizado. Saída: pasta, comando, lista de anexos, hashes quando viável, entrada do painel. Bloqueia se: anexo essencial faltando, pasta ambígua sem deduplicação ou comando vazio.
+  - [SRC-S017 · L189–L195 · TDD — FORJA N2 > 7. Contratos por fase > F2 — Classificação produto/risco](02_TDD_FORJA.md#src-s017)
+    - Assuntos: produto, classificação, risco, comando, tipo, tribunal, resposta, rota
+    - Trecho-guia: Entrada: comando e inventário inicial. Saída: tipo de produto, tribunal provável, prazo, urgência, destinatário de revisão, evidência mínima e F2QUESTIONTREE.json no protocolo FORJA-F2A-100-v1. Contrato F2-A: exatamente 100 perguntas Q001..Q100; 10 óticas × 10; pergunta, âncora, 
+  - [SRC-S018 · L196–L201 · TDD — FORJA N2 > 7. Contratos por fase > F3 — Fontes, regimento e leis gerais](02_TDD_FORJA.md#src-s018)
+    - Assuntos: regimento, fontes, leis, gerais, entrada, pasta, caso, comando
+    - Trecho-guia: Entrada: pasta do caso, comando, LEISGERAIS, regimento e F2QUESTIONTREE.json. Saída: F3MAPAFONTESEREGIMENTO.md e ledger de fontes. Bloqueia se: regimento ausente/incompleto, emendas sem conferência, fonte crítica não localizada.
+  - [SRC-S019 · L202–L207 · TDD — FORJA N2 > 7. Contratos por fase > F4 — Blueprint estratégico](02_TDD_FORJA.md#src-s019)
+    - Assuntos: blueprint, estratégico, entrada, mapa, fontes, documentos, produto, risco
+    - Trecho-guia: Entrada: mapa de fontes, documentos, produto, risco e F2QUESTIONTREE.json. Saída: F4BLUEPRINTESTRATEGICO.md. Bloqueia se: tese depende de fato não documentado sem marcação, ou divergência estratégica grave sem decisão.
+  - [SRC-S020 · L208–L213 · TDD — FORJA N2 > 7. Contratos por fase > F5 — Pesquisa oficial](02_TDD_FORJA.md#src-s020)
+    - Assuntos: oficial, pesquisa, entrada, blueprint, temas, saída, f5_jurisprudencia_verificada, f5_citacoes_removidas
+    - Trecho-guia: Entrada: blueprint e temas de pesquisa. Saída: F5JURISPRUDENCIAVERIFICADA.md, F5CITACOESREMOVIDAS.md. Bloqueia se: citação final não tem fonte oficial ou arquivo oficial arquivado.
+  - [SRC-S021 · L214–L219 · TDD — FORJA N2 > 7. Contratos por fase > F6 — Redação em template](02_TDD_FORJA.md#src-s021)
+    - Assuntos: template, redação, entrada, peça, anterior, blueprint, fontes, citações
+    - Trecho-guia: Entrada: template/peça anterior, blueprint, fontes e citações verificadas. Saída: minuta DOCX. Bloqueia se: documento nasceu de arquivo vazio, quebrou timbre/padrão, contém placeholder ou usa fato sem fonte.
+  - [SRC-S022 · L220–L225 · TDD — FORJA N2 > 7. Contratos por fase > F7 — Auditoria jurídica/factual](02_TDD_FORJA.md#src-s022)
+    - Assuntos: auditoria, jurídica, factual, entrada, minuta, ledger, jurisprudência, anexos
+    - Trecho-guia: Entrada: minuta, ledger, jurisprudência, anexos e regimento. Saída: F7RELATORIOAUDITORIA.md, CHECKLISTFONTESEPENDENCIAS.md. Bloqueia se: qualquer P0 estiver aberto.
+  - [SRC-S023 · L226–L247 · TDD — FORJA N2 > 7. Contratos por fase > F7 — Auditoria jurídica/factual > F7-B — Revisão editorial e escrita final pelo Claude Fable 5](02_TDD_FORJA.md#src-s023)
+    - Assuntos: não, claude, json, fragmento, editorial, final, fable, audited_markdown
+    - Trecho-guia: Posição: subfase de F7 executada somente depois de f7gateresult comprovar zero P0 e antes de F8.
+  - [SRC-S024 · L248–L253 · TDD — FORJA N2 > 7. Contratos por fase > F8 — QA visual](02_TDD_FORJA.md#src-s024)
+    - Assuntos: visual, entrada, docx, auditado, saída, pdf, imagens, renderizadas
+    - Trecho-guia: Entrada: DOCX auditado. Saída: PDF, imagens renderizadas, relatório de inspeção. Bloqueia se: qualquer página não foi inspecionada, diagrama ilegível, rodapé/timbre/folio quebrado ou sobreposição.
+  - [SRC-S025 · L254–L259 · TDD — FORJA N2 > 7. Contratos por fase > F9 — Pacote de revisão e draft opcional](02_TDD_FORJA.md#src-s025)
+    - Assuntos: draft, pacote, revisão, opcional, gmail, entrada, docx, pdf
+    - Trecho-guia: Entrada: DOCX/PDF aprovados e checklist sem P0. Saída: pacote de revisão; draft Gmail apenas se autorizado. Bloqueia se: approvedRecipients vazio para draft, anexos errados, Gmail degradado sem fallback manual.
+  - [SRC-S026 · L260–L267 · TDD — FORJA N2 > 7. Contratos por fase > F10 — Entrega, evidência e aprendizado](02_TDD_FORJA.md#src-s026)
+    - Assuntos: evidência, entrega, aprendizado, f10, entrada, protocolo, envio, intervenção
+    - Trecho-guia: Entrada: evidência de entrega/protocolo/envio ou intervenção manual. Saída: F10DOCUMENTACAOFINAL/, atualização de painel, aprendizado. Bloqueia se: não houver evidência real.
+  - [SRC-S027 · L268–L287 · TDD — FORJA N2 > 8. Ledger de fontes](02_TDD_FORJA.md#src-s027)
+    - Assuntos: ledger, fontes, item, nao_verificado, finaluseallowed, cada, crítico, deve
+    - Trecho-guia: Cada item crítico deve ser gravado com:
+  - [SRC-S028 · L288–L289 · TDD — FORJA N2 > 9. Adaptadores técnicos](02_TDD_FORJA.md#src-s028)
+    - Assuntos: adaptadores, técnicos
+    - Trecho-guia: Documento de consulta sobre 9. Adaptadores técnicos.
+  - [SRC-S029 · L290–L296 · TDD — FORJA N2 > 9. Adaptadores técnicos > Gmail/gws](02_TDD_FORJA.md#src-s029)
+    - Assuntos: gws, gmail, preferir, cmd, powershell, invalid_grant, precisa_login, vira
+    - Trecho-guia: Preferir gws.cmd em PowerShell. invalidgrant ou precisalogin vira needslogin. Draft depende de autorização e destinatários da demanda. Nunca enviar automaticamente.
+  - [SRC-S030 · L297–L301 · TDD — FORJA N2 > 9. Adaptadores técnicos > Hermes/WhatsApp](02_TDD_FORJA.md#src-s030)
+    - Assuntos: hermes, whatsapp, entrada, permitida, sinal, sanitizado, card, triagem
+    - Trecho-guia: Entrada permitida: sinal sanitizado, card de triagem, COMANDODOWHATSAPP.md. Proibido: conversa bruta em painel, chat ou relatório público.
+  - [SRC-S031 · L302–L306 · TDD — FORJA N2 > 9. Adaptadores técnicos > Pesquisa oficial](02_TDD_FORJA.md#src-s031)
+    - Assuntos: oficial, pesquisa, fonte, não, apenas, descoberta, arquivo, arquivado
+    - Trecho-guia: Fonte não oficial é apenas descoberta. Fonte oficial ou arquivo oficial arquivado é obrigatório para citação final.
+  - [SRC-S032 · L307–L313 · TDD — FORJA N2 > 9. Adaptadores técnicos > Word/visual law](02_TDD_FORJA.md#src-s032)
+    - Assuntos: word, visual, law, final, via, docx, deve, partir
+    - Trecho-guia: DOCX final deve partir de template ou peça anterior. PDF final via Word COM. SVG para EMF via Inkscape quando houver diagrama vetorial. Render e inspeção de todas as páginas.
+  - [SRC-S033 · L314–L320 · TDD — FORJA N2 > 9. Adaptadores técnicos > Custos](02_TDD_FORJA.md#src-s033)
+    - Assuntos: custo, custos, registrar, modelo, tokens, estimado, real, quando
+    - Trecho-guia: Registrar modelo, tokens, custo estimado e custo real quando disponível. Se custo exceder limite configurado, bloquear e pedir autorização.
+  - [SRC-S034 · L321–L337 · TDD — FORJA N2 > 10. APIs locais sugeridas](02_TDD_FORJA.md#src-s034)
+    - Assuntos: api, post, caseid, apis, locais, sugeridas, endpoints, get
+    - Trecho-guia: Se integradas ao painel local, usar endpoints com semântica conservadora:
+  - [SRC-S035 · L338–L351 · TDD — FORJA N2 > 11. Tratamento de erros](02_TDD_FORJA.md#src-s035)
+    - Assuntos: blocked, não, tratamento, erros, login, degraded, fallback, ausente
+    - Trecho-guia: Documento de consulta sobre 11. Tratamento de erros.
+  - [SRC-S036 · L352–L363 · TDD — FORJA N2 > 12. Proibições técnicas](02_TDD_FORJA.md#src-s036)
+    - Assuntos: não, usar, proibições, técnicas, final, git, reset, hard
+    - Trecho-guia: Não usar git reset --hard ou checkout destrutivo. Não mover conteúdo de SOMBRA para pasta principal automaticamente. Não apagar duplicidades sem inventário e recomendação. Não transformar conversa, anotação ou resumo em prova de entrega sem evidência arquivada. Não usar Document(
+  - [SRC-S037 · L364–L378 · TDD — FORJA N2 > 13. Ordem de implementação recomendada](02_TDD_FORJA.md#src-s037)
+    - Assuntos: ordem, implementação, recomendada, evidência, estado, schema, manifest, reconciliação
+    - Trecho-guia: 1. Estado, schema e manifest. 2. Reconciliação de fila e evidência. 3. Gate de fontes/regimento. 4. Pesquisa oficial e ledger. 5. Redação com template. 6. Auditoria e QA visual. 7. Draft opcional. 8. Fechamento com evidência.
+  - [SRC-S038 · L379–L395 · TDD — FORJA N2 > 14. Subsistema de auditoria adversarial — A1](02_TDD_FORJA.md#src-s038)
+    - Assuntos: produz, vinculado, audit, subsistema, auditoria, adversarial, peças, hashes
+    - Trecho-guia: forjaadversarialaudit.py implementa um ledger encadeado para peças responsivas:
+  - [SRC-S039 · L396–L400 · TDD — FORJA N2 > 15. Adendo técnico implementado — cânone editorial F7-B (15/07/2026)](02_TDD_FORJA.md#src-s039)
+    - Assuntos: adendo, técnico, implementado, cânone, editorial, f7-b, contrato, final_markdown
+    - Trecho-guia: A integração acima é aditiva ao desenho N2 histórico. O contrato vigente de F7 inclui finalmarkdown, editorialreport, editorialdiff, fable5usage e editorialfidelity; o contrato F8 exige finalmarkdown junto da trilha auditada. Para múltiplos textos, IDs e nomes usam sufixo seguro 
+
+### 4.4. ROADMAP — FORJA N2
+
+- **Arquivo preparado:** [03_ROADMAP_FORJA.md](03_ROADMAP_FORJA.md)
+- **Origem:** `03_ROADMAP_FORJA.md`
+- **Termos:** final, não, regimento, evidência, oficial, citações, visual, casos, critério, json, fontes, objetivo
+- **Blocos:**
+  - [SRC-S001 · L1–L13 · ROADMAP — FORJA N2](03_ROADMAP_FORJA.md#src-s001)
+    - Assuntos: roadmap, versão, data, status, vigente, execução, prd, prd_forja
+    - Trecho-guia: Versão: N2.0 Data: 2026-07-08 Status: vigente para execução PRD: 01PRDFORJA.md TDD: 02TDDFORJA.md Manifest: FORJAHARNESS/FORJASPECMANIFEST.json
+  - [SRC-S002 · L14–L26 · ROADMAP — FORJA N2 > 1. Princípios de rollout](03_ROADMAP_FORJA.md#src-s002)
+    - Assuntos: não, final, princípios, rollout, começar, estado, sombra, regimento
+    - Trecho-guia: 1. Não começar por Claude headless. Começar por estado, evidência, fontes e bloqueios. 2. Modo sombra não move arquivos. Sombra compara e propõe promoção; nunca sobrescreve caso real. 3. Integração degradada é estado válido. Gmail/Hermes sem login ou sem acesso não são "ok". 4. C
+  - [SRC-S003 · L27–L28 · ROADMAP — FORJA N2 > 2. Marcos](03_ROADMAP_FORJA.md#src-s003)
+    - Assuntos: marcos
+    - Trecho-guia: Documento de consulta sobre 2. Marcos.
+  - [SRC-S004 · L29–L57 · ROADMAP — FORJA N2 > 2. Marcos > M0 — Travar especificação e segurança operacional](03_ROADMAP_FORJA.md#src-s004)
+    - Assuntos: regra, json, travar, especificação, segurança, operacional, antigo, vigente
+    - Trecho-guia: Duração sugerida: 2 a 4 dias Risco: médio Objetivo: impedir que agentes executem o plano antigo.
+  - [SRC-S005 · L58–L94 · ROADMAP — FORJA N2 > 2. Marcos > M1 — Reconciliação da fila e ingestão degradável](03_ROADMAP_FORJA.md#src-s005)
+    - Assuntos: reconciliação, json, relatório, ler, demandas, caso-02, fila, ingestão
+    - Trecho-guia: Duração sugerida: 1 semana Risco: alto Objetivo: saber o estado real da fábrica antes de produzir.
+  - [SRC-S006 · L95–L129 · ROADMAP — FORJA N2 > 2. Marcos > M2 — Gate de fontes, regimento e leis gerais](03_ROADMAP_FORJA.md#src-s006)
+    - Assuntos: regimento, tribunal, não, casos, gate, fontes, leis, gerais
+    - Trecho-guia: Duração sugerida: 1 a 2 semanas Risco: alto Objetivo: bloquear redação sem base normativa e documental.
+  - [SRC-S007 · L130–L163 · ROADMAP — FORJA N2 > 2. Marcos > M3 — Pesquisa oficial e ledger de citações](03_ROADMAP_FORJA.md#src-s007)
+    - Assuntos: oficial, citações, fonte, pesquisa, final, ledger, citação, registrar
+    - Trecho-guia: Duração sugerida: 2 semanas Risco: médio Objetivo: impedir jurisprudência inventada ou mal atribuída.
+  - [SRC-S008 · L164–L197 · ROADMAP — FORJA N2 > 2. Marcos > M4 — Redação com template e visual law controlado](03_ROADMAP_FORJA.md#src-s008)
+    - Assuntos: visual, peça, template, law, padrão, anterior, word, final
+    - Trecho-guia: Duração sugerida: 2 a 4 semanas Risco: alto Objetivo: gerar minuta forte sem quebrar padrão Medina Osório.
+  - [SRC-S009 · L198–L226 · ROADMAP — FORJA N2 > 2. Marcos > M5 — Auditoria, QA visual e fechamento com evidência](03_ROADMAP_FORJA.md#src-s009)
+    - Assuntos: evidência, auditoria, visual, cumprida, fechamento, demanda, pacote, entrega
+    - Trecho-guia: Duração sugerida: 1 a 2 semanas Risco: médio Objetivo: fechar demanda somente quando ela estiver pronta e comprovada.
+  - [SRC-S010 · L227–L239 · ROADMAP — FORJA N2 > 3. Tabela de rollout](03_ROADMAP_FORJA.md#src-s010)
+    - Assuntos: sim, tabela, rollout, regimento, casos, citações, marco, entrega
+    - Trecho-guia: Documento de consulta sobre 3. Tabela de rollout.
+  - [SRC-S011 · L240–L249 · ROADMAP — FORJA N2 > 4. Ordem de casos recomendada](03_ROADMAP_FORJA.md#src-s011)
+    - Assuntos: melhor, validar, ordem, casos, recomendada, caso-14, visual, comparação
+    - Trecho-guia: 1. CASO-14: melhor para validar QA visual e comparação com entrega final. 2. CASO-04: melhor para validar estratégia, STJ/TRF1, citações e auditoria. 3. CASO-15 Campos: melhor para validar regimento TJTO e embargos. 4. CASO-02: melhor para validar duplicidade de pastas e consolid
+  - [SRC-S012 · L250–L260 · ROADMAP — FORJA N2 > 5. Backlog pós-N2](03_ROADMAP_FORJA.md#src-s012)
+    - Assuntos: backlog, pós-n2, transcrição, áudio, whatsapp, permissão, explícita, consolidação
+    - Trecho-guia: Transcrição de áudio WhatsApp com permissão explícita. Consolidação multi-e-mail por thread/caso. Interface móvel sanitizada. Banco local de citações oficiais verificadas. Automação Codex recorrente com logs de execução. Integração mais profunda com painel para aprovações.
+  - [SRC-S013 · L261–L272 · ROADMAP — FORJA N2 > 6. O que nunca será automatizado](03_ROADMAP_FORJA.md#src-s013)
+    - Assuntos: final, nunca, será, automatizado, protocolo, marcação, evidência, envio
+    - Trecho-guia: 1. Envio de e-mail ao cliente, escritório ou tribunal. 2. Protocolo judicial. 3. Assinatura digital. 4. Decisão jurídica final grave. 5. Marcação de comunicação informal como evidência final sem arquivo, mensagem, protocolo ou intervenção manual documentada. 6. Marcação de cumpri
+  - [SRC-S014 · L273–L287 · ROADMAP — FORJA N2 > 7. Critério de sucesso FORJA N2](03_ROADMAP_FORJA.md#src-s014)
+    - Assuntos: critério, sucesso, estará, operacional, quando, igor, puder, abrir
+    - Trecho-guia: FORJA N2 estará operacional quando Igor puder abrir o painel, escolher uma demanda e obter um pacote de revisão com:
+
+### 4.5. DIAGRAMAS — FORJA N2
+
+- **Arquivo preparado:** [04_DIAGRAMAS_FORJA.md](04_DIAGRAMAS_FORJA.md)
+- **Origem:** `04_DIAGRAMAS_FORJA.md`
+- **Termos:** nao, panel, sim, evidencia, participant, gmail, mermaid, harness, fonte, fontes, regimento, oficial
+- **Blocos:**
+  - [SRC-S001 · L1–L13 · DIAGRAMAS — FORJA N2](04_DIAGRAMAS_FORJA.md#src-s001)
+    - Assuntos: diagramas, versão, data, status, vigente, execução, prd, prd_forja
+    - Trecho-guia: Versão: N2.0 Data: 2026-07-08 Status: vigente para execução PRD: 01PRDFORJA.md TDD: 02TDDFORJA.md Roadmap: 03ROADMAPFORJA.md
+  - [SRC-S002 · L14–L48 · DIAGRAMAS — FORJA N2 > 1. Fluxo macro F0-F10](04_DIAGRAMAS_FORJA.md#src-s002)
+    - Assuntos: nao, sim, bloqueado, fontes, regimento, g7b, f10, fluxo
+    - Trecho-guia: Documento de consulta sobre 1. Fluxo macro F0-F10.
+  - [SRC-S003 · L49–L81 · DIAGRAMAS — FORJA N2 > 2. Maquina de estados](04_DIAGRAMAS_FORJA.md#src-s003)
+    - Assuntos: blocked, em_reconciliacao, em_fontes, em_planejamento, em_pesquisa, em_redacao, em_auditoria, em_revisao_editorial
+    - Trecho-guia: Documento de consulta sobre 2. Maquina de estados.
+  - [SRC-S004 · L82–L104 · DIAGRAMAS — FORJA N2 > 3. Fonte de verdade](04_DIAGRAMAS_FORJA.md#src-s004)
+    - Assuntos: painel, anexos, evidencia, fonte, verdade, json, comando, whatsapp
+    - Trecho-guia: Documento de consulta sobre 3. Fonte de verdade.
+  - [SRC-S005 · L105–L129 · DIAGRAMAS — FORJA N2 > 4. Sequencia de reconciliacao e ingestao](04_DIAGRAMAS_FORJA.md#src-s005)
+    - Assuntos: panel, participant, gmail, hermes, reconciliacao, state, sequencia, ingestao
+    - Trecho-guia: Documento de consulta sobre 4. Sequencia de reconciliacao e ingestao.
+  - [SRC-S006 · L130–L147 · DIAGRAMAS — FORJA N2 > 5. Gate de fontes e regimento](04_DIAGRAMAS_FORJA.md#src-s006)
+    - Assuntos: regimento, nao, gate, fontes, integral, bloquear, sim, mermaid
+    - Trecho-guia: Documento de consulta sobre 5. Gate de fontes e regimento.
+  - [SRC-S007 · L148–L163 · DIAGRAMAS — FORJA N2 > 6. Pesquisa e citacao oficial](04_DIAGRAMAS_FORJA.md#src-s007)
+    - Assuntos: citacao, oficial, nao, pesquisa, final, sim, teor, mermaid
+    - Trecho-guia: Documento de consulta sobre 6. Pesquisa e citacao oficial.
+  - [SRC-S008 · L164–L182 · DIAGRAMAS — FORJA N2 > 7. Redacao, auditoria e QA visual](04_DIAGRAMAS_FORJA.md#src-s008)
+    - Assuntos: redacao, auditoria, visual, nao, sim, blueprint, mermaid, flowchart
+    - Trecho-guia: Documento de consulta sobre 7. Redacao, auditoria e QA visual.
+  - [SRC-S009 · L183–L210 · DIAGRAMAS — FORJA N2 > 8. Entrega e cumprimento](04_DIAGRAMAS_FORJA.md#src-s009)
+    - Assuntos: igor, participant, gmail, entrega, evidence, panel, evidencia, cumprimento
+    - Trecho-guia: Documento de consulta sobre 8. Entrega e cumprimento.
+  - [SRC-S010 · L211–L253 · DIAGRAMAS — FORJA N2 > 9. Arquitetura de componentes](04_DIAGRAMAS_FORJA.md#src-s010)
+    - Assuntos: harness, word, subgraph, panel, data, end, gmail, hermes
+    - Trecho-guia: Documento de consulta sobre 9. Arquitetura de componentes.
+  - [SRC-S011 · L254–L272 · DIAGRAMAS — FORJA N2 > 10. Leitura executiva](04_DIAGRAMAS_FORJA.md#src-s011)
+    - Assuntos: leitura, executiva, manifest, fluxo, correto, reconciliar, realidade, bloquear
+    - Trecho-guia: 1. reconciliar a realidade; 2. bloquear entrada incompleta; 3. provar fonte e regimento; 4. planejar com divergencia registrada; 5. validar citacoes oficialmente; 6. redigir em template; 7. auditar; 8. revisar editorialmente com Fable 5, recompor os gates e então renderizar e ins
+  - [SRC-S012 · L273–L290 · DIAGRAMAS — FORJA N2 > 11. Adendo de leitura — fronteira F7-B (15/07/2026)](04_DIAGRAMAS_FORJA.md#src-s012)
+    - Assuntos: run, auth, fidelity, ate, adendo, leitura, fronteira, f7-b
+    - Trecho-guia: As três candidatas editoriais do diagrama (inicial + até dois retries) são internas a uma tentativa F7. O contrato da fase continua admitindo até quatro tentativas externas, cada uma com diretório e trilha próprios. O runner não chama o Fable 5 por conta própria.
+
+### 4.6. FORJA N2 — Análise crítica e planejamento corrigido
+
+- **Arquivo preparado:** [05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md)
+- **Origem:** `05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md`
+- **Termos:** não, json, entrega, tdd, regimento, oficial, evidência, caso, roadmap, painel, fonte, demanda
+- **Blocos:**
+  - [SRC-S001 · L1–L9 · FORJA N2 — Análise crítica e planejamento corrigido](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s001)
+    - Assuntos: análise, crítica, planejamento, corrigido, data, status, versão, superior
+    - Trecho-guia: Data: 2026-07-08 Status: versão superior consolidada dos quatro planejamentos FORJA; originais reescritos para N2 em 2026-07-08 Escopo: registrar falhas/acertos e justificar a correção aplicada ao PRD, TDD, roadmap e diagramas Fontes analisadas: 01PRDFORJA.md, 02TDDFORJA.md, 03RO
+  - [SRC-S002 · L10–L19 · FORJA N2 — Análise crítica e planejamento corrigido > 1. Veredito executivo](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s002)
+    - Assuntos: não, veredito, executivo, têm, painel, entrega, deve, quatro
+    - Trecho-guia: Os quatro planejamentos têm uma base útil: fases F0-F10, preocupação com regimento, red team, auditoria visual, custos e modo sombra. Porém, no estado atual, não estão prontos para implementação confiável. O principal defeito não é falta de ambição; é excesso de promessa sem cont
+  - [SRC-S003 · L20–L32 · FORJA N2 — Análise crítica e planejamento corrigido > 2. Acertos preservados](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s003)
+    - Assuntos: plano, acertos, preservados, modelo, redação, auditoria, visual, entrega
+    - Trecho-guia: 1. Modelo por fases F0-F10. A decomposição por ingestão, pesquisa, planejamento, redação, auditoria, QA visual, entrega e encerramento é aproveitável. 2. Gates humanos. A ideia de bloquear em plano jurídico, auditoria e entrega é correta. 3. Regimento antes da redação. Esse ponto
+  - [SRC-S004 · L33–L34 · FORJA N2 — Análise crítica e planejamento corrigido > 3. Falhas críticas identificadas](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s004)
+    - Assuntos: falhas, críticas, identificadas
+    - Trecho-guia: Documento de consulta sobre 3. Falhas críticas identificadas.
+  - [SRC-S005 · L35–L48 · FORJA N2 — Análise crítica e planejamento corrigido > 3. Falhas críticas identificadas > P0 — impedem execução segura](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s005)
+    - Assuntos: tdd, prd, roadmap, não, pode, fallback, execução, fonte
+    - Trecho-guia: Documento de consulta sobre P0 — impedem execução segura.
+  - [SRC-S006 · L49–L60 · FORJA N2 — Análise crítica e planejamento corrigido > 3. Falhas críticas identificadas > P1 — geram retrabalho ou falsa governança](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s006)
+    - Assuntos: pode, mas, campos, geram, retrabalho, falsa, governança, citado
+    - Trecho-guia: Documento de consulta sobre P1 — geram retrabalho ou falsa governança.
+  - [SRC-S007 · L61–L71 · FORJA N2 — Análise crítica e planejamento corrigido > 3. Falhas críticas identificadas > P2 — ajustes de qualidade](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s007)
+    - Assuntos: ajustes, qualidade, métricas, não, falha, correção, diagramas, usam
+    - Trecho-guia: Documento de consulta sobre P2 — ajustes de qualidade.
+  - [SRC-S008 · L72–L85 · FORJA N2 — Análise crítica e planejamento corrigido > 4. Princípios corrigidos do FORJA N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s008)
+    - Assuntos: não, comando, prova, entrega, oficial, vira, princípios, corrigidos
+    - Trecho-guia: 1. Painel resume; comando orienta; anexo prova. O painel nunca é prova jurídica nem prova de entrega. 2. Fonte oficial vence conveniência. SCON vale para STJ; STF e tribunais locais exigem portal oficial ou arquivo oficial arquivado. Jusbrasil, Google Scholar e IA são descoberta,
+  - [SRC-S009 · L86–L87 · FORJA N2 — Análise crítica e planejamento corrigido > 5. Escopo N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s009)
+    - Assuntos: escopo
+    - Trecho-guia: Documento de consulta sobre 5. Escopo N2.
+  - [SRC-S010 · L88–L100 · FORJA N2 — Análise crítica e planejamento corrigido > 5. Escopo N2 > Dentro do escopo](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s010)
+    - Assuntos: dentro, escopo, comandos, criar, regimento, gerar, somente, demanda
+    - Trecho-guia: Reconciliar fila real do escritório com demandas.json, comandos, pastas e evidências. Rodar ingestão assistida de e-mails e comandos existentes. Criar inventário de caso, matriz de fontes, regimento e leis gerais. Gerar blueprint jurídico com discordância registrada. Pesquisar ju
+  - [SRC-S011 · L101–L113 · FORJA N2 — Análise crítica e planejamento corrigido > 5. Escopo N2 > Fora do escopo N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s011)
+    - Assuntos: fora, escopo, automaticamente, regimento, enviar, e-mail, protocolar, judicialmente
+    - Trecho-guia: Enviar e-mail automaticamente. Protocolar judicialmente. Assinar digitalmente. Marcar demanda cumprida com base apenas no painel. Transcrever áudio WhatsApp automaticamente antes de existir fluxo técnico validado. Transformar comunicação informal em evidência final sem arquivo, m
+  - [SRC-S012 · L114–L115 · FORJA N2 — Análise crítica e planejamento corrigido > 6. Arquitetura N2 corrigida](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s012)
+    - Assuntos: arquitetura, corrigida
+    - Trecho-guia: Documento de consulta sobre 6. Arquitetura N2 corrigida.
+  - [SRC-S013 · L116–L139 · FORJA N2 — Análise crítica e planejamento corrigido > 6. Arquitetura N2 corrigida > Camadas](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s013)
+    - Assuntos: json, camadas, gestao_escritorio, local, caso, evidência, gestão, operacional
+    - Trecho-guia: 1. Gestão operacional gestaoescritorio/data/demandas.json intervencoesmanuais.json statusintegracoes.json painel local em 127.0.0.1:8765
+  - [SRC-S014 · L140–L152 · FORJA N2 — Análise crítica e planejamento corrigido > 6. Arquitetura N2 corrigida > Fonte de verdade por tipo](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s014)
+    - Assuntos: fonte, verdade, tipo, json, anexo, tribunal, informação, status
+    - Trecho-guia: Documento de consulta sobre Fonte de verdade por tipo.
+  - [SRC-S015 · L153–L154 · FORJA N2 — Análise crítica e planejamento corrigido > 7. Schema mínimo N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s015)
+    - Assuntos: schema, mínimo
+    - Trecho-guia: Documento de consulta sobre 7. Schema mínimo N2.
+  - [SRC-S016 · L155–L190 · FORJA N2 — Análise crítica e planejamento corrigido > 7. Schema mínimo N2 > Extensão em demandas.json](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s016)
+    - Assuntos: null, json, extensão, demandas, status, demanda-, aberta, version
+    - Trecho-guia: Documento de consulta sobre Extensão em demandas.json.
+  - [SRC-S017 · L191–L214 · FORJA N2 — Análise crítica e planejamento corrigido > 7. Schema mínimo N2 > FORJASTATE.json](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s017)
+    - Assuntos: json, t00, forjastate, forja_state, caseid, case-, specversion, createdat
+    - Trecho-guia: Documento de consulta sobre FORJASTATE.json.
+  - [SRC-S018 · L215–L229 · FORJA N2 — Análise crítica e planejamento corrigido > 7. Schema mínimo N2 > Ledger de fontes](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s018)
+    - Assuntos: ledger, fontes, fonte, não, verificado, cada, afirmação, crítica
+    - Trecho-guia: Cada afirmação crítica deve caber em uma destas classes:
+  - [SRC-S019 · L230–L231 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s019)
+    - Assuntos: fases, corrigidas
+    - Trecho-guia: Documento de consulta sobre 8. Fases N2 corrigidas.
+  - [SRC-S020 · L232–L239 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F0 — Vigília e reconciliação da fila](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s020)
+    - Assuntos: vigília, reconciliação, fila, demandas, json, execução, objetivo, saber
+    - Trecho-guia: Objetivo: saber o estado real antes de agir. Entrada: demandas.json, statusintegracoes.json, comandos, pastas e evidências. Execução: atualizar painel, detectar novas demandas, classificar integrações como ok, degraded, needslogin ou offline. Correção principal: Calendar não exec
+  - [SRC-S021 · L240–L246 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F1 — Ingestão segura](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s021)
+    - Assuntos: anexos, ingestão, segura, pasta, não, objetivo, criar, reconciliar
+    - Trecho-guia: Objetivo: criar ou reconciliar uma demanda sem perder contexto. Saídas: pasta, comando, anexos, hash/lista de anexos, entrada no painel. Regras: não sobrescrever pasta existente; não consolidar duas pastas CASO-02 apagando uma; deduplicar por threadId, assunto, processo e anexos.
+  - [SRC-S022 · L247–L253 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F2 — Classificação do produto e risco](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s022)
+    - Assuntos: produto, classificação, risco, tribunal, pasta, anexos, esperados, indefinido
+    - Trecho-guia: Objetivo: decidir o tipo de trabalho antes de aplicar molde jurídico. Classificações: petição, memorial, embargos, parecer, laudo, proposta, administrativo. Campos obrigatórios: tribunal provável, prazo, urgência, produto esperado, destinatário de revisão, pasta, anexos esperados
+  - [SRC-S023 · L254–L260 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F3 — Fontes, regimento e leis gerais](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s023)
+    - Assuntos: regimento, fontes, leis, gerais, tribunal, metadados, objetivo, bloquear
+    - Trecho-guia: Objetivo: bloquear redação sem base normativa. Execução: identificar tribunal, ler REGIMENTOINTERNOTRIBUNAL.md, conferir metadados, emendas posteriores e LEISGERAIS. Saídas: F3MAPAFONTESEREGIMENTO.md e sourceLedger. Gate P0: regimento ausente, incompleto ou sem metadados bloqueia
+  - [SRC-S024 · L261–L268 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F4 — Mapa do caso e estratégia](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s024)
+    - Assuntos: mapa, caso, estratégia, plano, lacunas, objetivo, transformar, documentos
+    - Trecho-guia: Objetivo: transformar documentos em plano jurídico. Execução: separar fatos documentais, declarações, inferências, hipóteses e lacunas. Rodar conselho multi-agente quando fizer sentido. Saída: F4BLUEPRINTESTRATEGICO.md. Correção principal: divergências entre personas são registra
+  - [SRC-S025 · L269–L275 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F5 — Pesquisa externa com validação oficial](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s025)
+    - Assuntos: oficial, pesquisa, externa, validação, validar, fonte, citação, não
+    - Trecho-guia: Objetivo: encontrar e validar precedentes. Execução: usar buscas e skills como descoberta; validar em fonte oficial antes de citação. Saídas: F5JURISPRUDENCIAVERIFICADA.md e F5CITACOESREMOVIDAS.md. Gate P0: precedente não localizado em fonte oficial não entra como citação final. 
+  - [SRC-S026 · L276–L282 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F6 — Redação a partir de template](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s026)
+    - Assuntos: template, redação, partir, padrão, objetivo, produzir, minuta, forte
+    - Trecho-guia: Objetivo: produzir minuta forte sem quebrar padrão do escritório. Execução: copiar template ou peça anterior; redigir com blueprint, ledger de fontes e padrão Medina Osório. Visual law: só entra se resolver cronologia, fluxo, matriz prova-argumento, contradição ou pedido. Gate: n
+  - [SRC-S027 · L283–L289 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F7 — Auditoria jurídica e factual](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s027)
+    - Assuntos: auditoria, jurídica, factual, objetivo, remover, erro, antes, pacote
+    - Trecho-guia: Objetivo: remover erro antes do pacote visual. Checks obrigatórios: citações, fatos, prazos, premissas, anexos mencionados, regimento, leis gerais, placeholders, metadados sensíveis. Saídas: F7RELATORIOAUDITORIA.md, CHECKLISTFONTESEPENDENCIAS.md. Gate: qualquer P0 volta para F4/F
+  - [SRC-S028 · L290–L296 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F8 — QA visual](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s028)
+    - Assuntos: pdf, visual, final, inspeção, página, objetivo, confirmar, realmente
+    - Trecho-guia: Objetivo: confirmar que o PDF final realmente ficou íntegro. Execução: Word COM para PDF, render de 100% das páginas, inspeção de timbre, fólio, rodapé, margens, fontes, diagramas e sobreposição. Dependências verificadas em 08/07/2026: Inkscape, Graphviz, Tectonic e Mermaid CLI e
+  - [SRC-S029 · L297–L303 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F9 — Pacote de revisão e draft opcional](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s029)
+    - Assuntos: draft, opcional, pacote, revisão, não, objetivo, entregar, igor
+    - Trecho-guia: Objetivo: entregar para Igor/Fábio revisar, não enviar automaticamente. Saídas: DOCX, PDF, relatório, checklist e preview visual. Draft Gmail: opcional, depende de autorização e approvedRecipients. Gate: prontapararevisao não é cumprida.
+  - [SRC-S030 · L304–L312 · FORJA N2 — Análise crítica e planejamento corrigido > 8. Fases N2 corrigidas > F10 — Reconciliação, entrega e aprendizado](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s030)
+    - Assuntos: entrega, f10, reconciliação, aprendizado, evidência, painel, objetivo, fechar
+    - Trecho-guia: Objetivo: fechar o ciclo sem mentira operacional. Execução: arquivar evidência de envio/protocolo/entrega, salvar final, registrar feedback, atualizar painel. Gate para cumprida: evidência real ou intervenção manual documentada. Saídas: F10DOCUMENTACAOFINAL/, DIFFORIGINALVSFINAL.
+  - [SRC-S031 · L313–L314 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s031)
+    - Assuntos: roadmap
+    - Trecho-guia: Documento de consulta sobre 9. Roadmap N2.
+  - [SRC-S032 · L315–L320 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2 > M0 — Travar especificação e segurança operacional](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s032)
+    - Assuntos: travar, especificação, segurança, operacional, json, duração, sugerida, dias
+    - Trecho-guia: Duração sugerida: 2 a 4 dias. Entrega: FORJASPECMANIFEST.json, schema de FORJASTATE.json, estados do painel e regras de evidência. Critério de pronto: os quatro documentos antigos apontam para o N2 ou estão marcados como superseded. Nenhum agente segue TDD antigo sem compatibilid
+  - [SRC-S033 · L321–L326 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2 > M1 — Reconciliação da fila e ingestão degradável](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s033)
+    - Assuntos: reconciliação, fila, ingestão, degradável, duração, sugerida, semana, entrega
+    - Trecho-guia: Duração sugerida: 1 semana. Entrega: rotina que lê painel, comandos e pastas; classifica Gmail/Hermes como ok/degraded/needslogin/offline; gera pendências claras. Critério de pronto: 10 demandas reais auditadas sem criar duplicidade nem marcar cumprida sem prova.
+  - [SRC-S034 · L327–L332 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2 > M2 — Gate de fontes, regimento e leis gerais](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s034)
+    - Assuntos: regimento, gate, fontes, leis, gerais, casos, duração, sugerida
+    - Trecho-guia: Duração sugerida: 1 a 2 semanas. Entrega: F3MAPAFONTESEREGIMENTO.md automático para casos piloto. Critério de pronto: 5 casos com tribunal identificado, regimento lido, emendas registradas e lacunas bloqueantes nominadas.
+  - [SRC-S035 · L333–L338 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2 > M3 — Pesquisa oficial e ledger de citações](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s035)
+    - Assuntos: citações, oficial, pesquisa, ledger, fonte, duração, sugerida, semanas
+    - Trecho-guia: Duração sugerida: 2 semanas. Entrega: validador de citações por fonte oficial e relatório de citações removidas. Critério de pronto: 2 casos com todas as citações finais confirmadas em fonte oficial ou arquivo-fonte arquivado.
+  - [SRC-S036 · L339–L344 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2 > M4 — Redação com template e visual law controlado](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s036)
+    - Assuntos: template, redação, visual, law, controlado, duração, sugerida, semanas
+    - Trecho-guia: Duração sugerida: 2 a 4 semanas. Entrega: uma peça piloto DOCX/PDF usando template, sem documento vazio, com diagramas apenas quando úteis. Critério de pronto: render de todas as páginas, 0 placeholders, padrão Medina Osório preservado.
+  - [SRC-S037 · L345–L352 · FORJA N2 — Análise crítica e planejamento corrigido > 9. Roadmap N2 > M5 — Auditoria, entrega e fechamento com evidência](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s037)
+    - Assuntos: entrega, evidência, auditoria, fechamento, cumprida, duração, sugerida, semanas
+    - Trecho-guia: Duração sugerida: 1 a 2 semanas. Entrega: pacote completo de revisão e fluxo de marcação cumprida somente com evidência. Critério de pronto: uma demanda piloto vai de aberta a cumprida com trilha completa: comando, fontes, minuta, auditoria, QA, entrega e evidência.
+  - [SRC-S038 · L353–L367 · FORJA N2 — Análise crítica e planejamento corrigido > 10. Critérios de aceite N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s038)
+    - Assuntos: nenhum, nenhuma, final, vira, critérios, aceite, data, fonte
+    - Trecho-guia: 1. Nenhuma fase final aceita [NÃO VERIFICADO], [VERIFICAR], [NOME], [DATA], [CRC-UF] ou placeholder equivalente. 2. Nenhuma citação jurisprudencial entra sem fonte oficial ou arquivo oficial arquivado. 3. Nenhum regimento é aceito sem fonte, versão, data de download e seção de em
+  - [SRC-S039 · L368–L369 · FORJA N2 — Análise crítica e planejamento corrigido > 11. Métricas N2](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s039)
+    - Assuntos: métricas
+    - Trecho-guia: Documento de consulta sobre 11. Métricas N2.
+  - [SRC-S040 · L370–L377 · FORJA N2 — Análise crítica e planejamento corrigido > 11. Métricas N2 > Métricas de qualidade](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s040)
+    - Assuntos: métricas, qualidade, detectadas, antes, citações, removidas, falta, fonte
+    - Trecho-guia: Citações removidas por falta de fonte oficial. Fatos reclassificados de fato documental para declaração/inferência. Pendências bloqueantes detectadas antes de draft. Placeholders encontrados antes do PDF final. Páginas com defeito visual detectadas no render.
+  - [SRC-S041 · L378–L384 · FORJA N2 — Análise crítica e planejamento corrigido > 11. Métricas N2 > Métricas operacionais](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s041)
+    - Assuntos: métricas, operacionais, tempo, falta, demandas, fila, até, pronta_para_revisao
+    - Trecho-guia: Tempo de fila até prontapararevisao. Tempo parado por falta de anexo, regimento, login ou fonte oficial. Demandas reconciliadas como abertas, vencidas, 48h, sem resposta com peça, pendência de anexos. Demandas que não foram marcadas como cumpridas por falta de evidência.
+  - [SRC-S042 · L385–L393 · FORJA N2 — Análise crítica e planejamento corrigido > 11. Métricas N2 > Métricas de custo](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s042)
+    - Assuntos: custo, métricas, real, fase, retries, diferença, estimativa, casos
+    - Trecho-guia: Custo real por fase. Retries por fase. Diferença entre estimativa e custo real. Casos bloqueados por orçamento.
+  - [SRC-S043 · L394–L422 · FORJA N2 — Análise crítica e planejamento corrigido > 12. Diagrama N2 — fluxo corrigido](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s043)
+    - Assuntos: não, sim, bloqueia, diagrama, fluxo, corrigido, regimento, fontes
+    - Trecho-guia: Documento de consulta sobre 12. Diagrama N2 — fluxo corrigido.
+  - [SRC-S044 · L423–L439 · FORJA N2 — Análise crítica e planejamento corrigido > 13. Decisões que substituem os quatro documentos anteriores](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s044)
+    - Assuntos: quatro, pode, decisões, substituem, documentos, anteriores, fonte, escopo
+    - Trecho-guia: Documento de consulta sobre 13. Decisões que substituem os quatro documentos anteriores.
+  - [SRC-S045 · L440–L450 · FORJA N2 — Análise crítica e planejamento corrigido > 14. Próximas ações recomendadas](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s045)
+    - Assuntos: ações, próximas, recomendadas, implementar, primeiro, schema, estado, reconciliação
+    - Trecho-guia: 1. Implementar primeiro o schema de estado e a reconciliação de evidências; não começar por Claude headless. 2. Rodar piloto N2 em caso já concluído, preferencialmente CASO-04 ou CASO-14, comparando contra artefatos finais existentes. 3. Depois ligar ingestão Gmail/WhatsApp em mo
+  - [SRC-S046 · L451–L455 · FORJA N2 — Análise crítica e planejamento corrigido > 15. Resumo para Igor](05_FORJA_NIVEL_2_ANALISE_E_PLANO_CORRIGIDO.md#src-s046)
+    - Assuntos: não, pode, resumo, igor, plano, dizer, original, tem
+    - Trecho-guia: O FORJA original tem boa direção, mas ainda parece um plano de demonstração. O N2 transforma em plano operacional: menos promessa, mais prova. A diferença prática é que a máquina não pode dizer "pronto" sem fonte, não pode dizer "cumprido" sem entrega, não pode usar número bonito
+
+### 4.7. 05 — Gates de Qualidade do FORJA N2 (catálogo complementar)
+
+- **Arquivo preparado:** [06_GATES_QUALIDADE_FORJA.md](06_GATES_QUALIDADE_FORJA.md)
+- **Origem:** `06_GATES_QUALIDADE_FORJA.md`
+- **Termos:** sim, fonte, não, gate, peça, caso, g7b, código, antes, lição, gates, bloqueador
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar)](06_GATES_QUALIDADE_FORJA.md#src-s001)
+    - Assuntos: qualidade, catálogo, complementar, caso, acervo, gates, aprendizados_feedback_humano, versão
+    - Trecho-guia: Versão: N2.3 | Data: 2026-07-15 Origem: mineração das análises de resultados reais da fábrica — APRENDIZADOSFEEDBACKHUMANO.md, a auditoria final do caso, registrada no acervo, a análise estratégica do caso, no acervo, o relatório de aprendizados do caso, no acervo, CASO-14 DOCUME
+  - [SRC-S002 · L9–L14 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Princípio central (diagnóstico transversal das entregas reais)](06_GATES_QUALIDADE_FORJA.md#src-s002)
+    - Assuntos: princípio, central, diagnóstico, transversal, entregas, reais, auditoria, acerta
+    - Trecho-guia: A IA acerta o eixo jurídico e erra por omissão de cautelas de advogado sênior (blindagem recursal, questões processuais laterais) e por defeitos que só aparecem na materialização. Nenhuma peça saiu protocolável na v1; 30-40% do esforço é auditoria — o harness não elimina essa aud
+  - [SRC-S003 · L15–L16 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2](06_GATES_QUALIDADE_FORJA.md#src-s003)
+    - Assuntos: catálogo, gates, fase
+    - Trecho-guia: Documento de consulta sobre Catálogo de gates por fase FORJA N2.
+  - [SRC-S004 · L17–L26 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F1-F3 INGESTÃO, CLASSIFICAÇÃO, FONTES E REGIMENTO](06_GATES_QUALIDADE_FORJA.md#src-s004)
+    - Assuntos: sim, peça, f1-f3, ingestão, classificação, fontes, regimento, fonte
+    - Trecho-guia: Documento de consulta sobre F1-F3 INGESTÃO, CLASSIFICAÇÃO, FONTES E REGIMENTO.
+  - [SRC-S005 · L27–L36 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F3-F4 PESQUISA INTERNA E BLUEPRINT](06_GATES_QUALIDADE_FORJA.md#src-s005)
+    - Assuntos: sim, pesquisa, antes, não, caso-04, f3-f4, interna, blueprint
+    - Trecho-guia: Documento de consulta sobre F3-F4 PESQUISA INTERNA E BLUEPRINT.
+  - [SRC-S006 · L37–L43 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F5 PESQUISA OFICIAL](06_GATES_QUALIDADE_FORJA.md#src-s006)
+    - Assuntos: oficial, fonte, sim, pesquisa, atribuição, frase, resp, não
+    - Trecho-guia: Documento de consulta sobre F5 PESQUISA OFICIAL.
+  - [SRC-S007 · L44–L54 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F4 PLANEJAMENTO (blueprint)](06_GATES_QUALIDADE_FORJA.md#src-s007)
+    - Assuntos: sim, blueprint, conselho, rejeitado, helena, cícero, cada, planejamento
+    - Trecho-guia: Documento de consulta sobre F4 PLANEJAMENTO (blueprint).
+  - [SRC-S008 · L55–L62 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F6REDACAOTEMPLATE](06_GATES_QUALIDADE_FORJA.md#src-s008)
+    - Assuntos: sim, fonte, referência, caso-04, fala, remover, f6redacaotemplate, f6_redacao_template
+    - Trecho-guia: Documento de consulta sobre F6REDACAOTEMPLATE.
+  - [SRC-S009 · L63–L73 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F7AUDITORIAJURIDICAFACTUAL](06_GATES_QUALIDADE_FORJA.md#src-s009)
+    - Assuntos: sim, fonte, não, e-mail, gate, cada, aspa, palavra
+    - Trecho-guia: Documento de consulta sobre F7AUDITORIAJURIDICAFACTUAL.
+  - [SRC-S010 · L74–L89 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F7-BREVISAOEDITORIALESCRITAFINAL](06_GATES_QUALIDADE_FORJA.md#src-s010)
+    - Assuntos: g7b, sim, não, editorial, modelo, relatório, limite, jurídica
+    - Trecho-guia: Política de repetição: até três candidatas editoriais internas, sempre refeitas desde o texto auditado original. Isso não consome nem amplia o limite de quatro tentativas externas da fase F7. Esgotado qualquer limite, a saída permanece bloqueada e a última versão válida não é sub
+  - [SRC-S011 · L90–L96 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F8QAVISUAL](06_GATES_QUALIDADE_FORJA.md#src-s011)
+    - Assuntos: docx, sim, f8qavisual, f8_qa_visual, código, gate, bloqueador, fonte
+    - Trecho-guia: Documento de consulta sobre F8QAVISUAL.
+  - [SRC-S012 · L97–L105 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F9PACOTEREVISAODRAFTOPCIONAL](06_GATES_QUALIDADE_FORJA.md#src-s012)
+    - Assuntos: sim, relatório, pacote, memoria_auditabilidade_forja, versão, não, cumprida, f9pacoterevisaodraftopcional
+    - Trecho-guia: Documento de consulta sobre F9PACOTEREVISAODRAFTOPCIONAL.
+  - [SRC-S013 · L106–L113 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Catálogo de gates por fase FORJA N2 > F10ENTREGAEVIDENCIAAPRENDIZADO](06_GATES_QUALIDADE_FORJA.md#src-s013)
+    - Assuntos: diretriz, lição, g10, sim, f10entregaevidenciaaprendizado, f10_entrega_evidencia_aprendizado, código, gate
+    - Trecho-guia: Documento de consulta sobre F10ENTREGAEVIDENCIAAPRENDIZADO.
+  - [SRC-S014 · L114–L128 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Taxonomia de falha de citação — 6 modos (U1, plano de upgrade 2026)](06_GATES_QUALIDADE_FORJA.md#src-s014)
+    - Assuntos: fonte, não, citação, modos, modo, conferir, lookup, sim
+    - Trecho-guia: Checklist nominal do F7, complementar ao G7.1. Toda peça registra no relatório de melhorias a conferência dos 6 modos:
+  - [SRC-S015 · L129–L138 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Tabela de lastro das proposições decisivas (U6 — por caso, no relatório de melhorias)](06_GATES_QUALIDADE_FORJA.md#src-s015)
+    - Assuntos: tabela, relatório, melhorias, peça, lastro, proposições, decisivas, caso
+    - Trecho-guia: Toda peça nasce com tabela de 10-15 linhas no máximo, no relatório de melhorias:
+  - [SRC-S016 · L139–L168 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Blindagem contra lastro aparente (U12 — caso CASO-23, 26/07/2026)](06_GATES_QUALIDADE_FORJA.md#src-s016)
+    - Assuntos: não, fonte, gate, contra, lastro, dois, fato, caso
+    - Trecho-guia: A falha que originou o bloco. Três camadas de revisão devolveram zero P0 sobre uma minuta que continha quatro. O red team interno de doze perguntas passou; o gate F7 passou; dois revisores externos de famílias distintas de modelo passaram. Todas examinaram o texto. Os erros estav
+  - [SRC-S017 · L169–L180 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Bloco "Pontos que exigem o seu olho" no e-mail de entrega (U11 — anti-complacência)](06_GATES_QUALIDADE_FORJA.md#src-s017)
+    - Assuntos: bloco, e-mail, entrega, peça, pontos, exigem, seu, olho
+    - Trecho-guia: Todo rascunho de e-mail de entrega ganha bloco fixo curto, entre a apresentação da peça e a assinatura — 3 a 6 itens, com página (máximo 6: se tudo é destaque, nada é):
+  - [SRC-S018 · L181–L191 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Técnicas com eficácia comprovada (para calibrar esforço do harness)](06_GATES_QUALIDADE_FORJA.md#src-s018)
+    - Assuntos: min, técnicas, eficácia, comprovada, calibrar, esforço, harness, humana
+    - Trecho-guia: Documento de consulta sobre Técnicas com eficácia comprovada (para calibrar esforço do harness).
+  - [SRC-S019 · L192–L197 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Comando mental de saída (antes de qualquer "pronto")](06_GATES_QUALIDADE_FORJA.md#src-s019)
+    - Assuntos: comando, mental, saída, antes, qualquer, pronto, toda, consigo
+    - Trecho-guia: Consigo provar (toda citação tem fonte), abrir (todo documento referido está nos autos), auditar o OOXML e os SVGs, explicar (toda decisão registrada) e repetir (processo documentado) este trabalho?
+  - [SRC-S020 · L198–L216 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Gate A1 — auditoria da peça adversária](06_GATES_QUALIDADE_FORJA.md#src-s020)
+    - Assuntos: sim, gate, peça, adversária, não, auditoria, tem, consequência
+    - Trecho-guia: Aplicável a toda peça responsiva conforme 09AUDITORIAADVERSARIALPONTOSDECISIVOS.md.
+  - [SRC-S021 · L217–L253 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Fonte prevalente e ancoragem de valor monetário (U13 — IMPLEMENTADO, FORJA-LASTRO-v2)](06_GATES_QUALIDADE_FORJA.md#src-s021)
+    - Assuntos: não, fonte, gate, valor, fato, caso, prevalente, exige
+    - Trecho-guia: Estado em 04/08/2026: implementado no módulo e nas rotas declaradas abaixo. A fonte canônica continua sendo forjalastro.py e o protocolo; esta tabela não substitui a execução dos testes nem a validação humana da fonte.
+  - [SRC-S022 · L254–L280 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Gates computados por código — redução da superfície de autovalidação (04/08/2026)](06_GATES_QUALIDADE_FORJA.md#src-s022)
+    - Assuntos: não, gates, gate, pass, existe, código, warn, not_applicable
+    - Trecho-guia: Antes desta frente, 42 dos 73 gates declarados nos contratos eram escritos pelo próprio agente da fase: ele recebia requiredGates no RUNCONTEXT e devolvia pass no PHASERESULT. Nenhum código conferia. A medição está em forjagateliveness.py e a catraca em testforjagateliveness.py.
+  - [SRC-S023 · L281–L304 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Gates computados por código — redução da superfície de autovalidação (04/08/2026) > Levas 12 a 17 — a superfície de autovalidação chegou a zero (04/08/2026)](06_GATES_QUALIDADE_FORJA.md#src-s023)
+    - Assuntos: não, zero, gate, regimento, forja_produto, cada, acervo, levas
+    - Trecho-guia: Dois medidores, duas catracas. forjagateliveness.py responde "quem decide cada gate" (73 de 73 computados). forjarecomputocenso.py responde "o gate dispara em caso real" — executa cada produtor contra as 63 tentativas do acervo e conta vereditos. Zero autodeclarado não é zero aut
+  - [SRC-S024 · L305–L323 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Propostas de gate REJEITADAS — e o critério que decide (04/08/2026)](06_GATES_QUALIDADE_FORJA.md#src-s024)
+    - Assuntos: doc, sigilo, não, critério, propostas, gate, rejeitadas, decide
+    - Trecho-guia: Ordem do Igor, verbatim: "tira tudo do plano de lgpd ou sigilo são petições judiciais e uso interno, isso não faz o menor sentido. Conflito de interesses e sigilo como gates automáticos não faz o menor sentido tira tudo nessa linha, qualquer preocupaçãozinha genérica ou qualquer 
+  - [SRC-S025 · L324–L357 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Propostas de gate REJEITADAS — e o critério que decide (04/08/2026) > O critério que fica, e por que ele importa nos dois sentidos](06_GATES_QUALIDADE_FORJA.md#src-s025)
+    - Assuntos: não, critério, dois, falha, origem, operacional, fica, ele
+    - Trecho-guia: O Diabob levantou o modo de falha oposto ao que a ordem combate: o agente obedecer demais — usar "tira a preocupaçãozinha genérica" como licença para matar gate que nasceu de falha real, ou para deixar de levantar risco no futuro por medo de parecer cerimonioso. Expurgar cerimôni
+  - [SRC-S026 · L358–L375 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > Propostas de gate REJEITADAS — e o critério que decide (04/08/2026) > G12 — autorização do cliente: a decisão do conselho](06_GATES_QUALIDADE_FORJA.md#src-s026)
+    - Assuntos: não, g12, autorização, diabob, cliente, decisão, conselho, faz
+    - Trecho-guia: O Igor devolveu a pergunta ("não faz sentido, não diz nada") e delegou a Efesto, Helena e Diabob. Efesto e Helena: não construir. Sem critério computável; a verificação verdadeira é humana; e a peça sempre passa pelo Fábio antes de protocolar, então o gate duplicaria uma checagem
+  - [SRC-S027 · L376–L404 · 05 — Gates de Qualidade do FORJA N2 (catálogo complementar) > § U14 — Porta única de produção (FORJA-PORTA-UNICA-v1)](06_GATES_QUALIDADE_FORJA.md#src-s027)
+    - Assuntos: não, gate, peça, produção, real, classe, lastro, bloqueia
+    - Trecho-guia: Criado em 05/08/2026 por decisão unânime de Helena, Efesto e Diabob sob delegação expressa do Igor. Registro da deliberação: CONSELHODELEGADO5DECISOES2026-08-05.md. Âncora real: o incidente CASO-04 de 02/08/2026, cuja rota — script ad hoc chamando PecaVisual direto — continuava a
+
+### 4.8. Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado)
+
+- **Arquivo preparado:** [07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md)
+- **Origem:** `07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md`
+- **Termos:** não, caso, fonte, estado, claude, peça, risco, relatório, pronto, casos, relatórios, novo
+- **Blocos:**
+  - [SRC-S001 · L1–L6 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado)](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s001)
+    - Assuntos: estado, upgrade, arte, reports, plano, revisado, detalhado, data
+    - Trecho-guia: Data: 09/07/2026 (v2 na mesma data, após revisão crítica da v1 contra os 3 relatórios) · Insumos: reports/deep-research-...md (ChatGPT), reports/CLAUDE Estado da Arte...md, reports/IA na Criação de Peças Jurídicas.md (Gemini) · Regra: nada quebra o que existe; só entra o que agre
+  - [SRC-S002 · L7–L13 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 0. Filtros aplicados de saída (decisão do Igor — não reabrir)](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s002)
+    - Assuntos: não, decisão, modelos, contexto, filtros, aplicados, saída, igor
+    - Trecho-guia: 1. Governança de confidencialidade/retention/incident disclosure: CORTADO. Os 3 relatórios empurram NIST AI RMF, EU AI Act, LGPD-como-arquitetura, políticas de logging/disclosure. Não entra nada disso: é trabalho humano de gestão do escritório, não feature — e estampa "feito por 
+  - [SRC-S003 · L14–L29 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 1. Onde os relatórios CONFIRMAM o FORJA (ativo, não lacuna — não mexer)](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s003)
+    - Assuntos: não, ponta, relatórios, evidência, gates, lições, está, mais
+    - Trecho-guia: Veredito unânime dos 3 relatórios: o FORJA está no consenso e acima do mercado médio em gates/evidência/visual. O ganho marginal NÃO está em mais geração nem mais agentes — está em verificabilidade fina e em reduzir ainda mais o custo de revisão humana.
+  - [SRC-S004 · L30–L31 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 2. Upgrades ADOTADOS](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s004)
+    - Assuntos: upgrades, adotados
+    - Trecho-guia: Documento de consulta sobre 2. Upgrades ADOTADOS.
+  - [SRC-S005 · L32–L70 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 2. Upgrades ADOTADOS > Onda 1 — baratos, valor imediato](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s005)
+    - Assuntos: não, fonte, caso, claude, casos, relatório, citação, modos
+    - Trecho-guia: U1. Taxonomia de citação em 6 modos de falha no F7. Fonte: LePhantomCite (relatório Claude §Camada A) + validador de autoridades (deep-research §Acrescentar). O que: checklist nominal do F7 com os modos de falha: (1) citação inexistente; (2) nome/número trocado; (3) misquote verb
+  - [SRC-S006 · L71–L98 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 2. Upgrades ADOTADOS > Onda 2 — médio prazo, junto com a fila](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s006)
+    - Assuntos: quando, fonte, peça, tabela, nossa, pronto, versão, caso
+    - Trecho-guia: U6. Tabela de lastro das afirmações decisivas (proveniência madura, não por frase). Fonte: deep-research §proveniência em nível de afirmação (ALCE/SelfCite/ContextCite) — adaptado: a versão por frase polui a peça e multiplica trabalho; a nossa é por PROPOSIÇÃO DECISIVA. O que: o 
+  - [SRC-S007 · L99–L104 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 2. Upgrades ADOTADOS > Onda 3 — condicional (gatilhos registrados, NÃO tarefas)](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s007)
+    - Assuntos: não, onda, condicional, gatilhos, registrados, tarefas, multiagente, função
+    - Trecho-guia: U9. Ablação de papéis multiagente. Consenso dos 3 relatórios: multiagente só onde há função de CONTROLE distinta; a vantagem cai à medida que os modelos-base melhoram. Nossa cadeia já é enxuta e cada papel tem função de controle (leitores paralelos → conselho → redator → auditore
+  - [SRC-S008 · L105–L122 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 3. Sugestões REJEITADAS (não reabrir sem fato novo)](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s008)
+    - Assuntos: não, rejeitado, gemini, chatgpt, claude, peça, reabrir, humana
+    - Trecho-guia: Documento de consulta sobre 3. Sugestões REJEITADAS (não reabrir sem fato novo).
+  - [SRC-S009 · L123–L137 · Plano de Upgrade FORJA × Estado da Arte 2026 — v2 (revisado e detalhado) > 4. Sequência de execução e critérios de pronto — EXECUTADO em 09/07/2026](07_PLANO_UPGRADE_ESTADO_DA_ARTE_2026.md#src-s009)
+    - Assuntos: feito, verde, pronto, caso, checklist, pdfs, sintético, real
+    - Trecho-guia: Limitação conhecida registrada: a detecção de branco-sobre-branco depende de o PDF expor cor de caractere ao pdfplumber (PDFs gerados por reportlab não expõem — o veneno sintético é pego pelos outros dois detectores). A camada (a) da blindagem (instrução-padrão nos leitores) cobr
+
+### 4.9. FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO
+
+- **Arquivo preparado:** [08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md)
+- **Origem:** `08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md`
+- **Termos:** json, não, fase, revisão, versão, estado, painel, visual, fonte, etapa, arquivo, contexto
+- **Blocos:**
+  - [SRC-S001 · L1–L9 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s001)
+    - Assuntos: plano, integridade, contexto, visual, gestão, revisão, status, proposta
+    - Trecho-guia: Status: proposta de implementação incremental — revisão 2 Revisado em: 09/07/2026 Base preservada: FORJA N2, fases F0–F10, Helena, Cícero, red team, verificadores, template Medina Osório, Word COM, SVG→EMF, Gmail em rascunho e revisão humana. Auditoria de origem: ../reports/AUDIT
+  - [SRC-S002 · L10–L24 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 1. Objetivo da N3](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s002)
+    - Assuntos: não, onde, objetivo, integridade, avance, todo, fonte, página
+    - Trecho-guia: A FORJA N3 não substitui a N2. Ela acrescenta uma camada de integridade para garantir que:
+  - [SRC-S003 · L25–L36 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 1.1 Correções incorporadas na revisão 2](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s003)
+    - Assuntos: revisão, correções, incorporadas, não, painel, serão, será, docx
+    - Trecho-guia: A primeira versão do plano ainda deixava sete ambiguidades que poderiam recriar os problemas auditados. Esta revisão as resolve antes da implementação:
+  - [SRC-S004 · L37–L49 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 1.2 Limites da versão](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s004)
+    - Assuntos: limites, versão, não, pretende, automatizar, envio, protocolo, substituir
+    - Trecho-guia: automatizar envio ou protocolo; substituir a decisão jurídica de Fábio, Igor ou do advogado responsável; transformar todo caso legado para o novo formato de uma vez; usar resumo como substituto do documento original; criar uma infraestrutura distribuída desnecessária; misturar at
+  - [SRC-S005 · L50–L77 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 2. Princípio central](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s005)
+    - Assuntos: confere, mesma, versão, princípio, central, pdf, novo, fluxo
+    - Trecho-guia: O novo fluxo terá uma única cadeia de identidade:
+  - [SRC-S006 · L78–L79 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3. Arquitetura incremental](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s006)
+    - Assuntos: arquitetura, incremental
+    - Trecho-guia: Documento de consulta sobre 3. Arquitetura incremental.
+  - [SRC-S007 · L80–L104 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.1 Novos artefatos canônicos por caso](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s007)
+    - Assuntos: json, caso, não, páginas, novos, artefatos, canônicos, arquivos
+    - Trecho-guia: Cada state/case-/ passará a poder conter, sem invalidar os arquivos antigos:
+  - [SRC-S008 · L105–L120 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.2 Estado derivado, não atribuído](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s008)
+    - Assuntos: estado, derivado, não, atribuído, fase, novo, módulo, proposto
+    - Trecho-guia: Novo módulo proposto: FORJAHARNESS/forjastatemachine.py.
+  - [SRC-S009 · L121–L132 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.2 Estado derivado, não atribuído > 3.2.1 Modelo de estado em três dimensões](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s009)
+    - Assuntos: blocked, modelo, estado, três, dimensões, phasecursor, qual, lifecyclestatus
+    - Trecho-guia: Um único campo status não é suficiente. A N3 separará:
+  - [SRC-S010 · L133–L180 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.2 Estado derivado, não atribuído > 3.2.2 Contrato mínimo do evento](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s010)
+    - Assuntos: evento, escritor, contrato, mínimo, json, idempotencykey, caseid, runid
+    - Trecho-guia: Regras de concorrência e recuperação:
+  - [SRC-S011 · L181–L190 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.2 Estado derivado, não atribuído > Regra de reabertura](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s011)
+    - Assuntos: regra, reabertura, pesquisa, posterior, encontrar, problema, após, continua
+    - Trecho-guia: Se uma pesquisa posterior encontrar problema após F9:
+  - [SRC-S012 · L191–L241 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.3 Manifesto do pacote](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s012)
+    - Assuntos: manifesto, path, sha256, não, zero, pendência, pacote, json
+    - Trecho-guia: FORJAPACKAGE.json será a lista definitiva do que saiu da FORJA.
+  - [SRC-S013 · L242–L259 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 3.4 Matriz de fontes de verdade](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s013)
+    - Assuntos: json, painel, fontes, fonte, matriz, verdade, canônica, pacote
+    - Trecho-guia: Nenhuma visão derivada pode ser usada para reescrever sua própria fonte canônica.
+  - [SRC-S014 · L260–L261 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4. Continuidade de contexto sem perda de sentido](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s014)
+    - Assuntos: continuidade, contexto, perda, sentido
+    - Trecho-guia: Documento de consulta sobre 4. Continuidade de contexto sem perda de sentido.
+  - [SRC-S015 · L262–L267 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.1 Correção da premissa](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s015)
+    - Assuntos: correção, premissa, contexto, longo, não, continuará, sendo, usado
+    - Trecho-guia: Contexto longo continuará sendo usado, mas não será tratado como garantia de leitura uniforme. A N3 adotará contexto longo com cadernos de evidência por fase.
+  - [SRC-S016 · L268–L283 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.2 Unidade mínima: afirmação com lastro](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s016)
+    - Assuntos: afirmação, unidade, mínima, lastro, agente, cada, fato, decisivo
+    - Trecho-guia: factId estável; texto da afirmação; entidade envolvida; data/período; sourceId; página/evento; trecho de apoio; classificação: comprovado, declarado, inferido, conflitante ou não verificado; uso permitido na peça; agente que extraiu; agente que confirmou.
+  - [SRC-S017 · L284–L298 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.3 Pacotes de entrada por fase](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s017)
+    - Assuntos: fase, originais, pacotes, entrada, índice, fatos, arquivos, recebe
+    - Trecho-guia: Documento de consulta sobre 4.3 Pacotes de entrada por fase.
+  - [SRC-S018 · L299–L310 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.4 Limites operacionais](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s018)
+    - Assuntos: recebe, limites, operacionais, documento, partes, cada, resumo, redator
+    - Trecho-guia: documento grande é indexado por partes e páginas; cada leitor registra intervalo lido, método, falha de extração e cobertura do documento; resumo nunca substitui o acesso ao original; o redator recebe os fatos/proposições aprovados e pode reabrir a fonte; o auditor recebe a peça 
+  - [SRC-S019 · L311–L322 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.5 Gate contra contaminação entre casos](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s019)
+    - Assuntos: casos, gate, contra, contaminação, relatório, novo, teste, forja_case_isolation
+    - Trecho-guia: cria lista de entidades esperadas do caso; varre peça, relatório, e-mail e manifesto por nomes exclusivos de outros casos; sinaliza referência estrangeira; permite modelos e citações comuns por whitelist; bloqueia F9 se houver entidade externa sem justificativa.
+  - [SRC-S020 · L323–L335 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.6 Cobertura, compressão e estouro de contexto](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s020)
+    - Assuntos: contexto, cobertura, compressão, estouro, cada, páginas, pacote, agente
+    - Trecho-guia: quantidade de páginas disponíveis e efetivamente cobertas; páginas sem texto, OCR duvidoso ou leitura visual pendente; itens deliberadamente excluídos e justificativa; tamanho do pacote entregue a cada agente; checkpoint de continuidade antes de trocar de agente ou resumir contex
+  - [SRC-S021 · L336–L347 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 4.7 Fidelidade semântica entre formatos](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s021)
+    - Assuntos: fidelidade, semântica, formatos, parágrafos, docx, terá, três, comparações
+    - Trecho-guia: A N3 terá três comparações complementares:
+  - [SRC-S022 · L348–L349 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 5. Gates jurídicos N3](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s022)
+    - Assuntos: gates, jurídicos
+    - Trecho-guia: Documento de consulta sobre 5. Gates jurídicos N3.
+  - [SRC-S023 · L350–L359 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 5.1 Gate F5 — fonte utilizável](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s023)
+    - Assuntos: fonte, deve, ser, gate, utilizável, artefatos, protocolavel, toda
+    - Trecho-guia: toda jurisprudência, súmula, tema, regimento e citação literal deve possuir fonte; finalUseAllowed deve ser true; citacoesNaoConferidas deve ser vazio; a fonte deve ter hash ou URL oficial + data de consulta; duplicatas de fonte devem ser consolidadas por identificador canônico.
+  - [SRC-S024 · L360–L378 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 5.2 Gate F7 — conteúdo](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s024)
+    - Assuntos: gate, conteúdo, quando, passa, somente, artefato, personas, obrigatórias
+    - Trecho-guia: p0 == 0; personas obrigatórias presentes quando aplicáveis; citações finais conferidas; fatos decisivos apontam para factId autorizado; nenhum placeholder proibido; nenhuma entidade estrangeira inexplicada; relatório e arquivo têm hashes correspondentes.
+  - [SRC-S025 · L379–L386 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 5.2 Gate F7 — conteúdo > 5.2-A Gate F7-B — texto final canônico](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s025)
+    - Assuntos: não, gate, f7-b, texto, final, canônico, tentativas, conclusão
+    - Trecho-guia: Para tentativas F7 novas, zero P0 é pré-condição, não conclusão do conteúdo textual. O operador executa forjafable5.py de forma controlada dentro da tentativa; forjarun.py não faz essa chamada automaticamente. O editor usa claude-fable-5 pela autenticação OAuth Claude Max, sem AP
+  - [SRC-S026 · L387–L397 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 5.3 Gate F9 — pacote](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s026)
+    - Assuntos: não, pacote, gate, arquivo, existir, cria, rascunho, qualquer
+    - Trecho-guia: qualquer entregável protocolável estiver com fonte não conferida; F7/F8 estiverem vencidos por mudança de hash; algum arquivo listado não existir; o anexo escolhido não for o arquivo do manifesto; EMAILRESPOSTA.txt/equivalente canônico não existir; o conjunto de anexos divergir d
+  - [SRC-S027 · L398–L412 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 5.4 Gate F10 — evidência](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s027)
+    - Assuntos: evidência, gate, f10, arquivo, válida, deve, ser, estruturada
+    - Trecho-guia: Evidência válida deve ser estruturada:
+  - [SRC-S028 · L413–L414 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6. QA visual N3](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s028)
+    - Assuntos: visual
+    - Trecho-guia: Documento de consulta sobre 6. QA visual N3.
+  - [SRC-S029 · L415–L434 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.1 Separar geração, inspeção e aprovação](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s029)
+    - Assuntos: aprovação, pdf, páginas, revisor, não, separar, geração, inspeção
+    - Trecho-guia: 1. rendered: PDF virou imagens; 2. lintpassed: verificações geométricas e textuais passaram; 3. independentreviewpassed: todas as páginas foram examinadas e registradas por agente/revisor diferente do gerador.
+  - [SRC-S030 · L435–L457 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.2 Validador SVG V2](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s030)
+    - Assuntos: texto, svg, validador, mínima, final, dentro, outro, conteúdo
+    - Trecho-guia: Novo módulo proposto: FERRAMENTAS/medinavisuallint.py.
+  - [SRC-S031 · L458–L470 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.3 Parser Markdown visual](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s031)
+    - Assuntos: markdown, parser, visual, não, correções, forja_visual, reconhecer, tratar
+    - Trecho-guia: reconhecer H1–H6; tratar blockquotes de forma própria; remover gramática Markdown que não deve aparecer; preservar listas, tabelas e notas; dimensionar colunas de tabela por conteúdo, não por divisão igual fixa; validar numeração de figuras; impedir legenda dupla; substituir o ga
+  - [SRC-S032 · L471–L484 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.4 Cobertura de conteúdo V2](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s032)
+    - Assuntos: cobertura, conteúdo, gate, linhas, caracteres, atual, usa, acima
+    - Trecho-guia: O gate atual usa linhas acima de 60 caracteres e os primeiros 150 caracteres. O novo gate deve comparar:
+  - [SRC-S033 · L485–L512 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.5 Ledger página a página](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s033)
+    - Assuntos: página, ledger, json, pass, exemplo, f8_qa_ledger, pdfsha256, pagecount
+    - Trecho-guia: Se o PDF mudar, o ledger fica automaticamente vencido.
+  - [SRC-S034 · L513–L528 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.6 Regressões visuais obrigatórias](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s034)
+    - Assuntos: regressões, visuais, obrigatórias, caso-17, caso-16, rótulos, caso-19, caso-07
+    - Trecho-guia: Transformar os defeitos reais em fixtures:
+  - [SRC-S035 · L529–L550 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 6.7 QA em quatro camadas](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s035)
+    - Assuntos: página, quatro, camadas, tabelas, cabeçalho, rodapé, fólio, branco
+    - Trecho-guia: cabeçalho ou rodapé ausente/inconsistente; número de página duplicado, cortado ou deslocado; linha órfã de título no fim da página; tabela partida de forma ilegível; página em branco não intencional; nota lateral colidindo com corpo ou fólio; figura afastada do argumento que deve
+  - [SRC-S036 · L551–L552 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7. Integração com a gestão do escritório](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s036)
+    - Assuntos: integração, gestão, escritório
+    - Trecho-guia: Documento de consulta sobre 7. Integração com a gestão do escritório.
+  - [SRC-S037 · L553–L562 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.1 Papel de ABRIRGESTAOESCRITORIO.html](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s037)
+    - Assuntos: papel, html, lançador, será, local, abrirgestaoescritorio, abrir_gestao_escritorio, preservado
+    - Trecho-guia: O lançador será preservado. Ele continuará abrindo:
+  - [SRC-S038 · L563–L574 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.2 Sincronizador file-first](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s038)
+    - Assuntos: file-first, sincronizador, servidor, pelo, novo, módulo, proposto, gestao_escritorio
+    - Trecho-guia: Novo módulo proposto: gestaoescritorio/scripts/syncforjagestao.py.
+  - [SRC-S039 · L575–L621 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.2 Sincronizador file-first > Decisão de propriedade dos dados](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s039)
+    - Assuntos: json, participant, não, demandid, vínculo, caso, sidecar, sincronizador
+    - Trecho-guia: O sincronizador não altera demandas.json. A rotina atual updatedashboardlocal.ps1 reconstrói esse arquivo e depois aplica intervencoesmanuais.json; inserir a FORJA nele criaria disputa de escrita e risco de perda no próximo refresh.
+  - [SRC-S040 · L622–L664 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.3 Visão forja unida à demanda](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s040)
+    - Assuntos: demanda, json, pass, visão, status, unida, painel, não
+    - Trecho-guia: O bloco abaixo aparece na visão enriquecida da demanda e no snapshot do painel. Sua fonte é forjastatus.json, não uma mutação de demandas.json:
+  - [SRC-S041 · L665–L677 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.3.1 Contrato de precedência](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s041)
+    - Assuntos: contrato, precedência, demanda, não, derivado, ação, manual, campo
+    - Trecho-guia: Isso evita que “pronta para revisão” apague uma pendência administrativa ou que uma ação manual antiga esconda o bloqueador técnico da FORJA.
+  - [SRC-S042 · L678–L694 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.4 Atualizações automáticas](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s042)
+    - Assuntos: criado, atualizações, automáticas, caso, aprovado, reprovado, eventos, obrigam
+    - Trecho-guia: caso criado; fase iniciada/concluída; bloqueio ou desbloqueio; parecer Helena/Cícero registrado; F7 aprovado/reprovado; F8 aprovado/reprovado; pacote criado; rascunho Gmail criado; envio confirmado; caso encerrado ou substituído.
+  - [SRC-S043 · L695–L711 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.5 Campos do painel](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s043)
+    - Assuntos: campos, painel, fase, última, cada, demanda, exibir, não
+    - Trecho-guia: “FORJA não executada”, “em andamento”, “bloqueada”, “pronta para revisão” ou “enviada”; fase atual e última fase concluída; horário da última sincronização; alerta de estado desatualizado; P0/P1 e bloqueadores; fontes oficiais: conferidas/pendentes; QA visual: páginas revisadas/t
+  - [SRC-S044 · L712–L724 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.5 Campos do painel > Links que realmente abrem](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s044)
+    - Assuntos: links, servidor, local, caminho, realmente, abrem, painel, botão
+    - Trecho-guia: O painel não emitirá links file:///C:/.... Cada botão de artefato enviará caseId + artifactId ao servidor local. O servidor resolverá o caminho exclusivamente pelo FORJAPACKAGE.json e então abrirá o arquivo com o aplicativo padrão do Windows ou a pasta correspondente.
+  - [SRC-S045 · L725–L732 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.6 Regra de status da demanda](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s045)
+    - Assuntos: demanda, regra, status, não, rascunho, criado, marca, cumprida
+    - Trecho-guia: rascunho criado não marca cumprida; readyforreview e draftawaitingreview mantêm a demanda aberta; somente sentconfirmed, protocolo ou reconciliação comprovada podem concluir; mudança manual continua possível, mas deve registrar evidência estruturada; divergência estado/painel ger
+  - [SRC-S046 · L733–L746 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 7.7 Endpoint opcional](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s046)
+    - Assuntos: api, caseid, post, endpoint, opcional, get, depois, sincronizador
+    - Trecho-guia: Depois do sincronizador file-first estável, o servidor pode expor:
+  - [SRC-S047 · L747–L748 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 8. Fechamento único do ciclo](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s047)
+    - Assuntos: fechamento, único, ciclo
+    - Trecho-guia: Documento de consulta sobre 8. Fechamento único do ciclo.
+  - [SRC-S048 · L749–L773 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 8.1 Executor canônico e retomável](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s048)
+    - Assuntos: tentativa, executor, canônico, fase, não, válida, retomável, novo
+    - Trecho-guia: O fechamento só será confiável se as fases anteriores também tiverem um caminho reproduzível. Novo módulo proposto: FORJAHARNESS/forjarun.py.
+  - [SRC-S049 · L774–L802 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 8.2 Fechamento F7→F10](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s049)
+    - Assuntos: não, sim, hashes, rascunho, fechamento, f10, aprovado, pacote
+    - Trecho-guia: Novo orquestrador proposto: FORJAHARNESS/forjaclosecycle.py.
+  - [SRC-S050 · L803–L820 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 8.3 Responsabilidades independentes](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s050)
+    - Assuntos: pode, próprio, jurídico, visual, responsabilidades, independentes, aprovar, final
+    - Trecho-guia: Em contingência, uma mesma IA pode desempenhar papéis em execuções separadas, mas nunca aprovar no mesmo runId o artefato que acabou de gerar sem uma nova revisão independente registrada.
+  - [SRC-S051 · L821–L822 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 9. Plano de implementação seguro](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s051)
+    - Assuntos: plano, implementação, seguro
+    - Trecho-guia: Documento de consulta sobre 9. Plano de implementação seguro.
+  - [SRC-S052 · L823–L836 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 0 — Congelamento da referência](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s052)
+    - Assuntos: etapa, congelamento, referência, estados, plano, mudança, comportamento, nenhuma
+    - Trecho-guia: criar inventário e hashes dos scripts atuais; salvar snapshot dos 21 estados e dados da gestão; registrar quais casos são N2, reconciliados ou legados; documentar a matriz de fontes de verdade e schemas antes do primeiro código; fixar o hash do plano e dos contratos usados em cad
+  - [SRC-S053 · L837–L855 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 1 — Testes que reproduzem os erros](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s053)
+    - Assuntos: teste, criar, testes, adicionar, etapa, reproduzem, erros, mudança
+    - Trecho-guia: corrigir validatef7integration.py; adicionar teste de JSON global; adicionar testes de regressão de fase; adicionar testes de duas escritas concorrentes e revisão desatualizada; simular interrupção entre evento, materialização e sincronização; adicionar teste de fonte não autoriz
+  - [SRC-S054 · L856–L868 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 2 — Manifesto e máquina de estados em sombra](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s054)
+    - Assuntos: estados, etapa, manifesto, máquina, sombra, eventos, json, estado
+    - Trecho-guia: Mudança de comportamento: apenas gravação paralela, sem controlar produção.
+  - [SRC-S055 · L869–L882 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 3 — Contexto estruturado](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s055)
+    - Assuntos: etapa, contexto, estruturado, página, mudança, comportamento, novos, cadernos
+    - Trecho-guia: Mudança de comportamento: novos cadernos passam a acompanhar casos-piloto.
+  - [SRC-S056 · L883–L897 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 4 — QA visual V2](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s056)
+    - Assuntos: visual, etapa, implementar, peças, defeitos, mudança, comportamento, gate
+    - Trecho-guia: Mudança de comportamento: o gate novo roda em sombra e compara com o atual.
+  - [SRC-S057 · L898–L912 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 5 — Sincronização com a gestão em sombra](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s057)
+    - Assuntos: não, etapa, sincronização, gestão, sombra, painel, json, demandas
+    - Trecho-guia: Mudança de comportamento: gera arquivo de comparação, não altera painel oficial.
+  - [SRC-S058 · L913–L926 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 6 — Fechamento único em piloto](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s058)
+    - Assuntos: fechamento, etapa, único, piloto, caso, executar, pelo, painel
+    - Trecho-guia: Mudança de comportamento: ativada por feature flag em um caso escolhido.
+  - [SRC-S059 · L927–L936 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > Etapa 7 — Replay e promoção gradual](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s059)
+    - Assuntos: replay, etapa, promoção, gradual, novos, casos, caso-02, caso-07
+    - Trecho-guia: replay em CASO-02, CASO-07, CASO-16, CASO-17, CASO-19/Fábio e Plano de Saúde; corrigir primeiro os módulos, não reescrever silenciosamente as peças; gerar relatório antes/depois; ativar N3 por novos casos; manter N2 disponível até três ciclos novos estáveis e o replay dos seis ca
+  - [SRC-S060 · L937–L968 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 10. Feature flags e rollback](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s060)
+    - Assuntos: false, flags, rollback, feature, json, eventstorev1, statemachinev2, managementsidecarv1
+    - Trecho-guia: ativação independente; dependências explícitas: stateMachineV2 depende de eventStoreV1; fechamento depende de state machine, F7 e F8 válidos; default false até concluir etapa de sombra; nenhuma migração destrutiva; backup antes da primeira escrita em cada base; escrita atômica co
+  - [SRC-S061 · L969–L1010 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 11. Matriz de testes obrigatórios](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s061)
+    - Assuntos: reprovar, evento, após, bloquear, pdf, não, fase, estado
+    - Trecho-guia: Documento de consulta sobre 11. Matriz de testes obrigatórios.
+  - [SRC-S062 · L1011–L1025 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 11.1 Corpus de regressão obrigatório](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s062)
+    - Assuntos: regressão, não, corpus, obrigatório, caso, replay, provar, relatório
+    - Trecho-guia: Cada replay roda sobre cópia imutável do caso, produz relatório antes/depois e não substitui a peça histórica. O objetivo é provar o gate, não “embelezar” retroativamente o acervo.
+  - [SRC-S063 · L1026–L1054 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 12. Critérios de aceitação da N3](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s063)
+    - Assuntos: pacote, não, todos, estado, painel, critérios, aceitação, pode
+    - Trecho-guia: A versão só pode ser promovida quando todos os itens abaixo forem verdadeiros:
+  - [SRC-S064 · L1055–L1056 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 13. Definição de pronto por camada](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s064)
+    - Assuntos: definição, pronto, camada
+    - Trecho-guia: Documento de consulta sobre 13. Definição de pronto por camada.
+  - [SRC-S065 · L1057–L1064 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 13. Definição de pronto por camada > Estado](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s065)
+    - Assuntos: estado, transições, validadas, eventos, imutáveis, idempotentes, recuperáveis, concorrência
+    - Trecho-guia: transições validadas; eventos imutáveis, idempotentes e recuperáveis; concorrência sem perda de atualização; reabertura explícita; compatibilidade N2.
+  - [SRC-S066 · L1065–L1072 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 13. Definição de pronto por camada > Jurídico](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s066)
+    - Assuntos: jurídico, fontes, finais, autorizadas, fatos, lastro, mapa, proveniência
+    - Trecho-guia: fontes finais autorizadas; fatos com lastro; mapa de proveniência dos parágrafos decisivos; Helena, Cícero e red team registrados; classificação clara de papel, público e política de liberação.
+  - [SRC-S067 · L1073–L1081 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 13. Definição de pronto por camada > Visual](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s067)
+    - Assuntos: visual, nenhuma, pdf, svg, válido, colisão, conhecida, gramática
+    - Trecho-guia: SVG válido; nenhuma colisão conhecida; nenhuma gramática Markdown vazada; todas as páginas revisadas por execução independente do gerador; estrutura Word/PDF validada; QA vinculado ao hash do PDF.
+  - [SRC-S068 · L1082–L1089 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 13. Definição de pronto por camada > Pacote](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s068)
+    - Assuntos: pacote, manifesto, completo, anexos, exatos, e-mail, canônico, hashes
+    - Trecho-guia: manifesto completo; anexos exatos; e-mail canônico; hashes, bytes e IDs confirmados; retry sem duplicar rascunho.
+  - [SRC-S069 · L1090–L1100 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 13. Definição de pronto por camada > Gestão](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s069)
+    - Assuntos: gestão, json, sidecar, forja_status, atualizado, unido, visão, demandas
+    - Trecho-guia: sidecar forjastatus.json atualizado e unido à visão; demandas.json preservado como base da gestão; próxima ação real; status sem conclusão prematura; links por artifactId e evidência acessíveis; alerta de desatualização.
+  - [SRC-S070 · L1101–L1117 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 14. Ordem de construção recomendada](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s070)
+    - Assuntos: ordem, construção, recomendada, schemas, contratos, fase, baseline, rollback
+    - Trecho-guia: 1. schemas, contratos de fase e baseline de rollback; 2. testes de regressão, concorrência e interrupção; 3. eventos atômicos + máquina de estados; 4. executor retomável + cadernos de contexto; 5. gate jurídico F5/F7/F9; 6. QA visual V2 independente; 7. manifesto de pacote + fech
+  - [SRC-S071 · L1118–L1150 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 15. Métricas e aprendizado operacional](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s071)
+    - Assuntos: painel, métricas, aprendizado, operacional, cada, dados, fase, quantidade
+    - Trecho-guia: Cada execução produzirá FORJARUNMETRICS.json com dados suficientes para detectar degradação sem depender da memória do agente:
+  - [SRC-S072 · L1151–L1166 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 16. Riscos controlados da implementação](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s072)
+    - Assuntos: caso, riscos, controlados, implementação, json, sidecar, risco, controle
+    - Trecho-guia: Documento de consulta sobre 16. Riscos controlados da implementação.
+  - [SRC-S073 · L1167–L1177 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 16.1 Controle de versão do próprio plano](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s073)
+    - Assuntos: versão, controle, próprio, plano, não, contratos, esta, revisão
+    - Trecho-guia: esta revisão 2 continua proposta e não muda o manifesto canônico N2; schemas e contratos terão versão própria; cada piloto registra o hash deste documento e dos contratos usados; alteração de regra durante um caso cria nova versão, não reinterpreta retroativamente eventos antigos
+  - [SRC-S074 · L1178–L1196 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 17. Resultado esperado](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s074)
+    - Assuntos: resultado, esperado, não, final, usuário, abrirá, abrir_gestao_escritorio, html
+    - Trecho-guia: Ao final, o usuário abrirá ABRIRGESTAOESCRITORIO.html e verá, para cada demanda:
+  - [SRC-S075 · L1197–L1201 · FORJA N3 — PLANO DE INTEGRIDADE, CONTEXTO, VISUAL E GESTÃO > 18. Nota histórica de implementação posterior — F7-B (15/07/2026)](08_PLANO_FORJA_N3_INTEGRIDADE_VISUAL_E_GESTAO.md#src-s075)
+    - Assuntos: implementação, f7-b, nota, histórica, posterior, tentativas, sufixo, json
+    - Trecho-guia: A revisão 2 deste plano nasceu antes da implementação do F7-B. O acréscimo acima registra o estado vigente sem reclassificar eventos históricos: tentativas anteriores permanecem interpretadas pelo contrato e specHash usados à época; tentativas novas exigem o bundle editorial.
+
+### 4.10. FORJA — Auditoria adversarial e pontos decisivos
+
+- **Arquivo preparado:** [09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md)
+- **Origem:** `09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md`
+- **Termos:** não, peça, fonte, achado, resultado, prova, pedido, quando, adversarial, jurídica, decisão, adversária
+- **Blocos:**
+  - [SRC-S001 · L1–L6 · FORJA — Auditoria adversarial e pontos decisivos](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s001)
+    - Assuntos: auditoria, adversarial, pontos, decisivos, versão, data, aplicação, toda
+    - Trecho-guia: Versão: A1 Data: 10/07/2026 Aplicação: toda peça que responda, confronte ou dependa de alegações formuladas por parte adversária.
+  - [SRC-S002 · L7–L18 · FORJA — Auditoria adversarial e pontos decisivos > 1. Finalidade](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s002)
+    - Assuntos: finalidade, alterar, acrescentar, investigação, específica, peça, adversária, antes
+    - Trecho-guia: Acrescentar à FORJA uma investigação específica da peça adversária antes da definição da resposta. O objetivo não é multiplicar acusações, mas localizar erros raros e materialmente relevantes que possam alterar admissibilidade, prova, credibilidade, ônus, preclusão, competência, 
+  - [SRC-S003 · L19–L24 · FORJA — Auditoria adversarial e pontos decisivos > 2. Regra de prudência](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s003)
+    - Assuntos: não, regra, prudência, prova, diligência, jurídica, resultado, negativo
+    - Trecho-guia: Resultado negativo de pesquisa não prova inexistência. A classificação correta é “não localizado após diligência”, acompanhada das consultas realizadas. A expressão “jurisprudência inexistente”, a imputação de falsidade e o pedido de sanção só podem aparecer em texto externo quan
+  - [SRC-S004 · L25–L40 · FORJA — Auditoria adversarial e pontos decisivos > 2. Regra de prudência > 2.1 Taxonomia jurídica de triagem](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s004)
+    - Assuntos: taxonomia, jurídica, triagem, art, hipótese, fato, incontroverso, não
+    - Trecho-guia: Nos processos sujeitos ao CPC, o indício deve ser relacionado, sem antecipar conclusão, a uma das hipóteses do art. 80:
+  - [SRC-S005 · L41–L42 · FORJA — Auditoria adversarial e pontos decisivos > 3. Funcionamento em três passagens](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s005)
+    - Assuntos: funcionamento, três, passagens
+    - Trecho-guia: Documento de consulta sobre 3. Funcionamento em três passagens.
+  - [SRC-S006 · L43–L54 · FORJA — Auditoria adversarial e pontos decisivos > 3. Funcionamento em três passagens > F3 — Inventário e verificação](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s006)
+    - Assuntos: inventário, verificação, pedidos, data, proposição, registrar, dois, artefato
+    - Trecho-guia: confirmar leitura integral e mapear os pedidos adversários; inventariar todas as autoridades citadas, inclusive número, tribunal, relator, data, trecho, proposição atribuída e localização na peça; conferir existência, identidade, literalidade, contexto, vigência e aderência da pr
+  - [SRC-S007 · L55–L71 · FORJA — Auditoria adversarial e pontos decisivos > 3. Funcionamento em três passagens > F4 — Decisão estratégica](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s007)
+    - Assuntos: decisão, achado, risco, estratégica, quando, prova, melhor, avalia
+    - Trecho-guia: Cada achado recebe uma decisão registrada:
+  - [SRC-S008 · L72–L88 · FORJA — Auditoria adversarial e pontos decisivos > 3. Funcionamento em três passagens > F7 — Rechecagem adversarial](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s008)
+    - Assuntos: rechecagem, adversarial, não, artefato, adversarial_recheck, revisor, tenta, derrubar
+    - Trecho-guia: O revisor tenta derrubar os próprios achados:
+  - [SRC-S009 · L89–L101 · FORJA — Auditoria adversarial e pontos decisivos > 4. Estados da verificação jurisprudencial](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s009)
+    - Assuntos: não, fonte, estados, verificação, jurisprudencial, autoridade, proposição, estado
+    - Trecho-guia: Documento de consulta sobre 4. Estados da verificação jurisprudencial.
+  - [SRC-S010 · L102–L111 · FORJA — Auditoria adversarial e pontos decisivos > 5. Escada de reação](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s010)
+    - Assuntos: escada, reação, corrigir, silenciosamente, premissa, resposta, demonstrar, inconsistência
+    - Trecho-guia: 1. corrigir silenciosamente a premissa na resposta; 2. demonstrar a inconsistência com fonte oficial; 3. pedir esclarecimento, juntada, desentranhamento ou valoração adequada, conforme cabimento; 4. explorar a perda de credibilidade apenas na medida necessária ao mérito; 5. formu
+  - [SRC-S011 · L112–L124 · FORJA — Auditoria adversarial e pontos decisivos > 6. Gates bloqueantes](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s011)
+    - Assuntos: gates, bloqueantes, peça, não, dois, resposta, classificação, aplicabilidade
+    - Trecho-guia: peça de resposta sem classificação de aplicabilidade; leitura integral ou pedidos adversários não confirmados; citação inventariada ainda pendente; divergência sem fonte oficial; “não localizado” sem dois canais oficiais documentados; contradição ou ponto decisivo sem fontes dos 
+  - [SRC-S012 · L125–L136 · FORJA — Auditoria adversarial e pontos decisivos > 7. Implementação](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s012)
+    - Assuntos: json, peças, implementação, não, módulo, comando, forja_adversarial_audit, prompt
+    - Trecho-guia: módulo e comando: forjaadversarialaudit.py; prompt obrigatório: injetado por forjaheadless.py em F3, F4 e F7; contratos: phasecontracts/F3.json, F4.json e F7.json; promoção de fase: validada por forjarun.py; pacote N3: validado e vinculado por hashes em forjapackage.py; fechament
+  - [SRC-S013 · L137–L139 · FORJA — Auditoria adversarial e pontos decisivos > 8. Resultado esperado no trabalho jurídico](09_AUDITORIA_ADVERSARIAL_PONTOS_DECISIVOS.md#src-s013)
+    - Assuntos: resultado, esperado, trabalho, jurídico, quando, existir, deve, resposta
+    - Trecho-guia: A resposta deixa de apenas rebater argumentos aparentes e passa a testar a confiabilidade estrutural da peça adversária. Quando existir um achado realmente decisivo, a FORJA deve entregá-lo com prova, consequência e providência. Quando não existir, deve registrar a investigação s
+
+### 4.11. PRD — FORJA N4: Raciocínio, Prova e Ciência
+
+- **Arquivo preparado:** [10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md)
+- **Origem:** `10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md`
+- **Termos:** não, deve, pode, fonte, gate, ser, caso, produto, auditoria, cobertura, cada, prova
+- **Blocos:**
+  - [SRC-S001 · L1–L17 · PRD — FORJA N4: Raciocínio, Prova e Ciência](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s001)
+    - Assuntos: não, prd, raciocínio, prova, ciência, revisão, versão, vigente
+    - Trecho-guia: Produto: FORJA, harness de elaboração, revisão e entrega assistida de petições Versão proposta: N4.0 Data: 2026-07-10 Status: versão final do planejamento N4; candidata não vigente Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 Base vigente: ../FORJASPECMANI
+  - [SRC-S002 · L18–L38 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 1. Decisão de produto](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s002)
+    - Assuntos: deve, cada, ser, decisão, redação, produto, não, será
+    - Trecho-guia: A N4 não será uma nova fábrica nem uma troca do motor de redação. Será uma camada adicional de raciocínio verificável sobre a FORJA existente.
+  - [SRC-S003 · L39–L40 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 2. Linha de base que a N4 deve respeitar](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s003)
+    - Assuntos: linha, base, deve, respeitar
+    - Trecho-guia: Documento de consulta sobre 2. Linha de base que a N4 deve respeitar.
+  - [SRC-S004 · L41–L58 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 2. Linha de base que a N4 deve respeitar > 2.1 Capacidades já existentes e preservadas](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s004)
+    - Assuntos: capacidades, existentes, preservadas, página, parte, atuais, duplicá-las, fluxo
+    - Trecho-guia: A N4 parte das capacidades atuais, sem duplicá-las:
+  - [SRC-S005 · L59–L68 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 2. Linha de base que a N4 deve respeitar > 2.2 Restrição operacional constatada](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s005)
+    - Assuntos: restrição, operacional, constatada, não, json, pode, ser, levantamento
+    - Trecho-guia: No levantamento de 2026-07-10, a pasta state/ continha 21 diretórios de caso, mas ainda não apresentava os novos artefatos canônicos esperados para a promoção plena da N3, como n3artifacts, F3FACTLEDGER.json, CONTEXTVALIDATION.json ou auditorias A1 materializadas nesses estados.
+  - [SRC-S006 · L69–L82 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 2. Linha de base que a N4 deve respeitar > 2.3 Lições da auditoria de 2026-07-10 incorporadas como requisito](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s006)
+    - Assuntos: auditoria, deve, lições, visual, incorporadas, requisito, reais, ciclo
+    - Trecho-guia: A auditoria de artefatos reais do ciclo N3, registrada em ../reports/AUDITORIAULTRACODE2026-07-10.md, trouxe cinco lições que a N4 deve transformar em gate ou fixture:
+  - [SRC-S007 · L83–L84 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s007)
+    - Assuntos: problemas, resolve
+    - Trecho-guia: Documento de consulta sobre 3. Problemas que a N4 resolve.
+  - [SRC-S008 · L85–L88 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P1 — Cobertura aparente](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s008)
+    - Assuntos: cobertura, aparente, peça, pode, parecer, completa, ainda, deixar
+    - Trecho-guia: Uma peça pode parecer completa e ainda deixar sem resposta um pedido, fundamento, documento, evento ou possível omissão.
+  - [SRC-S009 · L89–L92 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P2 — Coerência temática sem identidade processual](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s009)
+    - Assuntos: coerência, temática, identidade, processual, mesmo, texto, pode, preservar
+    - Trecho-guia: O texto pode preservar a tese geral e, ao mesmo tempo, alternar indevidamente entre “não conhecimento”, “improcedência”, “rejeição” e “extinção”, ou modificar a qualificação de um mesmo evento em seções diferentes.
+  - [SRC-S010 · L93–L96 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P3 — Lastro genérico](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s010)
+    - Assuntos: lastro, genérico, seu, expressões, segundo, material, escritório, indicam
+    - Trecho-guia: Expressões como “segundo o material do escritório” indicam uma origem ampla, mas não permitem confirmar a afirmação exata, seu local, seu alcance ou sua condição de validade.
+  - [SRC-S011 · L97–L106 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P4 — Comparação documental incompleta](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s011)
+    - Assuntos: comparação, documental, incompleta, alegação, peças, responsivas, sucessivas, tese
+    - Trecho-guia: Em peças responsivas ou sucessivas, a tese de repetição, omissão, inovação ou contradição pode ser formulada sem uma matriz que compare:
+  - [SRC-S012 · L107–L110 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P5 — Tese correta, mas superdimensionada](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s012)
+    - Assuntos: tese, correta, mas, superdimensionada, precedente, estudo, pode, apoiar
+    - Trecho-guia: Um precedente ou estudo pode apoiar apenas parte do raciocínio e ser usado como se resolvesse toda a controvérsia.
+  - [SRC-S013 · L111–L114 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P6 — Plano sem critérios de falsificação](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s013)
+    - Assuntos: plano, critérios, falsificação, peça, pode, ser, revisada, impressão
+    - Trecho-guia: Uma peça pode ser revisada por impressão geral, sem perguntas literais que permitam declarar objetivamente se cumpriu ou não o que o caso exigia.
+  - [SRC-S014 · L115–L118 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P7 — Consenso artificial](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s014)
+    - Assuntos: consenso, artificial, não, agentes, diferentes, podem, repetir, mesma
+    - Trecho-guia: Agentes diferentes podem repetir a mesma premissa, inclusive quando ela veio do comando inicial e não dos autos. Quantidade de concordâncias não substitui verificação independente.
+  - [SRC-S015 · L119–L122 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P8 — Conhecimento interdisciplinar usado como ornamento](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s015)
+    - Assuntos: conhecimento, interdisciplinar, usado, ornamento, temas, psicologia, saúde, contabilidade
+    - Trecho-guia: Temas de psicologia, saúde, contabilidade, economia, engenharia ou políticas públicas podem ser importantes para a tese, mas são frequentemente tratados por generalizações, referências vagas ou autoridade acadêmica sem conexão precisa com a proposição defendida.
+  - [SRC-S016 · L123–L128 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 3. Problemas que a N4 resolve > P9 — Aprendizado sem causa](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s016)
+    - Assuntos: causa, aprendizado, correção, humana, pode, ser, registrada, apenas
+    - Trecho-guia: Uma correção humana pode ser registrada apenas como texto “antes/depois”, sem indicar se a causa foi erro factual, fonte inadequada, falha de recuperação, estratégia, terminologia, visual, estilo ou preferência.
+  - [SRC-S017 · L129–L143 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 4. Objetivos](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s017)
+    - Assuntos: objetivos, obter, cobertura, explícita, todas, questões, pedidos, materiais
+    - Trecho-guia: 1. Obter cobertura explícita de todas as questões e pedidos materiais. 2. Tornar afirmações decisivas rastreáveis até fonte, localizador e condição de uso. 3. Detectar contradições de evento, termo, data, cálculo e conclusão no documento inteiro. 4. Distinguir tese principal, sub
+  - [SRC-S018 · L144–L145 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s018)
+    - Assuntos: princípios, obrigatórios
+    - Trecho-guia: Documento de consulta sobre 5. Princípios obrigatórios.
+  - [SRC-S019 · L146–L153 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.1 Incremento, não reconstrução](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s019)
+    - Assuntos: não, incremento, reconstrução, ampliar, ledgers, existentes, preservar, ids
+    - Trecho-guia: ampliar ledgers existentes; preservar IDs, hashes, fases e pacotes atuais; não criar banco novo como pré-requisito; não reprocessar ou reclassificar silenciosamente o histórico; ativar cada capacidade por flag e caso-piloto.
+  - [SRC-S020 · L154–L157 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.2 Estrutura antes da prosa](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s020)
+    - Assuntos: estrutura, antes, prosa, redação, final, começa, depois, existirem
+    - Trecho-guia: A redação final só começa depois de existirem perguntas, cobertura, teses, fontes e critérios mínimos compatíveis com o produto.
+  - [SRC-S021 · L158–L170 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.3 Afirmação decisiva com lastro exato](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s021)
+    - Assuntos: afirmação, decisiva, lastro, exato, fonte, toda, capaz, alterar
+    - Trecho-guia: Toda afirmação capaz de alterar conclusão, pedido, prazo, cabimento, cálculo ou acusação deve possuir:
+  - [SRC-S022 · L171–L174 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.4 Ausência não vira certeza](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s022)
+    - Assuntos: não, ausência, vira, certeza, localizado, após, diligência, continua
+    - Trecho-guia: “Não localizado após diligência” continua diferente de “não existe”. A regra vale para jurisprudência, documento, artigo científico, evento e alegação.
+  - [SRC-S023 · L175–L185 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.5 Pesquisa científica não substitui prova](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s023)
+    - Assuntos: não, pesquisa, científica, substitui, prova, pode, substituir, lci
+    - Trecho-guia: O LCI pode explicar conceitos, mecanismos, riscos, métodos, padrões populacionais ou contexto técnico. Não pode, por si só:
+  - [SRC-S024 · L186–L189 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.6 Critério por disciplina e por pergunta](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s024)
+    - Assuntos: disciplina, pergunta, critério, não, existe, única, pirâmide, evidência
+    - Trecho-guia: Não existe uma única pirâmide de evidência adequada a toda área. O peso de um estudo depende da pergunta, do desenho, da disciplina, do método, da amostra, das limitações e da adequação da transferência para o caso.
+  - [SRC-S025 · L190–L193 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.7 Revisor independente como execução distinta](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s025)
+    - Assuntos: revisor, independente, execução, distinta, obrigatório, produção, revisão, devem
+    - Trecho-guia: Produção e revisão devem ter runId e decisões separados. Não é obrigatório contratar outro fornecedor ou usar outra família de modelo; é obrigatório impedir autoaprovação silenciosa.
+  - [SRC-S026 · L194–L197 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.8 Métrica não substitui mérito](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s026)
+    - Assuntos: não, métrica, substitui, mérito, similaridade, percentuais, cobertura, confiança
+    - Trecho-guia: Percentuais de cobertura, similaridade e confiança são instrumentos de controle, não conclusão jurídica. Não haverá probabilidade numérica de vitória nem sanção automática por similaridade textual.
+  - [SRC-S027 · L198–L203 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 5. Princípios obrigatórios > 5.9 Conteúdo externo é fonte, não comando](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s027)
+    - Assuntos: não, fonte, conteúdo, externo, comando, pesquisa, abstract, pdf
+    - Trecho-guia: Abstract, PDF, página de periódico e metadado de API são tratados exclusivamente como material de pesquisa. Texto imperativo encontrado dentro da fonte não altera objetivo, ferramentas, critérios ou estado do ciclo. O scanner existente pode registrar anomalias técnicas reais, com
+  - [SRC-S028 · L204–L205 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 6. Usuários e produtos alcançados](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s028)
+    - Assuntos: usuários, produtos, alcançados
+    - Trecho-guia: Documento de consulta sobre 6. Usuários e produtos alcançados.
+  - [SRC-S029 · L206–L214 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 6. Usuários e produtos alcançados > Usuários](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s029)
+    - Assuntos: usuários, análise, igor, coordenador, operacional, fábio, osório, responsável
+    - Trecho-guia: Igor, como coordenador operacional; Fábio Osório, como responsável final pela orientação e revisão; advogados e revisores do escritório; Helena, na análise estratégica, científica e de falsificação; Cícero, na análise jurídica, processual e de prudência acusatória; agentes da FOR
+  - [SRC-S030 · L215–L229 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 6. Usuários e produtos alcançados > Produtos](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s030)
+    - Assuntos: produtos, embargos, petição, inicial, contestação, réplica, impugnação, contrarrazões
+    - Trecho-guia: petição inicial; contestação, réplica e impugnação; contrarrazões e contraminutas; memoriais; embargos e respostas a embargos; manifestações incidentais; pareceres e estudos internos; pacotes de apoio à revisão humana.
+  - [SRC-S031 · L230–L231 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 7. Capacidades funcionais N4](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s031)
+    - Assuntos: capacidades, funcionais
+    - Trecho-guia: Documento de consulta sobre 7. Capacidades funcionais N4.
+  - [SRC-S032 · L232–L249 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R01 — Árvore dinâmica de questões](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s032)
+    - Assuntos: n4-r01, árvore, dinâmica, questões, não, pergunta, resposta, partial
+    - Trecho-guia: Antes da redação, a FORJA cria de 20 a 100 perguntas conforme complexidade e produto. Não haverá preenchimento artificial para alcançar número mínimo: o intervalo serve como faixa de profundidade, e a justificativa registra quando o caso exige menos ou mais.
+  - [SRC-S033 · L250–L263 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R02 — Matriz de cobertura integral](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s033)
+    - Assuntos: cobertura, n4-r02, matriz, integral, pedido, existente, peça, pedidos
+    - Trecho-guia: pedido ou alegação → fonte → resposta existente → decisão existente → situação atual → tratamento na nova peça → pedido correspondente.
+  - [SRC-S034 · L264–L299 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R03 — Grafo jurídico leve](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s034)
+    - Assuntos: grafo, enumeração, supports, relação, n4-r03, jurídico, leve, json
+    - Trecho-guia: Um arquivo JSON ligará nós já presentes nos ledgers:
+  - [SRC-S035 · L300–L315 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R04 — Matriz de maturidade e contaminação de teses](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s035)
+    - Assuntos: decisão, n4-r04, matriz, maturidade, contaminação, teses, tese, força
+    - Trecho-guia: força documental; força jurídica; lacunas; melhor objeção; risco de enfraquecer tese superior; posição: principal, subsidiária, reserva ou não usar; gatilho de ativação; veículo processual adequado; decisão de Helena; decisão de Cícero; decisão humana final quando houver divergên
+  - [SRC-S036 · L316–L328 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R05 — TDD jurídico do caso](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s036)
+    - Assuntos: n4-r05, tdd, jurídico, caso, cada, versão, não, apenas
+    - Trecho-guia: Cada peça terá 10 a 25 testes literais definidos antes da versão final, além dos gates gerais da FORJA.
+  - [SRC-S037 · L329–L339 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R06 — Auditoria metacognitiva e anti-concordância](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s037)
+    - Assuntos: quais, n4-r06, auditoria, metacognitiva, anti-concordância, revisão, registrará, premissas
+    - Trecho-guia: quais premissas vieram do usuário, e-mail ou comando; quais foram confirmadas nos autos; quais permaneceram apenas como declaração; onde múltiplos agentes repetiram uma premissa sem verificação independente; qual recomendação mudou por fato novo, erro identificado ou preferência 
+  - [SRC-S038 · L340–L345 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R07 — Ledger longitudinal de condutas](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s038)
+    - Assuntos: ledger, condutas, n4-r07, longitudinal, casos, histórico, sucessivo, poderá
+    - Trecho-guia: Em casos com histórico sucessivo, a FORJA poderá organizar condutas alegadas ou verificadas em dois polos e no tempo.
+  - [SRC-S039 · L346–L357 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R08 — Mapa de fatores decisórios](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s039)
+    - Assuntos: mapa, n4-r08, fatores, decisórios, decisões, julgador, anteriores, próprio
+    - Trecho-guia: Decisões anteriores do próprio caso serão decompostas em:
+  - [SRC-S040 · L358–L371 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R09 — Estratégia condicional de composição](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s040)
+    - Assuntos: composição, n4-r09, estratégia, condicional, não, quando, aplicável, poderá
+    - Trecho-guia: Quando aplicável, a FORJA poderá registrar:
+  - [SRC-S041 · L372–L375 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R10 — Identidade terminológica e de eventos](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s041)
+    - Assuntos: n4-r10, identidade, terminológica, eventos, cria, vocabulário, canônico, caso
+    - Trecho-guia: A FORJA cria um vocabulário canônico do caso e compara o documento inteiro. Alternâncias como “não conhecimento”, “improcedência”, “rejeição” e “extinção” serão bloqueadas quando descrevem o mesmo evento sem distinção expressa e fonte correspondente.
+  - [SRC-S042 · L376–L391 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R11 — Comparação estruturada entre documentos](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s042)
+    - Assuntos: n4-r11, comparação, estruturada, documentos, argumento, peças, responsivas, sucessivas
+    - Trecho-guia: Para peças responsivas, sucessivas ou integrativas, a FORJA comparará unidades argumentativas, não apenas porcentagem de texto.
+  - [SRC-S043 · L392–L402 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R12 — Validador intertemporal](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s043)
+    - Assuntos: n4-r12, validador, intertemporal, relevante, ato, quando, houver, mudança
+    - Trecho-guia: Quando houver mudança normativa relevante, o sistema identificará:
+  - [SRC-S044 · L403–L416 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R13 — Cenários objetivos de quantificação](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s044)
+    - Assuntos: quantificação, n4-r13, cenários, objetivos, quando, fórmula, entradas, tese
+    - Trecho-guia: Quando a tese envolver valor, proveito econômico, atualização, dano, custo ou impacto mensurável, a FORJA poderá produzir:
+  - [SRC-S045 · L417–L428 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R14 — Lastro Científico Interdisciplinar — LCI](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s045)
+    - Assuntos: lci, n4-r14, lastro, científico, interdisciplinar, pesquisa, proposição, jurídica
+    - Trecho-guia: A F2 classifica a pesquisa científica como:
+  - [SRC-S046 · L429–L440 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R15 — Alcance real de precedentes e analogias](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s046)
+    - Assuntos: n4-r15, alcance, real, precedentes, analogias, cada, autoridade, decisiva
+    - Trecho-guia: Cada autoridade decisiva deve registrar:
+  - [SRC-S047 · L441–L458 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R16 — Consistência global](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s047)
+    - Assuntos: hash, n4-r16, consistência, global, identidade, entrega, arquivo, final
+    - Trecho-guia: A F7 executará verificação transversal de:
+  - [SRC-S048 · L459–L477 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R17 — Aprendizado por causa](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s048)
+    - Assuntos: n4-r17, aprendizado, causa, preferência, diff, humano, f10, será
+    - Trecho-guia: O diff humano da F10 será classificado em:
+  - [SRC-S049 · L478–L495 · PRD — FORJA N4: Raciocínio, Prova e Ciência > N4-R18 — Evidência da própria execução](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s049)
+    - Assuntos: n4-r18, evidência, própria, execução, interno, pacote, registrará, plano
+    - Trecho-guia: plano usado; artefatos de entrada e saída; chamadas de ferramentas; fontes recuperadas; verificações executadas; revisões rejeitadas ou aceitas; decisões humanas; hashes e runId; custo e duração apenas quando medidos.
+  - [SRC-S050 · L496–L497 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 8. Produto LCI em detalhe](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s050)
+    - Assuntos: produto, lci, detalhe
+    - Trecho-guia: Documento de consulta sobre 8. Produto LCI em detalhe.
+  - [SRC-S051 · L498–L507 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 8. Produto LCI em detalhe > 8.1 Modos](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s051)
+    - Assuntos: não, modos, modo, quando, proposição, duas, strict, revisão
+    - Trecho-guia: O modo strict não transforma toda petição em revisão sistemática. PRISMA será referência de transparência para revisões formais; no uso ordinário, a FORJA aplicará uma revisão rápida de evidências proporcional ao caso.
+  - [SRC-S052 · L508–L516 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 8. Produto LCI em detalhe > 8.2 Rotas de pesquisa planejadas](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s052)
+    - Assuntos: rotas, pesquisa, planejadas, descoberta, manual, crossref, metadados, doi
+    - Trecho-guia: Crossref: metadados e DOI; OpenAlex: descoberta ampla e relações entre trabalhos, mediante acesso disponível; PubMed/PMC via NCBI: saúde, medicina e áreas biomédicas; bases disciplinares adicionais quando acessíveis e justificadas; busca manual e encadeamento de referências; Goog
+  - [SRC-S053 · L517–L536 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 8. Produto LCI em detalhe > 8.3 Ficha mínima de estudo](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s053)
+    - Assuntos: estudo, ficha, mínima, versão, proposição, sustenta, cada, selecionado
+    - Trecho-guia: Cada estudo selecionado deve registrar:
+  - [SRC-S054 · L537–L544 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 8. Produto LCI em detalhe > 8.4 Estados de síntese](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s054)
+    - Assuntos: evidência, estados, síntese, não, convergent, fontes, adequadas, convergem
+    - Trecho-guia: convergent — fontes adequadas convergem; mixed — resultados relevantes divergem; weak — evidência insuficiente ou metodologicamente frágil; absent — não foi localizada evidência adequada; nottransferable — existe evidência, mas não pode ser transportada para a proposição do caso.
+  - [SRC-S055 · L545–L558 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 8. Produto LCI em detalhe > 8.5 Uso permitido na peça](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s055)
+    - Assuntos: uso, permitido, peça, não, contextual_support, technical_definition, mechanism_support, risk_support
+    - Trecho-guia: contextualsupport; technicaldefinition; mechanismsupport; risksupport; methodologicalsupport; notforindividualfact; notforcausalclaim.
+  - [SRC-S056 · L559–L578 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 9. Jornada N4 dentro de F0–F10](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s056)
+    - Assuntos: f10, dentro, jornada, fonte, apenas, registrar, preservar, cobertura
+    - Trecho-guia: Internamente, F5 passa a ter duas vias nomeadas: F5J (pesquisa jurídica oficial, comportamento vigente, inalterado) e F5C (Lastro Científico Interdisciplinar, condicional à classificação de F2). Os dois rótulos existem apenas dentro de F5 para fins de contrato, artefato e diagram
+  - [SRC-S057 · L579–L580 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s057)
+    - Assuntos: gates, produto
+    - Trecho-guia: Documento de consulta sobre 10. Gates de produto.
+  - [SRC-S058 · L581–L584 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-0 — Base operacional](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s058)
+    - Assuntos: gate, n4-0, base, operacional, não, pode, ser, promovida
+    - Trecho-guia: N4 não pode ser promovida sem evidência de ciclos N3 reais, com ledgers, contexto, auditoria, visual e gestão coerentes.
+  - [SRC-S059 · L585–L588 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-1 — Questões](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s059)
+    - Assuntos: gate, n4-1, questões, toda, questão, material, está, respondida
+    - Trecho-guia: Toda questão material está respondida, explicitamente bloqueada ou aceita por decisão humana nominada.
+  - [SRC-S060 · L589–L592 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-2 — Cobertura](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s060)
+    - Assuntos: gate, n4-2, cobertura, todo, pedido, alegação, ponto, decisivo
+    - Trecho-guia: Todo pedido, alegação e ponto decisivo possui tratamento e consequência identificáveis.
+  - [SRC-S061 · L593–L596 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-3 — Relações](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s061)
+    - Assuntos: relações, gate, n4-3, nenhum, decisivo, aponta, inexistente, fato
+    - Trecho-guia: Nenhum nó decisivo aponta para ID inexistente; fato, tese, fonte, pedido e decisão mantêm relações válidas.
+  - [SRC-S062 · L597–L600 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-4 — Terminologia e tempo](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s062)
+    - Assuntos: gate, n4-4, terminologia, tempo, não, existe, alternância, processual
+    - Trecho-guia: Não existe alternância processual, data ou regime temporal material sem justificativa.
+  - [SRC-S063 · L601–L604 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-5 — Testes do caso](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s063)
+    - Assuntos: testes, gate, n4-5, caso, todos, bloqueantes, versão, vigente
+    - Trecho-guia: Todos os testes bloqueantes da versão vigente passam. Mudança de critério exige versionamento e justificativa.
+  - [SRC-S064 · L605–L608 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-6 — Ciência](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s064)
+    - Assuntos: gate, n4-6, ciência, quando, lci, aplicável, nenhuma, citação
+    - Trecho-guia: Quando LCI é aplicável, nenhuma citação acadêmica entra na peça sem identidade confirmada, fonte lida no nível necessário, alcance delimitado e estado de correção/retratação consultado.
+  - [SRC-S065 · L609–L612 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-7 — Metacognição](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s065)
+    - Assuntos: gate, n4-7, metacognição, premissas, externas, não, confirmadas, consenso
+    - Trecho-guia: Premissas externas não confirmadas, consenso repetido e mudanças de recomendação estão explicitados no relatório interno.
+  - [SRC-S066 · L613–L616 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-8 — Consistência global](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s066)
+    - Assuntos: gate, n4-8, consistência, global, peça, pedidos, quadros, diagramas
+    - Trecho-guia: Peça, pedidos, quadros, diagramas, relatório e e-mail não divergem sobre fatos, termos, valores, ressalvas ou pendências.
+  - [SRC-S067 · L617–L620 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-9 — Aprendizado](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s067)
+    - Assuntos: gate, n4-9, aprendizado, correção, estrutural, vira, regra, após
+    - Trecho-guia: Correção estrutural só vira regra após causa classificada, exemplo reproduzível e teste correspondente.
+  - [SRC-S068 · L621–L626 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 10. Gates de produto > Gate N4-10 — Expedição](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s068)
+    - Assuntos: hash, entrega, quando, gate, n4-10, expedição, antes, arquivo
+    - Trecho-guia: Antes da entrega, o arquivo selecionado deve ter o mesmo hash do pacote auditado, metadados válidos e registro reconciliado com o disco. Depois da entrega, o hash do anexo é reconferido quando o canal disponibilizar o arquivo; quando não disponibilizar, valem o artifactId, o hash
+  - [SRC-S069 · L627–L646 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 11. Critérios de aceitação](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s069)
+    - Assuntos: zero, possuem, critérios, aceitação, bloqueio, justificativa, documento, evidência
+    - Trecho-guia: 1. 100% das afirmações decisivas do piloto possuem lastro exato ou bloqueio. 2. 100% dos pedidos e alegações materiais possuem estado na matriz de cobertura. 3. Zero termo processual material conflitante sem justificativa. 4. Zero referência para nó, documento, fonte ou estudo in
+  - [SRC-S070 · L647–L648 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 12. Métricas](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s070)
+    - Assuntos: métricas
+    - Trecho-guia: Documento de consulta sobre 12. Métricas.
+  - [SRC-S071 · L649–L660 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 12. Métricas > Qualidade](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s071)
+    - Assuntos: qualidade, cobertura, testes, questões, materiais, pedidos, alegações, afirmações
+    - Trecho-guia: cobertura de questões materiais; cobertura de pedidos e alegações; afirmações decisivas com fonte exata; contradições globais detectadas antes da revisão humana; testes do caso aprovados/reprovados por versão; citações jurídicas e científicas verificadas; estudos com alcance e li
+  - [SRC-S072 · L661–L670 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 12. Métricas > Operação](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s072)
+    - Assuntos: operação, versão, duração, fase, módulo, número, reaberturas, causa
+    - Trecho-guia: duração por fase e módulo; número de reaberturas e causa; artefatos produzidos e invalidados por hash; modo LCI usado; fontes consultadas e indisponíveis; sincronização com a gestão; diferença entre versão produzida e versão humana aprovada.
+  - [SRC-S073 · L671–L680 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 12. Métricas > Métricas proibidas como verdade de mérito](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s073)
+    - Assuntos: métricas, proibidas, verdade, mérito, prova, substituto, probabilidade, numérica
+    - Trecho-guia: probabilidade numérica de vitória; “confiança” sem calibração e sem base; similaridade textual como prova de má-fé; quantidade de artigos como substituto de qualidade; número de agentes concordantes como substituto de prova.
+  - [SRC-S074 · L681–L699 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 13. Fora do escopo N4 inicial](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s074)
+    - Assuntos: fora, escopo, inicial, protocolo, troca, generalizada, modelo-base, catálogo
+    - Trecho-guia: troca generalizada do modelo-base; catálogo de fornecedores de IA; compra de GPU, servidor ou infraestrutura nova; fine-tuning, LoRA, QLoRA ou treinamento por reforço; banco vetorial, relacional ou de grafos como pré-requisito; busca científica autônoma ilimitada; revisão sistemá
+  - [SRC-S075 · L700–L701 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 14. Triagem da análise externa recebida](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s075)
+    - Assuntos: triagem, análise, externa, recebida
+    - Trecho-guia: Documento de consulta sobre 14. Triagem da análise externa recebida.
+  - [SRC-S076 · L702–L715 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 14. Triagem da análise externa recebida > Incorporado](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s076)
+    - Assuntos: incorporado, afirmação, unidade, rastreável, coerência, terminológica, global, matriz
+    - Trecho-guia: afirmação como unidade rastreável; coerência terminológica global; matriz de comparação entre peças sucessivas; alcance e limites de precedentes analógicos; cenários objetivos de quantificação; verificação intertemporal; trilha operacional por execução; baseline, regressão, sombr
+  - [SRC-S077 · L716–L723 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 14. Triagem da análise externa recebida > Incorporado com redução de escopo](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s077)
+    - Assuntos: não, incorporado, redução, escopo, vira, significa, grafo, conhecimento
+    - Trecho-guia: grafo de conhecimento vira JSON leve sobre os ledgers, sem banco novo; memória institucional vira arquivos, testes e retrospectivas versionadas; diversidade de revisão significa execução independente, não obrigação de fornecedor diferente; PRISMA inspira transparência no modo str
+  - [SRC-S078 · L724–L737 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 14. Triagem da análise externa recebida > Deferido ou rejeitado nesta versão](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s078)
+    - Assuntos: modelos, deferido, rejeitado, nesta, versão, portfólio, alegações, comerciais
+    - Trecho-guia: portfólio de modelos e alegações comerciais não verificadas; substituição do motor por suposta geração mais nova; projeto de GPU/VRAM e modelos locais gigantes; fine-tuning antes de existir corpus classificado e avaliação estável; reconstrução da camada de dados; armazenamento de
+  - [SRC-S079 · L738–L739 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 15. Entregáveis esperados após implementação](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s079)
+    - Assuntos: entregáveis, esperados, após, implementação
+    - Trecho-guia: Documento de consulta sobre 15. Entregáveis esperados após implementação.
+  - [SRC-S080 · L740–L756 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 15. Entregáveis esperados após implementação > Internos por caso](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s080)
+    - Assuntos: caso, quando, internos, aplicável, árvore, questões, matriz, cobertura
+    - Trecho-guia: árvore de questões; matriz de cobertura; grafo jurídico leve; identidade de eventos e termos; comparação documental, quando aplicável; maturidade de teses; testes próprios do caso; mapa intertemporal e cenários quantitativos, quando aplicáveis; protocolo e ledger científico, quan
+  - [SRC-S081 · L757–L766 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 15. Entregáveis esperados após implementação > Externos](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s081)
+    - Assuntos: externos, petição, limpa, marcações, laboratoriais, quadro, tabela, gráfico
+    - Trecho-guia: petição limpa, sem marcações laboratoriais; quadro, tabela, gráfico ou diagrama apenas quando reduzir esforço cognitivo; fontes jurídicas e acadêmicas citadas com alcance calibrado; relatório de melhorias para o escritório; pacote de revisão com pendências reais e arquivos exatos
+  - [SRC-S082 · L767–L781 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 16. Regra de promoção](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s082)
+    - Assuntos: promoção, manifest, regra, atual, roadmap, poderá, tornar-se, vigente
+    - Trecho-guia: A N4 só poderá tornar-se vigente quando:
+  - [SRC-S083 · L782–L789 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 17. Estado de execução em 11/07/2026](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s083)
+    - Assuntos: estado, execução, cobertura, testes, caso-04, agint, artefatos, arquitetura
+    - Trecho-guia: A arquitetura deste PRD foi implementada como candidata N4.0-candidate, sem substituir por presunção a especificação vigente. Estão ativos por flags: árvore de questões, cobertura, grafo de raciocínio, testes do caso, identidade terminológica, comparação documental, direito inter
+  - [SRC-S084 · L790–L802 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 17. Estado de execução em 11/07/2026 > Adendo do Conselho - 11/07/2026](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s084)
+    - Assuntos: não, adendo, conselho, independente, três, baselines, final, exige
+    - Trecho-guia: A auditoria independente corrigiu a expressão acima. As três baselines preservam 24/24 artefatos, zero P0, 10/10 testes e 10/10 mutações literais, mas possuem dois P1 jurídicos cada: Helena não emitiu aprovação específica suficiente para uso final e Cícero rejeitou a versão corre
+  - [SRC-S085 · L803–L806 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 18. Extensão metodológica PSO-Pet — 11/07/2026](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s085)
+    - Assuntos: extensão, metodológica, pso-pet, incorpora, sombra, perfil, metodológico, descrito
+    - Trecho-guia: A FORJA incorpora, em sombra, o perfil metodológico descrito em 14METODOVANAKENAPLICADOAPETICOES.md. A extensão não cria nova fase nem promove a N4. Ela explicita a petição como intervenção jurídico-processual projetada e acrescenta o seguinte requisito funcional:
+  - [SRC-S086 · L807–L823 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 18. Extensão metodológica PSO-Pet — 11/07/2026 > N4-R19 — Definição, diagnóstico e desenho da intervenção](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s086)
+    - Assuntos: definição, não, n4-r19, diagnóstico, desenho, intervenção, resultado, requisitos
+    - Trecho-guia: Antes da redação detalhada, casos classificados como completos ou intensivos devem produzir:
+  - [SRC-S087 · L824–L836 · PRD — FORJA N4: Raciocínio, Prova e Ciência > 19. Adendo de compatibilidade com a base vigente — F7-B (15/07/2026)](10_PRD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s087)
+    - Assuntos: não, f7-b, base, vigente, ser, adendo, compatibilidade, original
+    - Trecho-guia: Este PRD N4 permanece candidato e não reinterpreta seu planejamento original. Contudo, qualquer implementação futura da N4 deve herdar a subfase F7-B já incorporada à base vigente:
+
+### 4.12. TDD — FORJA N4: Raciocínio, Prova e Ciência
+
+- **Arquivo preparado:** [11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md)
+- **Origem:** `11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md`
+- **Termos:** json, não, técnico, artefatos, caso, responsabilidades, identidade, testes, quando, f10, são, fase
+- **Blocos:**
+  - [SRC-S001 · L1–L16 · TDD — FORJA N4: Raciocínio, Prova e Ciência](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s001)
+    - Assuntos: tdd, raciocínio, prova, ciência, versão, roadmap, proposta, data
+    - Trecho-guia: Versão proposta: N4.0 Data: 2026-07-10 Status: versão final do desenho técnico; não implementado Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 PRD: 10PRDFORJAN4RACIOCINIOPROVACIENCIA.md Roadmap: 12ROADMAPFORJAN4RACIOCINIOPROVACIENCIA.md Diagramas: 13DIAGRAM
+  - [SRC-S002 · L17–L32 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 1. Objetivo técnico](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s002)
+    - Assuntos: objetivo, técnico, caso, adicionar, arquitetura, file-first, camada, raciocínio
+    - Trecho-guia: Adicionar à arquitetura file-first da FORJA uma camada de raciocínio auditável que:
+  - [SRC-S003 · L33–L34 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s003)
+    - Assuntos: decisões, arquiteturais
+    - Trecho-guia: Documento de consulta sobre 2. Decisões arquiteturais.
+  - [SRC-S004 · L35–L38 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D1 — F0–F10 permanece intacto](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s004)
+    - Assuntos: f10, permanece, intacto, não, serão, criadas, fases, f11
+    - Trecho-guia: Não serão criadas fases F11 ou F12. A pesquisa científica será uma via interna F5C executada dentro de F5 e condicionada pela classificação de F2.
+  - [SRC-S005 · L39–L42 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D2 — Ledgers atuais são fonte, N4 é relação derivada](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s005)
+    - Assuntos: ledgers, atuais, são, fonte, relação, derivada, fatos, documentos
+    - Trecho-guia: Fatos, documentos, proposições e fontes continuam nos ledgers N3. A N4 não copiará seu conteúdo integral; armazenará referências estáveis e relações.
+  - [SRC-S006 · L43–L46 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D3 — Arquivo primeiro](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s006)
+    - Assuntos: arquivo, primeiro, armazenamento, inicial, será, json, markdown, versionado
+    - Trecho-guia: O armazenamento inicial será JSON/Markdown versionado por caso. Banco relacional, vetorial ou de grafos não é dependência da N4.
+  - [SRC-S007 · L47–L56 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D4 — Artefatos candidatos isolados](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s007)
+    - Assuntos: artefatos, candidatos, isolados, arquivos, enquanto, estiver, sombra, seus
+    - Trecho-guia: Enquanto a N4 estiver em sombra, seus arquivos ficarão em:
+  - [SRC-S008 · L57–L62 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D5 — Validação híbrida](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s008)
+    - Assuntos: validação, híbrida, estrutura, ids, hashes, datas, números, cobertura
+    - Trecho-guia: estrutura, IDs, hashes, datas, números, cobertura e invariantes: código determinístico; classificação semântica, alcance de fontes, objeções e síntese: execução inteligente; conclusão grave ou acusatória: gate humano já previsto na FORJA.
+  - [SRC-S009 · L63–L66 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D6 — Falha explícita](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s009)
+    - Assuntos: falha, explícita, base, acadêmica, indisponível, documento, ilegível, doi
+    - Trecho-guia: Base acadêmica indisponível, documento ilegível, DOI divergente ou teste sem resposta não vira aprovação. O estado deve ser degraded, blocked, partial ou notapplicable, conforme contrato.
+  - [SRC-S010 · L67–L72 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 2. Decisões arquiteturais > D7 — Sem dependência obrigatória de modelo novo](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s010)
+    - Assuntos: novo, dependência, obrigatória, modelo, usa, roteamento, existente, revisor
+    - Trecho-guia: A N4 usa o roteamento existente. Revisor independente significa nova execução e novo runId; não exige outro fornecedor.
+  - [SRC-S011 · L73–L90 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 3. Topologia incremental](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s011)
+    - Assuntos: topologia, incremental, contratos, text, forja_run, f0-f10, existentes, forja_reasoning
+    - Trecho-guia: Os nomes são contratos propostos. A implementação pode distribuí-los em pacote interno, desde que não misture responsabilidades nem quebre os artefatos.
+  - [SRC-S012 · L91–L92 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4. Componentes propostos](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s012)
+    - Assuntos: componentes, propostos
+    - Trecho-guia: Documento de consulta sobre 4. Componentes propostos.
+  - [SRC-S013 · L93–L110 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.1 forjareasoning.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s013)
+    - Assuntos: forjareasoning, forja_reasoning, responsabilidades, construir, atualizar, árvore, questões, montar
+    - Trecho-guia: construir e atualizar árvore de questões; montar matriz de cobertura; derivar grafo jurídico leve; calcular completude estrutural sem decidir mérito; manter maturidade de teses; produzir módulos condicionais de conduta, fatores decisórios e composição.
+  - [SRC-S014 · L111–L123 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.2 forjaconsistency.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s014)
+    - Assuntos: forjaconsistency, forja_consistency, responsabilidades, identidade, canônica, eventos, termos, comparação
+    - Trecho-guia: identidade canônica de eventos e termos; comparação estruturada entre documentos; verificação intertemporal; cenários de quantificação; consistência transversal entre peça, pedidos, visuais, relatório e e-mail; detecção de alterações de sentido.
+  - [SRC-S015 · L124–L134 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.3 forjacasetests.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s015)
+    - Assuntos: testes, teste, forjacasetests, forja_case_tests, responsabilidades, versionar, específicos, caso
+    - Trecho-guia: versionar testes específicos do caso; distinguir teste bloqueante, obrigatório para revisão e informativo; executar testes determinísticos; registrar avaliação semântica independente; impedir relaxamento retroativo do critério; invalidar resultados quando a peça ou o teste muda d
+  - [SRC-S016 · L135–L148 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.4 forjascience.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s016)
+    - Assuntos: forjascience, forja_science, responsabilidades, classificar, modo, lci, gerar, protocolo
+    - Trecho-guia: classificar modo LCI; gerar protocolo de busca; consultar adaptadores bibliográficos; deduplicar e verificar identidade das fontes; manter fichas de estudos; avaliar adequação metodológica por disciplina e proposição; sintetizar convergência, divergência e limites; mapear evidênc
+  - [SRC-S017 · L149–L158 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.5 forjametacognition.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s017)
+    - Assuntos: premissa, forjametacognition, forja_metacognition, responsabilidades, separar, declarada, confirmada, detectar
+    - Trecho-guia: separar premissa declarada de premissa confirmada; detectar consenso derivado da mesma fonte ou resumo; registrar mudança de recomendação e sua causa; apontar otimização artificial de métricas; produzir melhor objeção e alternativa explicativa.
+  - [SRC-S018 · L159–L168 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.6 forjalearning.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s018)
+    - Assuntos: teste, regra, forjalearning, forja_learning, responsabilidades, consumir, diff, humano
+    - Trecho-guia: consumir o diff humano já existente; classificar cada alteração por causa; propor teste de regressão para erro estrutural; manter proposta de aprendizado separada da regra vigente; promover regra somente após aprovação e teste.
+  - [SRC-S019 · L169–L181 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 4.7 forjan4validate.py](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s019)
+    - Assuntos: forjan4validate, forja_n4_validate, validador, agregador, valida, schemas, verifica, ids
+    - Trecho-guia: valida schemas; verifica IDs, referências e hashes; confirma aplicabilidade dos módulos; roda gates N4; gera N4VALIDATION.json; não altera conteúdo para fazê-lo passar.
+  - [SRC-S020 · L182–L219 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 5. Estrutura de artefatos por fase](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s020)
+    - Assuntos: json, não, estrutura, artefatos, fase, aplicabilidade, text, state
+    - Trecho-guia: Arquivos condicionais continuam obrigatórios como registro de aplicabilidade. Quando o módulo não se aplicar, o arquivo mínimo conterá applicability: "notapplicable" e justificativa; omissão não equivale a não aplicabilidade.
+  - [SRC-S021 · L220–L252 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 6. Contrato comum de artefato N4](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s021)
+    - Assuntos: artefato, contrato, comum, required, sourcehashes, producerrunid, reviewerrunid, t00
+    - Trecho-guia: Todo artefato terá envelope mínimo:
+  - [SRC-S022 · L253–L254 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7. Schemas funcionais](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s022)
+    - Assuntos: schemas, funcionais
+    - Trecho-guia: Documento de consulta sobre 7. Schemas funcionais.
+  - [SRC-S023 · L255–L295 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.1 Árvore de questões](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s023)
+    - Assuntos: árvore, questões, category, procedural_event, não, supportids, material, pergunta
+    - Trecho-guia: IDs são estáveis; pergunta removida vira retired, não desaparece; resposta depende de supportIds quando factual; pergunta material sem resposta bloqueia F6 ou exige decisão humana registrada.
+  - [SRC-S024 · L296–L328 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.2 Matriz de cobertura](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s024)
+    - Assuntos: matriz, cobertura, material, covered, intentionally_excluded, json, items, coverageid
+    - Trecho-guia: covered; partiallycovered; intentionallyexcluded; blocked; notapplicable.
+  - [SRC-S025 · L329–L362 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.3 Grafo jurídico leve](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s025)
+    - Assuntos: supports, grafo, json, scope, partial, jurídico, leve, fact-012
+    - Trecho-guia: Enumeração canônica de relation (idêntica ao PRD N4-R03):
+  - [SRC-S026 · L363–L382 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.4 Identidade de eventos e termos](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s026)
+    - Assuntos: identidade, eventos, termos, não, conhecimento, json, events, eventid
+    - Trecho-guia: O validador varre título, corpo, quadros, legendas, pedidos, relatório e e-mail. Ocorrência proibida pode ser aceita apenas se estiver contrastando conceitos e tiver marcação semântica correspondente.
+  - [SRC-S027 · L383–L420 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.5 Comparação documental](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s027)
+    - Assuntos: texto, comparação, documental, normalizado, repeated_with_no_material_novelty, json, comparisonsets, setid
+    - Trecho-guia: repeatedwithnomaterialnovelty; repeatedwithnewbasis; newissuefrompriordecision; legitimateclarification; possibleprequestioning; notcomparable; uncertain.
+  - [SRC-S028 · L421–L445 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.6 Maturidade de teses](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s028)
+    - Assuntos: maturidade, teses, tese, json, theses, thesisid, thesis-002, statement
+    - Trecho-guia: Não haverá cálculo agregado de “força da tese” que esconda dimensões diferentes.
+  - [SRC-S029 · L446–L474 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.7 Testes jurídicos do caso](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s029)
+    - Assuntos: testes, jurídicos, caso, json, suiteid, case-tdd-v1, draftedbeforefinaltext, true
+    - Trecho-guia: supersedesTestId; razão; autor da decisão; hash anterior; reexecução completa.
+  - [SRC-S030 · L475–L495 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.8 Intertemporalidade](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s030)
+    - Assuntos: intertemporalidade, regime, json, issues, issueid, temp-001, legalregimequestion, aplicável
+    - Trecho-guia: Data inferida não pode ser gravada como comprovada.
+  - [SRC-S031 · L496–L520 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.9 Quantificação](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s031)
+    - Assuntos: base, percentual, quantificação, name, unit, brl, json, scenarios
+    - Trecho-guia: Valores monetários devem preservar unidade, data-base e regra de arredondamento. Intervalos só existem se as extremidades tiverem base.
+  - [SRC-S032 · L521–L543 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.10 Ledger longitudinal de condutas](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s032)
+    - Assuntos: null, ledger, longitudinal, condutas, conduta, doc-014, verificationstatus, verified
+    - Trecho-guia: Regras: verificationStatus ∈ verified | partial | notverified | contradicted; conduta notverified ou contradicted tem externalPhrasingAllowed: null obrigatório; qualquer formulação acusatória exige ciceroApproval: approved antes de F6.
+  - [SRC-S033 · L544–L569 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.11 Mapa de fatores decisórios](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s033)
+    - Assuntos: mapa, fatores, decisórios, kind, explicit_requirement, julgador, data, json
+    - Trecho-guia: Regras: kind ∈ explicitrequirement | evidenceassessment | judicialcaution | openquestion; todo fator cita decisão e localizador; o mapa descreve critérios demonstrados, nunca perfil pessoal do julgador.
+  - [SRC-S034 · L570–L587 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.12 Estratégia condicional de composição](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s034)
+    - Assuntos: composição, estratégia, condicional, interesse, limite, fonte, decisão, registrada
+    - Trecho-guia: Regras: nenhum campo aceita número inventado; interesse ou limite sem fonte ou sem decisão humana registrada fica blocked; o artefato é interno e nunca transcrito na peça.
+  - [SRC-S035 · L588–L615 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 7.13 Integridade da versão entregue](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s035)
+    - Assuntos: artifact_evidence, integridade, versão, entregue, sha256-package-file, presendmatch, mode, deliveredhash
+    - Trecho-guia: channelhash: o canal disponibiliza o anexo e o hash real é comparado; artifactevidence: o canal não devolve os bytes; a seleção pré-envio, o artifactId, o hash e a evidência externa formam a cadeia de confirmação.
+  - [SRC-S036 · L616–L617 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8. Lastro Científico Interdisciplinar — F5C](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s036)
+    - Assuntos: lastro, científico, interdisciplinar, f5c
+    - Trecho-guia: Documento de consulta sobre 8. Lastro Científico Interdisciplinar — F5C.
+  - [SRC-S037 · L618–L639 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.1 Classificação em F2](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s037)
+    - Assuntos: não, material, classificação, json, rapid, proposição, jurídica, f2_n4_classification
+    - Trecho-guia: notapplicable: nenhuma proposição não jurídica material; rapid: apoio técnico/contextual material, mas não exclusivo; strict: a conclusão depende substancialmente de afirmação científica contestável ou de alto impacto.
+  - [SRC-S038 · L640–L658 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.2 Protocolo de busca](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s038)
+    - Assuntos: busca, protocolo, critérios, regra, parada, f5c_research_protocol, json, conterá
+    - Trecho-guia: researchQuestion; decomposição por população/contexto, exposição/intervenção, comparação, resultado/conceito e desenho, conforme a disciplina; sinônimos e conceitos de áreas adjacentes; bases e rotas de descoberta; consultas literais; período e idiomas; critérios de inclusão/excl
+  - [SRC-S039 · L659–L660 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.3 Adaptadores de descoberta](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s039)
+    - Assuntos: adaptadores, descoberta
+    - Trecho-guia: Documento de consulta sobre 8.3 Adaptadores de descoberta.
+  - [SRC-S040 · L661–L667 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.3 Adaptadores de descoberta > Crossref](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s040)
+    - Assuntos: doi, crossref, título, uso, principal, metadados, bibliográficos, operações
+    - Trecho-guia: uso principal: DOI e metadados bibliográficos; operações: busca por título, DOI e filtros; identidade confirmada por DOI + título + autores/ano; resposta indisponível gera crossrefstatus: unavailable, não notfound.
+  - [SRC-S041 · L668–L674 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.3 Adaptadores de descoberta > OpenAlex](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s041)
+    - Assuntos: openalex, chave, uso, principal, descoberta, ampla, citações, relações
+    - Trecho-guia: uso principal: descoberta ampla, citações e relações entre trabalhos; a documentação oficial atual exige chave de acesso, ainda que exista faixa gratuita; a N4 não dependerá de plano pago; ausência de chave ou limite esgotado aciona busca manual/alternativa e registra degradação.
+  - [SRC-S042 · L675–L680 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.3 Adaptadores de descoberta > NCBI E-utilities / PubMed / PMC](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s042)
+    - Assuntos: ncbi, e-utilities, pubmed, pmc, uso, principal, saúde, medicina
+    - Trecho-guia: uso principal: saúde, medicina, psicologia biomédica e áreas afins; operações: busca, identificação e recuperação de metadados/resumos ou texto disponível; PMID, PMCID e DOI devem ser conciliados quando presentes.
+  - [SRC-S043 · L681–L684 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.3 Adaptadores de descoberta > Rotas adicionais](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s043)
+    - Assuntos: rotas, adicionais, adaptadores, disciplinares, serão, opcionais, entram, após
+    - Trecho-guia: Adaptadores disciplinares serão opcionais e só entram após teste próprio. Busca manual e encadeamento de referências continuam válidos se registrados.
+  - [SRC-S044 · L685–L704 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.4 Pipeline científico](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s044)
+    - Assuntos: pipeline, científico, científica, população, resultado, título, fonte, texto
+    - Trecho-guia: 1. formular pergunta científica precisa, com população/contexto e resultado ou conceito adequados à disciplina; 2. escolher áreas e conceitos-ponte; 3. executar consultas registradas; 4. deduplicar por DOI/PMID/título/autoria; 5. confirmar identidade bibliográfica; 6. normalizar 
+  - [SRC-S045 · L705–L744 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.5 Ledger de estudos](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s045)
+    - Assuntos: descrição, confirmed, ledger, estudos, null, estrutura, central, json
+    - Trecho-guia: Documento de consulta sobre 8.5 Ledger de estudos.
+  - [SRC-S046 · L745–L766 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.6 Avaliação metodológica](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s046)
+    - Assuntos: avaliação, metodológica, desenho, pergunta, pelo, estudo, adequado, validade
+    - Trecho-guia: A classificação terá duas dimensões separadas:
+  - [SRC-S047 · L767–L788 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.7 Mapa afirmação científica → evidência](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s047)
+    - Assuntos: mapa, afirmação, científica, evidência, json, claims, scienceclaimid, sci-claim-001
+    - Trecho-guia: Documento de consulta sobre 8.7 Mapa afirmação científica → evidência.
+  - [SRC-S048 · L789–L816 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 8.8 Auditoria científica em F7](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s048)
+    - Assuntos: fonte, auditoria, científica, identidade, correspondência, frase, individual, f7_science_audit
+    - Trecho-guia: identidade e versão da fonte; correção, retratação ou expressão de preocupação; correspondência entre fonte e frase; status de revisão por pares; nível de leitura realizado; limites de população/contexto; associação versus causalidade; evidência contrária; diferença entre apoio g
+  - [SRC-S049 · L817–L818 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 9. Integração aos contratos F0–F10](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s049)
+    - Assuntos: integração, contratos, f10
+    - Trecho-guia: Documento de consulta sobre 9. Integração aos contratos F0–F10.
+  - [SRC-S050 · L819–L823 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F0](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s050)
+    - Assuntos: registrar, n4spechash, flags, run, não, criar, artefato, caso
+    - Trecho-guia: registrar n4SpecHash e flags no run; não criar artefato N4 para caso sem vínculo inequívoco.
+  - [SRC-S051 · L824–L829 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F1](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s051)
+    - Assuntos: garantir, índice, cobertura, documentos, necessários, preservar, versões, comparação
+    - Trecho-guia: garantir índice e cobertura dos documentos necessários; preservar versões para comparação; identificar ausência de documento essencial à matriz comparativa.
+  - [SRC-S052 · L830–L842 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F2](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s052)
+    - Assuntos: novas, saídas, candidatas, n4_classification, question_tree, novos, gates, n4_modules_classified
+    - Trecho-guia: n4modulesclassified; materialquestionsinitialized; sciencemodeclassified.
+  - [SRC-S053 · L843–L859 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F3](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s053)
+    - Assuntos: novas, saídas, candidatas, event_identity, document_comparison, reasoning_graph, inicial, conduct_ledger
+    - Trecho-guia: eventidentity; documentcomparison; reasoninggraph inicial; conductledger quando aplicável.
+  - [SRC-S054 · L860–L880 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F4](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s054)
+    - Assuntos: novas, saídas, candidatas, coverage_matrix, thesis_maturity, case_acceptance_tests, decision_factor_map, settlement_map
+    - Trecho-guia: coveragematrix; thesismaturity; caseacceptancetests; decisionfactormap; settlementmap; intertemporalmap; quantificationscenarios.
+  - [SRC-S055 · L881–L895 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F5](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s055)
+    - Assuntos: pesquisa, jurídica, oficial, permanece, inalterada, f5c, roda, paralelo
+    - Trecho-guia: A pesquisa jurídica oficial permanece inalterada. F5C roda em paralelo quando science.mode != notapplicable.
+  - [SRC-S056 · L896–L907 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F6](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s056)
+    - Assuntos: entradas, adicionais, cobertura, aprovada, testes, congelados, termos, canônicos
+    - Trecho-guia: cobertura aprovada; testes congelados; termos canônicos; claims científicos autorizados; limites e objeções.
+  - [SRC-S057 · L908–L925 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F7](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s057)
+    - Assuntos: auditoria, gates, testes, consistência, científica, novas, saídas, resultados
+    - Trecho-guia: resultados dos testes do caso; consistência global; auditoria metacognitiva; auditoria científica.
+  - [SRC-S058 · L926–L936 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F8](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s058)
+    - Assuntos: visual, novas, verificações, entrada, textual, canônica, igual, final_markdown
+    - Trecho-guia: entrada textual canônica igual ao finalmarkdown aprovado e vinculado ao auditedmarkdown pelo bundle F7-B; legenda e fonte de gráfico/tabela; escalas, unidades e denominadores; correspondência entre visual e afirmação; ausência de sobreposição e texto acumulado; nenhuma extrapolaç
+  - [SRC-S059 · L937–L940 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F9](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s059)
+    - Assuntos: hash, pacote, interno, inclui, artefatos, pelo, manifesto, peça
+    - Trecho-guia: O pacote interno inclui artefatos N4 pelo manifesto. A peça protocolável continua limpa. Hash diferente entre auditoria e arquivo bloqueia. Antes de preparar a entrega, F9 grava F9DELIVERYSELECTION.json com o artefato exato selecionado e seu hash.
+  - [SRC-S060 · L941–L952 · TDD — FORJA N4: Raciocínio, Prova e Ciência > F10](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s060)
+    - Assuntos: f10, novas, saídas, classificação, diff, humano, integridade, entrega
+    - Trecho-guia: classificação do diff humano; integridade da entrega em F10DELIVERYINTEGRITY.json; propostas de teste; métricas por módulo; sincronização de status N4 no sidecar da gestão.
+  - [SRC-S061 · L953–L982 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 10. Eventos N4](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s061)
+    - Assuntos: eventos, candidatos, n4_module_classified, question_added, question_answered, question_blocked, coverage_item_resolved, event_identity_confirmed
+    - Trecho-guia: n4moduleclassified; questionadded; questionanswered; questionblocked; coverageitemresolved; eventidentityconfirmed; documentcomparisoncompleted; thesismaturitydecided; casetestfrozen; casetestexecuted; scienceprotocolapproved; sciencesourceverified; sciencesynthesiscompleted; glo
+  - [SRC-S062 · L983–L999 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 11. Máquina de invalidação](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s062)
+    - Assuntos: dependentes, invalidação, pacote, máquina, parágrafos, mudança, invalida, documento-fonte
+    - Trecho-guia: Invalidação não apaga resultado anterior. Marca-o stale e registra o evento que a causou.
+  - [SRC-S063 · L1000–L1003 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 12. Consistência global](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s063)
+    - Assuntos: consistência, global, validador, trabalhará, quatro, camadas
+    - Trecho-guia: O validador trabalhará em quatro camadas:
+  - [SRC-S064 · L1004–L1013 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 12. Consistência global > C1 — Identidade literal](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s064)
+    - Assuntos: identidade, literal, nomes, números, cnj, ids, documentos, artigos
+    - Trecho-guia: nomes; números CNJ; IDs de documentos; artigos e precedentes; datas; valores e unidades; nomes de estudos e identificadores.
+  - [SRC-S065 · L1014–L1021 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 12. Consistência global > C2 — Identidade semântica](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s065)
+    - Assuntos: identidade, semântica, classificação, eventos, posição, teses, alcance, precedentes
+    - Trecho-guia: classificação de eventos; posição das teses; alcance de precedentes; associação/causalidade; ressalvas e condições.
+  - [SRC-S066 · L1022–L1029 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 12. Consistência global > C3 — Coerência decisória](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s066)
+    - Assuntos: coerência, decisória, corresponde, premissas, levam, conclusão, declarada, pedido
+    - Trecho-guia: premissas levam à conclusão declarada; pedido corresponde à fundamentação; subsidiária não contradiz principal sem tratamento; quantificação corresponde à fórmula; ciência apoia a proposição efetivamente usada.
+  - [SRC-S067 · L1030–L1038 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 12. Consistência global > C4 — Coerência entre artefatos](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s067)
+    - Assuntos: coerência, artefatos, relatório, peça, quadros, tabelas, diagramas, auditoria
+    - Trecho-guia: peça; quadros/tabelas/diagramas; relatório de auditoria; relatório de melhorias; e-mail de entrega; pacote da gestão.
+  - [SRC-S068 · L1039–L1050 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 12. Consistência global > C5 — Integridade física do documento final (lições da auditoria de 2026-07-10)](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s068)
+    - Assuntos: hash, física, final, após, integridade, documento, lições, auditoria
+    - Trecho-guia: metadados do DOCX/PDF (autor, empresa, última modificação por) conforme o padrão do escritório, verificados APÓS o render final e após TODA regeneração; margens, fonte, entrelinhas, recuo e áreas visuais medidos contra o layoutProfileId registrado no pacote; o perfil pode ser o W
+  - [SRC-S069 · L1051–L1090 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 13. Auditoria metacognitiva](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s069)
+    - Assuntos: auditoria, metacognitiva, deve, estrutura, mínima, json, premises, premiseid
+    - Trecho-guia: O auditor não deve desqualificar instrução do usuário; deve apenas separar objetivo, preferência e fato comprovado.
+  - [SRC-S070 · L1091–L1122 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 14. Integração com a gestão do escritório](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s070)
+    - Assuntos: json, não, integração, gestão, escritório, sidecar, data, enabled
+    - Trecho-guia: O sidecar gestaoescritorio/data/forjastatus.json poderá receber, por caso/demanda:
+  - [SRC-S071 · L1123–L1177 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 15. Feature flags](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s071)
+    - Assuntos: false, depende, flags, flag, cobertura, feature, n4questiontreev1, n4coveragematrixv1
+    - Trecho-guia: Mapa flag → capacidade do PRD (para auditoria de cobertura das flags):
+  - [SRC-S072 · L1178–L1179 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 16. Modos de execução](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s072)
+    - Assuntos: modos, execução
+    - Trecho-guia: Documento de consulta sobre 16. Modos de execução.
+  - [SRC-S073 · L1180–L1183 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 16. Modos de execução > off](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s073)
+    - Assuntos: off, nenhum, artefato, exigido, comportamento, anterior, permanece
+    - Trecho-guia: Nenhum artefato N4 é exigido. O comportamento anterior permanece.
+  - [SRC-S074 · L1184–L1187 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 16. Modos de execução > shadow](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s074)
+    - Assuntos: shadow, são, artefatos, produzidos, avaliados, mas, não, bloqueiam
+    - Trecho-guia: Artefatos N4 são produzidos e avaliados, mas não bloqueiam o fluxo vigente. Divergências são relatadas.
+  - [SRC-S075 · L1188–L1191 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 16. Modos de execução > pilotblocking](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s075)
+    - Assuntos: pilotblocking, pilot_blocking, gates, selecionados, bloqueiam, apenas, casos-piloto, explicitamente
+    - Trecho-guia: Gates selecionados bloqueiam apenas casos-piloto explicitamente marcados.
+  - [SRC-S076 · L1192–L1197 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 16. Modos de execução > defaulton](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s076)
+    - Assuntos: defaulton, default_on, disponível, somente, após, promoção, normativa, módulos
+    - Trecho-guia: Disponível somente após promoção normativa. Módulos condicionais continuam classificados por caso.
+  - [SRC-S077 · L1198–L1218 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 17. Tratamento de falhas](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s077)
+    - Assuntos: não, fonte, bloquear, tratamento, falhas, estado, documento, blocked
+    - Trecho-guia: Documento de consulta sobre 17. Tratamento de falhas.
+  - [SRC-S078 · L1219–L1220 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s078)
+    - Assuntos: testes, regressão, obrigatórios
+    - Trecho-guia: Documento de consulta sobre 18. Testes de regressão obrigatórios.
+  - [SRC-S079 · L1221–L1230 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios > Estrutura e rastreabilidade](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s079)
+    - Assuntos: reprovar, estrutura, rastreabilidade, material, fato, cenário, resultado, esperado
+    - Trecho-guia: Documento de consulta sobre Estrutura e rastreabilidade.
+  - [SRC-S080 · L1231–L1243 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios > Coerência e comparação](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s080)
+    - Assuntos: coerência, comparação, não, final, cenário, resultado, esperado, n4-c-01
+    - Trecho-guia: Documento de consulta sobre Coerência e comparação.
+  - [SRC-S081 · L1244–L1252 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios > Testes do caso](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s081)
+    - Assuntos: teste, testes, caso, invalidar, resultados, cenário, resultado, esperado
+    - Trecho-guia: Documento de consulta sobre Testes do caso.
+  - [SRC-S082 · L1253–L1268 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios > Ciência](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s082)
+    - Assuntos: estudo, artigo, ciência, usado, reprovar, não, cenário, resultado
+    - Trecho-guia: Documento de consulta sobre Ciência.
+  - [SRC-S083 · L1269–L1278 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios > Metacognição e aprendizado](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s083)
+    - Assuntos: não, metacognição, aprendizado, cenário, resultado, esperado, n4-m-01, três
+    - Trecho-guia: Documento de consulta sobre Metacognição e aprendizado.
+  - [SRC-S084 · L1279–L1291 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 18. Testes de regressão obrigatórios > Gestão e rollback](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s084)
+    - Assuntos: gestão, rollback, cenário, resultado, esperado, n4-g-01, flag, desligada
+    - Trecho-guia: Documento de consulta sobre Gestão e rollback.
+  - [SRC-S085 · L1292–L1308 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 19. Corpus de avaliação](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s085)
+    - Assuntos: peça, caso, corpus, avaliação, casos, resultado, deve, conter
+    - Trecho-guia: O corpus N4 deve conter cópias imutáveis de casos que exercitem capacidades distintas:
+  - [SRC-S086 · L1309–L1330 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 20. Telemetria](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s086)
+    - Assuntos: telemetria, estado, fontes, não, apenas, forja_run_metrics, json, será
+    - Trecho-guia: FORJARUNMETRICS.json será estendido com:
+  - [SRC-S087 · L1331–L1332 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s087)
+    - Assuntos: requisitos, não, funcionais
+    - Trecho-guia: Documento de consulta sobre 21. Requisitos não funcionais.
+  - [SRC-S088 · L1333–L1340 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais > Determinismo](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s088)
+    - Assuntos: determinismo, hashes, reproduzíveis, json, estável, enums, validados, cálculos
+    - Trecho-guia: hashes reproduzíveis; JSON estável; enums validados; cálculos repetíveis; datas com fuso e fonte.
+  - [SRC-S089 · L1341–L1344 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais > Idempotência](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s089)
+    - Assuntos: idempotência, reexecução, mesma, entrada, versão, não, duplica, perguntas
+    - Trecho-guia: Reexecução com mesma entrada e versão não duplica perguntas, estudos, eventos ou sidecar.
+  - [SRC-S090 · L1345–L1348 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais > Retomada](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s090)
+    - Assuntos: retomada, falha, base, word, rede, agente, permite, retomar
+    - Trecho-guia: Falha de base, Word, rede ou agente permite retomar do último artefato válido.
+  - [SRC-S091 · L1349–L1352 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais > Auditabilidade](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s091)
+    - Assuntos: auditabilidade, toda, promoção, registra, produtor, revisor, entrada, saída
+    - Trecho-guia: Toda promoção registra produtor, revisor, entrada, saída, decisão e hash.
+  - [SRC-S092 · L1353–L1356 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais > Compatibilidade](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s092)
+    - Assuntos: compatibilidade, flags, desligadas, preservam, comportamento, existente, leitores, antigos
+    - Trecho-guia: Flags desligadas preservam o comportamento existente. Leitores antigos ignoram n4artifacts/.
+  - [SRC-S093 · L1357–L1362 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 21. Requisitos não funcionais > Desempenho](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s093)
+    - Assuntos: desempenho, módulos, condicionais, não, executam, quando, not_applicable, pesquisa
+    - Trecho-guia: Módulos condicionais não executam quando notapplicable. Pesquisa LCI respeita regra de parada e cache bibliográfico.
+  - [SRC-S094 · L1363–L1375 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 22. Rollback](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s094)
+    - Assuntos: rollback, não, desligar, flags, impedir, leitura, n4_artifacts, pelo
+    - Trecho-guia: 1. desligar flags N4; 2. impedir leitura de n4artifacts/ pelo runner; 3. manter os arquivos para auditoria; 4. recalcular sidecar sem bloco N4; 5. retomar fluxo N3/N2 pela versão registrada; 6. não apagar eventos nem reinterpretar estados passados.
+  - [SRC-S095 · L1376–L1393 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 23. Ordem técnica recomendada](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s095)
+    - Assuntos: implementar, ordem, técnica, recomendada, comprovar, baseline, real, criar
+    - Trecho-guia: 1. comprovar baseline N3 real; 2. criar schemas e fixtures N4; 3. implementar árvore, cobertura e testes do caso; 4. implementar identidade terminológica e consistência global; 5. implementar grafo e maturidade de teses; 6. implementar comparação, temporalidade e quantificação; 7
+  - [SRC-S096 · L1394–L1395 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 24. Dependências de referência](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s096)
+    - Assuntos: dependências, referência
+    - Trecho-guia: Documento de consulta sobre 24. Dependências de referência.
+  - [SRC-S097 · L1396–L1409 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 24. Dependências de referência > Internas](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s097)
+    - Assuntos: internas, forja_spec_manifest, json, forja_state_machine, forja_run, forja_context, forja_adversarial_audit, forja_package
+    - Trecho-guia: FORJASPECMANIFEST.json; forjastatemachine.py; forjarun.py; forjacontext.py; forjaadversarialaudit.py; forjapackage.py; forjaclosecycle.py; forjarunmetrics.py; contratos F0–F10; kit visual Medina e Word COM; sidecar da gestão.
+  - [SRC-S098 · L1410–L1420 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 24. Dependências de referência > Acadêmicas e bibliográficas](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s098)
+    - Assuntos: https, org, www, crossref, acadêmicas, bibliográficas, openalex, developers
+    - Trecho-guia: OpenAlex Developers: https://developers.openalex.org/; Crossref REST API: https://www.crossref.org/documentation/retrieve-metadata/rest-api/; Crossmark e atualizações: https://www.crossref.org/services/crossmark/; NCBI APIs/E-utilities: https://www.ncbi.nlm.nih.gov/home/develop/a
+  - [SRC-S099 · L1421–L1434 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 25. Critério técnico de pronto](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s099)
+    - Assuntos: critério, técnico, pronto, promoção, forem, passar, implementação, estará
+    - Trecho-guia: A implementação N4 estará pronta para promoção somente quando:
+  - [SRC-S100 · L1435–L1438 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 25. Critério técnico de pronto > Estado implementado em 11/07/2026](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s100)
+    - Assuntos: estado, implementado, cada, caso, contrato, foi, comprovado, retrospectivamente
+    - Trecho-guia: O contrato foi comprovado retrospectivamente em CASO-19/Fábio, CASO-16 e Saúde. Cada caso materializou 24/24 artefatos, executou 10 testes ligados ao hash do texto final, matou 10/10 mutações literais, passou pelas cinco camadas reproduzidas e recebeu QA visual automática por pág
+  - [SRC-S101 · L1439–L1457 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 25. Critério técnico de pronto > Adendo técnico anti-autocertificação - 11/07/2026](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s101)
+    - Assuntos: fontes, aprovação, stale, adendo, técnico, anti-autocertificação, modo, declaração
+    - Trecho-guia: 1. suiteHash inclui modo temporal, declaração de anterioridade, datas e justificativa retrospectiva. 2. Datas prospectivas são interpretadas como ISO 8601 com fuso; comparação textual não é aceita. 3. O agregador resolve o texto canônico no registro de fontes, reexecuta F7 e muta
+  - [SRC-S102 · L1458–L1471 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 26. Estado técnico implementado em 11/07/2026](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s102)
+    - Assuntos: contratos, artefatos, estado, técnico, implementado, pelo, validador, ponta
+    - Trecho-guia: 1. Os 24 contratos de artefato foram gerados em n4schemas/ e são aplicados pelo validador agregado, além das regras semânticas específicas. 2. Os contratos candidatos F0-F10 estão em phasecontractsn4/, anexados sem substituir os contratos N3. 3. O runner promove artefatos N4 vali
+  - [SRC-S103 · L1472–L1475 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 27. Perfil técnico PSO-Pet 1.0](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s103)
+    - Assuntos: perfil, técnico, pso-pet, referência, normativa, complementar, metodo_van_aken_aplicado_a_peticoes
+    - Trecho-guia: Referência normativa complementar: 14METODOVANAKENAPLICADOAPETICOES.md.
+  - [SRC-S104 · L1476–L1487 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 27. Perfil técnico PSO-Pet 1.0 > 27.1 Decisão técnica](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s104)
+    - Assuntos: json, decisão, técnica, requisitos, perfil, reutiliza, artefatos, existentes
+    - Trecho-guia: O perfil reutiliza os artefatos N4 existentes. Não cria banco, nova fase ou validador obrigatório nesta etapa. O roteiro ../templates/F4METODOSOLUCAOPROBLEMAPETICAO.md funciona como índice humano entre:
+  - [SRC-S105 · L1488–L1491 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 27. Perfil técnico PSO-Pet 1.0 > 27.2 Iterações permitidas](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s105)
+    - Assuntos: iterações, permitidas, nova, decisão, descoberta, posterior, pode, reabrir
+    - Trecho-guia: Uma descoberta posterior pode reabrir F2, F3 ou F4. A reabertura deve registrar artefato afetado, evidência nova, decisão anterior, nova decisão e hashes invalidados. Não é permitido corrigir silenciosamente a definição do problema depois da redação.
+  - [SRC-S106 · L1492–L1499 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 27. Perfil técnico PSO-Pet 1.0 > 27.3 Aplicabilidade](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s106)
+    - Assuntos: aplicabilidade, ciclo, completo, light, núcleo, mínimo, questão, simples
+    - Trecho-guia: light: núcleo mínimo para questão simples; full: ciclo completo para recurso, resposta ou múltiplas teses; intensive: ciclo completo, comparação documental, cenários e CIMO-Pet.
+  - [SRC-S107 · L1500–L1505 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 27. Perfil técnico PSO-Pet 1.0 > 27.4 Futuro gate determinístico](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s107)
+    - Assuntos: futuro, gate, determinístico, deve, somente, após, validação, prospectiva
+    - Trecho-guia: Somente após validação prospectiva poderá ser criado schema específico. O gate futuro deve verificar presença, ordem temporal, referências aos artefatos canônicos e decisões do conselho. Não deve avaliar mérito por contagem de campos nem exigir alternativas artificiais.
+  - [SRC-S108 · L1506–L1509 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 28. Adendo técnico de compatibilidade — F7-B/Fable 5 (15/07/2026)](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s108)
+    - Assuntos: adendo, técnico, compatibilidade, f7-b, fable, este, desenho, continua
+    - Trecho-guia: Este desenho N4 continua não vigente, mas deve compor com a implementação posterior da base sem regressão.
+  - [SRC-S109 · L1510–L1513 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 28. Adendo técnico de compatibilidade — F7-B/Fable 5 (15/07/2026) > 28.1 Fronteira de execução](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s109)
+    - Assuntos: fronteira, execução, tentativa, forja_run, cria, promove, tentativas, mas
+    - Trecho-guia: forjarun.py cria e promove tentativas, mas não invoca Fable 5 automaticamente. Dentro de uma tentativa F7AUDITORIAJURIDICAFACTUAL com RUNCONTEXT.json, auditedmarkdown e f7gateresult sem P0, o operador chama forjafable5.py. O executor valida pertencimento ao caso/fase e confina to
+  - [SRC-S110 · L1514–L1526 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 28. Adendo técnico de compatibilidade — F7-B/Fable 5 (15/07/2026) > 28.2 Contrato e composição do resultado](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s110)
+    - Assuntos: suffix, json, contrato, resultado, composição, hashes, fable5_result, não
+    - Trecho-guia: finalmarkdown[suffix].md — texto canônico; editorialreport[suffix].json — hashes e relatório do editor; editorialdiff[suffix].patch — comparação com a origem; fable5usage[suffix].json — sessão, modelo, OAuth, hashes e uso observado; editorialfidelity[suffix].json — resultado dete
+  - [SRC-S111 · L1527–L1532 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 28. Adendo técnico de compatibilidade — F7-B/Fable 5 (15/07/2026) > 28.3 Autenticação e limites](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s111)
+    - Assuntos: autenticação, limites, claude, não, comando, usa, alias, fable
+    - Trecho-guia: O comando usa o alias fable, mas o envelope precisa provar claude-fable-5. Antes da chamada, claude auth status deve indicar loggedIn=true, authMethod=claude.ai e subscriptionType=max. Não há chave ou faturamento de API.
+  - [SRC-S112 · L1533–L1537 · TDD — FORJA N4: Raciocínio, Prova e Ciência > 28. Adendo técnico de compatibilidade — F7-B/Fable 5 (15/07/2026) > 28.4 Gates e repetição](11_TDD_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s112)
+    - Assuntos: gates, repetição, marcadores, não, candidata, forja_editorial_fidelity, recompõe, fable5_oauth_confirmed
+    - Trecho-guia: forjaeditorialfidelity.py recompõe fable5oauthconfirmed, editorialsourcehashmatch, editorialfidelitypass e humanstylefinalpass. As comparações incluem hashes reais, números, marcadores, autoridades, aspas, marcadores de auditoria, títulos, retenção mínima de 90% do conteúdo não b
+
+### 4.13. ROADMAP — FORJA N4: Raciocínio, Prova e Ciência
+
+- **Arquivo preparado:** [12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md)
+- **Origem:** `12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md`
+- **Termos:** não, testes, critério, rollback, caso, objetivo, pronto, base, entregáveis, escopo, criar, cobertura
+- **Blocos:**
+  - [SRC-S001 · L1–L15 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s001)
+    - Assuntos: roadmap, raciocínio, prova, ciência, versão, não, proposta, data
+    - Trecho-guia: Versão proposta: N4.0 Data: 2026-07-10 Status: versão final do plano de implementação; execução não iniciada Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 PRD: 10PRDFORJAN4RACIOCINIOPROVACIENCIA.md TDD: 11TDDFORJAN4RACIOCINIOPROVACIENCIA.md Diagramas: 13DIA
+  - [SRC-S002 · L16–L33 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 1. Estratégia de rollout](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s002)
+    - Assuntos: entregar, estratégia, rollout, será, implantada, sete, marcos, comprovar
+    - Trecho-guia: A N4 será implantada em sete marcos:
+  - [SRC-S003 · L34–L49 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 2. Regras de execução](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s003)
+    - Assuntos: não, regras, execução, marco, peça, fluxo, nenhum, altera
+    - Trecho-guia: 1. Nenhum marco altera peça histórica original. 2. Todo replay trabalha sobre cópia imutável. 3. Toda nova capacidade começa com flag false. 4. Sombra produz comparação, não autoridade para bloquear o fluxo vigente. 5. Piloto bloqueante é limitado a caso explicitamente escolhido.
+  - [SRC-S004 · L50–L65 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 3. Dependências entre marcos](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s004)
+    - Assuntos: dependências, marcos, promoção, text, base, núcleo, raciocínio, relações
+    - Trecho-guia: M3 e M4 podem ser desenvolvidos em paralelo depois de M2, mas a promoção conjunta depende de M5 e M6.
+  - [SRC-S005 · L66–L67 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s005)
+    - Assuntos: comprovação, base
+    - Trecho-guia: Documento de consulta sobre 4. M0 — Comprovação da base N3.
+  - [SRC-S006 · L68–L71 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s006)
+    - Assuntos: objetivo, transformar, arquitetura, escrita, parcialmente, implementada, linha, base
+    - Trecho-guia: Transformar a arquitetura N3 já escrita e parcialmente implementada em linha de base observável para a N4.
+  - [SRC-S007 · L72–L75 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Motivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s007)
+    - Assuntos: motivo, fatos, proposições, proveniência, contexto, validado, hashes, execução
+    - Trecho-guia: Sem fatos, proposições, proveniência, contexto validado, hashes e execução real, os artefatos N4 virariam uma segunda camada de planejamento sem base operacional.
+  - [SRC-S008 · L76–L106 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Escopo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s008)
+    - Assuntos: escopo, registrar, estado, gestão, real, ledger, auditoria, apenas
+    - Trecho-guia: 1. registrar snapshot de: manifest; contratos F0–F10; configuração N3; 21 diretórios de estado; sidecar da gestão; testes vigentes; 2. confirmar o status real dos seis replays previstos na N3; 3. executar ciclos N3 novos em casos controlados; 4. materializar e validar: índice doc
+  - [SRC-S009 · L107–L113 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Casos mínimos](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s009)
+    - Assuntos: caso, casos, mínimos, responsivo, visual, law, complexo, documentos
+    - Trecho-guia: um caso responsivo; um caso com visual law complexo; um caso com documentos extensos; um caso em que a integração com a gestão tenha evidência de entrega.
+  - [SRC-S010 · L114–L122 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Entregáveis](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s010)
+    - Assuntos: entregáveis, n4_m0_baseline_inventory, json, n4_m0_n3_real_cycles, corpus, imutável, fixtures, mapa
+    - Trecho-guia: N4M0BASELINEINVENTORY.json; N4M0N3REALCYCLES.md; corpus imutável de fixtures; mapa de lacunas N3; plano de rollback; lista de defeitos que a N4 deve capturar.
+  - [SRC-S011 · L123–L132 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Testes](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s011)
+    - Assuntos: testes, replay, reproduzível, zero, alteração, originais, hashes, coerentes
+    - Trecho-guia: replay reproduzível; zero alteração em originais; hashes coerentes; sidecar idempotente; A1 aplicável materializada; F7/F8 invalidados quando o arquivo muda; links por artifactId abrindo no painel.
+  - [SRC-S012 · L133–L139 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s012)
+    - Assuntos: critério, pronto, base, necessária, existe, artefatos, reais, lacunas
+    - Trecho-guia: a base N3 necessária à N4 existe em artefatos reais; lacunas restantes estão explicitamente aceitas ou bloqueadas; o corpus tem resultados esperados verificáveis; nenhum novo módulo N4 precisa inventar uma fonte de verdade ausente.
+  - [SRC-S013 · L140–L145 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 4. M0 — Comprovação da base N3 > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s013)
+    - Assuntos: rollback, nenhuma, mudança, comportamento, deve, existir, remover, relatórios
+    - Trecho-guia: Nenhuma mudança de comportamento deve existir. Remover os relatórios de comparação do caminho do runner restaura o estado anterior; os snapshots permanecem como evidência.
+  - [SRC-S014 · L146–L147 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s014)
+    - Assuntos: núcleo, raciocínio, questões, cobertura, tdd, jurídico
+    - Trecho-guia: Documento de consulta sobre 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico.
+  - [SRC-S015 · L148–L151 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s015)
+    - Assuntos: objetivo, respondido, criar, menor, versão, útil, saber, precisa
+    - Trecho-guia: Criar a menor versão útil da N4: saber o que precisa ser respondido, provar que foi respondido e testar a peça pelos critérios do próprio caso.
+  - [SRC-S016 · L152–L168 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Escopo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s016)
+    - Assuntos: testes, escopo, cobertura, implementar, perguntas, criar, schemas, classificação
+    - Trecho-guia: 1. criar schemas de: classificação N4; árvore de questões; matriz de cobertura; testes do caso; resultados dos testes; 2. implementar forjareasoning.py para perguntas e cobertura; 3. implementar forjacasetests.py; 4. integrar F2, F4, F6 e F7 em sombra; 5. gerar 20–100 perguntas c
+  - [SRC-S017 · L169–L183 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Primeiras classes de perguntas](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s017)
+    - Assuntos: primeiras, classes, perguntas, identidade, processo, partes, tribunal, prazo
+    - Trecho-guia: identidade do processo, partes e tribunal; prazo e regime; fatos comprovados, declarados e inferidos; eventos processuais; pedidos próprios e adversários; resposta judicial anterior; precedentes decisivos; cálculo; objeção mais forte; fontes faltantes; visual necessário; LCI pote
+  - [SRC-S018 · L184–L192 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Entregáveis](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s018)
+    - Assuntos: entregáveis, schemas, json, módulos, validadores, contratos, candidatos, substituir
+    - Trecho-guia: schemas JSON v1; módulos e validadores; contratos F2/F4/F7 candidatos v2, sem substituir os vigentes; fixtures positivas e negativas; relatório sombra por caso; documentação de versionamento dos testes.
+  - [SRC-S019 · L193–L202 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Testes essenciais](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s019)
+    - Assuntos: testes, essenciais, material, questão, alterado, pedido, resposta, classificada
+    - Trecho-guia: pedido material sem resposta; questão material classificada como irrelevante sem justificativa; parágrafo sem item de cobertura; teste alterado após falha; hash da peça alterado depois dos testes; questão retirada sem histórico; caso simples sem inflar perguntas.
+  - [SRC-S020 · L203–L211 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s020)
+    - Assuntos: critério, pronto, toda, material, possui, questão, piloto, estado
+    - Trecho-guia: 1. toda questão material do piloto possui estado; 2. toda alegação/pedido material possui tratamento; 3. todos os testes bloqueantes são reproduzíveis; 4. mudança de critério invalida o resultado; 5. sombra encontra pelo menos os defeitos conhecidos do corpus; 6. casos simples nã
+  - [SRC-S021 · L212–L217 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 5. M1 — Núcleo de raciocínio: questões, cobertura e TDD jurídico > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s021)
+    - Assuntos: rollback, desligar, n4questiontreev1, n4coveragematrixv1, n4casetestsv1, artefatos, ficam, fora
+    - Trecho-guia: Desligar n4QuestionTreeV1, n4CoverageMatrixV1 e n4CaseTestsV1. Os artefatos ficam fora do caminho vigente.
+  - [SRC-S022 · L218–L219 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s022)
+    - Assuntos: relações, identidade, consistência, global
+    - Trecho-guia: Documento de consulta sobre 6. M2 — Relações, identidade e consistência global.
+  - [SRC-S023 · L220–L223 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s023)
+    - Assuntos: objetivo, impedir, perda, sentido, documentos, fases, versões, peça
+    - Trecho-guia: Impedir perda de sentido entre documentos, fases e versões da peça.
+  - [SRC-S024 · L224–L240 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Escopo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s024)
+    - Assuntos: implementar, criar, escopo, próximo, mas, grafo, jurídico, leve
+    - Trecho-guia: 1. implementar grafo jurídico leve sobre IDs existentes; 2. criar identidade canônica de eventos e termos; 3. comparar documentos sucessivos por unidade argumentativa; 4. mapear alcance e limite de precedentes diretos/analógicos; 5. implementar verificador intertemporal; 6. imple
+  - [SRC-S025 · L241–L251 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Entregáveis](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s025)
+    - Assuntos: schema, entregáveis, forja_consistency, grafo, identidade, eventos, comparação, intertemporal
+    - Trecho-guia: forjaconsistency.py; schema do grafo; schema da identidade de eventos; schema de comparação; schema intertemporal; schema de quantificação; F7 global consistency report; corpus de hard negatives.
+  - [SRC-S026 · L252–L259 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Pilotos indicados](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s026)
+    - Assuntos: caso, pilotos, indicados, embargos, sucessivos, peça, não, conhecimento
+    - Trecho-guia: embargos sucessivos; peça em que “não conhecimento” e “rejeição” apareçam como risco; caso com precedente por analogia; caso com transição CPC/lei/regimento; caso com proveito econômico ou cálculo.
+  - [SRC-S027 · L260–L270 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Testes essenciais](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s027)
+    - Assuntos: testes, essenciais, evento, idêntico, labels, incompatíveis, data, divergente
+    - Trecho-guia: evento idêntico com labels incompatíveis; data divergente entre cronologia e pedido; tese subsidiária contradiz principal sem condição; precedente sustenta apenas uma subproposição; similaridade elevada tratada como triagem, não sanção; cálculo com variável sem fonte; ressalva pe
+  - [SRC-S028 · L271–L280 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s028)
+    - Assuntos: critério, pronto, zero, referência, órfã, grafo, conflito, terminológico
+    - Trecho-guia: 1. zero referência órfã no grafo; 2. zero conflito terminológico material não explicado; 3. comparação documental separa repetição, novidade e possível prequestionamento; 4. precedentes têm alcance e limites registrados; 5. intertemporalidade usa ato e data comprovados; 6. quanti
+  - [SRC-S029 · L281–L286 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 6. M2 — Relações, identidade e consistência global > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s029)
+    - Assuntos: rollback, desligar, flags, grafo, terminologia, comparação, temporalidade, quantificação
+    - Trecho-guia: Desligar flags de grafo, terminologia, comparação, temporalidade e quantificação. Nenhum ledger N3 é alterado.
+  - [SRC-S030 · L287–L288 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s030)
+    - Assuntos: lastro, científico, interdisciplinar
+    - Trecho-guia: Documento de consulta sobre 7. M3 — Lastro Científico Interdisciplinar.
+  - [SRC-S031 · L289–L292 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s031)
+    - Assuntos: objetivo, permitir, use, conhecimento, acadêmico, outras, áreas, apoio
+    - Trecho-guia: Permitir que a FORJA use conhecimento acadêmico de outras áreas como apoio sério, verificável e proporcional às teses jurídicas.
+  - [SRC-S032 · L293–L311 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Escopo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s032)
+    - Assuntos: criar, escopo, busca, evidência, classificação, not_applicable, rapid, strict
+    - Trecho-guia: 1. criar classificação notapplicable | rapid | strict; 2. implementar protocolo de busca; 3. criar adaptadores iniciais: Crossref; OpenAlex, quando houver chave/acesso disponível; NCBI E-utilities/PubMed/PMC; 4. permitir busca manual registrada e encadeamento de referências; 5. d
+  - [SRC-S033 · L312–L322 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Princípios de implementação](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s033)
+    - Assuntos: não, prova, princípios, implementação, modo, metadado, conteúdo, artigo
+    - Trecho-guia: metadado não prova conteúdo; artigo existente não significa pertinente; revisão sistemática ruim não recebe prioridade automática; estudo populacional não prova fato individual; associação não vira causalidade; ausência em uma base não prova inexistência; evidência contrária deve
+  - [SRC-S034 · L323–L329 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Primeiros domínios-piloto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s034)
+    - Assuntos: primeiros, domínios-piloto, saúde, psicologia, comportamental, medicina, contabilidade, economia
+    - Trecho-guia: 1. psicologia/saúde comportamental; 2. medicina/saúde; 3. contabilidade/economia; 4. políticas públicas ou organização, se houver caso adequado.
+  - [SRC-S035 · L330–L340 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Entregáveis](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s035)
+    - Assuntos: entregáveis, modelo, forja_science, adaptadores, cache, bibliográfico, schemas, f5c
+    - Trecho-guia: forjascience.py; adaptadores e cache bibliográfico; schemas F5C; fixtures de fontes válidas, divergentes, corrigidas e retratadas; modelo de síntese rápida; modelo estrito; gate científico F7; integração visual para tabelas/gráficos científicos.
+  - [SRC-S036 · L341–L356 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Testes essenciais](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s036)
+    - Assuntos: artigo, testes, essenciais, resultado, tratada, doi, real, errado
+    - Trecho-guia: DOI real para artigo errado; título semelhante com autores diferentes; preprint tratado como versão publicada; artigo retratado; correção relevante não considerada; estudo observacional com linguagem causal; amostra incompatível; resultado estatístico sem relevância prática; gráf
+  - [SRC-S037 · L357–L368 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s037)
+    - Assuntos: modo, critério, pronto, todas, referências-piloto, têm, identidade, confirmada
+    - Trecho-guia: 1. todas as referências-piloto têm identidade confirmada; 2. todas as frases científicas apontam para estudo e trecho/resultado adequado; 3. limites e evidência contrária estão registrados; 4. modo notapplicable funciona sem custo adicional; 5. modo rapid é reproduzível; 6. modo 
+  - [SRC-S038 · L369–L374 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 7. M3 — Lastro Científico Interdisciplinar > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s038)
+    - Assuntos: rollback, desligar, n4scienceevidencev1, remover, claims, científicos, candidatos, entrada
+    - Trecho-guia: Desligar n4ScienceEvidenceV1; remover claims científicos candidatos da entrada F6; manter protocolo e ledger para auditoria.
+  - [SRC-S039 · L375–L376 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s039)
+    - Assuntos: módulos, estratégicos, condicionais
+    - Trecho-guia: Documento de consulta sobre 8. M4 — Módulos estratégicos condicionais.
+  - [SRC-S040 · L377–L380 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s040)
+    - Assuntos: objetivo, integrar, técnicas, aprovadas, aumentam, visão, estratégica, obrigar
+    - Trecho-guia: Integrar técnicas aprovadas que aumentam visão estratégica sem obrigar todos os casos a carregar a mesma complexidade.
+  - [SRC-S041 · L381–L382 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Módulos](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s041)
+    - Assuntos: módulos
+    - Trecho-guia: Documento de consulta sobre Módulos.
+  - [SRC-S042 · L383–L390 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Módulos > 4A — Maturidade e contaminação de teses](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s042)
+    - Assuntos: maturidade, contaminação, teses, papel, principal, subsidiário, reserva, força
+    - Trecho-guia: papel principal/subsidiário/reserva; força documental e jurídica separadas; melhor objeção; risco de contaminar tese superior; gatilho e veículo.
+  - [SRC-S043 · L391–L399 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Módulos > 4B — Ledger longitudinal de condutas](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s043)
+    - Assuntos: ledger, longitudinal, condutas, dois, polos, linha, tempo, verified
+    - Trecho-guia: dois polos; linha do tempo; verified | partial | notverified | contradicted; correção posterior; frase externa autorizada; integração A1 e aprovação de Cícero para acusações.
+  - [SRC-S044 · L400–L407 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Módulos > 4C — Mapa de fatores decisórios](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s044)
+    - Assuntos: mapa, fatores, decisórios, requisito, expresso, decisão, prova, aceita
+    - Trecho-guia: requisito expresso em decisão; prova aceita/recusada; cautela; questão em aberto; consequência para a próxima peça.
+  - [SRC-S045 · L408–L416 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Módulos > 4D — Composição condicional](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s045)
+    - Assuntos: composição, condicional, interesses, não, negociáveis, concessões, gatilhos, alternativa
+    - Trecho-guia: interesses; não negociáveis; concessões; gatilhos; alternativa sem acordo; faixa qualitativa, sem probabilidade inventada.
+  - [SRC-S046 · L417–L426 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Entregáveis](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s046)
+    - Assuntos: fixtures, entregáveis, tese, não, schemas, validadores, regras, aplicabilidade
+    - Trecho-guia: schemas e validadores; regras de aplicabilidade; integração aos pareceres Helena/Cícero; fixtures de tese forte contaminada por tese fraca; fixtures de conduta não confirmada; fixtures de decisão com critério explícito; fixtures de composição não aplicável.
+  - [SRC-S047 · L427–L435 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s047)
+    - Assuntos: não, critério, pronto, módulos, aplicáveis, geram, apenas, justificativa
+    - Trecho-guia: 1. módulos não aplicáveis geram apenas justificativa mínima; 2. tese fraca não é promovida por retórica; 3. conduta não verificada não é externalizada como fato; 4. mapa decisório cita decisão e localizador; 5. composição não inventa vontade, número ou probabilidade; 6. Helena e 
+  - [SRC-S048 · L436–L441 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 8. M4 — Módulos estratégicos condicionais > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s048)
+    - Assuntos: rollback, desligar, n4conditionalstrategyv1, blueprint, permanece, válido
+    - Trecho-guia: Desligar n4ConditionalStrategyV1; blueprint N3 permanece válido.
+  - [SRC-S049 · L442–L443 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s049)
+    - Assuntos: metacognição, aprendizado, gestão
+    - Trecho-guia: Documento de consulta sobre 9. M5 — Metacognição, aprendizado e gestão.
+  - [SRC-S050 · L444–L447 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s050)
+    - Assuntos: objetivo, fechar, ciclo, produção, revisão, humana, correção, estrutural
+    - Trecho-guia: Fechar o ciclo entre produção, revisão humana, correção estrutural e painel do escritório.
+  - [SRC-S051 · L448–L470 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão > Escopo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s051)
+    - Assuntos: escopo, implementar, registrar, estender, auditoria, metacognitiva, origem, premissas
+    - Trecho-guia: 1. implementar auditoria metacognitiva; 2. registrar origem das premissas; 3. medir independência real das fontes de concordância; 4. registrar por que uma recomendação mudou; 5. detectar manipulação de métricas; 6. classificar diff humano por causa; 7. criar fila de propostas de
+  - [SRC-S052 · L471–L482 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão > Entregáveis](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s052)
+    - Assuntos: entregáveis, extensão, json, forja_metacognition, forja_learning, classificação, diff, fila
+    - Trecho-guia: forjametacognition.py; forjalearning.py; classificação do diff; fila de testes propostos; extensão de métricas; extensão idempotente do sidecar; F9DELIVERYSELECTION.json e F10DELIVERYINTEGRITY.json; componentes do painel e links por artifactId; runbook de reabertura e aprendizado
+  - [SRC-S053 · L483–L494 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão > Testes essenciais](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s053)
+    - Assuntos: testes, essenciais, fonte, três, agentes, comum, instrução, usuário
+    - Trecho-guia: três agentes com uma fonte comum; instrução do usuário tratada como fato sem fonte; correção de estilo promovida indevidamente a regra jurídica; P0 escondido por 100% de cobertura numérica; refresh do painel perde estado N4; link com espaço/acento; dois casos atualizam sidecar si
+  - [SRC-S054 · L495–L506 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s054)
+    - Assuntos: critério, pronto, têm, premissas, origem, status, consenso, artificial
+    - Trecho-guia: 1. premissas têm origem e status; 2. consenso artificial é detectado; 3. mudanças estratégicas têm causa; 4. correções humanas são classificadas; 5. nenhum aprendizado vira regra sem teste; 6. sidecar é idempotente; 7. painel mostra bloqueio acima do percentual; 8. gestão e estad
+  - [SRC-S055 · L507–L512 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 9. M5 — Metacognição, aprendizado e gestão > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s055)
+    - Assuntos: rollback, desligar, flags, metacognitiva, aprendizado, integridade, entrega, gestão
+    - Trecho-guia: Desligar flags metacognitiva, aprendizado, integridade de entrega e gestão N4. O sidecar N3 continua e as propostas ficam arquivadas.
+  - [SRC-S056 · L513–L514 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s056)
+    - Assuntos: sombra, pilotos, bloqueantes, promoção
+    - Trecho-guia: Documento de consulta sobre 10. M6 — Sombra, pilotos bloqueantes e promoção.
+  - [SRC-S057 · L515–L518 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s057)
+    - Assuntos: objetivo, provar, melhora, resultado, real, criar, regressões, burocracia
+    - Trecho-guia: Provar que a N4 melhora o resultado real sem criar regressões, burocracia vazia ou falsa confiança.
+  - [SRC-S058 · L519–L529 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Etapa 6.1 — Replay offline](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s058)
+    - Assuntos: etapa, replay, offline, medir, não, executar, corpus, completo
+    - Trecho-guia: Executar o corpus completo em cópias:
+  - [SRC-S059 · L530–L540 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Etapa 6.2 — Sombra em casos novos](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s059)
+    - Assuntos: etapa, sombra, casos, novos, produz, relatórios, mas, fluxo
+    - Trecho-guia: N4 produz relatórios, mas o fluxo vigente decide. Revisores humanos registram:
+  - [SRC-S060 · L541–L553 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Etapa 6.3 — Piloto bloqueante](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s060)
+    - Assuntos: etapa, piloto, bloqueante, ativar, inicialmente, apenas, questão, material
+    - Trecho-guia: 1. questão material sem resposta; 2. cobertura de pedidos; 3. identidade terminológica; 4. testes do caso; 5. citação científica inválida, quando aplicável; 6. consistência global.
+  - [SRC-S061 · L554–L566 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Etapa 6.4 — Promoção gradual](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s061)
+    - Assuntos: etapa, promoção, gradual, ordem, sugerida, árvore, questões, cobertura
+    - Trecho-guia: 1. árvore de questões; 2. cobertura; 3. testes do caso; 4. terminologia e consistência; 5. comparação/intertemporal/quantificação; 6. LCI; 7. metacognição/aprendizado; 8. módulos estratégicos condicionais.
+  - [SRC-S062 · L567–L576 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Casos mínimos de promoção](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s062)
+    - Assuntos: pelo, menos, caso, casos, mínimos, promoção, ciclos, novos
+    - Trecho-guia: pelo menos um caso responsivo completo; pelo menos um caso com LCI; pelo menos um caso quantitativo; pelo menos um caso longo com visual complexo; ciclos novos suficientes para demonstrar estabilidade, além dos replays.
+  - [SRC-S063 · L577–L590 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Critérios de promoção](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s063)
+    - Assuntos: promoção, hash, critérios, zero, aprovada, comprovado, conhecido, escapando
+    - Trecho-guia: 1. zero P0 conhecido escapando no corpus; 2. zero regressão material em peça antes aprovada; 3. falsos positivos bloqueantes dentro do limite aprovado pelos revisores; 4. rollback comprovado; 5. todos os artefatos e hashes coerentes; 6. sidecar e painel idempotentes; 7. ganho dem
+  - [SRC-S064 · L591–L601 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 10. M6 — Sombra, pilotos bloqueantes e promoção > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s064)
+    - Assuntos: rollback, desligar, módulo, inteira, recalcular, visão, painel, preservar
+    - Trecho-guia: desligar módulo ou N4 inteira; recalcular visão do painel; preservar eventos e artefatos; retomar N3/N2; abrir retrospectiva do defeito; nenhuma limpeza destrutiva.
+  - [SRC-S065 · L602–L617 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 11. Matriz consolidada de entregas](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s065)
+    - Assuntos: não, sombra, matriz, consolidada, entregas, esforço, relativo, real
+    - Trecho-guia: Esforço relativo (P/M/G) orienta priorização, não calendário: o roadmap continua sequencial por evidência.
+  - [SRC-S066 · L618–L634 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 12. Critérios de parada](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s066)
+    - Assuntos: não, critérios, parada, possui, frente, deve, ser, pausada
+    - Trecho-guia: Uma frente deve ser pausada quando:
+  - [SRC-S067 · L635–L651 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 13. Backlog posterior à N4](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s067)
+    - Assuntos: backlog, posterior, local, eventual, somente, depois, promoção, dados
+    - Trecho-guia: Somente depois da promoção e de dados reais:
+  - [SRC-S068 · L652–L670 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 14. Definition of Done geral](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s068)
+    - Assuntos: definition, done, geral, estará, implementada, não, apenas, documentada
+    - Trecho-guia: A N4 estará implementada, e não apenas documentada, quando:
+  - [SRC-S069 · L671–L685 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 15. Fechamento dos marcos em 11/07/2026](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s069)
+    - Assuntos: concluído, sombra, fechamento, marcos, testes, real, correção, três
+    - Trecho-guia: Documento de consulta sobre 15. Fechamento dos marcos em 11/07/2026.
+  - [SRC-S070 · L686–L692 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 15. Fechamento dos marcos em 11/07/2026 > Revisão M6.4 pelo Conselho - 11/07/2026](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s070)
+    - Assuntos: pelo, conselho, três, revisão, ciclos, prospectivos, materiais, final
+    - Trecho-guia: M6.4 continua pendente e ganhou critérios adicionais. Antes dos três ciclos prospectivos, o sistema deve provar: mutação semântica por famílias materiais; zero falsa aprovação P0 no corpus reservado; controles benignos com taxa de falso bloqueio publicada; pareceres Helena/Cícero
+  - [SRC-S071 · L693–L694 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 16. M6.5 — Piloto prospectivo do perfil PSO-Pet](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s071)
+    - Assuntos: piloto, prospectivo, perfil, pso-pet
+    - Trecho-guia: Documento de consulta sobre 16. M6.5 — Piloto prospectivo do perfil PSO-Pet.
+  - [SRC-S072 · L695–L698 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 16. M6.5 — Piloto prospectivo do perfil PSO-Pet > Objetivo](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s072)
+    - Assuntos: objetivo, testar, definição, explícita, problema, história, diagnóstica, comparação
+    - Trecho-guia: Testar se a definição explícita do problema, a história diagnóstica, a comparação de alternativas e a validação por requisitos reduzem erro e retrabalho sem burocratizar casos simples.
+  - [SRC-S073 · L699–L708 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 16. M6.5 — Piloto prospectivo do perfil PSO-Pet > Execução](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s073)
+    - Assuntos: execução, comparar, selecionar, três, casos, novos, leve, completo
+    - Trecho-guia: 1. selecionar três casos novos: um leve, um completo e um intensivo; 2. congelar o roteiro metodológico antes da redação final; 3. manter histórico das iterações e reaberturas; 4. comparar requisitos planejados com a peça e com as revisões humanas; 5. colher decisões separadas de
+  - [SRC-S074 · L709–L717 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 16. M6.5 — Piloto prospectivo do perfil PSO-Pet > Critério de pronto](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s074)
+    - Assuntos: critério, pronto, pelo, três, execuções, prospectivas, completas, zero
+    - Trecho-guia: três execuções prospectivas completas; zero falsa alegação de preenchimento anterior à redação; alternativa real examinada nos perfis completo e intensivo; utilidade reconhecida pelo conselho sem P0 novo causado pelo método; perfil leve sem aumento material injustificado de tempo
+  - [SRC-S075 · L718–L723 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 16. M6.5 — Piloto prospectivo do perfil PSO-Pet > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s075)
+    - Assuntos: rollback, remover, exigência, roteiro, casos, seguintes, preservando, três
+    - Trecho-guia: Remover a exigência do roteiro nos casos seguintes, preservando os três pilotos para análise. Nenhum artefato N2/N3/N4 existente é apagado ou reclassificado.
+  - [SRC-S076 · L724–L727 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 17. Trilha de compatibilidade obrigatória — F7-B vigente (adendo de 15/07/2026)](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s076)
+    - Assuntos: f7-b, adendo, trilha, compatibilidade, obrigatória, vigente, este, não
+    - Trecho-guia: Este adendo não altera os sete marcos históricos nem afirma que a N4 foi promovida. Ele acrescenta uma condição de integração: qualquer marco que toque F7, F8, pacote ou replay deve preservar o F7-B implementado na base.
+  - [SRC-S077 · L728–L737 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 17. Trilha de compatibilidade obrigatória — F7-B vigente (adendo de 15/07/2026) > Trabalho necessário em cada marco afetado](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s077)
+    - Assuntos: devem, deve, trabalho, necessário, cada, marco, afetado, audited_markdown
+    - Trecho-guia: 1. fixtures e replays devem produzir auditedmarkdown, passar F7 com zero P0 e então acionar forjafable5.py explicitamente; não se deve pressupor chamada automática por forjarun.py; 2. a infraestrutura de teste deve comprovar Claude Code em OAuth Claude Max e modelo claude-fable-5
+  - [SRC-S078 · L738–L745 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 17. Trilha de compatibilidade obrigatória — F7-B vigente (adendo de 15/07/2026) > Critério de pronto adicional](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s078)
+    - Assuntos: zero, critério, pronto, adicional, contador, promoção, fragmento, isolado
+    - Trecho-guia: zero promoção de fragmento isolado; zero pacote novo baseado apenas em auditedmarkdown; zero relaxamento dos limites semânticos pela N4; replays distinguem corretamente o contador editorial interno do contador da fase; falha de OAuth/modelo ou esgotamento das três candidatas bloq
+  - [SRC-S079 · L746–L748 · ROADMAP — FORJA N4: Raciocínio, Prova e Ciência > 17. Trilha de compatibilidade obrigatória — F7-B vigente (adendo de 15/07/2026) > Rollback](12_ROADMAP_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s079)
+    - Assuntos: rollback, desligar, funcionalidades, candidatas, continua, sendo, f7-b, pertence
+    - Trecho-guia: Desligar funcionalidades candidatas N4 continua sendo o rollback da N4. O F7-B pertence à base vigente e não é removido por esse rollback; eventual retorno dele exige decisão normativa separada, mantendo os bundles já produzidos como evidência histórica.
+
+### 4.14. DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência
+
+- **Arquivo preparado:** [13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md)
+- **Origem:** `13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md`
+- **Termos:** não, questões, sim, caso, mermaid, root, cmp, cobertura, status, flowchart, draft, peça
+- **Blocos:**
+  - [SRC-S001 · L1–L14 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s001)
+    - Assuntos: diagramas, raciocínio, prova, ciência, versão, planejamento, prd, tdd
+    - Trecho-guia: Versão proposta: N4.0 Data: 2026-07-10 Status: versão final dos diagramas de planejamento; não vigentes Revisão do documento: final-r2, após auditoria cruzada de 2026-07-10 PRD: 10PRDFORJAN4RACIOCINIOPROVACIENCIA.md TDD: 11TDDFORJAN4RACIOCINIOPROVACIENCIA.md Roadmap: 12ROADMAPFOR
+  - [SRC-S002 · L15–L53 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 1. Evolução incremental dentro de F0–F10](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s002)
+    - Assuntos: não, f10, sim, ready, testes, f5j, sci, f5c
+    - Trecho-guia: Documento de consulta sobre 1. Evolução incremental dentro de F0–F10.
+  - [SRC-S003 · L54–L100 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 2. Camadas da arquitetura N4](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s003)
+    - Assuntos: validator, reasoning, visual, subgraph, package, end, consistency, casetests
+    - Trecho-guia: Documento de consulta sobre 2. Camadas da arquitetura N4.
+  - [SRC-S004 · L101–L135 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 3. Árvore de questões, cobertura e redação](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s004)
+    - Assuntos: root, questões, status, coverage, paragraph, cobertura, gate, árvore
+    - Trecho-guia: Documento de consulta sobre 3. Árvore de questões, cobertura e redação.
+  - [SRC-S005 · L136–L160 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 4. Grafo jurídico leve](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s005)
+    - Assuntos: supports, thesis, scope, partial, fact, contradicts, claim, qualifies
+    - Trecho-guia: Leitura: todas as relações pertencem à enumeração canônica do PRD N4-R03 (supports, contradicts, qualifies, dependson, respondsto, ignoredby, distinguishes, quantifies, limits, records, justifies, testedby, resolves). O alcance é atributo (scope: full | partial), não relação nova
+  - [SRC-S006 · L161–L187 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 5. Peça responsiva: comparação documental e A1](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s006)
+    - Assuntos: cmp, participant, peça, draft, resposta, responsiva, comparação, documental
+    - Trecho-guia: Documento de consulta sobre 5. Peça responsiva: comparação documental e A1.
+  - [SRC-S007 · L188–L213 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 6. Identidade terminológica, tempo e quantificação](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s007)
+    - Assuntos: conflict, sim, explain, não, time, regime, quant, global
+    - Trecho-guia: Documento de consulta sobre 6. Identidade terminológica, tempo e quantificação.
+  - [SRC-S008 · L214–L245 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 7. Maturidade de teses e módulos condicionais](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s008)
+    - Assuntos: council, role, candidate, settlement, não, decisionmap, conduct, ledger
+    - Trecho-guia: Documento de consulta sobre 7. Maturidade de teses e módulos condicionais.
+  - [SRC-S009 · L246–L279 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 8. Pipeline do Lastro Científico Interdisciplinar](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s009)
+    - Assuntos: search, source, não, mode, protocol, crossref, openalex, ncbi
+    - Trecho-guia: Documento de consulta sobre 8. Pipeline do Lastro Científico Interdisciplinar.
+  - [SRC-S010 · L280–L310 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 9. Estados de uma fonte acadêmica](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s010)
+    - Assuntos: editorial_status_checked, identity_pending, identity_confirmed, content_pending, appraisal_completed, mapped_to_claim, limited_use_or_block, estados
+    - Trecho-guia: Documento de consulta sobre 9. Estados de uma fonte acadêmica.
+  - [SRC-S011 · L311–L343 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 10. Testes do caso e auditoria metacognitiva](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s011)
+    - Assuntos: result, draft, meta, testes, tests, auditoria, metacognitiva, freeze
+    - Trecho-guia: Documento de consulta sobre 10. Testes do caso e auditoria metacognitiva.
+  - [SRC-S012 · L344–L371 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 11. Aprendizado por correção humana](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s012)
+    - Assuntos: classify, structural, humana, diff, versão, visual, fixture, aprendizado
+    - Trecho-guia: Documento de consulta sobre 11. Aprendizado por correção humana.
+  - [SRC-S013 · L372–L398 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 12. Gestão, modos e rollback](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s013)
+    - Assuntos: rollback, flags, gestão, validator, sidecar, block, modos, caso
+    - Trecho-guia: Documento de consulta sobre 12. Gestão, modos e rollback.
+  - [SRC-S014 · L399–L423 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 13. Roadmap e gates de promoção](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s014)
+    - Assuntos: replay, gate, docs, roadmap, gates, promoção, real, não
+    - Trecho-guia: Documento de consulta sobre 13. Roadmap e gates de promoção.
+  - [SRC-S015 · L424–L435 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 14. Leitura executiva](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s015)
+    - Assuntos: demonstrável, hash, leitura, executiva, verificados, evidência, quando, real
+    - Trecho-guia: A N4 acrescenta cinco ideias centrais à FORJA:
+  - [SRC-S016 · L436–L453 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 15. Estado final dos canários M6](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s016)
+    - Assuntos: mode, baseline, retrospectiva, mutações, estado, final, canários, ok2
+    - Trecho-guia: Documento de consulta sobre 15. Estado final dos canários M6.
+  - [SRC-S017 · L454–L474 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 16. Diagrama do estado implantado em 11/07/2026](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s017)
+    - Assuntos: estado, pick, piloto, não, sim, pilot, gate, management
+    - Trecho-guia: Documento de consulta sobre 16. Diagrama do estado implantado em 11/07/2026.
+  - [SRC-S018 · L475–L492 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 17. Anti-autocertificação e decisão do conselho](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s018)
+    - Assuntos: decisão, conselho, não, sim, anti-autocertificação, semântica, promoção, mermaid
+    - Trecho-guia: O diagrama separa aprovação mecânica, decisão jurídica e promoção. Nenhum score agregado supera fonte revogada, conselho contrário ou ausência de evidência semântica.
+  - [SRC-S019 · L493–L518 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 18. Petição como intervenção projetada — PSO-Pet](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s019)
+    - Assuntos: intervenção, diagnose, requisitos, alternatives, evaluate, reopen, petição, projetada
+    - Trecho-guia: Leitura: as fases F0–F10 continuam como controle de estado. As setas de retorno representam iteração cognitiva registrada, não regressão silenciosa nem autorização para ignorar gates concluídos.
+  - [SRC-S020 · L519–L540 · DIAGRAMAS — FORJA N4: Raciocínio, Prova e Ciência > 19. Fronteira operacional F7/F7-B/F8 — adendo de 15/07/2026](13_DIAGRAMAS_FORJA_N4_RACIOCINIO_PROVA_CIENCIA.md#src-s020)
+    - Assuntos: não, rewrite, gate, f7-b, auth, fronteira, operacional, adendo
+    - Trecho-guia: O retorno visual a Rewrite significa nova candidata gerada do auditedmarkdown original, nunca edição da candidata rejeitada. A revisão não pode alterar fatos, datas, números, valores, autoridades, citações, marcadores, ressalvas, teses, capítulos, pedidos, fecho ou assinaturas. A
+
+### 4.15. Método de solução de problemas aplicado à elaboração de petições
+
+- **Arquivo preparado:** [14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md)
+- **Origem:** `14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md`
+- **Termos:** não, solução, problema, ser, qual, resultado, processual, requisitos, intervenção, pedido, prova, quais
+- **Blocos:**
+  - [SRC-S001 · L1–L13 · Método de solução de problemas aplicado à elaboração de petições](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s001)
+    - Assuntos: método, solução, problemas, fonte, aplicado, elaboração, petições, não
+    - Trecho-guia: Produto: FORJA — perfil metodológico PSO-Pet 1.0 Data: 2026-07-11 Status: especificação complementar em sombra; não promove N4 nem cria bloqueio automático Base: Van Aken, Joan; Berends, Hans. Problem Solving in Organizations: A Methodological Handbook for Business and Management
+  - [SRC-S002 · L14–L37 · Método de solução de problemas aplicado à elaboração de petições > 1. Ganho central para a FORJA](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s002)
+    - Assuntos: ser, intervenção, situação, alternativas, ganho, central, tratada, passa
+    - Trecho-guia: A petição deixa de ser tratada apenas como texto a ser redigido e passa a ser tratada como uma intervenção jurídico-processual projetada.
+  - [SRC-S003 · L38–L39 · Método de solução de problemas aplicado à elaboração de petições > 2. Tradução correta para o domínio jurídico](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s003)
+    - Assuntos: tradução, correta, domínio, jurídico
+    - Trecho-guia: Documento de consulta sobre 2. Tradução correta para o domínio jurídico.
+  - [SRC-S004 · L40–L51 · Método de solução de problemas aplicado à elaboração de petições > 2. Tradução correta para o domínio jurídico > 2.1 O que é o “problema”](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s004)
+    - Assuntos: problema, não, pedido, inicial, escritório, automaticamente, definição, ele
+    - Trecho-guia: O pedido inicial do escritório não é automaticamente a definição do problema. Ele pode descrever:
+  - [SRC-S005 · L52–L63 · Método de solução de problemas aplicado à elaboração de petições > 2. Tradução correta para o domínio jurídico > 2.2 O que é “desempenho”](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s005)
+    - Assuntos: resultado, desempenho, não, final, processo, judicial, equivale, ganhar
+    - Trecho-guia: No processo judicial, desempenho não equivale a “ganhar a causa”. O resultado final depende de fatores externos e não pode ser atribuído apenas à peça.
+  - [SRC-S006 · L64–L75 · Método de solução de problemas aplicado à elaboração de petições > 2. Tradução correta para o domínio jurídico > 2.3 O que é a “solução”](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s006)
+    - Assuntos: solução, não, somente, arquivo, docx, combinação, veículo, processual
+    - Trecho-guia: A solução não é somente o arquivo DOCX. É a combinação de:
+  - [SRC-S007 · L76–L87 · Método de solução de problemas aplicado à elaboração de petições > 2. Tradução correta para o domínio jurídico > 2.4 O que não deve ser transplantado mecanicamente](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s007)
+    - Assuntos: não, deve, ser, transplantado, mecanicamente, linguagem, empresarial, peça
+    - Trecho-guia: linguagem empresarial na peça; métricas artificiais de produtividade ou probabilidade de vitória; causalidade científica onde há apenas argumentação normativa; pesquisa com pessoas quando a prova documental já resolve a questão; “resistência à mudança” como rótulo psicológico do 
+  - [SRC-S008 · L88–L105 · Método de solução de problemas aplicado à elaboração de petições > 3. O ciclo PSO-Pet dentro de F0–F10](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s008)
+    - Assuntos: f10, requisitos, pso-pet, qual, intervenção, solução, avaliação, ciclo
+    - Trecho-guia: O método opera como passos iterativos. As fases F0–F10 continuam sendo checkpoints de estado, não uma sequência cognitiva rígida. Uma descoberta em F5 ou F7 pode reabrir F2, F3 ou F4 com registro da razão.
+  - [SRC-S009 · L106–L107 · Método de solução de problemas aplicado à elaboração de petições > 4. P0 — Intake crítico](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s009)
+    - Assuntos: intake, crítico
+    - Trecho-guia: Documento de consulta sobre 4. P0 — Intake crítico.
+  - [SRC-S010 · L108–L111 · Método de solução de problemas aplicado à elaboração de petições > 4. P0 — Intake crítico > Objetivo](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s010)
+    - Assuntos: objetivo, separar, comando, recebido, situação, real, caso
+    - Trecho-guia: Separar o comando recebido da situação real do caso.
+  - [SRC-S011 · L112–L122 · Método de solução de problemas aplicado à elaboração de petições > 4. P0 — Intake crítico > Perguntas obrigatórias](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s011)
+    - Assuntos: qual, quem, perguntas, obrigatórias, foi, ato, quais, produto
+    - Trecho-guia: Qual produto foi solicitado? Qual decisão prática o solicitante espera obter? Qual é o ato processual que cria a necessidade atual? O ato está integralmente disponível e inequivocamente identificado? Quais anexos são esperados e quais faltam? O prazo decorre de qual fonte e foi c
+  - [SRC-S012 · L123–L128 · Método de solução de problemas aplicado à elaboração de petições > 4. P0 — Intake crítico > Gate](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s012)
+    - Assuntos: gate, não, iniciar, solução, detalhada, quando, ato, impugnado
+    - Trecho-guia: Não iniciar solução detalhada quando o ato impugnado, o comando, o prazo ou os documentos materiais estiverem ambíguos. A lacuna vira pergunta nominada, não preenchimento por inferência.
+  - [SRC-S013 · L129–L130 · Método de solução de problemas aplicado à elaboração de petições > 5. P1 — Definição do problema jurídico-processual](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s013)
+    - Assuntos: definição, problema, jurídico-processual
+    - Trecho-guia: Documento de consulta sobre 5. P1 — Definição do problema jurídico-processual.
+  - [SRC-S014 · L131–L145 · Método de solução de problemas aplicado à elaboração de petições > 5. P1 — Definição do problema jurídico-processual > Fórmula canônica](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s014)
+    - Assuntos: atual, estado, fórmula, canônica, contexto, situação, juridicamente, possível
+    - Trecho-guia: No contexto C, a situação atual A, comprovada por E, diverge da situação juridicamente possível ou necessária D em razão de G. A intervenção desta peça pode atuar sobre I, dentro dos limites L, para produzir diretamente O.
+  - [SRC-S015 · L146–L156 · Método de solução de problemas aplicado à elaboração de petições > 5. P1 — Definição do problema jurídico-processual > Testes de qualidade](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s015)
+    - Assuntos: problema, testes, qualidade, definição, resultado, descreve, não, apenas
+    - Trecho-guia: A definição descreve um problema, e não apenas uma solução desejada? O problema está no alcance do veículo processual escolhido? Existe evidência de que o problema é real? O escopo cabe no prazo e no acervo disponível? O resultado direto é distinguível do resultado final do proce
+  - [SRC-S016 · L157–L158 · Método de solução de problemas aplicado à elaboração de petições > 6. P2 — Diagnóstico fundamentado](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s016)
+    - Assuntos: diagnóstico, fundamentado
+    - Trecho-guia: Documento de consulta sobre 6. P2 — Diagnóstico fundamentado.
+  - [SRC-S017 · L159–L170 · Método de solução de problemas aplicado à elaboração de petições > 6. P2 — Diagnóstico fundamentado > 6.1 Modelo do sistema processual atual](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s017)
+    - Assuntos: modelo, sistema, processual, atual, antes, propor, intervenção, representar
+    - Trecho-guia: Antes de propor a intervenção, representar:
+  - [SRC-S018 · L171–L183 · Método de solução de problemas aplicado à elaboração de petições > 6. P2 — Diagnóstico fundamentado > 6.2 História diagnóstica](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s018)
+    - Assuntos: história, diagnóstica, quais, não, qual, fatores, ser, explicação
+    - Trecho-guia: A história diagnóstica é uma explicação curta e integrada, não uma lista de defeitos. Deve responder:
+  - [SRC-S019 · L184–L196 · Método de solução de problemas aplicado à elaboração de petições > 6. P2 — Diagnóstico fundamentado > 6.3 Triangulação](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s019)
+    - Assuntos: triangulação, quando, independente, proposições, materiais, combinar, possível, documento
+    - Trecho-guia: Para proposições materiais, combinar quando possível:
+  - [SRC-S020 · L197–L208 · Método de solução de problemas aplicado à elaboração de petições > 6. P2 — Diagnóstico fundamentado > 6.4 Perspectivas rivais](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s020)
+    - Assuntos: perspectivas, rivais, interpretação, executar, pelo, menos, estas, leituras
+    - Trecho-guia: Executar pelo menos estas leituras:
+  - [SRC-S021 · L209–L212 · Método de solução de problemas aplicado à elaboração de petições > 7. P3 — Requisitos da intervenção](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s021)
+    - Assuntos: requisitos, intervenção, método, distingue, quatro, grupos, eles, são
+    - Trecho-guia: O método distingue quatro grupos. Na FORJA, eles são traduzidos assim:
+  - [SRC-S022 · L213–L221 · Método de solução de problemas aplicado à elaboração de petições > 7. P3 — Requisitos da intervenção > 7.1 Requisitos funcionais](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s022)
+    - Assuntos: requisitos, funcionais, responder, pergunta, jurisdicional, usar, veículo, adequado
+    - Trecho-guia: responder à pergunta jurisdicional; usar veículo adequado; cobrir pedidos e alegações materiais; ligar afirmações decisivas a fontes; formular consequência e pedido compatíveis; preservar tese superior e contingências.
+  - [SRC-S023 · L222–L229 · Método de solução de problemas aplicado à elaboração de petições > 7. P3 — Requisitos da intervenção > 7.2 Requisitos do usuário e do destinatário](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s023)
+    - Assuntos: requisitos, usuário, destinatário, permitir, leitura, rápida, perda, precisão
+    - Trecho-guia: permitir leitura rápida sem perda de precisão; tornar visível a ordem decisória; reduzir carga cognitiva com quadros ou diagramas somente quando úteis; usar terminologia estável; manter padrão Medina Osório e legibilidade material.
+  - [SRC-S024 · L230–L237 · Método de solução de problemas aplicado à elaboração de petições > 7. P3 — Requisitos da intervenção > 7.3 Condições de contorno não negociáveis](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s024)
+    - Assuntos: condições, contorno, não, negociáveis, lei, competência, regimento, prazo
+    - Trecho-guia: lei, competência, regimento, prazo e cognição; fatos e documentos efetivamente disponíveis; proibição de citação inventada; template, integridade e gates de protocolo; instrução estratégica humana expressa.
+  - [SRC-S025 · L238–L249 · Método de solução de problemas aplicado à elaboração de petições > 7. P3 — Requisitos da intervenção > 7.4 Restrições de desenho negociáveis](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s025)
+    - Assuntos: restrições, desenho, negociáveis, não, pode, ser, extensão, desejada
+    - Trecho-guia: extensão desejada; quantidade de elementos visuais; nível de aprofundamento subsidiário; ordem entre argumentos de força semelhante; esforço adicional de pesquisa em ponto não decisivo.
+  - [SRC-S026 · L250–L261 · Método de solução de problemas aplicado à elaboração de petições > 8. P4 — Alternativas estratégicas](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s026)
+    - Assuntos: alternativas, estratégicas, estratégia, pedido, não, prova, antes, detalhar
+    - Trecho-guia: Antes de detalhar a peça, gerar ao menos uma alternativa viável à estratégia preferida. Em caso complexo, considerar alternativas em cinco dimensões:
+  - [SRC-S027 · L262–L278 · Método de solução de problemas aplicado à elaboração de petições > 8. P4 — Alternativas estratégicas > Matriz qualitativa de escolha](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s027)
+    - Assuntos: matriz, orienta, qualitativa, escolha, alternativa, forte, médio, fraco
+    - Trecho-guia: Não converter essa matriz em probabilidade numérica de vitória.
+  - [SRC-S028 · L279–L280 · Método de solução de problemas aplicado à elaboração de petições > 9. P5 — Síntese e avaliação iterativas](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s028)
+    - Assuntos: síntese, avaliação, iterativas
+    - Trecho-guia: Documento de consulta sobre 9. P5 — Síntese e avaliação iterativas.
+  - [SRC-S029 · L281–L289 · Método de solução de problemas aplicado à elaboração de petições > 9. P5 — Síntese e avaliação iterativas > Ciclo](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s029)
+    - Assuntos: requisito, ciclo, arquitetura, sintetizar, preliminar, comparar, cada, procurar
+    - Trecho-guia: 1. sintetizar uma arquitetura preliminar; 2. comparar a arquitetura com cada requisito; 3. procurar requisito violado, lacuna e consequência não desejada; 4. revisar alternativa, requisito negociável ou diagnóstico; 5. repetir até obter um desenho robusto; 6. somente então detalh
+  - [SRC-S030 · L290–L302 · Método de solução de problemas aplicado à elaboração de petições > 9. P5 — Síntese e avaliação iterativas > Arquitetura preliminar mínima](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s030)
+    - Assuntos: arquitetura, preliminar, mínima, pergunta, jurisdicional, história, diagnóstica, resultado
+    - Trecho-guia: pergunta jurisdicional; história diagnóstica; resultado direto pretendido; tese principal e melhor objeção; teses subsidiárias com gatilhos; mapa de prova; ordem decisória; pedidos e contingências; elementos visuais e sua função cognitiva; requisitos ainda não satisfeitos.
+  - [SRC-S031 · L303–L308 · Método de solução de problemas aplicado à elaboração de petições > 9. P5 — Síntese e avaliação iterativas > Princípio da especificação mínima](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s031)
+    - Assuntos: especificação, princípio, mínima, deve, blueprint, conter, tudo, redator
+    - Trecho-guia: O blueprint deve conter tudo que o redator e os revisores precisam para executar a estratégia corretamente, mas não deve tentar antecipar cada frase. Subespecificação produz perda de sentido; excesso de especificação sufoca adaptação e infla contexto.
+  - [SRC-S032 · L309–L314 · Método de solução de problemas aplicado à elaboração de petições > 10. P6 — Validação argumentativa](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s032)
+    - Assuntos: validação, argumentativa, opera, trás, frente, solução, proposta, requisitos
+    - Trecho-guia: A validação opera de trás para frente:
+  - [SRC-S033 · L315–L325 · Método de solução de problemas aplicado à elaboração de petições > 10. P6 — Validação argumentativa > Argumento de validação](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s033)
+    - Assuntos: argumento, validação, explicação, descrição, breve, diagnóstico, desenho, foram
+    - Trecho-guia: 1. descrição breve de como o diagnóstico e o desenho foram produzidos; 2. demonstração de que os insumos críticos são confiáveis; 3. explicação de como cada componente satisfaz os requisitos; 4. explicação do mecanismo esperado: por que esta organização de tese, prova e pedido fa
+  - [SRC-S034 · L326–L331 · Método de solução de problemas aplicado à elaboração de petições > 10. P6 — Validação argumentativa > Regra de “sem surpresa”](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s034)
+    - Assuntos: regra, surpresa, deve, questão, estratégica, grave, não, aparecer
+    - Trecho-guia: Questão estratégica grave não deve aparecer pela primeira vez no pacote final. Deve ser submetida ao conselho durante o blueprint, permitindo correção antes do detalhamento e da diagramação.
+  - [SRC-S035 · L332–L349 · Método de solução de problemas aplicado à elaboração de petições > 11. P7 — Plano de intervenção processual](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s035)
+    - Assuntos: plano, intervenção, processual, versão, peça, apenas, parte, deve
+    - Trecho-guia: A peça é apenas uma parte da intervenção. O plano deve registrar:
+  - [SRC-S036 · L350–L351 · Método de solução de problemas aplicado à elaboração de petições > 12. P8 — Avaliação e aprendizado](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s036)
+    - Assuntos: avaliação, aprendizado
+    - Trecho-guia: Documento de consulta sobre 12. P8 — Avaliação e aprendizado.
+  - [SRC-S037 · L352–L360 · Método de solução de problemas aplicado à elaboração de petições > 12. P8 — Avaliação e aprendizado > 12.1 Avaliação somativa](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s037)
+    - Assuntos: avaliação, somativa, verifica, resultado, direto, foi, atingido, todos
+    - Trecho-guia: Verifica se o resultado direto foi atingido:
+  - [SRC-S038 · L361–L373 · Método de solução de problemas aplicado à elaboração de petições > 12. P8 — Avaliação e aprendizado > 12.2 Avaliação formativa](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s038)
+    - Assuntos: não, avaliação, formativa, falhou, reconstrói, onde, cadeia, diagnóstico
+    - Trecho-guia: diagnóstico errado; fonte ausente ou inadequada; alternativa superior não considerada; mecanismo persuasivo mal escolhido; redação não preservou o blueprint; revisão não detectou mudança de sentido; protocolo ou acompanhamento falhou; fator externo ou explicação rival predominou.
+  - [SRC-S039 · L374–L387 · Método de solução de problemas aplicado à elaboração de petições > 12. P8 — Avaliação e aprendizado > 12.3 Aprendizado CIMO-Pet](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s039)
+    - Assuntos: aprendizado, cimo-pet, efeito, lições, transferíveis, registrar, contexto, tipo
+    - Trecho-guia: Para lições transferíveis, registrar:
+  - [SRC-S040 · L388–L399 · Método de solução de problemas aplicado à elaboração de petições > 13. Três níveis de aplicação](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s040)
+    - Assuntos: perfil, três, níveis, aplicação, completo, quando, usar, exigência
+    - Trecho-guia: O classificador de F2 recomenda o perfil. Enquanto esta extensão estiver em sombra, a escolha não cria bloqueio automático.
+  - [SRC-S041 · L400–L420 · Método de solução de problemas aplicado à elaboração de petições > 14. Integração com artefatos N4 existentes](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s041)
+    - Assuntos: json, artefatos, integração, existentes, não, roteiro, método, deve
+    - Trecho-guia: O método não deve duplicar ledgers. O roteiro operacional ../templates/F4METODOSOLUCAOPROBLEMAPETICAO.md funciona como índice humano e aponta para:
+  - [SRC-S042 · L421–L422 · Método de solução de problemas aplicado à elaboração de petições > 15. Métricas corretas](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s042)
+    - Assuntos: métricas, corretas
+    - Trecho-guia: Documento de consulta sobre 15. Métricas corretas.
+  - [SRC-S043 · L423–L431 · Método de solução de problemas aplicado à elaboração de petições > 15. Métricas corretas > Métricas de processo](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s043)
+    - Assuntos: métricas, processo, percentual, casos, antes, problema, definido, redação
+    - Trecho-guia: percentual de casos com problema definido antes da redação; percentual de casos complexos com alternativa viável comparada; requisitos materiais satisfeitos ou explicitamente bloqueados; número de reaberturas justificadas por nova evidência; divergências do conselho resolvidas an
+  - [SRC-S044 · L432–L440 · Método de solução de problemas aplicado à elaboração de petições > 15. Métricas corretas > Métricas de qualidade](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s044)
+    - Assuntos: métricas, qualidade, erros, definição, ato, problema, afirmações, decisivas
+    - Trecho-guia: erros de definição do ato ou problema; afirmações decisivas sem lastro; perda de sentido entre blueprint e peça; pedidos sem fundamento ou fundamentos sem pedido; falhas visuais que alteram compreensão; resultado direto enfrentado ou não pela decisão posterior.
+  - [SRC-S045 · L441–L451 · Método de solução de problemas aplicado à elaboração de petições > 15. Métricas corretas > Métricas que não provam eficácia](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s045)
+    - Assuntos: métricas, não, provam, eficácia, número, agentes, tamanho, peça
+    - Trecho-guia: número de agentes; tamanho da peça; quantidade de citações; concordância entre modelos com a mesma fonte; taxa bruta de vitória; nota estética isolada.
+  - [SRC-S046 · L452–L464 · Método de solução de problemas aplicado à elaboração de petições > 16. Gates de promoção deste perfil](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s046)
+    - Assuntos: perfil, gates, casos, promoção, deste, menos, foi, executar
+    - Trecho-guia: 1. executar em sombra em pelo menos três casos prospectivos de complexidades diferentes; 2. demonstrar que o roteiro foi preenchido antes da versão final; 3. confirmar que ao menos uma alternativa real foi considerada nos casos completos/intensivos; 4. registrar reaberturas e mud
+  - [SRC-S047 · L465–L483 · Método de solução de problemas aplicado à elaboração de petições > 17. Mapa da fonte metodológica](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s047)
+    - Assuntos: solução, requisitos, mapa, fonte, metodológica, problema, rivais, desenho
+    - Trecho-guia: Documento de consulta sobre 17. Mapa da fonte metodológica.
+  - [SRC-S048 · L484–L488 · Método de solução de problemas aplicado à elaboração de petições > 18. Síntese executiva](14_METODO_VAN_AKEN_APLICADO_A_PETICOES.md#src-s048)
+    - Assuntos: falha, síntese, executiva, método, problema, ele, acrescenta, inteligência
+    - Trecho-guia: O método acrescenta inteligência porque obriga a FORJA a provar que está resolvendo o problema certo, a comparar intervenções possíveis e a justificar a arquitetura escolhida por seus requisitos e mecanismos. Ele também melhora o aprendizado: separa falha de diagnóstico, falha de
+
+### 4.16. PRD — FORJA FILA: priorização automática painel → FORJA
+
+- **Arquivo preparado:** [15_PRD_FILA_PRIORIZADA.md](15_PRD_FILA_PRIORIZADA.md)
+- **Origem:** `15_PRD_FILA_PRIORIZADA.md`
+- **Termos:** fila, painel, json, não, score, demanda, demandas, prazo, comando, dias, prioridade, manual
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · PRD — FORJA FILA: priorização automática painel → FORJA](15_PRD_FILA_PRIORIZADA.md#src-s001)
+    - Assuntos: priorização, prd, fila, automática, painel, helena, igor, peças
+    - Trecho-guia: Origem: recomendação R1.1 (achado H3, crítico) do parecer Helena de 11/07/2026 (reports/conselho2026-07-11/RELATORIOHELENA.md), autorizada pelo Igor em 12/07/2026. Objetivo de negócio: dobrar a vazão da fábrica (4 → 8 peças/semana viáveis) eliminando o gargalo de priorização manu
+  - [SRC-S002 · L9–L16 · PRD — FORJA FILA: priorização automática painel → FORJA > 1. Problema](15_PRD_FILA_PRIORIZADA.md#src-s002)
+    - Assuntos: painel, demandas, problema, não, fila, decisão, fábio, gestao_escritorio
+    - Trecho-guia: O painel (gestaoescritorio/data/demandas.json) registra as demandas com status, prazo e urgência, e a FORJA reporta estado para o painel (ponte FORJA→painel via forjamanagementbridge.py/syncforjagestao.py). O caminho de volta não existe: nenhuma etiqueta do painel dispara ou orde
+  - [SRC-S003 · L17–L22 · PRD — FORJA FILA: priorização automática painel → FORJA > 2. Solução em uma frase](15_PRD_FILA_PRIORIZADA.md#src-s003)
+    - Assuntos: solução, frase, painel, produção, fila, motor, determinístico, forja_fila
+    - Trecho-guia: Um motor determinístico (forjafila.py) que lê o painel + os estados F0 da FORJA, classifica cada demanda aberta em pronta / bloqueada (com motivo) / em produção, calcula um score de prioridade explicável e grava a fila ordenada em três lugares: JSON para máquinas, relatório para 
+  - [SRC-S004 · L23–L36 · PRD — FORJA FILA: priorização automática painel → FORJA > 3. Requisitos funcionais](15_PRD_FILA_PRIORIZADA.md#src-s004)
+    - Assuntos: json, painel, demanda, comando, score, demandas, fila, cada
+    - Trecho-guia: Documento de consulta sobre 3. Requisitos funcionais.
+  - [SRC-S005 · L37–L43 · PRD — FORJA FILA: priorização automática painel → FORJA > 4. Requisitos não-funcionais](15_PRD_FILA_PRIORIZADA.md#src-s005)
+    - Assuntos: requisitos, não-funcionais, entra, fila, régua, determinismo, total, rede
+    - Trecho-guia: Determinismo total: sem rede, sem LLM, sem relógio no score além de datas dos próprios dados (a data "hoje" entra como parâmetro injetável para teste). Regenerável: a fila é artefato derivado; apagar e rodar de novo reconstrói idêntico. Ninguém edita a fila à mão. Execução: manua
+  - [SRC-S006 · L44–L64 · PRD — FORJA FILA: priorização automática painel → FORJA > 5. Fórmula de prioridade (normativa)](15_PRD_FILA_PRIORIZADA.md#src-s006)
+    - Assuntos: prazo, idem, dias, fila, urgência, score, manual, recebidoem
+    - Trecho-guia: Score 0–100, somente demandas pronta competem pela fila de produção (bloqueadas ficam em lista própria, ordenadas pelo mesmo score, para orientar o desbloqueio):
+  - [SRC-S007 · L65–L72 · PRD — FORJA FILA: priorização automática painel → FORJA > 6. Fora de escopo (anti-requisitos — não reabrir sem fato novo)](15_PRD_FILA_PRIORIZADA.md#src-s007)
+    - Assuntos: fila, comando, fora, escopo, anti-requisitos, não, reabrir, fato
+    - Trecho-guia: 1. Disparo automático de produção (fila iniciando F1-F10 sozinha): risco de negócio — peça errada produzida no momento errado consome as horas que a fila deveria economizar. O disparo continua sendo comando explícito (humano ou agente sob comando). 2. Escrita em demandas.json pel
+  - [SRC-S008 · L73–L81 · PRD — FORJA FILA: priorização automática painel → FORJA > 7. Riscos e mitigações](15_PRD_FILA_PRIORIZADA.md#src-s008)
+    - Assuntos: fila, painel, riscos, mitigações, vira, verdade, não, risco
+    - Trecho-guia: Documento de consulta sobre 7. Riscos e mitigações.
+  - [SRC-S009 · L82–L86 · PRD — FORJA FILA: priorização automática painel → FORJA > 8. Dependências](15_PRD_FILA_PRIORIZADA.md#src-s009)
+    - Assuntos: dependências, html, forja_reconcile, fonte, findings, bloqueio, fila, roda
+    - Trecho-guia: forjareconcile.py (F0) — fonte dos findings de bloqueio; a fila roda DEPOIS do reconcile (ou o chama). renderdashboard.py — único escritor do painel HTML (memória do projeto: nunca editar o HTML direto). forjan3common.py — atomicwritejson, featureenabled, nowiso.
+
+### 4.17. TDD — FORJA FILA: desenho técnico e plano de testes
+
+- **Arquivo preparado:** [16_TDD_FILA_PRIORIZADA.md](16_TDD_FILA_PRIORIZADA.md)
+- **Origem:** `16_TDD_FILA_PRIORIZADA.md`
+- **Termos:** fila, json, painel, não, prazo, dict, score, forja_fila, fator, demandas, novo, cliente
+- **Blocos:**
+  - [SRC-S001 · L1–L6 · TDD — FORJA FILA: desenho técnico e plano de testes](16_TDD_FILA_PRIORIZADA.md#src-s001)
+    - Assuntos: tdd, fila, desenho, técnico, plano, testes, par, prd
+    - Trecho-guia: Par do PRD 15PRDFILAPRIORIZADA.md. Estilo da casa: módulo único, funções puras testáveis, escrita atômica, feature flag, modo sombra primeiro.
+  - [SRC-S002 · L7–L17 · TDD — FORJA FILA: desenho técnico e plano de testes > 1. Componentes](16_TDD_FILA_PRIORIZADA.md#src-s002)
+    - Assuntos: forja_harness, novo, componentes, forja_fila, alteração, flag, componente, arquivo
+    - Trecho-guia: Documento de consulta sobre 1. Componentes.
+  - [SRC-S003 · L18–L53 · TDD — FORJA FILA: desenho técnico e plano de testes > 2. Contratos das funções (núcleo puro — sem I/O)](16_TDD_FILA_PRIORIZADA.md#src-s003)
+    - Assuntos: dict, nao, fila, def, status, painel, cliente, forja_state
+    - Trecho-guia: I/O fica em main(): ler JSONs (utf-8-sig, padrão da casa), chamar montarfila, gravar os 3 artefatos (R4) com atomicwritejson do forjan3common.
+  - [SRC-S004 · L54–L89 · TDD — FORJA FILA: desenho técnico e plano de testes > 3. Schema de state/FILAPRIORIZADA.json (canônico)](16_TDD_FILA_PRIORIZADA.md#src-s004)
+    - Assuntos: json, fator, pontos, schema, state, canônico, gestao_escritorio, data
+    - Trecho-guia: gestaoescritorio/data/forjafila.json é o MESMO documento (cópia atômica) — o painel não lê de dentro do harness (separação já usada por forjastatus.json).
+  - [SRC-S005 · L90–L96 · TDD — FORJA FILA: desenho técnico e plano de testes > 4. Integração com o painel (renderdashboard.py)](16_TDD_FILA_PRIORIZADA.md#src-s005)
+    - Assuntos: painel, integração, novo, json, atual, existentes, renderdashboard, render_dashboard
+    - Trecho-guia: Novo bloco secaofila() que lê data/forjafila.json; se ausente, malformado ou flag off → retorna string vazia (painel idêntico ao atual — FILA-R5). Conteúdo: tabela top 5 de producao (posição, título, prazo, score com tooltip dos fatores), linha de resumo ("9 bloqueadas: 4 acesso,
+  - [SRC-S006 · L97–L110 · TDD — FORJA FILA: desenho técnico e plano de testes > 5. Encadeamento com o F0](16_TDD_FILA_PRIORIZADA.md#src-s006)
+    - Assuntos: fila, encadeamento, main, forja_fila, exc, stderr, fim, forja_reconcile
+    - Trecho-guia: No fim de forjareconcile.main() (após gravar o relatório), sob featureenabled("filaPriorizadaV1"):
+  - [SRC-S007 · L111–L114 · TDD — FORJA FILA: desenho técnico e plano de testes > 6. --proxima (FILA-R6)](16_TDD_FILA_PRIORIZADA.md#src-s007)
+    - Assuntos: proxima, fila-r6, exit, python, forja_fila, regenera, fila, imprime
+    - Trecho-guia: python forjafila.py --proxima → regenera a fila e imprime JSON de 1 caso (topo de producao): demandaId, caseId, pasta, comando, score, fatores, prazo. Exit 3 se não houver demanda pronta (sinal claro para automação; espelha o padrão exit 2 do forjadelivery).
+  - [SRC-S008 · L115–L138 · TDD — FORJA FILA: desenho técnico e plano de testes > 7. Plano de testes (testforjafila.py)](16_TDD_FILA_PRIORIZADA.md#src-s008)
+    - Assuntos: prazo, fila, json, painel, não, plano, testes, hoje
+    - Trecho-guia: Fixtures 100% sintéticas em tempfile (nenhum caso real, determinismo com hoje fixo).
+  - [SRC-S009 · L139–L143 · TDD — FORJA FILA: desenho técnico e plano de testes > 8. O que este desenho conscientemente NÃO faz](16_TDD_FILA_PRIORIZADA.md#src-s009)
+    - Assuntos: não, este, desenho, conscientemente, faz, json, altera, demandas
+    - Trecho-guia: Não altera demandas.json, syncforjagestao.py, forjastatus.json nem o fluxo de eventos N3 — superfície de mudança mínima em código que roda em produção. Não cria estado novo por caso — a fila é um documento global, derivado, regenerável. Não usa manual.lastComment no score (texto 
+
+### 4.18. Diagramas — FORJA FILA (priorização automática painel → FORJA)
+
+- **Arquivo preparado:** [17_DIAGRAMAS_FILA_PRIORIZADA.md](17_DIAGRAMAS_FILA_PRIORIZADA.md)
+- **Origem:** `17_DIAGRAMAS_FILA_PRIORIZADA.md`
+- **Termos:** fila, não, json, painel, forja_fila, leitura, sim, rec, participant, quem, dia, igor
+- **Blocos:**
+  - [SRC-S001 · L1–L4 · Diagramas — FORJA FILA (priorização automática painel → FORJA)](17_DIAGRAMAS_FILA_PRIORIZADA.md#src-s001)
+    - Assuntos: diagramas, fila, priorização, automática, painel, par, prd_fila_priorizada, tdd_fila_priorizada
+    - Trecho-guia: Par de 15PRDFILAPRIORIZADA.md e 16TDDFILAPRIORIZADA.md.
+  - [SRC-S002 · L5–L35 · Diagramas — FORJA FILA (priorização automática painel → FORJA) > 1. Fluxo de dados (quem lê e quem escreve o quê)](17_DIAGRAMAS_FILA_PRIORIZADA.md#src-s002)
+    - Assuntos: fila, json, rec, leitura, quem, grava, html, fluxo
+    - Trecho-guia: Documento de consulta sobre 1. Fluxo de dados (quem lê e quem escreve o quê).
+  - [SRC-S003 · L36–L56 · Diagramas — FORJA FILA (priorização automática painel → FORJA) > 2. Máquina de classificação de prontidão (ordem de precedência)](17_DIAGRAMAS_FILA_PRIORIZADA.md#src-s003)
+    - Assuntos: sim, não, máquina, classificação, prontidão, ordem, precedência, fora
+    - Trecho-guia: Documento de consulta sobre 2. Máquina de classificação de prontidão (ordem de precedência).
+  - [SRC-S004 · L57–L76 · Diagramas — FORJA FILA (priorização automática painel → FORJA) > 3. Sequência operacional (dia a dia do Igor)](17_DIAGRAMAS_FILA_PRIORIZADA.md#src-s004)
+    - Assuntos: participant, dia, igor, painel, forja_fila, sequência, operacional, produção
+    - Trecho-guia: Documento de consulta sobre 3. Sequência operacional (dia a dia do Igor).
+  - [SRC-S005 · L77–L87 · Diagramas — FORJA FILA (priorização automática painel → FORJA) > 4. Onde a fila NÃO mexe (fronteiras de segurança)](17_DIAGRAMAS_FILA_PRIORIZADA.md#src-s005)
+    - Assuntos: fila, json, onde, não, mexe, fronteiras, segurança, forja_fila
+    - Trecho-guia: Documento de consulta sobre 4. Onde a fila NÃO mexe (fronteiras de segurança).
+
+### 4.19. Mapa de implementação — FORJA FILA
+
+- **Arquivo preparado:** [18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md)
+- **Origem:** `18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md`
+- **Termos:** fila, gate, painel, não, semana, flag, json, forja_fila, regressão, paralelo, reais, caso
+- **Blocos:**
+  - [SRC-S001 · L1–L4 · Mapa de implementação — FORJA FILA](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s001)
+    - Assuntos: mapa, implementação, fila, marco, gate, roadmap, executável, helena
+    - Trecho-guia: Roadmap executável da R1.1 (Helena, 16h estimadas). Cada marco tem gate de saída objetivo; nenhum marco seguinte começa com gate anterior aberto. Tudo aditivo e reversível por flag — padrão N2/N3 da casa.
+  - [SRC-S002 · L5–L18 · Mapa de implementação — FORJA FILA > Visão geral](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s002)
+    - Assuntos: flag, visão, geral, schema, casos, painel, ponta, marco
+    - Trecho-guia: Total: 16h. M1 é o caminho crítico; M2 e M3 podem andar em paralelo após M1.
+  - [SRC-S003 · L19–L27 · Mapa de implementação — FORJA FILA > M0 — Fundação (2h)](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s003)
+    - Assuntos: reais, fundação, json, leitura, contra, classificação, proposta, léxico
+    - Trecho-guia: 1. Adicionar filaPriorizadaV1: false em FORJAN3CONFIG.json. 2. Escrever o schema de FILAPRIORIZADA.json (TDD §3) como constante documentada no módulo. 3. Rodar protótipo de leitura contra os 23 casos reais (só leitura, sem gravar em gestaoescritorio/): imprime classificação de pr
+  - [SRC-S004 · L28–L34 · Mapa de implementação — FORJA FILA > M1 — Motor + regressão (6h)](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s004)
+    - Assuntos: motor, regressão, fila_, forja_fila, funções, puras, classificar_prontidao, pontuar
+    - Trecho-guia: 1. forjafila.py: funções puras (classificarprontidao, pontuar, ordenar, montarfila) + main() com os 3 artefatos (R4), escrita atômica. 2. testforjafila.py: os 14 casos do TDD §7 (7 DEVEPEGAR + 7 NÃOPODETRAVAR), fixtures sintéticas, hoje injetado. 3. Relatório humano reports/FILAd
+  - [SRC-S005 · L35–L42 · Mapa de implementação — FORJA FILA > M2 — Painel (3h) [paralelo com M3]](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s005)
+    - Assuntos: painel, json, atual, paralelo, render_dashboard, forja_fila, badge, gate
+    - Trecho-guia: 1. secaofila() em renderdashboard.py lendo data/forjafila.json com degradação limpa (R5): arquivo ausente/malformado/flag off → painel byte-idêntico ao atual. 2. Top 5 + resumo de bloqueadas por motivo + badge 48h (R7) + badge prazo vencido + aviso de frescor (hash de origem ≠ de
+  - [SRC-S006 · L43–L53 · Mapa de implementação — FORJA FILA > M3 — Consumo e encadeamento (2h) [paralelo com M2]](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s006)
+    - Assuntos: fila, encadeamento, mudar, consumo, paralelo, forja_fila, proxima, regenera
+    - Trecho-guia: 1. forjafila.py --proxima: regenera e imprime o caso do topo; exit 3 se fila vazia (TDD §6). 2. Chamada opcional no fim de forjareconcile.main() sob flag, com try/except — falha da fila NUNCA derruba o F0 (TDD §5). 3. Adicionar forjafila.py ao manifesto da régua (forjaregua.py) e
+  - [SRC-S007 · L54–L65 · Mapa de implementação — FORJA FILA > M4 — Operação assistida e promoção (3h ao longo de 1 semana)](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s007)
+    - Assuntos: semana, fila, registrar, caso, operação, assistida, promoção, longo
+    - Trecho-guia: 1. Ligar filaPriorizadaV1: true; rodar reconcile+fila no ciclo normal da semana. 2. A cada peça iniciada na semana, registrar: a fila apontou o caso certo? Alguma urgência real ficou fora do top 5? (anotação de 1 linha por evento, no próprio relatório da fila do dia — sem burocra
+  - [SRC-S008 · L66–L71 · Mapa de implementação — FORJA FILA > Dependências e pré-condições](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s008)
+    - Assuntos: não, dependências, pré-condições, forja_reconcile, funcionando, operacional, nenhuma, dependência
+    - Trecho-guia: F0 (forjareconcile.py) funcionando — já operacional. Nenhuma dependência Python nova (stdlib apenas, padrão da casa). Não depende de N4, não toca no pipeline F1-F10, não altera demandas.json.
+  - [SRC-S009 · L72–L76 · Mapa de implementação — FORJA FILA > O que fica explicitamente para depois (não entra nestes 16h)](18_MAPA_IMPLEMENTACAO_FILA_PRIORIZADA.md#src-s009)
+    - Assuntos: fica, explicitamente, depois, não, entra, nestes, decisão, igor
+    - Trecho-guia: R1.2 da Helena (telemetria de feedback com classe de erro, 8h + 2 semanas de coleta) — próximo candidato após M4, decisão do Igor. Disparo automático de produção — anti-requisito do PRD §6; só reavaliá-lo com evidência de M4 + decisão expressa do Igor (risco de negócio). Cron/age
+
+### 4.20. 19 — Plano de instalação das melhorias mapeadas na FORJA
+
+- **Arquivo preparado:** [19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md)
+- **Origem:** `19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md`
+- **Termos:** não, casos, gate, json, critério, estimativa, ordem, pareceres, teste, cada, novo, sessão
+- **Blocos:**
+  - [SRC-S001 · L1–L13 · 19 — Plano de instalação das melhorias mapeadas na FORJA](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s001)
+    - Assuntos: plano, paperclip, instalação, melhorias, mapeadas, sessão, sobre, middleware
+    - Trecho-guia: Data: 12/07/2026. Origem: estudo completo do harness (sessão 12/07, três agentes de exploração sobre código, planejamento e telemetria) + veredito sobre o middleware paperclip. Status: PLANO APROVADO PARA EXECUÇÃO POR ORDEM DO IGOR (12/07). Implementação por milestone, cada miles
+  - [SRC-S002 · L14–L35 · 19 — Plano de instalação das melhorias mapeadas na FORJA > Sumário das lacunas e mapeamento para milestones](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s002)
+    - Assuntos: média, não, crítica, alta, sumário, lacunas, mapeamento, milestones
+    - Trecho-guia: Ordem de execução: M1 → M2 → M3 → M4. M1 e M2 são baratos e de efeito imediato; M3 é o caminho crítico da promoção N4; M4 é robustez contínua.
+  - [SRC-S003 · L36–L37 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M1 — Observabilidade e contexto (estimativa: 6-8h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s003)
+    - Assuntos: observabilidade, contexto, estimativa
+    - Trecho-guia: Documento de consulta sobre M1 — Observabilidade e contexto (estimativa: 6-8h).
+  - [SRC-S004 · L38–L58 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M1 — Observabilidade e contexto (estimativa: 6-8h) > M1.1 Alerta proativo de P0 (2-3h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s004)
+    - Assuntos: gate, não, notifica, alerta, ponte, proativo, quando, exit
+    - Trecho-guia: Problema: quando um gate derruba um caso (P0 em blockers[] / gates[]), o estado registra e o processo para com exit 2 — mas nenhum humano é avisado. Um P0 pode ficar horas invisível.
+  - [SRC-S005 · L59–L70 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M1 — Observabilidade e contexto (estimativa: 6-8h) > M1.2 LocalContext da FORJA (hook de sessão) (1-2h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s005)
+    - Assuntos: sessão, json, localcontext, hook, paperclip, state, resumo, pasta
+    - Trecho-guia: Único empréstimo do paperclip. Script forjalocalcontext.py (na raiz do harness) que: Varre state//FORJASTATE.json e imprime resumo de 5-10 linhas: casos com status != fulfilled, fase atual de cada um, P0/P1 abertos, idade do último evento. Registrado em .claude/settings.json do p
+  - [SRC-S006 · L71–L85 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M1 — Observabilidade e contexto (estimativa: 6-8h) > M1.3 Histórico de bloqueadores + tendência de gates (3h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s006)
+    - Assuntos: casos, gate, json, histórico, bloqueadores, tendência, gates, estado
+    - Trecho-guia: Estender o registro de bloqueador com resolvedAt e resolvedBy (preencher quando o gate reavaliar como verde; hoje o snapshot só tem o estado atual). Compatibilidade: campo novo opcional, casos antigos continuam válidos — nenhuma migração. Novo script forjametricasgates.py: varre 
+  - [SRC-S007 · L86–L87 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M2 — Ordem dos pareceres Helena/Cícero (estimativa: 3-4h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s007)
+    - Assuntos: ordem, pareceres, helena, cícero, estimativa
+    - Trecho-guia: Documento de consulta sobre M2 — Ordem dos pareceres Helena/Cícero (estimativa: 3-4h).
+  - [SRC-S008 · L88–L110 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M2 — Ordem dos pareceres Helena/Cícero (estimativa: 3-4h) > M2.1 Pareceres ANTES da redação (ordem do Igor 09/07, lição 62)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s008)
+    - Assuntos: pareceres, antes, redação, parecer, ordem, igor, lição, atual
+    - Trecho-guia: Estado atual: gate G5.7 bloqueia a entrega sem F4PARECERHELENA.md e F4PARECERCICERO.md, mas o fluxo real produz os pareceres depois do blueprint e às vezes em paralelo à redação. A exigência é: blueprint pronto → pareceres → só então F6.
+  - [SRC-S009 · L111–L112 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M3 — Caminho crítico da promoção N4 (estimativa: 20-30h + casos reais)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s009)
+    - Assuntos: caminho, crítico, promoção, estimativa, casos, reais
+    - Trecho-guia: Documento de consulta sobre M3 — Caminho crítico da promoção N4 (estimativa: 20-30h + casos reais).
+  - [SRC-S010 · L113–L145 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M3 — Caminho crítico da promoção N4 (estimativa: 20-30h + casos reais) > M3.1 Mutação semântica (12-16h) — maior lacuna técnica](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s010)
+    - Assuntos: não, mutações, mutação, literal, operador, troca, cada, corpus
+    - Trecho-guia: Objetivo: semanticMutationScore = 80% (critério 3 de promoção). Hoje só existe mutação literal (remover/inserir texto exigido); falta detectar que a peça mutada mudou de sentido jurídico e o pipeline não percebeu.
+  - [SRC-S011 · L146–L163 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M3 — Caminho crítico da promoção N4 (estimativa: 20-30h + casos reais) > M3.2 Ledger de citações materiais (6-8h) — lição 52](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s011)
+    - Assuntos: ledger, tabela, citações, fonte, lastro, proposicao, materiais, lição
+    - Trecho-guia: Estrutura por peça: afirmação material decisiva → fonte primária → trecho/localizador → alcance e ressalva. Distinto do registro físico de fontes (sourceregistry), que só prova integridade de arquivo.
+  - [SRC-S012 · L164–L183 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M3 — Caminho crítico da promoção N4 (estimativa: 20-30h + casos reais) > M3.3 Três ciclos prospectivos (processo, não código — 2h de preparação)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s012)
+    - Assuntos: não, ciclos, três, prospectivos, processo, código, preparação, promoção
+    - Trecho-guia: A promoção N4 e o destravamento do N3 dependem de 3 ciclos NOVOS (classes/tribunais distintos) com congelamento anterior à redação. Isso não se implementa — se executa quando as próximas demandas reais chegarem. O que o plano instala:
+  - [SRC-S013 · L184–L185 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M4 — Robustez contínua (estimativa: 8-12h, paralelizável)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s013)
+    - Assuntos: robustez, contínua, estimativa, paralelizável
+    - Trecho-guia: Documento de consulta sobre M4 — Robustez contínua (estimativa: 8-12h, paralelizável).
+  - [SRC-S014 · L186–L190 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M4 — Robustez contínua (estimativa: 8-12h, paralelizável) > M4.1 Suite de teste para forjarun.py (3-4h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s014)
+    - Assuntos: teste, suite, forjarun, forja_run, executor, fases, roda, sombra
+    - Trecho-guia: Executor de fases N3 roda em sombra sem teste dedicado. Criar testforjarun.py: transições válidas F0→F10, fase inválida rejeitada, contrato ausente falha com mensagem clara, replay idempotente (mesma sequência de eventos → mesmo estado), P0 interrompe.
+  - [SRC-S015 · L191–L198 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M4 — Robustez contínua (estimativa: 8-12h, paralelizável) > M4.2 F8 — ampliar QA visual automático (3-4h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s015)
+    - Assuntos: visual, ampliar, automático, manual, hoje, detecta, sobreposição, corte
+    - Trecho-guia: Hoje 40%: detecta sobreposição/corte/truncamento. Adicionar checagens determinísticas baratas já validadas nos kits (medinasvgkit): fonte mínima impressa (8pt reprova), largura de inserção vs largurarecomendadacm, contraste texto/fundo abaixo do limiar, página com densidade anôma
+  - [SRC-S016 · L199–L206 · 19 — Plano de instalação das melhorias mapeadas na FORJA > M4 — Robustez contínua (estimativa: 8-12h, paralelizável) > M4.3 F2 — classificação assistida (2-3h)](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s016)
+    - Assuntos: classificação, assistida, schema, forja_product_classification, json, validado, automaticamente, tipo
+    - Trecho-guia: Schema FORJAPRODUCTCLASSIFICATION.json validado automaticamente (tipo de peça ∈ enum, tribunal coerente com o CNJ do processo — regra do segmento já documentada no protocolo, perfil PSO-Pet ∈ {leve, completo, intensivo}). A decisão continua do agente; o schema só impede classific
+  - [SRC-S017 · L207–L223 · 19 — Plano de instalação das melhorias mapeadas na FORJA > Cronograma e dependências](19_PLANO_INSTALACAO_MELHORIAS_FORJA_2026-07-12.md#src-s017)
+    - Assuntos: cronograma, dependências, semana, mudança, nenhum, efeito, imediato, mutação
+    - Trecho-guia: Regras transversais de execução (valem para todo milestone): 1. Toda mudança no pipeline roda testforjaverificador.py, testlicao41.py e testrealtelemetrialicao41.py antes de ser declarada pronta. 2. Nenhum gate novo entra sem par DEVEPEGAR/NÃOPODETRAVAR no teste. 3. Nenhum contro
+
+### 4.21. F2-A — Exploração problematizadora em 100 perguntas
+
+- **Arquivo preparado:** [20_F2A_EXPLORACAO_100_PERGUNTAS.md](20_F2A_EXPLORACAO_100_PERGUNTAS.md)
+- **Origem:** `20_F2A_EXPLORACAO_100_PERGUNTAS.md`
+- **Termos:** não, perguntas, f2-a, f2a, contrato, json, exploração, testes, problematizadora, problema, segura, apenas
+- **Blocos:**
+  - [SRC-S001 · L1–L4 · F2-A — Exploração problematizadora em 100 perguntas](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s001)
+    - Assuntos: f2-a, exploração, problematizadora, perguntas, decisão, produto, status, implementada
+    - Trecho-guia: Decisão de produto: 14/07/2026. Status: implementada para novos ciclos; histórico preservado.
+  - [SRC-S002 · L5–L8 · F2-A — Exploração problematizadora em 100 perguntas > Problema corrigido](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s002)
+    - Assuntos: problema, corrigido, perguntas, possuía, f2_question_tree, json, mas, casos
+    - Trecho-guia: A N4 possuía F2QUESTIONTREE.json, mas casos reais continham apenas 5–20 perguntas e o contrato não exigia diversidade, respostas rastreáveis, síntese do problema ou passagem às fases seguintes. Assim, “ter árvore de perguntas” podia virar autocertificação sem exploração real.
+  - [SRC-S003 · L9–L23 · F2-A — Exploração problematizadora em 100 perguntas > Posição no fluxo](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s003)
+    - Assuntos: f2a, continua, posição, fluxo, f2-a, perguntas, não, mermaid
+    - Trecho-guia: F2-A é subfase de F2CLASSIFICACAOPRODUTORISCO; não renumera F0–F10 e não promove N4. A N2 continua vigente, N3 continua em sombra e N4 continua pilotblocking.
+  - [SRC-S004 · L24–L36 · F2-A — Exploração problematizadora em 100 perguntas > Contrato](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s004)
+    - Assuntos: contrato, exatamente, ids, resposta, blocked, artefato, f2_question_tree, json
+    - Trecho-guia: Artefato: F2QUESTIONTREE.json. Protocolo: FORJA-F2A-100-v1. Contagem: exatamente 100, IDs Q001..Q100. Cobertura: exatamente 10 perguntas em cada uma das dez óticas. Profundidade mínima: pergunta, âncora do caso, importância, resposta e rota. Proveniência: fatos, eventos, preceden
+  - [SRC-S005 · L37–L40 · F2-A — Exploração problematizadora em 100 perguntas > Compatibilidade e falha segura](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s005)
+    - Assuntos: compatibilidade, falha, segura, pelo, validador, antigo, novo, árvores
+    - Trecho-guia: Árvores históricas sem protocolVersion continuam legíveis pelo validador N4 antigo e não são reclassificadas silenciosamente. Todo novo resultado F2, porém, tem questiontree como saída obrigatória e passa pelo validador estrito antes da promoção. Reabrir F3/F4 de caso antigo exig
+  - [SRC-S006 · L41–L50 · F2-A — Exploração problematizadora em 100 perguntas > Implementação e testes](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s006)
+    - Assuntos: json, implementação, testes, árvore, phase_contracts, forja_exploracao_100, sementes, adaptáveis
+    - Trecho-guia: forjaexploracao100.py: 100 sementes adaptáveis, contrato e CLI. forjarun.py: reprova promoção de F2 com árvore inválida. phasecontracts/F2.json: saída e três gates obrigatórios. phasecontracts/F3.json e F4.json: recebem a árvore como entrada. forjareasoning.py: valida protocolo e
+  - [SRC-S007 · L51–L58 · F2-A — Exploração problematizadora em 100 perguntas > Anti-requisitos](20_F2A_EXPLORACAO_100_PERGUNTAS.md#src-s007)
+    - Assuntos: não, anti-requisitos, produzir, perguntas, genéricas, apenas, atingir, número
+    - Trecho-guia: não produzir 100 perguntas genéricas apenas para atingir número; não usar consenso entre agentes como prova; não transformar bloqueio em resposta inventada; não expor proveniência operacional na peça; não pedir ao Igor decisões técnicas sobre geração, schema ou testes; não avança
+
+### 4.22. Decisão arquitetural 21 — F7-B com Claude Fable 5
+
+- **Arquivo preparado:** [21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md)
+- **Origem:** `21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md`
+- **Termos:** claude, não, fable, modelo, decisão, tentativa, json, rejeitada, contrato, final, porque, arquitetural
+- **Blocos:**
+  - [SRC-S001 · L1–L6 · Decisão arquitetural 21 — F7-B com Claude Fable 5](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s001)
+    - Assuntos: decisão, arquitetural, f7-b, claude, fable, status, aceita, implementada
+    - Trecho-guia: Status: aceita e implementada Data: 15/07/2026 Contrato: FORJA-FABLE5-FINAL-v1
+  - [SRC-S002 · L7–L10 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Contexto](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s002)
+    - Assuntos: contexto, auditoria, texto, não, editorial, final, pelo, separava
+    - Trecho-guia: A FORJA já separava redação, auditoria jurídica/factual e composição visual, mas o texto protocolável não possuía um passe editorial final especializado, comprovadamente executado pelo modelo de escrita escolhido pelo Igor. Inserir um novo redator depois de F8 criaria risco de di
+  - [SRC-S003 · L11–L18 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Decisão](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s003)
+    - Assuntos: decisão, fable, atua, são, json, criar, f7-b_revisao_editorial_escrita_final, dentro
+    - Trecho-guia: Criar F7-BREVISAOEDITORIALESCRITAFINAL dentro de F7AUDITORIAJURIDICAFACTUAL, depois do gate jurídico/factual sem P0 e imediatamente antes de F8.
+  - [SRC-S004 · L19–L27 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Razões](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s004)
+    - Assuntos: razões, preserva, numeração, histórica, f10, mantém, fronteira, aprovação
+    - Trecho-guia: preserva a numeração histórica F0–F10; mantém F7 como fronteira de aprovação textual; garante que F8 consuma exatamente o texto final; aproveita a assinatura Claude Max sem instituir custo de API; permite auditoria por diff, hashes e uso da sessão; falha fechado quando o modelo a
+  - [SRC-S005 · L28–L29 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Alternativas rejeitadas](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s005)
+    - Assuntos: alternativas, rejeitadas
+    - Trecho-guia: Documento de consulta sobre Alternativas rejeitadas.
+  - [SRC-S006 · L30–L33 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Alternativas rejeitadas > Nova fase F8 e renumeração das demais](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s006)
+    - Assuntos: nova, fase, renumeração, demais, rejeitada, porque, quebraria, estados
+    - Trecho-guia: Rejeitada porque quebraria estados, relatórios, contratos e consumidores históricos. Uma subfase bloqueante expressa a mudança sem migração destrutiva.
+  - [SRC-S007 · L34–L37 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Alternativas rejeitadas > API Anthropic com chave](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s007)
+    - Assuntos: api, anthropic, chave, claude, rejeitada, porque, pedido, usar
+    - Trecho-guia: Rejeitada porque o pedido é usar a assinatura Claude do Igor e evitar custo recorrente inesperado. O fluxo exige Claude Code OAuth Max e não oferece fallback pago.
+  - [SRC-S008 · L38–L41 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Alternativas rejeitadas > Aceitar a autocertificação do modelo](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s008)
+    - Assuntos: aceitar, autocertificação, modelo, rejeitada, porque, mesmo, agente, escreve
+    - Trecho-guia: Rejeitada porque o mesmo agente que escreve não pode ser a única fonte de aprovação. O relatório do Fable é evidência auxiliar; hashes e invariantes são recalculados localmente.
+  - [SRC-S009 · L42–L45 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Alternativas rejeitadas > Reescrever a tentativa anterior após falha](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s009)
+    - Assuntos: tentativa, reescrever, anterior, após, falha, rejeitada, porque, edições
+    - Trecho-guia: Rejeitada porque edições sucessivas acumulam deriva. Todo retry retorna à origem auditada imutável e recebe apenas os achados da tentativa rejeitada.
+  - [SRC-S010 · L46–L49 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Alternativas rejeitadas > Apenas lint estilístico determinístico](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s010)
+    - Assuntos: lint, apenas, estilístico, determinístico, rejeitada, solução, completa, porque
+    - Trecho-guia: Rejeitada como solução completa porque detectores de vício não produzem a qualidade de prosa pretendida. O lint continua como gate, enquanto o Fable 5 executa a transformação editorial.
+  - [SRC-S011 · L50–L68 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Contrato de dados](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s011)
+    - Assuntos: contrato, dados, mínima, tentativa, entrada, audited_markdown, resultado, identidade
+    - Trecho-guia: auditedmarkdown; resultado de F7 sem P0; identidade do caso e diretório de tentativa.
+  - [SRC-S012 · L69–L78 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Implementação](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s012)
+    - Assuntos: json, implementação, phase_contracts, forja_fable5, autenticação, chamada, ferramentas, parsing
+    - Trecho-guia: forjafable5.py: autenticação, chamada sem ferramentas, parsing, retry e persistência. forjaeditorialfidelity.py: comparação e invariantes independentes. forjarun.py: validação de todos os bundles antes da promoção. forjapackage.py: revalidação do bundle do entregável escolhido. p
+  - [SRC-S013 · L79–L84 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Compatibilidade e implantação](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s013)
+    - Assuntos: compatibilidade, implantação, históricos, contrato, estados, pacotes, permanecem, legíveis
+    - Trecho-guia: Estados e pacotes históricos permanecem legíveis. A obrigação vale para tentativas F7 criadas sob o contrato atualizado. Não há migração automática de textos históricos e nenhum arquivo anterior é reescrito.
+  - [SRC-S014 · L85–L93 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Evidência de aceite](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s014)
+    - Assuntos: evidência, aceite, revisão, claude, arquitetural, pós-implementação, pelo, próprio
+    - Trecho-guia: revisão arquitetural e pós-implementação pelo próprio Claude/Fable; correção dos achados materiais levantados na revisão; regressão integrada de 42/42 testes em 15/07/2026; execução viva sobre peça auditada de aproximadamente 36 KB; confirmação de OAuth Claude Max, modelo claude-
+  - [SRC-S015 · L94–L102 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Riscos residuais](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s015)
+    - Assuntos: riscos, residuais, não, podem, qualidade, equivalência, semântica, perfeita
+    - Trecho-guia: equivalência semântica perfeita não é decidível por checks lexicais; o gate atual não cobre toda mudança factual sem números, adição de conteúdo, aspas simples ou pedido sem heading reconhecido; mudanças futuras do envelope do Claude Code podem exigir adaptação; textos muito gran
+  - [SRC-S016 · L103–L111 · Decisão arquitetural 21 — F7-B com Claude Fable 5 > Consequências documentais](21_F7B_FABLE5_REVISAO_ESCRITA_FINAL.md#src-s016)
+    - Assuntos: docs, consequências, documentais, toda, mudança, futura, modelo, autenticação
+    - Trecho-guia: Toda mudança futura em modelo, autenticação, artefatos, invariantes, retry ou consumidor final deve atualizar, no mesmo ciclo:
+
+### 4.23. Plano mestre de refatoração segura da FORJA
+
+- **Arquivo preparado:** [21_PLANO_MESTRE_REFATORACAO_FORJA.md](21_PLANO_MESTRE_REFATORACAO_FORJA.md)
+- **Origem:** `21_PLANO_MESTRE_REFATORACAO_FORJA.md`
+- **Termos:** planning, refactor, refatoração, plano, mestre, segura, planos, fonte, verdade, limite, desta, entrega
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · Plano mestre de refatoração segura da FORJA](21_PLANO_MESTRE_REFATORACAO_FORJA.md#src-s001)
+    - Assuntos: refatoração, plano, mestre, segura, status, planejamento, concluído, execução
+    - Trecho-guia: Status: planejamento concluído; execução não autorizada Data-base: 15/07/2026 Pacote canônico: ../.planning/refactor/
+  - [SRC-S002 · L9–L19 · Plano mestre de refatoração segura da FORJA > Fonte de verdade](21_PLANO_MESTRE_REFATORACAO_FORJA.md#src-s002)
+    - Assuntos: planning, refactor, fonte, verdade, requisitos, planos, readme, índice
+    - Trecho-guia: 1. ../.planning/refactor/README.md — índice e ordem de leitura. 2. ../.planning/refactor/01-PRDREFATORACAOFORJA.md — produto, requisitos e invariantes. 3. ../.planning/refactor/02-TDDREFATORACAOFORJA.md — desenho técnico e estratégia TDD. 4. ../.planning/refactor/03-ROADMAPREFATO
+  - [SRC-S003 · L20–L22 · Plano mestre de refatoração segura da FORJA > Limite desta entrega](21_PLANO_MESTRE_REFATORACAO_FORJA.md#src-s003)
+    - Assuntos: limite, desta, entrega, pacote, descreve, limpar, deduplicar, modularizar
+    - Trecho-guia: O pacote descreve como limpar, deduplicar, modularizar e documentar o sistema preservando comportamento jurídico, trilha de prova e compatibilidade. Nenhuma refatoração funcional, migração física, remoção de arquivo, promoção normativa ou cutover foi executado nesta etapa.
+
+### 4.24. PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça)
+
+- **Arquivo preparado:** [22_PRD_AUTORESEARCH_FORJA.md](22_PRD_AUTORESEARCH_FORJA.md)
+- **Origem:** `22_PRD_AUTORESEARCH_FORJA.md`
+- **Termos:** não, ciclo, cobertura, fora, real, painel, contra, workspace, indicadores, pareada, canários, falha
+- **Blocos:**
+  - [SRC-S001 · L1–L5 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça)](22_PRD_AUTORESEARCH_FORJA.md#src-s001)
+    - Assuntos: prd, auto-research, ciclo, auto-melhoria, anti-trapaça, versão, autor, claude
+    - Trecho-guia: Versão 1.1 — 2026-07-23. Autor: Claude Fable 5 (estudo multi-agente wfaa83ac96) sob ordem do Igor. v1.0 REPROVADA em review adversarial Codex GPT-5.5 (13 P1, 2 P2); v1.1 incorpora todas — triagem na seção 14.
+  - [SRC-S002 · L6–L11 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 1. Decisão de produto](22_PRD_AUTORESEARCH_FORJA.md#src-s002)
+    - Assuntos: não, decisão, produto, ciclo, mede, real, esteira, variante
+    - Trecho-guia: Institucionalizar na FORJA um processo de auto-research: ciclo recorrente e auditável que (a) mede a qualidade real das entregas com indicadores ancorados em falhas reais e não gameáveis por exclusão de conteúdo, (b) testa variantes de artefatos da esteira (prompts de fase, templ
+  - [SRC-S003 · L12–L18 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 2. Linha de base preservada](22_PRD_AUTORESEARCH_FORJA.md#src-s003)
+    - Assuntos: linha, base, preservada, não, ciclo, são, trilha, esteira
+    - Trecho-guia: A esteira F0–F10 e seus contratos não mudam. O ciclo AR roda fora do caminho crítico de produção, lendo artefatos de state/caseId. forjaverificador.py, forjametricasf7.py, forjaestilohumano.py, forjamutationsemantic.py, forjadiffdocx.py, forjahumanreview.py (recibos Ed25519) e a 
+  - [SRC-S004 · L19–L25 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 3. Problemas que resolve](22_PRD_AUTORESEARCH_FORJA.md#src-s004)
+    - Assuntos: não, problemas, resolve, melhoria, indicador, bias, lição, minerada
+    - Trecho-guia: P1 — Lição minerada não vira melhoria mensurável. 83 lições em RETROSPECTIVAS.md, 30 codificadas; não há medição contínua da qualidade entre entregas. P2 — Melhoria sem prova. Mudança de prompt/template é promovida por juízo pontual, sem comparação pareada e cega contra a versão 
+  - [SRC-S005 · L26–L33 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 4. Objetivos](22_PRD_AUTORESEARCH_FORJA.md#src-s005)
+    - Assuntos: objetivos, painel, sobre, real, pareada, sensores, sensor, camada
+    - Trecho-guia: O1. Painel de indicadores computável sobre qualquer caso elegível, com cada indicador rastreado a lição/erro real, medindo cobertura e correção separadamente (nunca só precisão — R4) e com máscara pareada de sensores (R7). O2. Suíte de canários de falha única por mutação sobre a 
+  - [SRC-S006 · L34–L45 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 5. Princípios invioláveis](22_PRD_AUTORESEARCH_FORJA.md#src-s006)
+    - Assuntos: não, caso, antes, orçamento, ciclo, workspace, juiz, sealed
+    - Trecho-guia: 1. Pré-registro antes de medir. Critérios, pesos, margens, splits, orçamento de candidatos e de consultas são gravados em ARMANIFEST.json ANTES da rodada; o manifest de cada ciclo é hash-vinculado no log encadeado; edição após observar resultado invalida o ciclo (teste de sabotag
+  - [SRC-S007 · L46–L55 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 6. Capacidades funcionais](22_PRD_AUTORESEARCH_FORJA.md#src-s007)
+    - Assuntos: hash, split, workspace, exige, capacidades, funcionais, registro, casos
+    - Trecho-guia: R01 — Registro de corpus (forjaarcorpus.py): inventaria casos elegíveis (critério amplo e testado contra o estado real: qualquer finalmarkdown.md sob F7 em n3artifacts/ ou runs/), agrupa por linhagem (mesmo litígio/template/matéria — grupo inteiro cai no mesmo split), atribui spl
+  - [SRC-S008 · L56–L67 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 7. Jornada de um ciclo AR (A0–A6)](22_PRD_AUTORESEARCH_FORJA.md#src-s008)
+    - Assuntos: json, ciclo, qualquer, jornada, sensor, mínimo, execução, fase
+    - Trecho-guia: Documento de consulta sobre 7. Jornada de um ciclo AR (A0–A6).
+  - [SRC-S009 · L68–L86 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 8. Indicadores do painel (v1 — pesos e status congelados só após o estudo piloto)](22_PRD_AUTORESEARCH_FORJA.md#src-s009)
+    - Assuntos: alvo, cobertura, não, ledger, congelado, erro, lições, sentinela-veto
+    - Trecho-guia: Tipo D = determinístico, J = julgado. Papel: alvo (entra no score comparativo), sentinela (veto/monitor, nunca otimizado como alvo — R5/R6), operacional (processo, fora do score de peça).
+  - [SRC-S010 · L87–L97 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 9. Critérios de aceitação](22_PRD_AUTORESEARCH_FORJA.md#src-s010)
+    - Assuntos: linhagem, critérios, aceitação, critério, contra, splits, nunca, sensor
+    - Trecho-guia: 1. forjaarcorpus.py --scan cobre o estado real (critério de elegibilidade validado contra os 49 diretórios atuais; meta ≥ 30 elegíveis após ajuste do critério amplo; distribuição por estrato publicada); rodadas repetidas → splits idênticos; grupos de linhagem nunca se separam. 2.
+  - [SRC-S011 · L98–L104 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 10. Meta-métricas do processo](22_PRD_AUTORESEARCH_FORJA.md#src-s011)
+    - Assuntos: meta-métricas, processo, sensor, mutation-kill, alvo, mutações, falha, única
+    - Trecho-guia: Mutation-kill por sensor (alvo: 100% das mutações de falha única mortas pelo sensor certo; controles vivos). Kappa inter-juiz e taxa de anulação posicional por ciclo. Consumo de orçamento (candidatos, consultas holdout/sealed, julgamentos LLM, tokens) vs pré-registro. Proibida: q
+  - [SRC-S012 · L105–L108 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 11. Eficiência (R14)](22_PRD_AUTORESEARCH_FORJA.md#src-s012)
+    - Assuntos: eficiência, r14, todos, cache, content-addressed, sensores, prefilter, determinístico
+    - Trecho-guia: Cache content-addressed em todos os sensores; prefilter determinístico barato antes de qualquer julgamento LLM; amostra estratificada inicial + early stopping sequencial nos pares cegos; limites de tokens/páginas e orçamento máximo de julgamentos no manifest; sealed só roda depoi
+  - [SRC-S013 · L109–L112 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 12. Fora do escopo (v1)](22_PRD_AUTORESEARCH_FORJA.md#src-s013)
+    - Assuntos: fora, escopo, gepa, dspy, juízes, api, paga, adicional
+    - Trecho-guia: GEPA/DSPy; juízes por API paga adicional; auto-edição de gates pelo ciclo; otimização de F2A/conselho; cron automático; UI.
+  - [SRC-S014 · L113–L116 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 13. Regra de promoção do próprio subsistema](22_PRD_AUTORESEARCH_FORJA.md#src-s014)
+    - Assuntos: subsistema, regra, promoção, próprio, critérios, seção, ciclo, piloto
+    - Trecho-guia: Critérios 1–8 da seção 9 + um ciclo piloto A0–A6 completo com material real + relatório publicado. Enquanto não houver mínimo de casos sealed elegíveis (acúmulo prospectivo), o subsistema opera em modo estudodescritivo e NENHUMA variante pode ser promovida a produção (R9/R11).
+  - [SRC-S015 · L117–L135 · PRD — FORJA AUTO-RESEARCH (ciclo AR de auto-melhoria anti-trapaça) > 14. Triagem da revisão adversarial Codex (parecer 2026-07-23, GPT-5.5 high)](22_PRD_AUTORESEARCH_FORJA.md#src-s015)
+    - Assuntos: acatada, não, workspace, triagem, revisão, adversarial, codex, parecer
+    - Trecho-guia: Documento de consulta sobre 14. Triagem da revisão adversarial Codex (parecer 2026-07-23, GPT-5.5 high).
+
+### 4.25. TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR)
+
+- **Arquivo preparado:** [23_TDD_AUTORESEARCH_FORJA.md](23_TDD_AUTORESEARCH_FORJA.md)
+- **Origem:** `23_TDD_AUTORESEARCH_FORJA.md`
+- **Termos:** json, não, ciclo, split, manifest, sealed, familia, par, variante, linhagem, log, hash
+- **Blocos:**
+  - [SRC-S001 · L1–L5 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR)](23_TDD_AUTORESEARCH_FORJA.md#src-s001)
+    - Assuntos: tdd, auto-research, implementação, técnica, ciclo, codex, versão, par
+    - Trecho-guia: Versão 1.1 — 2026-07-23. Par do PRD 22PRDAUTORESEARCHFORJA.md v1.1 (pós-review Codex). Executor designado: Codex GPT-5.5; auditor: Claude Fable 5.
+  - [SRC-S002 · L6–L11 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 1. Objetivo técnico](23_TDD_AUTORESEARCH_FORJA.md#src-s002)
+    - Assuntos: objetivo, técnico, null, implementar, ciclo, seis, módulos, python
+    - Trecho-guia: Implementar o ciclo AR como seis módulos Python determinísticos + suíte pytest com sabotagens, na convenção FORJA (JSON com schemaVersion, SHA-256, CLI com exit codes reais, telemetria). Acréscimos são aditivos; nenhum módulo de produção é alterado.
+  - [SRC-S003 · L12–L17 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 2. Topologia e dependências](23_TDD_AUTORESEARCH_FORJA.md#src-s003)
+    - Assuntos: nunca, pelo, topologia, dependências, python, hmac, llm, local
+    - Trecho-guia: PC local (Windows, Python 3.14). Sem rede em A1–A2. Sem dependência pip nova (stdlib: hashlib, hmac, json, argparse, statistics; módulos FORJA por import direto). LLM nunca é chamado pelo Python. Passos LLM (gerar variante, redigir par, julgar) são explícitos, com prompt-padrão v
+  - [SRC-S004 · L18–L54 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 3. Estrutura de arquivos](23_TDD_AUTORESEARCH_FORJA.md#src-s004)
+    - Assuntos: json, cache, estrutura, arquivos, split, pareada, mutações, falha
+    - Trecho-guia: Documento de consulta sobre 3. Estrutura de arquivos.
+  - [SRC-S005 · L55–L56 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes](23_TDD_AUTORESEARCH_FORJA.md#src-s005)
+    - Assuntos: componentes
+    - Trecho-guia: Documento de consulta sobre 4. Componentes.
+  - [SRC-S006 · L57–L62 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes > 4.1 forjaarcorpus.py](23_TDD_AUTORESEARCH_FORJA.md#src-s006)
+    - Assuntos: json, estrato, caso, caseid, n3_artifacts, runs, linhagem, lineageid
+    - Trecho-guia: Elegibilidade (validada contra o estado real — R8): caso com qualquer finalmarkdown.md sob state/caseId//F7/ (cobre n3artifacts/ e runs/run/fase/attempt-/). Artefato canônico por caso: regra determinística documentada (ordenação de path; preferir n3artifacts sobre runs; entre att
+  - [SRC-S007 · L63–L69 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes > 4.2 forjaarindicadores.py](23_TDD_AUTORESEARCH_FORJA.md#src-s007)
+    - Assuntos: contexto, modo, aprovado, ledger, ledgers, caso, null, painel
+    - Trecho-guia: API: computarindicadores(mdtexto, contexto) - dict. Sensores por import direto: forjaverificador (I2, I4), forjametricasf7 (parte de I1), forjaestilohumano (I5, aprovado/P0/P1 — sem escala inventada), classes conceituais de origem operacional (I6), leitura de ledger F8 + verifica
+  - [SRC-S008 · L70–L75 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes > 4.3 forjaarcanarios.py](23_TDD_AUTORESEARCH_FORJA.md#src-s008)
+    - Assuntos: falha, base, mutacao, camada, classe, real, não, remover
+    - Trecho-guia: Camada pública: por classe de falha real, base.md (peça real liberada, uso interno) + mutacao.md = base com UMA falha injetada (gerada por operador determinístico — reutiliza forjamutationsemantic S1–S6 quando aplicável; para classes não cobertas, mutador próprio mínimo: injetar 
+  - [SRC-S009 · L76–L80 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes > 4.4 forjaarrunpair.py (R1)](23_TDD_AUTORESEARCH_FORJA.md#src-s009)
+    - Assuntos: familia, input, json, manifest, parametros, inputhash, paridade, lados
+    - Trecho-guia: --freeze --caso id --alvo artefato: congela input (texto-fonte da tarefa), ledgers de claims/autoridades, e grava runpair/INPUTk.json com hashes. --register --lado vigente|variante --manifest json: valida e arquiva manifest de execução {modelo, familia, versao, parametros, prompt
+  - [SRC-S010 · L81–L85 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes > 4.5 forjaarblind.py](23_TDD_AUTORESEARCH_FORJA.md#src-s010)
+    - Assuntos: hash, juiz, par_, família, mapping, ordem, artifactsha256, registrado
+    - Trecho-guia: --prepare: canonicaliza outputs (remove front-matter, cabeçalhos de versão, nomes, normaliza espaços), cria blind/PARkORD1{L,R}.md e ORD2{L,R}.md com rótulos neutros; mapping {par, ordem, rotulo→artifactSha256} gravado FORA do workspace com HMAC; hash do mapping registrado no log
+  - [SRC-S011 · L86–L93 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 4. Componentes > 4.6 forjaarciclo.py](23_TDD_AUTORESEARCH_FORJA.md#src-s011)
+    - Assuntos: log, ciclo, resultado, json, corpushash, registra, promotion, manifest
+    - Trecho-guia: Log encadeado: cada evento {seq, prevHash, ts, ciclo, acao, inputsHash, resultado}; --verify-log reconstrói a cadeia (R10). snapshot: congela ARCICLOMANIFEST.json (cópia do pré-registro + hashes de código dos 6 módulos + sensorVersions + corpusHash) e registra no log. promotion r
+  - [SRC-S012 · L94–L97 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 5. Schemas](23_TDD_AUTORESEARCH_FORJA.md#src-s012)
+    - Assuntos: schemas, todos, schemaversion, forja-ar-v1, generatedat, producerrunid, validados, validar_
+    - Trecho-guia: Todos com schemaVersion: "FORJA-AR-v1", generatedAt, producerRunId, validados por validar. ARMANIFEST.json inicial (v0.1-precalibracao): pesos provisórios; papel por indicador (alvo|sentinela|veto|operacional); margens.ruidoporindicador; orcamentos: {candidatosporholdout: 5, cons
+  - [SRC-S013 · L98–L114 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 6. Testes (testforjaautoresearch.py)](23_TDD_AUTORESEARCH_FORJA.md#src-s013)
+    - Assuntos: não, testes, split, linhagem, além, cada, recusa, promotion
+    - Trecho-guia: Além dos testes funcionais de cada módulo (split estável e agrupado por linhagem; painel discrimina sabotagem; null-motivado; cache round-trip; runpair recusa paridade violada; consolidação por hash; regra posicional correta; log encadeado; promotion bloqueia sem artefato), a suí
+  - [SRC-S014 · L115–L118 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 7. Integração com a Régua](23_TDD_AUTORESEARCH_FORJA.md#src-s014)
+    - Assuntos: régua, autoresearch, integração, json, rebaseline, motivado, adicionando, forja_ar_
+    - Trecho-guia: Rebaseline motivado adicionando: forjaar.py (6), testforjaautoresearch.py, autoresearch/ARMANIFEST.json, autoresearch/prompts/.md, autoresearch/canarios/CANARIOSMANIFEST.json; suíte adicionada à lista da régua. A chave HMAC e o conteúdo de .forjaarsecrets/ NÃO entram no manifest 
+  - [SRC-S015 · L119–L126 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 8. Estudo piloto descritivo (pós-implementação — R11)](23_TDD_AUTORESEARCH_FORJA.md#src-s015)
+    - Assuntos: piloto, descritivo, real, estudo, pós-implementação, r11, scan, report
+    - Trecho-guia: 1. --scan + --report: distribuição real por estrato (esperado 30+ elegíveis com critério amplo; publicar o número real). 2. Painel descritivo em train+holdout; σ, missingness, intervalos cluster-bootstrap. 3. Canários públicos v1 montados de falhas reais; --verificar. 4. Pesos/ma
+  - [SRC-S016 · L127–L137 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 9. Riscos técnicos e mitigação](23_TDD_AUTORESEARCH_FORJA.md#src-s016)
+    - Assuntos: mitigação, pasta, riscos, técnicos, encoding, utf-8, paths, chave
+    - Trecho-guia: Documento de consulta sobre 9. Riscos técnicos e mitigação.
+  - [SRC-S017 · L138–L140 · TDD — FORJA AUTO-RESEARCH (implementação técnica do ciclo AR) > 10. Fora do escopo técnico](23_TDD_AUTORESEARCH_FORJA.md#src-s017)
+    - Assuntos: fora, escopo, técnico, servidor, cron, chamadas, llm, pelo
+    - Trecho-guia: Sem servidor, sem cron, sem UI, sem chamadas LLM pelo Python, sem mudança em forjarun.py, sem sandbox de kernel para juízes (protocolo verificado + manifests).
+
+### 4.26. 24 — Análise de propriedade intelectual da FORJA e plano de registro
+
+- **Arquivo preparado:** [24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md)
+- **Origem:** `24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md`
+- **Termos:** não, registro, inpi, marca, negócio, igor, segredo, produto, plano, patente, depósito, computador
+- **Blocos:**
+  - [SRC-S001 · L1–L10 · 24 — Análise de propriedade intelectual da FORJA e plano de registro](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s001)
+    - Assuntos: igor, análise, propriedade, intelectual, plano, registro, não, antes
+    - Trecho-guia: Data: 23/07/2026 Autor da análise: Claude Fable 5 (sessão com Igor), a pedido do Igor Natureza: análise interna orientativa — não é parecer formal; validar com agente da propriedade industrial antes de protocolar no INPI Classificação: internalworking — não circular fora da opera
+  - [SRC-S002 · L11–L20 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 1. Conclusão executiva](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s002)
+    - Assuntos: não, lpi, conclusão, executiva, eua, método, negócio, art
+    - Trecho-guia: Documento de consulta sobre 1. Conclusão executiva.
+  - [SRC-S003 · L21–L28 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 2. Por que patente não](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s003)
+    - Assuntos: não, patente, negócio, computador, problema, técnico, lpi, art
+    - Trecho-guia: 1. LPI art. 10, II e III — métodos, planos e esquemas de negócio e regras abstratas não são invenção. O núcleo da FORJA (esteira F1→F10, gates de qualidade, conselho obrigatório Helena+Cícero, red team de 9 perguntas, F2-A de 100 perguntas, ciclo AR de auto-pesquisa) é método de 
+  - [SRC-S004 · L29–L30 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 3. O que registrar e como](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s004)
+    - Assuntos: registrar
+    - Trecho-guia: Documento de consulta sobre 3. O que registrar e como.
+  - [SRC-S005 · L31–L38 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 3. O que registrar e como > 3.1 Registro de programa de computador no INPI — prioridade 1](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s005)
+    - Assuntos: código, inpi, depósito, registro, programa, computador, prioridade, lei
+    - Trecho-guia: Base: Lei 9.609/98 + Lei 9.610/98. Vigência: 50 anos. Sigiloso (o código não é publicado — deposita-se resumo de hash). Procedimento (2026): 100% eletrônico via e-Software/INPI com gov.br. Gera-se o resumo digital hash (SHA-512) do código-fonte e declara-se em formulário; o depós
+  - [SRC-S006 · L39–L44 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 3. O que registrar e como > 3.2 Direito autoral sobre a documentação — automático; registro facultativo](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s006)
+    - Assuntos: direito, autoral, registro, facultativo, sobre, documentação, automático, não
+    - Trecho-guia: Já protegidos desde a criação, sem formalidade: DOCUMENTACAOTECNICA.md, os documentos planejamento/01–23, RETROSPECTIVAS.md (80 lições), protocolos (escrita humana, Fable 5, tratamento de acervo), templates de fase, FORJAEXPLICADAPARAADVOGADOS.html. Registro facultativo na Biblio
+  - [SRC-S007 · L45–L50 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 3. O que registrar e como > 3.3 Marca "FORJA" no INPI](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s007)
+    - Assuntos: marca, inpi, nome, saas, logo, inteia, escritório, registrar
+    - Trecho-guia: Registrar se houver intenção de oferta como produto ou serviço (SaaS jurídico, licenciamento a escritórios). Classes de Nice indicativas: 9 (software), 42 (SaaS/desenvolvimento), 45 (serviços jurídicos) — definir com o procurador. "Forja" é palavra de uso comum → risco de colidên
+  - [SRC-S008 · L51–L60 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 3. O que registrar e como > 3.4 Segredo de negócio — a proteção principal (não se registra; vive na conduta)](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s008)
+    - Assuntos: não, segredo, proteção, negócio, principal, registra, vive, conduta
+    - Trecho-guia: O valor competitivo real está no que um concorrente não reconstrói lendo uma descrição: prompts calibrados por 80 lições reais, catálogo de gates minerado de erros de produção, taxonomia de 6 modos de falha de citação, corpus de feedback humano (APRENDIZADOSFEEDBACKHUMANO.md), ca
+  - [SRC-S009 · L61–L64 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 4. Ressalva de autoria com IA](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s009)
+    - Assuntos: autoria, ressalva, gerada, direção, igor, tem, autor, humano
+    - Trecho-guia: Parte do código e dos textos foi gerada com IA (Claude/Codex) sob direção do Igor. Obra puramente gerada por IA não tem autor humano e tem proteção autoral duvidosa (posição firme do US Copyright Office; doutrina majoritária no Brasil na mesma linha). A proteção se sustenta na co
+  - [SRC-S010 · L65–L75 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 5. Plano de ação (ordem recomendada)](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s010)
+    - Assuntos: plano, ação, produto, ordem, recomendada, interno, depositar, registro
+    - Trecho-guia: Documento de consulta sobre 5. Plano de ação (ordem recomendada).
+  - [SRC-S011 · L76–L80 · 24 — Análise de propriedade intelectual da FORJA e plano de registro > 6. Decisões registradas](24_ANALISE_PROPRIEDADE_INTELECTUAL_FORJA.md#src-s011)
+    - Assuntos: decisões, registradas, mudança, patente, descartada, fundamentos, reabrir, apenas
+    - Trecho-guia: Patente: descartada (fundamentos no § 2). Reabrir apenas com fato novo técnico. Estratégia adotada: segredo de negócio como camada principal + registro de software no INPI como prova de anterioridade + marca se houver produto. Este documento deve ser atualizado a cada mudança mat
+
+### 4.27. Diagnóstico e plano — constância visual da FORJA
+
+- **Arquivo preparado:** [24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md)
+- **Origem:** `24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md`
+- **Termos:** não, visual, gate, peça, causa, mapa, produção, correção, padrão, quando, três, plano
+- **Blocos:**
+  - [SRC-S001 · L1–L91 · Diagnóstico e plano — constância visual da FORJA](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s001)
+    - Assuntos: gate, não, peça, visual, três, defeito, plano, f8-s
+    - Trecho-guia: Lugar no plano geral: esta é a Trilha V da § 26 de 40PLANOCONSOLIDADODIAGNOSTICOEDESIGNFORJAV2.md, que é a fonte canônica de execução da FORJA. O estado resumido vive lá; o detalhe, aqui. Em divergência, vale o código.
+  - [SRC-S002 · L92–L105 · Diagnóstico e plano — constância visual da FORJA > 1. Veredito](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s002)
+    - Assuntos: visual, gate, não, padrão, edição, produção, quando, veredito
+    - Trecho-guia: A edição visual da FORJA não se degradou aos poucos. Ela parou de acontecer em 10 de julho de 2026.
+  - [SRC-S003 · L106–L107 · Diagnóstico e plano — constância visual da FORJA > 2. Evidência](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s003)
+    - Assuntos: evidência
+    - Trecho-guia: Documento de consulta sobre 2. Evidência.
+  - [SRC-S004 · L108–L119 · Diagnóstico e plano — constância visual da FORJA > 2. Evidência > 2.1. Contagens conferidas diretamente](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s004)
+    - Assuntos: find, árvore, inteira, contagens, conferidas, diretamente, arquivos, data
+    - Trecho-guia: Documento de consulta sobre 2.1. Contagens conferidas diretamente.
+  - [SRC-S005 · L120–L138 · Diagnóstico e plano — constância visual da FORJA > 2. Evidência > 2.2. Medição automatizada dos DOCX](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s005)
+    - Assuntos: não, negrito, medição, modelo, sim, recente, automatizada, recentes
+    - Trecho-guia: A frente de medição abriu os documentos como pacote e contou elementos. Os números abaixo vêm dessa medição automatizada; a direção é consistente com as contagens da seção 2.1, mas os valores por documento não foram reconferidos um a um.
+  - [SRC-S006 · L139–L146 · Diagnóstico e plano — constância visual da FORJA > 2. Evidência > 2.3. Correção de um nexo causal falso](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s006)
+    - Assuntos: correção, commit, nexo, causal, falso, visual, integração, foi
+    - Trecho-guia: A frente de arqueologia atribuiu a queda ao commit ef2fcf98 (15/07/2026, "modularize Word render and independent visual QA"), afirmando que ele removeu a integração visual. O commit existe, mas a atribuição está errada e foi retirada deste documento. A versão mais antiga de forja
+  - [SRC-S007 · L147–L148 · Diagnóstico e plano — constância visual da FORJA > 3. Causas-raiz](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s007)
+    - Assuntos: causas-raiz
+    - Trecho-guia: Documento de consulta sobre 3. Causas-raiz.
+  - [SRC-S008 · L149–L155 · Diagnóstico e plano — constância visual da FORJA > 3. Causas-raiz > Causa 1 — O compositor está desligado da produção](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s008)
+    - Assuntos: causa, compositor, produção, está, desligado, linha, importa, não
+    - Trecho-guia: forjavisual.py tem 469 linhas e expõe compor(mdpath, outdocx, mapa) na linha 115. Nenhum módulo de produção o importa. O forjarenderdocx.py importa, na linha 31, apenas o forjavisualreview — a revisão pendente, não o compositor. O render converte markdown em DOCX com parágrafos, 
+  - [SRC-S009 · L156–L164 · Diagnóstico e plano — constância visual da FORJA > 3. Causas-raiz > Causa 2 — O mapa visual é uma dependência humana](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s009)
+    - Assuntos: mapa, causa, vira, não, visual, dependência, humana, linha
+    - Trecho-guia: compor() exige um dicionário mapa que declara o que vira linha de síntese, o que vira pull quote, o que vira caixa e onde entram as figuras. Não existe gerador automático desse mapa. Existem cinco mapas escritos à mão, todos datados de 9 e 10 de julho, nenhum posterior.
+  - [SRC-S010 · L165–L173 · Diagnóstico e plano — constância visual da FORJA > 3. Causas-raiz > Causa 3 — O gate existe, mas na rota errada](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s010)
+    - Assuntos: causa, gate, rota, existe, mas, errada, linha, ele
+    - Trecho-guia: forjadelivery.py:185 implementa visualcomlastro(), que confere o SHA-256 do DOCX contra o FIDELIDADEVISUAL.json e rejeita versão desatualizada ou alterada depois do gate. A linha 268 registra o elo 4-B. A linha 476 encerra com SystemExit(2). É um gate sério e bem construído.
+  - [SRC-S011 · L174–L182 · Diagnóstico e plano — constância visual da FORJA > 3. Causas-raiz > Causa 4 — O QA visual só procura defeito, nunca pobreza](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s011)
+    - Assuntos: causa, visual, procura, defeito, nunca, pobreza, texto, forja_visual_qa
+    - Trecho-guia: forjavisualqa.py e forjavisualreview.py verificam se algo quebrou: texto estourando margem, legenda cortada, rodapé colidido, marcador esquecido. Nenhum deles pergunta se os elementos existem. Um documento de texto corrido puro, sem um único diagrama, passa limpo em ambos — porqu
+  - [SRC-S012 · L183–L196 · Diagnóstico e plano — constância visual da FORJA > 4. Por que é heterogêneo](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s012)
+    - Assuntos: não, caminho, peça, alguém, escreveu, caso, cinco, heterogêneo
+    - Trecho-guia: Existem hoje dois caminhos, e o que decide qual deles a peça percorre não é regra nenhuma — é se alguém escreveu um script à mão para aquele caso.
+  - [SRC-S013 · L197–L225 · Diagnóstico e plano — constância visual da FORJA > 5. Assinatura visual da FORJA](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s013)
+    - Assuntos: não, quando, elemento, artefato, tabela, timbre, tipo, rodapé
+    - Trecho-guia: Por determinação de 30/07/2026, os elementos abaixo são obrigatórios em todo artefato que sai da esteira. Não há nível dispensado, não há waiver, não há modo rápido. O tipo de artefato muda a forma que o elemento assume, nunca autoriza sua ausência.
+  - [SRC-S014 · L226–L229 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s014)
+    - Assuntos: plano, correção, não, produz, ordem, ondas, deliberada, pode
+    - Trecho-guia: A ordem das ondas é deliberada e não pode ser invertida. Exigência sem capacidade não produz qualidade, produz travamento: se o gate fechar antes de o compositor rodar sozinho, nenhuma peça sai e a fábrica para.
+  - [SRC-S015 · L230–L247 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Onda 1A — Gerar o mapa visual automaticamente](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s015)
+    - Assuntos: mapa, não, viram, âncora, gerador, mapas, são, categoria
+    - Trecho-guia: Por que primeiro: enquanto o mapa depender de mão humana, tudo o mais é decorativo.
+  - [SRC-S016 · L248–L263 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Onda 1B — Gerar os diagramas](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s016)
+    - Assuntos: onda, gate, não, gerar, texto, comparativa, três, partir
+    - Trecho-guia: Este é o verdadeiro caminho crítico do plano, e a estimativa anterior o subestimava.
+  - [SRC-S017 · L264–L275 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Onda 2 — Tornar o visual o caminho padrão](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s017)
+    - Assuntos: onda, não, gate, visual, padrão, docx, ser, composição
+    - Trecho-guia: Onde: forjarenderdocx.py, função render().
+  - [SRC-S018 · L276–L293 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Onda 3 — Ponto único de estrangulamento e gate bloqueante](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s018)
+    - Assuntos: não, ponto, gate, onda, depois, docx, f10, rota
+    - Trecho-guia: Por que só agora: a partir daqui, o que não atende ao padrão não sai. Isso só é seguro depois que o padrão é atingido automaticamente.
+  - [SRC-S019 · L294–L299 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Onda 4 — Invocação mecânica da skill](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s019)
+    - Assuntos: skill, onda, invocação, mecânica, fase, pelo, visual, hoje
+    - Trecho-guia: A skill visual é hoje invocada por lembrança do agente, o que é a mesma fragilidade do mapa manual num outro andar. A fase de produção passa a carregá-la pelo contrato de fase, não pelo texto do prompt.
+  - [SRC-S020 · L300–L312 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Total revisado](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s020)
+    - Assuntos: total, revisado, onda, mapa, diagrama, são, estimativa, geração
+    - Trecho-guia: São cerca de cinco a seis dias úteis, e não os três a quatro da primeira estimativa. A revisão de engenharia mostrou que a estimativa original tratava geração de mapa e geração de diagrama como a mesma tarefa, quando são duas — e a segunda é a mais pesada. A fábrica opera normalm
+  - [SRC-S021 · L313–L316 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Escopo temporal da determinação](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s021)
+    - Assuntos: não, escopo, temporal, determinação, plano, exigência, vale, todo
+    - Trecho-guia: A exigência vale para todo artefato produzido a partir da conclusão da Onda 2. As peças já entregues não são regeneradas automaticamente: isso é decisão sua, com custo próprio, e está fora deste plano. Registro para não haver expectativa frustrada — o plano recupera o padrão daqu
+  - [SRC-S022 · L317–L322 · Diagnóstico e plano — constância visual da FORJA > 6. Plano de correção > Custo de tempo por peça](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s022)
+    - Assuntos: tempo, peça, custo, composição, atual, não, visual, acrescenta
+    - Trecho-guia: A composição visual acrescenta tempo de processamento a cada render, e o volume atual da fábrica torna isso relevante. O número não foi medido e não vou estimá-lo no escuro: a medição do tempo adicional por peça entra como critério de pronto da Onda 2, com o resultado comparado a
+  - [SRC-S023 · L323–L326 · Diagnóstico e plano — constância visual da FORJA > 7. Loop de engenharia](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s023)
+    - Assuntos: loop, engenharia, precisa, distinguir, duas, coisas, misturadas, viram
+    - Trecho-guia: O loop precisa distinguir duas coisas que, se misturadas, viram exatamente o atalho que a determinação de hoje proíbe.
+  - [SRC-S024 · L327–L336 · Diagnóstico e plano — constância visual da FORJA > 7. Loop de engenharia > O piso é binário e não entra em loop](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s024)
+    - Assuntos: não, piso, entrega, entra, loop, iteração, correção, artefato
+    - Trecho-guia: Os dez elementos da seção 5 são condição de saída, não meta de convergência. Não há iteração que autorize entrega abaixo deles, não há prazo que os dispense, não há waiver.
+  - [SRC-S025 · L337–L348 · Diagnóstico e plano — constância visual da FORJA > 7. Loop de engenharia > A excelência acima do piso entra em loop, com teto](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s025)
+    - Assuntos: piso, teto, banda, excelência, acima, aqui, duas, estiver
+    - Trecho-guia: Acima do piso há espaço de refinamento: qualidade do diagrama, escolha do que merece pull quote, distribuição do negrito. Aqui vale medir, comparar com a banda, corrigir e remedir — e aqui vale a regra de parada, porque é aqui que o perfeccionismo trava produção.
+  - [SRC-S026 · L349–L352 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s026)
+    - Assuntos: indicadores, são, quatro, cada, responde, pergunta, diferente, nenhum
+    - Trecho-guia: São quatro, e cada um responde a uma pergunta diferente. Nenhum deles substitui o outro.
+  - [SRC-S027 · L353–L356 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores > Conformidade — binária](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s027)
+    - Assuntos: não, conformidade, binária, percentual, dez, elementos, obrigatórios, presentes
+    - Trecho-guia: Percentual dos dez elementos obrigatórios presentes. Alvo: 100%. Não é média, é condição. Uma peça não compra a ausência de um elemento obrigatório com pontuação alta nos outros. Este indicador não se combina com nenhum outro e não é ponderado.
+  - [SRC-S028 · L357–L362 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores > Cobertura — a pergunta que ninguém estava fazendo](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s028)
+    - Assuntos: cobertura, pergunta, ninguém, estava, fazendo, ser, percentual, artefatos
+    - Trecho-guia: Percentual de artefatos entregues que passaram pelo gate visual. Alvo: 100%.
+  - [SRC-S029 · L363–L382 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores > IRV — Índice de Riqueza Visual, que mede excelência acima do piso](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s029)
+    - Assuntos: negrito, irv, não, riqueza, banda, índice, visual, mede
+    - Trecho-guia: Bandas-alvo: peça protocolável 0,70 a 0,85; memorial ou parecer 0,65 a 0,80; produto interno 0,55 a 0,75.
+  - [SRC-S030 · L383–L392 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores > CVV — Coeficiente de Variação Visual, que mede constância](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s030)
+    - Assuntos: cvv, irv, coeficiente, variação, visual, mede, constância, média
+    - Trecho-guia: Alvo: até 15%. Acima de 25%, alarme.
+  - [SRC-S031 · L393–L403 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores > Defesa anti-gaming](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s031)
+    - Assuntos: não, elemento, peça, cada, defesa, anti-gaming, diagrama, sai
+    - Trecho-guia: Quatro travas para a esteira não encher a peça de diagrama inútil só para bater métrica:
+  - [SRC-S032 · L404–L411 · Diagnóstico e plano — constância visual da FORJA > 8. Indicadores > Quando o gerador é recalibrado](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s032)
+    - Assuntos: gerador, quando, recalibrado, recalibração, não, indicador, gatilho, ação
+    - Trecho-guia: Indicador sem gatilho de ação vira relatório decorativo. A revisão semanal dispara recalibração do gerador de mapa e dos geradores de diagrama quando qualquer uma destas condições ocorrer: o IRV médio do tipo sai da banda; o CVV ultrapassa 25%; ou um elemento é reprovado duas vez
+  - [SRC-S033 · L412–L427 · Diagnóstico e plano — constância visual da FORJA > 9. O que não fazer](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s033)
+    - Assuntos: não, mais, fazer, gate, onda, interno, geração, diagrama
+    - Trecho-guia: Fechar o gate antes da Onda 2. Pararia a fábrica sem melhorar nenhuma peça. O gate é a última onda por necessidade, não por prudência excessiva.
+  - [SRC-S034 · L428–L441 · Diagnóstico e plano — constância visual da FORJA > 10. Primeiro passo](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s034)
+    - Assuntos: onda, primeiro, passo, ondas, visual, geradores, diagrama, padrão
+    - Trecho-guia: Executar as Ondas 1A, 1B e 2 — gerador de mapa visual, geradores de diagrama e composição por padrão no render — mantendo a fábrica operando normalmente, e voltar com cinco peças reais de tipos diferentes, compostas automaticamente, para a sua conferência visual antes de ligar o 
+  - [SRC-S035 · L442–L456 · Diagnóstico e plano — constância visual da FORJA > Apêndice — procedência das afirmações](24_DIAGNOSTICO_E_PLANO_CONSTANCIA_VISUAL.md#src-s035)
+    - Assuntos: não, versão, gate, compor_, mapa, apenas, visual, medição
+    - Trecho-guia: Conferido diretamente nesta sessão: contagem e datas dos arquivos VISUALLAW.docx; os cinco compormapa.py; os três F10TRILHAEVIDENCIA.md; ausência de import de forjavisual em código de produção; forjavisual.py com 469 linhas e compor() na linha 115; forjarenderdocx.py:31 importand
+
+### 4.28. Hardening anti-alucinação v2 — plano, execução e rollback
+
+- **Arquivo preparado:** [24_HARDENING_ANTI_ALUCINACAO_V2.md](24_HARDENING_ANTI_ALUCINACAO_V2.md)
+- **Origem:** `24_HARDENING_ANTI_ALUCINACAO_V2.md`
+- **Termos:** não, rollback, autoridade, execução, f10, pacotes, peça, porque, recibo, política, pacote, hardening
+- **Blocos:**
+  - [SRC-S001 · L1–L6 · Hardening anti-alucinação v2 — plano, execução e rollback](24_HARDENING_ANTI_ALUCINACAO_V2.md#src-s001)
+    - Assuntos: hardening, anti-alucinação, plano, execução, rollback, data, método, operacional
+    - Trecho-guia: Data: 23/07/2026 Método operacional: Efesto Escopo: F5, F7/F7-B, F9/F10 e pacotes já produzidos.
+  - [SRC-S002 · L7–L18 · Hardening anti-alucinação v2 — plano, execução e rollback > Resultado pretendido](24_HARDENING_ANTI_ALUCINACAO_V2.md#src-s002)
+    - Assuntos: porque, resultado, pretendido, humana, nenhuma, peça, protocolável, pode
+    - Trecho-guia: Nenhuma peça protocolável pode ser liberada apenas porque um JSON declarou pass, porque existe um arquivo com nome convincente ou porque uma revisão humana assinou uma afirmação genérica. A autoridade citada, a fonte oficial, o trecho probatório, a proposição efetivamente escrita
+  - [SRC-S003 · L19–L29 · Hardening anti-alucinação v2 — plano, execução e rollback > Ameaças tratadas](24_HARDENING_ANTI_ALUCINACAO_V2.md#src-s003)
+    - Assuntos: ameaças, tratadas, peça, autoridade, política, pacote, autoriza, ameaça
+    - Trecho-guia: Documento de consulta sobre Ameaças tratadas.
+  - [SRC-S004 · L30–L43 · Hardening anti-alucinação v2 — plano, execução e rollback > Onda de implementação](24_HARDENING_ANTI_ALUCINACAO_V2.md#src-s004)
+    - Assuntos: onda, implementação, recibo, fazer, pacotes, unificar, inventário, jurisprudência
+    - Trecho-guia: 1. Unificar o inventário de jurisprudência e normas. 2. Elevar o recibo humano jurídico para v2. O binder determinístico prepara os hashes, mas nunca assina. 3. Fazer F7 promover verifiedsourceledger somente após recomputação. 4. Fazer F9/F10 revalidarem a política atual. 5. Bloq
+  - [SRC-S005 · L44–L55 · Hardening anti-alucinação v2 — plano, execução e rollback > Critérios de aceite](24_HARDENING_ANTI_ALUCINACAO_V2.md#src-s005)
+    - Assuntos: autoridade, falha, não, critérios, aceite, pacote, rms, rhc
+    - Trecho-guia: HC, RMS, RHC, MS, Rcl, classes STJ/STF cobertas, artigos e leis aparecem no inventário. autoridade de corte ambígua bloqueia strictprotocol; o recibo v2 falha se documento, parágrafo, proposição ou autoridade mudarem; finalmarkdown falso não é coberto por claim genérico; rebaixam
+  - [SRC-S006 · L56–L63 · Hardening anti-alucinação v2 — plano, execução e rollback > Rollback](24_HARDENING_ANTI_ALUCINACAO_V2.md#src-s006)
+    - Assuntos: rollback, arquivos, não, produção, estado, casos, são, migrados
+    - Trecho-guia: Os arquivos de produção e o estado dos casos não são migrados nesta onda. Rollback de código deve restaurar somente os arquivos listados no relatório de execução da mudança e remover os novos módulos/documentos. Não usar reset amplo porque o worktree contém alterações alheias. Pa
+
+### 4.29. Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA
+
+- **Arquivo preparado:** [25_CONSELHO_GATE_VISUAL_2026-08-03.md](25_CONSELHO_GATE_VISUAL_2026-08-03.md)
+- **Origem:** `25_CONSELHO_GATE_VISUAL_2026-08-03.md`
+- **Termos:** não, gate, efesto, visual, igor, peça, integração, cicero, conferência, onda, forja_render_docx, passo
+- **Blocos:**
+  - [SRC-S001 · L1–L70 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s001)
+    - Assuntos: não, peça, parecer, gate, data, f8-s, este, ligar
+    - Trecho-guia: ## ✔ DECISÃO DO IGOR — 03/08/2026, posterior a este parecer e à nota abaixo  O Igor decidiu, e a decisão prevalece sobre o cronograma deste parecer. Ele acatou a recomendação apresentada: ligar depois do prazo de 05/08, não antes, e em duas etapas —  1. primeiro fechar a rota sim
+  - [SRC-S002 · L71–L87 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 1. DECISÃO](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s002)
+    - Assuntos: não, forja_render_docx, gate, produção, cinco, peça, docx, minutos
+    - Trecho-guia: Gate F8-S bloqueante: SIM. Entra em produção como bloqueador irrevogável em 06/08/2026 (quarta), condicionado às cinco observáveis abaixo. Todas devem ser verdadeiras simultaneamente; falta qualquer uma = adiamento automático.
+  - [SRC-S003 · L88–L101 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 2. COMO SE CHEGOU AQUI](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s003)
+    - Assuntos: não, integração, figura, conferência, visual, real, chegou, aqui
+    - Trecho-guia: Ponto crítico trazido por Efesto: Integração técnica (acoplamento em forjarenderdocx, chamada viva no pipeline) é separada de construir Onda 2 (algoritmos de gerador). Ligar gate sem integração em produção = travamento garantido. Essa linha não cede.
+  - [SRC-S004 · L102–L113 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 3. DIVERGÊNCIAS QUE PERMANECERAM](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s004)
+    - Assuntos: conferência, visual, igor, não, gate, divergências, permaneceram, diabob
+    - Trecho-guia: Uma divergência nominalmente registrada, não bloqueadora:
+  - [SRC-S005 · L114–L133 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 4. O QUE FOI DERRUBADO](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s005)
+    - Assuntos: cicero, efesto, onda, helena, figura, não, foi, derrubado
+    - Trecho-guia: Três ideias que caíram na rodada 1 e não reapareceram: Onda 2 leva 25–30 horas (Efesto R1 pessimista) → Corrigido para 5–7 horas (Cicero R2 validou). Brief F7.5 obrigatório acima de 12 páginas → Corrigido para 25 páginas (Helena+Cicero convergem). Gate automático dispensa auditor
+  - [SRC-S006 · L134–L137 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 5. PLANO DE EXECUÇÃO](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s006)
+    - Assuntos: plano, execução, cinco, passos, sequenciados, paralelo, onde, possível
+    - Trecho-guia: Cinco passos sequenciados, paralelo onde possível. Responsável em parênteses.
+  - [SRC-S007 · L138–L159 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 5. PLANO DE EXECUÇÃO > Passo 1: Integração Onda 2 (Efesto, engenharia) — 04–05/08, 5–7 horas](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s007)
+    - Assuntos: integração, tempo, arquivo, aceitar, composição, zero, critério, pronto
+    - Trecho-guia: 1A — Completar geradores de diagrama (48h antes da integração) Arquivo: FERRAMENTAS\medinasvgkit.py Construir três geradores compostos: cronologia de atos, encadeamento de tese, matriz comparativa. Aceitar: Composição roda em zero P0 de testes existentes (gates de legibilidade ≥8
+  - [SRC-S008 · L160–L169 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 5. PLANO DE EXECUÇÃO > Passo 2: Rebaixamento rota simples (Efesto + Diabob, código) — 05–06/08, 1 hora](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s008)
+    - Assuntos: rota, simples, forja_package, assinatura, passo, rebaixamento, efesto, diabob
+    - Trecho-guia: 2 — Rejeição de saída não-visual em produção Arquivo: FORJAHARNESS\forjapackage.py Modificação: Validação de entrada rejeitando saída de forjarenderdocx.render() sem compor() como entregável. Implementação: forjapackage.validateinput() verifica assinatura digital em F8SASSINATURA
+  - [SRC-S009 · L170–L190 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 5. PLANO DE EXECUÇÃO > Passo 3: Conferência visual Igor (Igor, decisão executiva) — 06/08, 20 minutos](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s009)
+    - Assuntos: visual, sim, passo, igor, decisão, executiva, peça, condicional
+    - Trecho-guia: 3 — Inspeção visual de cinco PDFs em amostra real Arquivo (entrada): Cinco PDFs gerados por Passo 1B integrado. Checklist por tipo de peça:
+  - [SRC-S010 · L191–L200 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 5. PLANO DE EXECUÇÃO > Passo 4: Formalização contratual Brief F7.5 (Cicero, jurídico) — concomitante 04–06/08](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s010)
+    - Assuntos: brief, peça, passo, formalização, contratual, cicero, jurídico, concomitante
+    - Trecho-guia: 4 — Atualização do contrato de fase F7 Arquivo: FORJAHARNESS\phasecontracts\F7.json Campo novo: "visualbrieff75declarado" com obrigatoriedade condicional: "obrigatoriose": {"paginas": {"": 25}}. Schema: {cronologiadeclarada: string, cadeiaargumentativadeclarada: string, elementos
+  - [SRC-S011 · L201–L212 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 5. PLANO DE EXECUÇÃO > Passo 5: Ligação do bloqueador F8-S (Efesto, código) — 06/08 noite, 30 minutos](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s011)
+    - Assuntos: passo, bloqueador, f8-s, ligação, efesto, código, noite, minutos
+    - Trecho-guia: 5 — Ativação do gate em modo irrevogável Arquivo: FORJAHARNESS\forjaverificador.py Modificação: Seção F8-S (hoje em if DEBUGMODEOBSERVACAO:) ativada em modo production check. Gate retorna bloqueador P0 em peça sem assinatura visual válida. Diagnósticos: VIS-03 (brief ausente), VI
+  - [SRC-S012 · L213–L223 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > 6. O QUE O IGOR PRECISA FAZER](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s012)
+    - Assuntos: igor, precisa, fazer, passo, aprovação, não, única, ação
+    - Trecho-guia: Uma única ação: Em 06/08/2026 (à tarde, após Passo 1 integrado), abrir cinco PDFs gerados pela Onda 2 integrada no Adobe Reader ou Word, conferir o checklist visual de timbre / síntese / diagrama / caixa / pull quote / paleta / legibilidade (15–20 minutos totais), e assinar o rel
+  - [SRC-S013 · L224–L230 · Parecer do Conselho Quadripartite: Gate Visual F8-S da FORJA > Decisão do Igor em 04/08/2026 — a etapa 1 sai do plano](25_CONSELHO_GATE_VISUAL_2026-08-03.md#src-s013)
+    - Assuntos: não, etapa, igor, sai, plano, gate, decisão, previa
+    - Trecho-guia: O plano acima previa duas etapas: primeiro fechar a rota simples (fazer forjarenderdocx produzir prévia não liberável) e só depois tornar o gate F8-S bloqueante. O Igor descartou a etapa 1: o render não faz sentido como rota e não será tratado.
+
+### 4.30. Gosto jurídico autônomo na FORJA
+
+- **Arquivo preparado:** [25_GOSTO_JURIDICO_AUTONOMO_EDGE.md](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md)
+- **Origem:** `25_GOSTO_JURIDICO_AUTONOMO_EDGE.md`
+- **Termos:** vídeo, não, ser, edge, versão, texto, gosto, onda, fonte, apenas, três, jurídico
+- **Blocos:**
+  - [SRC-S001 · L1–L9 · Gosto jurídico autônomo na FORJA](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s001)
+    - Assuntos: gosto, jurídico, autônomo, transcrição, the, protocolo, forja-gosto-edge-v1, fonte
+    - Trecho-guia: Protocolo: FORJA-GOSTO-EDGE-v1 Fonte estudada: transcrição integral, em inglês, do vídeo “The ONE Skill Every High Performer Needs To Master (in the age of AI)”, de Sandeep Swadia, publicado em 23/07/2026. URL: https://www.youtube.com/watch?v=Vko7hmwrJjc Transcrição local auditáv
+  - [SRC-S002 · L10–L43 · Gosto jurídico autônomo na FORJA > 1. O que o vídeo realmente sustenta](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s002)
+    - Assuntos: vídeo, não, mais, realmente, sustenta, gera, verificação, sentido
+    - Trecho-guia: O vídeo chama de synthetic sameness o resultado aceitável, fluente e intercambiável produzido quando todos usam o mesmo modelo pelos mesmos padrões (00:01:57–00:02:40). A abundância de versões não gera originalidade. Ela aumenta a necessidade de seleção.
+  - [SRC-S003 · L44–L61 · Gosto jurídico autônomo na FORJA > 2. Onde a tese do vídeo precisa ser corrigida](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s003)
+    - Assuntos: vídeo, onde, tese, precisa, ser, corrigida, gosto, não
+    - Trecho-guia: O vídeo afirma que originalidade e gosto são coisas que a IA não pode gerar. A formulação é forte demais. A IA pode desenvolver uma competência funcional de gosto quando o harness lhe oferece:
+  - [SRC-S004 · L62–L70 · Gosto jurídico autônomo na FORJA > 3. Tradução do EDGE para petições](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s004)
+    - Assuntos: edge, tradução, petições, precisa, ser, pergunta, operacional, falha
+    - Trecho-guia: Documento de consulta sobre 3. Tradução do EDGE para petições.
+  - [SRC-S005 · L71–L94 · Gosto jurídico autônomo na FORJA > 4. Arquitetura de autonomia](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s005)
+    - Assuntos: arquitetura, autonomia, seleção, edge, estilo, text, corpus, ledgers
+    - Trecho-guia: A geração e a seleção editorial podem ser autônomas. A autorização jurídica para protocolar continua separada: nenhum ganho de estilo transforma modelo em fonte, advogado responsável ou autoridade de liberação.
+  - [SRC-S006 · L95–L107 · Gosto jurídico autônomo na FORJA > 5. O que foi implementado nesta onda](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s006)
+    - Assuntos: foi, implementado, nesta, onda, registra, passou, prompt, agora
+    - Trecho-guia: 1. O prompt de F6/F7 agora executa FORJA-GOSTO-EDGE-v1 internamente. 2. O passe F7-B produz três direções editoriais silenciosas, escolhe uma, registra o recibo gostoJuridico e descarta a candidata quando protocolo, unicidade da seleção ou âncoras literais forem inconsistentes. 3
+  - [SRC-S007 · L108–L127 · Gosto jurídico autônomo na FORJA > 6. Questões essenciais para as próximas ondas](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s007)
+    - Assuntos: mesmo, questões, essenciais, próximas, ondas, texto, consequência, apenas
+    - Trecho-guia: 1. O texto permite que o julgador formule a questão decisiva em uma frase? 2. A abertura começa pela fricção real do caso ou por um prefácio que serviria em qualquer processo? 3. Cada capítulo contém pelo menos uma âncora verificável e uma consequência? 4. O ponto de vista decorr
+  - [SRC-S008 · L128–L141 · Gosto jurídico autônomo na FORJA > 7. Próxima onda recomendada](25_GOSTO_JURIDICO_AUTONOMO_EDGE.md#src-s008)
+    - Assuntos: onda, próxima, recomendada, promoção, deve, texto, transformar, recibo
+    - Trecho-guia: Transformar o recibo gostoJuridico, hoje validado no executor de geração, em gate contratual recomposto também na promoção; acrescentar ao AUTO-RESEARCH uma rubrica JSON estruturada por dimensão EDGE. A promoção deve exigir:
+
+### 4.31. Plano de implementação — FORJA‑ASSINATURA
+
+- **Arquivo preparado:** [26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md)
+- **Origem:** `26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md`
+- **Termos:** não, json, onda, deve, assinatura, schema, plano, seleção, planejamento, jurídico, caso, juridicamente
+- **Blocos:**
+  - [SRC-S001 · L1–L15 · Plano de implementação — FORJA‑ASSINATURA](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s001)
+    - Assuntos: plano, planejamento, documento, implementação, assinatura, visão, experimental, não
+    - Trecho-guia: RECLASSIFICADO EM 25/07/2026 — visão longa e backlog experimental, não roteiro de execução. A tese deste plano permanece correta e o veredito adversarial Fable 5 de 24/07 (GO-COM-CONDIÇÕES) segue válido quanto a ela. O que foi retirado é a superfície: cinco a sete geometrias, trê
+  - [SRC-S002 · L16–L40 · Plano de implementação — FORJA‑ASSINATURA > 1. Decisão executiva](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s002)
+    - Assuntos: não, peça, deve, decisão, executiva, será, incumbente, somente
+    - Trecho-guia: A FORJA‑ASSINATURA será uma camada de busca, comparação e seleção argumentativa anterior à auditoria factual final. Não será um prompt mais eloquente, um detector de “texto humano” nem uma licença para tornar a peça excêntrica.
+  - [SRC-S003 · L41–L63 · Plano de implementação — FORJA‑ASSINATURA > 2. Autoridade, precedência e limites](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s003)
+    - Assuntos: autoridade, planejamento, precedência, limites, este, plano, não, contrato
+    - Trecho-guia: FORJASPECMANIFEST.json; os contratos em phasecontracts/ e phasecontractsn4/; planejamento/05FORJANIVEL2ANALISEEPLANOCORRIGIDO.md; planejamento/22PRDAUTORESEARCHFORJA.md; planejamento/23TDDAUTORESEARCHFORJA.md; PROTOCOLOFABLE5ESCRITAFINAL.md; RUNBOOKLIBERACAOJURIDICAESTRITA.md; a 
+  - [SRC-S004 · L64–L65 · Plano de implementação — FORJA‑ASSINATURA > 3. Diagnóstico de partida](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s004)
+    - Assuntos: diagnóstico, partida
+    - Trecho-guia: Documento de consulta sobre 3. Diagnóstico de partida.
+  - [SRC-S005 · L66–L83 · Plano de implementação — FORJA‑ASSINATURA > 3. Diagnóstico de partida > 3.1 O que já existe e deve ser reutilizado](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s005)
+    - Assuntos: promoção, não, existe, deve, ser, reutilizado, contratos, tentativa
+    - Trecho-guia: Documento de consulta sobre 3.1 O que já existe e deve ser reutilizado.
+  - [SRC-S006 · L84–L100 · Plano de implementação — FORJA‑ASSINATURA > 3. Diagnóstico de partida > 3.2 Lacunas comprovadas](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s006)
+    - Assuntos: não, lacunas, comprovadas, apenas, mede, qualidade, painel, artefatos
+    - Trecho-guia: 1. As “três direções” do Fable existem apenas como declaração da mesma sessão. 2. Só um texto é materializado; alternativas não possuem artefato nem hash. 3. O próprio redator escolhe a própria versão. 4. F7‑B entra tarde demais para corrigir arquitetura argumentativa. 5. O gate 
+  - [SRC-S007 · L101–L117 · Plano de implementação — FORJA‑ASSINATURA > 3. Diagnóstico de partida > 3.3 Estado de verificação em 24/07/2026](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s007)
+    - Assuntos: estado, verificação, passed, não, foi, executada, linha, base
+    - Trecho-guia: Resultado observado: 131 passed, 3 subtests passed.
+  - [SRC-S008 · L118–L138 · Plano de implementação — FORJA‑ASSINATURA > 4. Definição operacional de gosto jurídico](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s008)
+    - Assuntos: gosto, jurídico, definição, operacional, texto, juridicamente, correto, não
+    - Trecho-guia: Gosto jurídico funcional é a capacidade de:
+  - [SRC-S009 · L139–L154 · Plano de implementação — FORJA‑ASSINATURA > 4. Definição operacional de gosto jurídico > 4.1 Assinatura do caso](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s009)
+    - Assuntos: caso, deve, assinatura, prova, limite, desta, cada, possuir
+    - Trecho-guia: Cada caso deve possuir uma identidade decisória composta por:
+  - [SRC-S010 · L155–L166 · Plano de implementação — FORJA‑ASSINATURA > 4. Definição operacional de gosto jurídico > 4.2 Memorabilidade juridicamente segura](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s010)
+    - Assuntos: qual, memorabilidade, juridicamente, segura, será, medida, recuperabilidade, decisória
+    - Trecho-guia: Memorabilidade será medida como recuperabilidade decisória fiel, não como efeito retórico:
+  - [SRC-S011 · L167–L168 · Plano de implementação — FORJA‑ASSINATURA > 5. Encaixe arquitetural](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s011)
+    - Assuntos: encaixe, arquitetural
+    - Trecho-guia: Documento de consulta sobre 5. Encaixe arquitetural.
+  - [SRC-S012 · L169–L202 · Plano de implementação — FORJA‑ASSINATURA > 5. Encaixe arquitetural > 5.1 A tupla F0–F10 permanece intacta](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s012)
+    - Assuntos: não, tupla, f10, permanece, intacta, geometrias, seleção, independentes
+    - Trecho-guia: Não criar F6.5, não renumerar fases e não introduzir nova fase canônica.
+  - [SRC-S013 · L203–L216 · Plano de implementação — FORJA‑ASSINATURA > 5. Encaixe arquitetural > 5.2 Fronteiras de autoridade](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s013)
+    - Assuntos: candidatos, fronteiras, autoridade, pode, escolher, redigir, materializar, selecionar
+    - Trecho-guia: Documento de consulta sobre 5.2 Fronteiras de autoridade.
+  - [SRC-S014 · L217–L270 · Plano de implementação — FORJA‑ASSINATURA > 5. Encaixe arquitetural > 5.3 Estrutura física-alvo](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s014)
+    - Assuntos: json, schema, não, estrutura, física-alvo, raiz, service, adapters
+    - Trecho-guia: Para não acrescentar outro módulo monolítico à raiz:
+  - [SRC-S015 · L271–L290 · Plano de implementação — FORJA‑ASSINATURA > 5. Encaixe arquitetural > 5.4 Compatibilidade do rollout](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s015)
+    - Assuntos: não, rollout, sombra, compatibilidade, explícitos, somente, casos, assinatura
+    - Trecho-guia: O runner atual resolve apenas requiredInputs; não há contrato genérico de optionalInputs ou conditionalInputs. O rollout terá três etapas:
+  - [SRC-S016 · L291–L307 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s016)
+    - Assuntos: artefatos, contrato, todos, devem, conter, schemaversion, protocolversion, caseid
+    - Trecho-guia: schemaVersion; protocolVersion; caseId; attemptId; generatedAt; producerRunId; hashes de entradas; versão do prompt/rubrica; identidade/família real do executor quando verificável; releasePolicy: internalworking, salvo o único draftmarkdown promovido; reasonCodes; status explícit
+  - [SRC-S017 · L308–L350 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.1 F4SIGNATUREMAP.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s017)
+    - Assuntos: json, knowngaps, f4signaturemap, f4_signature_map, campos, mínimos, schemaversion, forja-assinatura-v1
+    - Trecho-guia: toda referência deve existir no ledger congelado; knownGaps nunca é convertido em afirmação; ausência de questão, âncora, consequência ou providência bloqueia F4‑S.
+  - [SRC-S018 · L351–L386 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.2 F4SIGNATUREGEOMETRIES.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s018)
+    - Assuntos: json, deve, eixos, f4signaturegeometries, f4_signature_geometries, conter, cinco, sete
+    - Trecho-guia: Deve conter de cinco a sete geometrias.
+  - [SRC-S019 · L387–L438 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.3 F6SIGNATURECANDIDATES.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s019)
+    - Assuntos: json, fluxo, prompt, texto, não, candidatos, candidate_0, orchestrator_attested
+    - Trecho-guia: O candidate0 é sempre a saída materializada do fluxo incumbente, executada antes da comparação com o mesmo snapshot jurídico congelado, em sessão isolada e sem artefatos de assinatura no prompt. Ele possui texto, caminho e hash; não é o nome abstrato de um fluxo. Por padrão, o se
+  - [SRC-S020 · L439–L457 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.3-A F5SIGNATURESHORTLIST.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s020)
+    - Assuntos: json, redação, artefato, hash, microbrief, quando, não, deve
+    - Trecho-guia: Artefato de transição entre estratégia e redação:
+  - [SRC-S021 · L458–L489 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.4 F6SIGNATUREJUDGMENT.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s021)
+    - Assuntos: json, dimensão, f6signaturejudgment, f6_signature_judgment, cada, voto, deve, conter
+    - Trecho-guia: juiz, família e nível de garantia (envelopeverified, orchestratorattested ou selfdeclared); judgeIndependenceMode efetivo: crossfamily|crosssessionsamefamily|unverified; arquivos efetivamente lidos; declaração de isolamento; ordem apresentada; hashes dos bundles; candidato venced
+  - [SRC-S022 · L490–L517 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.5 F6SIGNATURERECALL.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s022)
+    - Assuntos: não, recebe, cartão, json, teste, síntese, leitor, apenas
+    - Trecho-guia: O teste será um gargalo de informação em duas execuções isoladas:
+  - [SRC-S023 · L518–L550 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.6 F6SIGNATURESELECTION.json](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s023)
+    - Assuntos: json, snapshot, candidatos, matriz, vencedor, hash, estados, f6signatureselection
+    - Trecho-guia: snapshot e hashes dos candidatos; candidatos bloqueados e reason codes; matriz jurídica; matriz de comparações; swaps; consistência por juiz; vencedor estrutural; recall; decisão final; winnerArtifactSha256; identidade, snapshot e hash do candidate0; incumbentPreserved; abstained
+  - [SRC-S024 · L551–L575 · Plano de implementação — FORJA‑ASSINATURA > 6. Contrato dos artefatos > 6.7 Invalidação e reabertura](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s024)
+    - Assuntos: reabrir, decisão, invalida, seleção, invalidação, reabertura, assinatura, anterior
+    - Trecho-guia: A decisão de assinatura é append-only. Nunca sobrescrever a anterior.
+  - [SRC-S025 · L576–L577 · Plano de implementação — FORJA‑ASSINATURA > 7. Algoritmo de seleção](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s025)
+    - Assuntos: algoritmo, seleção
+    - Trecho-guia: Documento de consulta sobre 7. Algoritmo de seleção.
+  - [SRC-S026 · L578–L605 · Plano de implementação — FORJA‑ASSINATURA > 7. Algoritmo de seleção > 7.1 Vetos jurídicos e preferência holística estável](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s026)
+    - Assuntos: preferência, holística, vetos, jurídicos, estável, não, cobertura, elegíveis
+    - Trecho-guia: O sistema não usa média única nem ordem lexicográfica sobre notas qualitativas ruidosas.
+  - [SRC-S027 · L606–L617 · Plano de implementação — FORJA‑ASSINATURA > 7. Algoritmo de seleção > 7.2 Incumbente como candidato zero](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s027)
+    - Assuntos: incumbente, candidato, zero, pelo, jurídico, não, candidate_0, texto
+    - Trecho-guia: O candidate0 é o texto integral produzido pelo fluxo vigente sob o mesmo snapshot jurídico, materializado e hasheado antes do cegamento.
+  - [SRC-S028 · L618–L647 · Plano de implementação — FORJA‑ASSINATURA > 7. Algoritmo de seleção > 7.3 Seleção N-way](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s028)
+    - Assuntos: n-way, seleção, não, três, protocolo, dois, famílias, família
+    - Trecho-guia: A bancada atual A/B não será forçada a aceitar três lados.
+  - [SRC-S029 · L648–L672 · Plano de implementação — FORJA‑ASSINATURA > 8. Questões essenciais que o sistema deve responder](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s029)
+    - Assuntos: qual, questões, essenciais, sistema, deve, responder, redigir, caso
+    - Trecho-guia: 1. Qual é a questão que realmente decide o caso? 2. Qual fato ou prova muda o resultado? 3. Qual é o limite jurídico que impede a solução contrária? 4. O que o julgador pode considerar neste momento processual? 5. Qual providência concreta decorre da cadeia? 6. Qual seria a redaç
+  - [SRC-S030 · L673–L676 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s030)
+    - Assuntos: ondas, implementação, onda, cada, entrega, independente, nenhuma, posterior
+    - Trecho-guia: Cada onda é uma entrega independente. Nenhuma onda posterior começa com testes ou contratos da anterior em vermelho.
+  - [SRC-S031 · L677–L710 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 0 — Estabilizar a linha de base](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s031)
+    - Assuntos: onda, estabilizar, linha, base, régua, revisão, baseline, arquivos
+    - Trecho-guia: Objetivo: tornar o ponto de partida reproduzível.
+  - [SRC-S032 · L711–L752 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 1 — Contratos, schemas e tipos puros](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s032)
+    - Assuntos: contratos, schemas, caso, onda, tipos, puros, assinatura, antes
+    - Trecho-guia: Objetivo: definir o idioma executável da assinatura antes de qualquer chamada a modelo.
+  - [SRC-S033 · L753–L798 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 2 — F4‑S: mapa decisório e divergência](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s033)
+    - Assuntos: não, onda, arquitetura, geometrias, diversidade, mapa, decisório, divergência
+    - Trecho-guia: Objetivo: produzir arquitetura antes da prosa.
+  - [SRC-S034 · L799–L824 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 3 — F5: filtro de lastro](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s034)
+    - Assuntos: não, geometria, fonte, onda, filtro, lastro, objetivo, impedir
+    - Trecho-guia: Objetivo: impedir que uma geometria elegante avance sem fonte.
+  - [SRC-S035 · L825–L871 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 4 — F5‑S: microbriefs e shortlist estratégica](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s035)
+    - Assuntos: shortlist, não, onda, microbriefs, estratégica, objetivo, três, custo
+    - Trecho-guia: Objetivo: materializar três estratégias curtas, já lastreadas, antes de pagar o custo de drafts completos.
+  - [SRC-S036 · L872–L899 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 5 — F6‑A: drafts completos](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s036)
+    - Assuntos: candidato, elimina, drafts, completos, onda, somente, estilo, zero
+    - Trecho-guia: Objetivo: redigir somente as arquiteturas com chance real de vencer.
+  - [SRC-S037 · L900–L953 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 6 — F6‑B: cegamento e preferência preliminar](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s037)
+    - Assuntos: preliminar, onda, preferência, família, não, mapping, cegamento, draft_markdown
+    - Trecho-guia: Objetivo: formar a matriz cega e a preferência preliminar sem conhecer autor, família ou ordem original. Ainda não promover draftmarkdown.
+  - [SRC-S038 · L954–L993 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 7 — Recuperabilidade, steelman e F6‑C](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s038)
+    - Assuntos: steelman, síntese, não, onda, recuperabilidade, executiva, cartão, contra
+    - Trecho-guia: Objetivo: medir se a peça torna a decisão cognitivamente disponível sem falsear e, somente então, emitir a seleção final.
+  - [SRC-S039 · L994–L1027 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 8 — F7 e F7‑B conservadora](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s039)
+    - Assuntos: frase-mãe, não, onda, conservadora, fusão, geometria, passa, assinatura
+    - Trecho-guia: Objetivo: preservar a arquitetura vencedora durante auditoria e edição final.
+  - [SRC-S040 · L1028–L1077 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 9 — AUTO‑RESEARCH e memória decisória](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s040)
+    - Assuntos: memória, decisória, não, corpus, decisão, onda, auto, research
+    - Trecho-guia: Objetivo: aprender com comparações sem autopromover preferência.
+  - [SRC-S041 · L1078–L1129 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 10 — Calibração humana inicial](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s041)
+    - Assuntos: humana, inicial, produto, preferência, não, parada, onda, calibração
+    - Trecho-guia: Objetivo: ensinar a distinção entre excepcional e apenas fluente.
+  - [SRC-S042 · L1130–L1167 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 11 — Piloto sombra](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s042)
+    - Assuntos: sombra, onda, piloto, mode, incumbente, linhagem, objetivo, observar
+    - Trecho-guia: Objetivo: observar sem afetar a peça produzida.
+  - [SRC-S043 · L1168–L1190 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 12 — pilotblocking](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s043)
+    - Assuntos: não, onda, falha, bloqueia, pilotblocking, pilot_blocking, objetivo, tornar
+    - Trecho-guia: Objetivo: tornar a seleção obrigatória em escopo controlado.
+  - [SRC-S044 · L1191–L1218 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 13 — defaulton](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s044)
+    - Assuntos: onda, casos, pilot_blocking, prospectivo, jurídica, rollback, defaulton, default_on
+    - Trecho-guia: Objetivo: executar autonomamente em novos casos elegíveis.
+  - [SRC-S045 · L1219–L1242 · Plano de implementação — FORJA‑ASSINATURA > 9. Ondas de implementação > Onda 14 — Documentação e arquitetura](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s045)
+    - Assuntos: atualizar, documentação, graphify, mapa_arquitetura_ia, onda, arquitetura, json, python
+    - Trecho-guia: 1. atualizar FORJASPECMANIFEST.json; 2. atualizar contratos F4/F6/F7; 3. atualizar documentação técnica e protocolos; 4. atualizar catálogo; 5. regenerar Graphify e Archify; 6. renderizar e validar todos os HTMLs; 7. atualizar hashes; 8. executar consultas de grafo sobre os novos
+  - [SRC-S046 · L1243–L1277 · Plano de implementação — FORJA‑ASSINATURA > 10. Configuração proposta](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s046)
+    - Assuntos: true, configuração, proposta, signature-pilot-v1, onda, json, signature, protocolversion
+    - Trecho-guia: signature-pilot-v1 deve resolver para limites numéricos de chamadas, tokens de entrada/saída, tempo total, número de juízes e comparações. A Onda 0 mede a linha de base; a Onda 1 congela o perfil antes de W2. Parâmetros, budgets, função de parada e gatilhos devem ser hash-bound. 
+  - [SRC-S047 · L1278–L1304 · Plano de implementação — FORJA‑ASSINATURA > 11. Orçamento e eficiência](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s047)
+    - Assuntos: orçamento, eficiência, apenas, jurídico, custo, sistema, não, deve
+    - Trecho-guia: O sistema não deve gerar sete peças completas.
+  - [SRC-S048 · L1305–L1306 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s048)
+    - Assuntos: matriz, testes
+    - Trecho-guia: Documento de consulta sobre 12. Matriz de testes.
+  - [SRC-S049 · L1307–L1322 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes > 12.1 Unidade](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s049)
+    - Assuntos: unidade, schemas, reason, codes, resolução, ids, diversidade, eixo
+    - Trecho-guia: schemas; reason codes; resolução de IDs; diversidade por eixo e distância de ordem; canonicalização; permutações; Condorcet; abstenção; recall card; remoção segura da síntese executiva; topologia estrutural insensível a edição local; transições de estado; hash chain.
+  - [SRC-S050 · L1323–L1333 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes > 12.2 Contrato](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s050)
+    - Assuntos: histórico, contrato, novo, sidecars, draft, candidatos, internos, output
+    - Trecho-guia: F4 histórico; F4 novo com sidecars; F6 histórico com um draft; F6 novo com candidatos internos e um output canônico; F7 com assinatura; F7 histórico legível; F8 sem alteração de interface; package recompõe gates.
+  - [SRC-S051 · L1334–L1346 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes > 12.3 Metamórficos](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s051)
+    - Assuntos: metamórficos, trocar, alterar, posição, anonimizar, autor, nomes, mantendo
+    - Trecho-guia: trocar posição; anonimizar autor; trocar nomes mantendo relações; retirar âncora; inserir autoridade irrelevante; aumentar comprimento; repetir termos da rubrica; inverter polaridade; alterar data/valor; preservar palavras e alterar nexo.
+  - [SRC-S052 · L1347–L1362 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes > 12.4 Adversariais](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s052)
+    - Assuntos: adversariais, prompt, injection, mapping, leak, family, spoofing, self-judge
+    - Trecho-guia: prompt injection; mapping leak; family spoofing; self-judge; result JSON fora do schema; approved=true sem evidência; alteração pós-snapshot; sealed falso; salto de estado; downgrade silencioso para candidato único; feedback sem autoria; memória decisória vazando para prompt de g
+  - [SRC-S053 · L1363–L1370 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes > 12.5 Regressão real](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s053)
+    - Assuntos: regressão, real, página, artefatos, sanitizados, casos, históricos, somente
+    - Trecho-guia: artefatos sanitizados; casos históricos somente replay; pilotos prospectivos em sombra; comparação de hashes de package; F8 renderizado página a página.
+  - [SRC-S054 · L1371–L1392 · Plano de implementação — FORJA‑ASSINATURA > 12. Matriz de testes > 12.6 Comandos mínimos](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s054)
+    - Assuntos: python, comandos, mínimos, json, powershell, pytest, cacheprovider, test_forja_assinatura
+    - Trecho-guia: A contagem de testes deve vir da coleta viva, nunca de número escrito manualmente.
+  - [SRC-S055 · L1393–L1427 · Plano de implementação — FORJA‑ASSINATURA > 13. Gate de promoção](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s055)
+    - Assuntos: estiver, gate, promoção, política, forem, nenhum, for, houver
+    - Trecho-guia: Uma política FORJA‑ASSINATURA só avança se:
+  - [SRC-S056 · L1428–L1449 · Plano de implementação — FORJA‑ASSINATURA > 14. Modos de falha e resgate](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s056)
+    - Assuntos: falha, resgate, preservar, incumbente, modos, candidato, inventa, bloquear
+    - Trecho-guia: Documento de consulta sobre 14. Modos de falha e resgate.
+  - [SRC-S057 · L1450–L1472 · Plano de implementação — FORJA‑ASSINATURA > 15. Anti-padrões proibidos](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s057)
+    - Assuntos: anti-padrões, proibidos, usar, aceitar, alegar, renumerar, f10, transformar
+    - Trecho-guia: renumerar F0–F10; transformar F5 em redator; levar todos os candidatos a F7/F8; usar o Fable pós-F7 para refazer estratégia; chamar retries de diversidade; permitir que o gerador seja o julgador; selecionar pelo menor SHA; produzir média que compense erro jurídico; aceitar “sem P
+  - [SRC-S058 · L1473–L1496 · Plano de implementação — FORJA‑ASSINATURA > 16. Critério de concluído](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s058)
+    - Assuntos: hashes, critério, concluído, materializar, candidate_0, promoção, memória, estiverem
+    - Trecho-guia: A implementação estará concluída somente quando:
+  - [SRC-S059 · L1497–L1525 · Plano de implementação — FORJA‑ASSINATURA > 17. Sequência recomendada de execução](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s059)
+    - Assuntos: sequência, recomendada, execução, text, baseline, contratos, f4-s, grounding
+    - Trecho-guia: Não executar W2–W8 como uma única mudança. Cada onda deve produzir:
+  - [SRC-S060 · L1526–L1543 · Plano de implementação — FORJA‑ASSINATURA > 17. Sequência recomendada de execução > Referências obrigatórias por onda](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s060)
+    - Assuntos: json, onda, referências, obrigatórias, phase_contracts, padrão, copiar, não
+    - Trecho-guia: Documento de consulta sobre Referências obrigatórias por onda.
+  - [SRC-S061 · L1544–L1560 · Plano de implementação — FORJA‑ASSINATURA > 18. Primeira entrega a executar](26_PLANO_IMPLEMENTACAO_FORJA_ASSINATURA.md#src-s061)
+    - Assuntos: primeira, entrega, executar, contrato, nenhuma, código, deve, conter
+    - Trecho-guia: A primeira entrega de código deve conter apenas:
+
+### 4.32. PRD — FORJA-ASSINATURA
+
+- **Arquivo preparado:** [27_PRD_FORJA_ASSINATURA.md](27_PRD_FORJA_ASSINATURA.md)
+- **Origem:** `27_PRD_FORJA_ASSINATURA.md`
+- **Termos:** não, deve, antes, desafiante, incumbente, providência, decisória, texto, questão, produto, snapshot, preferência
+- **Blocos:**
+  - [SRC-S001 · L1–L13 · PRD — FORJA-ASSINATURA](27_PRD_FORJA_ASSINATURA.md#src-s001)
+    - Assuntos: prd, planejamento, forja-assinatura, execução, reclassificado, visão, experimental, longo
+    - Trecho-guia: RECLASSIFICADO EM 25/07/2026 — visão experimental de longo prazo. O PRD vigente para execução é planejamento/33PRDFORJAASSINATURALITECOCRIACAOPRECEDENTES.md.
+  - [SRC-S002 · L14–L33 · PRD — FORJA-ASSINATURA > 1. Decisão de produto](27_PRD_FORJA_ASSINATURA.md#src-s002)
+    - Assuntos: produto, não, decisão, camada, cega, argumentativa, criar, autônoma
+    - Trecho-guia: Criar uma camada autônoma de divergência estrutural, competição cega e seleção conservadora que aumente a identidade, a clareza decisória e a força argumentativa das peças da FORJA sem reduzir segurança jurídica.
+  - [SRC-S003 · L34–L54 · PRD — FORJA-ASSINATURA > 2. Problema](27_PRD_FORJA_ASSINATURA.md#src-s003)
+    - Assuntos: problema, controles, estilo, mas, não, antes, possui, fortes
+    - Trecho-guia: A FORJA já possui controles fortes de fonte, estilo, Fable 5, F7, package e renderização. Esses controles evitam muitos textos ruins, mas não garantem que um texto correto seja singular.
+  - [SRC-S004 · L55–L71 · PRD — FORJA-ASSINATURA > 3. Hipótese](27_PRD_FORJA_ASSINATURA.md#src-s004)
+    - Assuntos: hipótese, incumbente, não, reconstruir, identidade, decisória, gerar, geometrias
+    - Trecho-guia: 1. reconstruir a identidade decisória; 2. gerar geometrias realmente distintas; 3. filtrar lastro antes da prosa; 4. materializar o incumbente e uma desafiante sob condições comparáveis; 5. escolher às cegas com abstenção; 6. preservar a estrutura escolhida durante F7/F7-B;
+  - [SRC-S005 · L72–L73 · PRD — FORJA-ASSINATURA > 4. Usuários e decisões](27_PRD_FORJA_ASSINATURA.md#src-s005)
+    - Assuntos: usuários, decisões
+    - Trecho-guia: Documento de consulta sobre 4. Usuários e decisões.
+  - [SRC-S006 · L74–L84 · PRD — FORJA-ASSINATURA > 4. Usuários e decisões > 4.1 Usuário primário](27_PRD_FORJA_ASSINATURA.md#src-s006)
+    - Assuntos: usuário, primário, escritório, recebe, peça, pronta, revisão, entrega
+    - Trecho-guia: O escritório que recebe uma peça pronta para revisão ou entrega e precisa que o texto:
+  - [SRC-S007 · L85–L94 · PRD — FORJA-ASSINATURA > 4. Usuários e decisões > 4.2 Usuário operacional](27_PRD_FORJA_ASSINATURA.md#src-s007)
+    - Assuntos: usuário, operacional, operador, precisa, saber, qual, arquitetura, foi
+    - Trecho-guia: saber qual arquitetura foi escolhida; distinguir incumbente, desafiante, vencedor cego e cânone jurídico; entender por que houve abstenção; desligar a camada sem migrar ou corromper artefatos; auditar custo, modelo, sessão, prompt e hashes.
+  - [SRC-S008 · L95–L106 · PRD — FORJA-ASSINATURA > 4. Usuários e decisões > 4.3 Decisões suportadas](27_PRD_FORJA_ASSINATURA.md#src-s008)
+    - Assuntos: decisões, suportadas, qual, verdadeira, fricção, decisória, arquitetura, menos
+    - Trecho-guia: Qual é a verdadeira fricção decisória? Que arquitetura é menos óbvia e ainda estritamente lastreada? A diferença é estrutural ou apenas verbal? A desafiante é juridicamente não inferior? A preferência permanece quando posição e rótulos mudam? O corpo torna questão, âncora, limite
+  - [SRC-S009 · L107–L130 · PRD — FORJA-ASSINATURA > 5. Princípios invioláveis](27_PRD_FORJA_ASSINATURA.md#src-s009)
+    - Assuntos: não, princípios, invioláveis, incumbente, snapshot, resultado, independência, são
+    - Trecho-guia: 1. Juridicidade é veto. Nenhuma qualidade estética compensa erro de fato, fonte, autoridade, pedido, polaridade ou posição processual. 2. Incumbente material. candidate0 é texto, snapshot e hash; nunca um rótulo abstrato. 3. Comparabilidade. Candidatos disputam sob o mesmo snapsh
+  - [SRC-S010 · L131–L132 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1](27_PRD_FORJA_ASSINATURA.md#src-s010)
+    - Assuntos: escopo, funcional
+    - Trecho-guia: Documento de consulta sobre 6. Escopo funcional v1.
+  - [SRC-S011 · L133–L152 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-01 — Configuração e modo efetivo](27_PRD_FORJA_ASSINATURA.md#src-s011)
+    - Assuntos: configuração, modo, rf-01, efetivo, deve, off, pilot_blocking, sistema
+    - Trecho-guia: off; shadow; pilotblocking; defaulton.
+  - [SRC-S012 · L153–L166 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-02 — Snapshot jurídico congelado](27_PRD_FORJA_ASSINATURA.md#src-s012)
+    - Assuntos: rf-02, snapshot, jurídico, congelado, antes, gerar, alternativas, sistema
+    - Trecho-guia: Antes de gerar alternativas, o sistema deve produzir um compromisso que inclua:
+  - [SRC-S013 · L167–L183 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-03 — Mapa de assinatura](27_PRD_FORJA_ASSINATURA.md#src-s013)
+    - Assuntos: rf-03, mapa, assinatura, f4-s, questão, âncora, limite, providência
+    - Trecho-guia: questão decisória; frase-mãe; versão óbvia; âncora factual/probatória; limite jurídico; melhor contra-argumento; consequência demonstrada; providência; conteúdo obrigatório; lacunas conhecidas.
+  - [SRC-S014 · L184–L204 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-04 — Geometrias divergentes](27_PRD_FORJA_ASSINATURA.md#src-s014)
+    - Assuntos: geometrias, rf-04, divergentes, ordem, f4-s, deve, produzir, cinco
+    - Trecho-guia: F4-S deve produzir de cinco a sete geometrias baratas, sem petição completa.
+  - [SRC-S015 · L205–L216 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-05 — Grounding antes da redação](27_PRD_FORJA_ASSINATURA.md#src-s015)
+    - Assuntos: rf-05, grounding, antes, redação, geometria, partially_grounded, não, deve
+    - Trecho-guia: F5 deve classificar cada geometria:
+  - [SRC-S016 · L217–L230 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-06 — Microbriefs isolados e shortlist](27_PRD_FORJA_ASSINATURA.md#src-s016)
+    - Assuntos: microbriefs, shortlist, rf-06, isolados, três, desafiante, f5-s, deve
+    - Trecho-guia: F5-S deve produzir três microbriefs em sessões separadas, sem acesso entre si. Cada um contém estrutura mínima, não peça integral.
+  - [SRC-S017 · L231–L252 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-07 — Materialização de candidatos](27_PRD_FORJA_ASSINATURA.md#src-s017)
+    - Assuntos: rf-07, materialização, candidatos, deve, prompt, sha-256, f6-a, produzir
+    - Trecho-guia: 1. candidate0: fluxo incumbente, sem artefatos de assinatura no prompt; 2. candidate1: melhor desafiante.
+  - [SRC-S018 · L253–L264 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-08 — Garantia de execução](27_PRD_FORJA_ASSINATURA.md#src-s018)
+    - Assuntos: rf-08, garantia, execução, orchestrator_attested, self_declared, prompt, sistema, deve
+    - Trecho-guia: envelopeverified; orchestratorattested; selfdeclared.
+  - [SRC-S019 · L265–L280 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-09 — Elegibilidade jurídica](27_PRD_FORJA_ASSINATURA.md#src-s019)
+    - Assuntos: rf-09, elegibilidade, jurídica, antes, julgamento, editorial, cada, candidato
+    - Trecho-guia: Antes do julgamento editorial, cada candidato passa por:
+  - [SRC-S020 · L281–L296 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-10 — Cegamento N-way](27_PRD_FORJA_ASSINATURA.md#src-s020)
+    - Assuntos: n-way, rf-10, cegamento, f6-b, deve, canonicalizar, textos, remover
+    - Trecho-guia: canonicalizar textos; remover rótulos e metadados reveladores; armazenar mapping HMAC fora do workspace; balancear posições; executar comparações pareadas; exigir âncora literal; verificar hashes no momento da decisão; detectar vazamento, adulteração e viés de posição.
+  - [SRC-S021 · L297–L314 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-11 — Independência de julgamento](27_PRD_FORJA_ASSINATURA.md#src-s021)
+    - Assuntos: rf-11, independência, julgamento, cross_family, cross_session_same_family, unverified, modos, política
+    - Trecho-guia: crossfamily; crosssessionsamefamily; unverified.
+  - [SRC-S022 · L315–L329 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-12 — Preferência preliminar conservadora](27_PRD_FORJA_ASSINATURA.md#src-s022)
+    - Assuntos: preferência, rf-12, preliminar, conservadora, matriz, margem, não, algoritmo
+    - Trecho-guia: O algoritmo forma a matriz de preferência em três camadas:
+  - [SRC-S023 · L330–L346 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-13 — Recall fiel do corpo](27_PRD_FORJA_ASSINATURA.md#src-s023)
+    - Assuntos: recall, rf-13, fiel, corpo, recebe, cartão, questão, providência
+    - Trecho-guia: O leitor recebe o candidato sem síntese executiva, removida por marcador determinístico, e produz cartão de até 80 palavras. O verificador recebe apenas o cartão e o mapa.
+  - [SRC-S024 · L347–L356 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-14 — Steelman](27_PRD_FORJA_ASSINATURA.md#src-s024)
+    - Assuntos: rf-14, steelman, argumento, contrário, cada, candidato, elegível, deve
+    - Trecho-guia: Cada candidato elegível deve confrontar o melhor argumento contrário identificado no mapa. O teste verifica:
+  - [SRC-S025 · L357–L373 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-15 — Seleção final e cânone](27_PRD_FORJA_ASSINATURA.md#src-s025)
+    - Assuntos: rf-15, seleção, final, cânone, depois, rf-13, rf-14, f6-c
+    - Trecho-guia: Depois de RF-13 e RF-14, F6-C deve produzir F6SIGNATURESELECTION.json e promover exatamente um texto para draftmarkdown.
+  - [SRC-S026 · L374–L392 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-16 — Preservação em F7/F7-B](27_PRD_FORJA_ASSINATURA.md#src-s026)
+    - Assuntos: f7-b, pode, rf-16, preservação, sequência, teses, frase, corrigir
+    - Trecho-guia: F7 pode corrigir juridicidade. Toda correção é classificada.
+  - [SRC-S027 · L393–L403 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-17 — Invalidação append-only](27_PRD_FORJA_ASSINATURA.md#src-s027)
+    - Assuntos: rf-17, invalidação, append-only, nenhuma, decisão, sobrescrita, alterações, geram
+    - Trecho-guia: Nenhuma decisão é sobrescrita. Alterações geram:
+  - [SRC-S028 · L404–L415 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-18 — Memória decisória segura](27_PRD_FORJA_ASSINATURA.md#src-s028)
+    - Assuntos: memória, rf-18, decisória, segura, não, produção, sistema, escreve
+    - Trecho-guia: o sistema escreve selecionados e rejeitados; registra âncoras, razões, produto e linhagem; não copia conteúdo privado desnecessário; não injeta memória nos prompts de F4-S, F5-S ou F6-A.
+  - [SRC-S029 · L416–L434 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-19 — Budget e degradação](27_PRD_FORJA_ASSINATURA.md#src-s029)
+    - Assuntos: rf-19, budget, degradação, estágio, não, antes, budgetprofileid, deve
+    - Trecho-guia: Antes de W2, um budgetProfileId deve resolver para limites numéricos de:
+  - [SRC-S030 · L435–L452 · PRD — FORJA-ASSINATURA > 6. Escopo funcional v1 > RF-20 — Telemetria](27_PRD_FORJA_ASSINATURA.md#src-s030)
+    - Assuntos: rf-20, telemetria, caso, agregado, modo, efetivo, taxa, abstenção
+    - Trecho-guia: modo efetivo; taxa de abstenção; preferência por incumbente/desafiante; vetos por classe; estabilidade sob swap; garantia de independência; recall; custo e latência; alterações de F7/F7-B; falhas e fallback; missingness.
+  - [SRC-S031 · L453–L454 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais](27_PRD_FORJA_ASSINATURA.md#src-s031)
+    - Assuntos: requisitos, não, funcionais
+    - Trecho-guia: Documento de consulta sobre 7. Requisitos não funcionais.
+  - [SRC-S032 · L455–L460 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-01 — Fail-closed](27_PRD_FORJA_ASSINATURA.md#src-s032)
+    - Assuntos: rnf-01, fail-closed, hash, ausente, schema, inválido, snapshot, divergente
+    - Trecho-guia: Hash ausente, schema inválido, snapshot divergente, mapping adulterado ou proveniência insuficiente não pode ser convertido em warning em modo bloqueante.
+  - [SRC-S033 · L461–L466 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-02 — Determinismo do harness](27_PRD_FORJA_ASSINATURA.md#src-s033)
+    - Assuntos: rnf-02, determinismo, harness, schemas, hashes, permutações, resolução, modo
+    - Trecho-guia: Schemas, hashes, permutações, resolução de modo, diversidade estrutural, invalidação e promoção devem ser determinísticos. LLM só participa dos passos explicitamente generativos ou julgadores.
+  - [SRC-S034 · L467–L471 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-03 — Privacidade](27_PRD_FORJA_ASSINATURA.md#src-s034)
+    - Assuntos: rnf-03, privacidade, nenhum, conteúdo, caso, enviado, ambiente, não
+    - Trecho-guia: Nenhum conteúdo de caso é enviado a ambiente não autorizado. Mapping e chaves ficam fora do workspace. Relatórios públicos usam apenas artefatos sanitizados.
+  - [SRC-S035 · L472–L479 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-04 — Compatibilidade](27_PRD_FORJA_ASSINATURA.md#src-s035)
+    - Assuntos: rnf-04, compatibilidade, f10, não, são, renumeradas, bundles, históricos
+    - Trecho-guia: F0–F10 não são renumeradas; bundles históricos permanecem legíveis; phasecontracts/F6.json só muda no defaulton; F8 continua consumindo um único finalmarkdown; mode=off preserva o output anterior.
+  - [SRC-S036 · L480–L484 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-05 — Observabilidade](27_PRD_FORJA_ASSINATURA.md#src-s036)
+    - Assuntos: rnf-05, observabilidade, toda, alegação, material, isolamento, modelo, decisão
+    - Trecho-guia: Toda alegação material de isolamento, modelo, decisão ou promoção deve apontar para evidência persistida e recomputável.
+  - [SRC-S037 · L485–L489 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-06 — Reversibilidade](27_PRD_FORJA_ASSINATURA.md#src-s037)
+    - Assuntos: não, rnf-06, reversibilidade, rollback, mudança, modo, apaga, artefato
+    - Trecho-guia: Rollback é mudança de modo. Não apaga artefato, não reescreve histórico e não reprocessa pacote já liberado.
+  - [SRC-S038 · L490–L494 · PRD — FORJA-ASSINATURA > 7. Requisitos não funcionais > RNF-07 — Eficiência](27_PRD_FORJA_ASSINATURA.md#src-s038)
+    - Assuntos: rnf-07, eficiência, filtros, determinísticos, grounding, executam, antes, drafts
+    - Trecho-guia: Filtros determinísticos e grounding executam antes de drafts e juízes. Cache somente para inputs hash-idênticos. Custo nunca é usado como sinal de qualidade.
+  - [SRC-S039 · L495–L496 · PRD — FORJA-ASSINATURA > 8. Métricas e proteção contra Goodhart](27_PRD_FORJA_ASSINATURA.md#src-s039)
+    - Assuntos: métricas, proteção, contra, goodhart
+    - Trecho-guia: Documento de consulta sobre 8. Métricas e proteção contra Goodhart.
+  - [SRC-S040 · L497–L506 · PRD — FORJA-ASSINATURA > 8. Métricas e proteção contra Goodhart > 8.1 Métricas de segurança](27_PRD_FORJA_ASSINATURA.md#src-s040)
+    - Assuntos: métricas, segurança, regressão, jurídica, dimensão, classe, alteração, material
+    - Trecho-guia: regressão jurídica por dimensão; P0 por classe; alteração material detectada; integridade de hashes e snapshots; taxa de fallback por falha de garantia.
+  - [SRC-S041 · L507–L518 · PRD — FORJA-ASSINATURA > 8. Métricas e proteção contra Goodhart > 8.2 Métricas de valor](27_PRD_FORJA_ASSINATURA.md#src-s041)
+    - Assuntos: métricas, valor, preferência, cega, estável, sobre, candidate_0, identidade
+    - Trecho-guia: preferência cega estável sobre candidate0; identidade do caso; clareza decisória; steelman; recall fiel do corpo; economia condicionada à cobertura; carga de correção humana em corpus de calibração.
+  - [SRC-S042 · L519–L529 · PRD — FORJA-ASSINATURA > 8. Métricas e proteção contra Goodhart > 8.3 Métricas operacionais](27_PRD_FORJA_ASSINATURA.md#src-s042)
+    - Assuntos: métricas, operacionais, taxa, tokens, chamadas, latência, custo, marginal
+    - Trecho-guia: tokens; chamadas; latência; custo marginal; taxa de terceiro draft; taxa de abstenção; disponibilidade de família; missingness.
+  - [SRC-S043 · L530–L545 · PRD — FORJA-ASSINATURA > 8. Métricas e proteção contra Goodhart > 8.4 Regra de evidência](27_PRD_FORJA_ASSINATURA.md#src-s043)
+    - Assuntos: regra, evidência, parada, antes, primeiro, caso, prospectivo, registrar
+    - Trecho-guia: Antes do primeiro caso prospectivo, registrar:
+  - [SRC-S044 · L546–L547 · PRD — FORJA-ASSINATURA > 9. Rollout](27_PRD_FORJA_ASSINATURA.md#src-s044)
+    - Assuntos: rollout
+    - Trecho-guia: Documento de consulta sobre 9. Rollout.
+  - [SRC-S045 · L548–L554 · PRD — FORJA-ASSINATURA > 9. Rollout > Etapa 0 — Baseline](27_PRD_FORJA_ASSINATURA.md#src-s045)
+    - Assuntos: etapa, baseline, verde, suíte, viva, régua, desvio, classificado
+    - Trecho-guia: suíte viva verde; Régua verde ou desvio classificado; custo e latência incumbentes medidos; nenhum caso real alterado.
+  - [SRC-S046 · L555–L562 · PRD — FORJA-ASSINATURA > 9. Rollout > Etapa 1 — Contratos em off](27_PRD_FORJA_ASSINATURA.md#src-s046)
+    - Assuntos: etapa, contratos, off, nenhum, schemas, reason, codes, tipos
+    - Trecho-guia: schemas, reason codes, tipos puros; configuração; budget profile; nenhum modelo chamado; nenhum output F4–F8 alterado.
+  - [SRC-S047 · L563–L567 · PRD — FORJA-ASSINATURA > 9. Rollout > Etapa 2 — F4-S em sombra](27_PRD_FORJA_ASSINATURA.md#src-s047)
+    - Assuntos: etapa, f4-s, sombra, apenas, checkpoint, empírico, prosseguir, geometrias
+    - Trecho-guia: Checkpoint empírico. Prosseguir apenas se as geometrias mudarem arquitetura, não apenas palavras, no corpus congelado.
+  - [SRC-S048 · L568–L579 · PRD — FORJA-ASSINATURA > 9. Rollout > Etapa 3 — Esteira completa em sombra](27_PRD_FORJA_ASSINATURA.md#src-s048)
+    - Assuntos: etapa, esteira, completa, sombra, incumbente, segue, camada, registra
+    - Trecho-guia: O incumbente segue para F7. A camada registra o que escolheria.
+  - [SRC-S049 · L580–L584 · PRD — FORJA-ASSINATURA > 9. Rollout > Etapa 4 — pilotblocking](27_PRD_FORJA_ASSINATURA.md#src-s049)
+    - Assuntos: etapa, pilotblocking, pilot_blocking, somente, casos, produtos, tribunais, autorizados
+    - Trecho-guia: Somente casos, produtos e tribunais autorizados. Falha de integridade bloqueia; ausência de superioridade preserva incumbente.
+  - [SRC-S050 · L585–L598 · PRD — FORJA-ASSINATURA > 9. Rollout > Etapa 5 — defaulton](27_PRD_FORJA_ASSINATURA.md#src-s050)
+    - Assuntos: etapa, exige, política, defaulton, default_on, ganho, prospectivo, estável
+    - Trecho-guia: ganho prospectivo estável sobre candidate0; regra sequencial satisfeita; ausência de regressão; política de independência real registrada; rollback exercitado; revisão independente; recibo humano da política.
+  - [SRC-S051 · L599–L622 · PRD — FORJA-ASSINATURA > 10. Critérios de aceitação do produto](27_PRD_FORJA_ASSINATURA.md#src-s051)
+    - Assuntos: não, hash, abstenção, critérios, aceitação, produto, caso, falha
+    - Trecho-guia: 1. off é comportamentalmente idêntico ao fluxo anterior. 2. caso fora de pilotCases não é bloqueado; caso dentro falha fechado sem os artefatos. 3. candidate0 possui texto, snapshot e hash antes do cegamento. 4. abstenção promove exatamente o hash de candidate0 para F7. 5. dois c
+  - [SRC-S052 · L623–L636 · PRD — FORJA-ASSINATURA > 11. Fora do escopo v1](27_PRD_FORJA_ASSINATURA.md#src-s052)
+    - Assuntos: fora, escopo, nova, fine-tuning, rlhf, imitação, nominal, advogado
+    - Trecho-guia: fine-tuning ou RLHF; imitação nominal de advogado; treinamento online com decisões de produção; API paga nova; renumeração F0–F10; alteração autônoma de leis, fatos, pedidos ou fontes; protocolo judicial externo; UI nova; sete drafts completos; score universal de “gosto”; alegaçã
+  - [SRC-S053 · L637–L649 · PRD — FORJA-ASSINATURA > 12. Riscos de produto](27_PRD_FORJA_ASSINATURA.md#src-s053)
+    - Assuntos: riscos, produto, custo, valor, diversidade, vira, risco, consequência
+    - Trecho-guia: Documento de consulta sobre 12. Riscos de produto.
+  - [SRC-S054 · L650–L662 · PRD — FORJA-ASSINATURA > 13. Decisões já tomadas](27_PRD_FORJA_ASSINATURA.md#src-s054)
+    - Assuntos: decisões, tomadas, não, camada, aditiva, candidate_0, ocupa, dois
+    - Trecho-guia: a camada é aditiva; candidate0 ocupa um dos dois drafts padrão; segunda família é preferível, não dependência obrigatória; modo same-family é explicitamente correlacionado; memória não entra em prompts de produção v1; recall usa corpo sem síntese; preferência é holística após vet
+  - [SRC-S055 · L663–L669 · PRD — FORJA-ASSINATURA > 14. Critério de encerramento](27_PRD_FORJA_ASSINATURA.md#src-s055)
+    - Assuntos: critério, encerramento, produto, evidência, está, pronto, quando, todos
+    - Trecho-guia: O produto está pronto quando todos os critérios de aceitação estiverem automatizados, o rollout completo tiver sido exercitado com rollback, e a evidência prospectiva autorizar defaulton. Implementação de código sem essa evidência significa apenas capacidade técnica disponível, n
+
+### 4.33. TDD — FORJA-ASSINATURA
+
+- **Arquivo preparado:** [28_TDD_FORJA_ASSINATURA.md](28_TDD_FORJA_ASSINATURA.md)
+- **Origem:** `28_TDD_FORJA_ASSINATURA.md`
+- **Termos:** json, não, schema, recall, signature, f4-s, shortlist, configured_mode, snapshot, grounding, f7-b, modo
+- **Blocos:**
+  - [SRC-S001 · L1–L11 · TDD — FORJA-ASSINATURA](28_TDD_FORJA_ASSINATURA.md#src-s001)
+    - Assuntos: tdd, planejamento, forja-assinatura, desenho, reclassificado, experimental, longo, prazo
+    - Trecho-guia: RECLASSIFICADO EM 25/07/2026 — desenho experimental de longo prazo. O TDD vigente para execução é planejamento/34TDDFORJAASSINATURALITECOCRIACAOPRECEDENTES.md.
+  - [SRC-S002 · L12–L28 · TDD — FORJA-ASSINATURA > 1. Objetivo técnico](28_TDD_FORJA_ASSINATURA.md#src-s002)
+    - Assuntos: objetivo, técnico, f4-s, f5-s, f6-a, adicionar, subesteira, hash-bound
+    - Trecho-guia: Adicionar à FORJA uma subesteira hash-bound que:
+  - [SRC-S003 · L29–L44 · TDD — FORJA-ASSINATURA > 2. Restrições do sistema vivo](28_TDD_FORJA_ASSINATURA.md#src-s003)
+    - Assuntos: não, restrições, sistema, vivo, contratos, possui, recompõe, forja_phase_contracts
+    - Trecho-guia: 1. forjaphasecontracts.py resolve os contratos F0–F10. 2. phasecontracts/F6.json não possui inputs condicionais. 3. forjarun.py publica artefatos e recompõe gates; exit 0 não é promoção. 4. forjan4validate.py possui FLAGFILES, VALIDATORS e modo efetivo por pilotCases. 5. forjaarb
+  - [SRC-S004 · L45–L84 · TDD — FORJA-ASSINATURA > 3. Topologia](28_TDD_FORJA_ASSINATURA.md#src-s004)
+    - Assuntos: signature, topologia, f4-s, flow, text, inputs, snapshot, map
+    - Trecho-guia: Documento de consulta sobre 3. Topologia.
+  - [SRC-S005 · L85–L127 · TDD — FORJA-ASSINATURA > 4. Estrutura de arquivos-alvo](28_TDD_FORJA_ASSINATURA.md#src-s005)
+    - Assuntos: schema, json, estrutura, arquivos-alvo, raiz, padrão, text, signature
+    - Trecho-guia: Compatibilidade com o layout real prevalece. Se os testes permanecerem na raiz, não criar um segundo padrão apenas para esta feature.
+  - [SRC-S006 · L128–L129 · TDD — FORJA-ASSINATURA > 5. Fronteiras de responsabilidade](28_TDD_FORJA_ASSINATURA.md#src-s006)
+    - Assuntos: fronteiras, responsabilidade
+    - Trecho-guia: Documento de consulta sobre 5. Fronteiras de responsabilidade.
+  - [SRC-S007 · L130–L142 · TDD — FORJA-ASSINATURA > 5. Fronteiras de responsabilidade > 5.1 Domínio puro](28_TDD_FORJA_ASSINATURA.md#src-s007)
+    - Assuntos: domínio, puro, módulos, filesystem, subprocesso, rede, models, geometry
+    - Trecho-guia: Módulos sem filesystem, subprocesso ou rede:
+  - [SRC-S008 · L143–L157 · TDD — FORJA-ASSINATURA > 5. Fronteiras de responsabilidade > 5.2 Adapters](28_TDD_FORJA_ASSINATURA.md#src-s008)
+    - Assuntos: adapters, invocações, execução, contracts, schema, catalog, config, resolução
+    - Trecho-guia: contracts.py: schema/catalog; config.py: resolução de modo e budget; snapshot.py: leitura e hash; grounding.py: integração com ledgers; candidates.py: invocações isoladas; blind.py: bundles, mapping e julgadores; recall.py: invocações leitor/verificador; memory.py: append-only; t
+  - [SRC-S009 · L158–L168 · TDD — FORJA-ASSINATURA > 5. Fronteiras de responsabilidade > 5.3 Integrações existentes](28_TDD_FORJA_ASSINATURA.md#src-s009)
+    - Assuntos: integrações, existentes, sidecars, mapa, geometria, source, ledger, execução
+    - Trecho-guia: F4: sidecars de mapa/geometria; F5: source ledger; F6: execução interna e um output canônico; F7: correção jurídica; F7-B: edição local e validação; N4: catálogo, schemas, flag e modo por caso; AUTO-RESEARCH: avaliação offline; state machine: eventos e supersession.
+  - [SRC-S010 · L169–L192 · TDD — FORJA-ASSINATURA > 6. Modelo de dados comum](28_TDD_FORJA_ASSINATURA.md#src-s010)
+    - Assuntos: hex, modelo, dados, comum, artifactsha256, todo, artefato, json
+    - Trecho-guia: O artifactSha256 é calculado sobre payload canônico sem o próprio campo.
+  - [SRC-S011 · L193–L216 · TDD — FORJA-ASSINATURA > 6. Modelo de dados comum > 6.1 Enums](28_TDD_FORJA_ASSINATURA.md#src-s011)
+    - Assuntos: enums, text, signaturemode, off, shadow, pilot_blocking, default_on, executionassurance
+    - Trecho-guia: Enums desconhecidos falham no schema.
+  - [SRC-S012 · L217–L248 · TDD — FORJA-ASSINATURA > 7. Configuração](28_TDD_FORJA_ASSINATURA.md#src-s012)
+    - Assuntos: configuração, signature, json, mode, off, true, adicionar, seção
+    - Trecho-guia: Adicionar seção signature em FORJAN3CONFIG.json somente na W1, com mode=off.
+  - [SRC-S013 · L249–L265 · TDD — FORJA-ASSINATURA > 7. Configuração > 7.1 Resolução do modo](28_TDD_FORJA_ASSINATURA.md#src-s013)
+    - Assuntos: configured_mode, return, override, resolução, modo, effective_mode, pilot_cases, case_identity
+    - Trecho-guia: Reutilizar/refatorar o comportamento atual de forjan4validate.effectivemode() para uma API pública comum. Não copiar a lógica em dois módulos.
+  - [SRC-S014 · L266–L294 · TDD — FORJA-ASSINATURA > 7. Configuração > 7.2 Budget profile](28_TDD_FORJA_ASSINATURA.md#src-s014)
+    - Assuntos: budget, profile, schema, obrigatório, json, profileid, signature-pilot-v1, measuredat
+    - Trecho-guia: Zeros acima ilustram tipos, não valores aceitos. O validador exige inteiros positivos. W0 mede o baseline; W1 grava números e hash antes de W2.
+  - [SRC-S015 · L295–L296 · TDD — FORJA-ASSINATURA > 8. Snapshot](28_TDD_FORJA_ASSINATURA.md#src-s015)
+    - Assuntos: snapshot
+    - Trecho-guia: Documento de consulta sobre 8. Snapshot.
+  - [SRC-S016 · L297–L300 · TDD — FORJA-ASSINATURA > 8. Snapshot > 8.1 Input](28_TDD_FORJA_ASSINATURA.md#src-s016)
+    - Assuntos: input, referências, artefatos, canônicos, não, cópias, soltas
+    - Trecho-guia: Referências aos artefatos canônicos, não cópias soltas.
+  - [SRC-S017 · L301–L311 · TDD — FORJA-ASSINATURA > 8. Snapshot > 8.2 Algoritmo](28_TDD_FORJA_ASSINATURA.md#src-s017)
+    - Assuntos: algoritmo, paths, confirmar, resolver, existência, recomputar, sha-256, ledger
+    - Trecho-guia: 1. resolver paths; 2. confirmar existência; 3. recomputar SHA-256; 4. confirmar ledger/version; 5. montar objeto com paths relativos, hashes e papéis; 6. canonicalizar JSON; 7. calcular inputSnapshotSha256; 8. persistir antes da primeira chamada.
+  - [SRC-S018 · L312–L316 · TDD — FORJA-ASSINATURA > 8. Snapshot > 8.3 Proibição](28_TDD_FORJA_ASSINATURA.md#src-s018)
+    - Assuntos: proibição, nenhum, candidato, julgamento, recall, pode, referir, snapshot
+    - Trecho-guia: Nenhum candidato, julgamento ou recall pode referir snapshot distinto no mesmo lote. Mudança posterior cria nova tentativa.
+  - [SRC-S019 · L317–L318 · TDD — FORJA-ASSINATURA > 9. F4-S — mapa e geometrias](28_TDD_FORJA_ASSINATURA.md#src-s019)
+    - Assuntos: f4-s, mapa, geometrias
+    - Trecho-guia: Documento de consulta sobre 9. F4-S — mapa e geometrias.
+  - [SRC-S020 · L319–L352 · TDD — FORJA-ASSINATURA > 9. F4-S — mapa e geometrias > 9.1 F4SIGNATUREMAP.json](28_TDD_FORJA_ASSINATURA.md#src-s020)
+    - Assuntos: não, json, knowngapids, f4signaturemap, f4_signature_map, campos, domínio, decisionquestion
+    - Trecho-guia: strings não vazias; todos os IDs resolvem; knownGapIds não aparecem como fatos; providência pertence ao blueprint/pedidos; frase-mãe não adiciona certeza; conteúdo dos autos não é interpretado como instrução.
+  - [SRC-S021 · L353–L376 · TDD — FORJA-ASSINATURA > 9. F4-S — mapa e geometrias > 9.2 F4SIGNATUREGEOMETRIES.json](28_TDD_FORJA_ASSINATURA.md#src-s021)
+    - Assuntos: json, f4signaturegeometries, f4_signature_geometries, cada, geometria, geometryid, primaryaxis, causality
+    - Trecho-guia: Documento de consulta sobre 9.2 F4SIGNATUREGEOMETRIES.json.
+  - [SRC-S022 · L377–L396 · TDD — FORJA-ASSINATURA > 9. F4-S — mapa e geometrias > 9.3 Diversidade determinística](28_TDD_FORJA_ASSINATURA.md#src-s022)
+    - Assuntos: diversidade, determinística, claim_id, for, step, limiar, não, representação
+    - Trecho-guia: Dois candidatos são materialmente diversos quando:
+  - [SRC-S023 · L397–L421 · TDD — FORJA-ASSINATURA > 10. F5 — grounding](28_TDD_FORJA_ASSINATURA.md#src-s023)
+    - Assuntos: referência, grounding, missing, stale, revoked, função, pura, python
+    - Trecho-guia: resolved; missing; stale; revoked; unsupportedrelation.
+  - [SRC-S024 · L422–L423 · TDD — FORJA-ASSINATURA > 11. F5-S — microbrief e shortlist](28_TDD_FORJA_ASSINATURA.md#src-s024)
+    - Assuntos: f5-s, microbrief, shortlist
+    - Trecho-guia: Documento de consulta sobre 11. F5-S — microbrief e shortlist.
+  - [SRC-S025 · L424–L437 · TDD — FORJA-ASSINATURA > 11. F5-S — microbrief e shortlist > 11.1 Execução isolada](28_TDD_FORJA_ASSINATURA.md#src-s025)
+    - Assuntos: execução, isolada, output, orquestrador, seleciona, geometrias, grounded, monta
+    - Trecho-guia: 1. seleciona geometrias grounded; 2. monta prompt por geometria sem output irmão; 3. calcula promptSha256; 4. cria sessão; 5. registra envelope real ou atestação; 6. invoca; 7. persiste output antes da próxima decisão.
+  - [SRC-S026 · L438–L472 · TDD — FORJA-ASSINATURA > 11. F5-S — microbrief e shortlist > 11.2 Shortlist](28_TDD_FORJA_ASSINATURA.md#src-s026)
+    - Assuntos: shortlist, json, false, strategies, fallback, abstained, vetos, primeiro
+    - Trecho-guia: Vetos primeiro. Entre elegíveis, executar comparação estrutural curta. Saída:
+  - [SRC-S027 · L473–L474 · TDD — FORJA-ASSINATURA > 12. F6-A — candidatos](28_TDD_FORJA_ASSINATURA.md#src-s027)
+    - Assuntos: f6-a, candidatos
+    - Trecho-guia: Documento de consulta sobre 12. F6-A — candidatos.
+  - [SRC-S028 · L475–L486 · TDD — FORJA-ASSINATURA > 12. F6-A — candidatos > 12.1 candidate0](28_TDD_FORJA_ASSINATURA.md#src-s028)
+    - Assuntos: candidate_0, candidate0, contrato, candidateid, candidaterole, incumbent, generationmode, incumbent_pipeline
+    - Trecho-guia: candidateId = "candidate0"; candidateRole = "incumbent"; generationMode = "incumbentpipeline"; mesmo inputSnapshotSha256; sessão própria; prompt incumbente atual, sem mapa/geometrias/shortlist; texto integral persistido antes do cegamento.
+  - [SRC-S029 · L487–L494 · TDD — FORJA-ASSINATURA > 12. F6-A — candidatos > 12.2 Desafiante](28_TDD_FORJA_ASSINATURA.md#src-s029)
+    - Assuntos: recebe, desafiante, não, shortlist, ledgers, hash, texto, incumbente
+    - Trecho-guia: recebe a shortlist e ledgers por hash; não recebe texto do incumbente; não recebe memória decisória; preserva conteúdo obrigatório; produz paragraphprovenance.
+  - [SRC-S030 · L495–L509 · TDD — FORJA-ASSINATURA > 12. F6-A — candidatos > 12.3 Terceiro candidato](28_TDD_FORJA_ASSINATURA.md#src-s030)
+    - Assuntos: terceiro, shortlist, ambiguity, candidato, config, and, existe, python
+    - Trecho-guia: Não gerar terceiro draft para resolver desacordo ocorrido depois no julgamento. Isso mudaria o orçamento com base no resultado.
+  - [SRC-S031 · L510–L537 · TDD — FORJA-ASSINATURA > 12. F6-A — candidatos > 12.4 Manifesto](28_TDD_FORJA_ASSINATURA.md#src-s031)
+    - Assuntos: hex, manifesto, json, candidates, candidateid, candidate_0, candidaterole, incumbent
+    - Trecho-guia: Documento de consulta sobre 12.4 Manifesto.
+  - [SRC-S032 · L538–L557 · TDD — FORJA-ASSINATURA > 13. Elegibilidade](28_TDD_FORJA_ASSINATURA.md#src-s032)
+    - Assuntos: elegibilidade, eligibility, candidate, ledgers, gates, eligibilitydecision, ordem, schema
+    - Trecho-guia: eligibility(candidate, ledgers, gates) - EligibilityDecision
+  - [SRC-S033 · L558–L559 · TDD — FORJA-ASSINATURA > 14. F6-B — cegamento e julgamento](28_TDD_FORJA_ASSINATURA.md#src-s033)
+    - Assuntos: f6-b, cegamento, julgamento
+    - Trecho-guia: Documento de consulta sobre 14. F6-B — cegamento e julgamento.
+  - [SRC-S034 · L560–L572 · TDD — FORJA-ASSINATURA > 14. F6-B — cegamento e julgamento > 14.1 Extensão, não mutação do A/B](28_TDD_FORJA_ASSINATURA.md#src-s034)
+    - Assuntos: não, extensão, mutação, criar, primitives, n-way, signature, blind
+    - Trecho-guia: Criar primitives N-way em forja/signature/blind.py. Reutilizar:
+  - [SRC-S035 · L573–L584 · TDD — FORJA-ASSINATURA > 14. F6-B — cegamento e julgamento > 14.2 Bundles](28_TDD_FORJA_ASSINATURA.md#src-s035)
+    - Assuntos: bundles, workspace, cada, par, elegível, nomes, opacos, mesmo
+    - Trecho-guia: A/B; B/A; nomes opacos; mesmo conteúdo canonicalizado; mapping fora do workspace; commitment dentro do workspace; hash por bundle.
+  - [SRC-S036 · L585–L614 · TDD — FORJA-ASSINATURA > 14. F6-B — cegamento e julgamento > 14.3 Julgadores](28_TDD_FORJA_ASSINATURA.md#src-s036)
+    - Assuntos: inválido, modo, julgadores, sessionid, juiz, degradado, planner, bancada
+    - Trecho-guia: O planner de bancada recebe famílias disponíveis e produz:
+  - [SRC-S037 · L615–L638 · TDD — FORJA-ASSINATURA > 14. F6-B — cegamento e julgamento > 14.4 Voto](28_TDD_FORJA_ASSINATURA.md#src-s037)
+    - Assuntos: voto, abstain, json, pairid, judgeid, order, winnerposition, anchor
+    - Trecho-guia: Diagnósticos explicam; não são somados por média.
+  - [SRC-S038 · L639–L643 · TDD — FORJA-ASSINATURA > 15. Primitivas de seleção](28_TDD_FORJA_ASSINATURA.md#src-s038)
+    - Assuntos: primitivas, seleção, esta, seção, calcula, elegibilidade, grafo, vencedor
+    - Trecho-guia: Esta seção calcula elegibilidade, grafo e vencedor potencial. A função final só é chamada em F6-C depois de os resultados de recall e steelman estarem válidos.
+  - [SRC-S039 · L644–L651 · TDD — FORJA-ASSINATURA > 15. Primitivas de seleção > 15.1 Vetos](28_TDD_FORJA_ASSINATURA.md#src-s039)
+    - Assuntos: vetos, falha, remover, candidatos, inelegíveis, candidate_0, for, inelegível
+    - Trecho-guia: Se candidate0 for inelegível, o fluxo inteiro falha juridicamente: não usar uma desafiante editorial para encobrir falha do baseline. Retornar para a fase que originou o veto.
+  - [SRC-S040 · L652–L660 · TDD — FORJA-ASSINATURA > 15. Primitivas de seleção > 15.2 Matriz](28_TDD_FORJA_ASSINATURA.md#src-s040)
+    - Assuntos: matriz, sob, cada, par, elegível, consolidar, somente, voto
+    - Trecho-guia: Para cada par elegível, consolidar somente voto:
+  - [SRC-S041 · L661–L686 · TDD — FORJA-ASSINATURA > 15. Primitivas de seleção > 15.3 Vencedor](28_TDD_FORJA_ASSINATURA.md#src-s041)
+    - Assuntos: return, winner, preserve_incumbent, config, eligible, stable, vencedor, candidates
+    - Trecho-guia: Nunca ordenar por SHA para mérito. SHA serve apenas para identidade e determinismo de armazenamento.
+  - [SRC-S042 · L687–L696 · TDD — FORJA-ASSINATURA > 15. Primitivas de seleção > 15.4 Terceiro juiz](28_TDD_FORJA_ASSINATURA.md#src-s042)
+    - Assuntos: terceiro, juiz, permitido, somente, regra, estiver, manifest, quais
+    - Trecho-guia: É permitido somente se a regra já estiver no manifest:
+  - [SRC-S043 · L697–L698 · TDD — FORJA-ASSINATURA > 16. Recall e conclusão F6-C](28_TDD_FORJA_ASSINATURA.md#src-s043)
+    - Assuntos: recall, conclusão, f6-c
+    - Trecho-guia: Documento de consulta sobre 16. Recall e conclusão F6-C.
+  - [SRC-S044 · L699–L716 · TDD — FORJA-ASSINATURA > 16. Recall e conclusão F6-C > 16.1 Remoção da síntese](28_TDD_FORJA_ASSINATURA.md#src-s044)
+    - Assuntos: síntese, remoção, marcadores, deve, produzir, canônicos, início, fim
+    - Trecho-guia: F6 deve produzir marcadores canônicos de início/fim da síntese. Função:
+  - [SRC-S045 · L717–L726 · TDD — FORJA-ASSINATURA > 16. Recall e conclusão F6-C > 16.2 Leitor e verificador](28_TDD_FORJA_ASSINATURA.md#src-s045)
+    - Assuntos: leitor, verificador, cartão, mapa, não, recebe, sessões, separadas
+    - Trecho-guia: leitor: corpo → cartão; verificador: cartão + mapa → fidelidade.
+  - [SRC-S046 · L727–L734 · TDD — FORJA-ASSINATURA > 16. Recall e conclusão F6-C > 16.3 Uso na seleção](28_TDD_FORJA_ASSINATURA.md#src-s046)
+    - Assuntos: uso, seleção, não, falso, elimina, desafiante, questão, providência
+    - Trecho-guia: falso → elimina desafiante; questão/providência ausente → impede vitória; demais campos → diagnóstico; resultado não reabre candidato já inelegível; recall não compensa veto.
+  - [SRC-S047 · L735–L746 · TDD — FORJA-ASSINATURA > 16. Recall e conclusão F6-C > 16.4 Seleção final](28_TDD_FORJA_ASSINATURA.md#src-s047)
+    - Assuntos: seleção, final, recall, falha, f6-c, combina, matriz, válida
+    - Trecho-guia: F6-C combina a matriz válida da seção 15, recall e steelman. Só então:
+  - [SRC-S048 · L747–L748 · TDD — FORJA-ASSINATURA > 17. Topologia de assinatura](28_TDD_FORJA_ASSINATURA.md#src-s048)
+    - Assuntos: topologia, assinatura
+    - Trecho-guia: Documento de consulta sobre 17. Topologia de assinatura.
+  - [SRC-S049 · L749–L774 · TDD — FORJA-ASSINATURA > 17. Topologia de assinatura > 17.1 Canonicalização](28_TDD_FORJA_ASSINATURA.md#src-s049)
+    - Assuntos: canonicalização, json, mothersentencenormalized, sections, sectionid, thesisid, claimids, ordinal
+    - Trecho-guia: pontuação; fronteira de frase; conectivos; escolhas lexicais; tamanho de parágrafo.
+  - [SRC-S050 · L775–L784 · TDD — FORJA-ASSINATURA > 17. Topologia de assinatura > 17.2 Comparação](28_TDD_FORJA_ASSINATURA.md#src-s050)
+    - Assuntos: comparação, passa, classes, local_editorial_change, legal_correction_nonstructural, registra, structural_change, invalida
+    - Trecho-guia: localeditorialchange: passa; legalcorrectionnonstructural: passa e registra; structuralchange: invalida seleção; requestorpolaritychange: P0; unclassifiable: fail-closed.
+  - [SRC-S051 · L785–L797 · TDD — FORJA-ASSINATURA > 17. Topologia de assinatura > 17.3 Integração F7-B](28_TDD_FORJA_ASSINATURA.md#src-s051)
+    - Assuntos: integração, f7-b, recibo, extrair, validador, forja_fable5, taste_receipt_findings, api
+    - Trecho-guia: Extrair o validador de recibo de forjafable5.tastereceiptfindings() para API pública. validateeditorialbundle() chama:
+  - [SRC-S052 · L798–L799 · TDD — FORJA-ASSINATURA > 18. Memória](28_TDD_FORJA_ASSINATURA.md#src-s052)
+    - Assuntos: memória
+    - Trecho-guia: Documento de consulta sobre 18. Memória.
+  - [SRC-S053 · L800–L817 · TDD — FORJA-ASSINATURA > 18. Memória > 18.1 Evento](28_TDD_FORJA_ASSINATURA.md#src-s053)
+    - Assuntos: evento, json, decisionid, caselineage, product, selectedcandidatehash, rejectedcandidatehashes, reasoncodes
+    - Trecho-guia: Documento de consulta sobre 18.1 Evento.
+  - [SRC-S054 · L818–L831 · TDD — FORJA-ASSINATURA > 18. Memória > 18.2 Política de acesso](28_TDD_FORJA_ASSINATURA.md#src-s054)
+    - Assuntos: política, acesso, teste, python, def, load_production_generation_context, assert, config
+    - Trecho-guia: Teste por instrumentação deve registrar os arquivos e blocos passados a cada invocação. Regex isolada no prompt não basta; o teste compara allowlist de inputs.
+  - [SRC-S055 · L832–L857 · TDD — FORJA-ASSINATURA > 19. Invalidação](28_TDD_FORJA_ASSINATURA.md#src-s055)
+    - Assuntos: invalidação, evento, stale, mapa, dependências, text, snapshot, map
+    - Trecho-guia: 1. receber evento de mudança; 2. recomputar hash da origem; 3. localizar nós descendentes; 4. marcar stale, nunca apagar; 5. emitir evento append-only; 6. reabrir no primeiro subestágio afetado; 7. impedir promoção de descendente stale.
+  - [SRC-S056 · L858–L859 · TDD — FORJA-ASSINATURA > 20. Registro N4](28_TDD_FORJA_ASSINATURA.md#src-s056)
+    - Assuntos: registro
+    - Trecho-guia: Documento de consulta sobre 20. Registro N4.
+  - [SRC-S057 · L860–L870 · TDD — FORJA-ASSINATURA > 20. Registro N4 > 20.1 Catálogo](28_TDD_FORJA_ASSINATURA.md#src-s057)
+    - Assuntos: catálogo, adicionar, artefatos, generate_n4_contracts, regenerar, schemas, artifact_catalog, json
+    - Trecho-guia: Adicionar artefatos ao generaten4contracts.py, regenerar:
+  - [SRC-S058 · L871–L884 · TDD — FORJA-ASSINATURA > 20. Registro N4 > 20.2 Flag](28_TDD_FORJA_ASSINATURA.md#src-s058)
+    - Assuntos: flag, arquivos, piloto, feature, sugerida, text, n4signaturev1, exigidos
+    - Trecho-guia: Arquivos exigidos dependem do modo efetivo do caso. A validação deve provar:
+  - [SRC-S059 · L885–L911 · TDD — FORJA-ASSINATURA > 21. Eventos](28_TDD_FORJA_ASSINATURA.md#src-s059)
+    - Assuntos: eventos, adicionar, state, machine, apenas, após, contratos, text
+    - Trecho-guia: Adicionar ao state machine apenas após contratos:
+  - [SRC-S060 · L912–L940 · TDD — FORJA-ASSINATURA > 22. Reason codes mínimos](28_TDD_FORJA_ASSINATURA.md#src-s060)
+    - Assuntos: reason, codes, mínimos, text, sig-config-invalid, sig-budget-profile-missing, sig-budget-exceeded, sig-snapshot-drift
+    - Trecho-guia: Reason code desconhecido não é aceito como texto livre em decisão.
+  - [SRC-S061 · L941–L958 · TDD — FORJA-ASSINATURA > 23. CLI proposta](28_TDD_FORJA_ASSINATURA.md#src-s061)
+    - Assuntos: python, forja_signature, case-id, cli, proposta, status, powershell, snapshot
+    - Trecho-guia: Toda mutação exige --attempt-id explícito ou resolve a tentativa viva de modo unívoco. status é read-only.
+  - [SRC-S062 · L959–L960 · TDD — FORJA-ASSINATURA > 24. Testes](28_TDD_FORJA_ASSINATURA.md#src-s062)
+    - Assuntos: testes
+    - Trecho-guia: Documento de consulta sobre 24. Testes.
+  - [SRC-S063 · L961–L977 · TDD — FORJA-ASSINATURA > 24. Testes > 24.1 Unidade](28_TDD_FORJA_ASSINATURA.md#src-s063)
+    - Assuntos: unidade, config, modo, efetivo, budget, profile, positivo, canonical
+    - Trecho-guia: config e modo efetivo; budget profile positivo; canonical hash; resolução de IDs; distância estrutural; grounding; expansão de terceiro draft; veto filter; Condorcet; ciclo/empate; remoção de síntese; topologia; invalidation graph; reason codes.
+  - [SRC-S064 · L978–L990 · TDD — FORJA-ASSINATURA > 24. Testes > 24.2 Contrato](28_TDD_FORJA_ASSINATURA.md#src-s064)
+    - Assuntos: contrato, enum, todos, sete, schemas, válido, inválido, candidate_0
+    - Trecho-guia: todos os sete schemas válido/inválido; candidate0 obrigatório; assurance enum; independence enum; fallback de shortlist; decision com âncora; recall com hash; seleção com snapshot; artifacts no catálogo; gerador e derivados sem drift.
+  - [SRC-S065 · L991–L1005 · TDD — FORJA-ASSINATURA > 24. Testes > 24.3 Integração](28_TDD_FORJA_ASSINATURA.md#src-s065)
+    - Assuntos: seleção, estrutural, integração, piloto, lista, não, bloqueia, desafiante
+    - Trecho-guia: 1. off sem invocações e sem diff de output; 2. shadow produz sidecars e mantém incumbente; 3. piloto fora da lista não bloqueia; 4. piloto dentro da lista bloqueia sem artefatos; 5. baseline + desafiante → seleção; 6. abstenção → hash de candidate0; 7. desafiante vence → único dr
+  - [SRC-S066 · L1006–L1019 · TDD — FORJA-ASSINATURA > 24. Testes > 24.4 Metamórficos](28_TDD_FORJA_ASSINATURA.md#src-s066)
+    - Assuntos: metamórficos, trocar, palavras, mudar, mantendo, inverter, posição, renomear
+    - Trecho-guia: inverter posição; renomear candidato; trocar autor/modelo no rótulo; aumentar comprimento sem conteúdo; repetir palavras da rubrica; preservar palavras e mudar nexo; trocar nomes mantendo relações; remover âncora; retirar síntese antes do recall; fundir frases sem mudar topologia
+  - [SRC-S067 · L1020–L1037 · TDD — FORJA-ASSINATURA > 24. Testes > 24.5 Sabotagem](28_TDD_FORJA_ASSINATURA.md#src-s067)
+    - Assuntos: sabotagem, mapping, prompt, true, após, adulterado, dentro, workspace
+    - Trecho-guia: mapping adulterado; mapping dentro do workspace; prompt irmão; memória decisória no prompt; verified=true sem envelope; mesma sessão como juiz; family spoofing; âncora inexistente; snapshot alterado após julgamento; approved=true sem recomputação; menor SHA como desempate; tercei
+  - [SRC-S068 · L1038–L1049 · TDD — FORJA-ASSINATURA > 24. Testes > 24.6 Canários de detector](28_TDD_FORJA_ASSINATURA.md#src-s068)
+    - Assuntos: canários, detector, mudança, pedido, inversão, polaridade, troca, frase-mãe
+    - Trecho-guia: mudança de pedido; inversão de polaridade; troca de frase-mãe; reordenação de tese; remoção de conteúdo obrigatório; edição local legítima; falso positivo de fusão de frases; síntese não marcada; recall com elemento inventado.
+  - [SRC-S069 · L1050–L1069 · TDD — FORJA-ASSINATURA > 25. Matriz requisito → teste](28_TDD_FORJA_ASSINATURA.md#src-s069)
+    - Assuntos: requisito, matriz, teste, fallback, testes, principais, rf-01, modo
+    - Trecho-guia: Documento de consulta sobre 25. Matriz requisito → teste.
+  - [SRC-S070 · L1070–L1103 · TDD — FORJA-ASSINATURA > 26. Testes de promoção da política](28_TDD_FORJA_ASSINATURA.md#src-s070)
+    - Assuntos: testes, promoção, política, technical_candidate_passed, harness, avaliação, deve, pré-registrar
+    - Trecho-guia: O harness de avaliação deve pré-registrar:
+  - [SRC-S071 · L1104–L1105 · TDD — FORJA-ASSINATURA > 27. Observabilidade](28_TDD_FORJA_ASSINATURA.md#src-s071)
+    - Assuntos: observabilidade
+    - Trecho-guia: Documento de consulta sobre 27. Observabilidade.
+  - [SRC-S072 · L1106–L1117 · TDD — FORJA-ASSINATURA > 27. Observabilidade > 27.1 Eventos por caso](28_TDD_FORJA_ASSINATURA.md#src-s072)
+    - Assuntos: eventos, caso, tempo, tokens, estágio, candidatos, tentados, elegíveis
+    - Trecho-guia: tempo e tokens por estágio; candidatos tentados/elegíveis; reason codes; modo de independência; matriz pareada; recall; decisão; fallback; alterações em F7/F7-B.
+  - [SRC-S073 · L1118–L1131 · TDD — FORJA-ASSINATURA > 27. Observabilidade > 27.2 Agregados](28_TDD_FORJA_ASSINATURA.md#src-s073)
+    - Assuntos: agregados, separar, produto, tribunal, fase, processual, linhagem, modo
+    - Trecho-guia: produto; tribunal; fase processual; linhagem; modo; família/modelo; garantia de execução.
+  - [SRC-S074 · L1132–L1144 · TDD — FORJA-ASSINATURA > 27. Observabilidade > 27.3 Alertas](28_TDD_FORJA_ASSINATURA.md#src-s074)
+    - Assuntos: alertas, taxa, baseline, unverified, aumento, abstenção, terceiro, draft
+    - Trecho-guia: taxa de P0 baseline; taxa de unverified; aumento de abstenção; terceiro draft acima do esperado; estouro de budget; mudança estrutural em F7/F7-B; recall inválido; regressão package/F8.
+  - [SRC-S075 · L1145–L1175 · TDD — FORJA-ASSINATURA > 28. Desempenho e cache](28_TDD_FORJA_ASSINATURA.md#src-s075)
+    - Assuntos: muda, cache, desempenho, não, schema, chave, text, protocolversion
+    - Trecho-guia: modelo não é verificável; source ledger muda; rubrica muda; prompt muda; candidato muda; schema muda.
+  - [SRC-S076 · L1176–L1187 · TDD — FORJA-ASSINATURA > 29. Segurança e privacidade](28_TDD_FORJA_ASSINATURA.md#src-s076)
+    - Assuntos: segurança, privacidade, fora, workspace, nenhum, hmac, key, mapping
+    - Trecho-guia: HMAC key fora do workspace; mapping fora do workspace; logs sem conteúdo integral quando hashes bastarem; corpus público somente sanitizado; prompt injection tratada nos inputs jurídicos e nos bundles de juiz; nenhum segredo em telemetry; paths externos validados; nenhuma API pag
+  - [SRC-S077 · L1188–L1189 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits](28_TDD_FORJA_ASSINATURA.md#src-s077)
+    - Assuntos: ordem, implementação, commits
+    - Trecho-guia: Documento de consulta sobre 30. Ordem de implementação e commits.
+  - [SRC-S078 · L1190–L1193 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W0 — baseline](28_TDD_FORJA_ASSINATURA.md#src-s078)
+    - Assuntos: baseline, somente, medição, classificação, drift, relatório
+    - Trecho-guia: Somente medição, classificação de drift e relatório.
+  - [SRC-S079 · L1194–L1206 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W1 — linguagem](28_TDD_FORJA_ASSINATURA.md#src-s079)
+    - Assuntos: linguagem, arquivos, pacote, vazio, tipos, schemas, config, off
+    - Trecho-guia: pacote vazio + tipos; schemas; config off; reason codes; tests de contrato; budget profile.
+  - [SRC-S080 · L1207–L1210 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W2 — F4-S](28_TDD_FORJA_ASSINATURA.md#src-s080)
+    - Assuntos: f4-s, mapa, geometria, diversidade, shadow, checkpoint
+    - Trecho-guia: Mapa, geometria, diversidade, shadow e checkpoint.
+  - [SRC-S081 · L1211–L1214 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W3 — grounding](28_TDD_FORJA_ASSINATURA.md#src-s081)
+    - Assuntos: grounding, integração, invalidação, fonte
+    - Trecho-guia: Integração F5 e invalidação por fonte.
+  - [SRC-S082 · L1215–L1218 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W4 — microbrief/shortlist](28_TDD_FORJA_ASSINATURA.md#src-s082)
+    - Assuntos: microbrief, shortlist, adapters, invocação, isolamento, fallback
+    - Trecho-guia: Adapters de invocação, isolamento e fallback.
+  - [SRC-S083 · L1219–L1222 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W5 — candidatos](28_TDD_FORJA_ASSINATURA.md#src-s083)
+    - Assuntos: candidatos, materialização, candidate_0, desafiante, gate
+    - Trecho-guia: Materialização de candidate0, desafiante e gate.
+  - [SRC-S084 · L1223–L1226 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W6 — blind/selection](28_TDD_FORJA_ASSINATURA.md#src-s084)
+    - Assuntos: blind, selection, primitives, n-way, modo, independência, seleção
+    - Trecho-guia: Primitives N-way, modo de independência e seleção.
+  - [SRC-S085 · L1227–L1230 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W7 — recall/steelman](28_TDD_FORJA_ASSINATURA.md#src-s085)
+    - Assuntos: recall, steelman, marcadores, síntese, leitor, verificador, canários
+    - Trecho-guia: Marcadores de síntese, leitor/verificador e canários.
+  - [SRC-S086 · L1231–L1234 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W8 — F7/F7-B](28_TDD_FORJA_ASSINATURA.md#src-s086)
+    - Assuntos: f7-b, topologia, recibo, público, recomputação, package
+    - Trecho-guia: Topologia, recibo público e recomputação no package.
+  - [SRC-S087 · L1235–L1238 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W9 — memória/AR](28_TDD_FORJA_ASSINATURA.md#src-s087)
+    - Assuntos: memória, write-only, produção, leitura, offline, indicadores
+    - Trecho-guia: Write-only em produção; leitura offline; indicadores.
+  - [SRC-S088 · L1239–L1242 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W10 — calibração](28_TDD_FORJA_ASSINATURA.md#src-s088)
+    - Assuntos: w10, calibração, manifest, amostral, julgamento, contra, pares, humanos
+    - Trecho-guia: Manifest amostral e julgamento contra pares humanos.
+  - [SRC-S089 · L1243–L1246 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W11–W13 — rollout](28_TDD_FORJA_ASSINATURA.md#src-s089)
+    - Assuntos: w11, w13, rollout, shadow, piloto, default-on, promoção, vez
+    - Trecho-guia: Shadow, piloto e default-on, uma promoção por vez.
+  - [SRC-S090 · L1247–L1259 · TDD — FORJA-ASSINATURA > 30. Ordem de implementação e commits > W14 — documentação](28_TDD_FORJA_ASSINATURA.md#src-s090)
+    - Assuntos: w14, documentação, manifest, contratos, catálogo, mapas, hashes, cada
+    - Trecho-guia: Manifest, contratos, catálogo, mapas e hashes.
+  - [SRC-S091 · L1260–L1290 · TDD — FORJA-ASSINATURA > 31. Comandos de verificação](28_TDD_FORJA_ASSINATURA.md#src-s091)
+    - Assuntos: python, comandos, verificação, powershell, json, users, igorpc, claude
+    - Trecho-guia: Documento de consulta sobre 31. Comandos de verificação.
+  - [SRC-S092 · L1291–L1310 · TDD — FORJA-ASSINATURA > 32. Critério técnico de concluído](28_TDD_FORJA_ASSINATURA.md#src-s092)
+    - Assuntos: não, critério, técnico, concluído, têm, todos, schemas, validator
+    - Trecho-guia: 1. todos os schemas têm validator, owner e teste; 2. candidate0 é material e sempre recuperável; 3. piloto é condicional por caso; 4. isolamento tem evidência do orquestrador; 5. modo de julgamento real é persistido; 6. self-judge e menor SHA são impossíveis; 7. recall não vê sín
+
+### 4.34. 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório
+
+- **Arquivo preparado:** [29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md)
+- **Origem:** `29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md`
+- **Termos:** não, literal, ele, ela, trabalho, pedido, têm, ser, mais, documento, três, precedente
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s001)
+    - Assuntos: requisitos, entrevista, fábio, medina, osório, não, extraídos, fonte
+    - Trecho-guia: Fonte: transcrição de áudio de entrevista conduzida por Igor Morais Vasconcelos (Participante 1) com Fábio Medina Osório (Participante 2), 48 minutos, recebida em 25/07/2026. Natureza deste documento: fonte canônica de requisitos declarados pelo titular. Substitui inferência sobr
+  - [SRC-S002 · L9–L22 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 0. Advertência de método (obrigatória antes de citar este documento)](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s002)
+    - Assuntos: documento, este, não, advertência, método, obrigatória, antes, citar
+    - Trecho-guia: A transcrição é automática e contém erros de reconhecimento de fala. Este documento usa três marcações:
+  - [SRC-S003 · L23–L24 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s003)
+    - Assuntos: ele, efetivamente, pediu
+    - Trecho-guia: Documento de consulta sobre 1. O que ele efetivamente pediu.
+  - [SRC-S004 · L25–L32 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.1 A tese central, dita por ele](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s004)
+    - Assuntos: ele, art, não, tese, central, dita, dever, regem
+    - Trecho-guia: [literal] "o dever de fundamentação, auditabilidade das tomadas de decisões, a explicabilidade... são vetores que regem a atuação da IA e regem a atuação dos operadores jurídicos como um todo, tanto dos advogados, dos magistrados, dos membros do Ministério Público"
+  - [SRC-S005 · L33–L47 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.2 A ordem de trabalho que ele descreveu](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s005)
+    - Assuntos: literal, ela, pedido, trabalho, ele, documental, não, deve
+    - Trecho-guia: Ele descreveu um procedimento, e a ordem importa:
+  - [SRC-S006 · L48–L55 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.3 O argumento econômico dele, que precisa ser respeitado literalmente](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s006)
+    - Assuntos: isso, trabalho, ser, ela, velocidade, argumento, econômico, dele
+    - Trecho-guia: Ele antecipa a objeção óbvia — diálogo é atrito, atrito é lentidão — e a rejeita quatro vezes em quarenta segundos: [literal] "já pode abreviar inclusive o tempo, então ela ganha velocidade com isso, ela ganha enorme velocidade nesse trabalho"; "isso significa um ganho de escala,
+  - [SRC-S007 · L56–L74 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.4 Topologia decisória — o algoritmo que ele ditou](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s007)
+    - Assuntos: ela, precedente, tem, turma, vai, ele, mais, corrigido
+    - Trecho-guia: Este é o trecho mais operacional da entrevista e o mais ausente do harness. Reproduzido quase integral:
+  - [SRC-S008 · L75–L88 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.5 Estilo — três premissas declaradas, nesta ordem](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s008)
+    - Assuntos: não, literal, ele, identidade, trabalho, ser, tem, mais
+    - Trecho-guia: 1. Correção do idioma, sem tolerância. [corrigido] "há regras que devem ser seguidas... tem que seguir rigorosamente as regras do idioma; esse é o primeiro ponto, premissa fundamental". 2. Poder de síntese. [literal] "a segunda premissa é o poder de síntese, a objetividade, a aus
+  - [SRC-S009 · L89–L100 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.6 Jurimetria — o pedido de maior valor e maior risco](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s009)
+    - Assuntos: maior, não, repente, ele, poder, tem, pode, jurimetria
+    - Trecho-guia: Ele pediu duas aplicações concretas, ambas com a mesma mecânica.
+  - [SRC-S010 · L101–L108 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 1. O que ele efetivamente pediu > 1.7 Limites e postura que ele impôs sobre si](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s010)
+    - Assuntos: não, ele, nunca, literal, grupo, resolvo, vai, forma
+    - Trecho-guia: Nunca comparação depreciativa. Ele recusa a pergunta do diferencial quatro vezes: [literal] "eu não vou nunca me comparar com outro advogado... cada um tem a sua singularidade... eu não sou o melhor do Brasil nem do mundo"; e [literal] "muitas vezes indico vários outros colegas i
+  - [SRC-S011 · L109–L112 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 2. Mapa de requisitos contra o harness real](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s011)
+    - Assuntos: mapa, requisitos, contra, harness, real, verificado, contratos, phase_contracts
+    - Trecho-guia: Verificado em 25/07/2026 nos contratos phasecontracts/F0..F10.json, em forjaestilohumano.py, forjaauthorities.py, forjacitations.py, forjaexploracao100.py, templates/F2AEXPLORACAO100PERGUNTAS.md e por varredura léxica no código de produção.
+  - [SRC-S012 · L113–L132 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 2. Mapa de requisitos contra o harness real > 2.1 O que já existe e atende (não reconstruir)](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s012)
+    - Assuntos: não, existe, dele, antes, harness, final, atende, reconstruir
+    - Trecho-guia: Duas conclusões desta tabela. Primeira: o harness já honra a espinha dorsal da fala dele — dúvida antes do trabalho, lastro de fonte, nada silencioso, palavra final humana registrada, co-evolução. Segunda: as três propostas externas subestimam gravemente o que existe (falam em "a
+  - [SRC-S013 · L133–L160 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 2. Mapa de requisitos contra o harness real > 2.2 Lacunas confirmadas por varredura](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s013)
+    - Assuntos: não, alta, matéria, ausente, média, ele, aderência, ratio
+    - Trecho-guia: Termos ausentes de todo o código de produção: aderência, ratio, prevento/prevenção, jurimetria, estatística, composição da turma, legibilidade, síntese/concisão, diligência (como artefato contratado).
+  - [SRC-S014 · L161–L187 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 3. Avaliação dos três documentos externos](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s014)
+    - Assuntos: não, ele, três, dele, documentos, peça, lote, perguntas
+    - Trecho-guia: Aproveitáveis, com três correções materiais.
+  - [SRC-S015 · L188–L191 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 4. Padrões de pensamento e de linguagem dele](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s015)
+    - Assuntos: padrões, pensamento, linguagem, dele, deve, ser, extraídos, fala
+    - Trecho-guia: Extraídos da fala. Separo o que é oral — e que não deve ser imitado em peça escrita — do que é cognitivo, que é o que deve ser codificado.
+  - [SRC-S016 · L192–L201 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 4. Padrões de pensamento e de linguagem dele > 4.1 Padrões de fala (não transportar para o texto)](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s016)
+    - Assuntos: não, ele, fala, isso, padrões, transportar, texto, cada
+    - Trecho-guia: Tríades. "a dedicação, a seriedade, a ética"; "escopo, metodologia, objetivo"; "qualidade, rapidez, velocidade"; "acesso, resolutividade, capacidade". É o ritmo dele. Na escrita isso vira enumeração, e só quando cada item faz trabalho próprio. Aproximação sucessiva. Reformula com
+  - [SRC-S017 · L202–L207 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 4. Padrões de pensamento e de linguagem dele > 4.2 Léxico dele (vocabulário positivo, extraído literalmente)](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s017)
+    - Assuntos: léxico, dele, vocabulário, positivo, extraído, literalmente, precedente, desvio
+    - Trecho-guia: íntegra; corpo documental; checklist; rastrear; lastro; aderência fático-probatória; ratio decidendi; precedente qualificado; precedente vinculante; graduação hierárquica; prevento; órgão fracionário; seção; Corte Especial; prequestionamento; multiplicação de teses; conectividade
+  - [SRC-S018 · L208–L234 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 4. Padrões de pensamento e de linguagem dele > 4.3 Padrões cognitivos (estes são para codificar)](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s018)
+    - Assuntos: ele, precedente, consequência, não, cada, sempre, ela, analogia
+    - Trecho-guia: a) Analogia estruturante como porta de entrada. Abre definindo o objeto por um corpo: [literal] "cada processo é como se fosse um corpo único, anatomia de um corpo". Depois sustenta o primeiro terço inteiro na analogia advogado↔IA, e deriva deveres da analogia. Consequência práti
+  - [SRC-S019 · L235–L247 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 4. Padrões de pensamento e de linguagem dele > 4.4 Entrelinhas — o que ele quis dizer sem dizer](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s019)
+    - Assuntos: ele, não, ser, dizer, literal, teses, isso, vai
+    - Trecho-guia: 1. A dúvida da IA é o produto, não o defeito. Ele gasta cinco minutos defendendo o direito de perguntar e antecipa quatro vezes a objeção de lentidão. Isto só se explica se ele já viu ferramentas que fingem entender e entregam trabalho errado. Ele está pedindo uma IA que admite n
+  - [SRC-S020 · L248–L279 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 5. Plano de instalação proposto](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s020)
+    - Assuntos: não, ele, dele, subfase, onda, porque, precedente, módulo
+    - Trecho-guia: Não construir tudo. Ordem por retorno sobre esforço, respeitando que os requisitos entram como subfases de F0–F10 (§3, correção 1).
+  - [SRC-S021 · L280–L314 · 25 — Requisitos da FORJA extraídos da entrevista de Fábio Medina Osório > 6. Registro de rastreabilidade](29_REQUISITOS_ENTREVISTA_FABIO_MEDINA_OSORIO.md#src-s021)
+    - Assuntos: falta, existe, parcial, não, f6-b, pedido, registro, declarado
+    - Trecho-guia: Documento de consulta sobre 6. Registro de rastreabilidade.
+
+### 4.35. 26 — Arquitetura de três eixos: dialética com o advogado, identidade Medina Osório e sistema de precedentes
+
+- **Arquivo preparado:** [30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md)
+- **Origem:** `30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md`
+- **Termos:** não, sistema, documento, teses, mais, resposta, ele, está, identidade, codex, pergunta, advogado
+- **Blocos:**
+  - [SRC-S001 · L1–L9 · 26 — Arquitetura de três eixos: dialética com o advogado, identidade Medina Osório e sistema de precedentes](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s001)
+    - Assuntos: três, sistema, arquitetura, eixos, dialética, advogado, identidade, medina
+    - Trecho-guia: Estado: pesquisa, diagnóstico e planejamento. Nenhuma linha de código foi alterada. Fonte de requisitos: planejamento/25REQUISITOSENTREVISTAFABIOMEDINAOSORIO.md (entrevista de 25/07/2026). Insumos críticos incorporados: três documentos de IA externa (forjamedinaosorioarquitetura.
+  - [SRC-S002 · L10–L26 · 26 — Arquitetura de três eixos: dialética com o advogado, identidade Medina Osório e sistema de precedentes > 0. Resolução de uma divergência entre os pareceres](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s002)
+    - Assuntos: codex, transcrição, não, estão, resolução, divergência, pareceres, quanto
+    - Trecho-guia: O Codex registrou, com correção metodológica, que a transcrição que recebeu estava truncada: continha 00:00–03:34, saltava "[321 lines hidden]" e retornava em 45:19–47:58. Por isso marcou como [Não verificado] tudo que os documentos de IA citavam do trecho central.
+  - [SRC-S003 · L27–L42 · 26 — Arquitetura de três eixos: dialética com o advogado, identidade Medina Osório e sistema de precedentes > 0. Resolução de uma divergência entre os pareceres > 0.1 Correções do Codex que este documento adota — e que corrigem o documento 25](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s003)
+    - Assuntos: não, documento, aderência, precedente, art, correções, codex, este
+    - Trecho-guia: Quatro são materiais e uma delas é um erro jurídico que eu havia reproduzido do documento de identidade externo:
+  - [SRC-S004 · L43–L44 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s004)
+    - Assuntos: parte, dialética, sistema, parceiro, intelectual, antes, escrever
+    - Trecho-guia: Documento de consulta sobre PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever.
+  - [SRC-S005 · L45–L52 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever > 1.1 O que precisa ficar claro antes de projetar](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s005)
+    - Assuntos: não, tem, ele, precisa, ficar, claro, antes, projetar
+    - Trecho-guia: O modelo que o titular descreve não é "o advogado manda o caso e a IA entrega pronto". Também não é um chatbot que conversa. É um terceiro modelo, e ele o nomeou em vocabulário processual: "uma espécie de pedido de esclarecimentos ao remetente da demanda".
+  - [SRC-S006 · L53–L87 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever > 1.2 O instrumento: CONSULTA AO ADVOGADO RESPONSÁVEL](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s006)
+    - Assuntos: não, bloco, cada, pergunta, premissa, mais, lista, teses
+    - Trecho-guia: Documento único, enviado por e-mail, com cinco blocos. Não é formulário; é peça endereçada.
+  - [SRC-S007 · L88–L98 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever > 1.3 A regra que protege a confiança](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s007)
+    - Assuntos: não, confiança, pergunta, está, regra, protege, filtros, essencial
+    - Trecho-guia: Uma pergunta só entra na consulta se passar nos quatro filtros. O terceiro e o quarto decidem se ele responde ou para de ler.
+  - [SRC-S008 · L99–L108 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever > 1.4 Por que isto é barato: o motor já existe](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s008)
+    - Assuntos: motor, f2-a, não, resposta, isto, barato, existe, perguntas
+    - Trecho-guia: O F2-A já produz, por caso, cem perguntas adaptadas, com classificação epistemológica, blocked motivado, consequência declarada e rota de diligência. Não é preciso construir um motor de perguntas. O que falta é uma projeção do F2-A sobre o humano:
+  - [SRC-S009 · L109–L114 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever > 1.5 Teses: cobertura, não contagem](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s009)
+    - Assuntos: teses, não, cobertura, contagem, mérito, examinei, motivo, nada
+    - Trecho-guia: O titular pediu quantidade superior de teses e, na frase seguinte, plausibilidade forte e conectividade lógica. Um mínimo numérico transforma o primeiro pedido em produção de lixo argumentativo e viola o segundo.
+  - [SRC-S010 · L115–L122 · PARTE I — A dialética: o sistema como parceiro intelectual antes de escrever > 1.6 Onde isto mora no harness](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s010)
+    - Assuntos: bloqueia, onde, isto, mora, harness, subfase, exploração, escopo
+    - Trecho-guia: Subfase F2-B, entre a exploração das 100 perguntas e a fixação de escopo. Não é fase nova: é o padrão já usado duas vezes com sucesso (F2-A da exploração, F7-B do Fable 5). Consome F2QUESTIONTREE.json e o documentindex do F1; produz o documento que sai por e-mail e o ledger que f
+  - [SRC-S011 · L123–L124 · PARTE II — Identidade Medina Osório: método antes de vocabulário](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s011)
+    - Assuntos: parte, identidade, medina, osório, método, antes, vocabulário
+    - Trecho-guia: Documento de consulta sobre PARTE II — Identidade Medina Osório: método antes de vocabulário.
+  - [SRC-S012 · L125–L141 · PARTE II — Identidade Medina Osório: método antes de vocabulário > 2.1 O diagnóstico honesto do corpus](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s012)
+    - Assuntos: não, ele, corpus, está, nossa, peças, dele, temos
+    - Trecho-guia: Verificado hoje: MODELOS está vazio — contém apenas LEIA-ME.md e MAPAIA.md. Todos os .docx do acervo da fábrica são produção nossa, não peças assinadas por ele. A calibração de identidade que os documentos externos propõem, a partir de vinte a trinta peças dele, não pode começar 
+  - [SRC-S013 · L142–L153 · PARTE II — Identidade Medina Osório: método antes de vocabulário > 2.2 Três níveis de confiança, e só dois são ativáveis](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s013)
+    - Assuntos: três, ativável, níveis, confiança, dois, são, ativáveis, ele
+    - Trecho-guia: Adotado do Codex, com a granularidade que o caso exige:
+  - [SRC-S014 · L154–L170 · PARTE II — Identidade Medina Osório: método antes de vocabulário > 2.3 O que já é N1 hoje, sem pedir nada a ele](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s014)
+    - Assuntos: hoje, pedir, nada, ele, regra, síntese, direto, quem
+    - Trecho-guia: Da entrevista e das determinações registradas do escritório, já são regra confirmada:
+  - [SRC-S015 · L171–L194 · PARTE II — Identidade Medina Osório: método antes de vocabulário > 2.4 A identidade que importa é o motor argumentativo](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s015)
+    - Assuntos: não, autoridade, identidade, dele, isonomia, coerência, motor, consequência
+    - Trecho-guia: O documento de identidade externo acertou ao dizer que a identidade dele é arquitetural, não lexical. Mas localizou o motor no lugar errado — pôs "consequência institucional" como oitava seção da peça. Não é seção. É o que organiza a peça inteira.
+  - [SRC-S016 · L195–L208 · PARTE II — Identidade Medina Osório: método antes de vocabulário > 2.5 O que extrair, em que ordem, e o que não extrair](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s016)
+    - Assuntos: ele, extrair, ordem, não, nível, corpus, revela, arquitetura
+    - Trecho-guia: Ordem por retorno, do maior para o menor — inversa à que os sistemas costumam tentar:
+  - [SRC-S017 · L209–L218 · PARTE II — Identidade Medina Osório: método antes de vocabulário > 2.6 Validação: o alvo correto](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s017)
+    - Assuntos: alvo, correto, escritório, ele, não, validação, peça, dele
+    - Trecho-guia: O documento externo propôs teste cego para verificar se a peça calibrada passa por autoria dele. Alvo errado, e o Codex acertou ao corrigir.
+  - [SRC-S018 · L219–L222 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s018)
+    - Assuntos: parte, precedentes, onde, iii, sistema, está, mais, aquém
+    - Trecho-guia: É a parte em que o titular concentrou os dois marcadores de prioridade — "mas principalmente o uso adequado dos precedentes e a seleção correta" e "principalmente a identificação da aderência de cada precedente ao caso concreto" — e é onde a varredura confirmou ausência total: ad
+  - [SRC-S019 · L223–L241 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.1 O achado que muda o custo do projeto](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s019)
+    - Assuntos: não, teiajus, ementa, achado, muda, custo, projeto, dados
+    - Trecho-guia: Inspecionei o TeiaJus. O substrato de dados que faltava já existe e foi construído por você.
+  - [SRC-S020 · L242–L265 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.2 Camada 1 — Topologia decisória (subfase F3-B)](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s020)
+    - Assuntos: não, órgão, mapa, hoje, turma, python, forja_legal_search, artifact-dir
+    - Trecho-guia: Artefato canônico: MAPA DO DESTINATÁRIO. Responde a uma pergunta que a FORJA hoje não faz: para quem, nominalmente, esta peça está sendo escrita?
+  - [SRC-S021 · L266–L303 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.3 Camada 2 — A ficha de precedente (subfase F5-B)](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s021)
+    - Assuntos: bloco, precedente, não, art, ratio, moldura, órgão, contra
+    - Trecho-guia: Substitui a nota numérica de aderência, que é pseudoprecisão. O objeto correto é um dossiê por precedente, espelhando o que o art. 489, §1º, incisos V e VI, do CPC exige do juiz — e voltando essa exigência para nós mesmos.
+  - [SRC-S022 · L304–L334 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.4 Camada 2-B — Seleção estratégica: a jurimetria que dá para fazer já](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s022)
+    - Assuntos: risco, jurimetria, não, seleção, fazer, maior, valor, ele
+    - Trecho-guia: Aqui está a distinção que desbloqueia a maior parte do valor sem carregar o risco. O titular descreveu duas coisas diferentes sob o mesmo guarda-chuva estatístico, e elas têm perfis de risco opostos.
+  - [SRC-S023 · L335–L350 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.5 Camada 3 — Auditabilidade da própria pesquisa](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s023)
+    - Assuntos: pesquisa, foi, não, própria, camada, auditabilidade, ela, precisa
+    - Trecho-guia: Ele foi específico: "ela precisa ter explicabilidade nas suas buscas, nos seus rastreamentos, nos seus parâmetros, nas suas pesquisas; ela própria precisa estar sujeita à rastreabilidade". E ligou isso ao risco existencial: "sempre que uma pesquisa se revelar falsa ou errada, o i
+  - [SRC-S024 · L351–L356 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.6 Precedente administrativo](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s024)
+    - Assuntos: administrativo, precedente, cnj, ele, estendeu, expressamente, teoria, precedentes
+    - Trecho-guia: Ele estendeu expressamente a teoria dos precedentes ao contencioso administrativo, que é o terreno dele. O forjaauthorities.py só reconhece CNJ, STJ, STF, súmula e tema.
+  - [SRC-S025 · L357–L372 · PARTE III — O sistema de precedentes: onde a FORJA está mais aquém > 3.7 Gates novos que decorrem, e o que eles impedem](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s025)
+    - Assuntos: precedente, gates, novos, decorrem, eles, impedem, tese, falha
+    - Trecho-guia: Os quatro primeiros são bloqueadores P0. O quinto e o sexto são exigência de completude do artefato. O sétimo fecha uma lição que o escritório já nos deu uma vez.
+  - [SRC-S026 · L373–L374 · PARTE IV — Sequenciamento e o que depende dele](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s026)
+    - Assuntos: parte, sequenciamento, depende, dele
+    - Trecho-guia: Documento de consulta sobre PARTE IV — Sequenciamento e o que depende dele.
+  - [SRC-S027 · L375–L386 · PARTE IV — Sequenciamento e o que depende dele > 4.1 Ordem proposta](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s027)
+    - Assuntos: bloco, porque, ordem, proposta, dele, mais, existe, camada
+    - Trecho-guia: Bloco 1 — precedentes e topologia. É o "principalmente" dele, é onde estamos mais aquém, e o substrato do TeiaJus já existe. Camada 1, o mapa do destinatário, antes da Camada 2, a ficha de precedente, porque a primeira roteia a segunda. J-A junto, porque é consulta e não inferênc
+  - [SRC-S028 · L387–L394 · PARTE IV — Sequenciamento e o que depende dele > 4.2 O que só ele pode dar](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s028)
+    - Assuntos: ele, pode, dar, tipo, módulo, j-b, vinte, trinta
+    - Trecho-guia: Vinte a trinta peças assinadas, estratificadas por tipo, incluindo duas ou três que ele considere ruins. Preferência doutrinária por matéria — ele ofereceu responder isso na própria entrevista. Parâmetros por classe de caso: teto de rodadas de consulta, extensão máxima por tipo d
+  - [SRC-S029 · L395–L402 · PARTE IV — Sequenciamento e o que depende dele > 4.3 Como apresentar](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s029)
+    - Assuntos: não, ele, dele, apresentar, critério, tabela, três, coisas
+    - Trecho-guia: Três coisas, e a segunda é a que fecha pelo critério dele:
+  - [SRC-S030 · L403–L409 · PARTE IV — Sequenciamento e o que depende dele > 4.4 Riscos deste plano, declarados](30_ARQUITETURA_DIALETICA_IDENTIDADE_E_PRECEDENTES.md#src-s030)
+    - Assuntos: não, precisa, riscos, deste, plano, declarados, gate, falha
+    - Trecho-guia: Goodhart nas métricas de estilo e de tese. Já mitigado no desenho, com cobertura em vez de contagem, mas qualquer limiar novo precisa passar pelo ciclo AR antes de virar gate, com canário de falha única. Composição de órgão é dado perecível. Um mapa do destinatário desatualizado 
+
+### 4.36. 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular
+
+- **Arquivo preparado:** [31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md)
+- **Origem:** `31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md`
+- **Termos:** não, três, plano, titular, crítica, brief, dois, documento, existe, consulta, único, rotas
+- **Blocos:**
+  - [SRC-S001 · L1–L12 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s001)
+    - Assuntos: plano, consolidado, requisitos, titular, não, único, forja-assinatura, lite
+    - Trecho-guia: Data: 25/07/2026. Estado: planejamento consolidado. Nenhuma linha de código foi alterada.
+  - [SRC-S002 · L13–L37 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 1. A descoberta que dispensa metade da obra](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s002)
+    - Assuntos: três, consequência, mesmo, titular, quem, decide, descoberta, dispensa
+    - Trecho-guia: Os dois planos — FORJA-ASSINATURA e os três eixos do documento 30 — convergiram para o mesmo artefato, por caminhos independentes. Um veio de teoria de seleção editorial; o outro, da fala do titular. Postos lado a lado:
+  - [SRC-S003 · L38–L61 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 2. A dependência que a versão Lite não enxergou](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s003)
+    - Assuntos: não, escolha, brief, rota, está, único, três, destinatário
+    - Trecho-guia: A crítica está certa no princípio: a inteligência fica na qualidade da escolha prévia, não no volume de versões. Um único draft, precedido de uma escolha boa, vence três drafts precedidos de escolha genérica.
+  - [SRC-S004 · L62–L63 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 3. Superfície técnica única](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s004)
+    - Assuntos: superfície, técnica, única
+    - Trecho-guia: Documento de consulta sobre 3. Superfície técnica única.
+  - [SRC-S005 · L64–L75 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 3. Superfície técnica única > 3.1 Artefatos novos — dois, e não sete](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s005)
+    - Assuntos: não, dois, artefatos, novos, sete, json, dez, campos
+    - Trecho-guia: (1) F3MAPADESTINATARIO.json — pequeno, cerca de dez campos, todos preenchidos ou marcados como não apurados com motivo:
+  - [SRC-S006 · L76–L87 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 3. Superfície técnica única > 3.2 Extensões de artefatos existentes — três, sem schema novo](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s006)
+    - Assuntos: não, três, campos, extensões, artefatos, existentes, schema, novo
+    - Trecho-guia: (3) verifiedsourceledger (F7) + campos de precedente. ratio com trecho literal e localização; obiterConfundivel; molduraFaticaDeterminante; confronto elemento a elemento; operacao — aplicar, distinguir, delimitar alcance, sustentar superação; regime; vigenciaConferidaEm.
+  - [SRC-S007 · L88–L97 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 3. Superfície técnica única > 3.3 Sem schema novo — um seletor e um renderizador](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s007)
+    - Assuntos: consulta, novo, seletor, renderizador, não, resposta, escopo, schema
+    - Trecho-guia: (6) Consulta ao advogado responsável. É projeção do que já existe, não motor novo: seletor sobre as cem perguntas do F2-A + renderizador em prosa endereçada + rastreador de resposta. Os quatro filtros de admissão e o campo "o que farei se não houver resposta" estão no documento 3
+  - [SRC-S008 · L98–L103 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 3. Superfície técnica única > 3.4 Configuração e prova](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s008)
+    - Assuntos: configuração, prova, flag, única, off, shadow, pilot, reaproveitando
+    - Trecho-guia: Flag única off | shadow | pilot, reaproveitando forjan4validate.effectivemode() e pilotCases, que a revisão adversarial já identificou como padrão correto. Teto simples de custo com a telemetria existente. Sem pacote novo, sem CLI própria, sem máquina de estados nova.
+  - [SRC-S009 · L104–L105 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 4. O que sai — de ambos os planos](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s009)
+    - Assuntos: sai, ambos, planos
+    - Trecho-guia: Documento de consulta sobre 4. O que sai — de ambos os planos.
+  - [SRC-S010 · L106–L111 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 4. O que sai — de ambos os planos > 4.1 Cortes no FORJA-ASSINATURA (endosso a crítica, com um acréscimo)](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s010)
+    - Assuntos: não, crítica, acréscimo, cortes, forja-assinatura, endosso, sete, três
+    - Trecho-guia: Retirados: cinco a sete geometrias; três microbriefs isolados; dois ou três drafts por petição; N-way e Condorcet; terceiro juiz; famílias distintas obrigatórias em produção; memória decisória na v1; topologia estrutural sofisticada; pacote forja/signature/ com treze módulos; CLI
+  - [SRC-S011 · L112–L121 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 4. O que sai — de ambos os planos > 4.2 Cortes no meu plano (documento 30)](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s011)
+    - Assuntos: meu, plano, precedente, cortes, documento, vira, cortada, consulta
+    - Trecho-guia: Caderno de pesquisa como artefato próprio → cortado. Vira dois campos no sourceledger (§3.2, item 4). A informação nova é o resultado negativo; o resto já está na telemetria. Ficha de precedente como dossiê de dez blocos para todo precedente → cortada. Vira extensão do verifiedso
+  - [SRC-S012 · L122–L134 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 4. O que sai — de ambos os planos > 4.3 Placar da consolidação](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s012)
+    - Assuntos: plano, placar, consolidação, novos, módulos, assinatura, original, meu
+    - Trecho-guia: Documento de consulta sobre 4.3 Placar da consolidação.
+  - [SRC-S013 · L135–L148 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 5. Separação que a crítica embaçou: nem tudo é hipótese de A/B](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s013)
+    - Assuntos: hipótese, crítica, tudo, auto-research, não, separação, embaçou, nem
+    - Trecho-guia: A crítica manda provar tudo no AUTO-RESEARCH. Correto para uma das três coisas, e categoria errada para as outras duas.
+  - [SRC-S014 · L149–L169 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 6. Três ondas](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s014)
+    - Assuntos: brief, onda, casos, não, três, ondas, muda, saída
+    - Trecho-guia: Onda 1 — sombra, e nada muda na saída Régua verde primeiro, ou desvio classificado e aceito como baseline conhecido; rebaseline automático continua proibido. Schemas e validadores do mapa e do brief. F3-B produz o mapa; F4 produz o brief. Nenhum output de F6 muda. Verificação de 
+  - [SRC-S015 · L170–L179 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 7. Riscos que continuam de pé](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s015)
+    - Assuntos: não, brief, riscos, continuam, risco, campos, pode, produzir
+    - Trecho-guia: Texto escrito para a rubrica. O risco central da crítica não desaparece por enxugar: um brief com campos obrigatórios pode produzir peças que preenchem campos. Mitigação: o brief é decisão, não roteiro de redação; F6 não recebe o brief como sumário a expandir. E o gate de estilo 
+  - [SRC-S016 · L180–L182 · 31 — Plano único consolidado: FORJA-ASSINATURA Lite + requisitos do titular > 8. O que continua dependendo dele](31_PLANO_UNICO_CONSOLIDADO_2026-07-25.md#src-s016)
+    - Assuntos: dele, continua, dependendo, ele, mudança, relação, documento, vinte
+    - Trecho-guia: Sem mudança em relação ao documento 29, §5: vinte a trinta peças assinadas, incluindo duas ou três que ele considere ruins; preferência doutrinária por matéria; parâmetros por classe de caso, em tabela vazia, para preencher com ele; autorização e limites do módulo J-B; e os texto
+
+### 4.37. 32 — Plano único consolidado v2: cocrição, identidade e precedentes
+
+- **Arquivo preparado:** [32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md)
+- **Origem:** `32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md`
+- **Termos:** não, pesquisa, identidade, advogado, deve, decisão, precedentes, consulta, resposta, único, mapa, destinatário
+- **Blocos:**
+  - [SRC-S001 · L1–L20 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s001)
+    - Assuntos: não, cocrição, identidade, precedentes, documento, plano, único, consolidado
+    - Trecho-guia: Data: 25/07/2026. Estado: pesquisa e planejamento revisados. Não autoriza implementação nem envio externo.
+  - [SRC-S002 · L21–L37 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 1. Resultado pretendido](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s002)
+    - Assuntos: advogado, decisão, resultado, pretendido, humana, pesquisa, caso, risco
+    - Trecho-guia: A FORJA deve funcionar como parceiro intelectual do advogado responsável antes de redigir:
+  - [SRC-S003 · L38–L52 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 2. Linha de base verificada: o que existe e o que realmente falta](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s003)
+    - Assuntos: existe, não, base, exigem, pesquisa, linha, verificada, realmente
+    - Trecho-guia: Consequência arquitetural: não se deve criar um sistema paralelo, mas também não se deve declarar uma lacuna “resolvida” apenas porque uma pergunta, um campo genérico ou uma ação distante existe em outro subsistema.
+  - [SRC-S004 · L53–L54 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 3. Princípios não negociáveis](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s004)
+    - Assuntos: princípios, não, negociáveis
+    - Trecho-guia: Documento de consulta sobre 3. Princípios não negociáveis.
+  - [SRC-S005 · L55–L60 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 3. Princípios não negociáveis > 3.1 Verificação antes de persuasão](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s005)
+    - Assuntos: verificação, antes, persuasão, precedente, nenhuma, melhoria, assinatura, pode
+    - Trecho-guia: Nenhuma melhoria de assinatura pode reduzir os gates factuais e jurídicos. Citação, número, órgão, relator, composição, data, trecho, ratio e estado do precedente continuam sujeitos a fonte oficial e recomputação independente.
+  - [SRC-S006 · L61–L72 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 3. Princípios não negociáveis > 3.2 Identidade como método, não personificação](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s006)
+    - Assuntos: não, identidade, método, personificação, significa, autoria, escrever, medina
+    - Trecho-guia: “Escrever como Medina” significa aproximar:
+  - [SRC-S007 · L73–L81 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 3. Princípios não negociáveis > 3.3 Cocrição com responsabilidade epistêmica](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s007)
+    - Assuntos: não, cocrição, responsabilidade, epistêmica, declaração, escritório, pode, definir
+    - Trecho-guia: Uma declaração do escritório pode definir objetivo, preferência, autorização ou leitura estratégica. Ela não prova, por si, fato externo do processo. O registro deve manter separadas:
+  - [SRC-S008 · L82–L90 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 3. Princípios não negociáveis > 3.4 Proporcionalidade](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s008)
+    - Assuntos: recebem, proporcionalidade, precedentes, custo, pesquisa, fichamento, cresce, materialidade
+    - Trecho-guia: O custo da pesquisa e do fichamento cresce com a materialidade:
+  - [SRC-S009 · L91–L96 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 3. Princípios não negociáveis > 3.5 Sem pseudoprecisão](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s009)
+    - Assuntos: pseudoprecisão, não, usar, quando, houver, percentuais, intuitivos, notas
+    - Trecho-guia: Não usar percentuais intuitivos, notas de aderência ou pesos arbitrários para simular certeza. Quando houver medida estatística, ela deve ter população, janela, denominador, incerteza e finalidade declarados. Quando não houver, usar categorias verificáveis e justificativa em ling
+  - [SRC-S010 · L97–L120 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 4. Fluxo-alvo corrigido](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s010)
+    - Assuntos: advogado, fluxo-alvo, corrigido, f2b, dialética, mapa, destinatário, pesquisa
+    - Trecho-guia: O fluxo tem duas frentes paralelas antes da redação:
+  - [SRC-S011 · L121–L122 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 5. F2-B — consulta dialética ao advogado responsável](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s011)
+    - Assuntos: f2-b, consulta, dialética, advogado, responsável
+    - Trecho-guia: Documento de consulta sobre 5. F2-B — consulta dialética ao advogado responsável.
+  - [SRC-S012 · L123–L137 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 5. F2-B — consulta dialética ao advogado responsável > 5.1 O que a consulta deve produzir](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s012)
+    - Assuntos: consulta, não, deve, produzir, caso, pode, exigir, questionário
+    - Trecho-guia: A consulta não é um questionário integral. É uma seleção adaptativa das dúvidas que podem mudar:
+  - [SRC-S013 · L138–L148 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 5. F2-B — consulta dialética ao advogado responsável > 5.2 Filtros de admissão](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s013)
+    - Assuntos: filtros, admissão, pergunta, não, está, cada, precisa, passar
+    - Trecho-guia: Cada pergunta precisa passar por quatro filtros:
+  - [SRC-S014 · L149–L162 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 5. F2-B — consulta dialética ao advogado responsável > 5.3 Efeito do silêncio](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s014)
+    - Assuntos: efeito, material, não, silêncio, pergunta, fato, bloqueia, nunca
+    - Trecho-guia: O plano 31 é corrigido neste ponto:
+  - [SRC-S015 · L163–L177 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 5. F2-B — consulta dialética ao advogado responsável > 5.4 Resposta não é aceite automático](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s015)
+    - Assuntos: resposta, não, aceite, automático, haverá, decisão, cumpre, função
+    - Trecho-guia: A resposta cumpre a função de fixação de escopo apenas quando efetivamente resolve os pontos materiais. Não haverá uma subfase F2-C separada, mas haverá um registro explícito de decisão dentro dos contratos existentes:
+  - [SRC-S016 · L178–L190 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 5. F2-B — consulta dialética ao advogado responsável > 5.5 Forma de interação](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s016)
+    - Assuntos: forma, interação, e-mail, não, envio, único, consolidado, padrão
+    - Trecho-guia: Um único e-mail consolidado é o padrão inicial, não uma ontologia rígida. Respostas podem chegar por e-mail, WhatsApp, áudio ou reunião e devem ser incorporadas ao mesmo ledger versionado.
+  - [SRC-S017 · L191–L192 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 6. F3-B — mapa do destinatário com fontes separadas](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s017)
+    - Assuntos: f3-b, mapa, destinatário, fontes, separadas
+    - Trecho-guia: Documento de consulta sobre 6. F3-B — mapa do destinatário com fontes separadas.
+  - [SRC-S018 · L193–L201 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 6. F3-B — mapa do destinatário com fontes separadas > 6.1 Dois novos tipos de artefato](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s018)
+    - Assuntos: dois, novos, tipos, artefato, json, schema, mantêm-se, execução
+    - Trecho-guia: Mantêm-se os dois novos tipos de artefato de execução:
+  - [SRC-S019 · L202–L217 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 6. F3-B — mapa do destinatário com fontes separadas > 6.2 Conteúdo do mapa](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s019)
+    - Assuntos: oficial, conteúdo, mapa, regimento, atual, fonte, órgão, competente
+    - Trecho-guia: O mapa deve separar campos e fontes:
+  - [SRC-S020 · L218–L223 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 6. F3-B — mapa do destinatário com fontes separadas > 6.3 Topologia condicional](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s020)
+    - Assuntos: topologia, condicional, não, seção, ordem, busca, deve, seguir
+    - Trecho-guia: A ordem de busca deve seguir a competência e o problema concreto, não uma escada fixa. Outra turma da seção, seção ou Corte Especial só entra quando a estrutura do tribunal e a matéria tornarem esse nível relevante.
+  - [SRC-S021 · L224–L236 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 6. F3-B — mapa do destinatário com fontes separadas > 6.4 Perecibilidade](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s021)
+    - Assuntos: perecibilidade, dado, não, cada, mutável, precisa, checkedat, sourceid
+    - Trecho-guia: checkedAt; sourceId ou URL oficial; freshnessPolicy; status: confirmed, stale, unknown ou notapplicable.
+  - [SRC-S022 · L237–L258 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 7. F4 — signature brief como centro único de decisão](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s022)
+    - Assuntos: decisão, brief, rotas, rota, não, signature, centro, único
+    - Trecho-guia: O brief absorve o leque de teses e evita lugares concorrentes de decisão. Seus campos mínimos:
+  - [SRC-S023 · L259–L260 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s023)
+    - Assuntos: precedentes, estratégicos, auditáveis
+    - Trecho-guia: Documento de consulta sobre 8. F5/F7 — precedentes estratégicos e auditáveis.
+  - [SRC-S024 · L261–L268 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis > 8.1 Nome correto](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s024)
+    - Assuntos: nome, correto, jurimetria, documento, chamou, seleção, passa, chamar-se
+    - Trecho-guia: O que o documento 31 chamou de “jurimetria de seleção” passa a chamar-se:
+  - [SRC-S025 · L269–L286 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis > 8.2 Trilha de busca dentro do sourceledger](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s025)
+    - Assuntos: trilha, não, busca, dentro, source_ledger, jurídica, ids, motivo
+    - Trecho-guia: O caderno separado continua cortado. A trilha jurídica passa a existir por extensão versionada do sourceledger, com:
+  - [SRC-S026 · L287–L305 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis > 8.3 Extensão do verifiedsourceledger](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s026)
+    - Assuntos: extensão, íntegra, elemento, sustentar, quando, ementa, verifiedsourceledger, verified_source_ledger
+    - Trecho-guia: Somente precedentes-âncora recebem ficha aprofundada:
+  - [SRC-S027 · L306–L320 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis > 8.4 Regime sem rótulo simplificador](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s027)
+    - Assuntos: regime, não, rótulo, simplificador, vigência, peso, campo, deve
+    - Trecho-guia: base normativa; tipo de autoridade; dever ou efeito jurídico; órgão competente; caminho de distinção, revisão ou superação; estado de vigência.
+  - [SRC-S028 · L321–L331 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis > 8.5 Integração real com o TeiaJus](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s028)
+    - Assuntos: integração, teiajus, pelo, real, plano, deverá, ações, implementação
+    - Trecho-guia: O plano de implementação deverá tratar a diferença entre:
+  - [SRC-S029 · L332–L342 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 8. F5/F7 — precedentes estratégicos e auditáveis > 8.6 Precedente administrativo](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s029)
+    - Assuntos: precedente, administrativo, decisório, separar, dois, objetos, evidência, administrativa
+    - Trecho-guia: evidência administrativa e dados de integridade: CEIS, CEAF, CNEP, CEPIM, leniência; precedente administrativo decisório: acórdãos, decisões colegiadas, enunciados e julgados de TCU, CGU/CRG, CADE, CVM, CNJ ou CNMP.
+  - [SRC-S030 · L343–L344 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 9. Identidade Medina — corpus progressivo e atribuível](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s030)
+    - Assuntos: identidade, medina, corpus, progressivo, atribuível
+    - Trecho-guia: Documento de consulta sobre 9. Identidade Medina — corpus progressivo e atribuível.
+  - [SRC-S031 · L345–L366 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 9. Identidade Medina — corpus progressivo e atribuível > 9.1 Não esperar por corpus perfeito](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s031)
+    - Assuntos: não, esperar, corpus, perfeito, fábio, autor, versão, trabalho
+    - Trecho-guia: O trabalho pode começar com o acervo atual, mas não com a premissa de que todos os DOCX são produção do escritório ou autoria de Fábio. O primeiro produto é um inventário curatorial, fora do caminho crítico:
+  - [SRC-S032 · L367–L375 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 9. Identidade Medina — corpus progressivo e atribuível > 9.2 Quatro corpora, com pesos diferentes](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s032)
+    - Assuntos: evidência, quatro, corpora, pesos, diferentes, melhor, alteração, peças
+    - Trecho-guia: 1. Peças assinadas ou atribuídas com alta confiança: melhor evidência de estilo escrito. 2. Diffs entre versões: melhor evidência de preferência editorial, desde que se saiba quem alterou ou aprovou. 3. Feedback humano registrado: evidência direta de aceitação e rejeição. 4. Tran
+  - [SRC-S033 · L376–L391 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 9. Identidade Medina — corpus progressivo e atribuível > 9.3 O que extrair](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s033)
+    - Assuntos: extrair, não, movimentos, argumentativos, recorrentes, ordem, apresentação, relação
+    - Trecho-guia: movimentos argumentativos recorrentes; ordem de apresentação; relação entre autoridade, igualdade e consequência; padrões de distinção; ritmo e extensão de parágrafos; uso de doutrina; formas de transição; preferências de abertura e conclusão; alterações que ele aceita, desfaz ou
+  - [SRC-S034 · L392–L405 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 9. Identidade Medina — corpus progressivo e atribuível > 9.4 Validação](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s034)
+    - Assuntos: validação, não, objetivo, enganar, leitor, nem, provar, imitação
+    - Trecho-guia: O objetivo não é “enganar o leitor” nem provar imitação. É aumentar:
+  - [SRC-S035 · L406–L407 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 10. Superfície técnica consolidada](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s035)
+    - Assuntos: superfície, técnica, consolidada
+    - Trecho-guia: Documento de consulta sobre 10. Superfície técnica consolidada.
+  - [SRC-S036 · L408–L412 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 10. Superfície técnica consolidada > 10.1 Novos tipos de artefato de execução](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s036)
+    - Assuntos: novos, tipos, artefato, execução, json, f3_mapa_destinatario, f4_signature_brief
+    - Trecho-guia: 1. F3MAPADESTINATARIO.json; 2. F4SIGNATUREBRIEF.json.
+  - [SRC-S037 · L413–L428 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 10. Superfície técnica consolidada > 10.2 Extensões aditivas](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s037)
+    - Assuntos: extensões, aditivas, f2-a, f2-b, seleção, decisão, proveniência, efeito
+    - Trecho-guia: 1. F2-A/F2-B: seleção, decisão, proveniência e efeito do silêncio; 2. sourceledger: trilha de busca jurídica e resultados negativos; 3. verifiedsourceledger: ficha profunda das âncoras; 4. recibo gostoJuridico: hash do brief, rota selecionada e recomposição final.
+  - [SRC-S038 · L429–L432 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 10. Superfície técnica consolidada > 10.3 Ativo curatorial](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s038)
+    - Assuntos: ativo, curatorial, identity_corpus_manifest, jsonl, obrigatoriedade, caso, bloquear, produção
+    - Trecho-guia: IDENTITYCORPUSMANIFEST.jsonl, sem obrigatoriedade por caso e sem bloquear produção.
+  - [SRC-S039 · L433–L446 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 10. Superfície técnica consolidada > 10.4 O que continua fora](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s039)
+    - Assuntos: continua, fora, múltiplos, drafts, petição, votação, n-way, condorcet
+    - Trecho-guia: múltiplos drafts por petição; votação N-way ou Condorcet; recall; pacote novo com dezenas de módulos; jurimetria comportamental de julgadores; inferência psicológica; automação de envio externo sem autorização; escore numérico de aderência; imitação declarada de autoria.
+  - [SRC-S040 · L447–L461 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 11. Validação por natureza da capacidade](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s040)
+    - Assuntos: não, capacidade, brief, validação, natureza, decisões, fato, material
+    - Trecho-guia: O A/B serve para testar se brief e identidade melhoram a redação. Não serve para decidir se um dado factual está correto nem para legitimar uma interação pedida pelo titular.
+  - [SRC-S041 · L462–L463 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s041)
+    - Assuntos: ondas, revisadas
+    - Trecho-guia: Documento de consulta sobre 12. Ondas revisadas.
+  - [SRC-S042 · L464–L478 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas > Onda 0 — contratos e proveniência](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s042)
+    - Assuntos: contratos, onda, proveniência, especificar, mudança, output, fixar, semântica
+    - Trecho-guia: fixar semântica dos estados epistêmicos; definir efeito do silêncio por pergunta; mapear produtores e consumidores dos artefatos a estender; especificar schemas, versões e migração; especificar fontes por campo do mapa; inventariar o bridge TeiaJus real; criar plano de corpus e r
+  - [SRC-S043 · L479–L489 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas > Onda 1A — cocrição em sombra](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s043)
+    - Assuntos: sombra, consulta, onda, cocrição, perguntas, nenhuma, selecionar, materiais
+    - Trecho-guia: selecionar perguntas materiais; gerar minuta de consulta; registrar respostas históricas e simular decisões; validar que perguntas não estavam respondidas no acervo; testar múltiplas rodadas e silêncio material.
+  - [SRC-S044 · L490–L502 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas > Onda 1B — destinatário e precedentes em sombra](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s044)
+    - Assuntos: onda, destinatário, precedentes, sombra, produzir, mapa, brief, âncoras
+    - Trecho-guia: produzir mapa com fontes separadas; pesquisar topologia relevante; produzir brief; verificar três a seis âncoras; reabrir F4 quando âncora cair.
+  - [SRC-S045 · L503–L513 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas > Onda 2 — identidade e variante de redação](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s045)
+    - Assuntos: variante, onda, identidade, redação, padrões, ganho, curar, corpus
+    - Trecho-guia: curar o corpus disponível; separar escrita, edição, feedback e fala; extrair padrões candidatos; produzir um único draft variante que consome brief e padrões; comparar cegamente com o incumbente; rejeitar melhorias que reduzam fidelidade jurídica.
+  - [SRC-S046 · L514–L524 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas > Onda 3 — piloto controlado](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s046)
+    - Assuntos: onda, piloto, controlado, poucos, casos, pilotcases, consulta, enviada
+    - Trecho-guia: poucos casos por pilotCases; consulta enviada apenas por pessoa autorizada ou fluxo interno autorizado; mapa e brief ativos; F7/F7-B recompõem rota, âncoras e conteúdo obrigatório; rollback por flag; revisão humana final obrigatória.
+  - [SRC-S047 · L525–L532 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 12. Ondas revisadas > Trilha posterior e condicional](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s047)
+    - Assuntos: trilha, posterior, condicional, conectores, jurisprudência, administrativa, conforme, demanda
+    - Trecho-guia: conectores de jurisprudência administrativa conforme demanda real; jurimetria comportamental J-B somente após autorização, protocolo ético-jurídico específico e desenho estatístico válido; nenhum desses itens bloqueia as ondas centrais.
+  - [SRC-S048 · L533–L551 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 13. Critérios de aceite do plano antes de implementação](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s048)
+    - Assuntos: aceite, plano, implementação, critérios, antes, estiver, factual, tiver
+    - Trecho-guia: O plano estará pronto para implementação quando:
+  - [SRC-S049 · L552–L567 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 14. Decisões humanas reservadas](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s049)
+    - Assuntos: reservadas, decisões, humanas, pode, advogado, final, não, sugerir
+    - Trecho-guia: A FORJA pode sugerir, comparar e explicar. Permanecem reservadas ao advogado responsável:
+  - [SRC-S050 · L568–L584 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 15. O que mudou em relação ao documento 31](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s050)
+    - Assuntos: documento, novo, pesquisa, começa, mudou, relação, versão, parte
+    - Trecho-guia: Documento de consulta sobre 15. O que mudou em relação ao documento 31.
+  - [SRC-S051 · L585–L586 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 16. Evidências e referências usadas nesta revisão](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s051)
+    - Assuntos: evidências, referências, usadas, nesta, revisão
+    - Trecho-guia: Documento de consulta sobre 16. Evidências e referências usadas nesta revisão.
+  - [SRC-S052 · L587–L599 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 16. Evidências e referências usadas nesta revisão > Evidência local](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s052)
+    - Assuntos: json, evidência, local, n4_schemas, f5c_research_protocol, schema, f5c_study_ledger, forja_exploracao_100
+    - Trecho-guia: forjaexploracao100.py e contratos F2-A; FORJASEARCHCONFIG.json e forjalegalsearch.py; n4schemas/f5cresearchprotocol.schema.json; n4schemas/f5cstudyledger.schema.json; artefatos reais F5CRESEARCHPROTOCOL.json e F5CSTUDYLEDGER.json; forjalearning.py; forjadiffdocx.py; ../MODELOS/; 
+  - [SRC-S053 · L600–L608 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 16. Evidências e referências usadas nesta revisão > Fontes oficiais para os limites jurídicos](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s053)
+    - Assuntos: https, www, planalto, gov, ccivil_03, htm, fontes, oficiais
+    - Trecho-guia: Código de Processo Civil, especialmente arts. 489, § 1º, V e VI, e 927: https://www.planalto.gov.br/ccivil03/ato2015-2018/2015/lei/l13105.htm Glossário da API Pública do DataJud: https://datajud-wiki.cnj.jus.br/api-publica/glossario/ LOMAN, art. 41: https://www.planalto.gov.br/cc
+  - [SRC-S054 · L609–L617 · 32 — Plano único consolidado v2: cocrição, identidade e precedentes > 17. Próxima ação](32_PLANO_UNICO_CONSOLIDADO_V2_2026-07-25.md#src-s054)
+    - Assuntos: próxima, ação, planejamento, roadmap, conversão, documental, foi, concluída
+    - Trecho-guia: A conversão documental foi concluída:
+
+### 4.38. 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes
+
+- **Arquivo preparado:** [33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md)
+- **Origem:** `33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md`
+- **Termos:** não, deve, decisão, editorial, draft, brief, pesquisa, decisões, rotas, material, rota, precedentes
+- **Blocos:**
+  - [SRC-S001 · L1–L17 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s001)
+    - Assuntos: prd, lite, planejamento, forja-assinatura, cocrição, precedentes, emendas, este
+    - Trecho-guia: EMENDAS NORMATIVAS — 25/07/2026. Este documento vale acrescido da seção 9 de 36CONSOLIDACAOCONSELHOEPARECERFINAL.md (emendas E1 a E16: conselho Helena e Cícero, migração do modelo editorial Fable 5 para Opus 5 com revisão cruzada entre famílias, perímetro de sigilo, testes negati
+  - [SRC-S002 · L18–L30 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 1. Decisão de produto](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s002)
+    - Assuntos: decisão, produto, não, anterior, único, adicionar, camada, redação
+    - Trecho-guia: Adicionar à FORJA uma camada anterior à redação que combine:
+  - [SRC-S003 · L31–L47 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 2. Problema](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s003)
+    - Assuntos: não, mas, problema, exploração, fontes, suficiente, possui, controles
+    - Trecho-guia: A FORJA já possui controles fortes de exploração, fontes, proveniência, auditoria, edição final e entrega. Ainda assim, quatro lacunas reduzem a qualidade:
+  - [SRC-S004 · L48–L61 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Resultado esperado](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s004)
+    - Assuntos: foram, resultado, esperado, fatos, quatro, rota, foi, cada
+    - Trecho-guia: Para cada caso elegível, antes de F6:
+  - [SRC-S005 · L62–L63 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Usuários e autoridades](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s005)
+    - Assuntos: usuários, autoridades
+    - Trecho-guia: Documento de consulta sobre 4. Usuários e autoridades.
+  - [SRC-S006 · L64–L67 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Usuários e autoridades > 4.1 Advogado responsável](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s006)
+    - Assuntos: advogado, responsável, decide, objetivo, limites, risco, narrativa, material
+    - Trecho-guia: Decide objetivo, limites, risco, narrativa material, rota e autorização de envio. Recebe consulta curta, com contexto e consequência da ausência de resposta.
+  - [SRC-S007 · L68–L71 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Usuários e autoridades > 4.2 Operador da FORJA](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s007)
+    - Assuntos: operador, produz, valida, artefatos, distingue, pendência, falha, executa
+    - Trecho-guia: Produz e valida artefatos, distingue pendência de falha, executa pesquisa e consegue desligar a camada sem migrar casos.
+  - [SRC-S008 · L72–L75 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Usuários e autoridades > 4.3 Revisor jurídico](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s008)
+    - Assuntos: revisor, jurídico, confere, fontes, ratio, regime, aderência, vigência
+    - Trecho-guia: Confere fontes, ratio, regime, aderência, vigência e preservação da decisão estratégica.
+  - [SRC-S009 · L76–L79 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Usuários e autoridades > 4.4 Titular do padrão editorial](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s009)
+    - Assuntos: titular, padrão, editorial, fornece, aprova, amostras, corrige, preferências
+    - Trecho-guia: Fornece ou aprova amostras, corrige preferências e valida se o texto é aceitável para assinatura. Não precisa participar de toda petição.
+  - [SRC-S010 · L80–L91 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Usuários e autoridades > 4.5 Autoridade da IA](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s010)
+    - Assuntos: autoridade, pode, não, externa, investigar, perguntar, sugerir, comparar
+    - Trecho-guia: A IA pode investigar, perguntar, sugerir, comparar, explicar e redigir. Não pode:
+  - [SRC-S011 · L92–L105 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. Hipóteses separadas e falsificáveis](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s011)
+    - Assuntos: não, melhora, editorial, hipóteses, separadas, falsificáveis, hipótese, reduz
+    - Trecho-guia: Uma hipótese reprovada não invalida as demais. Correção factual não depende de vitória em A/B; ganho editorial não pode compensar erro jurídico.
+  - [SRC-S012 · L106–L122 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 6. Princípios invioláveis](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s012)
+    - Assuntos: não, princípios, invioláveis, paga, verificação, vence, persuasão, silêncio
+    - Trecho-guia: 1. Verificação vence persuasão. 2. Silêncio não produz fato. 3. Resposta não é automaticamente aceite. 4. Declaração do escritório não substitui autos ou fonte oficial. 5. Ementa não basta para ratio decisiva. 6. Aderência e regime jurídico são dimensões distintas. 7. Identidade 
+  - [SRC-S013 · L123–L124 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s013)
+    - Assuntos: escopo, funcional
+    - Trecho-guia: Documento de consulta sobre 7. Escopo funcional.
+  - [SRC-S014 · L125–L134 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-01 — Modo efetivo e piloto](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s014)
+    - Assuntos: rf-01, modo, efetivo, piloto, pilot_blocking, produto, deve, suportar
+    - Trecho-guia: Em pilotblocking, somente casos listados em pilotCases recebem gates bloqueantes; os demais operam em sombra. Não haverá defaulton na primeira implementação.
+  - [SRC-S015 · L135–L145 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-02 — Seleção dialética](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s015)
+    - Assuntos: rf-02, seleção, dialética, perguntas, não, sistema, deve, selecionar
+    - Trecho-guia: O sistema deve selecionar da árvore F2-A apenas perguntas que:
+  - [SRC-S016 · L146–L156 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-03 — Política de silêncio](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s016)
+    - Assuntos: política, rf-03, silêncio, cada, pergunta, selecionada, deve, possuir
+    - Trecho-guia: Cada pergunta selecionada deve possuir política:
+  - [SRC-S017 · L157–L169 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-04 — Consulta renderizada](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s017)
+    - Assuntos: consulta, rf-04, renderizada, minuta, sistema, deve, produzir, legível
+    - Trecho-guia: O sistema deve produzir uma minuta legível de consulta contendo:
+  - [SRC-S018 · L170–L175 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-05 — Registro de respostas e decisões](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s018)
+    - Assuntos: respostas, rf-05, registro, decisões, e-mail, whatsapp, áudio, reunião
+    - Trecho-guia: Respostas de e-mail, WhatsApp, áudio ou reunião devem convergir para um ledger versionado contendo autoria, canal, natureza epistêmica, decisão produzida, artefatos afetados e pendências.
+  - [SRC-S019 · L176–L179 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-06 — Gate de envio](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s019)
+    - Assuntos: envio, rf-06, gate, prepara, consulta, depende, pessoa, autorizada
+    - Trecho-guia: Na v1, a FORJA prepara a consulta. O envio depende de pessoa autorizada ou fluxo interno previamente autorizado, com allowlist e recibo. Nenhum conector de e-mail é requisito da capacidade técnica inicial.
+  - [SRC-S020 · L180–L193 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-07 — Mapa do destinatário](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s020)
+    - Assuntos: rf-07, mapa, destinatário, deve, posição, f3_mapa_destinatario, json, separar
+    - Trecho-guia: F3MAPADESTINATARIO.json deve separar:
+  - [SRC-S021 · L194–L202 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-08 — Fonte adequada por campo](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s021)
+    - Assuntos: fonte, exige, rf-08, adequada, campo, datajud, composição, atual
+    - Trecho-guia: DataJud e TeiaJus podem orientar pesquisa, mas:
+  - [SRC-S022 · L203–L218 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-09 — Signature brief](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s022)
+    - Assuntos: rf-09, signature, brief, rotas, f4_signature_brief, json, deve, registrar
+    - Trecho-guia: F4SIGNATUREBRIEF.json deve registrar:
+  - [SRC-S023 · L219–L222 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-10 — Número de rotas](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s023)
+    - Assuntos: rotas, rf-10, número, quatro, duas, são, padrão, quando
+    - Trecho-guia: Duas a quatro rotas são o padrão quando houver pluralidade real. Uma rota é válida com justificativa; mais de quatro exige razão de complexidade. Alternativas artificiais devem falhar no gate de utilidade.
+  - [SRC-S024 · L223–L226 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-11 — Trilha jurídica de pesquisa](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s024)
+    - Assuntos: rf-11, trilha, jurídica, pesquisa, resultados, source_ledger, deve, registrar
+    - Trecho-guia: O sourceledger deve registrar query, base, filtros, horário, resultados, descartes, limitações, bases não consultadas, resultados negativos e referência de replay.
+  - [SRC-S025 · L227–L240 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-12 — Ficha de precedente-âncora](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s025)
+    - Assuntos: rf-12, ficha, precedente-âncora, somente, precedentes, declarados, âncoras, recebem
+    - Trecho-guia: Somente precedentes declarados como âncoras recebem:
+  - [SRC-S026 · L241–L252 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-13 — Integração TeiaJus](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s026)
+    - Assuntos: rf-13, integração, teiajus, ações, produto, deve, distinguir, capacidades
+    - Trecho-guia: O produto deve distinguir capacidades anunciadas daquelas efetivamente permitidas pelo bridge. Na v1, podem ser avaliadas para allowlist apenas ações de leitura sem custo novo:
+  - [SRC-S027 · L253–L256 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-14 — Fontes administrativas](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s027)
+    - Assuntos: rf-14, fontes, administrativas, ser, dados, ceis, ceaf, cnep
+    - Trecho-guia: Dados de CEIS, CEAF, CNEP, CEPIM e leniência devem ser classificados como evidência administrativa. Só decisões oficiais com conteúdo decisório suficiente podem ser classificadas como precedentes administrativos.
+  - [SRC-S028 · L257–L262 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-15 — Corpus de identidade](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s028)
+    - Assuntos: rf-15, corpus, identidade, ativo, autoresearch, identity_corpus_manifest, jsonl, deve
+    - Trecho-guia: O ativo autoresearch/IDENTITYCORPUSMANIFEST.jsonl deve inventariar autoria, papel de Fábio, confiança, versão, canal, relação entre versões e uso permitido.
+  - [SRC-S029 · L263–L271 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-16 — Aplicação da identidade](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s029)
+    - Assuntos: rf-16, aplicação, identidade, pode, draft, usar, padrões, validados
+    - Trecho-guia: O draft pode usar padrões validados de método, estrutura, densidade e ritmo. Não pode:
+  - [SRC-S030 · L272–L281 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-17 — Um draft e preservação](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s030)
+    - Assuntos: rf-17, draft, preservação, produz, único, draft_markdown, f7-b, devem
+    - Trecho-guia: F6 produz um único draftmarkdown. F7/F7-B devem recompor:
+  - [SRC-S031 · L282–L291 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-18 — Invalidação](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s031)
+    - Assuntos: brief, draft, rf-18, invalidação, material, mapa, âncora, mudança
+    - Trecho-guia: Mudança material deve invalidar descendentes:
+  - [SRC-S032 · L292–L300 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-19 — Compatibilidade](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s032)
+    - Assuntos: rf-19, compatibilidade, continuam, novos, artefatos, casos, legados, válidos
+    - Trecho-guia: novos artefatos são condicionais enquanto o modo não for bloqueante; campos novos possuem defaults explícitos; schemas gerados aceitam artefatos históricos; F8 e package continuam consumindo um único cânone.
+  - [SRC-S033 · L301–L306 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. Escopo funcional > RF-20 — Observabilidade](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s033)
+    - Assuntos: rf-20, observabilidade, cada, execução, deve, registrar, modo, configurado
+    - Trecho-guia: Cada execução deve registrar modo configurado e efetivo, hashes, decisões humanas, queries, status de freshness, reason codes, custo, latência e resultado dos gates.
+  - [SRC-S034 · L307–L308 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s034)
+    - Assuntos: requisitos, não, funcionais
+    - Trecho-guia: Documento de consulta sobre 8. Requisitos não funcionais.
+  - [SRC-S035 · L309–L312 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-01 — Fail-closed proporcional](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s035)
+    - Assuntos: rnf-01, fail-closed, proporcional, pilot_blocking, ausência, inconsistência, material, bloqueia
+    - Trecho-guia: Em pilotblocking, ausência ou inconsistência material bloqueia o produto dependente. Em shadow, gera achado visível sem alterar a saída canônica.
+  - [SRC-S036 · L313–L316 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-02 — Determinismo](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s036)
+    - Assuntos: rnf-02, determinismo, schemas, hashes, seleção, perguntas, resolução, modo
+    - Trecho-guia: Schemas, hashes, seleção de perguntas, resolução de modo, cross-references, freshness e invalidação são determinísticos. LLM não autocertifica gates.
+  - [SRC-S037 · L317–L325 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-03 — Escopo do corpus](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s037)
+    - Assuntos: corpus, não, rnf-03, escopo, caso, global, este, requisito
+    - Trecho-guia: Este requisito era "Privacidade" e foi reescrito no expurgo de 04/08/2026: a parte de dados privados saiu por ordem do Igor. Ficou o que é decisão de produto — o corpus é do caso, não global.
+  - [SRC-S038 · L326–L329 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-04 — Reversibilidade](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s038)
+    - Assuntos: rnf-04, reversibilidade, rollback, alteração, modo, off, histórico, não
+    - Trecho-guia: Rollback é alteração de modo para off. Histórico não é apagado.
+  - [SRC-S039 · L330–L333 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-05 — Atualidade](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s039)
+    - Assuntos: rnf-05, atualidade, quando, composição, prevenção, vigência, posições, decisórias
+    - Trecho-guia: Composição, prevenção, vigência e posições decisórias registram quando foram verificadas e quando precisam ser revistas.
+  - [SRC-S040 · L334–L337 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-06 — Eficiência](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s040)
+    - Assuntos: rnf-06, eficiência, perguntas, redundantes, fichamento, indiscriminado, múltiplos, drafts
+    - Trecho-guia: Perguntas redundantes, fichamento indiscriminado e múltiplos drafts são proibidos. Pesquisa profunda limita-se às âncoras.
+  - [SRC-S041 · L338–L343 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. Requisitos não funcionais > RNF-07 — Sem custo novo implícito](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s041)
+    - Assuntos: rnf-07, custo, novo, implícito, ações, pagas, api, nova
+    - Trecho-guia: Ações pagas, API nova, CAPTCHA pago ou coleta de alto volume exigem decisão separada.
+  - [SRC-S042 · L344–L345 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. Métricas](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s042)
+    - Assuntos: métricas
+    - Trecho-guia: Documento de consulta sobre 9. Métricas.
+  - [SRC-S043 · L346–L354 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. Métricas > 9.1 Segurança](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s043)
+    - Assuntos: zero, segurança, fatos, materiais, convertidos, silêncio, citações, identidade
+    - Trecho-guia: fatos materiais convertidos por silêncio: zero; citações sem identidade ou lastro: zero; ratio decisiva baseada apenas em ementa: zero; composição apresentada como atual sem fonte/freshness: zero; falsa atribuição humana no corpus: zero; regressões AH-01 a AH-08: zero em strictpr
+  - [SRC-S044 · L355–L365 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. Métricas > 9.2 Interação](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s044)
+    - Assuntos: perguntas, interação, decisão, selecionadas, respondidas, acervo, produziram, rodadas
+    - Trecho-guia: perguntas selecionadas; perguntas já respondidas no acervo; perguntas que produziram decisão; rodadas necessárias; pendências mantidas abertas; tempo entre consulta e decisão.
+  - [SRC-S045 · L366–L374 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. Métricas > 9.3 Pesquisa](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s045)
+    - Assuntos: âncoras, pesquisa, íntegra, trecho, localizado, resultados, negativos, registrados
+    - Trecho-guia: âncoras com íntegra; âncoras com trecho localizado; resultados negativos registrados; queries reproduzíveis; âncoras rejeitadas antes de F6; dados stale detectados.
+  - [SRC-S046 · L375–L382 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. Métricas > 9.4 Valor editorial](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s046)
+    - Assuntos: valor, editorial, preferência, cega, variante, aceitação, assinatura, redução
+    - Trecho-guia: preferência cega da variante; aceitação para assinatura; redução de reescrita material; preservação de fatos, autoridades e pedidos; carga de revisão humana.
+  - [SRC-S047 · L383–L392 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. Métricas > 9.5 Operação](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s047)
+    - Assuntos: operação, taxa, latência, custo, subfluxo, fallback, incumbente, falhas
+    - Trecho-guia: latência e custo por subfluxo; taxa de fallback para incumbente; falhas por reason code; taxa de rollback; casos em shadow e pilotblocking.
+  - [SRC-S048 · L393–L425 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 10. Critérios de aceitação](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s048)
+    - Assuntos: não, critérios, aceitação, off, fora, pergunta, factual, material
+    - Trecho-guia: 1. off não altera outputs nem chama capacidades novas. 2. caso fora de pilotCases permanece em sombra. 3. pergunta factual já respondida não é enviada ao advogado. 4. pergunta material sem resposta mantém o dependente bloqueado. 5. officedeclaration não satisfaz gate de prova fac
+  - [SRC-S049 · L426–L442 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 11. Fora do escopo v1](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s049)
+    - Assuntos: fora, escopo, múltiplos, drafts, petição, n-way, condorcet, recall
+    - Trecho-guia: múltiplos drafts por petição; N-way, Condorcet e recall; memória decisória alimentando geração; fine-tuning ou clonagem de voz; UI nova; envio externo autônomo; protocolo judicial; score universal de gosto ou aderência; jurimetria comportamental; inferência psicológica de julgado
+  - [SRC-S050 · L443–L461 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 12. Riscos e controles](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s050)
+    - Assuntos: riscos, controles, gate, tratada, fonte, risco, controle, perguntas
+    - Trecho-guia: Documento de consulta sobre 12. Riscos e controles.
+  - [SRC-S051 · L462–L474 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 13. Gate de liberação](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s051)
+    - Assuntos: gate, liberação, estados, máximos, text, contracts_ready, shadow_evidence_ready, pilot_blocking_ready
+    - Trecho-guia: defaulton exige PRD futuro, evidência prospectiva e aprovação humana específica. Não é consequência automática deste projeto.
+  - [SRC-S052 · L475–L479 · 33 — PRD: FORJA-ASSINATURA Lite, cocrição e precedentes > 14. Critério de concluído](33_PRD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s052)
+    - Assuntos: tiverem, critério, concluído, estará, quando, tiver, evidência, capacidade
+    - Trecho-guia: A capacidade técnica estará concluída quando todos os critérios de aceitação tiverem testes, o modo off tiver identidade comportamental, as ondas de sombra e piloto tiverem rollback exercitado, e nenhum gate jurídico tiver regredido.
+
+### 4.39. 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes
+
+- **Arquivo preparado:** [34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md)
+- **Origem:** `34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md`
+- **Termos:** json, não, adicionar, fonte, status, null, namespace, modo, schema, override, not_applicable, tdd
+- **Blocos:**
+  - [SRC-S001 · L1–L16 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s001)
+    - Assuntos: tdd, planejamento, forja-assinatura, lite, cocrição, precedentes, emendas, este
+    - Trecho-guia: EMENDAS NORMATIVAS — 25/07/2026. Este documento vale acrescido da seção 9 de 36CONSOLIDACAOCONSELHOEPARECERFINAL.md (emendas E1 a E16: conselho Helena e Cícero, migração do modelo editorial Fable 5 para Opus 5 com revisão cruzada entre famílias, perímetro de sigilo, testes negati
+  - [SRC-S002 · L17–L46 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 1. Objetivo técnico](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s002)
+    - Assuntos: json, objetivo, técnico, estender, esteira, criar, nova, fase
+    - Trecho-guia: Estender a esteira F2–F7 sem criar nova fase canônica:
+  - [SRC-S003 · L47–L66 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 2. Restrições observadas no sistema vivo](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s003)
+    - Assuntos: não, restrições, observadas, sistema, vivo, são, generate_n4_contracts, fonte
+    - Trecho-guia: 1. F0–F10 são resolvidas por forjaphasecontracts.py. 2. Schemas e contratos N4 são gerados por generaten4contracts.py. 3. forjan4common.ARTIFACTSPECS é fonte do catálogo gerado. 4. generaten4contracts.EXTENSIONS é fonte dos outputs e gates N4. 5. forjan4validate.VALIDATORS e sche
+  - [SRC-S004 · L67–L68 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Decisões arquiteturais](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s004)
+    - Assuntos: decisões, arquiteturais
+    - Trecho-guia: Documento de consulta sobre 3. Decisões arquiteturais.
+  - [SRC-S005 · L69–L72 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Decisões arquiteturais > DA-01 — Sem nova fase](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s005)
+    - Assuntos: da-01, nova, fase, f2-b, f3-b, são, subestágios, observáveis
+    - Trecho-guia: F2-B e F3-B são subestágios observáveis. A tupla F0–F10 permanece.
+  - [SRC-S006 · L73–L93 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Decisões arquiteturais > DA-02 — Namespace de feature próprio](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s006)
+    - Assuntos: mode, da-02, namespace, feature, próprio, json, off, adicionar
+    - Trecho-guia: Valores de mode: off, shadow, pilotblocking.
+  - [SRC-S007 · L94–L106 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Decisões arquiteturais > DA-03 — Compatibilidade por protocolo](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s007)
+    - Assuntos: da-03, compatibilidade, protocolo, protocolos, envelope, continua, schemaversion, evolução
+    - Trecho-guia: O envelope N4 continua schemaVersion: 1. A evolução aditiva será marcada por protocolos específicos:
+  - [SRC-S008 · L107–L122 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Decisões arquiteturais > DA-04 — Schemas gerados, não editados isoladamente](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s008)
+    - Assuntos: schemas, gerados, json, da-04, não, editados, isoladamente, phase_contracts_n4
+    - Trecho-guia: forjan4common.py; generaten4contracts.py.
+  - [SRC-S009 · L123–L128 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 3. Decisões arquiteturais > DA-05 — Um draft](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s009)
+    - Assuntos: da-05, draft, não, alterar, phase_contracts, json, múltiplos, candidatos
+    - Trecho-guia: Não alterar phasecontracts/F6.json para múltiplos candidatos. F6 recebe um brief aprovado e produz um draftmarkdown.
+  - [SRC-S010 · L129–L173 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 4. Modo efetivo](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s010)
+    - Assuntos: override, modo, config, case_dir, str, none, efetivo, def
+    - Trecho-guia: Adicionar em forjan4validate.py uma resolução genérica preservando a fachada atual:
+  - [SRC-S011 · L174–L175 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. F2-B — extensão da árvore e consulta](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s011)
+    - Assuntos: f2-b, extensão, árvore, consulta
+    - Trecho-guia: Documento de consulta sobre 5. F2-B — extensão da árvore e consulta.
+  - [SRC-S012 · L176–L185 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. F2-B — extensão da árvore e consulta > 5.1 Fonte canônica](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s012)
+    - Assuntos: fonte, canônica, alterar, generate_n4_contracts, question_tree_schema, forja_exploracao_100, forja_reasoning, validate_question_tree
+    - Trecho-guia: generaten4contracts.QUESTIONTREESCHEMA; forjaexploracao100.py; forjareasoning.validatequestiontree(); testforjaexploracao100.py; testforjan4.py.
+  - [SRC-S013 · L186–L237 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. F2-B — extensão da árvore e consulta > 5.2 Estrutura aditiva](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s013)
+    - Assuntos: json, null, estrutura, aditiva, not_applicable, q001, decisionledger, adicionar
+    - Trecho-guia: Campos adicionais por pergunta selecionada:
+  - [SRC-S014 · L238–L264 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. F2-B — extensão da árvore e consulta > 5.3 Seleção determinística](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s014)
+    - Assuntos: seleção, determinística, pode, for, blocked, justificativa, existirem, impacto
+    - Trecho-guia: Uma pergunta só pode entrar em selectedQuestionIds se:
+  - [SRC-S015 · L265–L283 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. F2-B — extensão da árvore e consulta > 5.4 Gates](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s015)
+    - Assuntos: gates, dialectic_questions_material, dialectic_questions_not_answered_in_record, silence_policy_safe, human_decisions_attributed, material_decisions_resolved_or_blocked, reason, codes
+    - Trecho-guia: dialecticquestionsmaterial; dialecticquestionsnotansweredinrecord; silencepolicysafe; humandecisionsattributed; materialdecisionsresolvedorblocked.
+  - [SRC-S016 · L284–L310 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 5. F2-B — extensão da árvore e consulta > 5.5 Renderização](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s016)
+    - Assuntos: json, não, renderização, resposta, adicionar, cli, existente, forja_exploracao_100
+    - Trecho-guia: Adicionar ao CLI existente forjaexploracao100.py:
+  - [SRC-S017 · L311–L312 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 6. F3-B — mapa do destinatário](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s017)
+    - Assuntos: f3-b, mapa, destinatário
+    - Trecho-guia: Documento de consulta sobre 6. F3-B — mapa do destinatário.
+  - [SRC-S018 · L313–L326 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 6. F3-B — mapa do destinatário > 6.1 Registro](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s018)
+    - Assuntos: registro, adicionar, recipient_map, forja_n4_common, artifact_specs, python, f3_mapa_destinatario, json
+    - Trecho-guia: Adicionar a forjan4common.ARTIFACTSPECS:
+  - [SRC-S019 · L327–L375 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 6. F3-B — mapa do destinatário > 6.2 Schema](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s019)
+    - Assuntos: confirmed, unknown, status, sourceids, null, not_applicable, schema, organ
+    - Trecho-guia: positionId; nível: rapporteur, organ, samesectionotherorgan, section, specialcourt, plenary, other; issueId; decisionIds; status; asOf; summary; sourceIds.
+  - [SRC-S020 · L376–L401 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 6. F3-B — mapa do destinatário > 6.3 Validador](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s020)
+    - Assuntos: validador, forja_reasoning, validators, adicionar, validate_recipient_map, registrá-lo, forja_n4_validate, cross_reference_findings
+    - Trecho-guia: Adicionar validaterecipientmap() em forjareasoning.py e registrá-lo em:
+  - [SRC-S021 · L402–L407 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 6. F3-B — mapa do destinatário > 6.4 Freshness](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s021)
+    - Assuntos: freshness, validador, calcula, recipientmapfreshnesshours, não, confiar, status, confirmed
+    - Trecho-guia: O validador calcula freshness com recipientMapFreshnessHours. Não confiar em status=confirmed autodeclarado. Em pilotblocking, composição stale vira P0 se a estratégia depender dela; caso contrário, P1 com uso proibido.
+  - [SRC-S022 · L408–L409 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. F4 — signature brief](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s022)
+    - Assuntos: signature, brief
+    - Trecho-guia: Documento de consulta sobre 7. F4 — signature brief.
+  - [SRC-S023 · L410–L423 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. F4 — signature brief > 7.1 Registro](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s023)
+    - Assuntos: registro, adicionar, signature_brief, artifact_specs, python, f4_signature_brief, json, type
+    - Trecho-guia: Adicionar signaturebrief aos outputs F4 N4.
+  - [SRC-S024 · L424–L452 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. F4 — signature brief > 7.2 Schema](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s024)
+    - Assuntos: schema, json, protocolversion, forja-signature-brief-v1, decisivequestion, demonstratedconsequence, routes, routeid
+    - Trecho-guia: Documento de consulta sobre 7.2 Schema.
+  - [SRC-S025 · L453–L480 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 7. F4 — signature brief > 7.3 Validador](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s025)
+    - Assuntos: rota, não, validador, exige, adicionar, validate_signature_brief, forja_reasoning, regras
+    - Trecho-guia: Adicionar validatesignaturebrief() em forjareasoning.py.
+  - [SRC-S026 · L481–L482 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. F5 — trilha de pesquisa jurídica](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s026)
+    - Assuntos: trilha, pesquisa, jurídica
+    - Trecho-guia: Documento de consulta sobre 8. F5 — trilha de pesquisa jurídica.
+  - [SRC-S027 · L483–L519 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. F5 — trilha de pesquisa jurídica > 8.1 Extensão do sourceledger](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s027)
+    - Assuntos: extensão, não, bloco, searchruns, continua, sendo, liberação, sourceledger
+    - Trecho-guia: Não criar novo artefato obrigatório. Adicionar bloco:
+  - [SRC-S028 · L520–L539 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 8. F5 — trilha de pesquisa jurídica > 8.2 Gates](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s028)
+    - Assuntos: gates, query, único, base, identificada, horário, filtros, presentes
+    - Trecho-guia: query ID único; base identificada; horário e filtros presentes; resultados e descartes não sobrepostos; resultado negativo associado a query executada; replay existente quando declarado; ação TeiaJus permitida.
+  - [SRC-S029 · L540–L541 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. F7 — precedente-âncora](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s029)
+    - Assuntos: precedente-âncora
+    - Trecho-guia: Documento de consulta sobre 9. F7 — precedente-âncora.
+  - [SRC-S030 · L542–L572 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. F7 — precedente-âncora > 9.1 Extensão do verifiedsourceledger](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s030)
+    - Assuntos: extensão, verifiedsourceledger, verified_source_ledger, entrada, marcada, anchor, true, deve
+    - Trecho-guia: Entrada marcada anchor: true deve possuir:
+  - [SRC-S031 · L573–L601 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 9. F7 — precedente-âncora > 9.2 Regras](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s031)
+    - Assuntos: regras, deve, rota, não, reason, routeid, ser, selecionada
+    - Trecho-guia: routeId deve ser a rota selecionada ou uma rota explicitamente comparada; holding exige íntegra suficiente; ementa isolada produz fullTextStatus=insufficient; trecho e locator são hash-bound; elementComparison deve cobrir elementos declarados como determinantes; regime não recebe
+  - [SRC-S032 · L602–L603 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 10. TeiaJus](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s032)
+    - Assuntos: teiajus
+    - Trecho-guia: Documento de consulta sobre 10. TeiaJus.
+  - [SRC-S033 · L604–L620 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 10. TeiaJus > 10.1 Allowlist v1](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s033)
+    - Assuntos: allowlist, adicionar, qualquer, atualizar, forja_search_config, json, somente, após
+    - Trecho-guia: Atualizar FORJASEARCHCONFIG.json somente após teste de capabilities. Adicionar como leitura:
+  - [SRC-S034 · L621–L630 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 10. TeiaJus > 10.2 CLI](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s034)
+    - Assuntos: cli, capabilities, subcomando, genérico, execute, existe, primeira, versão
+    - Trecho-guia: O subcomando genérico execute já existe. Na primeira versão, não criar aliases antes de provar uso recorrente. O TDD exige:
+  - [SRC-S035 · L631–L648 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 10. TeiaJus > 10.3 Classificação de fonte](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s035)
+    - Assuntos: classificação, fonte, metadata_evidence, official_summary, official_full_text, administrative_data, cada, resultado
+    - Trecho-guia: discoveryonly; metadataevidence; officialsummary; officialfulltext; administrativedata; administrativedecision.
+  - [SRC-S036 · L649–L650 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 11. Identidade e AUTO-RESEARCH](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s036)
+    - Assuntos: identidade, auto-research
+    - Trecho-guia: Documento de consulta sobre 11. Identidade e AUTO-RESEARCH.
+  - [SRC-S037 · L651–L679 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 11. Identidade e AUTO-RESEARCH > 11.1 Manifest](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s037)
+    - Assuntos: manifest, criar, autoresearch, identity_corpus_manifest, jsonl, conteúdo, bruto, itemid
+    - Trecho-guia: Criar autoresearch/IDENTITYCORPUSMANIFEST.jsonl, sem conteúdo bruto, com:
+  - [SRC-S038 · L680–L696 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 11. Identidade e AUTO-RESEARCH > 11.2 Validação](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s038)
+    - Assuntos: validação, não, exige, adicionar, forja_learning, validate_identity_corpus_entry, validate_identity_corpus_manifest, regras
+    - Trecho-guia: validateidentitycorpusentry(); validateidentitycorpusmanifest().
+  - [SRC-S039 · L697–L709 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 11. Identidade e AUTO-RESEARCH > 11.3 Integração com AUTO-RESEARCH](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s039)
+    - Assuntos: não, integração, auto-research, autorizados, corpus, identidade, altera, ar_corpus
+    - Trecho-guia: O corpus de identidade não altera ARCORPUS.json. Ele é uma camada de metadados usada para:
+  - [SRC-S040 · L710–L711 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 12. F6 e F7-B](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s040)
+    - Assuntos: f7-b
+    - Trecho-guia: Documento de consulta sobre 12. F6 e F7-B.
+  - [SRC-S041 · L712–L722 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 12. F6 e F7-B > 12.1 Input de F6](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s041)
+    - Assuntos: input, incumbente, sombra, continua, variante, experimental, recebe, f4_signature_brief
+    - Trecho-guia: Em sombra, o incumbente continua. A variante experimental recebe:
+  - [SRC-S042 · L723–L735 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 12. F6 e F7-B > 12.2 Recibo gostoJuridico v2](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s042)
+    - Assuntos: recibo, gostojuridico, atualizar, forja_fable5, aceitar, forja-gosto-edge-v2, signaturebriefsha256, selectedrouteid
+    - Trecho-guia: Atualizar forjafable5.py para aceitar FORJA-GOSTO-EDGE-v2:
+  - [SRC-S043 · L736–L762 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 12. F6 e F7-B > 12.3 Recomposição independente](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s043)
+    - Assuntos: none, recomposição, independente, conferir, adicionar, assinatura, validate_editorial_bundle, parâmetros
+    - Trecho-guia: Adicionar à assinatura de validateeditorialbundle() parâmetros opcionais:
+  - [SRC-S044 · L763–L788 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 13. Invalidação](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s044)
+    - Assuntos: invalidação, brief, mapa, draft, anchor, hash, adicionar, arestas
+    - Trecho-guia: Adicionar arestas ao mecanismo N4 de invalidação:
+  - [SRC-S045 · L789–L790 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 14. Arquivos a alterar](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s045)
+    - Assuntos: arquivos, alterar
+    - Trecho-guia: Documento de consulta sobre 14. Arquivos a alterar.
+  - [SRC-S046 · L791–L800 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 14. Arquivos a alterar > Núcleo declarativo](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s046)
+    - Assuntos: json, núcleo, declarativo, phase_contracts_n4, gerados, gerado, forja_n3_config, forja_n4_common
+    - Trecho-guia: FORJAN3CONFIG.json; forjan4common.py; generaten4contracts.py; phasecontractsn4/F2.json a F7.json — gerados; phasecontractsn4/EXTENSIONS.json — gerado; n4schemas/ARTIFACTCATALOG.json — gerado; schemas novos e schema F2 — gerados.
+  - [SRC-S047 · L801–L813 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 14. Arquivos a alterar > Validadores e execução](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s047)
+    - Assuntos: validadores, execução, forja_exploracao_100, forja_reasoning, forja_n4_validate, forja_package, forja_run, forja_fable5
+    - Trecho-guia: forjaexploracao100.py; forjareasoning.py; forjan4validate.py; forjapackage.py; forjarun.py; forjafable5.py; forjaeditorialfidelity.py; forjalearning.py; forjan4invalidation.py; forjalegalsearch.py, apenas se a validação de action exigir mudança.
+  - [SRC-S048 · L814–L819 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 14. Arquivos a alterar > Configuração e templates](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s048)
+    - Assuntos: templates, configuração, forja_search_config, json, f2_consulta_advogado, autoresearch, identity_corpus_manifest, jsonl
+    - Trecho-guia: FORJASEARCHCONFIG.json; templates/F2CONSULTAADVOGADO.md; autoresearch/IDENTITYCORPUSMANIFEST.jsonl.
+  - [SRC-S049 · L820–L837 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 14. Arquivos a alterar > Testes](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s049)
+    - Assuntos: testes, novo, test_forja_assinatura_lite, test_forja_exploracao_100, test_forja_n4, test_forja_legal_search, test_forja_fable5, test_forja_run
+    - Trecho-guia: novo testforjaassinaturalite.py; testforjaexploracao100.py; testforjan4.py; testforjalegalsearch.py; testforjafable5.py; testforjarun.py; testforjan3package.py; testforjaantihallucinationv2.py; testforjaanticheat.py; testforjaautoresearch.py; testforjaarchitecture.py.
+  - [SRC-S050 · L838–L859 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 15. Matriz requisito → componente → teste](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s050)
+    - Assuntos: requisito, componente, teste, matriz, principal, rf-01, resolver, modo
+    - Trecho-guia: Documento de consulta sobre 15. Matriz requisito → componente → teste.
+  - [SRC-S051 · L860–L861 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s051)
+    - Assuntos: testes, obrigatórios
+    - Trecho-guia: Documento de consulta sobre 16. Testes obrigatórios.
+  - [SRC-S052 · L862–L876 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios > 16.1 Unidade](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s052)
+    - Assuntos: unidade, resolução, modo, seleção, ordenação, perguntas, política, silêncio
+    - Trecho-guia: resolução de modo; seleção e ordenação de perguntas; política de silêncio; autoria da decisão; freshness; duplicidade de rotas; cross-reference; search trace; holding/locator/hash; classificação de fonte; manifest de identidade; recibo v2.
+  - [SRC-S053 · L877–L885 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios > 16.2 Contrato e migração](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s053)
+    - Assuntos: contrato, migração, sincronizados, artefatos, gerador, idempotente, catálogo, schemas
+    - Trecho-guia: gerador idempotente; catálogo e schemas sincronizados; contratos N4 sincronizados; artefatos v1 legíveis; novos artefatos exigidos só no modo aplicável; chamadas antigas de validateeditorialbundle() válidas.
+  - [SRC-S054 · L886–L895 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios > 16.3 Integração](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s054)
+    - Assuntos: brief, integração, f2-b, mapa, search, trace, anchor, inválida
+    - Trecho-guia: F2-B → F4; mapa → brief; brief → search trace; anchor inválida → reabertura; brief → F6 variante; F7-B → package; TeiaJus artifact → source ledger.
+  - [SRC-S055 · L896–L911 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios > 16.4 Adversariais](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s055)
+    - Assuntos: adversariais, apresentada, pergunta, respondida, enviada, fato, default, resposta
+    - Trecho-guia: pergunta já respondida enviada; fato com default; resposta parcial marcada resolvida; officedeclaration usada como prova; composição stale apresentada como atual; DataJud apresentado como prevenção; ementa apresentada como ratio; anchor com locator falso; rota duplicada lexicalme
+  - [SRC-S056 · L912–L923 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios > 16.5 Metamórficos](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s056)
+    - Assuntos: metamórficos, trocar, mudar, alterar, retirar, ordem, rotas, selecionado
+    - Trecho-guia: trocar ordem das rotas sem mudar ID selecionado; renomear parte sem alterar relações; retirar decisão humana; retirar fonte da composição; alterar um termo do holding; trocar routeId no recibo; mudar hash do brief; converter transcript em peça escrita; remover query que sustenta 
+  - [SRC-S057 · L924–L943 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 16. Testes obrigatórios > 16.6 Regressão](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s057)
+    - Assuntos: regressão, baseline, passed, dirigido, powershell, python, pytest, cacheprovider
+    - Trecho-guia: Baseline observado antes da implementação: 104 passed, 3 subtests passed.
+  - [SRC-S058 · L944–L978 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 17. Comandos de verificação por mudança](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s058)
+    - Assuntos: python, mudança, comandos, verificação, powershell, json, users, igorpc
+    - Trecho-guia: Depois de mudança estrutural relevante:
+  - [SRC-S059 · L979–L1001 · 34 — TDD: FORJA-ASSINATURA Lite, cocrição e precedentes > 18. Critério técnico de concluído](34_TDD_FORJA_ASSINATURA_LITE_COCRIACAO_PRECEDENTES.md#src-s059)
+    - Assuntos: não, têm, critério, técnico, concluído, decisão, autoria, brief
+    - Trecho-guia: 1. modos e pilotCases têm namespace próprio; 2. artefatos novos estão no catálogo, schemas e contratos gerados; 3. F2-B não pergunta o que o acervo responde; 4. silêncio material não cria fato; 5. resposta e decisão têm autoria e proveniência; 6. mapa não trata metadado como prov
+
+### 4.40. 35 — Roadmap de execução: FORJA-ASSINATURA Lite
+
+- **Arquivo preparado:** [35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md)
+- **Origem:** `35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md`
+- **Termos:** não, objetivo, arquivos, trabalho, rollback, commit, sugerido, critérios, aceite, off, propriedade, implementar
+- **Blocos:**
+  - [SRC-S001 · L1–L16 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s001)
+    - Assuntos: roadmap, execução, planejamento, forja-assinatura, lite, emendas, este, documento
+    - Trecho-guia: EMENDAS NORMATIVAS — 25/07/2026. Este documento vale acrescido da seção 9 de 36CONSOLIDACAOCONSELHOEPARECERFINAL.md (emendas E1 a E16: conselho Helena e Cícero, migração do modelo editorial Fable 5 para Opus 5 com revisão cruzada entre famílias, perímetro de sigilo, testes negati
+  - [SRC-S002 · L17–L29 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 1. Regra de execução](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s002)
+    - Assuntos: onda, não, regra, execução, executar, vez, cada, precisa
+    - Trecho-guia: Executar uma onda por vez. Cada onda precisa entregar:
+  - [SRC-S003 · L30–L47 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 2. Dependências](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s003)
+    - Assuntos: w2a, w2b, dependências, mermaid, flowchart, baseline, freeze, contratos
+    - Trecho-guia: W2A e W2B podem ser executadas em paralelo apenas se os responsáveis não alterarem simultaneamente forjareasoning.py, forjan4validate.py ou os geradores. Se houver um único executor, fazer W2A antes de W2B.
+  - [SRC-S004 · L48–L49 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s004)
+    - Assuntos: baseline, contratos, inferiores, freeze
+    - Trecho-guia: Documento de consulta sobre 3. W0 — baseline, contratos inferiores e freeze.
+  - [SRC-S005 · L50–L53 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s005)
+    - Assuntos: objetivo, congelar, estado, vivo, confirmar, plano, aponta, interfaces
+    - Trecho-guia: Congelar o estado vivo e confirmar que o plano aponta para interfaces reais.
+  - [SRC-S006 · L54–L64 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s006)
+    - Assuntos: trabalho, registrar, rodar, tdd, git, status, preservar, alterações
+    - Trecho-guia: 1. registrar git status e preservar alterações alheias; 2. rodar a suíte dirigida do TDD; 3. rodar forjaregua.py; 4. classificar qualquer desvio preexistente; 5. salvar snapshot dos contratos F2–F7, catálogo N4, configurações e Graphify; 6. confirmar actions do TeiaJus com capabi
+  - [SRC-S007 · L65–L68 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s007)
+    - Assuntos: arquivos, somente, relatórios, baseline, documentação, execução, nenhum, código
+    - Trecho-guia: Somente relatórios de baseline e documentação de execução. Nenhum código de produção.
+  - [SRC-S008 · L69–L76 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Gate](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s008)
+    - Assuntos: gate, verde, suíte, dirigida, régua, desvio, preexistente, documentado
+    - Trecho-guia: suíte dirigida verde; Régua verde ou desvio preexistente documentado e aceito sem rebaseline automático; actions do TeiaJus inventariadas; nenhum consumidor inferior desconhecido; worktree suja mapeada.
+  - [SRC-S009 · L77–L86 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Evidência já disponível](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s009)
+    - Assuntos: evidência, disponível, passed, text, subtests, esse, resultado, ponto
+    - Trecho-guia: Esse resultado é ponto de partida, não substitui a repetição no início da execução.
+  - [SRC-S010 · L87–L90 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s010)
+    - Assuntos: rollback, não, aplicável, altera, comportamento
+    - Trecho-guia: Não aplicável; W0 não altera comportamento.
+  - [SRC-S011 · L91–L96 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 3. W0 — baseline, contratos inferiores e freeze > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s011)
+    - Assuntos: commit, sugerido, docs, freeze, baseline, assinatura, lite
+    - Trecho-guia: docs(forja): freeze baseline assinatura lite
+  - [SRC-S012 · L97–L98 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s012)
+    - Assuntos: linguagem, sistema, schemas, modo, off
+    - Trecho-guia: Documento de consulta sobre 4. W1 — linguagem do sistema, schemas e modo off.
+  - [SRC-S013 · L99–L102 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s013)
+    - Assuntos: objetivo, introduzir, contratos, materializar, comportamento, novo
+    - Trecho-guia: Introduzir os contratos sem materializar comportamento novo.
+  - [SRC-S014 · L103–L116 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s014)
+    - Assuntos: off, trabalho, adicionar, modo, registrar, json, outputs, não
+    - Trecho-guia: 1. adicionar namespace forjaAssinaturaLite com mode=off; 2. generalizar resolução de modo preservando effectivemode(); 3. registrar F3MAPADESTINATARIO.json; 4. registrar F4SIGNATUREBRIEF.json; 5. estender a definição geradora do F2 question tree; 6. adicionar outputs F3/F4 em EXT
+  - [SRC-S015 · L117–L128 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Propriedade de arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s015)
+    - Assuntos: arquivos, propriedade, forja_n3_config, json, forja_n4_common, generate_n4_contracts, forja_n4_validate, forja_reasoning
+    - Trecho-guia: FORJAN3CONFIG.json; forjan4common.py; generaten4contracts.py; forjan4validate.py; forjareasoning.py; arquivos gerados em n4schemas/ e phasecontractsn4/; testforjaassinaturalite.py; testforjan4.py; testforjaarchitecture.py.
+  - [SRC-S016 · L129–L139 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s016)
+    - Assuntos: critérios, aceite, casos, feature, gerador, idempotente, catálogo, artifact_specs
+    - Trecho-guia: gerador é idempotente; catálogo e ARTIFACTSPECS coincidem; contratos F0–F10 mantêm ordem e fachadas; casos históricos validam; feature ausente equivale a off; modo desconhecido falha; casos N4 já em piloto não ativam a feature nova. schema e validador usam os mesmos estados de pe
+  - [SRC-S017 · L140–L151 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Comandos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s017)
+    - Assuntos: python, comandos, json, powershell, generate_n4_contracts, tool, n4_schemas, artifact_catalog
+    - Trecho-guia: Documento de consulta sobre Comandos.
+  - [SRC-S018 · L152–L155 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s018)
+    - Assuntos: rollback, remover, namespace, registros, novos, regenerar, artefatos, modo
+    - Trecho-guia: Remover namespace e registros novos; regenerar artefatos. Como o modo é off, não há migração de caso.
+  - [SRC-S019 · L156–L161 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 4. W1 — linguagem do sistema, schemas e modo off > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s019)
+    - Assuntos: commit, sugerido, feat, add, assinatura, lite, contracts, off
+    - Trecho-guia: feat(forja): add assinatura lite contracts in off mode
+  - [SRC-S020 · L162–L163 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s020)
+    - Assuntos: w2a, cocrição, f2-b, sombra
+    - Trecho-guia: Documento de consulta sobre 5. W2A — cocrição F2-B em sombra.
+  - [SRC-S021 · L164–L167 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s021)
+    - Assuntos: objetivo, transformar, f2-a, consulta, material, envio, automático
+    - Trecho-guia: Transformar F2-A em consulta material sem envio automático.
+  - [SRC-S022 · L168–L179 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s022)
+    - Assuntos: implementar, trabalho, consulta, campos, dialéticos, ledger, decisões, seletor
+    - Trecho-guia: 1. implementar campos dialéticos e ledger de decisões; 2. implementar seletor determinístico; 3. implementar políticas de silêncio; 4. implementar renderização da consulta; 5. implementar registro append-only de resposta; 6. criar template humano; 7. validar consulta em casos his
+  - [SRC-S023 · L180–L190 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Propriedade de arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s023)
+    - Assuntos: propriedade, arquivos, forja_exploracao_100, generate_n4_contracts, forja_reasoning, schema, gerado, templates
+    - Trecho-guia: forjaexploracao100.py; generaten4contracts.py; forjareasoning.py; schema F2 gerado; templates/F2CONSULTAADVOGADO.md; testforjaexploracao100.py; testforjaassinaturalite.py; testforjan4.py.
+  - [SRC-S024 · L191–L201 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Casos de teste mínimos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s024)
+    - Assuntos: casos, teste, mínimos, resposta, default, fato, documentado, objetivo
+    - Trecho-guia: fato já documentado; objetivo estratégico desconhecido; autorização necessária; resposta parcial; duas rodadas; escolha formal não material com default; tentativa de default factual; resposta officedeclaration sem supportIds.
+  - [SRC-S025 · L202–L212 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s025)
+    - Assuntos: critérios, aceite, pergunta, redundante, rejeitada, material, informa, consequência
+    - Trecho-guia: pergunta redundante é rejeitada; pergunta material informa consequência; silêncio factual bloqueia; resposta parcial mantém pendência; decisão tem autor e canal; consulta renderizada corresponde ao hash; nenhum e-mail é enviado; incumbente de F6 permanece inalterado.
+  - [SRC-S026 · L213–L216 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s026)
+    - Assuntos: rollback, mode, off, campos, aditivos, permanecem, legíveis, ignorados
+    - Trecho-guia: mode=off; campos aditivos permanecem legíveis e ignorados.
+  - [SRC-S027 · L217–L222 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 5. W2A — cocrição F2-B em sombra > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s027)
+    - Assuntos: commit, sugerido, feat, add, dialectic, consultation, shadow
+    - Trecho-guia: feat(forja): add dialectic consultation in shadow
+  - [SRC-S028 · L223–L224 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s028)
+    - Assuntos: w2b, mapa, destinatário, teiajus, sombra
+    - Trecho-guia: Documento de consulta sobre 6. W2B — mapa do destinatário e TeiaJus em sombra.
+  - [SRC-S029 · L225–L228 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s029)
+    - Assuntos: objetivo, produzir, mapa, verificável, tratar, metadado, prova
+    - Trecho-guia: Produzir mapa verificável sem tratar metadado como prova.
+  - [SRC-S030 · L229–L240 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s030)
+    - Assuntos: trabalho, implementar, fonte, schema, completo, mapa, validador, freshness
+    - Trecho-guia: 1. implementar schema completo do mapa; 2. implementar validador e freshness; 3. classificar fontes por nível probatório; 4. testar a allowlist ampliada sem ações pagas; 5. integrar researchsources, researchplan, researchsearch e researchmissionget, se capabilities e testes confi
+  - [SRC-S031 · L241–L251 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra > Propriedade de arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s031)
+    - Assuntos: propriedade, arquivos, forja_reasoning, forja_n4_validate, forja_search_config, json, forja_legal_search, somente
+    - Trecho-guia: forjareasoning.py; forjan4validate.py; FORJASEARCHCONFIG.json; forjalegalsearch.py, somente se necessário; schema e contratos gerados; testforjalegalsearch.py; testforjaassinaturalite.py; testforjan4.py.
+  - [SRC-S032 · L252–L261 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s032)
+    - Assuntos: critérios, aceite, composição, datajud, nunca, confirma, prevenção, stale
+    - Trecho-guia: DataJud nunca confirma composição ou prevenção; composição stale é detectada; toda posição aponta para decisão; topologia adicional exige justificativa; actions readpaid são negadas; artefato de pesquisa não vira citação final sem F7; nenhuma mutação TeiaJus ocorre.
+  - [SRC-S033 · L262–L265 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s033)
+    - Assuntos: rollback, remover, novas, actions, allowlist, usar, mode, off
+    - Trecho-guia: Remover novas actions da allowlist e usar mode=off. O TeiaJus canônico não é modificado.
+  - [SRC-S034 · L266–L271 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 6. W2B — mapa do destinatário e TeiaJus em sombra > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s034)
+    - Assuntos: commit, sugerido, feat, add, sourced, recipient, map, shadow
+    - Trecho-guia: feat(forja): add sourced recipient map in shadow
+  - [SRC-S035 · L272–L273 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s035)
+    - Assuntos: signature, brief, pesquisa, jurídica, âncoras
+    - Trecho-guia: Documento de consulta sobre 7. W3 — signature brief, pesquisa jurídica e âncoras.
+  - [SRC-S036 · L274–L277 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s036)
+    - Assuntos: objetivo, vincular, decisão, humana, topologia, precedentes, antes, redação
+    - Trecho-guia: Vincular decisão humana, topologia e precedentes antes da redação.
+  - [SRC-S037 · L278–L289 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s037)
+    - Assuntos: implementar, rotas, trabalho, anchor, testar, quatro, f4_signature_brief, json
+    - Trecho-guia: 1. implementar F4SIGNATUREBRIEF.json; 2. validar rotas, decisão humana e cross-references; 3. implementar legalResearchProtocol no sourceledger; 4. implementar ficha de anchor no verifiedsourceledger; 5. distinguir ementa, íntegra, metadado e dado administrativo; 6. implementar r
+  - [SRC-S038 · L290–L304 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras > Propriedade de arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s038)
+    - Assuntos: propriedade, arquivos, forja_reasoning, forja_n4_validate, forja_package, forja_run, forja_claim_binding, necessário
+    - Trecho-guia: forjareasoning.py; forjan4validate.py; forjapackage.py; forjarun.py; forjaclaimbinding.py, se necessário; forjan4invalidation.py; geradores e schemas; testforjaassinaturalite.py; testforjaantihallucinationv2.py; testforjaanticheat.py; testforjarun.py; testforjan3package.py.
+  - [SRC-S039 · L305–L316 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s039)
+    - Assuntos: não, critérios, aceite, brief, bloqueado, libera, rota, selecionada
+    - Trecho-guia: brief bloqueado não libera F6; rota selecionada possui decisão humana material; IDs inexistentes falham; ementa isolada não produz holding final; trecho alterado falha por hash; regime não usa score universal; query negativa é reproduzível; CGU sancionatório não é precedente; anc
+  - [SRC-S040 · L317–L320 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s040)
+    - Assuntos: rollback, mode, off, continuam, aceitando, ledgers, legados, nenhuma
+    - Trecho-guia: mode=off; F5/F7 continuam aceitando ledgers legados. Nenhuma fonte histórica é apagada.
+  - [SRC-S041 · L321–L326 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 7. W3 — signature brief, pesquisa jurídica e âncoras > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s041)
+    - Assuntos: commit, sugerido, feat, bind, strategy, brief, verified, anchors
+    - Trecho-guia: feat(forja): bind strategy brief to verified anchors
+  - [SRC-S042 · L327–L328 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s042)
+    - Assuntos: corpus, identidade, variante, offline
+    - Trecho-guia: Documento de consulta sobre 8. W4 — corpus de identidade e variante offline.
+  - [SRC-S043 · L329–L332 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s043)
+    - Assuntos: objetivo, transformar, acervo, heterogêneo, evidência, editorial, atribuível
+    - Trecho-guia: Transformar acervo heterogêneo em evidência editorial atribuível.
+  - [SRC-S044 · L333–L344 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s044)
+    - Assuntos: trabalho, padrões, criar, manifest, vazio, schema, validador, inventariar
+    - Trecho-guia: 1. criar manifest vazio e schema/validador; 2. inventariar inicialmente apenas itens de alta confiança; 3. separar escrita, revisão, aprovação, feedback e pensamento oral; 4. vincular versões por hash; 5. classificar diffs por origem intelectual; 6. extrair padrões candidatos sem
+  - [SRC-S045 · L345–L355 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline > Propriedade de arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s045)
+    - Assuntos: propriedade, arquivos, autoresearch, precisar, prompts, identity_corpus_manifest, jsonl, forja_learning
+    - Trecho-guia: autoresearch/IDENTITYCORPUSMANIFEST.jsonl; forjalearning.py; forjadiffdocx.py, se precisar expor metadados; forjaarcorpus.py, se precisar de seleção offline; prompts versionados em autoresearch/prompts/; testforjaautoresearch.py; testforjaassinaturalite.py; testes de learning N4.
+  - [SRC-S046 · L356–L365 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s046)
+    - Assuntos: não, vira, critérios, aceite, autoria, desconhecida, human_authored, transcript
+    - Trecho-guia: autoria desconhecida não vira humanauthored; transcript não vira estilo escrito; diff sem autor não vira preferência Medina; conteúdo privado não aparece no relatório; variante usa o mesmo snapshot jurídico; A/B não promove automaticamente; regressão jurídica veta ganho editorial
+  - [SRC-S047 · L366–L369 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s047)
+    - Assuntos: rollback, não, usar, manifest, geração, corpus, offline, altera
+    - Trecho-guia: Não usar o manifest na geração. O corpus é offline e não altera casos.
+  - [SRC-S048 · L370–L375 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 8. W4 — corpus de identidade e variante offline > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s048)
+    - Assuntos: commit, sugerido, feat, add, attributable, identity, corpus, for
+    - Trecho-guia: feat(forja): add attributable identity corpus for offline evaluation
+  - [SRC-S049 · L376–L377 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s049)
+    - Assuntos: integração, f7-b, package
+    - Trecho-guia: Documento de consulta sobre 9. W5 — integração F6, F7/F7-B e package.
+  - [SRC-S050 · L378–L381 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s050)
+    - Assuntos: objetivo, preservar, decisão, até, texto, final, recomputá-la, independentemente
+    - Trecho-guia: Preservar a decisão até o texto final e recomputá-la independentemente.
+  - [SRC-S051 · L382–L393 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s051)
+    - Assuntos: trabalho, recibo, manter, brief, rota, implementar, forja-gosto-edge-v2, compatibilidade
+    - Trecho-guia: 1. implementar recibo FORJA-GOSTO-EDGE-v2; 2. manter compatibilidade com v1; 3. remover exigência fixa de três direções apenas no v2; 4. adicionar hash do brief e rota; 5. recompor recibo em forjaeditorialfidelity.py; 6. passar brief opcional por forjarun.py e forjapackage.py; 7.
+  - [SRC-S052 · L394–L405 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package > Propriedade de arquivos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s052)
+    - Assuntos: propriedade, arquivos, forja_fable5, forja_editorial_fidelity, forja_run, forja_package, test_forja_fable5, test_forja_run
+    - Trecho-guia: forjafable5.py; forjaeditorialfidelity.py; forjarun.py; forjapackage.py; testforjafable5.py; testforjarun.py; testforjan3package.py; testforjaassinaturalite.py; testforjamutationsemantic.py.
+  - [SRC-S053 · L406–L416 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s053)
+    - Assuntos: falha, critérios, aceite, recibo, divergente, chamadas, antigas, continuam
+    - Trecho-guia: chamadas antigas continuam válidas; recibo v1 continua legível; recibo v2 adulterado falha; routeId divergente falha; hash do brief divergente falha; conteúdo obrigatório removido falha; F8 recebe um finalmarkdown; package exige ledger e recibos existentes.
+  - [SRC-S054 · L417–L420 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package > Rollback](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s054)
+    - Assuntos: rollback, mode, off, ausência, parâmetro, opcional, brief, restauram
+    - Trecho-guia: mode=off e ausência do parâmetro opcional do brief restauram a execução anterior.
+  - [SRC-S055 · L421–L426 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 9. W5 — integração F6, F7/F7-B e package > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s055)
+    - Assuntos: commit, sugerido, feat, preserve, signature, brief, through, final
+    - Trecho-guia: feat(forja): preserve signature brief through final markdown
+  - [SRC-S056 · L427–L428 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s056)
+    - Assuntos: piloto, controlado, rollback, documentação
+    - Trecho-guia: Documento de consulta sobre 10. W6 — piloto controlado, rollback e documentação.
+  - [SRC-S057 · L429–L432 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação > Objetivo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s057)
+    - Assuntos: objetivo, exercitar, capacidade, completa, poucos, casos, promoção, global
+    - Trecho-guia: Exercitar a capacidade completa em poucos casos sem promoção global.
+  - [SRC-S058 · L433–L446 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação > Trabalho](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s058)
+    - Assuntos: executar, trabalho, revisão, pesquisa, selecionar, pilotos, autorização, registrar
+    - Trecho-guia: 1. selecionar pilotos com autorização; 2. registrar baseline e expectativas por caso; 3. executar consulta com revisão e envio humanos; 4. executar mapa, brief, pesquisa e um draft; 5. validar F7/F7-B, DOCX/PDF e package; 6. comparar com incumbente; 7. medir interação, segurança,
+  - [SRC-S059 · L447–L458 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação > Pilotos candidatos](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s059)
+    - Assuntos: candidatos, pilotos, escolher, apenas, após, considerando, existência, entrega
+    - Trecho-guia: Escolher apenas após W0, considerando:
+  - [SRC-S060 · L459–L471 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação > Critérios de aceite](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s060)
+    - Assuntos: zero, critérios, aceite, não, regressão, ah-01, ah-08, fato
+    - Trecho-guia: zero regressão AH-01 a AH-08; zero fato por silêncio; zero ação externa não autorizada; anchors verificadas; composição/prevenção com estado honesto; consultas materiais e não redundantes; rollback exercitado; pacote final íntegro; custos e latências publicados com denominadores;
+  - [SRC-S061 · L472–L479 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação > Estado máximo](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s061)
+    - Assuntos: estado, máximo, text, pilot_completed, não, habilitar, default_on
+    - Trecho-guia: Documento de consulta sobre Estado máximo.
+  - [SRC-S062 · L480–L485 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 10. W6 — piloto controlado, rollback e documentação > Commit sugerido](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s062)
+    - Assuntos: commit, sugerido, docs, record, assinatura, lite, pilot, and
+    - Trecho-guia: docs(forja): record assinatura lite pilot and validated architecture
+  - [SRC-S063 · L486–L522 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 11. Suíte de promoção](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s063)
+    - Assuntos: python, suíte, promoção, powershell, users, igorpc, claude, projects
+    - Trecho-guia: Validar visualmente todos os HTMLs regenerados.
+  - [SRC-S064 · L523–L541 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 12. Stop conditions](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s064)
+    - Assuntos: não, stop, conditions, necessidade, parar, onda, contornar, gate
+    - Trecho-guia: Parar a onda e não contornar o gate se ocorrer:
+  - [SRC-S065 · L542–L556 · 35 — Roadmap de execução: FORJA-ASSINATURA Lite > 13. Critério de prontidão para começar](35_ROADMAP_EXECUCAO_FORJA_ASSINATURA_LITE.md#src-s065)
+    - Assuntos: critério, prontidão, começar, têm, foram, execução, pacote, está
+    - Trecho-guia: O pacote está documentalmente pronto quando:
+
+### 4.41. 36 — Consolidação do conselho e parecer final de execução
+
+- **Arquivo preparado:** [36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md)
+- **Origem:** `36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md`
+- **Termos:** não, acatada, modelo, final, execução, mais, decisão, gate, sobre, citação, revisão, art
+- **Blocos:**
+  - [SRC-S001 · L1–L9 · 36 — Consolidação do conselho e parecer final de execução](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s001)
+    - Assuntos: pareceres, execução, consolidação, conselho, parecer, final, sobre, consolidador
+    - Trecho-guia: Consolidador: Efesto Tekhton. Data: 2026-07-25. Objeto: pareceres de Helena e Cícero sobre FORJA-COCRIACAO-v1, mais a diretriz do Igor de 25/07/2026 sobre modelo editorial e revisão cruzada. Pareceres na íntegra: pareceres/HELENAFORJACOCRIACAO2026-07-25.md e pareceres/CICEROFORJA
+  - [SRC-S002 · L10–L22 · 36 — Consolidação do conselho e parecer final de execução > Resultado](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s002)
+    - Assuntos: plano, mais, entra, resultado, quatro, não, modelo, aprovado
+    - Trecho-guia: O plano é aprovado para execução, com quatro mudanças e uma inversão de prioridade.
+  - [SRC-S003 · L23–L39 · 36 — Consolidação do conselho e parecer final de execução > 1. Evidência colhida nesta execução](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s003)
+    - Assuntos: não, ocorrências, evidência, colhida, nesta, execução, art, fable
+    - Trecho-guia: Não repito afirmação de terceiro sem medir. O que verifiquei diretamente:
+  - [SRC-S004 · L40–L41 · 36 — Consolidação do conselho e parecer final de execução > 2. Decisão sobre cada recomendação do conselho](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s004)
+    - Assuntos: decisão, sobre, cada, recomendação, conselho
+    - Trecho-guia: Documento de consulta sobre 2. Decisão sobre cada recomendação do conselho.
+  - [SRC-S005 · L42–L53 · 36 — Consolidação do conselho e parecer final de execução > 2. Decisão sobre cada recomendação do conselho > 2.1 Helena — estratégia](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s005)
+    - Assuntos: acatada, não, real, helena, estratégia, decisão, caso, custo
+    - Trecho-guia: Documento de consulta sobre 2.1 Helena — estratégia.
+  - [SRC-S006 · L54–L72 · 36 — Consolidação do conselho e parecer final de execução > 2. Decisão sobre cada recomendação do conselho > 2.2 Cícero — jurídico](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s006)
+    - Assuntos: não, acatada, cícero, conteúdo, acatadas, j-b, pelo, jurídico
+    - Trecho-guia: Nada rejeitado. Registro isso com desconfiança: conselho que concorda com tudo costuma não ter lido. Reli os dois pareceres procurando conflito material e encontrei um só — a separação do J-B —, resolvido em favor do Cícero por fundamento mais forte.
+  - [SRC-S007 · L73–L92 · 36 — Consolidação do conselho e parecer final de execução > 3. P0 de produção: a citação regimental — RESOLVIDO EM 2026-07-25](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s007)
+    - Assuntos: não, citação, regimental, produção, resolvido, está, apenas, peça
+    - Trecho-guia: ### Desfecho: o dispositivo existe. Bloqueio levantado.  Art. 343-A do RISTJ, introduzido pela Emenda Regimental nº 53, de 30/06/2026, publicada no DJe de 01/07/2026, vigente desde então. Verbatim e proveniência em cache/fontesoficiais/RISTJART343AER532026.md.  A determinação do 
+  - [SRC-S008 · L93–L112 · 36 — Consolidação do conselho e parecer final de execução > 3. P0 de produção: a citação regimental — RESOLVIDO EM 2026-07-25 > Registro do alarme original, preservado para auditoria](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s008)
+    - Assuntos: item, hoje, etiqueta, prática, registro, alarme, original, preservado
+    - Trecho-guia: Isto não é item de plano. É defeito ativo.
+  - [SRC-S009 · L113–L114 · 36 — Consolidação do conselho e parecer final de execução > 4. Diretriz do Igor: modelo editorial e revisão cruzada](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s009)
+    - Assuntos: diretriz, igor, modelo, editorial, revisão, cruzada
+    - Trecho-guia: Documento de consulta sobre 4. Diretriz do Igor: modelo editorial e revisão cruzada.
+  - [SRC-S010 · L115–L122 · 36 — Consolidação do conselho e parecer final de execução > 4. Diretriz do Igor: modelo editorial e revisão cruzada > 4.1 O que muda](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s010)
+    - Assuntos: muda, fable, mais, ser, ordem, supera, determinação, sobre
+    - Trecho-guia: Ordem de 25/07/2026, que supera a determinação de 15/07/2026 sobre o Fable 5:
+  - [SRC-S011 · L123–L133 · 36 — Consolidação do conselho e parecer final de execução > 4. Diretriz do Igor: modelo editorial e revisão cruzada > 4.2 Por que isto não é obra nova](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s011)
+    - Assuntos: não, isto, obra, nova, gate, cross_family, modelo, tem
+    - Trecho-guia: A FORJA já tem o vocabulário e metade da máquina:
+  - [SRC-S012 · L134–L149 · 36 — Consolidação do conselho e parecer final de execução > 4. Diretriz do Igor: modelo editorial e revisão cruzada > 4.3 Desenho da migração](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s012)
+    - Assuntos: forja_fable5, contrato, não, json, desenho, migração, modelo, constante
+    - Trecho-guia: Princípio: parametrizar, não reescrever. O que tem valor em forjafable5.py não é o nome do modelo — é a recusa em aceitar a autodeclaração dele. Isso fica.
+  - [SRC-S013 · L150–L164 · 36 — Consolidação do conselho e parecer final de execução > 4. Diretriz do Igor: modelo editorial e revisão cruzada > 4.4 Onde a revisão cruzada se aplica — e onde não](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s013)
+    - Assuntos: não, onde, família, revisão, cruzada, aplica, fases, ser
+    - Trecho-guia: Aplicar em todas as onze fases multiplicaria custo sem ganho proporcional. Aplico onde o erro é caro e difícil de reverter:
+  - [SRC-S014 · L165–L176 · 36 — Consolidação do conselho e parecer final de execução > 4. Diretriz do Igor: modelo editorial e revisão cruzada > 4.5 A ordem importa — e é onde vejo o único risco sério da diretriz](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s014)
+    - Assuntos: não, ordem, claude, protocolo, importa, onde, vejo, único
+    - Trecho-guia: Não editar o CLAUDE.md antes do código.
+  - [SRC-S015 · L177–L178 · 36 — Consolidação do conselho e parecer final de execução > 5. Superfície e ondas finais](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s015)
+    - Assuntos: superfície, ondas, finais
+    - Trecho-guia: Documento de consulta sobre 5. Superfície e ondas finais.
+  - [SRC-S016 · L179–L191 · 36 — Consolidação do conselho e parecer final de execução > 5. Superfície e ondas finais > 5.1 Placar consolidado](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s016)
+    - Assuntos: consolidado, placar, novos, arquivos, prd, origem, mudança, tipos
+    - Trecho-guia: Documento de consulta sobre 5.1 Placar consolidado.
+  - [SRC-S017 · L192–L210 · 36 — Consolidação do conselho e parecer final de execução > 5. Superfície e ondas finais > 5.2 Ondas](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s017)
+    - Assuntos: onda, ondas, hoje, não, consulta, manual, sobre, caso
+    - Trecho-guia: P0 — hoje, fora do plano. Conferência do art. 343-A; suspensão da referência numérica. Não é onda: é correção de defeito ativo.
+  - [SRC-S018 · L211–L226 · 36 — Consolidação do conselho e parecer final de execução > 6. Risco e pendência](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s018)
+    - Assuntos: não, mitigado, risco, pendência, art, antes, ação, vira
+    - Trecho-guia: Pendência de verificação declarada: não confirmei a existência do art. 343-A na fonte oficial. Não afirmo que seja fictício. Afirmo o que medi: não está no regimento arquivado, e o art. 343 trata de outra matéria.
+  - [SRC-S019 · L227–L238 · 36 — Consolidação do conselho e parecer final de execução > 7. Parecer final](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s019)
+    - Assuntos: onda, parecer, final, plano, não, muda, tenho, reparo
+    - Trecho-guia: Execução autorizada, na ordem abaixo. O plano não muda de mérito; muda de sequência.
+  - [SRC-S020 · L239–L274 · 36 — Consolidação do conselho e parecer final de execução > 7-A. Reconciliação de cânone — colisão detectada e resolvida](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s020)
+    - Assuntos: linha, codex, não, claude, cânone, colisão, execução, onda
+    - Trecho-guia: Durante esta consolidação, detectei que dois conjuntos 33/34/35 foram escritos no mesmo intervalo, por linhas de trabalho paralelas, com minutos de diferença. Registro por evidência, não por relato:
+  - [SRC-S021 · L275–L287 · 36 — Consolidação do conselho e parecer final de execução > 7-B. Ressalva sobre a linha de base declarada](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s021)
+    - Assuntos: sobre, não, passed, régua, linha, base, pacote, suítes
+    - Trecho-guia: O pacote de execução reporta 104 passed, 3 subtests passed. O documento 26, §3.3, registrou em 24/07/2026 131 passed, 3 subtests passed sobre uma seleção nomeada de cinco suítes, e registrou que a Régua estava reprovada por alterações em arquivos de EDGE, Fable e estilo ainda não
+  - [SRC-S022 · L288–L291 · 36 — Consolidação do conselho e parecer final de execução > 9. EMENDAS AO CÂNONE — versão final única para execução](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s022)
+    - Assuntos: emendas, cânone, execução, versão, final, única, esta, seção
+    - Trecho-guia: Esta seção é normativa. O cânone de execução é o trio 33/34/35 do Codex, acrescido das emendas abaixo. Um único plano será executado. Os ANEXOA/B/C passam a ser histórico e não se executam.
+  - [SRC-S023 · L292–L305 · 36 — Consolidação do conselho e parecer final de execução > 9. EMENDAS AO CÂNONE — versão final única para execução > 9.1 F1 — concedido ao Codex, com o diagnóstico preservado](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s023)
+    - Assuntos: não, catálogo, payload, real, codex, são, concedido, diagnóstico
+    - Trecho-guia: Levantei que o catálogo N4 tem 24 tipos declarados sem payload e sem produção em caso real, e propus que o brief fosse payload de F4DECISIONFACTORMAP em vez de tipo novo. Reli o TDD 34, §6.1 e §7.1, e a proposta do Codex é melhor. Retiro a minha.
+  - [SRC-S024 · L306–L325 · 36 — Consolidação do conselho e parecer final de execução > 9. EMENDAS AO CÂNONE — versão final única para execução > 9.2 Emendas que entram no cânone](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s024)
+    - Assuntos: cícero, onda, anexo, não, gate, emendas, sobre, final
+    - Trecho-guia: Documento de consulta sobre 9.2 Emendas que entram no cânone.
+  - [SRC-S025 · L326–L329 · 36 — Consolidação do conselho e parecer final de execução > 9. EMENDAS AO CÂNONE — versão final única para execução > 9.3 O que fica de fora, confirmado](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s025)
+    - Assuntos: fica, fora, confirmado, múltiplos, drafts, petição, n-way, condorcet
+    - Trecho-guia: Múltiplos drafts por petição; N-way e Condorcet; recall; memória decisória em produção; pacote e CLI próprios; escore numérico de aderência; conectores de jurisprudência administrativa na v1; envio externo autônomo; ações pagas de pesquisa; defaulton antes do piloto; ativação de 
+  - [SRC-S026 · L330–L342 · 36 — Consolidação do conselho e parecer final de execução > 9. EMENDAS AO CÂNONE — versão final única para execução > 9.4 Ordem final de execução](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s026)
+    - Assuntos: ordem, final, execução, e15, antes, onda, código, e11
+    - Trecho-guia: Documento de consulta sobre 9.4 Ordem final de execução.
+  - [SRC-S027 · L343–L352 · 36 — Consolidação do conselho e parecer final de execução > 8. Próxima ação](36_CONSOLIDACAO_CONSELHO_E_PARECER_FINAL.md#src-s027)
+    - Assuntos: onda, antes, até, próxima, ação, conferir, decisão, real
+    - Trecho-guia: 0. Fundir F1 a F4 dos anexos no cânone 33–35 — tarefa 0 da Onda 0, antes de qualquer schema. Especialmente F1: conferir a decisão DA-02 do TDD contra o achado das 24 conchas. 1. Conferir art. 343-A do RISTJ na fonte oficial — hoje. Suspender a referência numérica no corpo das peç
+
+### 4.42. 37 — FORJA como harness multimodelo
+
+- **Arquivo preparado:** [37_PLANO_HARNESS_MULTIMODELO.md](37_PLANO_HARNESS_MULTIMODELO.md)
+- **Origem:** `37_PLANO_HARNESS_MULTIMODELO.md`
+- **Termos:** não, modelo, kimi, grok, opus, instrução, duas, bancada, assento, mais, súmula, foi
+- **Blocos:**
+  - [SRC-S001 · L1–L14 · 37 — FORJA como harness multimodelo](37_PLANO_HARNESS_MULTIMODELO.md#src-s001)
+    - Assuntos: harness, multimodelo, determinação, igor, protocolo, forja-multimodelo-v1, data, origem
+    - Trecho-guia: Protocolo: FORJA-MULTIMODELO-v1 Data: 26/07/2026 Origem: determinação do Igor de 26/07/2026 — "a FORJA é sistema de multimodelos", cada modelo na parte em que é melhor, todos revisando uns aos outros.
+  - [SRC-S002 · L15–L47 · 37 — FORJA como harness multimodelo > 0. A tese, e por que ela não é nova aqui](37_PLANO_HARNESS_MULTIMODELO.md#src-s002)
+    - Assuntos: não, tese, kimi, harvey, fireworks, tarefas, the, for
+    - Trecho-guia: A FORJA já operava sob revisão cruzada entre famílias desde a onda W0: o gate crossmodelreviewverified bloqueia entrega cujo revisor não seja de família diferente do produtor. O que muda agora é a largura da bancada: em vez de duas famílias (Anthropic e OpenAI), quatro.
+  - [SRC-S003 · L48–L51 · 37 — FORJA como harness multimodelo > 1. O que foi medido em 26/07/2026](37_PLANO_HARNESS_MULTIMODELO.md#src-s003)
+    - Assuntos: foi, medido, instrumentos, forja_modelos, despacho, ledger, custo, forja_bench_modelos
+    - Trecho-guia: Instrumentos: forjamodelos.py (despacho e ledger de custo) e forjabenchmodelos.py (aferição contra cache/fontesoficiais/).
+  - [SRC-S004 · L52–L67 · 37 — FORJA como harness multimodelo > 1. O que foi medido em 26/07/2026 > 1.1 O achado que define o desenho](37_PLANO_HARNESS_MULTIMODELO.md#src-s004)
+    - Assuntos: não, art, carf, resposta, lei, mais, achado, define
+    - Trecho-guia: Primeira pergunta jurídica real feita ao Kimi K3 — se acórdão do CARF vincula o Judiciário. Resposta:
+  - [SRC-S005 · L68–L94 · 37 — FORJA como harness multimodelo > 1. O que foi medido em 26/07/2026 > 1.2 A bancada completa — 24 chamadas, 6 provas, 2 condições](37_PLANO_HARNESS_MULTIMODELO.md#src-s005)
+    - Assuntos: súmula, solto, cauteloso, duas, condições, correto, devolveu, texto
+    - Trecho-guia: Kimi K3 fabricou quatro textos de súmula, todos diferentes entre si. Pedidas duas súmulas do STF em duas condições, ele devolveu quatro enunciados inventados — com aspas, formatação de citação e comentário doutrinário em volta, sem uma única ressalva:
+  - [SRC-S006 · L95–L102 · 37 — FORJA como harness multimodelo > 1. O que foi medido em 26/07/2026 > 1.3 O achado contraintuitivo: a instrução da casa piorou o modelo bom](37_PLANO_HARNESS_MULTIMODELO.md#src-s006)
+    - Assuntos: não, instrução, modelo, achado, contraintuitivo, casa, piorou, bom
+    - Trecho-guia: A instrução "se não souber, diga que não sabe" derrubou o Grok de 6/6 para 2/6, com quatro abstenções sobre textos que ele demonstradamente conhecia — e sem nenhum ganho de segurança, porque ele já tinha zero invenções nas duas condições.
+  - [SRC-S007 · L103–L112 · 37 — FORJA como harness multimodelo > 1. O que foi medido em 26/07/2026 > 1.4 Custo e latência (ledger real, 36 chamadas)](37_PLANO_HARNESS_MULTIMODELO.md#src-s007)
+    - Assuntos: latência, custo, ledger, real, chamadas, chamada, kimi, entrada
+    - Trecho-guia: Kimi K3 foi cerca de 7,6x mais caro e 5,6x mais lento por chamada. Somado ao resultado jurídico, isso fundamentou sua retirada integral da FORJA.
+  - [SRC-S008 · L113–L120 · 37 — FORJA como harness multimodelo > 1. O que foi medido em 26/07/2026 > 1.5 A armadilha operacional](37_PLANO_HARNESS_MULTIMODELO.md#src-s008)
+    - Assuntos: tokens, armadilha, operacional, numa, gastou, resposta, falhar, kimi
+    - Trecho-guia: Kimi K3 raciocina internamente e consome o orçamento de tokens pensando. Numa pergunta jurídica de quatro linhas gastou 641 tokens de raciocínio para 203 de resposta; numa pergunta-armadilha gastou 2.045 de 2.048 e devolveu conteúdo vazio com finishreason=length.
+  - [SRC-S009 · L121–L139 · 37 — FORJA como harness multimodelo > 2. Roteamento por fase](37_PLANO_HARNESS_MULTIMODELO.md#src-s009)
+    - Assuntos: opus, grok, fase, não, modelo, roteamento, laço, objeção
+    - Trecho-guia: O critério não é reputação do modelo; é o que a fase exige.
+  - [SRC-S010 · L140–L159 · 37 — FORJA como harness multimodelo > 2. Roteamento por fase > 2.1 O assento de F5 está vago, e por quê](37_PLANO_HARNESS_MULTIMODELO.md#src-s010)
+    - Assuntos: não, assento, opus, kimi, está, dispositivos, depois, grok
+    - Trecho-guia: A primeira versão deste plano punha o Kimi K3 para propor dispositivos e precedentes em F5, com a justificativa de que ele é "mais denso" e de que o Opus confere depois.
+  - [SRC-S011 · L160–L191 · 37 — FORJA como harness multimodelo > 3. Indicadores](37_PLANO_HARNESS_MULTIMODELO.md#src-s011)
+    - Assuntos: não, instrução, abstencao, indicador, modelo, condição, cauteloso, invencao
+    - Trecho-guia: Medidos por forjabenchmodelos.py, com gabarito em cache/fontesoficiais/, em duas condições.
+  - [SRC-S012 · L192–L207 · 37 — FORJA como harness multimodelo > 4. Controle de gasto](37_PLANO_HARNESS_MULTIMODELO.md#src-s012)
+    - Assuntos: gasto, chamada, assinatura, pelo, controle, teto, ledger, família
+    - Trecho-guia: Teto de US$ 0,50 por chamada e US$ 3,00 por execução, recusados antes do envio. Ledger append-only com custo, fase, papel, família e latência por chamada. python forjamodelos.py gasto responde quanto cada modelo custou até hoje. Não existe rota operacional Kimi na FORJA. Foram re
+  - [SRC-S013 · L208–L215 · 37 — FORJA como harness multimodelo > 5. O que fica pendente de decisão ou de terceiro](37_PLANO_HARNESS_MULTIMODELO.md#src-s013)
+    - Assuntos: pendente, não, fica, decisão, terceiro, bancada, provas, sol
+    - Trecho-guia: 1. Sol 5.6 pelo /codex — o par de revisão que o Igor observou funcionando ainda não foi exercitado nesta bancada; ele não sai por HTTP, roda pela assinatura. 2. Grok como padrão do /diabob — configuração da skill, pendente. 3. Ampliar as provas — seis provas são um sinal, não uma
+  - [SRC-S014 · L216–L223 · 37 — FORJA como harness multimodelo > 6. A ressalva que não pode sumir](37_PLANO_HARNESS_MULTIMODELO.md#src-s014)
+    - Assuntos: não, ressalva, pode, sumir, opus, contra, são, relatos
+    - Trecho-guia: Os relatos que motivaram este plano — Opus 5 "do contra", Fable pior em texto, Sol e Opus se fiscalizando — são impressões de usuários, não medição. São hipóteses boas e testáveis, e algumas já ganharam suporte medido aqui.
+  - [SRC-S015 · L224–L229 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026)](37_PLANO_HARNESS_MULTIMODELO.md#src-s015)
+    - Assuntos: bancada, revisão, roteamento, após, caso-04, mediu, muda, fidelidade
+    - Trecho-guia: A bancada de 26/07 mediu fidelidade de citação em pergunta fechada. A de 27/07 mediu outra coisa: peça inteira, caso real, seis modelos em isolamento, julgamento cego por três famílias em dupla ordem. Relatório e artefatos em bancadacafelanav7/.
+  - [SRC-S016 · L230–L248 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026) > 7.1 O achado que reorganiza dois assentos](37_PLANO_HARNESS_MULTIMODELO.md#src-s016)
+    - Assuntos: opus, dois, fable, peça, titular, f7-b, não, achado
+    - Trecho-guia: Os juízes cegos separaram, pela primeira vez com número, duas capacidades que a intuição trata como uma só:
+  - [SRC-S017 · L249–L255 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026) > 7.2 Assentos confirmados](37_PLANO_HARNESS_MULTIMODELO.md#src-s017)
+    - Assuntos: confirmado, sol, grok, assentos, confirmados, opus, melhor, revisão
+    - Trecho-guia: F6 redação — Opus 5. Confirmado com folga: melhor tese, arquitetura, escrita e uso de autoridade. É o assento onde a propensão a decidir sozinho é virtude, porque ali ainda há revisão inteira pela frente. F7 revisão adversarial — Sol 5.6 + Grok 4.5. Confirmado. O Sol foi eleito p
+  - [SRC-S018 · L256–L269 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026) > 7.3 Assento novo: Luna 5.6 para volume](37_PLANO_HARNESS_MULTIMODELO.md#src-s018)
+    - Assuntos: luna, volume, assento, novo, custo, peça, juízes, vezes
+    - Trecho-guia: Entra no registro como alavanca de custo, com perfil medido na mesma tarefa dos demais:
+  - [SRC-S019 · L270–L283 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026) > 7.4 Regra nova de composição de bancada](37_PLANO_HARNESS_MULTIMODELO.md#src-s019)
+    - Assuntos: regra, sol, nova, composição, bancada, juiz, opus, grok
+    - Trecho-guia: A auto-preferência deixou de ser hipótese e virou número:
+  - [SRC-S020 · L284–L289 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026) > 7.5 O assento de F5 continua vago](37_PLANO_HARNESS_MULTIMODELO.md#src-s020)
+    - Assuntos: não, autoridade, assento, continua, vago, bancada, preenche, dossiê
+    - Trecho-guia: A bancada V7 não o preenche, e é preciso dizer isso em vez de aproveitar o resultado. O dossiê era fechado e completo: ninguém precisou propor autoridade nova, e nenhum dos seis inventou nada. O que se mediu foi uso de autoridade disponível, não descoberta de autoridade ausente.
+  - [SRC-S021 · L290–L297 · 37 — FORJA como harness multimodelo > 7. Revisão do roteamento após a bancada CASO-04 V7 (27/07/2026) > 7.6 Duas falhas de infraestrutura corrigidas na mesma rodada](37_PLANO_HARNESS_MULTIMODELO.md#src-s021)
+    - Assuntos: duas, falhas, infraestrutura, corrigidas, mesma, rodada, modelo, model
+    - Trecho-guia: Nenhuma era de modelo; as duas produziam artefato com proveniência falsa.
+
+### 4.43. Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA
+
+- **Arquivo preparado:** [38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md)
+- **Origem:** `38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md`
+- **Termos:** não, humana, peça, protocolo, versão, nome, json, onda, final, será, caso, loop
+- **Blocos:**
+  - [SRC-S001 · L1–L7 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s001)
+    - Assuntos: plano, loop, pós-protocolo, autoaperfeiçoamento, arquitetural, versão, operação, implementada
+    - Trecho-guia: Versão: 2.1, implementada, endurecida após três revisões adversariais no Claude Code Opus 5 e auditada em operação Data: 29/07/2026 Status: implementação concluída; operação automática condicionada aos gates descritos neste documento Escopo: captura da peça humana final recebida 
+  - [SRC-S002 · L8–L28 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 1. Resultado pretendido](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s002)
+    - Assuntos: peça, nome, json, canônico, resultado, pretendido, pasta, caso
+    - Trecho-guia: Toda peça produzida com participação da FORJA deverá encerrar o ciclo com um pacote pós-protocolo verificável:
+  - [SRC-S003 · L29–L40 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 2. Premissas e decisões](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s003)
+    - Assuntos: não, humana, escritório, premissas, decisões, nem, final, pode
+    - Trecho-guia: 1. Não criar F11 nem renumerar a esteira. O subsistema entra em F10ENTREGAEVIDENCIAAPRENDIZADO, que já possui deliveryintegrity, humandiffclassification e feedbackAssimilation. 2. “Final humana” e “protocolada” são estados diferentes. Um anexo pode ser a versão final do escritóri
+  - [SRC-S004 · L41–L55 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 3. O que já existe e será reaproveitado](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s004)
+    - Assuntos: não, atual, manual, ainda, entrega, pós-protocolo, humana, existe
+    - Trecho-guia: Documento de consulta sobre 3. O que já existe e será reaproveitado.
+  - [SRC-S005 · L56–L75 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 4. Distinção obrigatória de estados](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s005)
+    - Assuntos: não, nome, peça, protocolada, versão, humana, protocolo, distinção
+    - Trecho-guia: O sistema não poderá usar “protocolada” como rótulo genérico. O manifesto registrará:
+  - [SRC-S006 · L76–L77 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 5. Arquitetura proposta](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s006)
+    - Assuntos: arquitetura, proposta
+    - Trecho-guia: Documento de consulta sobre 5. Arquitetura proposta.
+  - [SRC-S007 · L78–L122 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 5. Arquitetura proposta > 5.1. Componentes](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s007)
+    - Assuntos: componentes, gmail, json, learning, text, modo, leitura, adaptador
+    - Trecho-guia: Documento de consulta sobre 5.1. Componentes.
+  - [SRC-S008 · L123–L141 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 5. Arquitetura proposta > 5.2. Direção de dependência](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s008)
+    - Assuntos: não, adapters, direção, dependência, domain, fachadas, núcleo, domínio
+    - Trecho-guia: O núcleo de domínio não acessará Gmail, Word, disco ou painel diretamente.
+  - [SRC-S009 · L142–L145 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 5. Arquitetura proposta > 5.3. Pré-requisito arquitetural](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s009)
+    - Assuntos: pré-requisito, arquitetural, antes, iniciar, migração, física, deste, subsistema
+    - Trecho-guia: Antes de iniciar a migração física deste subsistema, concluir ou estabilizar a onda W0 já priorizada em 00MAPAARQUITETURAIA/ANALISEARQUITETURALEPROPOSTAS.md: romper a dependência circular entre package e validação. O loop pós-protocolo não deve ampliar esse ciclo.
+  - [SRC-S010 · L146–L147 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s010)
+    - Assuntos: fluxo, operacional, completo
+    - Trecho-guia: Documento de consulta sobre 6. Fluxo operacional completo.
+  - [SRC-S011 · L148–L166 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP0. Descoberta do retorno](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s011)
+    - Assuntos: mensagens, pp0, descoberta, retorno, versão, protocolo, contentkey, sha256
+    - Trecho-guia: O adaptador consulta apenas mensagens elegíveis:
+  - [SRC-S012 · L167–L180 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP1. Resolução de caso e identidade](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s012)
+    - Assuntos: resolução, caso, pp1, identidade, será, gmail, assunto, quarentena
+    - Trecho-guia: O resolvedor não será um segundo matcher. Ele endurece e reutiliza as rotas existentes de Gmail/gestão, eliminando resolução conclusiva por termos de assunto. Usa, nesta ordem:
+  - [SRC-S013 · L181–L194 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP2. Seleção da versão-base da FORJA](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s013)
+    - Assuntos: entrega, hash, pp2, seleção, versão-base, json, artefato, selecionado
+    - Trecho-guia: O sistema lê F9DELIVERYSELECTION.json, F10DELIVERYINTEGRITY.json, package manifest e recibo de entrega. A base precisa satisfazer:
+  - [SRC-S014 · L195–L213 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP3. Captura imutável e nomenclatura](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s014)
+    - Assuntos: não, pp3, captura, imutável, nomenclatura, anexo, nome, original
+    - Trecho-guia: O anexo é salvo primeiro com seu nome original e SHA-256. A cópia canônica recebe:
+  - [SRC-S015 · L214–L224 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP4. Verificação do protocolo](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s015)
+    - Assuntos: protocolo, arquivo, pp4, verificação, comprovante, data, processo, final
+    - Trecho-guia: O verificador classifica a evidência:
+  - [SRC-S016 · L225–L254 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP5. Extração e normalização](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s016)
+    - Assuntos: quando, não, pp5, extração, normalização, visível, headings, campos
+    - Trecho-guia: O comparador produzirá duas representações:
+  - [SRC-S017 · L255–L290 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP6. Diff multicamada](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s017)
+    - Assuntos: mudança, reasoning, cause, fact, classe, inferência, não, pp6
+    - Trecho-guia: Cada mudança preserva o campo canônico cause de forjalearning.py e recebe uma ou mais camadas ortogonais. Isso evita desligar silenciosamente gates existentes como stylepreference.
+  - [SRC-S018 · L291–L307 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP7. Relatório humano](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s018)
+    - Assuntos: humano, pp7, relatório, hashes, mudanças, apenas, mudanças_ia_vs_peça_protocolada, terá
+    - Trecho-guia: MUDANÇASIAVSPEÇAPROTOCOLADA.md terá:
+  - [SRC-S019 · L308–L339 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 6. Fluxo operacional completo > PP8. Encerramento e painel](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s019)
+    - Assuntos: painel, pp8, encerramento, eventos, json, apenas, diff, não
+    - Trecho-guia: Os estados são eventos append-only com expectedrevision e idempotencykey. FORJASTATE.json recebe apenas a projeção derivada; o job de inbox nunca reescreve o estado inteiro.
+  - [SRC-S020 · L340–L341 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 7. Modelo de aprendizado](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s020)
+    - Assuntos: modelo, aprendizado
+    - Trecho-guia: Documento de consulta sobre 7. Modelo de aprendizado.
+  - [SRC-S021 · L342–L380 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 7. Modelo de aprendizado > 7.1. Ciclo, escopo e estágio de promoção](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s021)
+    - Assuntos: scope, text, global, ciclo, escopo, estágio, promoção, não
+    - Trecho-guia: Não se criará um enum concorrente. O campo status mantém o contrato atual:
+  - [SRC-S022 · L381–L393 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 7. Modelo de aprendizado > 7.2. Quatro destinos possíveis](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s022)
+    - Assuntos: quatro, destinos, possíveis, lição, deve, destino, recorrente, confirmada
+    - Trecho-guia: Uma lição confirmada deve ir ao destino mínimo correto:
+  - [SRC-S023 · L394–L409 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 7. Modelo de aprendizado > 7.3. Métricas úteis](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s023)
+    - Assuntos: percentual, mudanças, métricas, úteis, retorno, falso, não, cobertura
+    - Trecho-guia: cobertura de retornos: peças entregues com retorno detectado; percentual com identidade inequívoca; percentual com protocolo verificado; diffs ligados ao artefato exato entregue; mudanças materiais por classe; falso positivo/falso negativo do classificador, medido em amostra huma
+  - [SRC-S024 · L410–L411 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 8. Loop de aperfeiçoamento da arquitetura](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s024)
+    - Assuntos: loop, aperfeiçoamento, arquitetura
+    - Trecho-guia: Documento de consulta sobre 8. Loop de aperfeiçoamento da arquitetura.
+  - [SRC-S025 · L412–L433 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 8. Loop de aperfeiçoamento da arquitetura > 8.1. Geração de candidato](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s025)
+    - Assuntos: candidato, geração, causa, casos, arquitetural, nasce, quando, mesma
+    - Trecho-guia: Um candidato arquitetural nasce quando:
+  - [SRC-S026 · L434–L457 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 8. Loop de aperfeiçoamento da arquitetura > 8.2. Experimentação](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s026)
+    - Assuntos: não, manifesto, depois, experimentação, seu, ciclos, próprio, indicadores
+    - Trecho-guia: O AutoResearch de peças não será modificado nem terá seu manifesto congelado reescrito. Uma linhagem separada, AR-Architecture, reutiliza somente os mecanismos genéricos que forem extraíveis sem alterar ciclos vigentes. Seu manifesto próprio mede arquitetura com indicadores deter
+  - [SRC-S027 · L458–L469 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 8. Loop de aperfeiçoamento da arquitetura > 8.3. Tipos de mudança e autoridade](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s027)
+    - Assuntos: mudança, após, tipos, autoridade, promover, consumidores, jurídica, revisão
+    - Trecho-guia: Documento de consulta sobre 8.3. Tipos de mudança e autoridade.
+  - [SRC-S028 · L470–L473 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 8. Loop de aperfeiçoamento da arquitetura > 8.4. Monitoramento e rollback](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s028)
+    - Assuntos: rollback, monitoramento, toda, promoção, registra, versão, hash, casos
+    - Trecho-guia: Toda promoção registra versão, hash, casos de evidência, testes, aprovador, data e janela de observação. O rollback é automático somente para falhas técnicas objetivas previamente definidas; regressão jurídica bloqueia e exige decisão humana.
+  - [SRC-S029 · L474–L475 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 9. Contratos e artefatos novos ou alterados](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s029)
+    - Assuntos: contratos, artefatos, novos, alterados
+    - Trecho-guia: Documento de consulta sobre 9. Contratos e artefatos novos ou alterados.
+  - [SRC-S030 · L476–L485 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 9. Contratos e artefatos novos ou alterados > 9.1. Novos contratos](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s030)
+    - Assuntos: schema, json, novos, contratos, post_protocol_return, protocol_evidence, document_comparison, learning_candidate
+    - Trecho-guia: postprotocolreturn.schema.json protocolevidence.schema.json documentcomparison.schema.json learningcandidate.schema.json architecturecandidate.schema.json, pertencente à linhagem AR-Architecture
+  - [SRC-S031 · L486–L498 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 9. Contratos e artefatos novos ou alterados > 9.2. Extensões compatíveis](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s031)
+    - Assuntos: json, schema, extensões, compatíveis, quando, gates, primeiro, f10_delivery_integrity
+    - Trecho-guia: f10deliveryintegrity.schema.json: expor o artefato-base exato; f10humandiffclassification.schema.json: locadores, impacto, confiança, protocolo, versões e decisão; phasecontractsn4/F10.json: tornar obrigatório o ramo pós-protocolo quando houver retorno elegível, sem bloquear o fe
+  - [SRC-S032 · L499–L502 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 9. Contratos e artefatos novos ou alterados > 9.3. Regra temporal importante](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s032)
+    - Assuntos: regra, temporal, importante, fechamento, demanda, entrega, escritório, continua
+    - Trecho-guia: O fechamento da demanda por entrega ao escritório continua válido. O ramo pós-protocolo é uma obrigação de aprendizado posterior e possui estado próprio. A ausência de retorno humano não reabre artificialmente o trabalho já entregue por Igor, mas permanece visível como postProtoc
+  - [SRC-S033 · L503–L515 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 10. Controles operacionais concretos](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s033)
+    - Assuntos: não, controles, operacionais, concretos, envia, nunca, identidade, gmail
+    - Trecho-guia: 1. Gmail será somente leitura; o loop não envia mensagens. 2. Anexos e diffs integrais ficam em pasta local ignorada pelo Git; teste objetivo impede rastreamento acidental. 3. Logs guardam IDs, hashes, contagens e reason codes, não trechos. 4. Documento recebido é tratado como da
+  - [SRC-S034 · L516–L535 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 11. Modos de falha e recuperação](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s034)
+    - Assuntos: falha, recuperação, hash, humana, produção, modos, e-mail, não
+    - Trecho-guia: Documento de consulta sobre 11. Modos de falha e recuperação.
+  - [SRC-S035 · L536–L537 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 12. Testes e verificação](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s035)
+    - Assuntos: testes, verificação
+    - Trecho-guia: Documento de consulta sobre 12. Testes e verificação.
+  - [SRC-S036 · L538–L574 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 12. Testes e verificação > 12.1. Diagrama de cobertura](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s036)
+    - Assuntos: integração, negativo, golden, promoção, diagrama, cobertura, anexo, caso
+    - Trecho-guia: Documento de consulta sobre 12.1. Diagrama de cobertura.
+  - [SRC-S037 · L575–L598 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 12. Testes e verificação > 12.2. Suítes mínimas](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s037)
+    - Assuntos: testes, teste, golden, suítes, mínimas, caso, origem, estrutural
+    - Trecho-guia: testes unitários de nomenclatura, hashing, idempotência e resolução; testes de contrato de todos os schemas; golden jurídico de caso com origem ativa e golden estrutural de CASO-15 Campos; CASO-04 somente como poison/estrutura, marcada como origem revogada, nunca como referência 
+  - [SRC-S038 · L599–L611 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 12. Testes e verificação > 12.3. Critérios de aceite do produto](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s038)
+    - Assuntos: não, critérios, aceite, produto, canários, nenhum, anexo, caso
+    - Trecho-guia: 1. Em todos os retornos históricos localizáveis e canários de ambiguidade, nenhum anexo é ligado ao caso errado. 2. Reexecução não cria duplicata. 3. Todo relatório identifica hashes e artefato-base. 4. Nenhum caso usa PEÇA PROTOCOLADA sem estado de evidência compatível. 5. Mudan
+  - [SRC-S039 · L612–L613 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s039)
+    - Assuntos: roadmap, implementação
+    - Trecho-guia: Documento de consulta sobre 13. Roadmap de implementação.
+  - [SRC-S040 · L614–L618 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Pré-onda. Estabilizar W0 arquitetural](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s040)
+    - Assuntos: pré-onda, estabilizar, arquitetural, package, saída, romper, ciclo, validator
+    - Trecho-guia: Saída: romper o ciclo package ↔ validator já priorizado na arquitetura viva. Gate: zero SCC, testes de package/N4 verdes e artefatos equivalentes.
+  - [SRC-S041 · L619–L623 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 0. Vocabulário, contratos e pilotos](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s041)
+    - Assuntos: onda, vocabulário, contratos, pilotos, saídas, adr, cause, layer
+    - Trecho-guia: Saídas: ADR, cause/layer/scope/promotionStage, ARTIFACTSPECS, catálogo, gerador, schemas, reason codes, nomenclatura, eventos e fixtures. Gate: catálogos coerentes, enums fail-closed, gates em shadow e golden jurídico sem origem revogada.
+  - [SRC-S042 · L624–L628 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 1. Isolamento local, event store e idempotência](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s042)
+    - Assuntos: onda, isolamento, local, event, store, idempotência, git, saídas
+    - Trecho-guia: Saídas: exclusões Git, teste git ls-files, eventos postprotocol, projeção e chaves de conteúdo/evidência. Gate: nenhuma escrita inteira concorrente de FORJASTATE.json; corrida falha por revisão.
+  - [SRC-S043 · L629–L634 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 2. Matcher endurecido e captura em shadow](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s043)
+    - Assuntos: matcher, endurecido, onda, captura, shadow, zero, saídas, gmail
+    - Trecho-guia: Saídas: matcher Gmail/gestão existente endurecido, vault imutável e manifestos. Modo: detecta e simula destino; não renomeia casos reais. Gate: todos os retornos históricos localizáveis + canário CASO-14, zero pareamento incorreto e zero duplicação.
+  - [SRC-S044 · L635–L639 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 3. Evidência e nomenclatura](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s044)
+    - Assuntos: onda, evidência, nomenclatura, saídas, verificador, protocolo, pasta, canônica
+    - Trecho-guia: Saídas: verificador de protocolo, pasta canônica e transição atômica de nome. Gate: casos declarados, verificados, ambíguos e conflitantes cobertos.
+  - [SRC-S045 · L640–L644 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 4. Comparador multicamada](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s045)
+    - Assuntos: onda, comparador, multicamada, saídas, extratores, docx, pdf, alinhamento
+    - Trecho-guia: Saídas: extratores DOCX/PDF, alinhamento, JSON canônico e Markdown. Gate: DOCX×DOCX antes de DOCX×PDF; goldens com carimbo; OCR só na última subonda; mutações materiais e revisão humana de precisão/recall.
+  - [SRC-S046 · L645–L649 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 5. Aprendizado controlado](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s046)
+    - Assuntos: onda, aprendizado, controlado, saídas, builder, candidatos, fila, revisão
+    - Trecho-guia: Saídas: builder de candidatos, fila de revisão, atualização derivada de aprendizados e modelos. Gate: nenhuma autopromoção ampla; rejeição e proveniência preservadas.
+  - [SRC-S047 · L650–L654 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 6. Painel e operação automática](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s047)
+    - Assuntos: onda, painel, operação, automática, gmail, saídas, job, recorrente
+    - Trecho-guia: Saídas: job recorrente, reason codes, estados sanitizados e alertas acionáveis. Gate: confirmar antes qual agendador e conta Gmail estão vivos; falha de Gmail degrada o ramo sem afetar a esteira principal.
+  - [SRC-S048 · L655–L659 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 7. Loop arquitetural descritivo](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s048)
+    - Assuntos: onda, loop, arquitetural, descritivo, saídas, architecture_candidate, ar_arch_manifest, json
+    - Trecho-guia: Saídas: architecturecandidate, ARARCHMANIFEST.json, ADR candidata, worktree, indicadores determinísticos, canários, revisão independente e rollback ensaiado. Gate: atingir estudodescritivo; promoção permanece decisão humana fora do AR até existir sealed prospectivo próprio.
+  - [SRC-S049 · L660–L665 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 13. Roadmap de implementação > Onda 8. Backfill seguro](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s049)
+    - Assuntos: onda, backfill, seguro, saídas, inventário, retornos, históricos, conhecidos
+    - Trecho-guia: Saídas: inventário de retornos históricos conhecidos. Regra: preservar nomes atuais; criar aliases/manifests, não reorganizar acervo em massa. Gate: cada item é verificado, declarado ou ambíguo; nenhum “protocolado” por inferência.
+  - [SRC-S050 · L666–L681 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 14. Ordem concreta de implementação por arquivo](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s050)
+    - Assuntos: criar, ordem, concreta, implementação, arquivo, atualizar, vault, testes
+    - Trecho-guia: 1. Concluir W0 package ↔ validator. 2. Atualizar ARTIFACTSPECS, catálogo, gerador, schemas, FORJASPECMANIFEST.json e contratos F10. 3. Isolar vault/diff do Git e criar testes de rastreamento. 4. Implementar eventos postprotocol com expectedrevision. 5. Estender forjadeliveryinteg
+  - [SRC-S051 · L682–L694 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 15. Fora do escopo](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s051)
+    - Assuntos: fora, escopo, peças, protocolar, assinar, enviar, e-mail, automaticamente
+    - Trecho-guia: protocolar ou assinar peças; enviar e-mail automaticamente; declarar que um anexo foi protocolado sem evidência; usar embeddings/RAG para substituir a leitura integral da peça-modelo; treinar modelo com acervo privado sem contrato específico; promover regra jurídica por votação d
+  - [SRC-S052 · L695–L711 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 16. Decisões autônomas registradas](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s052)
+    - Assuntos: decisões, autônomas, registradas, criar, arquivo, preservar, original, json
+    - Trecho-guia: Documento de consulta sobre 16. Decisões autônomas registradas.
+  - [SRC-S053 · L712–L735 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 16. Decisões autônomas registradas > 16.1. Revisão adversarial independente](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s053)
+    - Assuntos: criar, revisão, adversarial, independente, foi, leitura, padrão, teste
+    - Trecho-guia: O plano v0.9 foi lido em modo somente leitura pelo Claude Code. O cliente confirmou o modelo canônico claude-opus-5, sessão bc24f6f9-0c8b-4f29-80de-d2b10fc03c57. O veredito foi REPROVAR a v0.9, preservando o eixo do produto.
+  - [SRC-S054 · L736–L744 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > GSTACK REVIEW REPORT](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s054)
+    - Assuntos: gstack, review, report, plano, revisão, revisor, execuções, estado
+    - Trecho-guia: Veredito final do plano: v0.9 reprovada; v1.0 corrigida e pronta para decisão de implementação.
+  - [SRC-S055 · L745–L759 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 17. Critério final de “concluído”](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s055)
+    - Assuntos: for, critério, final, concluído, peça, após, tiver, gerar
+    - Trecho-guia: O sistema estará realmente implantado quando uma peça real, recebida por e-mail após entrega da FORJA:
+  - [SRC-S056 · L760–L800 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 18. Estado de implementação em 29/07/2026](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s056)
+    - Assuntos: json, reports, estado, implementação, real, arquitetural, foram, prospectiva
+    - Trecho-guia: Os dez critérios acima foram exercitados em execução real e prospectiva:
+  - [SRC-S057 · L801–L829 · Plano do loop pós-protocolo e de autoaperfeiçoamento arquitetural da FORJA > 19. Fechamento operacional da execução](38_PLANO_LOOP_POS_PROTOCOLO_E_AUTOAPERFEICOAMENTO_ARQUITETURAL.md#src-s057)
+    - Assuntos: candidato, execução, status, promoted, decision, fechamento, operacional, regra
+    - Trecho-guia: A auditoria final encontrou e corrigiu uma inconsistência de estado que não afetava a regra ativa, mas enfraquecia sua representação: um candidato podia estar status=promoted e promotionStage=humanapproved enquanto conservava decision=pending. O contrato agora exige e persiste:
+
+### 4.44. Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind
+
+- **Arquivo preparado:** [39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md)
+- **Origem:** `39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md`
+- **Termos:** não, problema, van, aken, mckinsey, peça, the, doc, cap, casos, mais, mind
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s001)
+    - Assuntos: reforma, design, diagnóstico, van, aken, the, mckinsey, mind
+    - Trecho-guia: Documento: 39 Data: 2026-07-30 Autor: sessão Claude (primeira passada em Opus 5; revisão crítica na mesma sessão após troca para Fable 5 — ver §12) Status: estudo + plano de reforma. Não altera código nem contratos até decisão do Igor. Escopo: fases de exploração do problema (F2/
+  - [SRC-S002 · L9–L20 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > Fontes estudadas](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s002)
+    - Assuntos: fonte, fontes, estudadas, foi, van, aken, ocr, local
+    - Trecho-guia: O notebook 3003e19d (só o livro van Aken) não foi consultado: o OCR local é fonte superior, permite leitura verbatim e tem hash conferido.
+  - [SRC-S003 · L21–L46 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 1. Síntese executiva](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s003)
+    - Assuntos: não, casos, perguntas, van, aken, manda, gate, plano
+    - Trecho-guia: Três conclusões, em ordem de importância.
+  - [SRC-S004 · L47–L59 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 2. Por que o PSO-Pet morreu (e o que isso impõe a esta proposta)](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s004)
+    - Assuntos: não, mas, artefato, pso-pet, morreu, isso, impõe, esta
+    - Trecho-guia: 1. Sem elo bloqueante. Declarado "em sombra; não promove N4 nem cria bloqueio automático" (doc 14, cabeçalho). O F2A-100 nasceu com validador e ordem inviolável no CLAUDE.md e gate no contrato F2 — e rodou em 7 casos. 2. Sem invocação. forjapsopet.py existe e tem teste, mas nenhu
+  - [SRC-S005 · L60–L63 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 3. Destilação — van Aken](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s005)
+    - Assuntos: destilação, van, aken, ficou, fora, marco, doc, capturou
+    - Trecho-guia: Marco o que o doc 14 já capturou e o que ficou de fora. O que ficou de fora é onde está o ganho.
+  - [SRC-S006 · L64–L67 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 3. Destilação — van Aken > 3.1 Já capturado no doc 14 (manter, sem retrabalho)](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s006)
+    - Assuntos: capturado, doc, manter, retrabalho, requisitos, ciclo, fórmula, canônica
+    - Trecho-guia: Ciclo P0–P8; fórmula canônica da definição do problema; distinção resultado direto × intermediário × final; quatro categorias de requisitos; matriz qualitativa de alternativas sem probabilidade numérica; validação invertida (da solução para os requisitos); regra do "sem surpresa"
+  - [SRC-S007 · L68–L85 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 3. Destilação — van Aken > 3.2 Não capturado — as sete técnicas que faltam](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s007)
+    - Assuntos: problema, não, cap, meta, pode, tradução, quando, real
+    - Trecho-guia: (A) Problema real × problema de percepção × problema de meta (Monhemius, 1984 — cap. 5.3, "Validating the Business Problem"). Antes de diagnosticar causas, é preciso decidir se o problema existe. Problema de percepção: o dono do problema tem leitura inexata do sistema. Problema d
+  - [SRC-S008 · L86–L93 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 3. Destilação — van Aken > 3.3 Um achado conceitual que muda como pensar a peça](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s008)
+    - Assuntos: peça, redesenho, achado, conceitual, muda, pensar, primeiro, sistema
+    - Trecho-guia: Van Aken distingue primeiro redesenho (o sistema formal projetado pelo agente de mudança) e segundo redesenho (a apropriação pelos atores, que sempre adaptam à sua circunstância). E: em sistema social, sobre-especificar é danoso — ao contrário do domínio material, onde só desperd
+  - [SRC-S009 · L94–L95 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 4. Destilação — The McKinsey Mind](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s009)
+    - Assuntos: destilação, the, mckinsey, mind
+    - Trecho-guia: Documento de consulta sobre 4. Destilação — The McKinsey Mind.
+  - [SRC-S010 · L96–L117 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 4. Destilação — The McKinsey Mind > 4.1 As técnicas que valem](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s010)
+    - Assuntos: cap, não, hipótese, teste, antes, hoje, conclusão, cada
+    - Trecho-guia: (A) Hipótese inicial + Quick and Dirty Test (cap. 1, p. 15-23). Formula-se a conclusão mais provável antes da coleta massiva; para cada hipótese pergunta-se "quais premissas precisam ser verdadeiras para isto se sustentar?", e se qualquer premissa pode ser refutada em minutos, a 
+  - [SRC-S011 · L118–L129 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 4. Destilação — The McKinsey Mind > 4.2 O que rejeitar do McKinsey, e por quê](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s011)
+    - Assuntos: não, rejeitar, mckinsey, esforço, titular, entrevista, priorizar, mais
+    - Trecho-guia: Documento de consulta sobre 4.2 O que rejeitar do McKinsey, e por quê.
+  - [SRC-S012 · L130–L141 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 5. Onde os dois métodos se contradizem — e como alocar](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s012)
+    - Assuntos: diagnóstico, dois, van, aken, onde, métodos, contradizem, alocar
+    - Trecho-guia: Documento de consulta sobre 5. Onde os dois métodos se contradizem — e como alocar.
+  - [SRC-S013 · L142–L145 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s013)
+    - Assuntos: árvore, proposta, f2a-v2, divergência, forçada, questões, decisórias, igor
+    - Trecho-guia: Correção de rumo pedida pelo Igor (30/07): a primeira versão desta seção pulava direto para a árvore convergente e perdia o que as 100 perguntas tentavam garantir — a exploração do problema por todos os lados. O Igor está certo, e os dois livros o sustentam: van Aken separa a ori
+  - [SRC-S014 · L146–L155 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.0 Fase D — divergência com amplitude medida, não contada](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s014)
+    - Assuntos: não, pergunta, perguntas, ótica, conta, amplitude, vista, deve
+    - Trecho-guia: Substitui a cota "100 perguntas, 10 por ótica" por exigências que só a exploração real satisfaz e a cópia não:
+  - [SRC-S015 · L156–L161 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.0-bis Fase C — convergência](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s015)
+    - Assuntos: pergunta, fase, bis, convergência, não, saturação, ganho, sobre
+    - Trecho-guia: Toda pergunta válida da Fase D tem exatamente três destinos, e nenhum é silencioso: (a) entra como nó ou evidência de um ramo da árvore MECE sob a pergunta jurisdicional; (b) é podada com motivo + lastro (e relida pelo red team de F7); (c) vira bloqueio com consequência e rota de
+  - [SRC-S016 · L162–L175 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.1 Os nove elementos obrigatórios da convergência](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s016)
+    - Assuntos: não, elementos, tese, nove, obrigatórios, convergência, duas, ser
+    - Trecho-guia: Substituir FORJA-F2A-100-v1 por FORJA-F2A-TREE-v2 com as duas fases acima. Elementos da Fase C:
+  - [SRC-S017 · L176–L189 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.2 Como fica o gate](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s017)
+    - Assuntos: gate, fica, pelo, não, mesmo, nome, schema, exploration_100_complete
+    - Trecho-guia: exploration100complete sai. Entram:
+  - [SRC-S018 · L190–L198 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.3 Anti-degeneração: por que estes gates não viram a próxima cota](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s018)
+    - Assuntos: não, gates, cada, viram, cota, poda, pergunta, anti-degeneração
+    - Trecho-guia: Autocrítica obrigatória: metade dos gates acima é de presença (diagnosticstorypresent, rivalexplanationpresent, stopjustified), e gate de presença degenera pelo mesmo mecanismo da cota — o modelo escreve uma história boilerplate, uma rival de palha, uma frase de saturação, e pass
+  - [SRC-S019 · L199–L202 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.4 As 10 óticas não morrem — mudam de função](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s019)
+    - Assuntos: óticas, não, ótica, morrem, mudam, função, cota, elas
+    - Trecho-guia: Erro da primeira versão deste plano: descartar as óticas junto com a cota. As 10 óticas canônicas (mandato, fatos, prova, processo, direito, adversário, riscos, alternativas, quantificação, comunicação) são um bom checklist de cobertura — o problema nunca foram elas, foi a cota d
+  - [SRC-S020 · L203–L216 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 6. A proposta — F2A-v2: divergência forçada + árvore de questões decisórias > 6.5 Perfil por complexidade — seleção que não pode ser jogada](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s020)
+    - Assuntos: perfil, não, seleção, pode, peça, complexidade, ser, jogada
+    - Trecho-guia: Van Aken §13 já previa três perfis e nunca foram usados porque nada os selecionava. Aqui o perfil é escolhido em F2 e determina o gate — mas a seleção não pode ficar a critério do produtor, porque o produtor sempre terá incentivo a escolher "leve" para reduzir trabalho. Critérios
+  - [SRC-S021 · L217–L230 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 7. Reforma do design (F4/F5)](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s021)
+    - Assuntos: design, não, reforma, todas, van, aken, solução, antes
+    - Trecho-guia: Cinco mudanças, todas de van Aken, todas já descritas no doc 14 e nenhuma operacionalizada.
+  - [SRC-S022 · L231–L242 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 8. Ressalvas honestas](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s022)
+    - Assuntos: não, citação, documento, são, ressalvas, honestas, páginas, pode
+    - Trecho-guia: As páginas do McKinsey Mind não foram conferidas na fonte. Vêm do NotebookLM, que cita mas pode errar pincite — exatamente o modo de falha nº 4 da taxonomia de citação do upgrade U1. Antes de qualquer uso das páginas em documento que circule fora da fábrica, conferir no PDF. O co
+  - [SRC-S023 · L243–L268 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 9. Seleção final — o que aplicar, onde e o ganho esperado](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s023)
+    - Assuntos: baixo, van, aken, f2a, mckinsey, não, onde, ganho
+    - Trecho-guia: Ordenado por retorno sobre esforço.
+  - [SRC-S024 · L269–L284 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 10. Sequência de implementação](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s024)
+    - Assuntos: etapa, igor, schema, itens, determinação, sequência, implementação, nenhuma
+    - Trecho-guia: Três etapas. Nenhuma delas começa sem decisão do Igor.
+  - [SRC-S025 · L285–L292 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 11. Uma observação sobre a pergunta do Igor](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s025)
+    - Assuntos: mais, foi, menos, método, observação, sobre, pergunta, igor
+    - Trecho-guia: O pedido foi "formas mais elegantes e sofisticadas e que seriam mais eficientes para explorar o problema". A resposta dos dois livros é a mesma e é o oposto de sofisticação: explorar menos, mas com estrutura e com direito de matar cedo. As 100 perguntas são o método mais elaborad
+  - [SRC-S026 · L293–L307 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 12. Registro da segunda passada (revisão crítica na mesma sessão)](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s026)
+    - Assuntos: não, passada, revisão, mesma, cota, corrigido, segunda, sessão
+    - Trecho-guia: A pedido do Igor, o plano foi reanalisado adversarialmente após a primeira entrega. Quatro defeitos materiais encontrados e corrigidos — todos do mesmo tipo que o próprio plano censura nos outros:
+  - [SRC-S027 · L308–L311 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 13. Confronto com o estudo paralelo do GPT-5.6 Sol e consolidação](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s027)
+    - Assuntos: confronto, estudo, paralelo, gpt-5, sol, consolidação, dois, igor
+    - Trecho-guia: O Igor encomendou o mesmo estudo, em paralelo, ao GPT-5.6 Sol (39VANAKENMCKINSEYDIAGNOSTICOEDESIGNFORJA.md, 30/07 13:25). Os dois documentos foram produzidos sem contato — o confronto abaixo funciona como a revisão cruzada entre famílias que o §12 pedia, e a implementação deve pa
+  - [SRC-S028 · L312–L315 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 13. Confronto com o estudo paralelo do GPT-5.6 Sol e consolidação > 13.1 Convergência independente (adotar sem discussão)](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s028)
+    - Assuntos: convergência, independente, antes, adotar, discussão, famílias, hipótese, não
+    - Trecho-guia: As duas famílias chegaram sozinhas ao mesmo núcleo: problema como lacuna validada; pergunta decisiva governante; issue tree + hipótese inicial + rival + QDT com salvaguarda jurídica; work plan hipótese→teste→fonte; diagnostic story como gate F3→F4; requisitos congelados antes do 
+  - [SRC-S029 · L316–L324 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 13. Confronto com o estudo paralelo do GPT-5.6 Sol e consolidação > 13.2 O que o estudo do Sol tem de superior — incorporado a este plano](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s029)
+    - Assuntos: dele, superior, este, não, estudo, sol, tem, incorporado
+    - Trecho-guia: 1. Sementes como auditoria de omissão. As 100 sementes viram banco canônico que roda ao final da convergência como detector de ramo omitido; omissão material reabre a árvore. Superior à minha redução das óticas a checklist CE: reusa as perguntas concretas, não só as lentes. Entra
+  - [SRC-S030 · L325–L333 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 13. Confronto com o estudo paralelo do GPT-5.6 Sol e consolidação > 13.3 Onde o estudo do Sol falha — e este plano corrige](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s030)
+    - Assuntos: dele, plano, não, deste, onde, estudo, sol, falha
+    - Trecho-guia: 1. Descreve a especificação, não audita a produção. O §2.1 dele credita à F2A-100 virtudes ("impede lacunas silenciosas", "vincula respostas a supportIds") que os artefatos reais desmentem — a medição do §1 deste documento mostra a degeneração (100/100 answered, 1 valor distinto 
+  - [SRC-S031 · L334–L341 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 13. Confronto com o estudo paralelo do GPT-5.6 Sol e consolidação > 13.4 Desenho consolidado — três camadas](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s031)
+    - Assuntos: camada, sol, desenho, consolidado, três, camadas, plano, varredura
+    - Trecho-guia: 1. Camada D — divergência forçada (este plano, §6.0): varredura das 10 óticas com especificidade por âncora, geração congelada por hash antes das respostas, dissimilaridade entre pares, saturação declarada por ótica, cota de perspectiva adversarial. Piso numérico opcional em que 
+  - [SRC-S032 · L342–L344 · Reforma do diagnóstico e do design da FORJA — van Aken e The McKinsey Mind > 13. Confronto com o estudo paralelo do GPT-5.6 Sol e consolidação > 13.5 Efeito sobre a sequência do §10](39_METODO_DIAGNOSTICO_VAN_AKEN_MCKINSEY.md#src-s032)
+    - Assuntos: etapa, efeito, sobre, sequência, dele, pelo, ganha, campos
+    - Trecho-guia: A Etapa 1 ganha os campos problemFrame, hypothesisLedger (com QDT) e diagnosticStory no formato do Sol. A Etapa 2 incorpora o diagnosticTree tipado e a camada de auditoria de sementes, mantendo as pré-condições de governança e o fail-loud já registrados. A Etapa 3 absorve o §7.4 
+
+### 4.45. Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA
+
+- **Arquivo preparado:** [39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md)
+- **Origem:** `39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md`
+- **Termos:** não, deve, causas, problema, design, decisão, ganho, esperado, van, aken, jurídica, causal
+- **Blocos:**
+  - [SRC-S001 · L1–L7 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s001)
+    - Assuntos: van, aken, the, mckinsey, mind, seleção, aplicada, diagnóstico
+    - Trecho-guia: Data do estudo: 30/07/2026 Natureza: estudo metodológico e proposta de produto; não altera os contratos executáveis nesta entrega. Fontes primárias estudadas: Joan Ernst van Aken e Hans Berends, Problem Solving in Organizations: A Methodological Handbook for Business and Manageme
+  - [SRC-S002 · L8–L37 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 1. Decisão executiva](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s002)
+    - Assuntos: decisão, problema, foram, pesquisa, causal, executiva, não, deve
+    - Trecho-guia: A FORJA não deve abandonar as 100 perguntas. Deve retirar delas a função de arquitetura principal do raciocínio.
+  - [SRC-S003 · L38–L39 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 2. O que já existe e deve ser preservado](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s003)
+    - Assuntos: existe, deve, ser, preservado
+    - Trecho-guia: Documento de consulta sobre 2. O que já existe e deve ser preservado.
+  - [SRC-S004 · L40–L56 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 2. O que já existe e deve ser preservado > 2.1 Forças reais da F2-A atual](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s004)
+    - Assuntos: forças, reais, f2-a, atual, não, deve, ser, protocolo
+    - Trecho-guia: O protocolo FORJA-F2A-100-v1 já possui virtudes que os livros recomendariam:
+  - [SRC-S005 · L57–L69 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 2. O que já existe e deve ser preservado > 2.2 Limitações observadas no contrato vivo](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s005)
+    - Assuntos: não, contrato, perguntas, causal, limitações, observadas, vivo, evidência
+    - Trecho-guia: Documento de consulta sobre 2.2 Limitações observadas no contrato vivo.
+  - [SRC-S006 · L70–L71 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s006)
+    - Assuntos: melhor, van, aken
+    - Trecho-guia: Documento de consulta sobre 3. O melhor de Van Aken para a FORJA.
+  - [SRC-S007 · L72–L98 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.1 Definir o problema como lacuna de desempenho](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s007)
+    - Assuntos: problema, definir, lacuna, desempenho, não, situação, decisão, qual
+    - Trecho-guia: O problema não é o assunto do processo nem o pedido literal recebido. É a distância entre:
+  - [SRC-S008 · L99–L120 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.2 Tratar a entrada como problem mess](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s008)
+    - Assuntos: tratar, entrada, problem, mess, fatos, narrativa, tese, antes
+    - Trecho-guia: Antes de simplificar, o método reconhece o emaranhado de fatos, valores, interesses, versões e relações de poder.
+  - [SRC-S009 · L121–L149 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.3 Árvore de causa e efeito](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s009)
+    - Assuntos: causas, efeito, árvore, causa, tratar, decisão, van, aken
+    - Trecho-guia: Van Aken propõe organizar sintomas à direita e causas potenciais “rio acima”, sem tratar o primeiro desenho como prova.
+  - [SRC-S010 · L150–L169 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.4 Teoria como geradora de causas candidatas](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s010)
+    - Assuntos: teoria, causas, geradora, candidatas, literatura, não, explicações, acervo
+    - Trecho-guia: A literatura não entra apenas para ornamentar a peça. Ela ajuda a imaginar explicações que o acervo inicial não tornou visíveis.
+  - [SRC-S011 · L170–L186 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.5 Triangulação e validação](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s011)
+    - Assuntos: triangulação, validação, não, única, fonte, confirmação, causa, importante
+    - Trecho-guia: Uma causa importante não deve depender de uma única fala, um único OCR ou uma única leitura conceitual.
+  - [SRC-S012 · L187–L214 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.6 Diagnostic story](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s012)
+    - Assuntos: intervenção, explicação, deve, diagnostic, story, história, problema, causas
+    - Trecho-guia: O diagnóstico encerra quando é possível contar, em uma ou poucas frases, uma história que ligue:
+  - [SRC-S013 · L215–L236 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.7 Design por requisitos, não por inspiração](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s013)
+    - Assuntos: requisitos, design, não, inspiração, usuário, revisor, julgador, contorno
+    - Trecho-guia: Antes de redigir a solução, definir:
+  - [SRC-S014 · L237–L247 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.8 Solução conceitual antes do detalhamento](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s014)
+    - Assuntos: antes, detalhamento, outline, solução, conceitual, design, van, aken
+    - Trecho-guia: Van Aken diferencia o outline design do detalhamento. Na FORJA:
+  - [SRC-S015 · L248–L269 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.9 Alternativas, decisão multicritério e “advogado do diabo”](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s015)
+    - Assuntos: alternativas, decisão, multicritério, advogado, diabo, risco, não, design
+    - Trecho-guia: O design deve conter ao menos uma alternativa viável e ser testado por cenários e críticas.
+  - [SRC-S016 · L270–L284 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 3. O melhor de Van Aken para a FORJA > 3.10 Lógica CIMO](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s016)
+    - Assuntos: qual, lógica, cimo, solução, mecanismo, deve, cada, relevante
+    - Trecho-guia: C — Contexto: qual problema, órgão, fase, fatos, restrições e destinatário; I — Intervenção: qual tese, prova, pedido, visual ou sequência de atos; M — Mecanismo: por que isso deve alterar compreensão, cognição, ônus, incentivo ou decisão; O — Outcome: qual resultado observável e
+  - [SRC-S017 · L285–L286 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s017)
+    - Assuntos: melhor, the, mckinsey, mind
+    - Trecho-guia: Documento de consulta sobre 4. O melhor de The McKinsey Mind para a FORJA.
+  - [SRC-S018 · L287–L294 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.1 “O problema nem sempre é o problema”](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s018)
+    - Assuntos: problema, nem, sempre, diagnóstico, inicial, solicitante, entrada, não
+    - Trecho-guia: O diagnóstico inicial do solicitante é entrada, não conclusão.
+  - [SRC-S019 · L295–L313 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.2 Hipótese inicial como mapa, não como veredicto](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s019)
+    - Assuntos: hipótese, inicial, mapa, não, veredicto, ser, direção, coleta
+    - Trecho-guia: A hipótese inicial dá direção à coleta. Deve declarar quais premissas precisam ser verdadeiras e ser descartável diante de fatos contrários.
+  - [SRC-S020 · L314–L333 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.3 Árvores de questões e MECE](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s020)
+    - Assuntos: mece, deve, árvore, árvores, questões, ser, decisão, podem
+    - Trecho-guia: A questão governante é decomposta até folhas testáveis que determinam análises concretas.
+  - [SRC-S021 · L334–L352 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.4 Quick and Dirty Test com salvaguarda jurídica](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s021)
+    - Assuntos: quick, and, dirty, test, salvaguarda, jurídica, uso, prazo
+    - Trecho-guia: O teste rápido elimina hipóteses cujas premissas básicas já são falsas.
+  - [SRC-S022 · L353–L372 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.5 Plano de trabalho guiado por hipótese](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s022)
+    - Assuntos: qual, hipótese, será, plano, trabalho, guiado, decisão, ser
+    - Trecho-guia: qual questão será respondida; qual hipótese está sendo testada; qual análise será feita; quais fontes são necessárias; qual produto será gerado; quem é responsável; qual é a prioridade; qual resultado mudaria a decisão; quando parar.
+  - [SRC-S023 · L373–L386 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.6 80/20, “não ferver o oceano” e “e daí?”](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s023)
+    - Assuntos: não, ferver, oceano, daí, essas, heurísticas, servem, priorizar
+    - Trecho-guia: Essas heurísticas servem para priorizar esforço, não para reduzir rigor jurídico.
+  - [SRC-S024 · L387–L400 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.7 Sanity checks](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s024)
+    - Assuntos: sanity, checks, antes, conclusão, aceitar, magnitude, seria, necessária
+    - Trecho-guia: que magnitude seria necessária para isso importar? quão errada a premissa poderia estar antes de mudar a conclusão? o resultado é juridicamente possível? a tese resolve o problema ou apenas desloca o risco? o pedido é executável?
+  - [SRC-S025 · L401–L414 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.8 Entrevistas curtas e orientadas](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s025)
+    - Assuntos: entrevistas, curtas, orientadas, esperado, livro, recomenda, poucos, blocos
+    - Trecho-guia: O livro recomenda poucos blocos principais, preparação e sondagem. A FORJA já possui F2-B e limite de conforto.
+  - [SRC-S026 · L415–L422 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 4. O melhor de The McKinsey Mind para a FORJA > 4.9 Síntese indutiva e elevator test](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s026)
+    - Assuntos: síntese, indutiva, elevator, test, conclusão, vem, primeiro, seguida
+    - Trecho-guia: A conclusão vem primeiro, seguida das razões essenciais.
+  - [SRC-S027 · L423–L443 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 5. Novo modelo operacional proposto](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s027)
+    - Assuntos: novo, modelo, operacional, proposto, pesquisa, testes, mermaid, flowchart
+    - Trecho-guia: Não é necessário criar novas fases numeradas. As marcações A1–A3 podem ser blocos internos do protocolo F2-A v2.
+  - [SRC-S028 · L444–L445 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 6. Como substituir a rigidez das 100 perguntas sem perder cobertura](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s028)
+    - Assuntos: substituir, rigidez, perguntas, perder, cobertura
+    - Trecho-guia: Documento de consulta sobre 6. Como substituir a rigidez das 100 perguntas sem perder cobertura.
+  - [SRC-S029 · L446–L461 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 6. Como substituir a rigidez das 100 perguntas sem perder cobertura > 6.1 Papel futuro das cem sementes](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s029)
+    - Assuntos: cem, sementes, papel, futuro, tornam-se, banco, canônico, riscos
+    - Trecho-guia: banco canônico de riscos e ângulos; teste final de cobertura; fonte de perguntas candidatas; mecanismo para detectar ramo omitido.
+  - [SRC-S030 · L462–L474 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 6. Como substituir a rigidez das 100 perguntas sem perder cobertura > 6.2 Exploração adaptativa](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s030)
+    - Assuntos: exploração, adaptativa, formular, árvore, inicial, hipótese, ramo, quando
+    - Trecho-guia: 1. Executar varredura das dez óticas. 2. Formular a pergunta decisiva e a lacuna. 3. Construir a árvore inicial. 4. Formular hipótese inicial e melhor hipótese rival. 5. Aplicar QDT às premissas eliminatórias. 6. Pontuar cada ramo por materialidade, incerteza, impacto decisório e
+  - [SRC-S031 · L475–L489 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 6. Como substituir a rigidez das 100 perguntas sem perder cobertura > 6.3 Regra de parada](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s031)
+    - Assuntos: estão, não, regra, parada, decisão, diagnóstico, pode, encerrar
+    - Trecho-guia: O diagnóstico pode encerrar quando:
+  - [SRC-S032 · L490–L491 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 7. Alterações de contrato recomendadas para uma futura v2](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s032)
+    - Assuntos: alterações, contrato, recomendadas, futura
+    - Trecho-guia: Documento de consulta sobre 7. Alterações de contrato recomendadas para uma futura v2.
+  - [SRC-S033 · L492–L507 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 7. Alterações de contrato recomendadas para uma futura v2 > 7.1 F2QUESTIONTREE.json](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s033)
+    - Assuntos: json, f2questiontree, f2_question_tree, preservar, campos, acrescentar, presentedproblem, problemframe
+    - Trecho-guia: presentedProblem; problemFrame; problemMess; decisiveQuestion; issueTree; hypothesisLedger; diagnosticWorkplan; diagnosticStory; stopRule; coverageAudit; questionCountRationale.
+  - [SRC-S034 · L508–L523 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 7. Alterações de contrato recomendadas para uma futura v2 > 7.2 Gates F2](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s034)
+    - Assuntos: gates, exploration_100_complete, substituir, gate, substantivo, problem_gap_validated, decisive_question_defined, issue_tree_decision_complete
+    - Trecho-guia: Substituir exploration100complete como gate substantivo por:
+  - [SRC-S035 · L524–L535 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 7. Alterações de contrato recomendadas para uma futura v2 > 7.3 F3](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s035)
+    - Assuntos: reasoning_graph, deve, aceitar, relações, causais, tipadas, vínculos, hipótese
+    - Trecho-guia: O reasoninggraph deve aceitar relações causais tipadas e vínculos a:
+  - [SRC-S036 · L536–L561 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 7. Alterações de contrato recomendadas para uma futura v2 > 7.4 F4](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s036)
+    - Assuntos: fortalecer, artefatos, existentes, designrequirements, solutionconcepts, alternatives, selectioncriteria, tradeoffs
+    - Trecho-guia: Fortalecer os artefatos existentes com:
+  - [SRC-S037 · L562–L579 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 7. Alterações de contrato recomendadas para uma futura v2 > 7.5 F7 e F10](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s037)
+    - Assuntos: qual, f10, deve, causa, mecanismo, testar, premissas, hipótese
+    - Trecho-guia: premissas da hipótese; explicações rivais; coerência problema → causa → mecanismo → solução → pedido; aderência aos requisitos; cenários de falha.
+  - [SRC-S038 · L580–L606 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 8. Priorização das técnicas](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s038)
+    - Assuntos: não, f2-a, reduz, priorização, pesquisa, árvore, técnicas, aplicar
+    - Trecho-guia: Documento de consulta sobre 8. Priorização das técnicas.
+  - [SRC-S039 · L607–L618 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 9. O que não deve ser importado literalmente](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s039)
+    - Assuntos: não, deve, ser, importado, literalmente, hipótese, artefatos, mece
+    - Trecho-guia: 1. MECE absoluto: o direito contém sobreposição legítima, subsidiariedade e fundamentos concorrentes. 2. 80/20 em verificação: não vale para citação, prazo, competência, número, data, valor, anexo ou identidade. 3. “Direcionalmente correto” em alto risco: aceitável para priorizar
+  - [SRC-S040 · L619–L635 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 10. Ganhos esperados e como medi-los](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s040)
+    - Assuntos: menos, melhor, ganhos, pedido, esperados, medi-los, hipóteses, pesquisa
+    - Trecho-guia: Os ganhos abaixo são hipóteses de produto, não resultados já medidos.
+  - [SRC-S041 · L636–L646 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 11. Piloto recomendado antes de alterar o contrato canônico](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s041)
+    - Assuntos: piloto, recomendado, antes, alterar, contrato, canônico, executar, sombra
+    - Trecho-guia: Executar em sombra, sem substituir v1:
+  - [SRC-S042 · L647–L660 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 12. Seleção final](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s042)
+    - Assuntos: seleção, final, decisão, profundidade, medida, apenas, sete, mudanças
+    - Trecho-guia: Se apenas sete mudanças puderem ser feitas, a ordem recomendada é:
+  - [SRC-S043 · L661–L663 · Van Aken + The McKinsey Mind — seleção aplicada ao diagnóstico e ao design da FORJA > 13. Nota de proveniência](39_VAN_AKEN_MCKINSEY_DIAGNOSTICO_E_DESIGN_FORJA.md#src-s043)
+    - Assuntos: nota, proveniência, técnicas, capítulos, faixas, páginas, foram, reconstruídos
+    - Trecho-guia: As técnicas, capítulos e faixas de páginas foram reconstruídos por consulta às fontes primárias dentro dos notebooks fornecidos. O estudo foi confrontado com os arquivos vivos da FORJA. Para citação acadêmica literal, publicação externa ou transcrição, a passagem e a paginação de
+
+### 4.46. Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA
+
+- **Arquivo preparado:** [40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md)
+- **Origem:** `40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md`
+- **Termos:** não, revisão, json, decisão, onda, plano, execução, diagnóstico, map, sombra, auditoria, pso-pet
+- **Blocos:**
+  - [SRC-S001 · L1–L24 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s001)
+    - Assuntos: plano, final, execução, diagnóstico, map, revisão, consolidado, design
+    - Trecho-guia: Revisão final: 05/08/2026 — incorporada a auditoria sistêmica de prontidão, a revisão Fable 5 e a correção executável dos achados A3/A5/A7/A10/A12: despacho explícito sem fallback, invalidação por hash, compatibilidade de fachada, bloqueio visual sem falso-verde e revisão entre f
+  - [SRC-S002 · L25–L51 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 1. Decisão executiva](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s002)
+    - Assuntos: não, obrigatória, map, auditoria, cem, perguntas, decisão, executiva
+    - Trecho-guia: Adotar o desenho de três camadas proposto na revisão cruzada, com dez decisões de fechamento:
+  - [SRC-S003 · L52–L53 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s003)
+    - Assuntos: auditoria, crítica, recebida
+    - Trecho-guia: Documento de consulta sobre 2. Auditoria crítica da v4 recebida.
+  - [SRC-S004 · L54–L66 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida > 2.1 O que a v4 acertou](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s004)
+    - Assuntos: correto, não, acertou, são, aprofundou, plano, poda, precisa
+    - Trecho-guia: Documento de consulta sobre 2.1 O que a v4 acertou.
+  - [SRC-S005 · L67–L83 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida > 2.2 Correções factuais e de formulação](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s005)
+    - Assuntos: fato, artefatos, perguntas, correções, factuais, formulação, não, json
+    - Trecho-guia: Os números usados na v4 ficaram desatualizados durante a própria rodada:
+  - [SRC-S006 · L84–L104 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida > 2.3 “O PSO-Pet morreu” precisa de qualificação](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s006)
+    - Assuntos: pso-pet, está, nenhum, morreu, precisa, qualificação, não, json
+    - Trecho-guia: aparece no FORJASPECMANIFEST.json; é documentado em DOCUMENTACAOTECNICA.md; possui método, template, schema, exemplo, validador, benchmark e testes; possui auditoria retrospectiva e indicadores vetoriais.
+  - [SRC-S007 · L105–L117 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida > 2.4 Sombra não é o problema; sombra sem execução é](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s007)
+    - Assuntos: sombra, não, problema, execução, pelo, modo, proteção, correta
+    - Trecho-guia: O modo sombra é a proteção correta para uma reforma de contrato. O erro anterior foi não haver:
+  - [SRC-S008 · L118–L127 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida > 2.5 A revisão cruzada intelectual não equivale automaticamente ao gate formal](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s008)
+    - Assuntos: revisão, não, gate, cruzada, automaticamente, intelectual, equivale, formal
+    - Trecho-guia: O confronto entre as duas famílias é uma revisão cruzada real do plano e aumenta sua robustez. Entretanto:
+  - [SRC-S009 · L128–L142 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 2. Auditoria crítica da v4 recebida > 2.6 Pontos da v4 que precisavam de refinamento](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s009)
+    - Assuntos: pontos, precisavam, refinamento, problema, congelar, perguntas, antes, respostas
+    - Trecho-guia: Documento de consulta sobre 2.6 Pontos da v4 que precisavam de refinamento.
+  - [SRC-S010 · L143–L159 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 3. Princípios de arquitetura](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s010)
+    - Assuntos: não, princípios, arquitetura, nova, hipótese, fonte, conceito, artefato
+    - Trecho-guia: 1. Um conceito, um artefato canônico. Não manter PSOCASE.json e os JSONs N4 dizendo as mesmas coisas. 2. Produção nova consome a saída anterior. Campo não consumido é documentação, não fluxo. 3. Gate de presença não prova qualidade. Lastro, relações, contraste e revisão dão subst
+  - [SRC-S011 · L160–L206 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 4. Fluxo consolidado](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s011)
+    - Assuntos: falha, rota, altera, fase, fluxo, consolidado, problem, novas
+    - Trecho-guia: Não se criam novas fases numeradas. D0–D2 e C0–C3 são blocos internos de F2.
+  - [SRC-S012 · L207–L208 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s012)
+    - Assuntos: camada, divergência, forçada
+    - Trecho-guia: Documento de consulta sobre 5. Camada D — divergência forçada.
+  - [SRC-S013 · L209–L223 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada > 5.1 Objetivo](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s013)
+    - Assuntos: objetivo, mapear, emaranhado, antes, escolher, explicação, atos, cronologia
+    - Trecho-guia: Mapear o emaranhado antes de escolher a explicação:
+  - [SRC-S014 · L224–L246 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada > 5.2 As dez óticas permanecem](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s014)
+    - Assuntos: dez, óticas, permanecem, perguntas, cada, atuais, continuam, pauta
+    - Trecho-guia: As óticas atuais continuam como pauta de varredura:
+  - [SRC-S015 · L247–L270 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada > 5.3 Congelamento por lotes](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s015)
+    - Assuntos: lote, lotes, congelamento, não, respondido, nova, congelar, toda
+    - Trecho-guia: Não congelar toda a exploração uma única vez. Usar lotes:
+  - [SRC-S016 · L271–L287 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada > 5.4 Especificidade](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s016)
+    - Assuntos: especificidade, deve, pergunta, material, apontar, menos, seguintes, ato
+    - Trecho-guia: Pergunta material deve apontar para ao menos um dos seguintes:
+  - [SRC-S017 · L288–L299 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada > 5.5 Novidade, não apenas dissimilaridade](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s017)
+    - Assuntos: apenas, novidade, não, dissimilaridade, nova, novo, cada, pergunta
+    - Trecho-guia: caseAnchorIds; branchId; expectedDecisionEffect; uncertaintyReduced; noveltyReason.
+  - [SRC-S018 · L300–L310 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 5. Camada D — divergência forçada > 5.6 Perspectivas forçadas](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s018)
+    - Assuntos: pergunta, perspectivas, forçadas, formulada, testa, casos, completos, intensivos
+    - Trecho-guia: Em casos completos ou intensivos, a divergência deve conter:
+  - [SRC-S019 · L311–L312 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s019)
+    - Assuntos: camada, convergência, estruturada
+    - Trecho-guia: Documento de consulta sobre 6. Camada C — convergência estruturada.
+  - [SRC-S020 · L313–L350 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.1 problemFrame](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s020)
+    - Assuntos: problemframe, problemtype, real, perception_unconfirmed, goal_unfeasible_in_current_route, mixed, undetermined, campos
+    - Trecho-guia: real; perceptionunconfirmed; goalunfeasibleincurrentroute; mixed; undetermined.
+  - [SRC-S021 · L351–L373 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.2 Pergunta decisiva](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s021)
+    - Assuntos: pergunta, decisiva, text, não, exigir, apenas, resposta, binária
+    - Trecho-guia: Não exigir apenas resposta binária. Tipos permitidos:
+  - [SRC-S022 · L374–L398 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.3 hypothesisLedger](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s022)
+    - Assuntos: hypothesisledger, hipótese, sinais, teste, cada, registra, enunciado, premissas
+    - Trecho-guia: enunciado; premissas necessárias; sinais favoráveis; sinais contrários; explicação rival; teste rápido; teste aprofundado; histórico de revisão; estado.
+  - [SRC-S023 · L399–L428 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.4 QDT jurídico](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s023)
+    - Assuntos: qdt, jurídico, usar, primeiro, premissas, eliminatórias, prazo, competência
+    - Trecho-guia: Usar primeiro para premissas eliminatórias:
+  - [SRC-S024 · L429–L454 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.5 issueTree](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s024)
+    - Assuntos: issuetree, crosslinks, cada, registra, text, nodeid, parentid, nodetype
+    - Trecho-guia: diagnóstica: por que a situação existe; decisória: o que precisa ser verdadeiro para a rota funcionar; solução: que intervenções podem atuar.
+  - [SRC-S025 · L455–L467 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.6 Destino obrigatório de cada pergunta](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s025)
+    - Assuntos: pergunta, destino, cada, obrigatório, divergente, precisa, terminar, answered_and_mapped
+    - Trecho-guia: Cada pergunta divergente precisa terminar como:
+  - [SRC-S026 · L468–L483 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.7 diagnosticWorkplan](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s026)
+    - Assuntos: diagnosticworkplan, cada, folha, material, produz, item, questão, hipótese
+    - Trecho-guia: Cada folha material produz item com:
+  - [SRC-S027 · L484–L496 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 6. Camada C — convergência estruturada > 6.8 Ciclo de vida canônico dos conceitos](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s027)
+    - Assuntos: não, cria, estado, mesmo, ciclo, vida, canônico, conceitos
+    - Trecho-guia: Cada consumidor declara a versão aceita e resolve o conteúdo pela fonte canônica. Cópia de conveniência pode existir apenas como projeção derivada, com sourceArtifactId, sourceObjectId e hash.
+  - [SRC-S028 · L497–L498 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 7. F3 — pesquisa e grafo causal](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s028)
+    - Assuntos: pesquisa, grafo, causal
+    - Trecho-guia: Documento de consulta sobre 7. F3 — pesquisa e grafo causal.
+  - [SRC-S029 · L499–L544 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 7. F3 — pesquisa e grafo causal > 7.1 Não criar um diagnosticTree paralelo](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s029)
+    - Assuntos: não, criar, diagnostictree, paralelo, supported_candidate_cause, relações, status, scope
+    - Trecho-guia: symptom; candidatecause; supportedcandidatecause; constraint; rivalexplanation; mechanism; consequence; hypothesis; test; evidence; interventionlever.
+  - [SRC-S030 · L545–L570 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 7. F3 — pesquisa e grafo causal > 7.2 Saturação auditável](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s030)
+    - Assuntos: saturação, auditável, não, usar, stopdecision, ramo, text, branchid
+    - Trecho-guia: nenhuma questão material sem destino; rival principal testada; nova coleta não altera árvore, rota ou requisito; bloqueios residuais estão explícitos; revisor independente aceita a parada.
+  - [SRC-S031 · L571–L589 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 7. F3 — pesquisa e grafo causal > 7.3 História diagnóstica](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s031)
+    - Assuntos: história, diagnóstica, fica, topo, próprio, f3_reasoning_graph, json, text
+    - Trecho-guia: Fica no topo do próprio F3REASONINGGRAPH.json:
+  - [SRC-S032 · L590–L591 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 8. Camada A — auditoria das cem sementes](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s032)
+    - Assuntos: camada, auditoria, cem, sementes
+    - Trecho-guia: Documento de consulta sobre 8. Camada A — auditoria das cem sementes.
+  - [SRC-S033 · L592–L615 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 8. Camada A — auditoria das cem sementes > 8.1 Função](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s033)
+    - Assuntos: função, depois, fechar, provisoriamente, árvore, executar, cem, sementes
+    - Trecho-guia: Depois de fechar provisoriamente a árvore, executar as cem sementes do protocolo atual contra ela.
+  - [SRC-S034 · L616–L624 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 8. Camada A — auditoria das cem sementes > 8.2 Regra de reabertura](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s034)
+    - Assuntos: regra, reabertura, material_omission, cria, nova, pergunta, novo, lote
+    - Trecho-guia: cria nova pergunta em novo lote; reabre o ramo; invalida a parada; registra qual decisão poderia mudar.
+  - [SRC-S035 · L625–L630 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 8. Camada A — auditoria das cem sementes > 8.3 O que deixa de existir](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s035)
+    - Assuntos: deixa, existir, exigência, responder, cem, itens, tivessem, mesmo
+    - Trecho-guia: exigência de responder cem itens como se tivessem o mesmo valor; dez respostas artificiais por ótica; contagem como principal prova de profundidade.
+  - [SRC-S036 · L631–L643 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 8. Camada A — auditoria das cem sementes > 8.4 O que permanece](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s036)
+    - Assuntos: permanece, dez, óticas, cem, sementes, proveniência, supportids, bloqueios
+    - Trecho-guia: as dez óticas; as cem sementes; proveniência; supportIds; bloqueios materiais; duas ou mais soluções quando o perfil exigir; handoff; revisão humana.
+  - [SRC-S037 · L644–L659 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 9. F2-B — consulta humana já existe e deve ser reutilizada](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s037)
+    - Assuntos: humana, f2-b, consulta, existe, deve, ser, reutilizada, fato
+    - Trecho-guia: selectconsultationquestions; validatedialectic; limite de conforto de doze perguntas; autoridade humana; política de silêncio; proibição de default para fato, prova e autorização; recibo humano de envio; ledger de decisões; distinção entre declaração do escritório e fato provado.
+  - [SRC-S038 · L660–L681 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 9. F2-B — consulta humana já existe e deve ser reutilizada > 9.1 Aprimoramento](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s038)
+    - Assuntos: aprimoramento, acrescentar, prioridade, estruturada, text, priorityfactors, materiality, uncertainty
+    - Trecho-guia: Acrescentar prioridade estruturada:
+  - [SRC-S039 · L682–L683 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s039)
+    - Assuntos: design, usando, artefatos, existentes
+    - Trecho-guia: Documento de consulta sobre 10. F4 — design usando os artefatos existentes.
+  - [SRC-S040 · L684–L696 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes > 10.1 F4THESISMATURITY.json](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s040)
+    - Assuntos: json, f4thesismaturity, f4_thesis_maturity, reutilizar, hipóteses, sobreviveram, maturidade, melhor
+    - Trecho-guia: hipóteses que sobreviveram a F3; maturidade; melhor objeção; explicações rivais; decisão Helena/Cícero; gatilhos de ativação ou abandono.
+  - [SRC-S041 · L697–L711 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes > 10.2 F4CASEACCEPTANCETESTS.json](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s041)
+    - Assuntos: json, condições, antes, texto, f4caseacceptancetests, f4_case_acceptance_tests, reutilizar, requisitos
+    - Trecho-guia: Reutilizar para requisitos verificáveis:
+  - [SRC-S042 · L712–L723 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes > 10.3 F4DECISIONFACTORMAP.json](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s042)
+    - Assuntos: json, f4decisionfactormap, f4_decision_factor_map, reutilizar, critérios, escolha, trade-offs, fatores
+    - Trecho-guia: critérios de escolha; trade-offs; fatores decisórios do destinatário; consequências de cada rota; riscos residuais.
+  - [SRC-S043 · L724–L760 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes > 10.4 F4SIGNATUREBRIEF.json](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s043)
+    - Assuntos: json, decisão, f4signaturebrief, f4_signature_brief, contém, pergunta, decisiva, rotas
+    - Trecho-guia: pergunta decisiva; rotas; teses; âncoras candidatas; melhor objeção; decisão; decisão humana; motherSentence; cobertura de famílias de tese.
+  - [SRC-S044 · L761–L764 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes > 10.5 F4COVERAGEMATRIX.json](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s044)
+    - Assuntos: json, f4coveragematrix, f4_coverage_matrix, preservar, sua, função, cobertura, peça
+    - Trecho-guia: Preservar sua função de cobertura da peça e ligação a parágrafos. A auditoria das sementes fica em F2; não sobrecarregar a matriz F4 com duas semânticas diferentes.
+  - [SRC-S045 · L765–L793 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 10. F4 — design usando os artefatos existentes > 10.6 CIMO em dois momentos](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s045)
+    - Assuntos: mecanismo, contexto, cimo, dois, momentos, design, cimoid, intervenção
+    - Trecho-guia: cimoId; contexto; intervenção; mecanismo; resultado direto; limites.
+  - [SRC-S046 · L794–L795 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s046)
+    - Assuntos: memória, auditável, peça, produto, obrigatório, f10
+    - Trecho-guia: Documento de consulta sobre 11. Memória Auditável da Peça — produto obrigatório de F9/F10.
+  - [SRC-S047 · L796–L828 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.1 Decisão de produto](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s047)
+    - Assuntos: json, html, peça, map, não, produto, advogado, f9_memoria_auditavel_peca
+    - Trecho-guia: Toda nova peça encaminhada ao advogado para revisão deve ser acompanhada por uma Memória Auditável da Peça — MAP. Ela integra o próprio bundle de entrega ao advogado; não é relatório opcional nem arquivo produzido depois do envio.
+  - [SRC-S048 · L829–L853 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.2 O que “memória” significa](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s048)
+    - Assuntos: quais, qual, não, foi, foram, memória, significa, verificável
+    - Trecho-guia: A MAP registra a trilha verificável do trabalho, não um despejo de raciocínio privado do modelo.
+  - [SRC-S049 · L854–L892 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.3 Fronteira de proveniência](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s049)
+    - Assuntos: fronteira, proveniência, map, pesquisa, provenancetype, precisa, chegar, decisão
+    - Trecho-guia: A MAP é construída somente a partir de artefatos canônicos promovidos e de registros operacionais autorizados:
+  - [SRC-S050 · L893–L926 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.4 Arquitetura de leitura em três níveis](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s050)
+    - Assuntos: nível, arquitetura, leitura, três, níveis, precisa, peça, gates
+    - Trecho-guia: O HTML deve servir simultaneamente ao advogado que precisa revisar em minutos e ao auditor que precisa reconstruir o processo.
+  - [SRC-S051 · L927–L949 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.5 Conteúdo mínimo obrigatório](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s051)
+    - Assuntos: não, conteúdo, versão, mínimo, obrigatório, bloco, verificável, hashes
+    - Trecho-guia: Bloco sem incidência não desaparece. Deve constar como notapplicable, com justificativa verificável.
+  - [SRC-S052 · L950–L960 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.6 Diagramas obrigatórios](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s052)
+    - Assuntos: diagramas, obrigatórios, html, deve, incorporar, dependência, externa, fluxo
+    - Trecho-guia: O HTML deve incorporar, sem dependência externa:
+  - [SRC-S053 · L961–L1011 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.7 Ciclo de geração e invalidação](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s053)
+    - Assuntos: map, peça, html, f10, entrega, não, registra, recibo
+    - Trecho-guia: gerar somente depois de congelar o hash da peça selecionada e concluir F8; produtor da MAP e revisor não podem ser a mesma execução; qualquer mudança em fonte, diagnóstico, design, peça, auditoria ou render marcado em sourceHashes muda o status para stale; MAP stale, parcialmente
+  - [SRC-S054 · L1012–L1039 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.8 Gates bloqueantes](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s054)
+    - Assuntos: gates, bloqueantes, entrega, construção, pacote, audit_memory_canonical_json_valid, audit_memory_html_derived_from_canonical_json, audit_memory_bound_to_selected_petition_hash
+    - Trecho-guia: auditmemorycanonicaljsonvalid; auditmemoryhtmlderivedfromcanonicaljson; auditmemoryboundtoselectedpetitionhash; auditmemorysourcehashescurrent; auditmemorymethodstepsevidenced; auditmemorymaterialconclusionstraceable; auditmemorycorrectionsandlimitationsdisclosed; auditmemorydiag
+  - [SRC-S055 · L1040–L1066 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.9 Portabilidade do HTML](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s055)
+    - Assuntos: html, arquivo, não, portabilidade, ordem, política, interno, sigilo
+    - Trecho-guia: Expurgo de 04/08/2026 (ordem do Igor). Esta seção trazia uma política de classificação da informação — attorneyworkproduct, allowlist de exportação, restrição de destinatário por recibo humano, retenção, minimização de dados pessoais. Saiu inteira. São petições judiciais e uso in
+  - [SRC-S056 · L1067–L1081 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.10 Uso pelo advogado e circuito de correção](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s056)
+    - Assuntos: correção, pelo, advogado, uso, circuito, conclusão, pode, regra
+    - Trecho-guia: Cada conclusão, risco, pergunta aberta e correção recebe ID estável. O advogado pode devolver observações referindo-se a esses IDs.
+  - [SRC-S057 · L1082–L1091 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.11 Compatibilidade e cutover](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s057)
+    - Assuntos: cutover, map, não, compatibilidade, após, exige, pode, entrega
+    - Trecho-guia: entregas históricas continuam legíveis sem reconstrução retroativa obrigatória; reenvio ou reabertura material após o cutover exige MAP; durante o piloto, a MAP roda em sombra e não pode atrasar a entrega vigente; após promoção, toda nova entrega ao advogado exige a peça + HTML n
+  - [SRC-S058 · L1092–L1119 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 11. Memória Auditável da Peça — produto obrigatório de F9/F10 > 11.12 Contrato do bundle de revisão](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s058)
+    - Assuntos: bundle, peça, deliveryrole, releaseboundary, selecionada, contrato, revisão, selectedartifactid
+    - Trecho-guia: O modelo vigente de um único selectedArtifactId permanece como alias da peça selecionada para compatibilidade, mas F9/F10 passam a validar um bundle versionado:
+  - [SRC-S059 · L1120–L1159 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 12. Recursos existentes: decisão de integração](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s059)
+    - Assuntos: json, reusar, map, trilha, não, usar, versionar, ampliar
+    - Trecho-guia: Documento de consulta sobre 12. Recursos existentes: decisão de integração.
+  - [SRC-S060 · L1160–L1161 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 13. Contrato proposto para F2QUESTIONTREE.json](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s060)
+    - Assuntos: contrato, proposto, json, f2questiontree, f2_question_tree
+    - Trecho-guia: Documento de consulta sobre 13. Contrato proposto para F2QUESTIONTREE.json.
+  - [SRC-S061 · L1162–L1167 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 13. Contrato proposto para F2QUESTIONTREE.json > 13.1 Versão](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s061)
+    - Assuntos: versão, text, protocolversion, forja-f2a-diagnostic-v2
+    - Trecho-guia: Documento de consulta sobre 13.1 Versão.
+  - [SRC-S062 · L1168–L1188 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 13. Contrato proposto para F2QUESTIONTREE.json > 13.2 Blocos](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s062)
+    - Assuntos: blocos, text, presentedproblem, problemmess, explorationbatches, questions, problemframe, decisivequestion
+    - Trecho-guia: Documento de consulta sobre 13.2 Blocos.
+  - [SRC-S063 · L1189–L1201 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 13. Contrato proposto para F2QUESTIONTREE.json > 13.3 Compatibilidade](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s063)
+    - Assuntos: não, compatibilidade, caso, continua, legível, auditável, casos, históricos
+    - Trecho-guia: v1 continua legível e auditável em casos históricos; novos ciclos, depois do cutover, exigem v2; protocolo ausente ou diferente falha fechado; novo caso usando v1 após o corte recebe erro explícito; caso histórico v1 não precisa ser reescrito; consumidores devem declarar quais ve
+  - [SRC-S064 · L1202–L1203 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s064)
+    - Assuntos: gates, substantivos
+    - Trecho-guia: Documento de consulta sobre 14. Gates substantivos.
+  - [SRC-S065 · L1204–L1219 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos > F2](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s065)
+    - Assuntos: problem_frame_evidenced, problem_route_validated_or_reframed, divergent_batches_hash_bound, material_questions_have_destinations, initial_and_rival_hypotheses_testable, quick_tests_grounded, issue_tree_decision_complete, workplan_bound_to_sources
+    - Trecho-guia: problemframeevidenced; problemroutevalidatedorreframed; divergentbatcheshashbound; materialquestionshavedestinations; initialandrivalhypothesestestable; quicktestsgrounded; issuetreedecisioncomplete; workplanboundtosources; humanquestionsselectiveandauthorized; seedbankaudited; n
+  - [SRC-S066 · L1220–L1227 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos > F3](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s066)
+    - Assuntos: causal_relations_grounded, rival_explanation_discriminated_or_blocked, actionable_causes_separated_from_boundaries, diagnostic_story_coherent, stop_decision_independently_reviewed
+    - Trecho-guia: causalrelationsgrounded; rivalexplanationdiscriminatedorblocked; actionablecausesseparatedfromboundaries; diagnosticstorycoherent; stopdecisionindependentlyreviewed.
+  - [SRC-S067 · L1228–L1236 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos > F4](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s067)
+    - Assuntos: design_requirements_frozen, alternatives_substantively_distinct, selected_route_mechanism_explained, boundary_conditions_preserved, outline_approved_before_detailing, human_route_decision_recorded
+    - Trecho-guia: designrequirementsfrozen; alternativessubstantivelydistinct; selectedroutemechanismexplained; boundaryconditionspreserved; outlineapprovedbeforedetailing; humanroutedecisionrecorded.
+  - [SRC-S068 · L1237–L1244 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos > F7](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s068)
+    - Assuntos: pruned_branches_adversarially_rechecked, hypothesis_revision_history_consistent, problem_cause_mechanism_solution_request_chain_passed, requirements_satisfied_or_blocked, failure_conditions_retested
+    - Trecho-guia: prunedbranchesadversariallyrechecked; hypothesisrevisionhistoryconsistent; problemcausemechanismsolutionrequestchainpassed; requirementssatisfiedorblocked; failureconditionsretested.
+  - [SRC-S069 · L1245–L1255 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos > F9](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s069)
+    - Assuntos: audit_memory_canonical_json_valid, audit_memory_html_derived_and_hash_bound, audit_memory_traceability_complete, audit_memory_privacy_passed, audit_memory_independent_review_passed, audit_memory_release_boundary_passed, package_contains_petition_and_audit_memory, protocol_export_excludes_audit_memory
+    - Trecho-guia: auditmemorycanonicaljsonvalid; auditmemoryhtmlderivedandhashbound; auditmemorytraceabilitycomplete; auditmemoryprivacypassed; auditmemoryindependentreviewpassed; auditmemoryreleaseboundarypassed; packagecontainspetitionandauditmemory; protocolexportexcludesauditmemory.
+  - [SRC-S070 · L1256–L1263 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 14. Gates substantivos > F10](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s070)
+    - Assuntos: f10, delivered_required_bundle_members_match_package, audit_memory_delivery_evidence_verified, audit_memory_management_sync_confirmed
+    - Trecho-guia: deliveredrequiredbundlemembersmatchpackage; auditmemorydeliveryevidenceverified; auditmemorymanagementsyncconfirmed.
+  - [SRC-S071 · L1264–L1283 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 15. Defesas anti-Goodhart](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s071)
+    - Assuntos: não, defesas, anti-goodhart, poda, precisa, revisão, pode, mede
+    - Trecho-guia: 1. Lote congelado antes da resposta. 2. Veredicto, poda e classificação exigem lastro. 3. Diversidade lexical é canário, não verdade. 4. Novidade é medida por âncora, ramo, incerteza e decisão. 5. Rival precisa de teste discriminante. 6. Saturação precisa de ledger e revisão. 7. 
+  - [SRC-S072 · L1284–L1301 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 16. Perfis de complexidade](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s072)
+    - Assuntos: perfil, perfis, não, protocolável, material, complexidade, leve, completo
+    - Trecho-guia: perfil é calculado por dados do manifesto e classificação; o produtor não escolhe livremente; rebaixamento exige motivo, autorização humana e registro; peça protocolável contenciosa nunca cai automaticamente no perfil leve. a MAP é obrigatória em todos os perfis depois do cutover
+  - [SRC-S073 · L1302–L1303 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s073)
+    - Assuntos: plano, final, execução
+    - Trecho-guia: Documento de consulta sobre 17. Plano final de execução.
+  - [SRC-S074 · L1304–L1331 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > 17.1 Estado inicial e limites](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s074)
+    - Assuntos: shadow, não, estado, execução, produção, pilot_blocking, default_on, decisão
+    - Trecho-guia: A execução começa com produção v1 preservada e dois modos independentes:
+  - [SRC-S075 · L1332–L1346 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > 17.2 Arquitetura física escolhida](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s075)
+    - Assuntos: não, raiz, arquitetura, física, escolhida, forja_runtime, novos, serviços
+    - Trecho-guia: Novos serviços não aprofundam a raiz plana. Usar o pacote interno forjaruntime/, que não conflita com a pasta documental existente FORJA/:
+  - [SRC-S076 · L1347–L1363 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > 17.3 Sequência e dependências](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s076)
+    - Assuntos: não, onda, map, diagnóstico, sequência, dependências, baseline, sombra
+    - Trecho-guia: Ondas 2A e 2B podem ser executadas em paralelo depois da Onda 1, em branches/worktrees separados. Nenhuma outra sobreposição é autorizada.
+  - [SRC-S077 · L1364–L1381 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda G0 — baseline GitHub obrigatório](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s077)
+    - Assuntos: branch, merge, main, remoto, onda, baseline, github, obrigatório
+    - Trecho-guia: 1. confirmar repositório privado, owner, colaboradores, convites, remote e branch-base; 2. atualizar origin/main até o commit-base aprovado ou registrar bloqueio objetivo de transporte/tamanho; 3. criar branch codex/forja-v3-g0-governanca a partir do origin/main confirmado; 4. pu
+  - [SRC-S078 · L1382–L1399 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 0 — contrato executável e baseline](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s078)
+    - Assuntos: baseline, fixtures, onda, contrato, executável, registrar, este, plano
+    - Trecho-guia: 1. registrar este plano no FORJASPECMANIFEST.json; 2. calcular o baseline no início da onda, sem congelar no código a contagem histórica de 11 artefatos; 3. preservar hashes dos contratos F2/F3/F4/F7/F9/F10, schemas, policy v2 e uma entrega de referência sanitizada; 4. formar trê
+  - [SRC-S079 · L1400–L1422 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 1 — fundação comum e fail-closed](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s079)
+    - Assuntos: pacote, flag, map, versão, flags, off, fundação, json
+    - Trecho-guia: 1. implementar despacho explícito de protocolVersion em F2, recusando versão desconhecida; 2. concluir P-J04 para os artefatos atingidos: ARTIFACTCATALOG.json declara schema, owner, validator, flag, fase, versões e política; 3. fazer ARTIFACTSPECS, VALIDATORS e FLAGFILES consumir
+  - [SRC-S080 · L1423–L1432 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 2A — Diagnóstico v2 em sombra](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s080)
+    - Assuntos: modo, onda, sombra, f2-b, fachada, forja_reasoning, diagnóstico, pergunta
+    - Trecho-guia: Mudanças: implementar lotes congelados, problemFrame, pergunta decisiva, hypothesisLedger, QDT, issueTree, destinos, workplan, auditoria das sementes e loops F2-B. Preservar arquivo F2QUESTIONTREE.json, leitor v1, supportIds, F2-B e headless vigente. Congelar, durante o piloto, a
+  - [SRC-S081 · L1433–L1442 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 2B — MAP em sombra](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s081)
+    - Assuntos: map, html, json, sombra, hash, stale, peça, onda
+    - Trecho-guia: Mudanças: construir JSON canônico por allowlist, hash unidirecional, HTML autocontido, sanitização, diagramas derivados, revisão independente e estado stale. Não integrar ainda o HTML à entrega real. O JSON deve registrar sourceArtifactId, sourceArtifactSha256, packageId, mapSha2
+  - [SRC-S082 · L1443–L1460 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 3 — integração vertical e bundle](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s082)
+    - Assuntos: bundle, json, peça, pacote, onda, integração, vertical, ampliar
+    - Trecho-guia: 1. ampliar F3REASONINGGRAPH.json e o ciclo F2 → F3 → F4 com referências, não cópias; 2. portar regra por regra do PSO-Pet para artefato/validador canônico, sempre com teste equivalente; 3. ampliar signature brief, testes de aceitação e fatores decisórios; 4. implementar FORJA-LAW
+  - [SRC-S083 · L1461–L1462 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 4 — piloto em dois estágios](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s083)
+    - Assuntos: onda, piloto, dois, estágios
+    - Trecho-guia: Documento de consulta sobre Onda 4 — piloto em dois estágios.
+  - [SRC-S084 · L1463–L1466 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 4 — piloto em dois estágios > Estágio T0 — funcional](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s084)
+    - Assuntos: estágio, funcional, executar, três, fixtures, sanitizadas, perfis, leve
+    - Trecho-guia: Executar as três fixtures sanitizadas dos perfis leve, completo e intensivo, todas as mutações maliciosas e todos os controles benignos. T0 prova funcionamento e falha segura; não autoriza promoção.
+  - [SRC-S085 · L1467–L1497 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 4 — piloto em dois estágios > Estágio T1 — promoção](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s085)
+    - Assuntos: não, pelo, menos, zero, estágio, promoção, candidata, perfil
+    - Trecho-guia: Usar no mínimo 12 casos novos ou replays selados não usados para desenvolver a candidata, com quatro por perfil. Se a amostra mínima não existir, o resultado é inconclusive, não aprovação.
+  - [SRC-S086 · L1498–L1507 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 5A — cutover exclusivo da MAP](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s086)
+    - Assuntos: map, onda, advogado, f10, não, cutover, exclusivo, todos
+    - Trecho-guia: Pré-condições: todos os critérios MAP da Onda 4; crossfamilyreviewverified; recibo do advogado sobre usabilidade; threat model aprovado; política FORJA-LEGAL-RELEASE-v3 preserva todos os gates v2 e acrescenta bundle/neverProtocol; rollback testado.
+  - [SRC-S087 · L1508–L1517 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 5B — cutover exclusivo do Diagnóstico v2](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s087)
+    - Assuntos: onda, não, cutover, exclusivo, diagnóstico, decisão, novo, caso
+    - Trecho-guia: Pré-condições: critérios v2 da Onda 4; crossfamilyreviewverified; nenhuma regressão P0/P1; decisão expressa do Igor superando a ordem de 14/07; atualização coordenada de AGENTS.md e CLAUDE.md.
+  - [SRC-S088 · L1518–L1521 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > Onda 6 — deprecação controlada](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s088)
+    - Assuntos: onda, deprecação, controlada, descontinuar, pso_case, json, somente, depois
+    - Trecho-guia: Descontinuar PSOCASE.json somente depois que cada regra útil possuir destino canônico, fixture equivalente, teste e telemetria. Remover shim apenas após inventário de consumidores igual a zero. Regenerar Graphify e Archify, validar visualmente todos os mapas afetados e registrar 
+  - [SRC-S089 · L1522–L1538 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 17. Plano final de execução > 17.4 Definition of Done de toda onda](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s089)
+    - Assuntos: onda, são, definition, done, toda, arquivos, não, termina
+    - Trecho-guia: 1. arquivos previstos e arquivos realmente alterados são confrontados no diff; 2. schemas/JSON são parseáveis e registries não divergem; 3. testes focados, suíte afetada, mutações maliciosas e controles benignos passam; 4. comportamento é observado no modo/runtime pertinente, não
+  - [SRC-S090 · L1539–L1540 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 18. Testes e mutações obrigatórios](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s090)
+    - Assuntos: testes, mutações, obrigatórios
+    - Trecho-guia: Documento de consulta sobre 18. Testes e mutações obrigatórios.
+  - [SRC-S091 · L1541–L1583 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 18. Testes e mutações obrigatórios > Mutações maliciosas](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s091)
+    - Assuntos: map, depois, material, pacote, fonte, não, html, mas
+    - Trecho-guia: 1. cem perguntas com uma única âncora; 2. perguntas semanticamente iguais com palavras trocadas; 3. lote alterado depois de respondido; 4. diagnosticStory genérica; 5. rival de palha; 6. poda sem fonte; 7. QDT sem suporte; 8. hipótese rejeitada reintroduzida sem histórico; 9. sat
+  - [SRC-S092 · L1584–L1606 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 18. Testes e mutações obrigatórios > Controles benignos](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s092)
+    - Assuntos: map, caso, histórico, controles, benignos, única, realmente, não
+    - Trecho-guia: 1. repetição legítima de terminologia jurídica; 2. uma única fonte primária suficiente; 3. ótica realmente não aplicável; 4. rota única justificada em perfil leve; 5. nova evidência criando lote adicional; 6. reenquadramento de problema de meta para veículo adequado; 7. requisito
+  - [SRC-S093 · L1607–L1630 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 18. Testes e mutações obrigatórios > Suítes atingidas](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s093)
+    - Assuntos: novo, suítes, atingidas, testes, test_forja_exploracao_100, test_forja_assinatura_lite, test_forja_assinatura_visual, test_forja_n3_visual
+    - Trecho-guia: testforjaexploracao100.py; testforjaassinaturalite.py; testforjaassinaturavisual.py; testforjan3visual.py; testforjan4.py; testforjapsopet.py, até sua migração; testforjalastro.py; testforjaautoresearch.py; novo testforjaprotocoldispatch.py; novo testforjaartifactregistry.py; nov
+  - [SRC-S094 · L1631–L1657 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 19. Métricas do piloto](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s094)
+    - Assuntos: tempo, métricas, piloto, métrica, decisão, não, rota, map
+    - Trecho-guia: Os indicadores PSO-Pet PDI, DCI, AQI, RTI, MSI, VSI, CDI e LVI continuam úteis como vetor. Não produzir média geral. Os limiares de promoção são os critérios cumulativos da Onda 4; métrica sem denominador, braço comparável ou regra de decisão é apenas descritiva.
+  - [SRC-S095 · L1658–L1688 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 20. Ganhos esperados](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s095)
+    - Assuntos: mais, menos, ganhos, esperados, redução, menor, advogado, aprendizado
+    - Trecho-guia: redução do preenchimento sem valor decisório; eliminação mais cedo de teses inviáveis; menor pesquisa ornamental; melhor separação entre sintoma, causa, condição e mecanismo; menos perguntas ao advogado que o acervo poderia responder; maior coerência entre problema, prova, tese, 
+  - [SRC-S096 · L1689–L1690 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 21. Decisões de produto](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s096)
+    - Assuntos: decisões, produto
+    - Trecho-guia: Documento de consulta sobre 21. Decisões de produto.
+  - [SRC-S097 · L1691–L1694 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 21. Decisões de produto > Decisão já recomendável](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s097)
+    - Assuntos: decisão, recomendável, onda, iniciar, passagem, shadow, ocorre, somente
+    - Trecho-guia: Iniciar a Onda 0. A passagem a shadow ocorre somente depois da fundação fail-closed da Onda 1 e de seus testes.
+  - [SRC-S098 · L1695–L1700 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 21. Decisões de produto > Decisão reservada ao corte](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s098)
+    - Assuntos: decisão, reservada, corte, cem, perguntas, permanecem, critérios, onda
+    - Trecho-guia: Se os critérios da Onda 4 passarem, emitir determinação expressa:
+  - [SRC-S099 · L1701–L1717 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 21. Decisões de produto > Decisão reservada ao corte > CONGELADO em 05/08/2026 — decisão unânime do conselho sob delegação do Igor](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s099)
+    - Assuntos: não, três, gate, decisão, conselho, igor, piloto, deste
+    - Trecho-guia: O v2 não é rota, é estudo. Enquanto este bloco existir, FORJA-F2A-DIAGNOSTIC-v2 não entra em piloto, sombra ou produção, e a cota de cem perguntas do FORJA-F2A-100-v1 continua sendo o regime único para caso novo. Quem ler a determinação acima fora deste contexto está lendo uma in
+  - [SRC-S100 · L1718–L1727 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 21. Decisões de produto > Decisão sobre PSO-Pet](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s100)
+    - Assuntos: decisão, sobre, pso-pet, não, remover, forja_pso_pet, imediatamente, primeiro
+    - Trecho-guia: Não remover forjapsopet.py imediatamente. Primeiro:
+  - [SRC-S101 · L1728–L1733 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 21. Decisões de produto > Decisão sobre a Memória Auditável da Peça](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s101)
+    - Assuntos: decisão, sobre, memória, auditável, peça, não, adotar, desde
+    - Trecho-guia: Adotar desde já o contrato e preparar o piloto em sombra. A obrigatoriedade de anexação entra no cutover exclusivo 5A após validação de integridade, usabilidade e invalidação; não depende da decisão sobre as cem perguntas. Depois do corte, ausência, obsolescência ou não entrega d
+  - [SRC-S102 · L1734–L1755 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 22. Seleção final](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s102)
+    - Assuntos: final, método, seleção, precisa, onze, mudanças, maior, retorno
+    - Trecho-guia: As onze mudanças de maior retorno são:
+  - [SRC-S103 · L1756–L1767 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 23. Proveniência e limites](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s103)
+    - Assuntos: não, foi, map, proveniência, limites, foram, este, plano
+    - Trecho-guia: As técnicas acadêmicas foram estudadas nas fontes primárias indicadas nos planos 39. A produção real foi examinada somente por métricas sanitizadas; este plano não reproduz conteúdo jurídico de casos. As relações arquiteturais foram confirmadas no grafo, nos contratos e no código
+  - [SRC-S104 · L1768–L1769 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 24. Prontidão para início](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s104)
+    - Assuntos: prontidão, início
+    - Trecho-guia: Documento de consulta sobre 24. Prontidão para início.
+  - [SRC-S105 · L1770–L1775 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 24. Prontidão para início > 24.1 Veredito](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s105)
+    - Assuntos: veredito, onda, github, cutover, antes, decisão, hold, até
+    - Trecho-guia: GO para a Onda G0. HOLD para a Onda 0 até o baseline GitHub estar publicado e verificado. NO-GO para qualquer cutover antes dos gates próprios das Ondas 5A/5B.
+  - [SRC-S106 · L1776–L1785 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 24. Prontidão para início > 24.2 Baseline técnico observado em 03/08/2026](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s106)
+    - Assuntos: baseline, técnico, observado, estado, cem, perguntas, vigente, fachada
+    - Trecho-guia: fachada viva: 26 casos, nenhum estado inválido e gates humanos preservados; estado sanitizado: 52 diretórios, 13 árvores F2, 11 com cem perguntas e zero PSOCASE.json; regressão focada ampliada atual: 105 testes e 6 subtestes aprovados em exploração, N4, pacote, PSO-Pet e arquitet
+  - [SRC-S107 · L1786–L1818 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 24. Prontidão para início > 24.3 Primeiro work item executável](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s107)
+    - Assuntos: branch, merge, primeiro, work, item, executável, implementação, json
+    - Trecho-guia: Depois de G0, executar W0-01-BASELINE-CONTRACT exatamente como definido na Onda 0. A equipe inicia a implementação sem reinterpretar o plano, alterar produção ou aguardar a decisão de cutover.
+  - [SRC-S108 · L1819–L1820 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s108)
+    - Assuntos: governança, github, branches, commits, prs, merges
+    - Trecho-guia: Documento de consulta sobre 25. Governança GitHub, branches, commits, PRs e merges.
+  - [SRC-S109 · L1821–L1832 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.1 Objetivo e invariantes](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s109)
+    - Assuntos: branch, invariantes, objetivo, não, repositório, main, merge, github
+    - Trecho-guia: GitHub é a trilha de integração da próxima versão, não backup indiscriminado do workspace jurídico. Invariantes:
+  - [SRC-S110 · L1833–L1856 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.2 Estado GitHub observado em 03/08/2026](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s110)
+    - Assuntos: estado, github, igormorais123, observado, fabricas-de-melhoria-de-peticoes, main, consultar, antes
+    - Trecho-guia: Esse snapshot é evidência de G0 parcialmente executada, não estado permanente. Antes de qualquer nova tentativa, consultar o hash remoto; “Everything up-to-date” após disconnect não prova sincronização.
+  - [SRC-S111 · L1857–L1873 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.3 Estratégia de branches](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s111)
+    - Assuntos: codex, squash, merge, onda, estratégia, branches, main, arquivos
+    - Trecho-guia: 2A e 2B só correm em paralelo se a matriz de ownership provar zero sobreposição de arquivos. Caso ambas precisem alterar manifesto, catálogo, config ou registry, a alteração compartilhada fica na Onda 1 ou a integração é serializada.
+  - [SRC-S112 · L1874–L1896 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.4 Política de commits](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s112)
+    - Assuntos: git, commit, commits, add, política, feat, gerados, usar
+    - Trecho-guia: Commits pequenos, funcionais e revisáveis, com mensagem convencional:
+  - [SRC-S113 · L1897–L1915 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.5 Contrato do pull request](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s113)
+    - Assuntos: contrato, pull, request, onda, não, quando, todo, contém
+    - Trecho-guia: 1. objetivo e onda; 2. base/head e dependências; 3. arquivos intencionais e exclusões; 4. contratos/schemas alterados; 5. evidência antes/depois; 6. testes executados, quantidade e resultado; 7. mutações e controles benignos atingidos; 8. riscos P0/P1/P2; 9. rollback executável; 
+  - [SRC-S114 · L1916–L1937 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.6 Checks e política de merge](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s114)
+    - Assuntos: merge, checks, política, testes, quando, git, diff, arquivos
+    - Trecho-guia: parser de JSON/schemas; testes focados e suíte afetada; testes de arquitetura/registry quando contratos mudarem; git diff --check; varredura de segredo e arquivos proibidos; gate Efesto APROVADA; branch atualizada sobre origin/main e sem conflito; diff remoto do PR igual ao escop
+  - [SRC-S115 · L1938–L1955 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 25. Governança GitHub, branches, commits, PRs e merges > 25.7 Tratamento do backlog remoto atual](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s115)
+    - Assuntos: atual, não, privado, repositório, engine, grandes, tratamento, backlog
+    - Trecho-guia: O push acumulado não deve ser repetido como um pacote monolítico. Plano de saneamento G0:
+  - [SRC-S116 · L1956–L1961 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 26. Trilhas transversais de qualidade — visual e lastro documental (integração de 03/08/2026)](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s116)
+    - Assuntos: qualidade, plano, visual, não, trilhas, transversais, lastro, documental
+    - Trecho-guia: O escopo declarado deste plano é o eixo do raciocínio: F2-A/F2-B, F3, F4, F5, F7, F8, F9, F10. Em 03/08/2026 duas frentes de qualidade correram em paralelo e passaram a produzir efeito em fases que este plano governa. Elas entram aqui por referência, com estado real, e não por có
+  - [SRC-S117 · L1962–L1989 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 26. Trilhas transversais de qualidade — visual e lastro documental (integração de 03/08/2026) > 26.1 Trilha V — assinatura visual](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s117)
+    - Assuntos: visual, peça, não, antes, assinatura, ordem, igor, entrada
+    - Trecho-guia: Ordem de origem: determinação do Igor de 30/07/2026, inviolável — nenhuma peça sai da FORJA sem elementos visuais completos; sem atalho, sem waiver, sem exceção para produto interno.
+  - [SRC-S118 · L1990–L2011 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 26. Trilhas transversais de qualidade — visual e lastro documental (integração de 03/08/2026) > 26.2 Trilha L — lastro documental](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s118)
+    - Assuntos: fonte, não, plano, prevalente, lastro, dois, caso, gate
+    - Trecho-guia: Origem: dois incidentes irmãos. CASO-23 (26/07) — lastro aparente de proposição, que gerou o FORJA-LASTRO-v1. CASO-04 (02/08, e-mail do Fábio de 03/08, thread 19fbfa33e7ce7df9) — ausência de fonte prevalente e lastro ausente de número, que gera a v2.
+  - [SRC-S119 · L2012–L2015 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 26. Trilhas transversais de qualidade — visual e lastro documental (integração de 03/08/2026) > 26.3 Relação com as ondas G0–6](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s119)
+    - Assuntos: ondas, trilha, relação, trilhas, não, onda, evidência, econômico
+    - Trecho-guia: As duas trilhas são independentes do baseline GitHub G0 e não estão bloqueadas pelo HOLD da Onda 0. A trilha V já opera em produção e a trilha L foi implementada e revalidada como extensão aditiva do módulo existente, com regressões e evidência próprias. Isso não promove a trilha
+  - [SRC-S120 · L2016–L2026 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 26. Trilhas transversais de qualidade — visual e lastro documental (integração de 03/08/2026) > 26.4 O princípio comum, que é o aprendizado de 03/08](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s120)
+    - Assuntos: gate, não, visual, rota, quem, princípio, comum, aprendizado
+    - Trecho-guia: As duas frentes chegaram, por caminhos independentes, às mesmas quatro regras de arquitetura de gate. Elas valem para qualquer gate futuro da FORJA e são a razão de as trilhas estarem no plano geral, e não em anexos:
+  - [SRC-S121 · L2027–L2032 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 27. Revisão adversarial Fable 5 do plano completo (03/08/2026)](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s121)
+    - Assuntos: revisão, fable, plano, adversarial, completo, código, antes, revisor
+    - Trecho-guia: Revisão do plano inteiro, 26 seções, executada pelo Fable 5 com ordem expressa de conferir cada afirmação no código antes de afirmar estado. Devolveu doze achados. Todos passaram por triagem contra o código antes de entrar aqui, porque a regra da casa vale também para o revisor: 
+  - [SRC-S122 · L2033–L2041 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 27. Revisão adversarial Fable 5 do plano completo (03/08/2026) > 27.1 Achados que sobreviveram à verificação](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s122)
+    - Assuntos: não, onda, visual, plano, diz, caso, durante, piloto
+    - Trecho-guia: Documento de consulta sobre 27.1 Achados que sobreviveram à verificação.
+  - [SRC-S123 · L2042–L2051 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 27. Revisão adversarial Fable 5 do plano completo (03/08/2026) > 27.2 Achados descartados na verificação, com o motivo](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s123)
+    - Assuntos: não, plano, achados, descartados, verificação, motivo, revisor, rota
+    - Trecho-guia: Documento de consulta sobre 27.2 Achados descartados na verificação, com o motivo.
+  - [SRC-S124 · L2052–L2055 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 27. Revisão adversarial Fable 5 do plano completo (03/08/2026) > 27.3 O que esta revisão ensina sobre revisão](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s124)
+    - Assuntos: revisão, revisor, esta, ensina, sobre, quatro, plano, aproveitamento
+    - Trecho-guia: Aproveitamento de quatro achados úteis em doze. Os dois mais citados pelo revisor eram nossos, devolvidos; um afirmava ausência de arquivo existente; um cobrava resposta que o plano já dava. Isso não desqualifica o método — os quatro que sobraram são reais e um deles, o A3, é uma
+  - [SRC-S125 · L2056–L2065 · Plano consolidado final v3 — execução do diagnóstico, design e MAP da FORJA > 28. Aplicação das correções após a revisão Fable 5 (05/08/2026)](40_PLANO_CONSOLIDADO_DIAGNOSTICO_E_DESIGN_FORJA_V2.md#src-s125)
+    - Assuntos: revisão, aplicação, correções, após, plano, não, onda, agora
+    - Trecho-guia: As correções abaixo foram incorporadas ao corpo operacional do plano, e não apenas registradas como intenção na seção 27:
+
+### 4.47. Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2)
+
+- **Arquivo preparado:** [41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md)
+- **Origem:** `41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md`
+- **Termos:** não, plano, fonte, revisão, prevalente, incidente, ledger, execução, foi, gate, rota, documental
+- **Blocos:**
+  - [SRC-S001 · L1–L26 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2)](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s001)
+    - Assuntos: revisão, não, plano, ledger, real, fonte, diabob, passo
+    - Trecho-guia: Data: 03/08/2026 (noite) · revisão de integração: 03/08/2026 · revisão adversarial Opus 5 (Efesto, Helena, Diabob): 03/08/2026 · fechamento técnico Codex/Opus: 04/08/2026 · revalidação Diabob/Codex: 04/08/2026 Autor: Efesto (planejamento) · revisão de integração ao acervo pela se
+  - [SRC-S002 · L27–L41 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 1. Contexto e incidente que origina o plano](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s002)
+    - Assuntos: plano, documental, fábio, não, fonte, erro, contexto, incidente
+    - Trecho-guia: E-mail do Fábio Medina Osório de 03/08/2026, 08:49 (Gmail 19fc6d0294b5ec85, thread 19fbfa33e7ce7df9): as faixas econômicas do plano executivo CASO-04 partiram de referências históricas e cenários parciais porque o laudo que deveria controlar a base econômica não foi lido e adotad
+  - [SRC-S003 · L42–L55 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 2. Diagnóstico técnico — onde o fluxo falhou](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s003)
+    - Assuntos: não, gate, mas, nenhum, onde, caso, exige, produto
+    - Trecho-guia: F1 (ingestão) cataloga arquivos, mas não hierarquiza: nenhum artefato declara "este documento governa a premissa econômica deste caso". F2A (100 perguntas) pergunta sobre lacunas, mas não trava produção econômica na ausência de fonte prevalente validada. U6 (tabela de lastro) exi
+  - [SRC-S004 · L56–L57 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s004)
+    - Assuntos: design, solução, extensão, forja-lastro-v2
+    - Trecho-guia: Documento de consulta sobre 3. Design da solução — extensão FORJA-LASTRO-v2.
+  - [SRC-S005 · L58–L75 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2 > D1 — Fonte prevalente como PAPEL no ledger existente, não como artefato novo](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s005)
+    - Assuntos: não, fonte, prevalente, ledger, novo, caso, arquivo, papel
+    - Trecho-guia: O factledger.json do caso (F3, schemaVersion/kind/facts) já é a memória documental. A fonte prevalente entra como um fato com role: fonteprevalente, espelhando o role: criteriovigente do L7 — mesmo mecanismo, mesma função ("qual registro governa hoje"), zero conceito novo.
+  - [SRC-S006 · L76–L117 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2 > D2 — Cinco gates novos em forjalastro.py](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s006)
+    - Assuntos: não, âncora, foi, número, regra, gate, econômico, documento
+    - Trecho-guia: Cada um traz a âncora real exigida pelo § 8 do protocolo — o incidente CASO-04 de 02/08/2026:
+  - [SRC-S007 · L118–L145 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2 > D3 — Acoplamento: os quatro pontos existentes mais a rota que o incidente percorreu](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s007)
+    - Assuntos: ponto, rota, não, pecavisual, entrada, quatro, incidente, dois
+    - Trecho-guia: O § 6 do PROTOCOLOLASTRODOCUMENTAL.md já fixa e testa quatro pontos. A revisão adversarial mostrou que nenhum deles cobria o produto defeituoso (achado A do § 2), e que dois deles são declarativos, não computados (achado B). A tabela abaixo separa os dois estados, porque tratá-lo
+  - [SRC-S008 · L146–L171 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2 > D4 — Regressão dentro de testforjalastro.py](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s008)
+    - Assuntos: não, bloqueia, gate, fato, valor, dentro, real, validado
+    - Trecho-guia: Os cenários entram na suíte existente (98 verificações de script, preservando os casos do v1, os pares de não-trava e as contraprovas de vocabulário/binário, além das contraprovas de não-trava nas rotas direta e canônica e da precedência de caminho explícito ausente), não em arqu
+  - [SRC-S009 · L172–L178 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2 > D5 — Registro na memória institucional, nos lugares canônicos](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s009)
+    - Assuntos: registro, memória, institucional, lugares, canônicos, catálogo, gates, lição
+    - Trecho-guia: Lição numerada em RETROSPECTIVAS.md: "Erro de premissa por ausência de fonte prevalente — CASO-04 02/08/2026", com causa, correção e teste que a cobre. § U13 do catálogo 06GATESQUALIDADEFORJA.md (o § 8.4 do protocolo de lastro manda registrar linha no catálogo) — o § U12 permanec
+  - [SRC-S010 · L179–L184 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 3. Design da solução — extensão FORJA-LASTRO-v2 > D6 — Relatório de evidência para o Fábio](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s010)
+    - Assuntos: relatório, evidência, fábio, relatorio_evidencia_gate_documental_2026-08, leitura, execução, arquivos, revisor
+    - Trecho-guia: FORJAHARNESS\RELATORIOEVIDENCIAGATEDOCUMENTAL2026-08.md e sua versão de leitura RELATORIOEVIDENCIAGATEDOCUMENTAL2026-08.html: o que foi implantado, fluxo, mapeamento requisito→mecanismo→teste, saída integral da execução dos testes, hashes dos arquivos novos e instrução de como qu
+  - [SRC-S011 · L185–L198 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 4. Sequência de execução (quando autorizada)](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s011)
+    - Assuntos: critério, não, pelo, caso, sequência, execução, quando, autorizada
+    - Trecho-guia: 1. Tornar computado o que já existe. Ligar validarlastrofatos (L1/L2) e exigircriteriovigente (L7) à rota de produção, de modo que o gate factgroundingverbatim do F7 passe a ser calculado pelo orquestrador em vez de declarado pelo agente. Critério: um caso real reprova por falta 
+  - [SRC-S012 · L199–L210 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 5. Riscos e mitigações](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s012)
+    - Assuntos: não, mitigação, gate, passo, número, riscos, mitigações, pela
+    - Trecho-guia: Overblocking — mitigado pela incidência condicionada a material econômico (D2) e pelos testes negativos T6, T9 e os cinco pares de não-trava (D4). É o risco número um desta entrega, não o número três. Valor de terceiro tratado como cálculo nosso — o L11 precisa distinguir número 
+  - [SRC-S013 · L211–L214 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6. Definição de pronto](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s013)
+    - Assuntos: definição, pronto, não-trava, rota, lastro, código, relatório, envio
+    - Trecho-guia: Zero P0; todos os cenários e pares de não-trava no resultado exigido, com T1 e T8 sobre o artefato real; T11 provando que a rota ad hoc é bloqueada, inclusive quando o caminho explícito está ausente; contraprovas de não-trava nas rotas direta e canônica; falso positivo medido no 
+  - [SRC-S014 · L215–L222 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-B. Execução técnica registrada em 04/08/2026](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s014)
+    - Assuntos: json, não, fonte, verificações, script, real, cobrem, cobre
+    - Trecho-guia: 1. L1/L2/L7 e L9–L13 foram ligados ao runner F7 (COMPUTEDLASTROGATES.json), ao verificador chamado pela entrada visual canônica, à PecaVisual.salvar() e ao elo 9-B da entrega. A materialização oficial agora é forjavisualbuild.py → forjasvgdocx.inserirsvgs() → QA OOXML/SVG; forjar
+  - [SRC-S015 · L223–L230 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-C. Memória obrigatória e rota visual sem renderização](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s015)
+    - Assuntos: memória, rota, memoria_auditabilidade_forja, json, phase_contracts, canônico, exige, false
+    - Trecho-guia: Como complemento de governança exigido pelo Igor, a entrega agora gera forjamemoriaauditabilidade.py em três formas hash-bound: MEMORIAAUDITABILIDADEFORJA.md, MEMORIAAUDITABILIDADEFORJA.html e MEMORIAAUDITABILIDADEFORJA.json. O anexo registra fases F0–F10, métodos, decisões, gate
+  - [SRC-S016 · L231–L246 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-D. Auditoria de conclusão contra os requisitos do incidente](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s016)
+    - Assuntos: completo, não, incidente, f-fp-001, data-base, auditoria, conclusão, contra
+    - Trecho-guia: O único item que não pode ser fechado pelo motor é a promoção nominal de F-FP-001 a validado e a consequente liberação jurídica. A saída correta é manter o caso bloqueado, não preencher esse campo por inferência.
+  - [SRC-S017 · L247–L268 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-A. Decisões da revisão adversarial (registro obrigatório)](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s017)
+    - Assuntos: acatada, não, gate, diabob, revisão, antes, helena, efesto
+    - Trecho-guia: Documento de consulta sobre 6-A. Decisões da revisão adversarial (registro obrigatório).
+  - [SRC-S018 · L269–L281 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 7. Onde este plano se encaixa no acervo](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s018)
+    - Assuntos: plano, este, não, dois, onde, encaixa, acervo, documento
+    - Trecho-guia: Higiene de numeração (observação, não ação deste plano): a pasta tem colisões históricas — três arquivos 24, dois 25, dois 21 e dois 39. O 41 é único. Renumerar retroativamente quebraria referências cruzadas já escritas em protocolos e memórias; a correção correta é numerar novos
+  - [SRC-S019 · L282–L285 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-E. Auditoria de encerramento em 04/08/2026 — o que a execução por si só não provava](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s019)
+    - Assuntos: não, execução, auditoria, encerramento, provava, contra, esta, seção
+    - Trecho-guia: Esta seção é o resultado de reler a definição de pronto do § 6 contra execução, e não contra o registro das seções anteriores. Dois itens que constavam como cumpridos não estavam.
+  - [SRC-S020 · L286–L291 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-E. Auditoria de encerramento em 04/08/2026 — o que a execução por si só não provava > O item que estava falso: "L1/L2/L7 comprovadamente computados na rota de produção"](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s020)
+    - Assuntos: não, rota, produção, item, estava, falso, comprovadamente, computados
+    - Trecho-guia: A prova existente exercitava computelastrogates diretamente. Nada exercitava validateresult, que é a rota real — a que grava o laudo e sobrepõe o gate declarado pelo agente. O ponto cego não é teórico: foi exatamente ele que permitiu o recomputo ficar inerte desde que nasceu, pro
+  - [SRC-S021 · L292–L297 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-E. Auditoria de encerramento em 04/08/2026 — o que a execução por si só não provava > O item que revelou dívida estrutural: as tentativas "aprovadas" do acervo não fecham hoje](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s021)
+    - Assuntos: não, acervo, dívida, tentativas, gates, item, revelou, estrutural
+    - Trecho-guia: Submetidas ao contrato F7 vigente, as duas únicas tentativas F7 com status: pass do acervo — CASO-17 e CASO-18 — são reprovadas por gates não aprovados: citationidentityandcnjtribunalresolved, citationcoveragecomplete, liveofficialsourcereplayed, sourceexcerpthashmatch. O contrat
+  - [SRC-S022 · L298–L301 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-E. Auditoria de encerramento em 04/08/2026 — o que a execução por si só não provava > Estado da regressão](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s022)
+    - Assuntos: telemetria, json, estado, regressão, suítes, aprovado, verificações, atuais
+    - Trecho-guia: 98 verificações atuais em testforjalastro.py (12 detecções + 11 não-travas lexicais + 16 de ledger + 22 de acoplamento + 37 cenários do Plano 41). A onda Codex/Opus corrente ficou verde em 80/80 suítes, 545 testes pytest, 60 subtestes e 38 regressões standalone, com 134 arquivos 
+  - [SRC-S023 · L302–L305 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-E. Auditoria de encerramento em 04/08/2026 — o que a execução por si só não provava > O que continua fora do alcance do motor](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s023)
+    - Assuntos: continua, fora, alcance, motor, nada, promoção, nominal, f-fp-001
+    - Trecho-guia: A promoção nominal de F-FP-001 a validado e a liberação jurídica seguem sendo ato humano. Nada mudou aqui, e nada deve mudar: o caso permanece bloqueado.
+  - [SRC-S024 · L306–L331 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-F. Fechamento da brecha de liveness na F10 — 04/08/2026](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s024)
+    - Assuntos: f10, não, gates, fechamento, estado, hash, brecha, liveness
+    - Trecho-guia: A revisão transversal encontrou que phasecontracts/F10.json declarava externalidentifiervalid, packagehashmatches e managementsynced, mas a rota final não os materializava como resultado recomputado. A ausência de uma execução histórica da F10 não foi convertida em aprovação nem 
+  - [SRC-S025 · L332–L377 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-G. Fechamento da escrita lateral do scanner — 04/08/2026](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s025)
+    - Assuntos: régua, json, telemetria, foi, suítes, não, passou, arquivos
+    - Trecho-guia: A régua revelou uma falha operacional fora do gate de conteúdo: forjainjectionscan.py tentava gravar F1INJECTIONSCAN.json ao lado de cada PDF real. Em pastas de anexos protegidas isso quebrava a suíte; em pastas graváveis, uma leitura de terceiro ainda poderia deixar artefatos nã
+  - [SRC-S026 · L378–L381 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-H. Revalidação posterior da régua — 04/08/2026, 13:56](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s026)
+    - Assuntos: régua, revalidação, posterior, json, alteração, código, após, baseline
+    - Trecho-guia: Sem alteração de código após o baseline v20, a régua rápida foi repetida no estado vivo: 93 arquivos protegidos conferidos, 24 suítes aprovadas, 50,5 s, APROVADO. O registro corrente é telemetria/REGUA2026-08-04135608.json; a execução anterior REGUA2026-08-04133952.json permanece
+  - [SRC-S027 · L382–L385 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-I. Auditoria requisito-a-requisito — fotografia anterior, supersedida pela 6-L](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s027)
+    - Assuntos: fotografia, auditoria, requisito-a-requisito, anterior, supersedida, pela, baseline, régua
+    - Trecho-guia: Uma verificação independente, feita contra o ledger canônico, os artefatos do caso, o baseline, a régua, os relatórios e o contrato F9, confirmou todos os requisitos técnicos do plano naquela fotografia: documentos recuperados; fonte prevalente registrada como proposto; data-base
+  - [SRC-S028 · L386–L389 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-J. Onda de gates computados — revalidação final posterior, 04/08/2026, 14:26](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s028)
+    - Assuntos: gates, computados, json, telemetria, onda, revalidação, final, posterior
+    - Trecho-guia: O Opus acrescentou gates computados para proveniência por parágrafo, fontes oficiais, red team, emissão F8/F10 e a rota de lastro. Após a correção da regressão de materialização do COMPUTEDLASTROGATES.json e da classificação fail-closed dos novos scripts, o baseline v21 fechou 60
+  - [SRC-S029 · L390–L397 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-K. Onda final de gates de entrada, produto e entrega — 04/08/2026, 15:16](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s029)
+    - Assuntos: não, onda, json, gates, produto, entrega, telemetria, final
+    - Trecho-guia: O Opus completou a extensão da recomputação para ingestão/exploração F1/F2, contexto F7, redação F6, inventário de artefatos, P0, regimento, produto, reconciliação F0 e entrega F9. A auditoria encontrou uma regressão real no runner: reconciliationreport textual em Markdown era en
+  - [SRC-S030 · L398–L409 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-L. Auditoria Codex durante a execução do Opus 5 — 04/08/2026, 17:56](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s030)
+    - Assuntos: execução, foi, telemetria, auditoria, codex, durante, gate, permanece
+    - Trecho-guia: Durante a execução viva do plano, o Codex acompanhou a sessão 60621e93-9173-468d-bedd-00ce4d69589e e auditou as ondas finais de gates. O Claude concluiu as tarefas de canário, censo, liveness, normalização de schema e revalidação; nenhuma mutação jurídica, liberação externa ou co
+  - [SRC-S031 · L410–L413 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-M. Revalidação após saneamento documental — 04/08/2026, 18:05](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s031)
+    - Assuntos: revalidação, após, saneamento, documental, régua, foi, telemetria, depois
+    - Trecho-guia: Depois de marcar as fotografias antigas como históricas e corrigir as referências de baseline/régua no próprio plano, a régua completa foi executada novamente. A integridade confirmou 121 arquivos protegidos, as 42 suítes e a bateria real de telemetria passaram, com veredito APRO
+  - [SRC-S032 · L414–L425 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-N. Onda de QA real, mutação e liveness total — fotografia histórica de 04/08/2026, 22:41–22:43](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s032)
+    - Assuntos: não, gates, onda, sha-256, real, mutação, liveness, fotografia
+    - Trecho-guia: Esta onda foi executada depois da revalidação documental e não altera a governança do caso. O objetivo foi retirar do inventário qualquer regressão autônoma que estivesse fora da porta de entrada e medir, com artefatos reais, se os gates continuam computando quando a saída é subm
+  - [SRC-S033 · L426–L437 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-O. Fechamento anti-moldagem e âncoras do padrão aprovado — 04/08/2026, 23:03–23:06](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s033)
+    - Assuntos: json, aprovado, fechou, sha-256, âncoras, padrão, telemetria, fechamento
+    - Trecho-guia: Depois da fotografia v23, o Opus acrescentou dois controles que passaram a fazer parte da porta de entrada, e o Codex os acompanhou sem alterar o código dos gates:
+  - [SRC-S034 · L438–L441 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-P. Reexecução posterior da régua — 04/08/2026, 23:07](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s034)
+    - Assuntos: posterior, régua, reexecução, foi, alteração, telemetria, depois, fotografia
+    - Trecho-guia: Depois da fotografia v24, a régua completa foi repetida sem alteração de código: os 134 arquivos protegidos permaneceram íntegros, as 48 suítes rápidas e a bateria real da Lição 41 passaram, totalizando 49 registros de suíte em 137,3 s. Evidência corrente: telemetria/REGUA2026-08
+  - [SRC-S035 · L442–L450 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-Q. Passo 11 sob delegação — o conselho decide e a rota do incidente é finalmente fechada (05/08/2026)](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s035)
+    - Assuntos: igor, não, foi, passo, delegação, diabob, três, continua
+    - Trecho-guia: O passo 11 era o único item aberto do plano: "submeter ao Igor; após ok, responder ao Fábio". Em 05/08/2026 o Igor delegou formalmente as cinco decisões humanas represadas a Helena, Efesto e Diabob, exigindo unanimidade e mandato de decidir "conforme meus interesses". Os três cor
+  - [SRC-S036 · L451–L469 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-Q. Passo 11 sob delegação — o conselho decide e a rota do incidente é finalmente fechada (05/08/2026) > O que a decisão 4 revelou, e o que foi construído](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s036)
+    - Assuntos: não, peça, foi, verificador, pecavisual, cinco, achado, nem
+    - Trecho-guia: O Efesto mediu em vez de estimar: existem seis caminhos capazes de gerar DOCX pela PecaVisual — a entrada canônica forjavisualbuild.py e cinco builddocx.py dentro de pastas de caso. Só o primeiro chamava o verificador. É a rota do incidente CASO-04 (achado A do § 2), ainda aberta
+  - [SRC-S037 · L470–L479 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-Q. Passo 11 sob delegação — o conselho decide e a rota do incidente é finalmente fechada (05/08/2026) > Estado após esta onda](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s037)
+    - Assuntos: não, gate, após, porta, três, rota, sobre, diagnóstico
+    - Trecho-guia: Baseline v25: 83/83 suítes verdes, 545 testes pytest, 60 subtestes e 41 regressões standalone — APROVADO (telemetria/BASELINE2026-08-05011824.json, reexecutado após o endurecimento final da porta). Três suítes e três regressões a mais que a fotografia v24 de 04/08. Régua completa
+  - [SRC-S038 · L480–L483 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-Q. Passo 11 sob delegação — o conselho decide e a rota do incidente é finalmente fechada (05/08/2026) > O que continua fora do alcance do motor — e agora por decisão registrada, não por omissão](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s038)
+    - Assuntos: não, agora, continua, fora, alcance, motor, decisão, registrada
+    - Trecho-guia: A promoção de F-FP-001 a validado e o envio ao Fábio permanecem atos do Igor. A diferença em relação às ondas anteriores é que agora existe deliberação escrita dizendo por que nenhum agente pode substituí-lo nesses dois pontos, e não apenas a constatação de que não substituiu.
+  - [SRC-S039 · L484–L531 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-R. Revalidação Codex posterior — 05/08/2026, 01:00–01:13](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s039)
+    - Assuntos: não, json, telemetria, sha-256, rota, porta, única, suítes
+    - Trecho-guia: Esta é a fotografia mais recente depois da correção da porta única e da integração dos canários no catálogo. O baseline foi executado novamente pelas suítes isoladas; a régua foi rebaselinada com motivo registrado no REGUAMANIFEST.json e executada em modo rápido e completo. Nenhu
+  - [SRC-S040 · L532–L551 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-S. Supersessão da fotografia Codex — 05/08/2026, 01:14–01:18](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s040)
+    - Assuntos: codex, supersessão, fotografia, telemetria, json, regressões, aprovado, sha-256
+    - Trecho-guia: A seção 6-R preserva a revalidação Codex de 01:00–01:13 como histórico. Depois dela, a execução principal endureceu a porta única e reexecutou o conjunto completo; por isso, os artefatos canônicos atuais são os seguintes:
+  - [SRC-S041 · L552–L573 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-T. Auditoria Codex posterior — falha pós-porta corrigida (05/08/2026)](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s041)
+    - Assuntos: falha, aprovado, auditoria, posterior, não, laudo, docx, lastro
+    - Trecho-guia: A auditoria independente encontrou uma inconsistência que a régua anterior não cobria: PecaVisual.salvar() gravava um laudo aprovado imediatamente depois da porta única; se L9–L13 reprovasse em seguida por falta de fonte prevalente, o DOCX era removido, mas o laudo permanecia apr
+  - [SRC-S042 · L574–L589 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-U. Auditoria e limpeza da própria onda — 05/08/2026, 01:20–01:47](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s042)
+    - Assuntos: não, auditoria, limpeza, foi, defeito, real, docx, arquivo
+    - Trecho-guia: Auditoria do trabalho de aperfeiçoamento feito nas 48h anteriores, por ordem do Igor, com mandato de corrigir e limpar. Método: reler o código novo procurando defeito, conferir cada afirmação dos documentos contra o estado real, e só então limpar.
+  - [SRC-S043 · L590–L622 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-V. Auditoria independente pós-campanha — 05/08/2026](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s043)
+    - Assuntos: não, independente, caso, escopo, exclusão, auditoria, pós-campanha, campanha
+    - Trecho-guia: O executor Claude encerrou a campanha, mas a verificação independente do estado vivo encontrou um bloqueio de governança que não é coberto pela aprovação da régua técnica. python forjalapidacaogovernanca.py --invariantes reproduziu REPROVADO (saída 2): I1, I2a, I2b, I3, I5, I6 e 
+  - [SRC-S044 · L623–L641 · Plano 41 — Fonte prevalente e ancoragem de valor monetário (FORJA-LASTRO-v2) > 6-W. Divergência tipográfica persistida — 05/08/2026](41_PLANO_GATE_DOCUMENTAL_E_REGRESSAO_FONTE_PREVALENTE.md#src-s044)
+    - Assuntos: abaixo, não, divergência, corrente, fotografia, entregáveis, tipográfica, persistida
+    - Trecho-guia: A medição corrente foi preservada em telemetria/VARREDURATIPOGRAFICA2026-08-05033253.json e deve prevalecer sobre a fotografia histórica até nova classificação: 123 entregáveis, 4 abaixo de 50% de justificação, 14 abaixo de 90%, 29 abaixo de 90% em tamanho e 19 abaixo de 90% em f
+
+### 4.48. 42 — Plano de ponderação e inteligência dos grafos da fábrica
+
+- **Arquivo preparado:** [42_PLANO_GRAFOS_PONDERADOS.md](42_PLANO_GRAFOS_PONDERADOS.md)
+- **Origem:** `42_PLANO_GRAFOS_PONDERADOS.md`
+- **Termos:** não, grafo, json, aresta, têm, arestas, tese, plano, vídeo, peso, grafos, fonte
+- **Blocos:**
+  - [SRC-S001 · L1–L9 · 42 — Plano de ponderação e inteligência dos grafos da fábrica](42_PLANO_GRAFOS_PONDERADOS.md#src-s001)
+    - Assuntos: grafos, plano, prd, não, ponderação, inteligência, fábrica, data
+    - Trecho-guia: Data: 05/08/2026 Origem: vídeo "Larguei tudo pra aprender Graph Engineering" (Lucas Montano, 31/07/2026, 15min) + auditoria dos grafos existentes no repositório nesta data.
+  - [SRC-S002 · L10–L21 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 1. O que o vídeo entrega, destilado](42_PLANO_GRAFOS_PONDERADOS.md#src-s002)
+    - Assuntos: vídeo, não, aresta, entrega, destilado, três, peso, exemplo
+    - Trecho-guia: O vídeo é majoritariamente didático (o que é nó, o que é aresta). Três ideias dele são aproveitáveis aqui, e só três:
+  - [SRC-S003 · L22–L23 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um](42_PLANO_GRAFOS_PONDERADOS.md#src-s003)
+    - Assuntos: inventário, grafos, existentes, diagnóstico, cada
+    - Trecho-guia: Documento de consulta sobre 2. Inventário dos grafos existentes e diagnóstico de cada um.
+  - [SRC-S004 · L24–L32 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > A. graphify-out/graph.json — grafo de código do Motor](42_PLANO_GRAFOS_PONDERADOS.md#src-s004)
+    - Assuntos: grafo, tem, não, graphify-out, graph, json, código, motor
+    - Trecho-guia: 3.156 nós, 9.136 arestas, 111 comunidades (relatório de 05/08/2026, commit 3866e1c1).
+  - [SRC-S005 · L33–L44 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > B. F3REASONINGGRAPH.json — grafo de raciocínio jurídico, um por caso](42_PLANO_GRAFOS_PONDERADOS.md#src-s005)
+    - Assuntos: grafo, arestas, aresta, quanto, json, raciocínio, jurídico, caso
+    - Trecho-guia: É o grafo mais valioso da fábrica e o menos ponderado. Nós: document, thesis, request, decision. Arestas: relation (supports / qualifies / justifies), scope (full / partial), reason, reviewStatus. Nenhum número em lugar algum.
+  - [SRC-S006 · L45–L47 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > C. paragraphprovenance.json / paragraphevidencemapn4.json](42_PLANO_GRAFOS_PONDERADOS.md#src-s006)
+    - Assuntos: json, parágrafo, paragraphprovenance, paragraphevidencemapn4, paragraph_provenance, paragraph_evidence_map_n4, grafo, bipartido
+    - Trecho-guia: Grafo bipartido parágrafo → prova, já existente e populado (54 KB no CASO-17, 42 KB no CASO-18). Sem peso: um parágrafo que carrega a tese decisiva e um parágrafo de cortesia processual valem igual.
+  - [SRC-S007 · L48–L50 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > D. 00IANAVIGACAO/dados/arvoreia.json (700 KB) + inventarioia.json (13 MB) + MAPAIA.md por pasta](42_PLANO_GRAFOS_PONDERADOS.md#src-s007)
+    - Assuntos: json, dados, pasta, não, caso, ianavigacao, arvoreia, inventarioia
+    - Trecho-guia: É árvore, não grafo — só hierarquia de diretório, zero aresta transversal. Não sabe que o caso X e o caso Y compartilham fonte, tribunal ou tese.
+  - [SRC-S008 · L51–L53 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > E. Archify — .architecture.json, .workflow.json, .dataflow.json, .sequence.json](42_PLANO_GRAFOS_PONDERADOS.md#src-s008)
+    - Assuntos: json, archify, architecture, workflow, dataflow, sequence, são, não
+    - Trecho-guia: São especificações de diagrama, para renderizar. Não são estruturas consultáveis e não pretendem ser.
+  - [SRC-S009 · L54–L56 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > F. forjafila.py — a fila priorizada](42_PLANO_GRAFOS_PONDERADOS.md#src-s009)
+    - Assuntos: fila, priorizada, tem, não, arestas, forjafila, forja_fila, espelho
+    - Trecho-guia: O espelho invertido do reasoning graph: tem pesos e não tem arestas. A tabela normativa do PRD §5 é boa e é declarada (urgência 40/20/0, prazo 40/30/20/10/0, alto valor 10, idade com teto de 10). Mas é uma lista plana: não modela que a demanda A bloqueia a B, que duas peças depen
+  - [SRC-S010 · L57–L61 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 2. Inventário dos grafos existentes e diagnóstico de cada um > G. O grafo que o protocolo exige e não existe](42_PLANO_GRAFOS_PONDERADOS.md#src-s010)
+    - Assuntos: grafo, existe, não, protocolo, exige, cronologia, claude, determina
+    - Trecho-guia: O CLAUDE.md determina, desde 11/07/2026, que processo volumoso tenha "cronologia auditada e grafo dos atos", com identidade própria por recurso, decisão, retratação e intimação. Hoje isso existe como markdown de cronologia. Como grafo, não existe.
+  - [SRC-S011 · L62–L70 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 3. Os quatro defeitos transversais](42_PLANO_GRAFOS_PONDERADOS.md#src-s011)
+    - Assuntos: não, sabe, grafo, quatro, defeitos, transversais, onde, decide
+    - Trecho-guia: 1. O peso está onde não decide e falta onde decide. A fila pontua e não tem aresta; o raciocínio jurídico tem aresta e não pontua. 2. Grafo que ninguém percorre é desenho. Um único algoritmo de travessia em toda a casa, é detector de ciclo, e ele nunca rodou — procura uma relação
+  - [SRC-S012 · L71–L72 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 4. Plano — cinco movimentos, em ordem de retorno](42_PLANO_GRAFOS_PONDERADOS.md#src-s012)
+    - Assuntos: plano, cinco, movimentos, ordem, retorno
+    - Trecho-guia: Documento de consulta sobre 4. Plano — cinco movimentos, em ordem de retorno.
+  - [SRC-S013 · L73–L93 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 4. Plano — cinco movimentos, em ordem de retorno > M1 · Ponderar o F3REASONINGGRAPH (maior retorno, menor custo)](42_PLANO_GRAFOS_PONDERADOS.md#src-s013)
+    - Assuntos: tese, aresta, maior, nunca, fonte, lastro, ponderar, retorno
+    - Trecho-guia: Três números por aresta e um por nó, todos com tabela normativa declarada — no formato da tabela do §5 da fila, nunca atribuídos por julgamento livre de modelo:
+  - [SRC-S014 · L94–L103 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 4. Plano — cinco movimentos, em ordem de retorno > M2 · Fazer alguém percorrer](42_PLANO_GRAFOS_PONDERADOS.md#src-s014)
+    - Assuntos: pedido, fazer, alguém, percorrer, hoje, fonte, fontes, cair
+    - Trecho-guia: Três consultas que o grafo já pode responder e que hoje ninguém pergunta:
+  - [SRC-S015 · L104–L109 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 4. Plano — cinco movimentos, em ordem de retorno > M3 · Grafo de atos processuais (cumpre ordem já vigente)](42_PLANO_GRAFOS_PONDERADOS.md#src-s015)
+    - Assuntos: grafo, atos, processuais, cumpre, ordem, vigente, recurso, decisão
+    - Trecho-guia: Nós = ato (recurso, decisão, retratação, intimação, destaque), com id próprio, data, sujeito, classe/número. Arestas = impugna, responde, retrata, intima, com peso = prazo em dias — o exemplo "acordar → levantar = 2 minutos" do vídeo, aplicado ao que a casa realmente faz.
+  - [SRC-S016 · L110–L113 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 4. Plano — cinco movimentos, em ordem de retorno > M4 · A fila vira grafo](42_PLANO_GRAFOS_PONDERADOS.md#src-s016)
+    - Assuntos: fila, vira, grafo, passa, adicionar, arestas, demandas, bloqueia
+    - Trecho-guia: Adicionar arestas entre demandas: bloqueia, mesmafonte, mesmocliente, aguardadecisãohumana. O score deixa de ser soma local e passa a considerar o subgrafo — a demanda que destrava outras três sobe. E a pergunta operacional que hoje não tem resposta passa a ter: quantos casos pod
+  - [SRC-S017 · L114–L121 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 4. Plano — cinco movimentos, em ordem de retorno > M5 · Higienizar o graphify antes de tirar conclusão dele](42_PLANO_GRAFOS_PONDERADOS.md#src-s017)
+    - Assuntos: higienizar, graphify, antes, tirar, conclusão, dele, comunidade, não
+    - Trecho-guia: Podar o god node de 2.019 arestas; separar a comunidade 90001 (1.647 nós, coesão 0,00 — é resto, não comunidade); usar confidencescore como peso em centralidade ponderada em vez de contar aresta. Só depois disso "nó central" significa alguma coisa. Menor prioridade: é grafo de có
+  - [SRC-S018 · L122–L127 · 42 — Plano de ponderação e inteligência dos grafos da fábrica > 5. O que não fazer](42_PLANO_GRAFOS_PONDERADOS.md#src-s018)
+    - Assuntos: não, fazer, grafo, tem, plano, sobre, grafos, peso
+    - Trecho-guia: Não trocar o pipeline F0–F10 por "orquestrador de grafo". O vídeo fala de agentes paralelos queimando token; a fábrica tem gates sequenciais por razão jurídica, não por limitação técnica. F7 antes de F7-B é decisão registrada (ADR-J04), não acidente. Não reabrir RAG / GraphRAG. R
+
+### 4.49. Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA
+
+- **Arquivo preparado:** [43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md)
+- **Origem:** `43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md`
+- **Termos:** não, skills, skill, claude, fábrica, seis, plano, vale, onde, modelo, tem, gate
+- **Blocos:**
+  - [SRC-S001 · L1–L11 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s001)
+    - Assuntos: plano, skills, vale, davidondrej, fábrica, não, importar, foi
+    - Trecho-guia: Revisado em 05/08/2026. O PRD de execução deste plano é planejamento/44PRDSKILLSDISCIPLINASPROCESSO.md — requisitos R1-R9 com critério de aceite, rollout em três ondas e métricas. O item 5 abaixo foi corrigido após conferência no código.
+  - [SRC-S002 · L12–L13 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 1. Triagem das 47](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s002)
+    - Assuntos: triagem
+    - Trecho-guia: Documento de consulta sobre 1. Triagem das 47.
+  - [SRC-S003 · L14–L17 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 1. Triagem das 47 > 1.1 Já instaladas por você, em versão pt-BR (não fazer nada)](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s003)
+    - Assuntos: instaladas, você, versão, pt-br, não, fazer, nada, anti-sleep
+    - Trecho-guia: anti-sleep, decisions, deep-research, git-worktree, global-agent-guardrails, goal-loop, setup-help — todas com metadata.sourcerepo: davidondrej/skills no frontmatter global. Parte do repositório já foi colhida em ciclo anterior.
+  - [SRC-S004 · L18–L35 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 1. Triagem das 47 > 1.2 Sem tradução para cá — descartadas com motivo](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s004)
+    - Assuntos: não, skill, item, codex, tem, symlink, tradução, descartadas
+    - Trecho-guia: Documento de consulta sobre 1.2 Sem tradução para cá — descartadas com motivo.
+  - [SRC-S005 · L36–L46 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 1. Triagem das 47 > 1.3 Adotadas — seis skills, escritas em .claude/skills/ da fábrica](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s005)
+    - Assuntos: skills, não, adotadas, seis, escritas, claude, fábrica, conselho
+    - Trecho-guia: Documento de consulta sobre 1.3 Adotadas — seis skills, escritas em .claude/skills/ da fábrica.
+  - [SRC-S006 · L47–L54 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 2. A ideia que mais importa](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s006)
+    - Assuntos: não, mais, gate, ideia, importa, duas, presença, substância
+    - Trecho-guia: O achado central do estudo não é nenhuma skill isolada. É que as duas melhores daquele repositório atacam o mesmo ponto que o DIAGNOSTICOF2ADEGRADACAO2026-08-05.md identificou como o limite desta fábrica: gate determinístico mede presença e forma, e a degradação é de substância.
+  - [SRC-S007 · L55–L67 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 3. Auditoria das skills existentes (não é skill nova)](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s007)
+    - Assuntos: não, descrição, skill, onde, skills, seis, auditoria, existentes
+    - Trecho-guia: De effective-agent-skills, seis regras que valem uma passada pelas skills desta casa — fabrica-visual-peticoes, padrao-visual-medina, advogado-sobrehumano e as seis novas:
+  - [SRC-S008 · L68–L69 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 4. Implementação](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s008)
+    - Assuntos: implementação
+    - Trecho-guia: Documento de consulta sobre 4. Implementação.
+  - [SRC-S009 · L70–L73 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 4. Implementação > 4.1 Onde ficam](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s009)
+    - Assuntos: onde, ficam, fábrica, claude, skills, nome, skill, escopo
+    - Trecho-guia: fábrica/.claude/skills/nome/SKILL.md — escopo de projeto, versionadas com o repositório, e não poluem o catálogo global (que já passa de 200). Trade-off assumido: só aparecem trabalhando dentro da fábrica. É o que se quer.
+  - [SRC-S010 · L74–L84 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 4. Implementação > 4.2 Ligação com o que já roda — ordem sugerida](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s010)
+    - Assuntos: antes, briefing, baixo, ligação, roda, ordem, sugerida, entrada
+    - Trecho-guia: Documento de consulta sobre 4.2 Ligação com o que já roda — ordem sugerida.
+  - [SRC-S011 · L85–L100 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 4. Implementação > 4.3 A divergência CLAUDE.md × AGENTS.md](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s011)
+    - Assuntos: claude, não, divergência, agents, existem, comum, symlink, mais
+    - Trecho-guia: Medido em 03/08: dos 107 trechos substantivos do AGENTS.md, 78 não existem no CLAUDE.md, e 47 do CLAUDE.md não existem lá; 29 em comum.
+  - [SRC-S012 · L101–L106 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 5. Observação sobre o modelo editorial (de fable-safe-prompt)](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s012)
+    - Assuntos: modelo, não, observação, sobre, editorial, fable-safe-prompt, existe, texto
+    - Trecho-guia: Aquela skill existe porque classificadores de entrada derrubam ou rebaixam o modelo por superfície de texto, quase independentemente da intenção. Peça de improbidade, crime, corrupção e investigação é exatamente o vocabulário que dispara esse tipo de filtro.
+  - [SRC-S013 · L107–L112 · Plano 43 — o que vale importar de davidondrej/skills para a fábrica e para a FORJA > 6. O que este plano não faz](43_PLANO_SKILLS_IMPORTADAS_ONDREJ.md#src-s013)
+    - Assuntos: não, este, plano, faz, gate, decisão, instala, nada
+    - Trecho-guia: Não instala nada globalmente e não altera skill existente. Não mexe em gate, contrato de fase ou pipeline. As seis skills são disciplina de processo; ligar cada uma ao ponto da esteira (item 4.2) é decisão separada, e a de maior custo é a migração das fichas de decisão. Não resol
+
+### 4.50. PRD — Grafo de raciocínio: completude antes de peso
+
+- **Arquivo preparado:** [43_PRD_GRAFOS_PONDERADOS.md](43_PRD_GRAFOS_PONDERADOS.md)
+- **Origem:** `43_PRD_GRAFOS_PONDERADOS.md`
+- **Termos:** não, grafo, teses, grafos, antes, tese, medição, arestas, aresta, usa, peso, decisão
+- **Blocos:**
+  - [SRC-S001 · L1–L14 · PRD — Grafo de raciocínio: completude antes de peso](43_PRD_GRAFOS_PONDERADOS.md#src-s001)
+    - Assuntos: prd, grafo, raciocínio, completude, antes, peso, medição, ponderação
+    - Trecho-guia: SUBSTITUÍDO EM 05/08/2026 por planejamento/45PRDINSTRUMENTACAOFORJA.md, que unifica este documento com o PRD 44 da mesma data. Permanece legível como anexo histórico: a medição da § 1, os critérios de E0 e o critério aritmético de reabertura da ponderação seguem valendo por incor
+  - [SRC-S002 · L15–L41 · PRD — Grafo de raciocínio: completude antes de peso > 1. Resultado da revisão: a v2 estava errada na ordem](43_PRD_GRAFOS_PONDERADOS.md#src-s002)
+    - Assuntos: não, teses, aresta, arestas, fórmula, grafos, tem, resultado
+    - Trecho-guia: A v2 propunha ponderar as arestas do F3REASONINGGRAPH como primeiro movimento. Rodei a fórmula proposta contra todos os grafos reais antes de aprovar. O resultado reprova a proposta:
+  - [SRC-S003 · L42–L47 · PRD — Grafo de raciocínio: completude antes de peso > 1. Resultado da revisão: a v2 estava errada na ordem > 1.1 Correção de fato da v1 e da v2](43_PRD_GRAFOS_PONDERADOS.md#src-s003)
+    - Assuntos: correção, fato, seis, dois, documentos, anteriores, diziam, cinco
+    - Trecho-guia: Os dois documentos anteriores diziam "cinco grafos reais". São seis em n4artifacts. Helena apontou a divergência de contagem no parecer dela; ela contou sete somando cópia de execução em runs/. O número canônico é seis, e as 49 arestas se distribuem 17 + 8 + 13 + 3 + 5 + 3.
+  - [SRC-S004 · L48–L59 · PRD — Grafo de raciocínio: completude antes de peso > 2. Decisão](43_PRD_GRAFOS_PONDERADOS.md#src-s004)
+    - Assuntos: decisão, grafo, peso, ele, hoje, isso, exige, atos
+    - Trecho-guia: Inverto a ordem da v2 e reduzo o escopo.
+  - [SRC-S005 · L60–L63 · PRD — Grafo de raciocínio: completude antes de peso > 2. Decisão > 2.1 Por que não simplesmente consertar a fórmula](43_PRD_GRAFOS_PONDERADOS.md#src-s005)
+    - Assuntos: não, fórmula, simplesmente, consertar, agregação, considerei, rejeitei, trocar
+    - Trecho-guia: Considerei e rejeitei. Trocar OU ruidoso por outra agregação — média, mínimo, soma normalizada — não resolve: com 40% das teses em grau de entrada zero e trinta fontes soltas num caso, qualquer agregação devolve o mesmo par de valores degenerados. O problema está a montante da ma
+  - [SRC-S006 · L64–L69 · PRD — Grafo de raciocínio: completude antes de peso > 2. Decisão > 2.2 Nome honesto do que se entrega](43_PRD_GRAFOS_PONDERADOS.md#src-s006)
+    - Assuntos: não, nome, honesto, entrega, raciocínio, isso, detecção, vulnerabilidade
+    - Trecho-guia: E0 não é detecção de vulnerabilidade jurídica. É lint de rastreabilidade: verifica se o raciocínio foi documentado de forma navegável, não se o raciocínio está certo. Diabob (§9) e Helena (§3) chegaram a isso por caminhos independentes, e estão certos. O relatório usa essa palavr
+  - [SRC-S007 · L70–L71 · PRD — Grafo de raciocínio: completude antes de peso > 3. E0 — Lint estrutural do grafo](43_PRD_GRAFOS_PONDERADOS.md#src-s007)
+    - Assuntos: lint, estrutural, grafo
+    - Trecho-guia: Documento de consulta sobre 3. E0 — Lint estrutural do grafo.
+  - [SRC-S008 · L72–L86 · PRD — Grafo de raciocínio: completude antes de peso > 3. E0 — Lint estrutural do grafo > 3.1 O que mede](43_PRD_GRAFOS_PONDERADOS.md#src-s008)
+    - Assuntos: tese, acende, mede, grafo-01, nenhuma, aresta, entrada, teses
+    - Trecho-guia: Tudo determinístico, sem parâmetro ajustável, sem juízo.
+  - [SRC-S009 · L87–L96 · PRD — Grafo de raciocínio: completude antes de peso > 3. E0 — Lint estrutural do grafo > 3.2 Severidade — sem limiar, sem calibração](43_PRD_GRAFOS_PONDERADOS.md#src-s009)
+    - Assuntos: não, peça, tese, severidade, grafo-01, usa, limiar, calibração
+    - Trecho-guia: Não há número a calibrar porque não há escala: as verificações são binárias. A severidade é fixa e derivada da consequência, não de tolerância estatística:
+  - [SRC-S010 · L97–L104 · PRD — Grafo de raciocínio: completude antes de peso > 3. E0 — Lint estrutural do grafo > 3.3 O que E0 explicitamente não faz](43_PRD_GRAFOS_PONDERADOS.md#src-s010)
+    - Assuntos: não, explicitamente, faz, diz, atribui, peso, força, confiança
+    - Trecho-guia: Não atribui peso, força ou confiança a nada. Não diz que uma tese é fraca. Diz que a sustentação dela não está registrada. Não bloqueia entrega. Emite achado no formato que o F7 já usa.
+  - [SRC-S011 · L105–L114 · PRD — Grafo de raciocínio: completude antes de peso > 4. E1 — Ontologia (condicionado)](43_PRD_GRAFOS_PONDERADOS.md#src-s011)
+    - Assuntos: grafos, ontologia, condicionado, schema, hoje, usam, vocabulário, não
+    - Trecho-guia: Fixar no schema o conjunto fechado de type de nó. Hoje o campo é livre e os seis grafos usam três vocabulários diferentes.
+  - [SRC-S012 · L115–L124 · PRD — Grafo de raciocínio: completude antes de peso > 5. O elo com o texto — reclassificado](43_PRD_GRAFOS_PONDERADOS.md#src-s012)
+    - Assuntos: elo, não, caso, texto, reclassificado, supportids, campo, cobertura
+    - Trecho-guia: A v2 propunha supportIds no paragraphprovenance.json para ligar parágrafo a nó do grafo. Helena (§4) e Diabob (§6) atacaram por lados diferentes e ambos acertaram: a fixture tem 187 parágrafos, nenhum com o campo, e cobertura parcial declarada não é ponte, é lacuna com etiqueta.
+  - [SRC-S013 · L125–L135 · PRD — Grafo de raciocínio: completude antes de peso > 6. Riscos](43_PRD_GRAFOS_PONDERADOS.md#src-s013)
+    - Assuntos: não, riscos, primeiro, ser, sobre, grafos, grafo, plano
+    - Trecho-guia: Documento de consulta sobre 6. Riscos.
+  - [SRC-S014 · L136–L147 · PRD — Grafo de raciocínio: completude antes de peso > 7. Aceitação](43_PRD_GRAFOS_PONDERADOS.md#src-s014)
+    - Assuntos: não, aceitação, grafo-01, grafo-04, passa, nenhum, achado, implementados
+    - Trecho-guia: 1. GRAFO-01 a GRAFO-04 implementados, determinísticos, sem parâmetro ajustável. 2. Cada verificação tem um teste que falha antes e passa depois, com caso real como fixture — a exigência de Diabob §10, acatada. Ressalva escrita não conta como correção. 3. Regressão nomeada, com os
+  - [SRC-S015 · L148–L158 · PRD — Grafo de raciocínio: completude antes de peso > 8. Bloqueadores](43_PRD_GRAFOS_PONDERADOS.md#src-s015)
+    - Assuntos: bloqueadores, saída, implementar, antes, peso, escala, confiança, qualquer
+    - Trecho-guia: Peso, escala ou confiança em qualquer saída de E0. Saída de E0 apresentada como avaliação da qualidade jurídica da tese. GRAFO-01 emitido como P2 sem a limitação declarada. Verificação sem o par de testes de §7.2. Implementar E2 antes da medição de §9.2. Implementar a propagação 
+  - [SRC-S016 · L159–L160 · PRD — Grafo de raciocínio: completude antes de peso > 9. Reabertura de E2 — critério objetivo](43_PRD_GRAFOS_PONDERADOS.md#src-s016)
+    - Assuntos: reabertura, critério, objetivo
+    - Trecho-guia: Documento de consulta sobre 9. Reabertura de E2 — critério objetivo.
+  - [SRC-S017 · L161–L164 · PRD — Grafo de raciocínio: completude antes de peso > 9. Reabertura de E2 — critério objetivo > 9.1 Por que travado](43_PRD_GRAFOS_PONDERADOS.md#src-s017)
+    - Assuntos: travado, não, distribuição, atual, peso, discrimina, isso, medição
+    - Trecho-guia: Com a distribuição atual, peso não discrimina. Isso é medição, não opinião, e está em §1.
+  - [SRC-S018 · L165–L181 · PRD — Grafo de raciocínio: completude antes de peso > 9. Reabertura de E2 — critério objetivo > 9.2 O que destrava](43_PRD_GRAFOS_PONDERADOS.md#src-s018)
+    - Assuntos: não, diabob, autos, destrava, abaixo, hoje, arestas, três
+    - Trecho-guia: Rodar de novo a medição de §1 e obter, sobre os grafos vigentes:
+  - [SRC-S019 · L182–L189 · PRD — Grafo de raciocínio: completude antes de peso > 10. Esforço](43_PRD_GRAFOS_PONDERADOS.md#src-s019)
+    - Assuntos: horas, esforço, inferência, incluindo, testes, integração, mais, levantamento
+    - Trecho-guia: [Inferência] E0: 3 a 5 horas, incluindo os testes de §7 e a integração no F7. E1: 2 a 3 horas, mais o levantamento dos type divergentes. E2: não estimo o que está suspenso.
+  - [SRC-S020 · L190–L193 · PRD — Grafo de raciocínio: completude antes de peso > 11. Decisões sobre os três pareceres](43_PRD_GRAFOS_PONDERADOS.md#src-s020)
+    - Assuntos: decisões, sobre, três, pareceres, achado, conferi, cada, fonte
+    - Trecho-guia: Conferi cada achado na fonte antes de decidir. Onde a conferência mudou o achado, está dito.
+  - [SRC-S021 · L194–L203 · PRD — Grafo de raciocínio: completude antes de peso > 11. Decisões sobre os três pareceres > Helena — estratégia](43_PRD_GRAFOS_PONDERADOS.md#src-s021)
+    - Assuntos: acatado, não, helena, estratégia, sai, tem, contagem, escopo
+    - Trecho-guia: Documento de consulta sobre Helena — estratégia.
+  - [SRC-S022 · L204–L213 · PRD — Grafo de raciocínio: completude antes de peso > 11. Decisões sobre os três pareceres > Efesto-Codex — engenharia](43_PRD_GRAFOS_PONDERADOS.md#src-s022)
+    - Assuntos: não, engenharia, acesso, achado, efesto-codex, parecer, revisão, porque
+    - Trecho-guia: O parecer não vale como revisão de engenharia. O executor negou acesso ao repositório (CreateProcessAsUserW: acesso negado) e ele reportou bloqueio em vez de inventar achados — o que é a conduta correta e está registrado a favor dele. Um único achado sobreviveu, porque foi deriva
+  - [SRC-S023 · L214–L231 · PRD — Grafo de raciocínio: completude antes de peso > 11. Decisões sobre os três pareceres > Diabob — autoengano](43_PRD_GRAFOS_PONDERADOS.md#src-s023)
+    - Assuntos: não, acatado, desenho, medição, item, ausência, dado, tem
+    - Trecho-guia: Também sem acesso a arquivo; trabalhou sobre os fatos do briefing. Como a missão dele era atacar o desenho, e o desenho estava descrito por inteiro, os achados sobre desenho valem. Descartei o que dependia de leitura de código.
+  - [SRC-S024 · L232–L237 · PRD — Grafo de raciocínio: completude antes de peso > 11. Decisões sobre os três pareceres > Nota de circularidade](43_PRD_GRAFOS_PONDERADOS.md#src-s024)
+    - Assuntos: nota, circularidade, sou, efesto, julguei, parecer, efesto-codex, registro
+    - Trecho-guia: Eu sou Efesto e julguei o parecer do Efesto-Codex. Registro para que se olhe com atenção: o único achado que aproveitei dele é também o que mais reforçou a minha conclusão. Mitigação real: não o aceitei por concordância, rodei a medição de §1 e ela é reproduzível pelo script em §
+  - [SRC-S025 · L238–L243 · PRD — Grafo de raciocínio: completude antes de peso > 12. Reprodução da medição](43_PRD_GRAFOS_PONDERADOS.md#src-s025)
+    - Assuntos: medição, reprodução, foi, feita, sobre, state, n4_artifacts, f3_reasoning_graph
+    - Trecho-guia: A medição de §1 foi feita sobre state//n4artifacts/F3REASONINGGRAPH.json, aplicando a fórmula da v2 com os defaults da v2, contando por tese as arestas de entrada supports e justifies. Ela deve virar o primeiro teste de E0, com os números desta data como baseline — se a distribui
+  - [SRC-S026 · L244–L249 · PRD — Grafo de raciocínio: completude antes de peso > 13. Pendências](43_PRD_GRAFOS_PONDERADOS.md#src-s026)
+    - Assuntos: não, pendências, real, antes, decisoes, dado, revisão, engenharia
+    - Trecho-guia: 1. Revisão de engenharia sobre código real não aconteceu. O Codex não conseguiu ler o workspace nesta rodada. Resolver o acesso antes de E0 entrar em produção. 2. M3 precisa de plano próprio, com prioridade acima de E1 e E2. 3. Fichas de decisão. FORJAHARNESS\decisoes\ ainda não 
+
+### 4.51. PRD — Disciplinas de processo importadas (skills da fábrica)
+
+- **Arquivo preparado:** [44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md)
+- **Origem:** `44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md`
+- **Termos:** não, decisão, piloto, antes, decisões, cada, prospectivo, observado, seis, skills, disciplina, escopo
+- **Blocos:**
+  - [SRC-S001 · L1–L18 · PRD — Disciplinas de processo importadas (skills da fábrica)](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s001)
+    - Assuntos: planejamento, state, prd44-revisao, prd, skills, disciplinas, processo, importadas
+    - Trecho-guia: SUBSTITUÍDO EM 05/08/2026 por planejamento/45PRDINSTRUMENTACAOFORJA.md, que unifica este documento com o outro PRD da mesma data. Permanece legível como anexo histórico: os requisitos detalhados e os critérios de aceite aqui escritos seguem valendo por incorporação, e não foram r
+  - [SRC-S002 · L19–L48 · PRD — Disciplinas de processo importadas (skills da fábrica) > 1. Decisão de produto](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s002)
+    - Assuntos: piloto, candidata, decisão, observado, seis, não, disciplina, reduzir
+    - Trecho-guia: A FORJA manterá as seis skills já adaptadas, mas as tratará como seis hipóteses de processo independentes, e não como um pacote comprovado de qualidade. A versão 1.1 autoriza preparar e executar somente um piloto prospectivo em modo de observação, governado pelo ciclo AR. Ela não
+  - [SRC-S003 · L49–L72 · PRD — Disciplinas de processo importadas (skills da fábrica) > 2. Problema](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s003)
+    - Assuntos: não, problema, podem, quatro, disciplinas, omitir, pode, resultado
+    - Trecho-guia: Há quatro problemas operacionais plausivelmente atacáveis pelas disciplinas:
+  - [SRC-S004 · L73–L74 · PRD — Disciplinas de processo importadas (skills da fábrica) > 3. Linha de base F2A e decisão separada da Onda 0](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s004)
+    - Assuntos: linha, base, f2a, decisão, separada, onda
+    - Trecho-guia: Documento de consulta sobre 3. Linha de base F2A e decisão separada da Onda 0.
+  - [SRC-S005 · L75–L86 · PRD — Disciplinas de processo importadas (skills da fábrica) > 3. Linha de base F2A e decisão separada da Onda 0 > 3.1 Fato conferido pelo orquestrador](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s005)
+    - Assuntos: arquivos, fato, conferido, pelo, orquestrador, árvore, casos, reprovam
+    - Trecho-guia: Foram executados os gates sobre todas as árvores localizadas no disco: 25 arquivos de árvore, referentes a 11 casos distintos, e os 25 reprovam exploration100complete. Em 21 arquivos, de 8 casos, as reprovações limitam-se a N4-Q-100-DIVERSITY e, em vários deles, também N4-Q-100-N
+  - [SRC-S006 · L87–L98 · PRD — Disciplinas de processo importadas (skills da fábrica) > 3. Linha de base F2A e decisão separada da Onda 0 > 3.2 Opções reservadas ao Igor](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s006)
+    - Assuntos: não, igor, positiva, opções, reservadas, bloqueante, diversidade, árvore
+    - Trecho-guia: Decisão pendente: Igor escolhe A, B ou C. Este PRD não altera código nem antecipa a escolha. D3 não entra em caso prospectivo antes dessa decisão; D1, D2, D4 e D5 podem ter ensaio histórico, mas não promoção.
+  - [SRC-S007 · L99–L112 · PRD — Disciplinas de processo importadas (skills da fábrica) > 4. Hipóteses falsificáveis por disciplina](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s007)
+    - Assuntos: menos, cada, hipóteses, decisão, materiais, falsificáveis, disciplina, hipótese
+    - Trecho-guia: As seis hipóteses não compartilham denominador. “Dez casos” deixa de ser unidade comum: a unidade é a oportunidade elegível definida em cada linha.
+  - [SRC-S008 · L113–L114 · PRD — Disciplinas de processo importadas (skills da fábrica) > 5. Escopo e não escopo](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s008)
+    - Assuntos: escopo, não
+    - Trecho-guia: Documento de consulta sobre 5. Escopo e não escopo.
+  - [SRC-S009 · L115–L125 · PRD — Disciplinas de processo importadas (skills da fábrica) > 5. Escopo e não escopo > 5.1 Escopo](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s009)
+    - Assuntos: escopo, seis, skills, existentes, sua, ligação, experimental, consumidor
+    - Trecho-guia: as seis skills existentes e sua ligação experimental ao consumidor correto; schemas, IDs estáveis, hashes e recibos temporais necessários ao piloto; ledger prospectivo de oportunidades, inclusive inelegibilidade e não disparo; canários de falha única e contraprovas reais aprovada
+  - [SRC-S010 · L126–L138 · PRD — Disciplinas de processo importadas (skills da fábrica) > 5. Escopo e não escopo > 5.2 Não escopo](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s010)
+    - Assuntos: não, escopo, gate, entrega, render, skills, corrigir, f2a
+    - Trecho-guia: corrigir o gate F2A nesta entrega; RAG, LLM-as-judge como gate, RCT interno, governança de confidencialidade por IA, firewall de saída, visual 3D, compor() dentro do render; resolver cache editorial por SHA, gates visuais, citações existentes, render ou entrega; reconciliar integ
+  - [SRC-S011 · L139–L160 · PRD — Disciplinas de processo importadas (skills da fábrica) > 6. Princípios de contrato e medição](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s011)
+    - Assuntos: não, contrato, princípios, medição, ordem, recibo, sequência, têm
+    - Trecho-guia: 1. Observação não é contrato obrigatório. Enquanto o runner não possui optionalOutputs ou observedGates, os artefatos do piloto ficam fora de requiredOutputs e requiredGates, em área experimental identificada. 2. Produtor, consumidor e ordem precisam de recibo. mtime não prova or
+  - [SRC-S012 · L161–L162 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s012)
+    - Assuntos: requisitos, critérios, aceite
+    - Trecho-guia: Documento de consulta sobre 7. Requisitos e critérios de aceite.
+  - [SRC-S013 · L163–L184 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R0 — Instrumento prospectivo antes da intervenção](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s013)
+    - Assuntos: antes, prospectivo, eligible, instrumento, intervenção, nondispatchreason, registro, exige
+    - Trecho-guia: Criar o schema do ledger de observação com, no mínimo: opportunityId, caseId, disciplineId, triggerEvent, eligible, eligibilityReason, registeredAt, dispatchEvent, nonDispatchReason, artifactPath, artifactSha256, consumerEvent, consumedSha256, humanAudit, materialOutcome, costMin
+  - [SRC-S014 · L185–L198 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R1 — Registro de decisões operante](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s014)
+    - Assuntos: decisões, registro, operante, status, fonte, critério, reabertura, aponta
+    - Trecho-guia: Criar FORJAHARNESS/decisoes/ e migrar as 13 decisões inventariadas pela skill forja-adr, com ID estável, status, fonte, evidência, consequência e critério de reabertura. O índice da FORJA aponta a pasta.
+  - [SRC-S015 · L199–L216 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R2 — Briefing cego ligado ao despacho F4](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s015)
+    - Assuntos: briefing, despacho, cego, ligado, hash, ids, anterior, antes
+    - Trecho-guia: Antes de cada despacho de conselho F4, o produtor experimental gera briefing com três perguntas obrigatórias, fontes primárias por caminho e hash, restrições relevantes e IDs de decisões já tomadas ou rejeitadas. O recibo de despacho leva o SHA-256 do briefing; a resposta do revi
+  - [SRC-S016 · L217–L244 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R3 — Pesquisa oficial F5 nasce de briefing e usa um fluxo de ledgers](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s016)
+    - Assuntos: pesquisa, briefing, fonte, oficial, propositionid, não, nasce, usa
+    - Trecho-guia: O briefing de pesquisa pertence à F5. F4 produz o propositionledger, que é a fonte canônica das demandas de pesquisa. F5 consome seus propositionId e produz o sourceledger, fonte canônica dos achados. U6/ F5LEDGERMATERIAL.json, enquanto existir, é somente projeção derivada desses
+  - [SRC-S017 · L245–L262 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R4 — Três escolhas viram hipóteses provisórias depois de F1](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s017)
+    - Assuntos: não, hipóteses, depois, hipótese, fonte, três, escolhas, viram
+    - Trecho-guia: peticao-tres-escolhas não roda no primeiro contato. Depois de F1, quando o acervo mínimo estiver identificado e restarem duas ou mais linhas materiais, a disciplina pode gerar F2INTAKEHYPOTHESES.json. Recomendações do agente e respostas humanas são hipóteses de exploração, nunca 
+  - [SRC-S018 · L263–L279 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R5 — Decisões incertas têm ponte explícita F7 → F9](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s018)
+    - Assuntos: têm, ponte, não, ids, decisões, incertas, explícita, antes
+    - Trecho-guia: Antes do fechamento F7, produzir F7UNCERTAINDECISIONS.json com ID, decisão, alternativa, motivo, localizador e, quando vazio, justificativa nominal. F9 produz mapa interno que liga cada ID pertinente ao trecho e à página do emailresponse. O e-mail não precisa expor IDs internos.
+  - [SRC-S019 · L280–L294 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R6 — Handoff somente antes do despacho de revisão cruzada](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s019)
+    - Assuntos: handoff, despacho, antes, revisão, cruzada, hash, estado, somente
+    - Trecho-guia: forja-handoff-caso produz state/caseId/HANDOFF.md antes do despacho real de revisão cruzada. O recibo de despacho registra hash do handoff, versão do estado e evento consumido.
+  - [SRC-S020 · L295–L309 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R7 — Recibo de tentativa editorial preserva stopreason](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s020)
+    - Assuntos: recibo, tentativa, sucesso, editorial, preserva, ser, antes, valor
+    - Trecho-guia: R7 é patch de observabilidade independente. O recibo de tentativa precisa ser gravado assim que o envelope retorna, antes de parse, fidelidade ou qualquer exceção que possa encerrar a execução. No sucesso, o mesmo recibo é enriquecido.
+  - [SRC-S021 · L310–L323 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R8 — Rejeição registrada do classificador semântico de instruções](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s021)
+    - Assuntos: rejeição, classificador, registrada, semântico, instruções, não, nova, fonte
+    - Trecho-guia: Registrar em ficha R1 que não será construído classificador automático de trechos em núcleo comum, específico-Codex e específico-Claude. Classificação de texto livre criaria nova fonte semântica sujeita a deriva. Se houver necessidade futura, ferramenta separada pode calcular som
+  - [SRC-S022 · L324–L339 · PRD — Disciplinas de processo importadas (skills da fábrica) > 7. Requisitos e critérios de aceite > R9 — Descoberta explícita para Codex e Claude](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s022)
+    - Assuntos: descoberta, codex, claude, seis, explícito, não, explícita, skills
+    - Trecho-guia: Documentar no AGENTS.md aplicável uma tabela com as seis skills, caminho, gatilho, modo automático ou explícito/manual e o artefato/contrato que prevalece. R4, R5 e R6 não podem ser anunciadas como disparo automático enquanto o frontmatter o desabilitar.
+  - [SRC-S023 · L340–L341 · PRD — Disciplinas de processo importadas (skills da fábrica) > 8. Ondas de execução](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s023)
+    - Assuntos: ondas, execução
+    - Trecho-guia: Documento de consulta sobre 8. Ondas de execução.
+  - [SRC-S024 · L342–L357 · PRD — Disciplinas de processo importadas (skills da fábrica) > 8. Ondas de execução > Onda 0 — baseline, instrumentos e decisões](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s024)
+    - Assuntos: onda, baseline, instrumentos, decisões, decisão, f2a, canários, integração
+    - Trecho-guia: Sem integração das disciplinas na produção:
+  - [SRC-S025 · L358–L367 · PRD — Disciplinas de processo importadas (skills da fábrica) > 8. Ondas de execução > Onda 1 — ensaio assistido de três oportunidades elegíveis por disciplina](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s025)
+    - Assuntos: disciplina, três, oportunidades, elegíveis, onda, ensaio, assistido, apenas
+    - Trecho-guia: Executar a variante apenas no ambiente experimental previsto pelo ciclo AR. Os artefatos ficam fora dos contratos obrigatórios. Registrar todos os gatilhos, inclusive inelegibilidade e não disparo. Corrigir apenas defeitos do instrumento; não promover disciplina.
+  - [SRC-S026 · L368–L377 · PRD — Disciplinas de processo importadas (skills da fábrica) > 8. Ondas de execução > Onda 2 — piloto prospectivo observado](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s026)
+    - Assuntos: resultado, não, onda, piloto, prospectivo, observado, disciplina, dez
+    - Trecho-guia: Executar por 30 dias. Somente a disciplina que acumular pelo menos dez oportunidades elegíveis poderá ter leitura exploratória de resultado; abaixo desse piso, o resultado permanece inconclusivo e não há extensão automática. Separar adoção, resultado material e custo; preservar n
+  - [SRC-S027 · L378–L387 · PRD — Disciplinas de processo importadas (skills da fábrica) > 8. Ondas de execução > Onda 3 — decisão individual de promoção](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s027)
+    - Assuntos: promoção, onda, decisão, individual, disciplina, não, cada, registrar
+    - Trecho-guia: Para cada disciplina, registrar um dos três estados: promover, continuarestudo ou retirar. Promoção de prompt, template ou protocolo exige recibo válido do ciclo AR, canários mortos, contraprovas preservadas, ausência de regressão material e custo aceito. Somente depois disso a d
+  - [SRC-S028 · L388–L389 · PRD — Disciplinas de processo importadas (skills da fábrica) > 9. Métricas](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s028)
+    - Assuntos: métricas
+    - Trecho-guia: Documento de consulta sobre 9. Métricas.
+  - [SRC-S029 · L390–L409 · PRD — Disciplinas de processo importadas (skills da fábrica) > 9. Métricas > 9.1 Denominadores e fórmulas comuns](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s029)
+    - Assuntos: n_eligible, elegíveis, fórmulas, denominadores, comuns, eventos, motivo, despacho
+    - Trecho-guia: Nconsidered: todos os eventos de gatilho avaliados após o início do piloto; Neligible: eventos com eligible=true e motivo congelado; Ndispatched: elegíveis com recibo de despacho; Nconsumed: elegíveis cujo consumidor confirma o mesmo SHA-256; Nnondispatch: elegíveis sem despacho,
+  - [SRC-S030 · L410–L426 · PRD — Disciplinas de processo importadas (skills da fábrica) > 9. Métricas > 9.2 Resultado por disciplina](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s030)
+    - Assuntos: resultado, fonte, humana, disciplina, auditoria, decisão, propostas, rejeitadas
+    - Trecho-guia: Métricas estruturais devem atingir 100% de vínculo quando o artefato for produzido e detectar 100% dos canários nominados. Isso prova o instrumento, não o benefício. Resultado material só sustenta promoção quando superar a comparação pré-registrada no AR sem regressão e com custo
+  - [SRC-S031 · L427–L444 · PRD — Disciplinas de processo importadas (skills da fábrica) > 10. O que mudou da v1.0 e por quê](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s031)
+    - Assuntos: não, bloqueio, onda, mudou, estado, execução, três, literal
+    - Trecho-guia: Documento de consulta sobre 10. O que mudou da v1.0 e por quê.
+  - [SRC-S032 · L445–L459 · PRD — Disciplinas de processo importadas (skills da fábrica) > 11. Riscos e controles](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s032)
+    - Assuntos: não, riscos, controles, decisão, única, auditoria, humana, resultado
+    - Trecho-guia: Documento de consulta sobre 11. Riscos e controles.
+  - [SRC-S033 · L460–L482 · PRD — Disciplinas de processo importadas (skills da fábrica) > 12. Decisão sobre os três pareceres](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s033)
+    - Assuntos: foi, decisão, acatado, parte, acatados, não, sobre, três
+    - Trecho-guia: Helena — acatado em parte. Acatados: bloqueio F2A como baseline separado, F3 → F5, hipóteses e denominadores próprios, métricas de resultado/custo, ciclo AR, R4 provisório e vínculo temporal por hash. Não foi acatada a inclusão da correção de cache editorial por SHA: é problema v
+  - [SRC-S034 · L483–L493 · PRD — Disciplinas de processo importadas (skills da fábrica) > 13. Pendências e decisões abertas](44_PRD_SKILLS_DISCIPLINAS_PROCESSO.md#src-s034)
+    - Assuntos: pendências, decisões, abertas, igor, não, escolher, f2a, nomear
+    - Trecho-guia: 1. Igor: escolher A, B ou C para o F2A (§ 3.2). 2. Igor: nomear o auditor humano do resultado material e o custo aceitável por disciplina antes do registro AR. 3. Execução futura: comprovar se existe sealed prospectivo consumível. Se não existir, manter estudodescritivo. 4. Após 
+
+### 4.52. PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3
+
+- **Arquivo preparado:** [45_PRD_INSTRUMENTACAO_FORJA.md](45_PRD_INSTRUMENTACAO_FORJA.md)
+- **Origem:** `45_PRD_INSTRUMENTACAO_FORJA.md`
+- **Termos:** não, fonte, grafo, json, hash, f2a, lint, artefato, prd, ponte, severidade, única
+- **Blocos:**
+  - [SRC-S001 · L1–L20 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3](45_PRD_INSTRUMENTACAO_FORJA.md#src-s001)
+    - Assuntos: prd, versão, instrumentação, rastreável, ponte, reabrir, reconstrução, efesto
+    - Trecho-guia: Versão: 2.0 — reconstrução Efesto após red team Diabob Protocolo: FORJA-INSTRUMENTACAO-v2 Data: 06/08/2026 Modo: arquitetura e especificação executável Estado: pronto para implementação da Onda 0; este documento não altera produção por si só Parecer adversarial: state/prd45-revis
+  - [SRC-S002 · L21–L45 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 1. Resultado e decisão de produto](45_PRD_INSTRUMENTACAO_FORJA.md#src-s002)
+    - Assuntos: resultado, decisão, não, grafo, produto, prospectiva, fonte, severidade
+    - Trecho-guia: A FORJA terá uma instrumentação prospectiva única, mas não reescreverá o grafo de raciocínio da F3 depois da pesquisa oficial. A ligação entre proposição e fonte será materializada em artefato próprio da F5, consumível e reconciliável pela F7.
+  - [SRC-S003 · L46–L47 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 2. Evidência de partida, reproduzida em 06/08/2026](45_PRD_INSTRUMENTACAO_FORJA.md#src-s003)
+    - Assuntos: evidência, partida, reproduzida
+    - Trecho-guia: Documento de consulta sobre 2. Evidência de partida, reproduzida em 06/08/2026.
+  - [SRC-S004 · L48–L74 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 2. Evidência de partida, reproduzida em 06/08/2026 > 2.1 Grafo N4 de F3](45_PRD_INSTRUMENTACAO_FORJA.md#src-s004)
+    - Assuntos: origem, grafo, não, arestas, teses, document, official_source, quantos
+    - Trecho-guia: Foram lidos os seis artefatos vigentes em state//n4artifacts/F3REASONINGGRAPH.json.
+  - [SRC-S005 · L75–L98 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 2. Evidência de partida, reproduzida em 06/08/2026 > 2.2 F2A](45_PRD_INSTRUMENTACAO_FORJA.md#src-s005)
+    - Assuntos: não, árvores, f2a, cada, gates, fail, apenas, achado
+    - Trecho-guia: A unidade canônica atual é o último artefato de cada caso em state//n4artifacts/F2QUESTIONTREE.json, e não cada cópia em runs/ ou history/.
+  - [SRC-S006 · L99–L109 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 2. Evidência de partida, reproduzida em 06/08/2026 > 2.3 Verificação técnica inicial](45_PRD_INSTRUMENTACAO_FORJA.md#src-s006)
+    - Assuntos: verificação, técnica, inicial, aprovados, axi, checks, saúde, contratos
+    - Trecho-guia: AXI: 5 de 5 checks de saúde aprovados; contratos F0–F10 carregados e hashados; 95 testes focados aprovados, zero falhas; baseline estrutural do grafo reproduzido; artefato F5LEDGERMATERIAL.json conferido no código real.
+  - [SRC-S007 · L110–L124 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 3. Restrições arquiteturais](45_PRD_INSTRUMENTACAO_FORJA.md#src-s007)
+    - Assuntos: não, fase, são, restrições, arquiteturais, instrumentação, entra, cada
+    - Trecho-guia: 1. Cada fase é dona das próprias saídas. Fase posterior não altera artefato aprovado de fase anterior. 2. N3 canônico e N4 candidateshadow não são uma única família de contrato. 3. Durante o piloto, a instrumentação não entra em requiredOutputs nem requiredGates. 4. Artefatos exi
+  - [SRC-S008 · L125–L143 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 4. Arquitetura escolhida](45_PRD_INSTRUMENTACAO_FORJA.md#src-s008)
+    - Assuntos: map, obs, arquitetura, escolhida, mermaid, flowchart, grafo, raciocínio
+    - Trecho-guia: Documento de consulta sobre 4. Arquitetura escolhida.
+  - [SRC-S009 · L144–L149 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 4. Arquitetura escolhida > 4.1 O que muda](45_PRD_INSTRUMENTACAO_FORJA.md#src-s009)
+    - Assuntos: muda, mapa, passa, produzir, namespace, experimental, liga, cada
+    - Trecho-guia: F5 passa a produzir, em namespace experimental, um mapa que liga cada propositionId decisiva às entradas do sourceledger. A F7 reconcilia esse mapa com o verifiedsourceledger e com a auditoria humana do resultado final.
+  - [SRC-S010 · L150–L156 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 4. Arquitetura escolhida > 4.2 O que não muda](45_PRD_INSTRUMENTACAO_FORJA.md#src-s010)
+    - Assuntos: não, muda, f3_reasoning_graph, json, permanece, propriedade, altera, hash
+    - Trecho-guia: F3REASONINGGRAPH.json permanece propriedade da F3; F5 não altera hash, updatedAt, producerRunId ou conteúdo de F3; o lint do grafo F3 não recebe autoridade jurídica; o runner canônico continua sem novo output obrigatório durante a observação.
+  - [SRC-S011 · L157–L158 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 5. Contratos novos](45_PRD_INSTRUMENTACAO_FORJA.md#src-s011)
+    - Assuntos: contratos, novos
+    - Trecho-guia: Documento de consulta sobre 5. Contratos novos.
+  - [SRC-S012 · L159–L181 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 5. Contratos novos > R0 — OBSERVATIONLEDGER.jsonl](45_PRD_INSTRUMENTACAO_FORJA.md#src-s012)
+    - Assuntos: jsonl, observation_ledger, caseid, oportunidade, eligible, nondispatchreason, despacho, exige
+    - Trecho-guia: Local piloto: state/caseId/instrumentation/OBSERVATIONLEDGER.jsonl.
+  - [SRC-S013 · L182–L223 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 5. Contratos novos > R1 — F5PROPOSITIONEVIDENCEMAP.json](45_PRD_INSTRUMENTACAO_FORJA.md#src-s013)
+    - Assuntos: json, hash, f5_proposition_evidence_map, caseid, artifactid, proposition_ledger, sha256, source_ledger
+    - Trecho-guia: Local piloto: state/caseId/instrumentation/F5PROPOSITIONEVIDENCEMAP.json.
+  - [SRC-S014 · L224–L240 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 5. Contratos novos > R2 — lint de evidência pós-F5](45_PRD_INSTRUMENTACAO_FORJA.md#src-s014)
+    - Assuntos: instrumento, lint, não, evidência, pós-f5, código, piloto, decisiva
+    - Trecho-guia: “P0 do instrumento” impede creditar a observação; durante o piloto não bloqueia a fase canônica. Promoção futura decide se algum código entra em contrato.
+  - [SRC-S015 · L241–L259 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 5. Contratos novos > R3 — lint estrutural do grafo F3](45_PRD_INSTRUMENTACAO_FORJA.md#src-s015)
+    - Assuntos: lint, grafo, estrutural, código, grafo-01, tese, entrada, fonte
+    - Trecho-guia: O lint original é preservado, mas separado de D2:
+  - [SRC-S016 · L260–L272 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 5. Contratos novos > R4 — ontologia sem reescrita histórica](45_PRD_INSTRUMENTACAO_FORJA.md#src-s016)
+    - Assuntos: ontologia, reescrita, histórica, document, não, vocabulário, proposto, novos
+    - Trecho-guia: Vocabulário proposto para novos grafos: document, officialsource, fact, event, rule, thesis, request, decision, inference e gap.
+  - [SRC-S017 · L273–L274 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 6. Correção obrigatória do F2A](45_PRD_INSTRUMENTACAO_FORJA.md#src-s017)
+    - Assuntos: correção, obrigatória, f2a
+    - Trecho-guia: Documento de consulta sobre 6. Correção obrigatória do F2A.
+  - [SRC-S018 · L275–L296 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 6. Correção obrigatória do F2A > R5 — severidade única nos dois caminhos do runner](45_PRD_INSTRUMENTACAO_FORJA.md#src-s018)
+    - Assuntos: severidade, única, dois, achado, árvore, caminhos, runner, validação
+    - Trecho-guia: achado P0 bloqueia a validação e o gate; achado P1 permanece no laudo e não interrompe promoção; achado sem severidade é tratado como P0; código novo não mapeado preserva sua severidade, em vez de virar fail por desconhecimento; a função que seleciona bloqueantes é única e reutil
+  - [SRC-S019 · L297–L315 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 7. As seis disciplinas, sem segunda fonte normativa](45_PRD_INSTRUMENTACAO_FORJA.md#src-s019)
+    - Assuntos: fonte, decisões, não, material, antes, json, ids, seis
+    - Trecho-guia: D3 é sempre provisória, roda depois de F1 e nunca bloqueia por silêncio humano. D4 não expõe IDs internos no e-mail; o mapa interno prova a ponte F7 → F9. D5 só vale no evento real de pré-despacho, não em “troca de contexto” genérica. D6 começa pelas quatro decisões resolvidas na
+  - [SRC-S020 · L316–L317 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 8. Itens preservados fora do caminho crítico](45_PRD_INSTRUMENTACAO_FORJA.md#src-s020)
+    - Assuntos: itens, preservados, fora, caminho, crítico
+    - Trecho-guia: Documento de consulta sobre 8. Itens preservados fora do caminho crítico.
+  - [SRC-S021 · L318–L324 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 8. Itens preservados fora do caminho crítico > R6 — stopreason](45_PRD_INSTRUMENTACAO_FORJA.md#src-s021)
+    - Assuntos: stopreason, stop_reason, recibo, editorial, deve, ser, gravado, após
+    - Trecho-guia: O recibo editorial deve ser gravado após o retorno do envelope e antes de parse, fidelidade ou exceção. Sucesso, ausência do campo, saída inválida e divergência de modelo terão testes próprios. R6 é observabilidade independente e não recebe crédito causal por D1–D6.
+  - [SRC-S022 · L325–L330 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 8. Itens preservados fora do caminho crítico > R7 — classificador semântico de instruções rejeitado](45_PRD_INSTRUMENTACAO_FORJA.md#src-s022)
+    - Assuntos: classificador, semântico, instruções, rejeitado, específico, permanece, rejeitada, criação
+    - Trecho-guia: Permanece rejeitada a criação de classificador que decida automaticamente núcleo comum, específico Codex e específico Claude. Ferramenta futura pode calcular hash e diff, nunca classificar mérito sem nova decisão.
+  - [SRC-S023 · L331–L336 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 8. Itens preservados fora do caminho crítico > R8 — descoberta entre famílias](45_PRD_INSTRUMENTACAO_FORJA.md#src-s023)
+    - Assuntos: descoberta, famílias, skill, automático, manual, depois, disciplina, possuir
+    - Trecho-guia: Depois de a disciplina possuir produtor, consumidor e artefato estáveis, o AGENTS.md aplicável registra skill, caminho, gatilho, modo automático/manual e fonte prevalente. Skill manual não é anunciada como disparo automático.
+  - [SRC-S024 · L337–L338 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 9. Ondas de execução](45_PRD_INSTRUMENTACAO_FORJA.md#src-s024)
+    - Assuntos: ondas, execução
+    - Trecho-guia: Documento de consulta sobre 9. Ondas de execução.
+  - [SRC-S025 · L339–L349 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 9. Ondas de execução > Onda 0 — coerência do gate e instrumentos](45_PRD_INSTRUMENTACAO_FORJA.md#src-s025)
+    - Assuntos: instrumentos, onda, coerência, gate, implementar, seus, testes, dois
+    - Trecho-guia: 1. implementar R5 e seus testes nos dois caminhos do runner; 2. congelar baseline canônico por caso, sem contar cópias históricas; 3. escrever schemas de R0 e R1; 4. criar os quatro registros de decisão desta versão; 5. manter toda instrumentação fora dos contratos obrigatórios.
+  - [SRC-S026 · L350–L360 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 9. Ondas de execução > Onda 1 — fatia vertical D2](45_PRD_INSTRUMENTACAO_FORJA.md#src-s026)
+    - Assuntos: onda, fatia, vertical, oportunidades, elegíveis, executar, byte, registrar
+    - Trecho-guia: 1. registrar todas as oportunidades F5 elegíveis; 2. produzir o mapa de proposição-evidência; 3. executar EVID-01 a EVID-07; 4. reconciliar com F7 e auditor humano; 5. executar caso bom, fonte trocada e hash adulterado.
+  - [SRC-S027 · L361–L367 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 9. Ondas de execução > Onda 2 — disciplinas independentes](45_PRD_INSTRUMENTACAO_FORJA.md#src-s027)
+    - Assuntos: onda, disciplinas, independentes, pilotar, separadamente, entra, último, somente
+    - Trecho-guia: Pilotar D1, D4, D5 e D6 separadamente. D3 entra por último, somente depois de o F2A estar estável e sempre como hipótese provisória.
+  - [SRC-S028 · L368–L373 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 9. Ondas de execução > Onda 3 — observação prospectiva](45_PRD_INSTRUMENTACAO_FORJA.md#src-s028)
+    - Assuntos: onda, observação, prospectiva, dez, oportunidades, não, rodar, dias
+    - Trecho-guia: Rodar por 30 dias. Uma disciplina só recebe leitura exploratória quando acumular pelo menos dez oportunidades elegíveis; abaixo disso o resultado é inconclusivo. Dez oportunidades não provam eficácia causal e não substituem o ciclo AR.
+  - [SRC-S029 · L374–L380 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 9. Ondas de execução > Onda 4 — promoção individual](45_PRD_INSTRUMENTACAO_FORJA.md#src-s029)
+    - Assuntos: promoção, onda, individual, cada, disciplina, recebe, promover, continuar_estudo
+    - Trecho-guia: Cada disciplina recebe promover, continuarestudo ou retirar. Promoção para N4 candidateshadow exige schema, catálogo, contrato F5, consumidor, canários, contraprovas, cobertura humana e rollback. Promoção para N3 canônico é decisão posterior e separada; não ocorre por consequênci
+  - [SRC-S030 · L381–L385 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 10. Métricas](45_PRD_INSTRUMENTACAO_FORJA.md#src-s030)
+    - Assuntos: métricas, três, colunas, independentes, adoção, resultado, material, custo
+    - Trecho-guia: Três colunas independentes: adoção, resultado material e custo. Uma não compensa a outra.
+  - [SRC-S031 · L386–L393 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 10. Métricas > 10.1 Fórmulas comuns](45_PRD_INSTRUMENTACAO_FORJA.md#src-s031)
+    - Assuntos: n_eligible, fórmulas, comuns, não, adoção, n_consumed, disparo, n_non_dispatch
+    - Trecho-guia: adoção = Nconsumed / Neligible; não disparo = Nnondispatch / Neligible; cobertura humana = Nhumanaudited / Neligible; custo = mediana e maior valor de minutos por oportunidade; denominador zero = não aplicável, nunca 100%.
+  - [SRC-S032 · L394–L404 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 10. Métricas > 10.2 D2](45_PRD_INSTRUMENTACAO_FORJA.md#src-s032)
+    - Assuntos: proposição, mede, coluna, medida, adoção, proposições, decisivas, link
+    - Trecho-guia: EVID-01 mede cobertura. GRAFO-01 mede preenchimento de F3. Nenhum dos dois, isoladamente, conta como melhora jurídica.
+  - [SRC-S033 · L405–L416 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 10. Métricas > 10.3 Critério de reabertura de ponderação](45_PRD_INSTRUMENTACAO_FORJA.md#src-s033)
+    - Assuntos: ponderação, critério, reabertura, arestas, forem, menos, não, permanece
+    - Trecho-guia: A ponderação de arestas permanece suspensa. Só pode ser rediscutida se, nos grafos vigentes:
+  - [SRC-S034 · L417–L418 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 11. Plano de testes](45_PRD_INSTRUMENTACAO_FORJA.md#src-s034)
+    - Assuntos: plano, testes
+    - Trecho-guia: Documento de consulta sobre 11. Plano de testes.
+  - [SRC-S035 · L419–L427 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 11. Plano de testes > 11.1 F2A](45_PRD_INSTRUMENTACAO_FORJA.md#src-s035)
+    - Assuntos: bloqueia, f2a, diversidade, não, validação, inicial, recomputação, dois
+    - Trecho-guia: 1. P1 de diversidade não bloqueia na validação inicial; 2. P1 de diversidade não bloqueia na recomputação; 3. P0 bloqueia nos dois caminhos; 4. severidade ausente falha fechada; 5. oito artefatos atuais P1-only passam em regressão nominada; 6. árvore legítima e sabotagens existen
+  - [SRC-S036 · L428–L438 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 11. Plano de testes > 11.2 Ponte F4 → F5 → F7](45_PRD_INSTRUMENTACAO_FORJA.md#src-s036)
+    - Assuntos: reprova, ponte, desconhecida, hash, fonte, válido, não, propositionid
+    - Trecho-guia: 1. propositionId desconhecida reprova; 2. sourceId desconhecida reprova; 3. hash de fonte divergente reprova; 4. fonte trocada entre precedentes reprova; 5. proposição bloqueada com motivo válido não é falsa cobertura; 6. consumidor com hash diferente não conta como exposição; 7.
+  - [SRC-S037 · L439–L446 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 11. Plano de testes > 11.3 Observação](45_PRD_INSTRUMENTACAO_FORJA.md#src-s037)
+    - Assuntos: não, observação, oportunidade, inelegível, permanece, censo, disparo, exige
+    - Trecho-guia: 1. oportunidade inelegível permanece no censo; 2. não disparo exige motivo; 3. replay não duplica evento; 4. denominador zero produz não aplicável; 5. falha do instrumento não vira resultado verde.
+  - [SRC-S038 · L447–L453 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 11. Plano de testes > 11.4 Grafo F3](45_PRD_INSTRUMENTACAO_FORJA.md#src-s038)
+    - Assuntos: grafo, baseline, real, reproduz, grafo-01, sintético, completo, passa
+    - Trecho-guia: 1. baseline real reproduz 8 GRAFO-01; 2. grafo sintético completo passa; 3. nó/aresta pendente, relação inválida e sustentação sem escopo reprovam; 4. vocabulário legado avisa sem reescrever arquivo.
+  - [SRC-S039 · L454–L455 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 12. Rollout, rollback e observabilidade](45_PRD_INSTRUMENTACAO_FORJA.md#src-s039)
+    - Assuntos: rollout, rollback, observabilidade
+    - Trecho-guia: Documento de consulta sobre 12. Rollout, rollback e observabilidade.
+  - [SRC-S040 · L456–L462 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 12. Rollout, rollback e observabilidade > Rollout](45_PRD_INSTRUMENTACAO_FORJA.md#src-s040)
+    - Assuntos: rollout, observe, feature, namespace, único, instrumentation, mode, off
+    - Trecho-guia: feature namespace único: instrumentation.mode = off|observe|candidateshadow; início obrigatório em observe; seleção de casos explícita e registrada; nenhum gate canônico novo antes da Onda 4.
+  - [SRC-S041 · L463–L473 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 12. Rollout, rollback e observabilidade > Rollback](45_PRD_INSTRUMENTACAO_FORJA.md#src-s041)
+    - Assuntos: rollback, não, definir, instrumentation, mode, off, parar, novos
+    - Trecho-guia: 1. definir instrumentation.mode=off; 2. parar novos sidecars sem apagar os existentes; 3. confirmar que contratos N3 e hashes F3 permanecem inalterados; 4. preservar ledger, canários e reason codes da falha; 5. reexecutar health e regressão do subsistema afetado.
+  - [SRC-S042 · L474–L487 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 13. Riscos e controles](45_PRD_INSTRUMENTACAO_FORJA.md#src-s042)
+    - Assuntos: não, riscos, controles, próprio, seleção, risco, controle, arestas
+    - Trecho-guia: Documento de consulta sobre 13. Riscos e controles.
+  - [SRC-S043 · L488–L500 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 14. Fora do escopo](45_PRD_INSTRUMENTACAO_FORJA.md#src-s043)
+    - Assuntos: fora, escopo, grafo, atos, processuais, ponderação, arestas, reescrita
+    - Trecho-guia: grafo de atos processuais M3; ponderação de arestas; reescrita de grafos históricos; classificador semântico de instruções; RAG ou LLM-as-judge como gate jurídico; refatoração física P-J01 a P-J06 da arquitetura v4; promoção direta a contrato N3; envio, protocolo ou alteração de 
+  - [SRC-S044 · L501–L516 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 15. Critério de conclusão do PRD](45_PRD_INSTRUMENTACAO_FORJA.md#src-s044)
+    - Assuntos: prd, critério, conclusão, esta, implementação, não, onda, testes
+    - Trecho-guia: Esta especificação está pronta para implementação quando:
+  - [SRC-S045 · L517–L521 · PRD — Instrumentação rastreável da FORJA: ponte F4 → F5 → F7 sem reabrir F3 > 16. Próxima ação única](45_PRD_INSTRUMENTACAO_FORJA.md#src-s045)
+    - Assuntos: próxima, ação, única, implementar, onda, entrega, curta, corrigir
+    - Trecho-guia: Implementar a Onda 0 em uma entrega curta: corrigir a semântica P0/P1 nos dois caminhos do F2A, congelar o baseline canônico por caso e adicionar os schemas de R0/R1 sem integrar disciplina ou gate novo à produção.
+
+### 4.53. 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos
+
+- **Arquivo preparado:** [ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md)
+- **Origem:** `ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md`
+- **Termos:** não, acatado, motivo, documento, rf-2, json, decisão, prd, dois, payload, três, este
+- **Blocos:**
+  - [SRC-S001 · L1–L11 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s001)
+    - Assuntos: prd, cocriação, mapa, destinatário, precedentes, estratégicos, requisitos, consolidação
+    - Trecho-guia: Protocolo: FORJA-COCRIACAO-v1 Data: 25/07/2026. Estado: requisitos de produto aprovados para detalhamento técnico. Não autoriza implementação.
+  - [SRC-S002 · L12–L15 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 1. Revisão do documento 32 — registro de decisão](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s002)
+    - Assuntos: revisão, documento, registro, decisão, acatado, aplico, padrão, conselho
+    - Trecho-guia: Aplico o padrão de conselho da fábrica: cada ponto recebe acatado, acatado com ajuste ou rejeitado, com motivo.
+  - [SRC-S003 · L16–L32 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 1. Revisão do documento 32 — registro de decisão > 1.1 Acatados sem reserva — e três deles corrigem erro meu](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s003)
+    - Assuntos: não, acatado, erro, meu, decisão, rf-2, acatados, reserva
+    - Trecho-guia: Documento de consulta sobre 1.1 Acatados sem reserva — e três deles corrigem erro meu.
+  - [SRC-S004 · L33–L40 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 1. Revisão do documento 32 — registro de decisão > 1.2 Acatados com ajuste](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s004)
+    - Assuntos: não, ajuste, acato, três, acatados, perguntas, gate, permanece
+    - Trecho-guia: Documento de consulta sobre 1.2 Acatados com ajuste.
+  - [SRC-S005 · L41–L49 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 1. Revisão do documento 32 — registro de decisão > 1.3 O que o documento 32 perdeu e este PRD restaura](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s005)
+    - Assuntos: restaurado, recall, motivo, documento, perdeu, este, prd, restaura
+    - Trecho-guia: Documento de consulta sobre 1.3 O que o documento 32 perdeu e este PRD restaura.
+  - [SRC-S006 · L50–L57 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 1. Revisão do documento 32 — registro de decisão > 1.4 Rejeitado](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s006)
+    - Assuntos: tipos, rejeitado, criar, json, dois, novos, ponto, motivo
+    - Trecho-guia: Documento de consulta sobre 1.4 Rejeitado.
+  - [SRC-S007 · L58–L59 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 2. Fundamentos do produto](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s007)
+    - Assuntos: fundamentos, produto
+    - Trecho-guia: Documento de consulta sobre 2. Fundamentos do produto.
+  - [SRC-S008 · L60–L67 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 2. Fundamentos do produto > 2.1 Um mecanismo, não dois — e por quê](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s008)
+    - Assuntos: dois, consequência, mecanismo, não, mesmo, rejeitada, terceiro, planos
+    - Trecho-guia: Dois planos independentes convergiram para o mesmo objeto. O F4SIGNATUREBRIEF, que nasceu de teoria de seleção editorial contra o synthetic sameness, e o "leque de teses" que Fábio Medina Osório descreveu na entrevista, são o mesmo artefato visto de dois ângulos: rotas plausíveis
+  - [SRC-S009 · L68–L81 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 2. Fundamentos do produto > 2.2 A descoberta que reduz a superfície: 24 conchas vazias](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s009)
+    - Assuntos: json, tipos, nenhum, payload, não, descoberta, reduz, superfície
+    - Trecho-guia: n4schemas/ARTIFACTCATALOG.json declara 24 tipos de artefato, entre eles F4DECISIONFACTORMAP.json, F4COVERAGEMATRIX.json, F4THESISMATURITY.json, F4SETTLEMENTMAP.json e F3EVENTIDENTITY.json; cada schema traz apenas o envelope N4 — schemaVersion, specVersion, caseId, artifactType, p
+  - [SRC-S010 · L82–L87 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 2. Fundamentos do produto > 2.3 Princípios herdados, que este PRD não reabre](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s010)
+    - Assuntos: não, princípios, herdados, este, prd, reabre, verificação, antes
+    - Trecho-guia: Verificação antes de persuasão; identidade como método e não personificação; responsabilidade epistêmica com recordevidence, officedeclaration, inference e unknown separados; proporcionalidade do fichamento à materialidade; ausência de pseudoprecisão numérica. Todos do documento 
+  - [SRC-S011 · L88–L97 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Usuários e resultado pretendido](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s011)
+    - Assuntos: resultado, pretendido, usuário, sabe, usuários, advogado, vai, primário
+    - Trecho-guia: Usuário primário: o advogado responsável pelo caso — em regra Fábio Medina Osório ou sócio que ele designe. Usuário secundário: o operador da FORJA, que revisa e envia. Não usuário: o cliente final e o juízo. Nenhum artefato desta versão é endereçado a eles.
+  - [SRC-S012 · L98–L99 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s012)
+    - Assuntos: requisitos, funcionais
+    - Trecho-guia: Documento de consulta sobre 4. Requisitos funcionais.
+  - [SRC-S013 · L100–L105 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-1 — Cobertura de famílias de tese (payload de F4COVERAGEMATRIX)](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s013)
+    - Assuntos: rf-1, cobertura, famílias, tese, payload, família, mérito, motivo
+    - Trecho-guia: RF-1.1 Para cada família — competência, admissibilidade, prejudiciais, prescrição e decadência, nulidades, mérito principal, mérito subsidiário, matéria constitucional a prequestionar, consequência institucional — registrar examinadaeproposta, examinadaedescartada com motivo, ou 
+  - [SRC-S014 · L106–L129 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-2 — Consulta dialética ao advogado (F2-B)](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s014)
+    - Assuntos: rf-2, resposta, consulta, não, pergunta, material, advogado, decisão
+    - Trecho-guia: RF-2.1 A consulta é ato endereçado, com objeto, motivação e dever de resposta. Não é formulário nem conversa por turnos. RF-2.2 Cinco blocos: compreensão declarada; perguntas decisórias; diligências documentais motivadas; rotas para provocação; decisões reservadas ao advogado. RF
+  - [SRC-S015 · L130–L137 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-3 — Mapa do destinatário (tipo novo, fase F3, subfase F3-B)](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s015)
+    - Assuntos: rf-3, não, composição, prevenção, atual, posição, campo, oficial
+    - Trecho-guia: RF-3.1 Blocos, cada um com fonte declarada: competência; prevenção; composição atual; posição individual do relator; posição colegiada; divergência conhecida; rota recursal projetada. RF-3.2 Fonte adequada por campo. Composição atual exige página oficial vigente do tribunal. Prev
+  - [SRC-S016 · L138–L147 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-4 — Signature brief (payload de F4DECISIONFACTORMAP)](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s016)
+    - Assuntos: rf-4, brief, não, rotas, rota, decisão, signature, payload
+    - Trecho-guia: RF-4.1 Campos mínimos: questão decisiva; consequência demonstrada nos autos; rotas plausíveis; rota selecionada e responsável pela decisão; rotas rejeitadas com motivo; frase-mãe provisória; fatos e documentos decisivos por ID; precedentes-âncora candidatos por ID; melhor contra-
+  - [SRC-S017 · L148–L159 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-5 — Precedentes estratégicos e auditáveis](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s017)
+    - Assuntos: rf-5, não, pelo, operação, precedentes, órgão, precedente, superação
+    - Trecho-guia: RF-5.1 Nome. A atividade chama-se pesquisa topológica e estratégica de precedentes. O termo jurimetria fica reservado a análise quantitativa com população, janela, denominador, incerteza e finalidade declarados. RF-5.2 Trilha de busca, por extensão versionada do sourceledger: que
+  - [SRC-S018 · L160–L165 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-6 — Compatibilidade e migração](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s018)
+    - Assuntos: rf-6, compatibilidade, migração, exige, casos, legados, catálogo, shell
+    - Trecho-guia: RF-6.1 Toda extensão de artefato existente exige incremento de versão de schema, defaults compatíveis para casos legados, atualização de catálogo, validação de produtores e consumidores, replay de fixtures e proibição de rebaseline automático. RF-6.2 Casos legados continuam válid
+  - [SRC-S019 · L166–L176 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Requisitos funcionais > RF-7 — Identidade, fora do caminho crítico](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s019)
+    - Assuntos: rf-7, não, evidência, identidade, fora, caminho, crítico, confiança
+    - Trecho-guia: RF-7.1 Primeiro produto é o inventário curatorial IDENTITYCORPUSMANIFEST.jsonl, com arquivo e hash, tipo, data, autor declarado, papel de Fábio, confiança da atribuição, canal, versão, relação com outra versão, uso permitido e observações de proveniência. RF-7.2 Reutilizar as cla
+  - [SRC-S020 · L177–L192 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 4.4 Placar de superfície](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s020)
+    - Assuntos: superfície, doc, tipos, novos, placar, artefato, shells, catálogo
+    - Trecho-guia: O aumento de zero para dois shells ativados reduz superfície: são tipos que já existem no catálogo e ganham payload, em vez de tipos novos que engrossariam a lista de conchas.
+  - [SRC-S021 · L193–L208 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 5. Fora de escopo, com motivo](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s021)
+    - Assuntos: não, motivo, fora, escopo, recall, métrica, risco, própria
+    - Trecho-guia: Documento de consulta sobre 5. Fora de escopo, com motivo.
+  - [SRC-S022 · L209–L224 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 6. Critérios de aceite por capacidade](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s022)
+    - Assuntos: não, capacidade, conferência, fonte, brief, pode, critérios, aceite
+    - Trecho-guia: Separação metodológica que não pode ser confundida: o A/B testa se o brief e a identidade melhoram a redação. Não decide se um dado factual está correto — isso é conferência em fonte oficial — nem legitima uma interação que o titular pediu por escrito — isso é métrica de interaçã
+  - [SRC-S023 · L225–L232 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Decisões reservadas ao advogado responsável](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s023)
+    - Assuntos: advogado, decisões, reservadas, responsável, final, não, objetivo, trabalho
+    - Trecho-guia: Objetivo final do trabalho; fatos que dependam de declaração do cliente ou do escritório; escolha estratégica com risco material; desistência, concessão, reconhecimento ou pedido sensível; autorização de envio; seleção final da rota; aprovação do texto para assinatura.
+  - [SRC-S024 · L233–L246 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 8. Riscos de produto](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s024)
+    - Assuntos: não, riscos, produto, risco, bloqueador, atual, melhor, mitigação
+    - Trecho-guia: Documento de consulta sobre 8. Riscos de produto.
+  - [SRC-S025 · L247–L249 · 33 — PRD: cocriação, mapa do destinatário e precedentes estratégicos > 9. Dependências externas ao sistema](ANEXO_A_DECISOES_E_ACHADOS_COCRIACAO.md#src-s025)
+    - Assuntos: dependências, externas, sistema, ele, vinte, trinta, peças, assinadas
+    - Trecho-guia: Vinte a trinta peças assinadas, estratificadas por tipo, incluindo duas ou três que ele considere ruins; preferência doutrinária por matéria; parâmetros por classe de caso em tabela vazia, preenchida com ele; autorização e limites do módulo J-B; textos dele sobre soberania cognit
+
+### 4.54. 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos
+
+- **Arquivo preparado:** [ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md)
+- **Origem:** `ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md`
+- **Termos:** não, json, status, enum, quando, string, exige, brief, novo, payload, extensão, aditiva
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s001)
+    - Assuntos: tdd, cocriação, mapa, destinatário, precedentes, estratégicos, prd, protocolo
+    - Trecho-guia: Protocolo: FORJA-COCRIACAO-v1 Data: 25/07/2026. Estado: desenho técnico para revisão. Não autoriza implementação. Rege-se pelo PRD 33. Em conflito, prevalece o PRD. Ondas e portões estão no 35.
+  - [SRC-S002 · L9–L21 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 1. Princípio de encaixe](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s002)
+    - Assuntos: nova, princípio, encaixe, nada, pacote, novo, cli, máquina
+    - Trecho-guia: Nada de pacote novo, CLI nova, máquina de estados nova ou fase nova. Tudo entra como:
+  - [SRC-S003 · L22–L41 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 2. Inventário de mudanças](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s003)
+    - Assuntos: json, extensão, aditiva, arquivo, inventário, mudanças, módulo, payload
+    - Trecho-guia: Módulos novos: quatro arquivos. Não é pacote. Cada um com um validador público e testes próprios.
+  - [SRC-S004 · L42–L43 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s004)
+    - Assuntos: payloads
+    - Trecho-guia: Documento de consulta sobre 3. Payloads.
+  - [SRC-S005 · L44–L83 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.1 F4DECISIONFACTORMAP — o signature brief](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s005)
+    - Assuntos: string, não, status, ids, statement, supportids, enum, selected
+    - Trecho-guia: Herda integralmente o envelope N4 já existente: schemaVersion, specVersion, caseId, artifactType, phase, applicability, status, sourceHashes, producerRunId, reviewerRunId, createdAt, updatedAt, contentHash, issues, justification. Não redefinir envelope.
+  - [SRC-S006 · L84–L98 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.2 F4COVERAGEMATRIX — cobertura de famílias](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s006)
+    - Assuntos: famílias, cobertura, enum, status, examinada_proposta, quando, f4coveragematrix, f4_coverage_matrix
+    - Trecho-guia: Invariante: as nove famílias presentes, sem exceção. Proibido campo de contagem mínima de teses — RF-1.2.
+  - [SRC-S007 · L99–L131 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.3 F3DESTINATARIOMAP — tipo novo](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s007)
+    - Assuntos: não, sourceref, rf-3, checkedat, status, precedentids, sourcekind, exige
+    - Trecho-guia: Envelope N4 idêntico aos demais, para herdar validação e catálogo. Payload:
+  - [SRC-S008 · L132–L147 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.4 sourceledger v2 — trilha de busca](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s008)
+    - Assuntos: busca, trilha, base, reason, negativeresult, sourceledger, source_ledger, acréscimo
+    - Trecho-guia: negativeResult é obrigatório quando a busca visava órgão prevento ou turma competente e não retornou precedente favorável — RF-5.3.
+  - [SRC-S009 · L148–L177 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.5 verifiedsourceledger v2 — ficha das âncoras](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s009)
+    - Assuntos: rf-5, operacao, ficha, âncoras, apenas, numero, integra, obtained
+    - Trecho-guia: Aplicada apenas aos anchorIds declarados no brief. Acréscimo:
+  - [SRC-S010 · L178–L200 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.6 F2QUESTIONTREE v2 — seleção e silêncio](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s010)
+    - Assuntos: seleção, silêncio, int, true, acervoprobe, matched, rf-2, silenceclass
+    - Trecho-guia: Invariante crítica, derivada de RF-2.4: silenceClass em fatomaterial ou autorizacao proíbe silenceEffect = defaultallowed. A violação é P0 de contrato, provada por teste negativo.
+  - [SRC-S011 · L201–L206 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 3. Payloads > 3.7 Recibo gostoJuridico v2](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s011)
+    - Assuntos: recibo, gostojuridico, dois, campos, signaturebriefsha256, selectedrouteid, recomposição, migra
+    - Trecho-guia: Dois campos: signatureBriefSha256 e selectedRouteId. A recomposição migra de forjafable5.py para forjaeditorialfidelity.validateeditorialbundle(), corrigindo o achado 5 da revisão adversarial de 24/07 — hoje o recibo é validado dentro do executor, fora da recomputação final.
+  - [SRC-S012 · L207–L222 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 4. Alterações nos contratos de fase](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s012)
+    - Assuntos: json, gates, required, sob, flag, alterações, contratos, fase
+    - Trecho-guia: Todas aditivas. Nenhum output existente sai.
+  - [SRC-S013 · L223–L233 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 5. Migração e compatibilidade](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s013)
+    - Assuntos: migração, compatibilidade, artefato, não, json, recebe, replay, versionamento
+    - Trecho-guia: 1. Versionamento. sourceledger, verifiedsourceledger e F2QUESTIONTREE vão a schemaVersion: 2. Leitores aceitam 1 e 2; escritores emitem 2. 2. Defaults legados. A ausência de searchTrail, anchorProfile ou consultaSelection em artefato v1 é válida e não gera issue. 3. Catálogo. ART
+  - [SRC-S014 · L234–L247 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 6. Configuração e flags](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s014)
+    - Assuntos: configuração, flags, pela, off, shadow, pilot, caso, pilotcases
+    - Trecho-guia: Flag única cocriacaoV1, com os estados já usados pela FORJA: off | shadow | pilot. Reaproveita forjan4validate.FLAGFILES e effectivemode(), que já rebaixa caso fora de pilotCases para sombra — padrão identificado na revisão adversarial e que não deve ser reinventado.
+  - [SRC-S015 · L248–L249 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s015)
+    - Assuntos: matriz, testes
+    - Trecho-guia: Documento de consulta sobre 7. Matriz de testes.
+  - [SRC-S016 · L250–L256 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.1 Unidade](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s016)
+    - Assuntos: invariantes, unidade, validadores, casos, mínimos, válidos, inválidos, brief
+    - Trecho-guia: validadores de A1, A2 e A3, com casos mínimos válidos e inválidos; invariantes 1 a 7 do brief, uma por teste; invariantes 1 a 5 do mapa; invariantes 1 a 5 da ficha de âncora; rebaixamento automático de composicaoAtual vencida para stale.
+  - [SRC-S017 · L257–L261 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.2 Contrato](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s017)
+    - Assuntos: contrato, presença, condicional, flag, off, não, exige, shadow
+    - Trecho-guia: presença condicional por flag: off não exige; shadow e pilot exigem; leitura de artefato v1 por consumidor v2, para os sete consumidores do §5.6; F3DESTINATARIOMAP registrado no catálogo e resolvido pelo validador de fase.
+  - [SRC-S018 · L262–L279 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.3 Negativos obrigatórios — cada um prova uma proibição do PRD](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s018)
+    - Assuntos: rf-5, prova, rf-2, negativos, obrigatórios, cada, proibição, prd
+    - Trecho-guia: Documento de consulta sobre 7.3 Negativos obrigatórios — cada um prova uma proibição do PRD.
+  - [SRC-S019 · L280–L284 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.4 Metamórficos](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s019)
+    - Assuntos: não, metamórficos, altera, remover, âncora, decisiva, invalida, reordenar
+    - Trecho-guia: reordenar rotas não altera o contentHash da decisão nem o resultado; renomear routeId preservando vínculos não altera a validação; remover âncora não decisiva não invalida a rota; remover âncora decisiva invalida e reabre F4.
+  - [SRC-S020 · L285–L291 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.5 Adversariais](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s020)
+    - Assuntos: adversariais, brief, declara, âncora, inexistente, source_ledger, consulta, reintroduz
+    - Trecho-guia: brief que declara âncora inexistente no sourceledger; consulta que reintroduz marcador [FONTE: arquivo] — RF-2.8; mapa com composicaoAtual copiada de espelho antigo; ficha com trechoLiteral que não existe na íntegra do hash declarado; rota escolhida que depende de pergunta com si
+  - [SRC-S021 · L292–L294 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.6 Regressão real](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s021)
+    - Assuntos: regressão, real, test_licao41, test_real_telemetria_licao41, test_forja_citacoes, test_forja_verificador, test_forja_fable5, test_forja_estilo_humano
+    - Trecho-guia: testlicao41.py, testrealtelemetrialicao41.py, testforjacitacoes.py, testforjaverificador.py, testforjafable5.py, testforjaestilohumano.py, testforjaexploracao100.py e testforjaautoresearch.py — todos verdes antes e depois de cada onda.
+  - [SRC-S022 · L295–L299 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 7. Matriz de testes > 7.7 Canários](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s022)
+    - Assuntos: canários, acrescentar, dois, falha, única, forja_ar_canarios, âncora, trecho
+    - Trecho-guia: Acrescentar dois canários de falha única a forjaarcanarios.py: âncora com trecho literal alterado em um caractere; mapa com checkedAt retroagido além do maxAgeDays. Ambos precisam matar por sensor específico, sem derrubar os controles benignos.
+  - [SRC-S023 · L300–L312 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 8. Telemetria](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s023)
+    - Assuntos: telemetria, caso, perguntas, âncoras, reutilizar, legal_search, reports, metricas_gates
+    - Trecho-guia: Reutilizar telemetria/legalsearch/ e reports/METRICASGATES.json. Métricas novas, todas derivadas de artefato e não de estimativa:
+  - [SRC-S024 · L313–L327 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 9. Falha e resgate](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s024)
+    - Assuntos: falha, resgate, resposta, composição, motivo, bloqueia, caso, desligar
+    - Trecho-guia: O rollback é sempre desligar cocriacaoV1. Nenhum artefato novo é insumo obrigatório de F8, F9 ou F10.
+  - [SRC-S025 · L328–L336 · 34 — TDD: cocriação, mapa do destinatário e precedentes estratégicos > 10. Fronteiras que este desenho não pode cruzar](ANEXO_B_INVARIANTES_E_TESTES_COCRIACAO.md#src-s025)
+    - Assuntos: nenhum, fronteiras, este, desenho, não, pode, cruzar, nenhuma
+    - Trecho-guia: 1. Nenhum gate jurídico ou factual existente é enfraquecido. AH-01 a AH-08 permanecem fail-closed em strictprotocol. 2. Nenhum envio externo automatizado. 3. Nenhuma leitura de memória decisória em produção. 4. Nenhum escore numérico de aderência ou de regime. 5. Nenhuma alegação
+
+### 4.55. 35 — Roteiro, portões e instrumentos de operação
+
+- **Arquivo preparado:** [ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md)
+- **Origem:** `ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md`
+- **Termos:** não, onda, instrumento, pergunta, revisão, mapa, cada, portão, operação, ondas, destinatário, consulta
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · 35 — Roteiro, portões e instrumentos de operação](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s001)
+    - Assuntos: roteiro, portões, instrumentos, operação, pelo, protocolo, forja-cocriacao-v1, data
+    - Trecho-guia: Protocolo: FORJA-COCRIACAO-v1 Data: 25/07/2026. Estado: roteiro para aprovação. Não autoriza implementação. Rege-se pelo PRD 33 e pelo TDD 34.
+  - [SRC-S002 · L9–L12 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s002)
+    - Assuntos: ondas, quatro, onda, portão, cada, tem, saída, verificável
+    - Trecho-guia: Cada onda tem saída verificável e portão de passagem. Nenhuma onda começa sem o portão da anterior fechado. As ondas 1A e 1B correm em paralelo.
+  - [SRC-S003 · L13–L29 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas > Onda 0 — Contratos, proveniência e baseline](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s003)
+    - Assuntos: baseline, plano, onda, contratos, proveniência, consumidores, real, não
+    - Trecho-guia: Sem qualquer mudança de saída. Sem código de produção.
+  - [SRC-S004 · L30–L39 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas > Onda 1A — Cocriação em sombra](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s004)
+    - Assuntos: zero, onda, cocriação, sombra, minuta, consulta, resposta, teste
+    - Trecho-guia: Entregas: seleção de perguntas materiais; minuta de consulta; ledger de decisão; replay sobre casos históricos com resposta conhecida; teste de rodadas múltiplas e de silêncio material.
+  - [SRC-S005 · L40–L50 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas > Onda 1B — Destinatário e precedentes em sombra](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s005)
+    - Assuntos: destinatário, onda, precedentes, sombra, âncora, ratio, entregas, mapa
+    - Trecho-guia: Entregas: mapa do destinatário com fonte por campo; pesquisa topológica pertinente ao tribunal do caso; brief e cobertura de famílias; verificação de três a seis âncoras; reabertura de F4 quando a âncora cai.
+  - [SRC-S006 · L51–L61 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas > Onda 2 — Identidade e variante de redação](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s006)
+    - Assuntos: não, identidade, variante, onda, redação, padrões, cega, preferência
+    - Trecho-guia: Entregas: IDENTITYCORPUSMANIFEST.jsonl com atribuição e confiança; separação entre escrita, edição, feedback e fala; padrões candidatos extraídos; um único draft variante que consome brief e padrões; comparação cega no AUTO-RESEARCH, com o prompt atual como incumbente.
+  - [SRC-S007 · L62–L74 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas > Onda 3 — Piloto controlado](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s007)
+    - Assuntos: onda, piloto, controlado, brief, revisão, final, não, entregas
+    - Trecho-guia: Entregas: ativação por pilotCases; uma peça por caso; consulta enviada por pessoa autorizada; mapa e brief ativos; F7 e F7-B recompondo rota, âncoras e conteúdo obrigatório; revisão humana final obrigatória.
+  - [SRC-S008 · L75–L80 · 35 — Roteiro, portões e instrumentos de operação > 1. Quatro ondas > Trilha condicional, fora das ondas centrais](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s008)
+    - Assuntos: ondas, centrais, trilha, condicional, fora, conectores, jurisprudência, administrativa
+    - Trecho-guia: Conectores de jurisprudência administrativa — TCU, CGU e CRG, CADE, CVM, CNJ, CNMP — por demanda real. Módulo J-B de jurimetria comportamental somente após autorização expressa, parecer do Cícero e desenho estatístico válido. Nenhum dos dois bloqueia as ondas centrais.
+  - [SRC-S009 · L81–L98 · 35 — Roteiro, portões e instrumentos de operação > 2. Instrumento de governança: registro de escopo](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s009)
+    - Assuntos: valor, novos, instrumento, governança, registro, escopo, onda, aprovado
+    - Trecho-guia: Preenchido a cada onda. Existe para impedir recrescimento silencioso da superfície.
+  - [SRC-S010 · L99–L117 · 35 — Roteiro, portões e instrumentos de operação > 3. Instrumento de operação: gabarito da consulta](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s010)
+    - Assuntos: pergunta, não, fato, instrumento, operação, gabarito, consulta, texto
+    - Trecho-guia: Estrutura fixa da minuta que sai para o advogado responsável. Não é modelo de texto: é lista de verificação de completude antes da revisão humana.
+  - [SRC-S011 · L118–L133 · 35 — Roteiro, portões e instrumentos de operação > 4. Instrumento de decisão: tabela de parâmetros por classe](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s011)
+    - Assuntos: instrumento, decisão, tabela, parâmetros, classe, mediante, autorização, deliberadamente
+    - Trecho-guia: Deliberadamente vazia. Preencher com o titular, na reunião. Chegar com ela preenchida contraria o que ele disse — recusou o papel de especificador de cima e pediu que cresçamos juntos.
+  - [SRC-S012 · L134–L143 · 35 — Roteiro, portões e instrumentos de operação > 5. Instrumento de apresentação ao titular](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s012)
+    - Assuntos: dele, não, ele, instrumento, apresentação, titular, critério, tabela
+    - Trecho-guia: Três peças, e a segunda é a que decide pelo critério dele.
+  - [SRC-S013 · L144–L163 · 35 — Roteiro, portões e instrumentos de operação > 6. Instrumento de revisão: perguntas de aceite do plano](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s013)
+    - Assuntos: aceite, têm, não, instrumento, revisão, perguntas, plano, está
+    - Trecho-guia: Marcar antes de autorizar implementação.
+  - [SRC-S014 · L164–L178 · 35 — Roteiro, portões e instrumentos de operação > 7. Mapa da cadeia documental](ANEXO_C_GOVERNANCA_E_INSTRUMENTOS_COCRIACAO.md#src-s014)
+    - Assuntos: vigente, mapa, cadeia, documental, requisitos, fonte, consolidação, trinca
+    - Trecho-guia: Em conflito operacional entre 31, 32 e a trinca 33–35, prevalece a trinca.
+
+### 4.56. Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas
+
+- **Arquivo preparado:** [fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md)
+- **Origem:** `fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md`
+- **Termos:** não, visual, pdf, final, caso-14, fonte, josé, caso-15, antes, página, quando, auditoria
+- **Blocos:**
+  - [SRC-S001 · L1–L5 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s001)
+    - Assuntos: análise, pontual, harness, fases, f10, lições, comprovadas, síntese
+    - Trecho-guia: Síntese executiva de 4 casos reais (CASO-14 Nível 3/4, José CASO-15 Embargos Ajustada, 2026-07-03 a 07)
+  - [SRC-S002 · L6–L7 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s002)
+    - Assuntos: lições, novas, não, capturadas, protocolo, atual
+    - Trecho-guia: Documento de consulta sobre I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL.
+  - [SRC-S003 · L8–L20 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 1. Pergunta Judicial como Centro Absoluto](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s003)
+    - Assuntos: pergunta, judicial, centro, absoluto, caso-14, peça, argumentos, fonte
+    - Trecho-guia: Fonte: CASO-14 — 03APRENDIZADOSACERTOSERROS.md, seção 2.1 Lição: Antes de redigir qualquer peça, formular a pergunta que o juiz fez em UMA FRASE. Só depois estruturar argumentos.
+  - [SRC-S004 · L21–L38 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 2. Matriz Fato-Alegação-Inferência-Lacuna como GATE Mandatório, Não Documentação Passiva](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s004)
+    - Assuntos: matriz, não, fonte, josé, caso-15, afirmar, fato-alegação-inferência-lacuna, gate
+    - Trecho-guia: Fonte: CASO-14 2.2; José CASO-15 AUDITORIAEPROMPT.md; RunbookNovosTrabalhos.md seção 4
+  - [SRC-S005 · L39–L58 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 3. Red Team Estruturado como Pré-requisito de PDF Final, Não Revisão Passiva](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s005)
+    - Assuntos: red, team, não, final, qual, estruturado, pdf, revisão
+    - Trecho-guia: Fonte: CASO-14 02FLUXO seção "Fase 6"; Runbook seção 6 (8 perguntas obrigatórias)
+  - [SRC-S006 · L59–L77 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 4. Conferência Verbatim de Citações Jurisprudenciais como Gate Separado (Não Inline)](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s006)
+    - Assuntos: não, fonte, conferência, verbatim, citações, josé, caso-15, pdf
+    - Trecho-guia: Fonte: José CASO-15 AUDITORIAEPROMPT.md P0 itens 1, 2; AUDITORIAFINAL.md seção D
+  - [SRC-S007 · L78–L96 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 5. Visual Law Só Entra Se Reduz Esforço Cognitivo — Teste Concreto Antes de Geração](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s007)
+    - Assuntos: visual, entra, não, law, reduz, esforço, cognitivo, teste
+    - Trecho-guia: Fonte: CASO-14 2.3; 04RUNBOOK seção 7 (regras de entrada/saída)
+  - [SRC-S008 · L97–L115 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 6. QA Visual Página por Página é Mandatório APÓS TODA regeneração — Contact Sheet Não Substitui Inspeção](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s008)
+    - Assuntos: página, visual, não, inspeção, rodapé, mandatório, após, contact
+    - Trecho-guia: Fonte: CASO-14 2.5; 02FLUXO Fase 9; 03APRENDIZADOS erro 3.3; 04RUNBOOK seção 9
+  - [SRC-S009 · L116–L129 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 7. Relatório Final Deve Ser Atualizado DEPOIS da Última Regeneração](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s009)
+    - Assuntos: relatório, final, páginas, deve, ser, atualizado, depois, última
+    - Trecho-guia: Fonte: CASO-14 erro 3.2; 03APRENDIZADOS regra 13
+  - [SRC-S010 · L130–L142 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > I. LIÇÕES NOVAS — NÃO CAPTURADAS NO PROTOCOLO ATUAL > 8. Metadata Sanitization é P0 Antes de Protocolo](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s010)
+    - Assuntos: metadados, python-docx, antes, autor, metadata, sanitization, protocolo, josé
+    - Trecho-guia: Fonte: José CASO-15 AUDITORIAEPROMPT.md P0 item 3; AUDITORIADAVERSAOAJUSTADA.md melhora 7
+  - [SRC-S011 · L143–L144 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s011)
+    - Assuntos: técnicas, auditoria, comprovadas, taxa, detecção
+    - Trecho-guia: Documento de consulta sobre II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO.
+  - [SRC-S012 · L145–L158 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO > Técnica 1: Busca por Termos Proibidos + QA Automático](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s012)
+    - Assuntos: termos, busca, automático, conferir, técnica, proibidos, nota, todo
+    - Trecho-guia: Descrição: Rodar busca regex no PDF/DOCX extraído por termos que foram deliberadamente excluídos (NOTA 00465, TODO, XXX, [CONFERIR], [[VISUAL:).
+  - [SRC-S013 · L159–L173 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO > Técnica 2: Extração de Texto por Página + Conferência Verbatim](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s013)
+    - Assuntos: pdf, extração, texto, página, conferência, técnica, verbatim, precedentes
+    - Trecho-guia: Descrição: Após geração, extrair texto de cada página do PDF, procurar aspas atribuídas a precedentes/acórdão, comparar pixel-a-pixel com screenshot do PDF original.
+  - [SRC-S014 · L174–L193 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO > Técnica 3: Renderização de Todas as Páginas + Contact Sheet + Inspeção Individual](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s014)
+    - Assuntos: páginas, contact, sheet, todas, inspeção, visual, técnica, renderização
+    - Trecho-guia: Descrição: Converter PDF para PNG (pypdfium2 ou imagemagick), criar contact sheet (todas as páginas em 1 imagem reduzida), depois abrir cada página em visualizador de imagem para conferir: cabeçalho e rodapé margens (esq/dir/sup/inf) quebras de tabela, diagrama cortado colisões d
+  - [SRC-S015 · L194–L215 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO > Técnica 4: Red Team Estruturado — 8 Perguntas Obrigatórias](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s015)
+    - Assuntos: red, team, estruturado, final, qual, não, técnica, perguntas
+    - Trecho-guia: Descrição: Antes de gerar PDF final, responder por escrito: 1. Qual é o melhor argumento contrário? 2. Qual afirmação nossa depende de documento fraco? 3. Qual termo pode ser atacado como exagero? 4. O pedido é útil e executável? 5. Alguma norma foi citada por memória? 6. Algum v
+  - [SRC-S016 · L216–L234 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > II. TÉCNICAS DE AUDITORIA COMPROVADAS COM TAXA DE DETECÇÃO > Técnica 5: Matriz de Segurança Factual Executada (Não Lida)](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s016)
+    - Assuntos: não, matriz, executada, pode, fato, técnica, segurança, factual
+    - Trecho-guia: Descrição: Tabela 5-coluna (Ponto | Fonte | Tipo | Pode afirmar | Formulação segura) preenchida para cada claim ANTES de escrever. Classificação: fato: documento oficial ou prova robusta → pode afirmar alegação: fala da parte, e-mail → pode alegar, mas marcar origem inferência: c
+  - [SRC-S017 · L235–L236 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s017)
+    - Assuntos: iii, erros, escaparam, ciclos, prevenção
+    - Trecho-guia: Documento de consulta sobre III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO.
+  - [SRC-S018 · L237–L249 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO > Erro 1: Base Legal Parecida Mas Inadequada](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s018)
+    - Assuntos: parecida, caso-14, erro, base, legal, mas, inadequada, art
+    - Trecho-guia: O que saiu: CASO-14 v1/v2 citava art. 534, § 2º, CPC (trata multa do art. 523, Fazenda Pública) Por que escapou: norma "parecida" com a função processual desejada (astreintes) — confiança de memória Como foi detectado: QA jurídico em F9, APÓS geração Dano: seria atacável em event
+  - [SRC-S019 · L250–L262 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO > Erro 2: Documento Mencionado Não Verificado Nos Autos](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s019)
+    - Assuntos: não, autos, documento, verificado, erro, mencionado, nota, extraídos
+    - Trecho-guia: O que saiu: José CASO-15 v1 citava NOTA 00465/2025, Cota 00075/2025 sem localizar em autos extraídos Por que escapou: "A minuta diz que existe" → assume verdade herdada de comando anterior Como foi detectado: Matriz de segurança retroativa (auditoria força execução) → "não verifi
+  - [SRC-S020 · L263–L274 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO > Erro 3: Aspa Atribuída Não Existe Literalmente](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s020)
+    - Assuntos: não, aspa, atribuída, existe, literalmente, conferir, erro, saiu
+    - Trecho-guia: O que saiu: José CASO-15 v1: "reclamam dilação probatória" atribuída ao acórdão, não existe no texto Por que escapou: leitura rápida + confiança de "está óbvio lá" Como foi detectado: Auditoria força conferência verbatim do Evento 185 → extração de texto não localiza aspa → [CONF
+  - [SRC-S021 · L275–L286 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO > Erro 4: Metadados Expõem Autoria IA](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s021)
+    - Assuntos: metadados, autoria, docx, erro, expõem, josé, caso-15, pdf
+    - Trecho-guia: O que saiu: José CASO-15 v1 DOCX/PDF com autor="python-docx" Por que escapou: processo de geração automático, não revisão de metadados Como foi detectado: Auditoria de fechamento → verifica metadados de DOCX Dano: tribunal ou parte abre proprietário de PDF → vê "python-docx" → qu
+  - [SRC-S022 · L287–L294 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO > Erro 5: Placeholder Esquecido ([NOME], [DATA], [CRC-UF])](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s022)
+    - Assuntos: erro, data, placeholder, esquecido, nome, crc-uf, achado, protocolo
+    - Trecho-guia: Achado: Protocolo atuais já captura isso (regra anti-alucinação 03APRENDIZADOS); CASO-14/José CASO-15 não tiveram esse erro Prevenção reforçada: F8 (QA Automático): grep por [\[] no texto extraído do PDF. F10 (Inspeção Visual): ler cada página com foco em "linha de assinatura", "
+  - [SRC-S023 · L295–L303 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > III. ERROS QUE ESCAPARAM DE CICLOS E PREVENÇÃO > Erro 6: Diagrama Ilegível (Fonte 8pt Impresso)](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s023)
+    - Assuntos: fonte, diagrama, erro, ilegível, impresso, visual, png, cada
+    - Trecho-guia: Achado: CASO-14: fonte ≥11pt confirmada, zero problemas. José CASO-15: Figura 4 teve texto pequeno → redesenhada com fonte maior Prevenção: F7 (Visual Law): criar manifesto PNG para cada diagrama → indicar viewBox, font-size real, escala de inserção final. Cálculo: se viewBox=600
+  - [SRC-S024 · L304–L305 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s024)
+    - Assuntos: recomendações, harness, f10
+    - Trecho-guia: Documento de consulta sobre IV. RECOMENDAÇÕES PARA HARNESS F0 A F10.
+  - [SRC-S025 · L306–L321 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F0 — Intake Estruturado](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s025)
+    - Assuntos: intake, estruturado, tese, operacional, frase, não, saída, obrigatória
+    - Trecho-guia: Gate: se "Tese operacional" não conseguir ser escrita em 1 frase, intake não termina.
+  - [SRC-S026 · L322–L332 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F1 — Ato Judicial e Fase Processual](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s026)
+    - Assuntos: ato, judicial, fase, processual, pergunta, executar, ler, despacho
+    - Trecho-guia: Executar: Ler despacho/decisão que move o trabalho Extrair "qual é a pergunta que o juiz faz?" Identificar prazo legal (regimento + CPC) Registrar em TESEOPERACIONAL.md
+  - [SRC-S027 · L333–L342 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F2 — Leitura de Autos e Documentos](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s027)
+    - Assuntos: autos, leitura, documentos, jurisprudência, tipo, executar, listar, todos
+    - Trecho-guia: Executar: Listar todos os arquivos: autos oficiais, anexos recebidos, PDFs de jurisprudência, minutas anteriores Classificar por tipo (fato, jurisprudência, OCR, print, imagem) Registrar em MAPAENTRADA.md (arquivo + tipo + qualidade + páginas)
+  - [SRC-S028 · L343–L353 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F3 — Auditoria Anti-Alucinação](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s028)
+    - Assuntos: auditoria, anti-alucinação, claims, não, executar, rodar, busca, principais
+    - Trecho-guia: Executar: Rodar busca de claims principais nos autos extraídos Classificar: documento oficial? OCR confirmado? Allegação herdada de minuta anterior? Completamente não verificado? Marcar como "[CONFERIR]" pontos sem comprovação Gerar RELATORIOVERIFICACAOANTIALUCINACAO.md
+  - [SRC-S029 · L354–L366 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F4 — Matriz de Segurança Factual](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s029)
+    - Assuntos: pode, matriz, segurança, factual, afirmar, fato, lacuna, executar
+    - Trecho-guia: Executar: preencher tabela 5-colunas (Ponto | Fonte | Tipo | Pode afirmar | Formulação segura) para cada claim Classificação: fato: documento oficial → "pode afirmar" alegação: minuta/e-mail → "pode alegar com origem" inferência: conclusão lógica → "fazer explícito 'Daí se conclu
+  - [SRC-S030 · L367–L377 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F5 — Estrutura da Peça](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s030)
+    - Assuntos: estrutura, tópico, peça, tese, cada, pergunta, judicial, executar
+    - Trecho-guia: Executar: Definir tese em 1 frase (derivada de Tese Operacional) Estrutura: Síntese Executiva → Tópicos 1-N → Pedidos → Prequestionamento (se cabível) Cada tópico responde a 1 item da pergunta judicial Cada pedido é mapeado a 1 tópico do corpo (não abrir frentes novas)
+  - [SRC-S031 · L378–L389 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F6 — Redação Controlada](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s031)
+    - Assuntos: redação, controlada, documento, todo, nenhuma, regras, obrigatórias, separar
+    - Trecho-guia: Regras obrigatórias: Separar fato ("A lei diz", documento oficial), alegação ("a parte alega"), inferência ("daí se conclui"), lacuna ("precisa esclarecer") Todo artigo/dispositivo que sustenta pedido deve ser marcado para conferência em F8 Nenhuma frase comem mais de 3 vírgulas 
+  - [SRC-S032 · L390–L404 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F7 — Red Team Estruturado](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s032)
+    - Assuntos: sim, qual, gate, não, red, team, estruturado, documento
+    - Trecho-guia: Executar (por escrito): 1. Qual é o melhor argumento contrário? 2. Qual afirmação nossa depende de documento fraco? 3. Qual termo pode ser atacado como exagero? 4. O pedido é útil e executável? 5. Alguma norma foi citada por memória? → gate: se SIM, voltar para F8 conferência. 6.
+  - [SRC-S033 · L405–L417 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F8 — Conferência Verbatim de Citações](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s033)
+    - Assuntos: conferir, citações, não, conferência, verbatim, cada, citação, baixar
+    - Trecho-guia: Executar: Para cada citação jurisprudencial: baixar PDF de STF/STJ/TRF/tribunal, procurar aspa, comparar com testo da peça. Se não localizar literalmente: converter para paráfrase ou marcar [CONFERIR] (não protocolar com [CONFERIR]). Para cada artigo que "sustenta pedido": baixar
+  - [SRC-S034 · L418–L431 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F9 — Geração DOCX/PDF + QA Automático](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s034)
+    - Assuntos: docx, pdf, geração, automático, gerar, via, word, não
+    - Trecho-guia: Executar: Usar template oficial (Medina Osório ou tribunal) Gerar DOCX via python-docx ou Word COM Gerar PDF via Word COM (não conversor externo) Rodar busca automática por termos proibidos: NOTA 00465, TODO, XXX, [CONFERIR], [[VISUAL: Extrair texto de cada página, buscar aspas, 
+  - [SRC-S035 · L432–L466 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F10 — QA Visual e Inspeção Final](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s035)
+    - Assuntos: não, página, inspeção, pdf, docx, f10, visual, final
+    - Trecho-guia: Executar: 1. Renderizar PDF para PNG (pypdfium2), página por página 2. Criar contact sheet 3. Abrir cada página individualmente, conferir: cabeçalho (nome da parte, número processo) rodapé (data, fólio, assinatura) margens (3,0 esq, 3,5 dir, confirmadas) texto não cortado diagram
+  - [SRC-S036 · L467–L515 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > IV. RECOMENDAÇÕES PARA HARNESS F0 A F10 > F11 — Relatório Final (Executar por Último)](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s036)
+    - Assuntos: lista, relatório, páginas, visual, não, f11, final, executar
+    - Trecho-guia: Gate: bloqueador se qualquer [✓] não marcado. Volta para F correspondente.
+  - [SRC-S037 · L516–L534 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > V. MATRIX DE ALOCAÇÃO F-ESPECÍFICA DE LIÇÕES+TÉCNICAS](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s037)
+    - Assuntos: min, sim, não, f10, matrix, alocação, f-específica, lições
+    - Trecho-guia: Documento de consulta sobre V. MATRIX DE ALOCAÇÃO F-ESPECÍFICA DE LIÇÕES+TÉCNICAS.
+  - [SRC-S038 · L535–L552 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > VI. COMANDO MENTAL FINAL DO HARNESS](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s038)
+    - Assuntos: abrir, comando, mental, final, harness, consigo, provar, renderizar
+    - Trecho-guia: Eu consigo provar, abrir, renderizar, explicar e repetir este trabalho?
+  - [SRC-S039 · L553–L580 · Análise Pontual de Harness — Fases F0 a F10 e Lições Comprovadas > VII. SÍNTESE EXECUTIVA PARA HELENA + EFESTO](fontes/ANALISE_PONTUAL_HARNESS_F0_F10.md#src-s039)
+    - Assuntos: não, conferência, matriz, verbatim, visual, inspeção, vii, síntese
+    - Trecho-guia: Lições novas não capturadas: 1. Pergunta Judicial = centro (não sequência passiva) 2. Matriz executada = gate de F4 (não documentação retroativa) 3. Red Team estruturado = 8 perguntas obrigatórias (não revisão genérica) 4. Conferência verbatim PRÉ-PDF = não pós-facto (reduz ciclo
+
+### 4.57. Mapa IA - fontes
+
+- **Arquivo preparado:** [fontes/MAPA_IA.md](fontes/MAPA_IA.md)
+- **Origem:** `fontes/MAPA_IA.md`
+- **Termos:** mapa, fontes, leitura, subpastas, arquivos, mapa_ia, ia_navigacao, planejamento, analise_pontual_harness_f0_f10, mermaid, diretas, papel
+- **Blocos:**
+  - [SRC-S001 · L1 · Conteúdo preliminar sem título](fontes/MAPA_IA.md#src-s001)
+    - Assuntos: conteúdo, preliminar, título, ia_navigacao, gerado_auto
+    - Trecho-guia: Documento de consulta sobre Conteúdo preliminar sem título.
+  - [SRC-S002 · L2–L16 · Mapa IA - fontes](fontes/MAPA_IA.md#src-s002)
+    - Assuntos: mapa, fontes, planejamento, mapa_ia, ia_navigacao, json, navegação, indice_geral_ia
+    - Trecho-guia: Atualizado automaticamente em: 2026-08-07 02:09:10 -0300
+  - [SRC-S003 · L17–L26 · Mapa IA - fontes > GPS Mermaid](fontes/MAPA_IA.md#src-s003)
+    - Assuntos: mermaid, n4c998ebdc6, gps, n46e494bd98, flowchart, fontes, área, trabalho
+    - Trecho-guia: Documento de consulta sobre GPS Mermaid.
+  - [SRC-S004 · L27–L31 · Mapa IA - fontes > Ordem de leitura recomendada](fontes/MAPA_IA.md#src-s004)
+    - Assuntos: ordem, leitura, recomendada, ler, este, mapa_ia, antes, abrir
+    - Trecho-guia: 1. Ler este MAPAIA.md antes de abrir arquivos pesados. 2. Subir para a raiz se precisar das regras globais AGENTS.md, CLAUDE.md e LEISGERAIS.
+  - [SRC-S005 · L32–L35 · Mapa IA - fontes > Subpastas diretas](fontes/MAPA_IA.md#src-s005)
+    - Assuntos: subpastas, diretas
+    - Trecho-guia: Documento de consulta sobre Subpastas diretas.
+  - [SRC-S006 · L36–L41 · Mapa IA - fontes > Arquivos diretos](fontes/MAPA_IA.md#src-s006)
+    - Assuntos: arquivos, diretos, arquivo, analise_pontual_harness_f0_f10, não, lições, papel, tamanho
+    - Trecho-guia: Documento de consulta sobre Arquivos diretos.
+  - [SRC-S007 · L42–L45 · Mapa IA - fontes > Leitura por papel](fontes/MAPA_IA.md#src-s007)
+    - Assuntos: leitura, papel, analise_pontual_harness_f0_f10, outro
+    - Trecho-guia: outro: ANALISEPONTUALHARNESSF0F10.md
+  - [SRC-S008 · L46–L50 · Mapa IA - fontes > Observações anti-alucinação](fontes/MAPA_IA.md#src-s008)
+    - Assuntos: observações, anti-alucinação, fonte, peça, regimento, este, mapa, classifica
+    - Trecho-guia: Este mapa classifica por nomes, extensões e posição na árvore; não substitui leitura de fonte primária. Fato, citação, ID processual, prazo e jurisprudência só entram em peça depois de conferência no arquivo-fonte ou fonte oficial. Se a pasta tiver regimento, a peça deve refletir
+
+### 4.58. Mapa IA - planejamento
+
+- **Arquivo preparado:** [MAPA_IA.md](MAPA_IA.md)
+- **Origem:** `MAPA_IA.md`
+- **Termos:** não, arquivo, automaticamente, outro, classificado, tópicos, plano, mapa, planejamento, arquivos, mapa_ia, decisão
+- **Blocos:**
+  - [SRC-S001 · L1 · Conteúdo preliminar sem título](MAPA_IA.md#src-s001)
+    - Assuntos: conteúdo, preliminar, título, ia_navigacao, gerado_auto
+    - Trecho-guia: Documento de consulta sobre Conteúdo preliminar sem título.
+  - [SRC-S002 · L2–L16 · Mapa IA - planejamento](MAPA_IA.md#src-s002)
+    - Assuntos: mapa, planejamento, mapa_ia, ia_navigacao, json, forja_harness, navegação, indice_geral_ia
+    - Trecho-guia: Atualizado automaticamente em: 2026-08-07 02:09:14 -0300
+  - [SRC-S003 · L17–L32 · Mapa IA - planejamento > GPS Mermaid](MAPA_IA.md#src-s003)
+    - Assuntos: n0594d5ce5b, mermaid, área, trabalho, arquivos, nf3dbdbfde5, click, mapa_ia
+    - Trecho-guia: Documento de consulta sobre GPS Mermaid.
+  - [SRC-S004 · L33–L37 · Mapa IA - planejamento > Ordem de leitura recomendada](MAPA_IA.md#src-s004)
+    - Assuntos: ordem, leitura, recomendada, ler, este, mapa_ia, antes, abrir
+    - Trecho-guia: 1. Ler este MAPAIA.md antes de abrir arquivos pesados. 2. Subir para a raiz se precisar das regras globais AGENTS.md, CLAUDE.md e LEISGERAIS.
+  - [SRC-S005 · L38–L44 · Mapa IA - planejamento > Subpastas diretas](MAPA_IA.md#src-s005)
+    - Assuntos: subpastas, diretas, fontes, mapa_ia, área, trabalho, arquivos, planejamento
+    - Trecho-guia: Documento de consulta sobre Subpastas diretas.
+  - [SRC-S006 · L45–L103 · Mapa IA - planejamento > Arquivos diretos](MAPA_IA.md#src-s006)
+    - Assuntos: não, arquivo, outro, classificado, automaticamente, tópicos, plano, decisão
+    - Trecho-guia: Documento de consulta sobre Arquivos diretos.
+  - [SRC-S007 · L104–L107 · Mapa IA - planejamento > Leitura por papel](MAPA_IA.md#src-s007)
+    - Assuntos: leitura, papel, prd_forja, tdd_forja, roadmap_forja, diagramas_forja, forja_nivel_2_analise_e_plano_corrigido, gates_qualidade_forja
+    - Trecho-guia: outro: 01PRDFORJA.md, 02TDDFORJA.md, 03ROADMAPFORJA.md, 04DIAGRAMASFORJA.md, 05FORJANIVEL2ANALISEEPLANOCORRIGIDO.md, 06GATESQUALIDADEFORJA.md, 07PLANOUPGRADEESTADODAARTE2026.md, 08PLANOFORJAN3INTEGRIDADEVISUALEGESTAO.md, 09AUDITORIAADVERSARIALPONTOSDECISIVOS.md, 10PRDFORJAN4RACIO
+  - [SRC-S008 · L108–L112 · Mapa IA - planejamento > Observações anti-alucinação](MAPA_IA.md#src-s008)
+    - Assuntos: observações, anti-alucinação, fonte, peça, regimento, este, mapa, classifica
+    - Trecho-guia: Este mapa classifica por nomes, extensões e posição na árvore; não substitui leitura de fonte primária. Fato, citação, ID processual, prazo e jurisprudência só entram em peça depois de conferência no arquivo-fonte ou fonte oficial. Se a pasta tiver regimento, a peça deve refletir
+
+### 4.59. Parecer jurídico — FORJA-COCRIACAO-v1
+
+- **Arquivo preparado:** [pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md)
+- **Origem:** `pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md`
+- **Termos:** não, art, regimental, peça, citação, plano, está, dispositivo, precedente, ressalva, j-b, julgador
+- **Blocos:**
+  - [SRC-S001 · L1–L23 · Parecer jurídico — FORJA-COCRIACAO-v1](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s001)
+    - Assuntos: não, parecer, art, peça, regimental, foi, stj, jurídico
+    - Trecho-guia: Objeto: 33PRD, 34TDD, 35ROADMAP, e a questão suscitada no parecer estratégico sobre a separabilidade entre J-B(acordo) e J-B(julgador). Natureza: parecer consultivo interno. Não é peça, não é destinado a protocolo, não contém opinião sobre caso concreto de cliente. Data de corte:
+  - [SRC-S002 · L24–L32 · Parecer jurídico — FORJA-COCRIACAO-v1 > 1. Resultado jurídico direto](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s002)
+    - Assuntos: plano, não, resultado, jurídico, direto, está, j-b, mais
+    - Trecho-guia: 1. O tratamento de precedentes do plano está juridicamente correto e é superior ao que existe hoje na esteira. A correção central — aderência governa a operação, não a força — é a leitura certa dos arts. 489, §1º, V e VI, e 927, §§1º a 4º, do CPC. 2. J-B(acordo) é separável de J-
+  - [SRC-S003 · L33–L49 · Parecer jurídico — FORJA-COCRIACAO-v1 > 2. Estado real, cânone e lacunas](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s003)
+    - Assuntos: não, cânone, lacunas, art, estado, real, prd, precatórios
+    - Trecho-guia: Cânone examinado: 33PRD (requisitos), 34TDD (payloads e invariantes), 35ROADMAP (portões), com os antecedentes 29, 30, 31 e 32.
+  - [SRC-S004 · L50–L51 · Parecer jurídico — FORJA-COCRIACAO-v1 > 3. Precedentes: o que o plano acertou e o que precisa de ajuste fino](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s004)
+    - Assuntos: precedentes, plano, acertou, precisa, ajuste, fino
+    - Trecho-guia: Documento de consulta sobre 3. Precedentes: o que o plano acertou e o que precisa de ajuste fino.
+  - [SRC-S005 · L52–L59 · Parecer jurídico — FORJA-COCRIACAO-v1 > 3. Precedentes: o que o plano acertou e o que precisa de ajuste fino > 3.1 Acertos](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s005)
+    - Assuntos: precedente, não, rf-5, operação, art, acertos, está, vinculante
+    - Trecho-guia: RF-5.6 está correto. Diante de precedente vinculante com moldura fática diversa, as operações são delimitar alcance, distinguir ou sustentar superação. Não existe "rebaixamento" de precedente vinculante por baixa similaridade fática — a vinculação é regime, e a similaridade defin
+  - [SRC-S006 · L60–L77 · Parecer jurídico — FORJA-COCRIACAO-v1 > 3. Precedentes: o que o plano acertou e o que precisa de ajuste fino > 3.2 Ajustes recomendados](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s006)
+    - Assuntos: não, art, precedente, dever, vinculante, ser, parte, próprio
+    - Trecho-guia: A1 — A inversão do art. 489 sobre nós mesmos precisa ser nomeada corretamente. O art. 489, §1º, é dever de fundamentação do juiz, não do advogado. O plano faz coisa metodologicamente excelente — antecipar o padrão pelo qual a decisão será medida —, mas o artefato interno deve reg
+  - [SRC-S007 · L78–L93 · Parecer jurídico — FORJA-COCRIACAO-v1 > 4. Ressalva bloqueante nº 1 — a citação regimental](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s007)
+    - Assuntos: regimental, citação, não, peça, art, síntese, executiva, ristj
+    - Trecho-guia: Situação. O protocolo da fábrica determina, para toda peça e todo tribunal, "síntese executiva estilo art. 343-A do RISTJ", com origem declarada em determinação do titular por e-mail de 07/07/2026. A taxonomia de falhas da própria disciplina jurídica interna já classifica "art. 3
+  - [SRC-S008 · L94–L113 · Parecer jurídico — FORJA-COCRIACAO-v1 > 5. Ressalva bloqueante nº 2 — sigilo, conflito e perímetro](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s008)
+    - Assuntos: sigilo, perímetro, documento, não, cliente, sob, corpus, conflito
+    - Trecho-guia: O documento 30 levantou a lacuna G18. O 32 a manteve como agregado necessário. O PRD 33 a eliminou do escopo e, no mesmo documento, criou o IDENTITYCORPUSMANIFEST.jsonl, que inventaria peças de múltiplos clientes com hash e proveniência.
+  - [SRC-S009 · L114–L117 · Parecer jurídico — FORJA-COCRIACAO-v1 > 6. J-B(acordo) e J-B(julgador): a separação e o seu fundamento](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s009)
+    - Assuntos: j-b, separação, acordo, julgador, seu, fundamento, não, parecer
+    - Trecho-guia: O parecer estratégico separou os dois por perfil de risco e registrou dúvida honesta na contra-hipótese 2 — se a separação não seria cosmética, já que ambos operam o mesmo motor de constrangimento. A separação se sustenta, mas não pelo motivo apresentado.
+  - [SRC-S010 · L118–L125 · Parecer jurídico — FORJA-COCRIACAO-v1 > 6. J-B(acordo) e J-B(julgador): a separação e o seu fundamento > 6.1 J-B(julgador) — o problema não é o risco, é a ausência de destino](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s010)
+    - Assuntos: não, ser, julgador, art, j-b, risco, suspeição, problema
+    - Trecho-guia: A alegação de parcialidade de magistrado tem veículo processual próprio e taxativo: impedimento e suspeição, arts. 144 a 148 do CPC. As hipóteses de suspeição do art. 145 são de rol fechado — amizade íntima, inimizade, interesse no julgamento, relação de crédito ou débito, entre 
+  - [SRC-S011 · L126–L136 · Parecer jurídico — FORJA-COCRIACAO-v1 > 6. J-B(acordo) e J-B(julgador): a separação e o seu fundamento > 6.2 J-B(acordo) — tem veículo, tem base e tem sujeito diferente](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s011)
+    - Assuntos: tem, não, lei, base, acordo, veículo, sujeito, análise
+    - Trecho-guia: O objeto da análise é uma proposta, não uma pessoa. E o ordenamento não só admite como estrutura o argumento de vantajosidade:
+  - [SRC-S012 · L137–L149 · Parecer jurídico — FORJA-COCRIACAO-v1 > 6. J-B(acordo) e J-B(julgador): a separação e o seu fundamento > 6.3 O veto que a separação exige](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s012)
+    - Assuntos: ser, gestor, não, veto, pessoal, separação, exige, formulação
+    - Trecho-guia: A dúvida do parecer estratégico está certa num ponto preciso, e é onde eu imponho veto.
+  - [SRC-S013 · L150–L163 · Parecer jurídico — FORJA-COCRIACAO-v1 > 7. Risco e sinais de reversão](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s013)
+    - Assuntos: não, risco, reversão, dispositivo, pelo, sinais, peça, decisão
+    - Trecho-guia: Onde eu posso estar errado. Sobre o art. 343-A, minha conclusão é de forte implausibilidade estrutural, não de inexistência provada: o arquivo consolidado pode estar defasado em relação a emenda recente. Se o dispositivo existir com conteúdo compatível, R2 a R4 caem e permanece a
+  - [SRC-S014 · L164–L172 · Parecer jurídico — FORJA-COCRIACAO-v1 > +1. Próximo ato](pareceres/CICERO_FORJA_COCRIACAO_2026-07-25.md#src-s014)
+    - Assuntos: ato, próximo, documentos, peças, prd, citação, regimental, j-b
+    - Trecho-guia: 1. Conferir o art. 343-A na fonte oficial do STJ. Prazo: antes da próxima peça. É o ato de maior relação entre custo e consequência de todo este conjunto de documentos. 2. Suspender a referência numérica no corpo das peças até a conferência. 3. Incluir no PRD 33, como requisito d
+
+### 4.60. Parecer Helena Strategos — FORJA-COCRIACAO-v1
+
+- **Arquivo preparado:** [pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md)
+- **Origem:** `pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md`
+- **Termos:** não, plano, onda, isso, consulta, ele, até, j-b, está, contra-hipótese, três, antes
+- **Blocos:**
+  - [SRC-S001 · L1–L8 · Parecer Helena Strategos — FORJA-COCRIACAO-v1](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s001)
+    - Assuntos: parecer, helena, strategos, forja-cocriacao-v1, está, objeto, prd, tdd
+    - Trecho-guia: Objeto: 33PRD, 34TDD, 35ROADMAPEGATES. Data: 2026-07-25. Modo: análise profunda 8+1. Veredito: APROVADO COM REORDENAÇÃO. O desenho está certo. A ordem está errada.
+  - [SRC-S002 · L9–L22 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 1. Status real e recomendação direta](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s002)
+    - Assuntos: recomendação, direta, status, real, plano, três, antes, não
+    - Trecho-guia: O plano é tecnicamente sólido, epistemicamente honesto e — coisa rara aqui — encolheu em vez de crescer a cada revisão. Aprovo o conteúdo.
+  - [SRC-S003 · L23–L35 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 2. Achado principal](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s003)
+    - Assuntos: achado, j-b, risco, proposta, sob, principal, plano, único
+    - Trecho-guia: O plano trata "jurimetria J-B" como um bloco único de alto risco. São dois produtos com perfis de risco opostos, e um deles é inofensivo.
+  - [SRC-S004 · L36–L49 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 3. Evidência e fundamentação](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s004)
+    - Assuntos: não, fonte, casos, cauda, evidência, fundamentação, tem, plano
+    - Trecho-guia: [FONTE — fila operacional, 2026-07-25] 49 casos, 10 ativos, 39 entregues em 7 dias. Seis casos parados 56h em F0 com P1 aberto. Um caso em draftawaitingreview parado 344 horas.
+  - [SRC-S005 · L50–L61 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 4. Mecanismo causal](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s005)
+    - Assuntos: onda, não, plano, mecanismo, causal, produz, consulta, tem
+    - Trecho-guia: Por que a reordenação funciona, e não é apenas impaciência:
+  - [SRC-S006 · L62–L63 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 5. Contra-hipóteses](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s006)
+    - Assuntos: contra-hipóteses
+    - Trecho-guia: Documento de consulta sobre 5. Contra-hipóteses.
+  - [SRC-S007 · L64–L71 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 5. Contra-hipóteses > Contra-hipótese 1: a consulta manual queima a única chance de causar boa impressão](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s007)
+    - Assuntos: não, manual, perguntas, pergunta, contra-hipótese, consulta, queima, única
+    - Trecho-guia: Argumento: um e-mail de perguntas mal calibrado, enviado antes de o sistema estar pronto, ensina ao Fábio que a FORJA pergunta o óbvio. Ele disse que perguntar acelera — mas isso vale para perguntas boas. Uma pergunta respondível pelos autos, na primeira interação, envenena a per
+  - [SRC-S008 · L72–L79 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 5. Contra-hipóteses > Contra-hipótese 2: J-B(acordo) não é tão inofensivo quanto eu afirmo](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s008)
+    - Assuntos: j-b, acordo, não, gestor, ser, contra-hipótese, tão, inofensivo
+    - Trecho-guia: Argumento: a fala do titular liga o benchmarking de deságio a "o gestor público pode ser responsabilizado perante o Tribunal de Contas da União". Isso não é análise econômica neutra — é construção de constrangimento contra um agente público identificável. O mesmo motor retórico d
+  - [SRC-S009 · L80–L89 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 5. Contra-hipóteses > Contra-hipótese 3: reordenar é otimizar para a demo e não para o produto](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s009)
+    - Assuntos: não, onda, contra-hipótese, reordenar, otimizar, demo, produto, teste
+    - Trecho-guia: Argumento: priorizar demonstração e teste comportamental é comportamento de vendedor. O valor durável do plano está na Camada 2 — ratio, moldura fática, operação declarada. Antecipar a vitrine pode consumir o mês e adiar o ativo.
+  - [SRC-S010 · L90–L103 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 6. Calibração de confiança](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s010)
+    - Assuntos: não, confiança, base, calibração, plano, nomeou, j-b, falha
+    - Trecho-guia: Não atribuo probabilidade a "o plano gera peça melhor". Não há base. É exatamente o que as ondas 2 e 3 existem para descobrir, e a revisão adversarial Fable já nomeou isso como risco empírico irredutível.
+  - [SRC-S011 · L104–L118 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 7. Cenários](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s011)
+    - Assuntos: resposta, consulta, não, cenários, responde, isso, ele, sinal
+    - Trecho-guia: Base (p ≈ 0.55). Onda −1 fecha em duas semanas. O Fábio responde parcialmente à consulta manual — responde ao que é decisão dele, ignora o que é diligência. Isso já valida o desenho, com ajuste: separar consulta de decisão de consulta de diligência, e mandar só a primeira a ele. 
+  - [SRC-S012 · L119–L129 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > 8. Próximo movimento — Onda −1, teto 2026-08-08](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s012)
+    - Assuntos: até, responsável, igor, feito, quando, sobre, próximo, movimento
+    - Trecho-guia: 1. Redigir e enviar uma consulta manual sobre um caso real da fila — responsável: Igor; até 2026-07-31; feito quando a minuta passar no gabarito do 35, §3, com zero pergunta reprovada no filtro do acervo, e for enviada pelo canal habitual. 2. Gravar a demonstração de recusa com a
+  - [SRC-S013 · L130–L140 · Parecer Helena Strategos — FORJA-COCRIACAO-v1 > Riscos de negócio que o plano não nomeia](pareceres/HELENA_FORJA_COCRIACAO_2026-07-25.md#src-s013)
+    - Assuntos: não, plano, ele, cada, isso, mandato, riscos, negócio
+    - Trecho-guia: Concentração de cliente. Toda a FORJA existe para um escritório, e cada onda a torna mais específica: identidade Medina, padrão Word Medina, regimentos das pastas. Isso é excelente para retenção e péssimo para transferência. O titular chamou isso de "IA artesanal" e tratou como v
+
+### 4.61. Mapa IA - pareceres
+
+- **Arquivo preparado:** [pareceres/MAPA_IA.md](pareceres/MAPA_IA.md)
+- **Origem:** `pareceres/MAPA_IA.md`
+- **Termos:** mapa, pareceres, leitura, subpastas, arquivos, mapa_ia, ia_navigacao, planejamento, arquivo, cicero_forja_cocriacao_2026-07-25, helena_forja_cocriacao_2026-07-25, mermaid
+- **Blocos:**
+  - [SRC-S001 · L1 · Conteúdo preliminar sem título](pareceres/MAPA_IA.md#src-s001)
+    - Assuntos: conteúdo, preliminar, título, ia_navigacao, gerado_auto
+    - Trecho-guia: Documento de consulta sobre Conteúdo preliminar sem título.
+  - [SRC-S002 · L2–L16 · Mapa IA - pareceres](pareceres/MAPA_IA.md#src-s002)
+    - Assuntos: mapa, pareceres, planejamento, mapa_ia, ia_navigacao, json, navegação, indice_geral_ia
+    - Trecho-guia: Atualizado automaticamente em: 2026-08-07 02:09:10 -0300
+  - [SRC-S003 · L17–L26 · Mapa IA - pareceres > GPS Mermaid](pareceres/MAPA_IA.md#src-s003)
+    - Assuntos: mermaid, ndeddd60c85, gps, n51a3875269, flowchart, pareceres, área, trabalho
+    - Trecho-guia: Documento de consulta sobre GPS Mermaid.
+  - [SRC-S004 · L27–L31 · Mapa IA - pareceres > Ordem de leitura recomendada](pareceres/MAPA_IA.md#src-s004)
+    - Assuntos: ordem, leitura, recomendada, ler, este, mapa_ia, antes, abrir
+    - Trecho-guia: 1. Ler este MAPAIA.md antes de abrir arquivos pesados. 2. Subir para a raiz se precisar das regras globais AGENTS.md, CLAUDE.md e LEISGERAIS.
+  - [SRC-S005 · L32–L35 · Mapa IA - pareceres > Subpastas diretas](pareceres/MAPA_IA.md#src-s005)
+    - Assuntos: subpastas, diretas
+    - Trecho-guia: Documento de consulta sobre Subpastas diretas.
+  - [SRC-S006 · L36–L42 · Mapa IA - pareceres > Arquivos diretos](pareceres/MAPA_IA.md#src-s006)
+    - Assuntos: arquivo, arquivos, diretos, cicero_forja_cocriacao_2026-07-25, outro, não, classificado, automaticamente
+    - Trecho-guia: Documento de consulta sobre Arquivos diretos.
+  - [SRC-S007 · L43–L46 · Mapa IA - pareceres > Leitura por papel](pareceres/MAPA_IA.md#src-s007)
+    - Assuntos: leitura, papel, cicero_forja_cocriacao_2026-07-25, helena_forja_cocriacao_2026-07-25, outro
+    - Trecho-guia: outro: CICEROFORJACOCRIACAO2026-07-25.md, HELENAFORJACOCRIACAO2026-07-25.md
+  - [SRC-S008 · L47–L51 · Mapa IA - pareceres > Observações anti-alucinação](pareceres/MAPA_IA.md#src-s008)
+    - Assuntos: observações, anti-alucinação, fonte, peça, regimento, este, mapa, classifica
+    - Trecho-guia: Este mapa classifica por nomes, extensões e posição na árvore; não substitui leitura de fonte primária. Fato, citação, ID processual, prazo e jurisprudência só entram em peça depois de conferência no arquivo-fonte ou fonte oficial. Se a pasta tiver regimento, a peça deve refletir
+
+## 5. Rastreabilidade
+
+O arquivo `MANIFESTO_CONSULTA_IA.json` contém, em formato estruturado, caminhos, hashes, linhas, títulos, hierarquia, blocos e âncoras. O campo `source_sha256` permite detectar qualquer alteração posterior no documento canônico.

@@ -5,6 +5,7 @@
 00_MAPA_ARQUITETURA_IA/
 architecture-map/
 graphify-out/
+planejamento/CONSULTA_IA/
 .git/
 node_modules/
 .venv/

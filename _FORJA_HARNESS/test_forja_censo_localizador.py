@@ -222,5 +222,60 @@ class TestConferenciaNaoViraEntregue(unittest.TestCase):
         self.assertEqual(dados["casos"][0]["situacao"], "entrega_declarada")
 
 
+class TestDeclaracaoHumana(unittest.TestCase):
+    """A pessoa declara o que a máquina não afere — e só o que o vocabulário admite.
+
+    `entrega_atestada` veio de um caso medido em 10/08/2026: produto de mídia,
+    289 arquivos e 386 MB entregues na pasta da demanda, nenhum deles `.docx` ou
+    `.pdf`, que é a única prova que esta régua lê. Afrouxar a régua para todos
+    seria aceitar qualquer arquivo como prova de petição entregue; a saída é
+    deixar alguém dizer o que viu, respondendo pelo que disse.
+    """
+
+    def _com_declaracao(self, resolucao):
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            _caso(raiz, "case-x", "entregue, sem identificador")
+            dados = forja_censo.censo(raiz, resolucoes={"case-x": resolucao},
+                                      conferencias={})
+        return dados["casos"][0]
+
+    def test_entrega_atestada_sai_de_sem_prova_e_nao_vira_entregue(self):
+        c = self._com_declaracao({"situacao": "entrega_atestada",
+                                  "por": "Fulano", "motivo": "kit de mídia"})
+        self.assertEqual(c["situacao"], "entrega_atestada")
+        self.assertIn("Fulano", c["porque"])
+
+    def test_declaracao_antiga_sem_campo_continua_valendo(self):
+        """O arquivo de resoluções já tem registros sem `situacao`; quebrar a
+        leitura deles trocaria um defeito por outro."""
+        c = self._com_declaracao({"por": "Fulano", "motivo": "não era tarefa"})
+        self.assertEqual(c["situacao"], "triado_sem_demanda")
+
+    def test_declarar_grava_a_situacao_pedida_e_quem_respondeu(self):
+        """Sem este, a categoria podia sumir do vocabulário de escrita e nenhum
+        teste notaria: os demais montam o registro à mão e nunca passam por
+        `declarar`. Foi a contraprova que apontou o buraco, não a suíte."""
+        with tempfile.TemporaryDirectory() as tmp:
+            alvo = Path(tmp) / "r.json"
+            forja_censo.declarar("case-x", "kit de mídia entregue por link",
+                                 "Fulano", situacao="entrega_atestada", path=alvo)
+            reg = json.loads(alvo.read_text(encoding="utf-8"))["casos"]["case-x"]
+        self.assertEqual(reg["situacao"], "entrega_atestada")
+        self.assertEqual(reg["por"], "Fulano")
+        self.assertIn("em", reg, "declaração sem data não responde por quando")
+
+    def test_situacao_fora_do_vocabulario_e_recusada_na_escrita(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(forja_censo.CensoError):
+                forja_censo.declarar("case-x", "m", "p", situacao="entregue",
+                                     path=Path(tmp) / "r.json")
+
+    def test_atestada_nao_deve_nada_e_sem_prova_deve(self):
+        """Se `entrega_atestada` entrasse em DEVENDO, declarar não fecharia nada."""
+        self.assertNotIn("entrega_atestada", forja_censo.DEVENDO)
+        self.assertIn("concluido_sem_prova", forja_censo.DEVENDO)
+
+
 if __name__ == "__main__":
     unittest.main()
