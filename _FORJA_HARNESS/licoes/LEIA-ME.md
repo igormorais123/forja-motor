@@ -31,7 +31,36 @@ python forja_licoes.py --orfas         # lições sem nada que as faça reprovar
 python forja_licoes.py --ambiguas      # citações em código que não decidem
 python forja_licoes.py --documentar    # reescreve os dois índices desta pasta
 python forja_licoes.py --indexar       # grava o índice legível por máquina
+python forja_licoes.py --fila-de-gates # as órfãs que mais pedem gate
+python forja_licoes.py --id 87         # o identificador estável, para citar
 ```
+
+## Ao criar âncora nova: cite o `id`, não o número
+
+Decidido em 11/08/2026. `--id <número>` ou `--id "trecho do título"` devolve o
+`licao-<hash>` para colar no código, no teste ou no contrato de fase. Se o número
+que você deu tiver mais de uma lição, o comando devolve todas — e é exatamente
+para isso que ele existe. Id citado que não resolve reprova no baseline, como já
+reprovava número inexistente.
+
+As citações por número que já existem ficam: reescrevê-las exigiria decidir qual
+das lições homônimas cada trecho quis citar, o que é autoria e não varredura.
+
+## Qual lição órfã deve virar gate
+
+`--fila-de-gates` responde com **20 das 340**, por critério do próprio acervo e
+não por gosto: a lição diz no próprio texto que aquilo já tinha acontecido
+("outra vez", "já tínhamos", "mesma família de falha") **e** nomeia um artefato
+onde um gate poderia morar. O primeiro filtro é o mesmo que o registro de regras
+aprendidas usa para adotar regra — recorrência, não anedota; o segundo evita
+propor gate para lição que é julgamento humano e deve continuar sendo.
+
+Semelhança de título foi testada antes e não serve: as 340 órfãs produziram **um
+único par**, porque cada título é uma frase única. A confissão de repetição, que
+o corpus faz espontaneamente, achou 50.
+
+A fila é proposta, nunca adoção. Quem adota é pessoa, por `forja_aprendizado.py
+adotar --aprovado-por <nome>`.
 
 Os dois índices são **gerados**. Não os edite: a fonte é `RETROSPECTIVAS.md`, e
 uma correção feita aqui desaparece na próxima geração. Depois de acrescentar

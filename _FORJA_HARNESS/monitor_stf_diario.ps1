@@ -45,6 +45,19 @@ de dar o encaminhamento. Detalhe por caso em ``telemetria\monitor_stf\``.
 Este arquivo é acervo: nomeia processo e cliente e não acompanha o motor.
 "@
     Set-Content -Path $flag -Value $texto -Encoding UTF8
+} elseif ($codigo -eq 0 -and (Test-Path -LiteralPath $flag)) {
+    # Sem movimento novo, a flag anterior só pode sair se o aviso persistente
+    # já recebeu ciência nominal. Assim não apagamos novidade esquecida e não
+    # deixamos alerta visual depois do encaminhamento comprovado.
+    try {
+        Push-Location $harness
+        $pendentes = (& python forja_avisos.py --json 2>$null | Out-String) | ConvertFrom-Json
+        if (-not @($pendentes | Where-Object { $_.origem -eq 'monitor_stf' }).Count) {
+            Remove-Item -LiteralPath $flag -Force
+        }
+    } finally {
+        Pop-Location
+    }
 } elseif ($codigo -eq 1) {
     Add-Content -Path $log -Value "  !! erro na verificacao — conferir manualmente" -Encoding UTF8
 }

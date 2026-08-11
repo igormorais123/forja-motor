@@ -47,6 +47,9 @@ SUITES_SCRIPT = {
     "test_forja_licoes.py": (
         "catraca da rastreabilidade das lições: citação por número tem de "
         "resolver para uma lição só, e a duplicidade de numeração não pode crescer"),
+    "test_forja_protocolo_par.py": (
+        "paridade de assunto entre CLAUDE.md e AGENTS.md — ordem que vive num "
+        "arquivo só vale para uma família de modelo e não para a outra"),
     "test_forja_aprendizado.py": (
         "o retorno humano vira regra aplicada e conferida: recorrência entre casos "
         "distintos manda sobre volume, aplicar é idempotente, e toda regra adotada "

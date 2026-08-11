@@ -28,6 +28,7 @@
 - [10. Ordem de execução e custo](#10-ordem-de-execução-e-custo)
 - [11. Como se mede que este plano funcionou](#11-como-se-mede-que-este-plano-funcionou)
 - [12. O que exige decisão do titular](#12-o-que-exige-decisão-do-titular)
+- [13. Consolidação das revisões externas](#13-consolidação-das-revisões-externas-11082026)
 
 ---
 
@@ -170,7 +171,7 @@ A distinção é exatamente o campo `aplicadaEm`/`destinoArquivo` que o registro
 | `learning_registry/DEFEITOS.json` | **novo.** Registro dos defeitos, com `dedupeKey` para idempotência. |
 | `forja_aprendizado.py` | `padroes` passa a consultar o detector e marcar cada classe como `novo`, `aplicacao_ausente` ou `regra_ineficaz`. |
 | `forja_delivery.py` | elo 5-B passa a barrar também por **defeito de severidade alta vencido**, não só por regra fora do destino. |
-| `forja_censo.py` | um achado novo (`CEN7`) para defeito de aprendizado vencido, na mesma leitura que já mostra a população. |
+| `forja_censo.py` | um achado novo (`CEN8`) para defeito de aprendizado vencido, na mesma leitura que já mostra a população. (`CEN7` já existe — conflito real entre esquemas; a primeira versão deste plano propunha o código colidente, apanhado pela revisão externa.) |
 | `test_forja_reaprendizado.py` | **novo.** Fixtures: as três âncoras reais da tabela do §1, anonimizadas por classe. Cada uma deve produzir `regra_ineficaz`. |
 
 ### Âncora de projeto
@@ -343,14 +344,19 @@ trabalho**, só onde ela observa; (c) não há relatório de manhã dizendo o qu
 
 Janela proposta: **01:00 às 05:00**, em ordem fixa, cada passo com registro próprio:
 
-1. `forja_reconcile.py` — reconciliação da fila.
-2. `forja_censo.py` + `forja_conferir_entregas.py --conferir` — a população e a dívida de auditoria.
-3. `forja_insumo_bloqueado.py --vencidos` e `--probe` — devolve à fila o que o bloqueio tirou dela e testa as rotas ao vivo.
-4. `forja_regimentos.py --limite-dias 90` — atualidade dos regimentos arquivados.
-5. `forja_aprendizado.py verificar` — as verificações vencidas do Bloco B.
-6. `forja_reaprendizado.py` — abre e reabre defeitos.
-7. `forja_sonho.py` — a noite propriamente dita.
-8. `forja_baseline.py` — a corrida completa, que hoje ninguém roda todo dia.
+1. `forja_baseline.py` — **primeiro**, como preflight: vermelho bloqueia a recombinação
+   do sonho e qualquer passo que grave; inconclusivo vira lacuna declarada. (A primeira
+   versão deste plano punha o baseline depois do sonho — o sonho raciocinaria sobre um
+   verde velho e descobriria o vermelho tarde demais. Apanhado pela revisão externa.)
+2. `forja_reconcile.py` — reconciliação da fila.
+3. `forja_censo.py` + `forja_conferir_entregas.py --conferir` — a população e a dívida de auditoria.
+4. `forja_insumo_bloqueado.py <raiz> --vencidos` — devolve à fila o que o bloqueio tirou
+   dela; em passo separado, `forja_rotas_fonte.py --probe` testa as rotas ao vivo. (São
+   dois scripts; a primeira versão atribuía `--probe` ao módulo errado.)
+5. `forja_regimentos.py --limite-dias 90` — atualidade dos regimentos arquivados.
+6. `forja_aprendizado.py verificar` — as verificações vencidas do Bloco B.
+7. `forja_reaprendizado.py` — abre e reabre defeitos.
+8. `forja_sonho.py` — a noite propriamente dita, só com o preflight verde.
 9. Relatório da manhã.
 
 ### A trava que define o turno
@@ -521,3 +527,140 @@ Critérios observáveis, definidos antes de construir para não serem ajustados 
    longa silencia falha nova da mesma classe; curta reintroduz o ruído. Proposta: 3 dias,
    e o alerta silenciado conta no placar como `ruido_evitado` — silêncio também é decisão
    e também se mede.
+
+## 13. Consolidação das revisões externas (11/08/2026)
+
+O plano passou por três famílias de modelo: a primeira e a segunda leitura (Claude —
+Opus 5 e Fable 5, §§ marcados ao longo do texto), a revisão técnica do **Codex
+`gpt-5.6-sol` em esforço alto** (17 achados, veredito REPROVADO até três correções) e o
+contraditório do **Diabob** (`grok-4.5-cursor`, parecer em
+`reports/PARECER_DIABOB_PLANO46_2026-08-11.json`; o titular pediu Grok 4.6, e foi
+conferido nas duas rotas — Cursor e OpenRouter — que a versão 4.6 não existe em nenhuma;
+o 4.5 é o Grok mais novo alcançável, registrado aqui como ressalva e não como escolha).
+
+As afirmações verificáveis dos revisores foram conferidas no código antes de aceitas —
+as quatro checadas bateram: o `CEN7` já existia, o `--probe` era do módulo errado, o
+agrupamento é só `(camada, causa)`, e `aplicar()` carimba `aplicadaEm` mesmo sem
+mudança. Os erros factuais foram corrigidos no corpo (§§3 e 7). O que segue são as
+decisões sobre o restante.
+
+### 13.1 A objeção central do Diabob — acatada, e ela muda a tese do plano
+
+**Objeção:** nas três âncoras do §1, a regra já estava escrita — e numa delas havia
+gate — no momento da violação. Logo, "saber que é reincidência" pode não ser o gargalo;
+o plano corre o risco de ser a 58ª pessoa a diagnosticar o mesmo defeito e chamar isso
+de progresso. A pergunta que o plano evitava: **depois do defeito aberto, quem muda o
+quê no caminho quente da peça, antes do próximo protocolo?**
+
+**Decisão: acatada, com a seguinte reformulação da tese.** O detector não é o remédio;
+é o disparador que a casa hoje não tem. O remédio a FORJA já conhece e já praticou:
+**regra escrita que não pega vira gate** (S6 e S7 nasceram exatamente assim — na mão,
+por dor). O que o Bloco A automatiza não é o aprendizado: é a *convocação* dele. Por
+isso o fechamento de defeito muda de definição:
+
+> **Defeito `regra_ineficaz` só fecha com mudança executável no caminho quente** — gate
+> novo ou endurecido, item recomputado no contrato da fase, verificação no runner — com
+> o identificador da mudança no registro. Reescrever a regra em prosa, em qualquer
+> destino, **não fecha**.
+
+E, antes de construir A+B, roda-se o **teste de realidade** que o Diabob propôs, como
+Fase 0 do §10: classificar à mão as três âncoras e as próximas cinco reincidências do
+`RETROSPECTIVAS.md` entre (I) "ninguém reconheceu a equivalência" e (II) "a classe era
+óbvia e a esteira avançou assim mesmo". Se a maioria for (II), o investimento migra do
+detector para a conversão em gate — e o plano diz isso com todas as letras em vez de
+construir o detector primeiro porque ele é a parte divertida.
+
+### 13.2 A segunda objeção do Diabob — acatada como métrica de guarda
+
+Barrar entrega por defeito vencido (elo 5-B ampliado) pode produzir o equilíbrio
+perverso: fechar defeito na véspera para destravar prazo — a prosa "corrigido" de volta,
+disfarçada de checkbox. **Decisão:** todo defeito nasce com **dono nominal**, e o placar
+do Bloco F ganha a coluna que o Diabob pediu: **defeitos fechados na véspera de uma
+entrega ou para destravar o 5-B**. Se essa coluna passar de metade dos fechamentos em 30
+dias, o dente do 5-B é teatro coercitivo e sai — critério escrito antes de instalar.
+
+### 13.3 A terceira objeção do Diabob + achado 8 do Codex — acatados juntos
+
+`efeito_na_producao` num sistema de volume baixo pode degradar em névoa: tudo
+`sem_sinal_ainda` para sempre, parecendo que o laço roda sem nunca emitir veredito.
+**Decisão:** (a) o denominador deixa de ser declarado e vira **computado** — cada regra
+adotada com esse verificador traz um `opportunityPredicate` executável sobre campos
+estruturados dos casos, que registra elegíveis, excluídos e motivo; (b) métrica de
+guarda: **se menos de 20% das verificações desse tipo emitirem veredito em 60 dias, o
+tipo está morto por falta de sangue** e a conclusão é essa, não um placar cinza.
+
+### 13.4 Os três P0 do Codex — acatados integralmente
+
+**(1) Chave de equivalência.** O ponto mais frágil do plano, como o próprio §3 não
+admitia. `(camada, causa)` não separa as seis regras distintas que hoje vivem sob
+`correspondencia:diretriz_escrita` — usar isso abriria falsos `regra_ineficaz` em série.
+Decisão: duas chaves distintas — `occurrenceKey` (hash de artefato, gate, localizador e
+evento: identifica o fato) e `equivalenceKey` (ontologia versionada
+`{invarianteViolada, camadaSistema, fase, gateId, objeto}`: identifica a classe) — com
+fixtures de pares equivalentes E contraprovas de pares que não podem ser equiparados.
+A ontologia nasce pequena e cresce por alias aprovado, nunca por regex esperta.
+
+**(2) Fronteira no sonho.** A trava 3 do Bloco D afirmava que ler estrutura basta para
+não vazar — e é falso: `caseId`, caminho e mensagem de gate são dado da instalação.
+Decisão: os registros de ocorrência e lastro vivem no **acervo/state**, nunca no motor;
+o modelo do sonho recebe **agregados sanitizados com IDs opacos**; e a sanitização é
+validada por **validador estrutural de campos** (allowlist do que PODE atravessar),
+não por lista de nomes proibidos — a lição 326 já mostrou que chave opaca vaza sem
+disparar gate lexical.
+
+**(3) Concorrência.** Mutex no PowerShell impede dois turnos, não impede a sessão humana
+das 2h da manhã — e o baseline desta semana já registrou árvore mudando durante a
+corrida. Decisão: **lease cooperativo global** (arquivo com owner, heartbeat e validade,
+respeitado por todos os mutadores novos), e cada passo do turno confere a revisão da
+árvore antes e depois — deriva detectada aborta o passo **sem gravar**, e o relatório da
+manhã diz qual passo abortou e por quê.
+
+### 13.5 Demais achados do Codex — decisões em uma linha cada
+
+| # | Achado | Decisão |
+|---|---|---|
+| 4 | idempotência sem chave definida; `aplicadaEm` carimba sem mudança | acatado — IDs determinísticos por ocorrência/aplicação/verificação/decisão; verificação só agenda em transição real (e o carimbo incondicional do `aplicar()` é bug a corrigir junto) |
+| 5 | sonho antes do baseline | acatado — já corrigido no §7 (preflight primeiro) |
+| 6 | janela de 30 dias atravessando o legado sem série temporal | acatado — ledger de ocorrências com `occurredAt`; legado importa como `tempo_desconhecido`; detector roda em sombra até o corte confiável |
+| 7 | `--verificador` ainda é declaração | acatado — o tipo resolve em catálogo de callables, com dry-run na adoção e recibo (hash do código, população examinada, veredito) |
+| 9 | `destino_presente` contaminando a métrica de verificadas | acatado — `materializacaoVerificada` não é `efeitoVerificado`; presença nunca entra no numerador de efeito |
+| 10 | colisão CEN7 | acatado — corrigido no corpo para CEN8 |
+| 11 | `--probe` no módulo errado | acatado — corrigido no §7 |
+| 12 | exit codes com semânticas incompatíveis sob um wrapper único | acatado — adaptador por job (`ok/finding/inconclusive/error`); "não zero" não é sinônimo de falha |
+| 13 | "resultado 0 = funciona" contradiz a regra da casa | acatado — canário por tarefa: execução recente + artefato esperado + frescor, antes de envelopar as sete |
+| 14 | rejeição de classe escondendo evidência nova para sempre | acatado — decisão vincula a `{versãoDaEquivalência, hashDoConjuntoDeEvidência}`; ocorrência nova ou defeito reaberto invalida a ocultação; defeito ativo prevalece sobre rejeição e adiamento |
+| 15 | "nunca envia nada" contra alerta/briefing | acatado — worker escreve **outbox** local; um notifier separado, com canal allowlisted e deduplicação, envia; a promessa do turno passa a ser "não envia diretamente" |
+| 16 | família do produtor sem prova computada | acatado — famílias derivadas dos recibos dos runs do dia; sem família disjunta autenticada, o sonho roda só a triagem determinística e registra `cross_family_unavailable` |
+| 17 | custo subestimado | acatado em parte — orçamento por noite (tempo, timeout, teto de retries) entra no desenho do turno; a estimativa de horas humanas fica para depois da Fase 0, porque depende do resultado dela |
+
+### 13.6 O que foi rejeitado das revisões
+
+**Do Codex, nada foi rejeitado no mérito** — os 17 achados sobreviveram à conferência
+(os 4 verificáveis batidos no código; os demais são de desenho e se sustentam sozinhos).
+O veredito REPROVADO é aceito como estado do plano *antes* desta seção: as três
+correções indispensáveis dele são exatamente os §§13.4(1), 13.4(3) e o par 13.3/13.4(2).
+
+**Do Diabob, rejeita-se a conclusão maximalista** de que "sobram F.1 e talvez hashes".
+Ela só segue se o teste de realidade der (II) maciço — e é para isso que a Fase 0
+existe. Se der misto, detector E conversão em gate são ambos necessários: o detector
+convoca, o gate corrige. A provocação dele fica registrada como o critério de desempate
+do §11: *se a reincidência das classes-âncora não cair antes de o placar ficar bonito,
+o plano errou o mecanismo.*
+
+### 13.7 Efeito na ordem de execução (§10 revisado)
+
+| Ordem | Etapa | Novidade desta consolidação |
+|---|---|---|
+| 0 | **Teste de realidade** (classificar 8 reincidências à mão) + piloto de 14 dias do F.1 | novo — barato, e decide onde vai o investimento |
+| 1 | F.1 — alerta em job, com adaptador de exit code e canário por tarefa | endurecido (achados 12 e 13) |
+| 2 | Ontologia de equivalência + ledger de ocorrências (em sombra) | novo pré-requisito dos blocos A e B |
+| 3 | A + B — com fechamento por mudança executável, dono nominal e verificador com recibo | reformulados |
+| 4 | C — rejeição vinculada a evidência | endurecido (achado 14) |
+| 5 | F.2 — placar, com as métricas de guarda 13.2 e 13.3 | ampliado |
+| 6 | E — turno com lease global, preflight de baseline e outbox | endurecido |
+| 7 | D — sonho, com sanitização estrutural validada | endurecido |
+
+A Fase 0 não é enfeite processual: é a diferença entre construir o instrumento certo e
+construir o instrumento divertido. Custa uma sessão de leitura e catorze dias de
+observação passiva — e o resto do plano fica melhor definido em qualquer um dos
+desfechos dela.

@@ -284,6 +284,71 @@ def citacoes(raiz: Path | None = None) -> dict[int, set[str]]:
     return achado
 
 
+# Confissão de repetição: a lição que diz, no próprio texto, que a casa já
+# tinha aprendido aquilo. É o sinal mais forte de que escrever não bastou —
+# mais forte que semelhança de título, que quase nunca casa porque cada título
+# é uma frase única (medido: 340 órfãs produziram UM par por semelhança).
+_REPETICAO = re.compile(
+    r"outra vez|de novo|duas vezes|tr[eê]s vezes|mesma fam[ií]lia|se repet|"
+    r"j[áa] t[ií]nhamos|mesmo erro|pela segunda|voltou a|reincid|no mesmo dia",
+    re.I)
+
+# Onde um gate poderia morar: a lição nomeia um artefato executável.
+_ARTEFATO = re.compile(r"`[^`]+\.py`|\b[a-z_]{5,}\.py\b|`[a-z_]{4,}\(\)`")
+
+
+def fila_de_gates(licoes: list[dict], citadas: dict) -> list[dict]:
+    """As órfãs que merecem virar gate primeiro, por critério e não por gosto.
+
+    A pergunta "quais das 340 lições sem âncora deviam virar gate?" não se
+    responde lendo 340 — ninguém lê, e é por isso que a pergunta estava aberta.
+    Ela se responde por dois filtros que o próprio acervo fornece:
+
+    1. **A lição confessa ser repetição.** Se o texto diz "outra vez", "já
+       tínhamos", "mesma família de falha", então a casa aprendeu aquilo mais
+       de uma vez e escrever não resolveu. É o mesmo critério que o registro de
+       regras aprendidas usa para adotar uma regra: recorrência, não anedota.
+    2. **A lição nomeia um artefato.** Gate precisa de onde morar. Lição que
+       não aponta para arquivo, função ou contrato é julgamento humano, e deve
+       continuar sendo — a casa não quer 340 gates, quer os que faltam.
+
+    A fila é uma proposta ordenada, nunca uma adoção: quem adota é pessoa, por
+    `forja_aprendizado.py adotar`, que exige `--aprovado-por`.
+    """
+    fila = []
+    for lic in licoes:
+        if lic["numero"] in citadas:
+            continue
+        if not _REPETICAO.search(lic["corpo"]):
+            continue
+        if not _ARTEFATO.search(lic["corpo"]):
+            continue
+        fila.append(lic)
+    return sorted(fila, key=lambda x: x["linha"])
+
+
+def por_id(alvo: str, licoes: list[dict]) -> list[dict]:
+    """Resolve um identificador estável, inteiro ou abreviado, para a lição."""
+    return [x for x in licoes if x["id"] == alvo or x["id"].endswith(alvo)]
+
+
+def ids_citados(raiz: Path | None = None) -> dict[str, set[str]]:
+    """Onde o código cita lição pelo identificador estável."""
+    base = raiz or FORJA
+    achado: dict[str, set[str]] = defaultdict(set)
+    for padrao in _ONDE_ANCORAR:
+        for p in base.glob(padrao):
+            if p.name == Path(__file__).name:
+                continue
+            try:
+                texto = p.read_text(encoding="utf-8", errors="ignore")
+            except OSError:
+                continue
+            for i in re.findall(r"\blicao-[0-9a-f]{12}\b", texto):
+                achado[i].add(p.name)
+    return achado
+
+
 def retrato(caminho: Path | None = None, raiz: Path | None = None) -> dict:
     licoes = ler(caminho)
     ambiguos = numeros_ambiguos(licoes)
@@ -296,6 +361,12 @@ def retrato(caminho: Path | None = None, raiz: Path | None = None) -> dict:
     orfas = [lic for lic in licoes if lic["numero"] not in citadas]
     perdidas = {n: sorted(arqs) for n, arqs in citadas.items() if n not in numeros}
 
+    # A âncora nova cita o `id`, não o número. Um id que não resolve é o mesmo
+    # defeito da citação a lição inexistente, e reprova pelo mesmo motivo.
+    ids = {x["id"] for x in licoes}
+    por_id_citados = ids_citados(raiz)
+    ids_perdidos = {i: sorted(a) for i, a in por_id_citados.items() if i not in ids}
+
     return {
         "versao": VERSAO,
         "licoes": len(licoes),
@@ -304,7 +375,12 @@ def retrato(caminho: Path | None = None, raiz: Path | None = None) -> dict:
         "citadasEmCodigo": len(set(citadas) & numeros),
         "citacoesAmbiguas": ambiguas,
         "citacoesSemLicao": perdidas,
+        "citadasPorId": {i: sorted(a) for i, a in por_id_citados.items()},
+        "idsSemLicao": ids_perdidos,
         "orfas": len(orfas),
+        "filaDeGates": [{"numero": x["numero"], "id": x["id"], "data": x["data"],
+                         "titulo": x["titulo"], "linha": x["linha"]}
+                        for x in fila_de_gates(licoes, citadas)],
         "detalhe": {
             "ambiguos": {str(n): [{"titulo": x["titulo"], "linha": x["linha"],
                                    "id": x["id"]} for x in v]
@@ -469,6 +545,10 @@ def main(argv=None) -> int:
     p.add_argument("--tema", metavar="SLUG", help="lista as lições de um tema")
     p.add_argument("--documentar", action="store_true",
                    help="reescreve os índices temático e cronológico")
+    p.add_argument("--fila-de-gates", action="store_true",
+                   help="órfãs que confessam repetição e nomeiam artefato")
+    p.add_argument("--id", metavar="NUMERO_OU_TERMO",
+                   help="devolve o identificador estável, para citar em código")
     p.add_argument("--indexar", action="store_true",
                    help=f"grava {INDICE.name} para consulta por máquina")
     p.add_argument("--json", action="store_true")
@@ -498,6 +578,37 @@ def main(argv=None) -> int:
                 print(f"       … e mais {len(no_corpo) - 12}")
         print(f"\n{len(no_titulo)} no título, {len(no_corpo)} no corpo, "
               f"sobre {a.buscar!r}.")
+        return 0
+
+    if a.id:
+        # O número não serve para citar: 48 deles designam mais de uma lição.
+        # Este comando existe para que a âncora nova nasça com o id certo, sem
+        # que ninguém precise calcular hash à mão.
+        if a.id.isdigit():
+            achadas = [x for x in r["itens"] if x["numero"] == int(a.id)]
+        else:
+            alvo = a.id.lower()
+            achadas = [x for x in r["itens"] if alvo in x["titulo"].lower()]
+        if not achadas:
+            print(f"nada encontrado para {a.id!r}")
+            return 2
+        for x in achadas:
+            print(f"  {x['id']}  Lição {x['numero']:3d}  linha {x['linha']:5d}  "
+                  f"{x['titulo'][:70]}")
+        if len(achadas) > 1:
+            print(f"\n{len(achadas)} candidatas — é exatamente por isso que a "
+                  f"âncora cita o id e não o número. Escolha lendo a lição.")
+        return 0
+
+    if a.fila_de_gates:
+        fila = r["filaDeGates"]
+        for x in fila:
+            print(f"  {x['id']}  [{x['data']}]  {x['titulo'][:74]}")
+        print(f"\n{len(fila)} de {r['orfas']} órfãs. O critério é do próprio "
+              f"acervo: a lição diz no texto que aquilo já tinha acontecido, e "
+              f"nomeia um artefato onde o gate pode morar.")
+        print("Isto é proposta, não adoção — quem adota é pessoa, por "
+              "`forja_aprendizado.py adotar --aprovado-por <nome>`.")
         return 0
 
     if a.temas or a.tema:

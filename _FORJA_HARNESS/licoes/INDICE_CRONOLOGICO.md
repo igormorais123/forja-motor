@@ -11,7 +11,7 @@ Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32
 | rodada | data | lições |
 |---|---|---:|
 | [Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)](#licao-84e3975e1cca) | 08/07/2026 | 8 |
-| [Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)](#licao-b7b7bd59bef8) | 08/07/2026 | 6 |
+| [Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)](#licao-48a1a3403025) | 08/07/2026 | 6 |
 | [Caso 3 — CASO-07 (diagnóstico consultivo, entregue 08/07/2026)](#licao-8089d101ef68) | 08/07/2026 | 4 |
 | [Caso 4 — CASO-17 (estudo preliminar em tese, entregue 08/07/2026)](#licao-2833361c61be) | 08/07/2026 | 4 |
 | [Caso 5 — CASO-02 (memorial REsp 2.237.713/SP, entregue 08/07/2026 — encerra o lote 1 da esteira)](#licao-3972ab075620) | 08/07/2026 | 4 |
@@ -20,7 +20,7 @@ Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32
 | [Aplicação da auditoria externa Efesto/5.5 (09/07/2026)](#licao-130e1e057397) | 09/07/2026 | 2 |
 | [Padrão visual law como default da fábrica (09/07/2026, tarde — ordem do Igor)](#licao-b070eafbb796) | 09/07/2026 | 2 |
 | [Plano de upgrade estado da arte executado (09/07/2026, noite)](#licao-e6a2256570c8) | 09/07/2026 | 1 |
-| [Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)](#licao-6b564cae5adf) | 09/07/2026 | 3 |
+| [Caso 6 — Plano de saúde, pessoal do titular (CASO-21, 09/07/2026 noite)](#licao-ad80f5ab4739) | 09/07/2026 | 3 |
 | [Bateria real com telemetria (09/07/2026, noite — pedido do Igor: "nada de smoke")](#licao-fe068fd4933c) | 09/07/2026 | 2 |
 | [Auditoria ultracode pós-rodada N3 (10/07/2026, tarde — 56 agentes: 12 auditores + verificação adversarial por achado)](#licao-1b731e697d06) | 10/07/2026 | 4 |
 | [Conselho N4 e auditoria anti-autocertificação (11/07/2026)](#licao-363a2f8b73b7) | 11/07/2026 | 12 |
@@ -57,8 +57,8 @@ Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32
 | 7 | 08/07/2026 | gws autorizado para escrita | [L17](../RETROSPECTIVAS.md#L17) | — |
 | 8 | 08/07/2026 | Retângulos cinza no topo direito da 1ª página são arte do template oficial | [L18](../RETROSPECTIVAS.md#L18) | — |
 
-<a id="licao-b7b7bd59bef8"></a>
-## Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)
+<a id="licao-48a1a3403025"></a>
+## Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)
 
 | nº | data | lição | onde | o que a faz reprovar |
 |---:|---|---|---|---|
@@ -139,8 +139,8 @@ Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32
 |---:|---|---|---|---|
 | 39 | 09/07/2026 | Confrontar o sistema com a literatura vale a pena quando há filtro de saída forte | [L107](../RETROSPECTIVAS.md#L107) | — |
 
-<a id="licao-6b564cae5adf"></a>
-## Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)
+<a id="licao-ad80f5ab4739"></a>
+## Caso 6 — Plano de saúde, pessoal do titular (CASO-21, 09/07/2026 noite)
 
 | nº | data | lição | onde | o que a faz reprovar |
 |---:|---|---|---|---|

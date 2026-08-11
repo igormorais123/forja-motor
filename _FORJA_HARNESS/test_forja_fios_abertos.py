@@ -46,9 +46,9 @@ class CanarioDosFiosAbertos(unittest.TestCase):
         p.start()
         self.addCleanup(p.stop)
 
-    def _rodar(self, threads):
+    def _rodar(self, threads, decisoes=None):
         with mock.patch.object(fios, "_pegar", side_effect=_dubles(threads)):
-            return fios.abertos(CASA)
+            return fios.abertos(CASA, decisoes=decisoes)
 
     def test_resposta_minha_depois_da_dela_fecha_o_fio(self):
         r = self._rodar({"t1": [_msg("adv@exemplo.adv.br", MINHA - 100),
@@ -85,9 +85,34 @@ class CanarioDosFiosAbertos(unittest.TestCase):
         })
         self.assertEqual([f["assunto"] for f in r], ["novo", "antigo"])
 
+    def test_decisao_posterior_encerra_sem_exigir_resposta_artificial(self):
+        resolvido = "2023-11-14T23:00:01+00:00"  # posterior a DELA
+        r = self._rodar(
+            {"t1": [_msg("adv@exemplo.adv.br", DELA)]},
+            decisoes={"t1": {"resolvedAt": resolvido, "reason": "ciência"}},
+        )
+        self.assertEqual(r, [])
+
+    def test_nova_mensagem_depois_da_decisao_reabre_o_fio(self):
+        resolvido = "2023-11-14T22:16:39+00:00"  # um segundo antes de DELA
+        r = self._rodar(
+            {"t1": [_msg("adv@exemplo.adv.br", DELA)]},
+            decisoes={"t1": {"resolvedAt": resolvido, "reason": "ciência"}},
+        )
+        self.assertEqual([f["thread"] for f in r], ["t1"])
+
+    def test_decisao_invalida_nunca_silencia(self):
+        r = self._rodar(
+            {"t1": [_msg("adv@exemplo.adv.br", DELA)]},
+            decisoes={"t1": {"resolvedAt": "data-invalida"}},
+        )
+        self.assertEqual([f["thread"] for f in r], ["t1"])
+
     def test_sem_acervo_o_varredor_nao_inventa_alvo(self):
-        with mock.patch.object(fios.forja_acervo, "valor", return_value=[]):
+        with (mock.patch.object(fios.forja_acervo, "valor", return_value=[]),
+              mock.patch.object(fios.forja_acervo, "fios_resolvidos", return_value={})):
             self.assertEqual(fios.remetentes(), [])
+            self.assertEqual(fios.resolvidos(), {})
             self.assertEqual(fios.main(["--dias", "1"]), 2)
 
 

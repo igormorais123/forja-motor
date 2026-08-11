@@ -16,10 +16,11 @@ sem origem ou com status contraditório; Gmail sem login vira needs_login, nunca
 import json
 import re
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
-from forja_n3_common import PHASES, now_iso, read_json
+from forja_n3_common import PHASES, atomic_write_text, now_iso, read_json
 
 FORJA = Path(__file__).resolve().parent
 RAIZ = FORJA.parent
@@ -29,6 +30,39 @@ STATE_DIR = FORJA / "state"
 REPORTS_DIR = FORJA / "reports"
 
 SPEC_VERSION = "N2.0"
+
+
+def escrever_com_retentativa(caminho: Path, texto: str, tentativas: int = 4) -> None:
+    """Grava por arquivo temporário e `os.replace`, com retentativa curta.
+
+    Em 11/08/2026 esta varredura passou a morrer no meio, com `OSError` na
+    abertura para escrita de um `FORJA_STATE.json` — e o número do erro engana:
+    vem `EINVAL`, que se lê como caminho inválido, quando é disputa pelo
+    arquivo. O mesmo caminho, aberto para escrita por um script isolado no
+    mesmo instante, funcionava. O que muda é o ritmo: a varredura reescreve
+    oitenta e cinco arquivos em sequência, e no meio disso o painel
+    (`gestao_escritorio/scripts/server.py`) e os vigias abrem os mesmos.
+
+    Duas correções, porque uma só não bastou: escrever no temporário e trocar
+    por `os.replace` reduz a janela em que o arquivo de destino está aberto, e
+    a retentativa cobre o resto. Falhar de vez é melhor que gravar metade —
+    mas falhar no meio de uma varredura que já regravou quarenta casos deixa o
+    estado misturado, e quem lê a fila depois não sabe que ela parou antes do
+    fim.
+    """
+    ultimo = None
+    for tentativa in range(tentativas):
+        try:
+            atomic_write_text(caminho, texto)
+            return
+        except OSError as erro:
+            ultimo = erro
+            time.sleep(0.2 * (tentativa + 1))
+    raise OSError(
+        f"não consegui gravar {caminho} depois de {tentativas} tentativas; "
+        f"último erro: {ultimo}. Verifique se o painel ou um vigia está com o "
+        "arquivo aberto."
+    )
 COMANDOS = [
     "COMANDO_DO_EMAIL.md",
     "COMANDO_DO_WHATSAPP.md",
@@ -330,7 +364,7 @@ def gravar_state(demanda, findings, case_status, evidence, integracoes):
         "initialExploration": exploration,
         "costLog": (anterior or {}).get("costLog") or [],
     }
-    state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+    escrever_com_retentativa(state_path, json.dumps(state, ensure_ascii=False, indent=2))
     return case_id
 
 
@@ -403,7 +437,7 @@ def main():
     linhas.append("")
     for r in limpo:
         linhas.append(f"- {r['demandaId']} — {r['titulo']} (FORJA: `{r['statusForja']}`)")
-    rel.write_text("\n".join(linhas) + "\n", encoding="utf-8")
+    escrever_com_retentativa(rel, "\n".join(linhas) + "\n")
 
     resumo = {
         "ok": True,

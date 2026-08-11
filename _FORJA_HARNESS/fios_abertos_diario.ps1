@@ -47,6 +47,13 @@ Responda ou anote a decisão, e apague este arquivo depois de dar o
 encaminhamento.
 "@
     Set-Content -Path $flag -Value $texto -Encoding UTF8
+} elseif ($codigo -eq 0) {
+    # A flag é estado derivado, não histórico. Se todos os fios foram
+    # respondidos ou receberam decisão auditada, deixá-la na pasta fabrica um
+    # alerta falso; a trilha integral permanece em execucoes.log.
+    if (Test-Path -LiteralPath $flag) {
+        Remove-Item -LiteralPath $flag -Force
+    }
 } elseif ($codigo -eq 2) {
     Add-Content -Path $log -Value "  -- sem alvo: o acervo nao esta nesta maquina" -Encoding UTF8
 } elseif ($codigo -eq 1) {

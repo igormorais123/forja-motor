@@ -421,6 +421,53 @@ observações **e** 3 casos distintos. Escada `observador → consultivo → can
 pular degrau, sempre com `--aprovado-por`. O placar **não revoga a bancada** de
 fidelidade à fonte. Ficha: `_FORJA_HARNESS/decisoes/0003`.
 
+## Aprendizado contínuo do retorno humano (06/08/2026 — ordem do Igor, INVIOLÁVEL)
+
+Toda correção que o titular faz numa peça é insumo do sistema, não só do caso. O
+ciclo é obrigatório e nesta ordem:
+
+1. **Capturar e comparar.** `forja_post_protocol.py` traz a versão humana final
+   ou a peça protocolada e compara com a nossa. Sanitizado por hash: guarda
+   `beforeHash`, `afterHash` e localizador, **nunca o trecho** — o texto vive só
+   no cofre local, fora de todo repositório.
+2. **Antes de tudo: isto é revisão da nossa peça?** O comparador alinha dois
+   documentos quaisquer; sem origem comum ele casa parágrafos sem relação e
+   classifica com confiança alta. O gate `PP-NOT-A-REVISION` mede a proporção de
+   texto em comum e barra abaixo de 0,30. Dos cinco retornos reais medidos, três
+   tinham 0,7%, 3,1% e 13,4% — sozinhos respondiam por 496 mudanças, e agregados
+   por classe tinham a forma exata de um padrão do escritório.
+3. **Ler o padrão, não a ocorrência — e ler o texto, não só a contagem.**
+   `forja_aprendizado.py padroes` agrega por `camada:causa` e ordena por
+   **recorrência entre casos distintos**; contagem bruta não serve, porque um
+   processo longo produz centenas de mudanças sozinho. Nenhuma regra é adotada
+   sem que alguém tenha lido exemplos: `amostra <classe>` abre o par real de
+   textos e não grava nada. **Contar não é ler.**
+4. **Adotar com destino executável**, por `adotar <classe> --destino
+   {checklist|template|doutrina|gate_computado} --aprovado-por <nome>`; a decisão
+   é humana. **Aplicar de verdade** (`aplicar`), porque registrar a frase não é
+   aprender — aprender é a próxima peça nascer diferente. E **revalidar o
+   lastro** (`revalidar`), porque regra pode continuar sensata e ter perdido a
+   evidência que a justificou.
+
+Gate 5-B do F10 (`forja_delivery.py`): nenhuma entrega fecha se uma regra adotada
+tiver saído do seu destino. O gate NÃO exige que o caso corrente já tenha
+aprendido — o retorno humano chega depois do protocolo.
+
+**A correção que vem escrita no e-mail conta igual, e é a maioria.** A varredura
+do Gmail pedia `has:attachment` e era cega para "tire aquele argumento", "o prazo
+é outro". A consulta sai da lista de remetentes autorizados: a primeira rodada
+com o filtro certo trouxe **45 correções vinculadas a caso conhecido, contra 5
+por anexo**. Guarda-se localizador, assunto e data — **nunca o corpo**.
+
+**"Não localizado" não é diagnóstico.** Insumo que não se conseguiu ler exige
+causa em vocabulário fechado, diligências com onde/quando/resultado, o que da
+peça fica sem lastro e quem pode destravar — `forja_insumo_bloqueado.py`, elo 5-C
+do F10.
+
+**Advogado, não juiz.** Risco, objeção e precedente contrário são identificados e
+enfrentados, inclusive por distinção tecnicamente sustentável — jamais adotados
+nem antecipados como juízo desfavorável ao cliente.
+
 ## Bloqueio se testa antes de declarar (07/08/2026 — ordem do Igor)
 
 Em dois dias a esteira declarou **três** bloqueios falsos. O inteiro teor de três

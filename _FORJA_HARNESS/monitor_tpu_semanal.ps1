@@ -11,6 +11,38 @@ New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $log     = Join-Path $logDir 'execucoes.log'
 $carimbo = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
 
+function Add-MonitorLog {
+    param([Parameter(Mandatory = $true)][string]$Value)
+
+    # Duas execuções podem se sobrepor (Agendador + canário manual), e o
+    # antivírus/indexador também pode abrir o arquivo por instantes. A
+    # telemetria não pode derrubar um ciclo que já concluiu a consulta.
+    $mutex = [Threading.Mutex]::new($false, 'Local\FORJA-Monitor-TPU-Log')
+    $locked = $false
+    try {
+        $locked = $mutex.WaitOne([TimeSpan]::FromSeconds(15))
+        if (-not $locked) { throw 'timeout aguardando o log do monitor TPU' }
+        $ultimoErro = $null
+        for ($tentativa = 0; $tentativa -lt 6; $tentativa++) {
+            try {
+                [IO.File]::AppendAllText(
+                    $log,
+                    $Value + [Environment]::NewLine,
+                    [Text.UTF8Encoding]::new($false)
+                )
+                return
+            } catch [IO.IOException] {
+                $ultimoErro = $_.Exception
+                Start-Sleep -Milliseconds (150 * ($tentativa + 1))
+            }
+        }
+        throw $ultimoErro
+    } finally {
+        if ($locked) { $mutex.ReleaseMutex() }
+        $mutex.Dispose()
+    }
+}
+
 Push-Location $harness
 try {
     $saida = & python forja_monitor_tpu.py 2>&1 | Out-String
@@ -19,10 +51,10 @@ try {
     Pop-Location
 }
 
-Add-Content -Path $log -Value "==== $carimbo (exit=$codigo)`n$saida" -Encoding UTF8
+Add-MonitorLog -Value "==== $carimbo (exit=$codigo)`n$saida"
 
 if ($codigo -eq 1) {
-    Add-Content -Path $log -Value "  !! erro na verificação — conferir manualmente" -Encoding UTF8
+    Add-MonitorLog -Value "  !! erro na verificação — conferir manualmente"
 }
 
 # O módulo usa 10 para novidade; para o Agendador, execução concluída continua

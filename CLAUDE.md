@@ -287,6 +287,71 @@ nacional do CNJ, sem depender de informação de terceiro — então esses três
 são a primeira parada real, não uma hipótese. Detalhe e origem em
 `APRENDIZADOS_FEEDBACK_HUMANO.md`, Diretriz nº 28.
 
+## Anti-alucinação (inviolável)
+
+Nenhum fato, citação, jurisprudência ou número de processo pode ser inventado.
+Tudo é verificável nos arquivos da pasta ou em fonte oficial; o que não puder
+ser verificado recebe a marca `[VERIFICAR]` e é reportado ao final. Trabalhar
+sobre cópia — nunca sobrescrever os arquivos originais. Acentuação PT-BR
+completa em qualquer saída.
+
+## Gates computados — fim da autovalidação da esteira (04/08/2026)
+
+Até 04/08/2026, 42 dos 73 gates declarados nos contratos de fase eram escritos
+pelo próprio agente que executava a fase: ele recebia `requiredGates` no
+`RUN_CONTEXT` e devolvia `pass` no `PHASE_RESULT`. Nenhum código conferia. Hoje
+os 73 são computados por produtor em Python.
+
+**Se for afirmar algo sobre a cobertura da esteira, rode os medidores — não
+decore número daqui:** `forja_gate_liveness.py` (quem decide cada gate),
+`forja_recomputo_censo.py` (o gate dispara sobre tentativa real?) e
+`forja_artefatos.py` (vocabulário canônico e censo de deriva).
+
+**Três vereditos, não dois.** `warn` existe para o que o gate não consegue
+conferir sem mentir `pass` nem reprovar formato aprovado. `not_applicable`
+existe para quando não há o que examinar — sem ele, "nada examinado" e
+"examinado e aprovado" saem idênticos.
+
+Ao construir ou alterar gate: medir o acervo ANTES de fixar limiar; toda
+regressão traz DUAS listas, a que deve reprovar e a contraprova com artefatos
+reais aprovados que não podem travar; se TODOS os artefatos reais saem `pass`,
+suspeitar de que o gate não mede o que afirma; `fail` só para o verificavelmente
+falso e `warn` para o não verificável; prova de que um gate existe é CHAMAR o
+produtor, nunca achar o nome por `grep` — dois gates do contrato F8 passavam no
+grep porque um script descartável escrevia `"pass"` à mão; vocabulário de
+artefato vem de `forja_artefatos.DIALETOS`, fonte única.
+
+## Arquitetura: mapa, interfaces e decisão (Archify + Graphify)
+
+Antes de responder sobre arquitetura, dependências, organização ou localização,
+ler `00_MAPA_ARQUITETURA_IA\LEIA_PRIMEIRO.md` e a documentação arquitetural
+completa da mesma pasta; consultar `graphify-out\graph.json` antes de varrer a
+pasta. Relação `CURATED` ou `INFERRED` orienta navegação, mas estado vivo exige
+verificação atual. Antes de alterar API interna, CLI, schema ou runner, ler
+`INTERFACES_INFERIORES.md` e confirmar arestas `AMBIGUOUS` no código — resolução
+por nome não é binding comprovado. Antes de refatorar, ler
+`ANALISE_ARQUITETURAL_E_PROPOSTAS.md`: proposta não é implementação concluída,
+executa-se uma onda por vez, preservando fachadas e consumidores, sem big-bang.
+Em raiz jurídica, não executar extração semântica crua sobre autos, mensagens,
+anexos, bancos, estado, telemetria ou credenciais — o mapa oficial é sanitizado
+e metadata-only.
+
+## Vigias diários da esteira (06/08/2026)
+
+Três tarefas agendadas no Windows que apenas olham e avisam por arquivo na raiz
+do harness — nenhuma peticiona, envia mensagem ou decide: `FORJA-Monitor-STF`
+(`forja_monitor_stf.py`, 09:00, `NOVIDADE_STF.md`), `FORJA-Monitor-DJEN`
+(`forja_monitor_djen.py`, 09:15, `NOVIDADE_PROCESSUAL.md`) e
+`FORJA-Fios-Abertos` (`forja_fios_abertos.py`, 09:30, `FIO_SEM_RESPOSTA.md`).
+Os alvos moram no acervo; sem ele os módulos saem com código 2 e **dizem** que
+rodaram sem alvo. Saída 0 sem novidade, 10 com novidade, 1 em erro.
+
+Duas armadilhas medidas na rota agendada, ambas invisíveis no shell da sessão:
+`.ps1` sem BOM UTF-8 morre no `powershell.exe` do agendador, e sem
+`PYTHONIOENCODING=utf-8` o log e a flag saem com acentuação corrompida. Canário
+de tarefa agendada se roda com o comando literal de
+`(Get-ScheduledTask <nome>).Actions[0]`.
+
 ## Hermes / gestão viva da fábrica (08/07/2026)
 
 Quando a tarefa envolver painel de demandas, Gmail, WhatsApp/Hermes, entregas ao Fábio, áudios, status de cumprimento ou priorização de trabalho, usar a orientação persistente do Hermes:

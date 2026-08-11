@@ -101,6 +101,7 @@ def caso(rotulo: str) -> str | None:
 
 
 VALORES = FORJA / "state" / "ACERVO_VALORES.json"
+FIOS_RESOLVIDOS = FORJA / "state" / "FIOS_RESOLVIDOS.json"
 
 
 def valor(chave: str, padrao=None):
@@ -119,6 +120,23 @@ def valor(chave: str, padrao=None):
     except (OSError, ValueError):
         return padrao
     return (dados.get("valores") or {}).get(chave, padrao)
+
+
+def fios_resolvidos() -> dict:
+    """Decisões privadas que encerram um fio sem fabricar uma resposta.
+
+    O arquivo é separado do catálogo estável de valores porque muda a cada
+    triagem. Cada registro precisa trazer ``resolvedAt``; mensagem posterior a
+    essa data volta a abrir o fio no consumidor.
+    """
+    if not FIOS_RESOLVIDOS.is_file():
+        return {}
+    try:
+        dados = json.loads(FIOS_RESOLVIDOS.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    threads = dados.get("threads") or {}
+    return threads if isinstance(threads, dict) else {}
 
 
 def autos_disponiveis() -> bool:

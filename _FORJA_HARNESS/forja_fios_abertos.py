@@ -53,6 +53,35 @@ def remetentes() -> list:
     return forja_acervo.valor("fios_remetentes_casa", []) or []
 
 
+def resolvidos() -> dict:
+    """Threads decididas localmente, com marca temporal auditável.
+
+    A decisão vive no acervo porque o identificador e o motivo pertencem ao
+    escritório. Ela não silencia o fio para sempre: mensagem da casa posterior
+    a ``resolvedAt`` volta a abri-lo automaticamente.
+    """
+    valor = forja_acervo.fios_resolvidos() or {}
+    return valor if isinstance(valor, dict) else {}
+
+
+def _resolvido_em_ms(registro) -> int | None:
+    if isinstance(registro, str):
+        texto = registro
+    elif isinstance(registro, dict):
+        texto = registro.get("resolvedAt")
+    else:
+        return None
+    if not texto:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(texto).replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return int(dt.timestamp() * 1000)
+    except (TypeError, ValueError, OverflowError):
+        return None
+
+
 def _token() -> str:
     chaves = json.loads((CRED / "gcp-oauth.keys.json").read_text(encoding="utf-8"))
     k = chaves.get("installed") or chaves.get("web")
@@ -71,8 +100,9 @@ def _pegar(url: str, tk: str) -> dict:
         return json.loads(r.read().decode("utf-8"))
 
 
-def abertos(alvos: list, dias: int = 20) -> list:
+def abertos(alvos: list, dias: int = 20, decisoes: dict | None = None) -> list:
     """Fios com mensagem da casa posterior à minha última resposta."""
+    decisoes = decisoes or {}
     tk = _token()
     filtro = " OR ".join(f"from:{a}" for a in alvos)
     q = urllib.parse.quote(f"newer_than:{dias}d ({filtro})")
@@ -91,7 +121,9 @@ def abertos(alvos: list, dias: int = 20) -> list:
                 ult_minha = max(ult_minha or 0, ts)
             elif any(a in (hs.get("From") or "").lower() for a in alvos):
                 ult_casa = max(ult_casa or 0, ts)
-        if ult_casa and (ult_minha is None or ult_casa > ult_minha):
+        resolvido_em = _resolvido_em_ms(decisoes.get(f["id"]))
+        if (ult_casa and (ult_minha is None or ult_casa > ult_minha)
+                and not (resolvido_em and ult_casa <= resolvido_em)):
             saida.append({
                 "thread": f["id"], "assunto": assunto,
                 "ultimaDaCasa": datetime.fromtimestamp(
@@ -116,7 +148,7 @@ def main(argv=None) -> int:
         return 2
 
     try:
-        fios = abertos(alvos, a.dias)
+        fios = abertos(alvos, a.dias, resolvidos())
     except (urllib.error.URLError, OSError, KeyError, json.JSONDecodeError) as e:
         print(f"falhou: {type(e).__name__}: {e}", file=sys.stderr)
         return 1

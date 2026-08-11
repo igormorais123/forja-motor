@@ -42,7 +42,151 @@
     ]
   },
   "citacoesSemLicao": {},
+  "citadasPorId": {},
+  "idsSemLicao": {},
   "orfas": 340,
+  "filaDeGates": [
+    {
+      "numero": 93,
+      "id": "licao-bae0dc84698f",
+      "data": "03/08/2026",
+      "titulo": "Quem constrói não pode ser quem valida, e comitê que lê o resumo do construtor não escapa disso",
+      "linha": 382
+    },
+    {
+      "numero": 101,
+      "id": "licao-3884fe72b601",
+      "data": "03/08/2026",
+      "titulo": "\"Rota única\" é hipótese a medir, não intuição de arquiteto",
+      "linha": 398
+    },
+    {
+      "numero": 105,
+      "id": "licao-6f24103582fc",
+      "data": "03/08/2026",
+      "titulo": "\"A ferramenta não está disponível\" é conclusão que exige procurar pela coisa certa; e o validador de terceiro tem o escopo dele, não o seu",
+      "linha": 412
+    },
+    {
+      "numero": 106,
+      "id": "licao-2455a5563d87",
+      "data": "03/08/2026",
+      "titulo": "Repetir a operação inteira não converge quando a falha é transitória e itinerante; repescar converge",
+      "linha": 418
+    },
+    {
+      "numero": 108,
+      "id": "licao-c277607f64b4",
+      "data": "03/08/2026",
+      "titulo": "Gate computado sobre conjunto vazio é pior que gate declarado, porque parece trabalho feito",
+      "linha": 426
+    },
+    {
+      "numero": 119,
+      "id": "licao-2faf9f5f375b",
+      "data": "03/08/2026",
+      "titulo": "A métrica moveu a favor de quem a escreveu, no mesmo dia em que nasceu",
+      "linha": 478
+    },
+    {
+      "numero": 187,
+      "id": "licao-a83171ec5653",
+      "data": "03/08/2026",
+      "titulo": "O defeito de adoção foi descoberto por acaso três vezes, então virou instrumento",
+      "linha": 621
+    },
+    {
+      "numero": 196,
+      "id": "licao-9e1e7cad817f",
+      "data": "03/08/2026",
+      "titulo": "o gate que reprova o padrão aprovado está errado, e o erro costuma ser de conceito",
+      "linha": 639
+    },
+    {
+      "numero": 232,
+      "id": "licao-911e29863231",
+      "data": "03/08/2026",
+      "titulo": "o cadastro respondia \"existe\"; era o TEOR que respondia \"quanto\", e eu declarei ao cliente que faltava ir aos autos sem ter tentado ler o teor",
+      "linha": 721
+    },
+    {
+      "numero": 255,
+      "id": "licao-8de6615a1fcf",
+      "data": "06/08/2026",
+      "titulo": "o padrão mais recorrente do acervo não era sobre a peça: era sobre como dizemos que não conseguimos ler um documento",
+      "linha": 891
+    },
+    {
+      "numero": 271,
+      "id": "licao-e36229252062",
+      "data": "06/08/2026",
+      "titulo": "o gate certo não lê o texto, lê de onde ele veio",
+      "linha": 990
+    },
+    {
+      "numero": 281,
+      "id": "licao-836de64ec6e7",
+      "data": "06/08/2026",
+      "titulo": "o bloqueio declarado é uma afirmação sobre o mundo, e envelhece pior que qualquer outra",
+      "linha": 1004
+    },
+    {
+      "numero": 279,
+      "id": "licao-857195dfce86",
+      "data": "06/08/2026",
+      "titulo": "a varredura de código morto quase apagou o servidor de e-mail que eu usara naquela sessão",
+      "linha": 1006
+    },
+    {
+      "numero": 285,
+      "id": "licao-58caf30918e6",
+      "data": "06/08/2026",
+      "titulo": "o gate que faltava era o do critério que o cliente escreveu, e ele é de uma espécie que a casa não tinha",
+      "linha": 1026
+    },
+    {
+      "numero": 293,
+      "id": "licao-1c97a66af3d6",
+      "data": "06/08/2026",
+      "titulo": "três defeitos visuais que o QA página a página aprovou",
+      "linha": 1044
+    },
+    {
+      "numero": 298,
+      "id": "licao-acd018a6ac63",
+      "data": "06/08/2026",
+      "titulo": "a skill agora se confere sozinha, e é isso que a distingue de mais um documento",
+      "linha": 1054
+    },
+    {
+      "numero": 299,
+      "id": "licao-f4e86a9dd28a",
+      "data": "06/08/2026",
+      "titulo": "a prudência do commit não se transferia para a publicação",
+      "linha": 1056
+    },
+    {
+      "numero": 300,
+      "id": "licao-065cf9d33ef7",
+      "data": "06/08/2026",
+      "titulo": "a lição 297 estava errada, e o erro dela é o da 296, três parágrafos acima",
+      "linha": 1066
+    },
+    {
+      "numero": 308,
+      "id": "licao-770c228c3e92",
+      "data": "06/08/2026",
+      "titulo": "o `grep` que a lição 296 mandou dar, eu dei, e ele mentiu por convenção de nome",
+      "linha": 1068
+    },
+    {
+      "numero": 314,
+      "id": "licao-38eb4ff7f9a3",
+      "data": "06/08/2026",
+      "titulo": "três leitores, três recortes, e nenhum deles avisando que era recorte",
+      "linha": 1080
+    }
+  ],
   "itens": [
     {
       "numero": 1,
@@ -139,7 +283,7 @@
       "titulo": "Auditor de citações estourou contexto",
       "id": "licao-848a56c94912",
       "linha": 26,
-      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "secao": "Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)",
       "data": "08/07/2026",
       "temas": [
         "citacao"
@@ -150,7 +294,7 @@
       "titulo": "Inversão de fatos espelhados",
       "id": "licao-0d8ed156bc55",
       "linha": 27,
-      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "secao": "Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)",
       "data": "08/07/2026",
       "temas": [
         "lastro"
@@ -161,7 +305,7 @@
       "titulo": "Meta-rótulos de produção",
       "id": "licao-af703ac29dc3",
       "linha": 28,
-      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "secao": "Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)",
       "data": "08/07/2026",
       "temas": [
         "sem-tema"
@@ -172,7 +316,7 @@
       "titulo": "E-mail do nível 2 vaza jargão interno",
       "id": "licao-4d19c4bce33d",
       "linha": 29,
-      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "secao": "Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)",
       "data": "08/07/2026",
       "temas": [
         "redacao",
@@ -184,7 +328,7 @@
       "titulo": "gws drafts",
       "id": "licao-56770a6a1e25",
       "linha": 30,
-      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "secao": "Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)",
       "data": "08/07/2026",
       "temas": [
         "sem-tema"
@@ -195,7 +339,7 @@
       "titulo": "Dado divergente entre casos",
       "id": "licao-71ada2f799aa",
       "linha": 31,
-      "secao": "Caso 2 — CASO-19/Fábio (memoriais TJRJ, 08/07/2026)",
+      "secao": "Caso 2 — CASO-19 (memoriais TJRJ, 08/07/2026)",
       "data": "08/07/2026",
       "temas": [
         "lastro",
@@ -466,7 +610,7 @@
       "titulo": "Os upgrades U1-U11 pagaram no primeiro caso em que rodaram juntos",
       "id": "licao-ef0609a259cd",
       "linha": 111,
-      "secao": "Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)",
+      "secao": "Caso 6 — Plano de saúde, pessoal do titular (CASO-21, 09/07/2026 noite)",
       "data": "09/07/2026",
       "temas": [
         "lastro"
@@ -477,7 +621,7 @@
       "titulo": "Três defeitos de ferramenta descobertos em produção (consertar na próxima sessão de manutenção):",
       "id": "licao-d6cebcb3a2af",
       "linha": 113,
-      "secao": "Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)",
+      "secao": "Caso 6 — Plano de saúde, pessoal do titular (CASO-21, 09/07/2026 noite)",
       "data": "09/07/2026",
       "temas": [
         "citacao"
@@ -488,7 +632,7 @@
       "titulo": "Captura de fonte oficial em três atalhos que funcionaram:",
       "id": "licao-b723ef6903ea",
       "linha": 115,
-      "secao": "Caso 6 — Plano de Saúde pessoal do Fábio (Mateus × CASO-21, 09/07/2026 noite)",
+      "secao": "Caso 6 — Plano de saúde, pessoal do titular (CASO-21, 09/07/2026 noite)",
       "data": "09/07/2026",
       "temas": [
         "lastro"

@@ -44,6 +44,16 @@ Confira no processo antes de tratar como definitivo, e apague este arquivo depoi
 de dar o encaminhamento. Detalhe por processo em ``telemetria\monitor_djen\``.
 "@
     Set-Content -Path $flag -Value $texto -Encoding UTF8
+} elseif ($codigo -eq 0 -and (Test-Path -LiteralPath $flag)) {
+    try {
+        Push-Location $harness
+        $pendentes = (& python forja_avisos.py --json 2>$null | Out-String) | ConvertFrom-Json
+        if (-not @($pendentes | Where-Object { $_.origem -eq 'monitor_djen' }).Count) {
+            Remove-Item -LiteralPath $flag -Force
+        }
+    } finally {
+        Pop-Location
+    }
 } elseif ($codigo -eq 2) {
     Add-Content -Path $log -Value "  -- sem alvo: o acervo nao esta nesta maquina" -Encoding UTF8
 } elseif ($codigo -eq 1) {
