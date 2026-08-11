@@ -3,7 +3,7 @@
 > **Documento gerado.** Não edite aqui: a fonte é `RETROSPECTIVAS.md` e este arquivo é reescrito por `python forja_licoes.py --documentar`.
 
 
-382 lições em 16 temas. Uma lição aparece em mais de um tema quando trata de mais de uma coisa (média de 1.5 por lição), então a soma das seções é maior que o total.
+386 lições em 16 temas. Uma lição aparece em mais de um tema quando trata de mais de uma coisa (média de 1.5 por lição), então a soma das seções é maior que o total.
 
 
 O tema sai do texto da própria lição, por vocabulário declarado em `forja_licoes.py`. O termo no título vale sozinho; no corpo, a lição curta precisa de uma ocorrência e a longa de duas, uma delas na abertura — sem isso, um registro denso de rodada cai em seis temas por mencionar seis assuntos uma vez cada.
@@ -16,12 +16,12 @@ O tema sai do texto da própria lição, por vocabulário declarado em `forja_li
 
 | tema | lições |
 |---|---:|
-| [Gates: o que reprova e o que só parece reprovar](#gate) | 126 |
+| [Gates: o que reprova e o que só parece reprovar](#gate) | 127 |
 | [Lastro: afirmação conferida na fonte](#lastro) | 41 |
 | [Citação, jurisprudência e dispositivo](#citacao) | 36 |
 | [Redação, estilo e cara de IA](#redacao) | 24 |
 | [Visual law: figura, diagrama e diagramação](#visual) | 42 |
-| [Modelos, famílias e revisão cruzada](#modelos) | 24 |
+| [Modelos, famílias e revisão cruzada](#modelos) | 25 |
 | [Identidade processual e peça](#processual) | 11 |
 | [Entrega ao destinatário e comunicação](#entrega) | 36 |
 | [Retorno humano e aprendizado da casa](#aprendizado) | 2 |
@@ -31,12 +31,12 @@ O tema sai do texto da própria lição, por vocabulário declarado em `forja_li
 | [Automação, agendamento e volume](#automacao) | 11 |
 | [Prova, atestado e o que conta como evidência](#evidencia) | 37 |
 | [Autoengano e autovalidação](#autoengano) | 14 |
-| [Sem tema atribuído pelo vocabulário](#sem-tema) | 107 |
+| [Sem tema atribuído pelo vocabulário](#sem-tema) | 110 |
 
 <a id="gate"></a>
 ## Gates: o que reprova e o que só parece reprovar
 
-126 lições.
+127 lições.
 
 | nº | data | lição | onde | o que a faz reprovar |
 |---:|---|---|---|---|
@@ -166,6 +166,7 @@ O tema sai do texto da própria lição, por vocabulário declarado em `forja_li
 | 310 | 06/08/2026 | o gate acusou de vazio um documento cheio, e isso é pior que não conferir | [L1072](../RETROSPECTIVAS.md#L1072) | — |
 | 322 | 06/08/2026 | abrir a segunda porta é onde o risco mora, e o risco tinha data | [L1096](../RETROSPECTIVAS.md#L1096) | — |
 | 326 | 06/08/2026 | identificador real de mensagem é dado do escritório, mesmo sem conteúdo | [L1104](../RETROSPECTIVAS.md#L1104) | — |
+| 327 | 06/08/2026 | o revisor de outra família achou três defeitos que nenhum gate desta casa acha, e os três estavam internamente coerentes | [L1106](../RETROSPECTIVAS.md#L1106) | — |
 
 <a id="lastro"></a>
 ## Lastro: afirmação conferida na fonte
@@ -345,7 +346,7 @@ O tema sai do texto da própria lição, por vocabulário declarado em `forja_li
 <a id="modelos"></a>
 ## Modelos, famílias e revisão cruzada
 
-24 lições.
+25 lições.
 
 | nº | data | lição | onde | o que a faz reprovar |
 |---:|---|---|---|---|
@@ -373,6 +374,7 @@ O tema sai do texto da própria lição, por vocabulário declarado em `forja_li
 | 277 | 06/08/2026 | a régua lexical não distingue modelos por conteúdo, e descobrir isso vale mais do que o número que ela dava | [L1016](../RETROSPECTIVAS.md#L1016) | — |
 | 284 | 06/08/2026 | o conselho e a revisão cruzada acharam erro que gate nenhum acharia, e os três erros eram de tipos diferentes | [L1024](../RETROSPECTIVAS.md#L1024) | — |
 | 304 | 06/08/2026 | o sandbox somente-leitura do Codex não lê nada neste Windows, e quase produziu um parecer inteiro escrito de memória | [L1058](../RETROSPECTIVAS.md#L1058) | — |
+| 327 | 06/08/2026 | o revisor de outra família achou três defeitos que nenhum gate desta casa acha, e os três estavam internamente coerentes | [L1106](../RETROSPECTIVAS.md#L1106) | — |
 
 <a id="processual"></a>
 ## Identidade processual e peça
@@ -628,7 +630,7 @@ O tema sai do texto da própria lição, por vocabulário declarado em `forja_li
 
 O vocabulário não alcançou estas. Não são lições piores — são as que ninguém classificou ainda, e ficam listadas para que a lacuna seja visível em vez de silenciosa.
 
-107 lições.
+110 lições.
 
 | nº | data | lição | onde | o que a faz reprovar |
 |---:|---|---|---|---|
@@ -739,3 +741,6 @@ O vocabulário não alcançou estas. Não são lições piores — são as que n
 | 319 | 06/08/2026 | o reparo preventivo do Word produziu um “documento defeituoso” que não existia | [L1090](../RETROSPECTIVAS.md#L1090) | — |
 | 321 | 06/08/2026 | a esteira tinha seis arquivos prontos e respondeu que não dava para anexar | [L1094](../RETROSPECTIVAS.md#L1094) | — |
 | 323 | 06/08/2026 | “o sistema saber que pode” é metade do trabalho, e tem teste próprio | [L1098](../RETROSPECTIVAS.md#L1098) | — |
+| 328 | 06/08/2026 | a declaração era verdadeira quando eu a escrevi e falsa quando alguém a leria | [L1108](../RETROSPECTIVAS.md#L1108) | — |
+| 329 | 06/08/2026 | `Errno 22 Invalid argument` na escrita é disputa de arquivo, e o número mente | [L1110](../RETROSPECTIVAS.md#L1110) | — |
+| 330 | 06/08/2026 | testei escrita gravando a palavra `teste` por cima do arquivo real | [L1112](../RETROSPECTIVAS.md#L1112) | — |

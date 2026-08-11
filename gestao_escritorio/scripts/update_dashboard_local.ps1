@@ -18,6 +18,8 @@ $ApplyManualPath = Join-Path $Root "scripts\apply_manual_updates.py"
 $HermesBridgePath = Join-Path $Root "scripts\hermes_bridge.py"
 $ForjaSyncPath = Join-Path $Root "scripts\sync_forja_gestao.py"
 $RunStartedAt = Get-Date
+$SentCachePath = Join-Path ([System.IO.Path]::GetTempPath()) ("forja-gmail-sent-" + [guid]::NewGuid().ToString("N") + ".json")
+$GmailSinceDays = if ($Mode -eq "Manual") { 0 } else { 7 }
 
 function Get-PythonExecutable {
   $candidate = Get-Command python -ErrorAction SilentlyContinue
@@ -239,7 +241,7 @@ $gmailUpdater = Join-Path $Root "scripts\gmail_gws_update.py"
 $GwsAvailable = (Test-Path -LiteralPath (Join-Path $HOME "AppData\Roaming\npm\gws.cmd")) -or [bool](Get-Command gws -ErrorAction SilentlyContinue)
 if ($GwsAvailable) {
   try {
-    $gmailRaw = & $Python $gmailUpdater --root $Root 2>$null
+    $gmailRaw = & $Python $gmailUpdater --root $Root --since-days $GmailSinceDays --sent-cache $SentCachePath 2>$null
     if ($gmailRaw) {
       $gmailStatus = ($gmailRaw -join "`n") | ConvertFrom-Json
       $status.gmailLocal.ok = [bool]$gmailStatus.ok
@@ -253,6 +255,8 @@ if ($GwsAvailable) {
       $status.gmailLocal.attachmentsExpected = $gmailStatus.attachmentsExpected
       $status.gmailLocal.attachmentsDownloaded = $gmailStatus.attachmentsDownloaded
       $status.gmailLocal.attachmentErrors = $gmailStatus.attachmentErrors
+      $status.gmailLocal.scanMode = $gmailStatus.scanMode
+      $status.gmailLocal.sinceDays = $gmailStatus.sinceDays
       if ($gmailStatus.error) { $status.gmailLocal.error = $gmailStatus.error }
       $data = Get-Content -LiteralPath $DataPath -Raw -Encoding UTF8 | ConvertFrom-Json
       $data.updatedAt = Get-NowIso
@@ -270,7 +274,23 @@ if ($GwsAvailable) {
 $deliveryAuditor = Join-Path $Root "scripts\audit_delivered_docs.py"
 if ($GwsAvailable) {
   try {
-    $deliveryRaw = & $Python $deliveryAuditor 2>$null
+    $deliveryRaw = $null
+    if (Test-Path -LiteralPath $DeliveriesPath) {
+      try {
+        $cachedDelivery = Get-Content -LiteralPath $DeliveriesPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $cachedAt = [datetimeoffset]::Parse([string]$cachedDelivery.updatedAt)
+        $cacheAgeHours = ([datetimeoffset]::Now - $cachedAt).TotalHours
+        if ([bool]$cachedDelivery.ok -and [int]$cachedDelivery.attachmentErrors -eq 0 -and $cacheAgeHours -le 12) {
+          $deliveryRaw = $cachedDelivery | ConvertTo-Json -Depth 20 -Compress
+          $status.deliveries.source = "auditoria_historica_recente"
+          $status.deliveries.cacheAgeHours = [math]::Round($cacheAgeHours, 2)
+        }
+      } catch { $deliveryRaw = $null }
+    }
+    if (-not $deliveryRaw) {
+      $deliveryRaw = & $Python $deliveryAuditor --sent-cache $SentCachePath 2>$null
+      $status.deliveries.source = "auditoria_historica_viva"
+    }
     if ($deliveryRaw) {
       $deliveryStatus = ($deliveryRaw -join "`n") | ConvertFrom-Json
       $status.deliveries.ok = [bool]$deliveryStatus.ok
@@ -297,6 +317,10 @@ if ($whatsappStatus.ok) {
 } else {
   $status.whatsappPersonal.state = "erro"
   $status.whatsappPersonal.error = $whatsappStatus.error
+}
+
+if (Test-Path -LiteralPath $SentCachePath) {
+  Remove-Item -LiteralPath $SentCachePath -Force -ErrorAction SilentlyContinue
 }
 
 if ($phoneHealth.ok) {

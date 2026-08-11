@@ -445,6 +445,16 @@ def repair_false_response_matches(data, sent_messages):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
+    ap.add_argument(
+        "--since-days",
+        type=int,
+        default=0,
+        help="Restringe a atualização cotidiana aos últimos N dias; zero mantém a auditoria histórica.",
+    )
+    ap.add_argument(
+        "--sent-cache",
+        help="Arquivo temporário opcional para reutilizar nesta execução as mensagens enviadas já lidas.",
+    )
     args = ap.parse_args()
 
     root = Path(args.root)
@@ -455,6 +465,10 @@ def main():
     config = read_json(config_path)
     inbound_query = config["gmail"]["inboundQuery"]
     sent_query = config["gmail"]["sentQuery"]
+    if args.since_days > 0:
+        cutoff = (datetime.now().astimezone() - timedelta(days=args.since_days)).strftime("%Y/%m/%d")
+        inbound_query = re.sub(r"\bafter:\d{4}/\d{2}/\d{2}\b", f"after:{cutoff}", inbound_query)
+        sent_query = re.sub(r"\bafter:\d{4}/\d{2}/\d{2}\b", f"after:{cutoff}", sent_query)
 
     status = {
         "ok": False,
@@ -596,6 +610,15 @@ def main():
         msg, msg_status = get_message(mid, "full")
         if msg_status["ok"] and msg:
             sent_messages.append(msg)
+    if args.sent_cache:
+        atomic_write_json(
+            Path(args.sent_cache),
+            {
+                "query": sent_query,
+                "createdAt": datetime.now(timezone.utc).astimezone().isoformat(),
+                "messages": sent_messages,
+            },
+        )
     repaired = repair_false_response_matches(data, sent_messages)
     responses = mark_sent_responses(data, sent_messages)
     data["updatedAt"] = datetime.now(timezone.utc).astimezone().isoformat()
@@ -613,6 +636,8 @@ def main():
             "attachmentsDownloaded": attachment_downloaded,
             "attachmentErrors": attachment_errors,
             "message": "Gmail local atualizado com sucesso.",
+            "scanMode": "incremental" if args.since_days > 0 else "historico",
+            "sinceDays": args.since_days,
         }
     )
     print(json.dumps(status, ensure_ascii=False))

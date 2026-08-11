@@ -1,7 +1,7 @@
 {
   "versao": "FORJA-LICOES-v1",
-  "licoes": 382,
-  "numerosDistintos": 319,
+  "licoes": 386,
+  "numerosDistintos": 323,
   "numerosAmbiguos": 48,
   "citadasEmCodigo": 27,
   "citacoesAmbiguas": {
@@ -44,7 +44,7 @@
   "citacoesSemLicao": {},
   "citadasPorId": {},
   "idsSemLicao": {},
-  "orfas": 340,
+  "orfas": 344,
   "filaDeGates": [
     {
       "numero": 93,
@@ -4583,6 +4583,51 @@
       "data": "06/08/2026",
       "temas": [
         "gate"
+      ]
+    },
+    {
+      "numero": 327,
+      "titulo": "o revisor de outra família achou três defeitos que nenhum gate desta casa acha, e os três estavam internamente coerentes",
+      "id": "licao-b4578d6f291d",
+      "linha": 1106,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "gate",
+        "modelos"
+      ]
+    },
+    {
+      "numero": 328,
+      "titulo": "a declaração era verdadeira quando eu a escrevi e falsa quando alguém a leria",
+      "id": "licao-03b5e0ba385c",
+      "linha": 1108,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
+    },
+    {
+      "numero": 329,
+      "titulo": "`Errno 22 Invalid argument` na escrita é disputa de arquivo, e o número mente",
+      "id": "licao-c990742a914d",
+      "linha": 1110,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
+      ]
+    },
+    {
+      "numero": 330,
+      "titulo": "testei escrita gravando a palavra `teste` por cima do arquivo real",
+      "id": "licao-3a6aa110f834",
+      "linha": 1112,
+      "secao": "Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)",
+      "data": "06/08/2026",
+      "temas": [
+        "sem-tema"
       ]
     }
   ]

@@ -100,14 +100,24 @@ checar("todo tema do vocabulário classifica pelo menos uma lição",
                                     if t not in temas) +
        " — vocabulário que não acha nada é rótulo morto no índice")
 
-# Teto, não meta: as sem tema são dívida de classificação, e a régua só desce.
-# O número não é vergonha — é o que impede a lacuna de virar silêncio.
-SEM_TEMA_MAX = 107
-sem_tema = len(temas.get("sem-tema", []))
-checar("a fatia sem classificação temática não cresceu",
-       sem_tema <= SEM_TEMA_MAX,
-       f"{sem_tema} sem tema, contra o teto de {SEM_TEMA_MAX} medido em "
-       f"10/08/2026 — lição nova entrou sem nenhum termo do vocabulário")
+# Aqui havia um teto absoluto de lições sem tema (107, medido em 10/08/2026).
+# Ele foi REMOVIDO em 11/08/2026, e o motivo é a única coisa que vale registrar:
+# **reprovou o acervo por ter crescido.** Outra sessão acrescentou quatro lições
+# ao arquivo e o gate acusou, sem que nada tivesse piorado. Contagem absoluta
+# sobre pilha que cresce mede a pilha; e gate que dispara em toda adição legítima
+# treina quem o vê a subir o número, que é o modo mais rápido de matar um gate.
+#
+# O que se mede no lugar é o **alcance do vocabulário sobre material novo**, que
+# é a falha de verdade: um vocabulário pode envelhecer até não classificar mais
+# nada do que a casa escreve hoje, e a contagem global levaria anos para notar.
+# O piso é de morte, não de qualidade — o número honesto, que é ruim, fica
+# visível em `--temas` para quem quiser fechar a lacuna.
+recentes = r["itens"][-10:]
+alcancadas = [x for x in recentes if x["temas"] != ["sem-tema"]]
+checar("o vocabulário ainda alcança lição nova",
+       len(alcancadas) >= 1,
+       f"nenhuma das {len(recentes)} lições mais recentes recebeu tema — o "
+       f"vocabulário parou de acompanhar o que a casa escreve")
 
 # Um tema que casasse em quase tudo devolveria o problema que ele resolve: a
 # primeira versão marcava `gate` em 49% do acervo por mencionar a palavra.

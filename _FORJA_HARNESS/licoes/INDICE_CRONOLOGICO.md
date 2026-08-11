@@ -3,7 +3,7 @@
 > **Documento gerado.** Não edite aqui: a fonte é `RETROSPECTIVAS.md` e este arquivo é reescrito por `python forja_licoes.py --documentar`.
 
 
-Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32 rodadas e 382 lições. Este índice responde "o que aprendemos naquele dia", que é a pergunta de quem volta a um caso; o temático responde "o que a casa já sabe sobre isto", que é a de quem vai escrever código novo.
+Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32 rodadas e 386 lições. Este índice responde "o que aprendemos naquele dia", que é a pergunta de quem volta a um caso; o temático responde "o que a casa já sabe sobre isto", que é a de quem vai escrever código novo.
 
 
 ## Sumário
@@ -41,7 +41,7 @@ Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32
 | [Caso 8 — A regressão visual e a reconstrução da assinatura (30/07 a 03/08/2026)](#licao-4193042ae1b1) | 03/08/2026 | 164 |
 | [Lição 235 — Provei o canário na rota errada e chamei de prova (06/08/2026)](#licao-6a434287dedf) | 06/08/2026 | 13 |
 | [Lição 236 — O que a rota agendada revelou e o shell escondia (06/08/2026)](#licao-94bf08af57a8) | 06/08/2026 | 24 |
-| [Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)](#licao-ac61c7a686c4) | 06/08/2026 | 68 |
+| [Lição 239 — A peça saiu com a paginação do nosso PDF sete vezes, e quem corrigiu foi o humano (06/08/2026)](#licao-ac61c7a686c4) | 06/08/2026 | 72 |
 
 <a id="licao-84e3975e1cca"></a>
 ## Caso 1 — CASO-16 (memoriais STJ, 08/07/2026)
@@ -616,3 +616,7 @@ Cada seção do arquivo é uma rodada: um caso, uma auditoria, um ciclo. São 32
 | 324 | 06/08/2026 | o resumo comeu a prova, e o censo acusou de mentira um trabalho que estava feito | [L1100](../RETROSPECTIVAS.md#L1100) | — |
 | 325 | 06/08/2026 | alerta que ninguém consegue baixar é alerta que ninguém lê | [L1102](../RETROSPECTIVAS.md#L1102) | — |
 | 326 | 06/08/2026 | identificador real de mensagem é dado do escritório, mesmo sem conteúdo | [L1104](../RETROSPECTIVAS.md#L1104) | — |
+| 327 | 06/08/2026 | o revisor de outra família achou três defeitos que nenhum gate desta casa acha, e os três estavam internamente coerentes | [L1106](../RETROSPECTIVAS.md#L1106) | — |
+| 328 | 06/08/2026 | a declaração era verdadeira quando eu a escrevi e falsa quando alguém a leria | [L1108](../RETROSPECTIVAS.md#L1108) | — |
+| 329 | 06/08/2026 | `Errno 22 Invalid argument` na escrita é disputa de arquivo, e o número mente | [L1110](../RETROSPECTIVAS.md#L1110) | — |
+| 330 | 06/08/2026 | testei escrita gravando a palavra `teste` por cima do arquivo real | [L1112](../RETROSPECTIVAS.md#L1112) | — |

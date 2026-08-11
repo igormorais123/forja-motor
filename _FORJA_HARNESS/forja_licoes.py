@@ -628,6 +628,17 @@ def main(argv=None) -> int:
             print(f"  {slug:12s} {len(itens):4d}  {rotulo(slug)}")
         print(f"\n{r['licoes']} lições. Uma lição conta em mais de um tema "
               f"quando trata de mais de uma coisa.")
+        # O alcance sobre material novo é o número que diz se o vocabulário
+        # ainda serve. A contagem global de "sem tema" mistura dívida velha com
+        # lição de ontem e esconde o envelhecimento por anos.
+        recentes = r["itens"][-20:]
+        alcance = sum(1 for x in recentes if x["temas"] != [_SEM_TEMA])
+        sem = len(agrupado.get(_SEM_TEMA, []))
+        print(f"\nsem tema: {sem} no total ({sem / max(1, r['licoes']):.0%}) — "
+              f"dívida de classificação, listada no índice para poder ser fechada.")
+        print(f"alcance sobre as 20 mais recentes: {alcance} de "
+              f"{len(recentes)}. É este que diz se o vocabulário envelheceu; "
+              f"o total, não.")
         return 0
 
     if a.documentar:

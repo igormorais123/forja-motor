@@ -1,4 +1,5 @@
 import base64
+import argparse
 import email.utils
 import json
 import re
@@ -373,8 +374,28 @@ def write_report(payload):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "--sent-cache",
+        help="Retrato temporário das mensagens enviadas criado pelo conciliador do Gmail.",
+    )
+    args = ap.parse_args()
     data = read_json(DATA_PATH, {"demandas": []})
-    sent_ids, status = list_sent_ids()
+    cached_messages = None
+    if args.sent_cache:
+        cache_path = Path(args.sent_cache)
+        try:
+            cache = read_json(cache_path, {})
+            if cache.get("query") == SENT_QUERY and isinstance(cache.get("messages"), list):
+                cached_messages = cache["messages"]
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            cached_messages = None
+
+    if cached_messages is None:
+        sent_ids, status = list_sent_ids()
+    else:
+        sent_ids = [message.get("id") for message in cached_messages if message.get("id")]
+        status = {"ok": True}
     if not status["ok"]:
         payload = {
             "ok": False,
@@ -397,10 +418,14 @@ def main():
     attachment_errors = 0
     attachments_downloaded = 0
     attachments_expected = 0
+    cached_by_id = {message.get("id"): message for message in (cached_messages or []) if message.get("id")}
     for mid in sent_ids:
-        message, msg_status = get_message(mid)
-        if not msg_status["ok"] or not message:
-            continue
+        if mid in cached_by_id:
+            message = cached_by_id[mid]
+        else:
+            message, msg_status = get_message(mid)
+            if not msg_status["ok"] or not message:
+                continue
         attachments = list(attachment_parts(message))
         if not is_relevant_delivery(message, attachments):
             continue
