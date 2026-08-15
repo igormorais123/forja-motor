@@ -84,6 +84,20 @@ def listar(svc, limite: int = 10) -> int:
     return 0
 
 
+def _validar_corpo_email(corpo: str) -> dict:
+    """Bloqueia corpo incompatível antes de qualquer chamada à API do Gmail."""
+    from forja_estilo_humano import relatorio
+
+    resultado = relatorio(corpo or "", tipo="email")
+    p0 = [item for item in resultado["achados"] if item.get("sev") == "P0"]
+    if p0:
+        resumo = "; ".join(
+            f"{item.get('gate')}: {item.get('problema')}" for item in p0[:3]
+        )
+        raise ValueError(f"corpo de e-mail reprovado pelo padrão da casa: {resumo}")
+    return resultado
+
+
 def criar_rascunho(svc, *, para, assunto, corpo, anexos=(), responder_a=None) -> str:
     """Compõe um rascunho com anexos e devolve o draftId.
 
@@ -95,6 +109,8 @@ def criar_rascunho(svc, *, para, assunto, corpo, anexos=(), responder_a=None) ->
     O rascunho é criado, não enviado. Quem envia é `enviar_rascunho`, que roda
     a conferência do padrão da casa antes de qualquer coisa sair.
     """
+    _validar_corpo_email(corpo)
+
     import mimetypes
     from email.message import EmailMessage
 

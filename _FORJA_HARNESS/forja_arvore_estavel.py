@@ -58,6 +58,10 @@ def impressao(raiz: Path | None = None) -> dict[str, tuple[int, int]]:
     for pasta, subs, arquivos in os.walk(base):
         subs[:] = [s for s in subs if s not in IGNORAR_PASTAS]
         for nome in arquivos:
+            # O observador regrava este mapa derivado em cada pasta quando a
+            # interface é atualizada; ele não representa mudança de fonte.
+            if nome == "MAPA_IA.md":
+                continue
             if nome.endswith(IGNORAR_SUFIXOS):
                 continue
             caminho = Path(pasta) / nome

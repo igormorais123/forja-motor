@@ -39,6 +39,30 @@ A mensagem abre com a entrega, a mudança relevante ou a decisão necessária. O
 
 O gate analisa apenas a mensagem nova: histórico citado com `>` e bloco de mensagem encaminhada não contaminam o resultado. O corpo aprovado integra o manifesto do pacote por `sha256`. O registro do rascunho exige `bodySha256` idêntico; qualquer edição posterior invalida a aprovação e obriga nova validação.
 
+### Método positivo configurado da casa
+
+As proibições acima retiram vícios; elas não definem, sozinhas, como a casa
+escreve. O contrato positivo é carregado por `forja_estilo_casa.py` a partir da
+chave privada de acervo `perfil-estilo-casa` e se aplica a e-mails e mensagens:
+
+1. questão dominante, resultado ou decisão aparecem cedo;
+2. confirmado, condicional e ainda não verificado permanecem separados;
+3. crítica é convertida em critério verificável e rota de correção;
+4. análise é ligada à consequência concreta;
+5. o fechamento indica a providência proporcional e, quando cabível, responsável
+   e critério de conclusão;
+6. reconhecimento do trabalho alheio é breve e não encobre a ressalva material.
+
+O canal controla a forma: e-mail admite contexto suficiente para anexos e
+decisão; mensagem dá conclusão ou pergunta decisiva na primeira rajada e usa
+blocos curtos. As faixas de tamanho de frase são guias de lote, nunca obrigação
+mecânica por período.
+
+Este perfil mede método profissional e adequação ao canal. Não atribui autoria,
+não mede “parecença” com pessoa real, não autoriza personificação e não permite
+copiar conteúdo privado do corpus. Perfil ausente é estado declarado, não licença
+para o motor inventar um estilo de instalação.
+
 ## Método de redação em F6
 
 Antes de redigir, fixar em uma frase a questão jurisdicional e o resultado pretendido. Cada parágrafo recebe uma função única e verificável:
@@ -99,6 +123,11 @@ O relatório JSON registra regra, severidade, trecho, problema e ação corretiv
 3. conferir se entrega, alertas e próximo passo aparecem sem rodeios;
 4. executar novamente o gate;
 5. gerar o pacote e registrar no recibo do rascunho o `bodySha256` do corpo efetivamente inserido no Gmail.
+
+Para mensagem fora de F9, carregar
+`mandatory_prompt_for_channel("mensagem")` e executar
+`forja_estilo_humano.analisar(texto, tipo="mensagem")` antes de disponibilizar
+a resposta. P0 bloqueia; P1 exige revisão contextual.
 
 ## Exemplos de correção
 

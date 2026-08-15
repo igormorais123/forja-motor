@@ -73,8 +73,11 @@ PROTEGIDOS = [
     # O baseline define a fronteira entre pytest e regressões standalone;
     # deixá-lo fora do manifesto permitiria ocultar uma suíte por classificação.
     FORJA / "forja_baseline.py",
+    FORJA / "forja_skill_deploy.py",
+    FORJA / "test_forja_skill_deploy_map.py",
     FORJA / "forja_verificador.py",
     FORJA / "forja_estilo_humano.py",
+    FORJA / "forja_estilo_casa.py",
     FORJA / "forja_run.py",
     FORJA / "forja_headless.py",
     FORJA / "forja_editorial.py",
@@ -141,6 +144,7 @@ PROTEGIDOS = [
     # Envio real ao cliente. Alterar quem envia, para quem ou com que texto é a
     # mudança de maior consequência externa do harness — tem de deixar rastro.
     FORJA / "forja_email.py",
+    FORJA / "forja_mcp_email.py",
     FORJA / "forja_render_docx.py",  # legado arquivado; não é rota da FORJA
     FORJA / "forja_visual_build.py",
     FORJA / "forja_svg_docx.py",
@@ -193,6 +197,7 @@ PROTEGIDOS = [
     FORJA / "test_forja_red_team.py",
     FORJA / "test_forja_gates_emitidos.py",
     FORJA / "test_forja_estilo_humano.py",
+    FORJA / "test_forja_estilo_casa.py",
     FORJA / "test_forja_editorial.py",
     FORJA / "test_forja_run.py",
     FORJA / "test_forja_n3_package.py",
@@ -239,10 +244,13 @@ PROTEGIDOS = [
 
 # Suítes rápidas (sem Word COM; a materialização oficial é OOXML/SVG estático).
 SUITES = [
+    "test_forja_skill_deploy_map.py",
+    "test_forja_arvore_estavel.py",
     "test_forja_fronteira.py",
     "test_forja_hook_fronteira.py",
     "test_forja_verificador.py",
     "test_forja_estilo_humano.py",
+    "test_forja_estilo_casa.py",
     "test_forja_editorial.py",
     "test_forja_run.py",
     "test_forja_n3_package.py",

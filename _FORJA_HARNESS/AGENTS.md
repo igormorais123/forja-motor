@@ -55,3 +55,17 @@
 As disciplinas não são disparadas automaticamente por semelhança semântica. O
 classificador de instruções recusado pelo R7 não existe; uma ferramenta futura
 pode comparar hashes e diffs, mas não classificar mérito sem nova decisão.
+
+## Padrão configurado de escrita da casa
+
+- Todo e-mail ou mensagem redigido pelo ARCANO/FORJA usa o perfil privado
+  resolvido pela chave de acervo `perfil-estilo-casa`. O motor não contém nome,
+  corpus, exemplos privados nem identidade do escritório.
+- Em F9, `forja_estilo_humano.mandatory_prompt_for_phase()` injeta o perfil de
+  e-mail automaticamente. Fora da esteira, carregue
+  `mandatory_prompt_for_channel("email"|"mensagem")` antes de redigir.
+- Antes de criar rascunho, enviar e-mail ou liberar resposta no pacote, execute
+  `forja_estilo_humano.analisar(texto, tipo="email"|"mensagem")`. P0 bloqueia;
+  P1 pede ajuste editorial fundamentado.
+- O perfil mede método profissional e adequação ao canal. Não prova autoria,
+  não autoriza personificação e não permite inventar opinião, fato ou mandato.

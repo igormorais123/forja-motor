@@ -19,7 +19,7 @@ from collections import Counter
 from pathlib import Path
 
 
-VERSION = "FORJA-ESTILO-HUMANO-v2"
+VERSION = "FORJA-ESTILO-HUMANO-v3"
 
 _STOPWORDS = {
     "a", "ao", "aos", "as", "com", "como", "da", "das", "de", "do", "dos",
@@ -135,13 +135,13 @@ O gate determinístico será recomputado; autodeclarar aprovação não o contor
 
 PROMPT_F9_EMAIL = """
 
-PROTOCOLO OBRIGATÓRIO DE E-MAIL HUMANO — FORJA-ESTILO-HUMANO-v2
+PROTOCOLO OBRIGATÓRIO DE E-MAIL HUMANO — FORJA-ESTILO-HUMANO-v3
 - Escreva para a pessoa e para a conversa concreta; use o nome quando conhecido.
 - Abra com o que foi feito ou com a decisão que precisa ser tomada. Não use frases de aquecimento.
 - Não use "espero que este e-mail o encontre bem", "venho por meio deste", "gostaria de informar",
   "não hesite em entrar em contato" ou fechos cerimoniosos equivalentes.
 - Não narre o próprio esforço ("análise abrangente", "revisão cuidadosa"). Diga o resultado.
-- Prefira frases curtas, verbos concretos e poucos parágrafos. Não transforme o e-mail em relatório.
+- Use verbos concretos e poucos parágrafos. Ajuste a cadência à conversa; não transforme o e-mail em relatório.
 - Mantenha apenas o contexto necessário para o destinatário compreender anexos, decisão e próximo passo.
 - Preserve o bloco "Pontos que exigem o seu olho" quando aplicável, com alertas concretos e páginas.
 - Feche de forma simples: "Fico à disposição." ou outro fecho natural adequado à conversa.
@@ -154,8 +154,21 @@ def mandatory_prompt_for_phase(phase: str) -> str:
     if phase in {"F6_REDACAO_TEMPLATE", "F7_AUDITORIA_JURIDICA_FACTUAL"}:
         return PROMPT_F6_F7
     if phase == "F9_PACOTE_REVISAO_DRAFT_OPCIONAL":
-        return PROMPT_F9_EMAIL
+        return PROMPT_F9_EMAIL + mandatory_prompt_for_channel("email")
     return ""
+
+
+def mandatory_prompt_for_channel(tipo: str) -> str:
+    """Entrega o perfil positivo configurado para e-mail ou mensagem.
+
+    O motor permanece genérico: o conteúdo concreto é resolvido pelo acervo da
+    instalação e nunca é incorporado neste arquivo publicável.
+    """
+    if tipo not in {"email", "mensagem"}:
+        return ""
+    from forja_estilo_casa import prompt
+
+    return prompt(tipo)
 
 
 def _sem_acentos(value: str) -> str:
@@ -556,6 +569,10 @@ def analisar(texto: str, tipo: str = "peca") -> list[dict]:
         achados.extend(_conclusao_tautologica(paragrafos))
     elif tipo == "email":
         achados.extend(_email_especifico(fonte, paragrafos))
+    if tipo in {"email", "mensagem"}:
+        from forja_estilo_casa import analisar as _analisar_casa
+
+        achados.extend(_analisar_casa(fonte, tipo)["findings"])
     # Deduplica achados equivalentes sem esconder ocorrências distintas relevantes.
     unicos = []
     vistos = set()
@@ -569,15 +586,26 @@ def analisar(texto: str, tipo: str = "peca") -> list[dict]:
 
 def relatorio(texto: str, tipo: str = "peca") -> dict:
     achados = analisar(texto, tipo)
-    return {
+    saida = {
         "protocolVersion": VERSION,
         "tipo": tipo,
         "aprovado": not any(item["sev"] == "P0" for item in achados),
         "p0": sum(item["sev"] == "P0" for item in achados),
         "p1": sum(item["sev"] == "P1" for item in achados),
         "achados": achados,
-        "metodo": "sinais determinísticos observáveis; não estima autoria nem probabilidade de IA",
+        "metodo": (
+            "sinais determinísticos observáveis e método positivo configurado da casa; "
+            "não estima autoria nem probabilidade de IA"
+        ),
     }
+    if tipo in {"email", "mensagem"}:
+        from forja_estilo_casa import analisar as _analisar_casa
+
+        saida["houseStyle"] = _analisar_casa(
+            _limpar_email(texto) if tipo == "email" else texto,
+            tipo,
+        )
+    return saida
 
 
 def main() -> int:

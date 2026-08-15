@@ -102,6 +102,10 @@ def _arquivos_da_canonica() -> dict[str, str]:
     ref = CANONICA / "reference"
     if ref.is_dir():
         for f in sorted(ref.glob("*.md")):
+            # Artefato derivado do observador. Cada carregador recebe contexto
+            # próprio, portanto o mapa não integra a skill nem o hash canônico.
+            if f.name == "MAPA_IA.md":
+                continue
             saida[f"reference/{f.name}"] = f.read_text(encoding="utf-8")
     return saida
 
@@ -135,6 +139,8 @@ def espalhar(seco: bool = False, apenas_verificar: bool = False) -> dict:
         # fica na cópia dizendo coisa que ninguém mais mantém.
         if base.exists():
             for f in sorted(base.rglob("*.md")):
+                if f.name == "MAPA_IA.md":
+                    continue
                 rel = f.relative_to(base).as_posix()
                 if rel not in esperado:
                     sobrando.append(rel)

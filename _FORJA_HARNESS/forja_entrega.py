@@ -155,6 +155,25 @@ def _entregaveis(manifesto: dict) -> list:
     return []
 
 
+def _corpo_email(email) -> str:
+    """Extrai o corpo real sem confundir metadados JSON com a redação."""
+    if isinstance(email, str):
+        return email
+    if not isinstance(email, dict):
+        return ""
+    for chave in ("body", "corpo", "text", "texto", "markdown", "content"):
+        valor = email.get(chave)
+        if isinstance(valor, str) and valor.strip():
+            return valor
+    for chave in ("email", "message", "mensagem"):
+        valor = email.get(chave)
+        if isinstance(valor, dict):
+            corpo = _corpo_email(valor)
+            if corpo:
+                return corpo
+    return ""
+
+
 def validar_pacote(manifesto, email=None, base_dir=None, artefatos_existentes=None):
     """Gates da F9: anexos exatos, hashes atuais e e-mail que não promete demais."""
     achados = []
@@ -224,6 +243,7 @@ def validar_pacote(manifesto, email=None, base_dir=None, artefatos_existentes=No
     # LE1/LE2 — o e-mail não promete o que o pacote não entrega.
     texto = email if isinstance(email, str) else (
         json.dumps(email, ensure_ascii=False) if isinstance(email, dict) else "")
+    corpo_email = _corpo_email(email)
     if not texto.strip():
         achados.append({
             "gate": "LE8-email-ausente", "sev": "P1",
@@ -264,12 +284,12 @@ def validar_pacote(manifesto, email=None, base_dir=None, artefatos_existentes=No
     # verificavelmente artificial: cabeçalho de máquina, fórmula pronta,
     # metadiscurso vazio. Achado leve fica em `warn` porque o analisador mede
     # indício, e indício de estilo não derruba entrega.
-    if not texto:
+    if not corpo_email:
         estilo = "warn"
     else:
         from forja_estilo_humano import analisar as _analisar_estilo
 
-        achados_estilo = _analisar_estilo(texto, tipo="email")
+        achados_estilo = _analisar_estilo(corpo_email, tipo="email")
         p0_estilo = [x for x in achados_estilo if x.get("sev") == "P0"]
         achados.extend({**x, "versao": _GATE_VERSAO} for x in p0_estilo)
         estilo = "fail" if p0_estilo else ("warn" if achados_estilo else "pass")

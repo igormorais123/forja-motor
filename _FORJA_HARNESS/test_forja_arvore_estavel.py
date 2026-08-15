@@ -64,6 +64,18 @@ class TestImpressaoDaArvore(unittest.TestCase):
             d = arvore.mexeu(antes, arvore.impressao(raiz))
         self.assertFalse(d["mexeu"], d["amostra"])
 
+    def test_mapa_gerado_pelo_observador_fica_de_fora(self):
+        """Mapa derivado muda a cada atualização da interface e não é fonte."""
+        with tempfile.TemporaryDirectory() as tmp:
+            raiz = Path(tmp)
+            (raiz / "modulo").mkdir()
+            mapa = raiz / "modulo" / "MAPA_IA.md"
+            mapa.write_text("primeiro mapa", encoding="utf-8")
+            antes = arvore.impressao(raiz)
+            mapa.write_text("mapa regenerado e maior", encoding="utf-8")
+            d = arvore.mexeu(antes, arvore.impressao(raiz))
+        self.assertFalse(d["mexeu"], d["amostra"])
+
     def test_amostra_nao_se_passa_por_lista_completa(self):
         with tempfile.TemporaryDirectory() as tmp:
             raiz = Path(tmp)

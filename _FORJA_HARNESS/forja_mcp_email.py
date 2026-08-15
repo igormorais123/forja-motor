@@ -136,6 +136,10 @@ def enviar_email(to, subject, body, cc=None, bcc=None, reply_to_message_id=None,
     """Compõe e envia, com ou sem anexo. Devolve messageId e threadId da API."""
     if not to:
         raise ValueError("destinatário ausente")
+    from forja_email import _validar_corpo_email
+
+    # A validação precede OAuth, leitura de anexos e qualquer mutação externa.
+    _validar_corpo_email(body or "")
     svc = _servico()
 
     preparados = []
